@@ -4,12 +4,12 @@
 
 梯度提升是构建预测模型的最强大技术之一。
 
-在这篇文章中，您将发现梯度增强机器学习算法，并轻松介绍它的来源和工作原理。
+在这篇文章中，您将发现梯度提升机器学习算法，并轻松介绍它的来源和工作原理。
 
 阅读这篇文章后，你会知道：
 
 *   从学习理论和 AdaBoost 推动的起源。
-*   梯度增强的工作原理包括损失函数，弱学习者和加法模型。
+*   梯度提升的工作原理包括损失函数，弱学习者和加法模型。
 *   如何通过各种正则化方案提高基本算法的性能
 
 让我们开始吧。
@@ -69,7 +69,7 @@ AdaBoost 和相关算法首先由 Breiman 称之为 ARCing 算法的统计框架
 
 - [预测游戏和拱形算法](https://www.stat.berkeley.edu/~breiman/games.pdf) [PDF]，1997
 
-这个框架由 Friedman 进一步开发，称为 Gradient Boosting Machines。后来称为梯度提升或渐变树增强。
+这个框架由 Friedman 进一步开发，称为 Gradient Boosting Machines。后来称为梯度提升或梯度树增强。
 
 统计框架将推进作为一个数值优化问题，其目标是通过使用梯度下降类似过程添加弱学习者来最小化模型的损失。
 
@@ -81,7 +81,7 @@ AdaBoost 和相关算法首先由 Breiman 称之为 ARCing 算法的统计框架
 
 泛化允许使用任意可微分损失函数，将技术扩展到二元分类问题之外，以支持回归，多类分类等。
 
-## 渐变提升的工作原理
+## 梯度提升的工作原理
 
 梯度提升涉及三个要素：
 
@@ -97,11 +97,11 @@ AdaBoost 和相关算法首先由 Breiman 称之为 ARCing 算法的统计框架
 
 例如，回归可能使用平方误差，分类可能使用对数损失。
 
-梯度增强框架的一个好处是不必为可能想要使用的每个损失函数导出新的增强算法，相反，它是足够通用的框架，可以使用任何可微分损失函数。
+梯度提升框架的一个好处是不必为可能想要使用的每个损失函数导出新的增强算法，相反，它是足够通用的框架，可以使用任何可微分损失函数。
 
 ### 2.弱小的学习者
 
-决策树被用作梯度增强中的弱学习者。
+决策树被用作梯度提升中的弱学习者。
 
 特别是使用回归树，其输出分裂的实际值并且其输出可以被加在一起，允许添加后续模型输出并“校正”预测中的残差。
 
@@ -139,7 +139,7 @@ AdaBoost 和相关算法首先由 Breiman 称之为 ARCing 算法的统计框架
 
 它可以受益于惩罚算法的各个部分的正则化方法，并且通常通过减少过度拟合来改善算法的性能。
 
-在本节中，我们将介绍基本梯度增强的 4 个增强功能：
+在本节中，我们将介绍基本梯度提升的 4 个增强功能：
 
 1.  树约束
 2.  收缩
@@ -188,9 +188,9 @@ AdaBoost 和相关算法首先由 Breiman 称之为 ARCing 算法的统计框架
 
 对装袋合奏和随机森林的深入了解允许从训练数据集的子样本中贪婪地创建树。
 
-可以使用相同的益处来减少梯度增强模型中序列中的树之间的相关性。
+可以使用相同的益处来减少梯度提升模型中序列中的树之间的相关性。
 
-这种增强的变化称为随机梯度增强。
+这种增强的变化称为随机梯度提升。
 
 > 在每次迭代中，从完整训练数据集中随机（无替换）绘制训练数据的子样本。然后使用随机选择的子样本而不是完整样本来适合基础学习者。
 
@@ -227,22 +227,22 @@ AdaBoost 和相关算法首先由 Breiman 称之为 ARCing 算法的统计框架
 
 梯度提升是一种迷人的算法，我相信你想要更深入。
 
-本节列出了可用于了解梯度增强算法的更多信息。
+本节列出了可用于了解梯度提升算法的更多信息。
 
-### 渐变提升视频
+### 梯度提升视频
 
 *   [Gradient Boosting Machine Learning](https://www.youtube.com/watch?v=wPqtzj5VZus) ，Trevor Hastie，2014
 *   [Gradient Boosting](https://www.youtube.com/watch?v=sRktKszFmSk) ，Alexander Ihler，2012
 *   [GBM](https://www.youtube.com/watch?v=WZvPUGNJg18) ，John Mount，2015 年
 *   [学习：提升](https://www.youtube.com/watch?v=UHBmv7qCey4)，麻省理工学院 6.034 人工智能，2010
-*   [xgboost：用于快速准确梯度增强的 R 包](https://www.youtube.com/watch?v=0IhraqUVJ_E)，2016
+*   [xgboost：用于快速准确梯度提升的 R 包](https://www.youtube.com/watch?v=0IhraqUVJ_E)，2016
 *   [XGBoost：可扩展的树木升压系统](https://www.youtube.com/watch?v=Vly8xGnNiWs)，陈天琪，2016
 
 ### 教科书中的梯度提升
 
 *   第 8.2.3 节 Boosting，第 321 页，[统计学习简介：在 R](http://www.amazon.com/dp/1461471370?tag=inspiredalgor-20) 中的应用。
 *   第 8.6 节 Boosting，第 203 页，[应用预测建模](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20)。
-*   第 14.5 节“随机梯度增强”，第 390 页，[应用预测建模](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20)。
+*   第 14.5 节“随机梯度提升”，第 390 页，[应用预测建模](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20)。
 *   第 16.4 节 Boosting，第 556 页，[机器学习：概率视角](http://www.amazon.com/dp/0262018020?tag=inspiredalgor-20)
 *   第 10 章 Boosting 和 Additive 树，第 337 页，[统计学习的要素：数据挖掘，推理和预测](http://www.amazon.com/dp/0387848576?tag=inspiredalgor-20)
 
@@ -254,25 +254,25 @@ AdaBoost 和相关算法首先由 Breiman 称之为 ARCing 算法的统计框架
 *   [随机梯度提升](https://statweb.stanford.edu/~jhf/ftp/stobst.pdf) [PDF]，1999
 *   [在函数空间中提升算法作为梯度下降](http://maths.dur.ac.uk/~dma6kp/pdf/face_recognition/Boosting/Mason99AnyboostLong.pdf) [PDF]，1999
 
-### 渐变提升幻灯片
+### 梯度提升幻灯片
 
 *   [Boosted Trees 简介](http://homes.cs.washington.edu/~tqchen/pdf/BoostedTree.pdf)，2014
 *   [一个温和的梯度提升介绍](http://www.chengli.io/tutorials/gradient_boosting.pdf)，程力
 
-### 渐变提升网页
+### 梯度提升网页
 
 *   [提升（机器学习）](https://en.wikipedia.org/wiki/Boosting_(machine_learning))
-*   [梯度增强](https://en.wikipedia.org/wiki/Gradient_boosting)
+*   [梯度提升](https://en.wikipedia.org/wiki/Gradient_boosting)
 *   [在 scikit-learn](http://scikit-learn.org/stable/modules/ensemble.html#gradient-tree-boosting) 中提升梯度树
 
 ## 摘要
 
-在这篇文章中，您发现了用于机器学习中预测建模的梯度增强算法。
+在这篇文章中，您发现了用于机器学习中预测建模的梯度提升算法。
 
 具体来说，你学到了：
 
 *   提升学习理论和 AdaBoost 的历史。
-*   梯度增强算法如何与损失函数，弱学习者和附加模型一起工作。
-*   如何通过正则化提高梯度增强的性能。
+*   梯度提升算法如何与损失函数，弱学习者和附加模型一起工作。
+*   如何通过正则化提高梯度提升的性能。
 
-您对梯度增强算法或此帖有任何疑问吗？在评论中提出您的问题，我会尽力回答。
+您对梯度提升算法或此帖有任何疑问吗？在评论中提出您的问题，我会尽力回答。

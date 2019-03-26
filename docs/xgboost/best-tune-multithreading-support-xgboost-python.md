@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/best-tune-multithreading-support-xgboost-python/](https://machinelearningmastery.com/best-tune-multithreading-support-xgboost-python/)
 
-用于梯度增强用途的 XGBoost 库专为高效的多核并行处理而设计。
+用于梯度提升用途的 XGBoost 库专为高效的多核并行处理而设计。
 
 这使它可以在训练时有效地使用系统中的所有 CPU 核心。
 
@@ -39,7 +39,7 @@
 
 XGBoost 在 C ++中实现，以明确地使用 [OpenMP API](https://en.wikipedia.org/wiki/OpenMP) 进行并行处理。
 
-梯度增强中的并行性可以在单个树的构造中实现，而不是像随机森林那样并行创建树。这是因为在增强中，树木被顺序添加到模型中。 XGBoost 的速度既可以在单个树木的构造中增加平行度，也可以有效地准备输入数据，以帮助加快树木的构建。
+梯度提升中的并行性可以在单个树的构造中实现，而不是像随机森林那样并行创建树。这是因为在增强中，树木被顺序添加到模型中。 XGBoost 的速度既可以在单个树木的构造中增加平行度，也可以有效地准备输入数据，以帮助加快树木的构建。
 
 根据您的平台，您可能需要专门编译 XGBoost 以支持多线程。有关详细信息，请参阅 [XGBoost 安装说明](https://github.com/dmlc/xgboost/blob/master/doc/build.md)。
 

@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/avoid-overfitting-by-early-stopping-with-xgboost-in-python/](https://machinelearningmastery.com/avoid-overfitting-by-early-stopping-with-xgboost-in-python/)
 
-过度拟合是复杂的非线性学习算法（例如梯度增强）的问题。
+过度拟合是复杂的非线性学习算法（例如梯度提升）的问题。
 
 在这篇文章中，您将了解如何使用早期停止来限制 Python 中的 XGBoost 过度拟合。
 

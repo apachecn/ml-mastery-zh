@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/train-xgboost-models-cloud-amazon-web-services/](https://machinelearningmastery.com/train-xgboost-models-cloud-amazon-web-services/)
 
-XGBoost 库提供了针对速度和性能而设计的梯度增强实现。
+XGBoost 库提供了针对速度和性能而设计的梯度提升实现。
 
 它的实现是为了充分利用您的计算资源，包括所有 CPU 内核和内存。
 

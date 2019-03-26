@@ -27,9 +27,9 @@ XGBoost 代表 e **X** treme **G** radient **B** oosting。
 
 > 但是，名称 xgboost 实际上指的是推动增强树算法的计算资源限制的工程目标。这就是为什么许多人使用 xgboost 的原因。
 
-- 陈天琪回答问题“ [R gbm（梯度增强机）和 xgboost（极限梯度增强）有什么区别？](https://www.quora.com/What-is-the-difference-between-the-R-gbm-gradient-boosting-machine-and-xgboost-extreme-gradient-boosting) “在 Quora 上
+- 陈天琪回答问题“ [R gbm（梯度提升机）和 xgboost（极限梯度提升）有什么区别？](https://www.quora.com/What-is-the-difference-between-the-R-gbm-gradient-boosting-machine-and-xgboost-extreme-gradient-boosting) “在 Quora 上
 
-它是 [Tianqi Chen](http://homes.cs.washington.edu/~tqchen/) 创建的梯度增强机的实现，现在得到了许多开发人员的贡献。它属于分布式机器学习社区或 [DMLC](http://dmlc.ml/) 旗下的更广泛的工具集，他们也是流行的 [mxnet 深度学习库](https://github.com/dmlc/mxnet)的创建者。
+它是 [Tianqi Chen](http://homes.cs.washington.edu/~tqchen/) 创建的梯度提升机的实现，现在得到了许多开发人员的贡献。它属于分布式机器学习社区或 [DMLC](http://dmlc.ml/) 旗下的更广泛的工具集，他们也是流行的 [mxnet 深度学习库](https://github.com/dmlc/mxnet)的创建者。
 
 Tianqi Chen 在后期[故事和 XGBoost 演变背后的教训](http://homes.cs.washington.edu/~tqchen/2016/03/10/story-and-lessons-behind-the-evolution-of-xgboost.html)中提供了关于 XGBoost 创作的简短而有趣的背景故事。
 
@@ -48,11 +48,11 @@ XGBoost 是一个软件库，您可以在您的机器上下载和安装，然后
 
 ### 型号特点
 
-该模型的实现支持 scikit-learn 和 R 实现的功能，以及正规化等新增功能。支持三种主要形式的梯度增强：
+该模型的实现支持 scikit-learn 和 R 实现的功能，以及正规化等新增功能。支持三种主要形式的梯度提升：
 
-*   **Gradient Boosting** 算法也称为梯度增强机，包括学习率。
+*   **Gradient Boosting** 算法也称为梯度提升机，包括学习率。
 *   **随机梯度提升**，每个分割级别在行，列和列处进行子采样。
-*   **正则化梯度增强**同时具有 L1 和 L2 正则化。
+*   **正则化梯度提升**同时具有 L1 和 L2 正则化。
 
 ### 系统功能
 
@@ -82,9 +82,9 @@ XGBoost 是免费的开源软件，可在许可的 Apache-2 许可下使用。
 
 ### 1\. XGBoost 执行速度
 
-通常，XGBoost 很快。与梯度增强的其他实现相比，真的很快。
+通常，XGBoost 很快。与梯度提升的其他实现相比，真的很快。
 
-[Szilard Pafka](https://www.linkedin.com/in/szilard) 进行了一些客观的基准测试，比较了 XGBoost 与梯度增强和袋装决策树的其他实现的性能。他在 2015 年 5 月的博客文章“[基准随机森林实施基准](http://datascience.la/benchmarking-random-forest-implementations/)”中写下了他的结果。
+[Szilard Pafka](https://www.linkedin.com/in/szilard) 进行了一些客观的基准测试，比较了 XGBoost 与梯度提升和袋装决策树的其他实现的性能。他在 2015 年 5 月的博客文章“[基准随机森林实施基准](http://datascience.la/benchmarking-random-forest-implementations/)”中写下了他的结果。
 
 他还提供了 [GitHub](https://github.com/szilard/benchm-ml) 上的所有代码以及更为广泛的硬数字结果报告。
 
@@ -134,15 +134,15 @@ XGBoost 在分类和回归预测建模问题上支配结构化或表格数据集
 
 XGBoost 库实现[梯度提升决策树算法](https://en.wikipedia.org/wiki/Gradient_boosting)。
 
-该算法有许多不同的名称，例如梯度增强，多重加性回归树，随机梯度增强或梯度增强机器。
+该算法有许多不同的名称，例如梯度提升，多重加性回归树，随机梯度提升或梯度提升机器。
 
 Boosting 是一种集合技术，其中添加了新模型以纠正现有模型所产生的错误。依次添加模型，直到不能进一步改进。一个流行的例子是 [AdaBoost 算法](http://machinelearningmastery.com/boosting-and-adaboost-for-machine-learning/)，它对很难预测的数据点进行加权。
 
-梯度增强是一种方法，其中创建新模型以预测先前模型的残差或误差，然后将其加在一起以进行最终预测。它被称为梯度增强，因为它使用梯度下降算法来最小化添加新模型时的损失。
+梯度提升是一种方法，其中创建新模型以预测先前模型的残差或误差，然后将其加在一起以进行最终预测。它被称为梯度提升，因为它使用梯度下降算法来最小化添加新模型时的损失。
 
 该方法支持回归和分类预测建模问题。
 
-有关增强和梯度增强的更多信息，请参阅 Trevor Hastie 关于[梯度增强机器学习](https://www.youtube.com/watch?v=wPqtzj5VZus)的演讲。
+有关增强和梯度提升的更多信息，请参阅 Trevor Hastie 关于[梯度提升机器学习](https://www.youtube.com/watch?v=wPqtzj5VZus)的演讲。
 
 &lt;iframe allowfullscreen="" frameborder="0" height="281" src="https://www.youtube.com/embed/wPqtzj5VZus?feature=oembed" width="500"&gt;&lt;/iframe&gt;
 
@@ -233,7 +233,7 @@ sudo pip install xgboost
 
 你了解到：
 
-*   XGBoost 是一个用于开发快速和高性能梯度增强树模型的库。
+*   XGBoost 是一个用于开发快速和高性能梯度提升树模型的库。
 *   XGBoost 在一系列困难的机器学习任务中实现了最佳性能。
 *   您可以从命令行，Python 和 R 使用此库以及如何开始使用。
 

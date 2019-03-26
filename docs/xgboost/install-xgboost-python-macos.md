@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/install-xgboost-python-macos/](https://machinelearningmastery.com/install-xgboost-python-macos/)
 
-XGBoost 是一个用于开发非常快速和准确的梯度增强模型的库。
+XGBoost 是一个用于开发非常快速和准确的梯度提升模型的库。
 
 它是 Kaggle 数据科学竞赛中许多获奖解决方案中心的图书馆。
 
