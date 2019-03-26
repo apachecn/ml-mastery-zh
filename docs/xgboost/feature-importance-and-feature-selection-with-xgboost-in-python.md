@@ -1,25 +1,25 @@
-# 功能重要性和功能选择使用Python中的XGBoost
+# 功能重要性和功能选择使用 Python 中的 XGBoost
 
 > 原文： [https://machinelearningmastery.com/feature-importance-and-feature-selection-with-xgboost-in-python/](https://machinelearningmastery.com/feature-importance-and-feature-selection-with-xgboost-in-python/)
 
 使用诸如梯度增强之类的决策树方法的集合的好处是它们可以从训练的预测模型自动提供特征重要性的估计。
 
-在本文中，您将了解如何使用Python中的XGBoost库来估计功能对预测建模问题的重要性。
+在本文中，您将了解如何使用 Python 中的 XGBoost 库来估计功能对预测建模问题的重要性。
 
 阅读这篇文章后你会知道：
 
 *   如何使用梯度增强算法计算特征重要性。
-*   如何在XGBoost模型计算的Python中绘制要素重要性。
-*   如何使用XGBoost计算的要素重要性来执行要素选择。
+*   如何在 XGBoost 模型计算的 Python 中绘制要素重要性。
+*   如何使用 XGBoost 计算的要素重要性来执行要素选择。
 
 让我们开始吧。
 
-*   **2017年1月更新**：已更新，以反映scikit-learn API版本0.18.1中的更改​​。
-*   **更新March / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
+*   **2017 年 1 月更新**：已更新，以反映 scikit-learn API 版本 0.18.1 中的更改​​。
+*   **更新 March / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
 
 ![Feature Importance and Feature Selection With XGBoost in Python](img/5a184d41ab4a4455f4f46aae43b17958.jpg)
 
-功能重要性和功能选择使用Python中的XGBoost
+功能重要性和功能选择使用 Python 中的 XGBoost
 照片由 [Keith Roper](https://www.flickr.com/photos/keithroper/15476027141/) ，保留一些权利。
 
 ## 梯度提升中的特征重要性
@@ -34,13 +34,13 @@
 
 然后，在模型中的所有决策树中对要素重要性进行平均。
 
-有关如何在提升的决策树中计算特征重要性的更多技术信息，请参阅本书[统计学习要素：数据挖掘，推理，第10.53.1节“_预测变量的相对重要性_”。和预测](http://www.amazon.com/dp/0387848576?tag=inspiredalgor-20)，第367页。
+有关如何在提升的决策树中计算特征重要性的更多技术信息，请参阅本书[统计学习要素：数据挖掘，推理，第 10.53.1 节“_ 预测变量的相对重要性 _”。和预测](http://www.amazon.com/dp/0387848576?tag=inspiredalgor-20)，第 367 页。
 
-另外，请参阅Matthew Drury对StackOverflow问题的回答“ [Boosting](http://stats.stackexchange.com/questions/162162/relative-variable-importance-for-boosting) 的相对变量重要性”，他提供了非常详细和实用的答案。
+另外，请参阅 Matthew Drury 对 StackOverflow 问题的回答“ [Boosting](http://stats.stackexchange.com/questions/162162/relative-variable-importance-for-boosting) 的相对变量重要性”，他提供了非常详细和实用的答案。
 
 ## 手动绘制功能重要性
 
-经过训练的XGBoost模型可自动计算预测建模问题的特征重要性。
+经过训练的 XGBoost 模型可自动计算预测建模问题的特征重要性。
 
 这些重要性分数可在训练模型的 **feature_importances_** 成员变量中找到。例如，它们可以直接打印如下：
 
@@ -56,7 +56,7 @@ pyplot.bar(range(len(model.feature_importances_)), model.feature_importances_)
 pyplot.show()
 ```
 
-我们可以通过在 [Pima印第安人糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)上训练XGBoost模型并根据计算的特征重要性创建条形图来证明这一点（更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
+我们可以通过在 [Pima 印第安人糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)上训练 XGBoost 模型并根据计算的特征重要性创建条形图来证明这一点（更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
 
 ```
 # plot feature importance manually
@@ -88,15 +88,15 @@ pyplot.show()
 
 ![Manual Bar Chart of XGBoost Feature Importance](img/745045b3bf82c5128eae73f2ebbfe78e.jpg)
 
-XGBoost功能重要性的手动条形图
+XGBoost 功能重要性的手动条形图
 
 这个图的缺点是功能按输入索引而不是它们的重要性排序。我们可以在绘图之前对功能进行排序。
 
 值得庆幸的是，有一个内置的绘图功能来帮助我们。
 
-## 使用内置的XGBoost功能重要性图
+## 使用内置的 XGBoost 功能重要性图
 
-XGBoost库提供了一个内置函数来绘制按其重要性排序的特征。
+XGBoost 库提供了一个内置函数来绘制按其重要性排序的特征。
 
 该函数称为 **plot_importance（）**，可以按如下方式使用：
 
@@ -106,7 +106,7 @@ plot_importance(model)
 pyplot.show()
 ```
 
-例如，下面是一个完整的代码清单，使用内置的 **plot_importance（）**函数绘制Pima Indians数据集的特征重要性。
+例如，下面是一个完整的代码清单，使用内置的 **plot_importance（）**函数绘制 Pima Indians 数据集的特征重要性。
 
 ```
 # plot feature importance using built-in function
@@ -131,23 +131,23 @@ pyplot.show()
 
 ![XGBoost Feature Importance Bar Chart](img/5f9e25575188c1f1ca109d5a47b9bc13.jpg)
 
-XGBoost功能重要性条形图
+XGBoost 功能重要性条形图
 
-您可以看到功能是根据它们在F0到F7的输入数组（X）中的索引自动命名的。
+您可以看到功能是根据它们在 F0 到 F7 的输入数组（X）中的索引自动命名的。
 
-在问题描述中手动将这些指数映射到[名称，我们可以看到该图显示F5（体重指数）具有最高重要性，F3（皮肤折叠厚度）具有最低重要性。](https://github.com/jbrownlee/Datasets/blob/master/pima-indians-diabetes.names)
+在问题描述中手动将这些指数映射到[名称，我们可以看到该图显示 F5（体重指数）具有最高重要性，F3（皮肤折叠厚度）具有最低重要性。](https://github.com/jbrownlee/Datasets/blob/master/pima-indians-diabetes.names)
 
-## 使用XGBoost功能重要性分数进行特征选择
+## 使用 XGBoost 功能重要性分数进行特征选择
 
-特征重要性分数可用于scikit-learn中的特征选择。
+特征重要性分数可用于 scikit-learn 中的特征选择。
 
 这是使用 [SelectFromModel](http://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SelectFromModel.html) 类完成的，该类采用模型并可以将数据集转换为具有所选特征的子集。
 
 该课程可以采用预训练的模型，例如在整个训练数据集上训练的模型。然后，它可以使用阈值来决定选择哪些功能。当您在 **SelectFromModel** 实例上调用 **transform（）**方法以在训练数据集和测试数据集上始终选择相同的特征时，将使用此阈值。
 
-在下面的示例中，我们首先分别训练并评估整个训练数据集和测试数据集上的XGBoost模型。
+在下面的示例中，我们首先分别训练并评估整个训练数据集和测试数据集上的 XGBoost 模型。
 
-使用从训练数据集计算的要素重要性，然后我们将模型包装在SelectFromModel实例中。我们使用它来选择训练数据集上的特征，从所选特征子集训练模型，然后根据相同的特征选择方案评估测试集上的模型。
+使用从训练数据集计算的要素重要性，然后我们将模型包装在 SelectFromModel 实例中。我们使用它来选择训练数据集上的特征，从所选特征子集训练模型，然后根据相同的特征选择方案评估测试集上的模型。
 
 例如：
 
@@ -223,18 +223,18 @@ Thresh=0.208, n=1, Accuracy: 63.78%
 
 我们可以看到模型的性能通常随着所选特征的数量而减少。
 
-在这个问题上，需要权衡测试集合精度的特征，我们可以决定采用较不复杂的模型（较少的属性，如n = 4），并接受估计精度的适度降低，从77.95％降至76.38％。
+在这个问题上，需要权衡测试集合精度的特征，我们可以决定采用较不复杂的模型（较少的属性，如 n = 4），并接受估计精度的适度降低，从 77.95％降至 76.38％。
 
 这可能是对这么小的数据集的一种洗涤，但对于更大的数据集并且使用交叉验证作为模型评估方案可能是更有用的策略。
 
 ## 摘要
 
-在这篇文章中，您发现了如何在训练有素的XGBoost梯度增强模型中访问特征和使用重要性。
+在这篇文章中，您发现了如何在训练有素的 XGBoost 梯度增强模型中访问特征和使用重要性。
 
 具体来说，你学到了：
 
-*   重要的是什么，一般如何在XGBoost中计算。
-*   如何从XGBoost模型访问和绘制要素重要性分数。
-*   如何使用XGBoost模型中的要素重要性来选择要素。
+*   重要的是什么，一般如何在 XGBoost 中计算。
+*   如何从 XGBoost 模型访问和绘制要素重要性分数。
+*   如何使用 XGBoost 模型中的要素重要性来选择要素。
 
-您对XGBoost或此帖中的功能重要性有任何疑问吗？在评论中提出您的问题，我会尽力回答。
+您对 XGBoost 或此帖中的功能重要性有任何疑问吗？在评论中提出您的问题，我会尽力回答。

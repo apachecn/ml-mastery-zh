@@ -1,25 +1,25 @@
-# 通过在Python中使用XGBoost提前停止来避免过度拟合
+# 通过在 Python 中使用 XGBoost 提前停止来避免过度拟合
 
 > 原文： [https://machinelearningmastery.com/avoid-overfitting-by-early-stopping-with-xgboost-in-python/](https://machinelearningmastery.com/avoid-overfitting-by-early-stopping-with-xgboost-in-python/)
 
 过度拟合是复杂的非线性学习算法（例如梯度增强）的问题。
 
-在这篇文章中，您将了解如何使用早期停止来限制Python中的XGBoost过度拟合。
+在这篇文章中，您将了解如何使用早期停止来限制 Python 中的 XGBoost 过度拟合。
 
 阅读这篇文章后，你会知道：
 
 *   关于早期停止作为减少训练数据过度拟合的方法。
-*   如何在训练期间监控XGBoost模型的性能并绘制学习曲线。
-*   如何使用早期停止来提前停止在最佳时期训练XGBoost模型。
+*   如何在训练期间监控 XGBoost 模型的性能并绘制学习曲线。
+*   如何使用早期停止来提前停止在最佳时期训练 XGBoost 模型。
 
 让我们开始吧。
 
-*   **2017年1月更新**：已更新，以反映scikit-learn API版本0.18.1中的更改​​。
-*   **更新March / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
+*   **2017 年 1 月更新**：已更新，以反映 scikit-learn API 版本 0.18.1 中的更改​​。
+*   **更新 March / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
 
 ![Avoid Overfitting By Early Stopping With XGBoost In Python](img/3b5a137b9d5bd85033c44aac0f3068ff.jpg)
 
-通过Python中的XGBoost提前停止来避免过度拟合
+通过 Python 中的 XGBoost 提前停止来避免过度拟合
 照片由 [Michael Hamann](https://www.flickr.com/photos/michitux/7218180540/) 拍摄，保留一些权利。
 
 ## 提前停止以避免过度拟合
@@ -32,30 +32,30 @@
 
 性能度量可以是针对训练模型而优化的损失函数（例如对数损失），或者一般对问题感兴趣的外部度量（例如分类准确度）。
 
-## 使用XGBoost监控培训性能
+## 使用 XGBoost 监控培训性能
 
-XGBoost模型可以在训练期间评估和报告模型的测试集上的性能。
+XGBoost 模型可以在训练期间评估和报告模型的测试集上的性能。
 
 它通过在训练模型和指定详细输出时调用 **model.fit（）**时指定测试数据集和评估指标来支持此功能。
 
-例如，我们可以在独立测试集（ **eval_set** ）上报告二进制分类错误率（“_错误_”），同时训练XGBoost模型，如下所示：
+例如，我们可以在独立测试集（ **eval_set** ）上报告二进制分类错误率（“_ 错误 _”），同时训练 XGBoost 模型，如下所示：
 
 ```
 eval_set = [(X_test, y_test)]
 model.fit(X_train, y_train, eval_metric="error", eval_set=eval_set, verbose=True)
 ```
 
-XGBoost支持一套评估指标，不仅限于：
+XGBoost 支持一套评估指标，不仅限于：
 
 *   “ _rmse_ ”表示均方根误差。
 *   “ _mae_ ”表示平均绝对误差。
 *   “ _logloss_ ”用于二元对数损失，“ _mlogloss_ ”用于多级对数损失（交叉熵）。
-*   “_错误_”表示分类错误。
-*   “ _auc_ ”用于ROC曲线下的面积。
+*   “_ 错误 _”表示分类错误。
+*   “ _auc_ ”用于 ROC 曲线下的面积。
 
-完整列表在XGBoost参数网页的“[学习任务参数](http://xgboost.readthedocs.io/en/latest//parameter.html)”部分中提供。
+完整列表在 XGBoost 参数网页的“[学习任务参数](http://xgboost.readthedocs.io/en/latest//parameter.html)”部分中提供。
 
-例如，我们可以演示如何跟踪 [Pima印第安人糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)的XGBoost模型训练的性能，可从UCI机器学习库获取（更新：[从此处下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
+例如，我们可以演示如何跟踪 [Pima 印第安人糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)的 XGBoost 模型训练的性能，可从 UCI 机器学习库获取（更新：[从此处下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
 
 完整示例如下：
 
@@ -84,7 +84,7 @@ accuracy = accuracy_score(y_test, predictions)
 print("Accuracy: %.2f%%" % (accuracy * 100.0))
 ```
 
-运行此示例在67％的数据上训练模型，并在33％的测试数据集上评估每个训练时期的模型。
+运行此示例在 67％的数据上训练模型，并在 33％的测试数据集上评估每个训练时期的模型。
 
 每次迭代都会报告分类错误，最后报告分类准确性。
 
@@ -108,11 +108,11 @@ Accuracy: 77.95%
 
 回顾所有输出，我们可以看到测试集上的模型性能平稳，甚至在培训结束时变得更糟。
 
-## 使用学习曲线评估XGBoost模型
+## 使用学习曲线评估 XGBoost 模型
 
 我们可以在评估数据集上检索模型的性能并绘制它以深入了解在培训时如何展开学习。
 
-在拟合XGBoost模型时，我们为 **eval_metric** 参数提供了一对X和y对。除了测试集，我们还可以提供训练数据集。这将提供一份报告，说明模型在培训期间对培训和测试集的执行情况。
+在拟合 XGBoost 模型时，我们为 **eval_metric** 参数提供了一对 X 和 y 对。除了测试集，我们还可以提供训练数据集。这将提供一份报告，说明模型在培训期间对培训和测试集的执行情况。
 
 例如：
 
@@ -145,7 +145,7 @@ print(results)
 results['validation_0']['error']
 ```
 
-此外，我们可以通过为 **fit（）**函数的eval_metric参数提供一系列度量来指定更多评估度量来评估和收集。
+此外，我们可以通过为 **fit（）**函数的 eval_metric 参数提供一系列度量来指定更多评估度量来评估和收集。
 
 然后，我们可以使用这些收集的性能度量来创建线图，并进一步了解模型在训练时期的训练和测试数据集上的表现。
 
@@ -199,29 +199,29 @@ pyplot.show()
 
 运行此代码会报告每个纪元的列车和测试数据集的分类错误。我们可以通过在 **fit（）**函数的调用中设置 **verbose = False** （默认值）来关闭它。
 
-创建了两个图。第一个显示了训练和测试数据集中每个时期的XGBoost模型的对数损失。
+创建了两个图。第一个显示了训练和测试数据集中每个时期的 XGBoost 模型的对数损失。
 
 ![XGBoost Learning Curve Log Loss](img/3dd164f486ba1862fa97f82eb6693360.jpg)
 
-XGBoost学习曲线日志丢失
+XGBoost 学习曲线日志丢失
 
-第二个图显示了训练和测试数据集中每个时期的XGBoost模型的分类错误。
+第二个图显示了训练和测试数据集中每个时期的 XGBoost 模型的分类错误。
 
 ![XGBoost Learning Curve Classification Error](img/cdfec3000bac01a37daacb6f874ff978.jpg)
 
-XGBoost学习曲线分类错误
+XGBoost 学习曲线分类错误
 
-通过回顾logloss图，看起来有机会提前停止学习，也许在20世纪到40世纪左右。
+通过回顾 logloss 图，看起来有机会提前停止学习，也许在 20 世纪到 40 世纪左右。
 
-我们看到了类似的分类错误故事，其中错误似乎在40左右的时间内重新出现。
+我们看到了类似的分类错误故事，其中错误似乎在 40 左右的时间内重新出现。
 
-## 早期停止使用XGBoost
+## 早期停止使用 XGBoost
 
-XGBoost支持在固定次数的迭代后提前停止。
+XGBoost 支持在固定次数的迭代后提前停止。
 
 除了为每个时期指定用于评估的度量和度量数据集之外，还必须指定一个窗口，其中没有观察到任何改进的时期数。这在 **early_stopping_rounds** 参数中指定。
 
-例如，我们可以检查10个时期的对数损失没有改善如下：
+例如，我们可以检查 10 个时期的对数损失没有改善如下：
 
 ```
 eval_set = [(X_test, y_test)]
@@ -275,9 +275,9 @@ Stopping. Best iteration:
 [32]	validation_0-logloss:0.487297
 ```
 
-我们可以看到模型在第42纪元停止训练（接近我们对学习曲线的手动判断的预期），并且在第32纪元观察到具有最佳损失的模型。
+我们可以看到模型在第 42 纪元停止训练（接近我们对学习曲线的手动判断的预期），并且在第 32 纪元观察到具有最佳损失的模型。
 
-选择 **early_stopping_rounds** 作为训练时期总数（在这种情况下为10％）的合理函数通常是个好主意，或者尝试对应于在情节上可以观察到的拐点时期。学习曲线。
+选择 **early_stopping_rounds** 作为训练时期总数（在这种情况下为 10％）的合理函数通常是个好主意，或者尝试对应于在情节上可以观察到的拐点时期。学习曲线。
 
 ## 摘要
 
@@ -286,7 +286,7 @@ Stopping. Best iteration:
 你了解到：
 
 *   关于在模型过度训练数据之前停止模型训练的早期停止技术。
-*   如何在训练期间监控XGBoost模型的性能并绘制学习曲线。
-*   如何在训练XGBoost模型时配置早期停止。
+*   如何在训练期间监控 XGBoost 模型的性能并绘制学习曲线。
+*   如何在训练 XGBoost 模型时配置早期停止。
 
 您对过度拟合或有关此帖子有任何疑问吗？在评论中提出您的问题，我会尽力回答。

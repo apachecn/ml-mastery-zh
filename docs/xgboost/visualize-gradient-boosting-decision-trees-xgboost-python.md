@@ -1,23 +1,23 @@
-# 如何用Python中的XGBoost可视化梯度提升决策树
+# 如何用 Python 中的 XGBoost 可视化梯度提升决策树
 
 > 原文： [https://machinelearningmastery.com/visualize-gradient-boosting-decision-trees-xgboost-python/](https://machinelearningmastery.com/visualize-gradient-boosting-decision-trees-xgboost-python/)
 
 绘制单个决策树可以提供对给定数据集的梯度提升过程的深入了解。
 
-在本教程中，您将了解如何使用Python中的XGBoost从训练好的梯度提升模型中绘制单个决策树。
+在本教程中，您将了解如何使用 Python 中的 XGBoost 从训练好的梯度提升模型中绘制单个决策树。
 
 让我们开始吧。
 
-*   **更新March / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
+*   **更新 March / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
 
 ![How to Visualize Gradient Boosting Decision Trees With XGBoost in Python](img/53f3758154f3614de9c05883ac908246.jpg)
 
-如何用Python中的XGBoost可视化梯度提升决策树
+如何用 Python 中的 XGBoost 可视化梯度提升决策树
 [Kaarina Dillabough](https://www.flickr.com/photos/100497095@N02/23895950682/) 的照片，保留一些权利。
 
-## 绘制单个XGBoost决策树
+## 绘制单个 XGBoost 决策树
 
-[XGBoost Python API](http://xgboost.readthedocs.io/en/latest/python/python_api.html#module-xgboost.plotting) 提供了在经过训练的XGBoost模型中绘制决策树的功能。
+[XGBoost Python API](http://xgboost.readthedocs.io/en/latest/python/python_api.html#module-xgboost.plotting) 提供了在经过训练的 XGBoost 模型中绘制决策树的功能。
 
 **plot_tree（）**函数提供了此功能，该函数将训练模型作为第一个参数，例如：
 
@@ -25,11 +25,11 @@
 plot_tree(model)
 ```
 
-这将绘制模型中的第一个树（索引0处的树）。可以使用 **matplotlib** 和 **pyplot.show（）**将该图保存到文件或显示在屏幕上。
+这将绘制模型中的第一个树（索引 0 处的树）。可以使用 **matplotlib** 和 **pyplot.show（）**将该图保存到文件或显示在屏幕上。
 
-此绘图功能要求您安装 [graphviz库](http://www.graphviz.org/)。
+此绘图功能要求您安装 [graphviz 库](http://www.graphviz.org/)。
 
-我们可以在 [Pima印第安人糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)上创建一个XGBoost模型，并绘制模型中的第一棵树（更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。完整的代码清单如下：
+我们可以在 [Pima 印第安人糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)上创建一个 XGBoost 模型，并绘制模型中的第一棵树（更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。完整的代码清单如下：
 
 ```
 # plot decision tree
@@ -50,17 +50,17 @@ plot_tree(model)
 plt.show()
 ```
 
-运行代码会在模型中创建第一个决策树（索引0）的图，显示每个拆分的特征和特征值以及输出叶节点。
+运行代码会在模型中创建第一个决策树（索引 0）的图，显示每个拆分的特征和特征值以及输出叶节点。
 
 ![XGBoost Plot of Single Decision Tree](img/b689361fa203cc95ba7173bb475cc1dc.jpg)
 
-单一决策树的XGBoost图
+单一决策树的 XGBoost 图
 
-您可以看到变量自动命名为f1和f5，与输入数组中的特征索引相对应。
+您可以看到变量自动命名为 f1 和 f5，与输入数组中的特征索引相对应。
 
 您可以看到每个节点内的拆分决策以及左右分割的不同颜色（蓝色和红色）。
 
-**plot_tree（）**函数需要一些参数。您可以通过指定 **num_trees** 参数的索引来绘制特定图形。例如，您可以按顺序绘制序列中的第5个提升树：
+**plot_tree（）**函数需要一些参数。您可以通过指定 **num_trees** 参数的索引来绘制特定图形。例如，您可以按顺序绘制序列中的第 5 个提升树：
 
 ```
 plot_tree(model, num_trees=4)
@@ -76,10 +76,10 @@ plot_tree(model, num_trees=0, rankdir='LR')
 
 ![XGBoost Plot of Single Decision Tree Left-To-Right](img/896ab7f2c02bde2ade456f409a97f693.jpg)
 
-从左到右的单一决策树的XGBoost图
+从左到右的单一决策树的 XGBoost 图
 
 ## 摘要
 
-在这篇文章中，您学习了如何使用Python中训练有素的XGBoost梯度提升模型绘制单个决策树。
+在这篇文章中，您学习了如何使用 Python 中训练有素的 XGBoost 梯度提升模型绘制单个决策树。
 
-你有关于在XGBoost中绘制决策树或关于这篇文章的任何问题吗？在评论中提出您的问题，我会尽力回答。
+你有关于在 XGBoost 中绘制决策树或关于这篇文章的任何问题吗？在评论中提出您的问题，我会尽力回答。

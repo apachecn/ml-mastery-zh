@@ -1,54 +1,54 @@
-# 如何在macOS上安装XGBoost for Python
+# 如何在 macOS 上安装 XGBoost for Python
 
 > 原文： [https://machinelearningmastery.com/install-xgboost-python-macos/](https://machinelearningmastery.com/install-xgboost-python-macos/)
 
-XGBoost是一个用于开发非常快速和准确的梯度增强模型的库。
+XGBoost 是一个用于开发非常快速和准确的梯度增强模型的库。
 
-它是Kaggle数据科学竞赛中许多获奖解决方案中心的图书馆。
+它是 Kaggle 数据科学竞赛中许多获奖解决方案中心的图书馆。
 
-在本教程中，您将了解如何在macOS上安装Python的XGBoost库。
+在本教程中，您将了解如何在 macOS 上安装 Python 的 XGBoost 库。
 
 让我们开始吧。
 
 ![How to Install XGBoost for Python on macOS](img/6b9d2f1049c556cbd5210724ef317015.jpg)
 
-如何在macOS上安装XGBoost for Python
+如何在 macOS 上安装 XGBoost for Python
 照片来自 [auntjojo](https://www.flickr.com/photos/7682623@N02/7944342576/) ，保留一些权利。
 
 ## 教程概述
 
-本教程分为3个部分;他们是：
+本教程分为 3 个部分;他们是：
 
-1.  安装MacPorts
-2.  构建XGBoost
-3.  安装XGBoost
+1.  安装 MacPorts
+2.  构建 XGBoost
+3.  安装 XGBoost
 
-**注意**：我已经在一系列不同的macOS版本上使用了这个程序多年，并且没有改变。本教程是在macOS High Sierra（10.13.1）上编写和测试的。
+**注意**：我已经在一系列不同的 macOS 版本上使用了这个程序多年，并且没有改变。本教程是在 macOS High Sierra（10.13.1）上编写和测试的。
 
-## 1.安装MacPorts
+## 1.安装 MacPorts
 
-您需要安装GCC和Python环境才能构建和安装XGBoost for Python。
+您需要安装 GCC 和 Python 环境才能构建和安装 XGBoost for Python。
 
-我推荐使用GCC 7和Python 3.6，我建议使用 [MacPorts](https://www.macports.org/) 安装这些先决条件。
+我推荐使用 GCC 7 和 Python 3.6，我建议使用 [MacPorts](https://www.macports.org/) 安装这些先决条件。
 
-*   1.有关逐步安装MacPorts和Python环境的帮助，请参阅本教程：
+*   1.有关逐步安装 MacPorts 和 Python 环境的帮助，请参阅本教程：
 
-[＆gt;＆gt;如何在Mac OS X上安装Python 3环境以进行机器学习和深度学习](https://machinelearningmastery.com/install-python-3-environment-mac-os-x-machine-learning-deep-learning/)
+[＆gt;＆gt;如何在 Mac OS X 上安装 Python 3 环境以进行机器学习和深度学习](https://machinelearningmastery.com/install-python-3-environment-mac-os-x-machine-learning-deep-learning/)
 
-*   2.安装MacPorts和可用的Python环境后，您可以按如下方式安装和选择GCC 7：
+*   2.安装 MacPorts 和可用的 Python 环境后，您可以按如下方式安装和选择 GCC 7：
 
 ```
 sudo port install gcc7
 sudo port select --set gcc mp-gcc7
 ```
 
-*   3.确认您的GCC安装成功，如下所示：
+*   3.确认您的 GCC 安装成功，如下所示：
 
 ```
 gcc -v
 ```
 
-你应该看到印刷版的GCC;例如：
+你应该看到印刷版的 GCC;例如：
 
 ```
 ..
@@ -58,29 +58,29 @@ gcc version 7.2.0 (MacPorts gcc7 7.2.0_0)
 你看到什么版本？
 请在下面的评论中告诉我。
 
-## 2.构建XGBoost
+## 2.构建 XGBoost
 
-下一步是为您的系统下载并编译XGBoost。
+下一步是为您的系统下载并编译 XGBoost。
 
-*   1.首先，从GitHub查看代码库：
+*   1.首先，从 GitHub 查看代码库：
 
 ```
 git clone --recursive https://github.com/dmlc/xgboost
 ```
 
-*   2.转到xgboost目录。
+*   2.转到 xgboost 目录。
 
 ```
 cd xgboost/
 ```
 
-*   3.复制我们打算用来将XGBoost编译到位的配置。
+*   3.复制我们打算用来将 XGBoost 编译到位的配置。
 
 ```
 cp make/config.mk ./config.mk
 ```
 
-*   4.编译XGBoost;这要求您指定系统上的核心数（例如，8，根据需要进行更改）。
+*   4.编译 XGBoost;这要求您指定系统上的核心数（例如，8，根据需要进行更改）。
 
 ```
 make -j8
@@ -133,17 +133,17 @@ c++ -std=c++11 -Wall -Wno-unknown-pragmas -Iinclude -Idmlc-core/include -Irabit/
 这一步对你有用吗？
 请在下面的评论中告诉我。
 
-## 3.安装XGBoost
+## 3.安装 XGBoost
 
-您现在可以在系统上安装XGBoost了。
+您现在可以在系统上安装 XGBoost 了。
 
-*   1.将目录更改为xgboost项目的Python包。
+*   1.将目录更改为 xgboost 项目的 Python 包。
 
 ```
 cd python-package
 ```
 
-*   2.安装Python XGBoost包。
+*   2.安装 Python XGBoost 包。
 
 ```
 sudo python setup.py install
@@ -170,9 +170,9 @@ Using /opt/local/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/
 Finished processing dependencies for xgboost==0.6
 ```
 
-*   3.通过打印xgboost版本确认安装是否成功，这需要加载库。
+*   3.通过打印 xgboost 版本确认安装是否成功，这需要加载库。
 
-将以下代码保存到名为 _version.py的文件中。_
+将以下代码保存到名为 _version.py 的文件中。_
 
 ```
 import xgboost
@@ -185,7 +185,7 @@ print("xgboost", xgboost.__version__)
 python version.py
 ```
 
-您应该看到XGBoost版本打印到屏幕：
+您应该看到 XGBoost 版本打印到屏幕：
 
 ```
 xgboost 0.6
@@ -198,13 +198,13 @@ xgboost 0.6
 
 如果您希望深入了解，本节将提供有关该主题的更多资源。
 
-*   [如何在Mac OS X上安装Python 3环境以进行机器学习和深度学习](https://machinelearningmastery.com/install-python-3-environment-mac-os-x-machine-learning-deep-learning/)
-*   [MacPorts安装指南](https://www.macports.org/install.php)
-*   [XGBoost安装指南](http://xgboost.readthedocs.io/en/latest/build.html)
+*   [如何在 Mac OS X 上安装 Python 3 环境以进行机器学习和深度学习](https://machinelearningmastery.com/install-python-3-environment-mac-os-x-machine-learning-deep-learning/)
+*   [MacPorts 安装指南](https://www.macports.org/install.php)
+*   [XGBoost 安装指南](http://xgboost.readthedocs.io/en/latest/build.html)
 
 ## 摘要
 
-在本教程中，您了解了如何在macOS上逐步安装XGBoost for Python。
+在本教程中，您了解了如何在 macOS 上逐步安装 XGBoost for Python。
 
 你有任何问题吗？
 在下面的评论中提出您的问题，我会尽力回答。

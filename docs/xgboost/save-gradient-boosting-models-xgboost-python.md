@@ -1,31 +1,31 @@
-# 如何在Python中使用XGBoost保存梯度提升模型
+# 如何在 Python 中使用 XGBoost 保存梯度提升模型
 
 > 原文： [https://machinelearningmastery.com/save-gradient-boosting-models-xgboost-python/](https://machinelearningmastery.com/save-gradient-boosting-models-xgboost-python/)
 
-XGBoost可用于使用梯度提升算法为表格数据创建一些性能最佳的模型。
+XGBoost 可用于使用梯度提升算法为表格数据创建一些性能最佳的模型。
 
 经过培训，将模型保存到文件中以便以后用于预测新的测试和验证数据集以及全新数据通常是一种很好的做法。
 
-在本文中，您将了解如何使用标准Python pickle API将XGBoost模型保存到文件中。
+在本文中，您将了解如何使用标准 Python pickle API 将 XGBoost 模型保存到文件中。
 
 完成本教程后，您将了解：
 
-*   如何使用pickle保存并稍后加载训练有素的XGBoost模型。
-*   如何使用joblib保存并稍后加载训练有素的XGBoost模型。
+*   如何使用 pickle 保存并稍后加载训练有素的 XGBoost 模型。
+*   如何使用 joblib 保存并稍后加载训练有素的 XGBoost 模型。
 
 让我们开始吧。
 
-*   **2017年1月更新**：已更新，以反映scikit-learn API版本0.18.1中的更改​​。
-*   **更新March / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
+*   **2017 年 1 月更新**：已更新，以反映 scikit-learn API 版本 0.18.1 中的更改​​。
+*   **更新 March / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
 
 ![How to Save Gradient Boosting Models with XGBoost in Python](img/5a3953dc573c491c8f0f4131ffbd4ec7.jpg)
 
-如何在Python中使用XGBoost保存梯度提升模型
+如何在 Python 中使用 XGBoost 保存梯度提升模型
 照片来自 [Keoni Cabral](https://www.flickr.com/photos/keoni101/5334841889/) ，保留一些权利。
 
-## 使用Pickle序列化您的XGBoost模型
+## 使用 Pickle 序列化您的 XGBoost 模型
 
-Pickle是在Python中序列化对象的标准方法。
+Pickle 是在 Python 中序列化对象的标准方法。
 
 您可以使用 [Python pickle API](https://docs.python.org/2/library/pickle.html) 序列化您的机器学习算法并将序列化格式保存到文件中，例如：
 
@@ -41,7 +41,7 @@ pickle.dump(model, open("pima.pickle.dat", "wb"))
 loaded_model = pickle.load(open("pima.pickle.dat", "rb"))
 ```
 
-以下示例演示了如何在 [Pima印第安人糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)上训练XGBoost模型，将模型保存到文件中，然后加载它以进行预测（更新：[从此处下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv) ）。
+以下示例演示了如何在 [Pima 印第安人糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)上训练 XGBoost 模型，将模型保存到文件中，然后加载它以进行预测（更新：[从此处下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv) ）。
 
 完整性代码清单如下所示。
 
@@ -79,7 +79,7 @@ accuracy = accuracy_score(y_test, predictions)
 print("Accuracy: %.2f%%" % (accuracy * 100.0))
 ```
 
-运行此示例将训练有素的XGBoost模型保存到当前工作目录中的 **pima.pickle.dat** pickle文件中。
+运行此示例将训练有素的 XGBoost 模型保存到当前工作目录中的 **pima.pickle.dat** pickle 文件中。
 
 ```
 pima.pickle.dat
@@ -91,13 +91,13 @@ pima.pickle.dat
 Accuracy: 77.95%
 ```
 
-## 使用joblib序列化XGBoost模型
+## 使用 joblib 序列化 XGBoost 模型
 
-Joblib是SciPy生态系统的一部分，并提供用于管道化Python作业的实用程序。
+Joblib 是 SciPy 生态系统的一部分，并提供用于管道化 Python 作业的实用程序。
 
-[Joblib API](https://pypi.python.org/pypi/joblib) 提供了用于保存和加载有效利用NumPy数据结构的Python对象的实用程序。对于非常大的模型，使用它可能是一种更快捷的方法。
+[Joblib API](https://pypi.python.org/pypi/joblib) 提供了用于保存和加载有效利用 NumPy 数据结构的 Python 对象的实用程序。对于非常大的模型，使用它可能是一种更快捷的方法。
 
-API看起来很像pickle API，例如，您可以保存训练有素的模型，如下所示：
+API 看起来很像 pickle API，例如，您可以保存训练有素的模型，如下所示：
 
 ```
 # save model to file
@@ -111,7 +111,7 @@ joblib.dump(model, "pima.joblib.dat")
 loaded_model = joblib.load("pima.joblib.dat")
 ```
 
-下面的示例演示了如何训练XGBoost模型在Pima Indians糖尿病数据集开始时进行分类，使用Joblib将模型保存到文件中，并在以后加载它以进行预测。
+下面的示例演示了如何训练 XGBoost 模型在 Pima Indians 糖尿病数据集开始时进行分类，使用 Joblib 将模型保存到文件中，并在以后加载它以进行预测。
 
 ```
 # Train XGBoost model, save to file using joblib, load and make predictions
@@ -147,7 +147,7 @@ accuracy = accuracy_score(y_test, predictions)
 print("Accuracy: %.2f%%" % (accuracy * 100.0))
 ```
 
-运行该示例将模型保存为当前工作目录中的 **pima.joblib.dat** 文件，并为模型中的每个NumPy数组创建一个文件（在本例中为两个附加文件）。
+运行该示例将模型保存为当前工作目录中的 **pima.joblib.dat** 文件，并为模型中的每个 NumPy 数组创建一个文件（在本例中为两个附加文件）。
 
 ```
 pima.joblib.dat
@@ -163,11 +163,11 @@ Accuracy: 77.95%
 
 ## 摘要
 
-在这篇文章中，您了解了如何序列化经过训练的XGBoost模型，然后加载它们以进行预测。
+在这篇文章中，您了解了如何序列化经过训练的 XGBoost 模型，然后加载它们以进行预测。
 
 具体来说，你学到了：
 
-*   如何使用pickle API序列化并稍后加载训练有素的XGBoost模型。
-*   如何使用joblib API序列化并稍后加载训练有素的XGBoost模型。
+*   如何使用 pickle API 序列化并稍后加载训练有素的 XGBoost 模型。
+*   如何使用 joblib API 序列化并稍后加载训练有素的 XGBoost 模型。
 
-您对序列化XGBoost模型或此帖子有任何疑问吗？在评论中提出您的问题，我会尽力回答。
+您对序列化 XGBoost 模型或此帖子有任何疑问吗？在评论中提出您的问题，我会尽力回答。

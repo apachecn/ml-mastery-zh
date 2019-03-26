@@ -1,12 +1,12 @@
-# 在Python中使用XGBoost调整梯度提升的学习率
+# 在 Python 中使用 XGBoost 调整梯度提升的学习率
 
 > 原文： [https://machinelearningmastery.com/tune-learning-rate-for-gradient-boosting-with-xgboost-in-python/](https://machinelearningmastery.com/tune-learning-rate-for-gradient-boosting-with-xgboost-in-python/)
 
 梯度提升决策树的问题在于它们快速学习和过度训练数据。
 
-在梯度增强模型中减慢学习速度的一种有效方法是使用学习速率，也称为收缩（或XGBoost文档中的eta）。
+在梯度增强模型中减慢学习速度的一种有效方法是使用学习速率，也称为收缩（或 XGBoost 文档中的 eta）。
 
-在这篇文章中，您将发现渐变提升中学习速率的影响以及如何使用Python中的XGBoost库将其调整到机器学习问题上。
+在这篇文章中，您将发现渐变提升中学习速率的影响以及如何使用 Python 中的 XGBoost 库将其调整到机器学习问题上。
 
 阅读这篇文章后你会知道：
 
@@ -16,11 +16,11 @@
 
 让我们开始吧。
 
-*   **2017年1月更新**：已更新，以反映scikit-learn API版本0.18.1中的更改​​。
+*   **2017 年 1 月更新**：已更新，以反映 scikit-learn API 版本 0.18.1 中的更改​​。
 
 ![Tune Learning Rate for Gradient Boosting with XGBoost in Python](img/c29d62a42bd2e2687325e3b7f3c41a5e.jpg)
 
-在Python中使用XGBoost调整梯度提升的学习率
+在 Python 中使用 XGBoost 调整梯度提升的学习率
 照片由 [Robert Hertel](https://www.flickr.com/photos/roberthertel/14890278255/) 拍摄，保留一些权利。
 
 ## 缓慢学习渐变提升与学习率
@@ -35,37 +35,37 @@
 
 这种加权称为收缩因子或学习率，取决于文献或工具。
 
-天然梯度增强与收缩时的梯度增强相同，其中收缩系数设定为1.0。设置值小于1.0会对添加到模型中的每个树进行较少的更正。这反过来导致必须将更多树添加到模型中。
+天然梯度增强与收缩时的梯度增强相同，其中收缩系数设定为 1.0。设置值小于 1.0 会对添加到模型中的每个树进行较少的更正。这反过来导致必须将更多树添加到模型中。
 
-通常具有0.1至0.3范围内的小值，以及小于0.1的值。
+通常具有 0.1 至 0.3 范围内的小值，以及小于 0.1 的值。
 
 让我们研究一下学习率对标准机器学习数据集的影响。
 
 ## 问题描述：Otto Dataset
 
-在本教程中，我们将使用 [Otto Group产品分类挑战](https://www.kaggle.com/c/otto-group-product-classification-challenge)数据集。
+在本教程中，我们将使用 [Otto Group 产品分类挑战](https://www.kaggle.com/c/otto-group-product-classification-challenge)数据集。
 
-此数据集可从Kaggle免费获得（您需要注册Kaggle才能下载此数据集）。您可以从[数据页面](https://www.kaggle.com/c/otto-group-product-classification-challenge/data)下载训练数据集 **train.csv.zip** ，并将解压缩的 **train.csv** 文件放入您的工作目录。
+此数据集可从 Kaggle 免费获得（您需要注册 Kaggle 才能下载此数据集）。您可以从[数据页面](https://www.kaggle.com/c/otto-group-product-classification-challenge/data)下载训练数据集 **train.csv.zip** ，并将解压缩的 **train.csv** 文件放入您的工作目录。
 
-该数据集描述了超过61,000种产品的93个模糊细节，这些产品分为10个产品类别（例如时装，电子产品等）。输入属性是某种不同事件的计数。
+该数据集描述了超过 61,000 种产品的 93 个模糊细节，这些产品分为 10 个产品类别（例如时装，电子产品等）。输入属性是某种不同事件的计数。
 
-目标是对新产品进行预测，因为10个类别中的每个类别都有一组概率，并且使用多类对数损失（也称为交叉熵）来评估模型。
+目标是对新产品进行预测，因为 10 个类别中的每个类别都有一组概率，并且使用多类对数损失（也称为交叉熵）来评估模型。
 
-这个竞赛在2015年5月完成，这个数据集对XGBoost来说是一个很好的挑战，因为它有很多例子，问题的难度以及需要很少数据准备的事实（除了将字符串类变量编码为整数）。
+这个竞赛在 2015 年 5 月完成，这个数据集对 XGBoost 来说是一个很好的挑战，因为它有很多例子，问题的难度以及需要很少数据准备的事实（除了将字符串类变量编码为整数）。
 
-## 在XGBoost中调整学习率
+## 在 XGBoost 中调整学习率
 
-使用scikit-learn包装器创建具有XGBoost的梯度增强模型时，可以设置 **learning_rate** 参数来控制添加到模型中的新树的权重。
+使用 scikit-learn 包装器创建具有 XGBoost 的梯度增强模型时，可以设置 **learning_rate** 参数来控制添加到模型中的新树的权重。
 
-我们可以使用scikit-learn中的网格搜索功能来评估训练具有不同学习速率值的梯度增强模型的对数损失的影响。
+我们可以使用 scikit-learn 中的网格搜索功能来评估训练具有不同学习速率值的梯度增强模型的对数损失的影响。
 
-我们将树的数量保持为默认值100，并评估Otto数据集上学习率的标准值套件。
+我们将树的数量保持为默认值 100，并评估 Otto 数据集上学习率的标准值套件。
 
 ```
 learning_rate = [0.0001, 0.001, 0.01, 0.1, 0.2, 0.3]
 ```
 
-要测试的学习率有6种变化，每种变化将使用10倍交叉验证进行评估，这意味着总共需要训练和评估6×10或60个XGBoost模型。
+要测试的学习率有 6 种变化，每种变化将使用 10 倍交叉验证进行评估，这意味着总共需要训练和评估 6×10 或 60 个 XGBoost 模型。
 
 将打印每个学习率的对数损失以及导致最佳性能的值。
 
@@ -121,30 +121,30 @@ Best: -0.001156 using {'learning_rate': 0.2}
 -0.001158 (0.001666) with: {'learning_rate': 0.3}
 ```
 
-有趣的是，我们可以看到最佳学习率为0.2。
+有趣的是，我们可以看到最佳学习率为 0.2。
 
-这是一个很高的学习率，它表明，100的默认树数可能太低，需要增加。
+这是一个很高的学习率，它表明，100 的默认树数可能太低，需要增加。
 
-我们还可以绘制（倒置的）对数损失分数的学习率的影响，尽管所选择的learning_rate值的log10样扩展意味着大多数被压缩在接近零的图的左侧。
+我们还可以绘制（倒置的）对数损失分数的学习率的影响，尽管所选择的 learning_rate 值的 log10 样扩展意味着大多数被压缩在接近零的图的左侧。
 
 ![Tune Learning Rate in XGBoost](img/58646d58a91be21fa629b7f9749c766a.jpg)
 
-在XGBoost中调整学习率
+在 XGBoost 中调整学习率
 
 接下来，我们将研究在改变学习率的同时改变树的数量。
 
-## 调整学习率和XGBoost中的树数
+## 调整学习率和 XGBoost 中的树数
 
 较小的学习率通常需要将更多树添加到模型中。
 
-我们可以通过评估参数对的网格来探索这种关系。决策树的数量将在100到500之间变化，学习率在log10范围内从0.0001变化到0.1。
+我们可以通过评估参数对的网格来探索这种关系。决策树的数量将在 100 到 500 之间变化，学习率在 log10 范围内从 0.0001 变化到 0.1。
 
 ```
 n_estimators = [100, 200, 300, 400, 500]
 learning_rate = [0.0001, 0.001, 0.01, 0.1]
 ```
 
-**n_estimators** 有5种变体， **learning_rate** 有4种变体。每个组合将使用10倍交叉验证进行评估，因此总共需要培训和评估4x5x10或200个XGBoost模型。
+**n_estimators** 有 5 种变体， **learning_rate** 有 4 种变体。每个组合将使用 10 倍交叉验证进行评估，因此总共需要培训和评估 4x5x10 或 200 个 XGBoost 模型。
 
 期望的是，对于给定的学习率，随着树木数量的增加，性能将提高然后稳定。完整的代码清单如下。
 
@@ -218,19 +218,19 @@ Best: -0.001152 using {'n_estimators': 300, 'learning_rate': 0.1}
 -0.001153 (0.001708) with: {'n_estimators': 500, 'learning_rate': 0.1}
 ```
 
-我们可以看到观察到的最佳结果是有300棵树的学习率为0.1。
+我们可以看到观察到的最佳结果是有 300 棵树的学习率为 0.1。
 
 很难从原始数据和小的负日志损失结果中挑选出趋势。下面是每个学习率的图表，显示了树木数量变化时的对数损失性能。
 
 ![Tuning Learning Rate and Number of Trees in XGBoost](img/512a1564756908ccd4ee7153325849f8.jpg)
 
-调整XGBoost中的学习率和树数
+调整 XGBoost 中的学习率和树数
 
 我们可以看到预期的总趋势成立，其中性能（反向对数损失）随着树木数量的增加而提高。
 
 对于较小的学习率，性能通常较差，这表明可能需要更多的树木。我们可能需要将树的数量增加到数千，这可能在计算上非常昂贵。
 
-由于图的大y轴比例， **learning_rate = 0.1** 的结果变得模糊。我们可以只为 **learning_rate = 0.1** 提取性能测量并直接绘制它们。
+由于图的大 y 轴比例， **learning_rate = 0.1** 的结果变得模糊。我们可以只为 **learning_rate = 0.1** 提取性能测量并直接绘制它们。
 
 ```
 # Plot performance for learning_rate=0.1
@@ -244,11 +244,11 @@ pyplot.title('XGBoost learning_rate=0.1 n_estimators vs Log Loss')
 pyplot.show()
 ```
 
-运行此代码会显示随着树木数量的增加而提高的性能，其次是400和500棵树的性能平稳。
+运行此代码会显示随着树木数量的增加而提高的性能，其次是 400 和 500 棵树的性能平稳。
 
 ![Plot of Learning Rate=0.1 and varying the Number of Trees in XGBoost](img/4ae61c8193cfeb023b5aa42a8262e76e.jpg)
 
-学习率的曲线= 0.1并且改变XGBoost中的树数
+学习率的曲线= 0.1 并且改变 XGBoost 中的树数
 
 ## 摘要
 
