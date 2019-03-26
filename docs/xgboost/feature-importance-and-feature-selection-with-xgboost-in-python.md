@@ -1,4 +1,4 @@
-# 功能重要性和功能选择使用 Python 中的 XGBoost
+# 在 Python 中使用 XGBoost 的特征重要性和特征选择
 
 > 原文： [https://machinelearningmastery.com/feature-importance-and-feature-selection-with-xgboost-in-python/](https://machinelearningmastery.com/feature-importance-and-feature-selection-with-xgboost-in-python/)
 

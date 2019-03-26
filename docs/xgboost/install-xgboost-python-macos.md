@@ -1,4 +1,4 @@
-# 如何在 macOS 上安装 XGBoost for Python
+# 如何在 macOS 上为 Python 安装 XGBoost
 
 > 原文： [https://machinelearningmastery.com/install-xgboost-python-macos/](https://machinelearningmastery.com/install-xgboost-python-macos/)
 

@@ -1,4 +1,4 @@
-# 如何在 Python 中最好地调整 XGBoost 的多线程支持
+# 如何在 Python 中调优 XGBoost 的多线程支持
 
 > 原文： [https://machinelearningmastery.com/best-tune-multithreading-support-xgboost-python/](https://machinelearningmastery.com/best-tune-multithreading-support-xgboost-python/)
 
