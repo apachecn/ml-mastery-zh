@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/data-preparation-gradient-boosting-xgboost-python/](https://machinelearningmastery.com/data-preparation-gradient-boosting-xgboost-python/)
 
-XGBoost 因其速度和性能而成为 Gradient Boosting 的流行实现。
+XGBoost 因其速度和表现而成为 Gradient Boosting 的流行实现。
 
 在内部，XGBoost 模型将所有问题表示为回归预测建模问题，仅将数值作为输入。如果您的数据格式不同，则必须将其准备为预期格式。
 

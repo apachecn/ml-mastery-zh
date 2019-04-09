@@ -221,7 +221,7 @@ Parallel Thread XGBoost and CV: 313.382301
 你了解到：
 
 *   如何检查系统上是否启用了 XGBoost 中的多线程支持。
-*   如何增加线程数会影响训练 XGBoost 模型的性能。
+*   如何增加线程数会影响训练 XGBoost 模型的表现。
 *   如何在 Python 中最佳地配置 XGBoost 和交叉验证，以最短的运行时间。
 
 您对 XGBoost 或此帖子的多线程支持有任何疑问吗？在评论中提出您的问题，我会尽力回答。

@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/train-xgboost-models-cloud-amazon-web-services/](https://machinelearningmastery.com/train-xgboost-models-cloud-amazon-web-services/)
 
-XGBoost 库提供了针对速度和性能而设计的梯度提升实现。
+XGBoost 库提供了针对速度和表现而设计的梯度提升实现。
 
 它的实现是为了充分利用您的计算资源，包括所有 CPU 内核和内存。
 
@@ -410,4 +410,4 @@ exit
 *   如何安装在 Python 中运行 XGBoost 库所需的所有必需软件。
 *   如何将数据和代码传输到服务器并使用服务器上的所有核心训练大型模型。
 
-您对在 Amazon Web Services 或此帖子上培训 XGBoost 模型有任何疑问吗？在评论中提出您的问题，我会尽力回答。
+您对在 Amazon Web Services 或此帖子上训练 XGBoost 模型有任何疑问吗？在评论中提出您的问题，我会尽力回答。

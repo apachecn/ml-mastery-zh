@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/develop-first-xgboost-model-python-scikit-learn/](https://machinelearningmastery.com/develop-first-xgboost-model-python-scikit-learn/)
 
-XGBoost 是梯度提升决策树的一种实现，旨在提高竞争机器学习速度和性能。
+XGBoost 是梯度提升决策树的一种实现，旨在提高竞争机器学习速度和表现。
 
 在这篇文章中，您将了解如何在 Python 中安装和创建第一个 XGBoost 模型。
 
@@ -81,7 +81,7 @@ sudo python setup.py install
 
 ## 3.加载和准备数据
 
-在本节中，我们将从文件加载数据并准备用于培训和评估 XGBoost 模型。
+在本节中，我们将从文件加载数据并准备用于训练和评估 XGBoost 模型。
 
 我们将从导入我们打算在本教程中使用的类和函数开始。
 
@@ -107,7 +107,7 @@ X = dataset[:,0:8]
 Y = dataset[:,8]
 ```
 
-最后，我们必须将 X 和 Y 数据拆分为训练和测试数据集。训练集将用于准备 XGBoost 模型，测试集将用于进行新的预测，我们可以从中评估模型的性能。
+最后，我们必须将 X 和 Y 数据拆分为训练和测试数据集。训练集将用于准备 XGBoost 模型，测试集将用于进行新的预测，我们可以从中评估模型的表现。
 
 为此，我们将使用 scikit-learn 库中的 **train_test_split（）**函数。我们还为随机数生成器指定种子，以便每次执行此示例时始终获得相同的数据分割。
 
@@ -162,7 +162,7 @@ y_pred = model.predict(X_test)
 predictions = [round(value) for value in y_pred]
 ```
 
-现在我们已经使用拟合模型对新数据进行预测，我们可以通过将预测值与预期值进行比较来评估预测的性能。为此，我们将在 scikit-learn 中使用内置的 **accuracy_score（）**函数。
+现在我们已经使用拟合模型对新数据进行预测，我们可以通过将预测值与预期值进行比较来评估预测的表现。为此，我们将在 scikit-learn 中使用内置的 **accuracy_score（）**函数。
 
 ```py
 # evaluate predictions
@@ -216,6 +216,6 @@ Accuracy: 77.95%
 
 *   如何在您的系统上安装 XGBoost 以备 Python 使用。
 *   如何在标准机器学习数据集上准备数据并训练您的第一个 XGBoost 模型。
-*   如何使用 scikit-learn 进行预测并评估训练有素的 XGBoost 模型的性能。
+*   如何使用 scikit-learn 进行预测并评估训练有素的 XGBoost 模型的表现。
 
 您对 XGBoost 或该帖子有任何疑问吗？在评论中提出您的问题，我会尽力回答。

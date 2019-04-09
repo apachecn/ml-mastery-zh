@@ -33,7 +33,7 @@
 
 使用贪婪搜索过程创建每个决策树，以选择最佳地最小化目标函数的分割点。这可能导致树一次又一次地使用相同的属性甚至相同的分裂点。
 
-[Bagging](http://machinelearningmastery.com/bagging-and-random-forest-ensemble-algorithms-for-machine-learning/) 是一种技术，其中创建决策树的集合，每个决策树来自训练数据的不同行的随机子集。结果是，从树集合中获得了更好的性能，因为样本中的随机性允许创建略微不同的树，从而增加了集合预测的方差。
+[Bagging](http://machinelearningmastery.com/bagging-and-random-forest-ensemble-algorithms-for-machine-learning/) 是一种技术，其中创建决策树的集合，每个决策树来自训练数据的不同行的随机子集。结果是，从树集合中获得了更好的表现，因为样本中的随机性允许创建略微不同的树，从而增加了集合预测的方差。
 
 通过允许在选择分割点时对特征（列）进行二次采样，随机森林更进一步，向树集合添加进一步的方差。
 
@@ -136,7 +136,7 @@ Best: -0.000647 using {'subsample': 0.3}
 -0.001239 (0.001730) with: {'subsample': 1.0}
 ```
 
-我们可以绘制这些平均值和标准差对数损失值，以更好地理解性能如何随子采样值变化。
+我们可以绘制这些平均值和标准差对数损失值，以更好地理解表现如何随子采样值变化。
 
 ![Plot of Tuning Row Sample Rate in XGBoost](img/8656295302bbaecbeb416213b9a54cde.jpg)
 
@@ -144,7 +144,7 @@ XGBoost 中调整行采样率的图
 
 我们可以看到确实有 30％的人具有最佳的平均表现，但我们也可以看到，随着比率的增加，表现的差异也会显着增加。
 
-值得注意的是，所有**子样本**值的平均性能优于没有子采样的平均性能（**子样本= 1.0** ）。
+值得注意的是，所有**子样本**值的平均表现优于没有子采样的平均表现（**子样本= 1.0** ）。
 
 ## 按树在 XGBoost 中调整列子采样
 
@@ -202,7 +202,7 @@ pyplot.savefig('colsample_bytree.png')
 
 Running this example prints the best configuration as well as the log loss for each tested configuration.
 
-我们可以看到该模型的最佳性能是 **colsample_bytree = 1.0** 。这表明对此问题的子采样列不会增加价值。
+我们可以看到该模型的最佳表现是 **colsample_bytree = 1.0** 。这表明对此问题的子采样列不会增加价值。
 
 ```py
 Best: -0.001239 using {'colsample_bytree': 1.0}
@@ -217,7 +217,7 @@ Best: -0.001239 using {'colsample_bytree': 1.0}
 -0.001239 (0.001730) with: {'colsample_bytree': 1.0}
 ```
 
-绘制结果，我们可以看到模型平台的性能（至少在这个尺度上），其值在 0.5 到 1.0 之间。
+绘制结果，我们可以看到模型平台的表现（至少在这个尺度上），其值在 0.5 到 1.0 之间。
 
 ![Plot of Tuning Per-Tree Column Sampling in XGBoost](img/25700c450ba1f3aa55ec915c531c8140.jpg)
 
@@ -292,7 +292,7 @@ Best: -0.001062 using {'colsample_bylevel': 0.7}
 -0.001239 (0.001730) with: {'colsample_bylevel': 1.0}
 ```
 
-我们可以绘制每个 **colsample_bylevel** 变体的性能。结果显示相对较低的方差，并且在此规模的值为 0.3 之后，表现似乎是性能的平台。
+我们可以绘制每个 **colsample_bylevel** 变体的表现。结果显示相对较低的方差，并且在此规模的值为 0.3 之后，表现似乎是表现的平台。
 
 ![Plot of Tuning Per-Split Column Sampling in XGBoost](img/f8330b8c24fa2c6b765dafcc072cc850.jpg)
 

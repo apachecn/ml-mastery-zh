@@ -2,9 +2,9 @@
 
 > 原文： [https://machinelearningmastery.com/save-gradient-boosting-models-xgboost-python/](https://machinelearningmastery.com/save-gradient-boosting-models-xgboost-python/)
 
-XGBoost 可用于使用梯度提升算法为表格数据创建一些性能最佳的模型。
+XGBoost 可用于使用梯度提升算法为表格数据创建一些表现最佳的模型。
 
-经过培训，将模型保存到文件中以便以后用于预测新的测试和验证数据集以及全新数据通常是一种很好的做法。
+经过训练，将模型保存到文件中以便以后用于预测新的测试和验证数据集以及全新数据通常是一种很好的做法。
 
 在本文中，您将了解如何使用标准 Python pickle API 将 XGBoost 模型保存到文件中。
 

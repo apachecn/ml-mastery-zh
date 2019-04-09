@@ -67,7 +67,7 @@ learning_rate = [0.0001, 0.001, 0.01, 0.1, 0.2, 0.3]
 
 要测试的学习率有 6 种变化，每种变化将使用 10 倍交叉验证进行评估，这意味着总共需要训练和评估 6×10 或 60 个 XGBoost 模型。
 
-将打印每个学习率的对数损失以及导致最佳性能的值。
+将打印每个学习率的对数损失以及导致最佳表现的值。
 
 ```py
 # XGBoost on Otto dataset, Tune learning_rate
@@ -144,9 +144,9 @@ n_estimators = [100, 200, 300, 400, 500]
 learning_rate = [0.0001, 0.001, 0.01, 0.1]
 ```
 
-**n_estimators** 有 5 种变体， **learning_rate** 有 4 种变体。每个组合将使用 10 倍交叉验证进行评估，因此总共需要培训和评估 4x5x10 或 200 个 XGBoost 模型。
+**n_estimators** 有 5 种变体， **learning_rate** 有 4 种变体。每个组合将使用 10 倍交叉验证进行评估，因此总共需要训练和评估 4x5x10 或 200 个 XGBoost 模型。
 
-期望的是，对于给定的学习率，随着树木数量的增加，性能将提高然后稳定。完整的代码清单如下。
+期望的是，对于给定的学习率，随着树木数量的增加，表现将提高然后稳定。完整的代码清单如下。
 
 ```py
 # XGBoost on Otto dataset, Tune learning_rate and n_estimators
@@ -220,17 +220,17 @@ Best: -0.001152 using {'n_estimators': 300, 'learning_rate': 0.1}
 
 我们可以看到观察到的最佳结果是有 300 棵树的学习率为 0.1。
 
-很难从原始数据和小的负日志损失结果中挑选出趋势。下面是每个学习率的图表，显示了树木数量变化时的对数损失性能。
+很难从原始数据和小的负日志损失结果中挑选出趋势。下面是每个学习率的图表，显示了树木数量变化时的对数损失表现。
 
 ![Tuning Learning Rate and Number of Trees in XGBoost](img/512a1564756908ccd4ee7153325849f8.jpg)
 
 调整 XGBoost 中的学习率和树数
 
-我们可以看到预期的总趋势成立，其中性能（反向对数损失）随着树木数量的增加而提高。
+我们可以看到预期的总趋势成立，其中表现（反向对数损失）随着树木数量的增加而提高。
 
-对于较小的学习率，性能通常较差，这表明可能需要更多的树木。我们可能需要将树的数量增加到数千，这可能在计算上非常昂贵。
+对于较小的学习率，表现通常较差，这表明可能需要更多的树木。我们可能需要将树的数量增加到数千，这可能在计算上非常昂贵。
 
-由于图的大 y 轴比例， **learning_rate = 0.1** 的结果变得模糊。我们可以只为 **learning_rate = 0.1** 提取性能测量并直接绘制它们。
+由于图的大 y 轴比例， **learning_rate = 0.1** 的结果变得模糊。我们可以只为 **learning_rate = 0.1** 提取表现测量并直接绘制它们。
 
 ```py
 # Plot performance for learning_rate=0.1
@@ -244,7 +244,7 @@ pyplot.title('XGBoost learning_rate=0.1 n_estimators vs Log Loss')
 pyplot.show()
 ```
 
-运行此代码会显示随着树木数量的增加而提高的性能，其次是 400 和 500 棵树的性能平稳。
+运行此代码会显示随着树木数量的增加而提高的表现，其次是 400 和 500 棵树的表现平稳。
 
 ![Plot of Learning Rate=0.1 and varying the Number of Trees in XGBoost](img/4ae61c8193cfeb023b5aa42a8262e76e.jpg)
 

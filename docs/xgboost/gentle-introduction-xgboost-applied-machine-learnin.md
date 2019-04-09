@@ -4,7 +4,7 @@
 
 XGBoost 是一种算法，最近一直主导应用机器学习和 Kaggle 竞争结构化或表格数据。
 
-XGBoost 是为速度和性能而设计的梯度提升决策树的实现。
+XGBoost 是为速度和表现而设计的梯度提升决策树的实现。
 
 在这篇文章中，您将发现 XGBoost 并轻松了解它的来源，来自何处以及如何了解更多信息。
 
@@ -44,7 +44,7 @@ XGBoost 是一个软件库，您可以在您的机器上下载和安装，然后
 
 ## XGBoost 功能
 
-该库激光专注于计算速度和模型性能，因此几乎没有多余的装饰。尽管如此，它确实提供了许多高级功能。
+该库激光专注于计算速度和模型表现，因此几乎没有多余的装饰。尽管如此，它确实提供了许多高级功能。
 
 ### 型号特点
 
@@ -84,13 +84,13 @@ XGBoost 是免费的开源软件，可在许可的 Apache-2 许可下使用。
 
 通常，XGBoost 很快。与梯度提升的其他实现相比，真的很快。
 
-[Szilard Pafka](https://www.linkedin.com/in/szilard) 进行了一些客观的基准测试，比较了 XGBoost 与梯度提升和袋装决策树的其他实现的性能。他在 2015 年 5 月的博客文章“[基准随机森林实施基准](http://datascience.la/benchmarking-random-forest-implementations/)”中写下了他的结果。
+[Szilard Pafka](https://www.linkedin.com/in/szilard) 进行了一些客观的基准测试，比较了 XGBoost 与梯度提升和袋装决策树的其他实现的表现。他在 2015 年 5 月的博客文章“[基准随机森林实施基准](http://datascience.la/benchmarking-random-forest-implementations/)”中写下了他的结果。
 
 他还提供了 [GitHub](https://github.com/szilard/benchm-ml) 上的所有代码以及更为广泛的硬数字结果报告。
 
 ![Benchmark Performance of XGBoost](img/6198624aaad562ea913e9dd529a072e5.jpg)
 
-XGBoost 的基准性能，取自[基准随机森林实施](http://datascience.la/benchmarking-random-forest-implementations/)。
+XGBoost 的基准表现，取自[基准随机森林实施](http://datascience.la/benchmarking-random-forest-implementations/)。
 
 他的结果显示 XGBoost 几乎总是比 R，Python Spark 和 H2O 的其他基准测试实现更快。
 
@@ -100,7 +100,7 @@ XGBoost 的基准性能，取自[基准随机森林实施](http://datascience.la
 
 - Szilard Pafka，[基准随机森林实施基准](http://datascience.la/benchmarking-random-forest-implementations/)。
 
-### 2\. XGBoost 模型性能
+### 2\. XGBoost 模型表现
 
 XGBoost 在分类和回归预测建模问题上支配结构化或表格数据集。
 
@@ -233,8 +233,8 @@ sudo pip install xgboost
 
 你了解到：
 
-*   XGBoost 是一个用于开发快速和高性能梯度提升树模型的库。
-*   XGBoost 在一系列困难的机器学习任务中实现了最佳性能。
+*   XGBoost 是一个用于开发快速和高表现梯度提升树模型的库。
+*   XGBoost 在一系列困难的机器学习任务中实现了最佳表现。
 *   您可以从命令行，Python 和 R 使用此库以及如何开始使用。
 
 你用过 XGBoost 吗？在下面的评论中分享您的经验。
