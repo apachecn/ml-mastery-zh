@@ -61,7 +61,7 @@
 
 我们将树的数量保持为默认值 100，并评估 Otto 数据集上学习率的标准值套件。
 
-```
+```py
 learning_rate = [0.0001, 0.001, 0.01, 0.1, 0.2, 0.3]
 ```
 
@@ -69,7 +69,7 @@ learning_rate = [0.0001, 0.001, 0.01, 0.1, 0.2, 0.3]
 
 将打印每个学习率的对数损失以及导致最佳性能的值。
 
-```
+```py
 # XGBoost on Otto dataset, Tune learning_rate
 from pandas import read_csv
 from xgboost import XGBClassifier
@@ -111,7 +111,7 @@ pyplot.savefig('learning_rate.png')
 
 运行此示例将打印每个评估学习速率的最佳结果以及日志丢失。
 
-```
+```py
 Best: -0.001156 using {'learning_rate': 0.2}
 -2.155497 (0.000081) with: {'learning_rate': 0.0001}
 -1.841069 (0.000716) with: {'learning_rate': 0.001}
@@ -139,7 +139,7 @@ Best: -0.001156 using {'learning_rate': 0.2}
 
 我们可以通过评估参数对的网格来探索这种关系。决策树的数量将在 100 到 500 之间变化，学习率在 log10 范围内从 0.0001 变化到 0.1。
 
-```
+```py
 n_estimators = [100, 200, 300, 400, 500]
 learning_rate = [0.0001, 0.001, 0.01, 0.1]
 ```
@@ -148,7 +148,7 @@ learning_rate = [0.0001, 0.001, 0.01, 0.1]
 
 期望的是，对于给定的学习率，随着树木数量的增加，性能将提高然后稳定。完整的代码清单如下。
 
-```
+```py
 # XGBoost on Otto dataset, Tune learning_rate and n_estimators
 from pandas import read_csv
 from xgboost import XGBClassifier
@@ -194,7 +194,7 @@ pyplot.savefig('n_estimators_vs_learning_rate.png')
 
 运行该示例将打印每个已评估对的最佳组合以及日志丢失。
 
-```
+```py
 Best: -0.001152 using {'n_estimators': 300, 'learning_rate': 0.1}
 -2.155497 (0.000081) with: {'n_estimators': 100, 'learning_rate': 0.0001}
 -2.115540 (0.000159) with: {'n_estimators': 200, 'learning_rate': 0.0001}
@@ -232,7 +232,7 @@ Best: -0.001152 using {'n_estimators': 300, 'learning_rate': 0.1}
 
 由于图的大 y 轴比例， **learning_rate = 0.1** 的结果变得模糊。我们可以只为 **learning_rate = 0.1** 提取性能测量并直接绘制它们。
 
-```
+```py
 # Plot performance for learning_rate=0.1
 from matplotlib import pyplot
 n_estimators = [100, 200, 300, 400, 500]

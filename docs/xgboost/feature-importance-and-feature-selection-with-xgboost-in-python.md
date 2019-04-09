@@ -44,13 +44,13 @@
 
 这些重要性分数可在训练模型的 **feature_importances_** 成员变量中找到。例如，它们可以直接打印如下：
 
-```
+```py
 print(model.feature_importances_)
 ```
 
 我们可以直接在条形图上绘制这些分数，以直观地显示数据集中每个要素的相对重要性。例如：
 
-```
+```py
 # plot
 pyplot.bar(range(len(model.feature_importances_)), model.feature_importances_)
 pyplot.show()
@@ -58,7 +58,7 @@ pyplot.show()
 
 我们可以通过在 [Pima 印第安人糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)上训练 XGBoost 模型并根据计算的特征重要性创建条形图来证明这一点（更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
 
-```
+```py
 # plot feature importance manually
 from numpy import loadtxt
 from xgboost import XGBClassifier
@@ -80,7 +80,7 @@ pyplot.show()
 
 运行此示例首先输出重要性分数：
 
-```
+```py
 [ 0.089701    0.17109634  0.08139535  0.04651163  0.10465116  0.2026578 0.1627907   0.14119601]
 ```
 
@@ -100,7 +100,7 @@ XGBoost 库提供了一个内置函数来绘制按其重要性排序的特征。
 
 该函数称为 **plot_importance（）**，可以按如下方式使用：
 
-```
+```py
 # plot feature importance
 plot_importance(model)
 pyplot.show()
@@ -108,7 +108,7 @@ pyplot.show()
 
 例如，下面是一个完整的代码清单，使用内置的 **plot_importance（）**函数绘制 Pima Indians 数据集的特征重要性。
 
-```
+```py
 # plot feature importance using built-in function
 from numpy import loadtxt
 from xgboost import XGBClassifier
@@ -151,7 +151,7 @@ XGBoost 功能重要性条形图
 
 例如：
 
-```
+```py
 # select features using threshold
 selection = SelectFromModel(model, threshold=thresh, prefit=True)
 select_X_train = selection.transform(X_train)
@@ -167,7 +167,7 @@ y_pred = selection_model.predict(select_X_test)
 
 完整的代码清单如下。
 
-```
+```py
 # use feature importance for feature selection
 from numpy import loadtxt
 from numpy import sort
@@ -209,7 +209,7 @@ for thresh in thresholds:
 
 运行此示例将输出以下输出：
 
-```
+```py
 Accuracy: 77.95%
 Thresh=0.071, n=8, Accuracy: 77.95%
 Thresh=0.073, n=7, Accuracy: 76.38%

@@ -29,14 +29,14 @@ Pickle 是在 Python 中序列化对象的标准方法。
 
 您可以使用 [Python pickle API](https://docs.python.org/2/library/pickle.html) 序列化您的机器学习算法并将序列化格式保存到文件中，例如：
 
-```
+```py
 # save model to file
 pickle.dump(model, open("pima.pickle.dat", "wb"))
 ```
 
 稍后您可以加载此文件以反序列化模型并使用它来进行新的预测，例如：
 
-```
+```py
 # load model from file
 loaded_model = pickle.load(open("pima.pickle.dat", "rb"))
 ```
@@ -45,7 +45,7 @@ loaded_model = pickle.load(open("pima.pickle.dat", "rb"))
 
 完整性代码清单如下所示。
 
-```
+```py
 # Train XGBoost model, save to file using pickle, load and make predictions
 from numpy import loadtxt
 import xgboost
@@ -81,13 +81,13 @@ print("Accuracy: %.2f%%" % (accuracy * 100.0))
 
 运行此示例将训练有素的 XGBoost 模型保存到当前工作目录中的 **pima.pickle.dat** pickle 文件中。
 
-```
+```py
 pima.pickle.dat
 ```
 
 加载模型并对训练数据集进行预测后，将打印模型的准确性。
 
-```
+```py
 Accuracy: 77.95%
 ```
 
@@ -99,21 +99,21 @@ Joblib 是 SciPy 生态系统的一部分，并提供用于管道化 Python 作�
 
 API 看起来很像 pickle API，例如，您可以保存训练有素的模型，如下所示：
 
-```
+```py
 # save model to file
 joblib.dump(model, "pima.joblib.dat")
 ```
 
 您可以稍后从文件加载模型并使用它来进行如下预测：
 
-```
+```py
 # load model from file
 loaded_model = joblib.load("pima.joblib.dat")
 ```
 
 下面的示例演示了如何训练 XGBoost 模型在 Pima Indians 糖尿病数据集开始时进行分类，使用 Joblib 将模型保存到文件中，并在以后加载它以进行预测。
 
-```
+```py
 # Train XGBoost model, save to file using joblib, load and make predictions
 from numpy import loadtxt
 import xgboost
@@ -149,7 +149,7 @@ print("Accuracy: %.2f%%" % (accuracy * 100.0))
 
 运行该示例将模型保存为当前工作目录中的 **pima.joblib.dat** 文件，并为模型中的每个 NumPy 数组创建一个文件（在本例中为两个附加文件）。
 
-```
+```py
 pima.joblib.dat
 pima.joblib.dat_01.npy
 pima.joblib.dat_02.npy
@@ -157,7 +157,7 @@ pima.joblib.dat_02.npy
 
 加载模型后，将在训练数据集上对其进行评估，并打印预测的准确性。
 
-```
+```py
 Accuracy: 77.95%
 ```
 

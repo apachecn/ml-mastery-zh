@@ -37,14 +37,14 @@
 
 我们可以使用 scikit-learn 库中的 **train_test_split（）**函数将数据集拆分为火车和测试集。例如，我们可以将数据集拆分为 67％和 33％的分组，用于训练和测试集，如下所示：
 
-```
+```py
 # split data into train and test sets
 X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.33, random_state=7)
 ```
 
 下面使用 [Pima 印第安人糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)开始提供完整的代码清单，假设它位于当前工作目录中（更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。具有默认配置的 XGBoost 模型适合训练数据集并在测试数据集上进行评估。
 
-```
+```py
 # train-test split evaluation of xgboost model
 from numpy import loadtxt
 from xgboost import XGBClassifier
@@ -70,7 +70,7 @@ print("Accuracy: %.2f%%" % (accuracy * 100.0))
 
 运行此示例总结了测试集上模型的性能。
 
-```
+```py
 Accuracy: 77.95%
 ```
 
@@ -88,14 +88,14 @@ k 的选择必须允许每个测试分区的大小足够大以成为问题的合
 
 我们可以使用 scikit-learn 中提供的 k-fold 交叉验证支持。首先，我们必须创建 [KFold](http://scikit-learn.org/stable/modules/generated/sklearn.cross_validation.KFold.html) 对象，指定折叠的数量和数据集的大小。然后，我们可以将此方案与特定数据集一起使用。来自 scikit-learn 的 **cross_val_score（）**函数允许我们使用交叉验证方案评估模型，并返回每个折叠上训练的每个模型的分数列表。
 
-```
+```py
 kfold = KFold(n_splits=10, random_state=7)
 results = cross_val_score(model, X, Y, cv=kfold)
 ```
 
 下面提供了用于评估具有 k 折交叉验证的 XGBoost 模型的完整代码清单，以确保完整性。
 
-```
+```py
 # k-fold cross validation evaluation of xgboost model
 from numpy import loadtxt
 import xgboost
@@ -115,7 +115,7 @@ print("Accuracy: %.2f%% (%.2f%%)" % (results.mean()*100, results.std()*100))
 
 运行此示例总结了数据集上默认模型配置的性能，包括平均值和标准差分类精度。
 
-```
+```py
 Accuracy: 76.69% (7.11%)
 ```
 
@@ -125,7 +125,7 @@ Accuracy: 76.69% (7.11%)
 
 下面是修改为使用分层交叉验证来评估 XGBoost 模型的相同示例。
 
-```
+```py
 # stratified k-fold cross validation evaluation of xgboost model
 from numpy import loadtxt
 import xgboost
@@ -145,7 +145,7 @@ print("Accuracy: %.2f%% (%.2f%%)" % (results.mean()*100, results.std()*100))
 
 运行此示例将生成以下输出。
 
-```
+```py
 Accuracy: 76.95% (5.88%)
 ```
 

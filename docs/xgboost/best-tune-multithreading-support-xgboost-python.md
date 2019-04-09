@@ -47,7 +47,7 @@ XGBoost 在 C ++中实现，以明确地使用 [OpenMP API](https://en.wikipedia
 
 默认情况下，此参数设置为-1 以使用系统中的所有核心。
 
-```
+```py
 model = XGBClassifier(nthread=-1)
 ```
 
@@ -59,7 +59,7 @@ model = XGBClassifier(nthread=-1)
 
 例如，如果您的系统有 4 个核心，您可以训练 8 个不同的模型，并计算创建每个模型所需的时间（以秒为单位），然后比较时间。
 
-```
+```py
 # evaluate the effect of the number of threads
 results = []
 num_threads = [1, 2, 3, 4]
@@ -76,7 +76,7 @@ for n in num_threads:
 
 您可以更改 **num_threads** 阵列以满足系统上的核心数。
 
-```
+```py
 # Otto, tune number of threads
 from pandas import read_csv
 from xgboost import XGBClassifier
@@ -111,7 +111,7 @@ pyplot.show()
 
 运行此示例总结了每个配置的执行时间（以秒为单位），例如：
 
-```
+```py
 (1, 115.51652717590332)
 (2, 62.7727689743042)
 (3, 46.042901039123535)
@@ -146,7 +146,7 @@ scikit-learn 中的 k-fold 交叉验证支持也支持多线程。
 
 默认情况下，此值设置为 1，但可以设置为-1 以使用系统上的所有 CPU 核心，这是一种很好的做法。例如：
 
-```
+```py
 results = cross_val_score(model, X, label_encoded_y, cv=kfold, scoring='log_loss', n_jobs=-1, verbose=1)
 ```
 
@@ -162,7 +162,7 @@ results = cross_val_score(model, X, label_encoded_y, cv=kfold, scoring='log_loss
 
 完整的代码示例如下所示。
 
-```
+```py
 # Otto, parallel cross validation
 from pandas import read_csv
 from xgboost import XGBClassifier
@@ -202,7 +202,7 @@ print("Parallel Thread XGBoost and CV: %f" % (elapsed))
 
 运行该示例将打印以下结果：
 
-```
+```py
 Single Thread XGBoost, Parallel Thread CV: 359.854589
 Parallel Thread XGBoost, Single Thread CV: 330.498101
 Parallel Thread XGBoost and CV: 313.382301

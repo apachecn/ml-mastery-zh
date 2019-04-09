@@ -221,7 +221,7 @@ You can review the slides from his talk here:
 
 要快速入门，您可以输入：
 
-```
+```py
 sudo pip install xgboost
 ```
 

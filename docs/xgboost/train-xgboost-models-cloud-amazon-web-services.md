@@ -109,7 +109,7 @@ AWS 控制台
 *   12.打开终端并将目录更改为您下载密钥对的位置。
 *   13.如果尚未执行此操作，请限制密钥对文件的访问权限。这是 SSH 访问服务器的一部分。例如，在您的控制台上，您可以键入：
 
-```
+```py
 cd Downloads
 chmod 600 xgboost-keypair.pem
 ```
@@ -142,7 +142,7 @@ chmod 600 xgboost-keypair.pem
 
 *   3.打开终端并将目录更改为您下载密钥对的位置。使用 SSH 登录您的服务器，例如您可以输入：
 
-```
+```py
 ssh -i xgboost-keypair.pem fedora@52.53.185.166
 ```
 
@@ -152,13 +152,13 @@ ssh -i xgboost-keypair.pem fedora@52.53.185.166
 
 通过键入，仔细检查实例上的 CPU 核心数
 
-```
+```py
 cat /proc/cpuinfo | grep processor | wc -l
 ```
 
 你应该看到：
 
-```
+```py
 32
 ```
 
@@ -170,7 +170,7 @@ cat /proc/cpuinfo | grep processor | wc -l
 
 这是一行：
 
-```
+```py
 sudo dnf install gcc gcc-c++ make git unzip python python2-numpy python2-scipy python2-scikit-learn python2-pandas python2-matplotlib
 ```
 
@@ -184,13 +184,13 @@ sudo dnf install gcc gcc-c++ make git unzip python python2-numpy python2-scipy p
 
 类型：
 
-```
+```py
 gcc --version
 ```
 
 You should see:
 
-```
+```py
 gcc (GCC) 6.1.1 20160621 (Red Hat 6.1.1-3)
 Copyright (C) 2016 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
@@ -201,13 +201,13 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 Type:
 
-```
+```py
 python --version
 ```
 
 You should see:
 
-```
+```py
 Python 2.7.12
 ```
 
@@ -215,7 +215,7 @@ Python 2.7.12
 
 Type:
 
-```
+```py
 python -c "import scipy;print(scipy.__version__)"
 python -c "import numpy;print(numpy.__version__)"
 python -c "import pandas;print(pandas.__version__)"
@@ -224,7 +224,7 @@ python -c "import sklearn;print(sklearn.__version__)"
 
 你应该看到类似的东西：
 
-```
+```py
 0.16.1
 1.11.0
 0.18.0
@@ -241,7 +241,7 @@ XGBoost 的[安装说明已完成，我们可以直接关注它们。](https://x
 
 首先，我们需要在服务器上下载项目。
 
-```
+```py
 git clone --recursive https://github.com/dmlc/xgboost
 cd xgboost
 ```
@@ -250,7 +250,7 @@ cd xgboost
 
 如果您选择了不同的 AWS 硬件，则可以适当地进行设置。
 
-```
+```py
 make -j32
 ```
 
@@ -258,7 +258,7 @@ XGBoost 项目应该成功构建（例如没有错误）。
 
 我们现在准备安装该库的 Python 版本。
 
-```
+```py
 cd python-package
 sudo python setup.py install
 ```
@@ -267,13 +267,13 @@ sudo python setup.py install
 
 我们可以输入以下内容确认安装是否成功：
 
-```
+```py
 python -c "import xgboost;print(xgboost.__version__)"
 ```
 
 这应该打印如下：
 
-```
+```py
 0.4
 ```
 
@@ -299,7 +299,7 @@ python -c "import xgboost;print(xgboost.__version__)"
 
 下面列出了完整的示例。将其保存在名为 **work / script.py** 的文件中。
 
-```
+```py
 # Otto multi-core test
 from pandas import read_csv
 from xgboost import XGBClassifier
@@ -329,7 +329,7 @@ for n in num_threads:
 
 从**工作/** 目录所在的当前目录中的工作站，键入：
 
-```
+```py
 scp -r -i xgboost-keypair.pem work fedora@52.53.185.166:/home/fedora/
 ```
 
@@ -339,26 +339,26 @@ scp -r -i xgboost-keypair.pem work fedora@52.53.185.166:/home/fedora/
 
 重新登录到您的服务器实例（如果需要）：
 
-```
+```py
 ssh -i xgboost-keypair.pem fedora@52.53.185.166
 ```
 
 将目录更改为工作目录并解压缩训练数据。
 
-```
+```py
 cd work
 unzip ./train.csv.data
 ```
 
 现在我们可以运行脚本并训练我们的 XGBoost 模型并计算使用不同数量的核心所需的时间：
 
-```
+```py
 python script.py
 ```
 
 您应该看到如下输出：
 
-```
+```py
 (1, 84.26896095275879)
 (16, 6.597043037414551)
 (32, 7.6703619956970215)
@@ -372,7 +372,7 @@ python script.py
 
 您可以将代码作为后台进程运行，并通过键入以下内容将输出重定向到文件：
 
-```
+```py
 nohup python script.py >script.py.out 2>&1 &
 ```
 
@@ -386,7 +386,7 @@ nohup python script.py >script.py.out 2>&1 &
 
 *   1.在终端注销您的实例，例如您可以输入：
 
-```
+```py
 exit
 ```
 

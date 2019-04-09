@@ -40,13 +40,13 @@ XGBoost 是梯度提升决策树的一种实现，旨在提高竞争机器学习
 
 例如：
 
-```
+```py
 sudo pip install xgboost
 ```
 
 要更新 XGBoost 的安装，您可以键入：
 
-```
+```py
 sudo pip install --upgrade xgboost
 ```
 
@@ -54,7 +54,7 @@ sudo pip install --upgrade xgboost
 
 例如，要在 Mac OS X 上没有多线程构建 XGBoost（已经通过 macports 或 homebrew 安装了 GCC），您可以键入：
 
-```
+```py
 git clone --recursive https://github.com/dmlc/xgboost
 cd xgboost
 cp make/minimum.mk ./config.mk
@@ -85,7 +85,7 @@ sudo python setup.py install
 
 我们将从导入我们打算在本教程中使用的类和函数开始。
 
-```
+```py
 from numpy import loadtxt
 from xgboost import XGBClassifier
 from sklearn.model_selection import train_test_split
@@ -94,14 +94,14 @@ from sklearn.metrics import accuracy_score
 
 接下来，我们可以使用 NumPy 函数 **loadtext（）**将 CSV 文件作为 NumPy 数组加载。
 
-```
+```py
 # load data
 dataset = loadtxt('pima-indians-diabetes.csv', delimiter=",")
 ```
 
 我们必须将数据集的列（属性或特征）分成输入模式（X）和输出模式（Y）。我们可以通过以 NumPy 数组格式指定列索引来轻松完成此操作。
 
-```
+```py
 # split data into X and y
 X = dataset[:,0:8]
 Y = dataset[:,8]
@@ -111,7 +111,7 @@ Y = dataset[:,8]
 
 为此，我们将使用 scikit-learn 库中的 **train_test_split（）**函数。我们还为随机数生成器指定种子，以便每次执行此示例时始终获得相同的数据分割。
 
-```
+```py
 # split data into train and test sets
 seed = 7
 test_size = 0.33
@@ -130,7 +130,7 @@ XGBoost 提供了一个包装类，允许在 scikit-learn 框架中将模型视�
 
 训练模型的参数可以传递给构造函数中的模型。在这里，我们使用合理的默认值。
 
-```
+```py
 # fit model no training data
 model = XGBClassifier()
 model.fit(X_train, y_train)
@@ -138,7 +138,7 @@ model.fit(X_train, y_train)
 
 您可以通过打印模型来查看训练模型中使用的参数，例如：
 
-```
+```py
 print(model)
 ```
 
@@ -156,7 +156,7 @@ print(model)
 
 默认情况下，XGBoost 进行的预测是概率。因为这是二元分类问题，所以每个预测是输入模式属于第一类的概率。我们可以通过将它们四舍五入为 0 或 1 来轻松地将它们转换为二进制类值。
 
-```
+```py
 # make predictions for test data
 y_pred = model.predict(X_test)
 predictions = [round(value) for value in y_pred]
@@ -164,7 +164,7 @@ predictions = [round(value) for value in y_pred]
 
 现在我们已经使用拟合模型对新数据进行预测，我们可以通过将预测值与预期值进行比较来评估预测的性能。为此，我们将在 scikit-learn 中使用内置的 **accuracy_score（）**函数。
 
-```
+```py
 # evaluate predictions
 accuracy = accuracy_score(y_test, predictions)
 print("Accuracy: %.2f%%" % (accuracy * 100.0))
@@ -174,7 +174,7 @@ print("Accuracy: %.2f%%" % (accuracy * 100.0))
 
 我们可以将所有这些部分组合在一起，下面是完整的代码清单。
 
-```
+```py
 # First XGBoost model for Pima Indians dataset
 from numpy import loadtxt
 from xgboost import XGBClassifier
@@ -202,7 +202,7 @@ print("Accuracy: %.2f%%" % (accuracy * 100.0))
 
 运行此示例将生成以下输出。
 
-```
+```py
 Accuracy: 77.95%
 ```
 

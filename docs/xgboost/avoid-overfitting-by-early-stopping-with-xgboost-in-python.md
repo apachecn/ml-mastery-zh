@@ -40,7 +40,7 @@ XGBoost 模型可以在训练期间评估和报告模型的测试集上的性能
 
 例如，我们可以在独立测试集（ **eval_set** ）上报告二进制分类错误率（“_ 错误 _”），同时训练 XGBoost 模型，如下所示：
 
-```
+```py
 eval_set = [(X_test, y_test)]
 model.fit(X_train, y_train, eval_metric="error", eval_set=eval_set, verbose=True)
 ```
@@ -59,7 +59,7 @@ XGBoost 支持一套评估指标，不仅限于：
 
 完整示例如下：
 
-```
+```py
 # monitor training performance
 from numpy import loadtxt
 from xgboost import XGBClassifier
@@ -90,7 +90,7 @@ print("Accuracy: %.2f%%" % (accuracy * 100.0))
 
 下面提供了输出，为简洁起见，将其截断。我们可以看到，每次训练迭代都会报告分类错误（在每个提升的树被添加到模型之后）。
 
-```
+```py
 ...
 [89]	validation_0-error:0.204724
 [90]	validation_0-error:0.208661
@@ -116,21 +116,21 @@ Accuracy: 77.95%
 
 例如：
 
-```
+```py
 eval_set = [(X_train, y_train), (X_test, y_test)]
 model.fit(X_train, y_train, eval_metric="error", eval_set=eval_set, verbose=True)
 ```
 
 此外，通过调用 **model.evals_result（）**函数，模型在训练后存储并使模型在每个评估集上的性能可用。这将返回评估数据集和分数的字典，例如：
 
-```
+```py
 results = model.evals_result()
 print(results)
 ```
 
 这将打印如下结果（为简洁起见，将其截断）：
 
-```
+```py
 {
 	'validation_0': {'error': [0.259843, 0.26378, 0.26378, ...]},
 	'validation_1': {'error': [0.22179, 0.202335, 0.196498, ...]}
@@ -141,7 +141,7 @@ print(results)
 
 可以按如下方式访问特定的结果数组，例如第一个数据集和错误度量标准：
 
-```
+```py
 results['validation_0']['error']
 ```
 
@@ -151,7 +151,7 @@ results['validation_0']['error']
 
 下面是完整的代码示例，显示了如何在线图上显示收集的结果。
 
-```
+```py
 # plot learning curve
 from numpy import loadtxt
 from xgboost import XGBClassifier
@@ -223,7 +223,7 @@ XGBoost 支持在固定次数的迭代后提前停止。
 
 例如，我们可以检查 10 个时期的对数损失没有改善如下：
 
-```
+```py
 eval_set = [(X_test, y_test)]
 model.fit(X_train, y_train, early_stopping_rounds=10, eval_metric="logloss", eval_set=eval_set, verbose=True)
 ```
@@ -232,7 +232,7 @@ model.fit(X_train, y_train, early_stopping_rounds=10, eval_metric="logloss", eva
 
 下面提供了完整性的完整示例，提前停止。
 
-```
+```py
 # early stopping
 from numpy import loadtxt
 from xgboost import XGBClassifier
@@ -261,7 +261,7 @@ print("Accuracy: %.2f%%" % (accuracy * 100.0))
 
 运行该示例提供以下输出，为简洁起见，将其截断：
 
-```
+```py
 ...
 [35]	validation_0-logloss:0.487962
 [36]	validation_0-logloss:0.488218

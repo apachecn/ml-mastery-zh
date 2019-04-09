@@ -21,7 +21,7 @@
 
 **plot_tree（）**函数提供了此功能，该函数将训练模型作为第一个参数，例如：
 
-```
+```py
 plot_tree(model)
 ```
 
@@ -31,7 +31,7 @@ plot_tree(model)
 
 我们可以在 [Pima 印第安人糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)上创建一个 XGBoost 模型，并绘制模型中的第一棵树（更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。完整的代码清单如下：
 
-```
+```py
 # plot decision tree
 from numpy import loadtxt
 from xgboost import XGBClassifier
@@ -62,13 +62,13 @@ plt.show()
 
 **plot_tree（）**函数需要一些参数。您可以通过指定 **num_trees** 参数的索引来绘制特定图形。例如，您可以按顺序绘制序列中的第 5 个提升树：
 
-```
+```py
 plot_tree(model, num_trees=4)
 ```
 
 您还可以通过将 **rankdir** 参数更改为“LR”（从左到右）而不是默认的从上到下（UT）来更改图表的布局从左到右（更容易阅读） ）。例如：
 
-```
+```py
 plot_tree(model, num_trees=0, rankdir='LR')
 ```
 

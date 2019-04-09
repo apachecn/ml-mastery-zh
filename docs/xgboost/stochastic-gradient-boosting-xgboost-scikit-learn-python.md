@@ -71,7 +71,7 @@
 
 我们可以使用 scikit-learn 内置的网格搜索功能来评估 Otto 数据集中 0.1 到 1.0 的不同子样本值的影响。
 
-```
+```py
 [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1.0]
 ```
 
@@ -79,7 +79,7 @@
 
 完整的代码清单如下。
 
-```
+```py
 # XGBoost on Otto dataset, tune subsample
 from pandas import read_csv
 from xgboost import XGBClassifier
@@ -123,7 +123,7 @@ pyplot.savefig('subsample.png')
 
 我们可以看到，获得的最佳结果是 0.3，或使用 30％的训练数据集样本训练树。
 
-```
+```py
 Best: -0.000647 using {'subsample': 0.3}
 -0.001156 (0.000286) with: {'subsample': 0.1}
 -0.000765 (0.000430) with: {'subsample': 0.2}
@@ -154,13 +154,13 @@ XGBoost 中调整行采样率的图
 
 默认值为 1.0，表示在每个决策树中使用所有列。我们可以评估 **colsample_bytree** 的值在 0.1 和 1.0 之间递增 0.1。
 
-```
+```py
 [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1.0]
 ```
 
 完整的代码清单如下。
 
-```
+```py
 # XGBoost on Otto dataset, tune colsample_bytree
 from pandas import read_csv
 from xgboost import XGBClassifier
@@ -204,7 +204,7 @@ Running this example prints the best configuration as well as the log loss for e
 
 我们可以看到该模型的最佳性能是 **colsample_bytree = 1.0** 。这表明对此问题的子采样列不会增加价值。
 
-```
+```py
 Best: -0.001239 using {'colsample_bytree': 1.0}
 -0.298955 (0.002177) with: {'colsample_bytree': 0.1}
 -0.092441 (0.000798) with: {'colsample_bytree': 0.2}
@@ -233,7 +233,7 @@ Best: -0.001239 using {'colsample_bytree': 1.0}
 
 The full code listing is provided below.
 
-```
+```py
 # XGBoost on Otto dataset, tune colsample_bylevel
 from pandas import read_csv
 from xgboost import XGBClassifier
@@ -279,7 +279,7 @@ Running this example prints the best configuration as well as the log loss for e
 
 如果每个树的结果建议使用 100％的列，那么建议不要放弃列子采样，而是尝试按每个拆分列子采样。
 
-```
+```py
 Best: -0.001062 using {'colsample_bylevel': 0.7}
 -0.159455 (0.007028) with: {'colsample_bylevel': 0.1}
 -0.034391 (0.003533) with: {'colsample_bylevel': 0.2}

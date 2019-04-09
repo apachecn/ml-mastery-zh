@@ -49,7 +49,7 @@ XGBoost 模型中的树（或舍入）数量是在 n_estimators 参数中指定�
 
 使用 scikit-learn，我们可以对 **n_estimators** 模型参数进行网格搜索，评估 50 到 350 的一系列值，步长为 50（50,150,200,250,300,350） 。
 
-```
+```py
 # grid search
 model = XGBClassifier()
 n_estimators = range(50, 400, 50)
@@ -62,7 +62,7 @@ result = grid_search.fit(X, label_encoded_y)
 
 完整性代码清单如下所示。
 
-```
+```py
 # XGBoost on Otto dataset, Tune n_estimators
 from pandas import read_csv
 from xgboost import XGBClassifier
@@ -104,7 +104,7 @@ pyplot.savefig('n_estimators.png')
 
 运行此示例将打印以下结果。
 
-```
+```py
 Best: -0.001152 using {'n_estimators': 250}
 -0.010970 (0.001083) with: {'n_estimators': 50}
 -0.001239 (0.001730) with: {'n_estimators': 100}
@@ -135,7 +135,7 @@ Best: -0.001152 using {'n_estimators': 250}
 
 可以在 **max_depth** 参数中的 **XGBC 分类器**和 **XGBRegressor** XGBoost 包装类中指定最大深度。此参数采用整数值，默认值为 3。
 
-```
+```py
 model = XGBClassifier(max_depth=3)
 ```
 
@@ -143,7 +143,7 @@ model = XGBClassifier(max_depth=3)
 
 使用 10 倍交叉验证评估 5 种配置中的每一种，从而构建 50 个模型。完整性代码清单如下所示。
 
-```
+```py
 # XGBoost on Otto dataset, Tune max_depth
 from pandas import read_csv
 from xgboost import XGBClassifier
@@ -188,7 +188,7 @@ pyplot.savefig('max_depth.png')
 
 最佳配置为 **max_depth = 5** ，导致对数损失为 0.001236。
 
-```
+```py
 Best: -0.001236 using {'max_depth': 5}
 -0.026235 (0.000898) with: {'max_depth': 1}
 -0.001239 (0.001730) with: {'max_depth': 3}
@@ -219,7 +219,7 @@ Best: -0.001236 using {'max_depth': 5}
 
 完整的代码清单如下。
 
-```
+```py
 # XGBoost on Otto dataset, Tune n_estimators and max_depth
 from pandas import read_csv
 from xgboost import XGBClassifier
@@ -266,7 +266,7 @@ pyplot.savefig('n_estimators_vs_max_depth.png')
 
 运行代码会生成每个参数对的 logloss 列表。
 
-```
+```py
 Best: -0.001141 using {'n_estimators': 200, 'max_depth': 4}
 -0.012127 (0.001130) with: {'n_estimators': 50, 'max_depth': 2}
 -0.001351 (0.001825) with: {'n_estimators': 100, 'max_depth': 2}

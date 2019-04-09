@@ -122,7 +122,7 @@ XGBoost 开发中的性能已经成为最好的预测建模算法之一，现在
 
 例如：
 
-```
+```py
 sudo pip install xgboost
 ```
 
@@ -136,20 +136,20 @@ XGBoost 模型可以使用包装类直接在 scikit-learn 框架中使用， **X
 
 我们可以通过构造它并调用 **model.fit（）**函数来训练 XGBoost 模型进行分类：
 
-```
+```py
 model = XGBClassifier()
 model.fit(X_train, y_train)
 ```
 
 然后可以通过在新数据上调用 **model.predict（）**函数来使用该模型进行预测。
 
-```
+```py
 y_pred = model.predict(X_test)
 ```
 
 我们可以将这些结合起来如下：
 
-```
+```py
 # First XGBoost model for Pima Indians dataset
 from numpy import loadtxt
 from xgboost import XGBClassifier
@@ -185,14 +185,14 @@ XGBoost 模型可以在训练期间评估和报告模型的测试集上的性能
 
 例如，我们可以在训练 XGBoost 模型时报告独立测试集（ **eval_set** ）上的二进制分类错误率（**错误**），如下所示：
 
-```
+```py
 eval_set = [(X_test, y_test)]
 model.fit(X_train, y_train, eval_metric="error", eval_set=eval_set, verbose=True)
 ```
 
 使用此配置运行模型将在添加每个树后报告模型的性能。例如：
 
-```
+```py
 ...
 [89] validation_0-error:0.204724
 [90] validation_0-error:0.208661
@@ -204,7 +204,7 @@ model.fit(X_train, y_train, eval_metric="error", eval_set=eval_set, verbose=True
 
 下面提供了使用 Pima Indians Onset of Diabetes 数据集的完整示例。
 
-```
+```py
 # exmaple of early stopping
 from numpy import loadtxt
 from xgboost import XGBClassifier
@@ -241,7 +241,7 @@ print("Accuracy: %.2f%%" % (accuracy * 100.0))
 
 这些重要性分数可在训练模型的 **feature_importances_** 成员变量中找到。例如，它们可以直接打印如下：
 
-```
+```py
 print(model.feature_importances_)
 ```
 
@@ -249,7 +249,7 @@ XGBoost 库提供了一个内置函数来绘制按其重要性排序的特征。
 
 该函数称为 **plot_importance（）**，可以按如下方式使用：
 
-```
+```py
 plot_importance(model)
 pyplot.show()
 ```
@@ -258,7 +258,7 @@ pyplot.show()
 
 下面提供了使用 Pima Indians Onset of Diabetes 数据集绘制特征重要性分数的完整示例。
 
-```
+```py
 # plot feature importance using built-in function
 from numpy import loadtxt
 from xgboost import XGBClassifier
@@ -313,7 +313,7 @@ scikit-learn 框架提供了搜索参数组合的功能。
 
 例如，我们可以定义一个树的数量（ **n_estimators** ）和树大小（ **max_depth** ）的网格，通过将网格定义为：
 
-```
+```py
 n_estimators = [50, 100, 150, 200]
 max_depth = [2, 4, 6, 8]
 param_grid = dict(max_depth=max_depth, n_estimators=n_estimators)
@@ -321,7 +321,7 @@ param_grid = dict(max_depth=max_depth, n_estimators=n_estimators)
 
 然后使用 10 倍交叉验证评估每个参数组合：
 
-```
+```py
 kfold = StratifiedKFold(n_splits=10, shuffle=True, random_state=7)
 grid_search = GridSearchCV(model, param_grid, scoring="neg_log_loss", n_jobs=-1, cv=kfold, verbose=1)
 result = grid_search.fit(X, label_encoded_y)
@@ -337,7 +337,7 @@ result = grid_search.fit(X, label_encoded_y)
 
 下面是调整 Pima Indians Onset of Diabetes 数据集中 **learning_rate** 的完整示例。
 
-```
+```py
 # Tune learning_rate
 from numpy import loadtxt
 from xgboost import XGBClassifier

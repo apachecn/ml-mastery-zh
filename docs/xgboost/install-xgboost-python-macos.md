@@ -37,20 +37,20 @@ XGBoost 是一个用于开发非常快速和准确的梯度提升模型的库。
 
 *   2.安装 MacPorts 和可用的 Python 环境后，您可以按如下方式安装和选择 GCC 7：
 
-```
+```py
 sudo port install gcc7
 sudo port select --set gcc mp-gcc7
 ```
 
 *   3.确认您的 GCC 安装成功，如下所示：
 
-```
+```py
 gcc -v
 ```
 
 你应该看到印刷版的 GCC;例如：
 
-```
+```py
 ..
 gcc version 7.2.0 (MacPorts gcc7 7.2.0_0)
 ```
@@ -64,25 +64,25 @@ gcc version 7.2.0 (MacPorts gcc7 7.2.0_0)
 
 *   1.首先，从 GitHub 查看代码库：
 
-```
+```py
 git clone --recursive https://github.com/dmlc/xgboost
 ```
 
 *   2.转到 xgboost 目录。
 
-```
+```py
 cd xgboost/
 ```
 
 *   3.复制我们打算用来将 XGBoost 编译到位的配置。
 
-```
+```py
 cp make/config.mk ./config.mk
 ```
 
 *   4.编译 XGBoost;这要求您指定系统上的核心数（例如，8，根据需要进行更改）。
 
-```
+```py
 make -j8
 ```
 
@@ -90,7 +90,7 @@ make -j8
 
 例如，编译的最后一个片段可能如下所示：
 
-```
+```py
 ...
 a - build/learner.o
 a - build/logging.o
@@ -139,13 +139,13 @@ c++ -std=c++11 -Wall -Wno-unknown-pragmas -Iinclude -Idmlc-core/include -Irabit/
 
 *   1.将目录更改为 xgboost 项目的 Python 包。
 
-```
+```py
 cd python-package
 ```
 
 *   2.安装 Python XGBoost 包。
 
-```
+```py
 sudo python setup.py install
 ```
 
@@ -153,7 +153,7 @@ sudo python setup.py install
 
 例如，在安装结束时，您可能会看到如下消息：
 
-```
+```py
 ...
 Installed /opt/local/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/xgboost-0.6-py3.6.egg
 Processing dependencies for xgboost==0.6
@@ -174,20 +174,20 @@ Finished processing dependencies for xgboost==0.6
 
 将以下代码保存到名为 _version.py 的文件中。_
 
-```
+```py
 import xgboost
 print("xgboost", xgboost.__version__)
 ```
 
 从命令行运行脚本：
 
-```
+```py
 python version.py
 ```
 
 您应该看到 XGBoost 版本打印到屏幕：
 
-```
+```py
 xgboost 0.6
 ```
 

@@ -33,7 +33,7 @@ XGBoost 因其速度和性能而成为 Gradient Boosting 的流行实现。
 
 下面是原始数据集的示例。您可以从 [UCI 机器学习库](http://archive.ics.uci.edu/ml/datasets/Iris)中了解有关此数据集的更多信息并以 CSV 格式下载原始数据。
 
-```
+```py
 5.1,3.5,1.4,0.2,Iris-setosa
 4.9,3.0,1.4,0.2,Iris-setosa
 4.7,3.2,1.3,0.2,Iris-setosa
@@ -45,7 +45,7 @@ XGBoost 无法按原样对此问题进行建模，因为它要求输出变量为
 
 我们可以使用 [LabelEncoder](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html) 轻松地将字符串值转换为整数值。三个类值（Iris-setosa，Iris-versicolor，Iris-virginica）被映射到整数值（0,1,2）。
 
-```
+```py
 # encode string class values as integers
 label_encoder = LabelEncoder()
 label_encoder = label_encoder.fit(Y)
@@ -56,7 +56,7 @@ label_encoded_y = label_encoder.transform(Y)
 
 下面是一个演示如何加载虹膜数据集的完整示例。请注意，Pandas 用于加载数据以处理字符串类值。
 
-```
+```py
 # multiclass classification
 import pandas
 import xgboost
@@ -90,7 +90,7 @@ print("Accuracy: %.2f%%" % (accuracy * 100.0))
 
 运行该示例将生成以下输出：
 
-```
+```py
 XGBClassifier(base_score=0.5, colsample_bylevel=1, colsample_bytree=1,
        gamma=0, learning_rate=0.1, max_delta_step=0, max_depth=3,
        min_child_weight=1, missing=None, n_estimators=100, nthread=-1,
@@ -109,7 +109,7 @@ Accuracy: 92.00%
 
 下面是原始数据集的示例。您可以在 [UCI 机器学习库](http://archive.ics.uci.edu/ml/datasets/Breast+Cancer)中了解有关此数据集的更多信息，并从 [mldata.org](http://mldata.org/repository/data/viewslug/datasets-uci-breast-cancer/) 以 CSV 格式下载。
 
-```
+```py
 '40-49','premeno','15-19','0-2','yes','3','right','left_up','no','recurrence-events'
 '50-59','ge40','15-19','0-2','no','1','right','central','no','no-recurrence-events'
 '50-59','ge40','35-39','0-2','no','2','left','left_low','no','recurrence-events'
@@ -121,7 +121,7 @@ Accuracy: 92.00%
 
 我们可以重用上一节中的相同方法，并将字符串类值转换为整数值，以使用 LabelEncoder 对预测进行建模。例如：
 
-```
+```py
 # encode string class values as integers
 label_encoder = LabelEncoder()
 label_encoder = label_encoder.fit(Y)
@@ -130,7 +130,7 @@ label_encoded_y = label_encoder.transform(Y)
 
 我们可以在 X 中的每个输入要素上使用相同的方法，但这只是一个起点。
 
-```
+```py
 # encode string input values as integers
 features = []
 for i in range(0, X.shape[1]):
@@ -147,7 +147,7 @@ XGBoost 可以假设每个输入变量的编码整数值具有序数关系。例
 
 例如，breast-quad 变量具有以下值：
 
-```
+```py
 left-up
 left-low
 right-up
@@ -157,7 +157,7 @@ central
 
 我们可以将其建模为 5 个二进制变量，如下所示：
 
-```
+```py
 left-up, left-low, right-up, right-low, central
 1,0,0,0,0
 0,1,0,0,0
@@ -170,20 +170,20 @@ left-up, left-low, right-up, right-low, central
 
 在我们对其进行标签编码后，我们可以对每个功能进行热编码。首先，我们必须将要素数组转换为 2 维 NumPy 数组，其中每个整数值是长度为 1 的要素向量。
 
-```
+```py
 feature = feature.reshape(X.shape[0], 1)
 ```
 
 然后我们可以创建 OneHotEncoder 并对特征数组进行编码。
 
-```
+```py
 onehot_encoder = OneHotEncoder(sparse=False)
 feature = onehot_encoder.fit_transform(feature)
 ```
 
 最后，我们可以通过逐个连接一个热编码特征来建立输入数据集，将它们作为新列添加（轴= 2）。我们最终得到一个由 43 个二进制输入变量组成的输入向量。
 
-```
+```py
 # encode string input values as integers
 encoded_x = None
 for i in range(0, X.shape[1]):
@@ -203,7 +203,7 @@ print("X shape: : ", encoded_x.shape)
 
 下面是带有标签和一个热编码输入变量和标签编码输出变量的完整示例。
 
-```
+```py
 # binary classification, breast cancer dataset, label and one hot encoded
 import numpy
 from pandas import read_csv
@@ -254,7 +254,7 @@ print("Accuracy: %.2f%%" % (accuracy * 100.0))
 
 运行此示例，我们得到以下输出：
 
-```
+```py
 ('X shape: : ', (285, 43))
 XGBClassifier(base_score=0.5, colsample_bylevel=1, colsample_bytree=1,
        gamma=0, learning_rate=0.1, max_delta_step=0, max_depth=3,
@@ -280,27 +280,27 @@ Horse Colic 数据集是演示此功能的一个很好的示例，因为它包�
 
 这些值由空格分隔，我们可以使用 Pandas 函数 [read_csv](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html) 轻松加载它。
 
-```
+```py
 dataframe = read_csv("horse-colic.csv", delim_whitespace=True, header=None)
 ```
 
 加载后，我们可以看到缺少的数据标有问号字符（'？'）。我们可以将这些缺失值更改为 XGBoost 预期的稀疏值，即值零（0）。
 
-```
+```py
 # set missing values to 0
 X[X == '?'] = 0
 ```
 
 由于缺少的数据被标记为字符串，因此缺少数据的那些列都作为字符串数据类型加载。我们现在可以将整个输入数据集转换为数值。
 
-```
+```py
 # convert to numeric
 X = X.astype('float32')
 ```
 
 最后，这是一个二元分类问题，尽管类值用整数 1 和 2 标记。我们将 XGBoost 中的二进制分类问题建模为逻辑 0 和 1 值。我们可以使用 LabelEncoder 轻松地将 Y 数据集转换为 0 和 1 整数，就像我们在虹膜花示例中所做的那样。
 
-```
+```py
 # encode Y class values as integers
 label_encoder = LabelEncoder()
 label_encoder = label_encoder.fit(Y)
@@ -309,7 +309,7 @@ label_encoded_y = label_encoder.transform(Y)
 
 完整性代码清单如下所示。
 
-```
+```py
 # binary classification, missing data
 from pandas import read_csv
 from xgboost import XGBClassifier
@@ -348,7 +348,7 @@ print("Accuracy: %.2f%%" % (accuracy * 100.0))
 
 运行此示例将生成以下输出。
 
-```
+```py
 XGBClassifier(base_score=0.5, colsample_bylevel=1, colsample_bytree=1,
        gamma=0, learning_rate=0.1, max_delta_step=0, max_depth=3,
        min_child_weight=1, missing=None, n_estimators=100, nthread=-1,
@@ -359,13 +359,13 @@ Accuracy: 83.84%
 
 我们可以通过使用非零值（例如 1）标记缺失值来梳理 XGBoost 自动处理缺失值的效果。
 
-```
+```py
 X[X == '?'] = 1
 ```
 
 重新运行该示例表明模型的准确性下降。
 
-```
+```py
 Accuracy: 79.80%
 ```
 
@@ -373,7 +373,7 @@ Accuracy: 79.80%
 
 通常使用列的平均值或中值。我们可以使用 scikit-learn [Imputer](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.Imputer.html) 类轻松地估算缺失的数据。
 
-```
+```py
 # impute missing values as the mean
 imputer = Imputer()
 imputed_x = imputer.fit_transform(X)
@@ -381,7 +381,7 @@ imputed_x = imputer.fit_transform(X)
 
 下面是完整的示例，其中缺少的数据与每列的平均值估算。
 
-```
+```py
 # binary classification, missing data, impute with mean
 import numpy
 from pandas import read_csv
@@ -425,7 +425,7 @@ print("Accuracy: %.2f%%" % (accuracy * 100.0))
 
 运行此示例，我们看到的结果等同于将值固定为一（1）。这表明至少在这种情况下，我们最好用不同的零（0）值而不是有效值（1）或估算值来标记缺失值。
 
-```
+```py
 Accuracy: 79.80%
 ```
 
