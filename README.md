@@ -9,6 +9,11 @@
 * [ApacheCN 机器学习交流群 629470233](http://shang.qq.com/wpa/qunwpa?idkey=30e5f1123a79867570f665aa3a483ca404b1c3f77737bc01ec520ed5f078ddef)
 * [ApacheCN 学习资源](http://www.apachecn.org/)
 
+## 目录
+
++   [XGBoost](docs/xgboost/SUMMARY.md)
++   [深度学习（Keras）](docs/dl-keras/SUMMARY.md)
+
 ## 负责人
 
 * [飞龙](https://github.com/wizardforcel)：562826179
