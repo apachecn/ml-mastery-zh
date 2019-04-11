@@ -8,7 +8,7 @@ Theano 是一个用于快速数值计算的 Python 库，可以在 CPU 或 GPU �
 
 在这篇文章中，您将发现 Theano Python 库。
 
-![Introduction to the Python Deep Learning Library Theano](img/97a5a2d7ca50d98d6dd0d2787ea7bd18.jpg)
+![Introduction to the Python Deep Learning Library Theano](img/97a5a2d7ca50d98d6dd0d2787ea7bd18.png)
 
 Python 深度学习库 Theano
 照片由 [Kristoffer Trolle](https://www.flickr.com/photos/kristoffer-trolle/17088729869/) 拍摄，保留一些权利。

@@ -20,7 +20,7 @@
 *   **2016 年 10 月更新**：更新了 Keras 1.1.0，TensorFlow 0.10.0 和 scikit-learn v0.18 的示例。
 *   **2017 年 3 月更新**：更新了 Keras 2.0.2，TensorFlow 1.0.1 和 Theano 0.9.0 的示例。
 
-![Handwritten Digit Recognition using Convolutional Neural Networks in Python with Keras](img/299fb4248be9f10daf6e16e3069a834d.jpg)
+![Handwritten Digit Recognition using Convolutional Neural Networks in Python with Keras](img/299fb4248be9f10daf6e16e3069a834d.png)
 
 使用 Keras
 在 Python 中使用卷积神经网络进行手写数字识别 [Jamie](https://www.flickr.com/photos/jamiesrabbits/5947373341/) ，保留一些权利。
@@ -70,7 +70,7 @@ plt.show()
 
 您可以看到下载和加载 MNIST 数据集就像调用 mnist.load_data（）函数一样简单。运行上面的示例，您应该看到下面的图像。
 
-![Examples from the MNIST dataset](img/2501396e3f59ad04cd824226eeae9ede.jpg)
+![Examples from the MNIST dataset](img/2501396e3f59ad04cd824226eeae9ede.png)
 
 MNIST 数据集中的示例
 

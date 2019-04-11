@@ -16,7 +16,7 @@ Keras 库提供了一种在训练深度学习模型时计算和报告一套标�
 
 让我们开始吧。
 
-![Metrics and How to Use Custom Metrics for Deep Learning with Keras in Python](img/659eb8361ecfc07bb1b54bbb96a44de5.jpg)
+![Metrics and How to Use Custom Metrics for Deep Learning with Keras in Python](img/659eb8361ecfc07bb1b54bbb96a44de5.png)
 
 度量标准以及如何在 Python 中使用 Keras 进行深度学习的自定义度量标准
 [Indi Samarajiva](https://www.flickr.com/photos/indi/6901400708/) 的照片，保留一些权利。
@@ -101,7 +101,7 @@ Epoch 100/100
 
 然后创建训练时期上的 4 个度量的线图。
 
-![Line Plot of Built-in Keras Metrics for Regression](img/7be6d7bf030fac7196c7ff7c227cc0c1.jpg)
+![Line Plot of Built-in Keras Metrics for Regression](img/7be6d7bf030fac7196c7ff7c227cc0c1.png)
 
 用于回归的内置 Keras 度量的线图
 
@@ -182,7 +182,7 @@ Epoch 400/400
 
 创建精确度超过迭代的线图。
 
-![Line Plot of Built-in Keras Metrics for Classification](img/cf206a9fc0040edff578d8bec2c9cb16.jpg)
+![Line Plot of Built-in Keras Metrics for Classification](img/cf206a9fc0040edff578d8bec2c9cb16.png)
 
 用于分类的内置 Keras 度量的线图
 
@@ -260,7 +260,7 @@ Epoch 500/500
 
 在运行结束时，将创建自定义 RMSE 度量标准的折线图。
 
-![Line Plot of Custom RMSE Keras Metric for Regression](img/029826d677dd0afb9af83862a1eabd0e.jpg)
+![Line Plot of Custom RMSE Keras Metric for Regression](img/029826d677dd0afb9af83862a1eabd0e.png)
 
 用于回归的自定义 RMSE Keras 度量的线图
 

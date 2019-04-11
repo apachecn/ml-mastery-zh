@@ -12,7 +12,7 @@ Python 中两个为深度学习研究和开发提供基础的顶级数字平台�
 
 **2016 年 10 月更新**：更新了 Keras 1.1.0，Theano 0.8.2 和 TensorFlow 0.10.0 的示例。
 
-![Introduction to the Python Deep Learning Library Keras](img/faed449c22db6586e71129af66aef2a5.jpg)
+![Introduction to the Python Deep Learning Library Keras](img/faed449c22db6586e71129af66aef2a5.png)
 
 Python 深度学习库 Keras 简介
 照片由 [Dennis Jarvis](https://www.flickr.com/photos/archer10/2216602404/) 拍摄，保留一些权利。

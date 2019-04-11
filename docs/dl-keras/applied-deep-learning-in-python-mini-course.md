@@ -18,7 +18,7 @@
 
 *   **更新 March / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
 
-![Applied Deep Learning in Python Mini-Course](img/2f778185ceac552e5d1ee21c4cdd45b1.jpg)
+![Applied Deep Learning in Python Mini-Course](img/2f778185ceac552e5d1ee21c4cdd45b1.png)
 
 在 Python 迷你课程中应用深度学习
 照片由 [darkday](https://www.flickr.com/photos/drainrat/15783392494/) 拍摄，保留一些权利。
@@ -191,7 +191,7 @@ Perceptrons 之后可能是最有用的神经网络类型。
 配置完成后，需要在数据集上训练神经网络。用于神经网络的经典且仍然优选的训练算法称为随机
 梯度下降。
 
-![Model of a Simple Neuron](img/498ab2d8740c6a44a78ade60a46c95a9.jpg)
+![Model of a Simple Neuron](img/498ab2d8740c6a44a78ade60a46c95a9.png)
 
 简单神经元的模型
 
@@ -400,7 +400,7 @@ model.compile(..., optimizer=sgd)
 
 MNIST 数据集是用于评估手写数字识别问题的算法的标准问题。它包含可用于训练模型的 60,000 个数字图像，以及可用于评估其表现的 10,000 个图像。
 
-![Example MNIST images](img/256dfb575d54b2eec4be14c906ce2c11.jpg)
+![Example MNIST images](img/256dfb575d54b2eec4be14c906ce2c11.png)
 
 示例 MNIST 图像
 
@@ -455,7 +455,7 @@ model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accur
 
 用于评估此类问题模型的流行标准数据集称为 CIFAR-10。它包含 60,000 张小照片，每张照片都是 10 个物体中的一个，如猫，船或飞机。
 
-![Small Sample of CIFAR-10 Images](img/def90f3b9b58bf30829a905ae7da3e0d.jpg)
+![Small Sample of CIFAR-10 Images](img/def90f3b9b58bf30829a905ae7da3e0d.png)
 
 CIFAR-10 图像的小样本
 

@@ -84,7 +84,7 @@ pyplot.show()
 
 运行此示例提供了以下图像，我们可以将其用作与下面示例中的图像准备和扩充进行比较的点。
 
-![Example MNIST images](img/256dfb575d54b2eec4be14c906ce2c11.jpg)
+![Example MNIST images](img/256dfb575d54b2eec4be14c906ce2c11.png)
 
 示例 MNIST 图像
 
@@ -126,7 +126,7 @@ for X_batch, y_batch in datagen.flow(X_train, y_train, batch_size=9):
 
 运行此示例，您可以看到效果不同，看似变暗并使不同的数字变亮。
 
-![Standardized Feature MNIST Images](img/c12075af40bf983d4677a85b12ff92c2.jpg)
+![Standardized Feature MNIST Images](img/c12075af40bf983d4677a85b12ff92c2.png)
 
 标准化特征 MNIST 图像
 
@@ -172,7 +172,7 @@ for X_batch, y_batch in datagen.flow(X_train, y_train, batch_size=9):
 
 运行该示例，您可以在图像中看到相同的一般结构，以及如何突出显示每个数字的轮廓。
 
-![ZCA Whitening MNIST Images](img/23bddb450fa7cd93bad158899043b4ee.jpg)
+![ZCA Whitening MNIST Images](img/23bddb450fa7cd93bad158899043b4ee.png)
 
 ZCA 美白 MNIST 图像
 
@@ -216,7 +216,7 @@ for X_batch, y_batch in datagen.flow(X_train, y_train, batch_size=9):
 
 运行该示例，您可以看到图像已经左右旋转到 90 度的限制。这对此问题没有帮助，因为 MNIST 数字具有标准化方向，但是当从对象可能具有不同方向的照片进行学习时，这种变换可能会有所帮助。
 
-![Random Rotations of MNIST Images](img/c74159d0c08a16f4d34d423625015f83.jpg)
+![Random Rotations of MNIST Images](img/c74159d0c08a16f4d34d423625015f83.png)
 
 MNIST 图像的随机旋转
 
@@ -259,7 +259,7 @@ for X_batch, y_batch in datagen.flow(X_train, y_train, batch_size=9):
 
 运行此示例会创建数字的移位版本。同样，这不是 MNIST 所必需的，因为手写数字已经居中，但您可以看到这对于更复杂的问题域有何用处。
 
-![Random Shifted MNIST Images](img/a1c44e0b21366d4a6326b44bd4e31679.jpg)
+![Random Shifted MNIST Images](img/a1c44e0b21366d4a6326b44bd4e31679.png)
 
 随机移位的 MNIST 图像
 
@@ -301,7 +301,7 @@ for X_batch, y_batch in datagen.flow(X_train, y_train, batch_size=9):
 
 运行此示例，您可以看到翻转的数字。翻转数字没有用，因为它们总是具有正确的左右方向，但这对于场景中可以具有不同方向的对象的照片的问题可能是有用的。
 
-![Randomly Flipped MNIST Images](img/a054ee10ec3175a6e81b8a511f36da6d.jpg)
+![Randomly Flipped MNIST Images](img/a054ee10ec3175a6e81b8a511f36da6d.png)
 
 随机翻转 MNIST 图像
 
@@ -349,7 +349,7 @@ for X_batch, y_batch in datagen.flow(X_train, y_train, batch_size=9, save_to_dir
 
 运行该示例，您可以看到图像仅在生成时写入。
 
-![Augmented MNIST Images Saved To File](img/411af1874839fc85236ad1da133db167.jpg)
+![Augmented MNIST Images Saved To File](img/411af1874839fc85236ad1da133db167.png)
 
 增强的 MNIST 图像保存到文件
 

@@ -14,7 +14,7 @@ Keras 是一个简单而强大的 Python 库，用于深度学习。
 *   **2017 年 3 月更新**：更新了 Keras 2.0.2，TensorFlow 1.0.1 和 Theano 0.9.0 的示例。
 *   **更新 March / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
 
-![Save and Load Your Keras Deep Learning Models](img/f7c8bf23f866c7d1a641e25ab2c1e6cd.jpg)
+![Save and Load Your Keras Deep Learning Models](img/f7c8bf23f866c7d1a641e25ab2c1e6cd.png)
 
 保存并加载您的 Keras 深度学习模型
 照片由 [art_inthecity](https://www.flickr.com/photos/art_inthecity/6346545268/) 保留，保留一些权利。

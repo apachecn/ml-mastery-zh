@@ -10,7 +10,7 @@
 
 让我们开始吧。
 
-![Deep Learning Books](img/9226be57337d5beb79c53462cb99daad.jpg)
+![Deep Learning Books](img/9226be57337d5beb79c53462cb99daad.png)
 
 深度学习书籍（我希望）
 摄影： [Indi Samarajiva](https://www.flickr.com/photos/indi/4259120807/) ，保留一些权利。
@@ -25,7 +25,7 @@
 
 其中很多已经完成，我强烈建议阅读它以获得深度学习算法的背景理论。
 
-[![Amazon Image](img/ee355a2aacdc70cce857b65c712bb041.jpg)](http://www.amazon.com/dp/0262035618?tag=inspiredalgor-20)
+[![Amazon Image](img/ee355a2aacdc70cce857b65c712bb041.png)](http://www.amazon.com/dp/0262035618?tag=inspiredalgor-20)
 
 目前的工作目录如下：
 
@@ -67,7 +67,7 @@
 
 这本书将于 2016 年 5 月出版，目前没有目录（我能找到）。
 
-[![Amazon Image](img/717ae728128d92f139938bd1c4c3b457.jpg)](http://www.amazon.com/dp/1491914254?tag=inspiredalgor-20)
+[![Amazon Image](img/717ae728128d92f139938bd1c4c3b457.png)](http://www.amazon.com/dp/1491914254?tag=inspiredalgor-20)
 
 ### 深度学习的基础知识：设计下一代机器智能算法
 
@@ -90,7 +90,7 @@
 
 我很高兴能得到这本书。
 
-[![Amazon Image](img/7b1c3b4ef1fa6b37c0eb0bd04b82eb26.jpg)](http://www.amazon.com/dp/1491925612?tag=inspiredalgor-20)
+[![Amazon Image](img/7b1c3b4ef1fa6b37c0eb0bd04b82eb26.png)](http://www.amazon.com/dp/1491925612?tag=inspiredalgor-20)
 
 ## Packt Publishing 的深度学习
 
@@ -98,7 +98,7 @@
 
 似乎没有可用于本书的目录，但我相信你可以[尽早获得它](https://www.packtpub.com/big-data-and-business-intelligence/deep-learning-java)。
 
-[![Amazon Image](img/bc688ef2476b30e081706f5cb16dd727.jpg)](http://www.amazon.com/dp/1785282190?tag=inspiredalgor-20)
+[![Amazon Image](img/bc688ef2476b30e081706f5cb16dd727.png)](http://www.amazon.com/dp/1785282190?tag=inspiredalgor-20)
 
 ## C ++和 CUDA C 中的深信仰网
 
@@ -137,7 +137,7 @@
 
 该系列的第三本书涵盖了人工神经网络，并有一些关于深度学习技术的章节。
 
-[![Amazon Image](img/f2b08c4eb571d1dc15ee278519741cbe.jpg)](http://www.amazon.com/dp/1505714346?tag=inspiredalgor-20)
+[![Amazon Image](img/f2b08c4eb571d1dc15ee278519741cbe.png)](http://www.amazon.com/dp/1505714346?tag=inspiredalgor-20)
 
 目录如下：
 
@@ -164,7 +164,7 @@
 
 N. D. Lewis 有一系列关于统计学和机器学习的书籍，包括有关神经网络的书籍。 2016 年初，他发表了一本关于深度学习的书，名为：[深度学习轻松学习 R：数据科学的温和介绍。](http://www.amazon.com/dp/B01AEXMX34?tag=inspiredalgor-20) 。
 
-[![Amazon Image](img/a73a28eb8d953d02fd5d02416b785c78.jpg)](http://www.amazon.com/dp/B01AEXMX34?tag=inspiredalgor-20)
+[![Amazon Image](img/a73a28eb8d953d02fd5d02416b785c78.png)](http://www.amazon.com/dp/B01AEXMX34?tag=inspiredalgor-20)
 
 目录如下：
 

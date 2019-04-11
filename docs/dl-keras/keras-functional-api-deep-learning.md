@@ -183,7 +183,7 @@ _________________________________________________________________
 
 还会创建模型图的图并将其保存到文件中。
 
-![Multilayer Perceptron Network Graph](img/a996a23eabeb4945e5ff491773bcb951.jpg)
+![Multilayer Perceptron Network Graph](img/a996a23eabeb4945e5ff491773bcb951.png)
 
 多层感知器网络图
 
@@ -247,7 +247,7 @@ _________________________________________________________________
 
 还会创建模型图的图并将其保存到文件中。
 
-![Convolutional Neural Network Graph](img/8d5c11180494f5fb0ec35218148e7d7b.jpg)
+![Convolutional Neural Network Graph](img/8d5c11180494f5fb0ec35218148e7d7b.png)
 
 卷积神经网络图
 
@@ -297,7 +297,7 @@ _________________________________________________________________
 
 还会创建模型图的图并将其保存到文件中。
 
-![Recurrent Neural Network Graph](img/c39b32bb7b7d10578b913aa8aa00ba34.jpg)
+![Recurrent Neural Network Graph](img/c39b32bb7b7d10578b913aa8aa00ba34.png)
 
 递归神经网络图
 
@@ -383,7 +383,7 @@ ________________________________________________________________________________
 
 还会创建模型图的图并将其保存到文件中。
 
-![Neural Network Graph With Shared Inputs](img/c4d3dd994ea7c141153c92bb593e506e.jpg)
+![Neural Network Graph With Shared Inputs](img/c4d3dd994ea7c141153c92bb593e506e.png)
 
 具有共享输入的神经网络图
 
@@ -453,7 +453,7 @@ ________________________________________________________________________________
 
 还会创建模型图的图并将其保存到文件中。
 
-![Neural Network Graph With Shared Feature Extraction Layer](img/1a156e687268e204c213d96733179234.jpg)
+![Neural Network Graph With Shared Feature Extraction Layer](img/1a156e687268e204c213d96733179234.png)
 
 共享特征提取层的神经网络图
 
@@ -559,7 +559,7 @@ ________________________________________________________________________________
 
 还会创建模型图的图并将其保存到文件中。
 
-![Neural Network Graph With Multiple Inputs](img/bb8620c8c9ed94e3f29dd3ac43cd7ed1.jpg)
+![Neural Network Graph With Multiple Inputs](img/bb8620c8c9ed94e3f29dd3ac43cd7ed1.png)
 
 多输入神经网络图
 
@@ -621,7 +621,7 @@ ________________________________________________________________________________
 
 还会创建模型图的图并将其保存到文件中。
 
-![Neural Network Graph With Multiple Outputs](img/5c9247c398565f2d0ac41322dac602d7.jpg)
+![Neural Network Graph With Multiple Outputs](img/5c9247c398565f2d0ac41322dac602d7.png)
 
 具有多个输出的神经网络图
 

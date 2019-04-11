@@ -10,7 +10,7 @@ TensorFlow 是一个用于 Google 创建和发布的快速数值计算的 Python
 
 让我们开始吧。
 
-![Introduction to the Python Deep Learning Library TensorFlow](img/fe8f0396c0f9d7b02308150c33abe2da.jpg)
+![Introduction to the Python Deep Learning Library TensorFlow](img/fe8f0396c0f9d7b02308150c33abe2da.png)
 
 Python 深度学习库简介 TensorFlow
 摄影： [Nicolas Raymond](https://www.flickr.com/photos/82955120@N05/15932303392/) ，保留一些权利。

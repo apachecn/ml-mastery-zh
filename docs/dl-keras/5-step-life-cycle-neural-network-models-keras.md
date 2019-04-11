@@ -17,7 +17,7 @@
 *   **2017 年 3 月更新**：更新了 Keras 2.0.2，TensorFlow 1.0.1 和 Theano 0.9.0 的示例。
 *   **更新 March / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
 
-![Deep Learning Neural Network Life-Cycle in Keras](img/ba26805ccbbb3318546dbf2663ddbef9.jpg)
+![Deep Learning Neural Network Life-Cycle in Keras](img/ba26805ccbbb3318546dbf2663ddbef9.png)
 
 Keras 的深度学习神经网络生命周期
 [Martin Stitchener](https://www.flickr.com/photos/dxhawk/6842278135/) 的照片，保留一些权利。
@@ -32,7 +32,7 @@ Keras 的深度学习神经网络生命周期
 4.  评估网络。
 5.  作出预测。
 
-![5 Step Life-Cycle for Neural Network Models in Keras](img/2996eabdf1f9d9a0bc2b5e1c62d6b4e5.jpg)
+![5 Step Life-Cycle for Neural Network Models in Keras](img/2996eabdf1f9d9a0bc2b5e1c62d6b4e5.png)
 
 Keras 中神经网络模型的 5 步生命周期
 

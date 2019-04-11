@@ -41,7 +41,7 @@
 
 在过去几年中，已经使用非常深度的卷积神经网络模型来赢得这些挑战，并且任务的结果已超过人类的表现。
 
-![Sample of Images from the ImageNet Dataset used in the ILSVRC Challenge](img/bedb451b4ae753eecb4b2f2f5ddf01b5.jpg)
+![Sample of Images from the ImageNet Dataset used in the ILSVRC Challenge](img/bedb451b4ae753eecb4b2f2f5ddf01b5.png)
 
 来自“ImageNet 大规模视觉识别挑战”的 ILSVRC 挑战
 中使用的 ImageNet 数据集的图像样本，2015 年。
@@ -52,7 +52,7 @@
 
 2014 年，由 VGG [开发的卷积神经网络模型（CNN）赢得了图像分类任务](http://image-net.org/challenges/LSVRC/2014/results)。
 
-![ILSVRC Results in 2014 for the Classification task](img/3e261540d96ebda34701ebd35f653fd5.jpg)
+![ILSVRC Results in 2014 for the Classification task](img/3e261540d96ebda34701ebd35f653fd5.png)
 
 ILSVRC 2014 年的分类任务结果
 
@@ -186,7 +186,7 @@ plot_model(model, to_file='vgg.png')
 
 同样，因为模型很大，情节有点太大，也许不可读。然而，它在下面提供。
 
-![Plot of Layers in the VGG Model](img/bb63b33d778d9f3aa7c05ecc5ef6f642.jpg)
+![Plot of Layers in the VGG Model](img/bb63b33d778d9f3aa7c05ecc5ef6f642.png)
 
 VGG 模型中的图层图
 
@@ -213,12 +213,12 @@ _VGG（）_ 类需要一些参数，如果您希望在自己的项目中使用�
 
 你可以在这里从 Flickr [下载咖啡杯的随机照片。](https://www.flickr.com/photos/jfanaian/4994221690/)
 
-![Coffee Mug](img/c62790dc095057645ed694f0c187f31f.jpg)
+![Coffee Mug](img/c62790dc095057645ed694f0c187f31f.png)
 
 咖啡杯
 摄影： [jfanaian](https://www.flickr.com/photos/jfanaian/4994221690/) ，保留一些权利。
 
-下载图像并将其保存到当前工作目录，文件名为“ _mug.jpg_ ”。
+下载图像并将其保存到当前工作目录，文件名为“ _mug.png_ ”。
 
 ### 2.加载 VGG 模型
 
@@ -241,7 +241,7 @@ Keras 提供了一些帮助完成此步骤的工具。
 ```py
 from keras.preprocessing.image import load_img
 # load an image from file
-image = load_img('mug.jpg', target_size=(224, 224))
+image = load_img('mug.png', target_size=(224, 224))
 ```
 
 接下来，我们可以将像素转换为 NumPy 数组，以便我们可以在 Keras 中使用它。我们可以使用 _img_to_array（）_ 函数。
@@ -321,7 +321,7 @@ from keras.applications.vgg16 import VGG16
 # load the model
 model = VGG16()
 # load an image from file
-image = load_img('mug.jpg', target_size=(224, 224))
+image = load_img('mug.png', target_size=(224, 224))
 # convert the image pixels to a numpy array
 image = img_to_array(image)
 # reshape data for the model

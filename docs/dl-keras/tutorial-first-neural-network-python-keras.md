@@ -14,7 +14,7 @@ Keras 是一个功能强大且易于使用的 Python 库，用于开发和评估
 *   **2017 年 3 月更新**：更新了 Keras 2.0.2，TensorFlow 1.0.1 和 Theano 0.9.0 的示例。
 *   **更新 Mar / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
 
-![Tour of Deep Learning Algorithms](img/b146789c05a7cd65c9b0afcfc33dcd5e.jpg)
+![Tour of Deep Learning Algorithms](img/b146789c05a7cd65c9b0afcfc33dcd5e.png)
 
 使用 Keras 逐步开发 Python 中的第一个神经网络
 Phil Whitehouse 的照片，保留一些权利。

@@ -21,7 +21,7 @@ Keras 允许您快速简单地设计和训练神经网络和深度学习模型�
 *   **2016 年 10 月更新**：更新了 Keras 1.1.0 和 scikit-learn v0.18 的示例。
 *   **2017 年 3 月更新**：更新了 Keras 2.0.2，TensorFlow 1.0.1 和 Theano 0.9.0 的示例。
 
-![Binary Classification Worked Example with the Keras Deep Learning Library](img/813384c9d73f15abe34aa5f55bd5ddfa.jpg)
+![Binary Classification Worked Example with the Keras Deep Learning Library](img/813384c9d73f15abe34aa5f55bd5ddfa.png)
 
 使用 Keras 深度学习库的二元分类工作示例
 [Mattia Merlo](https://www.flickr.com/photos/h_crimson/9405280189/) 的照片，保留一些权利。

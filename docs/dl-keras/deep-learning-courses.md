@@ -118,7 +118,7 @@
 
 在从入门材料到最新研究的一系列主题的深度学习领域，至少有 30 场演讲（有 30 个视频）来自着名研究人员。
 
-![Deep Learning Summer School at Montreal](img/65a7874651021d24638d4636aa14a1d4.jpg)
+![Deep Learning Summer School at Montreal](img/65a7874651021d24638d4636aa14a1d4.png)
 
 蒙特利尔深度学习暑期学校
 

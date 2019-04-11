@@ -24,7 +24,7 @@ Keras 非常易于使用，您可以在几分钟内开发出您的第一个[多�
 
 ## 1\. Keras 用户 Google Group
 
-![Keras Users Google Group](img/1370ade3cc9bd5feb94a1be0c1c87369.jpg)
+![Keras Users Google Group](img/1370ade3cc9bd5feb94a1be0c1c87369.png)
 
 Keras 用户 Google Group
 
@@ -36,7 +36,7 @@ Keras 用户 Google Group
 
 ## 2\. Keras Slack Channel
 
-![Keras Slack Channel](img/07aad7228d9e13432d15e81820ae2199.jpg)
+![Keras Slack Channel](img/07aad7228d9e13432d15e81820ae2199.png)
 
 Keras Slack 频道
 
@@ -51,7 +51,7 @@ Keras Slack 频道
 
 ## 凯特在吉特
 
-![Keras Gitter Group](img/95f6701c22073478af5f7e8f88aaf8b5.jpg)
+![Keras Gitter Group](img/95f6701c22073478af5f7e8f88aaf8b5.png)
 
 Keras Gitter 集团
 
@@ -65,7 +65,7 @@ Keras Gitter 集团
 
 ## 4\. StackOverflow 上的 Keras 标记
 
-![Keras tag on StackOverflow](img/30e6e1be6cd09de3ce9d725b9ca33188.jpg)
+![Keras tag on StackOverflow](img/30e6e1be6cd09de3ce9d725b9ca33188.png)
 
 StackOverflow 上的 Keras 标记
 
@@ -79,7 +79,7 @@ StackOverflow 是一个致力于编程的问答网站。
 
 ## 5.交叉验证的 Keras 标签
 
-![Keras tag on CrossValidated](img/6074ebf72c384434cedd2411d8a7f962.jpg)
+![Keras tag on CrossValidated](img/6074ebf72c384434cedd2411d8a7f962.png)
 
 交叉验证的 Keras 标签
 
@@ -93,7 +93,7 @@ CrossValidated 是一个致力于机器学习的问答网站。
 
 ## 6.数据科学上的 Keras 标签
 
-![Keras tag on DataScience Stack Exchange](img/e0d34ef7b223c8edb1e2ec490aa2c563.jpg)
+![Keras tag on DataScience Stack Exchange](img/e0d34ef7b223c8edb1e2ec490aa2c563.png)
 
 数据科学堆栈交换中的 Keras 标记
 
@@ -109,7 +109,7 @@ CrossValidated 是一个致力于机器学习的问答网站。
 
 ## 7\. Quora 上的 Keras 主题
 
-![Keras topic on Quora](img/1f56d629c36a38157a077936baca1aee.jpg)
+![Keras topic on Quora](img/1f56d629c36a38157a077936baca1aee.png)
 
 关于 Quora 的 Keras 主题
 
@@ -125,7 +125,7 @@ Quora 是一个大型的通用问答网站。
 
 ## 8\. Keras Github 问题
 
-![Keras Github Issues](img/f1e85b455ad088df5051e012c2c57db8.jpg)
+![Keras Github Issues](img/f1e85b455ad088df5051e012c2c57db8.png)
 
 Keras Github 问题
 
@@ -139,7 +139,7 @@ GitHub 提供了一个基本的问题管理系统，Keras 项目报告了很多�
 
 ## 9\. Keras 在 Twitter 上
 
-![Keras hash tag on Twitter](img/dcf7adb1cfb7d2e4d2acfe7acb62f171.jpg)
+![Keras hash tag on Twitter](img/dcf7adb1cfb7d2e4d2acfe7acb62f171.png)
 
 Twitter 上的 Keras 哈希标签
 

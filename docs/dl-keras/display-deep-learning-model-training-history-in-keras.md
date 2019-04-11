@@ -13,7 +13,7 @@ Keras 是一个功能强大的 Python 库，它提供了一个干净的界面来
 *   **2017 年 3 月更新：**更新了 Keras 2.0.2，TensorFlow 1.0.1 和 Theano 0.9.0 **的示例。**
 *   **更新 March / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
 
-![Display Deep Learning Model Training History in Keras](img/8f6199089c1bc957ea5e0a9d478c098a.jpg)
+![Display Deep Learning Model Training History in Keras](img/8f6199089c1bc957ea5e0a9d478c098a.png)
 
 在 Keras 中展示深度学习模型训练历史
 照片由 [Gordon Robertson](https://www.flickr.com/photos/gordon_robertson/5620659988/) 拍摄，保留一些权利。
@@ -107,13 +107,13 @@ plt.show()
 
 从准确度的图表中我们可以看出，模型可能会受到更多的训练，因为两个数据集的准确度趋势在最后几个时期仍在上升。我们还可以看到该模型尚未过度学习训练数据集，在两个数据集上显示出相似的技能。
 
-![Plot of Model Accuracy on Train and Validation Datasets](img/aa735153796f8cda098d2fe7fb675e75.jpg)
+![Plot of Model Accuracy on Train and Validation Datasets](img/aa735153796f8cda098d2fe7fb675e75.png)
 
 列车和验证数据集的模型精度图
 
 从损失图中，我们可以看到该模型在列车和验证数据集上都具有可比性（标记为测试）。如果这些平行的地块开始一致地离开，那么可能是在早期时期停止训练的迹象。
 
-![Plot of Model Loss on Training and Validation Datasets](img/429db1e26cf59719f9b941d5e8a7b919.jpg)
+![Plot of Model Loss on Training and Validation Datasets](img/429db1e26cf59719f9b941d5e8a7b919.png)
 
 关于训练和验证数据集的模型损失情节
 

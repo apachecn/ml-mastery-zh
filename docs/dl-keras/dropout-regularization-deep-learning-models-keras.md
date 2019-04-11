@@ -18,7 +18,7 @@
 *   **2016 年 10 月更新**：更新了 Keras 1.1.0，TensorFlow 0.10.0 和 scikit-learn v0.18 的示例。
 *   **2017 年 3 月更新**：更新了 Keras 2.0.2，TensorFlow 1.0.1 和 Theano 0.9.0 的示例。
 
-![Dropout Regularization in Deep Learning Models With Keras](img/79c8df17f76c38e054a8760b935e6ed9.jpg)
+![Dropout Regularization in Deep Learning Models With Keras](img/79c8df17f76c38e054a8760b935e6ed9.png)
 
 使用 Keras 的深度学习模型中的dropout正规化
 照片由 [Trekking Rinjani](https://www.flickr.com/photos/trekkingrinjani/4930552641/) ，保留一些权利。

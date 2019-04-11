@@ -22,7 +22,7 @@
 *   **2017 年 9 月更新**：更新了使用 Keras 2“epochs”代替 Keras 1“nb_epochs”的示例。
 *   **更新 March / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
 
-![How to Grid Search Hyperparameters for Deep Learning Models in Python With Keras](img/4ae90ba8e51222dd47048dad32a96128.jpg)
+![How to Grid Search Hyperparameters for Deep Learning Models in Python With Keras](img/4ae90ba8e51222dd47048dad32a96128.png)
 
 如何使用 Keras 网格搜索 Python 中深度学习模型的超参数
 照片由 [3V Photo](https://www.flickr.com/photos/107439982@N02/10635372184/) ，保留一些权利。

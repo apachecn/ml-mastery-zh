@@ -12,7 +12,7 @@
 
 让我们潜入。
 
-![What is Deep Learning?](img/17428dfdb9702ab6ce021befb3d7b812.jpg)
+![What is Deep Learning?](img/17428dfdb9702ab6ce021befb3d7b812.png)
 
 什么是深度学习？
 [Kiran Foster](https://www.flickr.com/photos/rueful/7885846128/) 的照片，保留一些权利。
@@ -45,7 +45,7 @@
 
 他在幻灯片中提供了一个漂亮的卡通片：
 
-![Why Deep Learning?](img/7e971b08f1a9d6b073c9659bc13010e5.jpg)
+![Why Deep Learning?](img/7e971b08f1a9d6b073c9659bc13010e5.png)
 
 为何深度学习？
 滑动 [Andrew Ng](http://www.slideshare.net/ExtractConf) ，保留所有权利。
@@ -68,7 +68,7 @@
 
 他已经多次发表过这个演讲，并且在[改进的幻灯片中为同一个演讲](http://static.googleusercontent.com/media/research.google.com/en//people/jeff/BayLearn2015.pdf)，他强调了神经网络的可扩展性，表明随着更多的数据和更大的模型，结果会变得更好更多计算训练。
 
-![Results Get Better With More Data, Larger Models, More Compute](img/f12c1bb681a84a2372eacda56b1aeadc.jpg)
+![Results Get Better With More Data, Larger Models, More Compute](img/f12c1bb681a84a2372eacda56b1aeadc.png)
 
 结果更好，更多数据，更大型号，更多计算
 滑动 [Jeff Dean](http://static.googleusercontent.com/media/research.google.com/en//people/jeff/BayLearn2015.pdf) ，保留所有权利。
@@ -128,7 +128,7 @@
 
 皇家学会谈话中对深度学习的描述非常反向传播，正如您所期望的那样。有趣的是，他提出了为什么反向传播（读“深度学习”）在上世纪 90 年代没有起飞的 4 个原因。前两点与安德鲁·吴（Andrew Ng）的评论相符，关于数据集太小而计算机太慢。
 
-![What Was Actually Wrong With Backpropagation in 1986?](img/fba7c01fd78761e808c4f093eff4ccd1.jpg)
+![What Was Actually Wrong With Backpropagation in 1986?](img/fba7c01fd78761e808c4f093eff4ccd1.png)
 
 1986 年背向传播实际上是错误的？
 滑动 [Geoff Hinton](https://www.youtube.com/watch?v=VhmE_UXDOGs) ，保留所有权利。
@@ -145,7 +145,7 @@
 
 > 深度学习[是] ...所有可训练的模块管道。 ......因为在识别一个物体的过程中有多个阶段，所有这些阶段都是训练的一部分“
 
-![Deep Learning = Learning Hierarchical Representations](img/662da48b47adc3aaeccc61fa6245b2a0.jpg)
+![Deep Learning = Learning Hierarchical Representations](img/662da48b47adc3aaeccc61fa6245b2a0.png)
 
 深度学习=学习等级表示
 滑动 [Yann LeCun](https://www.youtube.com/watch?v=Qk4SqF9FT-M) ，保留所有权利。

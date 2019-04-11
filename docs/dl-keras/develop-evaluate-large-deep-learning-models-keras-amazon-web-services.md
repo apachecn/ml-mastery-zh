@@ -14,7 +14,7 @@ Keras 是一个 Python 深度学习库，可以轻松方便地访问功能强大
 *   **2017 年 3 月更新**：更新后使用新的 AMI，Keras 2.0.2 和 TensorFlow 1.0。
 *   **2002 年 2 月更新**：更新后使用新的“深度学习 AMI”并建议使用更快的“p3.2xlarge”实例类型。
 
-![Amazon Web Services](img/756b3d773ebebb0faba54b7006da3120.jpg)
+![Amazon Web Services](img/756b3d773ebebb0faba54b7006da3120.png)
 
 亚马逊网络服务
 摄影： [Andrew Mager](https://www.flickr.com/photos/mager/3183272133/) ，保留一些权利
@@ -40,13 +40,13 @@ Keras 是一个 Python 深度学习库，可以轻松方便地访问功能强大
 
 *   1.您可以通过[亚马逊网络服务门户](https://aws.amazon.com/)创建一个帐户，然后单击“登录到控制台”。从那里，您可以使用现有的亚马逊帐户登录或创建新帐户。
 
-![AWS Sign-in Button](img/827f7a153d004f35332b92fb724b1b92.jpg)
+![AWS Sign-in Button](img/827f7a153d004f35332b92fb724b1b92.png)
 
 AWS 登录按钮
 
 *   2.您需要提供您的详细信息以及亚马逊可以收取的有效信用卡。如果您已经是亚马逊客户并且已将您的信用卡存档，那么此过程会快得多。
 
-![AWS Sign-In Form](img/5bb2f88423069cc64dda533c02cb29d3.jpg)
+![AWS Sign-In Form](img/5bb2f88423069cc64dda533c02cb29d3.png)
 
 AWS 登录表单
 
@@ -62,7 +62,7 @@ AWS 登录表单
 
 *   1.如果您尚未登录 [AWS 控制台](https://console.aws.amazon.com/console/home)，请登录。
 
-![AWS Console](img/3aa11a0f106d6a9d26e5ff0f0928e835.jpg)
+![AWS Console](img/3aa11a0f106d6a9d26e5ff0f0928e835.png)
 
 AWS 控制台
 
@@ -71,20 +71,20 @@ AWS 控制台
 *   4.单击“启动实例”按钮。
 *   5.单击“社区 AMI”。 AMI 是亚马逊机器映像。它是服务器的冻结实例，您可以在新虚拟服务器上进行选择和实例化。
 
-![Community AMIs](img/55f115adb23074958d7ba0cc5e9d3806.jpg)
+![Community AMIs](img/55f115adb23074958d7ba0cc5e9d3806.png)
 
 社区 AMI
 
 *   6.在“搜索社区 AMI”搜索框中输入“**深度学习 AMI** ”，然后按 Enter 键。
 
-![Deep Learning AMI](img/945bc23e6b2a065508c17f058c6a7992.jpg)
+![Deep Learning AMI](img/945bc23e6b2a065508c17f058c6a7992.png)
 
 深度学习 AMI
 
 *   7.单击“选择”以在搜索结果中选择 AMI。
 *   8.现在您需要选择运行映像的硬件。向下滚动并选择“ **p3.2xlarge** ”硬件（我以前推荐 g2 或 [g3 实例](https://aws.amazon.com/ec2/instance-types/g3/)和 [p2 实例](https://aws.amazon.com/ec2/instance-types/p2/)，但 [p3 实例](https://aws.amazon.com/ec2/instance-types/p3/)更新更快。这包括一个 Tesla V100 GPU，我们可以用它来显着提高我们模型的训练速度。它还包括 8 个 CPU 内核，61GB 内存和 16GB GPU 内存。注意：使用此实例将花费约 3 美元/小时。
 
-![p3.2xlarge EC2 Instance](img/a56adc566715868c4b9c5b56941c5a53.jpg)
+![p3.2xlarge EC2 Instance](img/a56adc566715868c4b9c5b56941c5a53.png)
 
 p3.2xlarge EC2 实例
 
@@ -94,7 +94,7 @@ p3.2xlarge EC2 实例
     *   如果您之前使用过 EC2，则选择“选择现有密钥对”并从列表中选择密钥对。然后检查“我”确认......“。
     *   如果您没有密钥对，请选择“创建新密钥对”选项并输入“密钥对名称”，例如 keras-keypair。单击“下载密钥对”按钮。
 
-![Select Your Key Pair](img/01f3d67c5792b6695bbc5759d32f9ad4.jpg)
+![Select Your Key Pair](img/01f3d67c5792b6695bbc5759d32f9ad4.png)
 
 选择您的密钥对
 
@@ -109,7 +109,7 @@ chmod 600 keras-aws-keypair.pem
 *   14.单击“启动实例”。如果这是您第一次使用 AWS，亚马逊可能必须验证您的请求，这可能需要长达 2 个小时（通常只需几分钟）。
 *   15.单击“查看实例”以查看实例的状态。
 
-![Deep Learning AMI Status](img/bf480c56be39c466c39ef7c081ee2e4f.jpg)
+![Deep Learning AMI Status](img/bf480c56be39c466c39ef7c081ee2e4f.png)
 
 深度学习 AMI 状态
 
@@ -131,7 +131,7 @@ ssh -i keras-aws-keypair.pem ec2-user@54.186.97.77
 
 您现在已登录到您的服务器。
 
-![Terminal Login to Deep Learning AMI](img/e2e01130306ad5b55ef570cb81af36ab.jpg)
+![Terminal Login to Deep Learning AMI](img/e2e01130306ad5b55ef570cb81af36ab.png)
 
 终端登录深度学习 AMI
 
@@ -169,13 +169,13 @@ exit
 *   3.单击 EC2。
 *   4.单击左侧菜单中的“Instances”。
 
-![Review Your List of Running Instances](img/1d019ff799ebac1cbdf3559f9ffaba1e.jpg)
+![Review Your List of Running Instances](img/1d019ff799ebac1cbdf3559f9ffaba1e.png)
 
 查看运行实例列表
 
 *   5.从列表中选择正在运行的实例（如果您只有一个正在运行的实例，则可能已选中该实例）。
 
-![Select Your Running AWS Instance](img/b30037d88d3bce9c780e5eae957be293.jpg)
+![Select Your Running AWS Instance](img/b30037d88d3bce9c780e5eae957be293.png)
 
 选择您正在运行的 AWS 实例
 

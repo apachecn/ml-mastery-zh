@@ -20,7 +20,7 @@
 
 让我们开始吧。
 
-![How to Run Deep Learning Experiments on a Linux Server](img/5b3d95a2ac65cd8206b3a11433959297.jpg)
+![How to Run Deep Learning Experiments on a Linux Server](img/5b3d95a2ac65cd8206b3a11433959297.png)
 
 如何在 Linux 服务器上运行深度学习实验
 [Patrik Nygren](https://www.flickr.com/photos/lattefarsan/10538489333/) 的照片，保留一些权利。

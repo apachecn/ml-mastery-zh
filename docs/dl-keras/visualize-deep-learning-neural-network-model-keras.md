@@ -14,7 +14,7 @@ Keras Python 深度学习库提供了可视化和更好地理解您的神经网�
 
 让我们开始吧。
 
-![How to Visualize a Deep Learning Neural Network Model in Keras](img/ae4bbe3728d2ae14a8486fd00fc87a8b.jpg)
+![How to Visualize a Deep Learning Neural Network Model in Keras](img/ae4bbe3728d2ae14a8486fd00fc87a8b.png)
 
 如何在 Keras 中可视化深度学习神经网络模型
 照片由 [Ed Dunens](https://www.flickr.com/photos/blachswan/14990404869/) ，保留一些权利。
@@ -121,7 +121,7 @@ plot_model(model, to_file='model_plot.png', show_shapes=True, show_layer_names=T
 
 运行该示例将创建文件 _model_plot.png_ ，其中包含已创建模型的图。
 
-![Plot of Neural Network Model Graph](img/cd2ea0cb6ea3f16f73d52c1580d22310.jpg)
+![Plot of Neural Network Model Graph](img/cd2ea0cb6ea3f16f73d52c1580d22310.png)
 
 神经网络模型图的绘制
 

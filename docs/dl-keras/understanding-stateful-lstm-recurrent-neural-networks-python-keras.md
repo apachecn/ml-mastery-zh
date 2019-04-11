@@ -22,7 +22,7 @@
 *   **更新 Aug / 2018** ：更新了 Python 3 的示例，更新了有状态示例以获得 100％的准确性。
 *   **更新 Mar / 2019** ：修正了有状态示例中的拼写错误。
 
-![Understanding Stateful LSTM Recurrent Neural Networks in Python with Keras](img/37f8b123630baa4ea9ced3b21e1ebed6.jpg)
+![Understanding Stateful LSTM Recurrent Neural Networks in Python with Keras](img/37f8b123630baa4ea9ced3b21e1ebed6.png)
 
 使用 Keras 了解 Python 中的有状态 LSTM 回归神经网络
 [Martin Abegglen](https://www.flickr.com/photos/twicepix/7923674788/) 的照片，保留一些权利。

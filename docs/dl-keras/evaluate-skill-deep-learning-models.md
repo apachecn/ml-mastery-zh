@@ -16,7 +16,7 @@
 
 让我们开始吧。
 
-![How to Evaluate the Skill of Deep Learning Models](img/8e1689ec640a31d8358af77078ac6bfb.jpg)
+![How to Evaluate the Skill of Deep Learning Models](img/8e1689ec640a31d8358af77078ac6bfb.png)
 
 如何评估深度学习模型的技巧
 照片由 [Allagash Brewing](https://www.flickr.com/photos/allagashbrewing/14612890354/) ，保留一些权利。

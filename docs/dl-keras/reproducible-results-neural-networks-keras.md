@@ -14,7 +14,7 @@
 
 让我们开始吧。
 
-![How to Get Reproducible Results from Neural Networks with Keras](img/7c82a23fe9ca5ce16ae054ff7260f3f0.jpg)
+![How to Get Reproducible Results from Neural Networks with Keras](img/7c82a23fe9ca5ce16ae054ff7260f3f0.png)
 
 如何从 Keras 的神经网络获得可重现的结果
 照片由 [Samuel John](https://www.flickr.com/photos/samueljohn/6129216625/) ，保留一些权利。

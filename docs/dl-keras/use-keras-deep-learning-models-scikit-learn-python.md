@@ -19,7 +19,7 @@ Keras 是用于研究和开发的 Python 中最受欢迎的深度学习库之一
 *   **2017 年 3 月更新**：更新了 Keras 2.0.2，TensorFlow 1.0.1 和 Theano 0.9.0 的示例。
 *   **更新 Mar / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
 
-![Use Keras Deep Learning Models with Scikit-Learn in Python](img/7a15249820eaff950ac0e36a690b5b32.jpg)
+![Use Keras Deep Learning Models with Scikit-Learn in Python](img/7a15249820eaff950ac0e36a690b5b32.png)
 
 使用 Keras 深度学习模型与 Scikit-Learn 在 Python
 照片由 [Alan Levine](https://www.flickr.com/photos/cogdog/7519589420/) ，保留一些权利。

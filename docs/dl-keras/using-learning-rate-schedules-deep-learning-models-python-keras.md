@@ -17,7 +17,7 @@
 
 *   **2017 年 3 月更新**：更新了 Keras 2.0.2，TensorFlow 1.0.1 和 Theano 0.9.0 的示例。
 
-![Using Learning Rate Schedules for Deep Learning Models in Python with Keras](img/6d16e08f6dc1ca8376aec45e7f10e5ac.jpg)
+![Using Learning Rate Schedules for Deep Learning Models in Python with Keras](img/6d16e08f6dc1ca8376aec45e7f10e5ac.png)
 
 使用 Keras
 在 Python 中使用深度学习模型的学习速率计划[哥伦比亚 GSAPP](https://www.flickr.com/photos/gsapponline/17050523800/) ，保留一些权利。
@@ -71,7 +71,7 @@ Epoch	Learning Rate
 
 将其延伸到 100 个时期将产生以下学习率（y 轴）与时期（x 轴）的关系图：
 
-![Time-Based Learning Rate Schedule](img/81ba8599de669cbdd390ffde16096c83.jpg)
+![Time-Based Learning Rate Schedule](img/81ba8599de669cbdd390ffde16096c83.png)
 
 基于时间的学习费率表
 
@@ -159,7 +159,7 @@ Epoch 50/50
 
 如果我们将此示例的学习率绘制到 100 个时期，您将得到下图，显示学习率（y 轴）与时期（x 轴）。
 
-![Drop Based Learning Rate Schedule](img/d9484ee640bb568aed750a19dbeb9547.jpg)
+![Drop Based Learning Rate Schedule](img/d9484ee640bb568aed750a19dbeb9547.png)
 
 基于丢弃的学习率计划
 

@@ -18,7 +18,7 @@
 
 让我们开始吧。
 
-![When to Use MLP, CNN, and RNN Neural Networks](img/070851788dabfc54104852fe22f56b44.jpg)
+![When to Use MLP, CNN, and RNN Neural Networks](img/070851788dabfc54104852fe22f56b44.png)
 
 何时使用 MLP，CNN 和 RNN 神经网络
 照片由 [PRODAVID S. FERRY III，DDS](https://www.flickr.com/photos/drdavidferry/15365735518/) ，保留一些权利。
@@ -63,7 +63,7 @@
 
 *   [多层感知器神经网络速成课程](https://machinelearningmastery.com/neural-networks-crash-course/)
 
-![Model of a Simple Network](img/98d0e7f8e58b0a5cb817d172e0256fe0.jpg)
+![Model of a Simple Network](img/98d0e7f8e58b0a5cb817d172e0256fe0.png)
 
 简单网络的模型
 

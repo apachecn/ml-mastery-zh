@@ -10,7 +10,7 @@
 
 *   **2017 年 3 月更新**：更新了 Keras 2.0.2，TensorFlow 1.0.1 和 Theano 0.9.0 的示例。
 
-![How To Build Multi-Layer Perceptron Neural Network Models with Keras](img/1ff32d002f02ee2ec7be1f308faffc6b.jpg)
+![How To Build Multi-Layer Perceptron Neural Network Models with Keras](img/1ff32d002f02ee2ec7be1f308faffc6b.png)
 
 如何使用 Keras 建立多层感知器神经网络模型
 照片由 [George Rex](https://www.flickr.com/photos/rogersg/13316350364/) ，保留一些权利。

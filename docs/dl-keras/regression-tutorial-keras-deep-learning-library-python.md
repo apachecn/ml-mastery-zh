@@ -20,7 +20,7 @@ Keras 是一个深度学习库，包含高效的数字库 Theano 和 TensorFlow�
 *   **更新 Mar / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
 *   **Update Apr / 2018** ：将 nb_epoch 参数更改为 epochs。
 
-![Regression Tutorial with Keras Deep Learning Library in Python](img/4ae1e83ece36ea618e1ec2f6cbbbeb1f.jpg)
+![Regression Tutorial with Keras Deep Learning Library in Python](img/4ae1e83ece36ea618e1ec2f6cbbbeb1f.png)
 
 使用 Python 中的 Keras 深度学习库的回归教程
 [Salim Fadhley](https://www.flickr.com/photos/salimfadhley/130295135/) 的照片，保留一些权利。

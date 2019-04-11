@@ -18,7 +18,7 @@ Keras 是一个深度学习的 Python 库，它包含了高效的数值库 Thean
 *   **2017 年 3 月更新**：更新了 Keras 2.0.2，TensorFlow 1.0.1 和 Theano 0.9.0 的示例。
 *   **2017 年 6 月更新**：更新了在输出层使用 softmax 激活，更大隐藏层，默认权重初始化的示例。
 
-![Multi-Class Classification Tutorial with the Keras Deep Learning Library](img/2dae7dc453b9ee9eecf2783612250927.jpg)
+![Multi-Class Classification Tutorial with the Keras Deep Learning Library](img/2dae7dc453b9ee9eecf2783612250927.png)
 
 Keras 深度学习库的多类分类教程
 [houroumono](https://www.flickr.com/photos/hourou/8922014724/) 的照片，保留一些权利。

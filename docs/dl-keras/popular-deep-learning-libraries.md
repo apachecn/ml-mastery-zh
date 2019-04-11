@@ -10,7 +10,7 @@
 
 让我们开始吧。
 
-![Popular Deep Learning Libraries](img/d901ddd6726290886da25ffca5932512.jpg)
+![Popular Deep Learning Libraries](img/d901ddd6726290886da25ffca5932512.png)
 
 流行的深度学习库
 照片由 [Nikki](https://www.flickr.com/photos/nikkis_pikkis/1112212508/) 拍摄，保留一些权利。

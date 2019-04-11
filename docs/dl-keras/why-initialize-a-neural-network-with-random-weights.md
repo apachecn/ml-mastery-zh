@@ -18,7 +18,7 @@
 
 让我们开始吧。
 
-![Why Initialize a Neural Network with Random Weights?](img/d767349f43cecc391f31806440729f12.jpg)
+![Why Initialize a Neural Network with Random Weights?](img/d767349f43cecc391f31806440729f12.png)
 
 为什么用随机权重初始化神经网络？
 照 [lwtt93](https://www.flickr.com/photos/37195641@N03/7086827121/) ，保留一些权利。

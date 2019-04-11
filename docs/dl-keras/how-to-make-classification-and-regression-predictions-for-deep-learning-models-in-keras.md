@@ -18,7 +18,7 @@
 
 让我们开始吧。
 
-![How to Make Classification and Regression Predictions for Deep Learning Models in Keras](img/f0f15aa8316dd7ee6c7b1361b8727f8a.jpg)
+![How to Make Classification and Regression Predictions for Deep Learning Models in Keras](img/f0f15aa8316dd7ee6c7b1361b8727f8a.png)
 
 如何对 Keras 中的深度学习模型进行分类和回归预测
 [mstk east](https://www.flickr.com/photos/120248737@N03/16306796118/) 的照片，保留一些权利。

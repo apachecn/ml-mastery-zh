@@ -14,7 +14,7 @@
 
 让我们开始吧。
 
-![Crash Course In Neural Networks](img/9cf44410774b0c5f0b4c55ecc97e2692.jpg)
+![Crash Course In Neural Networks](img/9cf44410774b0c5f0b4c55ecc97e2692.png)
 
 神经网络中的速成课程
 摄影： [Joe Stump](https://www.flickr.com/photos/joestump/2357729981/) ，保留一些权利。
@@ -46,7 +46,7 @@
 
 这些是具有加权输入信号并使用激活功能产生输出信号的简单计算单元。
 
-![Model of a Simple Neuron](img/498ab2d8740c6a44a78ade60a46c95a9.jpg)
+![Model of a Simple Neuron](img/498ab2d8740c6a44a78ade60a46c95a9.png)
 
 简单神经元的模型
 
@@ -80,7 +80,7 @@
 
 一行神经元称为层，一个网络可以有多个层。网络中神经元的体系结构通常称为网络拓扑。
 
-![Model of a Simple Network](img/efb0b72bb3c64da47744e0d5c7a8aeac.jpg)
+![Model of a Simple Network](img/efb0b72bb3c64da47744e0d5c7a8aeac.png)
 
 简单网络的模型
 

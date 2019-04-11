@@ -14,7 +14,7 @@
 
 我一直想写这篇文章一段时间。让我们开始吧。
 
-![Inspirational Applications of Deep Learning](img/e5ce13a85212886909aaee57125f4cab.jpg)
+![Inspirational Applications of Deep Learning](img/e5ce13a85212886909aaee57125f4cab.png)
 
 深度学习的鼓舞人心的应用
 照片由 [Nick Kenrick](https://www.flickr.com/photos/zedzap/12093300505/) 拍摄，保留一些权利。
@@ -56,7 +56,7 @@
 
 通常，该方法涉及使用非常大的卷积神经网络和监督层，其通过添加颜色来重建图像。
 
-![Colorization of Black and White Photographs](img/33d8cdc3cb4fecc654bce247b69af0bc.jpg)
+![Colorization of Black and White Photographs](img/33d8cdc3cb4fecc654bce247b69af0bc.png)
 
 黑白照片的着色
 图片取自 [Richard Zhang，Phillip Isola 和 Alexei A. Efros](http://richzhang.github.io/colorization/) 。
@@ -111,7 +111,7 @@
 
 正如您所料，卷积神经网络用于识别具有字母的图像以及字母在场景中的位置。识别后，可以将它们转换为文本，翻译并使用翻译后的文本重新创建图像。这通常被称为即时视觉翻译。
 
-![Instant Visual Translation](img/3e7ff435faae5d295db3318aa75ce44e.jpg)
+![Instant Visual Translation](img/3e7ff435faae5d295db3318aa75ce44e.png)
 
 即时视觉翻译
 即时视觉翻译示例，取自 [Google 博客](https://research.googleblog.com/2015/07/how-google-translate-squeezes-deep.html)。
@@ -134,13 +134,13 @@
 
 使用非常大的卷积神经网络已经在该问题的基准示例上实现了最先进的结果。 Alex Krizhevsky 等人在这个问题上取得了突破。结果出现了名为 AlexNet 的 ImageNet 分类问题。
 
-![Example of Object Classification](img/18af9b56f22eba68918a4ceaa17405a2.jpg)
+![Example of Object Classification](img/18af9b56f22eba68918a4ceaa17405a2.png)
 
 使用深度卷积神经网络从 [ImageNet 分类中获取的对象分类示例](http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf) 
 
 该任务的更复杂的变体称为物体检测涉及具体识别照片场景内的一个或多个物体并在它们周围画一个盒子。
 
-![Automatic Object Detection](img/c8df59efd05bb76c2e64afcaaa4b406e.jpg)
+![Automatic Object Detection](img/c8df59efd05bb76c2e64afcaaa4b406e.png)
 
 Photogaphs 中的物体检测示例
 取自 [Google 博客](https://research.googleblog.com/2014/09/building-deeper-understanding-of-images.html)。
@@ -166,7 +166,7 @@ Photogaphs 中的物体检测示例
 
 令人着迷的是，可以学习不同的风格，然后模仿。我很乐意看到这项工作与一些法医手写分析专业知识相结合。
 
-![Sample of Automatic Handwriting Generation](img/e3200de987f26f28e740ba476e06d3e3.jpg)
+![Sample of Automatic Handwriting Generation](img/e3200de987f26f28e740ba476e06d3e3.png)
 
 自动手写生成示例
 
@@ -195,7 +195,7 @@ Andrej Karpathy 在他关于该主题的热门博客文章中提供了许多例�
 *   Linux 源代码
 *   宝贝名字
 
-![Automatic Text Generation Example of Shakespeare](img/f2dd8ae07b918bba4062a5725937285e.jpg)
+![Automatic Text Generation Example of Shakespeare](img/f2dd8ae07b918bba4062a5725937285e.png)
 
 莎士比亚的自动文本生成示例
 摘自 [Andrej Karpathy 博客文章](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
@@ -222,7 +222,7 @@ Andrej Karpathy 在他关于该主题的热门博客文章中提供了许多例�
 
 通常，该系统涉及使用非常大的卷积神经网络用于照片中的物体检测，然后使用像 LSTM 那样的递归神经网络将标签变成连贯的句子。
 
-![Automatic Image Caption Generation](img/265192f5c88c8a78da52ecabd638aaa9.jpg)
+![Automatic Image Caption Generation](img/265192f5c88c8a78da52ecabd638aaa9.png)
 
 自动图像标题生成
 样本取自 [Andrej Karpathy，李飞飞](http://cs.stanford.edu/people/karpathy/deepimagesent/)
@@ -282,7 +282,7 @@ Andrej Karpathy 在他关于该主题的热门博客文章中提供了许多例�
 *   从粗略草图自动创建风格化图像。
     *   [神经涂鸦](https://github.com/alexjc/neural-doodle)
 
-![Automatically Create Styled Image From Sketch](img/a1a0554742400bb687dd331e6f95e77b.jpg)
+![Automatically Create Styled Image From Sketch](img/a1a0554742400bb687dd331e6f95e77b.png)
 
 从草图自动创建样式图像
 从 [NeuralDoodle](https://github.com/alexjc/neural-doodle) 拍摄图像

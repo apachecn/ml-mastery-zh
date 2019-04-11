@@ -18,7 +18,7 @@
 *   **2016 年 10 月更新**：更新了 Keras 1.1.0 和 TensorFlow 0.10.0 的示例。
 *   **2017 年 3 月更新**：更新了 Keras 2.0.2，TensorFlow 1.0.1 和 Theano 0.9.0 的示例。
 
-![Predict Sentiment From Movie Reviews Using Deep Learning](img/5c59c425196cb23cb43afa5a74345b1e.jpg)
+![Predict Sentiment From Movie Reviews Using Deep Learning](img/5c59c425196cb23cb43afa5a74345b1e.png)
 
 使用深度学习预测电影评论的情绪
 [SparkCBC](https://www.flickr.com/photos/25031050@N06/3407720762/) 的照片，保留一些权利。
@@ -125,7 +125,7 @@ Mean 234.76 words (172.911495)
 
 我们可以看到一个指数分布的盒子和胡须图，我们可以看到一个指数分布，我们可以覆盖分布的质量，剪切长度为 400 到 500 字。
 
-![Review Length in Words for IMDB Dataset](img/f73add12895695350fadc1995b8d77e9.jpg)
+![Review Length in Words for IMDB Dataset](img/f73add12895695350fadc1995b8d77e9.png)
 
 查看 IMDB 数据集的单词长度
 

@@ -58,7 +58,7 @@ pyplot.show()
 
 运行代码可创建 3×3 的照片。图像已经从 32×32 的小尺寸放大，但你可以清楚地看到卡车马和汽车。您还可以在一些强制为方形宽高比的图像中看到一些失真。
 
-![Small Sample of CIFAR-10 Images](img/def90f3b9b58bf30829a905ae7da3e0d.jpg)
+![Small Sample of CIFAR-10 Images](img/def90f3b9b58bf30829a905ae7da3e0d.png)
 
 CIFAR-10 图像的小样本
 

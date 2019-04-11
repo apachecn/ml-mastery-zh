@@ -24,7 +24,7 @@ _（我教这种方法并帮助超过 1,145 名开发人员
 
 让我们潜入。
 
-![What You Think You Know About Deep Learning Is A Lie](img/a88ebb815922dc1277b935534416294a.jpg)
+![What You Think You Know About Deep Learning Is A Lie](img/a88ebb815922dc1277b935534416294a.png)
 
 你认为你所知道的深度学习是一种谎言
 照片由 [Simon Matzinger](https://www.flickr.com/photos/simonmatzinger/14598379523/) 拍摄，保留一些权利。
@@ -66,7 +66,7 @@ _（我教这种方法并帮助超过 1,145 名开发人员
 
 无论如何，你和其他人一样对待你。像一个学者。
 
-![Deep Learning Is NOT Just For The Academics](img/a6423d666cd09de47bcf0660509102c6.jpg)
+![Deep Learning Is NOT Just For The Academics](img/a6423d666cd09de47bcf0660509102c6.png)
 
 深度学习不仅仅适用于学者
 [Breyten Ernsting](https://www.flickr.com/photos/breyten/6424263261/) 的照片，保留一些权利。
@@ -172,7 +172,7 @@ _（我教这种方法并帮助超过 1,145 名开发人员
 
 学术教科书，视频课程和期刊论文是一个很好的资源。他们是思想的金矿。在开始深度学习时，它们不是开始的地方。
 
-![Deep Learning Is For Academics, The Lie](img/99ef23d86f8af9e053b6b74255fdab0f.jpg)
+![Deep Learning Is For Academics, The Lie](img/99ef23d86f8af9e053b6b74255fdab0f.png)
 
 深度学习是为学者，谎言
 照片由 [Quinn Dombrowski](https://www.flickr.com/photos/quinndombrowski/7622139752/) ，保留一些权利。

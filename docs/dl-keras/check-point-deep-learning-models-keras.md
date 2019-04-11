@@ -13,7 +13,7 @@
 *   **2017 年 3 月更新**：更新了 Keras 2.0.2，TensorFlow 1.0.1 和 Theano 0.9.0 的示例。
 *   **更新 March / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
 
-![How to Check-Point Deep Learning Models in Keras](img/299672cd2b9efa26d634b06c4df2e751.jpg)
+![How to Check-Point Deep Learning Models in Keras](img/299672cd2b9efa26d634b06c4df2e751.png)
 
 如何在 Keras 检查深度学习模型
 照片由 [saragoldsmith](https://www.flickr.com/photos/saragoldsmith/2353051153/) ，保留一些权利。

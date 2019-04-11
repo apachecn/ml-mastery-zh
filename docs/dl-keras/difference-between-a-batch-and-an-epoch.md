@@ -16,7 +16,7 @@
 
 让我们开始吧。
 
-![What is the Difference Between a Batch and an Epoch in a Neural Network?](img/1f3275bfb5407176028269720f3a11da.jpg)
+![What is the Difference Between a Batch and an Epoch in a Neural Network?](img/1f3275bfb5407176028269720f3a11da.png)
 
 神经网络中批处理和历元之间的区别是什么？
 [Graham Cook](https://www.flickr.com/photos/grazza123/9754438586/) 的照片，保留一些权利。

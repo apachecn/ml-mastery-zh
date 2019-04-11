@@ -15,7 +15,7 @@
 
 让我们开始吧。
 
-![Crash Course in Convolutional Neural Networks for Machine Learning](img/28a944c830ffc6a1fd896c1df6c953e5.jpg)
+![Crash Course in Convolutional Neural Networks for Machine Learning](img/28a944c830ffc6a1fd896c1df6c953e5.png)
 
 用于机器学习的卷积神经网络的崩溃课程
 照片由 [Bryan Ledgard](https://www.flickr.com/photos/ledgard/7772964384/) ，保留一些权利。

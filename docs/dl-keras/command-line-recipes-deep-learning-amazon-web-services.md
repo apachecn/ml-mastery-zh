@@ -23,7 +23,7 @@
 **你有在 EC2 上运行模型的任何其他提示，技巧或喜欢的命令吗？**
 请在下面的评论中告诉我。
 
-![10 Command Line Recipes for Deep Learning on Amazon Web Services](img/2ff0956a0537ec5bd319693e3ac5b79a.jpg)
+![10 Command Line Recipes for Deep Learning on Amazon Web Services](img/2ff0956a0537ec5bd319693e3ac5b79a.png)
 
 10 亚马逊网络服务深度学习命令行方案
 [chascar](https://www.flickr.com/photos/chascar/6480093119/) 的照片，保留一些权利。

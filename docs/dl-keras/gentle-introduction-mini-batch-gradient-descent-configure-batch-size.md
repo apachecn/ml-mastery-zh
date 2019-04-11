@@ -18,7 +18,7 @@
 
 *   **Update Apr / 2018** ：添加了额外的参考，以支持批量大小为 32。
 
-![A Gentle Introduction to Mini-Batch Gradient Descent and How to Configure Batch Size](img/e95bf53e34f94fbb07da8860454b1e2a.jpg)
+![A Gentle Introduction to Mini-Batch Gradient Descent and How to Configure Batch Size](img/e95bf53e34f94fbb07da8860454b1e2a.png)
 
 小批量梯度下降和如何配置批量大小的温和介绍
 照片由 [Brian Smithson](https://www.flickr.com/photos/smithser/6269720226/) ，保留一些权利。
