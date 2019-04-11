@@ -19,11 +19,11 @@ Theano 是一个根据 BSD 许可发布的开源项目，由加拿大魁北克�
 
 在它的核心 Theano 是 Python 中数学表达式的编译器。它知道如何使用您的结构并将它们转换为非常有效的代码，使用 NumPy，高效的本机库（如 [BLAS](http://www.netlib.org/blas/) 和本机代码（C ++））在 CPU 或 GPU 上尽可能快地运行。
 
-它使用大量巧妙的代码优化来尽可能地从硬件中获取尽可能多的性能。如果你深入研究代码中数学优化的细节，[请查看这个有趣的列表](http://deeplearning.net/software/theano/optimizations.html#optimizations)。
+它使用大量巧妙的代码优化来尽可能地从硬件中获取尽可能多的表现。如果你深入研究代码中数学优化的细节，[请查看这个有趣的列表](http://deeplearning.net/software/theano/optimizations.html#optimizations)。
 
 Theano 表达式的实际语法是象征性的，这可能不适合初学者用于正常的软件开发。具体而言，表达式在抽象意义上定义，编译后实际用于进行计算。
 
-它专门用于处理深度学习中使用的大型神经网络算法所需的计算类型。它是同类中最早的图书馆之一（2007 年开始开发），被认为是深度学习研究和开发的行业标准。
+它专门用于处理深度学习中使用的大型神经网络算法所需的计算类型。它是同类中最早的库之一（2007 年开始开发），被认为是深度学习研究和开发的行业标准。
 
 ## 如何安装 Theano
 
@@ -112,7 +112,7 @@ assert 4.0 == f(1.5, 2.5)
 *   [Theano 官方主页](http://deeplearning.net/software/theano/)
 *   [Theano GitHub 存储库](https://github.com/Theano/Theano/)
 *   [Theano：Python 中的 CPU 和 GPU 数学编译器](http://www.iro.umontreal.ca/~lisa/pointeurs/theano_scipy2010.pdf)（2010）（PDF）
-*   [在 Theano 上建立的图书馆名单](https://github.com/Theano/Theano/wiki/Related-projects)
+*   [在 Theano 上建立的库名单](https://github.com/Theano/Theano/wiki/Related-projects)
 *   [Theano 配置选项列表](http://deeplearning.net/software/theano/library/config.html)
 
 ### Theano 和深度学习教程

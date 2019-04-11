@@ -1,4 +1,4 @@
-# 10 个用于 Amazon Web Services 深度学习的命令行配方
+# 10 个用于 Amazon Web Services 深度学习的命令行秘籍
 
 > 原文： [https://machinelearningmastery.com/command-line-recipes-deep-learning-amazon-web-services/](https://machinelearningmastery.com/command-line-recipes-deep-learning-amazon-web-services/)
 
@@ -14,7 +14,7 @@
 
 *   如何将数据复制到 EC2 实例和从 EC2 实例复制数据。
 *   如何将脚本设置为安全地运行数天，数周或数月。
-*   如何监控进程，系统和 GPU 性能。
+*   如何监控进程，系统和 GPU 表现。
 
 让我们开始吧。
 
@@ -140,9 +140,9 @@ watch "tail script.py.log"
 你对此有更多了解吗？
 请在下面的评论中告诉我。
 
-## 6.监视服务器上的系统和进程性能
+## 6.监视服务器上的系统和进程表现
 
-监控 EC2 系统性能是个好主意。特别是你正在使用和剩下的 RAM 量。
+监控 EC2 系统表现是个好主意。特别是你正在使用和剩下的 RAM 量。
 
 您可以使用将每隔几秒更新一次的 top 命令来执行此操作。
 
@@ -156,9 +156,9 @@ top -M
 top -p PID -M
 ```
 
-## 7.监控服务器上的 GPU 性能
+## 7.监控服务器上的 GPU 表现
 
-密切关注 GPU 性能是一个好主意。
+密切关注 GPU 表现是一个好主意。
 
 如果您计划并行运行多个脚本并使用 GPU RAM，请再次关注运行 GPU 的 GPU 利用率。
 
@@ -228,7 +228,7 @@ scp -i ~/.ssh/aws-keypair.pem ec2-user@54.218.86.47:~/*.png .
 
 *   如何将数据复制到 EC2 实例和从 EC2 实例复制数据。
 *   如何将脚本设置为安全地运行数天，数周或数月。
-*   如何监控进程，系统和 GPU 性能。
+*   如何监控进程，系统和 GPU 表现。
 
 你有任何问题吗？
 在下面的评论中提出您的问题，我会尽力回答。

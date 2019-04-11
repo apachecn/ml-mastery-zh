@@ -231,7 +231,7 @@ YouTube 播放列表的文件名称很差，而且有些缺少讲座。 2016 年
 *   [第 9 讲可视化，深度梦想，神经风格，对抗性实例](https://www.youtube.com/watch?v=ASdbG_7KMhc&index=9&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
 *   [讲座 10 回归神经网络，图像字幕，LSTM](https://www.youtube.com/watch?v=R1rXkuJ5w20&index=10&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
 *   [第 11 讲实践中的讲座](https://www.youtube.com/watch?v=G3m6HusAJTg&index=11&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
-*   [第 12 讲深度学习图书馆](https://www.youtube.com/watch?v=b6RntuTiKQo&index=12&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
+*   [第 12 讲深度学习库](https://www.youtube.com/watch?v=b6RntuTiKQo&index=12&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
 *   [第 13 讲分段，软注意，空间变换器](https://www.youtube.com/watch?v=yCrkzVFsEX0&index=13&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
 *   [讲座 14 视频和无监督学习](https://www.youtube.com/watch?v=k645B_f4a6Y&index=14&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
 *   [第 15 讲由 Jeff Dean 邀请演讲](https://www.youtube.com/watch?v=qtm4JgbxuEc&index=15&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)

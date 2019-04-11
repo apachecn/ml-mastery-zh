@@ -1,4 +1,4 @@
-# 评估 Keras 中深度学习模型的性能
+# 评估 Keras 中深度学习模型的表现
 
 > 原文： [https://machinelearningmastery.com/evaluate-performance-deep-learning-models-keras/](https://machinelearningmastery.com/evaluate-performance-deep-learning-models-keras/)
 
@@ -6,9 +6,9 @@ Keras 是一个易于使用且功能强大的 Python 库，用于深度学习。
 
 在设计和配置深度学习模型时，需要做出很多决定。大多数决策必须通过试验和错误凭经验解决，并根据实际数据进行评估。
 
-因此，有一种强大的方法来评估神经网络和深度学习模型的性能至关重要。
+因此，有一种强大的方法来评估神经网络和深度学习模型的表现至关重要。
 
-在这篇文章中，您将发现使用 Keras 评估模型性能的几种方法。
+在这篇文章中，您将发现使用 Keras 评估模型表现的几种方法。
 
 让我们开始吧。
 
@@ -18,7 +18,7 @@ Keras 是一个易于使用且功能强大的 Python 库，用于深度学习。
 
 ![Evaluate the Performance Of Deep Learning Models in Keras](img/e1c3b3955f7f82b7e5b64209a3825ab4.jpg)
 
-评估 Keras 中深度学习模型的性能
+评估 Keras 中深度学习模型的表现
 照片由 [Thomas Leuthard](https://www.flickr.com/photos/thomasleuthard/7273077758/) 拍摄，保留一些权利。
 
 ## 根据经验评估网络配置
@@ -31,7 +31,7 @@ Keras 是一个易于使用且功能强大的 Python 库，用于深度学习。
 
 深度学习通常用于具有非常大的数据集的问题。那就是数万或数十万个实例。
 
-因此，您需要拥有一个强大的测试工具，可以让您估计给定配置在看不见的数据上的性能，并可靠地将性能与其他配置进行比较。
+因此，您需要拥有一个强大的测试工具，可以让您估计给定配置在看不见的数据上的表现，并可靠地将表现与其他配置进行比较。
 
 ## 数据拆分
 
@@ -46,13 +46,13 @@ Keras 提供了两种方便的方式来评估您的深度学习算法：
 
 ### 使用自动验证数据集
 
-Keras 可以将训练数据的一部分分离为验证数据集，并在每个时期评估模型在该验证数据集上的性能。
+Keras 可以将训练数据的一部分分离为验证数据集，并在每个时期评估模型在该验证数据集上的表现。
 
 您可以通过将 **fit** （）函数上的 **validation_split** 参数设置为训练数据集大小的百分比来完成此操作。
 
-例如，20％的合理值可能是 0.2 或 0.33，或者为了验证而保留的培训数据的 33％。
+例如，20％的合理值可能是 0.2 或 0.33，或者为了验证而保留的训练数据的 33％。
 
-下面的示例演示了如何在小二进制分类问题上使用自动验证数据集。本文中的所有实例均使用[皮马印第安人糖尿病数据集](http://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)。您可以[从 UCI 机器学习库下载](http://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/pima-indians-diabetes.data)，并使用文件名 **pima-indians-diabetes.csv** 将数据文件保存到当前工作目录中（更新：[从这里](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
+下面的示例演示了如何在小二元分类问题上使用自动验证数据集。本文中的所有实例均使用[皮马印第安人糖尿病数据集](http://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)。您可以[从 UCI 机器学习库下载](http://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/pima-indians-diabetes.data)，并使用文件名 **pima-indians-diabetes.csv** 将数据文件保存到当前工作目录中（更新：[从这里](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
 
 ```py
 # MLP with automatic validation set
@@ -99,7 +99,7 @@ Epoch 150/150
 
 Keras 还允许您手动指定在训练期间用于验证的数据集。
 
-在这个例子中，我们使用 Python [scikit-learn](http://scikit-learn.org/stable/index.html) 机器学习库中的方便 [train_test_split](http://scikit-learn.org/stable/modules/generated/sklearn.cross_validation.train_test_split.html) （）函数将我们的数据分成训练和测试数据集。我们使用 67％用于培训，剩余 33％用于验证。
+在这个例子中，我们使用 Python [scikit-learn](http://scikit-learn.org/stable/index.html) 机器学习库中的方便 [train_test_split](http://scikit-learn.org/stable/modules/generated/sklearn.cross_validation.train_test_split.html) （）函数将我们的数据分成训练和测试数据集。我们使用 67％用于训练，剩余 33％用于验证。
 
 可以通过 **validation_data** 参数将验证数据集指定给 Keras 中的 **fit** （）函数。它需要输入和输出数据集的元组。
 
@@ -152,17 +152,17 @@ Epoch 150/150
 
 机器学习模型评估的黄金标准是 [k 倍交叉验证](https://en.wikipedia.org/wiki/Cross-validation_(statistics))。
 
-它提供了对未见数据模型性能的可靠估计。它通过将训练数据集分成 k 个子集并在所有子集上轮流训练模型（除了一个被保持的外部）并在所保持的验证数据集上评估模型性能来实现这一点。重复该过程，直到所有子集都有机会成为保持的验证集。然后在所有创建的模型中对性能度量进行平均。
+它提供了对未见数据模型表现的可靠估计。它通过将训练数据集分成 k 个子集并在所有子集上轮流训练模型（除了一个被保持的外部）并在所保持的验证数据集上评估模型表现来实现这一点。重复该过程，直到所有子集都有机会成为保持的验证集。然后在所有创建的模型中对表现度量进行平均。
 
 由于计算费用较高，交叉验证通常不用于评估深度学习模型。例如，k 倍交叉验证通常使用 5 或 10 倍。因此，必须构建和评估 5 或 10 个模型，这大大增加了模型的评估时间。
 
-然而，当问题足够小或者你有足够的计算资源时，k-fold 交叉验证可以让你对模型的性能进行较少的偏差估计。
+然而，当问题足够小或者你有足够的计算资源时，k-fold 交叉验证可以让你对模型的表现进行较少的偏差估计。
 
 在下面的例子中，我们使用来自 [scikit-learn](http://scikit-learn.org/stable/index.html) Python 机器学习库的方便的 [StratifiedKFold](http://scikit-learn.org/stable/modules/generated/sklearn.cross_validation.StratifiedKFold.html) 类将训练数据集分成 10 倍。折叠是分层的，这意味着算法试图平衡每个折叠中每个类的实例数。
 
-该示例使用 10 个数据分割创建和评估 10 个模型，并收集所有分数。通过将 verbose = 0 传递给模型上的 **fit（）**和 **evaluate（）**函数来关闭每个纪元的详细输出。
+该示例使用 10 个数据分割创建和评估 10 个模型，并收集所有分数。通过将 verbose = 0 传递给模型上的 **fit（）**和 **evaluate（）**函数来关闭每个迭代的详细输出。
 
-为每个型号打印性能并将其存储。然后在运行结束时打印模型性能的平均值和标准偏差，以提供模型精度的稳健估计。
+为每个型号打印表现并将其存储。然后在运行结束时打印模型表现的平均值和标准偏差，以提供模型精度的稳健估计。
 
 ```py
 # MLP for Pima Indians Dataset with 10-fold cross validation
@@ -218,7 +218,7 @@ acc: 72.37%
 
 在这篇文章中，您发现了使用一种强大的方法来估计深度学习模型在看不见的数据上的表现的重要性。
 
-您发现了三种使用 Keras 库在 Python 中估计深度学习模型性能的方法：
+您发现了三种使用 Keras 库在 Python 中估计深度学习模型表现的方法：
 
 *   使用自动验证数据集。
 *   使用手动验证数据集。

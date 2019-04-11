@@ -51,7 +51,7 @@ Keras 中的 KerasClassifier 和 KerasRegressor 类接受一个参数 **build_fn
 
 我们通过 **build_fn** 参数将此函数名称传递给 KerasClassifier 类。我们还传递了 **nb_epoch = 150** 和 **batch_size = 10** 的其他参数。它们会自动捆绑并传递给 **fit（）**函数，该函数由 KerasClassifier 类在内部调用。
 
-在这个例子中，我们使用 scikit-learn [StratifiedKFold](http://scikit-learn.org/stable/modules/generated/sklearn.cross_validation.StratifiedKFold.html) 来执行 10 倍分层交叉验证。这是一种重采样技术，可以提供对机器学习模型在看不见的数据上的性能的可靠估计。
+在这个例子中，我们使用 scikit-learn [StratifiedKFold](http://scikit-learn.org/stable/modules/generated/sklearn.cross_validation.StratifiedKFold.html) 来执行 10 倍分层交叉验证。这是一种重采样技术，可以提供对机器学习模型在看不见的数据上的表现的可靠估计。
 
 我们使用 scikit-learn 函数 **cross_val_score（）**来使用交叉验证方案评估我们的模型并打印结果。
 
@@ -91,7 +91,7 @@ results = cross_val_score(model, X, Y, cv=kfold)
 print(results.mean())
 ```
 
-运行该示例显示每个纪元的模型技能。创建和评估总共 10 个模型，并显示最终的平均精度。
+运行该示例显示每个迭代的模型技能。创建和评估总共 10 个模型，并显示最终的平均精度。
 
 ```py
 0.646838691487
@@ -103,7 +103,7 @@ print(results.mean())
 
 在这个例子中，我们更进一步。在创建 KerasClassifier 包装器时，我们为 **build_fn** 参数指定的函数可以使用参数。我们可以使用这些参数来进一步自定义模型的构造。另外，我们知道我们可以为 **fit（）**函数提供参数。
 
-在此示例中，我们使用网格搜索来评估神经网络模型的不同配置，并报告提供最佳估计性能的组合。
+在此示例中，我们使用网格搜索来评估神经网络模型的不同配置，并报告提供最佳估计表现的组合。
 
 **create_model（）**函数被定义为采用两个参数 optimizer 和 init，两者都必须具有默认值。这将允许我们评估为我们的网络使用不同的优化算法和权重初始化方案的效果。
 
@@ -118,7 +118,7 @@ print(results.mean())
 
 这是很多模型和大量的计算。这不是一个你想要轻松使用的方案，因为它需要时间。您可以使用较小的数据子集设计小型实验，这些实验将在合理的时间内完成。在这种情况下，这是合理的，因为网络较小且数据集较小（少于 1000 个实例和 9 个属性）。
 
-最后，显示最佳模型的性能和配置组合，然后显示所有参数组合的性能。
+最后，显示最佳模型的表现和配置组合，然后显示所有参数组合的表现。
 
 ```py
 # MLP for Pima Indians Dataset with grid search via sklearn

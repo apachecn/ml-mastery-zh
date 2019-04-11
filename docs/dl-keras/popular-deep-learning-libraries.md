@@ -1,10 +1,10 @@
-# 流行的深度学习图书馆
+# 流行的深度学习库
 
 > 原文： [https://machinelearningmastery.com/popular-deep-learning-libraries/](https://machinelearningmastery.com/popular-deep-learning-libraries/)
 
 有很多深度学习库可供选择。
 
-哪些是值得学习的优秀专业图书馆，哪些是侧面项目，应该避免。很难分辨出来。
+哪些是值得学习的优秀专业库，哪些是侧面项目，应该避免。很难分辨出来。
 
 在这篇文章中，您将发现您应该考虑在自己的深度学习项目中学习和使用的顶级深度学习库。
 
@@ -12,7 +12,7 @@
 
 ![Popular Deep Learning Libraries](img/d901ddd6726290886da25ffca5932512.jpg)
 
-流行的深度学习图书馆
+流行的深度学习库
 照片由 [Nikki](https://www.flickr.com/photos/nikkis_pikkis/1112212508/) 拍摄，保留一些权利。
 
 ## 概观

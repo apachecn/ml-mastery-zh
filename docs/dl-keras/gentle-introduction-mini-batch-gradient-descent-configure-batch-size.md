@@ -1,4 +1,4 @@
-# 微型批量梯度下降的简要介绍以及如何配置批量大小
+# 小批量梯度下降的简要介绍以及如何配置批量大小
 
 > 原文： [https://machinelearningmastery.com/gentle-introduction-mini-batch-gradient-descent-configure-batch-size/](https://machinelearningmastery.com/gentle-introduction-mini-batch-gradient-descent-configure-batch-size/)
 
@@ -20,7 +20,7 @@
 
 ![A Gentle Introduction to Mini-Batch Gradient Descent and How to Configure Batch Size](img/e95bf53e34f94fbb07da8860454b1e2a.jpg)
 
-微型批量梯度下降和如何配置批量大小的温和介绍
+小批量梯度下降和如何配置批量大小的温和介绍
 照片由 [Brian Smithson](https://www.flickr.com/photos/smithser/6269720226/) ，保留一些权利。
 
 ## 教程概述
@@ -76,7 +76,7 @@ for i in n_epochs:
 
 #### 上升空间
 
-*   频繁更新可立即深入了解模型的性能和改进速度。
+*   频繁更新可立即深入了解模型的表现和改进速度。
 *   这种梯度下降的变体可能是最容易理解和实现的，特别是对于初学者。
 *   增加的模型更新频率可以更快地学习某些问题。
 *   噪声更新过程可以允许模型避免局部最小值（例如，早熟收敛）。
@@ -123,7 +123,7 @@ for i in n_epochs:
 #### 缺点
 
 *   小批量需要为学习算法配置额外的“小批量大小”超参数。
-*   错误信息必须在批量梯度下降等小批量培训示例中累积。
+*   错误信息必须在批量梯度下降等小批量训练示例中累积。
 
 ## 如何配置 Mini-Batch Gradient Descent
 
@@ -144,9 +144,9 @@ for i in n_epochs:
 
 **更新 2018** ：这是支持批量大小为 32 的另一篇论文，这里是引用（m 是批量大小）：
 
-> 所呈现的结果证实，对于给定的计算成本，在大范围的实验中使用小批量尺寸实现了最佳的训练稳定性和泛化性能。在所有情况下，已经获得了最佳结果，批量大小 m = 32 或更小，通常小到 m = 2 或 m = 4。
+> 所呈现的结果证实，对于给定的计算成本，在大范围的实验中使用小批量尺寸实现了最佳的训练稳定性和泛化表现。在所有情况下，已经获得了最佳结果，批量大小 m = 32 或更小，通常小到 m = 2 或 m = 4。
 
-- [重新审视深度神经网络的小批量培训](https://arxiv.org/abs/1804.07612)，2018 年。
+- [重新审视深度神经网络的小批量训练](https://arxiv.org/abs/1804.07612)，2018 年。
 
 **提示 2：在调整批量大小时，最好在不同批量大小的情况下查看模型验证错误与训练时间的学习曲线。**
 
@@ -170,8 +170,8 @@ for i in n_epochs:
 *   [维基百科上的随机梯度下降](https://en.wikipedia.org/wiki/Stochastic_gradient_descent)
 *   [维基百科上的在线机器学习](https://en.wikipedia.org/wiki/Online_machine_learning)
 *   [梯度下降优化算法概述](http://sebastianruder.com/optimizing-gradient-descent/index.html)
-*   [深层架构基于梯度的培训的实用建议](https://arxiv.org/abs/1206.5533)，2012
-*   [随机优化的高效小批量培训](http://www.cs.cmu.edu/~muli/file/minibatch_sgd.pdf)，2014 年
+*   [深层架构基于梯度的训练的实用建议](https://arxiv.org/abs/1206.5533)，2012
+*   [随机优化的高效小批量训练](http://www.cs.cmu.edu/~muli/file/minibatch_sgd.pdf)，2014 年
 *   [在深度学习中，为什么我们不使用整个训练集来计算梯度？ Quora 上的](https://www.quora.com/In-deep-learning-why-dont-we-use-the-whole-training-set-to-compute-the-gradient)
 *   [大规模机器学习的优化方法](https://arxiv.org/abs/1606.04838)，2016
 

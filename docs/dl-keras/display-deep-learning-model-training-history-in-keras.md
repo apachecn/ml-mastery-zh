@@ -1,4 +1,4 @@
-# 在 Keras 展示深度学习模式培训历史
+# 在 Keras 展示深度学习模式训练历史
 
 > 原文： [https://machinelearningmastery.com/display-deep-learning-model-training-history-in-keras/](https://machinelearningmastery.com/display-deep-learning-model-training-history-in-keras/)
 
@@ -6,7 +6,7 @@
 
 Keras 是一个功能强大的 Python 库，它提供了一个干净的界面来创建深度学习模型，并包含更技术性的 TensorFlow 和 Theano 后端。
 
-在本文中，您将了解如何在使用 Keras 进行 Python 培训期间查看和可视化深度学习模型的性能。
+在本文中，您将了解如何在使用 Keras 进行 Python 训练期间查看和可视化深度学习模型的表现。
 
 让我们开始吧。
 
@@ -15,14 +15,14 @@ Keras 是一个功能强大的 Python 库，它提供了一个干净的界面来
 
 ![Display Deep Learning Model Training History in Keras](img/8f6199089c1bc957ea5e0a9d478c098a.jpg)
 
-在 Keras 中展示深度学习模型培训历史
+在 Keras 中展示深度学习模型训练历史
 照片由 [Gordon Robertson](https://www.flickr.com/photos/gordon_robertson/5620659988/) 拍摄，保留一些权利。
 
-## Keras 中的访问模型培训历史
+## Keras 中的访问模型训练历史
 
 Keras 提供了在训练深度学习模型时注册回调的功能。
 
-训练所有深度学习模型时注册的默认回调之一是[历史回调](http://keras.io/callbacks/)。它记录每个时期的培训指标。这包括损失和准确性（对于分类问题）以及验证数据集的损失和准确性（如果已设置）。
+训练所有深度学习模型时注册的默认回调之一是[历史回调](http://keras.io/callbacks/)。它记录每个时期的训练指标。这包括损失和准确性（对于分类问题）以及验证数据集的损失和准确性（如果已设置）。
 
 历史对象从调用返回到用于训练模型的 fit（）函数返回。度量标准存储在返回对象的历史成员中的字典中。
 
@@ -49,7 +49,7 @@ print(history.history.keys())
 
 和更多。
 
-## 可视化 Keras 中的模型培训历史
+## 可视化 Keras 中的模型训练历史
 
 我们可以从收集的历史数据中创建绘图。
 
@@ -115,12 +115,12 @@ plt.show()
 
 ![Plot of Model Loss on Training and Validation Datasets](img/429db1e26cf59719f9b941d5e8a7b919.jpg)
 
-关于培训和验证数据集的模型损失情节
+关于训练和验证数据集的模型损失情节
 
 ## 摘要
 
-在这篇文章中，您发现了在深度学习模型培训过程中收集和检查指标的重要性。
+在这篇文章中，您发现了在深度学习模型训练过程中收集和检查指标的重要性。
 
-您了解了 Keras 中的历史回调以及它是如何从调用 fit（）函数返回以训练模型的。您学习了如何根据培训期间收集的历史数据创建绘图。
+您了解了 Keras 中的历史回调以及它是如何从调用 fit（）函数返回以训练模型的。您学习了如何根据训练期间收集的历史数据创建绘图。
 
 您对模特训练历史或这篇文章有任何疑问吗？在评论中提出您的问题，我会尽力回答。

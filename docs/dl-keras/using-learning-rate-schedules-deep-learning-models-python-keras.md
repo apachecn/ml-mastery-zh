@@ -4,7 +4,7 @@
 
 训练神经网络或大型深度学习模型是一项困难的优化任务。
 
-训练神经网络的经典算法称为[随机梯度下降](http://machinelearningmastery.com/gradient-descent-for-machine-learning/)。已经确定，通过使用在训练期间发生变化的学习速率，您可以在某些问题上实现更高的性能和更快的训练。
+训练神经网络的经典算法称为[随机梯度下降](http://machinelearningmastery.com/gradient-descent-for-machine-learning/)。已经确定，通过使用在训练期间发生变化的学习速率，您可以在某些问题上实现更高的表现和更快的训练。
 
 在这篇文章中，您将了解如何使用 Keras 深度学习库在 Python 中为神经网络模型使用不同的学习速率计划。
 
@@ -22,9 +22,9 @@
 使用 Keras
 在 Python 中使用深度学习模型的学习速率计划[哥伦比亚 GSAPP](https://www.flickr.com/photos/gsapponline/17050523800/) ，保留一些权利。
 
-## 培训模型的学习率表
+## 训练模型的学习率表
 
-调整随机梯度下降优化程序的学习速率可以提高性能并缩短培训时间。
+调整随机梯度下降优化程序的学习速率可以提高表现并缩短训练时间。
 
 有时这称为学习率退火或自适应学习率。在这里，我们将此方法称为学习速率计划，默认计划是使用恒定学习速率来更新每个训练时期的网络权重。
 
@@ -56,7 +56,7 @@ LearningRate = 0.1 * 1/(1 + 0.0 * 1)
 LearningRate = 0.1
 ```
 
-当指定衰减参数时，它将使学习速率从前一个纪元减少给定的固定量。
+当指定衰减参数时，它将使学习速率从前一个迭代减少给定的固定量。
 
 例如，如果我们使用 0.1 的初始学习率值和 0.001 的衰减，前 5 个时期将调整学习率如下：
 
@@ -165,7 +165,7 @@ Epoch 50/50
 
 在拟合模型时，我们可以使用 [LearningRateScheduler](http://keras.io/callbacks/) 回调在 Keras 中实现此功能。
 
-LearningRateScheduler 回调允许我们定义一个调用函数，该函数将纪元号作为参数，并返回用于随机梯度下降的学习速率。使用时，忽略随机梯度下降指定的学习率。
+LearningRateScheduler 回调允许我们定义一个调用函数，该函数将迭代号作为参数，并返回用于随机梯度下降的学习速率。使用时，忽略随机梯度下降指定的学习率。
 
 在下面的代码中，我们在 Ionosphere 数据集上的单个隐藏层网络之前使用相同的示例。定义了一个新的 step_decay（）函数来实现等式：
 
@@ -173,7 +173,7 @@ LearningRateScheduler 回调允许我们定义一个调用函数，该函数将�
 LearningRate = InitialLearningRate * DropRate^floor(Epoch / EpochDrop)
 ```
 
-其中，InitialLearningRate 是初始学习率，例如 0.1，DropRate 是每次更改学习率时修改的量，例如 0.5，Epoch 是当前的纪元号，EpochDrop 是改变学习率的频率，例如 10 。
+其中，InitialLearningRate 是初始学习率，例如 0.1，DropRate 是每次更改学习率时修改的量，例如 0.5，Epoch 是当前的迭代号，EpochDrop 是改变学习率的频率，例如 10 。
 
 请注意，我们将 SGD 类中的学习速率设置为 0，以清楚地表明它未被使用。不过，如果您想在此学习率计划中使用动量，则可以设置新元的动量项。
 

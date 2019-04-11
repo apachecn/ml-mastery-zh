@@ -1,12 +1,12 @@
-# 如何设置 Amazon AWS EC2 GPU 以培训 Keras 深度学习模型（分步）
+# 如何设置 Amazon AWS EC2 GPU 以训练 Keras 深度学习模型（分步）
 
 > 原文： [https://machinelearningmastery.com/develop-evaluate-large-deep-learning-models-keras-amazon-web-services/](https://machinelearningmastery.com/develop-evaluate-large-deep-learning-models-keras-amazon-web-services/)
 
 Keras 是一个 Python 深度学习库，可以轻松方便地访问功能强大的数据库 Theano 和 TensorFlow。
 
-大型深度学习模型需要大量的计算时间才能运行。您可以在 CPU 上运行它们，但可能需要数小时或数天才能获得结果。如果您可以访问桌面上的 GPU，则可以大大加快深度学习模型的培训时间。
+大型深度学习模型需要大量的计算时间才能运行。您可以在 CPU 上运行它们，但可能需要数小时或数天才能获得结果。如果您可以访问桌面上的 GPU，则可以大大加快深度学习模型的训练时间。
 
-在本文中，您将了解如何使用 Amazon Web Service（AWS）基础结构访问 GPU 以加速深度学习模型的培训。每小时不到 1 美元，通常便宜很多，您可以使用工作站或笔记本电脑上的这项服务。
+在本文中，您将了解如何使用 Amazon Web Service（AWS）基础结构访问 GPU 以加速深度学习模型的训练。每小时不到 1 美元，通常便宜很多，您可以使用工作站或笔记本电脑上的这项服务。
 
 让我们开始吧。
 
