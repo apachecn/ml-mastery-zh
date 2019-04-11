@@ -1,14 +1,14 @@
-# 用深度学习预测电影评论的情绪
+# 用深度学习预测电影评论的情感
 
 > 原文： [https://machinelearningmastery.com/predict-sentiment-movie-reviews-using-deep-learning/](https://machinelearningmastery.com/predict-sentiment-movie-reviews-using-deep-learning/)
 
 [情感分析](https://en.wikipedia.org/wiki/Sentiment_analysis)是一种自然语言处理问题，其中理解文本并预测潜在意图。
 
-在这篇文章中，您将了解如何使用 Keras 深度学习库在 Python 中预测电影评论的积极或消极情绪。
+在这篇文章中，您将了解如何使用 Keras 深度学习库在 Python 中预测电影评论的积极或消极情感。
 
 阅读这篇文章后你会知道：
 
-*   关于自然语言处理的 IMDB 情绪分析问题以及如何在 Keras 中加载它。
+*   关于自然语言处理的 IMDB 情感分析问题以及如何在 Keras 中加载它。
 *   如何在 Keras 中使用单词嵌入来解决自然语言问题。
 *   如何开发和评估 IMDB 问题的多层感知器模型。
 *   如何为 IMDB 问题开发一维卷积神经网络模型。
@@ -20,14 +20,14 @@
 
 ![Predict Sentiment From Movie Reviews Using Deep Learning](img/5c59c425196cb23cb43afa5a74345b1e.png)
 
-使用深度学习预测电影评论的情绪
+使用深度学习预测电影评论的情感
 [SparkCBC](https://www.flickr.com/photos/25031050@N06/3407720762/) 的照片，保留一些权利。
 
-## IMDB 电影评论情绪问题描述
+## IMDB 电影评论情感问题描述
 
 数据集是[大型电影评论数据集](http://ai.stanford.edu/~amaas/data/sentiment/)，通常称为 IMDB 数据集。
 
-大型电影评论数据集（通常称为 IMDB 数据集）包含 25,000 个用于训练的高极移动评论（好的或坏的）以及用于测试的相同数量。问题是确定给定的移动评论是否具有正面或负面情绪。
+大型电影评论数据集（通常称为 IMDB 数据集）包含 25,000 个用于训练的高极移动评论（好的或坏的）以及用于测试的相同数量。问题是确定给定的移动评论是否具有正面或负面情感。
 
 这些数据由斯坦福大学的研究人员收集并用于 [2011 年论文](http://ai.stanford.edu/~amaas/papers/wvSent_acl2011.pdf) [PDF]，其中 50/50 的数据用于训练和测试。准确度达到 88.89％。
 
@@ -82,7 +82,7 @@ print("Classes: ")
 print(numpy.unique(y))
 ```
 
-我们可以看到，这是一个二元分类问题，在评论中有好的和坏的情绪。
+我们可以看到，这是一个二元分类问题，在评论中有好的和坏的情感。
 
 ```py
 Classes:
@@ -332,12 +332,12 @@ Accuracy: 87.79%
 
 ## 摘要
 
-在这篇文章中，您发现了用于自然语言处理的 IMDB 情绪分析数据集。
+在这篇文章中，您发现了用于自然语言处理的 IMDB 情感分析数据集。
 
-您学习了如何为情绪分析开发深度学习模型，包括：
+您学习了如何为情感分析开发深度学习模型，包括：
 
 *   如何加载和查看 Keras 中的 IMDB 数据集。
 *   如何开发一个用于情感分析的大型神经网络模型。
 *   如何开发一种用于情感分析的一维卷积神经网络模型。
 
-您对情绪分析或此帖有任何疑问吗？在评论中提出您的问题，我会尽力回答。
+您对情感分析或此帖有任何疑问吗？在评论中提出您的问题，我会尽力回答。

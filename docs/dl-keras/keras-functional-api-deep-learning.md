@@ -1,4 +1,4 @@
-# 如何使用 Keras Functional API 进行深度学习
+# 如何使用 Keras 函数式 API 进行深度学习
 
 > 原文： [https://machinelearningmastery.com/keras-functional-api-deep-learning/](https://machinelearningmastery.com/keras-functional-api-deep-learning/)
 

@@ -1,4 +1,4 @@
-# 8 深度学习的鼓舞人心的应用
+# 8 个深度学习的鼓舞人心的应用
 
 > 原文： [https://machinelearningmastery.com/inspirational-applications-deep-learning/](https://machinelearningmastery.com/inspirational-applications-deep-learning/)
 

@@ -168,7 +168,7 @@ for mean, stdev, param in zip(means, stds, params):
 
 在 CPU（而不是 CPU）上执行的工作站上可能需要大约 5 分钟才能完成。运行该示例显示以下结果。
 
-我们可以看到，网格搜索发现使用统一初始化方案，rmsprop 优化器，150 个历元和 5 个批处理大小在此问题上实现了大约 75％的最佳交叉验证分数。
+我们可以看到，网格搜索发现使用统一初始化方案，rmsprop 优化器，150 个迭代和 5 个批量大小在此问题上实现了大约 75％的最佳交叉验证分数。
 
 ```py
 Best: 0.752604 using {'init': 'uniform', 'optimizer': 'adam', 'batch_size': 5, 'epochs': 150}

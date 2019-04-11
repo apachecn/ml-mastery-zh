@@ -1,4 +1,4 @@
-# 如何评价深度学习模式的技巧
+# 如何评价深度学习模型的技巧
 
 > 原文： [https://machinelearningmastery.com/evaluate-skill-deep-learning-models/](https://machinelearningmastery.com/evaluate-skill-deep-learning-models/)
 

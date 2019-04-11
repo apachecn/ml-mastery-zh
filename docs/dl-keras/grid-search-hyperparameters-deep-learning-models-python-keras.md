@@ -1,4 +1,4 @@
-# 如何使用 Keras 进行 Python 中深度学习模型的网格搜索超参数
+# 如何使用 Keras 在 Python 中网格搜索深度学习模型的超参数
 
 > 原文： [https://machinelearningmastery.com/grid-search-hyperparameters-deep-learning-models-python-keras/](https://machinelearningmastery.com/grid-search-hyperparameters-deep-learning-models-python-keras/)
 
@@ -284,7 +284,7 @@ Best: 0.704427 using {'optimizer': 'Adam'}
 
 通常预先选择优化算法来训练您的网络并调整其参数。
 
-到目前为止，最常见的优化算法是普通的老式[随机梯度下降](http://keras.io/optimizers/#sgd)（SGD），因为它非常清楚。在这个例子中，我们将研究优化 SGD 学习速率和动量参数。
+到目前为止，最常见的优化算法是普通的老式[随机梯度下降](http://keras.io/optimizers/#sgd)（SGD），因为它非常清楚。在这个例子中，我们将研究优化 SGD 学习率和动量参数。
 
 学习率控制在每批结束时更新权重的程度，并且动量控制让先前更新影响当前重量更新的程度。
 

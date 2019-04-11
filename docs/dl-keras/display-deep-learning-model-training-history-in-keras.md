@@ -1,4 +1,4 @@
-# 在 Keras 展示深度学习模式训练历史
+# 在 Keras 展示深度学习模型训练历史
 
 > 原文： [https://machinelearningmastery.com/display-deep-learning-model-training-history-in-keras/](https://machinelearningmastery.com/display-deep-learning-model-training-history-in-keras/)
 
@@ -45,7 +45,7 @@ print(history.history.keys())
 
 *   它是时代（坡度）的收敛速度。
 *   模型是否已经收敛（线的高原）。
-*   模式是否可能过度学习训练数据（验证线的变形）。
+*   模型是否可能过度学习训练数据（验证线的变形）。
 
 和更多。
 

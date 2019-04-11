@@ -1,4 +1,4 @@
-# 使用 Keras 介绍 Python 深度学习
+# Python 深度学习库 Keras 简介
 
 > 原文： [https://machinelearningmastery.com/introduction-python-deep-learning-library-keras/](https://machinelearningmastery.com/introduction-python-deep-learning-library-keras/)
 

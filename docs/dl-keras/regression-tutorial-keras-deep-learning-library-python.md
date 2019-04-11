@@ -1,4 +1,4 @@
-# 使用 Python 中的 Keras 深度学习库进行回归教程
+# Python 中的 Keras 深度学习库的回归教程
 
 > 原文： [https://machinelearningmastery.com/regression-tutorial-keras-deep-learning-library-python/](https://machinelearningmastery.com/regression-tutorial-keras-deep-learning-library-python/)
 

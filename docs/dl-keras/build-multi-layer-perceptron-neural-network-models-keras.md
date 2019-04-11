@@ -108,7 +108,7 @@ model.compile(optimizer=, loss=, metrics=)
 
 优化程序是用于更新模型中权重的搜索技术。
 
-您可以创建优化器对象并通过优化器参数将其传递给编译函数。这允许您使用自己的参数（例如学习速率）配置优化过程。例如：
+您可以创建优化器对象并通过优化器参数将其传递给编译函数。这允许您使用自己的参数（例如学习率）配置优化过程。例如：
 
 ```py
 sgd = SGD(...)
@@ -124,7 +124,7 @@ model.compile(optimizer='sgd')
 您可能想要选择的一些流行的梯度下降优化器包括：
 
 *   **SGD** ：随机梯度下降，支持动量。
-*   **RMSprop** ：Geoff Hinton 提出的自适应学习速率优化方法。
+*   **RMSprop** ：Geoff Hinton 提出的自适应学习率优化方法。
 *   **Adam** ：自适应力矩估计（Adam），也使用自适应学习率。
 
 您可以在 [Usage of optimizers](http://keras.io/optimizers/) 页面上了解 Keras 支持的所有优化器。
