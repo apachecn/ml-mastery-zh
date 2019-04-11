@@ -51,7 +51,7 @@ Dropout 是 Srivastava 等人提出的神经网络模型的正则化技术。在
 
 下面列出了完整的基线模型。
 
-```
+```py
 # Baseline Model on the Sonar Dataset
 import numpy
 from pandas import read_csv
@@ -104,7 +104,7 @@ print("Baseline: %.2f%% (%.2f%%)" % (results.mean()*100, results.std()*100))
 
 运行该示例可生成 86％的估计分类准确度。
 
-```
+```py
 Baseline: 86.04% (4.58%)
 ```
 
@@ -120,7 +120,7 @@ Dropout 可以应用于称为可见层的输入神经元。
 
 继续上面的基线示例，下面的代码使用输入丢失来运行相同的网络。
 
-```
+```py
 # dropout in the input layer with weight constraint
 def create_model():
 	# create model
@@ -146,7 +146,7 @@ print("Visible: %.2f%% (%.2f%%)" % (results.mean()*100, results.std()*100))
 
 运行该示例至少在单次测试运行中提供了分类精度的小幅下降。
 
-```
+```py
 Visible: 83.52% (7.68%)
 ```
 
@@ -156,7 +156,7 @@ Dropout 可以应用于网络模型体内的隐藏神经元。
 
 在下面的示例中，Dropout 应用于两个隐藏层之间以及最后一个隐藏层和输出层之间。再次使用 20％的辍学率，以及对这些层的权重约束。
 
-```
+```py
 # dropout in hidden layers with weight constraint
 def create_model():
 	# create model
@@ -185,7 +185,7 @@ print("Hidden: %.2f%% (%.2f%%)" % (results.mean()*100, results.std()*100))
 
 可能需要额外的训练时期或者需要进一步调整学习速率。
 
-```
+```py
 Hidden: 83.59% (7.31%)
 ```
 

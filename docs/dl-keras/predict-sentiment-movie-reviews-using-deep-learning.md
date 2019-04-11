@@ -47,7 +47,7 @@ keras.datasets.imdb.load_data（）允许您以可用于神经网络和深度学
 
 让我们加载数据集并计算它的一些属性。我们将首先加载一些库并将整个 IMDB 数据集作为训练数据集加载。
 
-```
+```py
 import numpy
 from keras.datasets import imdb
 from matplotlib import pyplot
@@ -59,7 +59,7 @@ y = numpy.concatenate((y_train, y_test), axis=0)
 
 接下来，我们可以显示训练数据集的形状。
 
-```
+```py
 # summarize size
 print("Training data: ")
 print(X.shape)
@@ -68,7 +68,7 @@ print(y.shape)
 
 运行此代码段，我们可以看到有 50,000 条记录。
 
-```
+```py
 Training data:
 (50000,)
 (50000,)
@@ -76,7 +76,7 @@ Training data:
 
 我们还可以打印唯一的类值。
 
-```
+```py
 # Summarize number of classes
 print("Classes: ")
 print(numpy.unique(y))
@@ -84,14 +84,14 @@ print(numpy.unique(y))
 
 我们可以看到，这是一个二元分类问题，在评论中有好的和坏的情绪。
 
-```
+```py
 Classes:
 [0 1]
 ```
 
 接下来，我们可以了解数据集中唯一单词的总数。
 
-```
+```py
 # Summarize number of words
 print("Number of words: ")
 print(len(numpy.unique(numpy.hstack(X))))
@@ -99,14 +99,14 @@ print(len(numpy.unique(numpy.hstack(X))))
 
 有趣的是，我们可以看到整个数据集中只有不到 100,000 个单词。
 
-```
+```py
 Number of words:
 88585
 ```
 
 最后，我们可以了解平均审核长度。
 
-```
+```py
 # Summarize review length
 print("Review length: ")
 result = [len(x) for x in X]
@@ -118,7 +118,7 @@ pyplot.show()
 
 我们可以看到，平均评论不到 300 字，标准差超过 200 字。
 
-```
+```py
 Review length:
 Mean 234.76 words (172.911495)
 ```
@@ -147,20 +147,20 @@ Keras 提供了一种方便的方法，可以将单词的正整数表示转换�
 
 我们将加载 IMDB 数据集，如下所示：
 
-```
+```py
 imdb.load_data(nb_words=5000)
 ```
 
 然后，我们将使用 Keras 实用程序使用 sequence.pad_sequences（）函数将数据集截断或填充到每个观察的长度 500。
 
-```
+```py
 X_train = sequence.pad_sequences(X_train, maxlen=500)
 X_test = sequence.pad_sequences(X_test, maxlen=500)
 ```
 
 最后，稍后，我们模型的第一层将是使用 Embedding 类创建的单词嵌入层，如下所示：
 
-```
+```py
 Embedding(5000, 32, input_length=500)
 ```
 
@@ -176,7 +176,7 @@ Embedding(5000, 32, input_length=500)
 
 让我们首先导入此模型所需的类和函数，并将随机数生成器初始化为常量值，以确保我们可以轻松地重现结果。
 
-```
+```py
 # MLP for the IMDB problem
 import numpy
 from keras.datasets import imdb
@@ -194,7 +194,7 @@ numpy.random.seed(seed)
 
 我们还将使用 50％/ 50％的数据集拆分进行培训和测试。这是一种很好的标准拆分方法。
 
-```
+```py
 # load the dataset but only keep the top n words, zero the rest
 top_words = 5000
 (X_train, y_train), (X_test, y_test) = imdb.load_data(num_words=top_words)
@@ -202,7 +202,7 @@ top_words = 5000
 
 我们将以 500 字的方式绑定评论，截断更长的评论和零填充更短的评论。
 
-```
+```py
 max_words = 500
 X_train = sequence.pad_sequences(X_train, maxlen=max_words)
 X_test = sequence.pad_sequences(X_test, maxlen=max_words)
@@ -214,7 +214,7 @@ X_test = sequence.pad_sequences(X_test, maxlen=max_words)
 
 该模型使用对数损失，并使用有效的 ADAM 优化程序进行优化。
 
-```
+```py
 # create the model
 model = Sequential()
 model.add(Embedding(top_words, 32, input_length=max_words))
@@ -229,7 +229,7 @@ print(model.summary())
 
 有很多数据，所以我们将使用 128 的批量大小。在训练模型后，我们评估其在测试数据集上的准确性。
 
-```
+```py
 # Fit the model
 model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=2, batch_size=128, verbose=2)
 # Final evaluation of the model
@@ -239,7 +239,7 @@ print("Accuracy: %.2f%%" % (scores[1]*100))
 
 运行此示例适合模型并总结估计的性能。我们可以看到，这个非常简单的模型获得了近 86.94％的分数，这是在原始论文的附近，只需很少的努力。
 
-```
+```py
 Train on 25000 samples, validate on 25000 samples
 Epoch 1/2
 39s - loss: 0.5160 - acc: 0.7040 - val_loss: 0.2982 - val_acc: 0.8716
@@ -260,7 +260,7 @@ Keras 分别支持 Conv1D 和 MaxPooling1D 类的一维卷积和池化。
 
 再次，让我们导入此示例所需的类和函数，并将随机数生成器初始化为常量值，以便我们可以轻松地重现结果。
 
-```
+```py
 # CNN for the IMDB problem
 import numpy
 from keras.datasets import imdb
@@ -278,7 +278,7 @@ numpy.random.seed(seed)
 
 我们也可以像以前一样加载和准备我们的 IMDB 数据集。
 
-```
+```py
 # load the dataset but only keep the top n words, zero the rest
 top_words = 5000
 (X_train, y_train), (X_test, y_test) = imdb.load_data(num_words=top_words)
@@ -292,7 +292,7 @@ X_test = sequence.pad_sequences(X_test, maxlen=max_words)
 
 卷积层之后是 1D max pooling layer，其长度和步幅为 2，使卷积层的特征映射的大小减半。网络的其余部分与上面的神经网络相同。
 
-```
+```py
 # create the model
 model = Sequential()
 model.add(Embedding(top_words, 32, input_length=max_words))
@@ -307,7 +307,7 @@ print(model.summary())
 
 我们也像以前一样适应网络。
 
-```
+```py
 # Fit the model
 model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=2, batch_size=128, verbose=2)
 # Final evaluation of the model
@@ -319,7 +319,7 @@ print("Accuracy: %.2f%%" % (scores[1]*100))
 
 运行该示例对上述神经网络模型提供了一个小但令人欢迎的改进，准确率接近 87.79％。
 
-```
+```py
 Train on 25000 samples, validate on 25000 samples
 Epoch 1/2
 38s - loss: 0.4451 - acc: 0.7640 - val_loss: 0.3107 - val_acc: 0.8660

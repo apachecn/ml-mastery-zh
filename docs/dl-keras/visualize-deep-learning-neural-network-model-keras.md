@@ -36,13 +36,13 @@ Keras Python 深度学习库提供了可视化和更好地理解您的神经网�
 
 例如：
 
-```
+```py
 [1 input] -> [2 neurons] -> [1 output]
 ```
 
 下面提供了该网络的代码清单。
 
-```
+```py
 from keras.models import Sequential
 from keras.layers import Dense
 model = Sequential()
@@ -65,7 +65,7 @@ Keras 提供了一种总结模型的方法。
 
 下面是打印已创建模型摘要的更新示例。
 
-```
+```py
 from keras.models import Sequential
 from keras.layers import Dense
 model = Sequential()
@@ -76,7 +76,7 @@ print(model.summary())
 
 运行此示例将打印下表。
 
-```
+```py
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
 =================================================================
@@ -109,7 +109,7 @@ Keras 中的 _plot_model（）_ 功能将创建您的网络图。这个函数有
 
 注意，该示例假设您已安装 [graphviz 图形库](http://www.graphviz.org/)和 [Python 接口](https://pypi.python.org/pypi/graphviz)。
 
-```
+```py
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.utils.vis_utils import plot_model

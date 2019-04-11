@@ -41,7 +41,7 @@ Keras 可以自动下载 CIFAR-10 等标准数据集，并使用 cifar10.load_da
 
 数据集存储为酸洗训练和测试集，准备在 Keras 中使用。每个图像表示为三维矩阵，具有红色，绿色，蓝色，宽度和高度的尺寸。我们可以使用 [matplotlib](http://matplotlib.org/) 直接绘制图像。
 
-```
+```py
 # Plot ad hoc CIFAR10 instances
 from keras.datasets import cifar10
 from matplotlib import pyplot
@@ -68,7 +68,7 @@ CIFAR-10 图像的小样本
 
 我们可以通过定义本例中需要的所有类和函数来快速入门。
 
-```
+```py
 # Simple CNN model for CIFAR-10
 import numpy
 from keras.datasets import cifar10
@@ -87,7 +87,7 @@ K.set_image_dim_ordering('th')
 
 好的做法是，我们接下来用常数初始化随机数种子，以确保结果可重复。
 
-```
+```py
 # fix random seed for reproducibility
 seed = 7
 numpy.random.seed(seed)
@@ -95,7 +95,7 @@ numpy.random.seed(seed)
 
 接下来，我们可以加载 CIFAR-10 数据集。
 
-```
+```py
 # load data
 (X_train, y_train), (X_test, y_test) = cifar10.load_data()
 ```
@@ -106,7 +106,7 @@ numpy.random.seed(seed)
 
 注意，数据作为整数加载，因此我们必须将其转换为浮点值才能执行除法。
 
-```
+```py
 # normalize inputs from 0-255 to 0.0-1.0
 X_train = X_train.astype('float32')
 X_test = X_test.astype('float32')
@@ -118,7 +118,7 @@ X_test = X_test / 255.0
 
 我们可以使用一个热编码将它们转换为二进制矩阵，以便最好地对分类问题进行建模。我们知道这个问题有 10 个类，所以我们可以期望二进制矩阵的宽度为 10。
 
-```
+```py
 # one hot encode outputs
 y_train = np_utils.to_categorical(y_train)
 y_test = np_utils.to_categorical(y_test)
@@ -142,7 +142,7 @@ num_classes = y_test.shape[1]
 
 对数损失函数与随机梯度下降优化算法一起使用，该算法配置有大动量和重量衰减开始，学习率为 0.01。
 
-```
+```py
 # Create the model
 model = Sequential()
 model.add(Conv2D(32, (3, 3), input_shape=(3, 32, 32), padding='same', activation='relu', kernel_constraint=maxnorm(3)))
@@ -168,7 +168,7 @@ print(model.summary())
 
 一旦模型适合，我们在测试数据集上对其进行评估并打印出分类准确度。
 
-```
+```py
 # Fit the model
 model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=epochs, batch_size=32)
 # Final evaluation of the model
@@ -178,7 +178,7 @@ print("Accuracy: %.2f%%" % (scores[1]*100))
 
 运行此示例提供以下结果。首先总结网络结构，确认我们的设计是正确实施的。
 
-```
+```py
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
@@ -206,7 +206,7 @@ _________________________________________________________________
 
 在训练和测试数据集的每个时期打印分类准确度和损失。该模型在测试装置上进行评估，达到 70.85％的准确度，这并不是很好。
 
-```
+```py
 ...
 Epoch 20/25
 50000/50000 [==============================] - 143s - loss: 0.2858 - acc: 0.9011 - val_loss: 1.0091 - val_acc: 0.7063
@@ -257,7 +257,7 @@ Accuracy: 70.85%
 
 我们可以很容易地在 Keras 中定义这种网络拓扑，如下所示：
 
-```
+```py
 # Create the model
 model = Sequential()
 model.add(Conv2D(32, (3, 3), input_shape=(3, 32, 32), activation='relu', padding='same'))
@@ -290,7 +290,7 @@ print(model.summary())
 
 我们可以使用与上述相同的程序和相同数量的时期来拟合和评估该模型，但是通过一些小的实验发现更大的批量大小为 64。
 
-```
+```py
 numpy.random.seed(seed)
 model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=epochs, batch_size=64)
 # Final evaluation of the model
@@ -300,7 +300,7 @@ print("Accuracy: %.2f%%" % (scores[1]*100))
 
 运行此示例将在每个时期打印训练和测试数据集的分类准确性和损失。最终模型的分类精度估计值为 80.18％，比我们的简单模型好近 10 个点。
 
-```
+```py
 # 50000/50000 [==============================] - 34s - loss: 0.4993 - acc: 0.8230 - val_loss: 0.5994 - val_acc: 0.7932
 # Epoch 20/25
 # 50000/50000 [==============================] - 34s - loss: 0.4877 - acc: 0.8271 - val_loss: 0.5986 - val_acc: 0.7932

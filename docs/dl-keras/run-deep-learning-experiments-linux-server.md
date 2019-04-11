@@ -56,7 +56,7 @@
 
 运行单个脚本（ _myscript.py_ ）如下所示：
 
-```
+```py
 python -u myscript.py >myscript.py.log 2>&1
 ```
 
@@ -68,7 +68,7 @@ python -u myscript.py >myscript.py.log 2>&1
 
 创建一个 shell 脚本，按顺序列出多个实验。例如：
 
-```
+```py
 #!/bin/sh
 
 # run experiments
@@ -83,7 +83,7 @@ python -u myscript5.py >myscript5.py.log 2>&1
 
 例如，如果所有代码和 run.sh 脚本都位于“ _ec2-user_ ”主目录的“ _experiments_ ”目录中，则脚本将按如下方式运行：
 
-```
+```py
 nohup /home/ec2-user/experiments/run.sh > /home/ec2-user/experiments/run.sh.log </dev/null 2>&1 &
 ```
 

@@ -45,7 +45,7 @@ Keras 由[FrançoisChollet](https://www.linkedin.com/in/fchollet)开发和维护
 
 使用 [PyPI](https://pypi.python.org/pypi) 可以轻松安装 Keras，如下所示：
 
-```
+```py
 sudo pip install keras
 ```
 
@@ -53,19 +53,19 @@ sudo pip install keras
 
 您可以使用以下代码段在命令行上检查您的 Keras 版本：
 
-```
+```py
 python -c "import keras; print keras.__version__"
 ```
 
 运行上面的脚本你会看到：
 
-```
+```py
 1.1.0
 ```
 
 您可以使用相同的方法升级 Keras 的安装：
 
-```
+```py
 sudo pip install --upgrade keras
 ```
 
@@ -75,13 +75,13 @@ sudo pip install --upgrade keras
 
 最简单的方法是在主目录中添加或编辑 Keras 配置文件：
 
-```
+```py
 ~/.keras/keras.json
 ```
 
 其格式如下：
 
-```
+```py
 {
     "image_dim_ordering": "tf", 
     "epsilon": 1e-07, 
@@ -94,26 +94,26 @@ sudo pip install --upgrade keras
 
 您可以在命令行上使用以下代码段确认 Keras 使用的后端：
 
-```
+```py
 python -c "from keras import backend; print backend._BACKEND"
 ```
 
 使用默认配置运行此选项，您将看到：
 
-```
+```py
 Using TensorFlow backend.
 tensorflow
 ```
 
 您还可以通过指定 KERAS_BACKEND 环境变量在命令行上指定 Keras 使用的后端，如下所示：
 
-```
+```py
 KERAS_BACKEND=theano python -c "from keras import backend; print(backend._BACKEND)"
 ```
 
 运行此示例打印：
 
-```
+```py
 Using Theano backend.
 theano
 ```

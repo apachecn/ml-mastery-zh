@@ -23,14 +23,14 @@ Keras 库的重点是模型。
 
 您可以创建一个 Sequential 模型并定义构造函数中的所有图层，例如：
 
-```
+```py
 from keras.models import Sequential
 model = Sequential(...)
 ```
 
 更有用的习惯是创建一个 Sequential 模型并按照您希望执行的计算顺序添加图层，例如：
 
-```
+```py
 from keras.models import Sequential
 model = Sequential()
 model.add(...)
@@ -46,7 +46,7 @@ model.add(...)
 
 例如，您可以按照 Dense 类型图层的 8 个输入定义输入，如下所示：
 
-```
+```py
 Dense(16, input_dim=8)
 ```
 
@@ -100,7 +100,7 @@ Keras 支持一系列标准神经元激活功能，例如：softmax，整流器�
 2.  损失功能。
 3.  指标。
 
-```
+```py
 model.compile(optimizer=, loss=, metrics=)
 ```
 
@@ -110,14 +110,14 @@ model.compile(optimizer=, loss=, metrics=)
 
 您可以创建优化器对象并通过优化器参数将其传递给编译函数。这允许您使用自己的参数（例如学习速率）配置优化过程。例如：
 
-```
+```py
 sgd = SGD(...)
 model.compile(optimizer=sgd)
 ```
 
 您还可以通过为优化程序参数指定优化程序的名称来使用优化程序的默认参数。例如：
 
-```
+```py
 model.compile(optimizer='sgd')
 ```
 
@@ -153,7 +153,7 @@ model.compile(optimizer='sgd')
 
 例如，使用 fit（）函数在 NumPy 数组上训练模型
 
-```
+```py
 model.fit(X, y, epochs=, batch_size=)
 ```
 
@@ -185,19 +185,19 @@ model.fit(X, y, epochs=, batch_size=)
 
 您可能希望输出模型的摘要。例如，您可以通过调用摘要函数来显示模型的摘要，例如：
 
-```
+```py
 model.summary()
 ```
 
 您还可以使用 get_config（）函数检索模型配置的摘要，例如：
 
-```
+```py
 model.get_config()
 ```
 
 最后，您可以直接创建模型结构的图像。例如：
 
-```
+```py
 from keras.utils.vis_utils import plot_model
 plot(model, to_file='model.png')
 ```

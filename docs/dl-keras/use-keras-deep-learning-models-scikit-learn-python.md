@@ -55,7 +55,7 @@ Keras 中的 KerasClassifier 和 KerasRegressor 类接受一个参数 **build_fn
 
 我们使用 scikit-learn 函数 **cross_val_score（）**来使用交叉验证方案评估我们的模型并打印结果。
 
-```
+```py
 # MLP for Pima Indians Dataset with 10-fold cross validation via sklearn
 from keras.models import Sequential
 from keras.layers import Dense
@@ -93,7 +93,7 @@ print(results.mean())
 
 运行该示例显示每个纪元的模型技能。创建和评估总共 10 个模型，并显示最终的平均精度。
 
-```
+```py
 0.646838691487
 ```
 
@@ -120,7 +120,7 @@ print(results.mean())
 
 最后，显示最佳模型的性能和配置组合，然后显示所有参数组合的性能。
 
-```
+```py
 # MLP for Pima Indians Dataset with grid search via sklearn
 from keras.models import Sequential
 from keras.layers import Dense
@@ -170,7 +170,7 @@ for mean, stdev, param in zip(means, stds, params):
 
 我们可以看到，网格搜索发现使用统一初始化方案，rmsprop 优化器，150 个历元和 5 个批处理大小在此问题上实现了大约 75％的最佳交叉验证分数。
 
-```
+```py
 Best: 0.752604 using {'init': 'uniform', 'optimizer': 'adam', 'batch_size': 5, 'epochs': 150}
 0.707031 (0.025315) with: {'init': 'glorot_uniform', 'optimizer': 'rmsprop', 'batch_size': 5, 'epochs': 50}
 0.589844 (0.147095) with: {'init': 'glorot_uniform', 'optimizer': 'adam', 'batch_size': 5, 'epochs': 50}

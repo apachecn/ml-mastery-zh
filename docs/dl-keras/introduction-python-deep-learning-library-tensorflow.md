@@ -47,7 +47,7 @@ TensorFlow 适用于 Python 2.7 和 Python 3.3+。您可以按照 TensorFlow 网
 
 第一个示例是 [TensorFlow 网站](https://github.com/tensorflow/tensorflow)上的示例的修改版本。它显示了如何使用会话创建会话，定义常量和使用这些常量执行计算。
 
-```
+```py
 import tensorflow as tf
 sess = tf.Session()
 a = tf.constant(10)
@@ -57,7 +57,7 @@ print(sess.run(a+b))
 
 运行此示例显示：
 
-```
+```py
 42
 ```
 
@@ -69,7 +69,7 @@ print(sess.run(a+b))
 
 我们对 TensorFlow 有一定的了解，它将计算的定义和声明与会话中的执行和运行调用分开。
 
-```
+```py
 import tensorflow as tf
 import numpy as np
 
@@ -107,7 +107,7 @@ for step in xrange(201):
 
 运行此示例将输出以下输出：
 
-```
+```py
 (0, array([ 0.2629351], dtype=float32), array([ 0.28697217], dtype=float32))
 (20, array([ 0.13929555], dtype=float32), array([ 0.27992988], dtype=float32))
 (40, array([ 0.11148042], dtype=float32), array([ 0.2941364], dtype=float32))
@@ -129,13 +129,13 @@ for step in xrange(201):
 
 首先，您需要找出系统上 TensorFlow 的安装位置。例如，您可以使用以下 Python 脚本：
 
-```
+```py
 python -c 'import os; import inspect; import tensorflow; print(os.path.dirname(inspect.getfile(tensorflow)))'
 ```
 
 例如，这可能是：
 
-```
+```py
 /usr/lib/python2.7/site-packages/tensorflow
 ```
 

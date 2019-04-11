@@ -54,7 +54,7 @@ Keras 可以将训练数据的一部分分离为验证数据集，并在每个�
 
 下面的示例演示了如何在小二进制分类问题上使用自动验证数据集。本文中的所有实例均使用[皮马印第安人糖尿病数据集](http://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)。您可以[从 UCI 机器学习库下载](http://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/pima-indians-diabetes.data)，并使用文件名 **pima-indians-diabetes.csv** 将数据文件保存到当前工作目录中（更新：[从这里](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
 
-```
+```py
 # MLP with automatic validation set
 from keras.models import Sequential
 from keras.layers import Dense
@@ -79,7 +79,7 @@ model.fit(X, Y, validation_split=0.33, epochs=150, batch_size=10)
 
 运行该示例，您可以看到每个时期的详细输出显示了训练数据集和验证数据集的损失和准确性。
 
-```
+```py
 ...
 Epoch 145/150
 514/514 [==============================] - 0s - loss: 0.5252 - acc: 0.7335 - val_loss: 0.5489 - val_acc: 0.7244
@@ -103,7 +103,7 @@ Keras 还允许您手动指定在训练期间用于验证的数据集。
 
 可以通过 **validation_data** 参数将验证数据集指定给 Keras 中的 **fit** （）函数。它需要输入和输出数据集的元组。
 
-```
+```py
 # MLP with manual validation set
 from keras.models import Sequential
 from keras.layers import Dense
@@ -132,7 +132,7 @@ model.fit(X_train, y_train, validation_data=(X_test,y_test), epochs=150, batch_s
 
 与之前一样，运行该示例提供了详细的训练输出，其中包括模型在每个时期的训练和验证数据集上的丢失和准确性。
 
-```
+```py
 ...
 Epoch 145/150
 514/514 [==============================] - 0s - loss: 0.4847 - acc: 0.7704 - val_loss: 0.5668 - val_acc: 0.7323
@@ -164,7 +164,7 @@ Epoch 150/150
 
 为每个型号打印性能并将其存储。然后在运行结束时打印模型性能的平均值和标准偏差，以提供模型精度的稳健估计。
 
-```
+```py
 # MLP for Pima Indians Dataset with 10-fold cross validation
 from keras.models import Sequential
 from keras.layers import Dense
@@ -200,7 +200,7 @@ print("%.2f%% (+/- %.2f%%)" % (numpy.mean(cvscores), numpy.std(cvscores)))
 
 运行该示例将花费不到一分钟，并将产生以下输出：
 
-```
+```py
 acc: 77.92%
 acc: 68.83%
 acc: 72.73%

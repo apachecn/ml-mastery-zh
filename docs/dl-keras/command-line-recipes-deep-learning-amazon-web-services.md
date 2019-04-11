@@ -53,7 +53,7 @@
 
 以下命令将使您登录到服务器实例。请记住将用户名和 IP 地址更改为相关的用户名和服务器实例 IP 地址。
 
-```
+```py
 ssh -i ~/.ssh/aws-keypair.pem ec2-user@54.218.86.47
 ```
 
@@ -63,7 +63,7 @@ ssh -i ~/.ssh/aws-keypair.pem ec2-user@54.218.86.47
 
 以下示例在您的工作站上运行，将工作站本地目录中的 _script.py_ Python 脚本复制到您的服务器实例。
 
-```
+```py
 scp -i ~/.ssh/aws-keypair.pem script.py ec2-user@54.218.86.47:~/
 ```
 
@@ -75,7 +75,7 @@ scp -i ~/.ssh/aws-keypair.pem script.py ec2-user@54.218.86.47:~/
 
 根据我的经验，所有这些都是长期运行脚本以适应大型深度学习模型所必需的。
 
-```
+```py
 nohup python /home/ec2-user/script.py >/home/ec2-user/script.py.log </dev/null 2>&1 &
 ```
 
@@ -101,7 +101,7 @@ nohup python /home/ec2-user/script.py >/home/ec2-user/script.py.log </dev/null 2
 
 我们可以使用上面相同的命令来运行脚本并指定要使用的特定 GPU 设备，如下所示：
 
-```
+```py
 CUDA_VISIBLE_DEVICES=0 nohup python /home/ec2-user/script.py >/home/ec2-user/script.py.log </dev/null 2>&1 &
 ```
 
@@ -121,7 +121,7 @@ CUDA_VISIBLE_DEVICES=0 nohup python /home/ec2-user/script.py >/home/ec2-user/scr
 
 此示例将列出脚本日志文件的最后几行，并在脚本中添加新行时更新输出。
 
-```
+```py
 tail -f script.py.log
 ```
 
@@ -129,7 +129,7 @@ tail -f script.py.log
 
 另一种方法是使用 watch 命令。我发现亚马逊将保持这个终端开放：
 
-```
+```py
 watch "tail script.py.log"
 ```
 
@@ -146,13 +146,13 @@ watch "tail script.py.log"
 
 您可以使用将每隔几秒更新一次的 top 命令来执行此操作。
 
-```
+```py
 top -M
 ```
 
 如果您知道其进程标识符（PID），还可以监视系统和进程。
 
-```
+```py
 top -p PID -M
 ```
 
@@ -164,7 +164,7 @@ top -p PID -M
 
 您可以使用 _nvidia-smi_ 命令来关注 GPU 的使用情况。我喜欢使用 _watch_ 命令来保持终端打开并清除每个新结果的屏幕。
 
-```
+```py
 watch "nvidia-smi"
 ```
 
@@ -176,7 +176,7 @@ watch "nvidia-smi"
 
 同样，我喜欢使用 watch 命令来保持终端打开。
 
-```
+```py
 watch "ps -ef | grep python"
 ```
 
@@ -188,7 +188,7 @@ watch "ps -ef | grep python"
 
 下面的示例将在 vi 中打开您的脚本。
 
-```
+```py
 vi ~/script.py
 ```
 
@@ -206,7 +206,7 @@ vi ~/script.py
 
 以下示例从您的工作站运行，并将所有 PNG 文件从您的主目录复制到您的工作站。
 
-```
+```py
 scp -i ~/.ssh/aws-keypair.pem ec2-user@54.218.86.47:~/*.png .
 ```
 

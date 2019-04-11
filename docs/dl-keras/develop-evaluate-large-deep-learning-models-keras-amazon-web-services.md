@@ -101,7 +101,7 @@ p3.2xlarge EC2 实例
 *   12.打开终端并将目录更改为您下载密钥对的位置。
 *   13.如果尚未执行此操作，请限制密钥对文件的访问权限。这需要作为对服务器的 SSH 访问的一部分。例如：
 
-```
+```py
 cd Downloads
 chmod 600 keras-aws-keypair.pem
 ```
@@ -123,7 +123,7 @@ chmod 600 keras-aws-keypair.pem
 *   2.将“公共 IP”（在“描述”中的屏幕底部）复制到剪贴板。在此示例中，我的 IP 地址是 54.186.97.77。 **请勿使用此 IP 地址**，您的 IP 地址会有所不同。
 *   3.打开终端并将目录更改为您下载密钥对的位置。使用 SSH 登录您的服务器，例如：
 
-```
+```py
 ssh -i keras-aws-keypair.pem ec2-user@54.186.97.77
 ```
 
@@ -141,7 +141,7 @@ ssh -i keras-aws-keypair.pem ec2-user@54.186.97.77
 
 您可以键入以下内容来激活此虚拟环境：
 
-```
+```py
 source activate tensorflow_p36
 ```
 
@@ -161,7 +161,7 @@ source activate tensorflow_p36
 
 *   1.在终端注销您的实例，例如您可以输入：
 
-```
+```py
 exit
 ```
 
@@ -192,7 +192,7 @@ exit
 
 您可以轻松地执行以下操作：
 
-```
+```py
 nohup /path/to/script >/path/to/script.log 2>&1 < /dev/null &
 ```
 

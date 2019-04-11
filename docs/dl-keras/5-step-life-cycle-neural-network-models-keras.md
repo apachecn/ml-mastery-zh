@@ -46,14 +46,14 @@ Keras 中神经网络模型的 5 步生命周期
 
 例如，我们可以分两步完成：
 
-```
+```py
 model = Sequential()
 model.add(Dense(2))
 ```
 
 但是我们也可以通过创建一个图层数组并将其传递给 Sequential 的构造函数来一步完成。
 
-```
+```py
 layers = [Dense(2)]
 model = Sequential(layers)
 ```
@@ -62,7 +62,7 @@ model = Sequential(layers)
 
 例如，一个小的多层感知器模型，在可见层中有 2 个输入，隐藏层中有 5 个神经元，输出层中有一个神经元，可以定义为：
 
-```
+```py
 model = Sequential()
 model.add(Dense(5, input_dim=2))
 model.add(Dense(1))
@@ -72,7 +72,7 @@ model.add(Dense(1))
 
 这在 Keras 中是一个有用的概念，因为传统上与图层相关的关注点也可以拆分并作为单独的图层添加，清楚地显示它们在从输入到预测的数据转换中的作用。例如，可以提取转换来自层中每个神经元的求和信号的激活函数，并将其作为称为激活的层状对象添加到 Sequential 中。
 
-```
+```py
 model = Sequential()
 model.add(Dense(5, input_dim=2))
 model.add(Activation('relu'))
@@ -102,7 +102,7 @@ model.add(Activation('sigmoid'))
 
 例如，下面是编译定义模型并指定随机梯度下降（sgd）优化算法和均方误差（mse）损失函数的情况，用于回归类型问题。
 
-```
+```py
 model.compile(optimizer='sgd', loss='mse')
 ```
 
@@ -128,7 +128,7 @@ model.compile(optimizer='sgd', loss='mse')
 
 例如：
 
-```
+```py
 model.compile(optimizer='sgd', loss='mse', metrics=['accuracy'])
 ```
 
@@ -146,7 +146,7 @@ model.compile(optimizer='sgd', loss='mse', metrics=['accuracy'])
 
 拟合网络的最小例子如下：
 
-```
+```py
 history = model.fit(X, y, batch_size=10, epochs=100)
 ```
 
@@ -164,7 +164,7 @@ history = model.fit(X, y, batch_size=10, epochs=100)
 
 例如，对于使用精度度量编制的模型，我们可以在新数据集上对其进行评估，如下所示：
 
-```
+```py
 loss, accuracy = model.evaluate(X, y)
 ```
 
@@ -176,7 +176,7 @@ loss, accuracy = model.evaluate(X, y)
 
 例如：
 
-```
+```py
 predictions = model.predict(x)
 ```
 
@@ -204,7 +204,7 @@ predictions = model.predict(x)
 
 完整的代码清单如下。
 
-```
+```py
 # Sample Multilayer Perceptron Neural Network in Keras
 from keras.models import Sequential
 from keras.layers import Dense
@@ -233,7 +233,7 @@ print("Prediction Accuracy: %.2f%%" % (accuracy*100))
 
 运行此示例将生成以下输出：
 
-```
+```py
 ...
 768/768 [==============================] - 0s - loss: 0.5219 - acc: 0.7591
 Epoch 99/100

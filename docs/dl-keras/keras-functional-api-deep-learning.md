@@ -42,7 +42,7 @@ Keras 中的功能 API 是创建模型的另一种方式，它提供了更多的
 
 例如，可以定义图层并将其作为数组传递给 Sequential：
 
-```
+```py
 from keras.models import Sequential
 from keras.layers import Dense
 model = Sequential([Dense(2, input_dim=1), Dense(1)])
@@ -50,7 +50,7 @@ model = Sequential([Dense(2, input_dim=1), Dense(1)])
 
 图层也可以分段添加：
 
-```
+```py
 from keras.models import Sequential
 from keras.layers import Dense
 model = Sequential()
@@ -80,7 +80,7 @@ Keras 功能 API 为定义模型提供了更灵活的方式。
 
 当输入数据是一维的时，例如对于多层感知器，形状必须明确留出空间，以便在训练网络时分割数据时使用的小批量大小的形状。因此，当输入是一维（2，）时，形状元组总是用挂起的最后一个维度定义，例如：
 
-```
+```py
 from keras.layers import Input
 visible = Input(shape=(2,))
 ```
@@ -93,7 +93,7 @@ visible = Input(shape=(2,))
 
 让我们用一个简短的例子来说明这一点。我们可以像上面那样创建输入层，然后创建一个隐藏层作为 Dense，它只接收来自输入层的输入。
 
-```
+```py
 from keras.layers import Input
 from keras.layers import Dense
 visible = Input(shape=(2,))
@@ -112,7 +112,7 @@ hidden = Dense(2)(visible)
 
 Keras 提供了一个 Model 类，您可以使用它从创建的图层创建模型。它要求您只指定输入和输出图层。例如：
 
-```
+```py
 from keras.models import Model
 from keras.layers import Input
 from keras.layers import Dense
@@ -141,7 +141,7 @@ model = Model(inputs=visible, outputs=hidden)
 
 该模型具有 10 个输入，3 个具有 10,20 和 10 个神经元的隐藏层，以及具有 1 个输出的输出层。在每个隐藏层中使用校正的线性激活函数，并且在输出层中使用 S 形激活函数，用于二进制分类。
 
-```
+```py
 # Multilayer Perceptron
 from keras.utils import plot_model
 from keras.models import Model
@@ -161,7 +161,7 @@ plot_model(model, to_file='multilayer_perceptron_graph.png')
 
 运行该示例将打印网络结构。
 
-```
+```py
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
 =================================================================
@@ -193,7 +193,7 @@ _________________________________________________________________
 
 该模型接收黑白 64×64 图像作为输入，然后具有两个卷积和池化层的序列作为特征提取器，接着是完全连接的层来解释特征，输出层具有用于两类预测的 S 形激活。
 
-```
+```py
 # Convolutional Neural Network
 from keras.utils import plot_model
 from keras.models import Model
@@ -219,7 +219,7 @@ plot_model(model, to_file='convolutional_neural_network.png')
 
 运行该示例总结了模型层。
 
-```
+```py
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
@@ -257,7 +257,7 @@ _________________________________________________________________
 
 该模型需要 100 个时间步长作为输入。该模型具有单个 LSTM 隐藏层以从序列中提取特征，随后是完全连接的层以解释 LSTM 输出，接着是用于进行二元预测的输出层。
 
-```
+```py
 # Recurrent Neural Network
 from keras.utils import plot_model
 from keras.models import Model
@@ -277,7 +277,7 @@ plot_model(model, to_file='recurrent_neural_network.png')
 
 运行该示例总结了模型层。
 
-```
+```py
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
 =================================================================
@@ -315,7 +315,7 @@ _________________________________________________________________
 
 该模型采用尺寸为 64×64 像素的黑白图像。有两个共享此输入的 CNN 特征提取子模型;第一个内核大小为 4，第二个内核大小为 8.这些特征提取子模型的输出被平展为向量并连接成一个长向量，并传递到完全连接的层以进行解释，然后最终输出层生成二进制分类。
 
-```
+```py
 # Shared Input Layer
 from keras.utils import plot_model
 from keras.models import Model
@@ -350,7 +350,7 @@ plot_model(model, to_file='shared_input_layer.png')
 
 运行该示例总结了模型层。
 
-```
+```py
 ____________________________________________________________________________________________________
 Layer (type)                     Output Shape          Param #     Connected to
 ====================================================================================================
@@ -393,7 +393,7 @@ ________________________________________________________________________________
 
 模型的输入是 1 个特征的 100 个时间步长。具有 10 个存储器单元的 LSTM 层解释该序列。第一个解释模型是浅单个完全连接层，第二个是深 3 层模型。两个解释模型的输出被连接成一个长向量，该向量被传递到用于进行二进制预测的输出层。
 
-```
+```py
 # Shared Feature Extraction Layer
 from keras.utils import plot_model
 from keras.models import Model
@@ -424,7 +424,7 @@ plot_model(model, to_file='shared_feature_extractor.png')
 
 运行该示例总结了模型层。
 
-```
+```py
 ____________________________________________________________________________________________________
 Layer (type)                     Output Shape          Param #     Connected to
 ====================================================================================================
@@ -469,13 +469,13 @@ ________________________________________________________________________________
 
 请注意，在创建 Model（）实例时，我们将两个输入层定义为数组。特别：
 
-```
+```py
 model = Model(inputs=[visible1, visible2], outputs=output)
 ```
 
 下面列出了完整的示例。
 
-```
+```py
 # Multiple Inputs
 from keras.utils import plot_model
 from keras.models import Model
@@ -514,7 +514,7 @@ plot_model(model, to_file='multiple_inputs.png')
 
 运行该示例总结了模型层。
 
-```
+```py
 ____________________________________________________________________________________________________
 Layer (type)                     Output Shape          Param #     Connected to
 ====================================================================================================
@@ -569,7 +569,7 @@ ________________________________________________________________________________
 
 LSTM 层解释输入序列并返回每个时间步的隐藏状态。第一个输出模型创建堆叠 LSTM，解释特征并进行二元预测。第二输出模型使用相同的输出层对每个输入时间步进行实值预测。
 
-```
+```py
 # Multiple Outputs
 from keras.utils import plot_model
 from keras.models import Model
@@ -597,7 +597,7 @@ plot_model(model, to_file='multiple_outputs.png')
 
 运行该示例总结了模型层。
 
-```
+```py
 ____________________________________________________________________________________________________
 Layer (type)                     Output Shape          Param #     Connected to
 ====================================================================================================
@@ -644,7 +644,7 @@ ________________________________________________________________________________
 
 例如，给定：
 
-```
+```py
 ...
 dense1 = Dense(32)(input)
 ...
@@ -662,7 +662,7 @@ dense1 = Dense(32)(input)
 
 我们可以用两行来做同样的事情：
 
-```
+```py
 # create layer
 dense1 = Dense(32)
 # connect layer to previous layer
@@ -671,7 +671,7 @@ dense1(input)
 
 我想我们也可以明确地调用对象上的 ___call __（）_ 函数，虽然我从未尝试过：
 
-```
+```py
 # create layer
 dense1 = Dense(32)
 # connect layer to previous layer

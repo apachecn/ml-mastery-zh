@@ -39,7 +39,7 @@
 
 首先，让我们导入我们计划在本教程中使用的所有类和函数。
 
-```
+```py
 import numpy
 from keras.models import Sequential
 from keras.layers import Dense
@@ -49,7 +49,7 @@ from keras.utils import np_utils
 
 接下来，我们可以为随机数生成器播种，以确保每次执行代码时结果都相同。
 
-```
+```py
 # fix random seed for reproducibility
 numpy.random.seed(7)
 ```
@@ -58,7 +58,7 @@ numpy.random.seed(7)
 
 神经网络模型编号，因此我们需要将字母表的字母映射为整数值。我们可以通过创建字符索引的字典（map）来轻松完成此操作。我们还可以创建反向查找，以便将预测转换回字符以便以后使用。
 
-```
+```py
 # define the raw dataset
 alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 # create mapping of characters to integers (0-25) and the reverse
@@ -70,7 +70,7 @@ int_to_char = dict((i, c) for i, c in enumerate(alphabet))
 
 例如，我们使用输入长度 1.从原始输入数据的开头开始，我们可以读出第一个字母“A”和下一个字母作为预测“B”。我们沿着一个角色移动并重复直到我们达到“Z”的预测。
 
-```
+```py
 # prepare the dataset of input to output pairs encoded as integers
 seq_length = 1
 dataX = []
@@ -87,7 +87,7 @@ for i in range(0, len(alphabet) - seq_length, 1):
 
 将代码运行到此点将产生以下输出，总结长度为 1 的输入序列和单个输出字符。
 
-```
+```py
 A -> B
 B -> C
 C -> D
@@ -117,21 +117,21 @@ Y -> Z
 
 我们需要将 NumPy 阵列重新整形为 LSTM 网络所期望的格式，即[_ 样本，时间步长，特征 _]。
 
-```
+```py
 # reshape X to be [samples, time steps, features]
 X = numpy.reshape(dataX, (len(dataX), seq_length, 1))
 ```
 
 一旦重新整形，我们就可以将输入整数归一化到 0 到 1 的范围，即 LSTM 网络使用的 S 形激活函数的范围。
 
-```
+```py
 # normalize
 X = X / float(len(alphabet))
 ```
 
 最后，我们可以将此问题视为序列分类任务，其中 26 个字母中的每一个代表不同的类。因此，我们可以使用 Keras 内置函数 **to_categorical（）**将输出（y）转换为一个热编码。
 
-```
+```py
 # one hot encode the output variable
 y = np_utils.to_categorical(dataY)
 ```
@@ -148,7 +148,7 @@ y = np_utils.to_categorical(dataY)
 
 该模型适用于 500 个时期，批量大小为 1。
 
-```
+```py
 # create and fit the model
 model = Sequential()
 model.add(LSTM(32, input_shape=(X.shape[1], X.shape[2])))
@@ -159,7 +159,7 @@ model.fit(X, y, epochs=500, batch_size=1, verbose=2)
 
 在我们拟合模型之后，我们可以评估和总结整个训练数据集的性能。
 
-```
+```py
 # summarize performance of the model
 scores = model.evaluate(X, y, verbose=0)
 print("Model Accuracy: %.2f%%" % (scores[1]*100))
@@ -167,7 +167,7 @@ print("Model Accuracy: %.2f%%" % (scores[1]*100))
 
 然后，我们可以通过网络重新运行训练数据并生成预测，将输入和输出对转换回原始字符格式，以便直观地了解网络如何了解问题。
 
-```
+```py
 # demonstrate some model predictions
 for pattern in dataX:
 	x = numpy.reshape(pattern, (1, len(pattern), 1))
@@ -181,7 +181,7 @@ for pattern in dataX:
 
 下面提供了整个代码清单，以确保完整性。
 
-```
+```py
 # Naive LSTM to learn one-char to one-char mapping
 import numpy
 from keras.models import Sequential
@@ -233,7 +233,7 @@ for pattern in dataX:
 
 运行此示例将生成以下输出。
 
-```
+```py
 Model Accuracy: 84.00%
 ['A'] -> B
 ['B'] -> C
@@ -278,14 +278,14 @@ Model Accuracy: 84.00%
 
 在这里，我们将序列长度从 1 增加到 3，例如：
 
-```
+```py
 # prepare the dataset of input to output pairs encoded as integers
 seq_length = 3
 ```
 
 这创建了以下培训模式：
 
-```
+```py
 ABC -> D
 BCD -> E
 CDE -> F
@@ -293,20 +293,20 @@ CDE -> F
 
 然后，序列中的每个元素作为新的输入特征提供给网络。这需要修改数据准备步骤中输入序列的重新形成方式：
 
-```
+```py
 # reshape X to be [samples, time steps, features]
 X = numpy.reshape(dataX, (len(dataX), 1, seq_length))
 ```
 
 在演示模型的预测时，还需要修改样本模式的重新整形方式。
 
-```
+```py
 x = numpy.reshape(pattern, (1, 1, len(pattern)))
 ```
 
 下面提供了整个代码清单，以确保完整性。
 
-```
+```py
 # Naive LSTM to learn three-char window to one-char mapping
 import numpy
 from keras.models import Sequential
@@ -358,7 +358,7 @@ for pattern in dataX:
 
 运行此示例提供以下输出。
 
-```
+```py
 Model Accuracy: 86.96%
 ['A', 'B', 'C'] -> D
 ['B', 'C', 'D'] -> E
@@ -397,13 +397,13 @@ Model Accuracy: 86.96%
 
 我们可以采用我们的第一个例子，只需将序列长度从 1 更改为 3。
 
-```
+```py
 seq_length = 3
 ```
 
 同样，这会创建输入 - 输出对，如下所示：
 
-```
+```py
 ABC -> D
 BCD -> E
 CDE -> F
@@ -412,14 +412,14 @@ DEF -> G
 
 不同之处在于输入数据的重新整形将序列作为一个特征的时间步长序列，而不是多个特征的单个时间步长。
 
-```
+```py
 # reshape X to be [samples, time steps, features]
 X = numpy.reshape(dataX, (len(dataX), seq_length, 1))
 ```
 
 这是为 Keras 中的 LSTM 提供序列上下文的正确用途。完整性代码示例如下所示。
 
-```
+```py
 # Naive LSTM to learn three-char time steps to one-char mapping
 import numpy
 from keras.models import Sequential
@@ -471,7 +471,7 @@ for pattern in dataX:
 
 运行此示例提供以下输出。
 
-```
+```py
 Model Accuracy: 100.00%
 ['A', 'B', 'C'] -> D
 ['B', 'C', 'D'] -> E
@@ -516,7 +516,7 @@ LSTM 的 Keras 实现在每批之后重置网络状态。
 
 此外，Keras 在每个训练时期之前对训练数据集进行混洗。为确保训练数据模式保持连续，我们可以禁用此改组。
 
-```
+```py
 model.fit(X, y, epochs=5000, batch_size=len(dataX), verbose=2, shuffle=False)
 ```
 
@@ -524,7 +524,7 @@ model.fit(X, y, epochs=5000, batch_size=len(dataX), verbose=2, shuffle=False)
 
 完整性代码示例如下所示。
 
-```
+```py
 # Naive LSTM to learn one-char to one-char mapping with all data in each batch
 import numpy
 from keras.models import Sequential
@@ -591,7 +591,7 @@ for i in range(0,20):
 
 运行该示例提供以下输出。
 
-```
+```py
 Model Accuracy: 100.00%
 ['A'] -> B
 ['B'] -> C
@@ -659,14 +659,14 @@ Test a Random Pattern:
 
 我们首先需要将 LSTM 层定义为有状态。这样，我们必须明确指定批量大小作为输入形状的维度。这也意味着，当我们评估网络或进行预测时，我们还必须指定并遵守相同的批量大小。现在这不是一个问题，因为我们使用批量大小为 1.当批量大小不是一个时，这可能会在进行预测时带来困难，因为需要批量和按顺序进行预测。
 
-```
+```py
 batch_size = 1
 model.add(LSTM(50, batch_input_shape=(batch_size, X.shape[1], X.shape[2]), stateful=True))
 ```
 
 训练有状态 LSTM 的一个重要区别是我们一次手动训练一个时期并在每个时期后重置状态。我们可以在 for 循环中执行此操作。同样，我们不会改变输入，保留输入训练数据的创建顺序。
 
-```
+```py
 for i in range(300):
 	model.fit(X, y, epochs=1, batch_size=batch_size, verbose=2, shuffle=False)
 	model.reset_states()
@@ -674,7 +674,7 @@ for i in range(300):
 
 如上所述，我们在评估整个训练数据集的网络性能时指定批量大小。
 
-```
+```py
 # summarize performance of the model
 scores = model.evaluate(X, y, batch_size=batch_size, verbose=0)
 model.reset_states()
@@ -683,7 +683,7 @@ print("Model Accuracy: %.2f%%" % (scores[1]*100))
 
 最后，我们可以证明网络确实学会了整个字母表。我们可以用第一个字母“A”播种它，请求预测，将预测反馈作为输入，并一直重复该过程到“Z”。
 
-```
+```py
 # demonstrate some model predictions
 seed = [char_to_int[alphabet[0]]]
 for i in range(0, len(alphabet)-1):
@@ -698,7 +698,7 @@ model.reset_states()
 
 我们还可以看到网络是否可以从任意字母开始进行预测。
 
-```
+```py
 # demonstrate a random starting point
 letter = "K"
 seed = [char_to_int[letter]]
@@ -715,7 +715,7 @@ model.reset_states()
 
 下面提供了整个代码清单，以确保完整性。
 
-```
+```py
 # Stateful LSTM to learn one-char to one-char mapping
 import numpy
 from keras.models import Sequential
@@ -784,7 +784,7 @@ model.reset_states()
 
 运行该示例提供以下输出。
 
-```
+```py
 Model Accuracy: 100.00%
 A -> B
 B -> C
@@ -827,7 +827,7 @@ E -> F
 
 为了真实地预测“K”，需要将网络的状态反复加热，将字母从“A”加到“J”。这告诉我们，通过准备以下训练数据，我们可以通过“无状态”LSTM 实现相同的效果：
 
-```
+```py
 ---a -> b
 --ab -> c
 -abc -> d
@@ -848,7 +848,7 @@ abcd -> e
 
 我们还需要定义要创建的随机序列的数量，在本例中为 1000.这也可能更多或更少。我希望实际上需要更少的模式。
 
-```
+```py
 # prepare the dataset of input to output pairs encoded as integers
 num_inputs = 1000
 max_len = 5
@@ -866,7 +866,7 @@ for i in range(num_inputs):
 
 在更广泛的上下文中运行此代码将创建如下所示的输入模式：
 
-```
+```py
 PQRST -> U
 W -> X
 O -> P
@@ -880,7 +880,7 @@ GHIJ -> K
 
 输入序列的长度在 1 和 **max_len** 之间变化，因此需要零填充。这里，我们使用左侧（前缀）填充和 **pad_sequences（）**函数中内置的 Keras。
 
-```
+```py
 X = pad_sequences(dataX, maxlen=max_len, dtype='float32')
 ```
 
@@ -888,7 +888,7 @@ X = pad_sequences(dataX, maxlen=max_len, dtype='float32')
 
 完整性代码清单如下所示。
 
-```
+```py
 # LSTM with Variable Length Input Sequences to One Character Output
 import numpy
 from keras.models import Sequential
@@ -951,7 +951,7 @@ for i in range(20):
 
 运行此代码将生成以下输出：
 
-```
+```py
 Model Accuracy: 98.90%
 ['Q', 'R'] -> S
 ['W', 'X'] -> Y

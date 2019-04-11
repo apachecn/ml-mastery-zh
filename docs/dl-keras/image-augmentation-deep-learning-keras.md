@@ -36,7 +36,7 @@ Keras 提供 [ImageDataGenerator](http://keras.io/preprocessing/image/) 类，�
 
 可以如下创建增强图像生成器：
 
-```
+```py
 datagen = ImageDataGenerator()
 ```
 
@@ -44,19 +44,19 @@ API 不是在内存中对整个图像数据集执行操作，而是通过深度�
 
 创建并配置 **ImageDataGenerator** 后，必须将其放在数据上。这将计算实际执行图像数据转换所需的任何统计信息。您可以通过调用数据生成器上的 **fit（）**函数并将其传递给训练数据集来完成此操作。
 
-```
+```py
 datagen.fit(train)
 ```
 
 数据生成器本身实际上是一个迭代器，在请求时返回批量的图像样本。我们可以通过调用 **flow（）**函数来配置批量大小并准备数据生成器并获取批量图像。
 
-```
+```py
 X_batch, y_batch = datagen.flow(train, train, batch_size=32)
 ```
 
 最后我们可以使用数据生成器。我们必须调用 **fit_generator（）**函数并传入数据生成器和所需的时间长度以及总数，而不是在我们的模型上调用 **fit（）**函数。要训​​练的时代数。
 
-```
+```py
 fit_generator(datagen, samples_per_epoch=len(train), epochs=100)
 ```
 
@@ -68,7 +68,7 @@ fit_generator(datagen, samples_per_epoch=len(train), epochs=100)
 
 我们将在这些示例中使用 MNIST 手写数字识别任务。首先，让我们看一下训练数据集中的前 9 个图像。
 
-```
+```py
 # Plot images
 from keras.datasets import mnist
 from matplotlib import pyplot
@@ -94,7 +94,7 @@ pyplot.show()
 
 您可以通过在 ImageDataGenerator 类上设置 featurewise_center 和 featurewise_std_normalization 参数来执行功能标准化。实际上，默认情况下这些设置为 True，并且创建没有参数的 ImageDataGenerator 实例将具有相同的效果。
 
-```
+```py
 # Standardize images across the dataset, mean=0, stdev=1
 from keras.datasets import mnist
 from keras.preprocessing.image import ImageDataGenerator
@@ -140,7 +140,7 @@ for X_batch, y_batch in datagen.flow(X_train, y_train, batch_size=9):
 
 您可以通过将 zca_whitening 参数设置为 True 来执行 ZCA 白化转换。
 
-```
+```py
 # ZCA whitening
 from keras.datasets import mnist
 from keras.preprocessing.image import ImageDataGenerator
@@ -184,7 +184,7 @@ ZCA 美白 MNIST 图像
 
 下面的示例通过设置 rotation_range 参数创建最多 90 度的 MNIST 数字的随机旋转。
 
-```
+```py
 # Random Rotations
 from keras.datasets import mnist
 from keras.preprocessing.image import ImageDataGenerator
@@ -226,7 +226,7 @@ MNIST 图像的随机旋转
 
 您可以通过人工创建训练数据的移位版本来训练您的深度学习网络以期望并且当前处理偏离中心的对象。 Keras 通过 width_shift_range 和 height_shift_range 参数支持训练数据的单独水平和垂直随机移位。
 
-```
+```py
 # Random Shifts
 from keras.datasets import mnist
 from keras.preprocessing.image import ImageDataGenerator
@@ -269,7 +269,7 @@ for X_batch, y_batch in datagen.flow(X_train, y_train, batch_size=9):
 
 Keras 支持使用 vertical_flip 和 horizo​​ntal_flip 参数沿垂直轴和水平轴进行随机翻转。
 
-```
+```py
 # Random Flips
 from keras.datasets import mnist
 from keras.preprocessing.image import ImageDataGenerator
@@ -315,7 +315,7 @@ Keras 允许您保存训练期间生成的图像。可以在训练之前将目�
 
 下面的示例演示了这一点，并将 9 个图像写入“images”子目录，前缀为“aug”，文件类型为 PNG。
 
-```
+```py
 # Save augmented images to file
 from keras.datasets import mnist
 from keras.preprocessing.image import ImageDataGenerator

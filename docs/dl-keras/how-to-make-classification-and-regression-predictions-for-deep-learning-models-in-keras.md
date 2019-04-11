@@ -53,7 +53,7 @@
 
 *   [用 Keras 逐步开发 Python 中的第一个神经网络](https://machinelearningmastery.com/tutorial-first-neural-network-python-keras/)
 
-```
+```py
 # example of training a final classification model
 from keras.models import Sequential
 from keras.layers import Dense
@@ -91,14 +91,14 @@ model.fit(X, y, epochs=200, verbose=0)
 
 例如，我们在名为 _Xnew_ 的数组中有一个或多个数据实例。这可以传递给我们模型上的 _predict_classes（）_ 函数，以便预测数组中每个实例的类值。
 
-```
+```py
 Xnew = [[...], [...]]
 ynew = model.predict_classes(Xnew)
 ```
 
 让我们通过一个例子来具体化：
 
-```
+```py
 # example making new class predictions for a classification problem
 from keras.models import Sequential
 from keras.layers import Dense
@@ -128,7 +128,7 @@ for i in range(len(Xnew)):
 
 运行该示例预测三个新数据实例的类，然后将数据和预测一起打印。
 
-```
+```py
 X=[0.89337759 0.65864154], Predicted=[0]
 X=[0.29097707 0.12978982], Predicted=[1]
 X=[0.78082614 0.75391697], Predicted=[0]
@@ -136,7 +136,7 @@ X=[0.78082614 0.75391697], Predicted=[0]
 
 如果您只有一个新的数据实例，则可以将其作为包含在数组中的实例提供给 _predict_classes（）_ 函数;例如：
 
-```
+```py
 # example making new class prediction for a classification problem
 from keras.models import Sequential
 from keras.layers import Dense
@@ -165,7 +165,7 @@ print("X=%s, Predicted=%s" % (Xnew[0], ynew[0]))
 
 运行该示例将打印单个实例和预测类。
 
-```
+```py
 X=[0.89337759 0.65864154], Predicted=[0]
 ```
 
@@ -185,7 +185,7 @@ X=[0.89337759 0.65864154], Predicted=[0]
 
 您可以通过调用 _predict_proba（）_ 函数在 Keras 中进行这些类型的预测;例如：
 
-```
+```py
 Xnew = [[...], [...]]
 ynew = model.predict_proba(Xnew)
 ```
@@ -196,7 +196,7 @@ ynew = model.predict_proba(Xnew)
 
 以下示例对数据实例的 _Xnew_ 数组中的每个示例进行概率预测。
 
-```
+```py
 # example making new probability predictions for a classification problem
 from keras.models import Sequential
 from keras.layers import Dense
@@ -226,7 +226,7 @@ for i in range(len(Xnew)):
 
 运行实例会进行概率预测，然后打印输入数据实例以及属于类 1 的每个实例的概率。
 
-```
+```py
 X=[0.89337759 0.65864154], Predicted=[0.0087348]
 X=[0.29097707 0.12978982], Predicted=[0.82020265]
 X=[0.78082614 0.75391697], Predicted=[0.00693122]
@@ -240,7 +240,7 @@ X=[0.78082614 0.75391697], Predicted=[0.00693122]
 
 下面是用于回归的最终 Keras 模型的示例。
 
-```
+```py
 # example of training a final regression model
 from keras.models import Sequential
 from keras.layers import Dense
@@ -268,7 +268,7 @@ _predict（）_ 函数采用一个或多个数据实例的数组。
 
 下面的示例演示了如何对具有未知预期结果的多个数据实例进行回归预测。
 
-```
+```py
 # example of making predictions for a regression problem
 from keras.models import Sequential
 from keras.layers import Dense
@@ -300,7 +300,7 @@ for i in range(len(Xnew)):
 
 运行该示例会进行多次预测，然后并排打印输入和预测以供审阅。
 
-```
+```py
 X=[0.29466096 0.30317302], Predicted=[0.17097184]
 X=[0.39445118 0.79390858], Predicted=[0.7475489]
 X=[0.02884127 0.6208843 ], Predicted=[0.43370453]
@@ -310,7 +310,7 @@ X=[0.02884127 0.6208843 ], Predicted=[0.43370453]
 
 例如：
 
-```
+```py
 # example of making predictions for a regression problem
 from keras.models import Sequential
 from keras.layers import Dense
@@ -341,7 +341,7 @@ print("X=%s, Predicted=%s" % (Xnew[0], ynew[0]))
 
 运行该示例进行单个预测并打印数据实例和预测以供审阅。
 
-```
+```py
 X=[0.29466096 0.30317302], Predicted=[0.17333156]
 ```
 

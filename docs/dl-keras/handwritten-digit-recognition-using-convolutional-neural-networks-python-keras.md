@@ -49,7 +49,7 @@ Keras 深度学习库提供了一种加载 MNIST 数据集的便捷方法。
 
 为了演示加载 MNIST 数据集是多么容易，我们将首先编写一个小脚本来下载和可视化训练数据集中的前 4 个图像。
 
-```
+```py
 # Plot ad hoc mnist instances
 from keras.datasets import mnist
 import matplotlib.pyplot as plt
@@ -82,7 +82,7 @@ MNIST 数据集中的示例
 
 让我们从导入我们需要的类和函数开始。
 
-```
+```py
 import numpy
 from keras.datasets import mnist
 from keras.models import Sequential
@@ -93,7 +93,7 @@ from keras.utils import np_utils
 
 将随机数生成器初始化为常量始终是一个好主意，以确保脚本的结果是可重现的。
 
-```
+```py
 # fix random seed for reproducibility
 seed = 7
 numpy.random.seed(seed)
@@ -101,7 +101,7 @@ numpy.random.seed(seed)
 
 现在我们可以使用 Keras 辅助函数加载 MNIST 数据集。
 
-```
+```py
 # load data
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
 ```
@@ -110,7 +110,7 @@ numpy.random.seed(seed)
 
 我们可以使用 NumPy 数组上的 [reshape（）函数](http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.reshape.html)轻松地进行转换。我们还可以通过强制像素值的精度为 32 位来降低我们的内存需求，这是 Keras 使用的默认精度。
 
-```
+```py
 # flatten 28*28 images to a 784 vector for each image
 num_pixels = X_train.shape[1] * X_train.shape[2]
 X_train = X_train.reshape(X_train.shape[0], num_pixels).astype('float32')
@@ -119,7 +119,7 @@ X_test = X_test.reshape(X_test.shape[0], num_pixels).astype('float32')
 
 像素值是 0 到 255 之间的灰度级。在使用神经网络模型时，执行输入值的某些缩放几乎总是一个好主意。因为比例是众所周知的并且表现良好，所以我们可以通过将每个值除以最大值 255 来非常快速地将像素值标准化到 0 和 1 的范围。
 
-```
+```py
 # normalize inputs from 0-255 to 0-1
 X_train = X_train / 255
 X_test = X_test / 255
@@ -129,7 +129,7 @@ X_test = X_test / 255
 
 我们可以使用 Keras 中内置的 np_utils.to_categorical（）辅助函数轻松完成此操作。
 
-```
+```py
 # one hot encode outputs
 y_train = np_utils.to_categorical(y_train)
 y_test = np_utils.to_categorical(y_test)
@@ -138,7 +138,7 @@ num_classes = y_test.shape[1]
 
 我们现在准备创建我们简单的神经网络模型。我们将在函数中定义我们的模型。如果您想稍后扩展示例并尝试获得更好的分数，这将非常方便。
 
-```
+```py
 # define baseline model
 def baseline_model():
 	# create model
@@ -158,7 +158,7 @@ def baseline_model():
 
 最后，测试数据集用于评估模型并打印分类错误率。
 
-```
+```py
 # build the model
 model = baseline_model()
 # Fit the model
@@ -170,7 +170,7 @@ print("Baseline Error: %.2f%%" % (100-scores[1]*100))
 
 在 CPU 上运行时运行该示例可能需要几分钟。您应该看到下面的输出。在极少数代码行中定义的这种非常简单的网络实现了 1.91％的可观错误率。
 
-```
+```py
 Train on 60000 samples, validate on 10000 samples
 Epoch 1/10
 8s - loss: 0.2797 - acc: 0.9209 - val_loss: 0.1413 - val_acc: 0.9576
@@ -205,7 +205,7 @@ Keras 确实为[创建卷积神经网络](http://keras.io/layers/convolutional/)
 
 第一步是导入所需的类和函数。
 
-```
+```py
 import numpy
 from keras.datasets import mnist
 from keras.models import Sequential
@@ -221,7 +221,7 @@ K.set_image_dim_ordering('th')
 
 同样，我们总是将随机数生成器初始化为恒定的种子值，以便重现结果。
 
-```
+```py
 # fix random seed for reproducibility
 seed = 7
 numpy.random.seed(seed)
@@ -231,7 +231,7 @@ numpy.random.seed(seed)
 
 在 RGB 的情况下，对于红色，绿色和蓝色分量，第一维像素将是 3，并且对于每个彩色图像将具有 3 个图像输入。在 MNIST 中像素值是灰度级的情况下，像素尺寸设置为 1。
 
-```
+```py
 # load data
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
 # reshape to be [samples][pixels][width][height]
@@ -241,7 +241,7 @@ X_test = X_test.reshape(X_test.shape[0], 1, 28, 28).astype('float32')
 
 和以前一样，最好将像素值标准化为 0 和 1 范围，并对输出变量进行热编码。
 
-```
+```py
 # normalize inputs from 0-255 to 0-1
 X_train = X_train / 255
 X_test = X_test / 255
@@ -264,7 +264,7 @@ num_classes = y_test.shape[1]
 
 如前所述，使用对数损失和 ADAM 梯度下降算法训练模型。
 
-```
+```py
 def baseline_model():
 	# create model
 	model = Sequential()
@@ -281,7 +281,7 @@ def baseline_model():
 
 我们使用多层感知器以与以前相同的方式评估模型。 CNN 适用于 10 个时期，批量为 200。
 
-```
+```py
 # build the model
 model = baseline_model()
 # Fit the model
@@ -295,7 +295,7 @@ print("CNN Error: %.2f%%" % (100-scores[1]*100))
 
 时期可能需要大约 45 秒才能在 GPU 上运行（例如在 AWS 上）。您可以看到网络的错误率达到 1.03，这比我们上面的简单多层感知器模型要好。
 
-```
+```py
 Train on 60000 samples, validate on 10000 samples
 Epoch 1/10
 60000/60000 [==============================] - 120s - loss: 0.2346 - acc: 0.9334 - val_loss: 0.0774 - val_acc: 0.9762
@@ -326,7 +326,7 @@ CNN Error: 1.03%
 
 我们导入类和函数，然后加载和准备数据与前一个 CNN 示例相同。
 
-```
+```py
 # Larger CNN for the MNIST Dataset
 import numpy
 from keras.datasets import mnist
@@ -368,7 +368,7 @@ num_classes = y_test.shape[1]
 8.  完全连接的层有 50 个神经元和整流器激活。
 9.  输出层。
 
-```
+```py
 # define the larger model
 def larger_model():
 	# create model
@@ -389,7 +389,7 @@ def larger_model():
 
 与前两个实验一样，该模型适用于 10 个时期，批量大小为 200。
 
-```
+```py
 # build the model
 model = larger_model()
 # Fit the model
@@ -403,7 +403,7 @@ print("Large CNN Error: %.2f%%" % (100-scores[1]*100))
 
 该模型每个时期运行大约需要 100 秒。这个略大的模型实现了 0.89％的可观分类错误率。
 
-```
+```py
 Train on 60000 samples, validate on 10000 samples
 Epoch 1/10
 60000/60000 [==============================] - 45s - loss: 0.3912 - acc: 0.8798 - val_loss: 0.0874 - val_acc: 0.9726

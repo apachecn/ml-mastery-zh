@@ -33,7 +33,7 @@ Theano 假设使用 [SciPy](https://www.scipy.org/) 工作的 Python 2 或 Pytho
 
 使用 Python 和 SciPy 环境，安装 Theano 相对简单。来自 PyPI 使用 pip，例如：
 
-```
+```py
 pip install Theano
 ```
 
@@ -41,7 +41,7 @@ pip install Theano
 
 可能会发布新版本，您需要更新以获取任何错误修复和效率改进。您可以使用 pip 升级 Theano，如下所示：
 
-```
+```py
 sudo pip install --upgrade --no-deps theano
 ```
 
@@ -49,7 +49,7 @@ sudo pip install --upgrade --no-deps theano
 
 对于一些使用前沿 API 更改的包装器库，可能需要这样做。您可以直接从 Github 结帐安装 Theano，如下所示：
 
-```
+```py
 pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git
 ```
 
@@ -69,7 +69,7 @@ pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git
 
 最后，我们使用我们的编译表达式，插入一些实际值并使用高效的编译 Theano 代码执行计算。
 
-```
+```py
 import theano
 from theano import tensor
 # declare two symbolic floating-point scalars

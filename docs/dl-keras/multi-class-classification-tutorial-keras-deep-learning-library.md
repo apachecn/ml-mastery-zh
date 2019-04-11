@@ -41,7 +41,7 @@ Keras 深度学习库的多类分类教程
 
 这包括我们需要 Keras 的功能，还包括 [pandas](http://pandas.pydata.org/) 的数据加载以及 [scikit-learn](http://scikit-learn.org/) 的数据准备和模型评估。
 
-```
+```py
 import numpy
 import pandas
 from keras.models import Sequential
@@ -60,7 +60,7 @@ from sklearn.pipeline import Pipeline
 
 这对于确保我们可以再次精确地实现从该模型获得的结果非常重要。它确保可以再现训练神经网络模型的随机过程。
 
-```
+```py
 # fix random seed for reproducibility
 seed = 7
 numpy.random.seed(seed)
@@ -70,7 +70,7 @@ numpy.random.seed(seed)
 
 可以直接加载数据集。因为输出变量包含字符串，所以最简单的方法是使用 pandas 加载数据。然后我们可以将属性（列）拆分为输入变量（X）和输出变量（Y）。
 
-```
+```py
 # load dataset
 dataframe = pandas.read_csv("iris.csv", header=None)
 dataset = dataframe.values
@@ -88,7 +88,7 @@ Y = dataset[:,4]
 
 例如，在这个问题中，三个类值是 Iris-setosa，Iris-versicolor 和 Iris-virginica。如果我们有观察结果：
 
-```
+```py
 Iris-setosa
 Iris-versicolor
 Iris-virginica
@@ -96,7 +96,7 @@ Iris-virginica
 
 我们可以将其转换为每个数据实例的单热编码二进制矩阵，如下所示：
 
-```
+```py
 Iris-setosa,	Iris-versicolor,	Iris-virginica
 1,		0,			0
 0,		1, 			0
@@ -105,7 +105,7 @@ Iris-setosa,	Iris-versicolor,	Iris-virginica
 
 我们可以通过首先使用 scikit-learn 类 LabelEncoder 将字符串一致地编码为整数来完成此操作。然后使用 Keras 函数 to_categorical（）将整数向量转换为一个热编码。
 
-```
+```py
 # encode class values as integers
 encoder = LabelEncoder()
 encoder.fit(Y)
@@ -126,7 +126,7 @@ Keras 中有一个 KerasClassifier 类，可以用作 scikit-learn 中的 Estima
 
 这个简单的单层神经网络的网络拓扑可以概括为：
 
-```
+```py
 4 inputs -> [8 hidden nodes] -> 3 outputs
 ```
 
@@ -134,7 +134,7 @@ Keras 中有一个 KerasClassifier 类，可以用作 scikit-learn 中的 Estima
 
 最后，网络使用具有对数损失函数的高效 Adam 梯度下降优化算法，在 Keras 中称为“ _categorical_crossentropy_ ”。
 
-```
+```py
 # define baseline model
 def baseline_model():
 	# create model
@@ -150,7 +150,7 @@ def baseline_model():
 
 我们还可以在构造 KerasClassifier 类中传递参数，该类将传递给内部用于训练神经网络的 fit（）函数。在这里，我们将时期数传递为 200，批量大小为 5，以便在训练模型时使用。通过将 verbose 设置为 0，在训练时也会关闭调试。
 
-```
+```py
 estimator = KerasClassifier(build_fn=baseline_model, epochs=200, batch_size=5, verbose=0)
 ```
 
@@ -162,7 +162,7 @@ scikit-learn 具有使用一套技术评估模型的出色能力。评估机器�
 
 首先，我们可以定义模型评估程序。在这里，我们将折叠数设置为 10（一个很好的默认值）并在分区之前对数据进行洗牌。
 
-```
+```py
 kfold = KFold(n_splits=10, shuffle=True, random_state=seed)
 ```
 
@@ -170,14 +170,14 @@ kfold = KFold(n_splits=10, shuffle=True, random_state=seed)
 
 评估模型仅需要大约 10 秒钟，并返回一个对象，该对象描述了对数据集的每个分割的 10 个构建模型的评估。
 
-```
+```py
 results = cross_val_score(estimator, X, dummy_y, cv=kfold)
 print("Baseline: %.2f%% (%.2f%%)" % (results.mean()*100, results.std()*100))
 ```
 
 结果总结为数据集上模型精度的均值和标准差。这是对看不见的数据的模型性能的合理估计。对于这个问题，它也属于已知的最佳结果范围。
 
-```
+```py
 Accuracy: 97.33% (4.42%)
 ```
 

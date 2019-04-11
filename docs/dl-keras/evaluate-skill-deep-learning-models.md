@@ -50,7 +50,7 @@
 
 例如，这里有一些用于使用列车测试分割来评估模型的伪代码：
 
-```
+```py
 train, test = split(data)
 model = fit(train.X, train.y)
 predictions = model.predict(test.X)
@@ -69,7 +69,7 @@ skill = compare(test.y, predictions)
 
 例如，这里有一些使用 k 折交叉验证评估模型的伪代码：
 
-```
+```py
 scores = list()
 for i in k:
 	train, test = split_old(data, i)
@@ -81,13 +81,13 @@ for i in k:
 
 技能分数更有用，因为我们可以采用均值并报告模型的平均预期性能，这可能更接近实际模型的实际性能。例如：
 
-```
+```py
 mean_skill = sum(scores) / count(scores)
 ```
 
 我们还可以使用 mean_skill 计算标准偏差，以了解 mean_skill 周围的平均分数差异：
 
-```
+```py
 standard_deviation = sqrt(1/count(scores) * sum( (score - mean_skill)^2 ))
 ```
 
@@ -106,7 +106,7 @@ standard_deviation = sqrt(1/count(scores) * sum( (score - mean_skill)^2 ))
 
 一种方法是每次模型拟合时使用相同的随机性。我们可以通过修复系统使用的随机数种子然后评估或拟合模型来做到这一点。例如：
 
-```
+```py
 seed(1)
 scores = list()
 for i in k:
@@ -132,7 +132,7 @@ for i in k:
 
 例如：
 
-```
+```py
 scores = list()
 for i in repeats:
 	run_scores = list()
@@ -151,7 +151,7 @@ for i in repeats:
 
 因为重复通常&gt; = 30，所以我们可以很容易地计算出平均模型技能的标准误差，即模型技能得分的估计平均值与未知的实际平均模型技能的差异（例如，mean_skill 可能有多差）
 
-```
+```py
 standard_error = standard_deviation / sqrt(count(scores))
 ```
 
@@ -159,7 +159,7 @@ standard_error = standard_deviation / sqrt(count(scores))
 
 例如，95％的间隔是平均技能周围的（1.96 *标准误差）。
 
-```
+```py
 interval = standard_error * 1.96
 lower_interval = mean_skill - interval
 upper_interval = mean_skill + interval

@@ -41,7 +41,7 @@
 
 下面的伪代码草图总结了梯度下降算法：
 
-```
+```py
 model = initialization(...)
 n_epochs = ...
 train_data = ...

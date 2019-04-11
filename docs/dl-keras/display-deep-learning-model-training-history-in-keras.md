@@ -28,14 +28,14 @@ Keras 提供了在训练深度学习模型时注册回调的功能。
 
 例如，您可以在训练模型后使用以下代码段列出历史记录对象中收集的指标：
 
-```
+```py
 # list all data in history
 print(history.history.keys())
 ```
 
 例如，对于使用验证数据集训练分类问题的模型，这可能会产生以下列表：
 
-```
+```py
 ['acc', 'loss', 'val_acc', 'val_loss']
 ```
 
@@ -60,7 +60,7 @@ print(history.history.keys())
 1.  训练时期训练和验证数据集的准确性图。
 2.  训练和验证数据集在训练时期的损失图。
 
-```
+```py
 # Visualize training history
 from keras.models import Sequential
 from keras.layers import Dense

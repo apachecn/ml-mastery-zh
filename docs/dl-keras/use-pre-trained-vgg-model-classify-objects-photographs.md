@@ -92,7 +92,7 @@ Keras 通过 VGG16 和 VGG19 类提供 16 层和 19 层版本。让我们关注 
 
 可以按如下方式创建模型：
 
-```
+```py
 from keras.applications.vgg16 import VGG16
 model = VGG16()
 ```
@@ -109,7 +109,7 @@ model = VGG16()
 
 例如，您可以打印网络层的摘要，如下所示：
 
-```
+```py
 from keras.applications.vgg16 import VGG16
 model = VGG16()
 print(model.summary())
@@ -119,7 +119,7 @@ print(model.summary())
 
 您还可以看到，默认情况下，模型要求图像作为输入，大小为 224 x 224 像素，具有 3 个通道（例如颜色）。
 
-```
+```py
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
 =================================================================
@@ -177,7 +177,7 @@ _________________________________________________________________
 
 我们还可以在 VGG 模型中创建图层，如下所示：
 
-```
+```py
 from keras.applications.vgg16 import VGG16
 from keras.utils.vis_utils import plot_model
 model = VGG16()
@@ -224,7 +224,7 @@ _VGG（）_ 类需要一些参数，如果您希望在自己的项目中使用�
 
 加载 VGG-16 型号的重量，就像我们在上一节中所做的那样。
 
-```
+```py
 from keras.applications.vgg16 import VGG16
 # load the model
 model = VGG16()
@@ -238,7 +238,7 @@ Keras 提供了一些帮助完成此步骤的工具。
 
 首先，我们可以使用 _load_img（）_ 函数加载图像并将其大小调整为所需的 224×224 像素大小。
 
-```
+```py
 from keras.preprocessing.image import load_img
 # load an image from file
 image = load_img('mug.jpg', target_size=(224, 224))
@@ -246,7 +246,7 @@ image = load_img('mug.jpg', target_size=(224, 224))
 
 接下来，我们可以将像素转换为 NumPy 数组，以便我们可以在 Keras 中使用它。我们可以使用 _img_to_array（）_ 函数。
 
-```
+```py
 from keras.preprocessing.image import img_to_array
 # convert the image pixels to a numpy array
 image = img_to_array(image)
@@ -256,7 +256,7 @@ image = img_to_array(image)
 
 我们只有一个样本（一个图像）。我们可以通过调用 _reshape（）_ 并添加额外的维度来重新整形数组。
 
-```
+```py
 # reshape data for the model
 image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
 ```
@@ -269,7 +269,7 @@ image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
 
 Keras 提供了一个名为 _preprocess_input（）_ 的函数来为网络准备新的输入。
 
-```
+```py
 from keras.applications.vgg16 import preprocess_input
 # prepare the image for the VGG model
 image = preprocess_input(image)
@@ -281,7 +281,7 @@ image = preprocess_input(image)
 
 我们可以在模型上调用 _predict（）_ 函数，以便预测属于 1000 种已知对象类型中的每一种的图像的概率。
 
-```
+```py
 # predict the probability across all output classes
 yhat = model.predict(image)
 ```
@@ -296,7 +296,7 @@ Keras 提供了解释称为 _decode_predictions（）_ 的概率的函数。
 
 我们将报告第一个最可能的对象。
 
-```
+```py
 from keras.applications.vgg16 import decode_predictions
 # convert the probabilities to class labels
 label = decode_predictions(yhat)
@@ -312,7 +312,7 @@ print('%s (%.2f%%)' % (label[1], label[2]*100))
 
 将所有这些结合在一起，下面列出了完整的示例：
 
-```
+```py
 from keras.preprocessing.image import load_img
 from keras.preprocessing.image import img_to_array
 from keras.applications.vgg16 import preprocess_input
@@ -340,7 +340,7 @@ print('%s (%.2f%%)' % (label[1], label[2]*100))
 
 运行该示例，我们可以看到图像被正确分类为“_ 咖啡杯 _”，可能性为 75％。
 
-```
+```py
 coffee_mug (75.27%)
 ```
 

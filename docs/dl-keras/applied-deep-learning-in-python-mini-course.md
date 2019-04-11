@@ -85,13 +85,13 @@ Theano 表达式的实际语法是象征性的，这对于习惯于正常软件�
 
 例如，您可以使用 pip 安装 Theano，如下所示：
 
-```
+```py
 sudo pip install Theano
 ```
 
 下面列出了一个可以用作起点的 Theano 程序的小例子：
 
-```
+```py
 import theano
 from theano import tensor
 # declare two symbolic floating-point scalars
@@ -121,13 +121,13 @@ TensorFlow 是一个用于 Google 创建和发布的快速数值计算的 Python
 
 例如，您可以使用 pip 安装 TensorFlow：
 
-```
+```py
 sudo pip install TensorFlow
 ```
 
 下面列出了一个可以用作起点的 TensorFlow 程序的小例子：
 
-```
+```py
 import tensorflow as tf
 # declare two symbolic floating-point scalars
 a = tf.placeholder(tf.float32)
@@ -166,7 +166,7 @@ Keras 的重点是模型的概念。模型的生命周期可归纳如下：
 
 例如，您可以使用 pip 安装 Keras：
 
-```
+```py
 sudo pip install keras
 ```
 
@@ -218,7 +218,7 @@ Keras 允许您在极少数代码行中开发和评估深度学习模型。
 
 它假设您[将 Pima Indians 数据集](https://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/pima-indians-diabetes.data)下载到您当前的工作目录中，文件名为 _pima-indians-diabetes.csv_ （更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)） 。
 
-```
+```py
 # Create first network with Keras
 from keras.models import Sequential
 from keras.layers import Dense
@@ -263,7 +263,7 @@ Keras 提供了一个包装类，允许您使用 scikit-learn 的深度学习模
 
 例如，您可以定义 KerasClassifier 的实例和自定义函数来创建模型，如下所示：
 
-```
+```py
 # Function to create model, required for KerasClassifier
 def create_model():
 	# Create model
@@ -296,7 +296,7 @@ Keras 提供了在训练深度学习模型时注册回调的功能。
 
 例如，您可以打印历史记录对象收集的指标列表，如下所示：
 
-```
+```py
 # list all data in history
 history = model.fit(...)
 print(history.history.keys())
@@ -318,7 +318,7 @@ Keras 库通过回调 API 提供检查点功能。 ModelCheckpoint
 
 您可以定义 ModelCheckpoint，每次观察到改进时，都会将网络权重保存到同一文件中。例如：
 
-```
+```py
 from keras.callbacks import ModelCheckpoint
 ...
 checkpoint = ModelCheckpoint('weights.best.hdf5', monitor='val_acc', save_best_only=True, mode='max')
@@ -343,7 +343,7 @@ Dropout 是一种简单但非常有效的减少丢失的技术，并且已证明
 
 例如，您可以创建一个概率为 20％的辍学图层，并将其添加到您的模型中，如下所示：
 
-```
+```py
 from keras.layers import Dropout
 ...
 model.add(Dropout(0.2))
@@ -365,7 +365,7 @@ Keras 具有基于时间的学习速率计划，该计划内置于 SGD 类中的
 
 例如，您可以指定从 0.1 开始的学习率计划，每个时期下降 0.0001，如下所示：
 
-```
+```py
 from keras.optimizers import SGD
 ...
 sgd = SGD(lr=0.1, momentum=0.9, decay=0.0001, nesterov=False)
@@ -410,7 +410,7 @@ MNIST 数据集是用于评估手写数字识别问题的算法的标准问题�
 
 例如，您可以在 Keras 中加载 MNIST 数据集，如下所示：
 
-```
+```py
 from keras.datasets import mnist
 ...
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
@@ -420,14 +420,14 @@ from keras.datasets import mnist
 
 作为提示，您将用作第一个隐藏层的 Keras [Conv2D](http://keras.io/layers/convolutional/) 层需要格式为 x 宽 x 高的格式的图像数据，其中 MNIST 数据具有 1 个通道，因为图像是灰度级的宽度和高度为 28 像素。您可以轻松地重塑 MNIST 数据集，如下所示：
 
-```
+```py
 X_train = X_train.reshape(X_train.shape[0], 1, 28, 28)
 X_test = X_test.reshape(X_test.shape[0], 1, 28, 28)
 ```
 
 您还需要对输出类值进行单热编码，Keras 还提供了一个方便的辅助函数来实现：
 
-```
+```py
 from keras.utils import np_utils
 ...
 y_train = np_utils.to_categorical(y_train)
@@ -436,7 +436,7 @@ y_test = np_utils.to_categorical(y_test)
 
 作为最后的提示，这里是一个模型定义，您可以将其作为起点：
 
-```
+```py
 model = Sequential()
 model.add(Conv2D(32, (3, 3), padding='valid', input_shape=(1, 28, 28),
 activation='relu'))
@@ -465,7 +465,7 @@ CIFAR-10 图像的小样本
 
 例如，您可以在 Keras 中加载 CIFAR-10 数据集并准备与卷积神经网络一起使用，如下所示：
 
-```
+```py
 from keras.datasets import cifar10
 from keras.utils import np_utils
 # load data
@@ -491,7 +491,7 @@ Keras 提供了一个图像增强 API，可以及时在数据集中创建图像�
 
 例如，下面的示例在 MNIST 数据集中创建最多 90 度图像的随机旋转。
 
-```
+```py
 # Random Rotations
 from keras.datasets import mnist
 from keras.preprocessing.image import ImageDataGenerator

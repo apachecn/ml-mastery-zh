@@ -38,7 +38,7 @@ Keras 允许您列出在模型培训期间要监控的指标。
 
 例如：
 
-```
+```py
 model.compile(..., metrics=['mse'])
 ```
 
@@ -61,7 +61,7 @@ model.compile(..., metrics=['mse'])
 
 下面的示例演示了这个简单的人为回归问题的 4 个内置回归指标。
 
-```
+```py
 from numpy import array
 from keras.models import Sequential
 from keras.layers import Dense
@@ -85,7 +85,7 @@ pyplot.show()
 
 运行该示例将在每个纪元的末尾打印度量标准值。
 
-```
+```py
 ...
 Epoch 96/100
 0s - loss: 1.0596e-04 - mean_squared_error: 1.0596e-04 - mean_absolute_error: 0.0088 - mean_absolute_percentage_error: 3.5611 - cosine_proximity: -1.0000e+00
@@ -109,13 +109,13 @@ Epoch 100/100
 
 我们还可以使用其扩展名称指定指标，如下所示：
 
-```
+```py
 model.compile(loss='mse', optimizer='adam', metrics=['mean_squared_error', 'mean_absolute_error', 'mean_absolute_percentage_error', 'cosine_proximity'])
 ```
 
 如果将函数名称导入脚本，我们也可以直接指定它们。
 
-```
+```py
 from keras import metrics
 model.compile(loss='mse', optimizer='adam', metrics=[metrics.mean_squared_error, metrics.mean_absolute_error, metrics.mean_absolute_percentage_error, metrics.cosine_proximity])
 ```
@@ -124,7 +124,7 @@ model.compile(loss='mse', optimizer='adam', metrics=[metrics.mean_squared_error,
 
 例如，您可以使用均方对数误差（ _mean_squared_logarithmic_error_ ， _MSLE_ 或 _msle_ ）损失函数作为度量，如下所示：
 
-```
+```py
 model.compile(loss='mse', optimizer='adam', metrics=['msle'])
 ```
 
@@ -144,7 +144,7 @@ model.compile(loss='mse', optimizer='adam', metrics=['msle'])
 
 下面是一个二进制分类问题的示例，其中显示了内置的精度指标。
 
-```
+```py
 from numpy import array
 from keras.models import Sequential
 from keras.layers import Dense
@@ -166,7 +166,7 @@ pyplot.show()
 
 运行该示例报告每个训练时期结束时的准确性。
 
-```
+```py
 ...
 Epoch 396/400
 0s - loss: 0.5934 - acc: 0.9000
@@ -196,7 +196,7 @@ Epoch 400/400
 
 例如，下面是 Keras 中 [mean_squared_error 损失函数和度量的代码。](https://github.com/fchollet/keras/blob/master/keras/losses.py)
 
-```
+```py
 def mean_squared_error(y_true, y_pred):
     return K.mean(K.square(y_pred - y_true), axis=-1)
 ```
@@ -207,7 +207,7 @@ K 是 Keras 使用的后端。
 
 例如，我们可以编写自定义指标来计算 RMSE，如下所示：
 
-```
+```py
 from keras import backend
 
 def rmse(y_true, y_pred):
@@ -218,7 +218,7 @@ def rmse(y_true, y_pred):
 
 我们可以在我们的回归示例中对此进行如下测试。请注意，我们只是直接列出函数名称，而不是将其作为 Keras 要解析的字符串或别名提供。
 
-```
+```py
 from numpy import array
 from keras.models import Sequential
 from keras.layers import Dense
@@ -244,7 +244,7 @@ pyplot.show()
 
 运行该示例在每个训练时期结束时报告自定义 RMSE 度量标准。
 
-```
+```py
 ...
 Epoch 496/500
 0s - loss: 1.2992e-06 - rmse: 9.7909e-04

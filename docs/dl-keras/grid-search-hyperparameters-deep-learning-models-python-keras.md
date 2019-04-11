@@ -51,7 +51,7 @@ Keras 模型可以通过使用 **KerasClassifier** 或 **KerasRegressor** 类包
 
 例如：
 
-```
+```py
 def create_model():
 	...
 	return model
@@ -63,7 +63,7 @@ model = KerasClassifier(build_fn=create_model)
 
 例如：
 
-```
+```py
 def create_model():
 	...
 	return model
@@ -75,7 +75,7 @@ model = KerasClassifier(build_fn=create_model, epochs=10)
 
 例如：
 
-```
+```py
 def create_model(dropout_rate=0.0):
 	...
 	return model
@@ -101,7 +101,7 @@ model = KerasClassifier(build_fn=create_model, dropout_rate=0.2)
 
 下面是定义简单网格搜索的示例：
 
-```
+```py
 param_grid = dict(epochs=[10,20,30])
 grid = GridSearchCV(estimator=model, param_grid=param_grid, n_jobs=-1)
 grid_result = grid.fit(X, Y)
@@ -127,7 +127,7 @@ grid_result = grid.fit(X, Y)
 
 如果您收到如下错误：
 
-```
+```py
 INFO (theano.gof.compilelock): Waiting for existing lock by process '55614' (I am process '55613')
 INFO (theano.gof.compilelock): To manually release the lock, delete ...
 ```
@@ -146,7 +146,7 @@ INFO (theano.gof.compilelock): To manually release the lock, delete ...
 
 完整的代码清单如下。
 
-```
+```py
 # Use scikit-learn to grid search the batch size and epochs
 import numpy
 from sklearn.model_selection import GridSearchCV
@@ -189,7 +189,7 @@ for mean, stdev, param in zip(means, stds, params):
 
 运行此示例将生成以下输出。
 
-```
+```py
 Best: 0.686198 using {'epochs': 100, 'batch_size': 20}
 0.348958 (0.024774) with: {'epochs': 10, 'batch_size': 10}
 0.348958 (0.024774) with: {'epochs': 50, 'batch_size': 10}
@@ -225,7 +225,7 @@ Keras 提供一套不同的最先进的优化算法。
 
 完整的代码清单如下。
 
-```
+```py
 # Use scikit-learn to grid search the batch size and epochs
 import numpy
 from sklearn.model_selection import GridSearchCV
@@ -267,7 +267,7 @@ for mean, stdev, param in zip(means, stds, params):
 
 运行此示例将生成以下输出。
 
-```
+```py
 Best: 0.704427 using {'optimizer': 'Adam'}
 0.348958 (0.024774) with: {'optimizer': 'SGD'}
 0.348958 (0.024774) with: {'optimizer': 'RMSprop'}
@@ -294,7 +294,7 @@ Best: 0.704427 using {'optimizer': 'Adam'}
 
 完整的代码清单如下。
 
-```
+```py
 # Use scikit-learn to grid search the learning rate and momentum
 import numpy
 from sklearn.model_selection import GridSearchCV
@@ -339,7 +339,7 @@ for mean, stdev, param in zip(means, stds, params):
 
 运行此示例将生成以下输出。
 
-```
+```py
 Best: 0.680990 using {'learn_rate': 0.01, 'momentum': 0.0}
 0.348958 (0.024774) with: {'learn_rate': 0.001, 'momentum': 0.0}
 0.348958 (0.024774) with: {'learn_rate': 0.001, 'momentum': 0.2}
@@ -387,7 +387,7 @@ Best: 0.680990 using {'learn_rate': 0.01, 'momentum': 0.0}
 
 完整的代码清单如下。
 
-```
+```py
 # Use scikit-learn to grid search the weight initialization
 import numpy
 from sklearn.model_selection import GridSearchCV
@@ -429,7 +429,7 @@ for mean, stdev, param in zip(means, stds, params):
 
 运行此示例将生成以下输出。
 
-```
+```py
 Best: 0.720052 using {'init_mode': 'uniform'}
 0.720052 (0.024360) with: {'init_mode': 'uniform'}
 0.348958 (0.024774) with: {'init_mode': 'lecun_uniform'}
@@ -455,7 +455,7 @@ Best: 0.720052 using {'init_mode': 'uniform'}
 
 完整的代码清单如下。
 
-```
+```py
 # Use scikit-learn to grid search the activation function
 import numpy
 from sklearn.model_selection import GridSearchCV
@@ -497,7 +497,7 @@ for mean, stdev, param in zip(means, stds, params):
 
 运行此示例将生成以下输出。
 
-```
+```py
 Best: 0.722656 using {'activation': 'linear'}
 0.649740 (0.009744) with: {'activation': 'softmax'}
 0.720052 (0.032106) with: {'activation': 'softplus'}
@@ -525,7 +525,7 @@ Best: 0.722656 using {'activation': 'linear'}
 
 完整的代码清单如下。
 
-```
+```py
 # Use scikit-learn to grid search the dropout rate
 import numpy
 from sklearn.model_selection import GridSearchCV
@@ -571,7 +571,7 @@ for mean, stdev, param in zip(means, stds, params):
 
 运行此示例将生成以下输出。
 
-```
+```py
 Best: 0.723958 using {'dropout_rate': 0.2, 'weight_constraint': 4}
 0.696615 (0.031948) with: {'dropout_rate': 0.0, 'weight_constraint': 1}
 0.696615 (0.031948) with: {'dropout_rate': 0.0, 'weight_constraint': 2}
@@ -639,7 +639,7 @@ Best: 0.723958 using {'dropout_rate': 0.2, 'weight_constraint': 4}
 
 完整的代码清单如下。
 
-```
+```py
 # Use scikit-learn to grid search the number of neurons
 import numpy
 from sklearn.model_selection import GridSearchCV
@@ -684,7 +684,7 @@ for mean, stdev, param in zip(means, stds, params):
 
 运行此示例将生成以下输出。
 
-```
+```py
 Best: 0.714844 using {'neurons': 5}
 0.700521 (0.011201) with: {'neurons': 1}
 0.714844 (0.011049) with: {'neurons': 5}

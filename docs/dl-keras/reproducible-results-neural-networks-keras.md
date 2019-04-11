@@ -75,7 +75,7 @@
 
 下面列出了准备数据的代码。
 
-```
+```py
 # create sequence
 length = 10
 sequence = [i/float(length) for i in range(length)]
@@ -96,7 +96,7 @@ X, y = values[:,0], values[:,1]
 
 网络代码如下所示。
 
-```
+```py
 # design network
 model = Sequential()
 model.add(Dense(10, input_dim=1))
@@ -113,7 +113,7 @@ print(mean_squared_error(y, yhat[:,0]))
 
 完整的代码清单如下。
 
-```
+```py
 from pandas import DataFrame
 from pandas import concat
 from keras.models import Sequential
@@ -153,7 +153,7 @@ for _ in range(repeats):
 
 您的具体结果会有所不同。下面提供了一个示例输出。
 
-```
+```py
 0.0282584265697
 0.0457025913022
 0.145698137198
@@ -202,7 +202,7 @@ for _ in range(repeats):
 
 我们可以通过从随机模块调用 [seed（）函数](https://docs.scipy.org/doc/numpy/reference/generated/numpy.random.seed.html)来播种 NumPy 随机数生成器，如下所示：
 
-```
+```py
 from numpy.random import seed
 seed(1)
 ```
@@ -215,7 +215,7 @@ seed(1)
 
 每次运行代码时都应该看到相同的均方误差值列表（可能由于不同机器上的精度而有一些微小的变化），如下所示：
 
-```
+```py
 0.169326527063
 2.75750621228e-05
 0.0183287291562
@@ -236,21 +236,21 @@ Keras 确实从 NumPy 随机数生成器获得随机源，因此无论您使用�
 
 必须通过在任何其他导入或其他代码之前调用文件顶部的 [seed（）函数](https://docs.scipy.org/doc/numpy/reference/generated/numpy.random.seed.html)来播种。
 
-```
+```py
 from numpy.random import seed
 seed(1)
 ```
 
 此外，TensorFlow 还有自己的随机数生成器，必须通过在 NumPy 随机数生成器之后立即调用 [set_random_seed（）函数](https://www.tensorflow.org/api_docs/python/tf/set_random_seed)来播种，如下所示：
 
-```
+```py
 from tensorflow import set_random_seed
 set_random_seed(2)
 ```
 
 为了清楚起见，代码文件的顶部必须在任何其他文件之前有以下 4 行;
 
-```
+```py
 from numpy.random import seed
 seed(1)
 from tensorflow import set_random_seed
@@ -261,7 +261,7 @@ set_random_seed(2)
 
 将这 4 行添加到上面的示例将允许代码在每次运行时生成相同的结果。您应该看到与下面列出的相同的均方误差值（由于不同机器上的精度，可能会有一些微小的变化）：
 
-```
+```py
 0.224045112999
 0.00154879478823
 0.00387589994044

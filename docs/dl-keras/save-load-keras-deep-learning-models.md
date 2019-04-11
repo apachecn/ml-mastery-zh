@@ -40,7 +40,7 @@ Keras 将保存模型架构和保存模型权重的问题分开。
 
 注意：您可能需要先安装 _h5py_ ：
 
-```
+```py
 sudo pip install h5py
 ```
 
@@ -58,7 +58,7 @@ Keras 提供了使用带有 _to_json（）_ 函数的 JSON 格式描述任何模
 
 以相同的方式评估模型，打印相同的评估分数。
 
-```
+```py
 # MLP for Pima Indians Dataset Serialize to JSON and HDF5
 from keras.models import Sequential
 from keras.layers import Dense
@@ -112,7 +112,7 @@ print("%s: %.2f%%" % (loaded_model.metrics_names[1], score[1]*100))
 
 运行此示例提供下面的输出。
 
-```
+```py
 acc: 78.78%
 Saved model to disk
 Loaded model from disk
@@ -121,7 +121,7 @@ acc: 78.78%
 
 该模型的 JSON 格式如下所示：
 
-```
+```py
 {  
    "keras_version":"2.0.2",
    "backend":"theano",
@@ -229,7 +229,7 @@ acc: 78.78%
 
 使用 YAML 描述模型，保存到文件 model.yaml，然后通过 _model_from_yaml（）_ 函数加载到新模型中。权重的处理方式与上面 HDF5 格式相同，如 model.h5。
 
-```
+```py
 # MLP for Pima Indians Dataset serialize to YAML and HDF5
 from keras.models import Sequential
 from keras.layers import Dense
@@ -284,7 +284,7 @@ print("%s: %.2f%%" % (loaded_model.metrics_names[1], score[1]*100))
 
 运行该示例将显示以下输出：
 
-```
+```py
 acc: 78.78%
 Saved model to disk
 Loaded model from disk
@@ -293,7 +293,7 @@ acc: 78.78%
 
 以 YAML 格式描述的模型如下所示：
 
-```
+```py
 backend: theano
 class_name: Sequential
 config:

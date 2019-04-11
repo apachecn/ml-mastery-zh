@@ -50,7 +50,7 @@ API 允许您指定要监控的度量标准，例如培训或验证数据集的�
 
 只有在验证数据集（monitor ='val_acc'和 mode ='max'）的分类准确性有所提高时，才会设置检验点以保存网络权重。权重存储在一个文件中，该文件包含文件名中的分数（权重改进 - {val_acc = .2f} .hdf5）。
 
-```
+```py
 # Checkpoint the weights when validation accuracy improves
 from keras.models import Sequential
 from keras.layers import Dense
@@ -82,7 +82,7 @@ model.fit(X, Y, validation_split=0.33, epochs=150, batch_size=10, callbacks=call
 
 运行该示例将生成以下输出（为简洁起见，将其截断）：
 
-```
+```py
 ...
 Epoch 00134: val_acc did not improve
 Epoch 00135: val_acc did not improve
@@ -104,7 +104,7 @@ Epoch 00149: val_acc did not improve
 
 您将在工作目录中看到许多文件，其中包含 HDF5 格式的网络权重。例如：
 
-```
+```py
 ...
 weights-improvement-53-0.76.hdf5
 weights-improvement-71-0.76.hdf5
@@ -122,7 +122,7 @@ weights-improvement-99-0.78.hdf5
 
 在这种情况下，只有当验证数据集上模型的分类精度提高到目前为止最佳时，模型权重才会写入文件“weights.best.hdf5”。
 
-```
+```py
 # Checkpoint the weights for best model on validation accuracy
 from keras.models import Sequential
 from keras.layers import Dense
@@ -154,7 +154,7 @@ model.fit(X, Y, validation_split=0.33, epochs=150, batch_size=10, callbacks=call
 
 运行此示例提供以下输出（为简洁起见，将其截断）：
 
-```
+```py
 ...
 Epoch 00139: val_acc improved from 0.79134 to 0.79134, saving model to weights.best.hdf5
 Epoch 00140: val_acc did not improve
@@ -171,7 +171,7 @@ Epoch 00149: val_acc did not improve
 
 您应该在本地目录中看到权重文件。
 
-```
+```py
 weights.best.hdf5
 ```
 
@@ -187,7 +187,7 @@ weights.best.hdf5
 
 然后使用该模型对整个数据集进行预测。
 
-```
+```py
 # How to load and use weights from a checkpoint
 from keras.models import Sequential
 from keras.layers import Dense
@@ -219,7 +219,7 @@ print("%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
 
 运行该示例将生成以下输出：
 
-```
+```py
 Created model and loaded weights from file
 acc: 77.73%
 ```
