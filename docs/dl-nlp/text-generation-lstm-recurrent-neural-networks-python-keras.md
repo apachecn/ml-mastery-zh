@@ -50,13 +50,13 @@ Project Gutenberg 为每本书添加了标准页眉和页脚，这不是原始�
 
 标题很明显，以文字结尾：
 
-```
+```py
 *** START OF THIS PROJECT GUTENBERG EBOOK ALICE'S ADVENTURES IN WONDERLAND ***
 ```
 
 页脚是文本行后面的所有文本：
 
-```
+```py
 THE END
 ```
 
@@ -68,7 +68,7 @@ THE END
 
 让我们首先导入我们打算用来训练模型的类和函数。
 
-```
+```py
 import numpy
 from keras.models import Sequential
 from keras.layers import Dense
@@ -80,7 +80,7 @@ from keras.utils import np_utils
 
 接下来，我们需要将书籍的 ASCII 文本加载到内存中，并将所有字符转换为小写，以减少网络必须学习的词汇量。
 
-```
+```py
 # load ascii text and covert to lowercase
 filename = "wonderland.txt"
 raw_text = open(filename).read()
@@ -91,7 +91,7 @@ raw_text = raw_text.lower()
 
 我们可以通过首先在书中创建一组所有不同的字符，然后创建每个字符到唯一整数的映射来轻松完成此操作。
 
-```
+```py
 # create mapping of unique chars to integers
 chars = sorted(list(set(raw_text)))
 char_to_int = dict((c, i) for i, c in enumerate(chars))
@@ -99,7 +99,7 @@ char_to_int = dict((c, i) for i, c in enumerate(chars))
 
 例如，书中唯一排序的小写字符列表如下：
 
-```
+```py
 ['\n', '\r', ' ', '!', '"', "'", '(', ')', '*', ',', '-', '.', ':', ';', '?', '[', ']', '_', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '\xbb', '\xbf', '\xef']
 ```
 
@@ -107,7 +107,7 @@ char_to_int = dict((c, i) for i, c in enumerate(chars))
 
 现在已经加载了本书并准备了映射，我们可以总结数据集。
 
-```
+```py
 n_chars = len(raw_text)
 n_vocab = len(chars)
 print "Total Characters: ", n_chars
@@ -116,7 +116,7 @@ print "Total Vocab: ", n_vocab
 
 将代码运行到此点会产生以下输出。
 
-```
+```py
 Total Characters:  147674
 Total Vocab:  47
 ```
@@ -131,14 +131,14 @@ Total Vocab:  47
 
 例如，如果序列长度为 5（为简单起见），则前两个训练模式如下：
 
-```
+```py
 CHAPT -> E
 HAPTE -> R
 ```
 
 当我们将书分成这些序列时，我们使用我们之前准备的查找表将字符转换为整数。
 
-```
+```py
 # prepare the dataset of input to output pairs encoded as integers
 seq_length = 100
 dataX = []
@@ -154,7 +154,7 @@ print "Total Patterns: ", n_patterns
 
 运行代码到这一点向我们展示了当我们将数据集拆分为网络的训练数据时，我们知道我们只有不到 150,000 个训练模式。这有意义，因为排除前 100 个字符，我们有一个训练模式来预测每个剩余的字符。
 
-```
+```py
 Total Patterns:  147574
 ```
 
@@ -168,7 +168,7 @@ Total Patterns:  147574
 
 例如，当“n”（整数值 31）是一个热编码时，它看起来如下：
 
-```
+```py
 [ 0\.  0\.  0\.  0\.  0\.  0\.  0\.  0\.  0\.  0\.  0\.  0\.  0\.  0\.  0\.  0\.  0\.  0.
   0\.  0\.  0\.  0\.  0\.  0\.  0\.  0\.  0\.  0\.  0\.  0\.  0\.  1\.  0\.  0\.  0\.  0.
   0\.  0\.  0\.  0\.  0\.  0\.  0\.  0.]
@@ -176,7 +176,7 @@ Total Patterns:  147574
 
 我们可以执行以下步骤。
 
-```
+```py
 # reshape X to be [samples, time steps, features]
 X = numpy.reshape(dataX, (n_patterns, seq_length, 1))
 # normalize
@@ -189,7 +189,7 @@ y = np_utils.to_categorical(dataY)
 
 问题实际上是 47 个类的单个字符分类问题，因此被定义为优化日志损失（交叉熵），这里使用 ADAM 优化算法来提高速度。
 
-```
+```py
 # define the LSTM model
 model = Sequential()
 model.add(LSTM(256, input_shape=(X.shape[1], X.shape[2])))
@@ -204,7 +204,7 @@ model.compile(loss='categorical_crossentropy', optimizer='adam')
 
 网络训练缓慢（Nvidia K520 GPU 上每个迭代约 300 秒）。由于速度缓慢以及由于我们的优化要求，我们将使用模型检查点来记录每次在时期结束时观察到损失改善时的所有网络权重。我们将在下一节中使用最佳权重集（最低损失）来实例化我们的生成模型。
 
-```
+```py
 # define the checkpoint
 filepath="weights-improvement-{epoch:02d}-{loss:.4f}.hdf5"
 checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
@@ -213,13 +213,13 @@ callbacks_list = [checkpoint]
 
 我们现在可以将模型与数据相匹配。在这里，我们使用适度数量的 20 个时期和 128 个模式的大批量大小。
 
-```
+```py
 model.fit(X, y, epochs=20, batch_size=128, callbacks=callbacks_list)
 ```
 
 完整性代码清单如下所示。
 
-```
+```py
 # Small LSTM Network to Generate Text for Alice in Wonderland
 import numpy
 from keras.models import Sequential
@@ -277,7 +277,7 @@ model.fit(X, y, epochs=20, batch_size=128, callbacks=callbacks_list)
 
 除了丢失值最小的那个之外，您可以删除它们。例如，当我运行这个例子时，下面是我实现的损失最小的检查点。
 
-```
+```py
 weights-improvement-19-1.9435.hdf5
 ```
 
@@ -291,7 +291,7 @@ weights-improvement-19-1.9435.hdf5
 
 首先，我们以完全相同的方式加载数据并定义网络，除了从检查点文件加载网络权重并且不需要训练网络。
 
-```
+```py
 # load the network weights
 filename = "weights-improvement-19-1.9435.hdf5"
 model.load_weights(filename)
@@ -300,7 +300,7 @@ model.compile(loss='categorical_crossentropy', optimizer='adam')
 
 此外，在准备将唯一字符映射到整数时，我们还必须创建一个反向映射，我们可以使用它将整数转换回字符，以便我们可以理解预测。
 
-```
+```py
 int_to_char = dict((i, c) for i, c in enumerate(chars))
 ```
 
@@ -310,7 +310,7 @@ int_to_char = dict((i, c) for i, c in enumerate(chars))
 
 我们可以选择随机输入模式作为种子序列，然后在生成它们时打印生成的字符。
 
-```
+```py
 # pick a random seed
 start = numpy.random.randint(0, len(dataX)-1)
 pattern = dataX[start]
@@ -332,7 +332,7 @@ print "\nDone."
 
 下面列出了使用加载的 LSTM 模型生成文本的完整代码示例，以确保完整性。
 
-```
+```py
 # Load LSTM network and generate text
 import sys
 import numpy
@@ -404,14 +404,14 @@ print "\nDone."
 
 例如，下面是此文本生成器的一次运行的结果。随机种子是：
 
-```
+```py
 be no mistake about it: it was neither more nor less than a pig, and she
 felt that it would be quit
 ```
 
 随机种子生成的文本（清理后用于演示）是：
 
-```
+```py
 be no mistake about it: it was neither more nor less than a pig, and she
 felt that it would be quit e aelin that she was a little want oe toiet
 ano a grtpersent to the tas a little war th tee the tase oa teettee
@@ -446,7 +446,7 @@ and the tabdit was the wiite rabbit, and
 
 我们将内存单元的数量保持为 256，但添加第二层。
 
-```
+```py
 model = Sequential()
 model.add(LSTM(256, input_shape=(X.shape[1], X.shape[2]), return_sequences=True))
 model.add(Dropout(0.2))
@@ -458,7 +458,7 @@ model.compile(loss='categorical_crossentropy', optimizer='adam')
 
 我们还将更改检查点权重的文件名，以便我们可以区分此网络和之前的权重（通过在文件名中附加“更大”一词）。
 
-```
+```py
 filepath="weights-improvement-{epoch:02d}-{loss:.4f}-bigger.hdf5"
 ```
 
@@ -466,7 +466,7 @@ filepath="weights-improvement-{epoch:02d}-{loss:.4f}-bigger.hdf5"
 
 完整代码清单如下所示。
 
-```
+```py
 # Larger LSTM Network to Generate Text for Alice in Wonderland
 import numpy
 from keras.models import Sequential
@@ -524,7 +524,7 @@ model.fit(X, y, epochs=50, batch_size=64, callbacks=callbacks_list)
 
 运行此示例后，您可能会损失大约 1.2。例如，我通过运行此模型获得的最佳结果存储在一个名称为的检查点文件中：
 
-```
+```py
 weights-improvement-47-1.2219-bigger.hdf5
 ```
 
@@ -536,7 +536,7 @@ weights-improvement-47-1.2219-bigger.hdf5
 
 完整性代码清单如下所示。
 
-```
+```py
 # Load Larger LSTM network and generate text
 import sys
 import numpy
@@ -610,14 +610,14 @@ print "\nDone."
 
 随机选择的种子文本是：
 
-```
+```py
 d herself lying on the bank, with her
 head in the lap of her sister, who was gently brushing away s
 ```
 
 生成的文本与种子（清理用于演示）是：
 
-```
+```py
 herself lying on the bank, with her
 head in the lap of her sister, who was gently brushing away
 so siee, and she sabbit said to herself and the sabbit said to herself and the sood

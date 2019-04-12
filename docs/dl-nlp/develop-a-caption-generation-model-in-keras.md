@@ -84,7 +84,7 @@
 
 首先，我们将加载包含所有描述的文件。
 
-```
+```py
 # load doc into memory
 def load_doc(filename):
 	# open the file as read only
@@ -102,7 +102,7 @@ doc = load_doc(filename)
 
 每张照片都有唯一的标识符。这用于照片文件名和描述的文本文件中。接下来，我们将逐步浏览照片说明列表并保存每张照片的第一个描述。下面定义了一个名为 _load_descriptions（）_ 的函数，给定加载的文档文本，它将返回照片标识符的字典到描述。
 
-```
+```py
 # extract descriptions for images
 def load_descriptions(doc):
 	mapping = dict()
@@ -138,7 +138,7 @@ print('Loaded: %d ' % len(descriptions))
 
 下面定义 _clean_descriptions（）_ 函数，给定描述图像标识符的字典，逐步执行每个描述并清理文本。
 
-```
+```py
 import string
 
 def clean_descriptions(descriptions):
@@ -168,7 +168,7 @@ print('Vocabulary Size: %d' % len(vocabulary))
 
 下面定义了 _save_doc（）_ 函数，该函数给出了包含标识符到描述和文件名的映射的字典，将映射保存到文件。
 
-```
+```py
 # save descriptions to file, one per line
 def save_doc(descriptions, filename):
 	lines = list()
@@ -185,7 +185,7 @@ save_doc(descriptions, 'descriptions.txt')
 
 综合这些，下面提供了完整的列表。
 
-```
+```py
 import string
 
 # load doc into memory
@@ -261,7 +261,7 @@ save_doc(descriptions, 'descriptions.txt')
 
 首先运行示例打印已加载的照片描述数（8,092）和干净词汇表的大小（4,484 个单词）。
 
-```
+```py
 Loaded: 8092
 Vocabulary Size: 4484
 ```
@@ -270,7 +270,7 @@ Vocabulary Size: 4484
 
 看一下文件，我们可以看到描述已准备好进行建模。
 
-```
+```py
 3621647714_fc67ab2617 man is standing on snow with trees and mountains all around him
 365128300_6966058139 group of people are rafting on river rapids
 2751694538_fffa3d307d man and boy sit in the driver seat
@@ -303,7 +303,7 @@ Keras 还提供了用于将加载的照片整形为模型的优选尺寸的工�
 
 该函数返回图像标识符的字典到图像特征。
 
-```
+```py
 # extract features from each photo in the directory
 def extract_features(directory):
 	# load the model
@@ -336,7 +336,7 @@ def extract_features(directory):
 
 下面列出了完整的示例。
 
-```
+```py
 from os import listdir
 from pickle import dump
 from keras.applications.vgg16 import VGG16
@@ -407,7 +407,7 @@ dump(features, open('features.pkl', 'wb'))
 
 下面的函数 _load_set（）_ 将加载一组预定义的标识符，我们将使用' _Flickr_8k.devImages.txt_ '文件名作为参数调用它。
 
-```
+```py
 # load a pre-defined list of photo identifiers
 def load_set(filename):
 	doc = load_doc(filename)
@@ -429,7 +429,7 @@ def load_set(filename):
 
 下面的 _train_test_split（）_ 函数将在加载的标识符集作为输入的情况下创建此拆分。
 
-```
+```py
 # split a dataset into train/test elements
 def train_test_split(dataset):
 	# order keys so the split is consistent
@@ -444,7 +444,7 @@ def train_test_split(dataset):
 
 我们将开发的模型将生成给定照片的标题，并且标题将一次生成一个单词。将提供先前生成的单词的序列作为输入。因此，我们需要一个“_ 第一个字 _”来启动生成过程和'_ 最后一个字 _'来表示标题的结束。为此，我们将使用字符串' _startseq_ '和' _endseq_ '。
 
-```
+```py
 # load clean descriptions into memory
 def load_clean_descriptions(filename, dataset):
 	# load document
@@ -468,7 +468,7 @@ def load_clean_descriptions(filename, dataset):
 
 请注意，如果您有更好的方法，请在下面的评论中分享。
 
-```
+```py
 # load photo features
 def load_photo_features(filename, dataset):
 	# load all features
@@ -482,7 +482,7 @@ def load_photo_features(filename, dataset):
 
 完整的代码示例如下所示。
 
-```
+```py
 from pickle import load
 
 # load doc into memory
@@ -561,7 +561,7 @@ print('Photos: train=%d, test=%d' % (len(train_features), len(test_features)))
 
 我们快到了。
 
-```
+```py
 Dataset: 1,000
 Train=100, Test=100
 Descriptions: train=100, test=100
@@ -574,7 +574,7 @@ Photos: train=100, test=100
 
 下面定义 _create_tokenizer（）_，它将在给定加载的照片描述文本的情况下适合 Tokenizer。
 
-```
+```py
 # fit a tokenizer given caption descriptions
 def create_tokenizer(descriptions):
 	lines = list(descriptions.values())
@@ -594,7 +594,7 @@ print('Vocabulary Size: %d' % vocab_size)
 
 例如，输入序列“_ 在场 _ 中运行的小女孩”将被分成 6 个输入 - 输出对来训练模型：
 
-```
+```py
 X1,		X2 (text sequence), 						y (word)
 photo	startseq, 									little
 photo	startseq, little,							girl
@@ -610,7 +610,7 @@ photo	startseq, little, girl, running, in, field, endseq
 
 输入序列是整数编码的，输出字是一个热编码的，以表示在整个可能单词的词汇表中预期单词的概率分布。
 
-```
+```py
 # create sequences of images, input sequences and output words for an image
 def create_sequences(tokenizer, desc, image, max_length):
 	Ximages, XSeq, y = list(), list(),list()
@@ -653,7 +653,7 @@ def create_sequences(tokenizer, desc, image, max_length):
 
 函数 _define_model（）_ 定义基线模型，给定词汇量的大小和照片描述的最大长度。 Keras 功能 API 用于定义模型，因为它提供了定义采用两个输入流并组合它们的模型所需的灵活性。
 
-```
+```py
 # define the captioning model
 def define_model(vocab_size, max_length):
 	# feature extractor (encoder)
@@ -682,7 +682,7 @@ def define_model(vocab_size, max_length):
 
 要了解模型的结构，特别是图层的形状，请参阅下面列出的摘要。
 
-```
+```py
 ____________________________________________________________________________________________________
 Layer (type)                     Output Shape          Param #     Connected to
 ====================================================================================================
@@ -731,7 +731,7 @@ ________________________________________________________________________________
 
 生成器永远循环，并在被问及时保持产生批量的输入 - 输出对。我们还有一个 _n_step_ 参数，它允许我们调整每批次要生成的输入输出对的图像数量。平均序列有 10 个字，即 10 个输入 - 输出对，良好的批量大小可能是 30 个样本，大约 2 到 3 个图像值。
 
-```
+```py
 # data generator, intended to be used in a call to model.fit_generator()
 def data_generator(descriptions, features, tokenizer, max_length, n_step):
 	# loop until we finish training
@@ -758,7 +758,7 @@ def data_generator(descriptions, features, tokenizer, max_length, n_step):
 
 通过调用 _fit_generator（）_ 并将其传递给数据生成器以及所需的所有参数，可以拟合模型。在拟合模型时，我们还可以指定每个时期运行的批次数和时期数。
 
-```
+```py
 model.fit_generator(data_generator(train_descriptions, train_features, tokenizer, max_length, n_photos_per_update), steps_per_epoch=n_batches_per_epoch, epochs=n_epochs, verbose=verbose)
 ```
 
@@ -780,7 +780,7 @@ model.fit_generator(data_generator(train_descriptions, train_features, tokenizer
 
 以下名为 _generate_desc（）_ 的函数实现此行为，并在给定训练模型和给定准备照片作为输入的情况下生成文本描述。它调用函数 _word_for_id（）_ 以将整数预测映射回一个字。
 
-```
+```py
 # map an integer to a word
 def word_for_id(integer, tokenizer):
 	for word, index in tokenizer.word_index.items():
@@ -819,7 +819,7 @@ def generate_desc(model, tokenizer, photo, max_length):
 
 以下名为 _evaluate_model（）_ 的函数将针对给定的照片描述和照片特征数据集评估训练模型。使用语料库 BLEU 分数收集和评估实际和预测的描述，该分数总结了生成的文本与预期文本的接近程度。
 
-```
+```py
 # evaluate the skill of the model
 def evaluate_model(model, descriptions, photos, tokenizer, max_length):
 	actual, predicted = list(), list()
@@ -849,7 +849,7 @@ NLTK Python 库在 [_corpus_bleu（）_ 函数](http://www.nltk.org/api/nltk.tra
 
 下面定义了模型评估循环。在运行结束时，列车和测试集的 BLEU 分数的分布被保存到文件中。
 
-```
+```py
 # run experiment
 train_results, test_results = list(), list()
 for i in range(n_repeats):
@@ -874,7 +874,7 @@ df.to_csv(model_name+'.csv', index=False)
 
 我们按如下方式对运行进行参数化，允许我们命名每次运行并将结果保存到单独的文件中。
 
-```
+```py
 # define experiment
 model_name = 'baseline1'
 verbose = 2
@@ -888,7 +888,7 @@ n_repeats = 3
 
 下面列出了完整的示例。
 
-```
+```py
 from os import listdir
 from numpy import array
 from numpy import argmax
@@ -1147,7 +1147,7 @@ df.to_csv(model_name+'.csv', index=False)
 
 首先运行该示例打印已加载的训练数据的摘要统计信息。
 
-```
+```py
 Dataset: 1,000
 Descriptions: train=100, test=100
 Photos: train=100, test=100
@@ -1159,7 +1159,7 @@ Description Length: 25
 
 在运行结束时，训练集上报告的平均 BLEU 为 0.06，测试集上报告为 0.04。结果存储在 _baseline1.csv_ 中。
 
-```
+```py
           train      test
 count  3.000000  3.000000
 mean   0.060617  0.040978
@@ -1183,7 +1183,7 @@ max    0.087268  0.057617
 
 以下是该算法的第二次运行的结果。
 
-```
+```py
           train      test
 count  3.000000  3.000000
 mean   0.036902  0.043003
@@ -1211,14 +1211,14 @@ max    0.058660  0.060624
 
 将重复次数更改为 1，将运行名称更改为“ _baseline_generate_ ”。
 
-```
+```py
 model_name = 'baseline_generate'
 n_repeats = 1
 ```
 
 然后更新 _evaluate_model（）_ 函数以仅评估数据集中的前 5 张照片并打印描述，如下所示。
 
-```
+```py
 # evaluate the skill of the model
 def evaluate_model(model, descriptions, photos, tokenizer, max_length):
 	actual, predicted = list(), list()
@@ -1242,7 +1242,7 @@ def evaluate_model(model, descriptions, photos, tokenizer, max_length):
 
 您应该看到列车的结果如下所示（具体结果将根据算法的随机性质而变化）：
 
-```
+```py
 Actual:    startseq boy bites hard into treat while he sits outside endseq
 Predicted: startseq boy boy while while he while outside endseq
 
@@ -1261,7 +1261,7 @@ Predicted: startseq man is is shirt is on on on on bike endseq
 
 您应该在测试数据集上看到如下结果：
 
-```
+```py
 Actual:    startseq three people are looking into photographic equipment endseq
 Predicted: startseq boy racer on on on on bike endseq
 
@@ -1288,21 +1288,21 @@ Predicted: startseq man in up up his waves endseq
 
 我们将看看模型大小的以下几个方面：
 
-1.  '编码器'的固定矢量输出的大小。
+1.  '编码器'的固定向量输出的大小。
 2.  序列编码器模型的大小。
 3.  语言模型的大小。
 
 让我们潜入。
 
-### 固定长度矢量的大小
+### 固定长度向量的大小
 
-在基线模型中，照片特征提取器和文本序列编码器都输出 128 个元素矢量。然后将这些矢量连接起来以由语言模型处理。
+在基线模型中，照片特征提取器和文本序列编码器都输出 128 个元素向量。然后将这些向量连接起来以由语言模型处理。
 
 来自每个子模型的 128 个元素向量包含有关输入序列和照片的所有已知信息。我们可以改变这个向量的大小，看它是否会影响模型技能
 
 首先，我们可以将大小从 128 个元素减少到 64 个元素。
 
-```
+```py
 # define the captioning model
 def define_model(vocab_size, max_length):
 	# feature extractor (encoder)
@@ -1329,13 +1329,13 @@ def define_model(vocab_size, max_length):
 
 我们将此模型命名为“ _size_sm_fixed_vec_ ”。
 
-```
+```py
 model_name = 'size_sm_fixed_vec'
 ```
 
 运行此实验会产生以下 BLEU 分数，可能是测试集上基线的小增益。
 
-```
+```py
           train      test
 count  3.000000  3.000000
 mean   0.204421  0.063148
@@ -1347,9 +1347,9 @@ min    0.174769  0.059391
 max    0.227564  0.065295
 ```
 
-我们还可以将固定长度矢量的大小从 128 增加到 256 个单位。
+我们还可以将固定长度向量的大小从 128 增加到 256 个单位。
 
-```
+```py
 # define the captioning model
 def define_model(vocab_size, max_length):
 	# feature extractor (encoder)
@@ -1376,7 +1376,7 @@ def define_model(vocab_size, max_length):
 
 我们将此配置命名为“ _size_lg_fixed_vec_ ”。
 
-```
+```py
 model_name = 'size_lg_fixed_vec'
 ```
 
@@ -1384,7 +1384,7 @@ model_name = 'size_lg_fixed_vec'
 
 有可能通过更多数据和/或更长时间的训练，我们可能会看到不同的故事。
 
-```
+```py
           train      test
 count  3.000000  3.000000
 mean   0.023517  0.027813
@@ -1402,7 +1402,7 @@ max    0.029682  0.039966
 
 首先，我们可以尝试降低序列编码器的代表表现力是否会影响模型技能。我们可以将 LSTM 层中的内存单元数从 256 减少到 128。
 
-```
+```py
 # define the captioning model
 def define_model(vocab_size, max_length):
 	# feature extractor (encoder)
@@ -1431,7 +1431,7 @@ model_name = 'size_sm_seq_model'
 
 运行这个例子，我们可以看到两列火车上的小凹凸和基线测试。这可能是小训练集大小的神器。
 
-```
+```py
           train      test
 count  3.000000  3.000000
 mean   0.074944  0.053917
@@ -1445,7 +1445,7 @@ max    0.091406  0.064799
 
 换句话说，我们可以将 LSTM 层的数量从一个增加到两个，看看是否会产生显着的差异。
 
-```
+```py
 # define the captioning model
 def define_model(vocab_size, max_length):
 	# feature extractor (encoder)
@@ -1475,7 +1475,7 @@ model_name = 'size_lg_seq_model'
 
 运行此实验表明 BLEU 在列车和测试装置上都有不错的碰撞。
 
-```
+```py
           train      test
 count  3.000000  3.000000
 mean   0.094937  0.096970
@@ -1489,7 +1489,7 @@ max    0.109499  0.188351
 
 我们还可以尝试通过将其从 50 维加倍到 100 维来增加单词嵌入的表示能力。
 
-```
+```py
 # define the captioning model
 def define_model(vocab_size, max_length):
 	# feature extractor (encoder)
@@ -1518,7 +1518,7 @@ model_name = 'size_em_seq_model'
 
 我们在训练数据集上看到一个大的运动，但测试数据集上的运动可能很少。
 
-```
+```py
 count  3.000000  3.000000
 mean   0.112743  0.050935
 std    0.017136  0.006860
@@ -1535,7 +1535,7 @@ max    0.130350  0.057404
 
 首先，我们可以通过将 LSTM 和密集层切割为 500 到 256 个神经元来研究对模型技能的影响。
 
-```
+```py
 # define the captioning model
 def define_model(vocab_size, max_length):
 	# feature extractor (encoder)
@@ -1564,7 +1564,7 @@ model_name = 'size_sm_lang_model'
 
 我们可以看到，这对 BLEU 对训练和测试数据集的影响都很小，同样可能与数据集的小尺寸有关。
 
-```
+```py
           train      test
 count  3.000000  3.000000
 mean   0.063632  0.056059
@@ -1578,7 +1578,7 @@ max    0.082169  0.066256
 
 我们还可以通过添加相同大小的第二个 LSTM 层来查看加倍语言模型容量的影响。
 
-```
+```py
 # define the captioning model
 def define_model(vocab_size, max_length):
 	# feature extractor (encoder)
@@ -1610,7 +1610,7 @@ model_name = 'size_lg_lang_model'
 
 测试数据集的改进可能是个好兆头。这可能是一个值得探索的变化。
 
-```
+```py
           train      test
 count  3.000000  3.000000
 mean   0.043838  0.067658
@@ -1647,7 +1647,7 @@ max    0.086948  0.102469
 
 下面列出了更新的 _define_model（）_ 函数和实验名称。
 
-```
+```py
 # define the captioning model
 def define_model(vocab_size, max_length):
 	# feature extractor (encoder)
@@ -1678,7 +1678,7 @@ model_name = 'fe_avg_pool'
 
 我们也看到了测试技巧的小幅提升。这可能是一个值得探索的变化。
 
-```
+```py
           train      test
 count  3.000000  3.000000
 mean   0.834627  0.060847
@@ -1696,7 +1696,7 @@ max    0.909690  0.097952
 
 我不认为这是一个很好的模型设计，但值得测试这个假设。
 
-```
+```py
 # define the captioning model
 def define_model(vocab_size, max_length):
 	# feature extractor (encoder)
@@ -1725,7 +1725,7 @@ model_name = 'fe_flat'
 
 令人惊讶的是，我们看到训练数据的小幅提升和测试数据的大幅提升。这对我来说是令人惊讶的，可能值得进一步调查。
 
-```
+```py
           train      test
 count  3.000000  3.000000
 mean   0.055988  0.135231
@@ -1739,7 +1739,7 @@ max    0.073731  0.192428
 
 我们可以尝试重复此实验，并提供更多容量来解释提取的照片功能。在 Flatten 层之后添加具有 500 个神经元的新 Dense 层。
 
-```
+```py
 # define the captioning model
 def define_model(vocab_size, max_length):
 	# feature extractor (encoder)
@@ -1769,7 +1769,7 @@ model_name = 'fe_flat2'
 
 这导致更改不太令人印象深刻，并且测试数据集上的 BLEU 结果可能更差。
 
-```
+```py
           train      test
 count  3.000000  3.000000
 mean   0.060126  0.029487
@@ -1810,7 +1810,7 @@ max    0.091661  0.044688
 
 一旦适合，我们可以将单词和单词向量保存为 ASCII 文件，可能用于以后的检查或可视化。
 
-```
+```py
 # train word2vec model
 lines = [s.split() for s in train_descriptions.values()]
 model = Word2Vec(lines, size=100, window=5, workers=8, min_count=1)
@@ -1827,7 +1827,7 @@ model.wv.save_word2vec_format(filename, binary=False)
 
 现在，我们可以将嵌入加载到内存中，只检索词汇表中单词的单词向量，然后将它们保存到新文件中。
 
-```
+```py
 # load the whole embedding into memory
 embedding = dict()
 file = open('custom_embedding.txt')
@@ -1860,7 +1860,7 @@ print('Saved Embedding')
 
 下面列出了完整的示例。
 
-```
+```py
 # prepare word vectors for captioning model
 
 from numpy import asarray
@@ -1968,7 +1968,7 @@ print('Saved Embedding')
 
 运行此示例将创建存储在文件' _word2vec_embedding.pkl_ '中的单词到单词向量的新字典映射。
 
-```
+```py
 Dataset: 1000
 Train=100, Test=100
 Descriptions: train=100
@@ -1983,7 +1983,7 @@ Saved Embedding
 
 下面提供 _load_embedding（）_ 函数，它加载自定义 word2vec 嵌入并返回新的嵌入层以供在模型中使用。
 
-```
+```py
 # load a word embedding
 def load_embedding(tokenizer, vocab_size, max_length):
 	# load the tokenizer
@@ -2003,7 +2003,7 @@ def load_embedding(tokenizer, vocab_size, max_length):
 
 我们可以通过直接从 _define_model（）_ 函数调用函数在我们的模型中使用它。
 
-```
+```py
 # define the captioning model
 def define_model(tokenizer, vocab_size, max_length):
 	# feature extractor (encoder)
@@ -2032,7 +2032,7 @@ model_name = 'seq_w2v_fixed'
 
 我们可以在训练数据集上看到一些提升，也许在测试数据集上没有真正显着的变化。
 
-```
+```py
           train      test
 count  3.000000  3.000000
 mean   0.096780  0.047540
@@ -2050,7 +2050,7 @@ max    0.133967  0.054939
 
 下面列出了允许微调嵌入层的更新的 _load_embedding（）_ 功能。
 
-```
+```py
 # load a word embedding
 def load_embedding(tokenizer, vocab_size, max_length):
 	# load the tokenizer
@@ -2072,7 +2072,7 @@ model_name = 'seq_w2v_tuned'
 
 同样，我们认为在基线模型中使用这些预先训练的字嵌入向量并没有太大差异。
 
-```
+```py
           train      test
 count  3.000000  3.000000
 mean   0.065297  0.042712
@@ -2116,7 +2116,7 @@ max    0.157885  0.049904
 
 *   在照片特征提取器（fe_flat 在 0.135231）之后可能不需要合并。
 *   在照片特征提取器（fe_avg_pool 为 0.060847）之后，平均合并可能比最大合并更有优势。
-*   也许在子模型之后的较小尺寸的固定长度矢量是一个好主意（size_sm_fixed_vec 在 0.063148）。
+*   也许在子模型之后的较小尺寸的固定长度向量是一个好主意（size_sm_fixed_vec 在 0.063148）。
 *   也许在语言模型中添加更多层可以带来一些好处（size_lg_lang_model 为 0.067658）。
 *   也许在序列模型中添加更多层可以带来一些好处（size_lg_seq_model 为 0.09697）。
 
@@ -2126,7 +2126,7 @@ max    0.157885  0.049904
 
 下面是一些代码，用于加载每个实验的保存结果，并在列车和测试集上创建结果的盒子和须状图以供审查。
 
-```
+```py
 from os import listdir
 from pandas import read_csv
 from pandas import DataFrame
@@ -2169,7 +2169,7 @@ pyplot.show()
 *   平面上的利差很大;也许平均合并可能更安全。
 *   较大的语言模型的传播很大，并且在错误/危险的方向上倾斜。
 *   较大序列模型上的扩散很大，并且向右倾斜。
-*   较小的固定长度矢量大小可能有一些好处。
+*   较小的固定长度向量大小可能有一些好处。
 
 我预计增加重复到 5,10 或 30 会稍微收紧这些分布。
 

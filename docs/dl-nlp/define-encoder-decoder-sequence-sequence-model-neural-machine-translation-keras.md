@@ -54,7 +54,7 @@ Francois 的实现提供了一个模板，用于在编写本文时在 Keras 深�
 
 下面是解压缩下载的存档后您将看到的 _fra.txt_ 数据文件的前 10 行示例。
 
-```
+```py
 Go.		Va !
 Run!	Cours !
 Run!	Courez !
@@ -94,11 +94,11 @@ Stop!	Arrête-toi !
 
 第一步是定义编码器。
 
-编码器的输入是一系列字符，每个字符编码为长度为 _num_encoder_tokens_ 的单热矢量。
+编码器的输入是一系列字符，每个字符编码为长度为 _num_encoder_tokens_ 的单热向量。
 
 编码器中的 LSTM 层定义为 _return_state_ 参数设置为 _True_ 。这将返回 LSTM 图层返回的隐藏状态输出，以及图层中所有单元格的隐藏状态和单元格状态。这些在定义解码器时使用。
 
-```
+```py
 # Define an input sequence and process it.
 encoder_inputs = Input(shape=(None, num_encoder_tokens))
 encoder = LSTM(latent_dim, return_state=True)
@@ -109,7 +109,7 @@ encoder_states = [state_h, state_c]
 
 接下来，我们定义解码器。
 
-解码器输入被定义为法语字符一热编码到二元矢量的序列，其长度为 _num_decoder_tokens_ 。
+解码器输入被定义为法语字符一热编码到二元向量的序列，其长度为 _num_decoder_tokens_ 。
 
 LSTM 层定义为返回序列和状态。忽略最终的隐藏和单元状态，仅引用隐藏状态的输出序列。
 
@@ -119,7 +119,7 @@ _Dense_ 输出层用于预测每个字符。该 _Dense_ 用于以一次性方式
 
 Dense 不需要包含在 _TimeDistributed_ 层中。
 
-```
+```py
 # Set up the decoder, using `encoder_states` as initial state.
 decoder_inputs = Input(shape=(None, num_decoder_tokens))
 # We set up our decoder to return full output sequences,
@@ -133,7 +133,7 @@ decoder_outputs = decoder_dense(decoder_outputs)
 
 最后，使用编码器和解码器的输入以及输出目标序列来定义模型。
 
-```
+```py
 # Define the model that will turn
 # `encoder_input_data` & `decoder_input_data` into `decoder_target_data`
 model = Model([encoder_inputs, decoder_inputs], decoder_outputs)
@@ -141,7 +141,7 @@ model = Model([encoder_inputs, decoder_inputs], decoder_outputs)
 
 我们可以在一个独立的示例中将所有这些组合在一起并修复配置并打印模型图。下面列出了定义模型的完整代码示例。
 
-```
+```py
 from keras.models import Model
 from keras.layers import Input
 from keras.layers import LSTM
@@ -195,7 +195,7 @@ plot_model(model, to_file='model.png', show_shapes=True)
 
 编码器模型被定义为从训练模型中的编码器获取输入层（ _encoder_inputs_ ）并输出隐藏和单元状态张量（ _encoder_states_ ）。
 
-```
+```py
 # define encoder inference model
 encoder_model = Model(encoder_inputs, encoder_states)
 ```
@@ -204,14 +204,14 @@ encoder_model = Model(encoder_inputs, encoder_states)
 
 解码器需要来自编码器的隐藏和单元状态作为新定义的编码器模型的初始状态。由于解码器是一个单独的独立模型，因此这些状态将作为模型的输入提供，因此必须首先定义为输入。
 
-```
+```py
 decoder_state_input_h = Input(shape=(latent_dim,))
 decoder_state_input_c = Input(shape=(latent_dim,))
 ```
 
 然后可以指定它们用作解码器 LSTM 层的初始状态。
 
-```
+```py
 decoder_states_inputs = [decoder_state_input_h, decoder_state_input_c]
 decoder_outputs, state_h, state_c = decoder_lstm(decoder_inputs, initial_state=decoder_states_inputs)
 ```
@@ -224,7 +224,7 @@ decoder_outputs, state_h, state_c = decoder_lstm(decoder_inputs, initial_state=d
 
 因此，解码器必须在每次调用时输出隐藏和单元状态以及预测字符，以便可以将这些状态分配给变量并在每个后续递归调用上用于要翻译的给定输入英语文本序列。
 
-```
+```py
 decoder_states = [state_h, state_c]
 decoder_outputs = decoder_dense(decoder_outputs)
 decoder_model = Model([decoder_inputs] + decoder_states_inputs, [decoder_outputs] + decoder_states)
@@ -232,7 +232,7 @@ decoder_model = Model([decoder_inputs] + decoder_states_inputs, [decoder_outputs
 
 考虑到一些元素的重用，我们可以将所有这些结合在一起，形成一个独立的代码示例，并结合上一节训练模型的定义。完整的代码清单如下。
 
-```
+```py
 from keras.models import Model
 from keras.layers import Input
 from keras.layers import LSTM

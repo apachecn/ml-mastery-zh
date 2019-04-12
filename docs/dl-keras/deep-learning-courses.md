@@ -179,8 +179,8 @@
 YouTube 播放列表的文件名称很差，而且有些缺少讲座。 2016 年的视频尚未全部上传。以下是 2015 年讲座和视频链接的列表。只是跳进一个特定主题就容易多了。
 
 *   [讲座 1：NLP 和深度学习简介](https://www.youtube.com/watch?v=sU_Yu_USrNc&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=1)
-*   [第 2 讲：简单的单词矢量表示：word2vec，GloVe](https://www.youtube.com/watch?v=T8tQZChniMk&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=2)
-*   [第 3 讲：高级单词矢量表示：语言模型，softmax，单层网络](https://www.youtube.com/watch?v=T1j2Q9_FgTM&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=3)
+*   [第 2 讲：简单的单词向量表示：word2vec，GloVe](https://www.youtube.com/watch?v=T8tQZChniMk&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=2)
+*   [第 3 讲：高级单词向量表示：语言模型，softmax，单层网络](https://www.youtube.com/watch?v=T1j2Q9_FgTM&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=3)
 *   [第 4 讲：词窗分类和神经网络](https://www.youtube.com/watch?v=MRH9ABxCUZ0&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=4)
 *   [第五讲：项目建议，神经网络和反支柱（全部详细信息）](https://www.youtube.com/watch?v=I2TfdXfSOfc&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=5)
 *   [第六讲：实用技巧：梯度检查，过度拟合，正则化，激活功能，细节](https://www.youtube.com/watch?v=DTbI7XisZcQ&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=6)

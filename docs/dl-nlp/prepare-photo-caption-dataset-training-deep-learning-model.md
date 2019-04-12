@@ -99,7 +99,7 @@ Flickr8K 数据集是开始使用图像字幕时使用的一个很好的数据�
 
 图像文件名是唯一的图像标识符。例如，以下是图像文件名的示例：
 
-```
+```py
 990890291_afc72be141.jpg
 99171998_7cc800ceef.jpg
 99679241_adc853a5c0.jpg
@@ -109,7 +109,7 @@ Flickr8K 数据集是开始使用图像字幕时使用的一个很好的数据�
 
 Keras 提供 _load_img（）_ 函数，可用于将图像文件直接作为像素数组加载。
 
-```
+```py
 from keras.preprocessing.image import load_img
 image = load_img('990890291_afc72be141.jpg')
 ```
@@ -118,7 +118,7 @@ image = load_img('990890291_afc72be141.jpg')
 
 我们可以使用 _img_to_array（）_ keras 函数来转换加载的数据。
 
-```
+```py
 from keras.preprocessing.image import img_to_array
 image = img_to_array(image)
 ```
@@ -129,7 +129,7 @@ image = img_to_array(image)
 
 如果我们决定在模型中使用这个预先训练的模型作为特征提取器，我们可以使用 Keras 中的 _preprocess_input（）_ 函数预处理模型的像素数据，例如：
 
-```
+```py
 from keras.applications.vgg16 import preprocess_input
 
 # reshape data into a single sample of an image
@@ -140,19 +140,19 @@ image = preprocess_input(image)
 
 我们可能还想强制加载照片以使其具有与 VGG 模型相同的像素尺寸，即 224 x 224 像素。我们可以在调用 _load_img（）_ 时这样做，例如：
 
-```
+```py
 image = load_img('990890291_afc72be141.jpg', target_size=(224, 224))
 ```
 
 我们可能想要从图像文件名中提取唯一的图像标识符。我们可以通过将'。'（句点）字符拆分文件名字符串并检索结果数组的第一个元素来实现：
 
-```
+```py
 image_id = filename.split('.')[0]
 ```
 
 我们可以将所有这些结合在一起并开发一个函数，给定包含照片的目录的名称，将加载和预处理 VGG 模型的所有照片，并将它们返回到键入其唯一图像标识符的字典中。
 
-```
+```py
 from os import listdir
 from keras.preprocessing.image import load_img
 from keras.preprocessing.image import img_to_array
@@ -183,13 +183,13 @@ print('Loaded Images: %d' % len(images))
 
 运行此示例将打印已加载图像的数量。运行需要几分钟。
 
-```
+```py
 Loaded Images: 8091
 ```
 
 如果你没有 RAM 来保存所有图像（估计大约 5GB），那么你可以添加一个 if 语句来在加载 100 个图像后提前打破循环，例如：
 
-```
+```py
 if (len(images) >= 100):
 	break
 ```
@@ -206,7 +206,7 @@ if (len(images) >= 100):
 
 第一步是加载 VGG 模型。此型号直接在 Keras 中提供，可按如下方式加载。请注意，这会将 500 兆的模型权重下载到您的计算机，这可能需要几分钟。
 
-```
+```py
 from keras.applications.vgg16 import VGG16
 # load the model
 in_layer = Input(shape=(224, 224, 3))
@@ -222,7 +222,7 @@ print(model.summary())
 
 下面列出了完整的示例。
 
-```
+```py
 from os import listdir
 from pickle import dump
 from keras.applications.vgg16 import VGG16
@@ -282,7 +282,7 @@ dump(features, open('features.pkl', 'wb'))
 
 以下是文件中的描述示例，显示了单个图像的 5 种不同描述。
 
-```
+```py
 1305564994_00513f9a5b.jpg#0 A man in street racer armor be examine the tire of another racer 's motorbike .
 1305564994_00513f9a5b.jpg#1 Two racer drive a white bike down a road .
 1305564994_00513f9a5b.jpg#2 Two motorist be ride along on their vehicle that be oddly design and color .
@@ -306,7 +306,7 @@ dump(features, open('features.pkl', 'wb'))
 
 首先，我们需要一个函数将整个注释文件（' _Flickr8k.token.txt_ '）加载到内存中。下面是一个执行此操作的函数，称为 _load_doc（）_，给定文件名，将以字符串形式返回文档。
 
-```
+```py
 # load doc into memory
 def load_doc(filename):
 	# open the file as read only
@@ -320,7 +320,7 @@ def load_doc(filename):
 
 我们可以从上面的文件示例中看到，我们只需要用空格分割每一行，并将第一个元素作为图像标识符，其余元素作为图像描述。例如：
 
-```
+```py
 # split line by white space
 tokens = line.split()
 # take the first token as the image id, the rest as the description
@@ -329,14 +329,14 @@ image_id, image_desc = tokens[0], tokens[1:]
 
 然后我们可以通过删除文件扩展名和描述号来清理图像标识符。
 
-```
+```py
 # remove filename from image id
 image_id = image_id.split('.')[0]
 ```
 
 我们还可以将描述标记重新组合成一个字符串，以便以后处理。
 
-```
+```py
 # convert description tokens back to string
 image_desc = ' '.join(image_desc)
 ```
@@ -345,7 +345,7 @@ image_desc = ' '.join(image_desc)
 
 下面定义 _load_descriptions（）_ 函数，它将获取加载的文件，逐行处理，并将图像标识符字典返回到它们的第一个描述。
 
-```
+```py
 # load doc into memory
 def load_doc(filename):
 	# open the file as read only
@@ -384,7 +384,7 @@ print('Loaded: %d ' % len(descriptions))
 
 运行该示例将打印已加载的图像描述的数量。
 
-```
+```py
 Loaded: 8092
 ```
 
@@ -407,7 +407,7 @@ Loaded: 8092
 
 我们可以在一个函数中实现这些简单的清理操作，该函数清除上一节中加载的字典中的每个描述。下面定义了 _clean_descriptions（）_ 函数，它将清理每个加载的描述。
 
-```
+```py
 # clean description text
 def clean_descriptions(descriptions):
 	# prepare translation table for removing punctuation
@@ -429,7 +429,7 @@ def clean_descriptions(descriptions):
 
 每行将包含图像标识符，后跟干净描述。下面定义了 _save_doc（）_ 函数，用于将已清理的描述保存到文件中。
 
-```
+```py
 # save descriptions to file, one per line
 def save_doc(descriptions, filename):
 	lines = list()
@@ -443,7 +443,7 @@ def save_doc(descriptions, filename):
 
 将这一切与上一节中的描述加载在一起，下面列出了完整的示例。
 
-```
+```py
 import string
 
 # load doc into memory
@@ -520,14 +520,14 @@ save_doc(descriptions, 'descriptions.txt')
 
 运行该示例首先加载 8,092 个描述，清除它们，汇总 4,484 个唯一单词的词汇表，然后将它们保存到名为“ _descriptionss.txt_ ”的新文件中。
 
-```
+```py
 Loaded: 8092
 Vocabulary Size: 4484
 ```
 
 在文本编辑器中打开新文件' _descriptionss.txt_ '并查看内容。您应该看到准备好进行建模的照片的可读描述。
 
-```
+```py
 ...
 3139118874_599b30b116 two girls pose for picture at christmastime
 2065875490_a46b58c12b person is walking on sidewalk and skeleton is on the left inside of fence
@@ -558,7 +558,7 @@ Vocabulary Size: 4484
 
 第一步是将图像标识符的映射加载到存储在' _descriptionss.txt_ '中的干净描述中。
 
-```
+```py
 # load doc into memory
 def load_doc(filename):
 	# open the file as read only
@@ -588,20 +588,20 @@ print('Loaded %d' % (len(descriptions)))
 
 运行此片段将 8,092 张照片描述加载到以图像标识符为中心的字典中。然后，可以使用这些标识符将每个照片文件加载到模型的相应输入。
 
-```
+```py
 Loaded 8092
 ```
 
 接下来，我们需要提取所有描述文本，以便我们对其进行编码。
 
-```
+```py
 # extract all text
 desc_text = list(descriptions.values())
 ```
 
 我们可以使用 Keras _Tokenizer_ 类将词汇表中的每个单词一致地映射为整数。首先，创建对象，然后将其放在描述文本上。稍后可以将拟合标记器保存到文件中，以便将预测一致地解码回词汇单词。
 
-```
+```py
 from keras.preprocessing.text import Tokenizer
 # prepare tokenizer
 tokenizer = Tokenizer()
@@ -612,14 +612,14 @@ print('Vocabulary Size: %d' % vocab_size)
 
 接下来，我们可以使用 fit tokenizer 将照片描述编码为整数序列。
 
-```
+```py
 # integer encode descriptions
 sequences = tokenizer.texts_to_sequences(desc_text)
 ```
 
 该模型将要求所有输出序列具有相同的训练长度。我们可以通过填充所有编码序列以使其具有与最长编码序列相同的长度来实现这一点。我们可以在单词列表之后用 0 值填充序列。 Keras 提供 _pad_sequences（）_ 函数来填充序列。
 
-```
+```py
 from keras.preprocessing.sequence import pad_sequences
 # pad all sequences to a fixed length
 max_length = max(len(s) for s in sequences)
@@ -627,9 +627,9 @@ print('Description Length: %d' % max_length)
 padded = pad_sequences(sequences, maxlen=max_length, padding='post')
 ```
 
-最后，我们可以对填充序列进行热编码，以便为序列中的每个字提供一个稀疏矢量。 Keras 提供 _to_categorical（）_ 函数来执行此操作。
+最后，我们可以对填充序列进行热编码，以便为序列中的每个字提供一个稀疏向量。 Keras 提供 _to_categorical（）_ 函数来执行此操作。
 
-```
+```py
 from keras.utils import to_categorical
 # one hot encode
 y = to_categorical(padded, num_classes=vocab_size)
@@ -637,14 +637,14 @@ y = to_categorical(padded, num_classes=vocab_size)
 
 编码后，我们可以确保序列输出数据具有正确的模型形状。
 
-```
+```py
 y = y.reshape((len(descriptions), max_length, vocab_size))
 print(y.shape)
 ```
 
 将所有这些放在一起，下面列出了完整的示例。
 
-```
+```py
 from numpy import array
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
@@ -696,7 +696,7 @@ print(y.shape)
 
 运行该示例首先打印加载的图像描述的数量（8,092 张照片），数据集词汇量大小（4,485 个单词），最长描述的长度（28 个单词），然后最终打印用于拟合预测模型的数据的形状。形式 _[样品，序列长度，特征]_ 。
 
-```
+```py
 Loaded 8092
 Vocabulary Size: 4485
 Description Length: 28
@@ -727,19 +727,19 @@ Description Length: 28
 
 例如，描述：
 
-```
+```py
 boy rides horse
 ```
 
 会成为：
 
-```
+```py
 STARTDESC boy rides horse ENDDESC
 ```
 
 并且将被输入到具有相同图像输入的模型，以产生以下输入 - 输出字序列对：
 
-```
+```py
 Input (X), 						Output (y)
 STARTDESC, 						boy
 STARTDESC, boy,					rides
@@ -753,7 +753,7 @@ STARTDESC, boy, rides, horse	ENDDESC
 
 代码是相同的，直到我们计算序列的最大长度。
 
-```
+```py
 ...
 descriptions = load_clean_descriptions('descriptions.txt')
 print('Loaded %d' % (len(descriptions)))
@@ -777,7 +777,7 @@ print('Description Length: %d' % max_length)
 
 首先，我们将第一个 i-1 个字作为输入序列，将第 i 个字作为输出字。
 
-```
+```py
 # split into input and output pair
 in_seq, out_seq = seq[:i], seq[i]
 ```
@@ -786,21 +786,21 @@ in_seq, out_seq = seq[:i], seq[i]
 
 使用预填充（默认值），以便在序列的末尾显示新单词，而不是输入的开头。
 
-```
+```py
 # pad input sequence
 in_seq = pad_sequences([in_seq], maxlen=max_length)[0]
 ```
 
 输出字是一个热编码，与上一节非常相似。
 
-```
+```py
 # encode output sequence
 out_seq = to_categorical([out_seq], num_classes=vocab_size)[0]
 ```
 
 我们可以将所有这些放在一个完整的例子中，为逐字模型准备描述数据。
 
-```
+```py
 from numpy import array
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
@@ -868,7 +868,7 @@ print(y.shape)
 
 请注意，图像的输入必须遵循完全相同的顺序，其中针对从单个描述中绘制的每个示例显示相同的照片。实现此目的的一种方法是加载照片并将其存储为从单个描述准备的每个示例。
 
-```
+```py
 Loaded 8092
 Vocabulary Size: 4485
 Description Length: 28
@@ -906,7 +906,7 @@ Keras 通过在模型上使用 _fit_generator（）_ 函数来支持逐步加载
 
 以下是数据生成器功能。
 
-```
+```py
 def data_generator(mapping, tokenizer, max_length):
 	# loop for ever over images
 	directory = 'Flicker8k_Dataset'
@@ -927,7 +927,7 @@ def data_generator(mapping, tokenizer, max_length):
 
 你可以看到它调用一个名为 _load_photo（）_ 的函数来加载一张照片并返回像素和图像标识符。这是本教程开头开发的照片加载功能的简化版本。
 
-```
+```py
 # load a single photo intended as input for the VGG feature extractor model
 def load_photo(filename):
 	image = load_img(filename, target_size=(224, 224))
@@ -944,7 +944,7 @@ def load_photo(filename):
 
 调用名为 _create_sequences（）_ 的另一个函数来创建图像序列，输入单词序列和输出单词，然后我们将其输出给调用者。这是一个功能，包括上一节中讨论的所有内容，还可以创建图像像素的副本，每个输入 - 输出对都是根据照片的描述创建的。
 
-```
+```py
 # create sequences of images, input sequences and output words for an image
 def create_sequences(tokenizer, max_length, descriptions, images):
 	Ximages, XSeq, y = list(), list(),list()
@@ -976,7 +976,7 @@ def create_sequences(tokenizer, max_length, descriptions, images):
 
 将所有这些结合在一起，下面列出了完整的数据生成器，随时可用于训练模型。
 
-```
+```py
 from os import listdir
 from numpy import array
 from keras.preprocessing.text import Tokenizer
@@ -1084,7 +1084,7 @@ print(outputs.shape)
 
 我们可以按如下方式测试发电机。
 
-```
+```py
 # test the data generator
 generator = data_generator(descriptions, tokenizer, max_length)
 inputs, outputs = next(generator)
@@ -1095,7 +1095,7 @@ print(outputs.shape)
 
 运行该示例打印单个批量的输入和输出示例的形状（例如，13 个输入 - 输出对）：
 
-```
+```py
 (13, 224, 224, 3)
 (13, 28)
 (13, 4485)
@@ -1105,7 +1105,7 @@ print(outputs.shape)
 
 我们还必须指定每个时期的步数或批次数。我们可以将此估计为（10 x 训练数据集大小），如果使用 7,000 个图像进行训练，则可能估计为 70,000。
 
-```
+```py
 # define model
 # ...
 # fit model

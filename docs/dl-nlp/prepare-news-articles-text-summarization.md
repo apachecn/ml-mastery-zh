@@ -54,7 +54,7 @@ Kyunghyun Cho 是纽约大学的学者，已经提供了下载数据集：
 
 将此数据集下载到您的工作站并解压缩。下载后，您可以在命令行上解压缩存档，如下所示：
 
-```
+```py
 tar xvf cnn_stories.tgz
 ```
 
@@ -62,13 +62,13 @@ tar xvf cnn_stories.tgz
 
 例如，我们可以在命令行上计算故事文件的数量，如下所示：
 
-```
+```py
 ls -ltr | wc -l
 ```
 
 这向我们展示了我们共有 92,580 家商店。
 
-```
+```py
 92580
 ```
 
@@ -78,7 +78,7 @@ ls -ltr | wc -l
 
 例如，下面是一个故事的例子，为简洁起见，身体被截断。
 
-```
+```py
 (CNN) -- If you travel by plane and arriving on time makes a difference, try to book on Hawaiian Airlines. In 2012, passengers got where they needed to go without delay on the carrier more than nine times out of 10, according to a study released on Monday.
 
 In fact, Hawaiian got even better from 2011, when it had a 92.8% on-time performance. Last year, it improved to 93.4%.
@@ -114,7 +114,7 @@ ASCII 文本不包括文章标题，但我们可以使用这些人工编写的�
 
 我还可以看到许多文章都是从源信息开始的，可能是创建故事的 CNN 办公室;例如：
 
-```
+```py
 (CNN) --
 Gaza City (CNN) --
 Los Angeles (CNN) --
@@ -145,7 +145,7 @@ Los Angeles (CNN) --
 
 下面名为 _load_doc（）_ 的函数将加载单个文档作为给定文件名的文本。
 
-```
+```py
 # load doc into memory
 def load_doc(filename):
 	# open the file as read only
@@ -161,7 +161,7 @@ def load_doc(filename):
 
 我们可以使用 _listdir（）_ 函数加载目录中的所有文件名，然后依次加载每个文件名。以下名为 _load_stories（）_ 的函数实现了此行为，并为准备加载的文档提供了一个起点。
 
-```
+```py
 # load all stories in a directory
 def load_stories(directory):
 	for name in listdir(directory):
@@ -176,7 +176,7 @@ def load_stories(directory):
 
 以下名为 _split_story（）_ 的函数实现了此行为，并将给定的已加载文档文本拆分为故事和高亮列表。
 
-```
+```py
 # split a document into news story and highlights
 def split_story(doc):
 	# find first highlight
@@ -190,7 +190,7 @@ def split_story(doc):
 
 我们现在可以更新 _load_stories（）_ 函数，为每个加载的文档调用 _split_story（）_ 函数，然后将结果存储在列表中。
 
-```
+```py
 # load all stories in a directory
 def load_stories(directory):
 	all_stories = list()
@@ -207,7 +207,7 @@ def load_stories(directory):
 
 将所有这些结合在一起，下面列出了加载整个数据集的完整示例。
 
-```
+```py
 from os import listdir
 
 # load doc into memory
@@ -251,13 +251,13 @@ print('Loaded Stories %d' % len(stories))
 
 运行该示例将打印已加载故事的数量。
 
-```
+```py
 Loaded Stories 92,579
 ```
 
 我们现在可以访问加载的故事并突出显示数据，例如：
 
-```
+```py
 print(stories[4]['story'])
 print(stories[4]['highlights'])
 ```
@@ -272,7 +272,7 @@ print(stories[4]['highlights'])
 
 删除 CNN 办公室信息。
 
-```
+```py
 # strip source cnn office if it exists
 index = line.find('(CNN) -- ')
 if index > -1:
@@ -281,21 +281,21 @@ if index > -1:
 
 使用空格标记拆分线：
 
-```
+```py
 # tokenize on white space
 line = line.split()
 ```
 
 将案例规范化为小写。
 
-```
+```py
 # convert to lower case
 line = [word.lower() for word in line]
 ```
 
 从每个标记中删除所有标点符号（特定于 Python 3）。
 
-```
+```py
 # prepare a translation table to remove punctuation
 table = str.maketrans('', '', string.punctuation)
 # remove punctuation from each token
@@ -304,14 +304,14 @@ line = [w.translate(table) for w in line]
 
 删除任何具有非字母字符的单词。
 
-```
+```py
 # remove tokens with numbers in them
 line = [word for word in line if word.isalpha()]
 ```
 
 将这一切放在一起，下面是一个名为 _clean_lines（）_ 的新函数，它接受一行文本行并返回一个简洁的文本行列表。
 
-```
+```py
 # clean a list of lines
 def clean_lines(lines):
 	cleaned = list()
@@ -339,14 +339,14 @@ def clean_lines(lines):
 
 我们可以通过首先将其转换为一行文本来将其称为故事。可以在高亮列表上直接调用该函数。
 
-```
+```py
 example['story'] = clean_lines(example['story'].split('\n'))
 example['highlights'] = clean_lines(example['highlights'])
 ```
 
 下面列出了加载和清理数据集的完整示例。
 
-```
+```py
 from os import listdir
 import string
 
@@ -428,7 +428,7 @@ for example in stories:
 
 例如：
 
-```
+```py
 # save to file
 from pickle import dump
 dump(stories, open('cnn_dataset.pkl', 'wb'))
@@ -438,7 +438,7 @@ dump(stories, open('cnn_dataset.pkl', 'wb'))
 
 然后我们可以稍后加载它并将其与文本摘要模型一起使用，如下所示：
 
-```
+```py
 # load from file
 stories = load(open('cnn_dataset.pkl', 'rb'))
 print('Loaded Stories %d' % len(stories))

@@ -110,7 +110,7 @@ clean 文件的开头应如下所示：
 
 我们可以将整个“_ 变态 clean.text_ ”加载到内存中，如下所示：
 
-```
+```py
 # load text
 filename = 'metamorphosis_clean.txt'
 file = open(filename, 'rt')
@@ -128,7 +128,7 @@ file.close()
 
 一种非常简单的方法是使用空格分割文档，包括“”，新行，制表符等。我们可以在 Python 中使用 split（）函数在加载的字符串上执行此操作。
 
-```
+```py
 # load text
 filename = 'metamorphosis_clean.txt'
 file = open(filename, 'rt')
@@ -143,7 +143,7 @@ print(words[:100])
 
 我们可以看到标点符号被保留（例如“_ 不是 _”和“_ 盔甲式 _”），这很好。我们还可以看到句子标点符号的结尾与最后一个单词保持一致（例如“_ 认为 _。”），这不是很好。
 
-```
+```py
 ['One', 'morning,', 'when', 'Gregor', 'Samsa', 'woke', 'from', 'troubled', 'dreams,', 'he', 'found', 'himself', 'transformed', 'in', 'his', 'bed', 'into', 'a', 'horrible', 'vermin.', 'He', 'lay', 'on', 'his', 'armour-like', 'back,', 'and', 'if', 'he', 'lifted', 'his', 'head', 'a', 'little', 'he', 'could', 'see', 'his', 'brown', 'belly,', 'slightly', 'domed', 'and', 'divided', 'by', 'arches', 'into', 'stiff', 'sections.', 'The', 'bedding', 'was', 'hardly', 'able', 'to', 'cover', 'it', 'and', 'seemed', 'ready', 'to', 'slide', 'off', 'any', 'moment.', 'His', 'many', 'legs,', 'pitifully', 'thin', 'compared', 'with', 'the', 'size', 'of', 'the', 'rest', 'of', 'him,', 'waved', 'about', 'helplessly', 'as', 'he', 'looked.', '"What\'s', 'happened', 'to', 'me?"', 'he', 'thought.', 'It', "wasn't", 'a', 'dream.', 'His', 'room,', 'a', 'proper', 'human']
 ```
 
@@ -153,7 +153,7 @@ print(words[:100])
 
 例如：
 
-```
+```py
 # load text
 filename = 'metamorphosis_clean.txt'
 file = open(filename, 'rt')
@@ -167,7 +167,7 @@ print(words[:100])
 
 再次，运行示例我们可以看到我们得到了单词列表。这一次，我们可以看到“_ 盔甲式 _”现在是两个词“_ 装甲 _”和“_ 喜欢 _”（精）但是收缩像“ _]什么是 _“也是两个词”_ 什么 _“和” _s_ “（不是很好）。
 
-```
+```py
 ['One', 'morning', 'when', 'Gregor', 'Samsa', 'woke', 'from', 'troubled', 'dreams', 'he', 'found', 'himself', 'transformed', 'in', 'his', 'bed', 'into', 'a', 'horrible', 'vermin', 'He', 'lay', 'on', 'his', 'armour', 'like', 'back', 'and', 'if', 'he', 'lifted', 'his', 'head', 'a', 'little', 'he', 'could', 'see', 'his', 'brown', 'belly', 'slightly', 'domed', 'and', 'divided', 'by', 'arches', 'into', 'stiff', 'sections', 'The', 'bedding', 'was', 'hardly', 'able', 'to', 'cover', 'it', 'and', 'seemed', 'ready', 'to', 'slide', 'off', 'any', 'moment', 'His', 'many', 'legs', 'pitifully', 'thin', 'compared', 'with', 'the', 'size', 'of', 'the', 'rest', 'of', 'him', 'waved', 'about', 'helplessly', 'as', 'he', 'looked', 'What', 's', 'happened', 'to', 'me', 'he', 'thought', 'It', 'wasn', 't', 'a', 'dream', 'His', 'room']
 ```
 
@@ -181,13 +181,13 @@ print(words[:100])
 
 Python 提供了一个名为 _string.punctuation_ 的常量，它提供了一个很好的标点字符列表。例如：
 
-```
+```py
 print(string.punctuation)
 ```
 
 结果是：
 
-```
+```py
 !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
 ```
 
@@ -195,13 +195,13 @@ Python 提供了一个名为 [translate（）](https://docs.python.org/3/library
 
 我们可以使用函数 [maketrans（）](https://docs.python.org/3/library/stdtypes.html#str.maketrans)来创建映射表。我们可以创建一个空的映射表，但是这个函数的第三个参数允许我们列出在翻译过程中要删除的所有字符。例如：
 
-```
+```py
 table = str.maketrans('', '', string.punctuation)
 ```
 
 我们可以将所有这些放在一起，加载文本文件，通过空格将其拆分为单词，然后翻译每个单词以删除标点符号。
 
-```
+```py
 # load text
 filename = 'metamorphosis_clean.txt'
 file = open(filename, 'rt')
@@ -220,7 +220,7 @@ print(stripped[:100])
 
 像“_ 什么 _”这样的收缩已成为“_ 什么 _”，但“_ 盔甲式 _”已成为“ _armourlike_ ”。
 
-```
+```py
 ['One', 'morning', 'when', 'Gregor', 'Samsa', 'woke', 'from', 'troubled', 'dreams', 'he', 'found', 'himself', 'transformed', 'in', 'his', 'bed', 'into', 'a', 'horrible', 'vermin', 'He', 'lay', 'on', 'his', 'armourlike', 'back', 'and', 'if', 'he', 'lifted', 'his', 'head', 'a', 'little', 'he', 'could', 'see', 'his', 'brown', 'belly', 'slightly', 'domed', 'and', 'divided', 'by', 'arches', 'into', 'stiff', 'sections', 'The', 'bedding', 'was', 'hardly', 'able', 'to', 'cover', 'it', 'and', 'seemed', 'ready', 'to', 'slide', 'off', 'any', 'moment', 'His', 'many', 'legs', 'pitifully', 'thin', 'compared', 'with', 'the', 'size', 'of', 'the', 'rest', 'of', 'him', 'waved', 'about', 'helplessly', 'as', 'he', 'looked', 'Whats', 'happened', 'to', 'me', 'he', 'thought', 'It', 'wasnt', 'a', 'dream', 'His', 'room', 'a', 'proper', 'human']
 ```
 
@@ -236,7 +236,7 @@ print(stripped[:100])
 
 例如：
 
-```
+```py
 filename = 'metamorphosis_clean.txt'
 file = open(filename, 'rt')
 text = file.read()
@@ -250,7 +250,7 @@ print(words[:100])
 
 运行该示例，我们可以看到所有单词现在都是小写的。
 
-```
+```py
 ['one', 'morning,', 'when', 'gregor', 'samsa', 'woke', 'from', 'troubled', 'dreams,', 'he', 'found', 'himself', 'transformed', 'in', 'his', 'bed', 'into', 'a', 'horrible', 'vermin.', 'he', 'lay', 'on', 'his', 'armour-like', 'back,', 'and', 'if', 'he', 'lifted', 'his', 'head', 'a', 'little', 'he', 'could', 'see', 'his', 'brown', 'belly,', 'slightly', 'domed', 'and', 'divided', 'by', 'arches', 'into', 'stiff', 'sections.', 'the', 'bedding', 'was', 'hardly', 'able', 'to', 'cover', 'it', 'and', 'seemed', 'ready', 'to', 'slide', 'off', 'any', 'moment.', 'his', 'many', 'legs,', 'pitifully', 'thin', 'compared', 'with', 'the', 'size', 'of', 'the', 'rest', 'of', 'him,', 'waved', 'about', 'helplessly', 'as', 'he', 'looked.', '"what\'s', 'happened', 'to', 'me?"', 'he', 'thought.', 'it', "wasn't", 'a', 'dream.', 'his', 'room,', 'a', 'proper', 'human']
 ```
 
@@ -274,7 +274,7 @@ print(words[:100])
 
 您可以使用自己喜欢的包管理器安装 NLTK，例如 pip：
 
-```
+```py
 sudo pip install -U nltk
 ```
 
@@ -282,14 +282,14 @@ sudo pip install -U nltk
 
 有几种方法可以做到这一点，例如在脚本中：
 
-```
+```py
 import nltk
 nltk.download()
 ```
 
 或者从命令行：
 
-```
+```py
 python -m nltk.downloader all
 ```
 
@@ -308,7 +308,7 @@ NLTK 提供 _sent_tokenize（）_ 函数将文本拆分成句子。
 
 下面的示例将“ _metamorphosis_clean.txt_ ”文件加载到内存中，将其拆分为句子，然后打印第一个句子。
 
-```
+```py
 # load data
 filename = 'metamorphosis_clean.txt'
 file = open(filename, 'rt')
@@ -333,7 +333,7 @@ NLTK 提供了一个名为 _word_tokenize（）_ 的函数，用于将字符串�
 
 例如：
 
-```
+```py
 # load data
 filename = 'metamorphosis_clean.txt'
 file = open(filename, 'rt')
@@ -347,7 +347,7 @@ print(tokens[:100])
 
 运行代码，我们可以看到标点符号现在是我们可以决定专门过滤掉的标记。
 
-```
+```py
 ['One', 'morning', ',', 'when', 'Gregor', 'Samsa', 'woke', 'from', 'troubled', 'dreams', ',', 'he', 'found', 'himself', 'transformed', 'in', 'his', 'bed', 'into', 'a', 'horrible', 'vermin', '.', 'He', 'lay', 'on', 'his', 'armour-like', 'back', ',', 'and', 'if', 'he', 'lifted', 'his', 'head', 'a', 'little', 'he', 'could', 'see', 'his', 'brown', 'belly', ',', 'slightly', 'domed', 'and', 'divided', 'by', 'arches', 'into', 'stiff', 'sections', '.', 'The', 'bedding', 'was', 'hardly', 'able', 'to', 'cover', 'it', 'and', 'seemed', 'ready', 'to', 'slide', 'off', 'any', 'moment', '.', 'His', 'many', 'legs', ',', 'pitifully', 'thin', 'compared', 'with', 'the', 'size', 'of', 'the', 'rest', 'of', 'him', ',', 'waved', 'about', 'helplessly', 'as', 'he', 'looked', '.', '``', 'What', "'s", 'happened', 'to']
 ```
 
@@ -357,7 +357,7 @@ print(tokens[:100])
 
 这可以通过遍历所有令牌并且仅保留那些全部是字母的令牌来完成。 Python 具有可以使用的函数 [isalpha（）](https://docs.python.org/3/library/stdtypes.html#str.isalpha)。例如：
 
-```
+```py
 # load data
 filename = 'metamorphosis_clean.txt'
 file = open(filename, 'rt')
@@ -373,7 +373,7 @@ print(words[:100])
 
 运行这个例子，你不仅可以看到标点符号，而且“_ 盔甲式 _”和“_ 的 _”等例子也被过滤掉了。
 
-```
+```py
 ['One', 'morning', 'when', 'Gregor', 'Samsa', 'woke', 'from', 'troubled', 'dreams', 'he', 'found', 'himself', 'transformed', 'in', 'his', 'bed', 'into', 'a', 'horrible', 'vermin', 'He', 'lay', 'on', 'his', 'back', 'and', 'if', 'he', 'lifted', 'his', 'head', 'a', 'little', 'he', 'could', 'see', 'his', 'brown', 'belly', 'slightly', 'domed', 'and', 'divided', 'by', 'arches', 'into', 'stiff', 'sections', 'The', 'bedding', 'was', 'hardly', 'able', 'to', 'cover', 'it', 'and', 'seemed', 'ready', 'to', 'slide', 'off', 'any', 'moment', 'His', 'many', 'legs', 'pitifully', 'thin', 'compared', 'with', 'the', 'size', 'of', 'the', 'rest', 'of', 'him', 'waved', 'about', 'helplessly', 'as', 'he', 'looked', 'What', 'happened', 'to', 'me', 'he', 'thought', 'It', 'was', 'a', 'dream', 'His', 'room', 'a', 'proper', 'human', 'room']
 ```
 
@@ -387,7 +387,7 @@ print(words[:100])
 
 NLTK 提供了各种语言（例如英语）共同商定的停用词列表。它们可以按如下方式加载：
 
-```
+```py
 from nltk.corpus import stopwords
 stop_words = stopwords.words('english')
 print(stop_words)
@@ -395,7 +395,7 @@ print(stop_words)
 
 您可以看到完整列表，如下所示：
 
-```
+```py
 ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', 'should', 'now', 'd', 'll', 'm', 'o', 're', 've', 'y', 'ain', 'aren', 'couldn', 'didn', 'doesn', 'hadn', 'hasn', 'haven', 'isn', 'ma', 'mightn', 'mustn', 'needn', 'shan', 'shouldn', 'wasn', 'weren', 'won', 'wouldn']
 ```
 
@@ -412,7 +412,7 @@ print(stop_words)
 5.  过滤掉非字母的剩余令牌。
 6.  过滤掉停用词的令牌。
 
-```
+```py
 # load data
 filename = 'metamorphosis_clean.txt'
 file = open(filename, 'rt')
@@ -440,7 +440,7 @@ print(words[:100])
 
 我注意到我们仍然留下像“ _nt_ ”这样的令牌。兔子洞很深;我们总能做得更多。
 
-```
+```py
 ['one', 'morning', 'gregor', 'samsa', 'woke', 'troubled', 'dreams', 'found', 'transformed', 'bed', 'horrible', 'vermin', 'lay', 'armourlike', 'back', 'lifted', 'head', 'little', 'could', 'see', 'brown', 'belly', 'slightly', 'domed', 'divided', 'arches', 'stiff', 'sections', 'bedding', 'hardly', 'able', 'cover', 'seemed', 'ready', 'slide', 'moment', 'many', 'legs', 'pitifully', 'thin', 'compared', 'size', 'rest', 'waved', 'helplessly', 'looked', 'happened', 'thought', 'nt', 'dream', 'room', 'proper', 'human', 'room', 'although', 'little', 'small', 'lay', 'peacefully', 'four', 'familiar', 'walls', 'collection', 'textile', 'samples', 'lay', 'spread', 'table', 'samsa', 'travelling', 'salesman', 'hung', 'picture', 'recently', 'cut', 'illustrated', 'magazine', 'housed', 'nice', 'gilded', 'frame', 'showed', 'lady', 'fitted', 'fur', 'hat', 'fur', 'boa', 'sat', 'upright', 'raising', 'heavy', 'fur', 'muff', 'covered', 'whole', 'lower', 'arm', 'towards', 'viewer']
 ```
 
@@ -456,7 +456,7 @@ print(words[:100])
 
 例如：
 
-```
+```py
 # load data
 filename = 'metamorphosis_clean.txt'
 file = open(filename, 'rt')
@@ -476,7 +476,7 @@ print(stemmed[:100])
 
 您还可以看到，词干实现还将令牌减少为小写，可能是字表中的内部查找。
 
-```
+```py
 ['one', 'morn', ',', 'when', 'gregor', 'samsa', 'woke', 'from', 'troubl', 'dream', ',', 'he', 'found', 'himself', 'transform', 'in', 'hi', 'bed', 'into', 'a', 'horribl', 'vermin', '.', 'He', 'lay', 'on', 'hi', 'armour-lik', 'back', ',', 'and', 'if', 'he', 'lift', 'hi', 'head', 'a', 'littl', 'he', 'could', 'see', 'hi', 'brown', 'belli', ',', 'slightli', 'dome', 'and', 'divid', 'by', 'arch', 'into', 'stiff', 'section', '.', 'the', 'bed', 'wa', 'hardli', 'abl', 'to', 'cover', 'it', 'and', 'seem', 'readi', 'to', 'slide', 'off', 'ani', 'moment', '.', 'hi', 'mani', 'leg', ',', 'piti', 'thin', 'compar', 'with', 'the', 'size', 'of', 'the', 'rest', 'of', 'him', ',', 'wave', 'about', 'helplessli', 'as', 'he', 'look', '.', '``', 'what', "'s", 'happen', 'to'
 ```
 

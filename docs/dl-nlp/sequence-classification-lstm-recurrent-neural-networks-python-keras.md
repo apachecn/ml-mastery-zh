@@ -39,7 +39,7 @@ Keras 提供对内置 IMDB 数据集的访问。 **imdb.load_data（）**函数�
 
 ### 单词嵌入
 
-我们将每个电影评论映射到一个真正的矢量域，这是一种处理文字的流行技术，称为文字嵌入。这是一种在高维空间中将单词编码为实值向量的技术，其中单词之间的意义相似性转换为向量空间中的接近度。
+我们将每个电影评论映射到一个真正的向量域，这是一种处理文字的流行技术，称为文字嵌入。这是一种在高维空间中将单词编码为实值向量的技术，其中单词之间的意义相似性转换为向量空间中的接近度。
 
 Keras 提供了一种方便的方法，可以将单词的正整数表示转换为嵌入层的单词嵌入。
 
@@ -53,7 +53,7 @@ Keras 提供了一种方便的方法，可以将单词的正整数表示转换�
 
 让我们首先导入此模型所需的类和函数，并将随机数生成器初始化为常量值，以确保我们可以轻松地重现结果。
 
-```
+```py
 import numpy
 from keras.datasets import imdb
 from keras.models import Sequential
@@ -67,15 +67,15 @@ numpy.random.seed(7)
 
 我们需要加载 IMDB 数据集。我们将数据集限制在前 5,000 个单词中。我们还将数据集拆分为 train（50％）和 test（50％）集。
 
-```
+```py
 # load the dataset but only keep the top n words, zero the rest
 top_words = 5000
 (X_train, y_train), (X_test, y_test) = imdb.load_data(num_words=top_words)
 ```
 
-接下来，我们需要截断并填充输入序列，以便它们具有相同的建模长度。模型将学习零值不携带信息，因此实际上序列在内容方面不是相同的长度，但是在 Keras 中执行计算需要相同的长度矢量。
+接下来，我们需要截断并填充输入序列，以便它们具有相同的建模长度。模型将学习零值不携带信息，因此实际上序列在内容方面不是相同的长度，但是在 Keras 中执行计算需要相同的长度向量。
 
-```
+```py
 # truncate and pad input sequences
 max_review_length = 500
 X_train = sequence.pad_sequences(X_train, maxlen=max_review_length)
@@ -88,7 +88,7 @@ X_test = sequence.pad_sequences(X_test, maxlen=max_review_length)
 
 因为它是二元分类问题，所以使用对数丢失作为损失函数（Keras 中的 **binary_crossentropy** ）。使用有效的 ADAM 优化算法。该模型仅适用于 2 个时期，因为它很快就能解决问题。 64 个评论的大批量用于分隔重量更新。
 
-```
+```py
 # create the model
 embedding_vecor_length = 32
 model = Sequential()
@@ -102,7 +102,7 @@ model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=3, batch_si
 
 一旦适合，我们估计模型在看不见的评论上的表现。
 
-```
+```py
 # Final evaluation of the model
 scores = model.evaluate(X_test, y_test, verbose=0)
 print("Accuracy: %.2f%%" % (scores[1]*100))
@@ -110,7 +110,7 @@ print("Accuracy: %.2f%%" % (scores[1]*100))
 
 为了完整性，以下是 IMDB 数据集上此 LSTM 网络的完整代码清单。
 
-```
+```py
 # LSTM for sequence classification in the IMDB dataset
 import numpy
 from keras.datasets import imdb
@@ -146,7 +146,7 @@ print("Accuracy: %.2f%%" % (scores[1]*100))
 
 请注意，如果您使用的是 TensorFlow 后端，您可能会看到一些与“PoolAllocator”相关的警告消息，您现在可以忽略这些消息。
 
-```
+```py
 Epoch 1/3
 16750/16750 [==============================] - 107s - loss: 0.5570 - acc: 0.7149
 Epoch 2/3
@@ -166,7 +166,7 @@ Accuracy: 86.79%
 
 可以使用 Dropout Keras 图层在图层之间应用 Dropout。我们可以通过在 Embedding 和 LSTM 图层以及 LSTM 和 Dense 输出图层之间添加新的 Dropout 图层来轻松完成此操作。例如：
 
-```
+```py
 model = Sequential()
 model.add(Embedding(top_words, embedding_vecor_length, input_length=max_review_length))
 model.add(Dropout(0.2))
@@ -177,7 +177,7 @@ model.add(Dense(1, activation='sigmoid'))
 
 上面添加了 Dropout 图层的完整代码列表示例如下：
 
-```
+```py
 # LSTM with Dropout for sequence classification in the IMDB dataset
 import numpy
 from keras.datasets import imdb
@@ -214,7 +214,7 @@ print("Accuracy: %.2f%%" % (scores[1]*100))
 
 运行此示例提供以下输出。
 
-```
+```py
 Epoch 1/3
 16750/16750 [==============================] - 108s - loss: 0.5802 - acc: 0.6898
 Epoch 2/3
@@ -230,7 +230,7 @@ Accuracy: 85.56%
 
 Keras 通过 LSTM 层上的参数提供此功能，**丢失**用于配置输入丢失， **recurrent_dropout** 用于配置重复丢失。例如，我们可以修改第一个示例，将 dropout 添加到输入和循环连接，如下所示：
 
-```
+```py
 model = Sequential()
 model.add(Embedding(top_words, embedding_vecor_length, input_length=max_review_length))
 model.add(LSTM(100, dropout=0.2, recurrent_dropout=0.2))
@@ -239,7 +239,7 @@ model.add(Dense(1, activation='sigmoid'))
 
 下面列出了具有更精确 LSTM 丢失的完整代码清单，以确保完整性。
 
-```
+```py
 # LSTM with dropout for sequence classification in the IMDB dataset
 import numpy
 from keras.datasets import imdb
@@ -273,7 +273,7 @@ print("Accuracy: %.2f%%" % (scores[1]*100))
 
 运行此示例提供以下输出。
 
-```
+```py
 Epoch 1/3
 16750/16750 [==============================] - 112s - loss: 0.6623 - acc: 0.5935
 Epoch 2/3
@@ -297,7 +297,7 @@ IMDB 评论数据确实在评论中的单词序列中具有一维空间结构，
 
 例如，我们将按如下方式创建模型：
 
-```
+```py
 model = Sequential()
 model.add(Embedding(top_words, embedding_vecor_length, input_length=max_review_length))
 model.add(Conv1D(filters=32, kernel_size=3, padding='same', activation='relu'))
@@ -308,7 +308,7 @@ model.add(Dense(1, activation='sigmoid'))
 
 下面列出了具有 CNN 和 LSTM 图层的完整代码清单，以确保完整性。
 
-```
+```py
 # LSTM and CNN for sequence classification in the IMDB dataset
 import numpy
 from keras.datasets import imdb
@@ -346,7 +346,7 @@ print("Accuracy: %.2f%%" % (scores[1]*100))
 
 运行此示例提供以下输出。
 
-```
+```py
 Epoch 1/3
 16750/16750 [==============================] - 58s - loss: 0.5186 - acc: 0.7263
 Epoch 2/3

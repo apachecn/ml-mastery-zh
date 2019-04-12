@@ -115,7 +115,7 @@
 
 我们可以将所有这些步骤放入一个名为 _clean_doc（）_ 的函数中，该函数将从文件加载的原始文本作为参数，并返回已清理的标记列表。我们还可以定义一个函数 _load_doc（）_，它从文件中加载文件，以便与 _clean_doc（）_ 函数一起使用。下面列出了清理第一次正面评价的示例。
 
-```
+```py
 from nltk.corpus import stopwords
 import string
 
@@ -156,7 +156,7 @@ print(tokens)
 
 打印清洁评论中的标记以供审阅。
 
-```
+```py
 ...
 'creepy', 'place', 'even', 'acting', 'hell', 'solid', 'dreamy', 'depp', 'turning', 'typically', 'strong', 'performance', 'deftly', 'handling', 'british', 'accent', 'ians', 'holm', 'joe', 'goulds', 'secret', 'richardson', 'dalmatians', 'log', 'great', 'supporting', 'roles', 'big', 'surprise', 'graham', 'cringed', 'first', 'time', 'opened', 'mouth', 'imagining', 'attempt', 'irish', 'accent', 'actually', 'wasnt', 'half', 'bad', 'film', 'however', 'good', 'strong', 'violencegore', 'sexuality', 'language', 'drug', 'content']
 ```
@@ -171,7 +171,7 @@ print(tokens)
 
 完整功能如下所列。
 
-```
+```py
 # load all docs in a directory
 def process_docs(directory, is_trian):
 	documents = list()
@@ -195,13 +195,13 @@ def process_docs(directory, is_trian):
 
 我们可以将此功能称为负面训练评论，如下所示：
 
-```
+```py
 negative_docs = process_docs('txt_sentoken/neg', True)
 ```
 
 接下来，我们需要列车和测试文件的标签。我们知道我们有 900 份训练文件和 100 份测试文件。我们可以使用 Python 列表推导为列车和测试集的负（0）和正（1）评论创建标签。
 
-```
+```py
 trainy = [0 for _ in range(900)] + [1 for _ in range(900)]
 testY = [0 for _ in range(100)] + [1 for _ in range(100)]
 ```
@@ -210,7 +210,7 @@ testY = [0 for _ in range(100)] + [1 for _ in range(100)]
 
 下面命名为 _save_dataset（）_ 的函数将使用 pickle API 将给定的准备数据集（X 和 y 元素）保存到文件中。
 
-```
+```py
 # save a dataset to file
 def save_dataset(dataset, filename):
 	dump(dataset, open(filename, 'wb'))
@@ -223,7 +223,7 @@ def save_dataset(dataset, filename):
 
 下面列出了完整的示例。
 
-```
+```py
 from string import punctuation
 from os import listdir
 from nltk.corpus import stopwords
@@ -316,7 +316,7 @@ save_dataset([testX,testY], 'test.pkl')
 
 可以调用以下名为 _load_dataset（）_ 的函数来加载 pickle 训练数据集。
 
-```
+```py
 # load a clean dataset
 def load_dataset(filename):
 	return load(open(filename, 'rb'))
@@ -328,7 +328,7 @@ trainLines, trainLabels = load_dataset('train.pkl')
 
 下面的函数 _create_tokenizer（）_ 将创建一个给定文档列表的 Tokenizer。
 
-```
+```py
 # fit a tokenizer
 def create_tokenizer(lines):
 	tokenizer = Tokenizer()
@@ -340,7 +340,7 @@ def create_tokenizer(lines):
 
 下面的函数 _max_length（）_ 将计算训练数据集中所有评论的最大长度（单词数）。
 
-```
+```py
 # calculate the maximum document length
 def max_length(lines):
 	return max([len(s.split()) for s in lines])
@@ -350,7 +350,7 @@ def max_length(lines):
 
 这可以从准备好的 Tokenizer 计算，如下：
 
-```
+```py
 # calculate vocabulary size
 vocab_size = len(tokenizer.word_index) + 1
 ```
@@ -359,7 +359,7 @@ vocab_size = len(tokenizer.word_index) + 1
 
 名为 _encode_text（）_ 的以下函数将编码和填充文本数据到最大查看长度。
 
-```
+```py
 # encode a list of lines
 def encode_text(tokenizer, lines, length):
 	# integer encode
@@ -400,11 +400,11 @@ Yoon Kim 在他的 2014 年题为“[用于句子分类的卷积神经网络](ht
 *   Max Pooling 图层用于合并卷积图层的输出。
 *   展平图层以将三维输出减少为二维以进行连接。
 
-三个通道的输出连接成一个矢量，并由 Dense 层和输出层处理。
+三个通道的输出连接成一个向量，并由 Dense 层和输出层处理。
 
 下面的函数定义并返回模型。作为定义模型的一部分，将打印已定义模型的摘要，并创建模型图的图并将其保存到文件中。
 
-```
+```py
 # define the model
 def define_model(length, vocab_size):
 	# channel 1
@@ -446,7 +446,7 @@ def define_model(length, vocab_size):
 
 将所有这些结合在一起，下面列出了完整的示例。
 
-```
+```py
 from pickle import load
 from numpy import array
 from keras.preprocessing.text import Tokenizer
@@ -544,7 +544,7 @@ model.save('model.h5')
 
 首先运行该示例将打印准备好的训练数据集的摘要。
 
-```
+```py
 Max document length: 1380
 Vocabulary size: 44277
 (1800, 1380)
@@ -552,7 +552,7 @@ Vocabulary size: 44277
 
 接下来，打印已定义模型的摘要。
 
-```
+```py
 ____________________________________________________________________________________________________
 Layer (type)                     Output Shape          Param #     Connected to
 ====================================================================================================
@@ -608,7 +608,7 @@ ________________________________________________________________________________
 
 该模型相对较快，并且似乎在训练数据集上表现出良好的技能。
 
-```
+```py
 ...
 Epoch 6/10
 1800/1800 [==============================] - 30s - loss: 9.9093e-04 - acc: 1.0000
@@ -636,7 +636,7 @@ Epoch 10/10
 
 使用上一节中开发的数据加载函数，我们可以加载和编码训练和测试数据集。
 
-```
+```py
 # load datasets
 trainLines, trainLabels = load_dataset('train.pkl')
 testLines, testLabels = load_dataset('test.pkl')
@@ -659,7 +659,7 @@ print(trainX.shape, testX.shape)
 
 下面列出了完整的示例。
 
-```
+```py
 from pickle import load
 from numpy import array
 from keras.preprocessing.text import Tokenizer
@@ -719,7 +719,7 @@ print('Test Accuracy: %f' % (acc*100))
 
 运行该示例将在训练和测试数据集上打印模型的技能。
 
-```
+```py
 Max document length: 1380
 Vocabulary size: 44277
 (1800, 1380) (200, 1380)

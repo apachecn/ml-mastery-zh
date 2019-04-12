@@ -50,7 +50,7 @@ Keras 提供 [text_to_word_sequence（）函数](https://keras.io/preprocessing/
 
 下面是使用 text_to_word_sequence（）函数将文档（在本例中为简单字符串）拆分为单词列表的示例。
 
-```
+```py
 from keras.preprocessing.text import text_to_word_sequence
 # define the document
 text = 'The quick brown fox jumped over the lazy dog.'
@@ -61,7 +61,7 @@ print(result)
 
 运行该示例将创建一个包含文档中所有单词的数组。打印单词列表以供审阅。
 
-```
+```py
 ['the', 'quick', 'brown', 'fox', 'jumped', 'over', 'the', 'lazy', 'dog']
 ```
 
@@ -83,7 +83,7 @@ Keras 提供 [one_hot（）函数](https://keras.io/preprocessing/text/#one_hot)
 
 例如：
 
-```
+```py
 from keras.preprocessing.text import text_to_word_sequence
 # define the document
 text = 'The quick brown fox jumped over the lazy dog.'
@@ -97,7 +97,7 @@ print(vocab_size)
 
 词汇大小增加三分之一，以最大限度地减少散列词时的冲突。
 
-```
+```py
 from keras.preprocessing.text import one_hot
 from keras.preprocessing.text import text_to_word_sequence
 # define the document
@@ -113,7 +113,7 @@ print(result)
 
 首先运行该示例将词汇表的大小打印为 8.然后将编码的文档打印为整数编码的单词数组。
 
-```
+```py
 8
 [5, 9, 8, 7, 9, 1, 5, 3, 8]
 ```
@@ -128,7 +128,7 @@ Keras 提供了 [hashing_trick（）函数](https://keras.io/preprocessing/text/
 
 下面是使用 md5 哈希函数对文档进行整数编码的示例。
 
-```
+```py
 from keras.preprocessing.text import hashing_trick
 from keras.preprocessing.text import text_to_word_sequence
 # define the document
@@ -146,7 +146,7 @@ print(result)
 
 我们可以看到，使用不同的散列函数会导致单词的一致但不同的整数作为上一节中的 one_hot（）函数。
 
-```
+```py
 8
 [6, 4, 1, 2, 7, 5, 6, 2, 6]
 ```
@@ -161,7 +161,7 @@ Keras 提供 [Tokenizer 类](https://keras.io/preprocessing/text/#tokenizer)，�
 
 例如：
 
-```
+```py
 from keras.preprocessing.text import Tokenizer
 # define 5 documents
 docs = ['Well done!',
@@ -184,7 +184,7 @@ t.fit_on_texts(docs)
 
 例如：
 
-```
+```py
 # summarize what was learned
 print(t.word_counts)
 print(t.document_count)
@@ -207,7 +207,7 @@ Tokenizer 上的 texts_to_matrix（）函数可用于为每个输入提供每个
 
 我们可以将所有这些与一个有效的例子放在一起。
 
-```
+```py
 from keras.preprocessing.text import Tokenizer
 # define 5 documents
 docs = ['Well done!',
@@ -233,7 +233,7 @@ print(encoded_docs)
 
 每个文档被编码为 9 元素向量，每个字具有一个位置，并且每个字位置具有所选择的编码方案值。在这种情况下，使用简单的字数计数模式。
 
-```
+```py
 OrderedDict([('well', 1), ('done', 1), ('good', 1), ('work', 2), ('great', 1), ('effort', 1), ('nice', 1), ('excellent', 1)])
 5
 {'work': 1, 'effort': 6, 'done': 3, 'great': 5, 'good': 4, 'excellent': 8, 'well': 2, 'nice': 7}

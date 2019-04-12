@@ -149,7 +149,7 @@
 
 例如，下面的代码片段将加载文本文件，按空格分割标记并将每个标记转换为小写。
 
-```
+```py
 filename = '...'
 file = open(filename, 'rt')
 text = file.read()
@@ -168,26 +168,26 @@ words = [word.lower() for word in words]
 
 您可以使用 pip 在命令行上键入以下命令来安装此库：
 
-```
+```py
 sudo pip install -U nltk
 ```
 
 安装后，还必须通过 Python 脚本安装库使用的数据集：
 
-```
+```py
 import nltk
 nltk.download()
 ```
 
 或通过命令行：
 
-```
+```py
 python -m nltk.downloader all
 ```
 
 安装后，您可以使用 API​​来标记文本。例如，下面的代码段将加载并分词 ASCII 文本文件。
 
-```
+```py
 # load data
 filename = '...'
 file = open(filename, 'rt')
@@ -240,7 +240,7 @@ tokens = word_tokenize(text)
 
 下面的代码段显示了如何训练 TfidfVectorizer 字袋编码器并使用它来编码多个小文本文档。
 
-```
+```py
 from sklearn.feature_extraction.text import TfidfVectorizer
 # list of text documents
 text = ["The quick brown fox jumped over the lazy dog.",
@@ -268,7 +268,7 @@ print(vector.toarray())
 
 下面的代码段演示了如何使用 Keras API 和单词的“计数”类型评分来训练和编码一些小型文本文档。
 
-```
+```py
 from keras.preprocessing.text import Tokenizer
 # define 5 documents
 docs = ['Well done!',
@@ -324,13 +324,13 @@ Gensim 提供了 word2vec 算法的实现，该算法是在 Google 开发的，�
 
 您可以在命令行中键入以下内容，使用 pip 安装 Gensim：
 
-```
+```py
 pip install -U gensim
 ```
 
 下面的代码段显示了如何定义一些人为的句子并在 Gensim 中训练一个嵌入表示的单词。
 
-```
+```py
 from gensim.models import Word2Vec
 # define training data
 sentences = [['this', 'is', 'the', 'first', 'sentence', 'for', 'word2vec'],
@@ -357,7 +357,7 @@ print(model['sentence'])
 
 下面的代码段显示了如何训练单词嵌入模型，然后绘制词汇表中所有单词的二维投影。
 
-```
+```py
 from gensim.models import Word2Vec
 from sklearn.decomposition import PCA
 from matplotlib import pyplot
@@ -407,13 +407,13 @@ Keras 提供了一个嵌入层，可用于文本数据的神经网络。
 
 使用随机权重初始化嵌入层，并将学习训练数据集中所有单词的嵌入。你必须指定 _input_dim_ ，这是词汇量的大小， _output_dim_ 是嵌入的向量空间的大小，可选择 _input_length_ 是输入序列中的单词数。
 
-```
+```py
 layer = Embedding(input_dim, output_dim, input_length=??)
 ```
 
 或者，更具体地，200 个单词的词汇表，32 维的分布式表示和 50 个单词的输入长度。
 
-```
+```py
 layer = Embedding(200, 32, input_length=50)
 ```
 
@@ -425,7 +425,7 @@ layer = Embedding(200, 32, input_length=50)
 
 当模型被训练有关填充文档及其相关输出标签的示例时，网络权重和分布式表示将被调整到特定数据。
 
-```
+```py
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers import Flatten
@@ -483,7 +483,7 @@ print(model.summary())
 
 这种类型的模型可以在 Keras Python 深度学习库中定义。下面的代码段显示了一个深度学习模型示例，用于将文本文档分类为两个类之一。
 
-```
+```py
 # define problem
 vocab_size = 100
 max_length = 200

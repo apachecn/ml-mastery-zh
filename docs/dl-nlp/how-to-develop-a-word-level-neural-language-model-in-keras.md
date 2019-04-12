@@ -143,7 +143,7 @@
 
 我们可以开发一个小函数来将整个文本文件加载到内存中并返回它。该函数名为 _load_doc（）_，如下所示。给定文件名，它返回一个加载文本序列。
 
-```
+```py
 # load doc into memory
 def load_doc(filename):
 	# open the file as read only
@@ -157,7 +157,7 @@ def load_doc(filename):
 
 使用此函数，我们可以在文件' _republic_clean.txt_ '中加载文档的清洁版本，如下所示：
 
-```
+```py
 # load document
 in_filename = 'republic_clean.txt'
 doc = load_doc(in_filename)
@@ -190,7 +190,7 @@ print(doc[:200])
 
 我们可以在一个函数中按此顺序实现每个清理操作。下面是函数 _clean_doc（）_，它将加载的文档作为参数并返回一个干净的标记数组。
 
-```
+```py
 import string
 
 # turn a doc into clean tokens
@@ -211,7 +211,7 @@ def clean_doc(doc):
 
 我们可以在加载的文档上运行此清理操作，并打印出一些标记和统计信息作为完整性检查。
 
-```
+```py
 # clean document
 tokens = clean_doc(doc)
 print(tokens[:200])
@@ -221,7 +221,7 @@ print('Unique Tokens: %d' % len(set(tokens)))
 
 首先，我们可以看到一个很好的令牌列表，它看起来比原始文本更清晰。我们可以删除' _Book I_ '章节标记等等，但这是一个好的开始。
 
-```
+```py
 ['book', 'i', 'i', 'went', 'down', 'yesterday', 'to', 'the', 'piraeus', 'with', 'glaucon', 'the', 'son', 'of', 'ariston', 'that', 'i', 'might', 'offer', 'up', 'my', 'prayers', 'to', 'the', 'goddess', 'bendis', 'the', 'thracian', 'artemis', 'and', 'also', 'because', 'i', 'wanted', 'to', 'see', 'in', 'what', 'manner', 'they', 'would', 'celebrate', 'the', 'festival', 'which', 'was', 'a', 'new', 'thing', 'i', 'was', 'delighted', 'with', 'the', 'procession', 'of', 'the', 'inhabitants', 'but', 'that', 'of', 'the', 'thracians', 'was', 'equally', 'if', 'not', 'more', 'beautiful', 'when', 'we', 'had', 'finished', 'our', 'prayers', 'and', 'viewed', 'the', 'spectacle', 'we', 'turned', 'in', 'the', 'direction', 'of', 'the', 'city', 'and', 'at', 'that', 'instant', 'polemarchus', 'the', 'son', 'of', 'cephalus', 'chanced', 'to', 'catch', 'sight', 'of', 'us', 'from', 'a', 'distance', 'as', 'we', 'were', 'starting', 'on', 'our', 'way', 'home', 'and', 'told', 'his', 'servant', 'to', 'run', 'and', 'bid', 'us', 'wait', 'for', 'him', 'the', 'servant', 'took', 'hold', 'of', 'me', 'by', 'the', 'cloak', 'behind', 'and', 'said', 'polemarchus', 'desires', 'you', 'to', 'wait', 'i', 'turned', 'round', 'and', 'asked', 'him', 'where', 'his', 'master', 'was', 'there', 'he', 'is', 'said', 'the', 'youth', 'coming', 'after', 'you', 'if', 'you', 'will', 'only', 'wait', 'certainly', 'we', 'will', 'said', 'glaucon', 'and', 'in', 'a', 'few', 'minutes', 'polemarchus', 'appeared', 'and', 'with', 'him', 'adeimantus', 'glaucons', 'brother', 'niceratus', 'the', 'son', 'of', 'nicias', 'and', 'several', 'others', 'who', 'had', 'been', 'at', 'the', 'procession', 'polemarchus', 'said']
 ```
 
@@ -229,7 +229,7 @@ print('Unique Tokens: %d' % len(set(tokens)))
 
 我们可以看到，干净的文字中只有不到 120,000 个单词，而且词汇量不到 7,500 个单词。这个很小，适合这些数据的模型应该可以在适度的硬件上进行管理。
 
-```
+```py
 Total Tokens: 118684
 Unique Tokens: 7409
 ```
@@ -248,7 +248,7 @@ Unique Tokens: 7409
 
 下面列出了将清洁令牌列表拆分为长度为 51 令牌的序列的代码。
 
-```
+```py
 # organize into sequences of tokens
 length = 50 + 1
 sequences = list()
@@ -266,7 +266,7 @@ print('Total Sequences: %d' % len(sequences))
 
 在列表上打印统计数据，我们可以看到我们将有 118,633 种训练模式来适应我们的模型。
 
-```
+```py
 Total Sequences: 118633
 ```
 
@@ -274,7 +274,7 @@ Total Sequences: 118633
 
 我们可以定义一个新函数来保存文本行到文件。这个新函数叫做 _save_doc（）_，如下所示。它将行和文件名列表作为输入。这些行以 ASCII 格式写入，每行一行。
 
-```
+```py
 # save tokens to file, one dialog per line
 def save_doc(lines, filename):
 	data = '\n'.join(lines)
@@ -285,7 +285,7 @@ def save_doc(lines, filename):
 
 我们可以调用此函数并将训练序列保存到文件' _republic_sequences.txt_ '。
 
-```
+```py
 # save sequences to file
 out_filename = 'republic_sequences.txt'
 save_doc(sequences, out_filename)
@@ -304,7 +304,7 @@ save_doc(sequences, out_filename)
 
 将所有这些结合在一起，下面提供了完整的代码清单。
 
-```
+```py
 import string
 
 # load doc into memory
@@ -393,7 +393,7 @@ save_doc(sequences, out_filename)
 
 下面的代码段将从当前工作目录加载' _republic_sequences.txt_ '数据文件。
 
-```
+```py
 # load doc into memory
 def load_doc(filename):
 	# open the file as read only
@@ -424,7 +424,7 @@ lines = doc.split('\n')
 
 然后我们可以使用 fit Tokenizer 对所有训练序列进行编码，将每个序列从单词列表转换为整数列表。
 
-```
+```py
 # integer encode sequences of words
 tokenizer = Tokenizer()
 tokenizer.fit_on_texts(lines)
@@ -439,7 +439,7 @@ sequences = tokenizer.texts_to_sequences(lines)
 
 因此，在为嵌入层指定词汇表大小时，我们将其指定为比实际词汇大 1。
 
-```
+```py
 # vocabulary size
 vocab_size = len(tokenizer.word_index) + 1
 ```
@@ -458,7 +458,7 @@ Keras 提供 _to_categorical（）_，可用于对每个输入 - 输出序列对
 
 最后，我们需要为嵌入层指定输入序列的长度。我们知道有 50 个单词，因为我们设计了模型，但指定的一个很好的通用方法是使用输入数据形状的第二个维度（列数）。这样，如果在准备数据时更改序列的长度，则无需更改此数据加载代码;它是通用的。
 
-```
+```py
 # separate into input and output
 sequences = array(sequences)
 X, y = sequences[:,:-1], sequences[:,-1]
@@ -478,7 +478,7 @@ seq_length = X.shape[1]
 
 具有 100 个神经元的密集完全连接层连接到 LSTM 隐藏层以解释从序列提取的特征。输出层将下一个单词预测为单个向量，即词汇表的大小，其中词汇表中的每个单词具有概率。 softmax 激活函数用于确保输出具有归一化概率的特征。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(Embedding(vocab_size, 50, input_length=seq_length))
@@ -491,7 +491,7 @@ print(model.summary())
 
 定义网络的摘要打印为完整性检查，以确保我们构建了我们的预期。
 
-```
+```py
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
 =================================================================
@@ -517,7 +517,7 @@ _________________________________________________________________
 
 没有 GPU 的现代硬件上的训练可能需要几个小时。您可以使用更大的批量大小和/或更少的训练时期加快速度。
 
-```
+```py
 # compile model
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 # fit model
@@ -528,7 +528,7 @@ model.fit(X, y, batch_size=128, epochs=100)
 
 你会得到不同的结果，但是预测序列中下一个单词的准确度可能只有 50％以上，这也不错。我们的目标不是 100％准确（例如记忆文本的模型），而是一种捕捉文本本质的模型。
 
-```
+```py
 ...
 Epoch 96/100
 118633/118633 [==============================] - 265s - loss: 2.0324 - acc: 0.5187
@@ -550,7 +550,7 @@ Epoch 100/100
 
 之后，当我们加载模型进行预测时，我们还需要将单词映射到整数。这是在 Tokenizer 对象中，我们也可以使用 Pickle 保存它。
 
-```
+```py
 # save the model to file
 model.save('model.h5')
 # save the tokenizer
@@ -561,7 +561,7 @@ dump(tokenizer, open('tokenizer.pkl', 'wb'))
 
 我们可以把所有这些放在一起;下面列出了拟合语言模型的完整示例。
 
-```
+```py
 from numpy import array
 from pickle import dump
 from keras.preprocessing.text import Tokenizer
@@ -634,7 +634,7 @@ dump(tokenizer, open('tokenizer.pkl', 'wb'))
 
 具体来说， _load_doc（）_ 功能。
 
-```
+```py
 # load doc into memory
 def load_doc(filename):
 	# open the file as read only
@@ -657,7 +657,7 @@ lines = doc.split('\n')
 
 稍后，我们需要指定预期的输入长度。我们可以通过计算加载数据的一行的长度从输入序列中确定这一点，并且对于同一行上的预期输出字减去 1。
 
-```
+```py
 seq_length = len(lines[0].split()) - 1
 ```
 
@@ -667,14 +667,14 @@ seq_length = len(lines[0].split()) - 1
 
 Keras 提供 _load_model（）_ 功能，用于加载模型，随时可以使用。
 
-```
+```py
 # load the model
 model = load_model('model.h5')
 ```
 
 我们还可以使用 Pickle API 从文件加载 tokenizer。
 
-```
+```py
 # load the tokenizer
 tokenizer = load(open('tokenizer.pkl', 'rb'))
 ```
@@ -687,7 +687,7 @@ tokenizer = load(open('tokenizer.pkl', 'rb'))
 
 为此，我们将从输入文本中选择一行随机文本。一旦选定，我们将打印它，以便我们对使用的内容有所了解。
 
-```
+```py
 # select a seed text
 seed_text = lines[randint(0,len(lines))]
 print(seed_text + '\n')
@@ -697,20 +697,20 @@ print(seed_text + '\n')
 
 首先，必须使用我们在训练模型时使用的相同标记器将种子文本编码为整数。
 
-```
+```py
 encoded = tokenizer.texts_to_sequences([seed_text])[0]
 ```
 
 该模型可以通过调用 _model.predict_classes（）_ 直接预测下一个单词，该模型将返回具有最高概率的单词的索引。
 
-```
+```py
 # predict probabilities for each word
 yhat = model.predict_classes(encoded, verbose=0)
 ```
 
 然后，我们可以在 Tokenizers 映射中查找索引以获取关联的单词。
 
-```
+```py
 out_word = ''
 for word, index in tokenizer.word_index.items():
 	if index == yhat:
@@ -722,13 +722,13 @@ for word, index in tokenizer.word_index.items():
 
 重要的是，输入序列将变得太长。在输入序列编码为整数后，我们可以将其截断为所需的长度。 Keras 提供了 _pad_sequences（）_ 函数，我们可以使用它来执行此截断。
 
-```
+```py
 encoded = pad_sequences([encoded], maxlen=seq_length, truncating='pre')
 ```
 
 我们可以将所有这些包装成一个名为 _generate_seq（）_ 的函数，该函数将模型，标记生成器，输入序列长度，种子文本和要生成的单词数作为输入。然后它返回由模型生成的一系列单词。
 
-```
+```py
 # generate a sequence from a language model
 def generate_seq(model, tokenizer, seq_length, seed_text, n_words):
 	result = list()
@@ -755,7 +755,7 @@ def generate_seq(model, tokenizer, seq_length, seed_text, n_words):
 
 我们现在准备在给出一些种子文本的情况下生成一系列新单词。
 
-```
+```py
 # generate new text
 generated = generate_seq(model, tokenizer, seq_length, seed_text, 50)
 print(generated)
@@ -763,7 +763,7 @@ print(generated)
 
 综上所述，下面列出了从学习语言模型生成文本的完整代码清单。
 
-```
+```py
 from random import randint
 from pickle import load
 from keras.models import load_model

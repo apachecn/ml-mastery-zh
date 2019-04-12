@@ -70,7 +70,7 @@
 
 将数据集下载到当前工作目录并解压缩;例如：
 
-```
+```py
 unzip deu-eng.zip
 ```
 
@@ -78,7 +78,7 @@ unzip deu-eng.zip
 
 例如，文件的前 5 行如下所示：
 
-```
+```py
 Hi.	Hallo!
 Hi.	Grüß Gott!
 Run!	Lauf!
@@ -122,7 +122,7 @@ Wow!	Donnerwetter!
 
 首先，我们必须以保留 Unicode 德语字符的方式加载数据。下面的函数 _load_doc（）_ 将把文件加载为一团文本。
 
-```
+```py
 # load doc into memory
 def load_doc(filename):
 	# open the file as read only
@@ -138,7 +138,7 @@ def load_doc(filename):
 
 我们必须逐行拆分加载的文本，然后按短语拆分。下面的函数 _to_pairs（）_ 将拆分加载的文本。
 
-```
+```py
 # split a loaded document into sentences
 def to_pairs(doc):
 	lines = doc.strip().split('\n')
@@ -158,7 +158,7 @@ def to_pairs(doc):
 
 下面的 _clean_pairs（）_ 函数实现了这些操作。
 
-```
+```py
 # clean a list of lines
 def clean_pairs(lines):
 	cleaned = list()
@@ -194,7 +194,7 @@ def clean_pairs(lines):
 
 将所有这些结合在一起，下面列出了完整的示例。
 
-```
+```py
 import string
 import re
 from pickle import dump
@@ -268,7 +268,7 @@ for i in range(100):
 
 打印清洁文本的一些示例供我们在运行结束时进行评估，以确认清洁操作是按预期执行的。
 
-```
+```py
 [hi] => [hallo]
 [hi] => [gru gott]
 [run] => [lauf]
@@ -298,7 +298,7 @@ for i in range(100):
 
 下面是加载干净数据，拆分数据并将数据拆分部分保存到新文件的完整示例。
 
-```
+```py
 from pickle import load
 from pickle import dump
 from numpy.random import rand
@@ -345,7 +345,7 @@ save_clean_data(test, 'english-german-test.pkl')
 
 让我们从加载数据集开始，以便我们可以准备数据。以下名为 _load_clean_sentences（）_ 的函数可用于依次加载 train，test 和两个数据集。
 
-```
+```py
 # load a clean dataset
 def load_clean_sentences(filename):
 	return load(open(filename, 'rb'))
@@ -362,7 +362,7 @@ test = load_clean_sentences('english-german-test.pkl')
 
 我们可以根据建模需要使用 Keras _Tokenize_ 类将单词映射到整数。我们将为英语序列和德语序列使用单独的分词器。下面命名为 _create_tokenizer（）_ 的函数将在短语列表上训练一个分词器。
 
-```
+```py
 # fit a tokenizer
 def create_tokenizer(lines):
 	tokenizer = Tokenizer()
@@ -372,7 +372,7 @@ def create_tokenizer(lines):
 
 类似地，下面名为 _max_length（）_ 的函数将找到短语列表中最长序列的长度。
 
-```
+```py
 # max sentence length
 def max_length(lines):
 	return max(len(line.split()) for line in lines)
@@ -380,7 +380,7 @@ def max_length(lines):
 
 我们可以使用组合数据集调用这些函数来为英语和德语短语准备标记符，词汇表大小和最大长度。
 
-```
+```py
 # prepare english tokenizer
 eng_tokenizer = create_tokenizer(dataset[:, 0])
 eng_vocab_size = len(eng_tokenizer.word_index) + 1
@@ -399,7 +399,7 @@ print('German Max Length: %d' % (ger_length))
 
 每个输入和输出序列必须编码为整数并填充到最大短语长度。这是因为我们将对输入序列使用字嵌入，并对输出序列进行热编码。以下名为 _encode_sequences（）_ 的函数将执行这些操作并返回结果。
 
-```
+```py
 # encode and pad sequences
 def encode_sequences(tokenizer, length, lines):
 	# integer encode sequences
@@ -413,7 +413,7 @@ def encode_sequences(tokenizer, length, lines):
 
 下面的函数 _encode_output（）_ 将对英文输出序列进行单热编码。
 
-```
+```py
 # one hot encode target sequence
 def encode_output(sequences, vocab_size):
 	ylist = list()
@@ -427,7 +427,7 @@ def encode_output(sequences, vocab_size):
 
 我们可以利用这两个函数并准备训练模型的训练和测试数据集。
 
-```
+```py
 # prepare training data
 trainX = encode_sequences(ger_tokenizer, ger_length, train[:, 1])
 trainY = encode_sequences(eng_tokenizer, eng_length, train[:, 0])
@@ -452,7 +452,7 @@ testY = encode_output(testY, eng_vocab_size)
 
 *   [如何为神经机器翻译配置编码器 - 解码器模型](https://machinelearningmastery.com/configure-encoder-decoder-model-neural-machine-translation/)
 
-```
+```py
 # define NMT model
 def define_model(src_vocab, tar_vocab, src_timesteps, tar_timesteps, n_units):
 	model = Sequential()
@@ -477,7 +477,7 @@ plot_model(model, to_file='model.png', show_shapes=True)
 
 我们使用检查点来确保每次测试集上的模型技能得到改进时，模型都会保存到文件中。
 
-```
+```py
 # fit model
 filename = 'model.h5'
 checkpoint = ModelCheckpoint(filename, monitor='val_loss', verbose=1, save_best_only=True, mode='min')
@@ -488,7 +488,7 @@ model.fit(trainX, trainY, epochs=30, batch_size=64, validation_data=(testX, test
 
 完整的工作示例如下所示。
 
-```
+```py
 from pickle import load
 from numpy import array
 from keras.preprocessing.text import Tokenizer
@@ -586,7 +586,7 @@ model.fit(trainX, trainY, epochs=30, batch_size=64, validation_data=(testX, test
 
 首先运行该示例将打印数据集参数的摘要，例如词汇表大小和最大短语长度。
 
-```
+```py
 English Vocabulary Size: 2404
 English Max Length: 5
 German Vocabulary Size: 3856
@@ -595,7 +595,7 @@ German Max Length: 10
 
 接下来，打印已定义模型的摘要，允许我们确认模型配置。
 
-```
+```py
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
 =================================================================
@@ -627,7 +627,7 @@ NMT 模型图的图
 
 在运行期间，模型将保存到文件 _model.h5_ ，准备在下一步中进行推理。
 
-```
+```py
 ...
 Epoch 26/30
 Epoch 00025: val_loss improved from 2.20048 to 2.19976, saving model to model.h5
@@ -656,7 +656,7 @@ Epoch 00029: val_loss did not improve
 
 必须像以前一样加载和准备干净的数据集。
 
-```
+```py
 ...
 # load datasets
 dataset = load_clean_sentences('english-german-both.pkl')
@@ -677,7 +677,7 @@ testX = encode_sequences(ger_tokenizer, ger_length, test[:, 1])
 
 接下来，必须加载训练期间保存的最佳模型。
 
-```
+```py
 # load model
 model = load_model('model.h5')
 ```
@@ -686,7 +686,7 @@ model = load_model('model.h5')
 
 从推理开始，模型可以以一次性方式预测整个输出序列。
 
-```
+```py
 translation = model.predict(source, verbose=0)
 ```
 
@@ -694,7 +694,7 @@ translation = model.predict(source, verbose=0)
 
 以下函数名为 _word_for_id（）_，将执行此反向映射。
 
-```
+```py
 # map an integer to a word
 def word_for_id(integer, tokenizer):
 	for word, index in tokenizer.word_index.items():
@@ -707,7 +707,7 @@ def word_for_id(integer, tokenizer):
 
 下面的函数 _predict_sequence（）_ 对单个编码的源短语执行此操作。
 
-```
+```py
 # generate target given source sequence
 def predict_sequence(model, tokenizer, source):
 	prediction = model.predict(source, verbose=0)[0]
@@ -733,7 +733,7 @@ def predict_sequence(model, tokenizer, source):
 
 下面的 _evaluate_model（）_ 函数实现了这一点，为提供的数据集中的每个短语调用上述 _predict_sequence（）_ 函数。
 
-```
+```py
 # evaluate the skill of the model
 def evaluate_model(model, tokenizer, sources, raw_dataset):
 	actual, predicted = list(), list()
@@ -757,7 +757,7 @@ def evaluate_model(model, tokenizer, sources, raw_dataset):
 
 完整的代码清单如下。
 
-```
+```py
 from pickle import load
 from numpy import array
 from numpy import argmax
@@ -863,7 +863,7 @@ evaluate_model(model, eng_tokenizer, testX, test)
 
 我们还可以看到 BLEU-4 得分为 0.51，它提供了我们对此模型的预期上限。
 
-```
+```py
 src=[ich liebe dich], target=[i love you], predicted=[i love you]
 src=[ich sagte du sollst den mund halten], target=[i said shut up], predicted=[i said stop up]
 src=[wie geht es eurem vater], target=[hows your dad], predicted=[hows your dad]
@@ -889,7 +889,7 @@ BLEU-4: 0.517571
 
 BLEU-4 得分为 0.076238，提供了基线技能，可以进一步改进模型。
 
-```
+```py
 src=[tom erblasste], target=[tom turned pale], predicted=[tom went pale]
 src=[bring mich nach hause], target=[take me home], predicted=[let us at]
 src=[ich bin etwas beschwipst], target=[im a bit tipsy], predicted=[i a bit bit]

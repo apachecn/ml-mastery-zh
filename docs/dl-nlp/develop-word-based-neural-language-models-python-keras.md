@@ -64,7 +64,7 @@
 
 我们可以在 Python 中定义这个文本如下：
 
-```
+```py
 # source text
 data = """ Jack and Jill went up the hill\n
 		To fetch a pail of water\n
@@ -80,7 +80,7 @@ data = """ Jack and Jill went up the hill\n
 
 例如：
 
-```
+```py
 X,		y
 Jack, 	and
 and,	Jill
@@ -94,7 +94,7 @@ Jill,	went
 
 Keras 提供了 [Tokenizer](https://keras.io/preprocessing/text/#tokenizer) 类，可用于执行此编码。首先，Tokenizer 适合源文本，以开发从单词到唯一整数的映射。然后通过调用 _texts_to_sequences（）_ 函数将文本序列转换为整数序列。
 
-```
+```py
 # integer encode text
 tokenizer = Tokenizer()
 tokenizer.fit_on_texts([data])
@@ -105,7 +105,7 @@ encoded = tokenizer.texts_to_sequences([data])[0]
 
 通过访问 _word_index_ 属性，可以从训练好的 Tokenizer 中检索词汇表的大小。
 
-```
+```py
 # determine the vocabulary size
 vocab_size = len(tokenizer.word_index) + 1
 print('Vocabulary Size: %d' % vocab_size)
@@ -117,7 +117,7 @@ print('Vocabulary Size: %d' % vocab_size)
 
 接下来，我们需要创建单词序列以适合模型，其中一个单词作为输入，一个单词作为输出。
 
-```
+```py
 # create word -> word sequences
 sequences = list()
 for i in range(1, len(encoded)):
@@ -128,13 +128,13 @@ print('Total Sequences: %d' % len(sequences))
 
 运行这一部分表明我们总共有 24 个输入输出对来训练网络。
 
-```
+```py
 Total Sequences: 24
 ```
 
 然后我们可以将序列分成输入（ _X_ ）和输出元素（ _y_ ）。这很简单，因为我们在数据中只有两列。
 
-```
+```py
 # split into X and y elements
 sequences = array(sequences)
 X, y = sequences[:,0],sequences[:,1]
@@ -144,7 +144,7 @@ X, y = sequences[:,0],sequences[:,1]
 
 Keras 提供 _to_categorical（）_ 函数，我们可以使用它将整数转换为一个热编码，同时指定类的数量作为词汇表大小。
 
-```
+```py
 # one hot encode outputs
 y = to_categorical(y, num_classes=vocab_size)
 ```
@@ -155,7 +155,7 @@ y = to_categorical(y, num_classes=vocab_size)
 
 该模型具有单个隐藏的 LSTM 层，具有 50 个单元。这远远超过了需要。输出层由词汇表中每个单词的一个神经元组成，并使用 softmax 激活函数来确保输出被标准化为看起来像概率。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(Embedding(vocab_size, 10, input_length=1))
@@ -166,7 +166,7 @@ print(model.summary())
 
 网络结构可归纳如下：
 
-```
+```py
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
 =================================================================
@@ -188,7 +188,7 @@ _________________________________________________________________
 
 网络配置没有针对此和后续实验进行调整;选择了一个过度规定的配置，以确保我们可以专注于语言模型的框架。
 
-```
+```py
 # compile network
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 # fit network
@@ -197,7 +197,7 @@ model.fit(X, y, epochs=500, verbose=2)
 
 在模型拟合之后，我们通过从词汇表中传递给定的单词并让模型预测下一个单词来测试它。在这里我们通过编码传递' _Jack_ '并调用 _model.predict_classes（）_ 来获得预测单词的整数输出。然后在词汇表映射中查找，以提供相关的单词。
 
-```
+```py
 # evaluate
 in_text = 'Jack'
 print(in_text)
@@ -213,7 +213,7 @@ for word, index in tokenizer.word_index.items():
 
 为了使这更容易，我们将函数包含在一个函数中，我们可以通过传入模型和种子字来调用它。
 
-```
+```py
 # generate a sequence from the model
 def generate_seq(model, tokenizer, seed_text, n_words):
 	in_text, result = seed_text, seed_text
@@ -237,7 +237,7 @@ def generate_seq(model, tokenizer, seed_text, n_words):
 
 我们可以把所有这些放在一起。完整的代码清单如下。
 
-```
+```py
 from numpy import array
 from keras.preprocessing.text import Tokenizer
 from keras.utils import to_categorical
@@ -305,7 +305,7 @@ print(generate_seq(model, tokenizer, 'Jack', 6))
 
 运行该示例打印每个训练时期的损失和准确性。
 
-```
+```py
 ...
 Epoch 496/500
 0s - loss: 0.2358 - acc: 0.8750
@@ -321,7 +321,7 @@ Epoch 500/500
 
 我们可以看到模型没有记住源序列，可能是因为输入序列中存在一些模糊性，例如：
 
-```
+```py
 jack => and
 jack => fell
 ```
@@ -332,7 +332,7 @@ jack => fell
 
 我们得到一个合理的序列作为输出，它有一些源的元素。
 
-```
+```py
 Jack and jill came tumbling after down
 ```
 
@@ -344,7 +344,7 @@ Jack and jill came tumbling after down
 
 例如：
 
-```
+```py
 X,									y
 _, _, _, _, _, Jack, 				and
 _, _, _, _, Jack, and 				Jill
@@ -362,7 +362,7 @@ Jack, and, Jill, went, up, the,		hill
 
 首先，我们可以使用已经适合源文本的 Tokenizer 逐行创建整数序列。
 
-```
+```py
 # create line-based sequences
 sequences = list()
 for line in data.split('\n'):
@@ -375,7 +375,7 @@ print('Total Sequences: %d' % len(sequences))
 
 接下来，我们可以填充准备好的序列。我们可以使用 Keras 中提供的 [pad_sequences（）](https://keras.io/preprocessing/sequence/#pad_sequences)函数来完成此操作。这首先涉及找到最长的序列，然后使用它作为填充所有其他序列的长度。
 
-```
+```py
 # pad input sequences
 max_length = max([len(seq) for seq in sequences])
 sequences = pad_sequences(sequences, maxlen=max_length, padding='pre')
@@ -384,7 +384,7 @@ print('Max Sequence Length: %d' % max_length)
 
 接下来，我们可以将序列拆分为输入和输出元素，就像之前一样。
 
-```
+```py
 # split into input and output elements
 sequences = array(sequences)
 X, y = sequences[:,:-1],sequences[:,-1]
@@ -393,7 +393,7 @@ y = to_categorical(y, num_classes=vocab_size)
 
 然后可以像之前一样定义模型，除了输入序列现在比单个字长。具体来说，它们的长度为 _max_length-1_ ，-1 因为当我们计算序列的最大长度时，它们包括输入和输出元素。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(Embedding(vocab_size, 10, input_length=max_length-1))
@@ -408,7 +408,7 @@ model.fit(X, y, epochs=500, verbose=2)
 
 我们可以像以前一样使用该模型生成新序列。通过在每次迭代中将预测添加到输入词列表中，可以更新 _generate_seq（）_ 函数以建立输入序列。
 
-```
+```py
 # generate a sequence from a language model
 def generate_seq(model, tokenizer, max_length, seed_text, n_words):
 	in_text = seed_text
@@ -433,7 +433,7 @@ def generate_seq(model, tokenizer, max_length, seed_text, n_words):
 
 将所有这些结合在一起，下面提供了完整的代码示例。
 
-```
+```py
 from numpy import array
 from keras.preprocessing.text import Tokenizer
 from keras.utils import to_categorical
@@ -510,7 +510,7 @@ print(generate_seq(model, tokenizer, max_length-1, 'Jill', 4))
 
 仍有两行文字以“ _Jack_ ”开头，可能仍然是网络的问题。
 
-```
+```py
 ...
 Epoch 496/500
 0s - loss: 0.1039 - acc: 0.9524
@@ -528,7 +528,7 @@ Epoch 500/500
 
 第一个生成的行看起来很好，直接匹配源文本。第二个有点奇怪。这是有道理的，因为网络只在输入序列中看到' _Jill_ '，而不是在序列的开头，所以它强制输出使用' _Jill_ 这个词'，即押韵的最后一行。
 
-```
+```py
 Jack fell down and broke
 Jill jill came tumbling after
 ```
@@ -543,7 +543,7 @@ Jill jill came tumbling after
 
 我们将使用 3 个单词作为输入来预测一个单词作为输出。序列的准备与第一个示例非常相似，只是源序列数组中的偏移量不同，如下所示：
 
-```
+```py
 # encode 2 words -> 1 word
 sequences = list()
 for i in range(2, len(encoded)):
@@ -553,7 +553,7 @@ for i in range(2, len(encoded)):
 
 下面列出了完整的示例
 
-```
+```py
 from numpy import array
 from keras.preprocessing.text import Tokenizer
 from keras.utils import to_categorical
@@ -629,7 +629,7 @@ print(generate_seq(model, tokenizer, max_length-1, 'pail of', 5))
 
 再次运行示例可以很好地适应源文本，准确度大约为 95％。
 
-```
+```py
 ...
 Epoch 496/500
 0s - loss: 0.0685 - acc: 0.9565
@@ -645,7 +645,7 @@ Epoch 500/500
 
 我们看一下 4 代示例，两个线路起始线和两个起始中线。
 
-```
+```py
 Jack and jill went up the hill
 And Jill went up the
 fell down and broke his crown and

@@ -44,7 +44,7 @@
 
 我们将用作源文本的完整 4 节版本如下所示。
 
-```
+```py
 Sing a song of sixpence,
 A pocket full of rye.
 Four and twenty blackbirds,
@@ -96,7 +96,7 @@ And pecked off her nose.
 
 下面是一个名为 _load_doc（）_ 的函数，它将加载给定文件名的文本文件并返回加载的文本。
 
-```
+```py
 # load doc into memory
 def load_doc(filename):
 	# open the file as read only
@@ -110,7 +110,7 @@ def load_doc(filename):
 
 我们可以使用童谣' _rhyme.txt_ '的文件名调用此函数，将文本加载到内存中。然后将文件的内容作为完整性检查打印到屏幕。
 
-```
+```py
 # load text
 raw_text = load_doc('rhyme.txt')
 print(raw_text)
@@ -122,7 +122,7 @@ print(raw_text)
 
 我们在这里不会做太多。具体来说，我们将删除所有新行字符，以便我们只有一个由空格分隔的长字符序列。
 
-```
+```py
 # clean
 tokens = raw_text.split()
 raw_text = ' '.join(tokens)
@@ -138,7 +138,7 @@ raw_text = ' '.join(tokens)
 
 我们可以通过枚举文本中的字符来创建序列，从索引 10 处的第 11 个字符开始。
 
-```
+```py
 # organize into sequences of characters
 length = 10
 sequences = list()
@@ -152,7 +152,7 @@ print('Total Sequences: %d' % len(sequences))
 
 运行此片段，我们可以看到我们最终只有不到 400 个字符序列来训练我们的语言模型。
 
-```
+```py
 Total Sequences: 399
 ```
 
@@ -162,7 +162,7 @@ Total Sequences: 399
 
 下面是一个函数 _save_doc（）_，给定一个字符串列表和一个文件名，将字符串保存到文件，每行一个。
 
-```
+```py
 # save tokens to file, one dialog per line
 def save_doc(lines, filename):
 	data = '\n'.join(lines)
@@ -173,7 +173,7 @@ def save_doc(lines, filename):
 
 我们可以调用这个函数并将我们准备好的序列保存到我们当前工作目录中的文件名' _char_sequences.txt_ '。
 
-```
+```py
 # save sequences to file
 out_filename = 'char_sequences.txt'
 save_doc(sequences, out_filename)
@@ -183,7 +183,7 @@ save_doc(sequences, out_filename)
 
 将所有这些结合在一起，下面提供了完整的代码清单。
 
-```
+```py
 # load doc into memory
 def load_doc(filename):
 	# open the file as read only
@@ -228,7 +228,7 @@ save_doc(sequences, out_filename)
 
 看看里面你应该看到如下内容：
 
-```
+```py
 Sing a song
 ing a song
 ng a song o
@@ -256,7 +256,7 @@ ng of sixpe
 
 我们可以使用上一节中开发的相同 _load_doc（）_ 函数。加载后，我们按新行分割文本，以提供准备编码的序列列表。
 
-```
+```py
 # load doc into memory
 def load_doc(filename):
 	# open the file as read only
@@ -281,14 +281,14 @@ lines = raw_text.split('\n')
 
 我们可以在原始输入数据中给定一组排序的唯一字符来创建映射。映射是字符值到整数值的字典。
 
-```
+```py
 chars = sorted(list(set(raw_text)))
 mapping = dict((c, i) for i, c in enumerate(chars))
 ```
 
 接下来，我们可以一次处理一个字符序列，并使用字典映射查找每个字符的整数值。
 
-```
+```py
 sequences = list()
 for line in lines:
 	# integer encode line
@@ -301,7 +301,7 @@ for line in lines:
 
 我们稍后需要知道词汇量的大小。我们可以将其检索为字典映射的大小。
 
-```
+```py
 # vocabulary size
 vocab_size = len(mapping)
 print('Vocabulary Size: %d' % vocab_size)
@@ -309,7 +309,7 @@ print('Vocabulary Size: %d' % vocab_size)
 
 运行这一段，我们可以看到输入序列数据中有 38 个唯一字符。
 
-```
+```py
 Vocabulary Size: 38
 ```
 
@@ -319,16 +319,16 @@ Vocabulary Size: 38
 
 我们可以使用简单的数组切片来完成此操作。
 
-```
+```py
 sequences = array(sequences)
 X, y = sequences[:,:-1], sequences[:,-1]
 ```
 
-接下来，我们需要对每个字符进行一次热编码。也就是说，只要词汇表（38 个元素）标记为特定字符，每个字符就变成一个矢量。这为网络提供了更精确的输入表示。它还为网络预测提供了明确的目标，其中模型可以输出字符的概率分布，并与所有 0 值的理想情况进行比较，实际的下一个字符为 1。
+接下来，我们需要对每个字符进行一次热编码。也就是说，只要词汇表（38 个元素）标记为特定字符，每个字符就变成一个向量。这为网络提供了更精确的输入表示。它还为网络预测提供了明确的目标，其中模型可以输出字符的概率分布，并与所有 0 值的理想情况进行比较，实际的下一个字符为 1。
 
 我们可以使用 Keras API 中的 _to_categorical（）_ 函数对输入和输出序列进行热编码。
 
-```
+```py
 sequences = [to_categorical(x, num_classes=vocab_size) for x in X]
 X = array(sequences)
 y = to_categorical(y, num_classes=vocab_size)
@@ -346,7 +346,7 @@ y = to_categorical(y, num_classes=vocab_size)
 
 该模型具有完全连接的输出层，该输出层输出一个向量，其中概率分布跨越词汇表中的所有字符。在输出层上使用 softmax 激活函数以确保输出具有概率分布的属性。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(LSTM(75, input_shape=(X.shape[1], X.shape[2])))
@@ -356,7 +356,7 @@ print(model.summary())
 
 运行此命令会将已定义网络的摘要打印为完整性检查。
 
-```
+```py
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
 =================================================================
@@ -374,7 +374,7 @@ _________________________________________________________________
 
 该模型适用于 100 个训练时期，再次通过一些试验和错误找到。
 
-```
+```py
 # compile model
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 # fit model
@@ -387,14 +387,14 @@ model.fit(X, y, epochs=100, verbose=2)
 
 Keras 模型 API 提供 _save（）_ 函数，我们可以使用它将模型保存到单个文件，包括权重和拓扑信息。
 
-```
+```py
 # save the model to file
 model.save('model.h5')
 ```
 
 我们还保存了从字符到整数的映射，在使用模型和解码模型的任何输出时，我们需要对任何输入进行编码。
 
-```
+```py
 # save the mapping
 dump(mapping, open('mapping.pkl', 'wb'))
 ```
@@ -403,7 +403,7 @@ dump(mapping, open('mapping.pkl', 'wb'))
 
 将所有这些结合在一起，下面列出了适合基于字符的神经语言模型的完整代码清单。
 
-```
+```py
 from numpy import array
 from pickle import dump
 from keras.utils import to_categorical
@@ -467,7 +467,7 @@ dump(mapping, open('mapping.pkl', 'wb'))
 
 你会看到模型很好地学习了这个问题，也许是为了生成令人惊讶的字符序列。
 
-```
+```py
 ...
 Epoch 96/100
 0s - loss: 0.2193 - acc: 0.9950
@@ -495,14 +495,14 @@ Epoch 100/100
 
 我们可以使用 Keras API 中的 _load_model（）_ 函数。
 
-```
+```py
 # load the model
 model = load_model('model.h5')
 ```
 
 我们还需要加载 pickle 字典，用于将字符映射到文件' _mapping.pkl_ '中的整数。我们将使用 Pickle API 加载对象。
 
-```
+```py
 # load the mapping
 mapping = load(open('mapping.pkl', 'rb'))
 ```
@@ -517,14 +517,14 @@ mapping = load(open('mapping.pkl', 'rb'))
 
 首先，必须使用加载的映射对字符序列进行整数编码。
 
-```
+```py
 # encode the characters as integers
 encoded = [mapping[char] for char in in_text]
 ```
 
 接下来，序列需要使用 _to_categorical（）_ Keras 函数进行热编码。
 
-```
+```py
 # one hot encode
 encoded = to_categorical(encoded, num_classes=len(mapping))
 ```
@@ -533,14 +533,14 @@ encoded = to_categorical(encoded, num_classes=len(mapping))
 
 我们使用 _predict_classes（）_ 而不是 _predict（）_ 来直接选择具有最高概率的字符的整数，而不是在整个字符集中获得完整的概率分布。
 
-```
+```py
 # predict character
 yhat = model.predict_classes(encoded, verbose=0)
 ```
 
 然后，我们可以通过查找映射来解码此整数，以查看它映射到的字符。
 
-```
+```py
 out_char = ''
 for char, index in mapping.items():
 	if index == yhat:
@@ -554,7 +554,7 @@ for char, index in mapping.items():
 
 将所有这些放在一起，我们可以定义一个名为 _generate_seq（）_ 的新函数，用于使用加载的模型生成新的文本序列。
 
-```
+```py
 # generate a sequence of characters with a language model
 def generate_seq(model, mapping, seq_length, seed_text, n_chars):
 	in_text = seed_text
@@ -583,7 +583,7 @@ def generate_seq(model, mapping, seq_length, seed_text, n_chars):
 
 将所有这些结合在一起，下面列出了使用拟合神经语言模型生成文本的完整示例。
 
-```
+```py
 from pickle import load
 from keras.models import load_model
 from keras.utils import to_categorical
@@ -630,7 +630,7 @@ print(generate_seq(model, mapping, 10, 'hello worl', 20))
 
 第一个是测试模型在从押韵开始时的作用。第二个是测试，看看它在一行开头的表现如何。最后一个例子是一个测试，看看它对前面从未见过的一系列字符有多好。
 
-```
+```py
 Sing a song of sixpence, A poc
 king was in his counting house
 hello worls e pake wofey. The

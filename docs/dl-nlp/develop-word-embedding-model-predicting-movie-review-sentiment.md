@@ -132,7 +132,7 @@
 
 下面列出了清理第一次正面评价的示例。
 
-```
+```py
 from nltk.corpus import stopwords
 import string
 
@@ -176,7 +176,7 @@ print(tokens)
 我很想知道你能想出什么。
 最后在评论中发布您的方法和结果。
 
-```
+```py
 ...
 'creepy', 'place', 'even', 'acting', 'hell', 'solid', 'dreamy', 'depp', 'turning', 'typically', 'strong', 'performance', 'deftly', 'handling', 'british', 'accent', 'ians', 'holm', 'joe', 'goulds', 'secret', 'richardson', 'dalmatians', 'log', 'great', 'supporting', 'roles', 'big', 'surprise', 'graham', 'cringed', 'first', 'time', 'opened', 'mouth', 'imagining', 'attempt', 'irish', 'accent', 'actually', 'wasnt', 'half', 'bad', 'film', 'however', 'good', 'strong', 'violencegore', 'sexuality', 'language', 'drug', 'content']
 ```
@@ -195,7 +195,7 @@ print(tokens)
 
 下面列出了完整的示例。
 
-```
+```py
 from string import punctuation
 from os import listdir
 from collections import Counter
@@ -267,7 +267,7 @@ print(vocab.most_common(50))
 
 请注意，此词汇表仅基于训练数据集中的那些评论构建。
 
-```
+```py
 44276
 [('film', 7983), ('one', 4946), ('movie', 4826), ('like', 3201), ('even', 2262), ('good', 2080), ('time', 2041), ('story', 1907), ('films', 1873), ('would', 1844), ('much', 1824), ('also', 1757), ('characters', 1735), ('get', 1724), ('character', 1703), ('two', 1643), ('first', 1588), ('see', 1557), ('way', 1515), ('well', 1511), ('make', 1418), ('really', 1407), ('little', 1351), ('life', 1334), ('plot', 1288), ('people', 1269), ('could', 1248), ('bad', 1248), ('scene', 1241), ('movies', 1238), ('never', 1201), ('best', 1179), ('new', 1140), ('scenes', 1135), ('man', 1131), ('many', 1130), ('doesnt', 1118), ('know', 1092), ('dont', 1086), ('hes', 1024), ('great', 1014), ('another', 992), ('action', 985), ('love', 977), ('us', 967), ('go', 952), ('director', 948), ('end', 946), ('something', 945), ('still', 936)]
 ```
@@ -276,7 +276,7 @@ print(vocab.most_common(50))
 
 例如，以下代码段将仅检索在所有评论中出现 2 次或更多次的令牌。
 
-```
+```py
 # keep tokens with a min occurrence
 min_occurane = 2
 tokens = [k for k,c in vocab.items() if c >= min_occurane]
@@ -285,7 +285,7 @@ print(len(tokens))
 
 使用此添加运行上面的示例表明，词汇量大小略大于其大小的一半（从 43,476 到 25,767 个单词）。
 
-```
+```py
 25767
 ```
 
@@ -293,7 +293,7 @@ print(len(tokens))
 
 例如：
 
-```
+```py
 # save list to file
 def save_list(lines, filename):
 	# convert lines to a single blob of text
@@ -313,7 +313,7 @@ save_list(tokens, 'vocab.txt')
 
 文件中的单词顺序会有所不同，但应如下所示：
 
-```
+```py
 aberdeen
 dupe
 burt
@@ -349,7 +349,7 @@ columbia
 
 如果你已完成上一节，你应该有一个名为' _vocab.txt_ '的本地文件，每行一个单词。我们可以加载该文件并构建一个词汇表作为检查令牌有效性的集合。
 
-```
+```py
 # load doc into memory
 def load_doc(filename):
 	# open the file as read only
@@ -373,7 +373,7 @@ vocab = set(vocab)
 
 更新的 _clean_doc（）_ 功能如下所示。
 
-```
+```py
 # turn a doc into clean tokens
 def clean_doc(doc, vocab):
 	# split into tokens by white space
@@ -389,7 +389,7 @@ def clean_doc(doc, vocab):
 
 更新的 _process_docs（）_ 然后可以为' _pos_ '和' _neg_ '目录中的每个文档调用 _clean_doc（）_ 在我们的训练数据集中。
 
-```
+```py
 # load all docs in a directory
 def process_docs(directory, vocab, is_trian):
 	documents = list()
@@ -424,7 +424,7 @@ Keras 嵌入层需要整数输入，其中每个整数映射到单个标记，�
 
 首先，我们必须构造一个类的实例，然后在训练数据集中的所有文档上训练它。在这种情况下，它开发了训练数据集中所有标记的词汇表，并开发了从词汇表中的单词到唯一整数的一致映射。我们可以使用我们的词汇表文件轻松地开发此映射。
 
-```
+```py
 # create the tokenizer
 tokenizer = Tokenizer()
 # fit the tokenizer on the documents
@@ -433,7 +433,7 @@ tokenizer.fit_on_texts(train_docs)
 
 现在已经准备好了单词到整数的映射，我们可以使用它来对训练数据集中的评论进行编码。我们可以通过调用 Tokenizer 上的 _texts_to_sequences（）_ 函数来实现。
 
-```
+```py
 # sequence encode
 encoded_docs = tokenizer.texts_to_sequences(train_docs)
 ```
@@ -444,7 +444,7 @@ encoded_docs = tokenizer.texts_to_sequences(train_docs)
 
 首先，我们可以使用训练数据集上的 _max（）_ 函数找到最长的评论并获取其长度。然后，我们可以调用 Keras 函数 _pad_sequences（）_，通过在末尾添加 0 值将序列填充到最大长度。
 
-```
+```py
 # pad sequences
 max_length = max([len(s.split()) for s in train_docs])
 Xtrain = pad_sequences(encoded_docs, maxlen=max_length, padding='post')
@@ -452,14 +452,14 @@ Xtrain = pad_sequences(encoded_docs, maxlen=max_length, padding='post')
 
 最后，我们可以定义训练数据集的类标签，以适应监督的神经网络模型来预测评论的情绪。
 
-```
+```py
 # define training labels
 ytrain = array([0 for _ in range(900)] + [1 for _ in range(900)])
 ```
 
 然后我们可以对测试数据集进行编码和填充，稍后需要在我们训练之后评估模型。
 
-```
+```py
 # load all test reviews
 positive_docs = process_docs('txt_sentoken/pos', vocab, False)
 negative_docs = process_docs('txt_sentoken/neg', vocab, False)
@@ -478,7 +478,7 @@ ytest = array([0 for _ in range(100)] + [1 for _ in range(100)])
 
 词汇量大小是我们词汇表中的单词总数，加上一个未知单词。这可以是用于对文档进行整数编码的标记器内的词汇集长度或词汇大小，例如：
 
-```
+```py
 # define vocabulary size (largest integer value)
 vocab_size = len(tokenizer.word_index) + 1
 ```
@@ -489,13 +489,13 @@ vocab_size = len(tokenizer.word_index) + 1
 
 我们使用卷积神经网络（CNN），因为它们已经证明在文档分类问题上是成功的。保守的 CNN 配置与 32 个滤波器（用于处理字的并行字段）和具有整流线性（'relu'）激活功能的 8 的内核大小一起使用。接下来是一个池化层，它将卷积层的输出减少一半。
 
-接下来，将来自模型的 CNN 部分的 2D 输出展平为一个长 2D 矢量，以表示由 CNN 提取的“特征”。模型的后端是标准的多层感知器层，用于解释 CNN 功能。输出层使用 sigmoid 激活函数为评论中的消极和积极情绪输出介于 0 和 1 之间的值。
+接下来，将来自模型的 CNN 部分的 2D 输出展平为一个长 2D 向量，以表示由 CNN 提取的“特征”。模型的后端是标准的多层感知器层，用于解释 CNN 功能。输出层使用 sigmoid 激活函数为评论中的消极和积极情绪输出介于 0 和 1 之间的值。
 
 有关文本分类的有效深度学习模型配置的更多建议，请参阅帖子：
 
 *   [深度学习文档分类的最佳实践](https://machinelearningmastery.com/best-practices-document-classification-deep-learning/)
 
-```
+```py
 # define model
 model = Sequential()
 model.add(Embedding(vocab_size, 100, input_length=max_length))
@@ -511,7 +511,7 @@ print(model.summary())
 
 我们可以看到嵌入层需要长度为 442 个单词的文档作为输入，并将文档中的每个单词编码为 100 个元素向量。
 
-```
+```py
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
 =================================================================
@@ -539,7 +539,7 @@ _________________________________________________________________
 
 通过一些试验和错误找到了网络配置和训练计划，但对于此问题并不是最佳选择。如果您可以使用其他配置获得更好的结果，请告诉我们。
 
-```
+```py
 # compile network
 model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 # fit network
@@ -548,7 +548,7 @@ model.fit(Xtrain, ytrain, epochs=10, verbose=2)
 
 在拟合模型之后，在测试数据集上对其进行评估。此数据集包含我们以前从未见过的单词和在训练期间未看到的评论。
 
-```
+```py
 # evaluate
 loss, acc = model.evaluate(Xtest, ytest, verbose=0)
 print('Test Accuracy: %f' % (acc*100))
@@ -558,7 +558,7 @@ print('Test Accuracy: %f' % (acc*100))
 
 完整的代码清单如下。
 
-```
+```py
 from string import punctuation
 from os import listdir
 from numpy import array
@@ -675,7 +675,7 @@ print('Test Accuracy: %f' % (acc*100))
 
 鉴于神经网络的随机性，您的具体结果会有所不同。考虑运行几次示例并将平均分数作为模型的技能。
 
-```
+```py
 ...
 Epoch 6/10
 2s - loss: 0.0013 - acc: 1.0000
@@ -710,7 +710,7 @@ word2vec 算法逐句处理文档。这意味着我们将在清洁期间保留�
 
 我们开始像以前一样加载词汇表。
 
-```
+```py
 # load doc into memory
 def load_doc(filename):
 	# open the file as read only
@@ -730,7 +730,7 @@ vocab = set(vocab)
 
 接下来，我们定义一个名为 _doc_to_clean_lines（）_ 的函数来逐行清理已加载的文档并返回已清理行的列表。
 
-```
+```py
 # turn a doc into clean tokens
 def doc_to_clean_lines(doc, vocab):
 	clean_lines = list()
@@ -751,7 +751,7 @@ def doc_to_clean_lines(doc, vocab):
 
 该函数的结果将是 word2vec 模型的训练数据。
 
-```
+```py
 # load all docs in a directory
 def process_docs(directory, vocab, is_trian):
 	lines = list()
@@ -774,7 +774,7 @@ def process_docs(directory, vocab, is_trian):
 
 然后我们可以加载所有训练数据并将其转换为一长串的“句子”（令牌列表），以便为 word2vec 模型拟合。
 
-```
+```py
 # load training data
 positive_lines = process_docs('txt_sentoken/pos', vocab, True)
 negative_lines = process_docs('txt_sentoken/neg', vocab, True)
@@ -792,7 +792,7 @@ print('Total training sentences: %d' % len(sentences))
 
 在模型拟合之后，我们打印学习词汇的大小，这应该与我们在 25,767 个令牌的 vocab.txt 中的词汇量相匹配。
 
-```
+```py
 # train word2vec model
 model = Word2Vec(sentences, size=100, window=5, workers=8, min_count=1)
 # summarize vocabulary size in model
@@ -800,11 +800,11 @@ words = list(model.wv.vocab)
 print('Vocabulary size: %d' % len(words))
 ```
 
-最后，我们使用模型的' _wv_ '（字向量）属性上的 [save_word2vec_format（）](https://radimrehurek.com/gensim/models/keyedvectors.html)将学习的嵌入向量保存到文件中。嵌入以 ASCII 格式保存，每行一个字和矢量。
+最后，我们使用模型的' _wv_ '（字向量）属性上的 [save_word2vec_format（）](https://radimrehurek.com/gensim/models/keyedvectors.html)将学习的嵌入向量保存到文件中。嵌入以 ASCII 格式保存，每行一个字和向量。
 
 下面列出了完整的示例。
 
-```
+```py
 from string import punctuation
 from os import listdir
 from gensim.models import Word2Vec
@@ -880,7 +880,7 @@ model.wv.save_word2vec_format(filename, binary=False)
 
 您现在应该在当前工作目录中有一个带有学习向量的文件'embedding_word2vec.txt'。
 
-```
+```py
 Total training sentences: 58109
 Vocabulary size: 25767
 ```
@@ -897,7 +897,7 @@ Vocabulary size: 25767
 
 下面名为 _load_embedding（）_ 的函数加载嵌入并返回映射到 NumPy 格式的向量的单词目录。
 
-```
+```py
 # load embedding as a dict
 def load_embedding(filename):
 	# load embedding into memory, skip first line
@@ -919,7 +919,7 @@ def load_embedding(filename):
 
 下面定义了一个函数 _get_weight_matrix（）_，它将加载的嵌入和 tokenizer.word_index 词汇表作为参数，并返回一个矩阵，其中的单词 vector 位于正确的位置。
 
-```
+```py
 # create a weight matrix for the Embedding layer from a loaded embedding
 def get_weight_matrix(embedding, vocab):
 	# total vocabulary size plus 0 for unknown words
@@ -934,7 +934,7 @@ def get_weight_matrix(embedding, vocab):
 
 现在我们可以使用这些函数为我们的模型创建新的嵌入层。
 
-```
+```py
 ...
 # load embedding from file
 raw_embedding = load_embedding('embedding_word2vec.txt')
@@ -948,7 +948,7 @@ embedding_layer = Embedding(vocab_size, 100, weights=[embedding_vectors], input_
 
 我们现在可以将此图层添加到我们的模型中。我们还有一个稍微不同的模型配置，在 CNN 模型中有更多的过滤器（128），以及在开发 word2vec 嵌入时匹配用作邻居的 5 个单词的内核。最后，简化了模型的后端。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(embedding_layer)
@@ -963,7 +963,7 @@ print(model.summary())
 
 完整的代码清单如下。
 
-```
+```py
 from string import punctuation
 from os import listdir
 from numpy import array
@@ -1113,7 +1113,7 @@ print('Test Accuracy: %f' % (acc*100))
 
 测试表现差的原因可能是因为选择了 word2vec 配置或选择的神经网络配置。
 
-```
+```py
 ...
 Epoch 6/10
 2s - loss: 0.3306 - acc: 0.8778
@@ -1134,7 +1134,7 @@ Test Accuracy: 53.000000
 
 我鼓励您探索嵌入和网络的备用配置，看看您是否可以做得更好。让我知道你是怎么做的。
 
-```
+```py
 ...
 Epoch 6/10
 4s - loss: 0.0950 - acc: 0.9917
@@ -1153,9 +1153,9 @@ Test Accuracy: 57.500000
 
 例如，Google 和 Stanford 都提供了可以下载的预训练单词向量，分别使用高效的 word2vec 和 GloVe 方法进行训练。
 
-让我们尝试在我们的模型中使用预先训练的矢量。
+让我们尝试在我们的模型中使用预先训练的向量。
 
-您可以从斯坦福网页下载[预训练的 GloVe 载体](https://nlp.stanford.edu/projects/glove/)。具体来说，训练维基百科数据的矢量：
+您可以从斯坦福网页下载[预训练的 GloVe 载体](https://nlp.stanford.edu/projects/glove/)。具体来说，训练维基百科数据的向量：
 
 *   [手套.6B.zip](http://nlp.stanford.edu/data/glove.6B.zip) （822 兆字节下载）
 
@@ -1163,7 +1163,7 @@ Test Accuracy: 57.500000
 
 Glove 文件不包含头文件，因此在将嵌入加载到内存时我们不需要跳过第一行。下面列出了更新的 _load_embedding（）_ 功能。
 
-```
+```py
 # load embedding as a dict
 def load_embedding(filename):
 	# load embedding into memory, skip first line
@@ -1181,7 +1181,7 @@ def load_embedding(filename):
 
 加载的嵌入可能不包含我们选择的词汇表中的所有单词。因此，在创建嵌入权重矩阵时，我们需要跳过在加载的 GloVe 数据中没有相应向量的单词。以下是 _get_weight_matrix（）_ 功能的更新，更具防御性的版本。
 
-```
+```py
 # create a weight matrix for the Embedding layer from a loaded embedding
 def get_weight_matrix(embedding, vocab):
 	# total vocabulary size plus 0 for unknown words
@@ -1198,7 +1198,7 @@ def get_weight_matrix(embedding, vocab):
 
 我们现在可以像以前一样加载 GloVe 嵌入并创建嵌入层。
 
-```
+```py
 # load embedding from file
 raw_embedding = load_embedding('glove.6B.100d.txt')
 # get vectors in the right order
@@ -1211,7 +1211,7 @@ embedding_layer = Embedding(vocab_size, 100, weights=[embedding_vectors], input_
 
 下面列出了完整的示例。
 
-```
+```py
 from string import punctuation
 from os import listdir
 from numpy import array
@@ -1361,11 +1361,11 @@ print('Test Accuracy: %f' % (acc*100))
 
 同样，训练数据集很容易学习，模型在测试数据集上达到 76％的准确度。这很好，但不如使用学习的嵌入层。
 
-这可能是由于在更多数据上训练的更高质量的矢量和/或使用稍微不同的训练过程的原因。
+这可能是由于在更多数据上训练的更高质量的向量和/或使用稍微不同的训练过程的原因。
 
 鉴于神经网络的随机性，您的具体结果可能会有所不同。尝试运行几次示例。
 
-```
+```py
 ...
 Epoch 6/10
 2s - loss: 0.0278 - acc: 1.0000

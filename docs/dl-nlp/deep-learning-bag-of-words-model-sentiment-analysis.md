@@ -105,7 +105,7 @@
 
 下面列出了清理第一次正面评价的示例。
 
-```
+```py
 from nltk.corpus import stopwords
 import string
 
@@ -146,7 +146,7 @@ print(tokens)
 
 我们可能想要探索更多的清洁步骤，并将其作为进一步的练习。我很想知道你能想出什么。
 
-```
+```py
 ...
 'creepy', 'place', 'even', 'acting', 'hell', 'solid', 'dreamy', 'depp', 'turning', 'typically', 'strong', 'performance', 'deftly', 'handling', 'british', 'accent', 'ians', 'holm', 'joe', 'goulds', 'secret', 'richardson', 'dalmatians', 'log', 'great', 'supporting', 'roles', 'big', 'surprise', 'graham', 'cringed', 'first', 'time', 'opened', 'mouth', 'imagining', 'attempt', 'irish', 'accent', 'actually', 'wasnt', 'half', 'bad', 'film', 'however', 'good', 'strong', 'violencegore', 'sexuality', 'language', 'drug', 'content']
 ```
@@ -165,7 +165,7 @@ print(tokens)
 
 下面列出了完整的示例。
 
-```
+```py
 from string import punctuation
 from os import listdir
 from collections import Counter
@@ -235,7 +235,7 @@ print(vocab.most_common(50))
 
 请注意，此词汇表仅基于训练数据集中的那些评论构建。
 
-```
+```py
 44276
 [('film', 7983), ('one', 4946), ('movie', 4826), ('like', 3201), ('even', 2262), ('good', 2080), ('time', 2041), ('story', 1907), ('films', 1873), ('would', 1844), ('much', 1824), ('also', 1757), ('characters', 1735), ('get', 1724), ('character', 1703), ('two', 1643), ('first', 1588), ('see', 1557), ('way', 1515), ('well', 1511), ('make', 1418), ('really', 1407), ('little', 1351), ('life', 1334), ('plot', 1288), ('people', 1269), ('could', 1248), ('bad', 1248), ('scene', 1241), ('movies', 1238), ('never', 1201), ('best', 1179), ('new', 1140), ('scenes', 1135), ('man', 1131), ('many', 1130), ('doesnt', 1118), ('know', 1092), ('dont', 1086), ('hes', 1024), ('great', 1014), ('another', 992), ('action', 985), ('love', 977), ('us', 967), ('go', 952), ('director', 948), ('end', 946), ('something', 945), ('still', 936)]
 ```
@@ -244,7 +244,7 @@ print(vocab.most_common(50))
 
 例如，以下代码段将仅检索在所有评论中出现 2 次或更多次的代币。
 
-```
+```py
 # keep tokens with a min occurrence
 min_occurane = 2
 tokens = [k for k,c in vocab.items() if c >= min_occurane]
@@ -253,7 +253,7 @@ print(len(tokens))
 
 使用此添加运行上面的示例表明，词汇量大小略大于其大小的一半，从 43,476 到 25,767 个单词。
 
-```
+```py
 25767
 ```
 
@@ -261,7 +261,7 @@ print(len(tokens))
 
 例如：
 
-```
+```py
 # save list to file
 def save_list(lines, filename):
 	# convert lines to a single blob of text
@@ -281,7 +281,7 @@ save_list(tokens, 'vocab.txt')
 
 文件中的单词顺序会有所不同，但应如下所示：
 
-```
+```py
 aberdeen
 dupe
 burt
@@ -303,7 +303,7 @@ columbia
 
 词袋模型是一种从文本中提取特征的方法，因此文本输入可以与神经网络等机器学习算法一起使用。
 
-每个文档（在这种情况下是评论）被转换为矢量表示。表示文档的向量中的项目数对应于词汇表中的单词数。词汇量越大，向量表示越长，因此在前一部分中对较小词汇表的偏好。
+每个文档（在这种情况下是评论）被转换为向量表示。表示文档的向量中的项目数对应于词汇表中的单词数。词汇量越大，向量表示越长，因此在前一部分中对较小词汇表的偏好。
 
 对文档中的单词进行评分，并将分数放在表示中的相应位置。我们将在下一节中介绍不同的单词评分方法。
 
@@ -316,13 +316,13 @@ columbia
 
 ### 对令牌行的评论
 
-在我们将评论转换为矢量进行建模之前，我们必须首先清理它们。
+在我们将评论转换为向量进行建模之前，我们必须首先清理它们。
 
 这涉及加载它们，执行上面开发的清洁操作，过滤掉不在所选词汇表中的单词，并将剩余的标记转换成准备编码的单个字符串或行。
 
 首先，我们需要一个函数来准备一个文档。下面列出了函数 _doc_to_line（）_，它将加载文档，清理它，过滤掉不在词汇表中的标记，然后将文档作为一串空白分隔的标记返回。
 
-```
+```py
 # load doc, clean and return line of tokens
 def doc_to_line(filename, vocab):
 	# load the doc
@@ -338,7 +338,7 @@ def doc_to_line(filename, vocab):
 
 下面列出了 _process_docs（）_ 函数，该函数执行此操作，期望将目录名称和词汇表设置为输入参数并返回已处理文档的列表。
 
-```
+```py
 # load all docs in a directory
 def process_docs(directory, vocab):
 	lines = list()
@@ -358,7 +358,7 @@ def process_docs(directory, vocab):
 
 最后，我们需要加载词汇表并将其转换为用于清理评论的集合。
 
-```
+```py
 # load the vocabulary
 vocab_filename = 'vocab.txt'
 vocab = load_doc(vocab_filename)
@@ -370,7 +370,7 @@ vocab = set(vocab)
 
 下面列出了完整的示例，演示了如何从训练数据集准备正面和负面评论。
 
-```
+```py
 from string import punctuation
 from os import listdir
 from collections import Counter
@@ -440,7 +440,7 @@ negative_lines = process_docs('txt_sentoken/neg', vocab)
 print(len(positive_lines), len(negative_lines))
 ```
 
-### 电影评论到词袋矢量
+### 电影评论到词袋向量
 
 我们将使用 Keras API 将评论转换为编码的文档向量。
 
@@ -452,7 +452,7 @@ Keras 提供 [Tokenize 类](https://keras.io/preprocessing/text/#tokenizer)，�
 
 在这种情况下，这些是前一节中开发的 _positive_lines_ 和 _negative_lines_ 数组的聚合。
 
-```
+```py
 # create the tokenizer
 tokenizer = Tokenizer()
 # fit the tokenizer on the documents
@@ -466,7 +466,7 @@ tokenizer.fit_on_texts(docs)
 
 这可用于编码训练数据，例如：
 
-```
+```py
 # encode training data set
 Xtrain = tokenizer.texts_to_matrix(docs, mode='freq')
 print(Xtrain.shape)
@@ -474,7 +474,7 @@ print(Xtrain.shape)
 
 这将对训练数据集中的所有正面和负面评论进行编码，并将所得矩阵的形状打印为 1,800 个文档，每个文档的长度为 25,768 个元素。它可以用作模型的训练数据。
 
-```
+```py
 (1800, 25768)
 ```
 
@@ -484,7 +484,7 @@ print(Xtrain.shape)
 
 我们通过添加 _is_trian_ 参数并使用它来决定要跳过哪些评论文件名来支持加载训练和测试数据集。
 
-```
+```py
 # load all docs in a directory
 def process_docs(directory, vocab, is_trian):
 	lines = list()
@@ -506,7 +506,7 @@ def process_docs(directory, vocab, is_trian):
 
 接下来，我们可以像在训练集中一样，在测试集中加载和编码正面和负面评论。
 
-```
+```py
 ...
 # load all test reviews
 positive_lines = process_docs('txt_sentoken/pos', vocab, False)
@@ -519,7 +519,7 @@ print(Xtest.shape)
 
 我们可以将所有这些放在一个例子中。
 
-```
+```py
 from string import punctuation
 from os import listdir
 from collections import Counter
@@ -609,9 +609,9 @@ Xtest = tokenizer.texts_to_matrix(docs, mode='freq')
 print(Xtest.shape)
 ```
 
-运行该示例分别打印编码的训练数据集和测试数据集的形状，分别具有 1,800 和 200 个文档，每个文档具有相同大小的编码词汇表（矢量长度）。
+运行该示例分别打印编码的训练数据集和测试数据集的形状，分别具有 1,800 和 200 个文档，每个文档具有相同大小的编码词汇表（向量长度）。
 
-```
+```py
 (1800, 25768)
 (200, 25768)
 ```
@@ -636,13 +636,13 @@ print(Xtest.shape)
 
 我们可以将它存储在一个名为 _n_words_ 的新变量中，如下所示：
 
-```
+```py
 n_words = Xtest.shape[1]
 ```
 
 我们还需要所有训练和测试审核数据的类标签。我们确定性地加载并编码了这些评论（否定，然后是正面），因此我们可以直接指定标签，如下所示：
 
-```
+```py
 ytrain = array([0 for _ in range(900)] + [1 for _ in range(900)])
 ytest = array([0 for _ in range(100)] + [1 for _ in range(100)])
 ```
@@ -655,7 +655,7 @@ ytest = array([0 for _ in range(100)] + [1 for _ in range(100)])
 
 将使用梯度下降的有效 [Adam 实现](http://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/)和二元交叉熵损失函数来训练网络，适合于二元分类问题。在训练和评估模型时，我们将跟踪准确性。
 
-```
+```py
 # define network
 model = Sequential()
 model.add(Dense(50, input_shape=(n_words,), activation='relu'))
@@ -666,14 +666,14 @@ model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy']
 
 接下来，我们可以将模型拟合到训练数据上;在这种情况下，该模型很小，很容易适应 50 个时代。
 
-```
+```py
 # fit network
 model.fit(Xtrain, ytrain, epochs=50, verbose=2)
 ```
 
 最后，一旦训练了模型，我们就可以通过在测试数据集中进行预测并打印精度来评估其表现。
 
-```
+```py
 # evaluate
 loss, acc = model.evaluate(Xtest, ytest, verbose=0)
 print('Test Accuracy: %f' % (acc*100))
@@ -681,7 +681,7 @@ print('Test Accuracy: %f' % (acc*100))
 
 下面列出了完整的示例。
 
-```
+```py
 from numpy import array
 from string import punctuation
 from os import listdir
@@ -791,7 +791,7 @@ print('Test Accuracy: %f' % (acc*100))
 
 虽然，重要的是要注意这不是一个苹果对苹果的比较，因为原始论文使用 10 倍交叉验证来估计模型技能而不是单个列车/测试分裂。
 
-```
+```py
 ...
 Epoch 46/50
 0s - loss: 0.0167 - acc: 1.0000
@@ -822,7 +822,7 @@ Keras API 中 Tokenizer 的 _texts_to_matrix（）_ 函数提供了 4 种不同�
 
 这首先涉及开发一种函数，以基于所选择的评分模型来创建所加载文档的编码。该函数创建标记器，将其拟合到训练文档上，然后使用所选模型创建训练和测试编码。函数 _prepare_data（）_ 在给定列车和测试文档列表的情况下实现此行为。
 
-```
+```py
 # prepare bag of words encoding of docs
 def prepare_data(train_docs, test_docs, mode):
 	# create the tokenizer
@@ -842,7 +842,7 @@ def prepare_data(train_docs, test_docs, mode):
 
 下面的函数名为 _evaluate_mode（）_，它通过在火车上训练它并在测试集上估计技能 30 次来获取编码文档并评估 MLP，并返回所有这些精度得分的列表。运行。
 
-```
+```py
 # evaluate a neural network model
 def evaluate_mode(Xtrain, ytrain, Xtest, ytest):
 	scores = list()
@@ -868,7 +868,7 @@ def evaluate_mode(Xtrain, ytrain, Xtest, ytest):
 
 将所有这些结合在一起，下面列出了完整的示例。
 
-```
+```py
 from numpy import array
 from string import punctuation
 from os import listdir
@@ -1004,7 +1004,7 @@ pyplot.show()
 
 我们可以看到' _freq_ '和'_ 二元 _'方法的平均得分似乎优于'_ 计数 _'和' _tfidf_ '。
 
-```
+```py
           binary     count      tfidf       freq
 count  30.000000  30.00000  30.000000  30.000000
 mean    0.915833   0.88900   0.856333   0.908167
@@ -1036,7 +1036,7 @@ max     0.935000   0.90500   0.885000   0.910000
 
 所有这些步骤都可以放入一个名为 _predict_sentiment（）_ 的新函数中，该函数需要复习文本，词汇表，标记符和拟合模型，如下所示：
 
-```
+```py
 # classify a review as negative (0) or positive (1)
 def predict_sentiment(review, vocab, tokenizer, model):
 	# clean
@@ -1056,7 +1056,7 @@ def predict_sentiment(review, vocab, tokenizer, model):
 
 以下是使用频率词评分模式使用上面开发的简单 MLP 进行明确肯定和明显否定评论的示例。
 
-```
+```py
 # test positive text
 text = 'Best movie ever!'
 print(predict_sentiment(text, vocab, tokenizer, model))
@@ -1067,7 +1067,7 @@ print(predict_sentiment(text, vocab, tokenizer, model))
 
 正确运行示例会对这些评论进行分类。
 
-```
+```py
 1
 0
 ```

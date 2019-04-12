@@ -70,7 +70,7 @@ Gensim 由捷克自然语言处理研究员[RadimŘehůřek](https://www.linkedi
 
 例如，您可以通过在命令行上键入以下内容来使用 pip 安装 Gensim：
 
-```
+```py
 pip install --upgrade gensim
 ```
 
@@ -90,7 +90,7 @@ Gensim 提供 [Word2Vec](https://radimrehurek.com/gensim/models/word2vec.html) �
 
 学习从文本嵌入的单词涉及将文本加载和组织成句子并将它们提供给新的 _Word2Vec（）_ 实例的构造函数。例如：
 
-```
+```py
 sentences = ...
 model = Word2Vec(sentences)
 ```
@@ -109,26 +109,26 @@ model = Word2Vec(sentences)
 
 刚开始时，默认值通常足够好。如果您拥有大量核心，就像大多数现代计算机那样，我强烈建议您增加工作人员以匹配核心数量（例如 8）。
 
-训练模型后，可通过“ _wv_ ”属性访问该模型。这是可以进行查询的实际单词矢量模型。
+训练模型后，可通过“ _wv_ ”属性访问该模型。这是可以进行查询的实际单词向量模型。
 
 例如，您可以打印所学习的令牌（单词）词汇，如下所示：
 
-```
+```py
 words = list(model.wv.vocab)
 print(words)
 ```
 
 您可以查看特定标记的嵌入向量，如下所示：
 
-```
+```py
 print(model['word'])
 ```
 
-最后，通过调用单词矢量模型上的 _save_word2vec_format（）_ 函数，可以将训练好的模型保存到文件中。
+最后，通过调用单词向量模型上的 _save_word2vec_format（）_ 函数，可以将训练好的模型保存到文件中。
 
 默认情况下，模型以二进制格式保存以节省空间。例如：
 
-```
+```py
 model.wv.save_word2vec_format('model.bin')
 ```
 
@@ -136,13 +136,13 @@ model.wv.save_word2vec_format('model.bin')
 
 您可以通过在调用 _save_word2vec_format（）_ 函数时设置 _binary = False_ 来执行此操作，例如：
 
-```
+```py
 model.wv.save_word2vec_format('model.txt', binary=False)
 ```
 
 然后可以通过调用 _Word2Vec.load（）_ 函数再次加载保存的模型。例如：
 
-```
+```py
 model = Word2Vec.load('model.bin')
 ```
 
@@ -154,7 +154,7 @@ model = Word2Vec.load('model.bin')
 
 最后，模型以二进制格式保存到文件中，加载，然后进行汇总。
 
-```
+```py
 from gensim.models import Word2Vec
 # define training data
 sentences = [['this', 'is', 'the', 'first', 'sentence', 'for', 'word2vec'],
@@ -180,7 +180,7 @@ print(new_model)
 
 运行该示例将打印以下输出。
 
-```
+```py
 Word2Vec(vocab=14, size=100, alpha=0.025)
 ['second', 'sentence', 'and', 'this', 'final', 'word2vec', 'for', 'another', 'one', 'first', 'more', 'the', 'yet', 'is']
 [ -4.61881841e-03  -4.88735968e-03  -3.19508743e-03   4.08568839e-03
@@ -223,11 +223,11 @@ Word2Vec(vocab=14, size=100, alpha=0.025)
 
 我们可以从训练有素的模型中检索所有向量，如下所示：
 
-```
+```py
 X = model[model.wv.vocab]
 ```
 
-然后我们可以在矢量上训练投影方法，例如 scikit-learn 中提供的那些方法，然后使用 matplotlib 将投影绘制为散点图。
+然后我们可以在向量上训练投影方法，例如 scikit-learn 中提供的那些方法，然后使用 matplotlib 将投影绘制为散点图。
 
 让我们看一下使用 Principal Component Analysis 或 PCA 的示例。
 
@@ -235,20 +235,20 @@ X = model[model.wv.vocab]
 
 我们可以使用 scikit-learn [PCA 类](http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)创建单词向量的二维 PCA 模型，如下所示。
 
-```
+```py
 pca = PCA(n_components=2)
 result = pca.fit_transform(X)
 ```
 
 可以使用 matplotlib 如下绘制得到的投影，将两个维度拉出为 x 和 y 坐标。
 
-```
+```py
 pyplot.scatter(result[:, 0], result[:, 1])
 ```
 
 我们可以更进一步，用图标本身注释图表上的点。没有任何良好偏移的粗略版本如下所示。
 
-```
+```py
 words = list(model.wv.vocab)
 for i, word in enumerate(words):
 	pyplot.annotate(word, xy=(result[i, 0], result[i, 1]))
@@ -256,7 +256,7 @@ for i, word in enumerate(words):
 
 将这一切与上一节中的模型结合在一起，下面列出了完整的示例。
 
-```
+```py
 from gensim.models import Word2Vec
 from sklearn.decomposition import PCA
 from matplotlib import pyplot
@@ -308,7 +308,7 @@ Word2Vec 模型 PCA 投影的散点图
 
 Gensim 库提供了加载此文件的工具。具体来说，您可以调用 _KeyedVectors.load_word2vec_format（）_ 函数将此模型加载到内存中，例如：
 
-```
+```py
 from gensim.models import KeyedVectors
 filename = 'GoogleNews-vectors-negative300.bin'
 model = KeyedVectors.load_word2vec_format(filename, binary=True)
@@ -320,7 +320,7 @@ model = KeyedVectors.load_word2vec_format(filename, binary=True)
 
 例如，讲座和介绍文章中描述的一个流行的例子是：
 
-```
+```py
 queen = (king - man) + woman
 ```
 
@@ -330,14 +330,14 @@ Gensim 提供了一个接口，用于在训练或加载的模型上的 _most_sim
 
 例如：
 
-```
+```py
 result = model.most_similar(positive=['woman', 'king'], negative=['man'], topn=1)
 print(result)
 ```
 
 我们可以将所有这些放在一起如下。
 
-```
+```py
 from gensim.models import KeyedVectors
 # load the google word2vec model
 filename = 'GoogleNews-vectors-negative300.bin'
@@ -351,7 +351,7 @@ print(result)
 
 正如我们所料，答案是女王。
 
-```
+```py
 [('queen', 0.7118192315101624)]
 ```
 
@@ -369,7 +369,7 @@ print(result)
 
 第一步是将 GloVe 文件格式转换为 word2vec 文件格式。唯一的区别是添加了一个小标题行。这可以通过调用 _glove2word2vec（）_ 函数来完成。例如：
 
-```
+```py
 from gensim.scripts.glove2word2vec import glove2word2vec
 glove_input_file = 'glove.txt'
 word2vec_output_file = 'word2vec.txt'
@@ -388,7 +388,7 @@ glove2word2vec(glove_input_file, word2vec_output_file)
 
 使用模型的 100 维版本，我们可以将文件转换为 word2vec 格式，如下所示：
 
-```
+```py
 from gensim.scripts.glove2word2vec import glove2word2vec
 glove_input_file = 'glove.6B.100d.txt'
 word2vec_output_file = 'glove.6B.100d.txt.word2vec'
@@ -399,7 +399,7 @@ glove2word2vec(glove_input_file, word2vec_output_file)
 
 现在我们可以加载它并执行相同的（国王 - 男人）+女人=？按照上一节进行测试。完整的代码清单如下。请注意，转换后的文件是 ASCII 格式，而不是二进制格式，因此我们在加载时设置 _binary = False_ 。
 
-```
+```py
 from gensim.models import KeyedVectors
 # load the Stanford GloVe model
 filename = 'glove.6B.100d.txt.word2vec'
@@ -411,7 +411,7 @@ print(result)
 
 运行该示例将打印“queen”的相同结果。
 
-```
+```py
 [('queen', 0.7698540687561035)]
 ```
 
@@ -434,7 +434,7 @@ print(result)
 ### 帖子
 
 *   [使用 Word2vec](https://quomodocumque.wordpress.com/2016/01/15/messing-around-with-word2vec/) ，2016 年
-*   [数字人文学科的矢量空间模型](http://bookworm.benschmidt.org/posts/2015-10-25-Word-Embeddings.html)，2015
+*   [数字人文学科的向量空间模型](http://bookworm.benschmidt.org/posts/2015-10-25-Word-Embeddings.html)，2015
 *   [Gensim Word2vec 教程](https://rare-technologies.com/word2vec-tutorial/)，2014
 
 ## 摘要

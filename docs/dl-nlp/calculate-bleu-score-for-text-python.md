@@ -89,7 +89,7 @@ NLTK 提供 [sentence_bleu（）](http://www.nltk.org/api/nltk.translate.html#nl
 
 引用句子必须作为句子列表提供，其中每个引用是一个令牌列表。候选句子作为令牌列表提供。例如：
 
-```
+```py
 from nltk.translate.bleu_score import sentence_bleu
 reference = [['this', 'is', 'a', 'test'], ['this', 'is' 'test']]
 candidate = ['this', 'is', 'a', 'test']
@@ -99,7 +99,7 @@ print(score)
 
 运行此示例会打印出一个完美的分数，因为候选者会精确匹配其中一个引用。
 
-```
+```py
 1.0
 ```
 
@@ -111,7 +111,7 @@ NLTK 还提供称为 [corpus_bleu（）](http://www.nltk.org/api/nltk.translate.
 
 这有点令人困惑;这是一个文档的两个引用的示例。
 
-```
+```py
 # two references for one document
 from nltk.translate.bleu_score import corpus_bleu
 references = [[['this', 'is', 'a', 'test'], ['this', 'is' 'test']]]
@@ -122,7 +122,7 @@ print(score)
 
 运行该示例将像以前一样打印出完美的分数。
 
-```
+```py
 1.0
 ```
 
@@ -140,7 +140,7 @@ NLTK 中的 BLEU 分数计算允许您在计算 BLEU 分数时指定不同 n-gra
 
 权重被指定为元组，其中每个索引引用克顺序。要仅为 1-gram 匹配计算 BLEU 分数，您可以为 1-gram 指定权重 1，为 2,3 和 4 指定权重（1,0,0,0）。例如：
 
-```
+```py
 # 1-gram individual BLEU
 from nltk.translate.bleu_score import sentence_bleu
 reference = [['this', 'is', 'small', 'test']]
@@ -151,13 +151,13 @@ print(score)
 
 运行此示例会打印 0.5 分。
 
-```
+```py
 0.75
 ```
 
 我们可以针对 1 到 4 的单个 n-gram 重复此示例，如下所示：
 
-```
+```py
 # n-gram individual BLEU
 from nltk.translate.bleu_score import sentence_bleu
 reference = [['this', 'is', 'a', 'test']]
@@ -170,7 +170,7 @@ print('Individual 4-gram: %f' % sentence_bleu(reference, candidate, weights=(0, 
 
 运行该示例将给出以下结果。
 
-```
+```py
 Individual 1-gram: 1.000000
 Individual 2-gram: 1.000000
 Individual 3-gram: 1.000000
@@ -187,7 +187,7 @@ Individual 4-gram: 1.000000
 
 对于 1 克，2 克，3 克和 4 克的分数，BLEU-4 的重量分别为 1/4（25％）或 0.25。例如：
 
-```
+```py
 # 4-gram cumulative BLEU
 from nltk.translate.bleu_score import sentence_bleu
 reference = [['this', 'is', 'small', 'test']]
@@ -198,7 +198,7 @@ print(score)
 
 运行此示例将打印以下分数：
 
-```
+```py
 0.707106781187
 ```
 
@@ -206,7 +206,7 @@ print(score)
 
 让我们通过计算 BLEU-1，BLEU-2，BLEU-3 和 BLEU-4 的累积分数来具体化：
 
-```
+```py
 # cumulative BLEU scores
 from nltk.translate.bleu_score import sentence_bleu
 reference = [['this', 'is', 'small', 'test']]
@@ -221,7 +221,7 @@ print('Cumulative 4-gram: %f' % sentence_bleu(reference, candidate, weights=(0.2
 
 它们与独立的单个 n-gram 分数完全不同且更具表现力。
 
-```
+```py
 Cumulative 1-gram: 0.750000
 Cumulative 2-gram: 0.500000
 Cumulative 3-gram: 0.632878
@@ -240,7 +240,7 @@ Cumulative 4-gram: 0.707107
 
 首先，让我们看看一个完美的分数。
 
-```
+```py
 # prefect match
 from nltk.translate.bleu_score import sentence_bleu
 reference = [['the', 'quick', 'brown', 'fox', 'jumped', 'over', 'the', 'lazy', 'dog']]
@@ -251,13 +251,13 @@ print(score)
 
 运行该示例打印完美匹配。
 
-```
+```py
 1.0
 ```
 
 接下来，让我们改变一个词，'_ 快速 _'改为'_ 快 _'。
 
-```
+```py
 # one word different
 from nltk.translate.bleu_score import sentence_bleu
 reference = [['the', 'quick', 'brown', 'fox', 'jumped', 'over', 'the', 'lazy', 'dog']]
@@ -268,13 +268,13 @@ print(score)
 
 这个结果是得分略有下降。
 
-```
+```py
 0.7506238537503395
 ```
 
 尝试更改两个单词，'_ 快速 _'到'_ 快速 _'和'_ 懒惰 _'到'_ 困 _'。
 
-```
+```py
 # two words different
 from nltk.translate.bleu_score import sentence_bleu
 reference = [['the', 'quick', 'brown', 'fox', 'jumped', 'over', 'the', 'lazy', 'dog']]
@@ -285,13 +285,13 @@ print(score)
 
 运行该示例，我们可以看到技能的线性下降。
 
-```
+```py
 0.4854917717073234
 ```
 
 如果候选人的所有单词都不同怎么办？
 
-```
+```py
 # all words different
 from nltk.translate.bleu_score import sentence_bleu
 reference = [['the', 'quick', 'brown', 'fox', 'jumped', 'over', 'the', 'lazy', 'dog']]
@@ -302,13 +302,13 @@ print(score)
 
 我们得分可能更差。
 
-```
+```py
 0.0
 ```
 
 现在，让我们尝试一个比参考词少的候选词（例如删掉最后两个词），但这些词都是正确的。
 
-```
+```py
 # shorter candidate
 from nltk.translate.bleu_score import sentence_bleu
 reference = [['the', 'quick', 'brown', 'fox', 'jumped', 'over', 'the', 'lazy', 'dog']]
@@ -319,13 +319,13 @@ print(score)
 
 当两个单词出错时，得分很像得分。
 
-```
+```py
 0.7514772930752859
 ```
 
 如果我们让候选人的两个单词长于参考文件怎么样？
 
-```
+```py
 # longer candidate
 from nltk.translate.bleu_score import sentence_bleu
 reference = [['the', 'quick', 'brown', 'fox', 'jumped', 'over', 'the', 'lazy', 'dog']]
@@ -336,13 +336,13 @@ print(score)
 
 再次，我们可以看到我们的直觉成立并且得分类似于“_ 两个单词错 _”。
 
-```
+```py
 0.7860753021519787
 ```
 
 最后，让我们比较一个太短的候选人：长度只有两个单词。
 
-```
+```py
 # very short
 from nltk.translate.bleu_score import sentence_bleu
 reference = [['the', 'quick', 'brown', 'fox', 'jumped', 'over', 'the', 'lazy', 'dog']]
@@ -353,7 +353,7 @@ print(score)
 
 首先运行此示例将打印一条警告消息，指示无法执行评估的 3 克及以上部分（最多 4 克）。这是公平的，因为我们只有 2 克与候选人一起工作。
 
-```
+```py
 UserWarning:
 Corpus/Sentence contains 0 counts of 3-gram overlaps.
 BLEU scores might be undesirable; use SmoothingFunction().
@@ -362,7 +362,7 @@ BLEU scores might be undesirable; use SmoothingFunction().
 
 接下来，我们的分数确实非常低。
 
-```
+```py
 0.0301973834223185
 ```
 

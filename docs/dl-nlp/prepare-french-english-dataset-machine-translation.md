@@ -83,7 +83,7 @@ Europarl 是用于统计机器翻译的标准数据集，最近是神经机器�
 
 您可以使用 tar 命令解压缩此存档文件，如下所示：
 
-```
+```py
 tar zxvf fr-en.tgz
 ```
 
@@ -94,7 +94,7 @@ tar zxvf fr-en.tgz
 
 以下是英文文件的示例。
 
-```
+```py
 Resumption of the session
 I declare resumed the session of the European Parliament adjourned on Friday 17 December 1999, and I would like once again to wish you a happy new year in the hope that you enjoyed a pleasant festive period.
 Although, as you will have seen, the dreaded 'millennium bug' failed to materialise, still the people in a number of countries suffered a series of natural disasters that truly were dreadful.
@@ -104,7 +104,7 @@ In the meantime, I should like to observe a minute' s silence, as a number of Me
 
 以下是法语文件的示例。
 
-```
+```py
 Reprise de la session
 Je déclare reprise la session du Parlement européen qui avait été interrompue le vendredi 17 décembre dernier et je vous renouvelle tous mes vux en espérant que vous avez passé de bonnes vacances.
 Comme vous avez pu le constater, le grand "bogue de l'an 2000" ne s'est pas produit. En revanche, les citoyens d'un certain nombre de nos pays ont été victimes de catastrophes naturelles qui ont vraiment été terribles.
@@ -120,7 +120,7 @@ En attendant, je souhaiterais, comme un certain nombre de collègues me l'ont de
 
 下面的函数名为 _load_doc（）_，它将加载一个给定的文件并将其作为一个文本块返回。
 
-```
+```py
 # load doc into memory
 def load_doc(filename):
 	# open the file as read only
@@ -136,7 +136,7 @@ def load_doc(filename):
 
 通常，在每一行上存储一个话语。我们可以将它们视为句子并用新行字符拆分文件。下面的函数 _to_sentences（）_ 将拆分加载的文档。
 
-```
+```py
 # split a loaded document into sentences
 def to_sentences(doc):
 	return doc.strip().split('\n')
@@ -144,7 +144,7 @@ def to_sentences(doc):
 
 在以后准备我们的模型时，我们需要知道数据集中句子的长度。我们可以写一个简短的函数来计算最短和最长的句子。
 
-```
+```py
 # shortest and longest sentence lengths
 def sentence_lengths(sentences):
 	lengths = [len(s.split()) for s in sentences]
@@ -153,7 +153,7 @@ def sentence_lengths(sentences):
 
 我们可以将所有这些结合在一起，以加载和汇总英语和法语数据文件。下面列出了完整的示例。
 
-```
+```py
 # load doc into memory
 def load_doc(filename):
 	# open the file as read only
@@ -190,7 +190,7 @@ print('French data: sentences=%d, min=%d, max=%d' % (len(sentences), minlen, max
 
 运行该示例总结了每个文件中的行数或句子数以及每个文件中最长和最短行的长度。
 
-```
+```py
 English data: sentences=2007723, min=0, max=668
 French data: sentences=2007723, min=0, max=693
 ```
@@ -218,7 +218,7 @@ French data: sentences=2007723, min=0, max=693
 *   我们使用逆正则表达式匹配来仅保留可打印单词中的那些字符。
 *   我们使用转换表按原样翻译字符，但不包括所有标点字符。
 
-```
+```py
 # clean a list of lines
 def clean_lines(lines):
 	cleaned = list()
@@ -249,7 +249,7 @@ def clean_lines(lines):
 
 重用前面部分中开发的加载和拆分功能，下面列出了完整的示例。
 
-```
+```py
 import string
 import re
 from pickle import dump
@@ -326,7 +326,7 @@ for i in range(10):
 
 英语：
 
-```
+```py
 resumption of the session
 i declare resumed the session of the european parliament adjourned on friday december and i would like once again to wish you a happy new year in the hope that you enjoyed a pleasant festive period
 although as you will have seen the dreaded millennium bug failed to materialise still the people in a number of countries suffered a series of natural disasters that truly were dreadful
@@ -341,7 +341,7 @@ one of the people assassinated very recently in sri lanka was mr kumar ponnambal
 
 法国：
 
-```
+```py
 reprise de la session
 je declare reprise la session du parlement europeen qui avait ete interrompue le vendredi decembre dernier et je vous renouvelle tous mes vux en esperant que vous avez passe de bonnes vacances
 comme vous avez pu le constater le grand bogue de lan ne sest pas produit en revanche les citoyens dun certain nombre de nos pays ont ete victimes de catastrophes naturelles qui ont vraiment ete terribles
@@ -366,7 +366,7 @@ lune des personnes qui vient detre assassinee au sri lanka est m kumar ponnambal
 
 我们可以从加载上一节保存的酸洗干净线开始。下面的 _load_clean_sentences（）_ 函数将加载并返回给定文件名的列表。
 
-```
+```py
 # load a clean dataset
 def load_clean_sentences(filename):
 	return load(open(filename, 'rb'))
@@ -376,7 +376,7 @@ def load_clean_sentences(filename):
 
 下面的 _to_vocab（）_ 函数为给定的句子列表创建词汇表。
 
-```
+```py
 # create a frequency table for all words
 def to_vocab(lines):
 	vocab = Counter()
@@ -390,7 +390,7 @@ def to_vocab(lines):
 
 下面的 _trim_vocab（）_ 函数执行此操作并接受最小出现次数作为参数并返回更新的词汇表。
 
-```
+```py
 # remove all words with a frequency below a threshold
 def trim_vocab(vocab, min_occurance):
 	tokens = [k for k,c in vocab.items() if c >= min_occurance]
@@ -401,7 +401,7 @@ def trim_vocab(vocab, min_occurance):
 
 下面的 _update_dataset（）_ 函数执行此操作并返回更新行的列表，然后可以将其保存到新文件中。
 
-```
+```py
 # mark all OOV with "unk" for all lines
 def update_dataset(lines, vocab):
 	new_lines = list()
@@ -423,7 +423,7 @@ def update_dataset(lines, vocab):
 
 完整的代码示例如下所示。
 
-```
+```py
 from pickle import load
 from pickle import dump
 from collections import Counter
@@ -503,7 +503,7 @@ for i in range(10):
 
 首先，报告英语词汇的大小，然后是更新的大小。更新的数据集将保存到文件' _english_vocab.pkl_ '，并打印一些更新的示例的现场检查，其中包含用“ _unk_ ”替换的词汇单词。
 
-```
+```py
 English Vocabulary: 105357
 New English Vocabulary: 41746
 Saved: english_vocab.pkl
@@ -511,7 +511,7 @@ Saved: english_vocab.pkl
 
 我们可以看到词汇量的大小缩减了一半到 40,000 多个单词。
 
-```
+```py
 resumption of the session
 i declare resumed the session of the european parliament adjourned on friday december and i would like once again to wish you a happy new year in the hope that you enjoyed a pleasant festive period
 although as you will have seen the dreaded millennium bug failed to materialise still the people in a number of countries suffered a series of natural disasters that truly were dreadful
@@ -526,7 +526,7 @@ one of the people assassinated very recently in sri lanka was mr unk unk who had
 
 然后对 French 数据集执行相同的过程，将结果保存到文件' _french_vocab.pkl_ '。
 
-```
+```py
 French Vocabulary: 141642
 New French Vocabulary: 58800
 Saved: french_vocab.pkl
@@ -534,7 +534,7 @@ Saved: french_vocab.pkl
 
 我们看到法语词汇量大小相似缩小。
 
-```
+```py
 reprise de la session
 je declare reprise la session du parlement europeen qui avait ete interrompue le vendredi decembre dernier et je vous renouvelle tous mes vux en esperant que vous avez passe de bonnes vacances
 comme vous avez pu le constater le grand bogue de lan ne sest pas produit en revanche les citoyens dun certain nombre de nos pays ont ete victimes de catastrophes naturelles qui ont vraiment ete terribles

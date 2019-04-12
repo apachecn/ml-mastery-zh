@@ -178,7 +178,7 @@ Keras 不允许递归循环，其中模型的输出自动作为输入提供给�
 
 第一种替代模型是以一次性方式生成整个输出序列。
 
-也就是说，解码器仅使用上下文矢量来生成输出序列。
+也就是说，解码器仅使用上下文向量来生成输出序列。
 
 ![Alternate 1 - One-Shot Text Summarization Model](img/6c1cb97aa80bca4ee41e557e47448c35.jpg)
 
@@ -186,7 +186,7 @@ Keras 不允许递归循环，其中模型的输出自动作为输入提供给�
 
 以下是使用功能 API 在 Keras 中使用此方法的示例代码。
 
-```
+```py
 vocab_size = ...
 src_txt_length = ...
 sum_txt_length = ...
@@ -225,7 +225,7 @@ model.compile(loss='categorical_crossentropy', optimizer='adam')
 
 以下是使用功能 API 在 Keras 中使用此方法的示例代码。
 
-```
+```py
 vocab_size = ...
 src_txt_length = ...
 sum_txt_length = ...
@@ -263,7 +263,7 @@ model.compile(loss='categorical_crossentropy', optimizer='adam')
 
 以下是使用功能 API 在 Keras 中使用此方法的示例代码。
 
-```
+```py
 vocab_size = ...
 src_txt_length = ...
 sum_txt_length = ...

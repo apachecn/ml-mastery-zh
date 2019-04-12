@@ -140,7 +140,7 @@ Keras 还提供了用于将加载的照片整形为模型的优选尺寸的工�
 
 该函数返回图像标识符的字典到图像特征。
 
-```
+```py
 # extract features from each photo in the directory
 def extract_features(directory):
 	# load the model
@@ -176,7 +176,7 @@ def extract_features(directory):
 
 下面列出了完整的示例。
 
-```
+```py
 from os import listdir
 from pickle import dump
 from keras.applications.vgg16 import VGG16
@@ -237,7 +237,7 @@ dump(features, open('features.pkl', 'wb'))
 
 首先，我们将加载包含所有描述的文件。
 
-```
+```py
 # load doc into memory
 def load_doc(filename):
 	# open the file as read only
@@ -257,7 +257,7 @@ doc = load_doc(filename)
 
 接下来，我们将逐步浏览照片说明列表。下面定义了一个函数 _load_descriptions（）_，给定加载的文档文本，它将返回描述的照片标识符字典。每个照片标识符映射到一个或多个文本描述的列表。
 
-```
+```py
 # extract descriptions for images
 def load_descriptions(doc):
 	mapping = dict()
@@ -296,7 +296,7 @@ print('Loaded: %d ' % len(descriptions))
 
 下面定义 _clean_descriptions（）_ 函数，给定描述图像标识符的字典，逐步执行每个描述并清理文本。
 
-```
+```py
 import string
 
 def clean_descriptions(descriptions):
@@ -328,7 +328,7 @@ clean_descriptions(descriptions)
 
 作为参考，我们可以将干净的描述转换为一个集合并打印其大小，以了解我们的数据集词汇表的大小。
 
-```
+```py
 # convert the loaded descriptions into a vocabulary of words
 def to_vocabulary(descriptions):
 	# build a list of all description strings
@@ -346,7 +346,7 @@ print('Vocabulary Size: %d' % len(vocabulary))
 
 下面定义 _save_descriptions（）_ 函数，给定包含标识符到描述和文件名的映射的字典，将映射保存到文件。
 
-```
+```py
 # save descriptions to file, one per line
 def save_descriptions(descriptions, filename):
 	lines = list()
@@ -364,7 +364,7 @@ save_descriptions(descriptions, 'descriptions.txt')
 
 综合这些，下面提供了完整的列表。
 
-```
+```py
 import string
 
 # load doc into memory
@@ -454,7 +454,7 @@ save_descriptions(descriptions, 'descriptions.txt')
 
 首先运行该示例打印加载的照片描述的数量（8,092）和清晰词汇的大小（8,763 个单词）。
 
-```
+```py
 Loaded: 8,092
 Vocabulary Size: 8,763
 ```
@@ -463,7 +463,7 @@ Vocabulary Size: 8,763
 
 看一下这个文件，我们可以看到这些描述已经准备好进行建模了。文件中的描述顺序可能有所不同。
 
-```
+```py
 2252123185_487f21e336 bunch on people are seated in stadium
 2252123185_487f21e336 crowded stadium is full of people watching an event
 2252123185_487f21e336 crowd of people fill up packed stadium
@@ -493,7 +493,7 @@ Vocabulary Size: 8,763
 
 下面的函数 _load_set（）_ 将在给定列车或开发集文件名的情况下加载一组预定义的标识符。
 
-```
+```py
 # load doc into memory
 def load_doc(filename):
 	# open the file as read only
@@ -527,7 +527,7 @@ def load_set(filename):
 
 为此，我们将使用字符串' _startseq_ '和' _endseq_ '。这些令牌在加载时会添加到已加载的描述中。在我们对文本进行编码之前，现在执行此操作非常重要，这样才能正确编码令牌。
 
-```
+```py
 # load clean descriptions into memory
 def load_clean_descriptions(filename, dataset):
 	# load document
@@ -556,7 +556,7 @@ def load_clean_descriptions(filename, dataset):
 
 这不是很有效;尽管如此，这将使我们快速起步。
 
-```
+```py
 # load photo features
 def load_photo_features(filename, dataset):
 	# load all features
@@ -570,7 +570,7 @@ def load_photo_features(filename, dataset):
 
 完整的代码示例如下所示。
 
-```
+```py
 from pickle import load
 
 # load doc into memory
@@ -642,7 +642,7 @@ print('Photos: train=%d' % len(train_features))
 
 我们快到了。
 
-```
+```py
 Dataset: 6,000
 Descriptions: train=6,000
 Photos: train=6,000
@@ -654,7 +654,7 @@ Photos: train=6,000
 
 下面定义 _to_lines（）_ 将描述字典转换为字符串列表和 _create_tokenizer（）_ 函数，在给定加载的照片描述文本的情况下，它将适合 Tokenizer。
 
-```
+```py
 # convert a dictionary of clean descriptions to a list of descriptions
 def to_lines(descriptions):
 	all_desc = list()
@@ -681,7 +681,7 @@ print('Vocabulary Size: %d' % vocab_size)
 
 例如，输入序列“_ 在场 _ 中运行的小女孩”将被分成 6 个输入 - 输出对来训练模型：
 
-```
+```py
 X1,		X2 (text sequence), 						y (word)
 photo	startseq, 									little
 photo	startseq, little,							girl
@@ -699,7 +699,7 @@ photo	startseq, little, girl, running, in, field, endseq
 
 因此，输出数据将是每个单词的单热编码版本，表示在除了实际单词位置之外的所有单词位置具有 0 值的理想化概率分布，其具有值 1。
 
-```
+```py
 # create sequences of images, input sequences and output words for an image
 def create_sequences(tokenizer, max_length, descriptions, photos):
 	X1, X2, y = list(), list(), list()
@@ -726,7 +726,7 @@ def create_sequences(tokenizer, max_length, descriptions, photos):
 
 我们需要计算最长描述中的最大字数。名为 _max_length（）_ 的短辅助函数定义如下。
 
-```
+```py
 # calculate the length of the description with the most words
 def max_length(descriptions):
 	lines = to_lines(descriptions)
@@ -756,7 +756,7 @@ def max_length(descriptions):
 
 *   **照片功能提取器**。这是在 ImageNet 数据集上预训练的 16 层 VGG 模型。我们已经使用 VGG 模型预处理了照片（没有输出图层），并将使用此模型预测的提取特征作为输入。
 *   **序列处理器**。这是用于处理文本输入的单词嵌入层，后面是长短期记忆（LSTM）递归神经网络层。
-*   **解码器**（缺少一个更好的名字）。特征提取器和序列处理器都输出固定长度的矢量。这些被合并在一起并由 Dense 层处理以进行最终预测。
+*   **解码器**（缺少一个更好的名字）。特征提取器和序列处理器都输出固定长度的向量。这些被合并在一起并由 Dense 层处理以进行最终预测。
 
 Photo Feature Extractor 模型要求输入照片要素是 4,096 个元素的向量。这些由 Dense 图层处理以产生照片的 256 个元素表示。
 
@@ -768,7 +768,7 @@ Photo Feature Extractor 模型要求输入照片要素是 4,096 个元素的向�
 
 下面名为 _ 的函数 define_model（）_ 定义并返回准备好的模型。
 
-```
+```py
 # define the captioning model
 def define_model(vocab_size, max_length):
 	# feature extractor model
@@ -795,7 +795,7 @@ def define_model(vocab_size, max_length):
 
 要了解模型的结构，特别是图层的形状，请参阅下面列出的摘要。
 
-```
+```py
 ____________________________________________________________________________________________________
 Layer (type)                     Output Shape          Param #     Connected to
 ====================================================================================================
@@ -842,7 +842,7 @@ ________________________________________________________________________________
 
 我们可以通过在 Keras 中定义 _ModelCheckpoint_ 并指定它来监控验证数据集上的最小损失并将模型保存到文件名中具有训练和验证损失的文件来实现。
 
-```
+```py
 # define checkpoint callback
 filepath = 'model-ep{epoch:03d}-loss{loss:.3f}-val_loss{val_loss:.3f}.h5'
 checkpoint = ModelCheckpoint(filepath, monitor='val_loss', verbose=1, save_best_only=True, mode='min')
@@ -852,7 +852,7 @@ checkpoint = ModelCheckpoint(filepath, monitor='val_loss', verbose=1, save_best_
 
 我们只适用于 20 个时代的模型，但考虑到训练数据的数量，每个时代在现代硬件上可能需要 30 分钟。
 
-```
+```py
 # fit model
 model.fit([X1train, X2train], ytrain, epochs=20, verbose=2, callbacks=[checkpoint], validation_data=([X1test, X2test], ytest))
 ```
@@ -861,7 +861,7 @@ model.fit([X1train, X2train], ytrain, epochs=20, verbose=2, callbacks=[checkpoin
 
 下面列出了在训练数据上拟合模型的完整示例。
 
-```
+```py
 from numpy import array
 from pickle import load
 from keras.preprocessing.text import Tokenizer
@@ -1045,7 +1045,7 @@ model.fit([X1train, X2train], ytrain, epochs=20, verbose=2, callbacks=[checkpoin
 
 首先运行该示例将打印已加载的训练和开发数据集的摘要。
 
-```
+```py
 Dataset: 6,000
 Descriptions: train=6,000
 Photos: train=6,000
@@ -1058,7 +1058,7 @@ Photos: test=1,000
 
 在对模型进行总结之后，我们可以了解训练和验证（开发）输入 - 输出对的总数。
 
-```
+```py
 Train on 306,404 samples, validate on 50,903 samples
 ```
 
@@ -1080,7 +1080,7 @@ Train on 306,404 samples, validate on 50,903 samples
 
 你得到的错误如下：
 
-```
+```py
 Memory Error
 ```
 
@@ -1110,7 +1110,7 @@ _data_generator（）_ 下面的函数将是数据生成器，将采用加载的
 
 这是如何运作的？阅读上面刚才提到的引入数据生成器的帖子。
 
-```
+```py
 # data generator, intended to be used in a call to model.fit_generator()
 def data_generator(descriptions, photos, tokenizer, max_length):
 	# loop for ever over images
@@ -1126,7 +1126,7 @@ def data_generator(descriptions, photos, tokenizer, max_length):
 
 更新的功能如下：
 
-```
+```py
 # create sequences of images, input sequences and output words for an image
 def create_sequences(tokenizer, max_length, desc_list, photo):
 	X1, X2, y = list(), list(), list()
@@ -1163,7 +1163,7 @@ def create_sequences(tokenizer, max_length, desc_list, photo):
 
 您可以通过直接调用数据生成器来检查数据生成器，如下所示：
 
-```
+```py
 # test the data generator
 generator = data_generator(train_descriptions, train_features, tokenizer, max_length)
 inputs, outputs = next(generator)
@@ -1174,7 +1174,7 @@ print(outputs.shape)
 
 运行此完整性检查将显示一批批量序列的样子，在这种情况下，47 个样本将为第一张照片进行训练。
 
-```
+```py
 (47, 4096)
 (47, 34)
 (47, 7579)
@@ -1186,7 +1186,7 @@ print(outputs.shape)
 
 使用数据生成器训练模型的代码如下：
 
-```
+```py
 # train the model, run epochs manually and save after each epoch
 epochs = 20
 steps = len(train_descriptions)
@@ -1203,7 +1203,7 @@ for i in range(epochs):
 
 下面列出了用于训练字幕生成模型的渐进式加载（使用数据生成器）的完整更新示例。
 
-```
+```py
 from numpy import array
 from pickle import load
 from keras.preprocessing.text import Tokenizer
@@ -1395,7 +1395,7 @@ for i in range(epochs):
 
 以下名为 _generate_desc（）_ 的函数实现此行为，并在给定训练模型和给定准备照片作为输入的情况下生成文本描述。它调用函数 _word_for_id（）_ 以将整数预测映射回一个字。
 
-```
+```py
 # map an integer to a word
 def word_for_id(integer, tokenizer):
 	for word, index in tokenizer.word_index.items():
@@ -1434,7 +1434,7 @@ def generate_desc(model, tokenizer, photo, max_length):
 
 以下名为 _evaluate_model（）_ 的函数将针对给定的照片描述和照片特征数据集评估训练模型。使用语料库 BLEU 分数收集和评估实际和预测的描述，该分数总结了生成的文本与预期文本的接近程度。
 
-```
+```py
 # evaluate the skill of the model
 def evaluate_model(model, descriptions, photos, tokenizer, max_length):
 	actual, predicted = list(), list()
@@ -1469,7 +1469,7 @@ BLEU 分数用于文本翻译，用于针对一个或多个参考翻译评估翻
 
 下面列出了完整的示例。
 
-```
+```py
 from numpy import argmax
 from pickle import load
 from keras.preprocessing.text import Tokenizer
@@ -1640,7 +1640,7 @@ evaluate_model(model, test_descriptions, test_features, tokenizer, max_length)
 
 我们可以看到分数在问题的熟练模型的预期范围的顶部和接近顶部。所选的模型配置决不会优化。
 
-```
+```py
 BLEU-1: 0.579114
 BLEU-2: 0.344856
 BLEU-3: 0.252154
@@ -1659,7 +1659,7 @@ BLEU-4: 0.131446
 
 我们可以像以前一样创建 Tokenizer 并将其保存为 pickle 文件 _tokenizer.pkl_ 。下面列出了完整的示例。
 
-```
+```py
 from keras.preprocessing.text import Tokenizer
 from pickle import dump
 
@@ -1752,7 +1752,7 @@ dump(tokenizer, open('tokenizer.pkl', 'wb'))
 
 首先，我们必须从 _tokenizer.pkl_ 加载 Tokenizer，并定义填充输入所需的生成序列的最大长度。
 
-```
+```py
 # load the tokenizer
 tokenizer = load(open('tokenizer.pkl', 'rb'))
 # pre-define the max sequence length (from training)
@@ -1761,7 +1761,7 @@ max_length = 34
 
 然后我们必须像以前一样加载模型。
 
-```
+```py
 # load the model
 model = load_model('model-ep002-loss3.245-val_loss3.612.h5')
 ```
@@ -1770,7 +1770,7 @@ model = load_model('model-ep002-loss3.245-val_loss3.612.h5')
 
 我们可以通过重新定义模型并向其添加 VGG-16 模型来实现这一目标，或者我们可以使用 VGG 模型预测特征并将其用作现有模型的输入。我们将使用后者并使用在数据准备期间使用的 _extract_features（）_ 函数的修改版本，但适用于处理单张照片。
 
-```
+```py
 # extract features from each photo in the directory
 def extract_features(filename):
 	# load the model
@@ -1798,7 +1798,7 @@ photo = extract_features('example.jpg')
 
 下面列出了为全新独立照片生成描述的完整示例。
 
-```
+```py
 from pickle import load
 from numpy import argmax
 from keras.preprocessing.sequence import pad_sequences
@@ -1876,7 +1876,7 @@ print(description)
 
 在这种情况下，生成的描述如下：
 
-```
+```py
 startseq dog is running across the beach endseq
 ```
 

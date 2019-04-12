@@ -53,7 +53,7 @@
 
 我们可以从涉及 10 个单词序列的预测问题开始。每个单词被预测为 5 个单词的词汇表上的概率分布。
 
-```
+```py
 # define a sequence of 10 words over a vocab of 5 words
 data = [[0.1, 0.2, 0.3, 0.4, 0.5],
 		[0.5, 0.4, 0.3, 0.2, 0.1],
@@ -74,7 +74,7 @@ data = array(data)
 
 下面的 _greedy_decoder（）_ 函数使用 argmax 函数实现此解码器策略。
 
-```
+```py
 # greedy decoder
 def greedy_decoder(data):
 	# index for largest probability each row
@@ -83,7 +83,7 @@ def greedy_decoder(data):
 
 综上所述，下面列出了演示贪婪解码器的完整示例。
 
-```
+```py
 from numpy import array
 from numpy import argmax
 
@@ -111,7 +111,7 @@ print(result)
 
 运行该示例会输出一个整数序列，然后可以将这些整数映射回词汇表中的单词。
 
-```
+```py
 [4, 0, 4, 0, 4, 0, 4, 0, 4, 0]
 ```
 
@@ -143,7 +143,7 @@ print(result)
 
 下面的 _beam_search_decoder（）_ 函数实现了波束搜索解码器。
 
-```
+```py
 # beam search
 def beam_search_decoder(data, k):
 	sequences = [[list(), 1.0]]
@@ -165,7 +165,7 @@ def beam_search_decoder(data, k):
 
 我们可以将它与前一节中的样本数据联系起来，这次返回 3 个最可能的序列。
 
-```
+```py
 from math import log
 from numpy import array
 from numpy import argmax
@@ -211,7 +211,7 @@ for seq in result:
 
 尝试不同的 k 值。
 
-```
+```py
 [[4, 0, 4, 0, 4, 0, 4, 0, 4, 0], 0.025600863289563108]
 [[4, 0, 4, 0, 4, 0, 4, 0, 4, 1], 0.03384250043584397]
 [[4, 0, 4, 0, 4, 0, 4, 0, 3, 0], 0.03384250043584397]

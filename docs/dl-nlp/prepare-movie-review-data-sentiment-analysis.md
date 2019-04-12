@@ -77,7 +77,7 @@
 
 我们可以通过打开它，读取 ASCII 文本和关闭文件来加载单个文本文件。这是标准的文件处理。例如，我们可以加载第一个负面评论文件“ _cv000_29416.txt_ ”，如下所示：
 
-```
+```py
 # load one file
 filename = 'txt_sentoken/neg/cv000_29416.txt'
 # open the file as read only
@@ -92,7 +92,7 @@ file.close()
 
 我们可以把它变成一个名为 load_doc（）的函数，它接受文档的文件名加载并返回文本。
 
-```
+```py
 # load doc into memory
 def load_doc(filename):
 	# open the file as read only
@@ -108,7 +108,7 @@ def load_doc(filename):
 
 例如，我们可以使用 _load_doc（）_ 函数在负目录中加载每个文档来进行实际加载。
 
-```
+```py
 from os import listdir
 
 # load doc into memory
@@ -137,7 +137,7 @@ for filename in listdir(directory):
 
 运行此示例会在加载后打印每个评论的文件名。
 
-```
+```py
 ...
 Loaded cv995_23113.txt
 Loaded cv996_12447.txt
@@ -148,7 +148,7 @@ Loaded cv999_14636.txt
 
 我们也可以将文档的处理转换为函数，稍后将其用作模板，以开发清除文件夹中所有文档的函数。例如，下面我们定义一个 _process_docs（）_ 函数来做同样的事情。
 
-```
+```py
 from os import listdir
 
 # load doc into memory
@@ -191,7 +191,7 @@ process_docs(directory)
 
 首先，让我们加载一个文档，然后查看由空格分割的原始标记。我们将使用上一节中开发的 _load_doc（）_ 函数。我们可以使用 _split（）_ 函数将加载的文档拆分为由空格分隔的标记。
 
-```
+```py
 # load doc into memory
 def load_doc(filename):
 	# open the file as read only
@@ -212,7 +212,7 @@ print(tokens)
 
 运行该示例从文档中提供了很长的原始令牌列表。
 
-```
+```py
 ...
 'years', 'ago', 'and', 'has', 'been', 'sitting', 'on', 'the', 'shelves', 'ever', 'since', '.', 'whatever', '.', '.', '.', 'skip', 'it', '!', "where's", 'joblo', 'coming', 'from', '?', 'a', 'nightmare', 'of', 'elm', 'street', '3', '(', '7/10', ')', '-', 'blair', 'witch', '2', '(', '7/10', ')', '-', 'the', 'crow', '(', '9/10', ')', '-', 'the', 'crow', ':', 'salvation', '(', '4/10', ')', '-', 'lost', 'highway', '(', '10/10', ')', '-', 'memento', '(', '10/10', ')', '-', 'the', 'others', '(', '9/10', ')', '-', 'stir', 'of', 'echoes', '(', '8/10', ')']
 ```
@@ -234,7 +234,7 @@ print(tokens)
 
 以下是清洁此评论的更新版本。
 
-```
+```py
 from nltk.corpus import stopwords
 import string
 
@@ -268,14 +268,14 @@ print(tokens)
 
 运行该示例可以提供更清晰的令牌列表
 
-```
+```py
 ...
 'explanation', 'craziness', 'came', 'oh', 'way', 'horror', 'teen', 'slasher', 'flick', 'packaged', 'look', 'way', 'someone', 'apparently', 'assuming', 'genre', 'still', 'hot', 'kids', 'also', 'wrapped', 'production', 'two', 'years', 'ago', 'sitting', 'shelves', 'ever', 'since', 'whatever', 'skip', 'wheres', 'joblo', 'coming', 'nightmare', 'elm', 'street', 'blair', 'witch', 'crow', 'crow', 'salvation', 'lost', 'highway', 'memento', 'others', 'stir', 'echoes']
 ```
 
 我们可以将它放入一个名为 _clean_doc（）_ 的函数中，并在另一个评论中测试它，这次是一个积极的评论。
 
-```
+```py
 from nltk.corpus import stopwords
 import string
 
@@ -314,7 +314,7 @@ print(tokens)
 
 同样，清洁程序似乎产生了一组良好的令牌，至少作为第一次切割。
 
-```
+```py
 ...
 'comic', 'oscar', 'winner', 'martin', 'childs', 'shakespeare', 'love', 'production', 'design', 'turns', 'original', 'prague', 'surroundings', 'one', 'creepy', 'place', 'even', 'acting', 'hell', 'solid', 'dreamy', 'depp', 'turning', 'typically', 'strong', 'performance', 'deftly', 'handling', 'british', 'accent', 'ians', 'holm', 'joe', 'goulds', 'secret', 'richardson', 'dalmatians', 'log', 'great', 'supporting', 'roles', 'big', 'surprise', 'graham', 'cringed', 'first', 'time', 'opened', 'mouth', 'imagining', 'attempt', 'irish', 'accent', 'actually', 'wasnt', 'half', 'bad', 'film', 'however', 'good', 'strong', 'violencegore', 'sexuality', 'language', 'drug', 'content']
 ```
@@ -339,7 +339,7 @@ print(tokens)
 
 下面是一个名为 _add_doc_to_vocab（）_ 的函数，它将文档文件名和计数器词汇表作为参数。
 
-```
+```py
 # load doc and add to vocab
 def add_doc_to_vocab(filename, vocab):
 	# load doc
@@ -352,7 +352,7 @@ def add_doc_to_vocab(filename, vocab):
 
 最后，我们可以使用上面的模板处理名为 process_docs（）的目录中的所有文档，并将其更新为调用 _add_doc_to_vocab（）_。
 
-```
+```py
 # load all docs in a directory
 def process_docs(directory, vocab):
 	# walk through all files in the folder
@@ -368,7 +368,7 @@ def process_docs(directory, vocab):
 
 我们可以将所有这些放在一起，并从数据集中的所有文档开发完整的词汇表。
 
-```
+```py
 from string import punctuation
 from os import listdir
 from collections import Counter
@@ -436,7 +436,7 @@ print(vocab.most_common(50))
 
 我们可以看到所有评论中有超过 46,000 个独特单词，前 3 个单词是'_ 电影 _'，' _one_ '和'_ 电影 _ ”。
 
-```
+```py
 46557
 [('film', 8860), ('one', 5521), ('movie', 5440), ('like', 3553), ('even', 2555), ('good', 2320), ('time', 2283), ('story', 2118), ('films', 2102), ('would', 2042), ('much', 2024), ('also', 1965), ('characters', 1947), ('get', 1921), ('character', 1906), ('two', 1825), ('first', 1768), ('see', 1730), ('well', 1694), ('way', 1668), ('make', 1590), ('really', 1563), ('little', 1491), ('life', 1472), ('plot', 1451), ('people', 1420), ('movies', 1416), ('could', 1395), ('bad', 1374), ('scene', 1373), ('never', 1364), ('best', 1301), ('new', 1277), ('many', 1268), ('doesnt', 1267), ('man', 1266), ('scenes', 1265), ('dont', 1210), ('know', 1207), ('hes', 1150), ('great', 1141), ('another', 1111), ('love', 1089), ('action', 1078), ('go', 1075), ('us', 1065), ('director', 1056), ('something', 1048), ('end', 1047), ('still', 1038)]
 ```
@@ -449,7 +449,7 @@ print(vocab.most_common(50))
 
 我们可以通过单词和它们的计数来执行此操作，并且只保留计数高于所选阈值的计数。这里我们将使用 5 次。
 
-```
+```py
 # keep tokens with > 5 occurrence
 min_occurane = 5
 tokens = [k for k,c in vocab.items() if c >= min_occurane]
@@ -462,7 +462,7 @@ print(len(tokens))
 
 下面定义了一个名为 _save_list（）_ 的函数来保存项目列表，在这种情况下，标记为文件，每行一个。
 
-```
+```py
 def save_list(lines, filename):
 	data = '\n'.join(lines)
 	file = open(filename, 'w')
@@ -472,7 +472,7 @@ def save_list(lines, filename):
 
 下面列出了定义和保存词汇表的完整示例。
 
-```
+```py
 from string import punctuation
 from os import listdir
 from collections import Counter
@@ -553,7 +553,7 @@ save_list(tokens, 'vocab.txt')
 
 最好先查看，甚至研究您选择的词汇表，以便获得更好地准备这些数据或未来文本数据的想法。
 
-```
+```py
 hasnt
 updating
 figuratively
@@ -577,7 +577,7 @@ buffoons
 
 我们可以从' _vocab.txt_ '加载词汇开始。
 
-```
+```py
 # load doc into memory
 def load_doc(filename):
 	# open the file as read only
@@ -603,7 +603,7 @@ vocab = set(vocab)
 
 它调用先前定义的 _load_doc（）_ 函数来加载文档，调用 _clean_doc（）_ 来标记文档。
 
-```
+```py
 # load doc, clean and return line of tokens
 def doc_to_line(filename, vocab):
 	# load the doc
@@ -617,7 +617,7 @@ def doc_to_line(filename, vocab):
 
 接下来，我们可以定义新版本的 _process_docs（）_ 来逐步浏览文件夹中的所有评论，并通过为每个文档调用 _doc_to_line（）_ 将它们转换为行。然后返回行列表。
 
-```
+```py
 # load all docs in a directory
 def process_docs(directory, vocab):
 	lines = list()
@@ -639,7 +639,7 @@ def process_docs(directory, vocab):
 
 完整的代码清单如下。
 
-```
+```py
 from string import punctuation
 from os import listdir
 from collections import Counter
