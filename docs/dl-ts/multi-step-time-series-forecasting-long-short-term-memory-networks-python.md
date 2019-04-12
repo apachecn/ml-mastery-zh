@@ -56,7 +56,7 @@ Python 中长期短期记忆网络的多步时间序列预测
 
 下面的示例加载并创建已加载数据集的图。
 
-```
+```py
 # load and plot dataset
 from pandas import read_csv
 from pandas import datetime
@@ -74,7 +74,7 @@ pyplot.show()
 
 运行该示例将数据集作为 Pandas Series 加载并打印前 5 行。
 
-```
+```py
 Month
 1901-01-01    266.0
 1901-02-01    145.9
@@ -106,7 +106,7 @@ Name: Sales, dtype: float64
 
 作为参考，过去 12 个月的观察如下：
 
-```
+```py
 "3-01",339.7
 "3-02",440.4
 "3-03",315.9
@@ -133,7 +133,7 @@ Name: Sales, dtype: float64
 
 需要总共 10 个 3 个月的预测，如下：
 
-```
+```py
 Dec,	Jan, Feb, Mar
 Jan,	Feb, Mar, Apr
 Feb,	Mar, Apr, May
@@ -180,7 +180,7 @@ Sep,	Oct, Nov, Dec
 
 该功能如下所列。
 
-```
+```py
 # convert time series into supervised learning problem
 def series_to_supervised(data, n_in=1, n_out=1, dropnan=True):
 	n_vars = 1 if type(data) is list else data.shape[1]
@@ -208,7 +208,7 @@ def series_to_supervised(data, n_in=1, n_out=1, dropnan=True):
 
 可以通过将加载的系列值传入 _n_in_ 值 1 和 n_out 值 3 来调用该函数;例如：
 
-```
+```py
 supervised = series_to_supervised(raw_values, 1, 3)
 ```
 
@@ -218,7 +218,7 @@ supervised = series_to_supervised(raw_values, 1, 3)
 
 我们可以将所有这些放在一个新函数中，该函数接受加载的系列和一些参数，并返回准备建模的训练和测试集。
 
-```
+```py
 # transform series into train and test sets for supervised learning
 def prepare_data(series, n_test, n_lag, n_seq):
 	# extract raw values
@@ -234,7 +234,7 @@ def prepare_data(series, n_test, n_lag, n_seq):
 
 我们可以使用 Shampoo 数据集对此进行测试。下面列出了完整的示例。
 
-```
+```py
 from pandas import DataFrame
 from pandas import concat
 from pandas import read_csv
@@ -294,7 +294,7 @@ print('Train: %s, Test: %s' % (train.shape, test.shape))
 
 首先运行该示例将打印整个测试数据集，即最后 10 行。还打印了列车测试数据集的形状和大小。
 
-```
+```py
 [[ 342.3  339.7  440.4  315.9]
  [ 339.7  440.4  315.9  439.3]
  [ 440.4  315.9  439.3  401.3]
@@ -310,7 +310,7 @@ Train: (23, 4), Test: (10, 4)
 
 我们可以看到测试数据集第一行的单个输入值（第一列）与第二年 12 月的洗发水销售中的观察结果相符：
 
-```
+```py
 "2-12",342.3
 ```
 
@@ -322,7 +322,7 @@ Train: (23, 4), Test: (10, 4)
 
 我们可以在名为 _persistence（）_ 的函数中轻松实现持久性预测，该函数将最后一次观察和预测步骤的数量保持不变。此函数返回包含预测的数组。
 
-```
+```py
 # make a persistence forecast
 def persistence(last_ob, n_seq):
 	return [last_ob for i in range(n_seq)]
@@ -332,7 +332,7 @@ def persistence(last_ob, n_seq):
 
 下面是一个函数 _make_forecasts（）_，它执行此操作并将数据集的训练，测试和配置作为参数，并返回预测列表。
 
-```
+```py
 # evaluate the persistence model
 def make_forecasts(train, test, n_lag, n_seq):
 	forecasts = list()
@@ -347,7 +347,7 @@ def make_forecasts(train, test, n_lag, n_seq):
 
 我们可以调用这个函数如下：
 
-```
+```py
 forecasts = make_forecasts(train, test, 1, 3)
 ```
 
@@ -357,7 +357,7 @@ forecasts = make_forecasts(train, test, 1, 3)
 
 我们可以通过计算多步预测的每个时间步长的 RMSE 来做到这一点，在这种情况下给出 3 个 RMSE 分数。下面的函数 _evaluate_forecasts（）_ 计算并打印每个预测时间步的 RMSE。
 
-```
+```py
 # evaluate the RMSE for each forecast time step
 def evaluate_forecasts(test, forecasts, n_lag, n_seq):
 	for i in range(n_seq):
@@ -369,7 +369,7 @@ def evaluate_forecasts(test, forecasts, n_lag, n_seq):
 
 我们可以这样称呼它：
 
-```
+```py
 evaluate_forecasts(test, forecasts, 1, 3)
 ```
 
@@ -377,7 +377,7 @@ evaluate_forecasts(test, forecasts, 1, 3)
 
 我们可以首先绘制整个 Shampoo 数据集，然后将每个预测绘制为红线。下面的函数 _plot_forecasts（）_ 将创建并显示此图。
 
-```
+```py
 # plot the forecasts in the context of the original dataset
 def plot_forecasts(series, forecasts, n_test):
 	# plot the entire dataset in blue
@@ -394,7 +394,7 @@ def plot_forecasts(series, forecasts, n_test):
 
 我们可以按如下方式调用该函数。请注意，12 个月内在测试集上保留的观察数为 12，而上述使用的 10 个监督学习输入/输出模式则为 10。
 
-```
+```py
 # plot forecasts
 plot_forecasts(series, forecasts, 12)
 ```
@@ -403,7 +403,7 @@ plot_forecasts(series, forecasts, 12)
 
 这将需要将最后观察到的值添加到预测的前面。以下是具有此改进的 _plot_forecasts（）_ 功能的更新版本。
 
-```
+```py
 # plot the forecasts in the context of the original dataset
 def plot_forecasts(series, forecasts, n_test):
 	# plot the entire dataset in blue
@@ -425,7 +425,7 @@ def plot_forecasts(series, forecasts, n_test):
 
 下面列出了多步持久性预测的完整代码示例。
 
-```
+```py
 from pandas import DataFrame
 from pandas import concat
 from pandas import read_csv
@@ -531,7 +531,7 @@ plot_forecasts(series, forecasts, n_test+2)
 
 这为我们提供了每个时间步的表现基线，我们希望 LSTM 能够表现出色。
 
-```
+```py
 t+1 RMSE: 144.535304
 t+2 RMSE: 86.479905
 t+3 RMSE: 121.149168
@@ -560,7 +560,7 @@ t+3 RMSE: 121.149168
 
 我们可以引入一个函数使数据静止称为 _difference（）_。这会将一系列值转换为一系列差异，这是一种更简单的表示方式。
 
-```
+```py
 # create a differenced series
 def difference(dataset, interval=1):
 	diff = list()
@@ -576,7 +576,7 @@ def difference(dataset, interval=1):
 
 除了训练和测试数据集之外，该函数现在返回一个缩放器。
 
-```
+```py
 # transform series into train and test sets for supervised learning
 def prepare_data(series, n_test, n_lag, n_seq):
 	# extract raw values
@@ -599,7 +599,7 @@ def prepare_data(series, n_test, n_lag, n_seq):
 
 我们可以调用这个函数如下：
 
-```
+```py
 # prepare data
 scaler, train, test = prepare_data(series, n_test, n_lag, n_seq)
 ```
@@ -618,7 +618,7 @@ LSTM 是有状态的;这意味着我们必须在每个训练时代结束时手�
 
 我们可以将所有这些放在一个名为 _fit_lstm（）_ 的函数中。该函数采用了许多可用于稍后调整网络的关键参数，并且该函数返回适合 LSTM 模型以备预测。
 
-```
+```py
 # fit an LSTM network to training data
 def fit_lstm(train, n_lag, n_seq, n_batch, nb_epoch, n_neurons):
 	# reshape training into [samples, timesteps, features]
@@ -638,7 +638,7 @@ def fit_lstm(train, n_lag, n_seq, n_batch, nb_epoch, n_neurons):
 
 该函数可以调用如下：
 
-```
+```py
 # fit model
 model = fit_lstm(train, 1, 3, 1, 1500, 1)
 ```
@@ -655,7 +655,7 @@ model = fit_lstm(train, 1, 3, 1, 1500, 1)
 
 我们可以将它包装成一个名为 _forecast_lstm（）_ 的函数。
 
-```
+```py
 # make one forecast with an LSTM,
 def forecast_lstm(model, X, n_batch):
 	# reshape input pattern to [samples, timesteps, features]
@@ -668,7 +668,7 @@ def forecast_lstm(model, X, n_batch):
 
 我们可以从 _make_forecasts（）_ 函数调用此函数并更新它以接受模型作为参数。更新版本如下所示。
 
-```
+```py
 # evaluate the persistence model
 def make_forecasts(model, n_batch, train, test, n_lag, n_seq):
 	forecasts = list()
@@ -683,7 +683,7 @@ def make_forecasts(model, n_batch, train, test, n_lag, n_seq):
 
 可以按如下方式调用 _make_forecasts（）_ 函数的更新版本：
 
-```
+```py
 # make forecasts
 forecasts = make_forecasts(model, 1, train, test, 1, 3)
 ```
@@ -700,7 +700,7 @@ forecasts = make_forecasts(model, 1, train, test, 1, 3)
 
 这有点儿繁琐;我们可以在函数名 _inverse_difference（）_ 中包含行为，它将预测之前的最后观察值和预测作为参数，并返回反向预测。
 
-```
+```py
 # invert differenced forecast
 def inverse_difference(last_ob, forecast):
 	# invert first forecast
@@ -714,7 +714,7 @@ def inverse_difference(last_ob, forecast):
 
 将它们放在一起，我们可以创建一个 _inverse_transform（）_ 函数，该函数可以处理每个预测，首先反转比例，然后反转差异，将预测恢复到原始比例。
 
-```
+```py
 # inverse data transform on forecasts
 def inverse_transform(series, forecasts, scaler, n_test):
 	inverted = list()
@@ -736,21 +736,21 @@ def inverse_transform(series, forecasts, scaler, n_test):
 
 我们可以使用以下预测来调用此函数：
 
-```
+```py
 # inverse transform forecasts and test
 forecasts = inverse_transform(series, forecasts, scaler, n_test+2)
 ```
 
 我们还可以反转输出部分测试数据集上的变换，以便我们可以正确计算 RMSE 分数，如下所示：
 
-```
+```py
 actual = [row[n_lag:] for row in test]
 actual = inverse_transform(series, actual, scaler, n_test+2)
 ```
 
 我们还可以简化 RMSE 分数的计算，以期望测试数据仅包含输出值，如下所示：
 
-```
+```py
 def evaluate_forecasts(test, forecasts, n_lag, n_seq):
 	for i in range(n_seq):
 		actual = [row[i] for row in test]
@@ -765,7 +765,7 @@ def evaluate_forecasts(test, forecasts, n_lag, n_seq):
 
 完整的代码清单如下。
 
-```
+```py
 from pandas import DataFrame
 from pandas import Series
 from pandas import concat
@@ -954,7 +954,7 @@ plot_forecasts(series, forecasts, n_test+2)
 
 值得注意的是，RMSE 并没有像预期的那样随着预测范围的长度而变得越来越差。这是因为 t + 2 似乎比 t + 1 更容易预测。这可能是因为向下滴答比系列中记录的向上滴答更容易预测（这可以通过对结果进行更深入的分析来确认）。
 
-```
+```py
 t+1 RMSE: 95.973221
 t+2 RMSE: 78.872348
 t+3 RMSE: 105.613951

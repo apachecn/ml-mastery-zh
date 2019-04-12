@@ -110,7 +110,7 @@
 
 下面是一个跟踪示例，取自' _dataset / MovementAAL_RSS_1.csv_ '，其输出目标为'1'（发生房间转换），来自第 1 组（第一对房间）和是路径 1（房间之间从左到右的直射）。
 
-```
+```py
 #RSS_anchor1, RSS_anchor2, RSS_anchor3, RSS_anchor4
 -0.90476,-0.48,0.28571,0.3
 -0.57143,-0.32,0.14286,0.3
@@ -160,7 +160,7 @@ ES1 案例评估模型以概括两对已知房间内的移动，即具有已知�
 
 目标，组和路径文件可以直接作为 Pandas DataFrames 加载。
 
-```
+```py
 # load mapping files
 from pandas import read_csv
 target_mapping = read_csv('dataset/MovementAAL_target.csv', header=0)
@@ -172,7 +172,7 @@ paths_mapping = read_csv('groups/MovementAAL_Paths.csv', header=0)
 
 这些可以通过迭代目录中的所有文件并直接加载序列来加载。因为每个序列都有一个可变长度（可变行数），我们可以为列表中的每个跟踪存储 NumPy 数组。
 
-```
+```py
 # load sequences and targets into memory
 from pandas import read_csv
 from os import listdir
@@ -192,7 +192,7 @@ for name in listdir(directory):
 
 下面列出了完整的示例。
 
-```
+```py
 # load user movement dataset into memory
 from pandas import read_csv
 from os import listdir
@@ -224,7 +224,7 @@ print(len(sequences), targets.shape, groups.shape, paths.shape)
 
 运行该示例加载数据并显示已从磁盘正确加载 314 条跟踪及其相关输出（目标为-1 或+1），数据集编号（组为 1,2 或 3）和路径编号（路径为 1） -6）。
 
-```
+```py
 314 (314,) (314,) (314,)
 ```
 
@@ -234,7 +234,7 @@ print(len(sequences), targets.shape, groups.shape, paths.shape)
 
 我们从论文中了解到，数据集在两个类别方面是合理平衡的。我们可以通过总结所有观察的类别细分来证实这一点。
 
-```
+```py
 # summarize class breakdown
 class1,class2 = len(targets[targets==-1]), len(targets[targets==1])
 print('Class=-1: %d %.3f%%' % (class1, class1/len(targets)*100))
@@ -245,7 +245,7 @@ print('Class=+1: %d %.3f%%' % (class2, class2/len(targets)*100))
 
 这要求我们创建一个包含所有观察行的数组，以便我们可以绘制每列的分布。 _vstack（）_ NumPy 函数将为我们完成这项工作。
 
-```
+```py
 # histogram for each anchor point
 all_rows = vstack(sequences)
 pyplot.figure()
@@ -260,7 +260,7 @@ pyplot.show()
 
 我们可以使用直方图来总结这种分布。
 
-```
+```py
 # histogram for trace lengths
 trace_lengths = [len(x) for x in sequences]
 pyplot.hist(trace_lengths, bins=50)
@@ -269,7 +269,7 @@ pyplot.show()
 
 综合这些，下面列出了加载和汇总数据的完整示例。
 
-```
+```py
 # summarize simple information about user movement data
 from os import listdir
 from numpy import array
@@ -320,7 +320,7 @@ pyplot.show()
 
 结果证实了我们对完整数据集的期望在两个阶段结果的观察方面几乎完全平衡。
 
-```
+```py
 Class=-1: 156 49.682%
 Class=+1: 158 50.318%
 ```
@@ -349,7 +349,7 @@ Class=+1: 158 50.318%
 
 我们可以按路径对轨迹进行分组，并为每条路径绘制一条轨迹的示例。期望不同路径的迹线在某些方面可能看起来不同。
 
-```
+```py
 # group sequences by paths
 paths = [1,2,3,4,5,6]
 seq_paths = dict()
@@ -372,7 +372,7 @@ pyplot.show()
 
 下面的函数 _regress（）_ 将一系列作为单个变量，通过最小二乘拟合线性回归模型，并预测每个时间步的输出返回捕获数据趋势的序列。
 
-```
+```py
 # fit a linear regression function and return the predicted values for the series
 def regress(y):
 	# define input as the time step
@@ -386,7 +386,7 @@ def regress(y):
 
 我们可以使用该函数绘制单个迹线中每个变量的时间序列的趋势。
 
-```
+```py
 # plot series for a single trace with trend
 seq = sequences[0]
 variables = [0, 1, 2, 3]
@@ -402,7 +402,7 @@ pyplot.show()
 
 将所有这些结合在一起，下面列出了完整的示例。
 
-```
+```py
 # plot series data
 from os import listdir
 from numpy import array
@@ -507,7 +507,7 @@ pyplot.show()
 
 首先，我们必须将加载的跟踪和目标分成三组。
 
-```
+```py
 # separate traces
 seq1 = [sequences[i] for i in range(len(groups)) if groups[i]==1]
 seq2 = [sequences[i] for i in range(len(groups)) if groups[i]==2]
@@ -524,7 +524,7 @@ print(len(targets1),len(targets2),len(targets3))
 
 我们可以使用 scikit-learn 中的 [cross_val_score（）函数](http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)来评估模型，然后计算得分的均值和标准差。
 
-```
+```py
 # evaluate model for ES1
 from numpy import mean
 from numpy import std
@@ -593,7 +593,7 @@ m, s = mean(scores), std(scores)
 
 简单的机器学习算法需要对跟踪数据进行扁平化。
 
-```
+```py
 # create a fixed 1d vector for each trace with output variable
 def create_dataset(sequences, targets):
 	# create the transformed dataset
@@ -624,7 +624,7 @@ def create_dataset(sequences, targets):
 
 下面列出了完整的示例。
 
-```
+```py
 # prepare fixed length vector dataset
 from os import listdir
 from numpy import array
@@ -700,7 +700,7 @@ savetxt('es2_test.csv', es2_test, delimiter=',')
 
 还总结了这些数据集的形状。
 
-```
+```py
 ES1: (210, 77)
 ES2 Train: (210, 77)
 ES2 Test: (104, 77)
@@ -712,7 +712,7 @@ ES2 Test: (104, 77)
 
 下面列出了新数据集上的抽样检查算法的完整示例。
 
-```
+```py
 # spot check for ES1
 from numpy import mean
 from numpy import std
@@ -772,7 +772,7 @@ pyplot.show()
 
 结果表明 SVM 可能值得以 58％的准确度更详细地查看。
 
-```
+```py
 LR 55.285% +/-5.518
 KNN 50.897% +/-5.310
 CART 50.501% +/-10.922
@@ -797,7 +797,7 @@ GBM 55.749% +/-5.423
 
 我们可以通过将 0.0 值添加到每个变量序列的开头来填充每个序列，直到最大长度，例如，达到了 200 个时间步长。我们可以使用 [pad（）NumPy 函数](https://docs.scipy.org/doc/numpy/reference/generated/numpy.pad.html)来完成此操作。
 
-```
+```py
 from numpy import pad
 ...
 # pad sequences
@@ -809,7 +809,7 @@ seq = pad(seq, ((max_length-len(seq),0),(0,0)), 'constant', constant_values=(0.0
 
 我们将尝试 _n = 25_ 以包括每个载体中每个序列中的 25 个最后观察结果。虽然您可能想要探索其他配置是否会带来更好的技能，但可以通过一些试验和错误找到此值。
 
-```
+```py
 # create a fixed 1d vector for each trace with output variable
 def create_dataset(sequences, targets):
 	# create the transformed dataset
@@ -837,7 +837,7 @@ def create_dataset(sequences, targets):
 
 使用新功能再次运行脚本会创建更新的 CSV 文件。
 
-```
+```py
 ES1: (210, 101)
 ES2 Train: (210, 101)
 ES2 Test: (104, 101)
@@ -845,7 +845,7 @@ ES2 Test: (104, 101)
 
 同样，重新运行数据上的抽样检查脚本会导致 SVM 模型技能的小幅提升，并且还表明 KNN 可能值得进一步调查。
 
-```
+```py
 LR 54.344% +/-6.195
 KNN 58.562% +/-4.456
 CART 52.837% +/-7.650
@@ -864,7 +864,7 @@ KNN 和 SVM 的箱形图显示出良好的表现和相对紧密的标准偏差�
 
 下面列出了完整的示例。
 
-```
+```py
 # spot check for ES1
 from numpy import mean
 from numpy import std
@@ -902,7 +902,7 @@ pyplot.show()
 
 我们可以看到 _k = 7_ 导致最佳技能为 62.872％。
 
-```
+```py
 k=1 49.534% +/-4.407
 k=2 49.489% +/-4.201
 k=3 56.599% +/-6.923
@@ -940,7 +940,7 @@ _k_ 值的准确度得分的框和胡须图显示， _k_ 值约为 7，例如 5 
 
 下面列出了 ES2 算法的完整抽样检查。
 
-```
+```py
 # spot check for ES2
 from pandas import read_csv
 from matplotlib import pyplot
@@ -1007,7 +1007,7 @@ pyplot.show()
 
 我们可以看到 KNN 表现良好，并且发现在 ES1 上表现良好的七个邻居的 KNN 在 ES2 上也表现良好。
 
-```
+```py
 LR 45.192%
 KNN 54.808%
 KNN-7 57.692%

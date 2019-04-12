@@ -95,7 +95,7 @@
 
 配置参数依次为：趋势类型，阻尼类型，季节性类型，季节周期，是否使用 Box-Cox 变换，以及在拟合模型时是否消除偏差。
 
-```
+```py
 # one-step Holt Winter's Exponential Smoothing forecast
 def exp_smoothing_forecast(history, config):
 	t,d,s,p,b,r = config
@@ -115,7 +115,7 @@ def exp_smoothing_forecast(history, config):
 
 下面的 _train_test_split（）_ 函数为提供的数据集和要在测试集中使用的指定数量的时间步骤实现此功能。
 
-```
+```py
 # split a univariate dataset into train/test sets
 def train_test_split(data, n_test):
 	return data[:-n_test], data[-n_test:]
@@ -127,7 +127,7 @@ def train_test_split(data, n_test):
 
 下面的 _measure_rmse（）_ 函数将根据实际（测试集）和预测值列表计算 RMSE。
 
-```
+```py
 # root mean squared error or rmse
 def measure_rmse(actual, predicted):
 	return sqrt(mean_squared_error(actual, predicted))
@@ -139,7 +139,7 @@ def measure_rmse(actual, predicted):
 
 下面的 _walk_forward_validation（）_ 函数实现了这一点，采用了单变量时间序列，在测试集中使用的一些时间步骤，以及一组模型配置。
 
-```
+```py
 # walk-forward validation for univariate data
 def walk_forward_validation(data, n_test, cfg):
 	predictions = list()
@@ -172,7 +172,7 @@ def walk_forward_validation(data, n_test, cfg):
 
 下面的 _score_model（）_ 函数实现了这个并返回（键和结果）的元组，其中键是测试模型配置的字符串版本。
 
-```
+```py
 # score a model, return None on failure
 def score_model(data, n_test, cfg, debug=False):
 	result = None
@@ -204,19 +204,19 @@ def score_model(data, n_test, cfg, debug=False):
 
 我们可以定义一个 _Parallel_ 对象，其中包含要使用的核心数，并将其设置为硬件中检测到的 CPU 核心数。
 
-```
+```py
 executor = Parallel(n_jobs=cpu_count(), backend='multiprocessing')
 ```
 
 然后我们可以创建一个并行执行的任务列表，这将是对我们拥有的每个模型配置的 _score_model（）_ 函数的一次调用。
 
-```
+```py
 tasks = (delayed(score_model)(data, n_test, cfg) for cfg in cfg_list)
 ```
 
 最后，我们可以使用 _Parallel_ 对象并行执行任务列表。
 
-```
+```py
 scores = executor(tasks)
 ```
 
@@ -224,7 +224,7 @@ scores = executor(tasks)
 
 我们还可以提供评估所有模型配置的非并行版本，以防我们想要调试某些内容。
 
-```
+```py
 scores = [score_model(data, n_test, cfg) for cfg in cfg_list]
 ```
 
@@ -232,7 +232,7 @@ scores = [score_model(data, n_test, cfg) for cfg in cfg_list]
 
 我们可以使用“无”过滤掉所有分数。
 
-```
+```py
 scores = [r for r in scores if r[1] != None]
 ```
 
@@ -240,7 +240,7 @@ scores = [r for r in scores if r[1] != None]
 
 给定单变量时间序列数据集，模型配置列表（列表列表）以及在测试集中使用的时间步数，下面的 _grid_search（）_ 函数实现此行为。可选的并行参数允许对所有内核的模型进行开启或关闭调整，默认情况下处于打开状态。
 
-```
+```py
 # grid search configs
 def grid_search(data, cfg_list, n_test, parallel=True):
 	scores = None
@@ -270,7 +270,7 @@ def grid_search(data, cfg_list, n_test, parallel=True):
 
 从理论上讲，有 72 种可能的模型配置需要评估，但在实践中，许多模型配置无效并会导致我们将陷入和忽略的错误。
 
-```
+```py
 # create a set of exponential smoothing configs to try
 def exp_smoothing_configs(seasonal=[None]):
 	models = list()
@@ -301,7 +301,7 @@ def exp_smoothing_configs(seasonal=[None]):
 
 下面列出了完整的示例。
 
-```
+```py
 # grid search holt winter's exponential smoothing
 from math import sqrt
 from multiprocessing import cpu_count
@@ -433,7 +433,7 @@ if __name__ == '__main__':
 
 最后，报告前三种配置的配置和错误。
 
-```
+```py
 [10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0]
 
  > Model[[None, False, None, None, True, True]] 1.380
@@ -451,7 +451,7 @@ done
 
 您可以通过重新配置具有相同配置的独立模型并在模型拟合上打印' _params_ '属性的内容来访问这些内部参数;例如：
 
-```
+```py
 print(model_fit.params)
 ```
 
@@ -479,7 +479,7 @@ print(model_fit.params)
 
 我们可以使用函数 _read_csv（）_ 将此数据集作为 Pandas 系列加载。
 
-```
+```py
 series = read_csv('daily-total-female-births.csv', header=0, index_col=0)
 ```
 
@@ -487,7 +487,7 @@ series = read_csv('daily-total-female-births.csv', header=0, index_col=0)
 
 下面列出了搜索每日女性单变量时间序列预测问题的完整示例网格。
 
-```
+```py
 # grid search ets models for daily female births
 from math import sqrt
 from multiprocessing import cpu_count
@@ -631,7 +631,7 @@ if __name__ == '__main__':
 
 除非我们抛弃假设和网格搜索模型，否则我们不会知道情况就是这样。
 
-```
+```py
  > Model[['add', False, None, None, True, True]] 7.081
  > Model[['add', False, None, None, True, False]] 7.113
  > Model[['add', False, None, None, False, True]] 7.112
@@ -677,7 +677,7 @@ done
 
 我们可以使用函数 _read_csv（）_ 将此数据集作为 Pandas 系列加载。
 
-```
+```py
 # parse dates
 def custom_parser(x):
 	return datetime.strptime('195'+x, '%Y-%m')
@@ -690,7 +690,7 @@ series = read_csv('shampoo.csv', header=0, index_col=0, date_parser=custom_parse
 
 下面列出了搜索洗发水销售单变量时间序列预测问题的完整示例网格。
 
-```
+```py
 # grid search ets models for monthly shampoo sales
 from math import sqrt
 from multiprocessing import cpu_count
@@ -830,7 +830,7 @@ if __name__ == '__main__':
 *   **Box-Cox 变换**：错误
 *   **删除偏差**：错误
 
-```
+```py
  > Model[['add', False, None, None, False, True]] 106.431
  > Model[['add', False, None, None, False, False]] 104.874
  > Model[['add', True, None, None, False, False]] 103.069
@@ -868,7 +868,7 @@ done
 
 我们可以使用函数 _read_csv（）_ 将此数据集作为 Pandas 系列加载。
 
-```
+```py
 series = read_csv('monthly-mean-temp.csv', header=0, index_col=0)
 ```
 
@@ -876,7 +876,7 @@ series = read_csv('monthly-mean-temp.csv', header=0, index_col=0)
 
 我们将数据集修剪为过去五年的数据（60 个观测值），以加快模型评估过程，并使用去年或 12 个观测值来测试集。
 
-```
+```py
 # trim dataset to 5 years
 data = data[-(5*12):]
 ```
@@ -885,14 +885,14 @@ data = data[-(5*12):]
 
 在准备模型配置时，我们将此作为调用 _exp_smoothing_configs（）_ 函数的季节性时段。
 
-```
+```py
 # model configs
 cfg_list = exp_smoothing_configs(seasonal=[0, 12])
 ```
 
 下面列出了搜索月平均温度时间序列预测问题的完整示例网格。
 
-```
+```py
 # grid search ets hyperparameters for monthly mean temp dataset
 from math import sqrt
 from multiprocessing import cpu_count
@@ -1034,7 +1034,7 @@ if __name__ == '__main__':
 *   **Box-Cox 变换**：错误
 *   **删除偏差**：错误
 
-```
+```py
  > Model[['add', True, 'mul', 12, True, False]] 1.659
  > Model[['add', True, 'mul', 12, True, True]] 1.663
  > Model[['add', True, 'mul', 12, False, True]] 1.603
@@ -1134,7 +1134,7 @@ done
 
 我们可以使用函数 _read_csv（）_ 将此数据集作为 Pandas 系列加载。
 
-```
+```py
 series = read_csv('monthly-car-sales.csv', header=0, index_col=0)
 ```
 
@@ -1142,14 +1142,14 @@ series = read_csv('monthly-car-sales.csv', header=0, index_col=0)
 
 季节性成分的期限可能是六个月或 12 个月。在准备模型配置时，我们将尝试将两者作为调用 _exp_smoothing_configs（）_ 函数的季节性时段。
 
-```
+```py
 # model configs
 cfg_list = exp_smoothing_configs(seasonal=[0,6,12])
 ```
 
 下面列出了搜索月度汽车销售时间序列预测问题的完整示例网格。
 
-```
+```py
 # grid search ets models for monthly car sales
 from math import sqrt
 from multiprocessing import cpu_count
@@ -1291,7 +1291,7 @@ if __name__ == '__main__':
 
 这有点令人惊讶，因为我猜想六个月的季节性模型将是首选方法。
 
-```
+```py
  > Model[['add', True, 'add', 6, False, True]] 3240.433
  > Model[['add', True, 'add', 6, False, False]] 3226.384
  > Model[['add', True, 'add', 6, True, False]] 2836.535

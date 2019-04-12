@@ -113,7 +113,7 @@
 
 下面的 _load_file（）_ 函数在给定文件的文件路径的情况下加载数据集，并将加载的数据作为 NumPy 数组返回。
 
-```
+```py
 # load a single file as a numpy array
 def load_file(filepath):
 	dataframe = read_csv(filepath, header=None, delim_whitespace=True)
@@ -122,7 +122,7 @@ def load_file(filepath):
 
 考虑到目录布局和文件名的相似性，我们可以调用此函数来加载给定列车或测试集组的 _X_ 和 _y_ 文件。下面的 _load_dataset_group（）_ 函数将为一个组加载这两个文件，并将 X 和 y 元素作为 NumPy 数组返回。然后，此函数可用于加载列车和测试组的 X 和 y 元素。
 
-```
+```py
 # load a dataset group, such as train or test
 def load_dataset_group(group, prefix=''):
 	# load input data
@@ -134,7 +134,7 @@ def load_dataset_group(group, prefix=''):
 
 最后，我们可以加载 train 和 test 数据集，并将它们作为 NumPy 数组返回，以便为拟合和评估机器学习模型做好准备。
 
-```
+```py
 # load the dataset, returns train and test X and y elements
 def load_dataset(prefix=''):
 	# load all train
@@ -151,7 +151,7 @@ def load_dataset(prefix=''):
 
 我们可以调用这个函数来加载所有需要的数据;例如：
 
-```
+```py
 # load dataset
 trainX, trainy, testX, testy = load_dataset()
 ```
@@ -182,7 +182,7 @@ trainX, trainy, testX, testy = load_dataset()
 
 下面的 _define_models（）_ 函数定义了我们将评估的八个模型。
 
-```
+```py
 # create a dict of standard models to evaluate {name:object}
 def define_models(models=dict()):
 	# nonlinear models
@@ -211,7 +211,7 @@ def define_models(models=dict()):
 
 下面的 _evaluate_model（）_ 函数实现了此行为，评估给定模型并将分类精度返回为百分比。
 
-```
+```py
 # evaluate a single model
 def evaluate_model(trainX, trainy, testX, testy, model):
 	# fit the model
@@ -229,7 +229,7 @@ def evaluate_model(trainX, trainy, testX, testy, model):
 
 因为模型的评估可能需要几分钟，所以该函数在评估每个模型作为一些详细的反馈之后打印它们的表现。
 
-```
+```py
 # evaluate a dict of models {name:object}, returns {name:score}
 def evaluate_models(trainX, trainy, testX, testy, models):
 	results = dict()
@@ -251,7 +251,7 @@ def evaluate_models(trainX, trainy, testX, testy, models):
 
 下面的 _summarize_results（）_ 函数实现了这种行为。
 
-```
+```py
 # print and plot the results
 def summarize_results(results, maximize=True):
 	# create a list of (name, mean(scores)) tuples
@@ -272,7 +272,7 @@ def summarize_results(results, maximize=True):
 
 下面列出了在数据集的特征工程版本上评估一套八个机器学习模型的完整示例。
 
-```
+```py
 # spot check on engineered-features
 from pandas import read_csv
 from sklearn.metrics import accuracy_score
@@ -381,7 +381,7 @@ summarize_results(results)
 
 考虑到算法的随机性，每次运行代码时，具体结果可能会有所不同。然而，考虑到数据集的大小，算法表现之间的相对关系应该相当稳定。
 
-```
+```py
 (7352, 561) (7352, 1)
 (2947, 561) (2947, 1)
 (7352, 561) (7352,) (2947, 561) (2947,)
@@ -429,7 +429,7 @@ Name=bayes, Score=77.027
 
 下面的 _load_group（）_ 函数实现了这种行为。 _dstack（）_ NumPy 函数允许我们将每个加载的 3D 数组堆叠成单个 3D 数组，其中变量在第三维（特征）上分开。
 
-```
+```py
 # load a list of files into a 3D array of [samples, timesteps, features]
 def load_group(filenames, prefix=''):
 	loaded = list()
@@ -445,7 +445,7 @@ def load_group(filenames, prefix=''):
 
 下面的 _load_dataset_group（）_ 函数使用目录之间的一致命名约定加载单个组的所有输入信号数据和输出数据。
 
-```
+```py
 # load a dataset group, such as train or test
 def load_dataset_group(group, prefix=''):
 	filepath = prefix + group + '/Inertial Signals/'
@@ -472,7 +472,7 @@ def load_dataset_group(group, prefix=''):
 
 下面的 _load_dataset（）_ 函数实现了这种行为，并返回列车并测试 _X_ 和 _y_ 元素，以便拟合和评估定义的模型。
 
-```
+```py
 # load the dataset, returns train and test X and y elements
 def load_dataset(prefix=''):
 	# load all train
@@ -492,7 +492,7 @@ def load_dataset(prefix=''):
 
 综合这些，下面列出了完整的例子。
 
-```
+```py
 # spot check on raw data
 from numpy import dstack
 from pandas import read_csv
@@ -626,7 +626,7 @@ summarize_results(results)
 
 决策树集合的良好表现可能表明需要特征选择和集合方法能够选择与预测相关活动最相关的那些特征。
 
-```
+```py
 (7352, 128, 9) (7352, 1)
 (2947, 128, 9) (2947, 1)
 (7352, 1152) (7352,) (2947, 1152) (2947,)

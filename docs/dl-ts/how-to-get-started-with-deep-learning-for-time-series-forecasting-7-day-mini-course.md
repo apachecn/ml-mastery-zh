@@ -112,13 +112,13 @@
 
 例如，系列：
 
-```
+```py
 1, 2, 3, 4, 5, ...
 ```
 
 可以转换为具有输入和输出组件的样本，这些组件可以用作训练集的一部分，以训练监督学习模型，如深度学习神经网络。
 
-```
+```py
 X,				y
 [1, 2, 3]		4
 [2, 3, 4]		5
@@ -155,7 +155,7 @@ X,				y
 
 下面列出了完整的示例。
 
-```
+```py
 # univariate mlp example
 from numpy import array
 from keras.models import Sequential
@@ -213,7 +213,7 @@ print(yhat)
 
 下面列出了完整的示例。
 
-```
+```py
 # univariate cnn example
 from numpy import array
 from keras.models import Sequential
@@ -277,7 +277,7 @@ print(yhat)
 
 下面列出了完整的示例。
 
-```
+```py
 # univariate lstm example
 from numpy import array
 from keras.models import Sequential
@@ -339,7 +339,7 @@ CNN 将被定义为每个子序列有一个特征需要 2 个时间步长。然�
 
 下面列出了完整的示例。
 
-```
+```py
 # univariate cnn-lstm example
 from numpy import array
 from keras.models import Sequential
@@ -408,7 +408,7 @@ LSTM 模型需要具有[_ 样本，时间步长，特征 _]形状的三维输入
 
 下面列出了完整的示例。
 
-```
+```py
 # multi-step encoder-decoder lstm example
 from numpy import array
 from keras.models import Sequential

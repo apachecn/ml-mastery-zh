@@ -172,13 +172,13 @@
 
 我们可以使用 [read_csv（）Pandas 函数](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html)来加载单个数据文件，并指定该文件没有标题并使用空格分隔列。
 
-```
+```py
 dataframe = read_csv(filepath, header=None, delim_whitespace=True)
 ```
 
 我们可以将它包装在名为 _load_file（）_ 的函数中。下面列出了此功能的完整示例。
 
-```
+```py
 # load dataset
 from pandas import read_csv
 
@@ -195,7 +195,7 @@ print(data.shape)
 
 我们可以看到训练数据由 7,352 行或数据窗口组成，其中每个窗口有 128 个观察值。
 
-```
+```py
 (7352, 128)
 ```
 
@@ -203,7 +203,7 @@ print(data.shape)
 
 理想情况下，在处理多变量时间序列数据时，以下列格式构建数据非常有用：
 
-```
+```py
 [samples, timesteps, features]
 ```
 
@@ -215,7 +215,7 @@ print(data.shape)
 
 函数 _load_group（）_ 对文件名列表实现此行为，如下所示。
 
-```
+```py
 # load a list of files, such as x, y, z data for a given variable
 def load_group(filenames, prefix=''):
 	loaded = list()
@@ -231,7 +231,7 @@ def load_group(filenames, prefix=''):
 
 下面列出了完整的示例。
 
-```
+```py
 # load dataset
 from numpy import dstack
 from pandas import read_csv
@@ -259,7 +259,7 @@ print(total_acc.shape)
 
 运行该示例将打印返回的 NumPy 数组的形状，显示数据集的三个要素 x，y 和 z 的预期样本数和时间步长。
 
-```
+```py
 (7352, 128, 3)
 ```
 
@@ -269,7 +269,7 @@ print(total_acc.shape)
 
 下面的 _load_dataset（）_ 函数实现了这种行为。它可以被称为“ _train_ ”组或“ _test_ ”组，作为字符串参数传递。
 
-```
+```py
 # load a dataset group, such as train or test
 def load_dataset(group, prefix=''):
 	filepath = prefix + group + '/Inertial Signals/'
@@ -290,7 +290,7 @@ def load_dataset(group, prefix=''):
 
 下面列出了完整的示例。
 
-```
+```py
 # load dataset
 from numpy import dstack
 from pandas import read_csv
@@ -339,7 +339,7 @@ print(testX.shape, testy.shape)
 
 我们可以看到测试数据集有 2,947 行窗口数据。正如预期的那样，我们可以看到列车和测试装置中的窗口大小匹配，并且每个列车和测试用例中的输出（y）大小与样本数量相匹配。
 
-```
+```py
 (7352, 128, 9) (7352, 1)
 (2947, 128, 9) (2947, 1)
 ```
@@ -358,7 +358,7 @@ print(testX.shape, testy.shape)
 
 下面的函数 _class_breakdown（）_ 实现了这种行为，首先将提供的 NumPy 数组包装在 DataFrame 中，按类值对行进行分组，并计算每个组的大小（行数）。然后总结结果，包括计数和百分比。
 
-```
+```py
 # summarize the balance of classes in an output variable column
 def class_breakdown(data):
 	# convert the numpy array into a dataframe
@@ -377,7 +377,7 @@ def class_breakdown(data):
 
 下面列出了完整的示例。
 
-```
+```py
 # summarize class balance
 from numpy import array
 from numpy import vstack
@@ -426,7 +426,7 @@ class_breakdown(combined)
 
 使用数据集可能是安全的，假设每个列车和测试集以及每个主题可以平衡类的分布。
 
-```
+```py
 Train Dataset
 Class=1, total=1226, percentage=16.676
 Class=2, total=1073, percentage=14.595
@@ -460,7 +460,7 @@ Class=6, total=1944, percentage=18.876
 
 我们可以从使用上面开发的函数加载训练数据集开始。
 
-```
+```py
 # load data
 trainX, trainy = load_dataset('train', 'HARDataset/')
 ```
@@ -469,7 +469,7 @@ trainX, trainy = load_dataset('train', 'HARDataset/')
 
 我们可以使用 _load_file（）_ 函数加载这个文件。加载后，我们还可以使用 _unique（）_ NumPy 函数来检索训练数据集中的唯一主题列表。
 
-```
+```py
 sub_map = load_file('HARDataset/train/subject_train.txt')
 train_subjects = unique(sub_map)
 print(train_subjects)
@@ -481,7 +481,7 @@ print(train_subjects)
 
 下面的 _data_for_subject（）_ 函数实现了这种行为。它将获取加载的训练数据，行号到主题的加载映射，以及我们感兴趣的主题的主题标识号，并将返回 _X_ 和 _y_ 仅针对该主题的数据。
 
-```
+```py
 # get all data for one subject
 def data_for_subject(X, y, sub_map, sub_id):
 	# get row indexes for the subject id
@@ -496,7 +496,7 @@ def data_for_subject(X, y, sub_map, sub_id):
 
 下面的 _to_series（）_ 函数对给定变量实现此行为，例如窗户阵列。
 
-```
+```py
 # convert a series of windows to a 1D list
 def to_series(windows):
 	series = list()
@@ -514,7 +514,7 @@ def to_series(windows):
 
 下面的 _plot_subject（）_ 函数为单个主题的 _X_ 和 _y_ 数据实现此行为。该函数采用与 _load_dataset（）_ 函数中加载的变量（第 3 轴）相同的顺序。每个情节都会添加粗略的标题，因此我们不会轻易混淆我们正在看的内容。
 
-```
+```py
 # plot the data for one subject
 def plot_subject(X, y):
 	pyplot.figure()
@@ -547,7 +547,7 @@ def plot_subject(X, y):
 
 下面列出了完整的示例。
 
-```
+```py
 # plot all vars for one subject
 from numpy import array
 from numpy import dstack
@@ -649,7 +649,7 @@ plot_subject(subX, suby)
 
 运行该示例将打印训练数据集中的唯一主题，第一个主题的数据样本，并创建一个包含 10 个图的图形，每个图形对应九个输入变量和输出类别。
 
-```
+```py
 [ 1 3 5 6 7 8 11 14 15 16 17 19 21 22 23 25 26 27 28 29 30]
 (341, 128, 9) (341, 1)
 ```
@@ -670,7 +670,7 @@ plot_subject(subX, suby)
 
 我们可以通过做一个小的改动来重新运行另一个主题的例子，例如：选择训练数据集中第二个主题的标识符。
 
-```
+```py
 # get the data for one subject
 sub_id = train_subjects[1]
 ```
@@ -697,7 +697,7 @@ sub_id = train_subjects[1]
 
 为每个主题创建一个绘图，并将一个数据类型的三个变量绘制为具有 100 个二进制位的直方图，以帮助使分布明显。每个图共享相同的轴，该轴固定在-1 和 1 的边界。
 
-```
+```py
 # plot histograms for multiple subjects
 def plot_subject_histograms(X, y, sub_map, n=10):
 	pyplot.figure()
@@ -721,7 +721,7 @@ def plot_subject_histograms(X, y, sub_map, n=10):
 
 下面列出了完整的示例。
 
-```
+```py
 # plot histograms for multiple subjects
 from numpy import array
 from numpy import unique
@@ -820,7 +820,7 @@ plot_subject_histograms(X, y, sub_map)
 
 我们可以更新 _plot_subject_histograms（）_ 函数，接下来绘制身体加速度的分布。更新的功能如下所示。
 
-```
+```py
 # plot histograms for multiple subjects
 def plot_subject_histograms(X, y, sub_map, n=10):
 	pyplot.figure()
@@ -854,7 +854,7 @@ def plot_subject_histograms(X, y, sub_map, n=10):
 
 更新的功能如下所示。
 
-```
+```py
 # plot histograms for multiple subjects
 def plot_subject_histograms(X, y, sub_map, n=10):
 	pyplot.figure()
@@ -894,7 +894,7 @@ def plot_subject_histograms(X, y, sub_map, n=10):
 
 首先，我们必须按活动对主题的跟踪进行分组。下面的 _data_by_activity（）_ 函数实现了这种行为。
 
-```
+```py
 # group data by activity
 def data_by_activity(X, y, activities):
 	# group windows by activity
@@ -907,7 +907,7 @@ def data_by_activity(X, y, activities):
 
 首先，按活动对数据进行分组，然后为每个活动创建一个子图，并将数据类型的每个轴添加为直方图。该函数仅枚举数据的前三个特征，即总加速度变量。
 
-```
+```py
 # plot histograms for each activity for a subject
 def plot_activity_histograms(X, y):
 	# get a list of unique activities for the subject
@@ -932,7 +932,7 @@ def plot_activity_histograms(X, y):
 
 下面列出了完整的示例。
 
-```
+```py
 # plot histograms per activity for a subject
 from numpy import array
 from numpy import dstack
@@ -1039,7 +1039,7 @@ plot_activity_histograms(subX, suby)
 
 更新的功能如下所示。
 
-```
+```py
 # plot histograms for each activity for a subject
 def plot_activity_histograms(X, y):
 	# get a list of unique activities for the subject
@@ -1076,7 +1076,7 @@ def plot_activity_histograms(X, y):
 
 更新的功能如下所示。
 
-```
+```py
 # plot histograms for each activity for a subject
 def plot_activity_histograms(X, y):
 	# get a list of unique activities for the subject
@@ -1119,7 +1119,7 @@ def plot_activity_histograms(X, y):
 
 下面的函数 _plot_activity_durations_by_subject（）_ 通过首先按主题分割数据集，然后按活动分割主题数据并计算在每个活动上花费的行，然后最终创建持续时间测量的每个活动的箱线图来实现此行为。
 
-```
+```py
 # plot activity durations by subject
 def plot_activity_durations_by_subject(X, y, sub_map):
 	# get unique subjects and activities
@@ -1141,7 +1141,7 @@ def plot_activity_durations_by_subject(X, y, sub_map):
 
 下面列出了完整的示例。
 
-```
+```py
 # plot durations of each activity by subject
 from numpy import array
 from numpy import dstack
@@ -1243,7 +1243,7 @@ plot_activity_durations_by_subject(X, y, sub_map)
 
 我们可以使用以下附加行为训练数据创建类似的箱线图。
 
-```
+```py
 # load test dataset
 X, y = load_dataset('test', 'HARDataset/')
 # load mapping of rows to subjects

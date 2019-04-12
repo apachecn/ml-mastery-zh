@@ -40,7 +40,7 @@ EMC Data Science Global Hackathon 数据集或简称“_ 空气质量预测 _”
 
 具体而言，对于多个站点，每小时提供 8 天的温度，压力，风速和风向等天气观测。目标是预测未来 3 天在多个地点的空气质量测量。预测的提前期不是连续的;相反，必须在 72 小时预测期内预测特定提前期。他们是：
 
-```
+```py
 +1, +2, +3, +4, +5, +10, +17, +24, +48, +72
 ```
 
@@ -126,7 +126,7 @@ EMC Data Science Global Hackathon 数据集或简称“_ 空气质量预测 _”
 
 我们可以使用 Pandas [read_csv（）函数](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html)将数据文件加载到内存中，并在第 0 行指定标题行。
 
-```
+```py
 # load dataset
 dataset = read_csv('AirQualityPrediction/TrainingData.csv', header=0)
 ```
@@ -135,13 +135,13 @@ dataset = read_csv('AirQualityPrediction/TrainingData.csv', header=0)
 
 首先，让我们获取唯一的块标识符列表。
 
-```
+```py
 chunk_ids = unique(values[:, 1])
 ```
 
 然后，我们可以收集每个块标识符的所有行，并将它们存储在字典中以便于访问。
 
-```
+```py
 chunks = dict()
 # sort rows by chunk id
 for chunk_id in chunk_ids:
@@ -151,7 +151,7 @@ for chunk_id in chunk_ids:
 
 下面定义了一个名为 _to_chunks（）_ 的函数，它接受加载数据的 NumPy 数组，并将 _chunk_id_ 的字典返回到块的行。
 
-```
+```py
 # split the dataset by 'chunkID', return a dict of id to rows
 def to_chunks(values, chunk_ix=1):
 	chunks = dict()
@@ -166,7 +166,7 @@ def to_chunks(values, chunk_ix=1):
 
 下面列出了加载数据集并将其拆分为块的完整示例。
 
-```
+```py
 # load data and split into chunks
 from numpy import unique
 from pandas import read_csv
@@ -192,7 +192,7 @@ print('Total Chunks: %d' % len(chunks))
 
 运行该示例将打印数据集中的块数。
 
-```
+```py
 Total Chunks: 208
 ```
 
@@ -212,7 +212,7 @@ Total Chunks: 208
 
 下面的 _split_train_test（）_ 函数实现了这种行为;给定一个块的字典，它将每个分成列车和测试块数据。
 
-```
+```py
 # split each chunk into train/test sets
 def split_train_test(chunks, row_in_chunk_ix=2):
 	train, test = list(), list()
@@ -235,7 +235,7 @@ def split_train_test(chunks, row_in_chunk_ix=2):
 
 我们不需要整个测试数据集;相反，我们只需要在三天时间内的特定提前期进行观察，特别是提前期：
 
-```
+```py
 +1, +2, +3, +4, +5, +10, +17, +24, +48, +72
 ```
 
@@ -243,7 +243,7 @@ def split_train_test(chunks, row_in_chunk_ix=2):
 
 首先，我们可以将这些提前期放入函数中以便于参考：
 
-```
+```py
 # return a list of relative forecast lead times
 def get_lead_times():
 	return [1, 2 ,3, 4, 5, 10, 17, 24, 48, 72]
@@ -257,7 +257,7 @@ def get_lead_times():
 
 下面的函数 _to_forecasts（）_ 实现了这一点，并为每个块的每个预测提前期返回一行 NumPy 数组。
 
-```
+```py
 # convert the rows in a test chunk to forecasts
 def to_forecasts(test_chunks, row_in_chunk_ix=1):
 	# get lead times
@@ -289,7 +289,7 @@ def to_forecasts(test_chunks, row_in_chunk_ix=1):
 
 完整的代码示例如下所示。
 
-```
+```py
 # split data into train and test sets
 from numpy import unique
 from numpy import nan
@@ -384,7 +384,7 @@ savetxt('AirQualityPrediction/naive_test.csv', test_rows, delimiter=',')
 
 新的训练和测试数据集分别保存在' _naive_train.csv_ '和' _naive_test.csv_ '文件中。
 
-```
+```py
 >dropping chunk=69: train=(0, 95), test=(28, 95)
 Train Rows: (23514, 42)
 Test Rows: (2070, 42)
@@ -400,7 +400,7 @@ Test Rows: (2070, 42)
 
 我们还可以重新构建测试数据集以使此数据集进行比较。下面的 _prepare_test_forecasts（）_ 函数实现了这一点。
 
-```
+```py
 # convert the test dataset in chunks to [chunk][variable][time] format
 def prepare_test_forecasts(test_chunks):
 	predictions = list()
@@ -422,7 +422,7 @@ def prepare_test_forecasts(test_chunks):
 
 _calculate_error（）_ 函数实现这些规则并返回给定预测的错误。
 
-```
+```py
 # calculate the error between an actual and predicted value
 def calculate_error(actual, predicted):
 	# give the full actual value if predicted is nan
@@ -438,7 +438,7 @@ def calculate_error(actual, predicted):
 
 下面的 evaluate_forecasts（）函数实现了这一点，计算了 _[chunk] [variable] [time]_ 格式中提供的预测和期望值的 MAE 和每个引导时间 MAE。
 
-```
+```py
 # evaluate a forecast in the format [chunk][variable][time]
 def evaluate_forecasts(predictions, testset):
 	lead_times = get_lead_times()
@@ -473,7 +473,7 @@ def evaluate_forecasts(predictions, testset):
 
 下面的 _summarize_error（）_ 函数首先打印模型表现的一行摘要，然后创建每个预测提前期的 MAE 图。
 
-```
+```py
 # summarize scores
 def summarize_error(name, total_mae, times_mae):
 	# print summary
@@ -507,7 +507,7 @@ def summarize_error(name, total_mae, times_mae):
 
 完整的功能如下所列。
 
-```
+```py
 # forecast for each chunk, returns [chunk][variable][time]
 def forecast_chunks(train_chunks, test_input):
 	lead_times = get_lead_times()
@@ -530,7 +530,7 @@ def forecast_chunks(train_chunks, test_input):
 
 下面的 _forecast_variable（）_ 函数实现了这种行为。
 
-```
+```py
 # forecast all lead times for one variable
 def forecast_variable(train_chunks, chunk_train, chunk_test, lead_times, target_ix):
 	# convert target number into column number
@@ -548,7 +548,7 @@ def forecast_variable(train_chunks, chunk_train, chunk_test, lead_times, target_
 
 下面列出了在所有预测提前期内预测每个系列的全局均值的完整示例。
 
-```
+```py
 # forecast global mean
 from numpy import loadtxt
 from numpy import nan
@@ -681,7 +681,7 @@ summarize_error('Global Mean', total_mae, times_mae)
 
 首先运行该示例打印的总体 MAE 为 0.634，然后是每个预测提前期的 MAE 分数。
 
-```
+```py
 # Global Mean: [0.634 MAE] +1 0.635, +2 0.629, +3 0.638, +4 0.650, +5 0.649, +10 0.635, +17 0.634, +24 0.641, +48 0.613, +72 0.618
 ```
 
@@ -701,7 +701,7 @@ NumPy 提供 _nanmedian（）_ 功能，我们可以在 _forecast_variable（）
 
 完整更新的示例如下所示。
 
-```
+```py
 # forecast global median
 from numpy import loadtxt
 from numpy import nan
@@ -834,7 +834,7 @@ summarize_error('Global Median', total_mae, times_mae)
 
 运行该示例显示 MAE 下降至约 0.59，表明确实使用中位数作为集中趋势可能是更好的基线策略。
 
-```
+```py
 Global Median: [0.598 MAE] +1 0.601, +2 0.594, +3 0.600, +4 0.611, +5 0.615, +10 0.594, +17 0.592, +24 0.602, +48 0.585, +72 0.580
 ```
 
@@ -856,7 +856,7 @@ MAE 预测带领全球中位数的时间
 
 效率不高，首先为每个变量预先计算每小时的中值，然后使用查找表进行预测可能会更有效。此时效率不是问题，因为我们正在寻找模型表现的基线。
 
-```
+```py
 # forecast all lead times for one variable
 def forecast_variable(train_chunks, chunk_train, chunk_test, lead_times, target_ix):
 	forecast = list()
@@ -883,7 +883,7 @@ def forecast_variable(train_chunks, chunk_train, chunk_test, lead_times, target_
 
 下面列出了按一天中的小时预测全球中值的完整示例。
 
-```
+```py
 # forecast global median by hour of day
 from numpy import loadtxt
 from numpy import nan
@@ -1027,7 +1027,7 @@ summarize_error('Global Median by Hour', total_mae, times_mae)
 
 运行该示例总结了模型的表现，MAE 为 0.567，这是对每个系列的全局中位数的改进。
 
-```
+```py
 Global Median by Hour: [0.567 MAE] +1 0.573, +2 0.565, +3 0.567, +4 0.579, +5 0.589, +10 0.559, +17 0.565, +24 0.567, +48 0.558, +72 0.551
 ```
 
@@ -1055,7 +1055,7 @@ MAE 按预测带领时间以全球中位数按天计算
 
 下面的 _forecast_variable（）_ 函数实现了此预测策略。
 
-```
+```py
 # forecast all lead times for one variable
 def forecast_variable(train_chunks, chunk_train, chunk_test, lead_times, target_ix):
 	# convert target number into column number
@@ -1076,7 +1076,7 @@ def forecast_variable(train_chunks, chunk_train, chunk_test, lead_times, target_
 
 下面列出了评估测试集上持久性预测策略的完整示例。
 
-```
+```py
 # persist last observation
 from numpy import loadtxt
 from numpy import nan
@@ -1218,7 +1218,7 @@ summarize_error('Persistence', total_mae, times_mae)
 
 这增加了一些支持，即合理假设特定于块的信息在建模此问题时很重要。
 
-```
+```py
 Persistence: [0.520 MAE] +1 0.217, +2 0.330, +3 0.400, +4 0.471, +5 0.515, +10 0.648, +17 0.656, +24 0.589, +48 0.671, +72 0.708
 ```
 
@@ -1238,7 +1238,7 @@ MAE 通过持续性预测提前期
 
 _forecast_variable（）_ 实现了这种本地策略。
 
-```
+```py
 # forecast all lead times for one variable
 def forecast_variable(train_chunks, chunk_train, chunk_test, lead_times, target_ix):
 	# convert target number into column number
@@ -1254,7 +1254,7 @@ def forecast_variable(train_chunks, chunk_train, chunk_test, lead_times, target_
 
 下面列出了完整的示例。
 
-```
+```py
 # forecast local median
 from numpy import loadtxt
 from numpy import nan
@@ -1387,7 +1387,7 @@ summarize_error('Local Median', total_mae, times_mae)
 
 运行该示例总结了这种朴素策略的表现，显示了大约 0.568 的 MAE，这比上述持久性策略更糟糕。
 
-```
+```py
 Local Median: [0.568 MAE] +1 0.535, +2 0.542, +3 0.550, +4 0.568, +5 0.568, +10 0.562, +17 0.567, +24 0.605, +48 0.590, +72 0.593
 ```
 
@@ -1405,7 +1405,7 @@ MAE by Forecast Lead Time via Local Median
 
 下面的 _forecast_variable（）_ 函数实现了这个策略，首先查找具有预测提前期小时的所有行，然后计算给定目标变量的那些行的中值。
 
-```
+```py
 # forecast all lead times for one variable
 def forecast_variable(train_chunks, chunk_train, chunk_test, lead_times, target_ix):
 	forecast = list()
@@ -1429,7 +1429,7 @@ def forecast_variable(train_chunks, chunk_train, chunk_test, lead_times, target_
 
 下面列出了完整的示例。
 
-```
+```py
 # forecast local median per hour of day
 from numpy import loadtxt
 from numpy import nan
@@ -1571,7 +1571,7 @@ summarize_error('Local Median by Hour', total_mae, times_mae)
 
 如所怀疑的那样，这可能是由于样本量很小，最多五行训练数据对每个预测都有贡献。
 
-```
+```py
 Local Median by Hour: [0.574 MAE] +1 0.561, +2 0.559, +3 0.568, +4 0.577, +5 0.577, +10 0.556, +17 0.551, +24 0.588, +48 0.601, +72 0.608
 ```
 
@@ -1587,7 +1587,7 @@ MAE 按预测提前时间按当地中位数按小时计算
 
 下面的例子列出了每个小时的' _g_ '和' _l_ '用于全局和本地以及' _h_ '用于小时的每种方法变化。该示例创建了一个条形图，以便我们可以根据它们的相对表现来比较朴素的策略。
 
-```
+```py
 # summary of results
 from matplotlib import pyplot
 # results

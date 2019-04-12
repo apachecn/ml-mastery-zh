@@ -82,7 +82,7 @@
 
 检查数据文件，我们可以看到不同尺度的观察结果。
 
-```
+```py
 1/1/1998,0.8,1.8,2.4,2.1,2,2.1,1.5,1.7,1.9,2.3,3.7,5.5,5.1,5.4,5.4,4.7,4.3,3.5,3.5,2.9,3.2,3.2,2.8,2.6,5.5,3.1,5.2,6.1,6.1,6.1,6.1,5.6,5.2,5.4,7.2,10.6,14.5,17.2,18.3,18.9,19.1,18.9,18.3,17.3,16.8,16.1,15.4,14.9,14.8,15,19.1,12.5,6.7,0.11,3.83,0.14,1612,-2.3,0.3,7.18,0.12,3178.5,-15.5,0.15,10.67,-1.56,5795,-12.1,17.9,10330,-55,0,0.
 1/2/1998,2.8,3.2,3.3,2.7,3.3,3.2,2.9,2.8,3.1,3.4,4.2,4.5,4.5,4.3,5.5,5.1,3.8,3,2.6,3,2.2,2.3,2.5,2.8,5.5,3.4,15.1,15.3,15.6,15.6,15.9,16.2,16.2,16.2,16.6,17.8,19.4,20.6,21.2,21.8,22.4,22.1,20.8,19.1,18.1,17.2,16.5,16.1,16,16.2,22.4,17.8,9,0.25,-0.41,9.53,1594.5,-2.2,0.96,8.24,7.3,3172,-14.5,0.48,8.39,3.84,5805,14.05,29,10275,-55,0,0.
 1/3/1998,2.9,2.8,2.6,2.1,2.2,2.5,2.5,2.7,2.2,2.5,3.1,4,4.4,4.6,5.6,5.4,5.2,4.4,3.5,2.7,2.9,3.9,4.1,4.6,5.6,3.5,16.6,16.7,16.7,16.8,16.8,16.8,16.9,16.9,17.1,17.6,19.1,21.3,21.8,22,22.1,22.2,21.3,19.8,18.6,18,18,18.2,18.3,18.4,22.2,18.7,9,0.56,0.89,10.17,1568.5,0.9,0.54,3.8,4.42,3160,-15.9,0.6,6.94,9.8,5790,17.9,41.3,10235,-40,0,0.
@@ -91,7 +91,7 @@
 
 浏览文件，例如到 2003 年初，我们可以看到缺少的观察值标有“？”值。
 
-```
+```py
 ...
 12/29/2002,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,11.7,0.09,5.59,3.79,1578,5.7,0.04,1.8,4.8,3181.5,-13,0.02,0.38,2.78,5835,-31.1,18.9,10250,-25,0.03,0.
 12/30/2002,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,10.3,0.43,3.88,9.21,1525.5,1.8,0.87,9.17,9.96,3123,-11.3,0.03,11.23,10.79,5780,17,30.2,10175,-75,1.68,0.
@@ -102,7 +102,7 @@
 
 首先，我们可以使用 [read_csv（）函数](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html)将数据作为 Pandas DataFrame 加载。没有数据头，我们可以解析第一列中的日期并将它们用作索引;下面列出了完整的示例。
 
-```
+```py
 # load and summarize
 from pandas import read_csv
 from matplotlib import pyplot
@@ -120,7 +120,7 @@ for i in range(len(counts)):
 
 我们还可以看到阶级不平衡的性质，其中 93％以上的日子是非臭氧日，约 6％是臭氧日。
 
-```
+```py
 (2534, 73)
 Class=0, total=2374, percentage=93.686
 Class=1, total=160, percentage=6.314
@@ -128,7 +128,7 @@ Class=1, total=160, percentage=6.314
 
 我们还可以在七年内创建输出变量的线图，以了解臭氧天数是否发生在一年中的任何特定时间。
 
-```
+```py
 # load and plot output variable
 from pandas import read_csv
 from matplotlib import pyplot
@@ -162,7 +162,7 @@ pyplot.show()
 
 您可以探索替换缺失值的替代方法，例如输入平均值。此外，2004 年是一个闰年，因此将数据分成火车和测试集并不是一个干净的 5 - 2 年分裂，但是对于本教程来说足够接近。
 
-```
+```py
 # load and prepare
 from pandas import read_csv
 from matplotlib import pyplot
@@ -193,7 +193,7 @@ savetxt('test.csv', test, delimiter=',')
 
 运行该示例将列车和测试集保存为 CSV 文件，并汇总两个数据集的形状。
 
-```
+```py
 (1803, 73) (730, 73)
 ```
 
@@ -205,7 +205,7 @@ savetxt('test.csv', test, delimiter=',')
 
 我们可以从训练数据集中估计臭氧日的概率，如下所示。
 
-```
+```py
 # load datasets
 train = loadtxt('train.csv', delimiter=',')
 test = loadtxt('test.csv', delimiter=',')
@@ -215,7 +215,7 @@ naive = sum(train[:,-1]) / train.shape[0]
 
 然后，我们可以预测测试数据集中每天臭氧日的初始概率。
 
-```
+```py
 # forecast the test dataset
 yhat = [naive for _ in range(len(test))]
 ```
@@ -228,7 +228,7 @@ yhat = [naive for _ in range(len(test))]
 
 我们可以使用 scikit-learn 库中的 [brier_score_loss（）函数](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.brier_score_loss.html)来评估预测的 Brier 分数。
 
-```
+```py
 # evaluate forecast
 testy = test[:, -1]
 bs = brier_score_loss(testy, yhat)
@@ -241,7 +241,7 @@ print('Brier Score: %.6f' % bs)
 
 我们预计朴素预报的计算 BSS 将为 0.0。展望未来，我们有兴趣最大化此分数，例如较大的 BSS 分数更好。
 
-```
+```py
 # calculate brier skill score
 bs_ref = bs
 bss = (bs - bs_ref) / (0 - bs_ref)
@@ -250,7 +250,7 @@ print('Brier Skill Score: %.6f' % bss)
 
 下面列出了幼稚预测的完整示例。
 
-```
+```py
 # naive prediction method
 from sklearn.metrics import brier_score_loss
 from numpy import loadtxt
@@ -276,7 +276,7 @@ print('Brier Skill Score: %.6f' % bss)
 
 使用基本费率作为预测会导致 Brier 技能为 0.039，预期 Brier 技能得分为 0.0（忽略该符号）。
 
-```
+```py
 0.07265668330560178
 Brier Score: 0.039232
 Brier Skill Score: -0.000000
@@ -315,7 +315,7 @@ Brier Skill Score: -0.000000
 
 首先，我们必须将训练和测试数据集分成输入（X）和输出（y）组件，以便我们可以拟合 sklearn 模型。
 
-```
+```py
 # load datasets
 train = loadtxt('train.csv', delimiter=',')
 test = loadtxt('test.csv', delimiter=',')
@@ -325,7 +325,7 @@ trainX, trainy, testX, testy = train[:,:-1],train[:,-1],test[:,:-1],test[:,-1]
 
 我们还需要 Brier 分数进行朴素的预测，以便我们能够正确计算新模型的 Brier 技能分数。
 
-```
+```py
 # estimate naive probabilistic forecast
 naive = sum(train[:,-1]) / train.shape[0]
 # forecast the test dataset
@@ -338,7 +338,7 @@ bs_ref = brier_score_loss(testy, yhat)
 
 下面定义名为 _evaluate_once（）_ 的函数，该函数适合并评估给定的已定义和配置的 scikit-learn 模型并返回 Brier 技能分数（BSS）。
 
-```
+```py
 # evaluate a sklearn model
 def evaluate_once(bs_ref, template, trainX, trainy, testX, testy):
 	# fit model
@@ -361,7 +361,7 @@ def evaluate_once(bs_ref, template, trainX, trainy, testX, testy):
 
 下面的函数将评估给定模型 10 次，打印平均 BSS 分数，并返回分数的总体用于分析。
 
-```
+```py
 # evaluate an sklearn model n times
 def evaluate(bs_ref, model, trainX, trainy, testX, testy, n=10):
 	scores = [evaluate_once(bs_ref, model, trainX, trainy, testX, testy) for _ in range(n)]
@@ -373,7 +373,7 @@ def evaluate(bs_ref, model, trainX, trainy, testX, testy, n=10):
 
 下面列出了完整的示例。
 
-```
+```py
 # evaluate ensemble tree methods
 from numpy import loadtxt
 from numpy import mean
@@ -451,7 +451,7 @@ pyplot.show()
 
 从平均 BSS 分数来看，它表明额外的树木，随机梯度增强和随机森林模型是最熟练的。
 
-```
+```py
 ><class 'sklearn.ensemble.bagging.BaggingClassifier'>, bss=0.069762
 ><class 'sklearn.ensemble.forest.ExtraTreesClassifier'>, bss=0.103291
 ><class 'sklearn.ensemble.gradient_boosting.GradientBoostingClassifier'>, bss=0.119803
@@ -488,7 +488,7 @@ pyplot.show()
 
 下面列出了完整的示例。
 
-```
+```py
 # tune the gbm configuration
 from numpy import loadtxt
 from numpy import mean
@@ -565,7 +565,7 @@ pyplot.show()
 
 结果还表明，包含每个变化的“所有”配置导致最佳平均 BSS。
 
-```
+```py
 ><class 'sklearn.ensemble.gradient_boosting.GradientBoostingClassifier'>, bss=0.119972
 ><class 'sklearn.ensemble.gradient_boosting.GradientBoostingClassifier'>, bss=0.145596
 ><class 'sklearn.ensemble.gradient_boosting.GradientBoostingClassifier'>, bss=0.095871

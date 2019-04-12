@@ -65,7 +65,7 @@
 
 下面的示例加载并创建已加载数据集的图。
 
-```
+```py
 # load and plot dataset
 from pandas import read_csv
 from pandas import datetime
@@ -83,7 +83,7 @@ pyplot.show()
 
 运行该示例将数据集作为 Pandas Series 加载并打印前 5 行。
 
-```
+```py
 Month
 1901-01-01 266.0
 1901-02-01 145.9
@@ -107,7 +107,7 @@ Name: Sales, dtype: float64
 
 例如：
 
-```
+```py
 # split data into train and test
 X = series.values
 train, test = X[0:-12], X[-12:]
@@ -121,7 +121,7 @@ train, test = X[0:-12], X[-12:]
 
 例如：
 
-```
+```py
 # walk-forward validation
 history = [x for x in train]
 predictions = list()
@@ -135,7 +135,7 @@ for i in range(len(test)):
 
 例如：
 
-```
+```py
 from sklearn.metrics import mean_squared_error
 rmse = sqrt(mean_squared_error(test, predictions))
 print('RMSE: %.3f' % rmse)
@@ -151,7 +151,7 @@ print('RMSE: %.3f' % rmse)
 
 例如：
 
-```
+```py
 # make prediction
 yhat = history[-1]
 ```
@@ -160,7 +160,7 @@ yhat = history[-1]
 
 下面列出了 Shampoo Sales 数据集上的持久性预测模型的完整示例。
 
-```
+```py
 from pandas import read_csv
 from pandas import datetime
 from sklearn.metrics import mean_squared_error
@@ -192,7 +192,7 @@ pyplot.show()
 
 运行该示例将打印出大约 136 个月洗发水销售额的 RMSE，用于测试数据集的预测。
 
-```
+```py
 RMSE: 136.761
 ```
 
@@ -230,7 +230,7 @@ Keras 中的 LSTM 模型假设您的数据分为输入（X）和输出（y）组
 
 下面的代码定义了一个名为 _timeseries_to_supervised（）_ 的辅助函数。它需要一个原始时间序列数据的 NumPy 数组和一个滞后或移位序列的数量来创建和用作输入。
 
-```
+```py
 # frame a sequence as a supervised learning problem
 def timeseries_to_supervised(data, lag=1):
 	df = DataFrame(data)
@@ -243,7 +243,7 @@ def timeseries_to_supervised(data, lag=1):
 
 我们可以使用我们加载的 Shampoo Sales 数据集测试此功能，并将其转换为监督学习问题。
 
-```
+```py
 from pandas import read_csv
 from pandas import datetime
 from pandas import DataFrame
@@ -270,7 +270,7 @@ print(supervised.head())
 
 运行该示例将打印新监督学习问题的前 5 行。
 
-```
+```py
             0           0
 0    0.000000  266.000000
 1  266.000000  145.899994
@@ -299,7 +299,7 @@ Shampoo Sales 数据集不是固定的。
 
 下面是一个名为 _difference（）_ 的函数，用于计算差分序列。请注意，系列中的第一个观察值被跳过，因为没有先前的观察值来计算差值。
 
-```
+```py
 # create a differenced series
 def difference(dataset, interval=1):
 	diff = list()
@@ -313,7 +313,7 @@ def difference(dataset, interval=1):
 
 以下函数称为 _inverse_difference（）_，反转此操作。
 
-```
+```py
 # invert differenced value
 def inverse_difference(history, yhat, interval=1):
 	return yhat + history[-interval]
@@ -321,7 +321,7 @@ def inverse_difference(history, yhat, interval=1):
 
 我们可以通过对整个系列进行差分来测试这些函数，然后将其返回到原始比例，如下所示：
 
-```
+```py
 from pandas import read_csv
 from pandas import datetime
 from pandas import Series
@@ -359,7 +359,7 @@ print(inverted.head())
 
 请注意，原始数据集中的第一个观察值已从反向差异数据中删除。除此之外，最后一组数据与第一组数据匹配。
 
-```
+```py
 Month
 1901-01-01    266.0
 1901-02-01    145.9
@@ -400,7 +400,7 @@ LSTM 的默认激活函数是双曲正切（ _tanh_ ），它输出介于-1 和 
 
 例如：
 
-```
+```py
 # transform scale
 X = series.values
 X = X.reshape(len(X), 1)
@@ -411,14 +411,14 @@ scaled_X = scaler.transform(X)
 
 同样，我们必须反转预测的比例，以将值返回到原始比例，以便可以解释结果并计算可比较的误差分数。
 
-```
+```py
 # invert transform
 inverted_X = scaler.inverse_transform(scaled_X)
 ```
 
 将所有这些放在一起，下面的例子改变了 Shampoo Sales 数据的规模。
 
-```
+```py
 from pandas import read_csv
 from pandas import datetime
 from pandas import Series
@@ -444,7 +444,7 @@ print(inverted_series.head())
 
 运行该示例首先打印加载数据的前 5 行，然后打印缩放数据的前 5 行，然后是缩放比例变换的前 5 行，与原始数据匹配。
 
-```
+```py
 Month
 1901-01-01    266.0
 1901-02-01    145.9
@@ -490,7 +490,7 @@ LSTM 层期望输入位于具有以下尺寸的矩阵中：[_ 样本，时间步
 
 鉴于训练数据集定义为 X 输入和 y 输出，必须将其重新整形为 Samples / TimeSteps / Features 格式，例如：
 
-```
+```py
 X, y = train[:, 0:-1], train[:, -1]
 X = X.reshape(X.shape[0], 1, X.shape[1])
 ```
@@ -503,7 +503,7 @@ X = X.reshape(X.shape[0], 1, X.shape[1])
 
 下面的行创建了一个 LSTM 隐藏层，它还通过“ _batch_input_shape_ ”参数指定输入层的期望值。
 
-```
+```py
 layer = LSTM(neurons, batch_input_shape=(batch_size, X.shape[1], X.shape[2]), stateful=True)
 ```
 
@@ -515,7 +515,7 @@ layer = LSTM(neurons, batch_input_shape=(batch_size, X.shape[1], X.shape[2]), st
 
 使用 Sequential Keras API 定义网络，下面的代码片段创建并编译网络。
 
-```
+```py
 model = Sequential()
 model.add(LSTM(neurons, batch_input_shape=(batch_size, X.shape[1], X.shape[2]), stateful=True))
 model.add(Dense(1))
@@ -532,7 +532,7 @@ model.compile(loss='mean_squared_error', optimizer='adam')
 
 下面是一个手动使网络适合训练数据的循环。
 
-```
+```py
 for i in range(nb_epoch):
 	model.fit(X, y, epochs=1, batch_size=batch_size, verbose=0, shuffle=False)
 	model.reset_states()
@@ -540,7 +540,7 @@ for i in range(nb_epoch):
 
 综上所述，我们可以定义一个名为 _fit_lstm（）_ 的函数来训练并返回一个 LSTM 模型。作为参数，它将训练数据集置于监督学习格式，批量大小，多个时期和许多神经元中。
 
-```
+```py
 def fit_lstm(train, batch_size, nb_epoch, neurons):
 	X, y = train[:, 0:-1], train[:, -1]
 	X = X.reshape(X.shape[0], 1, X.shape[1])
@@ -584,7 +584,7 @@ _predict（）_ 函数返回一个预测数组，每个输入行一个。因为�
 
 我们可以在下面列出的名为 _forecast（）_ 的函数中捕获此行为。给定拟合模型，在拟合模型时使用的批量大小（例如 1）和测试数据中的行，该函数将从测试行中分离输入数据，重新整形，并将预测作为单个返回浮点值。
 
-```
+```py
 def forecast(model, batch_size, row):
 	X = row[0:-1]
 	X = X.reshape(1, 1, len(X))
@@ -626,7 +626,7 @@ def forecast(model, batch_size, row):
 
 下面列出了完整的示例。
 
-```
+```py
 from pandas import DataFrame
 from pandas import Series
 from pandas import concat
@@ -759,7 +759,7 @@ pyplot.show()
 
 随机数用于播种 LSTM，因此，您可能会从模型的单次运行中获得不同的结果。我们将在下一节进一步讨论这个问题。
 
-```
+```py
 Month=1, Predicted=351.582196, Expected=339.700000
 Month=2, Predicted=432.169667, Expected=440.400000
 Month=3, Predicted=378.064505, Expected=315.900000
@@ -785,13 +785,13 @@ LSTM 预测和预期值的线图
 
 在前进验证中注释掉适合 LSTM 模型的行：
 
-```
+```py
 yhat = forecast_lstm(lstm_model, 1, X)
 ```
 
 并将其替换为以下内容：
 
-```
+```py
 yhat = y
 ```
 
@@ -799,7 +799,7 @@ yhat = y
 
 结果应如下所示，表明如果 LSTM 模型能够完美地预测该系列，则逆变换和误差计算将正确显示。
 
-```
+```py
 Month=1, Predicted=339.700000, Expected=339.700000
 Month=2, Predicted=440.400000, Expected=440.400000
 Month=3, Predicted=315.900000, Expected=315.900000
@@ -831,7 +831,7 @@ Test RMSE: 0.000
 
 我们可以在固定数量的重复循环中包装模型拟合和前进验证。每次迭代都可以记录运行的 RMSE。然后我们可以总结 RMSE 分数的分布。
 
-```
+```py
 # repeat experiment
 repeats = 30
 error_scores = list()
@@ -865,7 +865,7 @@ for r in range(repeats):
 
 下面列出了完整的示例。
 
-```
+```py
 from pandas import DataFrame
 from pandas import Series
 from pandas import concat
@@ -1004,7 +1004,7 @@ pyplot.show()
 
 这表明，至少需要进一步的模型调整。
 
-```
+```py
 1) Test RMSE: 136.191
 2) Test RMSE: 169.693
 3) Test RMSE: 176.553

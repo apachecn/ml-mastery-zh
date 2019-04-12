@@ -86,7 +86,7 @@ LSTM 的一个关键特征是它们保持内部状态，有助于预测。这提
 
 下面的示例加载并创建已加载数据集的图。
 
-```
+```py
 # load and plot dataset
 from pandas import read_csv
 from pandas import datetime
@@ -104,7 +104,7 @@ pyplot.show()
 
 运行该示例将数据集作为 Pandas Series 加载并打印前 5 行。
 
-```
+```py
 Month
 1901-01-01 266.0
 1901-02-01 145.9
@@ -184,7 +184,7 @@ _ 实验（）_ 功能描述了这些场景的细节。
 
 完整的代码清单如下。
 
-```
+```py
 from pandas import DataFrame
 from pandas import Series
 from pandas import concat
@@ -338,7 +338,7 @@ pyplot.savefig('boxplot.png')
 
 完整输出如下所示。
 
-```
+```py
 1) Test RMSE: 86.566
 2) Test RMSE: 300.874
 3) Test RMSE: 169.237

@@ -47,7 +47,7 @@
 
 例如，最简单的情况是预测从前一个时间步的观察结果，即回显它。例如：
 
-```
+```py
 Time 1: Input 45
 Time 2: Input 23, Output 45
 Time 3: Input 73, Output 23
@@ -68,7 +68,7 @@ Time 3: Input 73, Output 23
 
 此功能如下所列。
 
-```
+```py
 # generate a sequence of random values
 def generate_sequence(n_timesteps):
 	return [random() for _ in range(n_timesteps)]
@@ -84,7 +84,7 @@ def generate_sequence(n_timesteps):
 
 或者更正式地说：
 
-```
+```py
 y(t) = f(X(t), X(t-1))
 ```
 
@@ -98,21 +98,21 @@ y(t) = f(X(t), X(t-1))
 
 [Pandas shift（）函数](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.shift.html)可用于创建序列的移位版本，可用于表示先前时间步的观测值。这可以与原始序列连接以提供 X（t-1）和 X（t）输入值。
 
-```
+```py
 df = DataFrame(sequence)
 df = concat([df.shift(1), df], axis=1)
 ```
 
 然后我们可以将 Pandas DataFrame 中的值作为输入序列（X），并使用第一列作为输出序列（y）。
 
-```
+```py
 # specify input and output data
 X, y = values, values[:, 0]
 ```
 
 综上所述，我们可以定义一个函数，它将时间步数作为参数，并返回名为 generate_data（）的序列学习的 X，y 数据。
 
-```
+```py
 # generate data for the lstm
 def generate_data(n_timesteps):
 	# generate sequence
@@ -133,7 +133,7 @@ def generate_data(n_timesteps):
 
 下面列出了完整的示例。
 
-```
+```py
 from random import random
 from numpy import array
 from pandas import concat
@@ -166,7 +166,7 @@ for i in range(n_timesteps):
 
 运行此示例会生成一个序列，将其转换为监督表示，并打印每个 X，Y 对。
 
-```
+```py
 [ nan 0.18961404] => nan
 [ 0.18961404 0.25956078] => 0.189614044109
 [ 0.25956078 0.30322084] => 0.259560776929
@@ -203,13 +203,13 @@ for i in range(n_timesteps):
 
 也就是说，在上面的例子中，给定输入：
 
-```
+```py
 [        nan  0.18961404]
 ```
 
 和输出：
 
-```
+```py
 nan
 ```
 
@@ -221,7 +221,7 @@ nan
 
 完整示例如下：
 
-```
+```py
 from random import random
 from numpy import array
 from pandas import concat
@@ -256,7 +256,7 @@ for i in range(len(X)):
 
 运行该示例会导致 9 X，y 对而不是 10 对，并删除第一行。
 
-```
+```py
 [ 0.60619475  0.24408238] => 0.606194746194
 [ 0.24408238  0.44873712] => 0.244082383195
 [ 0.44873712  0.92939547] => 0.448737123424
@@ -274,7 +274,7 @@ for i in range(len(X)):
 
 例如，我们可以将 y 的定义从值[：，0]更改为值[：，1]并重新运行演示以生成此问题的示例，如下所示：
 
-```
+```py
 [        nan  0.50513289] => 0.505132894821
 [ 0.50513289  0.22879667] => 0.228796667421
 [ 0.22879667  0.66980995] => 0.669809946421
@@ -289,13 +289,13 @@ for i in range(len(X)):
 
 我们可以看到第一行给出了输入：
 
-```
+```py
 [        nan  0.50513289]
 ```
 
 和输出：
 
-```
+```py
 0.505132894821
 ```
 
@@ -307,7 +307,7 @@ for i in range(len(X)):
 
 完整示例如下：
 
-```
+```py
 from random import random
 from numpy import array
 from pandas import concat
@@ -342,7 +342,7 @@ for i in range(len(X)):
 
 运行该示例，我们可以看到第一行的第一列中的 NaN 值被替换为-1 值。
 
-```
+```py
 [-1\. 0.94641256] => 0.946412559807
 [ 0.94641256 0.11958645] => 0.119586451733
 [ 0.11958645 0.50597771] => 0.505977714614
@@ -371,7 +371,7 @@ for i in range(len(X)):
 
 使用均方误差丢失函数和具有默认配置的高效 ADAM 优化算法，网络将适合。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(LSTM(5, input_shape=(2, 1)))
@@ -381,7 +381,7 @@ model.compile(loss='mean_squared_error', optimizer='adam')
 
 为了确保模型学习问题的广义解，即始终将输入作为输出返回（y（t）== X（t）），我们将在每个时期生成一个新的随机序列。该网络将适合 500 个时期，并且将在每个序列中的每个样本之后执行更新（batch_size = 1）。
 
-```
+```py
 # fit model
 for i in range(500):
 	X, y = generate_data(n_timesteps)
@@ -390,7 +390,7 @@ for i in range(500):
 
 一旦拟合，将生成另一个随机序列，并将来自模型的预测与预期值进行比较。这将提供模型技能的具体概念。
 
-```
+```py
 # evaluate model on new data
 X, y = generate_data(n_timesteps)
 yhat = model.predict(X)
@@ -400,7 +400,7 @@ for i in range(len(X)):
 
 将所有这些结合在一起，下面提供了完整的代码清单。
 
-```
+```py
 from random import random
 from numpy import array
 from pandas import concat
@@ -452,7 +452,7 @@ for i in range(len(X)):
 
 回顾最终预测，我们可以看到网络已经了解了问题并预测了“足够好”的输出，即使存在缺失值。
 
-```
+```py
 ...
 Epoch 1/1
 0s - loss: 1.5992e-04
@@ -490,13 +490,13 @@ Expected 0.716420996314 Predicted 0.719275
 
 由于 Masking 层是网络中的第一个，因此必须指定输入的预期形状，如下所示：
 
-```
+```py
 model.add(Masking(mask_value=-1, input_shape=(2, 1)))
 ```
 
 我们可以将所有这些结合起来并重新运行示例。完整的代码清单如下。
 
-```
+```py
 from random import random
 from numpy import array
 from pandas import concat
@@ -550,7 +550,7 @@ for i in range(len(X)):
 
 同样，预测看起来足够小到几位小数。
 
-```
+```py
 ...
 Epoch 1/1
 0s - loss: 1.0252e-04

@@ -57,13 +57,13 @@ CNN 模型将学习将过去观察序列作为输入映射到输出观察的函�
 
 考虑给定的单变量序列：
 
-```
+```py
 [10, 20, 30, 40, 50, 60, 70, 80, 90]
 ```
 
 我们可以将序列划分为多个称为样本的输入/输出模式，其中三个时间步长用作输入，一个时间步长用作正在学习的一步预测的输出。
 
-```
+```py
 X,				y
 10, 20, 30		40
 20, 30, 40		50
@@ -73,7 +73,7 @@ X,				y
 
 下面的 _split_sequence（）_ 函数实现了这种行为，并将给定的单变量序列分成多个样本，其中每个样本具有指定的时间步长，输出是单个时间步长。
 
-```
+```py
 # split a univariate sequence into samples
 def split_sequence(sequence, n_steps):
 	X, y = list(), list()
@@ -94,7 +94,7 @@ def split_sequence(sequence, n_steps):
 
 下面列出了完整的示例。
 
-```
+```py
 # univariate data preparation
 from numpy import array
 
@@ -126,7 +126,7 @@ for i in range(len(X)):
 
 运行该示例将单变量系列分成六个样本，其中每个样本具有三个输入时间步长和一个输出时间步长。
 
-```
+```py
 [10 20 30] 40
 [20 30 40] 50
 [30 40 50] 60
@@ -145,7 +145,7 @@ for i in range(len(X)):
 
 我们可以如下定义用于单变量时间序列预测的 1D CNN 模型。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(Conv1D(filters=64, kernel_size=2, activation='relu', input_shape=(n_steps, n_features)))
@@ -166,13 +166,13 @@ model.compile(optimizer='adam', loss='mse')
 
 我们几乎总是有多个样本，因此，模型将期望训练数据的输入组件具有尺寸或形状：
 
-```
+```py
 [samples, timesteps, features]
 ```
 
 我们在前一节中的 _split_sequence（）_ 函数输出具有[_ 样本，时间步长 _]形状​​的 X，因此我们可以轻松地对其进行整形，以便为一个特征提供额外的维度。
 
-```
+```py
 # reshape from [samples, timesteps] into [samples, timesteps, features]
 n_features = 1
 X = X.reshape((X.shape[0], X.shape[1], n_features))
@@ -186,7 +186,7 @@ CNN 实际上并不将数据视为具有时间步长，而是将其视为可以�
 
 定义模型后，我们可以将其放在训练数据集上。
 
-```
+```py
 # fit model
 model.fit(X, y, epochs=1000, verbose=0)
 ```
@@ -195,19 +195,19 @@ model.fit(X, y, epochs=1000, verbose=0)
 
 我们可以通过提供输入来预测序列中的下一个值：
 
-```
+```py
 [70, 80, 90]
 ```
 
 并期望模型预测如下：
 
-```
+```py
 [100]
 ```
 
 该模型期望输入形状为[_ 样本，时间步长，特征 _]三维，因此，我们必须在进行预测之前对单个输入样本进行整形。
 
-```
+```py
 # demonstrate prediction
 x_input = array([70, 80, 90])
 x_input = x_input.reshape((1, n_steps, n_features))
@@ -216,7 +216,7 @@ yhat = model.predict(x_input, verbose=0)
 
 我们可以将所有这些结合在一起并演示如何开发单变量时间序列预测的 1D CNN 模型并进行单一预测。
 
-```
+```py
 # univariate cnn example
 from numpy import array
 from keras.models import Sequential
@@ -272,7 +272,7 @@ print(yhat)
 
 我们可以看到模型预测序列中的下一个值。
 
-```
+```py
 [[101.67965]]
 ```
 
@@ -295,7 +295,7 @@ print(yhat)
 
 我们可以通过两个并行输入时间序列的简单示例来演示这一点，其中输出序列是输入序列的简单添加。
 
-```
+```py
 # define input sequence
 in_seq1 = array([10, 20, 30, 40, 50, 60, 70, 80, 90])
 in_seq2 = array([15, 25, 35, 45, 55, 65, 75, 85, 95])
@@ -306,7 +306,7 @@ out_seq = array([in_seq1[i]+in_seq2[i] for i in range(len(in_seq1))])
 
 这是将并行时间序列存储在 CSV 文件中的标准方法。
 
-```
+```py
 # convert to [rows, columns] structure
 in_seq1 = in_seq1.reshape((len(in_seq1), 1))
 in_seq2 = in_seq2.reshape((len(in_seq2), 1))
@@ -317,7 +317,7 @@ dataset = hstack((in_seq1, in_seq2, out_seq))
 
 下面列出了完整的示例。
 
-```
+```py
 # multivariate data preparation
 from numpy import array
 from numpy import hstack
@@ -336,7 +336,7 @@ print(dataset)
 
 运行该示例将打印数据集，每个时间步长为一行，两个输入和一个输出并行时间序列分别为一列。
 
-```
+```py
 [[ 10  15  25]
  [ 20  25  45]
  [ 30  35  65]
@@ -356,7 +356,7 @@ print(dataset)
 
 输入：
 
-```
+```py
 10, 15
 20, 25
 30, 35
@@ -364,7 +364,7 @@ print(dataset)
 
 输出：
 
-```
+```py
 65
 ```
 
@@ -374,7 +374,7 @@ print(dataset)
 
 我们可以定义一个名为 _split_sequences（）_ 的函数，该函数将采用数据集，因为我们已经为时间步长和行定义了并行序列和返回输入/输出样本的列。
 
-```
+```py
 # split a multivariate sequence into samples
 def split_sequences(sequences, n_steps):
 	X, y = list(), list()
@@ -395,7 +395,7 @@ def split_sequences(sequences, n_steps):
 
 下面列出了完整的示例。
 
-```
+```py
 # multivariate data preparation
 from numpy import array
 from numpy import hstack
@@ -445,7 +445,7 @@ for i in range(len(X)):
 
 然后我们可以看到每个样本的输入和输出都被打印出来，显示了两个输入序列中每个样本的三个时间步长以及每个样本的相关输出。
 
-```
+```py
 (7, 3, 2) (7,)
 
 [[10 15]
@@ -473,7 +473,7 @@ for i in range(len(X)):
 
 我们现在准备在这个数据上安装一维 CNN 模型，指定每个输入样本的预期时间步长和特征数，在这种情况下分别为 3 和 2。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(Conv1D(filters=64, kernel_size=2, activation='relu', input_shape=(n_steps, n_features)))
@@ -488,7 +488,7 @@ model.compile(optimizer='adam', loss='mse')
 
 我们可以预测输出系列中的下一个值，提供以下输入值：
 
-```
+```py
 80,	 85
 90,	 95
 100, 105
@@ -498,7 +498,7 @@ model.compile(optimizer='adam', loss='mse')
 
 我们希望序列中的下一个值为 100 + 105 或 205。
 
-```
+```py
 # demonstrate prediction
 x_input = array([[80, 85], [90, 95], [100, 105]])
 x_input = x_input.reshape((1, n_steps, n_features))
@@ -507,7 +507,7 @@ yhat = model.predict(x_input, verbose=0)
 
 下面列出了完整的示例。
 
-```
+```py
 # multivariate cnn example
 from numpy import array
 from numpy import hstack
@@ -567,7 +567,7 @@ print(yhat)
 
 运行该示例准备数据，拟合模型并进行预测。
 
-```
+```py
 [[206.0161]]
 ```
 
@@ -581,7 +581,7 @@ print(yhat)
 
 首先，我们可以将第一个输入模型定义为 1D CNN，其输入层需要具有 _n_steps_ 和 1 个特征的向量。
 
-```
+```py
 # first input model
 visible1 = Input(shape=(n_steps, n_features))
 cnn1 = Conv1D(filters=64, kernel_size=2, activation='relu')(visible1)
@@ -591,7 +591,7 @@ cnn1 = Flatten()(cnn1)
 
 我们可以以相同的方式定义第二个输入子模型。
 
-```
+```py
 # second input model
 visible2 = Input(shape=(n_steps, n_features))
 cnn2 = Conv1D(filters=64, kernel_size=2, activation='relu')(visible2)
@@ -601,7 +601,7 @@ cnn2 = Flatten()(cnn2)
 
 现在已经定义了两个输入子模型，我们可以将每个模型的输出合并为一个长向量，可以在对输出序列进行预测之前对其进行解释。
 
-```
+```py
 # merge input models
 merge = concatenate([cnn1, cnn2])
 dense = Dense(50, activation='relu')(merge)
@@ -610,7 +610,7 @@ output = Dense(1)(dense)
 
 然后我们可以将输入和输出联系在一起。
 
-```
+```py
 model = Model(inputs=[visible1, visible2], outputs=output)
 ```
 
@@ -624,7 +624,7 @@ model = Model(inputs=[visible1, visible2], outputs=output)
 
 为了实现这一点，我们可以将 3D 输入数据分成两个独立的输入数据阵列;这是从一个形状为[7,3,2]的数组到两个 3D 数组[7,3,1]
 
-```
+```py
 # one time series per head
 n_features = 1
 # separate input data
@@ -634,14 +634,14 @@ X2 = X[:, :, 1].reshape(X.shape[0], X.shape[1], n_features)
 
 然后可以提供这些数据以适合模型。
 
-```
+```py
 # fit model
 model.fit([X1, X2], y, epochs=1000, verbose=0)
 ```
 
 类似地，我们必须在进行单个一步预测时将单个样本的数据准备为两个单独的二维数组。
 
-```
+```py
 x_input = array([[80, 85], [90, 95], [100, 105]])
 x1 = x_input[:, 0].reshape((1, n_steps, n_features))
 x2 = x_input[:, 1].reshape((1, n_steps, n_features))
@@ -649,7 +649,7 @@ x2 = x_input[:, 1].reshape((1, n_steps, n_features))
 
 我们可以将所有这些结合在一起;下面列出了完整的示例。
 
-```
+```py
 # multivariate multi-headed 1d cnn example
 from numpy import array
 from numpy import hstack
@@ -723,7 +723,7 @@ print(yhat)
 
 运行该示例准备数据，拟合模型并进行预测。
 
-```
+```py
 [[205.871]]
 ```
 
@@ -733,7 +733,7 @@ print(yhat)
 
 例如，给定上一节的数据：
 
-```
+```py
 [[ 10  15  25]
  [ 20  25  45]
  [ 30  35  65]
@@ -755,7 +755,7 @@ print(yhat)
 
 输入：
 
-```
+```py
 10, 15, 25
 20, 25, 45
 30, 35, 65
@@ -763,13 +763,13 @@ print(yhat)
 
 输出：
 
-```
+```py
 40, 45, 85
 ```
 
 下面的 _split_sequences（）_ 函数将分割多个并行时间序列，其中时间步长为行，每列一个系列为所需的输入/输出形状。
 
-```
+```py
 # split a multivariate sequence into samples
 def split_sequences(sequences, n_steps):
 	X, y = list(), list()
@@ -788,7 +788,7 @@ def split_sequences(sequences, n_steps):
 
 我们可以在人为的问题上证明这一点;下面列出了完整的示例。
 
-```
+```py
 # multivariate output data prep
 from numpy import array
 from numpy import hstack
@@ -838,7 +838,7 @@ y 的形状是二维的，正如我们可能期望的样本数量（6）和每�
 
 然后，打印每个样本，显示每个样本的输入和输出分量。
 
-```
+```py
 (6, 3, 3) (6, 3)
 
 [[10 15 25]
@@ -867,7 +867,7 @@ y 的形状是二维的，正如我们可能期望的样本数量（6）和每�
 
 并行序列的数量也用于指定输出层中模型预测的值的数量;再次，这是三个。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(Conv1D(filters=64, kernel_size=2, activation='relu', input_shape=(n_steps, n_features)))
@@ -880,7 +880,7 @@ model.compile(optimizer='adam', loss='mse')
 
 我们可以通过为每个系列提供三个时间步长的输入来预测三个并行系列中的每一个的下一个值。
 
-```
+```py
 70, 75, 145
 80, 85, 165
 90, 95, 185
@@ -888,7 +888,7 @@ model.compile(optimizer='adam', loss='mse')
 
 用于进行单个预测的输入的形状必须是 1 个样本，3 个时间步长和 3 个特征，或者[1,3,3]。
 
-```
+```py
 # demonstrate prediction
 x_input = array([[70,75,145], [80,85,165], [90,95,185]])
 x_input = x_input.reshape((1, n_steps, n_features))
@@ -897,13 +897,13 @@ yhat = model.predict(x_input, verbose=0)
 
 我们希望向量输出为：
 
-```
+```py
 [100, 105, 205]
 ```
 
 我们可以将所有这些结合在一起并演示下面的多变量输出时间序列预测的 1D CNN。
 
-```
+```py
 # multivariate output 1d cnn example
 from numpy import array
 from numpy import hstack
@@ -963,7 +963,7 @@ print(yhat)
 
 运行该示例准备数据，拟合模型并进行预测。
 
-```
+```py
 [[100.11272 105.32213 205.53436]]
 ```
 
@@ -977,7 +977,7 @@ print(yhat)
 
 首先，我们可以将第一个输入模型定义为 1D CNN 模型。
 
-```
+```py
 # define model
 visible = Input(shape=(n_steps, n_features))
 cnn = Conv1D(filters=64, kernel_size=2, activation='relu')(visible)
@@ -988,7 +988,7 @@ cnn = Dense(50, activation='relu')(cnn)
 
 然后，我们可以为我们希望预测的三个系列中的每一个定义一个输出层，其中每个输出子模型将预测单个时间步长。
 
-```
+```py
 # define output 1
 output1 = Dense(1)(cnn)
 # define output 2
@@ -999,7 +999,7 @@ output3 = Dense(1)(cnn)
 
 然后，我们可以将输入和输出层组合到一个模型中。
 
-```
+```py
 # tie together
 model = Model(inputs=visible, outputs=[output1, output2, output3])
 model.compile(optimizer='adam', loss='mse')
@@ -1013,7 +1013,7 @@ model.compile(optimizer='adam', loss='mse')
 
 在训练模型时，每个样本需要三个独立的输出阵列。我们可以通过将具有形状[7,3]的输出训练数据转换为具有形状[7,1]的三个阵列来实现这一点。
 
-```
+```py
 # separate output
 y1 = y[:, 0].reshape((y.shape[0], 1))
 y2 = y[:, 1].reshape((y.shape[0], 1))
@@ -1022,14 +1022,14 @@ y3 = y[:, 2].reshape((y.shape[0], 1))
 
 可以在训练期间将这些阵列提供给模型。
 
-```
+```py
 # fit model
 model.fit(X, [y1,y2,y3], epochs=2000, verbose=0)
 ```
 
 将所有这些结合在一起，下面列出了完整的示例。
 
-```
+```py
 # multivariate output 1d cnn example
 from numpy import array
 from numpy import hstack
@@ -1101,7 +1101,7 @@ print(yhat)
 
 运行该示例准备数据，拟合模型并进行预测。
 
-```
+```py
 [array([[100.96118]], dtype=float32),
  array([[105.502686]], dtype=float32),
  array([[205.98045]], dtype=float32)]
@@ -1123,7 +1123,7 @@ print(yhat)
 
 例如，给定单变量时间序列：
 
-```
+```py
 [10, 20, 30, 40, 50, 60, 70, 80, 90]
 ```
 
@@ -1133,19 +1133,19 @@ print(yhat)
 
 输入：
 
-```
+```py
 [10, 20, 30]
 ```
 
 输出：
 
-```
+```py
 [40, 50]
 ```
 
 下面的 _split_sequence（）_ 函数实现了这种行为，并将给定的单变量时间序列分割为具有指定数量的输入和输出时间步长的样本。
 
-```
+```py
 # split a univariate sequence into samples
 def split_sequence(sequence, n_steps_in, n_steps_out):
 	X, y = list(), list()
@@ -1167,7 +1167,7 @@ def split_sequence(sequence, n_steps_in, n_steps_out):
 
 下面列出了完整的示例。
 
-```
+```py
 # multi-step data preparation
 from numpy import array
 
@@ -1200,7 +1200,7 @@ for i in range(len(X)):
 
 运行该示例将单变量系列拆分为输入和输出时间步骤，并打印每个系列的输入和输出组件。
 
-```
+```py
 [10 20 30] [40 50]
 [20 30 40] [50 60]
 [30 40 50] [60 70]
@@ -1218,7 +1218,7 @@ for i in range(len(X)):
 
 与前一节中单变量数据的 1D CNN 模型一样，必须首先对准备好的样本进行重新整形。 CNN 希望数据具有[_ 样本，时间步长，特征 _]的三维结构，在这种情况下，我们只有一个特征，因此重塑是直截了当的。
 
-```
+```py
 # reshape from [samples, timesteps] into [samples, timesteps, features]
 n_features = 1
 X = X.reshape((X.shape[0], X.shape[1], n_features))
@@ -1226,7 +1226,7 @@ X = X.reshape((X.shape[0], X.shape[1], n_features))
 
 通过 _n_steps_in_ 和 _n_steps_out_ 变量中指定的输入和输出步数，我们可以定义一个多步骤时间序列预测模型。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(Conv1D(filters=64, kernel_size=2, activation='relu', input_shape=(n_steps_in, n_features)))
@@ -1239,19 +1239,19 @@ model.compile(optimizer='adam', loss='mse')
 
 该模型可以对单个样本进行预测。我们可以通过提供输入来预测数据集末尾之后的下两个步骤：
 
-```
+```py
 [70, 80, 90]
 ```
 
 我们希望预测的输出为：
 
-```
+```py
 [100, 110]
 ```
 
 正如模型所预期的那样，进行预测时输入数据的单个样本的形状对于 1 个样本，输入的 3 个时间步长和单个特征必须是[1,3,1]。
 
-```
+```py
 # demonstrate prediction
 x_input = array([70, 80, 90])
 x_input = x_input.reshape((1, n_steps_in, n_features))
@@ -1260,7 +1260,7 @@ yhat = model.predict(x_input, verbose=0)
 
 将所有这些结合在一起，下面列出了具有单变量时间序列的 1D CNN 用于多步预测。
 
-```
+```py
 # univariate multi-step vector-output 1d cnn example
 from numpy import array
 from keras.models import Sequential
@@ -1313,7 +1313,7 @@ print(yhat)
 
 运行示例预测并打印序列中的后两个时间步骤。
 
-```
+```py
 [[102.86651 115.08979]]
 ```
 
@@ -1336,7 +1336,7 @@ print(yhat)
 
 例如，考虑前一部分的多变量时间序列：
 
-```
+```py
 [[ 10  15  25]
  [ 20  25  45]
  [ 30  35  65]
@@ -1352,7 +1352,7 @@ print(yhat)
 
 输入：
 
-```
+```py
 10, 15
 20, 25
 30, 35
@@ -1360,14 +1360,14 @@ print(yhat)
 
 输出：
 
-```
+```py
 65
 85
 ```
 
 下面的 _split_sequences（）_ 函数实现了这种行为。
 
-```
+```py
 # split a multivariate sequence into samples
 def split_sequences(sequences, n_steps_in, n_steps_out):
 	X, y = list(), list()
@@ -1387,7 +1387,7 @@ def split_sequences(sequences, n_steps_in, n_steps_out):
 
 我们可以在我们设计的数据集上证明这一点。下面列出了完整的示例。
 
-```
+```py
 # multivariate multi-step data preparation
 from numpy import array
 from numpy import hstack
@@ -1436,7 +1436,7 @@ for i in range(len(X)):
 
 然后打印制备的样品以确认数据是按照我们指定的方式制备的。
 
-```
+```py
 (6, 3, 2) (6, 2)
 
 [[10 15]
@@ -1463,7 +1463,7 @@ for i in range(len(X)):
 
 在这种情况下，我们将演示向量输出模型。下面列出了完整的示例。
 
-```
+```py
 # multivariate multi-step 1d cnn example
 from numpy import array
 from numpy import hstack
@@ -1528,7 +1528,7 @@ print(yhat)
 
 这是一个具有挑战性的问题框架，数据非常少，模型的任意配置版本也很接近。
 
-```
+```py
 [[185.57011 207.77893]]
 ```
 
@@ -1538,7 +1538,7 @@ print(yhat)
 
 例如，考虑前一部分的多变量时间序列：
 
-```
+```py
 [[ 10  15  25]
  [ 20  25  45]
  [ 30  35  65]
@@ -1556,7 +1556,7 @@ print(yhat)
 
 输入：
 
-```
+```py
 10, 15, 25
 20, 25, 45
 30, 35, 65
@@ -1564,14 +1564,14 @@ print(yhat)
 
 输出：
 
-```
+```py
 40, 45, 85
 50, 55, 105
 ```
 
 下面的 _split_sequences（）_ 函数实现了这种行为。
 
-```
+```py
 # split a multivariate sequence into samples
 def split_sequences(sequences, n_steps_in, n_steps_out):
 	X, y = list(), list()
@@ -1593,7 +1593,7 @@ def split_sequences(sequences, n_steps_in, n_steps_out):
 
 下面列出了完整的示例。
 
-```
+```py
 # multivariate multi-step data preparation
 from numpy import array
 from numpy import hstack
@@ -1645,7 +1645,7 @@ for i in range(len(X)):
 
 然后将每个系列的输入和输出元素并排打印，以便我们可以确认数据是按照我们的预期准备的。
 
-```
+```py
 (5, 3, 3) (5, 2, 3)
 
 [[10 15 25]
@@ -1674,7 +1674,7 @@ for i in range(len(X)):
 
 在这种情况下，我们将使用向量输出模型。因此，我们必须展平每个样本的输出部分的三维结构，以便训练模型。这意味着，不是为每个系列预测两个步骤，而是对模型进行训练并预期直接预测六个数字的向量。
 
-```
+```py
 # flatten output
 n_output = y.shape[1] * y.shape[2]
 y = y.reshape((y.shape[0], n_output))
@@ -1682,7 +1682,7 @@ y = y.reshape((y.shape[0], n_output))
 
 下面列出了完整的示例。
 
-```
+```py
 # multivariate output multi-step 1d cnn example
 from numpy import array
 from numpy import hstack
@@ -1748,14 +1748,14 @@ print(yhat)
 
 我们希望这些系列和时间步骤的值如下：
 
-```
+```py
 90, 95, 185
 100, 105, 205
 ```
 
 我们可以看到模型预测合理地接近预期值。
 
-```
+```py
 [[ 90.47855 95.621284 186.02629 100.48118 105.80815 206.52821 ]]
 ```
 

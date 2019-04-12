@@ -27,7 +27,7 @@
 
 下面是该文件前几行的示例。
 
-```
+```py
 "Month","International airline passengers: monthly totals in thousands. Jan 49 ? Dec 60"
 "1949-01",112
 "1949-02",118
@@ -40,7 +40,7 @@
 
 下载的数据集还有页脚信息，我们可以将 **skipfooter** 参数排除到 **pandas.read_csv（）**为 3 页脚行设置为 3。加载后，我们可以轻松绘制整个数据集。下面列出了加载和绘制数据集的代码。
 
-```
+```py
 import pandas
 import matplotlib.pyplot as plt
 dataset = pandas.read_csv('international-airline-passengers.csv', usecols=[1], engine='python', skipfooter=3)
@@ -70,7 +70,7 @@ plt.show()
 
 在我们开始之前，让我们首先导入我们打算使用的所有函数和类。这假设一个工作的 SciPy 环境安装了 Keras 深度学习库。
 
-```
+```py
 import numpy
 import matplotlib.pyplot as plt
 import pandas
@@ -80,14 +80,14 @@ from keras.layers import Dense
 
 在我们做任何事情之前，最好修复随机数种子以确保我们的结果可重复。
 
-```
+```py
 # fix random seed for reproducibility
 numpy.random.seed(7)
 ```
 
 我们还可以使用上一节中的代码将数据集作为 Pandas 数据帧加载。然后，我们可以从数据帧中提取 NumPy 数组，并将整数值转换为更适合使用神经网络建模的浮点值。
 
-```
+```py
 # load the dataset
 dataframe = pandas.read_csv('international-airline-passengers.csv', usecols=[1], engine='python', skipfooter=3)
 dataset = dataframe.values
@@ -98,7 +98,7 @@ dataset = dataset.astype('float32')
 
 对于时间序列数据，值的序列很重要。我们可以使用的一种简单方法是将有序数据集拆分为训练和测试数据集。下面的代码计算分裂点的索引，并将数据分成训练数据集，其中 67％的观测值可用于训练我们的模型，剩余的 33％用于测试模型。
 
-```
+```py
 # split into train and test sets
 train_size = int(len(dataset) * 0.67)
 test_size = len(dataset) - train_size
@@ -112,7 +112,7 @@ print(len(train), len(test))
 
 它可以配置，我们将在下一节中介绍构建不同形状的数据集。
 
-```
+```py
 # convert an array of values into a dataset matrix
 def create_dataset(dataset, look_back=1):
 	dataX, dataY = [], []
@@ -125,7 +125,7 @@ def create_dataset(dataset, look_back=1):
 
 让我们看看这个函数对数据集的前几行的影响。
 
-```
+```py
 X		Y
 112		118
 118		132
@@ -138,7 +138,7 @@ X		Y
 
 让我们使用这个函数来准备准备建模的训练和测试数据集。
 
-```
+```py
 # reshape into X=t and Y=t+1
 look_back = 1
 trainX, trainY = create_dataset(train, look_back)
@@ -151,7 +151,7 @@ testX, testY = create_dataset(test, look_back)
 
 我尝试了一些粗略的参数并确定了下面的配置，但绝不是网络列出了优化。
 
-```
+```py
 # create and fit Multilayer Perceptron model
 model = Sequential()
 model.add(Dense(8, input_dim=look_back, activation='relu'))
@@ -162,7 +162,7 @@ model.fit(trainX, trainY, epochs=200, batch_size=2, verbose=2)
 
 一旦模型拟合，我们就可以估计模型在列车和测试数据集上的表现。这将为我们提供新模型的比较点。
 
-```
+```py
 # Estimate model performance
 trainScore = model.evaluate(trainX, trainY, verbose=0)
 print('Train Score: %.2f MSE (%.2f RMSE)' % (trainScore, math.sqrt(trainScore)))
@@ -174,7 +174,7 @@ print('Test Score: %.2f MSE (%.2f RMSE)' % (testScore, math.sqrt(testScore)))
 
 由于数据集是如何准备的，我们必须改变预测，以便它们在 x 轴上与原始数据集一致。准备好后，绘制数据，以蓝色显示原始数据集，以绿色显示火车数据集的预测，以红色显示未见测试数据集的预测。
 
-```
+```py
 # generate predictions for training
 trainPredict = model.predict(trainX)
 testPredict = model.predict(testX)
@@ -205,7 +205,7 @@ plt.show()
 
 为完整起见，以下是整个代码清单。
 
-```
+```py
 # Multilayer Perceptron to Predict International Airline Passengers (t+1, given t)
 import numpy
 import matplotlib.pyplot as plt
@@ -267,7 +267,7 @@ plt.show()
 
 运行模型会生成以下输出。
 
-```
+```py
 Epoch 195/200
 0s - loss: 536.7014
 Epoch 196/200
@@ -300,7 +300,7 @@ Test Score: 2358.07 MSE (48.56 RMSE)
 
 具有此秘籍的数据集样本如下所示：
 
-```
+```py
 X1	X2	X3	Y
 112	118	132	129
 118	132	129	121
@@ -313,7 +313,7 @@ X1	X2	X3	Y
 
 为了完整性，下面列出了仅包含窗口大小更改的整个代码清单。
 
-```
+```py
 # Multilayer Perceptron to Predict International Airline Passengers (t+1, given t, t-1, t-2)
 import numpy
 import matplotlib.pyplot as plt
@@ -377,7 +377,7 @@ plt.show()
 
 运行该示例提供以下输出。
 
-```
+```py
 Epoch 395/400
 0s - loss: 485.3482
 Epoch 396/400

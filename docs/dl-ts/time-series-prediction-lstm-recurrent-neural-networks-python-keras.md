@@ -49,7 +49,7 @@
 
 下面是该文件前几行的示例。
 
-```
+```py
 "Month","International airline passengers: monthly totals in thousands. Jan 49 ? Dec 60"
 "1949-01",112
 "1949-02",118
@@ -62,7 +62,7 @@
 
 下载的数据集还有页脚信息，我们可以将 **skipfooter** 参数排除到 **pandas.read_csv（）**为 3 页脚行设置为 3。加载后，我们可以轻松绘制整个数据集。下面列出了加载和绘制数据集的代码。
 
-```
+```py
 import pandas
 import matplotlib.pyplot as plt
 dataset = pandas.read_csv('international-airline-passengers.csv', usecols=[1], engine='python', skipfooter=3)
@@ -112,7 +112,7 @@ LSTM 网络具有通过层连接的存储块，而不是神经元。
 
 在我们开始之前，让我们首先导入我们打算使用的所有函数和类。这假设一个工作的 SciPy 环境安装了 Keras 深度学习库。
 
-```
+```py
 import numpy
 import matplotlib.pyplot as plt
 import pandas
@@ -126,14 +126,14 @@ from sklearn.metrics import mean_squared_error
 
 在我们做任何事情之前，最好修复随机数种子以确保我们的结果可重复。
 
-```
+```py
 # fix random seed for reproducibility
 numpy.random.seed(7)
 ```
 
 我们还可以使用上一节中的代码将数据集作为 Pandas 数据帧加载。然后，我们可以从数据帧中提取 NumPy 数组，并将整数值转换为浮点值，这些值更适合使用神经网络进行建模。
 
-```
+```py
 # load the dataset
 dataframe = pandas.read_csv('international-airline-passengers.csv', usecols=[1], engine='python', skipfooter=3)
 dataset = dataframe.values
@@ -142,7 +142,7 @@ dataset = dataset.astype('float32')
 
 LSTM 对输入数据的比例敏感，特别是在使用 sigmoid（默认）或 tanh 激活函数时。将数据重新调整到 0 到 1 的范围是一种很好的做法，也称为标准化。我们可以使用 scikit-learn 库中的 **MinMaxScaler** 预处理类轻松地规范化数据集。
 
-```
+```py
 # normalize the dataset
 scaler = MinMaxScaler(feature_range=(0, 1))
 dataset = scaler.fit_transform(dataset)
@@ -152,7 +152,7 @@ dataset = scaler.fit_transform(dataset)
 
 对于时间序列数据，值的序列很重要。我们可以使用的一种简单方法是将有序数据集拆分为训练和测试数据集。下面的代码计算分裂点的索引，并将数据分成训练数据集，其中 67％的观测值可用于训练我们的模型，剩余的 33％用于测试模型。
 
-```
+```py
 # split into train and test sets
 train_size = int(len(dataset) * 0.67)
 test_size = len(dataset) - train_size
@@ -168,7 +168,7 @@ print(len(train), len(test))
 
 它可以配置，我们将在下一节中构建一个不同形状的数据集。
 
-```
+```py
 # convert an array of values into a dataset matrix
 def create_dataset(dataset, look_back=1):
 	dataX, dataY = [], []
@@ -181,7 +181,7 @@ def create_dataset(dataset, look_back=1):
 
 让我们看一下这个函数对数据集第一行的影响（为了清晰起见，以非标准化形式显示）。
 
-```
+```py
 X		Y
 112		118
 118		132
@@ -194,7 +194,7 @@ X		Y
 
 让我们使用这个函数来准备训练和测试数据集以进行建模。
 
-```
+```py
 # reshape into X=t and Y=t+1
 look_back = 1
 trainX, trainY = create_dataset(train, look_back)
@@ -205,7 +205,7 @@ LSTM 网络期望输入数据（X）以以下形式提供特定的阵列结构�
 
 目前，我们的数据形式为：[_ 样本，特征 _]，我们将问题定为每个样本的一个时间步长。我们可以使用 **numpy.reshape（）**将准备好的列车和测试输入数据转换为预期结构，如下所示：
 
-```
+```py
 # reshape input to be [samples, time steps, features]
 trainX = numpy.reshape(trainX, (trainX.shape[0], 1, trainX.shape[1]))
 testX = numpy.reshape(testX, (testX.shape[0], 1, testX.shape[1]))
@@ -215,7 +215,7 @@ testX = numpy.reshape(testX, (testX.shape[0], 1, testX.shape[1]))
 
 网络具有带有 1 个输入的可见层，带有 4 个 LSTM 块或神经元的隐藏层，以及进行单个值预测的输出层。默认的 sigmoid 激活函数用于 LSTM 块。对网络进行 100 个迭代的训练，并使用 1 的批量大小。
 
-```
+```py
 # create and fit the LSTM network
 model = Sequential()
 model.add(LSTM(4, input_shape=(1, look_back)))
@@ -228,7 +228,7 @@ model.fit(trainX, trainY, epochs=100, batch_size=1, verbose=2)
 
 请注意，我们在计算错误分数之前反转预测，以确保以与原始数据相同的单位报告表现（每月数千名乘客）。
 
-```
+```py
 # make predictions
 trainPredict = model.predict(trainX)
 testPredict = model.predict(testX)
@@ -248,7 +248,7 @@ print('Test Score: %.2f RMSE' % (testScore))
 
 由于数据集的准备方式，我们必须改变预测，使它们在 x 轴上与原始数据集对齐。准备好后，绘制数据，以蓝色显示原始数据集，以绿色显示训练数据集的预测，以及以红色显示未见测试数据集的预测。
 
-```
+```py
 # shift train predictions for plotting
 trainPredictPlot = numpy.empty_like(dataset)
 trainPredictPlot[:, :] = numpy.nan
@@ -272,7 +272,7 @@ LSTM 对乘客预测问题的回归制定进行了训练
 
 为了完整起见，下面是整个代码示例。
 
-```
+```py
 # LSTM for international airline passengers problem with regression framing
 import numpy
 import matplotlib.pyplot as plt
@@ -347,7 +347,7 @@ plt.show()
 
 运行该示例将生成以下输出。
 
-```
+```py
 ...
 Epoch 95/100
 0s - loss: 0.0020
@@ -381,7 +381,7 @@ Test Score: 47.53 RMSE
 
 具有此秘籍的数据集样本如下所示：
 
-```
+```py
 X1	X2	X3	Y
 112	118	132	129
 118	132	129	121
@@ -392,7 +392,7 @@ X1	X2	X3	Y
 
 我们可以使用更大的窗口大小重新运行上一节中的示例。为了完整性，下面列出了仅包含窗口大小更改的整个代码清单。
 
-```
+```py
 # LSTM for international airline passengers problem with window regression framing
 import numpy
 import matplotlib.pyplot as plt
@@ -467,7 +467,7 @@ plt.show()
 
 运行该示例提供以下输出：
 
-```
+```py
 ...
 Epoch 95/100
 0s - loss: 0.0021
@@ -503,7 +503,7 @@ LSTM 训练乘客预测问题的窗口方法
 
 我们可以使用与上一个基于窗口的示例相同的数据表示来执行此操作，除非我们对数据进行整形，我们将列设置为时间步长维并将要素维更改为 1.例如：
 
-```
+```py
 # reshape input to be [samples, time steps, features]
 trainX = numpy.reshape(trainX, (trainX.shape[0], trainX.shape[1], 1))
 testX = numpy.reshape(testX, (testX.shape[0], testX.shape[1], 1))
@@ -511,7 +511,7 @@ testX = numpy.reshape(testX, (testX.shape[0], testX.shape[1], 1))
 
 下面提供了整个代码清单，以确保完整性。
 
-```
+```py
 # LSTM for international airline passengers problem with time step regression framing
 import numpy
 import matplotlib.pyplot as plt
@@ -586,7 +586,7 @@ plt.show()
 
 运行该示例提供以下输出：
 
-```
+```py
 ...
 Epoch 95/100
 1s - loss: 0.0021
@@ -620,7 +620,7 @@ LSTM 网络具有内存，能够记住长序列。
 
 它要求在安装网络时不要改组训练数据。它还要求通过调用 **model.reset_states（）**，在每次暴露于训练数据（时期）后明确重置网络状态。这意味着我们必须在每个时代调用 **model.fit（）**和 **model.reset_states（）**内创建我们自己的时代外环。例如：
 
-```
+```py
 for i in range(100):
 	model.fit(trainX, trainY, epochs=1, batch_size=batch_size, verbose=2, shuffle=False)
 	model.reset_states()
@@ -628,19 +628,19 @@ for i in range(100):
 
 最后，当构造 LSTM 层时，**有状态**参数必须设置为 **True** 而不是指定输入维度，我们必须硬编码批次中的样本数量，通过设置 **batch_input_shape** 参数，样本中的时间步长和时间步长中的要素数量。例如：
 
-```
+```py
 model.add(LSTM(4, batch_input_shape=(batch_size, time_steps, features), stateful=True))
 ```
 
 然后，在评估模型和进行预测时，必须使用相同的批量大小。例如：
 
-```
+```py
 model.predict(trainX, batch_size=batch_size)
 ```
 
 我们可以调整前一个时间步骤示例以使用有状态 LSTM。完整的代码清单如下。
 
-```
+```py
 # LSTM for international airline passengers problem with memory
 import numpy
 import matplotlib.pyplot as plt
@@ -719,7 +719,7 @@ plt.show()
 
 运行该示例提供以下输出：
 
-```
+```py
 ...
 Epoch 1/1
 1s - loss: 0.0017
@@ -751,14 +751,14 @@ LSTM 网络可以像其他层类型堆叠一样堆叠在 Keras 中。对配置�
 
 我们可以在上一节中扩展有状态 LSTM，使其具有两层，如下所示：
 
-```
+```py
 model.add(LSTM(4, batch_input_shape=(batch_size, look_back, 1), stateful=True, return_sequences=True))
 model.add(LSTM(4, batch_input_shape=(batch_size, look_back, 1), stateful=True))
 ```
 
 下面提供了整个代码清单，以确保完整性。
 
-```
+```py
 # Stacked LSTM for international airline passengers problem with memory
 import numpy
 import matplotlib.pyplot as plt
@@ -838,7 +838,7 @@ plt.show()
 
 运行该示例将生成以下输出。
 
-```
+```py
 ...
 Epoch 1/1
 1s - loss: 0.0017

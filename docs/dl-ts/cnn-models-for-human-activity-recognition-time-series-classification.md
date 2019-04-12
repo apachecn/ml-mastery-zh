@@ -114,7 +114,7 @@
 
 输入数据采用 CSV 格式，其中列由空格分隔。这些文件中的每一个都可以作为 NumPy 数组加载。下面的 _load_file（）_ 函数在给定文件的文件路径的情况下加载数据集，并将加载的数据作为 NumPy 数组返回。
 
-```
+```py
 # load a single file as a numpy array
 def load_file(filepath):
 	dataframe = read_csv(filepath, header=None, delim_whitespace=True)
@@ -127,7 +127,7 @@ def load_file(filepath):
 
 下面的 _load_group（）_ 函数实现了这种行为。 [dstack（）NumPy 函数](https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.dstack.html)允许我们将每个加载的 3D 数组堆叠成单个 3D 数组，其中变量在第三维（特征）上分开。
 
-```
+```py
 # load a list of files into a 3D array of [samples, timesteps, features]
 def load_group(filenames, prefix=''):
 	loaded = list()
@@ -143,7 +143,7 @@ def load_group(filenames, prefix=''):
 
 下面的 _load_dataset_group（）_ 函数使用列车和测试目录之间的一致命名约定加载单个组的所有输入信号数据和输出数据。
 
-```
+```py
 # load a dataset group, such as train or test
 def load_dataset_group(group, prefix=''):
 	filepath = prefix + group + '/Inertial Signals/'
@@ -168,7 +168,7 @@ def load_dataset_group(group, prefix=''):
 
 下面的 _load_dataset（）_ 函数实现了这种行为，并返回列车并测试 _X_ 和 _y_ 元素，以便拟合和评估定义的模型。
 
-```
+```py
 # load the dataset, returns train and test X and y elements
 def load_dataset(prefix=''):
 	# load all train
@@ -201,7 +201,7 @@ def load_dataset(prefix=''):
 
 在拟合模型时需要这些输入和输出维度，我们可以从提供的训练数据集中提取它们。
 
-```
+```py
 n_timesteps, n_features, n_outputs = trainX.shape[1], trainX.shape[2], trainy.shape[1]
 ```
 
@@ -217,7 +217,7 @@ n_timesteps, n_features, n_outputs = trainX.shape[1], trainX.shape[2], trainy.sh
 
 下面列出了该模型的定义。
 
-```
+```py
 model = Sequential()
 model.add(Conv1D(filters=64, kernel_size=3, activation='relu', input_shape=(n_timesteps,n_features)))
 model.add(Conv1D(filters=64, kernel_size=3, activation='relu'))
@@ -235,7 +235,7 @@ model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accur
 
 下面列出了完整的 _evaluate_model（）_ 函数。
 
-```
+```py
 # fit and evaluate a model
 def evaluate_model(trainX, trainy, testX, testy):
 	verbose, epochs, batch_size = 0, 10, 32
@@ -268,7 +268,7 @@ def evaluate_model(trainX, trainy, testX, testy):
 
 我们将多次重复对模型的评估，然后在每次运行中总结模型的表现。例如，我们可以调用 _evaluate_model（）_ 共 10 次。这将导致必须总结的模型评估分数。
 
-```
+```py
 # repeat experiment
 scores = list()
 for r in range(repeats):
@@ -282,7 +282,7 @@ for r in range(repeats):
 
 下面的函数 _summarize_results（）_ 总结了运行的结果。
 
-```
+```py
 # summarize scores
 def summarize_results(scores):
 	print(scores)
@@ -294,7 +294,7 @@ def summarize_results(scores):
 
 默认情况下，在报告模型表现之前，会对模型进行 10 次评估。
 
-```
+```py
 # run an experiment
 def run_experiment(repeats=10):
 	# load data
@@ -316,7 +316,7 @@ def run_experiment(repeats=10):
 
 完整的代码清单如下。
 
-```
+```py
 # cnn model
 from numpy import mean
 from numpy import std
@@ -433,7 +433,7 @@ run_experiment()
 
 注意：鉴于算法的随机性，您的具体结果可能会有所不同。
 
-```
+```py
 (7352, 128, 9) (7352, 1)
 (2947, 128, 9) (2947, 1)
 (7352, 128, 9) (7352, 6) (2947, 128, 9) (2947, 6)
@@ -482,7 +482,7 @@ Accuracy: 90.787% (+/-1.341)
 
 我们可以使用 NumPy 来做到这一点，首先切割数组并仅保留每个窗口的后半部分，然后将窗口展平为每个变量的长向量。这很快且很脏，并且意味着我们在第一个窗口的前半部分丢失了数据。
 
-```
+```py
 # remove overlap
 cut = int(trainX.shape[1] / 2)
 longX = trainX[:, -cut:, :]
@@ -492,7 +492,7 @@ longX = longX.reshape((longX.shape[0] * longX.shape[1], longX.shape[2]))
 
 下面列出了加载数据，展平数据以及为九个变量中的每一个绘制直方图的完整示例。
 
-```
+```py
 # plot distributions
 from numpy import dstack
 from pandas import read_csv
@@ -602,7 +602,7 @@ plot_variable_distributions(trainX)
 
 标准化是可选的，因此我们可以应用该过程并将结果与​​相同的代码路径进行比较，而无需在受控实验中进行标准化。
 
-```
+```py
 # standardize data
 def scale_data(trainX, testX, standardize):
 	# remove overlap
@@ -630,7 +630,7 @@ def scale_data(trainX, testX, standardize):
 
 我们可以更新 _evaluate_model（）_ 函数来获取参数，然后使用此参数来决定是否执行标准化。
 
-```
+```py
 # fit and evaluate a model
 def evaluate_model(trainX, trainy, testX, testy, param):
 	verbose, epochs, batch_size = 0, 10, 32
@@ -655,7 +655,7 @@ def evaluate_model(trainX, trainy, testX, testy, param):
 
 我们还可以更新 _run_experiment（）_，为每个参数重复实验 10 次;在这种情况下，只有两个参数将被评估[ _False，True_ ]，分别没有标准化和标准化。
 
-```
+```py
 # run an experiment
 def run_experiment(params, repeats=10):
 	# load data
@@ -679,7 +679,7 @@ def run_experiment(params, repeats=10):
 
 我们将更新 _summarize_results（）_ 函数，以汇总每个配置参数的结果样本，并创建一个箱形图来比较每个结果样本。
 
-```
+```py
 # summarize scores
 def summarize_results(scores, params):
 	print(scores, params)
@@ -698,7 +698,7 @@ def summarize_results(scores, params):
 
 完整的代码清单如下。
 
-```
+```py
 # cnn model with standardization
 from numpy import mean
 from numpy import std
@@ -850,7 +850,7 @@ run_experiment(n_params)
 
 注意：鉴于算法的随机性，您的具体结果可能会有所不同。
 
-```
+```py
 (7352, 128, 9) (7352, 1)
 (2947, 128, 9) (2947, 1)
 (7352, 128, 9) (7352, 6) (2947, 128, 9) (2947, 6)
@@ -900,7 +900,7 @@ CNN 的一个重要超参数是滤波器映射的数量。我们可以尝试一�
 
 具体来说，我们将尝试以下数量的功能图：
 
-```
+```py
 n_params = [8, 16, 32, 64, 128, 256]
 ```
 
@@ -908,7 +908,7 @@ n_params = [8, 16, 32, 64, 128, 256]
 
 完整的代码示例如下所示。
 
-```
+```py
 # cnn model with filters
 from numpy import mean
 from numpy import std
@@ -1031,7 +1031,7 @@ run_experiment(n_params)
 
 随着滤波器图数量的增加，我们可以看到平均表现提升的趋势。方差保持不变，可能 128 个特征映射可能是网络的良好配置。
 
-```
+```py
 ...
 Param=8: 89.148% (+/-0.790)
 Param=16: 90.383% (+/-0.613)
@@ -1059,13 +1059,13 @@ Param=256: 90.706% (+/-0.997)
 
 除了默认的三个时间步长之外，我们可以使用相同的实验设置并测试一套不同的内核大小。完整的值列表如下：
 
-```
+```py
 n_params = [2, 3, 5, 7, 11]
 ```
 
 完整的代码清单如下：
 
-```
+```py
 # cnn model vary kernel size
 from numpy import mean
 from numpy import std
@@ -1188,7 +1188,7 @@ run_experiment(n_params)
 
 结果表明，籽粒大小为 5 可能是好的，平均技能为约 91.8％，但也许大小为 7 或 11 也可能同样好，标准偏差较小。
 
-```
+```py
 ...
 Param=2: 90.176% (+/-0.724)
 Param=3: 90.275% (+/-1.277)
@@ -1223,7 +1223,7 @@ CNN 的另一种流行方法是使用多头模型，其中模型的每个头使�
 
 我们可以看到模型的每个头部都是相同的结构，尽管内核大小是变化的。然后，在进行预测之前，三个头在被解释之前进入单个合并层。
 
-```
+```py
 # fit and evaluate a model
 def evaluate_model(trainX, trainy, testX, testy):
 	verbose, epochs, batch_size = 0, 10, 32
@@ -1272,7 +1272,7 @@ def evaluate_model(trainX, trainy, testX, testy):
 
 下面列出了多头 1D CNN 的完整代码示例。
 
-```
+```py
 # multi-headed cnn model
 from numpy import mean
 from numpy import std
@@ -1408,7 +1408,7 @@ run_experiment()
 
 考虑到该模型中资源的相对三倍，将此结果与单头 CNN 进行比较并不是一个苹果对苹果的比较。也许苹果与苹果的比较将是具有相同架构的模型，并且在模型的每个输入头上具有相同数量的过滤器。
 
-```
+```py
 >#1: 91.788
 >#2: 92.942
 >#3: 91.551

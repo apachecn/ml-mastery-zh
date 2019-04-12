@@ -44,7 +44,7 @@
 
 值按如下标准化：
 
-```
+```py
 y = (x - min) / (max - min)
 ```
 
@@ -52,7 +52,7 @@ y = (x - min) / (max - min)
 
 例如，对于数据集，我们可以将 min 和 max 可观察值猜测为 30 和-10。然后我们可以将任何值标准化，如 18.8，如下所示：
 
-```
+```py
 y = (x - min) / (max - min)
 y = (18.8 - (-10)) / (30 - (-10))
 y = 28.8 / 40
@@ -75,7 +75,7 @@ y = 0.72
 
 缩放器对象要求将数据作为行和列的矩阵提供。加载的时间序列数据作为 Pandas 系列加载。
 
-```
+```py
 from pandas import Series
 from sklearn.preprocessing import MinMaxScaler
 # define contrived series
@@ -101,7 +101,7 @@ print(inversed)
 
 我们还可以看到数据集的最小值和最大值分别为 10.0 和 100.0。
 
-```
+```py
 0     10.0
 1     20.0
 2     30.0
@@ -152,25 +152,25 @@ Min: 10.000000, Max: 100.000000
 
 值标准化如下：
 
-```
+```py
 y = (x - mean) / standard_deviation
 ```
 
 平均值计算如下：
 
-```
+```py
 mean = sum(x) / count(x)
 ```
 
 而 standard_deviation 计算如下：
 
-```
+```py
 standard_deviation = sqrt( sum( (x - mean)^2 ) / count(x))
 ```
 
 我们可以猜测平均值为 10，标准偏差约为 5.使用这些值，我们可以将第一个值 20.7 标准化如下：
 
-```
+```py
 y = (x - mean) / standard_deviation
 y = (20.7 - 10) / 5
 y = (10.7) / 5
@@ -181,7 +181,7 @@ y = 2.14
 
 您可以使用 scikit-learn 对象 [StandardScaler](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html) 标准化数据集。
 
-```
+```py
 from pandas import Series
 from sklearn.preprocessing import StandardScaler
 from math import sqrt
@@ -208,7 +208,7 @@ print(inversed)
 
 我们可以看到估计的平均值和标准偏差分别约为 5.3 和 2.7。
 
-```
+```py
 0    1.0
 1    5.5
 2    9.0

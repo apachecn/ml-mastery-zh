@@ -80,19 +80,19 @@
 
 从：
 
-```
+```py
 "date","Temperature","Humidity","Light","CO2","HumidityRatio","Occupancy"
 ```
 
 至：
 
-```
+```py
 "no","date","Temperature","Humidity","Light","CO2","HumidityRatio","Occupancy"
 ```
 
 下面是带有修改的 _datatraining.txt_ 文件的前五行示例。
 
-```
+```py
 "no","date","Temperature","Humidity","Light","CO2","HumidityRatio","Occupancy"
 "1","2015-02-04 17:51:00",23.18,27.272,426,721.25,0.00479298817650529,1
 "2","2015-02-04 17:51:59",23.15,27.2675,429.5,714,0.00478344094931065,1
@@ -104,7 +104,7 @@
 
 然后我们可以使用 Pandas _read_csv（）_ 函数加载数据文件，如下所示：
 
-```
+```py
 # load all data
 data1 = read_csv('datatest.txt', header=0, index_col=1, parse_dates=True, squeeze=True)
 data2 = read_csv('datatraining.txt', header=0, index_col=1, parse_dates=True, squeeze=True)
@@ -115,7 +115,7 @@ data3 = read_csv('datatest2.txt', header=0, index_col=1, parse_dates=True, squee
 
 下面列出了完整的示例。
 
-```
+```py
 from pandas import read_csv
 from matplotlib import pyplot
 # load all data
@@ -161,7 +161,7 @@ pyplot.show()
 
 下面的示例加载数据，将其连接到时间上一致的数据集，并将结果保存到名为“ _combined.csv_ ”的新文件中。
 
-```
+```py
 from pandas import read_csv
 from pandas import concat
 # load all data
@@ -188,7 +188,7 @@ data.to_csv('combined.csv')
 
 我们将使用上一节中描述的组合数据集，并通过将最后 30％的数据作为测试集保留来评估模型技能。例如：
 
-```
+```py
 # load the dataset
 data = read_csv('combined.csv', header=0, index_col=0, parse_dates=True, squeeze=True)
 values = data.values
@@ -208,14 +208,14 @@ trainX, testX, trainy, testy = train_test_split(X, y, test_size=0.3, shuffle=Fal
 
 下面是一个函数，它将根据测试集和选择的结果变量执行这种朴素的预测
 
-```
+```py
 def naive_prediction(testX, value):
 	return [value for x in range(len(testX))]
 ```
 
 下面列出了完整的示例。
 
-```
+```py
 # naive prediction model
 from pandas import read_csv
 from sklearn.metrics import accuracy_score
@@ -249,7 +249,7 @@ for value in [0, 1]:
 
 对于任何被认为对该问题熟练的模型，它必须达到 82％或更高的技能。
 
-```
+```py
 Naive=0 score=0.822
 Naive=1 score=0.178
 ```
@@ -262,7 +262,7 @@ Naive=1 score=0.178
 
 下面列出了完整的示例。
 
-```
+```py
 # logistic regression
 from pandas import read_csv
 from sklearn.metrics import accuracy_score
@@ -293,7 +293,7 @@ print(score)
 
 通常，我建议在建模之前对数据进行居中和规范化，但是一些试验和错误表明，未缩放数据的模型更加熟练。
 
-```
+```py
 0.992704280155642
 ```
 
@@ -313,7 +313,7 @@ print(score)
 
 下面列出了使用五个输入功能中的每一个单独测试逻辑模型的完整示例。
 
-```
+```py
 # logistic regression feature selection
 from pandas import read_csv
 from sklearn.metrics import accuracy_score
@@ -351,7 +351,7 @@ for f in features:
 
 至少，本教程的结果会询问有关使用此数据集的任何研究论文的一些难题，因为显然它不是一个具有挑战性的预测问题。
 
-```
+```py
 feature=0, name=Temperature, score=0.799
 feature=1, name=Humidity, score=0.822
 feature=2, name=Light, score=0.991

@@ -47,21 +47,21 @@
 
 我们可以使用函数 _read_csv（）_ 将此数据集作为 Pandas 系列加载。
 
-```
+```py
 # load
 series = read_csv('monthly-car-sales.csv', header=0, index_col=0)
 ```
 
 加载后，我们可以总结数据集的形状，以确定观察的数量。
 
-```
+```py
 # summarize shape
 print(series.shape)
 ```
 
 然后我们可以创建该系列的线图，以了解该系列的结构。
 
-```
+```py
 # plot
 pyplot.plot(series)
 pyplot.show()
@@ -69,7 +69,7 @@ pyplot.show()
 
 我们可以将所有这些结合在一起;下面列出了完整的示例。
 
-```
+```py
 # load and plot dataset
 from pandas import read_csv
 from matplotlib import pyplot
@@ -84,7 +84,7 @@ pyplot.show()
 
 首先运行该示例将打印数据集的形状。
 
-```
+```py
 (108, 1)
 ```
 
@@ -98,7 +98,7 @@ pyplot.show()
 
 从之前的实验中，我们知道一个幼稚的模型可以通过取预测月份的前三年的观测值的中位数来实现 1841.155 的均方根误差或 RMSE;例如：
 
-```
+```py
 yhat = median(-12, -24, -36)
 ```
 
@@ -133,7 +133,7 @@ SARIMA 模型的表现可以衡量问题的良好模型。任何在过去 12 个
 
 下面的 _train_test_split（）_ 函数将拆分系列，将原始观察值和在测试集中使用的观察数作为参数。
 
-```
+```py
 # split a univariate dataset into train/test sets
 def train_test_split(data, n_test):
 	return data[:-n_test], data[-n_test:]
@@ -157,7 +157,7 @@ def train_test_split(data, n_test):
 
 例如，系列定义为列：
 
-```
+```py
 (t)
 1
 2
@@ -167,7 +167,7 @@ def train_test_split(data, n_test):
 
 可以预先移位和插入列：
 
-```
+```py
 (t-1),		(t)
 Nan,		1
 1,			2
@@ -182,7 +182,7 @@ Nan,		1
 
 下面的 _series_to_supervised（）_ 函数实现了这种行为，允许您指定输入中使用的滞后观察数和每个样本的输出中使用的数。它还将删除具有 _NaN_ 值的行，因为它们不能用于训练或测试模型。
 
-```
+```py
 # transform list into supervised learning format
 def series_to_supervised(data, n_in=1, n_out=1):
 	df = DataFrame(data)
@@ -216,7 +216,7 @@ def series_to_supervised(data, n_in=1, n_out=1):
 
 我们将定义一个通用的 _model_fit（）_ 函数来执行此操作，可以为我们稍后可能感兴趣的给定类型的神经网络填充该操作。该函数获取训练数据集和模型配置，并返回准备好进行预测的拟合模型。
 
-```
+```py
 # fit a model
 def model_fit(train, config):
 	return None
@@ -226,7 +226,7 @@ def model_fit(train, config):
 
 同样，我们将定义一个名为 _model_predict（）_ 的通用函数，它采用拟合模型，历史和模型配置，并进行单个一步预测。
 
-```
+```py
 # forecast with a pre-fit model
 def model_predict(model, history, config):
 	return 0.0
@@ -240,7 +240,7 @@ def model_predict(model, history, config):
 
 RMSE 计算为预测值与实际值之间的平方差的平均值的平方根。 _measure_rmse（）_ 使用 [mean_squared_error（）scikit-learn 函数](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html)在计算平方根之前首先计算均方误差或 MSE。
 
-```
+```py
 # root mean squared error or rmse
 def measure_rmse(actual, predicted):
 	return sqrt(mean_squared_error(actual, predicted))
@@ -250,7 +250,7 @@ def measure_rmse(actual, predicted):
 
 它采用数据集，用作测试集的观察数量以及模型的配置，并返回测试集上模型表现的 RMSE。
 
-```
+```py
 # walk-forward validation for univariate data
 def walk_forward_validation(data, n_test, cfg):
 	predictions = list()
@@ -290,7 +290,7 @@ def walk_forward_validation(data, n_test, cfg):
 
 下面的 _repeat_evaluate（）_ 函数实现了这一点，并允许将重复次数指定为默认为 30 的可选参数，并返回模型表现得分列表：在本例中为 RMSE 值。
 
-```
+```py
 # repeat evaluation of a config
 def repeat_evaluate(data, config, n_test, n_repeats=30):
 	# fit and evaluate the model n times
@@ -308,7 +308,7 @@ def repeat_evaluate(data, config, n_test, n_repeats=30):
 
 下面的 _summarize_scores（）_ 函数实现了这一点，取了评估模型的名称和每次重复评估的分数列表，打印摘要并显示图表。
 
-```
+```py
 # summarize model performance
 def summarize_scores(name, scores):
 	# print a summary
@@ -327,7 +327,7 @@ def summarize_scores(name, scores):
 
 我们不需要拟合模型，因此 _model_fit（）_ 函数将被实现为简单地返回 _ 无 _。
 
-```
+```py
 # fit a model
 def model_fit(train, config):
 	return None
@@ -335,14 +335,14 @@ def model_fit(train, config):
 
 我们将使用配置来定义先前观察中的索引偏移列表，该列表相对于将被用作预测的预测时间。例如，12 将使用 12 个月前（-12）相对于预测时间的观察。
 
-```
+```py
 # define config
 config = [12, 24, 36]
 ```
 
 可以实现 model_predict（）函数以使用此配置来收集观察值，然后返回这些观察值的中值。
 
-```
+```py
 # forecast with a pre-fit model
 def model_predict(model, history, config):
 	values = list()
@@ -353,7 +353,7 @@ def model_predict(model, history, config):
 
 下面列出了使用简单持久性模型使用框架的完整示例。
 
-```
+```py
 # persistence
 from math import sqrt
 from numpy import mean
@@ -456,7 +456,7 @@ summarize_scores('persistence', scores)
 
 该模型被评估 30 次，但由于该模型没有随机元素，因此每次得分相同。
 
-```
+```py
  > 1841.156
  > 1841.156
  > 1841.156
@@ -510,7 +510,7 @@ MLP 可用于时间序列预测，方法是在先前时间步骤中进行多次�
 
 因此，训练数据集是样本列表，其中每个样本在预测时间之前的几个月具有一定数量的观察，并且预测是序列中的下个月。例如：
 
-```
+```py
 X, 							y
 month1, month2, month3,		month4
 month2, month3, month4,		month5
@@ -520,7 +520,7 @@ month3, month4, month5,		month6
 
 该模型将尝试概括这些样本，以便当提供超出模型已知的新样本时，它可以预测有用的东西;例如：
 
-```
+```py
 X, 							y
 month4, month5, month6,		???
 ```
@@ -533,7 +533,7 @@ month4, month5, month6,		???
 
 网络的损失函数将是均方误差损失或 MSE，我们将使用随机梯度下降的高效 [Adam 风格来训练网络。](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/)
 
-```
+```py
 # define model
 model = Sequential()
 model.add(Dense(n_nodes, activation='relu', input_dim=n_input))
@@ -552,7 +552,7 @@ model.compile(loss='mse', optimizer='adam')
 *   **n_epochs** ：将模型公开给整个训练数据集的次数。
 *   **n_batch** ：更新权重的时期内的样本数。
 
-```
+```py
 # fit a model
 def model_fit(train, config):
 	# unpack config
@@ -572,7 +572,7 @@ def model_fit(train, config):
 
 使用拟合 MLP 模型进行预测与调用 _predict（）_ 函数并传入进行预测所需的一个样本值输入值一样简单。
 
-```
+```py
 yhat = model.predict(x_input, verbose=0)
 ```
 
@@ -584,7 +584,7 @@ _predict（）_ 函数在进行预测时需要一个或多个输入样本，因�
 
 下面的 _model_predict（）_ 函数实现了这种行为，将模型，先前观察和模型配置作为参数，制定输入样本并进行一步预测，然后返回。
 
-```
+```py
 # forecast with a pre-fit model
 def model_predict(model, history, config):
 	# unpack config
@@ -607,7 +607,7 @@ def model_predict(model, history, config):
 
 此配置可以定义为列表：
 
-```
+```py
 # define config
 config = [24, 500, 100, 100]
 ```
@@ -618,7 +618,7 @@ config = [24, 500, 100, 100]
 
 完整的代码示例如下所示。
 
-```
+```py
 # evaluate mlp
 from math import sqrt
 from numpy import array
@@ -739,7 +739,7 @@ summarize_scores('mlp', scores)
 
 这是令人印象深刻的，因为该模型直接对原始数据进行操作而不进行缩放或数据静止。
 
-```
+```py
  > 1629.203
  > 1642.219
  > 1472.483
@@ -793,14 +793,14 @@ mlp: 1526.688 RMSE (+/- 134.789)
 
 我们将定义具有两个卷积层的 CNN，用于从输入序列中提取特征。每个都将具有可配置数量的滤波器和内核大小，并将使用经过整流的线性激活功能。滤波器的数量决定了读取和投影加权输入的并行字段的数量。内核大小定义了网络沿输入序列读取时每个快照内读取的时间步数。
 
-```
+```py
 model.add(Conv1D(filters=n_filters, kernel_size=n_kernel, activation='relu', input_shape=(n_input, 1)))
 model.add(Conv1D(filters=n_filters, kernel_size=n_kernel, activation='relu'))
 ```
 
 在卷积层之后使用最大池化层将加权输入特征提取为最显着的特征，将输入大小减小 1/4。汇总输入在被解释之前被平展为一个长向量，并用于进行一步预测。
 
-```
+```py
 model.add(MaxPooling1D(pool_size=2))
 model.add(Flatten())
 model.add(Dense(1))
@@ -810,7 +810,7 @@ CNN 模型期望输入数据采用多个样本的形式，其中每个样本具�
 
 一个区别是 CNN 可以在每个时间步骤支持多个特征或类型的观察，其被解释为图像的通道。我们在每个时间步都只有一个特征，因此输入数据所需的三维形状将是[ _n_samples，n_input，1_ ]。
 
-```
+```py
 train_x = train_x.reshape((train_x.shape[0], train_x.shape[1], 1))
 ```
 
@@ -824,7 +824,7 @@ train_x = train_x.reshape((train_x.shape[0], train_x.shape[1], 1))
 *   **n_epochs** ：将模型公开给整个训练数据集的次数。
 *   **n_batch** ：更新权重的时期内的样本数。
 
-```
+```py
 # fit a model
 def model_fit(train, config):
 	# unpack config
@@ -850,13 +850,13 @@ def model_fit(train, config):
 
 一个区别在于我们要求我们指定在每个时间步骤观察到的特征数量，在这种情况下为 1.因此，当进行单个一步预测时，输入数组的形状必须是：
 
-```
+```py
 [1, n_input, 1]
 ```
 
 下面的 _model_predict（）_ 函数实现了这种行为。
 
-```
+```py
 # forecast with a pre-fit model
 def model_predict(model, history, config):
 	# unpack config
@@ -880,14 +880,14 @@ def model_predict(model, history, config):
 
 这可以指定为如下列表：
 
-```
+```py
 # define config
 config = [36, 256, 3, 100, 100]
 ```
 
 将所有这些结合在一起，下面列出了完整的示例。
 
-```
+```py
 # evaluate cnn
 from math import sqrt
 from numpy import array
@@ -1015,7 +1015,7 @@ summarize_scores('cnn', scores)
 
 分数的标准偏差很大，约为 57 个销售额，但却是前一部分 MLP 模型观察到的方差大小的 1/3。我们有信心在坏情况下（3 个标准偏差），模型 RMSE 将保持低于（优于）朴素模型的表现。
 
-```
+```py
 > 1551.031
 > 1495.743
 > 1449.408
@@ -1081,7 +1081,7 @@ LSTM 神经网络可用于单变量时间序列预测。
 
 在序列结束时，隐藏 LSTM 单元层中的每个节点将输出单个值。该值向量总结了 LSTM 从输入序列中学习或提取的内容。这可以在完成最终预测之前由完全连接的层解释。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(LSTM(n_nodes, activation='relu', input_shape=(n_input, 1)))
@@ -1092,7 +1092,7 @@ model.compile(loss='mse', optimizer='adam')
 
 与 CNN 一样，LSTM 可以在每个时间步骤支持多个变量或功能。由于汽车销售数据集在每个时间步都只有一个值，我们可以将其固定为 1，既可以在 input_shape 参数[ _n_input，1_ ]中定义网络输入，也可以定义形状输入样本。
 
-```
+```py
 train_x = train_x.reshape((train_x.shape[0], train_x.shape[1], 1))
 ```
 
@@ -1100,7 +1100,7 @@ train_x = train_x.reshape((train_x.shape[0], train_x.shape[1], 1))
 
 对于汽车销售数据集，我们可以通过执行季节性调整来制作数据信息，即从每个观察值中减去一年前的值。
 
-```
+```py
 adjusted = value - value[-12]
 ```
 
@@ -1108,7 +1108,7 @@ adjusted = value - value[-12]
 
 下面的 _ 差异（）_ 函数将使提供的数据集与提供的偏移量不同，称为差异顺序，例如差异顺序。 12 前一个月的一年。
 
-```
+```py
 # difference dataset
 def difference(data, interval):
 	return [data[i] - data[i - interval] for i in range(interval, len(data))]
@@ -1126,7 +1126,7 @@ def difference(data, interval):
 *   **n_batch** ：更新权重的时期内的样本数。
 *   **n_diff** ：差值顺序或 0 如果不使用。
 
-```
+```py
 # fit a model
 def model_fit(train, config):
 	# unpack config
@@ -1156,7 +1156,7 @@ def model_fit(train, config):
 
 下面的 _model_predict（）_ 函数实现了这种行为。
 
-```
+```py
 # forecast with a pre-fit model
 def model_predict(model, history, config):
 	# unpack config
@@ -1184,14 +1184,14 @@ def model_predict(model, history, config):
 
 这可以指定为一个列表：
 
-```
+```py
 # define config
 config = [36, 50, 100, 100, 12]
 ```
 
 将所有这些结合在一起，下面列出了完整的示例。
 
-```
+```py
 # evaluate lstm
 from math import sqrt
 from numpy import array
@@ -1323,7 +1323,7 @@ summarize_scores('lstm', scores)
 
 这提供了进一步的证据（虽然证据不足），LSTM，至少单独，可能不适合自回归型序列预测问题。
 
-```
+```py
 > 2129.480
 > 2169.109
 > 2078.290
@@ -1375,7 +1375,7 @@ lstm: 2109.779 RMSE (+/- 81.373)
 
 该模型要求每个输入序列，例如， 36 个月，分为多个子序列，每个子序列由 CNN 模型读取，例如， 12 个时间步骤的 3 个子序列。将子序列划分多年可能是有意义的，但这只是一个假设，可以使用其他分裂，例如六个时间步骤的六个子序列。因此，对于子序列的数量和每个子序列参数的步数，使用 _n_seq_ 和 _n_steps_ 参数化该分裂。
 
-```
+```py
 train_x = train_x.reshape((train_x.shape[0], n_seq, n_steps, 1))
 ```
 
@@ -1383,7 +1383,7 @@ train_x = train_x.reshape((train_x.shape[0], n_seq, n_steps, 1))
 
 这是一个 4 维输入数组，现在尺寸为：
 
-```
+```py
 [samples, subsequences, timesteps, features]
 ```
 
@@ -1391,7 +1391,7 @@ train_x = train_x.reshape((train_x.shape[0], n_seq, n_steps, 1))
 
 我们可以通过将整个 CNN 模型包装在 _TimeDistributed_ 层包装器中来实现这一点。
 
-```
+```py
 model = Sequential()
 model.add(TimeDistributed(Conv1D(filters=n_filters, kernel_size=n_kernel, activation='relu', input_shape=(None,n_steps,1))))
 model.add(TimeDistributed(Conv1D(filters=n_filters, kernel_size=n_kernel, activation='relu')))
@@ -1401,7 +1401,7 @@ model.add(TimeDistributed(Flatten()))
 
 CNN 子模型的一个应用程序的输出将是向量。子模型到每个输入子序列的输出将是可由 LSTM 模型解释的时间序列的解释。接下来是完全连接的层，用于解释 LSTM 的结果，最后是输出层，用于进行一步预测。
 
-```
+```py
 model.add(LSTM(n_nodes, activation='relu'))
 model.add(Dense(n_nodes, activation='relu'))
 model.add(Dense(1))
@@ -1419,7 +1419,7 @@ model.add(Dense(1))
 *   **n_epochs** ：将模型公开给整个训练数据集的次数。
 *   **n_batch** ：更新权重的时期内的样本数。
 
-```
+```py
 # fit a model
 def model_fit(train, config):
 	# unpack config
@@ -1446,14 +1446,14 @@ def model_fit(train, config):
 
 使用拟合模型进行预测与 LSTM 或 CNN 大致相同，尽管添加了将每个样本分成具有给定数量的时间步长的子序列。
 
-```
+```py
 # prepare data
 x_input = array(history[-n_input:]).reshape((1, n_seq, n_steps, 1))
 ```
 
 更新后的 _model_predict（）_ 功能如下所示。
 
-```
+```py
 # forecast with a pre-fit model
 def model_predict(model, history, config):
 	# unpack config
@@ -1478,14 +1478,14 @@ def model_predict(model, history, config):
 
 我们可以将配置定义为列表;例如：
 
-```
+```py
 # define config
 config = [3, 12, 64, 3, 100, 200, 100]
 ```
 
 下面列出了评估用于预测单变量月度汽车销售的 CNN-LSTM 模型的完整示例。
 
-```
+```py
 # evaluate cnn lstm
 from math import sqrt
 from numpy import array
@@ -1615,7 +1615,7 @@ summarize_scores('cnn-lstm', scores)
 
 最终平均 RMSE 报告在约 1,626 的末尾，低于幼稚模型，但仍高于 SARIMA 模型。该分数的标准偏差也非常大，表明所选配置可能不如独立 CNN 模型稳定。
 
-```
+```py
  > 1543.533
  > 1421.895
  > 1467.927
@@ -1669,19 +1669,19 @@ CNN-LSTM RMSE 预测汽车销售的盒子和晶须图
 
 与 CNN-LSTM 一样，输入数据被分成子序列，其中每个子序列具有固定数量的时间步长，尽管我们还必须指定每个子序列中的行数，在这种情况下固定为 1。
 
-```
+```py
 train_x = train_x.reshape((train_x.shape[0], n_seq, 1, n_steps, 1))
 ```
 
 形状是五维的，尺寸为：
 
-```
+```py
 [samples, subsequences, rows, columns, features]
 ```
 
 与 CNN 一样，ConvLSTM 层允许我们指定过滤器映射的数量以及读取输入序列时使用的内核的大小。
 
-```
+```py
 model.add(ConvLSTM2D(filters=n_filters, kernel_size=(1,n_kernel), activation='relu', input_shape=(n_seq, 1, n_steps, 1)))
 ```
 
@@ -1699,7 +1699,7 @@ model.add(ConvLSTM2D(filters=n_filters, kernel_size=(1,n_kernel), activation='re
 
 下面列出了实现所有这些功能的 _model_fit（）_ 函数。
 
-```
+```py
 # fit a model
 def model_fit(train, config):
 	# unpack config
@@ -1723,14 +1723,14 @@ def model_fit(train, config):
 
 使用拟合模型以与 CNN-LSTM 相同的方式进行预测，尽管我们将附加行维度固定为 1。
 
-```
+```py
 # prepare data
 x_input = array(history[-n_input:]).reshape((1, n_seq, 1, n_steps, 1))
 ```
 
 下面列出了用于进行单个一步预测的 _model_predict（）_ 函数。
 
-```
+```py
 # forecast with a pre-fit model
 def model_predict(model, history, config):
 	# unpack config
@@ -1757,14 +1757,14 @@ def model_predict(model, history, config):
 
 我们可以将配置定义为列表;例如：
 
-```
+```py
 # define config
 config = [3, 12, 256, 3, 200, 200, 100]
 ```
 
 我们可以将所有这些结合在一起。下面列出了评估每月汽车销售数据集一步预测的 ConvLSTM 模型的完整代码清单。
 
-```
+```py
 # evaluate convlstm
 from math import sqrt
 from numpy import array
@@ -1894,7 +1894,7 @@ summarize_scores('convlstm', scores)
 
 这个结果可能与 CNN-LSTM 模型相当。该分数的标准偏差也非常大，表明所选配置可能不如独立 CNN 模型稳定。
 
-```
+```py
  > 1825.246
  > 1862.674
  > 1684.313

@@ -55,7 +55,7 @@
 
 可以通过从总活动能量中减去三个定义的子计量变量的总和来创建第四个子计量变量，如下所示：
 
-```
+```py
 sub_metering_remainder = (global_active_power * 1000 / 60) - (sub_metering_1 + sub_metering_2 + sub_metering_3)
 ```
 
@@ -69,7 +69,7 @@ sub_metering_remainder = (global_active_power * 1000 / 60) - (sub_metering_1 + s
 
 我们可以使用 _read_csv（）_ 函数来加载数据，并将前两列合并到一个日期时间列中，我们可以将其用作索引。
 
-```
+```py
 # load all data
 dataset = read_csv('household_power_consumption.txt', sep=';', header=0, low_memory=False, infer_datetime_format=True, parse_dates={'datetime':[0,1]}, index_col=['datetime'])
 ```
@@ -78,7 +78,7 @@ dataset = read_csv('household_power_consumption.txt', sep=';', header=0, low_mem
 
 这将允许我们将数据作为一个浮点值数组而不是混合类型（效率较低）。
 
-```
+```py
 # mark all missing values
 dataset.replace('?', nan, inplace=True)
 # make dataset numeric
@@ -89,7 +89,7 @@ dataset = dataset.astype('float32')
 
 一种非常简单的方法是从前一天的同一时间复制观察。我们可以在一个名为 _fill_missing（）_ 的函数中实现它，该函数将从 24 小时前获取数据的 NumPy 数组并复制值。
 
-```
+```py
 # fill missing values with a value at the same time one day ago
 def fill_missing(values):
 	one_day = 60 * 24
@@ -101,14 +101,14 @@ def fill_missing(values):
 
 我们可以将此函数直接应用于 DataFrame 中的数据。
 
-```
+```py
 # fill missing
 fill_missing(dataset.values)
 ```
 
 现在，我们可以使用上一节中的计算创建一个包含剩余子计量的新列。
 
-```
+```py
 # add a column for for the remainder of sub metering
 values = dataset.values
 dataset['sub_metering_4'] = (values[:,0] * 1000 / 60) - (values[:,4] + values[:,5] + values[:,6])
@@ -116,14 +116,14 @@ dataset['sub_metering_4'] = (values[:,0] * 1000 / 60) - (values[:,4] + values[:,
 
 我们现在可以将清理后的数据集版本保存到新文件中;在这种情况下，我们只需将文件扩展名更改为.csv，并将数据集保存为“ _household_power_consumption.csv_ ”。
 
-```
+```py
 # save updated dataset
 dataset.to_csv('household_power_consumption.csv')
 ```
 
 将所有这些结合在一起，下面列出了加载，清理和保存数据集的完整示例。
 
-```
+```py
 # load and clean-up data
 from numpy import nan
 from numpy import isnan
@@ -186,7 +186,7 @@ dataset.to_csv('household_power_consumption.csv')
 
 下面列出了完整的示例。
 
-```
+```py
 # resample minute data to total for each day
 from pandas import read_csv
 # load the new file
@@ -224,7 +224,7 @@ daily_data.to_csv('household_power_consumption_days.csv')
 
 下面的函数 _evaluate_forecasts（）_ 将实现此行为并基于多个七天预测返回模型的表现。
 
-```
+```py
 # evaluate one or more weekly forecasts against expected values
 def evaluate_forecasts(actual, predicted):
 	scores = list()
@@ -261,7 +261,7 @@ def evaluate_forecasts(actual, predicted):
 
 下面提供了测试数据集的每日数据的第一行和最后一行以供确认。
 
-```
+```py
 2010-01-03,2083.4539999999984,191.61000000000055,350992.12000000034,8703.600000000033,3842.0,4920.0,10074.0,15888.233355799992
 ...
 2010-11-20,2197.006000000004,153.76800000000028,346475.9999999998,9320.20000000002,4367.0,2947.0,11433.0,17869.76663959999
@@ -273,7 +273,7 @@ def evaluate_forecasts(actual, predicted):
 
 将数据组织到标准周内为训练预测模型提供了 159 个完整的标准周。
 
-```
+```py
 2006-12-17,3390.46,226.0059999999994,345725.32000000024,14398.59999999998,2033.0,4187.0,13341.0,36946.66673200004
 ...
 2010-01-02,1309.2679999999998,199.54600000000016,352332.8399999997,5489.7999999999865,801.0,298.0,6425.0,14297.133406600002
@@ -283,7 +283,7 @@ def evaluate_forecasts(actual, predicted):
 
 使用特定行偏移来使用数据集的知识来分割数据。然后使用 NumPy [split（）函数](https://docs.scipy.org/doc/numpy/reference/generated/numpy.split.html)将分割数据集组织成每周数据。
 
-```
+```py
 # split a univariate dataset into train/test sets
 def split_dataset(data):
 	# split into standard weeks
@@ -298,7 +298,7 @@ def split_dataset(data):
 
 完整的代码示例如下所示。
 
-```
+```py
 # split into standard weeks
 from numpy import split
 from numpy import array
@@ -328,7 +328,7 @@ print(test[0, 0, 0], test[-1, -1, 0])
 
 我们可以看到，第一行和最后一行的列车和测试数据集的总有效功率与我们定义为每组标准周界限的特定日期的数据相匹配。
 
-```
+```py
 (159, 7, 8)
 3390.46 1309.2679999999998
 (46, 7, 8)
@@ -343,7 +343,7 @@ print(test[0, 0, 0], test[-1, -1, 0])
 
 我们可以通过分离输入数据和输出/预测数据来证明这一点。
 
-```
+```py
 Input, 						Predict
 [Week1]						Week2
 [Week1 + Week2]				Week3
@@ -363,7 +363,7 @@ Input, 						Predict
 
 下面列出了完整的 _evaluate_model（）_ 函数。
 
-```
+```py
 # evaluate a single model
 def evaluate_model(train, test, n_input):
 	# fit model
@@ -389,7 +389,7 @@ def evaluate_model(train, test, n_input):
 
 下面的函数名为 _summarize_scores（）_，将模型的表现显示为单行，以便与其他模型进行比较。
 
-```
+```py
 # summarize scores
 def summarize_scores(name, score, scores):
 	s_scores = ', '.join(['%.1f' % s for s in scores])
@@ -472,7 +472,7 @@ CNN 可用于递归或直接预测策略，其中模型使得一步预测和输�
 
 1D CNN 模型期望数据具有以下形状：
 
-```
+```py
 [samples, timesteps, features]
 ```
 
@@ -480,7 +480,7 @@ CNN 可用于递归或直接预测策略，其中模型使得一步预测和输�
 
 训练数据集有 159 周的数据，因此训练数据集的形状为：
 
-```
+```py
 [159, 7, 1]
 ```
 
@@ -494,7 +494,7 @@ CNN 可用于递归或直接预测策略，其中模型使得一步预测和输�
 
 训练数据在标准周内提供八个变量，特别是形状[159,7,8]。第一步是展平数据，以便我们有八个时间序列序列。
 
-```
+```py
 # flatten data
 data = data.reshape((data.shape[0]*data.shape[1], data.shape[2]))
 ```
@@ -503,7 +503,7 @@ data = data.reshape((data.shape[0]*data.shape[1], data.shape[2]))
 
 例如：
 
-```
+```py
 Input, Output
 [d01, d02, d03, d04, d05, d06, d07],	[d08, d09, d10, d11, d12, d13, d14]
 [d02, d03, d04, d05, d06, d07, d08],	[d09, d10, d11, d12, d13, d14, d15]
@@ -516,7 +516,7 @@ Input, Output
 
 下面是一个名为 _to_supervised（）_ 的函数，它采用周（历史）列表和用作输入和输出的时间步数，并以重叠移动窗口格式返回数据。
 
-```
+```py
 # convert history into inputs and outputs
 def to_supervised(train, n_input, n_out=7):
 	# flatten data
@@ -553,7 +553,7 @@ def to_supervised(train, n_input, n_out=7):
 
 下面的 _build_model（）_ 准备训练数据，定义模型，并将模型拟合到训练数据上，使拟合模型准备好进行预测。
 
-```
+```py
 # train the model
 def build_model(train, n_input):
 	# prepare data
@@ -580,7 +580,7 @@ def build_model(train, n_input):
 
 在这种情况下，输入模式的预期形状是一个样本，每天消耗的一个功能的七天：
 
-```
+```py
 [1, 7, 1]
 ```
 
@@ -592,28 +592,28 @@ def build_model(train, n_input):
 
 为了预测下一个标准周，我们需要检索观察的最后几天。与训练数据一样，我们必须首先展平历史数据以删除每周结构，以便最终得到八个平行时间序列。
 
-```
+```py
 # flatten data
 data = data.reshape((data.shape[0]*data.shape[1], data.shape[2]))
 ```
 
 接下来，我们需要检索每日总功耗的最后七天（功能编号 0）。我们将像对训练数据那样进行参数化，以便将来可以修改模型用作输入的前几天的数量。
 
-```
+```py
 # retrieve last observations for input data
 input_x = data[-n_input:, 0]
 ```
 
 接下来，我们将输入重塑为预期的三维结构。
 
-```
+```py
 # reshape into [1, n_input, 1]
 input_x = input_x.reshape((1, len(input_x), 1))
 ```
 
 然后，我们使用拟合模型和输入数据进行预测，并检索七天输出的向量。
 
-```
+```py
 # forecast the next week
 yhat = model.predict(input_x, verbose=0)
 # we only want the vector forecast
@@ -622,7 +622,7 @@ yhat = yhat[0]
 
 下面的 _forecast（）_ 函数实现了这个功能，并将模型拟合到训练数据集，到目前为止观察到的数据历史以及模型预期的输入时间步数。
 
-```
+```py
 # make a forecast
 def forecast(model, history, n_input):
 	# flatten data
@@ -643,7 +643,7 @@ def forecast(model, history, n_input):
 
 我们可以将所有这些结合在一起。下面列出了完整的示例。
 
-```
+```py
 # univariate multi-step cnn
 from math import sqrt
 from numpy import split
@@ -786,7 +786,7 @@ pyplot.show()
 
 我们可以看到，在这种情况下，与朴素的预测相比，该模型是巧妙的，实现了大约 404 千瓦的总体 RMSE，小于 465 千瓦的朴素模型。
 
-```
+```py
 cnn: [404.411] 436.1, 400.6, 346.2, 388.2, 405.5, 326.0, 502.9
 ```
 
@@ -798,7 +798,7 @@ cnn: [404.411] 436.1, 400.6, 346.2, 388.2, 405.5, 326.0, 502.9
 
 我们可以通过更改 _n_input_ 变量来增加用作 7 到 14 之间输入的前几天的数量。
 
-```
+```py
 # evaluate model and get scores
 n_input = 14
 ```
@@ -809,7 +809,7 @@ n_input = 14
 
 在这种情况下，我们可以看到整体 RMSE 进一步下降，这表明进一步调整输入大小以及模型的内核大小可能会带来更好的表现。
 
-```
+```py
 cnn: [396.497] 392.2, 412.8, 384.0, 389.0, 387.3, 381.0, 427.1
 ```
 
@@ -833,13 +833,13 @@ cnn: [396.497] 392.2, 412.8, 384.0, 389.0, 387.3, 381.0, 427.1
 
 首先，我们必须更新训练数据的准备工作，以包括所有八项功能，而不仅仅是每日消耗的一项功能。它需要一行：
 
-```
+```py
 X.append(data[in_start:in_end, :])
 ```
 
 下面列出了具有此更改的完整 _to_supervised（）_ 功能。
 
-```
+```py
 # convert history into inputs and outputs
 def to_supervised(train, n_input, n_out=7):
 	# flatten data
@@ -862,7 +862,7 @@ def to_supervised(train, n_input, n_out=7):
 
 我们还必须使用拟合模型更新用于进行预测的函数，以使用先前时间步骤中的所有八个特征。再次，另一个小变化：
 
-```
+```py
 # retrieve last observations for input data
 input_x = data[-n_input:, :]
 # reshape into [1, n_input, n]
@@ -871,7 +871,7 @@ input_x = input_x.reshape((1, input_x.shape[0], input_x.shape[1]))
 
 具有此更改的完整 _forecast（）_ 如下所示：
 
-```
+```py
 # make a forecast
 def forecast(model, history, n_input):
 	# flatten data
@@ -890,7 +890,7 @@ def forecast(model, history, n_input):
 
 我们将在前面部分的最后一部分中使用 14 天的先前观察到 8 个输入变量，这导致表现稍好一些。
 
-```
+```py
 n_input = 14
 ```
 
@@ -902,7 +902,7 @@ n_input = 14
 
 下面列出了更新的 _build_model（）_ 函数，该函数定义并拟合训练数据集上的模型。
 
-```
+```py
 # train the model
 def build_model(train, n_input):
 	# prepare data
@@ -930,7 +930,7 @@ def build_model(train, n_input):
 
 下面列出了完整的示例。
 
-```
+```py
 # multichannel multi-step cnn
 from math import sqrt
 from numpy import split
@@ -1074,7 +1074,7 @@ pyplot.show()
 
 我们可以看到，在这种情况下，使用所有八个输入变量确实导致整体 RMSE 分数的另一个小幅下降。
 
-```
+```py
 cnn: [385.711] 422.2, 363.5, 349.8, 393.1, 357.1, 318.8, 474.3
 ```
 
@@ -1104,7 +1104,7 @@ cnn: [385.711] 422.2, 363.5, 349.8, 393.1, 357.1, 318.8, 474.3
 
 在我们构建子模型时，我们会跟踪输入层并在列表中展平层。这样我们就可以在模型对象的定义中指定输入，并使用合并层中的展平层列表。
 
-```
+```py
 # create a channel for each variable
 in_layers, out_layers = list(), list()
 for i in range(n_features):
@@ -1135,13 +1135,13 @@ model.compile(loss='mse', optimizer='adam')
 
 我们可以按以下格式准备训练数据集：
 
-```
+```py
 input_data = [train_x[:,:,i].reshape((train_x.shape[0],n_timesteps,1)) for i in range(n_features)]
 ```
 
 下面列出了具有这些更改的更新的 _build_model（）_ 函数。
 
-```
+```py
 # train the model
 def build_model(train, n_input):
 	# prepare data
@@ -1191,13 +1191,13 @@ def build_model(train, n_input):
 
 我们必须执行相同的更改，其中[1,14,8]的输入数组必须转换为八个 3D 数组的列表，每个数组都带有[1,14,1]。
 
-```
+```py
 input_x = [input_x[:,i].reshape((1,input_x.shape[0],1)) for i in range(input_x.shape[1])]
 ```
 
 下面列出了具有此更改的 _forecast（）_ 函数。
 
-```
+```py
 # make a forecast
 def forecast(model, history, n_input):
 	# flatten data
@@ -1218,7 +1218,7 @@ def forecast(model, history, n_input):
 
 我们可以将所有这些结合在一起;下面列出了完整的示例。
 
-```
+```py
 # multi headed multi-step cnn
 from math import sqrt
 from numpy import split
@@ -1391,7 +1391,7 @@ pyplot.show()
 
 我们可以看到，在这种情况下，与朴素的预测相比，整体 RMSE 非常熟练，但是所选择的配置可能不会比上一节中的多通道模型表现更好。
 
-```
+```py
 cnn: [396.116] 414.5, 385.5, 377.2, 412.1, 371.1, 380.6, 428.1
 ```
 

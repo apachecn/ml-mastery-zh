@@ -54,7 +54,7 @@
 
 下面的示例加载并创建已加载数据集的图。
 
-```
+```py
 # load and plot dataset
 from pandas import read_csv
 from pandas import datetime
@@ -72,7 +72,7 @@ pyplot.show()
 
 运行该示例将数据集作为 Pandas Series 加载并打印前 5 行。
 
-```
+```py
 Month
 1901-01-01 266.0
 1901-02-01 145.9
@@ -156,7 +156,7 @@ Name: Sales, dtype: float64
 
 代码的评论相当好，应该很容易理解。此代码将成为本教程中所有未来实验的基础，并且仅列出每个后续实验中所做的更改。
 
-```
+```py
 from pandas import DataFrame
 from pandas import Series
 from pandas import concat
@@ -299,7 +299,7 @@ run()
 
 运行实验在 10 次实验运行的每一次结束时打印列车的 RMSE 和测试集。
 
-```
+```py
 0) TrainRMSE=63.495594, TestRMSE=113.472643
 1) TrainRMSE=60.446307, TestRMSE=100.147470
 2) TrainRMSE=59.879681, TestRMSE=95.112331
@@ -332,13 +332,13 @@ run()
 
 具体地， _n_epochs_ 参数在 _run（）_ 函数中被设置为 _1000_ 。
 
-```
+```py
 n_epochs = 1000
 ```
 
 运行该示例为最后一个时期的列车和测试集打印 RMSE。
 
-```
+```py
 0) TrainRMSE=69.242394, TestRMSE=90.832025
 1) TrainRMSE=65.445810, TestRMSE=113.013681
 2) TrainRMSE=57.949335, TestRMSE=103.727228
@@ -371,13 +371,13 @@ n_epochs = 1000
 
 具体地，在 _run（）_ 函数中将 _n_epochs_ 参数设置为 2000。
 
-```
+```py
 n_epochs = 2000
 ```
 
 运行该示例为最后一个时期的列车和测试集打印 RMSE。
 
-```
+```py
 0) TrainRMSE=67.292970, TestRMSE=83.096856
 1) TrainRMSE=55.098951, TestRMSE=104.211509
 2) TrainRMSE=69.237206, TestRMSE=117.392007
@@ -412,13 +412,13 @@ n_epochs = 2000
 
 具体地，在 _run（）_ 函数中将 _n_epochs_ 参数设置为 4000。
 
-```
+```py
 n_epochs = 4000
 ```
 
 运行该示例为最后一个时期的列车和测试集打印 RMSE。
 
-```
+```py
 0) TrainRMSE=58.889277, TestRMSE=99.121765
 1) TrainRMSE=56.839065, TestRMSE=95.144846
 2) TrainRMSE=58.522271, TestRMSE=87.671309
@@ -453,7 +453,7 @@ n_epochs = 4000
 
 完整的代码示例如下所示。
 
-```
+```py
 from pandas import DataFrame
 from pandas import Series
 from pandas import concat
@@ -594,7 +594,7 @@ pyplot.savefig('boxplot_epochs.png')
 
 仅查看平均 RMSE 分数，结果表明配置为 1000 的迭代可能更好。结果还表明可能需要进一步调查 1000 至 2000 年的时代价值。
 
-```
+```py
               500        1000        2000        4000        6000
 count   30.000000   30.000000   30.000000   30.000000   30.000000
 mean   109.439203  104.566259  107.882390  116.339792  127.618305
@@ -642,7 +642,7 @@ max    138.879278  139.928055  146.840997  157.026562  166.111151
 
 对 _run（）_ 函数中的 _n_batch_ 参数进行了此更改;例如：
 
-```
+```py
 n_batch = 2
 ```
 
@@ -652,7 +652,7 @@ n_batch = 2
 
 下面列出了每次运行的最终暴露的 RSME 分数。
 
-```
+```py
 0) TrainRMSE=63.510219, TestRMSE=115.855819
 1) TrainRMSE=58.336003, TestRMSE=97.954374
 2) TrainRMSE=69.163685, TestRMSE=96.721446
@@ -681,13 +681,13 @@ n_batch = 2
 
 我们可以在 _run（）_ 函数中更改 _n_batch_ 参数;例如：
 
-```
+```py
 n_batch = 1
 ```
 
 同样，运行该示例将打印每次运行的最后一个时期的 RMSE 分数。
 
-```
+```py
 0) TrainRMSE=60.349798, TestRMSE=100.182293
 1) TrainRMSE=62.624106, TestRMSE=95.716070
 2) TrainRMSE=64.091859, TestRMSE=98.598958
@@ -716,7 +716,7 @@ n_batch = 1
 
 每个配置运行 30 次，并根据最终结果计算汇总统计数据。
 
-```
+```py
 ...
 
 # run a repeated experiment
@@ -778,7 +778,7 @@ pyplot.savefig('boxplot_batches.png')
 
 仅从平均表现来看，结果表明较低的 RMSE，批量大小为 1.正如前一节所述，随着更多的训练时期，这可能会得到进一步改善。
 
-```
+```py
                 1           2           4
 count   30.000000   30.000000   30.000000
 mean    98.697017  102.642594  100.320203
@@ -822,7 +822,7 @@ max    147.688818  120.038036  135.290829
 
 我们可以通过改变 _run（）_ 函数中的 _n_neurons_ 变量来实现。
 
-```
+```py
 n_neurons = 2
 ```
 
@@ -830,7 +830,7 @@ n_neurons = 2
 
 结果表明一般表现良好，但不是很好。
 
-```
+```py
 0) TrainRMSE=59.466223, TestRMSE=95.554547
 1) TrainRMSE=58.752515, TestRMSE=101.908449
 2) TrainRMSE=58.061139, TestRMSE=86.589039
@@ -861,7 +861,7 @@ n_neurons = 2
 
 我们可以通过在 _run（）_ 函数中设置 _n_neurons_ 变量来实现。
 
-```
+```py
 n_neurons = 3
 ```
 
@@ -873,7 +873,7 @@ n_neurons = 3
 
 这些神经元数量的增加可能受益于减慢学习速度的额外变化。例如使用正常化方法如丢失，减少批量大小，并减少到训练时期的数量。
 
-```
+```py
 0) TrainRMSE=55.686242, TestRMSE=90.955555
 1) TrainRMSE=55.198617, TestRMSE=124.989622
 2) TrainRMSE=55.767668, TestRMSE=104.751183
@@ -898,7 +898,7 @@ n_neurons = 3
 
 在本节中，我们重复每个实验 30 次，并将平均测试 RMSE 表现与 1 到 5 的神经元数量进行比较。
 
-```
+```py
 ...
 
 # run a repeated experiment
@@ -963,7 +963,7 @@ pyplot.savefig('boxplot_neurons.png')
 
 仅从平均表现来看，结果表明具有 1 个神经元的网络配置具有超过 1000 个时期的最佳表现，批量大小为 4.此配置还显示最紧密的方差。
 
-```
+```py
                 1           2           3           4           5
 count   30.000000   30.000000   30.000000   30.000000   30.000000
 mean    98.344696  103.268147  102.726894  112.453766  122.843032

@@ -74,7 +74,7 @@ EEG 传感器位于受试者身上的卡通
 
 下面是删除了 ARFF 标题的前五行数据的示例。
 
-```
+```py
 4329.23,4009.23,4289.23,4148.21,4350.26,4586.15,4096.92,4641.03,4222.05,4238.46,4211.28,4280.51,4635.9,4393.85,0
 4324.62,4004.62,4293.85,4148.72,4342.05,4586.67,4097.44,4638.97,4210.77,4226.67,4207.69,4279.49,4632.82,4384.1,0
 4327.69,4006.67,4295.38,4156.41,4336.92,4583.59,4096.92,4630.26,4207.69,4222.05,4206.67,4282.05,4628.72,4389.23,0
@@ -89,7 +89,7 @@ EEG 传感器位于受试者身上的卡通
 
 该示例假定您具有 CSV 格式的数据集副本，文件名为“ _EEG_Eye_State.csv_ ”，与代码位于同一目录中。
 
-```
+```py
 # visualize dataset
 from pandas import read_csv
 from matplotlib import pyplot
@@ -119,7 +119,7 @@ pyplot.show()
 
 这是[离群值检测和删除](https://machinelearningmastery.com/how-to-use-statistics-to-identify-outliers-in-data/)的快速而肮脏的实现，但是完成了工作。我相信你可以设计出更高效的实施方案。
 
-```
+```py
 # remove outliers from the EEG data
 from pandas import read_csv
 from numpy import mean
@@ -150,7 +150,7 @@ savetxt('EEG_Eye_State_no_outliers.csv', values, delimiter=',')
 
 运行该示例总结了删除的行，因为 EEG 数据中的每一列都针对平均值之上和之下的异常值进行处理。
 
-```
+```py
 >deleted 0 rows
 >deleted 1 rows
 >deleted 2 rows
@@ -183,7 +183,7 @@ savetxt('EEG_Eye_State_no_outliers.csv', values, delimiter=',')
 
 我们现在可以通过加载新的' _EEG_Eye_State_no_outliers.csv_ '文件来显示没有异常值的数据。
 
-```
+```py
 # visualize dataset without outliers
 from pandas import read_csv
 from matplotlib import pyplot
@@ -223,7 +223,7 @@ pyplot.show()
 
 完整示例如下所列，k = 3 KNN。
 
-```
+```py
 # knn for predicting eye state
 from pandas import read_csv
 from sklearn.metrics import accuracy_score
@@ -257,7 +257,7 @@ print('Final Score: %.3f' % (mean(scores)))
 
 运行该示例打印交叉验证的每个折叠的得分，并且在所有 10 倍中平均得分为 97％。
 
-```
+```py
 >0.970
 >0.975
 >0.978
@@ -313,7 +313,7 @@ Final Score: 0.975
 
 首先，下面的示例将数据集拆分为列车/测试拆分，分别为 90％/ 10％的数据。在拆分之前对数据集进行洗牌。
 
-```
+```py
 # knn for predicting eye state
 from pandas import read_csv
 from sklearn.metrics import accuracy_score
@@ -339,7 +339,7 @@ print(score)
 
 运行该示例，我们可以看到，确实，该技能与我们在交叉验证示例中看到的或与其接近的技能相匹配，准确率为 96％。
 
-```
+```py
 0.9699510831586303
 ```
 
@@ -347,7 +347,7 @@ print(score)
 
 这意味着训练数据是关于观测的时间排序的前 90％的数据，并且测试数据集是数据的最后 10％或约 1,400 个观测值。
 
-```
+```py
 # knn for predicting eye state
 from pandas import read_csv
 from sklearn.metrics import accuracy_score
@@ -373,7 +373,7 @@ print(score)
 
 运行该示例显示模型技能更差，为 52％。
 
-```
+```py
 0.5269042627533194
 ```
 
@@ -383,7 +383,7 @@ print(score)
 
 我们可以重复实验并及时使用前 10％的数据进行测试，最后 90％的数据用于训练。我们可以通过在使用 [flip（）函数](https://docs.scipy.org/doc/numpy/reference/generated/numpy.flip.html)分割数据之前反转行的顺序来实现。
 
-```
+```py
 # knn for predicting eye state
 from pandas import read_csv
 from sklearn.metrics import accuracy_score
@@ -414,7 +414,7 @@ print(score)
 
 这提供了更多的证据，证明不是特定的连续观察块导致模型技能差。
 
-```
+```py
 0.5290006988120196
 ```
 
@@ -434,7 +434,7 @@ print(score)
 
 下面的示例使用前向验证评估 KNN 的技能，使用最后 10％的数据集（约 10 秒），遵守时间顺序。
 
-```
+```py
 # knn for predicting eye state
 from pandas import read_csv
 from sklearn.metrics import accuracy_score
@@ -470,7 +470,7 @@ print(score)
 
 运行该示例可提供令人印象深刻的模型技能，准确率约为 95％。
 
-```
+```py
 0.9531795946890287
 ```
 
@@ -478,7 +478,7 @@ print(score)
 
 下面列出了完整的示例。
 
-```
+```py
 # knn for predicting eye state
 from pandas import read_csv
 from sklearn.metrics import accuracy_score
@@ -517,7 +517,7 @@ print(score)
 
 我预计，当迹线从开放到闭合或从闭合到开放转变时，唯一出现的错误是 EEG 系列拐点处的错误，这是问题的实际难点部分。这方面需要进一步调查。
 
-```
+```py
 0.9923130677847659
 ```
 

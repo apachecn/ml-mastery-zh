@@ -63,7 +63,7 @@
 
 同时，SARIMA 模型的表示法指定为：
 
-```
+```py
 SARIMA(p,d,q)(P,D,Q)m
 ```
 
@@ -101,7 +101,7 @@ SARIMA 模型可以通过模型配置参数包含 ARIMA，ARMA，AR 和 MA 模�
 
 我们还尝试通过放宽约束来使模型健壮，例如数据必须是静止的并且 MA 变换是可逆的。
 
-```
+```py
 # one-step sarima forecast
 def sarima_forecast(history, config):
 	order, sorder, trend = config
@@ -120,7 +120,7 @@ def sarima_forecast(history, config):
 
 下面的 _train_test_split（）_ 函数为提供的数据集和要在测试集中使用的指定数量的时间步骤实现此功能。
 
-```
+```py
 # split a univariate dataset into train/test sets
 def train_test_split(data, n_test):
 	return data[:-n_test], data[-n_test:]
@@ -132,7 +132,7 @@ def train_test_split(data, n_test):
 
 下面的 _measure_rmse（）_ 函数将根据实际（测试集）和预测值列表计算 RMSE。
 
-```
+```py
 # root mean squared error or rmse
 def measure_rmse(actual, predicted):
 	return sqrt(mean_squared_error(actual, predicted))
@@ -144,7 +144,7 @@ def measure_rmse(actual, predicted):
 
 下面的 _walk_forward_validation（）_ 函数实现了这一点，采用单变量时间序列，在测试集中使用的一些时间步骤，以及模型配置数组。
 
-```
+```py
 # walk-forward validation for univariate data
 def walk_forward_validation(data, n_test, cfg):
 	predictions = list()
@@ -177,7 +177,7 @@ def walk_forward_validation(data, n_test, cfg):
 
 下面的 _score_model（）_ 函数实现了这个并返回（键和结果）的元组，其中键是测试模型配置的字符串版本。
 
-```
+```py
 # score a model, return None on failure
 def score_model(data, n_test, cfg, debug=False):
 	result = None
@@ -209,19 +209,19 @@ def score_model(data, n_test, cfg, debug=False):
 
 我们可以定义一个 Parallel 对象，其中包含要使用的核心数，并将其设置为硬件中检测到的分数。
 
-```
+```py
 executor = Parallel(n_jobs=cpu_count(), backend='multiprocessing')
 ```
 
 然后我们可以创建一个并行执行的任务列表，这将是对我们拥有的每个模型配置的 _score_model（）_ 函数的一次调用。
 
-```
+```py
 tasks = (delayed(score_model)(data, n_test, cfg) for cfg in cfg_list)
 ```
 
 最后，我们可以使用 Parallel 对象并行执行任务列表。
 
-```
+```py
 scores = executor(tasks)
 ```
 
@@ -229,7 +229,7 @@ scores = executor(tasks)
 
 我们还可以提供评估所有模型配置的非并行版本，以防我们想要调试某些内容。
 
-```
+```py
 scores = [score_model(data, n_test, cfg) for cfg in cfg_list]
 ```
 
@@ -237,7 +237,7 @@ scores = [score_model(data, n_test, cfg) for cfg in cfg_list]
 
 我们可以使用“无”过滤掉所有分数。
 
-```
+```py
 scores = [r for r in scores if r[1] != None]
 ```
 
@@ -245,7 +245,7 @@ scores = [r for r in scores if r[1] != None]
 
 给定单变量时间序列数据集，模型配置列表（列表列表）以及在测试集中使用的时间步数，下面的 _grid_search（）_ 函数实现此行为。可选的 _ 并行 _ 参数允许对所有内核的模型进行开启或关闭调整，默认情况下处于打开状态。
 
-```
+```py
 # grid search configs
 def grid_search(data, cfg_list, n_test, parallel=True):
 	scores = None
@@ -275,7 +275,7 @@ def grid_search(data, cfg_list, n_test, parallel=True):
 
 理论上，有 1,296 种可能的模型配置需要评估，但在实践中，许多模型配置无效并会导致我们将陷入和忽略的错误。
 
-```
+```py
 # create a set of sarima configs to try
 def sarima_configs(seasonal=[0]):
 	models = list()
@@ -310,7 +310,7 @@ def sarima_configs(seasonal=[0]):
 
 下面列出了完整的示例。
 
-```
+```py
 # grid search sarima hyperparameters
 from math import sqrt
 from multiprocessing import cpu_count
@@ -444,7 +444,7 @@ if __name__ == '__main__':
 
 最后，报告前三种配置的配置和错误。我们可以看到，许多模型在这个简单的线性增长的时间序列问题上实现了完美的表现。
 
-```
+```py
 [10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0]
 
 ...
@@ -483,7 +483,7 @@ done
 
 我们可以使用函数 _read_csv（）_ 将此数据集作为 Pandas 系列加载。
 
-```
+```py
 series = read_csv('daily-total-female-births.csv', header=0, index_col=0)
 ```
 
@@ -491,7 +491,7 @@ series = read_csv('daily-total-female-births.csv', header=0, index_col=0)
 
 下面列出了搜索每日女性单变量时间序列预测问题的完整示例网格。
 
-```
+```py
 # grid search sarima hyperparameters for daily female dataset
 from math import sqrt
 from multiprocessing import cpu_count
@@ -633,7 +633,7 @@ if __name__ == '__main__':
 
 令人惊讶的是，具有一些季节性元素的配置导致最低的错误。我不会猜到这种配置，可能会坚持使用 ARIMA 模型。
 
-```
+```py
 ...
 > Model[[(2, 1, 2), (1, 0, 1, 0), 'ct']] 6.905
 > Model[[(2, 1, 2), (2, 0, 0, 0), 'ct']] 7.031
@@ -667,7 +667,7 @@ done
 
 我们可以使用函数 _read_csv（）_ 将此数据集作为 Pandas 系列加载。
 
-```
+```py
 # parse dates
 def custom_parser(x):
 	return datetime.strptime('195'+x, '%Y-%m')
@@ -680,7 +680,7 @@ series = read_csv('shampoo.csv', header=0, index_col=0, date_parser=custom_parse
 
 下面列出了搜索洗发水销售单变量时间序列预测问题的完整示例网格。
 
-```
+```py
 # grid search sarima hyperparameters for monthly shampoo sales dataset
 from math import sqrt
 from multiprocessing import cpu_count
@@ -825,7 +825,7 @@ if __name__ == '__main__':
 *   **季节性命令** :( 2,0,2,0）
 *   **趋势参数**：'t'（线性趋势）
 
-```
+```py
 ...
 > Model[[(2, 1, 2), (1, 0, 1, 0), 'ct']] 68.891
 > Model[[(2, 1, 2), (2, 0, 0, 0), 'ct']] 75.406
@@ -858,27 +858,27 @@ done
 
 我们可以使用函数 _read_csv（）_ 将此数据集作为 Pandas 系列加载。
 
-```
+```py
 series = read_csv('monthly-mean-temp.csv', header=0, index_col=0)
 ```
 
 数据集有 20 年，或 240 个观测值。我们将数据集修剪为过去五年的数据（60 个观测值），以加快模型评估过程，并使用去年或 12 个观测值来测试集。
 
-```
+```py
 # trim dataset to 5 years
 data = data[-(5*12):]
 ```
 
 季节性成分的周期约为一年，或 12 个观测值。在准备模型配置时，我们将此作为调用 _sarima_configs（）_ 函数的季节性时段。
 
-```
+```py
 # model configs
 cfg_list = sarima_configs(seasonal=[0, 12])
 ```
 
 下面列出了搜索月平均温度时间序列预测问题的完整示例网格。
 
-```
+```py
 # grid search sarima hyperparameters for monthly mean temp dataset
 from math import sqrt
 from multiprocessing import cpu_count
@@ -1021,7 +1021,7 @@ if __name__ == '__main__':
 
 正如我们所料，该模型没有趋势组件和 12 个月的季节性 ARMA 组件。
 
-```
+```py
 ...
 > Model[[(2, 1, 2), (2, 1, 0, 12), 't']] 4.599
 > Model[[(2, 1, 2), (1, 1, 0, 12), 'ct']] 2.477
@@ -1055,7 +1055,7 @@ done
 
 我们可以使用函数 _read_csv（）_ 将此数据集作为 Pandas 系列加载。
 
-```
+```py
 series = read_csv('monthly-car-sales.csv', header=0, index_col=0)
 ```
 
@@ -1063,14 +1063,14 @@ series = read_csv('monthly-car-sales.csv', header=0, index_col=0)
 
 季节性成分的期限可能是六个月或 12 个月。在准备模型配置时，我们将尝试将两者作为调用 _sarima_configs（）_ 函数的季节性时段。
 
-```
+```py
 # model configs
 cfg_list = sarima_configs(seasonal=[0,6,12])
 ```
 
 下面列出了搜索月度汽车销售时间序列预测问题的完整示例网格。
 
-```
+```py
 # grid search sarima hyperparameters for monthly car sales dataset
 from math import sqrt
 from multiprocessing import cpu_count
@@ -1210,7 +1210,7 @@ if __name__ == '__main__':
 *   **季节性命令** :( 1,1,0,12）
 *   **趋势参数**：'t'（线性趋势）
 
-```
+```py
 > Model[[(2, 1, 2), (2, 1, 1, 6), 'ct']] 2246.248
 > Model[[(2, 1, 2), (2, 0, 2, 12), 'ct']] 10710.462
 > Model[[(2, 1, 2), (2, 1, 2, 6), 'ct']] 2183.568

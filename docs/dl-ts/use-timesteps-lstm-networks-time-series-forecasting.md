@@ -52,7 +52,7 @@ Keras 的长短期记忆（LSTM）网络支持时间步骤。
 
 下面的示例加载并创建已加载数据集的图。
 
-```
+```py
 # load and plot dataset
 from pandas import read_csv
 from pandas import datetime
@@ -70,7 +70,7 @@ pyplot.show()
 
 运行该示例将数据集作为 Pandas Series 加载并打印前 5 行。
 
-```
+```py
 Month
 1901-01-01 266.0
 1901-02-01 145.9
@@ -158,7 +158,7 @@ Name: Sales, dtype: float64
 
 对于 5 个实验中的每一个， _run（）_ 函数中的时间步长参数从 1 到 5 变化。此外，结果将在实验结束时保存到文件中，并且还必须针对每个不同的实验运行更改此文件名;例如： _experiment_timesteps_1.csv_ ， _experiment_timesteps_2.csv_ 等。
 
-```
+```py
 from pandas import DataFrame
 from pandas import Series
 from pandas import concat
@@ -298,7 +298,7 @@ run()
 
 运行实验后，您应该有 5 个包含结果的文件，如下所示：
 
-```
+```py
 experiment_timesteps_1.csv
 experiment_timesteps_2.csv
 experiment_timesteps_3.csv
@@ -312,7 +312,7 @@ experiment_timesteps_5.csv
 
 下面列出了总结结果的代码。
 
-```
+```py
 from pandas import DataFrame
 from pandas import read_csv
 from matplotlib import pyplot
@@ -333,7 +333,7 @@ pyplot.show()
 
 我们可以从单独的平均表现中看出，使用单个时间步的默认值导致了最佳表现。在查看中位数测试 RMSE（第 50 百分位数）时也会显示这一点。
 
-```
+```py
        timesteps_1  timesteps_2  timesteps_3  timesteps_4  timesteps_5
 count    10.000000    10.000000    10.000000    10.000000    10.000000
 mean    102.785197   127.308725   136.182907   146.277122   142.631684
@@ -367,25 +367,25 @@ LSTM 网络中的神经元（也称为块）的数量定义了其学习能力。
 
 这可以通过更改实验函数中的行来实现：
 
-```
+```py
 lstm_model = fit_lstm(train_scaled, 1, 500, 1, timesteps)
 ```
 
 至
 
-```
+```py
 lstm_model = fit_lstm(train_scaled, 1, 500, timesteps, timesteps)
 ```
 
 此外，我们可以通过在文件名中添加“ __neurons_ ”后缀来保持写入文件的结果与第一个实验中创建的结果分开，例如，更改：
 
-```
+```py
 results.to_csv('experiment_timesteps_1.csv', index=False)
 ```
 
 至
 
-```
+```py
 results.to_csv('experiment_timesteps_1_neurons.csv', index=False)
 ```
 
@@ -393,7 +393,7 @@ results.to_csv('experiment_timesteps_1_neurons.csv', index=False)
 
 运行这些实验后，您应该有 5 个结果文件。
 
-```
+```py
 experiment_timesteps_1_neurons.csv
 experiment_timesteps_2_neurons.csv
 experiment_timesteps_3_neurons.csv
@@ -403,7 +403,7 @@ experiment_timesteps_5_neurons.csv
 
 与前一个实验一样，我们可以加载结果，计算描述性统计数据，并创建一个盒子和须状图。完整的代码清单如下。
 
-```
+```py
 from pandas import DataFrame
 from pandas import read_csv
 from matplotlib import pyplot
@@ -424,7 +424,7 @@ pyplot.show()
 
 结果与使用一个神经元 LSTM 的第一组实验相似。当神经元数量和时间步数设置为 1 时，平均测试 RMSE 显得最低。
 
-```
+```py
        timesteps_1  timesteps_2  timesteps_3  timesteps_4  timesteps_5
 count    10.000000    10.000000    10.000000    10.000000    10.000000
 mean    109.484374   133.195856   133.432933   145.843701   149.854229

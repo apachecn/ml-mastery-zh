@@ -61,7 +61,7 @@
 
 例如，给定系列：
 
-```
+```py
 [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
@@ -79,7 +79,7 @@
 
 例如，给定系列：
 
-```
+```py
 [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
@@ -89,7 +89,7 @@
 
 例如，给定具有 3 步循环的系列：
 
-```
+```py
 [1, 2, 3, 1, 2, 3, 1, 2, 3]
 ```
 
@@ -105,7 +105,7 @@
 
 下面的 _naive_forecast（）_ 函数实现了从 1 到数据集长度的给定偏移的朴素预测策略。
 
-```
+```py
 # one-step naive forecast
 def naive_forecast(history, n):
 	return history[-n]
@@ -113,7 +113,7 @@ def naive_forecast(history, n):
 
 我们可以在一个小的设计数据集上测试这个功能。
 
-```
+```py
 # one-step naive forecast
 def naive_forecast(history, n):
 	return history[-n]
@@ -128,7 +128,7 @@ for i in range(1, len(data)+1):
 
 首先运行示例打印设计的数据集，然后打印历史数据集中每个偏移的朴素预测。
 
-```
+```py
 [10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0]
 100.0
 90.0
@@ -146,21 +146,21 @@ for i in range(1, len(data)+1):
 
 平均最后 n 次观测是直截了当的;例如：
 
-```
+```py
 from numpy import mean
 result = mean(history[-n:])
 ```
 
 我们可能还想测试观察分布是非高斯分布的情况下的中位数。
 
-```
+```py
 from numpy import median
 result = median(history[-n:])
 ```
 
 下面的 _average_forecast（）_ 函数实现了这一过程，它将历史数据和一个配置数组或元组指定为平均值作为整数的先前值的数量，以及一个描述计算平均值的方法的字符串（' _ 表示 _'或'_ 中值 _'）。
 
-```
+```py
 # one-step average forecast
 def average_forecast(history, config):
 	n, avg_type = config
@@ -173,7 +173,7 @@ def average_forecast(history, config):
 
 下面列出了一个小型人为数据集的完整示例。
 
-```
+```py
 from numpy import mean
 from numpy import median
 
@@ -196,7 +196,7 @@ for i in range(1, len(data)+1):
 
 运行该示例将系列中的下一个值预测为先前观察的连续子集的平均值，从-1 到-10，包括在内。
 
-```
+```py
 [10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0]
 100.0
 95.0
@@ -220,7 +220,7 @@ for i in range(1, len(data)+1):
 
 更新的功能如下所示。
 
-```
+```py
 # one-step average forecast
 def average_forecast(history, config):
 	n, offset, avg_type = config
@@ -246,7 +246,7 @@ def average_forecast(history, config):
 
 下面列出了完整的示例。
 
-```
+```py
 from numpy import mean
 from numpy import median
 
@@ -280,7 +280,7 @@ for i in [1, 2, 3]:
 
 运行该示例计算[10]，[10,10]和[10,10,10]的平均值。
 
-```
+```py
 [10.0, 20.0, 30.0, 10.0, 20.0, 30.0, 10.0, 20.0, 30.0]
 10.0
 10.0
@@ -295,7 +295,7 @@ for i in [1, 2, 3]:
 
 下面的 _simple_forecast（）_ 函数将两种策略组合成一个函数。
 
-```
+```py
 # one-step simple forecast
 def simple_forecast(history, config):
 	n, offset, avg_type = config
@@ -330,7 +330,7 @@ def simple_forecast(history, config):
 
 下面的 _train_test_split（）_ 函数为提供的数据集和要在测试集中使用的指定数量的时间步骤实现此功能。
 
-```
+```py
 # split a univariate dataset into train/test sets
 def train_test_split(data, n_test):
 	return data[:-n_test], data[-n_test:]
@@ -342,7 +342,7 @@ def train_test_split(data, n_test):
 
 下面的 _measure_rmse（）_ 函数将根据实际（测试集）和预测值列表计算 RMSE。
 
-```
+```py
 # root mean squared error or rmse
 def measure_rmse(actual, predicted):
 	return sqrt(mean_squared_error(actual, predicted))
@@ -354,7 +354,7 @@ def measure_rmse(actual, predicted):
 
 下面的 _walk_forward_validation（）_ 函数实现了这一点，采用单变量时间序列，在测试集中使用的一些时间步骤，以及模型配置数组。
 
-```
+```py
 # walk-forward validation for univariate data
 def walk_forward_validation(data, n_test, cfg):
 	predictions = list()
@@ -385,7 +385,7 @@ def walk_forward_validation(data, n_test, cfg):
 
 下面的 _score_model（）_ 函数实现了这个并返回（键和结果）的元组，其中键是测试模型配置的字符串版本。
 
-```
+```py
 # score a model, return None on failure
 def score_model(data, n_test, cfg, debug=False):
 	result = None
@@ -417,19 +417,19 @@ def score_model(data, n_test, cfg, debug=False):
 
 我们可以定义一个 Parallel 对象，其中包含要使用的核心数，并将其设置为硬件中检测到的分数。
 
-```
+```py
 executor = Parallel(n_jobs=cpu_count(), backend='multiprocessing')
 ```
 
 然后我们可以创建一个并行执行的任务列表，这将是我们每个模型配置对 score_model（）函数的一次调用。
 
-```
+```py
 tasks = (delayed(score_model)(data, n_test, cfg) for cfg in cfg_list)
 ```
 
 最后，我们可以使用 _Parallel_ 对象并行执行任务列表。
 
-```
+```py
 scores = executor(tasks)
 ```
 
@@ -437,7 +437,7 @@ scores = executor(tasks)
 
 我们还可以提供评估所有模型配置的非并行版本，以防我们想要调试某些内容。
 
-```
+```py
 scores = [score_model(data, n_test, cfg) for cfg in cfg_list]
 ```
 
@@ -445,7 +445,7 @@ scores = [score_model(data, n_test, cfg) for cfg in cfg_list]
 
 我们可以过滤掉所有设置为 _ 无 _ 的分数。
 
-```
+```py
 scores = [r for r in scores if r[1] != None]
 ```
 
@@ -453,7 +453,7 @@ scores = [r for r in scores if r[1] != None]
 
 给定单变量时间序列数据集，模型配置列表（列表列表）以及在测试集中使用的时间步数，下面的 _grid_search（）_ 函数实现此行为。可选的并行参数允许对所有内核的模型进行开启或关闭调整，默认情况下处于打开状态。
 
-```
+```py
 # grid search configs
 def grid_search(data, cfg_list, n_test, parallel=True):
 	scores = None
@@ -481,7 +481,7 @@ def grid_search(data, cfg_list, n_test, parallel=True):
 
 该函数仅需要历史数据的最大长度作为参数，并且可选地需要任何季节性组件的周期性，其默认为 1（无季节性组件）。
 
-```
+```py
 # create a set of simple configs to try
 def simple_configs(max_length, offsets=[1]):
 	configs = list()
@@ -501,7 +501,7 @@ def simple_configs(max_length, offsets=[1]):
 
 下面列出了完整的示例。
 
-```
+```py
 # grid search simple forecasts
 from math import sqrt
 from numpy import mean
@@ -640,7 +640,7 @@ if __name__ == '__main__':
 
 我们可以看到，配置为 1 的持久性模型（例如，持续最后一次观察）实现了所测试的简单模型的最佳表现，如预期的那样。
 
-```
+```py
 [10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0]
 
 > Model[[1, 1, 'persist']] 10.000
@@ -690,7 +690,7 @@ done
 
 我们可以使用函数 _read_csv（）_ 将此数据集作为 Pandas 系列加载。
 
-```
+```py
 series = read_csv('daily-total-female-births.csv', header=0, index_col=0)
 ```
 
@@ -698,7 +698,7 @@ series = read_csv('daily-total-female-births.csv', header=0, index_col=0)
 
 下面列出了搜索每日女性单变量时间序列预测问题的完整示例网格。
 
-```
+```py
 # grid search simple forecast for daily female births
 from math import sqrt
 from numpy import mean
@@ -843,7 +843,7 @@ if __name__ == '__main__':
 
 这是令人惊讶的，因为缺乏趋势或季节性，我会预期持续-1 或整个历史数据集的平均值，以产生最佳表现。
 
-```
+```py
 ...
 > Model[[186, 1, 'mean']] 7.523
 > Model[[200, 1, 'median']] 7.681
@@ -877,7 +877,7 @@ done
 
 我们可以使用函数 _read_csv（）_ 将此数据集作为 Pandas 系列加载。
 
-```
+```py
 # parse dates
 def custom_parser(x):
 	return datetime.strptime('195'+x, '%Y-%m')
@@ -890,7 +890,7 @@ series = read_csv('shampoo.csv', header=0, index_col=0, date_parser=custom_parse
 
 下面列出了搜索洗发水销售单变量时间序列预测问题的完整示例网格。
 
-```
+```py
 # grid search simple forecast for monthly shampoo sales
 from math import sqrt
 from numpy import mean
@@ -1039,7 +1039,7 @@ if __name__ == '__main__':
 
 这是令人惊讶的，因为数据的趋势结构表明持久的前一个值（-1）将是最好的方法，而不是持久的倒数第二个值。
 
-```
+```py
 ...
 > Model[[23, 1, 'mean']] 209.782
 > Model[[23, 1, 'median']] 221.863
@@ -1073,27 +1073,27 @@ done
 
 我们可以使用函数 _read_csv（）_ 将此数据集作为 Pandas 系列加载。
 
-```
+```py
 series = read_csv('monthly-mean-temp.csv', header=0, index_col=0)
 ```
 
 数据集有 20 年，或 240 个观测值。我们将数据集修剪为过去五年的数据（60 个观测值），以加快模型评估过程并使用去年或 12 个观测值进行测试集。
 
-```
+```py
 # trim dataset to 5 years
 data = data[-(5*12):]
 ```
 
 季节性成分的周期约为一年，或 12 个观测值。在准备模型配置时，我们将此作为调用 _simple_configs（）_ 函数的季节性时段。
 
-```
+```py
 # model configs
 cfg_list = simple_configs(seasonal=[0, 12])
 ```
 
 下面列出了搜索月平均温度时间序列预测问题的完整示例网格。
 
-```
+```py
 # grid search simple forecast for monthly mean temperature
 from math import sqrt
 from numpy import mean
@@ -1239,7 +1239,7 @@ if __name__ == '__main__':
 
 这个发现并不太令人惊讶。鉴于数据的季节性结构，我们预计年度周期中先前点的最后几个观测值的函数是有效的。
 
-```
+```py
 ...
 > Model[[227, 12, 'persist']] 5.365
 > Model[[228, 1, 'persist']] 2.818
@@ -1272,7 +1272,7 @@ done
 
 我们可以使用函数 _read_csv（）_ 将此数据集作为 Pandas 系列加载。
 
-```
+```py
 series = read_csv('monthly-car-sales.csv', header=0, index_col=0)
 ```
 
@@ -1280,14 +1280,14 @@ series = read_csv('monthly-car-sales.csv', header=0, index_col=0)
 
 季节性成分的期限可能是六个月或 12 个月。在准备模型配置时，我们将尝试将两者作为调用 _simple_configs（）_ 函数的季节性时段。
 
-```
+```py
 # model configs
 cfg_list = simple_configs(seasonal=[0,6,12])
 ```
 
 下面列出了搜索月度汽车销售时间序列预测问题的完整示例网格。
 
-```
+```py
 # grid search simple forecast for monthly car sales
 from math import sqrt
 from numpy import mean
@@ -1433,7 +1433,7 @@ if __name__ == '__main__':
 
 所选模型是先前周期中同一点的最后几次观察的函数并不奇怪，尽管使用中位数而不是均值可能不会立即明显，结果比平均值好得多。
 
-```
+```py
 ...
 > Model[[79, 1, 'median']] 5124.113
 > Model[[91, 12, 'persist']] 9580.149

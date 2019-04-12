@@ -61,7 +61,7 @@
 
 默认情况下，该方法将以数字方式优化变换的 lambda 值并返回最佳值。
 
-```
+```py
 from scipy.stats import boxcox
 # define data
 data = ...
@@ -71,7 +71,7 @@ result, lmbda = boxcox(data)
 
 变换可以反转，但需要一个名为 _invert_boxcox（）_ 的下面列出的自定义函数，它接受一个变换值和用于执行变换的 lambda 值。
 
-```
+```py
 from math import log
 from math import exp
 # invert a boxcox transform for one value
@@ -85,7 +85,7 @@ def invert_boxcox(value, lam):
 
 下面列出了将功率变换应用于数据集并反转变换的完整示例。
 
-```
+```py
 # example of power transform and inversion
 from math import log
 from math import exp
@@ -112,7 +112,7 @@ print(inverted)
 
 运行该示例将在转换变换后打印原始数据集，幂变换的结果以及原始值（或接近它）。
 
-```
+```py
 [1, 2, 3, 4, 5, 6, 7, 8, 9]
 [0\.         0.89887536 1.67448353 2.37952145 3.03633818 3.65711928
  4.2494518  4.81847233 5.36786648] 0.7200338588580095
@@ -129,7 +129,7 @@ print(inverted)
 
 可以使用下面列出的名为 _difference（）_ 的自定义函数计算系列中的单个差异值。该函数采用时间序列和差值计算的间隔，例如， 1 表示趋势差异，12 表示季节性差异。
 
-```
+```py
 # difference dataset
 def difference(data, interval):
 	return [data[i] - data[i - interval] for i in range(interval, len(data))]
@@ -137,7 +137,7 @@ def difference(data, interval):
 
 同样，可以使用自定义函数反转此操作，该函数将原始值添加回名为 _invert_difference（）_ 的差值，该值采用原始序列和间隔。
 
-```
+```py
 # invert difference
 def invert_difference(orig_data, diff_data, interval):
 	return [diff_data[i-interval] + orig_data[i-interval] for i in range(interval, len(orig_data))]
@@ -145,7 +145,7 @@ def invert_difference(orig_data, diff_data, interval):
 
 我们可以在下面演示这个功能。
 
-```
+```py
 # example of a difference transform
 
 # difference dataset
@@ -171,7 +171,7 @@ print(inverted)
 
 注意，变换后序列中的第一个“间隔”值将丢失。这是因为它们在“间隔”之前的时间步长没有值，因此无法区分。
 
-```
+```py
 [1, 2, 3, 4, 5, 6, 7, 8, 9]
 [1, 1, 1, 1, 1, 1, 1, 1]
 [2, 3, 4, 5, 6, 7, 8, 9]
@@ -189,7 +189,7 @@ print(inverted)
 
 下面应用完整的示例。
 
-```
+```py
 # example of standardization
 from sklearn.preprocessing import StandardScaler
 from numpy import array
@@ -212,7 +212,7 @@ print(inverted)
 
 请注意，期望数据作为具有多行的列提供。
 
-```
+```py
 [[1]
  [2]
  [3]
@@ -254,7 +254,7 @@ print(inverted)
 
 下面列出了一个完整的例子。
 
-```
+```py
 # example of normalization
 from sklearn.preprocessing import MinMaxScaler
 from numpy import array
@@ -275,7 +275,7 @@ print(inverted)
 
 运行该示例将打印原始数据集，规范化转换的结果以及转换后的原始值。
 
-```
+```py
 [[1]
  [2]
  [3]

@@ -83,7 +83,7 @@
 
 可以通过从总活动能量中减去三个定义的子计量变量的总和来创建第四个子计量变量，如下所示：
 
-```
+```py
 sub_metering_remainder = (global_active_power * 1000 / 60) - (sub_metering_1 + sub_metering_2 + sub_metering_3)
 ```
 
@@ -97,7 +97,7 @@ sub_metering_remainder = (global_active_power * 1000 / 60) - (sub_metering_1 + s
 
 我们可以使用 _read_csv（）_ 函数来加载数据，并将前两列合并到一个日期时间列中，我们可以将其用作索引。
 
-```
+```py
 # load all data
 dataset = read_csv('household_power_consumption.txt', sep=';', header=0, low_memory=False, infer_datetime_format=True, parse_dates={'datetime':[0,1]}, index_col=['datetime'])
 ```
@@ -106,7 +106,7 @@ dataset = read_csv('household_power_consumption.txt', sep=';', header=0, low_mem
 
 这将允许我们将数据作为一个浮点值数组而不是混合类型（效率较低）。
 
-```
+```py
 # mark all missing values
 dataset.replace('?', nan, inplace=True)
 # make dataset numeric
@@ -117,7 +117,7 @@ dataset = dataset.astype('float32')
 
 一种非常简单的方法是从前一天的同一时间复制观察。我们可以在一个名为 _fill_missing（）_ 的函数中实现它，该函数将从 24 小时前获取数据的 NumPy 数组并复制值。
 
-```
+```py
 # fill missing values with a value at the same time one day ago
 def fill_missing(values):
 	one_day = 60 * 24
@@ -129,14 +129,14 @@ def fill_missing(values):
 
 我们可以将此函数直接应用于 DataFrame 中的数据。
 
-```
+```py
 # fill missing
 fill_missing(dataset.values)
 ```
 
 现在，我们可以使用上一节中的计算创建一个包含剩余子计量的新列。
 
-```
+```py
 # add a column for for the remainder of sub metering
 values = dataset.values
 dataset['sub_metering_4'] = (values[:,0] * 1000 / 60) - (values[:,4] + values[:,5] + values[:,6])
@@ -144,14 +144,14 @@ dataset['sub_metering_4'] = (values[:,0] * 1000 / 60) - (values[:,4] + values[:,
 
 我们现在可以将清理后的数据集版本保存到新文件中;在这种情况下，我们只需将文件扩展名更改为.csv，并将数据集保存为“ _household_power_consumption.csv_ ”。
 
-```
+```py
 # save updated dataset
 dataset.to_csv('household_power_consumption.csv')
 ```
 
 将所有这些结合在一起，下面列出了加载，清理和保存数据集的完整示例。
 
-```
+```py
 # load and clean-up data
 from numpy import nan
 from numpy import isnan
@@ -214,7 +214,7 @@ dataset.to_csv('household_power_consumption.csv')
 
 下面列出了完整的示例。
 
-```
+```py
 # resample minute data to total for each day
 from pandas import read_csv
 # load the new file
@@ -252,7 +252,7 @@ daily_data.to_csv('household_power_consumption_days.csv')
 
 下面的函数 _evaluate_forecasts（）_ 将实现此行为并基于多个七天预测返回模型的表现。
 
-```
+```py
 # evaluate one or more weekly forecasts against expected values
 def evaluate_forecasts(actual, predicted):
 	scores = list()
@@ -289,7 +289,7 @@ def evaluate_forecasts(actual, predicted):
 
 下面提供了测试数据集的每日数据的第一行和最后一行以供确认。
 
-```
+```py
 2010-01-03,2083.4539999999984,191.61000000000055,350992.12000000034,8703.600000000033,3842.0,4920.0,10074.0,15888.233355799992
 ...
 2010-11-20,2197.006000000004,153.76800000000028,346475.9999999998,9320.20000000002,4367.0,2947.0,11433.0,17869.76663959999
@@ -301,7 +301,7 @@ def evaluate_forecasts(actual, predicted):
 
 将数据组织到标准周内为训练预测模型提供了 159 个完整的标准周。
 
-```
+```py
 2006-12-17,3390.46,226.0059999999994,345725.32000000024,14398.59999999998,2033.0,4187.0,13341.0,36946.66673200004
 ...
 2010-01-02,1309.2679999999998,199.54600000000016,352332.8399999997,5489.7999999999865,801.0,298.0,6425.0,14297.133406600002
@@ -311,7 +311,7 @@ def evaluate_forecasts(actual, predicted):
 
 使用特定行偏移来使用数据集的知识来分割数据。然后使用 NumPy [split（）函数](https://docs.scipy.org/doc/numpy/reference/generated/numpy.split.html)将分割数据集组织成每周数据。
 
-```
+```py
 # split a univariate dataset into train/test sets
 def split_dataset(data):
 	# split into standard weeks
@@ -326,7 +326,7 @@ def split_dataset(data):
 
 完整的代码示例如下所示。
 
-```
+```py
 # split into standard weeks
 from numpy import split
 from numpy import array
@@ -356,7 +356,7 @@ print(test[0, 0, 0], test[-1, -1, 0])
 
 我们可以看到，第一行和最后一行的列车和测试数据集的总有效功率与我们定义为每组标准周界限的特定日期的数据相匹配。
 
-```
+```py
 (159, 7, 8)
 3390.46 1309.2679999999998
 (46, 7, 8)
@@ -371,7 +371,7 @@ print(test[0, 0, 0], test[-1, -1, 0])
 
 我们可以通过分离输入数据和输出/预测数据来证明这一点。
 
-```
+```py
 Input, 						Predict
 [Week1]						Week2
 [Week1 + Week2]				Week3
@@ -391,7 +391,7 @@ Input, 						Predict
 
 下面列出了完整的 _evaluate_model（）_ 函数。
 
-```
+```py
 # evaluate a single model
 def evaluate_model(train, test, n_input):
 	# fit model
@@ -417,7 +417,7 @@ def evaluate_model(train, test, n_input):
 
 以下名为 _summarize_scores（）_ 的函数将模型的表现显示为单行，以便与其他模型进行比较。
 
-```
+```py
 # summarize scores
 def summarize_scores(name, score, scores):
 	s_scores = ', '.join(['%.1f' % s for s in scores])
@@ -519,7 +519,7 @@ CNN LSTM 架构的功率变化是 ConvLSTM，它直接在 LSTM 的单元内使�
 
 LSTM 模型期望数据具有以下形状：
 
-```
+```py
 [samples, timesteps, features]
 ```
 
@@ -527,7 +527,7 @@ LSTM 模型期望数据具有以下形状：
 
 训练数据集有 159 周的数据，因此训练数据集的形状为：
 
-```
+```py
 [159, 7, 1]
 ```
 
@@ -541,7 +541,7 @@ LSTM 模型期望数据具有以下形状：
 
 训练数据在标准周内提供八个变量，特别是形状[ _159,7,8_ ]。第一步是展平数据，以便我们有八个时间序列序列。
 
-```
+```py
 # flatten data
 data = train.reshape((train.shape[0]*train.shape[1], train.shape[2]))
 ```
@@ -550,7 +550,7 @@ data = train.reshape((train.shape[0]*train.shape[1], train.shape[2]))
 
 例如：
 
-```
+```py
 Input, Output
 [d01, d02, d03, d04, d05, d06, d07], [d08, d09, d10, d11, d12, d13, d14]
 [d02, d03, d04, d05, d06, d07, d08], [d09, d10, d11, d12, d13, d14, d15]
@@ -563,7 +563,7 @@ Input, Output
 
 下面是一个名为 _to_supervised（）_ 的函数，它采用周（历史）列表和用作输入和输出的时间步数，并以重叠移动窗口格式返回数据。
 
-```
+```py
 # convert history into inputs and outputs
 def to_supervised(train, n_input, n_out=7):
 	# flatten data
@@ -600,7 +600,7 @@ def to_supervised(train, n_input, n_out=7):
 
 下面的 _build_model（）_ 准备训练数据，定义模型，并将模型拟合到训练数据上，使拟合模型准备好进行预测。
 
-```
+```py
 # train the model
 def build_model(train, n_input):
 	# prepare data
@@ -625,7 +625,7 @@ def build_model(train, n_input):
 
 在这种情况下，输入模式的预期形状是一个样本，每天消耗的一个功能的七天：
 
-```
+```py
 [1, 7, 1]
 ```
 
@@ -637,7 +637,7 @@ def build_model(train, n_input):
 
 为了预测下一个标准周，我们需要检索观察的最后几天。与训练数据一样，我们必须首先展平历史数据以删除每周结构，以便最终得到八个平行时间序列。
 
-```
+```py
 # flatten data
 data = data.reshape((data.shape[0]*data.shape[1], data.shape[2]))
 ```
@@ -646,21 +646,21 @@ data = data.reshape((data.shape[0]*data.shape[1], data.shape[2]))
 
 我们将对训练数据进行参数化，以便将来可以修改模型输入的前几天的数量。
 
-```
+```py
 # retrieve last observations for input data
 input_x = data[-n_input:, 0]
 ```
 
 接下来，我们将输入重塑为预期的三维结构。
 
-```
+```py
 # reshape into [1, n_input, 1]
 input_x = input_x.reshape((1, len(input_x), 1))
 ```
 
 然后，我们使用拟合模型和输入数据进行预测，并检索七天输出的向量。
 
-```
+```py
 # forecast the next week
 yhat = model.predict(input_x, verbose=0)
 # we only want the vector forecast
@@ -669,7 +669,7 @@ yhat = yhat[0]
 
 下面的 _forecast（）_ 函数实现了这个功能，并将模型拟合到训练数据集，到目前为止观察到的数据历史以及模型预期的输入时间步数。
 
-```
+```py
 # make a forecast
 def forecast(model, history, n_input):
 	# flatten data
@@ -690,7 +690,7 @@ def forecast(model, history, n_input):
 
 我们可以将所有这些结合在一起。下面列出了完整的示例。
 
-```
+```py
 # univariate multi-step lstm
 from math import sqrt
 from numpy import split
@@ -830,7 +830,7 @@ pyplot.show()
 
 我们可以看到，在这种情况下，与朴素的预测相比，该模型是巧妙的，实现了大约 399 千瓦的总体 RMSE，小于 465 千瓦的朴素模型。
 
-```
+```py
 lstm: [399.456] 419.4, 422.1, 384.5, 395.1, 403.9, 317.7, 441.5
 ```
 
@@ -844,7 +844,7 @@ lstm: [399.456] 419.4, 422.1, 384.5, 395.1, 403.9, 317.7, 441.5
 
 我们可以通过更改 _n_input_ 变量来增加用作 7 到 14 之间输入的前几天的数量。
 
-```
+```py
 # evaluate model and get scores
 n_input = 14
 ```
@@ -855,7 +855,7 @@ n_input = 14
 
 在这种情况下，我们可以看到整体 RMSE 进一步下降到大约 370 千瓦，这表明进一步调整输入大小以及模型中节点的数量可能会带来更好的表现。
 
-```
+```py
 lstm: [370.028] 387.4, 377.9, 334.0, 371.2, 367.1, 330.4, 415.1
 ```
 
@@ -881,7 +881,7 @@ lstm: [370.028] 387.4, 377.9, 334.0, 371.2, 367.1, 330.4, 415.1
 
 和以前一样，我们定义了一个包含 200 个单位的 LSTM 隐藏层。这是解码器模型，它将读取输入序列并输出一个 200 元素向量（每个单元一个输出），用于捕获输入序列中的特征。我们将使用 14 天的总功耗作为输入。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(LSTM(200, activation='relu', input_shape=(n_timesteps, n_features)))
@@ -891,13 +891,13 @@ model.add(LSTM(200, activation='relu', input_shape=(n_timesteps, n_features)))
 
 首先，输入序列的内部表示重复多次，输出序列中的每个时间步长一次。该序列的向量将被呈现给 LSTM 解码器。
 
-```
+```py
 model.add(RepeatVector(7))
 ```
 
 然后，我们将解码器定义为具有 200 个单位的 LSTM 隐藏层。重要的是，解码器将输出整个序列，而不仅仅是输出序列末尾的输出，就像我们对编码器一样。这意味着 200 个单位中的每一个都将为七天中的每一天输出一个值，表示输出序列中每天预测的基础。
 
-```
+```py
 model.add(LSTM(200, activation='relu', return_sequences=True))
 ```
 
@@ -905,7 +905,7 @@ model.add(LSTM(200, activation='relu', return_sequences=True))
 
 这意味着我们将使用应用于输出序列中每个步骤的相同层。这意味着将使用相同的完全连接的层和输出层来处理由解码器提供的每个时间步长。为此，我们将解释层和输出层包装在 [TimeDistributed 包装器](https://machinelearningmastery.com/timedistributed-layer-for-long-short-term-memory-networks-in-python/)中，该包装器允许包装层用于解码器的每个时间步长。
 
-```
+```py
 model.add(TimeDistributed(Dense(100, activation='relu')))
 model.add(TimeDistributed(Dense(1)))
 ```
@@ -918,14 +918,14 @@ model.add(TimeDistributed(Dense(1)))
 
 因此，在训练模型时，我们必须重新构造输出数据（ _y_ ）以具有三维结构而不是[_ 样本的二维结构，特征 _]用于上一节。
 
-```
+```py
 # reshape output into [samples, timesteps, features]
 train_y = train_y.reshape((train_y.shape[0], train_y.shape[1], 1))
 ```
 
 我们可以将所有这些绑定到下面列出的更新的 _build_model（）_ 函数中。
 
-```
+```py
 # train the model
 def build_model(train, n_input):
 	# prepare data
@@ -950,7 +950,7 @@ def build_model(train, n_input):
 
 下面列出了编码器 - 解码器模型的完整示例。
 
-```
+```py
 # univariate multi-step encoder-decoder lstm
 from math import sqrt
 from numpy import split
@@ -1096,7 +1096,7 @@ pyplot.show()
 
 我们可以看到，在这种情况下，该模型非常巧妙，总体 RMSE 得分约为 372 千瓦。
 
-```
+```py
 lstm: [372.595] 379.5, 399.8, 339.6, 372.2, 370.9, 309.9, 424.8
 ```
 
@@ -1118,13 +1118,13 @@ LSTM 将依次创建每个输入序列的内部表示，其将由解码器一起
 
 首先，我们必须更新训练数据的准备工作，以包括所有八项功能，而不仅仅是每日消耗的一项功能。它需要单行更改：
 
-```
+```py
 X.append(data[in_start:in_end, :])
 ```
 
 下面列出了具有此更改的完整 _to_supervised（）_ 功能。
 
-```
+```py
 # convert history into inputs and outputs
 def to_supervised(train, n_input, n_out=7):
 	# flatten data
@@ -1149,7 +1149,7 @@ def to_supervised(train, n_input, n_out=7):
 
 再次，另一个小变化：
 
-```
+```py
 # retrieve last observations for input data
 input_x = data[-n_input:, :]
 # reshape into [1, n_input, n]
@@ -1158,7 +1158,7 @@ input_x = input_x.reshape((1, input_x.shape[0], input_x.shape[1]))
 
 下面列出了具有此更改的完整 _forecast（）_ 函数：
 
-```
+```py
 # make a forecast
 def forecast(model, history, n_input):
 	# flatten data
@@ -1179,7 +1179,7 @@ def forecast(model, history, n_input):
 
 下面列出了完整的示例。
 
-```
+```py
 # multivariate multi-step encoder-decoder lstm
 from math import sqrt
 from numpy import split
@@ -1325,7 +1325,7 @@ pyplot.show()
 
 我们可以看到，在这种情况下，该模型非常巧妙，总体 RMSE 得分约为 376 千瓦。
 
-```
+```py
 lstm: [376.273] 378.5, 381.5, 328.4, 388.3, 361.2, 308.0, 467.2
 ```
 
@@ -1353,7 +1353,7 @@ CNN 期望输入数据具有与 LSTM 模型相同的 3D 结构，尽管多个特
 
 最大池化层通过将 1/4 的值保持为最大（最大）信号来简化特征映射。然后将汇集层之后的蒸馏特征映射平展为一个长向量，然后可以将其用作解码过程的输入。
 
-```
+```py
 model.add(Conv1D(filters=64, kernel_size=3, activation='relu', input_shape=(n_timesteps,n_features)))
 model.add(Conv1D(filters=64, kernel_size=3, activation='relu'))
 model.add(MaxPooling1D(pool_size=2))
@@ -1366,7 +1366,7 @@ model.add(Flatten())
 
 下面列出了具有这些更改的 _build_model（）_ 函数。
 
-```
+```py
 # train the model
 def build_model(train, n_input):
 	# prepare data
@@ -1396,7 +1396,7 @@ def build_model(train, n_input):
 
 完整的代码清单如下。
 
-```
+```py
 # univariate multi-step encoder-decoder cnn-lstm
 from math import sqrt
 from numpy import split
@@ -1549,7 +1549,7 @@ pyplot.show()
 
 我们可以看到，在这种情况下，该模型非常巧妙，总体 RMSE 得分约为 372 千瓦。
 
-```
+```py
 lstm: [372.055] 383.8, 381.6, 339.1, 371.8, 371.8, 319.6, 427.2
 ```
 
@@ -1575,7 +1575,7 @@ Keras 库提供 [ConvLSTM2D 类](https://keras.io/layers/recurrent/#convlstm2d)�
 
 默认情况下，ConvLSTM2D 类要求输入数据具有以下形状：
 
-```
+```py
 [samples, timesteps, rows, cols, channels]
 ```
 
@@ -1591,7 +1591,7 @@ Keras 库提供 [ConvLSTM2D 类](https://keras.io/layers/recurrent/#convlstm2d)�
 
 对于这个选择的问题框架，ConvLSTM2D 的输入因此是：
 
-```
+```py
 [n, 2, 1, 7, 1]
 ```
 
@@ -1609,14 +1609,14 @@ Keras 库提供 [ConvLSTM2D 类](https://keras.io/layers/recurrent/#convlstm2d)�
 
 首先，我们必须将训练数据集重塑为[_ 样本，时间步长，行，列，通道 _]的预期结构。
 
-```
+```py
 # reshape into subsequences [samples, time steps, rows, cols, channels]
 train_x = train_x.reshape((train_x.shape[0], n_steps, 1, n_length, n_features))
 ```
 
 然后，我们可以将编码器定义为 ConvLSTM 隐藏层，然后是准备好解码的展平层。
 
-```
+```py
 model.add(ConvLSTM2D(filters=64, kernel_size=(1,3), activation='relu', input_shape=(n_steps, 1, n_length, n_features)))
 model.add(Flatten())
 ```
@@ -1625,7 +1625,7 @@ model.add(Flatten())
 
 模型和训练的其余部分是相同的。下面列出了具有这些更改的 _build_model（）_ 函数。
 
-```
+```py
 # train the model
 def build_model(train, n_steps, n_length, n_input):
 	# prepare data
@@ -1653,14 +1653,14 @@ def build_model(train, n_steps, n_length, n_input):
 
 该模型期望五维数据作为输入。因此，我们还必须在进行预测时更新 _forecast（）_ 函数中单个样本的准备。
 
-```
+```py
 # reshape into [samples, time steps, rows, cols, channels]
 input_x = input_x.reshape((1, n_steps, 1, n_length, 1))
 ```
 
 具有此变化的 _forecast（）_ 函数以及参数化子序列如下所示。
 
-```
+```py
 # make a forecast
 def forecast(model, history, n_steps, n_length, n_input):
 	# flatten data
@@ -1681,7 +1681,7 @@ def forecast(model, history, n_steps, n_length, n_input):
 
 完整的代码示例如下所示。
 
-```
+```py
 # univariate multi-step encoder-decoder convlstm
 from math import sqrt
 from numpy import split
@@ -1833,7 +1833,7 @@ pyplot.show()
 
 我们可以看到，在这种情况下，该模型非常巧妙，总体 RMSE 得分约为 367 千瓦。
 
-```
+```py
 lstm: [367.929] 416.3, 379.7, 334.7, 362.3, 374.7, 284.8, 406.7
 ```
 

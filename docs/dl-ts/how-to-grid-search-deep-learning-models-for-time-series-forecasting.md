@@ -45,21 +45,21 @@
 
 我们可以使用函数 _read_csv（）_ 将此数据集作为 Pandas 系列加载。
 
-```
+```py
 # load
 series = read_csv('monthly-airline-passengers.csv', header=0, index_col=0)
 ```
 
 加载后，我们可以总结数据集的形状，以确定观察的数量。
 
-```
+```py
 # summarize shape
 print(series.shape)
 ```
 
 然后我们可以创建该系列的线图，以了解该系列的结构。
 
-```
+```py
 # plot
 pyplot.plot(series)
 pyplot.show()
@@ -67,7 +67,7 @@ pyplot.show()
 
 我们可以将所有这些结合在一起;下面列出了完整的示例。
 
-```
+```py
 # load and plot dataset
 from pandas import read_csv
 from matplotlib import pyplot
@@ -82,7 +82,7 @@ pyplot.show()
 
 首先运行该示例将打印数据集的形状。
 
-```
+```py
 (144, 1)
 ```
 
@@ -125,7 +125,7 @@ pyplot.show()
 
 下面的 _train_test_split（）_ 函数将拆分系列，将原始观察值和在测试集中使用的观察数作为参数。
 
-```
+```py
 # split a univariate dataset into train/test sets
 def train_test_split(data, n_test):
 	return data[:-n_test], data[-n_test:]
@@ -149,7 +149,7 @@ def train_test_split(data, n_test):
 
 例如，系列定义为列：
 
-```
+```py
 (t)
 1
 2
@@ -159,7 +159,7 @@ def train_test_split(data, n_test):
 
 此列可以预先移位并作为列插入：
 
-```
+```py
 (t-1),		(t)
 Nan,		1
 1,			2
@@ -174,7 +174,7 @@ Nan,		1
 
 下面的 _series_to_supervised（）_ 函数实现了这种行为，允许您指定输入中使用的滞后观察数和每个样本的输出中使用的数。它还将删除具有 NaN 值的行，因为它们不能用于训练或测试模型。
 
-```
+```py
 # transform list into supervised learning format
 def series_to_supervised(data, n_in=1, n_out=1):
 	df = DataFrame(data)
@@ -208,7 +208,7 @@ def series_to_supervised(data, n_in=1, n_out=1):
 
 我们将定义一个通用的 _model_fit（）_ 函数来执行此操作，可以为我们稍后可能感兴趣的给定类型的神经网络填充该操作。该函数获取训练数据集和模型配置，并返回准备好进行预测的拟合模型。
 
-```
+```py
 # fit a model
 def model_fit(train, config):
 	return None
@@ -218,7 +218,7 @@ def model_fit(train, config):
 
 同样，我们将定义一个名为 _model_predict（）_ 的通用函数，它采用拟合模型，历史和模型配置，并进行单个一步预测。
 
-```
+```py
 # forecast with a pre-fit model
 def model_predict(model, history, config):
 	return 0.0
@@ -232,7 +232,7 @@ def model_predict(model, history, config):
 
 RMSE 计算为预测值与实际值之间的平方差的平均值的平方根。 _measure_rmse（）_ 使用 [mean_squared_error（）scikit-learn](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html) 函数在计算平方根之前首先计算均方误差或 MSE。
 
-```
+```py
 # root mean squared error or rmse
 def measure_rmse(actual, predicted):
 	return sqrt(mean_squared_error(actual, predicted))
@@ -242,7 +242,7 @@ def measure_rmse(actual, predicted):
 
 它采用数据集，用作测试集的观察数量以及模型的配置，并返回测试集上模型表现的 RMSE。
 
-```
+```py
 # walk-forward validation for univariate data
 def walk_forward_validation(data, n_test, cfg):
 	predictions = list()
@@ -282,7 +282,7 @@ def walk_forward_validation(data, n_test, cfg):
 
 下面的 _repeat_evaluate（）_ 函数实现了这一点，并允许将重复次数指定为默认为 10 的可选参数，并返回所有重复的平均 RMSE 分数。
 
-```
+```py
 # score a model, return None on failure
 def repeat_evaluate(data, config, n_test, n_repeats=10):
 	# convert config to a key
@@ -305,7 +305,7 @@ def repeat_evaluate(data, config, n_test, n_repeats=10):
 
 完整的功能如下所列。
 
-```
+```py
 # grid search configs
 def grid_search(data, cfg_list, n_test):
 	# evaluate configs
@@ -321,7 +321,7 @@ def grid_search(data, cfg_list, n_test):
 
 我们不需要拟合模型，因此 _model_fit（）_ 函数将被实现为简单地返回 None。
 
-```
+```py
 # fit a model
 def model_fit(train, config):
 	return None
@@ -329,14 +329,14 @@ def model_fit(train, config):
 
 我们将使用配置来定义先前观察中的索引偏移列表，该列表相对于将被用作预测的预测时间。例如，12 将使用 12 个月前（-12）相对于预测时间的观察。
 
-```
+```py
 # define config
 cfg_list = [1, 6, 12, 24, 36]
 ```
 
 可以实现 _model_predict（）_ 函数以使用此配置将值保持在负相对偏移处。
 
-```
+```py
 # forecast with a pre-fit model
 def model_predict(model, history, offset):
 	history[-offset]
@@ -344,7 +344,7 @@ def model_predict(model, history, offset):
 
 下面列出了使用简单持久性模型使用框架的完整示例。
 
-```
+```py
 # grid search persistence models for airline passengers
 from math import sqrt
 from numpy import mean
@@ -431,7 +431,7 @@ for cfg, error in scores[:10]:
 
 我们可以看到，正如我们可能预期的那样，持续一年前的值（相对偏移-12）导致持久性模型的最佳表现。
 
-```
+```py
 ...
  > 110.274
  > 110.274
@@ -467,7 +467,7 @@ done
 
 下面的 _ 差异（）_ 函数将计算数据集的给定顺序的差异。
 
-```
+```py
 # difference dataset
 def difference(data, order):
 	return [data[i] - data[i - order] for i in range(order, len(data))]
@@ -479,14 +479,14 @@ def difference(data, order):
 
 首先，我们必须解压缩超参数列表。
 
-```
+```py
 # unpack config
 n_input, n_nodes, n_epochs, n_batch, n_diff = config
 ```
 
 接下来，我们必须准备数据，包括差分，将数据转换为监督格式，并分离出数据样本的输入和输出方面。
 
-```
+```py
 # prepare data
 if n_diff > 0:
 	train = difference(train, n_diff)
@@ -498,7 +498,7 @@ train_x, train_y = data[:, :-1], data[:, -1]
 
 我们现在可以使用提供的配置定义和拟合模型。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(Dense(n_nodes, activation='relu', input_dim=n_input))
@@ -510,7 +510,7 @@ model.fit(train_x, train_y, epochs=n_epochs, batch_size=n_batch, verbose=0)
 
 下面列出了 _model_fit（）_ 函数的完整实现。
 
-```
+```py
 # fit a model
 def model_fit(train, config):
 	# unpack config
@@ -538,7 +538,7 @@ def model_fit(train, config):
 
 如果数据差异，则必须反转差异以预测模型。这涉及将历史的相对偏移处的值添加回模型预测的值。
 
-```
+```py
 # invert difference
 correction = 0.0
 if n_diff > 0:
@@ -550,7 +550,7 @@ return correction + yhat[0]
 
 这也意味着必须区分历史记录，以便用于进行预测的输入数据具有预期的形式。
 
-```
+```py
 # calculate difference
 history = difference(history, n_diff)
 ```
@@ -559,14 +559,14 @@ history = difference(history, n_diff)
 
 一个样本的形状必须是[1，n_input]，其中 _n_input_ 是要使用的滞后观察数的选定数量。
 
-```
+```py
 # shape input for model
 x_input = array(history[-n_input:]).reshape((1, n_input))
 ```
 
 最后，可以进行预测。
 
-```
+```py
 # make forecast
 yhat = model.predict(x_input, verbose=0)
 ```
@@ -583,7 +583,7 @@ yhat = model.predict(x_input, verbose=0)
 
 下面列出了 _model_configs（）_ 函数的实现。
 
-```
+```py
 # create a list of configs to try
 def model_configs():
 	# define scope of configs
@@ -609,7 +609,7 @@ def model_configs():
 
 下面列出了完整的示例。
 
-```
+```py
 # grid search mlps for airline passengers
 from math import sqrt
 from numpy import array
@@ -779,7 +779,7 @@ for cfg, error in scores[:3]:
 
 鉴于算法的随机性，您的具体分数可能会有所不同。
 
-```
+```py
 Total configs: 8
  > 20.707
  > 29.111
@@ -816,7 +816,7 @@ done
 
 我们将定义一个非常简单的 CNN 模型，其中包含一个卷积层和一个最大池池。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(Conv1D(filters=n_filters, kernel_size=n_kernel, activation='relu', input_shape=(n_input, n_features)))
@@ -830,7 +830,7 @@ model.compile(loss='mse', optimizer='adam')
 
 与期望输入数据具有[样本，特征]形状的 MLP 不同，1D CNN 模型期望数据具有[_ 样本，时间步长，特征 _]的形状，其中特征映射到通道上并且在此案例 1 是我们每个月测量的一个变量。
 
-```
+```py
 # reshape input data into [samples, timesteps, features]
 n_features = 1
 train_x = train_x.reshape((train_x.shape[0], train_x.shape[1], n_features))
@@ -838,7 +838,7 @@ train_x = train_x.reshape((train_x.shape[0], train_x.shape[1], n_features))
 
 下面列出了 _model_fit（）_ 函数的完整实现。
 
-```
+```py
 # fit a model
 def model_fit(train, config):
 	# unpack config
@@ -869,13 +869,13 @@ def model_fit(train, config):
 
 同样，唯一的区别是一个样本值的输入数据必须具有三维形状。
 
-```
+```py
 x_input = array(history[-n_input:]).reshape((1, n_input, 1))
 ```
 
 下面列出了 _model_predict（）_ 函数的完整实现。
 
-```
+```py
 # forecast with the fit model
 def model_predict(model, history, config):
 	# unpack config
@@ -895,7 +895,7 @@ def model_predict(model, history, config):
 
 完整的 _model_configs（）_ 功能如下所示。
 
-```
+```py
 # create a list of configs to try
 def model_configs():
 	# define scope of configs
@@ -923,7 +923,7 @@ def model_configs():
 
 下面列出了完整的示例。
 
-```
+```py
 # grid search cnn for airline passengers
 from math import sqrt
 from numpy import array
@@ -1100,7 +1100,7 @@ for cfg, error in scores[:3]:
 
 鉴于算法的随机性，您的具体分数可能会有所不同。
 
-```
+```py
 Total configs: 8
  > 23.372
  > 28.317
@@ -1130,7 +1130,7 @@ LSTM 模型的超参数将与 MLP 相同;他们是：
 
 我们将定义一个简单的 LSTM 模型，该模型具有单个隐藏的 LSTM 层和指定该层中单元数的节点数。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(LSTM(n_nodes, activation='relu', input_shape=(n_input, n_features)))
@@ -1145,7 +1145,7 @@ model.fit(train_x, train_y, epochs=n_epochs, batch_size=n_batch, verbose=0)
 
 与 CNN 模型一样，LSTM 模型期望输入数据具有样本，时间步长和特征的三维形状。
 
-```
+```py
 # reshape input data into [samples, timesteps, features]
 n_features = 1
 train_x = train_x.reshape((train_x.shape[0], train_x.shape[1], n_features))
@@ -1153,7 +1153,7 @@ train_x = train_x.reshape((train_x.shape[0], train_x.shape[1], n_features))
 
 下面列出了 _model_fit（）_ 函数的完整实现。
 
-```
+```py
 # fit a model
 def model_fit(train, config):
 	# unpack config
@@ -1181,14 +1181,14 @@ def model_fit(train, config):
 
 与 CNN 一样，用于进行预测的单个输入样本也必须重新形成预期的三维结构。
 
-```
+```py
 # reshape sample into [samples, timesteps, features]
 x_input = array(history[-n_input:]).reshape((1, n_input, 1))
 ```
 
 完整的 _model_predict（）_ 功能如下所示。
 
-```
+```py
 # forecast with the fit model
 def model_predict(model, history, config):
 	# unpack config
@@ -1211,7 +1211,7 @@ def model_predict(model, history, config):
 
 我们将定义一组非常简单的两种配置来探索：随机和批量梯度下降。
 
-```
+```py
 # create a list of configs to try
 def model_configs():
 	# define scope of configs
@@ -1237,7 +1237,7 @@ def model_configs():
 
 下面列出了完整的示例。
 
-```
+```py
 # grid search lstm for airline passengers
 from math import sqrt
 from numpy import array
@@ -1411,7 +1411,7 @@ for cfg, error in scores[:3]:
 
 鉴于算法的随机性，您的具体分数可能会有所不同。
 
-```
+```py
 Total configs: 2
  > 20.488
  > 17.718

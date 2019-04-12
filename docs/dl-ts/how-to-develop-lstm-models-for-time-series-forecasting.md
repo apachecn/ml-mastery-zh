@@ -65,13 +65,13 @@ LSTM 模型将学习一种函数，该函数将过去观察序列作为输入映
 
 考虑给定的单变量序列：
 
-```
+```py
 [10, 20, 30, 40, 50, 60, 70, 80, 90]
 ```
 
 我们可以将序列划分为多个称为样本的输入/输出模式，其中三个时间步长用作输入，一个时间步长用作正在学习的一步预测的输出。
 
-```
+```py
 X,				y
 10, 20, 30		40
 20, 30, 40		50
@@ -81,7 +81,7 @@ X,				y
 
 下面的 _split_sequence（）_ 函数实现了这种行为，并将给定的单变量序列分成多个样本，其中每个样本具有指定的时间步长，输出是单个时间步长。
 
-```
+```py
 # split a univariate sequence into samples
 def split_sequence(sequence, n_steps):
 	X, y = list(), list()
@@ -102,7 +102,7 @@ def split_sequence(sequence, n_steps):
 
 下面列出了完整的示例。
 
-```
+```py
 # univariate data preparation
 from numpy import array
 
@@ -134,7 +134,7 @@ for i in range(len(X)):
 
 运行该示例将单变量系列分成六个样本，其中每个样本具有三个输入时间步长和一个输出时间步长。
 
-```
+```py
 [10 20 30] 40
 [20 30 40] 50
 [30 40 50] 60
@@ -151,7 +151,7 @@ Vanilla LSTM 是 LSTM 模型，具有单个隐藏的 LSTM 单元层，以及用�
 
 我们可以如下定义用于单变量时间序列预测的 Vanilla LSTM。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(LSTM(50, activation='relu', input_shape=(n_steps, n_features)))
@@ -169,13 +169,13 @@ model.compile(optimizer='adam', loss='mse')
 
 我们几乎总是有多个样本，因此，模型将期望训练数据的输入组件具有尺寸或形状：
 
-```
+```py
 [samples, timesteps, features]
 ```
 
 我们在上一节中的 _split_sequence（）_ 函数输出具有[_ 样本，时间步长 _]形状​​的 X，因此我们可以轻松地对其进行整形，以便为一个特征提供额外的维度。
 
-```
+```py
 # reshape from [samples, timesteps] into [samples, timesteps, features]
 n_features = 1
 X = X.reshape((X.shape[0], X.shape[1], n_features))
@@ -187,7 +187,7 @@ X = X.reshape((X.shape[0], X.shape[1], n_features))
 
 定义模型后，我们可以将其放在训练数据集上。
 
-```
+```py
 # fit model
 model.fit(X, y, epochs=200, verbose=0)
 ```
@@ -196,19 +196,19 @@ model.fit(X, y, epochs=200, verbose=0)
 
 我们可以通过提供输入来预测序列中的下一个值：
 
-```
+```py
 [70, 80, 90]
 ```
 
 并期望模型预测如下：
 
-```
+```py
 [100]
 ```
 
 该模型期望输入形状为[_ 样本，时间步长，特征 _]三维，因此，我们必须在进行预测之前对单个输入样本进行整形。
 
-```
+```py
 # demonstrate prediction
 x_input = array([70, 80, 90])
 x_input = x_input.reshape((1, n_steps, n_features))
@@ -217,7 +217,7 @@ yhat = model.predict(x_input, verbose=0)
 
 我们可以将所有这些结合在一起并演示如何开发用于单变量时间序列预测的 Vanilla LSTM 并进行单一预测。
 
-```
+```py
 # univariate lstm example
 from numpy import array
 from keras.models import Sequential
@@ -268,7 +268,7 @@ print(yhat)
 
 我们可以看到模型预测序列中的下一个值。
 
-```
+```py
 [[102.09213]]
 ```
 
@@ -282,7 +282,7 @@ LSTM 层需要三维输入，默认情况下，LSTM 将产生二维输出作为�
 
 因此，我们可以如下定义 Stacked LSTM。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(LSTM(50, activation='relu', return_sequences=True, input_shape=(n_steps, n_features)))
@@ -293,7 +293,7 @@ model.compile(optimizer='adam', loss='mse')
 
 我们可以将它们联系起来;完整的代码示例如下所示。
 
-```
+```py
 # univariate stacked lstm example
 from numpy import array
 from keras.models import Sequential
@@ -341,7 +341,7 @@ print(yhat)
 
 运行该示例预测序列中的下一个值，我们预期该值为 100。
 
-```
+```py
 [[102.47341]]
 ```
 
@@ -355,7 +355,7 @@ print(yhat)
 
 定义双向 LSTM 以向前和向后读取输入的示例如下。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(Bidirectional(LSTM(50, activation='relu'), input_shape=(n_steps, n_features)))
@@ -365,7 +365,7 @@ model.compile(optimizer='adam', loss='mse')
 
 下面列出了用于单变量时间序列预测的双向 LSTM 的完整示例。
 
-```
+```py
 # univariate bidirectional lstm example
 from numpy import array
 from keras.models import Sequential
@@ -413,7 +413,7 @@ print(yhat)
 
 运行该示例预测序列中的下一个值，我们预期该值为 100。
 
-```
+```py
 [[101.48093]]
 ```
 
@@ -429,13 +429,13 @@ CNN 模型可以在具有 LSTM 后端的混合模型中使用，其中 CNN 用�
 
 我们可以对此进行参数化，并将子序列的数量定义为 _n_seq_ ，将每个子序列的时间步数定义为 _n_steps_ 。然后可以将输入数据重新整形为具有所需的结构：
 
-```
+```py
 [samples, subsequences, timesteps, features]
 ```
 
 例如：
 
-```
+```py
 # choose a number of time steps
 n_steps = 4
 # split into samples
@@ -455,7 +455,7 @@ CNN 模型首先具有卷积层，用于读取子序列，该子序列需要指�
 
 卷积层后面跟着一个最大池池，它将过滤器图谱提取到其大小的 1/4，包括最显着的特征。然后将这些结构展平为单个一维向量，以用作 LSTM 层的单个输入时间步长。
 
-```
+```py
 model.add(TimeDistributed(Conv1D(filters=64, kernel_size=1, activation='relu'), input_shape=(None, n_steps, n_features)))
 model.add(TimeDistributed(MaxPooling1D(pool_size=2)))
 model.add(TimeDistributed(Flatten()))
@@ -463,14 +463,14 @@ model.add(TimeDistributed(Flatten()))
 
 接下来，我们可以定义模型的 LSTM 部分，该部分解释 CNN 模型对输入序列的读取并进行预测。
 
-```
+```py
 model.add(LSTM(50, activation='relu'))
 model.add(Dense(1))
 ```
 
 我们可以将所有这些结合在一起;下面列出了用于单变量时间序列预测的 CNN-LSTM 模型的完整示例。
 
-```
+```py
 # univariate cnn lstm example
 from numpy import array
 from keras.models import Sequential
@@ -526,7 +526,7 @@ print(yhat)
 
 运行该示例预测序列中的下一个值，我们预期该值为 100。
 
-```
+```py
 [[101.69263]]
 ```
 
@@ -538,7 +538,7 @@ ConvLSTM 是为读取二维时空数据而开发的，但可以用于单变量�
 
 该层期望输入为二维图像序列，因此输入数据的形状必须为：
 
-```
+```py
 [samples, timesteps, rows, columns, features]
 ```
 
@@ -546,7 +546,7 @@ ConvLSTM 是为读取二维时空数据而开发的，但可以用于单变量�
 
 我们现在可以将准备好的样品重新塑造成所需的结构。
 
-```
+```py
 # choose a number of time steps
 n_steps = 4
 # split into samples
@@ -562,14 +562,14 @@ X = X.reshape((X.shape[0], n_seq, 1, n_steps, n_features))
 
 然后必须将模型的输出展平，然后才能进行解释并进行预测。
 
-```
+```py
 model.add(ConvLSTM2D(filters=64, kernel_size=(1,2), activation='relu', input_shape=(n_seq, 1, n_steps, n_features)))
 model.add(Flatten())
 ```
 
 下面列出了用于一步式单变量时间序列预测的 ConvLSTM 的完整示例。
 
-```
+```py
 # univariate convlstm example
 from numpy import array
 from keras.models import Sequential
@@ -621,7 +621,7 @@ print(yhat)
 
 运行该示例预测序列中的下一个值，我们预期该值为 100。
 
-```
+```py
 [[103.68166]]
 ```
 
@@ -646,7 +646,7 @@ print(yhat)
 
 我们可以通过两个并行输入时间序列的简单示例来演示这一点，其中输出序列是输入序列的简单添加。
 
-```
+```py
 # define input sequence
 in_seq1 = array([10, 20, 30, 40, 50, 60, 70, 80, 90])
 in_seq2 = array([15, 25, 35, 45, 55, 65, 75, 85, 95])
@@ -655,7 +655,7 @@ out_seq = array([in_seq1[i]+in_seq2[i] for i in range(len(in_seq1))])
 
 我们可以将这三个数据数组重新整形为单个数据集，其中每一行都是一个时间步，每列都是一个单独的时间序列。这是将并行时间序列存储在 CSV 文件中的标准方法。
 
-```
+```py
 # convert to [rows, columns] structure
 in_seq1 = in_seq1.reshape((len(in_seq1), 1))
 in_seq2 = in_seq2.reshape((len(in_seq2), 1))
@@ -666,7 +666,7 @@ dataset = hstack((in_seq1, in_seq2, out_seq))
 
 下面列出了完整的示例。
 
-```
+```py
 # multivariate data preparation
 from numpy import array
 from numpy import hstack
@@ -685,7 +685,7 @@ print(dataset)
 
 运行该示例将打印数据集，每个时间步长为一行，两个输入和一个输出并行时间序列分别为一列。
 
-```
+```py
 [[ 10  15  25]
  [ 20  25  45]
  [ 30  35  65]
@@ -705,7 +705,7 @@ LSTM 模型需要足够的上下文来学习从输入序列到输出值的映射
 
 输入：
 
-```
+```py
 10, 15
 20, 25
 30, 35
@@ -713,7 +713,7 @@ LSTM 模型需要足够的上下文来学习从输入序列到输出值的映射
 
 输出：
 
-```
+```py
 65
 ```
 
@@ -723,7 +723,7 @@ LSTM 模型需要足够的上下文来学习从输入序列到输出值的映射
 
 我们可以定义一个名为 _split_sequences（）_ 的函数，该函数将采用数据集，因为我们已经为时间步长和行定义了并行序列和返回输入/输出样本的列。
 
-```
+```py
 # split a multivariate sequence into samples
 def split_sequences(sequences, n_steps):
 	X, y = list(), list()
@@ -744,7 +744,7 @@ def split_sequences(sequences, n_steps):
 
 下面列出了完整的示例。
 
-```
+```py
 # multivariate data preparation
 from numpy import array
 from numpy import hstack
@@ -794,7 +794,7 @@ for i in range(len(X)):
 
 然后我们可以看到每个样本的输入和输出都被打印出来，显示了两个输入序列中每个样本的三个时间步长以及每个样本的相关输出。
 
-```
+```py
 (7, 3, 2) (7,)
 
 [[10 15]
@@ -826,7 +826,7 @@ for i in range(len(X)):
 
 我们将使用 Vanilla LSTM，其中通过 _input_shape_ 参数为输入层指定时间步数和并行系列（特征）。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(LSTM(50, activation='relu', input_shape=(n_steps, n_features)))
@@ -838,7 +838,7 @@ model.compile(optimizer='adam', loss='mse')
 
 我们可以预测输出系列中的下一个值，提供以下输入值：
 
-```
+```py
 80,	 85
 90,	 95
 100, 105
@@ -848,7 +848,7 @@ model.compile(optimizer='adam', loss='mse')
 
 我们希望序列中的下一个值为 100 + 105 或 205。
 
-```
+```py
 # demonstrate prediction
 x_input = array([[80, 85], [90, 95], [100, 105]])
 x_input = x_input.reshape((1, n_steps, n_features))
@@ -857,7 +857,7 @@ yhat = model.predict(x_input, verbose=0)
 
 下面列出了完整的示例。
 
-```
+```py
 # multivariate lstm example
 from numpy import array
 from numpy import hstack
@@ -912,7 +912,7 @@ print(yhat)
 
 运行该示例准备数据，拟合模型并进行预测。
 
-```
+```py
 [[208.13531]]
 ```
 
@@ -922,7 +922,7 @@ print(yhat)
 
 例如，给定上一节的数据：
 
-```
+```py
 [[ 10  15  25]
  [ 20  25  45]
  [ 30  35  65]
@@ -944,7 +944,7 @@ print(yhat)
 
 输入：
 
-```
+```py
 10, 15, 25
 20, 25, 45
 30, 35, 65
@@ -952,13 +952,13 @@ print(yhat)
 
 输出：
 
-```
+```py
 40, 45, 85
 ```
 
 下面的 _split_sequences（）_ 函数将分割多个并行时间序列，其中时间步长为行，每列一个系列为所需的输入/输出形状。
 
-```
+```py
 # split a multivariate sequence into samples
 def split_sequences(sequences, n_steps):
 	X, y = list(), list()
@@ -977,7 +977,7 @@ def split_sequences(sequences, n_steps):
 
 我们可以在人为的问题上证明这一点;下面列出了完整的示例。
 
-```
+```py
 # multivariate output data prep
 from numpy import array
 from numpy import hstack
@@ -1027,7 +1027,7 @@ y 的形状是二维的，正如我们可能期望的样本数量（6）和每�
 
 然后，打印每个样本，显示每个样本的输入和输出分量。
 
-```
+```py
 (6, 3, 3) (6, 3)
 
 [[10 15 25]
@@ -1056,7 +1056,7 @@ y 的形状是二维的，正如我们可能期望的样本数量（6）和每�
 
 我们将使用 Stacked LSTM，其中通过 _input_shape_ 参数为输入层指定时间步数和并行系列（特征）。并行序列的数量也用于指定输出层中模型预测的值的数量;再次，这是三个。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(LSTM(100, activation='relu', return_sequences=True, input_shape=(n_steps, n_features)))
@@ -1067,7 +1067,7 @@ model.compile(optimizer='adam', loss='mse')
 
 我们可以通过为每个系列提供三个时间步长的输入来预测三个并行系列中的每一个的下一个值。
 
-```
+```py
 70, 75, 145
 80, 85, 165
 90, 95, 185
@@ -1075,7 +1075,7 @@ model.compile(optimizer='adam', loss='mse')
 
 用于进行单个预测的输入的形状必须是 1 个样本，3 个时间步长和 3 个特征，或者[1,3,3]
 
-```
+```py
 # demonstrate prediction
 x_input = array([[70,75,145], [80,85,165], [90,95,185]])
 x_input = x_input.reshape((1, n_steps, n_features))
@@ -1084,13 +1084,13 @@ yhat = model.predict(x_input, verbose=0)
 
 我们希望向量输出为：
 
-```
+```py
 [100, 105, 205]
 ```
 
 我们可以将所有这些结合在一起并演示下面的多变量输出时间序列预测的 Stacked LSTM。
 
-```
+```py
 # multivariate output stacked lstm example
 from numpy import array
 from numpy import hstack
@@ -1146,7 +1146,7 @@ print(yhat)
 
 运行该示例准备数据，拟合模型并进行预测。
 
-```
+```py
 [[101.76599 108.730484 206.63577 ]]
 ```
 
@@ -1171,7 +1171,7 @@ print(yhat)
 
 例如，给定单变量时间序列：
 
-```
+```py
 [10, 20, 30, 40, 50, 60, 70, 80, 90]
 ```
 
@@ -1181,19 +1181,19 @@ print(yhat)
 
 输入：
 
-```
+```py
 [10, 20, 30]
 ```
 
 输出：
 
-```
+```py
 [40, 50]
 ```
 
 下面的 _split_sequence（）_ 函数实现了这种行为，并将给定的单变量时间序列分割为具有指定数量的输入和输出时间步长的样本。
 
-```
+```py
 # split a univariate sequence into samples
 def split_sequence(sequence, n_steps_in, n_steps_out):
 	X, y = list(), list()
@@ -1215,7 +1215,7 @@ def split_sequence(sequence, n_steps_in, n_steps_out):
 
 下面列出了完整的示例。
 
-```
+```py
 # multi-step data preparation
 from numpy import array
 
@@ -1248,7 +1248,7 @@ for i in range(len(X)):
 
 运行该示例将单变量系列拆分为输入和输出时间步骤，并打印每个系列的输入和输出组件。
 
-```
+```py
 [10 20 30] [40 50]
 [20 30 40] [50 60]
 [30 40 50] [60 70]
@@ -1266,7 +1266,7 @@ for i in range(len(X)):
 
 与前一节中单变量数据的 LSTM 一样，必须首先对准备好的样本进行重新整形。 LSTM 期望数据具有[_ 样本，时间步长，特征 _]的三维结构，在这种情况下，我们只有一个特征，因此重塑是直截了当的。
 
-```
+```py
 # reshape from [samples, timesteps] into [samples, timesteps, features]
 n_features = 1
 X = X.reshape((X.shape[0], X.shape[1], n_features))
@@ -1276,7 +1276,7 @@ X = X.reshape((X.shape[0], X.shape[1], n_features))
 
 可以使用任何呈现的 LSTM 模型类型，例如香草，堆叠，双向，CNN-LSTM 或 ConvLSTM。下面定义了用于多步预测的 Stacked LSTM。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(LSTM(100, activation='relu', return_sequences=True, input_shape=(n_steps_in, n_features)))
@@ -1287,19 +1287,19 @@ model.compile(optimizer='adam', loss='mse')
 
 该模型可以对单个样本进行预测。我们可以通过提供输入来预测数据集末尾之后的下两个步骤：
 
-```
+```py
 [70, 80, 90]
 ```
 
 我们希望预测的输出为：
 
-```
+```py
 [100, 110]
 ```
 
 正如模型所预期的那样，进行预测时输入数据的单个样本的形状对于 1 个样本，输入的 3 个时间步长和单个特征必须是[1,3,1]。
 
-```
+```py
 # demonstrate prediction
 x_input = array([70, 80, 90])
 x_input = x_input.reshape((1, n_steps_in, n_features))
@@ -1308,7 +1308,7 @@ yhat = model.predict(x_input, verbose=0)
 
 将所有这些结合在一起，下面列出了具有单变量时间序列的用于多步预测的 Stacked LSTM。
 
-```
+```py
 # univariate multi-step vector-output stacked lstm example
 from numpy import array
 from keras.models import Sequential
@@ -1357,7 +1357,7 @@ print(yhat)
 
 运行示例预测并打印序列中的后两个时间步骤。
 
-```
+```py
 [[100.98096 113.28924]]
 ```
 
@@ -1373,7 +1373,7 @@ print(yhat)
 
 编码器是负责读取和解释输入序列的模型。编码器的输出是固定长度的向量，表示模型对序列的解释。编码器传统上是 Vanilla LSTM 模型，但也可以使用其他编码器模型，例如 Stacked，Bidirectional 和 CNN 模型。
 
-```
+```py
 model.add(LSTM(100, activation='relu', input_shape=(n_steps_in, n_features)))
 ```
 
@@ -1381,25 +1381,25 @@ model.add(LSTM(100, activation='relu', input_shape=(n_steps_in, n_features)))
 
 首先，对输出序列中的每个所需时间步长重复一次编码器的固定长度输出。
 
-```
+```py
 model.add(RepeatVector(n_steps_out))
 ```
 
 然后将该序列提供给 LSTM 解码器模型。模型必须为输出时间步骤中的每个值输出一个值，该值可由单个输出模型解释。
 
-```
+```py
 model.add(LSTM(100, activation='relu', return_sequences=True))
 ```
 
 我们可以使用相同的一个或多个输出层在输出序列中进行每个一步预测。这可以通过将模型的输出部分包装在 [TimeDistributed 包装器](https://machinelearningmastery.com/timedistributed-layer-for-long-short-term-memory-networks-in-python/)中来实现。
 
-```
+```py
 model.add(TimeDistributed(Dense(1)))
 ```
 
 下面列出了用于多步时间序列预测的编码器 - 解码器模型的完整定义。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(LSTM(100, activation='relu', input_shape=(n_steps_in, n_features)))
@@ -1411,19 +1411,19 @@ model.compile(optimizer='adam', loss='mse')
 
 与其他 LSTM 模型一样，输入数据必须重新整形为[_ 样本，时间步长，特征 _]的预期三维形状。
 
-```
+```py
 X = X.reshape((X.shape[0], X.shape[1], n_features))
 ```
 
 在编码器 - 解码器模型的情况下，训练数据集的输出或 y 部分也必须具有该形状。这是因为模型将使用每个输入样本的给定数量的特征预测给定数量的时间步长。
 
-```
+```py
 y = y.reshape((y.shape[0], y.shape[1], n_features))
 ```
 
 下面列出了用于多步时间序列预测的编码器 - 解码器 LSTM 的完整示例。
 
-```
+```py
 # univariate multi-step encoder-decoder lstm example
 from numpy import array
 from keras.models import Sequential
@@ -1476,7 +1476,7 @@ print(yhat)
 
 运行示例预测并打印序列中的后两个时间步骤。
 
-```
+```py
 [[[101.9736  
   [116.213615]]]
 ```
@@ -1500,7 +1500,7 @@ print(yhat)
 
 例如，考虑前一部分的多变量时间序列：
 
-```
+```py
 [[ 10  15  25]
  [ 20  25  45]
  [ 30  35  65]
@@ -1516,7 +1516,7 @@ print(yhat)
 
 输入：
 
-```
+```py
 10, 15
 20, 25
 30, 35
@@ -1524,14 +1524,14 @@ print(yhat)
 
 输出：
 
-```
+```py
 65
 85
 ```
 
 下面的 _split_sequences（）_ 函数实现了这种行为。
 
-```
+```py
 # split a multivariate sequence into samples
 def split_sequences(sequences, n_steps_in, n_steps_out):
 	X, y = list(), list()
@@ -1553,7 +1553,7 @@ def split_sequences(sequences, n_steps_in, n_steps_out):
 
 下面列出了完整的示例。
 
-```
+```py
 # multivariate multi-step data preparation
 from numpy import array
 from numpy import hstack
@@ -1602,7 +1602,7 @@ for i in range(len(X)):
 
 然后打印制备的样品以确认数据是按照我们指定的方式制备的。
 
-```
+```py
 (6, 3, 2) (6, 2)
 
 [[10 15]
@@ -1631,7 +1631,7 @@ for i in range(len(X)):
 
 下面列出了完整的示例。
 
-```
+```py
 # multivariate multi-step stacked lstm example
 from numpy import array
 from numpy import hstack
@@ -1692,7 +1692,7 @@ print(yhat)
 
 这是一个具有挑战性的问题框架，数据非常少，模型的任意配置版本也很接近。
 
-```
+```py
 [[188.70619 210.16513]]
 ```
 
@@ -1702,7 +1702,7 @@ print(yhat)
 
 例如，考虑前一部分的多变量时间序列：
 
-```
+```py
 [[ 10  15  25]
  [ 20  25  45]
  [ 30  35  65]
@@ -1720,7 +1720,7 @@ print(yhat)
 
 输入：
 
-```
+```py
 10, 15, 25
 20, 25, 45
 30, 35, 65
@@ -1728,14 +1728,14 @@ print(yhat)
 
 输出：
 
-```
+```py
 40, 45, 85
 50, 55, 105
 ```
 
 下面的 _split_sequences（）_ 函数实现了这种行为。
 
-```
+```py
 # split a multivariate sequence into samples
 def split_sequences(sequences, n_steps_in, n_steps_out):
 	X, y = list(), list()
@@ -1757,7 +1757,7 @@ def split_sequences(sequences, n_steps_in, n_steps_out):
 
 下面列出了完整的示例。
 
-```
+```py
 # multivariate multi-step data preparation
 from numpy import array
 from numpy import hstack
@@ -1809,7 +1809,7 @@ for i in range(len(X)):
 
 然后将每个系列的输入和输出元素并排打印，以便我们可以确认数据是按照我们的预期准备的。
 
-```
+```py
 (5, 3, 3) (5, 2, 3)
 
 [[10 15 25]
@@ -1838,7 +1838,7 @@ for i in range(len(X)):
 
 下面列出了完整的示例。
 
-```
+```py
 # multivariate multi-step encoder-decoder lstm example
 from numpy import array
 from numpy import hstack
@@ -1900,14 +1900,14 @@ print(yhat)
 
 我们希望这些系列和时间步骤的值如下：
 
-```
+```py
 90, 95, 185
 100, 105, 205
 ```
 
 我们可以看到模型预测合理地接近预期值。
 
-```
+```py
 [[[ 91.86044   97.77231  189.66768 ]
   [103.299355 109.18123  212.6863  ]]]
 ```

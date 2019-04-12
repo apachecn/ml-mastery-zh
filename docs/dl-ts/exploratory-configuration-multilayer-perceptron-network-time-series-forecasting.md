@@ -60,7 +60,7 @@
 
 下面的示例加载并创建已加载数据集的图。
 
-```
+```py
 # load and plot dataset
 from pandas import read_csv
 from pandas import datetime
@@ -78,7 +78,7 @@ pyplot.show()
 
 运行该示例将数据集作为 Pandas Series 加载并打印前 5 行。
 
-```
+```py
 Month
 1901-01-01 266.0
 1901-02-01 145.9
@@ -160,7 +160,7 @@ Name: Sales, dtype: float64
 
 此代码清单将用作所有后续实验的基础，后续部分中仅提供对此代码的更改。
 
-```
+```py
 from pandas import DataFrame
 from pandas import Series
 from pandas import concat
@@ -294,7 +294,7 @@ pyplot.savefig('boxplot_epochs.png')
 
 总结统计表明，平均 1000 个训练时期导致更好的表现，随着训练时期的增加，误差总体下降趋势。
 
-```
+```py
                50         100         500        1000        2000
 count   30.000000   30.000000   30.000000   30.000000   30.000000
 mean   129.660167  129.388944  111.444027  103.821703  107.500301
@@ -328,7 +328,7 @@ max    198.716220  198.704352  141.226816  139.994388  142.097747
 
 与前面的代码清单一样，下面的代码清单将用作本教程中所有诊断的基础，并且后续部分中仅提供对此清单的更改。
 
-```
+```py
 from pandas import DataFrame
 from pandas import Series
 from pandas import concat
@@ -485,7 +485,7 @@ run()
 
 下面列出了实验脚本的不同之处。
 
-```
+```py
 # load dataset
 series = read_csv('shampoo-sales.csv', header=0, parse_dates=[0], index_col=0, squeeze=True, date_parser=parser)
 # experiment
@@ -510,7 +510,7 @@ pyplot.savefig('boxplot_neurons.png')
 
 最好的结果似乎是 3 个神经元。
 
-```
+```py
                 1           2           3           4           5
 count   30.000000   30.000000   30.000000   30.000000   30.000000
 mean   105.107026  102.836520   92.675912   94.889952   96.577617
@@ -534,7 +534,7 @@ max    143.428154  140.923087  136.883946  135.891663  106.797563
 
 诊断脚本的更改仅限于 _run（）_ 功能，如下所示。
 
-```
+```py
 # run diagnostic experiments
 def run():
 	# config
@@ -590,7 +590,7 @@ def run():
 
 基础实验脚本的更改仅限于 _ 实验（）_ 功能和实验运行，如下所示。
 
-```
+```py
 # run a repeated experiment
 def experiment(repeats, series, epochs, lag, neurons):
 	# transform data to be stationary
@@ -653,7 +653,7 @@ pyplot.savefig('boxplot_neurons_lag.png')
 
 表现的降低可能与较小的批量大小有关，并且 1-神经元/ 1 滞后情况的结果不足以解释这一点。
 
-```
+```py
                 1           3           5           7
 count   30.000000   30.000000   30.000000   30.000000
 mean   105.465038  109.447044  158.894730  147.024776
@@ -679,7 +679,7 @@ max    139.941789  144.700754  232.962778  186.185471
 
 诊断脚本的更改仅限于 _run（）_ 功能。
 
-```
+```py
 # run diagnostic experiments
 def run():
 	# config

@@ -55,7 +55,7 @@
 
 通过首先将有功能量转换为瓦特小时，然后以瓦时为单位减去其他亚计量有功能量，可以从有功能量计算剩余瓦特小时，如下所示：
 
-```
+```py
 sub_metering_remainder = (global_active_power * 1000 / 60) - (sub_metering_1 + sub_metering_2 + sub_metering_3)
 ```
 
@@ -75,7 +75,7 @@ sub_metering_remainder = (global_active_power * 1000 / 60) - (sub_metering_1 + s
 
 以下是原始数据文件中的前五行数据（和标题）。
 
-```
+```py
 Date;Time;Global_active_power;Global_reactive_power;Voltage;Global_intensity;Sub_metering_1;Sub_metering_2;Sub_metering_3
 16/12/2006;17:24:00;4.216;0.418;234.840;18.400;0.000;1.000;17.000
 16/12/2006;17:25:00;5.360;0.436;233.630;23.000;0.000;1.000;16.000
@@ -91,7 +91,7 @@ Date;Time;Global_active_power;Global_reactive_power;Voltage;Global_intensity;Sub
 
 数据确实缺少值;例如，我们可以在 28/4/2007 左右看到 2-3 天的缺失数据。
 
-```
+```py
 ...
 28/4/2007;00:20:00;0.492;0.208;236.240;2.200;0.000;0.000;0.000
 28/4/2007;00:21:00;?;?;?;?;?;?;
@@ -118,7 +118,7 @@ Date;Time;Global_active_power;Global_reactive_power;Voltage;Global_intensity;Sub
 
 将所有这些放在一起，我们现在可以加载数据并汇总加载的形状和前几行。
 
-```
+```py
 # load all data
 dataset = read_csv('household_power_consumption.txt', sep=';', header=0, low_memory=False, infer_datetime_format=True, parse_dates={'datetime':[0,1]}, index_col=['datetime'])
 # summarize
@@ -130,14 +130,14 @@ print(dataset.head())
 
 这将允许我们将数据作为一个浮点值数组而不是混合类型来处理，效率较低。
 
-```
+```py
 # mark all missing values
 dataset.replace('?', nan, inplace=True)
 ```
 
 现在，我们可以使用上一节中的计算创建一个包含剩余子计量的新列。
 
-```
+```py
 # add a column for for the remainder of sub metering
 values = dataset.values.astype('float32')
 dataset['sub_metering_4'] = (values[:,0] * 1000 / 60) - (values[:,4] + values[:,5] + values[:,6])
@@ -145,14 +145,14 @@ dataset['sub_metering_4'] = (values[:,0] * 1000 / 60) - (values[:,4] + values[:,
 
 我们现在可以将清理后的数据集版本保存到新文件中;在这种情况下，我们只需将文件扩展名更改为.csv，并将数据集保存为“ _household_power_consumption.csv_ ”。
 
-```
+```py
 # save updated dataset
 dataset.to_csv('household_power_consumption.csv')
 ```
 
 为了确认我们没有弄乱，我们可以重新加载数据集并汇总前五行。
 
-```
+```py
 # load the new file
 dataset = read_csv('household_power_consumption.csv', header=None)
 print(dataset.head())
@@ -160,7 +160,7 @@ print(dataset.head())
 
 将所有这些结合在一起，下面列出了加载，清理和保存数据集的完整示例。
 
-```
+```py
 # load and clean-up data
 from numpy import nan
 from pandas import read_csv
@@ -183,7 +183,7 @@ print(dataset.head())
 
 运行该示例首先加载原始数据并汇总加载数据的形状和前五行。
 
-```
+```py
 (2075259, 7)
 
                     Global_active_power      ...       Sub_metering_3
@@ -199,7 +199,7 @@ datetime                                     ...
 
 我们加载这个新文件并再次打印前五行，显示删除日期和时间列以及添加新的子计量列。
 
-```
+```py
                      Global_active_power       ...        sub_metering_4
 datetime                                       ...
 2006-12-16 17:24:00                4.216       ...             52.266670
@@ -211,7 +211,7 @@ datetime                                       ...
 
 我们可以查看新的' _household_power_consumption.csv_ '文件并检查缺失的观察结果是否用空列标记，大熊猫将正确读作 NaN，例如第 190,499 行：
 
-```
+```py
 ...
 2007-04-28 00:20:00,0.492,0.208,236.240,2.200,0.000,0.000,0.0,8.2
 2007-04-28 00:21:00,,,,,,,,
@@ -232,7 +232,7 @@ datetime                                       ...
 
 下面列出了完整的示例。
 
-```
+```py
 # line plots
 from pandas import read_csv
 from matplotlib import pyplot
@@ -270,7 +270,7 @@ pyplot.show()
 
 下面列出了完整的示例。
 
-```
+```py
 # yearly line plots
 from pandas import read_csv
 from matplotlib import pyplot
@@ -311,7 +311,7 @@ pyplot.show()
 
 下面列出了完整的示例。
 
-```
+```py
 # monthly line plots
 from pandas import read_csv
 from matplotlib import pyplot
@@ -350,7 +350,7 @@ pyplot.show()
 
 下面列出了完整的示例。
 
-```
+```py
 # daily line plots
 from pandas import read_csv
 from matplotlib import pyplot
@@ -399,7 +399,7 @@ pyplot.show()
 
 下面列出了完整的示例。
 
-```
+```py
 # histogram plots
 from pandas import read_csv
 from matplotlib import pyplot
@@ -431,7 +431,7 @@ pyplot.show()
 
 下面列出了完整的示例。
 
-```
+```py
 # yearly histogram plots
 from pandas import read_csv
 from matplotlib import pyplot
@@ -472,7 +472,7 @@ pyplot.show()
 
 下面列出了完整的示例。
 
-```
+```py
 # monthly histogram plots
 from pandas import read_csv
 from matplotlib import pyplot

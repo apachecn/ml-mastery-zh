@@ -40,13 +40,13 @@
 
 例如，单变量时间序列表示为观察向量：
 
-```
+```py
 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 
 监督学习算法要求数据作为样本集合提供，其中每个样本具有输入分量（ _X_ ）和输出分量（ _y_ ）。
 
-```
+```py
 X,					y
 example input, 		example output
 example input, 		example output
@@ -56,7 +56,7 @@ example input, 		example output
 
 该模型将学习如何将输入映射到所提供示例的输出。
 
-```
+```py
 y = f(X)
 ```
 
@@ -66,7 +66,7 @@ y = f(X)
 
 例如，上述 10 步单变量系列可以表示为监督学习问题，其中输入的三个时间步长和输出的一个步骤如下：
 
-```
+```py
 X,			y
 [1, 2, 3],	[4]
 [2, 3, 4],	[5]
@@ -94,7 +94,7 @@ Keras 提供 [TimeseriesGenerator](https://keras.io/preprocessing/sequence/) ，
 
 例如：
 
-```
+```py
 # load data
 inputs = ...
 outputs = ...
@@ -116,7 +116,7 @@ for i in range(len(generator)):
 
 您还必须在训练期间将批量大小定义为模型的批量大小。如果数据集中的样本数小于批量大小，则可以通过计算其长度，将生成器和模型中的批量大小设置为生成器中的样本总数;例如：
 
-```
+```py
 print(len(generator))
 ```
 
@@ -138,7 +138,7 @@ print(len(generator))
 
 例如：
 
-```
+```py
 # define generator
 generator = TimeseriesGenerator(...)
 # define model
@@ -157,21 +157,21 @@ model.fit_generator(generator, steps_per_epoch=len(generator), ...)
 
 首先，让我们定义我们的数据集。
 
-```
+```py
 # define dataset
 series = array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 ```
 
 我们将选择框架问题，其中最后两个滞后观察将用于预测序列中的下一个值。例如：
 
-```
+```py
 X,			y
 [1, 2]		3
 ```
 
 现在，我们将使用批量大小为 1，以便我们可以探索生成器中的数据。
 
-```
+```py
 # define generator
 n_input = 2
 generator = TimeseriesGenerator(series, series, length=n_input, batch_size=1)
@@ -179,14 +179,14 @@ generator = TimeseriesGenerator(series, series, length=n_input, batch_size=1)
 
 接下来，我们可以看到数据生成器将为此时间序列准备多少样本。
 
-```
+```py
 # number of samples
 print('Samples: %d' % len(generator))
 ```
 
 最后，我们可以打印每个样本的输入和输出组件，以确认数据是按照我们的预期准备的。
 
-```
+```py
 for i in range(len(generator)):
 	x, y = generator[i]
 	print('%s => %s' % (x, y))
@@ -194,7 +194,7 @@ for i in range(len(generator)):
 
 下面列出了完整的示例。
 
-```
+```py
 # univariate one step problem
 from numpy import array
 from keras.preprocessing.sequence import TimeseriesGenerator
@@ -217,7 +217,7 @@ for i in range(len(generator)):
 
 观察结果按照我们的预期进行准备，其中两个滞后观察结果将用作输入，序列中的后续值作为输出。
 
-```
+```py
 Samples: 8
 
 [[1\. 2.]] => [3.]
@@ -236,7 +236,7 @@ Samples: 8
 
 将定义发生器，以便在给定少量样品的情况下，将在每批中使用所有样品。
 
-```
+```py
 # define generator
 n_input = 2
 generator = TimeseriesGenerator(series, series, length=n_input, batch_size=8)
@@ -244,7 +244,7 @@ generator = TimeseriesGenerator(series, series, length=n_input, batch_size=8)
 
 我们可以定义一个简单的模型，其中一个隐藏层有 50 个节点，一个输出层将进行预测。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(Dense(100, activation='relu', input_dim=n_input))
@@ -254,7 +254,7 @@ model.compile(optimizer='adam', loss='mse')
 
 然后我们可以使用 _fit_generator（）_ 函数将模型与生成器拟合。我们在生成器中只有一批数据，因此我们将 _steps_per_epoch_ 设置为 1.该模型适用于 200 个时期。
 
-```
+```py
 # fit model
 model.fit_generator(generator, steps_per_epoch=1, epochs=200, verbose=0)
 ```
@@ -263,7 +263,7 @@ model.fit_generator(generator, steps_per_epoch=1, epochs=200, verbose=0)
 
 给定输入[9,10]，我们将进行预测并期望模型预测[11]或接近它。该模型没有调整;这只是如何使用发电机的一个例子。
 
-```
+```py
 # make a one step prediction out of sample
 x_input = array([9, 10]).reshape((1, n_input))
 yhat = model.predict(x_input, verbose=0)
@@ -271,7 +271,7 @@ yhat = model.predict(x_input, verbose=0)
 
 下面列出了完整的示例。
 
-```
+```py
 # univariate one step problem with mlp
 from numpy import array
 from keras.models import Sequential
@@ -297,7 +297,7 @@ print(yhat)
 
 运行该示例准备生成器，拟合模型，并进行样本预测，正确预测接近 11 的值。
 
-```
+```py
 [[11.510406]]
 ```
 
@@ -307,7 +307,7 @@ LSTM 期望数据输入具有[_ 样本，时间步长，特征 _]的形状，而
 
 我们可以在从[10，]到[10,1]准备发电机之前重新设计单变量时间序列 10 个时间步长和 1 个特征;例如：
 
-```
+```py
 # reshape to [10, 1]
 n_features = 1
 series = series.reshape((len(series), n_features))
@@ -317,7 +317,7 @@ series = series.reshape((len(series), n_features))
 
 下面列出了完整的示例。
 
-```
+```py
 # univariate one step problem with lstm
 from numpy import array
 from keras.models import Sequential
@@ -347,7 +347,7 @@ print(yhat)
 
 再次，运行该示例准备数据，拟合模型，并预测序列中的下一个样本外值。
 
-```
+```py
 [[11.092189]]
 ```
 
@@ -361,7 +361,7 @@ TimeseriesGenerator 还支持多变量时间序列问题。
 
 首先，我们可以设计两个并行系列的数据集。
 
-```
+```py
 # define dataset
 in_seq1 = array([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
 in_seq2 = array([15, 25, 35, 45, 55, 65, 75, 85, 95, 105])
@@ -371,7 +371,7 @@ in_seq2 = array([15, 25, 35, 45, 55, 65, 75, 85, 95, 105])
 
 我们定义的系列是向量，但我们可以将它们转换为列。我们可以将每个系列重塑为具有 10 个时间步长和 1 个特征的形状[10,1]的数组。
 
-```
+```py
 # reshape series
 in_seq1 = in_seq1.reshape((len(in_seq1), 1))
 in_seq2 = in_seq2.reshape((len(in_seq2), 1))
@@ -379,14 +379,14 @@ in_seq2 = in_seq2.reshape((len(in_seq2), 1))
 
 我们现在可以通过调用 _hstack（）_ NumPy 函数将列水平堆叠到数据集中。
 
-```
+```py
 # horizontally stack columns
 dataset = hstack((in_seq1, in_seq2))
 ```
 
 我们现在可以直接将此数据集提供给 TimeseriesGenerator。我们将使用每个系列的前两个观测值作为输入，并将每个序列的下一个观测值作为输出。
 
-```
+```py
 # define generator
 n_input = 2
 generator = TimeseriesGenerator(dataset, dataset, length=n_input, batch_size=1)
@@ -394,14 +394,14 @@ generator = TimeseriesGenerator(dataset, dataset, length=n_input, batch_size=1)
 
 然后，对于 1 个样本，2 个时间步长和 2 个特征或平行序列，每个样本将是[1,2,2]的三维阵列。对于 1 个样本和 2 个特征，输出将是[1,2]的二维系列。第一个样本将是：
 
-```
+```py
 X, 							y
 [[10, 15], [20, 25]]		[[30, 35]]
 ```
 
 下面列出了完整的示例。
 
-```
+```py
 # multivariate one step problem
 from numpy import array
 from numpy import hstack
@@ -430,7 +430,7 @@ for i in range(len(generator)):
 
 接下来，打印每个样品的输入和输出部分，确认我们的预期结构。
 
-```
+```py
 [[ 10  15]
  [ 20  25]
  [ 30  35]
@@ -470,7 +470,7 @@ Samples: 8
 
 样品的三维结构可以由 CNN 和 LSTM 模型直接使用。下面列出了使用 TimeseriesGenerator 进行多变量时间序列预测的完整示例。
 
-```
+```py
 # multivariate one step problem with lstm
 from numpy import array
 from numpy import hstack
@@ -505,7 +505,7 @@ print(yhat)
 
 运行该示例准备数据，拟合模型，并预测每个输入时间序列中的下一个值，我们期望[110,115]。
 
-```
+```py
 [[111.03207 116.58153]]
 ```
 
@@ -515,7 +515,7 @@ print(yhat)
 
 为了使这个具体，我们可以设计一个带有两个输入时间序列和一个输出系列的例子，它是输入系列的总和。
 
-```
+```py
 # define dataset
 in_seq1 = array([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
 in_seq2 = array([15, 25, 35, 45, 55, 65, 75, 85, 95, 105])
@@ -524,7 +524,7 @@ out_seq = array([25, 45, 65, 85, 105, 125, 145, 165, 185, 205])
 
 其中输出序列中的值是输入时间序列中同一时间步长的值的总和。
 
-```
+```py
 10 + 15 = 25
 ```
 
@@ -532,7 +532,7 @@ out_seq = array([25, 45, 65, 85, 105, 125, 145, 165, 185, 205])
 
 例如，我们想要样本：
 
-```
+```py
 X, 			y
 [10, 15],	25
 [20, 25],	45
@@ -542,7 +542,7 @@ X, 			y
 
 我们不希望样品如下：
 
-```
+```py
 X, 			y
 [10, 15],	45
 [20, 25],	65
@@ -554,7 +554,7 @@ X, 			y
 
 例如：
 
-```
+```py
 # multivariate one step problem
 from numpy import array
 from numpy import hstack
@@ -580,7 +580,7 @@ for i in range(len(generator)):
 
 运行该示例打印样本的输入和输出部分，其具有下一时间步的输出值而不是当前时间步，因为我们可能期望这种类型的问题。
 
-```
+```py
 [[[10\. 15.]]] => [[45.]]
 [[[20\. 25.]]] => [[65.]]
 [[[30\. 35.]]] => [[85.]]
@@ -596,14 +596,14 @@ for i in range(len(generator)):
 
 这种人为的转变将允许优选的问题框架。
 
-```
+```py
 # shift the target sample by one step
 out_seq = insert(out_seq, 0, 0)
 ```
 
 下面提供了这种转变的完整示例。
 
-```
+```py
 # multivariate one step problem
 from numpy import array
 from numpy import hstack
@@ -634,7 +634,7 @@ for i in range(len(generator)):
 
 无论输入样本的长度如何，此方法都将起作用。
 
-```
+```py
 [[[10\. 15.]]] => [25.]
 [[[20\. 25.]]] => [45.]
 [[[30\. 35.]]] => [65.]
@@ -662,7 +662,7 @@ TimeseriesGenerator 的一个限制是它不直接支持多步输出。具体而
 
 您可以看到目标序列中的行数必须与输入序列中的行数相同。在这种情况下，我们必须知道输入序列中的值之外的值，或者将输入序列修剪为目标序列的长度。
 
-```
+```py
 # define dataset
 series = array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 target = array([[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[9,10],[10,11]])
@@ -670,7 +670,7 @@ target = array([[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[9,10],[10,11]])
 
 下面列出了完整的示例。
 
-```
+```py
 # univariate multi-step problem
 from numpy import array
 from keras.preprocessing.sequence import TimeseriesGenerator
@@ -688,7 +688,7 @@ for i in range(len(generator)):
 
 运行该示例打印样本的输入和输出部分，显示两个滞后观察值作为输入，两个步骤作为多步骤预测问题的输出。
 
-```
+```py
 [[1\. 2.]] => [[3\. 4.]]
 [[2\. 3.]] => [[4\. 5.]]
 [[3\. 4.]] => [[5\. 6.]]

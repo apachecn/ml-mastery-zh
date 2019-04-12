@@ -50,7 +50,7 @@
 
 可以通过从总活动能量中减去三个定义的子计量变量的总和来创建第四个子计量变量，如下所示：
 
-```
+```py
 sub_metering_remainder = (global_active_power * 1000 / 60) - (sub_metering_1 + sub_metering_2 + sub_metering_3)
 ```
 
@@ -64,7 +64,7 @@ sub_metering_remainder = (global_active_power * 1000 / 60) - (sub_metering_1 + s
 
 我们可以使用 _read_csv（）_ 函数来加载数据，并将前两列合并到一个日期时间列中，我们可以将其用作索引。
 
-```
+```py
 # load all data
 dataset = read_csv('household_power_consumption.txt', sep=';', header=0, low_memory=False, infer_datetime_format=True, parse_dates={'datetime':[0,1]}, index_col=['datetime'])
 ```
@@ -73,7 +73,7 @@ dataset = read_csv('household_power_consumption.txt', sep=';', header=0, low_mem
 
 这将允许我们将数据作为一个浮点值数组而不是混合类型（效率较低）。
 
-```
+```py
 # mark all missing values
 dataset.replace('?', nan, inplace=True)
 # make dataset numeric
@@ -84,7 +84,7 @@ dataset = dataset.astype('float32')
 
 一种非常简单的方法是从前一天的同一时间复制观察。我们可以在一个名为 _fill_missing（）_ 的函数中实现它，该函数将从 24 小时前获取数据的 NumPy 数组并复制值。
 
-```
+```py
 # fill missing values with a value at the same time one day ago
 def fill_missing(values):
 	one_day = 60 * 24
@@ -96,14 +96,14 @@ def fill_missing(values):
 
 我们可以将此函数直接应用于 DataFrame 中的数据。
 
-```
+```py
 # fill missing
 fill_missing(dataset.values)
 ```
 
 现在，我们可以使用上一节中的计算创建一个包含剩余子计量的新列。
 
-```
+```py
 # add a column for for the remainder of sub metering
 values = dataset.values
 dataset['sub_metering_4'] = (values[:,0] * 1000 / 60) - (values[:,4] + values[:,5] + values[:,6])
@@ -111,14 +111,14 @@ dataset['sub_metering_4'] = (values[:,0] * 1000 / 60) - (values[:,4] + values[:,
 
 我们现在可以将清理后的数据集版本保存到新文件中;在这种情况下，我们只需将文件扩展名更改为.csv，并将数据集保存为“ _household_power_consumption.csv_ ”。
 
-```
+```py
 # save updated dataset
 dataset.to_csv('household_power_consumption.csv')
 ```
 
 将所有这些结合在一起，下面列出了加载，清理和保存数据集的完整示例。
 
-```
+```py
 # load and clean-up data
 from numpy import nan
 from numpy import isnan
@@ -181,7 +181,7 @@ dataset.to_csv('household_power_consumption.csv')
 
 下面列出了完整的示例。
 
-```
+```py
 # resample minute data to total for each day
 from pandas import read_csv
 # load the new file
@@ -219,7 +219,7 @@ daily_data.to_csv('household_power_consumption_days.csv')
 
 下面的函数 _evaluate_forecasts（）_ 将实现此行为并基于多个七天预测返回模型的表现。
 
-```
+```py
 # evaluate one or more weekly forecasts against expected values
 def evaluate_forecasts(actual, predicted):
 	scores = list()
@@ -256,7 +256,7 @@ def evaluate_forecasts(actual, predicted):
 
 下面提供了测试数据集的每日数据的第一行和最后一行以供确认。
 
-```
+```py
 2010-01-03,2083.4539999999984,191.61000000000055,350992.12000000034,8703.600000000033,3842.0,4920.0,10074.0,15888.233355799992
 ...
 2010-11-20,2197.006000000004,153.76800000000028,346475.9999999998,9320.20000000002,4367.0,2947.0,11433.0,17869.76663959999
@@ -268,7 +268,7 @@ def evaluate_forecasts(actual, predicted):
 
 将数据组织到标准周内为训练预测模型提供了 159 个完整的标准周。
 
-```
+```py
 2006-12-17,3390.46,226.0059999999994,345725.32000000024,14398.59999999998,2033.0,4187.0,13341.0,36946.66673200004
 ...
 2010-01-02,1309.2679999999998,199.54600000000016,352332.8399999997,5489.7999999999865,801.0,298.0,6425.0,14297.133406600002
@@ -278,7 +278,7 @@ def evaluate_forecasts(actual, predicted):
 
 使用特定行偏移来使用数据集的知识来分割数据。然后使用 NumPy [split（）函数](https://docs.scipy.org/doc/numpy/reference/generated/numpy.split.html)将分割数据集组织成每周数据。
 
-```
+```py
 # split a univariate dataset into train/test sets
 def split_dataset(data):
 	# split into standard weeks
@@ -293,7 +293,7 @@ def split_dataset(data):
 
 完整的代码示例如下所示。
 
-```
+```py
 # split into standard weeks
 from numpy import split
 from numpy import array
@@ -323,7 +323,7 @@ print(test[0, 0, 0], test[-1, -1, 0])
 
 我们可以看到，第一行和最后一行的列车和测试数据集的总有效功率与我们定义为每组标准周界限的特定日期的数据相匹配。
 
-```
+```py
 (159, 7, 8)
 3390.46 1309.2679999999998
 (46, 7, 8)
@@ -338,7 +338,7 @@ print(test[0, 0, 0], test[-1, -1, 0])
 
 我们可以通过分离输入数据和输出/预测数据来证明这一点。
 
-```
+```py
 Input, 						Predict
 [Week1]						Week2
 [Week1 + Week2]				Week3
@@ -352,7 +352,7 @@ Input, 						Predict
 
 然后使用先前定义的 _evaluate_forecasts（）_ 函数，针对测试数据集评估模型所做的预测。
 
-```
+```py
 # evaluate a single model
 def evaluate_model(model_func, train, test):
 	# history is a list of weekly data
@@ -376,7 +376,7 @@ def evaluate_model(model_func, train, test):
 
 以下名为 _summarize_scores（）_ 的函数将模型的表现显示为单行，以便与其他模型进行比较。
 
-```
+```py
 # summarize scores
 def summarize_scores(name, score, scores):
 	s_scores = ', '.join(['%.1f' % s for s in scores])
@@ -405,7 +405,7 @@ def summarize_scores(name, score, scores):
 
 下面的 _daily_persistence（）_ 函数实现了每日持久性预测策略。
 
-```
+```py
 # daily persistence model
 def daily_persistence(history):
 	# get the data for the prior week
@@ -425,7 +425,7 @@ def daily_persistence(history):
 
 下面的 _weekly_persistence（）_ 函数实现了每周持久性预测策略。
 
-```
+```py
 # weekly persistence model
 def weekly_persistence(history):
 	# get the data for the prior week
@@ -441,7 +441,7 @@ def weekly_persistence(history):
 
 下面的 _week_one_year_ago_persistence（）_ 函数实现了一年前的预测策略。
 
-```
+```py
 # week one year ago persistence model
 def week_one_year_ago_persistence(history):
 	# get the data for the prior week
@@ -455,7 +455,7 @@ def week_one_year_ago_persistence(history):
 
 首先，可以加载数据集并将其拆分为训练集和测试集。
 
-```
+```py
 # load the new file
 dataset = read_csv('household_power_consumption_days.csv', header=0, infer_datetime_format=True, parse_dates=['datetime'], index_col=['datetime'])
 # split into train and test
@@ -464,7 +464,7 @@ train, test = split_dataset(dataset.values)
 
 每个策略都可以根据唯一名称存储在字典中。此名称可用于打印和创建乐谱图。
 
-```
+```py
 # define the names and functions for the models we wish to evaluate
 models = dict()
 models['daily'] = daily_persistence
@@ -474,7 +474,7 @@ models['week-oya'] = week_one_year_ago_persistence
 
 然后，我们可以列举每个策略，使用前向验证对其进行评估，打印分数，并将分数添加到线图中以进行视觉比较。
 
-```
+```py
 # evaluate each model
 days = ['sun', 'mon', 'tue', 'wed', 'thr', 'fri', 'sat']
 for name, func in models.items():
@@ -488,7 +488,7 @@ for name, func in models.items():
 
 将所有这些结合在一起，下面列出了评估三种朴素预测策略的完整示例。
 
-```
+```py
 # naive forecast strategies
 from math import sqrt
 from numpy import split
@@ -601,7 +601,7 @@ pyplot.show()
 
 我们可以使用周-oya 策略，总体 RMSE 为 465.294 千瓦作为表现的基准，以便更复杂的模型在这个特定的问题框架中被认为是熟练的。
 
-```
+```py
 daily: [511.886] 452.9, 596.4, 532.1, 490.5, 534.3, 481.5, 482.0
 weekly: [469.389] 567.6, 500.3, 411.2, 466.1, 471.9, 358.3, 482.0
 week-oya: [465.294] 550.0, 446.7, 398.6, 487.0, 459.3, 313.5, 555.1

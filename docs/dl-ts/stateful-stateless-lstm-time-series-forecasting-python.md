@@ -55,7 +55,7 @@ Keras Python 深度学习库支持有状态和无状态长短期内存（LSTM）
 
 下面的示例加载并创建已加载数据集的图。
 
-```
+```py
 # load and plot dataset
 from pandas import read_csv
 from pandas import datetime
@@ -73,7 +73,7 @@ pyplot.show()
 
 运行该示例将数据集作为 Pandas Series 加载并打印前 5 行。
 
-```
+```py
 Month
 1901-01-01 266.0
 1901-02-01 145.9
@@ -161,7 +161,7 @@ Name: Sales, dtype: float64
 
 此代码还为本教程中的所有实验提供了基础。我将仅列出已更改的函数，而不是为后续部分中的每个变体重新列出它。
 
-```
+```py
 from pandas import DataFrame
 from pandas import Series
 from pandas import concat
@@ -305,7 +305,7 @@ run()
 
 我们现在可以加载和比较这两个文件。下面列出了执行此操作的脚本。
 
-```
+```py
 from pandas import DataFrame
 from pandas import read_csv
 from matplotlib import pyplot
@@ -325,7 +325,7 @@ pyplot.show()
 
 我们可以看到平均结果和标准偏差是相对接近的值（分别约为 103-106 和 7-10）。这是一个好兆头，但并不完美。预计将实验的重复次数从 10 增加到 30,100 或甚至 1000 会产生几乎相同的汇总统计数据。
 
-```
+```py
          stateful   stateful2
 count   10.000000   10.000000
 mean   103.142903  106.594624
@@ -371,7 +371,7 @@ LSTM 网络的好处是它们能够维持状态并学习序列。
 
 代码更改为上面的有状态 LSTM 示例以使其无状态涉及在 LSTM 层中设置 _ 无状态=假 _ 并使用自动训练时代训练而不是手动。结果将写入名为“ _experiment_stateless.csv_ ”的新文件。更新后的 _fit_lstm（）_ 功能如下所示。
 
-```
+```py
 # fit an LSTM network to training data
 def fit_lstm(train, batch_size, nb_epoch, neurons):
 	X, y = train[:, 0:-1], train[:, -1]
@@ -388,7 +388,7 @@ def fit_lstm(train, batch_size, nb_epoch, neurons):
 
 完整更新的 _fit_lstm（）_ 功能如下所示。
 
-```
+```py
 # fit an LSTM network to training data
 def fit_lstm(train, batch_size, nb_epoch, neurons):
 	X, y = train[:, 0:-1], train[:, -1]
@@ -409,7 +409,7 @@ def fit_lstm(train, batch_size, nb_epoch, neurons):
 
 我们现在可以加载并比较这些结果。下面列出了比较结果的完整示例。
 
-```
+```py
 from pandas import DataFrame
 from pandas import read_csv
 from matplotlib import pyplot
@@ -436,7 +436,7 @@ pyplot.show()
 
 仅从这些有限的结果中，人们就会考虑在这个问题上探索无状态 LSTM。
 
-```
+```py
          stateful   stateless  stateless_shuffle
 count   10.000000   10.000000          10.000000
 mean   103.142903   95.661773          96.206332
@@ -473,7 +473,7 @@ max    114.958430  100.334725          99.870445
 
 我们将使用第一个实验的有状态结果作为起点。 _forecast_lstm（）_ 功能被修改为在一个步骤中预测一年的观察。 _ 实验（）_ 功能被修改为将训练数据集截断为 12 个月的数据，使用批量大小为 12，并处理从 _forecast_lstm（）_ 返回的批量预测功能。下面列出了这些更新的功能。结果将写入文件“ _experiment_stateful_batch12.csv_ ”。
 
-```
+```py
 # make a one-step forecast
 def forecast_lstm(model, batch_size, X):
 	X = X.reshape(1, 1, len(X))
@@ -528,7 +528,7 @@ def experiment(repeats, series):
 
 我们现在可以比较这些实验的结果。
 
-```
+```py
 from pandas import DataFrame
 from pandas import read_csv
 from matplotlib import pyplot
@@ -550,7 +550,7 @@ pyplot.show()
 
 如果这个结果是稳健的，那么它表明在内部状态重置之后，Keras 中的无状态和有状态 LSTM 网络之间没有进一步的实现 - 详细差异。
 
-```
+```py
        stateful_batch12  stateless_batch12
 count         10.000000          10.000000
 mean          97.920126          97.450757
@@ -610,7 +610,7 @@ max          114.567780         110.014679
 
 我们可以通过在每次预测之后在模型上添加对 _reset_states（）_ 的调用来更新 _forecast_lstm（）_ 函数以在每次测试之后更新。更新的 _forecast_lstm（）_ 功能如下所示。
 
-```
+```py
 # make a one-step forecast
 def forecast_lstm(model, batch_size, X):
 	X = X.reshape(1, 1, len(X))
@@ -621,7 +621,7 @@ def forecast_lstm(model, batch_size, X):
 
 我们可以通过删除对 _reset_states（）_ 的调用来更新 _fit_lstm（）_ 函数，使其在每个迭代后不复位。完整的功能如下所列。
 
-```
+```py
 # fit an LSTM network to training data
 def fit_lstm(train, batch_size, nb_epoch, neurons):
 	X, y = train[:, 0:-1], train[:, -1]
@@ -637,7 +637,7 @@ def fit_lstm(train, batch_size, nb_epoch, neurons):
 
 通过循环训练数据集并进行一步预测，我们可以在训练后通过训练数据集对训练数据集进行训练，使 LSTM 状态成为种子。在对测试数据集进行一步预测之前，可以将其添加到 _run（）_ 函数中。更新的 _run（）_ 功能如下所示。
 
-```
+```py
 # run a repeated experiment
 def experiment(repeats, series):
 	# transform data to be stationary
@@ -691,7 +691,7 @@ def experiment(repeats, series):
 
 我们现在可以使用下面的脚本比较结果。
 
-```
+```py
 from pandas import DataFrame
 from pandas import read_csv
 from matplotlib import pyplot
@@ -722,7 +722,7 @@ pyplot.show()
 
 关于播种的这些结果令人惊讶，但我们应该注意，平均值都在 5 个月洗发水销售的测试 RMSE 内，并且可能是统计噪声。
 
-```
+```py
          noseed_1    noseed_2    noseed_3      seed_1      seed_2      seed_3
 count   10.000000   10.000000   10.000000   10.000000   10.000000   10.000000
 mean   103.142903  101.757034  110.441021  105.468200  100.093551   98.766432

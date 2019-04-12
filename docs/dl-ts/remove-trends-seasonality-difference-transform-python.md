@@ -90,7 +90,7 @@
 
 通过从当前观察中减去先前的观察来执行差分。
 
-```
+```py
 difference(t) = observation(t) - observation(t-1)
 ```
 
@@ -98,7 +98,7 @@ difference(t) = observation(t) - observation(t-1)
 
 通过将先前时间步骤的观察值添加到差值，可以反转该过程。
 
-```
+```py
 inverted(t) = differenced(t) + observation(t-1)
 ```
 
@@ -128,7 +128,7 @@ inverted(t) = differenced(t) + observation(t-1)
 
 名为 difference（）的下面的函数实现了这个过程。
 
-```
+```py
 # create a differenced series
 def difference(dataset, interval=1):
 	diff = list()
@@ -144,7 +144,7 @@ def difference(dataset, interval=1):
 
 下面名为 inverse_difference（）的函数会反转单个预测的差异运算。它还要求提供前一时间步的实际观测值。
 
-```
+```py
 # invert differenced forecast
 def inverse_difference(last_ob, value):
 	return value + last_ob
@@ -158,7 +158,7 @@ def inverse_difference(last_ob, value):
 
 下面的示例将 difference（）函数应用于具有线性增加趋势的人为数据集。
 
-```
+```py
 # create a differenced series
 def difference(dataset, interval=1):
 	diff = list()
@@ -186,7 +186,7 @@ print(inverted)
 
 最后，使用来自原始序列的先验值作为每个变换的引物来反转差异序列。
 
-```
+```py
 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
@@ -208,7 +208,7 @@ print(inverted)
 
 下面的示例将 difference（）函数应用于人为的季节性数据集。该数据集包括两个循环，每个循环 360 个单元。
 
-```
+```py
 from math import sin
 from math import radians
 from matplotlib import pyplot

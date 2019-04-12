@@ -57,7 +57,7 @@
 
 下面的示例加载并创建已加载数据集的图。
 
-```
+```py
 # load and plot dataset
 from pandas import read_csv
 from pandas import datetime
@@ -75,7 +75,7 @@ pyplot.show()
 
 运行该示例将数据集作为 Pandas Series 加载并打印前 5 行。
 
-```
+```py
 Month
 1901-01-01 266.0
 1901-02-01 145.9
@@ -159,7 +159,7 @@ Name: Sales, dtype: float64
 
 完整的代码清单如下。
 
-```
+```py
 from pandas import DataFrame
 from pandas import Series
 from pandas import concat
@@ -297,7 +297,7 @@ run()
 
 结果表明，平均表现优于持久性模型，显示测试 RMSE 为 109.565465，而持久性的洗发水销售额为 136.761。
 
-```
+```py
           results
 count   10.000000
 mean   109.565465
@@ -321,7 +321,7 @@ max    138.261929
 
 使用与第一个实验中使用的相同的代码清单。代码清单的更改如下所示。
 
-```
+```py
 # Update LSTM model
 def update_model(model, train, batch_size, updates):
 	X, y = train[:, 0:-1], train[:, -1]
@@ -392,7 +392,7 @@ run()
 
 运行实验将最终测试 RMSE 分数保存在“ _experiment_update_2.csv_ ”中，并打印结果的摘要统计信息，如下所示。
 
-```
+```py
           results
 count   10.000000
 mean    99.566270
@@ -410,7 +410,7 @@ max    124.748746
 
 运行实验将最终测试 RMSE 分数保存在“ _experiment_update_5.csv_ ”中，并打印结果的摘要统计信息，如下所示。
 
-```
+```py
           results
 count   10.000000
 mean   101.094469
@@ -428,7 +428,7 @@ max    123.651985
 
 运行实验将最终测试 RMSE 分数保存在“ _experiment_update_10.csv_ ”中，并打印结果的摘要统计信息，如下所示。
 
-```
+```py
           results
 count   10.000000
 mean   108.806418
@@ -446,7 +446,7 @@ max    159.921749
 
 运行实验将最终测试 RMSE 分数保存在“ _experiment_update_20.csv_ ”中，并打印结果的摘要统计信息，如下所示。
 
-```
+```py
           results
 count   10.000000
 mean   112.070895
@@ -464,7 +464,7 @@ max    140.828410
 
 运行实验将最终测试 RMSE 分数保存在“ _experiment_update_50.csv_ ”中，并打印结果的摘要统计信息，如下所示。
 
-```
+```py
           results
 count   10.000000
 mean   110.721971
@@ -484,7 +484,7 @@ max    161.463289
 
 完整的代码清单如下。
 
-```
+```py
 from pandas import DataFrame
 from pandas import read_csv
 from matplotlib import pyplot
@@ -509,7 +509,7 @@ pyplot.show()
 
 我们看到少数更新时期导致更好的整体测试集表现，特别是 2 个时期，接着是 5 个时期。这是令人鼓舞的。
 
-```
+```py
             fixed    update_2    update_5   update_10   update_20   update_50
 count   10.000000   10.000000   10.000000   10.000000   10.000000   10.000000
 mean   109.565465   99.566270  101.094469  108.806418  112.070895  110.721971

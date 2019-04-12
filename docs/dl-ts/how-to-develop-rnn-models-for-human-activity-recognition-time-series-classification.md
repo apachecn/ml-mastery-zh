@@ -113,7 +113,7 @@ LSTM 网络模型是一种循环神经网络，能够学习和记忆长输入数
 
 输入数据采用 CSV 格式，其中列由空格分隔。这些文件中的每一个都可以作为 NumPy 数组加载。下面的 _load_file（）_ 函数在给定文件填充路径的情况下加载数据集，并将加载的数据作为 NumPy 数组返回。
 
-```
+```py
 # load a single file as a numpy array
 def load_file(filepath):
 	dataframe = read_csv(filepath, header=None, delim_whitespace=True)
@@ -126,7 +126,7 @@ def load_file(filepath):
 
 下面的 _load_group（）_ 函数实现了这种行为。 [dstack（）NumPy 函数](https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.dstack.html)允许我们将每个加载的 3D 数组堆叠成单个 3D 数组，其中变量在第三维（特征）上分开。
 
-```
+```py
 # load a list of files into a 3D array of [samples, timesteps, features]
 def load_group(filenames, prefix=''):
 	loaded = list()
@@ -142,7 +142,7 @@ def load_group(filenames, prefix=''):
 
 下面的 _load_dataset_group（）_ 函数使用目录之间的一致命名约定加载单个组的所有输入信号数据和输出数据。
 
-```
+```py
 # load a dataset group, such as train or test
 def load_dataset_group(group, prefix=''):
 	filepath = prefix + group + '/Inertial Signals/'
@@ -167,7 +167,7 @@ def load_dataset_group(group, prefix=''):
 
 下面的 _load_dataset（）_ 函数实现了这种行为，并返回训练并测试 X 和 y 元素，以便拟合和评估定义的模型。
 
-```
+```py
 # load the dataset, returns train and test X and y elements
 def load_dataset(prefix=''):
 	# load all train
@@ -200,7 +200,7 @@ def load_dataset(prefix=''):
 
 在拟合模型时需要输入和输出尺寸，我们可以从提供的训练数据集中提取它们。
 
-```
+```py
 n_timesteps, n_features, n_outputs = trainX.shape[1], trainX.shape[2], trainy.shape[1]
 ```
 
@@ -212,7 +212,7 @@ n_timesteps, n_features, n_outputs = trainX.shape[1], trainX.shape[2], trainy.sh
 
 下面列出了该模型的定义。
 
-```
+```py
 model = Sequential()
 model.add(LSTM(100, input_shape=(n_timesteps,n_features)))
 model.add(Dropout(0.5))
@@ -229,7 +229,7 @@ model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accur
 
 下面列出了完整的 _evaluate_model（）_ 函数。
 
-```
+```py
 # fit and evaluate a model
 def evaluate_model(trainX, trainy, testX, testy):
 	verbose, epochs, batch_size = 0, 15, 64
@@ -259,7 +259,7 @@ def evaluate_model(trainX, trainy, testX, testy):
 
 我们将多次重复对模型的评估，然后在每次运行中总结模型的表现。例如，我们可以调用 _evaluate_model（）_ 共 10 次。这将导致必须总结的模型评估分数。
 
-```
+```py
 # repeat experiment
 scores = list()
 for r in range(repeats):
@@ -273,7 +273,7 @@ for r in range(repeats):
 
 下面的函数 _summarize_results（）_ 总结了运行的结果。
 
-```
+```py
 # summarize scores
 def summarize_results(scores):
 	print(scores)
@@ -285,7 +285,7 @@ def summarize_results(scores):
 
 默认情况下，在报告模型表现之前，会对模型进行 10 次评估。
 
-```
+```py
 # run an experiment
 def run_experiment(repeats=10):
 	# load data
@@ -307,7 +307,7 @@ def run_experiment(repeats=10):
 
 完整的代码清单如下。
 
-```
+```py
 # lstm model
 from numpy import mean
 from numpy import std
@@ -420,7 +420,7 @@ run_experiment()
 
 注意：鉴于算法的随机性，您的具体结果可能会有所不同。如果是这样，请尝试运行几次代码。
 
-```
+```py
 (7352, 128, 9) (7352, 1)
 (2947, 128, 9) (2947, 1)
 (7352, 128, 9) (7352, 6) (2947, 128, 9) (2947, 6)
@@ -465,7 +465,7 @@ CNN LSTM 模型将以块为单位读取主序列的子序列，从每个块中�
 
 实现此模型的一种方法是将 128 个时间步的每个窗口拆分为 CNN 模型要处理的子序列。例如，每个窗口中的 128 个时间步长可以分成 32 个时间步长的四个子序列。
 
-```
+```py
 # reshape data into time steps of sub-sequences
 n_steps, n_length = 4, 32
 trainX = trainX.reshape((trainX.shape[0], n_steps, n_length, n_features))
@@ -476,7 +476,7 @@ testX = testX.reshape((testX.shape[0], n_steps, n_length, n_features))
 
 整个 CNN 模型可以包裹在 [TimeDistributed](https://machinelearningmastery.com/timedistributed-layer-for-long-short-term-memory-networks-in-python/) 层中，以允许相同的 CNN 模型在窗口的四个子序列中的每一个中读取。然后将提取的特征展平并提供给 LSTM 模型以进行读取，在最终映射到活动之前提取其自身的特征。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(TimeDistributed(Conv1D(filters=64, kernel_size=3, activation='relu'), input_shape=(None,n_length,n_features)))
@@ -494,7 +494,7 @@ model.add(Dense(n_outputs, activation='softmax'))
 
 下面列出了更新的 _evaluate_model（）_。
 
-```
+```py
 # fit and evaluate a model
 def evaluate_model(trainX, trainy, testX, testy):
 	# define model
@@ -527,7 +527,7 @@ def evaluate_model(trainX, trainy, testX, testy):
 
 完整的代码清单如下。
 
-```
+```py
 # cnn lstm model
 from numpy import mean
 from numpy import std
@@ -650,7 +650,7 @@ run_experiment()
 
 注意：鉴于算法的随机性，您的具体结果可能会有所不同。如果是这样，请尝试运行几次代码。
 
-```
+```py
 >#1: 91.517
 >#2: 91.042
 >#3: 90.804
@@ -683,7 +683,7 @@ Keras 库提供 [ConvLSTM2D 类](https://keras.io/layers/recurrent/#convlstm2d)�
 
 默认情况下，ConvLSTM2D 类要求输入数据具有以下形状：
 
-```
+```py
 (samples, time, rows, cols, channels)
 ```
 
@@ -701,7 +701,7 @@ Keras 库提供 [ConvLSTM2D 类](https://keras.io/layers/recurrent/#convlstm2d)�
 
 我们现在可以为 ConvLSTM2D 模型准备数据。
 
-```
+```py
 n_timesteps, n_features, n_outputs = trainX.shape[1], trainX.shape[2], trainy.shape[1]
 # reshape into subsequences (samples, time steps, rows, cols, channels)
 n_steps, n_length = 4, 32
@@ -713,7 +713,7 @@ ConvLSTM2D 类需要根据 CNN 和 LSTM 进行配置。这包括指定滤波器�
 
 与 CNN 或 LSTM 模型一样，输出必须展平为一个长向量，然后才能通过密集层进行解释。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(ConvLSTM2D(filters=64, kernel_size=(1,3), activation='relu', input_shape=(n_steps, 1, n_length, n_features)))
@@ -727,7 +727,7 @@ model.add(Dense(n_outputs, activation='softmax'))
 
 下面列出了完整的示例。
 
-```
+```py
 # convlstm model
 from numpy import mean
 from numpy import std
@@ -845,7 +845,7 @@ run_experiment()
 
 注意：鉴于算法的随机性，您的具体结果可能会有所不同。如果是这样，请尝试运行几次代码。
 
-```
+```py
 >#1: 90.092
 >#2: 91.619
 >#3: 92.128

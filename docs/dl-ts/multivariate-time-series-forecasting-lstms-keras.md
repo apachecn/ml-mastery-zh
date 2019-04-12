@@ -81,7 +81,7 @@
 
 下面是原始数据集的前几行。
 
-```
+```py
 No,year,month,day,hour,pm2.5,DEWP,TEMP,PRES,cbwd,Iws,Is,Ir
 1,2010,1,1,0,NA,-21,-11,1021,NW,1.79,0,0
 2,2010,1,1,1,NA,-21,-12,1020,NW,4.92,0,0
@@ -98,7 +98,7 @@ No,year,month,day,hour,pm2.5,DEWP,TEMP,PRES,cbwd,Iws,Is,Ir
 
 删除“否”列，然后为每列指定更清晰的名称。最后，将 NA 值替换为“0”值，并删除前 24 小时。
 
-```
+```py
 from pandas import read_csv
 from datetime import datetime
 # load data
@@ -121,7 +121,7 @@ dataset.to_csv('pollution.csv')
 
 运行该示例将打印转换数据集的前 5 行，并将数据集保存到“ _pollution.csv_ ”。
 
-```
+```py
                      pollution  dew  temp   press wnd_dir  wnd_spd  snow  rain
 date
 2010-01-02 00:00:00      129.0  -16  -4.0  1020.0      SE     1.79     0     0
@@ -135,7 +135,7 @@ date
 
 下面的代码加载新的“ _pollution.csv_ ”文件，并将每个系列绘制为一个单独的子图，除了风速 dir，这是绝对的。
 
-```
+```py
 from pandas import read_csv
 from matplotlib import pyplot
 # load dataset
@@ -187,7 +187,7 @@ pyplot.show()
 
 完整的代码清单如下。
 
-```
+```py
 # convert series to supervised learning
 def series_to_supervised(data, n_in=1, n_out=1, dropnan=True):
 	n_vars = 1 if type(data) is list else data.shape[1]
@@ -232,7 +232,7 @@ print(reframed.head())
 
 运行该示例将打印转换后的数据集的前 5 行。我们可以看到 8 个输入变量（输入系列）和 1 个输出变量（当前小时的污染水平）。
 
-```
+```py
    var1(t-1)  var2(t-1)  var3(t-1)  var4(t-1)  var5(t-1)  var6(t-1)  \
 1   0.129779   0.352941   0.245902   0.527273   0.666667   0.002290
 2   0.148893   0.367647   0.245902   0.527273   0.666667   0.003811
@@ -264,7 +264,7 @@ print(reframed.head())
 
 下面的示例将数据集拆分为训练集和测试集，然后将训练集和测试集拆分为输入和输出变量。最后，输入（X）被重新整形为 LSTM 所期望的 3D 格式，即[样本，时间步长，特征]。
 
-```
+```py
 # split into train and test sets
 values = reframed.values
 n_train_hours = 365 * 24
@@ -281,7 +281,7 @@ print(train_X.shape, train_y.shape, test_X.shape, test_y.shape)
 
 运行此示例打印列车的形状并测试输入和输出集，其中大约 9K 小时的数据用于训练，大约 35K 小时用于测试。
 
-```
+```py
 (8760, 1, 8) (8760,) (35039, 1, 8) (35039,)
 ```
 
@@ -295,7 +295,7 @@ print(train_X.shape, train_y.shape, test_X.shape, test_y.shape)
 
 最后，我们通过在 fit（）函数中设置 _validation_data_ 参数来跟踪训练期间的训练和测试丢失。在运行结束时，绘制训练和测试损失。
 
-```
+```py
 # design network
 model = Sequential()
 model.add(LSTM(50, input_shape=(train_X.shape[1], train_X.shape[2])))
@@ -318,7 +318,7 @@ pyplot.show()
 
 通过原始比例的预测和实际值，我们可以计算模型的误差分数。在这种情况下，我们计算出均方误差（RMSE），它以与变量本身相同的单位给出误差。
 
-```
+```py
 # make a prediction
 yhat = model.predict(test_X)
 test_X = test_X.reshape((test_X.shape[0], test_X.shape[2]))
@@ -342,7 +342,7 @@ print('Test RMSE: %.3f' % rmse)
 
 **注**：此示例假设您已正确准备数据，例如将下载的“ _raw.csv_ ”转换为准备好的“ _pollution.csv_ ”。请参阅本教程的第一部分。
 
-```
+```py
 from math import sqrt
 from numpy import concatenate
 from matplotlib import pyplot
@@ -452,7 +452,7 @@ print('Test RMSE: %.3f' % rmse)
 
 我们可以看到该模型实现了 26.496 的可观 RMSE，低于使用持久性模型找到的 30 的 RMSE。
 
-```
+```py
 ...
 Epoch 46/50
 0s - loss: 0.0143 - val_loss: 0.0133
@@ -482,7 +482,7 @@ Test RMSE: 26.496
 
 首先，在调用 series_to_supervised（）时必须适当地构建问题。我们将使用 3 小时的数据作为输入。另请注意，我们不再明确地删除 ob（t）处所有其他字段中的列。
 
-```
+```py
 # specify the number of lag hours
 n_hours = 3
 n_features = 8
@@ -494,7 +494,7 @@ reframed = series_to_supervised(scaled, n_hours, 1)
 
 我们的框架数据集中有 3 * 8 + 8 列。我们将在前 3 个小时内将 3 * 8 或 24 列作为所有功能的视角输入。我们将在下一个小时将污染变量作为输出，如下所示：
 
-```
+```py
 # split into input and outputs
 n_obs = n_hours * n_features
 train_X, train_y = train[:, :n_obs], train[:, -n_features]
@@ -504,7 +504,7 @@ print(train_X.shape, len(train_X), train_y.shape)
 
 接下来，我们可以正确地重塑输入数据以反映时间步骤和功能。
 
-```
+```py
 # reshape input to be 3D [samples, timesteps, features]
 train_X = train_X.reshape((train_X.shape[0], n_hours, n_features))
 test_X = test_X.reshape((test_X.shape[0], n_hours, n_features))
@@ -516,7 +516,7 @@ test_X = test_X.reshape((test_X.shape[0], n_hours, n_features))
 
 更改的要点是我们将 y 或 yhat 列与测试数据集的最后 7 个特征连接起来，以便反转缩放，如下所示：
 
-```
+```py
 # invert scaling for forecast
 inv_yhat = concatenate((yhat, test_X[:, -7:]), axis=1)
 inv_yhat = scaler.inverse_transform(inv_yhat)
@@ -530,7 +530,7 @@ inv_y = inv_y[:,0]
 
 我们可以将所有这些修改与上述示例结合在一起。下面列出了具有多个滞后输入的多变量时间序列预测的完整示例：
 
-```
+```py
 from math import sqrt
 from numpy import concatenate
 from matplotlib import pyplot
@@ -633,7 +633,7 @@ print('Test RMSE: %.3f' % rmse)
 
 该模型在一两分钟内就像以前一样合适。
 
-```
+```py
 ...
 Epoch 45/50
 1s - loss: 0.0143 - val_loss: 0.0154
@@ -657,7 +657,7 @@ Epoch 50/50
 
 最后，测试 RMSE 被打印出来，至少在这个问题上并没有真正显示出技能上的任何优势。
 
-```
+```py
 Test RMSE: 27.177
 ```
 

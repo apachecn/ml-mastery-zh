@@ -42,7 +42,7 @@ EMC Data Science Global Hackathon 数据集或简称“空气质量预测”数�
 
 具体而言，对于多个站点，每小时提供 8 天的温度，压力，风速和风向等天气观测。目标是预测未来 3 天在多个地点的空气质量测量。预测的提前期不是连续的;相反，必须在 72 小时预测期内预测特定提前期。他们是：
 
-```
+```py
 +1, +2, +3, +4, +5, +10, +17, +24, +48, +72
 ```
 
@@ -80,7 +80,7 @@ EMC Data Science Global Hackathon 数据集或简称“空气质量预测”数�
 
 我们可以使用 Pandas [read_csv（）函数](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html)将数据文件加载到内存中，并在第 0 行指定标题行。
 
-```
+```py
 # load dataset
 dataset = read_csv('AirQualityPrediction/TrainingData.csv', header=0)
 ```
@@ -89,13 +89,13 @@ dataset = read_csv('AirQualityPrediction/TrainingData.csv', header=0)
 
 首先，让我们获取唯一的块标识符列表。
 
-```
+```py
 chunk_ids = unique(values[:, 1])
 ```
 
 然后，我们可以收集每个块标识符的所有行，并将它们存储在字典中以便于访问。
 
-```
+```py
 chunks = dict()
 # sort rows by chunk id
 for chunk_id in chunk_ids:
@@ -105,7 +105,7 @@ for chunk_id in chunk_ids:
 
 下面定义了一个名为 _to_chunks（）_ 的函数，它接受加载数据的 NumPy 数组，并将 _chunk_id_ 的字典返回到块的行。
 
-```
+```py
 # split the dataset by 'chunkID', return a dict of id to rows
 def to_chunks(values, chunk_ix=1):
 	chunks = dict()
@@ -120,7 +120,7 @@ def to_chunks(values, chunk_ix=1):
 
 下面列出了加载数据集并将其拆分为块的完整示例。
 
-```
+```py
 # load data and split into chunks
 from numpy import unique
 from pandas import read_csv
@@ -146,7 +146,7 @@ print('Total Chunks: %d' % len(chunks))
 
 运行该示例将打印数据集中的块数。
 
-```
+```py
 Total Chunks: 208
 ```
 
@@ -166,7 +166,7 @@ Total Chunks: 208
 
 下面的 _split_train_test（）_ 函数实现了这种行为;给定一个块的字典，它将每个分成列车和测试块数据。
 
-```
+```py
 # split each chunk into train/test sets
 def split_train_test(chunks, row_in_chunk_ix=2):
 	train, test = list(), list()
@@ -189,7 +189,7 @@ def split_train_test(chunks, row_in_chunk_ix=2):
 
 我们不需要整个测试数据集;相反，我们只需要在三天时间内的特定提前期进行观察，特别是提前期：
 
-```
+```py
 +1, +2, +3, +4, +5, +10, +17, +24, +48, +72
 ```
 
@@ -197,7 +197,7 @@ def split_train_test(chunks, row_in_chunk_ix=2):
 
 首先，我们可以将这些提前期放入函数中以便于参考：
 
-```
+```py
 # return a list of relative forecast lead times
 def get_lead_times():
 	return [1, 2 ,3, 4, 5, 10, 17, 24, 48, 72]
@@ -211,7 +211,7 @@ def get_lead_times():
 
 下面的函数 _to_forecasts（）_ 实现了这一点，并为每个块的每个预测提前期返回一行 NumPy 数组。
 
-```
+```py
 # convert the rows in a test chunk to forecasts
 def to_forecasts(test_chunks, row_in_chunk_ix=1):
 	# get lead times
@@ -243,7 +243,7 @@ def to_forecasts(test_chunks, row_in_chunk_ix=1):
 
 完整的代码示例如下所示。
 
-```
+```py
 # split data into train and test sets
 from numpy import unique
 from numpy import nan
@@ -338,7 +338,7 @@ savetxt('AirQualityPrediction/naive_test.csv', test_rows, delimiter=',')
 
 新的训练和测试数据集分别保存在' _naive_train.csv_ '和' _naive_test.csv_ '文件中。
 
-```
+```py
 >dropping chunk=69: train=(0, 95), test=(28, 95)
 Train Rows: (23514, 42)
 Test Rows: (2070, 42)
@@ -354,7 +354,7 @@ Test Rows: (2070, 42)
 
 我们还可以重新构建测试数据集以使此数据集进行比较。下面的 _prepare_test_forecasts（）_ 函数实现了这一点。
 
-```
+```py
 # convert the test dataset in chunks to [chunk][variable][time] format
 def prepare_test_forecasts(test_chunks):
 	predictions = list()
@@ -376,7 +376,7 @@ def prepare_test_forecasts(test_chunks):
 
 _calculate_error（）_ 函数实现这些规则并返回给定预测的错误。
 
-```
+```py
 # calculate the error between an actual and predicted value
 def calculate_error(actual, predicted):
 	# give the full actual value if predicted is nan
@@ -392,7 +392,7 @@ def calculate_error(actual, predicted):
 
 下面的 evaluate_forecasts（）函数实现了这一点，计算了 _[chunk] [variable] [time]_ 格式中提供的预测和期望值的 MAE 和每个引导时间 MAE。
 
-```
+```py
 # evaluate a forecast in the format [chunk][variable][time]
 def evaluate_forecasts(predictions, testset):
 	lead_times = get_lead_times()
@@ -427,7 +427,7 @@ def evaluate_forecasts(predictions, testset):
 
 下面的 _summarize_error（）_ 函数首先打印模型表现的一行摘要，然后创建每个预测提前期的 MAE 图。
 
-```
+```py
 # summarize scores
 def summarize_error(name, total_mae, times_mae):
 	# print summary
@@ -524,7 +524,7 @@ def summarize_error(name, total_mae, times_mae):
 
 下面的 _variable_to_series（）_ 函数将获取目标变量的块和给定列索引的行，并将为变量返回一系列 120 个时间步长，所有可用数据都标记为来自块。
 
-```
+```py
 # layout a variable with breaks in the data for missing positions
 def variable_to_series(chunk_train, col_ix, n_steps=5*24):
 	# lay out whole series
@@ -542,7 +542,7 @@ def variable_to_series(chunk_train, col_ix, n_steps=5*24):
 
 给定一系列部分填充的小时，下面的 _interpolate_hours（）_ 函数将填充一天中缺少的小时数。它通过找到第一个标记的小时，然后向前计数，填写一天中的小时，然后向后执行相同的操作来完成此操作。
 
-```
+```py
 # interpolate series of hours (in place) in 24 hour time
 def interpolate_hours(hours):
 	# find the first hour
@@ -571,7 +571,7 @@ def interpolate_hours(hours):
 
 我们可以调用相同的 _variable_to_series（）_ 函数（上面）来创建具有缺失值的系列小时（列索引 2），然后调用 _interpolate_hours（）_ 来填补空白。
 
-```
+```py
 # prepare sequence of hours for the chunk
 hours = variable_to_series(rows, 2)
 # interpolate hours
@@ -586,7 +586,7 @@ interpolate_hours(hours)
 
 它首先检查系列是否全部缺失数据，如果是这种情况则立即返回，因为不能执行任何插补。然后，它会在系列的时间步骤中进行枚举，当它检测到没有数据的时间步长时，它会收集序列中所有行，并使用相同小时的数据并计算中值。
 
-```
+```py
 # impute missing data
 def impute_missing(train_chunks, rows, hours, series, col_ix):
 	# impute missing using the median value for hour in all series
@@ -615,13 +615,13 @@ def impute_missing(train_chunks, rows, hours, series, col_ix):
 
 具体来说，我们有一个系列，如：
 
-```
+```py
 [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
 当使用 2 个滞后变量预测+1 的前置时间时，我们将系列分为输入（ _X_ ）和输出（ _y_ ）模式，如下所示：
 
-```
+```py
 X,			y
 1, 2,		3
 2, 3,		4
@@ -636,7 +636,7 @@ X,			y
 
 然后，我们必须将系列分为 10 个预测提前期中的每一个的监督学习格式。例如，使用 2 个滞后观察预测+24 可能如下所示：
 
-```
+```py
 X,			y
 1, 2,		24
 ```
@@ -651,7 +651,7 @@ X,			y
 
 下面的 _supervised_for_lead_time（）_ 函数将采用一系列滞后观察作为输入，预测前置时间进行预测，然后返回从该系列中抽取的输入/输出行列表。
 
-```
+```py
 # created input/output patterns from a sequence
 def supervised_for_lead_time(series, n_lag, lead_time):
 	samples = list()
@@ -674,7 +674,7 @@ def supervised_for_lead_time(series, n_lag, lead_time):
 
 下面是一个完整的示例，它生成一系列 20 个整数并创建一个具有两个输入滞后的系列，并预测+6 前置时间。
 
-```
+```py
 # test supervised to input/output patterns
 from numpy import array
 
@@ -705,7 +705,7 @@ print(result)
 
 尝试使用此示例来熟悉此数据转换，因为它是使用机器学习算法建模时间序列的关键。
 
-```
+```py
 [[ 0  1  7]
  [ 1  2  8]
  [ 2  3  9]
@@ -727,7 +727,7 @@ print(result)
 
 然后，为该目标变量返回每个预测提前期的训练数据和测试输入数据。
 
-```
+```py
 # create supervised learning data for each lead time for this target
 def target_to_supervised(chunks, rows, hours, col_ix, n_lag):
 	train_lead_times = list()
@@ -758,7 +758,7 @@ def target_to_supervised(chunks, rows, hours, col_ix, n_lag):
 
 下面的 _data_prep（）_ 函数实现了这种行为，并将块格式的数据和指定数量的滞后观察值用作输入。
 
-```
+```py
 # prepare training [var][lead time][sample] and test [chunk][var][sample]
 def data_prep(chunks, n_lag, n_vars=39):
 	lead_times = get_lead_times()
@@ -803,7 +803,7 @@ def data_prep(chunks, n_lag, n_vars=39):
 
 下面列出了完整的示例。
 
-```
+```py
 # prepare data
 from numpy import loadtxt
 from numpy import nan
@@ -983,7 +983,7 @@ save('AirQualityPrediction/supervised_test.npy', test_data)
 
 首先，我们需要能够在训练数据上使用 scikit-learn 模型。下面的 _fit_model（）_ 函数将复制模型配置，并使其适合所提供的训练数据。我们需要适应每个配置模型的许多（360）版本，因此这个函数将被调用很多。
 
-```
+```py
 # fit a single model
 def fit_model(model, X, y):
 	# clone the model configuration
@@ -999,7 +999,7 @@ def fit_model(model, X, y):
 
 下面的 _fit_models（）_ 函数实现了这一点。
 
-```
+```py
 # fit one model for each variable and each forecast lead time [var][time][model]
 def fit_models(model, train):
 	# prepare structure for saving models
@@ -1025,7 +1025,7 @@ def fit_models(model, train):
 
 下面的 _make_predictions（）_ 函数实现了这一点，将模型列表列表和加载的测试数据集作为参数，并返回结构 _[chunks] [var] [time]的预测数组 _。
 
-```
+```py
 # return forecasts as [chunks][var][time]
 def make_predictions(models, test):
 	lead_times = get_lead_times()
@@ -1060,7 +1060,7 @@ def make_predictions(models, test):
 
 我们可以定义一个通用的 _get_models（）_ 函数，该函数负责定义映射到已配置的 scikit-learn 模型对象的模型名称字典。
 
-```
+```py
 # prepare a list of ml models
 def get_models(models=dict()):
 	# ...
@@ -1073,7 +1073,7 @@ def get_models(models=dict()):
 
 下面的 _evaluate_models（）_ 函数实现了这一点。
 
-```
+```py
 # evaluate a suite of models
 def evaluate_models(models, train, test, actual):
 	for name, model in models.items():
@@ -1110,7 +1110,7 @@ def evaluate_models(models, train, test, actual):
 
 我们可以在 _get_models（）_ 函数中定义这些模型。
 
-```
+```py
 # prepare a list of ml models
 def get_models(models=dict()):
 	# linear models
@@ -1128,7 +1128,7 @@ def get_models(models=dict()):
 
 完整的代码示例如下所示。
 
-```
+```py
 # evaluate linear algorithms
 from numpy import load
 from numpy import loadtxt
@@ -1322,7 +1322,7 @@ Huber 回归似乎表现最佳（使用默认配置），实现了 0.434 的 MAE
 
 这很有趣，因为 [Huber 回归](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.HuberRegressor.html)或[稳健回归](https://en.wikipedia.org/wiki/Robust_regression)与 Huber 损失，是一种设计为对训练数据集中的异常值具有鲁棒性的方法。这可能表明其他方法可以通过更多的数据准备（例如标准化和/或异常值去除）来表现更好。
 
-```
+```py
 lr: 0.454 MAE
 lasso: 0.624 MAE
 ridge: 0.454 MAE
@@ -1356,7 +1356,7 @@ sgd: 0.457 MAE
 
 下面的 _get_models（）_ 函数定义了这九个模型。
 
-```
+```py
 # prepare a list of ml models
 def get_models(models=dict()):
 	# non-linear models
@@ -1377,7 +1377,7 @@ def get_models(models=dict()):
 
 完整的代码清单如下。
 
-```
+```py
 # spot check nonlinear algorithms
 from numpy import load
 from numpy import loadtxt
@@ -1571,7 +1571,7 @@ evaluate_models(models, train, test, actual)
 
 支持向量回归和可能的梯度增强机器可能值得进一步研究分别达到 0.437 和 0.450 的 MAE。
 
-```
+```py
 knn: 0.484 MAE
 cart: 0.631 MAE
 extra: 0.630 MAE
@@ -1593,13 +1593,13 @@ gbm: 0.450 MAE
 
 我试验了以下数量的滞后观察：
 
-```
+```py
 [1, 3, 6, 12, 24, 36, 48]
 ```
 
 结果如下：
 
-```
+```py
 1:	0.451
 3:	0.445
 6:	0.441

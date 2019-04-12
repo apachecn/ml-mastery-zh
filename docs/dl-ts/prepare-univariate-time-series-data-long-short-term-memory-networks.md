@@ -50,7 +50,7 @@
 
 在这里，我们将通过在 5,000 个时间步长内存中定义新数据集来模拟加载。
 
-```
+```py
 from numpy import array
 
 # load...
@@ -67,7 +67,7 @@ print(data.shape)
 
 我们可以看到我们有 5,000 行和 2 列：标准的单变量时间序列数据集。
 
-```
+```py
 [[ 1 10]
  [ 2 20]
  [ 3 30]
@@ -88,7 +88,7 @@ print(data.shape)
 
 在这里，我们只删除第一列：
 
-```
+```py
 # drop time
 data = data[:, 1]
 print(data.shape)
@@ -96,7 +96,7 @@ print(data.shape)
 
 现在我们有一个 5,000 个值的数组。
 
-```
+```py
 (5000,)
 ```
 
@@ -117,7 +117,7 @@ LSTM 需要处理样品，其中每个样品是单个时间序列。
 
 在这里，我们将 5,000 个时间步骤分成 25 个子序列，每个子序列有 200 个时间步长。我们将采用老式方式，而不是使用 NumPy 或 Python 技巧，以便您可以看到正在发生的事情。
 
-```
+```py
 # split into samples (e.g. 5000/200 = 25)
 samples = list()
 length = 200
@@ -131,7 +131,7 @@ print(len(samples))
 
 我们现在有 25 个子序列，每个子序列有 200 个时间步长。
 
-```
+```py
 25
 ```
 
@@ -146,7 +146,7 @@ LSTM 需要具有[样本，时间步长和特征]格式的数据。
 
 首先，我们需要将我们的数组列表转换为 25 x 200 的 2D NumPy 数组。
 
-```
+```py
 # convert list of arrays into 2d array
 data = array(samples)
 print(data.shape)
@@ -154,13 +154,13 @@ print(data.shape)
 
 运行这件作品，你应该看到：
 
-```
+```py
 (25, 200)
 ```
 
 接下来，我们可以使用 _reshape（）_ 函数为我们的单个特征添加一个额外的维度。
 
-```
+```py
 # reshape into [samples, timesteps, features]
 # expect [25, 200, 1]
 data = data.reshape((len(samples), length, 1))
@@ -171,7 +171,7 @@ print(data.shape)
 
 现在，数据可用作 LSTM 模型的输入（X）。
 
-```
+```py
 (25, 200, 1)
 ```
 

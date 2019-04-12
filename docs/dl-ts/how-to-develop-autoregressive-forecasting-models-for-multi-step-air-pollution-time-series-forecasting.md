@@ -39,7 +39,7 @@ EMC Data Science Global Hackathon 数据集或简称“空气质量预测”数�
 
 具体而言，对于多个站点，每小时提供 8 天的温度，压力，风速和风向等天气观测。目标是预测未来 3 天在多个地点的空气质量测量。预测的提前期不是连续的;相反，必须在 72 小时预测期内预测特定提前期。他们是：
 
-```
+```py
 +1, +2, +3, +4, +5, +10, +17, +24, +48, +72
 ```
 
@@ -77,7 +77,7 @@ EMC Data Science Global Hackathon 数据集或简称“空气质量预测”数�
 
 我们可以使用 Pandas [read_csv（）函数](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html)将数据文件加载到内存中，并在第 0 行指定标题行。
 
-```
+```py
 # load dataset
 dataset = read_csv('AirQualityPrediction/TrainingData.csv', header=0)
 ```
@@ -86,13 +86,13 @@ dataset = read_csv('AirQualityPrediction/TrainingData.csv', header=0)
 
 首先，让我们获取唯一的块标识符列表。
 
-```
+```py
 chunk_ids = unique(values[:, 1])
 ```
 
 然后，我们可以收集每个块标识符的所有行，并将它们存储在字典中以便于访问。
 
-```
+```py
 chunks = dict()
 # sort rows by chunk id
 for chunk_id in chunk_ids:
@@ -102,7 +102,7 @@ for chunk_id in chunk_ids:
 
 下面定义了一个名为 _to_chunks（）_ 的函数，它接受加载数据的 NumPy 数组，并将 _chunk_id_ 的字典返回到块的行。
 
-```
+```py
 # split the dataset by 'chunkID', return a dict of id to rows
 def to_chunks(values, chunk_ix=1):
 	chunks = dict()
@@ -117,7 +117,7 @@ def to_chunks(values, chunk_ix=1):
 
 下面列出了加载数据集并将其拆分为块的完整示例。
 
-```
+```py
 # load data and split into chunks
 from numpy import unique
 from pandas import read_csv
@@ -143,7 +143,7 @@ print('Total Chunks: %d' % len(chunks))
 
 运行该示例将打印数据集中的块数。
 
-```
+```py
 Total Chunks: 208
 ```
 
@@ -163,7 +163,7 @@ Total Chunks: 208
 
 下面的 _split_train_test（）_ 函数实现了这种行为;给定一个块的字典，它将每个分成列车和测试块数据。
 
-```
+```py
 # split each chunk into train/test sets
 def split_train_test(chunks, row_in_chunk_ix=2):
 	train, test = list(), list()
@@ -186,7 +186,7 @@ def split_train_test(chunks, row_in_chunk_ix=2):
 
 我们不需要整个测试数据集;相反，我们只需要在三天时间内的特定提前期进行观察，特别是提前期：
 
-```
+```py
 +1, +2, +3, +4, +5, +10, +17, +24, +48, +72
 ```
 
@@ -194,7 +194,7 @@ def split_train_test(chunks, row_in_chunk_ix=2):
 
 首先，我们可以将这些提前期放入函数中以便于参考：
 
-```
+```py
 # return a list of relative forecast lead times
 def get_lead_times():
 	return [1, 2 ,3, 4, 5, 10, 17, 24, 48, 72]
@@ -208,7 +208,7 @@ def get_lead_times():
 
 下面的函数 _to_forecasts（）_ 实现了这一点，并为每个块的每个预测提前期返回一行 NumPy 数组。
 
-```
+```py
 # convert the rows in a test chunk to forecasts
 def to_forecasts(test_chunks, row_in_chunk_ix=1):
 	# get lead times
@@ -240,7 +240,7 @@ def to_forecasts(test_chunks, row_in_chunk_ix=1):
 
 完整的代码示例如下所示。
 
-```
+```py
 # split data into train and test sets
 from numpy import unique
 from numpy import nan
@@ -335,7 +335,7 @@ savetxt('AirQualityPrediction/naive_test.csv', test_rows, delimiter=',')
 
 新的训练和测试数据集分别保存在' _naive_train.csv_ '和' _naive_test.csv_ '文件中。
 
-```
+```py
 >dropping chunk=69: train=(0, 95), test=(28, 95)
 Train Rows: (23514, 42)
 Test Rows: (2070, 42)
@@ -351,7 +351,7 @@ Test Rows: (2070, 42)
 
 我们还可以重新构建测试数据集以使此数据集进行比较。下面的 _prepare_test_forecasts（）_ 函数实现了这一点。
 
-```
+```py
 # convert the test dataset in chunks to [chunk][variable][time] format
 def prepare_test_forecasts(test_chunks):
 	predictions = list()
@@ -373,7 +373,7 @@ def prepare_test_forecasts(test_chunks):
 
 _calculate_error（）_ 函数实现这些规则并返回给定预测的错误。
 
-```
+```py
 # calculate the error between an actual and predicted value
 def calculate_error(actual, predicted):
 	# give the full actual value if predicted is nan
@@ -389,7 +389,7 @@ def calculate_error(actual, predicted):
 
 下面的 evaluate_forecasts（）函数实现了这一点，计算了 _[chunk] [variable] [time]_ 格式中提供的预测和期望值的 MAE 和每个引导时间 MAE。
 
-```
+```py
 # evaluate a forecast in the format [chunk][variable][time]
 def evaluate_forecasts(predictions, testset):
 	lead_times = get_lead_times()
@@ -424,7 +424,7 @@ def evaluate_forecasts(predictions, testset):
 
 下面的 _summarize_error（）_ 函数首先打印模型表现的一行摘要，然后创建每个预测提前期的 MAE 图。
 
-```
+```py
 # summarize scores
 def summarize_error(name, total_mae, times_mae):
 	# print summary
@@ -471,7 +471,7 @@ def summarize_error(name, total_mae, times_mae):
 
 下面的 _variable_to_series（）_ 函数将获取目标变量的块和给定列索引的行，并将为变量返回一系列 120 个时间步长，所有可用数据都标记为来自块。
 
-```
+```py
 # layout a variable with breaks in the data for missing positions
 def variable_to_series(chunk_train, col_ix, n_steps=5*24):
 	# lay out whole series
@@ -489,7 +489,7 @@ def variable_to_series(chunk_train, col_ix, n_steps=5*24):
 
 下面名为 _plot_variables（）_ 的函数将实现此功能并创建一个图形，其中 39 个线图水平堆叠。
 
-```
+```py
 # plot variables horizontally with gaps for missing data
 def plot_variables(chunk_train, n_vars=39):
 	pyplot.figure()
@@ -509,7 +509,7 @@ def plot_variables(chunk_train, n_vars=39):
 
 将这些结合在一起，下面列出了完整的示例。创建第一个块中所有变量的图。
 
-```
+```py
 # plot missing
 from numpy import loadtxt
 from numpy import nan
@@ -585,7 +585,7 @@ plot_variables(rows)
 
 更新示例以绘制数据集中的第 4 个块（索引 3）。
 
-```
+```py
 # pick one chunk
 rows = train_chunks[3]
 ```
@@ -622,7 +622,7 @@ rows = train_chunks[3]
 
 给定一系列部分填充的小时，下面的 _interpolate_hours（）_ 函数将填充一天中缺少的小时数。它通过找到第一个标记的小时，然后向前计数，填写一天中的小时，然后向后执行相同的操作来完成此操作。
 
-```
+```py
 # interpolate series of hours (in place) in 24 hour time
 def interpolate_hours(hours):
 	# find the first hour
@@ -653,7 +653,7 @@ def interpolate_hours(hours):
 
 我们可以在缺少数据的模拟小时列表上测试它。下面列出了完整的示例。
 
-```
+```py
 # interpolate hours
 from numpy import nan
 from numpy import isnan
@@ -693,7 +693,7 @@ print(data)
 
 首先运行示例打印带有缺失值的小时数据，然后正确填写所有小时数的相同序列。
 
-```
+```py
 [nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 0, nan, 2, nan, nan, nan, nan, nan, nan, 9, 10, 11, 12, 13, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]
 [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 0, 1]
 ```
@@ -702,7 +702,7 @@ print(data)
 
 我们可以从上一节中调用相同的 _variable_to_series（）_ 函数来创建具有缺失值的小时系列（列索引 2），然后调用 _interpolate_hours（）_ 来填补空白。
 
-```
+```py
 # prepare sequence of hours for the chunk
 hours = variable_to_series(rows, 2)
 # interpolate hours
@@ -717,7 +717,7 @@ interpolate_hours(hours)
 
 它首先检查系列是否全部缺失数据，如果是这种情况则立即返回，因为不能执行任何插补。然后，它会在系列的时间步骤中进行枚举，当它检测到没有数据的时间步长时，它会收集序列中所有行，并使用相同小时的数据并计算中值。
 
-```
+```py
 # impute missing data
 def impute_missing(rows, hours, series, col_ix):
 	# count missing observations
@@ -747,7 +747,7 @@ def impute_missing(rows, hours, series, col_ix):
 
 _plot_variables（）_ 函数的更新版本在下面列出了此更改，调用 _impute_missing（）_ 函数来创建系列的推算版本并将小时系列作为参数。
 
-```
+```py
 # plot variables horizontally with gaps for missing data
 def plot_variables(chunk_train, hours, n_vars=39):
 	pyplot.figure()
@@ -771,7 +771,7 @@ def plot_variables(chunk_train, hours, n_vars=39):
 
 将所有这些结合在一起，下面列出了完整的示例。
 
-```
+```py
 # impute missing
 from numpy import loadtxt
 from numpy import nan
@@ -897,7 +897,7 @@ plot_variables(rows, hours)
 
 我们可以在数据集中具有更多缺失数据的第 4 个块上尝试相同的方法。
 
-```
+```py
 # pick one chunk
 rows = train_chunks[0]
 ```
@@ -926,7 +926,7 @@ statsmodels 库提供 [plot_acf（）](http://www.statsmodels.org/dev/generated/
 
 下面列出了用于绘制 ACF 和 PACF 图的更新的 _plot_variables（）_ 函数。
 
-```
+```py
 # plot acf and pacf plots for each imputed variable series
 def plot_variables(chunk_train, hours, n_vars=39):
 	pyplot.figure()
@@ -958,7 +958,7 @@ def plot_variables(chunk_train, hours, n_vars=39):
 
 下面列出了完整的示例。
 
-```
+```py
 # acf and pacf plots
 from numpy import loadtxt
 from numpy import nan
@@ -1114,7 +1114,7 @@ plot_variables(rows, hours)
 
 完整的功能如下所列。
 
-```
+```py
 # forecast for each chunk, returns [chunk][variable][time]
 def forecast_chunks(train_chunks, test_input):
 	lead_times = get_lead_times()
@@ -1143,7 +1143,7 @@ def forecast_chunks(train_chunks, test_input):
 
 最后，我们调用一个名为 _fit_and_forecast（）_ 的新函数，该函数适合模型并预测 10 个预测前置时间。
 
-```
+```py
 # forecast all lead times for one variable
 def forecast_variable(hours, chunk_train, chunk_test, lead_times, target_ix):
 	# convert target number into column number
@@ -1165,28 +1165,28 @@ def forecast_variable(hours, chunk_train, chunk_test, lead_times, target_ix):
 
 首先，我们必须定义模型，包括自回归过程的顺序，例如 AR（1）。
 
-```
+```py
 # define the model
 model = ARIMA(series, order=(1,0,0))
 ```
 
 接下来，该模型适用于推算系列。我们通过将 _disp_ 设置为 _False_ 来关闭拟合期间的详细信息。
 
-```
+```py
 # fit the model
 model_fit = model.fit(disp=False)
 ```
 
 然后使用拟合模型预测系列结束后的 72 小时。
 
-```
+```py
 # forecast 72 hours
 yhat = model_fit.predict(len(series), len(series)+72)
 ```
 
 我们只对特定的提前期感兴趣，因此我们准备一系列提前期，减 1 以将它们转换为数组索引，然后使用它们选择我们感兴趣的 10 个预测提前期的值。
 
-```
+```py
 # extract lead times
 lead_times = array(get_lead_times())
 indices = lead_times - 1
@@ -1199,7 +1199,7 @@ statsmodels ARIMA 模型使用线性代数库来拟合封面下的模型，有�
 
 下面的 _fit_and_forecast（）_ 函数将所有这些联系在一起。
 
-```
+```py
 # fit AR model and generate a forecast
 def fit_and_forecast(series):
 	# define the model
@@ -1227,7 +1227,7 @@ def fit_and_forecast(series):
 
 完整的代码示例如下所示。
 
-```
+```py
 # autoregression forecast
 from numpy import loadtxt
 from numpy import nan
@@ -1451,7 +1451,7 @@ summarize_error('AR', total_mae, times_mae)
 
 我们可以看到该模型实现了约 0.492 的 MAE，小于通过朴素持久模型实现的 MAE 0.520。这表明该方法确实具有一定的技巧。
 
-```
+```py
 AR: [0.492 MAE] +1 0.225, +2 0.342, +3 0.410, +4 0.475, +5 0.512, +10 0.593, +17 0.586, +24 0.588, +48 0.588, +72 0.604
 ```
 
@@ -1465,19 +1465,19 @@ AR 与预测 AR 的预测时间（1）
 
 AR（2）模型可以定义为：
 
-```
+```py
 model = ARIMA(series, order=(2,0,0))
 ```
 
 使用此更新运行代码显示错误进一步下降到总体 MAE 约 0.490。
 
-```
+```py
 AR: [0.490 MAE] +1 0.229, +2 0.342, +3 0.412, +4 0.470, +5 0.503, +10 0.563, +17 0.576, +24 0.605, +48 0.597, +72 0.608
 ```
 
 我们也可以尝试 AR（3）：
 
-```
+```py
 model = ARIMA(series, order=(3,0,0))
 ```
 
@@ -1485,7 +1485,7 @@ model = ARIMA(series, order=(3,0,0))
 
 AR（2）可能是一个很好的全局级配置，尽管预计为每个变量或每个系列量身定制的模型可能总体上表现更好。
 
-```
+```py
 AR: [0.491 MAE] +1 0.232, +2 0.345, +3 0.412, +4 0.472, +5 0.504, +10 0.556, +17 0.575, +24 0.607, +48 0.599, +72 0.611
 ```
 
@@ -1497,7 +1497,7 @@ AR: [0.491 MAE] +1 0.232, +2 0.345, +3 0.412, +4 0.472, +5 0.504, +10 0.556, +17
 
 我们可以更新 _impute_missing（）_ 以将所有训练块作为参数，然后从给定小时的所有块收集行，以计算用于估算的中值。下面列出了该功能的更新版本。
 
-```
+```py
 # impute missing data
 def impute_missing(train_chunks, rows, hours, series, col_ix):
 	# impute missing using the median value for hour in all series
@@ -1524,7 +1524,7 @@ def impute_missing(train_chunks, rows, hours, series, col_ix):
 
 下面列出了使用全局插补策略的完整示例。
 
-```
+```py
 # autoregression forecast with global impute strategy
 from numpy import loadtxt
 from numpy import nan
@@ -1752,7 +1752,7 @@ summarize_error('AR', total_mae, times_mae)
 
 探索插补策略可能会很有趣，这种策略可以根据系列中缺少的数据量或填充的间隙来替换用于填充缺失值的方法。
 
-```
+```py
 AR: [0.487 MAE] +1 0.228, +2 0.339, +3 0.409, +4 0.469, +5 0.499, +10 0.560, +17 0.573, +24 0.600, +48 0.595, +72 0.606
 ```
 

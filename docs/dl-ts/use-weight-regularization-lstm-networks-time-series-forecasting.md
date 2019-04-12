@@ -60,7 +60,7 @@ LSTM 的一个问题是他们可以轻松地过度训练训练数据，降低他
 
 下面的示例加载并创建已加载数据集的图。
 
-```
+```py
 # load and plot dataset
 from pandas import read_csv
 from pandas import datetime
@@ -78,7 +78,7 @@ pyplot.show()
 
 运行该示例将数据集作为 Pandas Series 加载并打印前 5 行。
 
-```
+```py
 Month
 1901-01-01 266.0
 1901-02-01 145.9
@@ -166,7 +166,7 @@ Name: Sales, dtype: float64
 
 此代码清单将用作所有后续实验的基础，后续部分中仅提供对此代码的更改。
 
-```
+```py
 from pandas import DataFrame
 from pandas import Series
 from pandas import concat
@@ -308,7 +308,7 @@ run()
 
 我们可以看到，平均而言，这种模型配置实现了约 92 个月洗发水销售的测试 RMSE，标准偏差为 5。
 
-```
+```py
           results
 count   30.000000
 mean    92.842537
@@ -347,7 +347,7 @@ max    105.247117
 
 下面列出了更新的 _fit_lstm（）_，_ 实验（）_ 和 _run（）_ 函数，用于使用 LSTM 的偏置权重正则化。
 
-```
+```py
 # fit an LSTM network to training data
 def fit_lstm(train, n_batch, nb_epoch, n_neurons, reg):
 	X, y = train[:, 0:-1], train[:, -1]
@@ -426,7 +426,7 @@ def run():
 
 结果表明，与所考虑的所有其他配置相比，平均而言，无偏差正则化的默认值导致更好的表现。
 
-```
+```py
        l1 0.00,l2 0.00  l1 0.01,l2 0.00  l1 0.00,l2 0.01  l1 0.01,l2 0.01
 count        30.000000        30.000000        30.000000        30.000000
 mean         92.821489        95.520003        93.285389        92.901021
@@ -461,7 +461,7 @@ max         101.194678       101.750900       100.650130        97.766301
 
 下面列出了更新的 _fit_lstm（）_，_ 实验（）_ 和 _run（）_ 函数，用于使用 LSTM 的偏置权重正则化。
 
-```
+```py
 # fit an LSTM network to training data
 def fit_lstm(train, n_batch, nb_epoch, n_neurons, reg):
 	X, y = train[:, 0:-1], train[:, -1]
@@ -542,7 +542,7 @@ def run():
 
 我们可以看到，对于所有配置，测试 RMSE 大约低 10 个单位，当 L1 和 L2 都组合成弹性网类型约束时，可能会带来更多好处。
 
-```
+```py
        l1 0.00,l2 0.00  l1 0.01,l2 0.00  l1 0.00,l2 0.01  l1 0.01,l2 0.01
 count        30.000000        30.000000        30.000000        30.000000
 mean         91.640028        82.118980        82.137198        80.471685
@@ -579,7 +579,7 @@ max         105.820586        94.210503        90.823454        85.243135
 
 下面列出了更新的 _fit_lstm（）_，_ 实验（）_ 和 _run（）_ 函数，用于使用 LSTM 的偏置权重正则化。
 
-```
+```py
 # fit an LSTM network to training data
 def fit_lstm(train, n_batch, nb_epoch, n_neurons, reg):
 	X, y = train[:, 0:-1], train[:, -1]
@@ -660,7 +660,7 @@ def run():
 
 尝试的所有变化的平均表现导致比基线模型更差的表现。
 
-```
+```py
        l1 0.00,l2 0.00  l1 0.01,l2 0.00  l1 0.00,l2 0.01  l1 0.01,l2 0.01
 count        30.000000        30.000000        30.000000        30.000000
 mean         92.918797       100.675386       101.302169        96.820026

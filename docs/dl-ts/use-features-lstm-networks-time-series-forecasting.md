@@ -52,7 +52,7 @@ Keras 中的长短期记忆（LSTM）网络支持多种输入功能。
 
 下面的示例加载并创建已加载数据集的图。
 
-```
+```py
 # load and plot dataset
 from pandas import read_csv
 from pandas import datetime
@@ -70,7 +70,7 @@ pyplot.show()
 
 运行该示例将数据集作为 Pandas Series 加载并打印前 5 行。
 
-```
+```py
 Month
 1901-01-01 266.0
 1901-02-01 145.9
@@ -158,7 +158,7 @@ Name: Sales, dtype: float64
 
 对于 5 个实验中的每一个， _run（）_ 函数中的特征参数从 1 到 5 变化。此外，结果在实验结束时保存到文件中，并且还必须针对每个不同的实验运行更改该文件名，例如， _experiment_features_1.csv_ ， _experiment_features_2.csv_ 等
 
-```
+```py
 from pandas import DataFrame
 from pandas import Series
 from pandas import concat
@@ -310,7 +310,7 @@ run()
 
 下面列出了总结结果的代码。
 
-```
+```py
 from pandas import DataFrame
 from pandas import read_csv
 from matplotlib import pyplot
@@ -331,7 +331,7 @@ pyplot.show()
 
 我们可以从单独的平均表现中看出，使用单个功能的默认值可以获得最佳表现。在查看中位数测试 RMSE（第 50 百分位数）时也会显示这一点。
 
-```
+```py
        features_1  features_2  features_3  features_4  features_5
 count   10.000000   10.000000   10.000000   10.000000   10.000000
 mean   104.588249  126.597800  118.268251  107.694178  116.414887
@@ -365,25 +365,25 @@ LSTM 网络中的神经元（也称为单元）的数量定义了其学习能力
 
 这可以通过更改实验函数中的行来实现：
 
-```
+```py
 lstm_model = fit_lstm(train_scaled, 1, 500, 1, features)
 ```
 
 至
 
-```
+```py
 lstm_model = fit_lstm(train_scaled, 1, 500, features, features)
 ```
 
 此外，我们可以通过在文件名中添加“ __neurons_ ”后缀来保持写入文件的结果与第一个实验的结果分开，例如，更改：
 
-```
+```py
 results.to_csv('experiment_features_1.csv', index=False)
 ```
 
 至
 
-```
+```py
 results.to_csv('experiment_features_1_neurons.csv', index=False)
 ```
 
@@ -399,7 +399,7 @@ results.to_csv('experiment_features_1_neurons.csv', index=False)
 
 与前一个实验一样，我们可以加载结果，计算描述性统计数据，并创建一个盒子和须状图。完整的代码清单如下。
 
-```
+```py
 from pandas import DataFrame
 from pandas import read_csv
 from matplotlib import pyplot
@@ -420,7 +420,7 @@ pyplot.show()
 
 结果用一个神经元 LSTM 对第一组实验说明了不同的故事。当神经元数量和特征数量设置为 1 时，平均测试 RMSE 显得最低，然后随着神经元和特征的增加，误差增加。
 
-```
+```py
        features_1  features_2  features_3  features_4  features_5
 count   10.000000   10.000000   10.000000   10.000000   10.000000
 mean   106.219189  138.411111  127.687128  154.281694  175.951500
@@ -448,25 +448,25 @@ max    146.638148  206.760081  170.899267  188.911768  250.685187
 
 这可以通过更改实验函数中的行来实现：
 
-```
+```py
 lstm_model = fit_lstm(train_scaled, 1, 500, features, features)
 ```
 
 至
 
-```
+```py
 lstm_model = fit_lstm(train_scaled, 1, 1000, features, features)
 ```
 
 此外，我们可以通过在文件名中添加“ _1000_ ”后缀来保持写入文件的结果与上一次实验的结果分开，例如，更改：
 
-```
+```py
 results.to_csv('experiment_features_1_neurons.csv', index=False)
 ```
 
 至
 
-```
+```py
 results.to_csv('experiment_features_1_neurons1000.csv', index=False)
 ```
 
@@ -482,7 +482,7 @@ results.to_csv('experiment_features_1_neurons1000.csv', index=False)
 
 与前一个实验一样，我们可以加载结果，计算描述性统计数据，并创建一个盒子和须状图。完整的代码清单如下。
 
-```
+```py
 from pandas import DataFrame
 from pandas import read_csv
 from matplotlib import pyplot
@@ -503,7 +503,7 @@ pyplot.show()
 
 结果与前一个实验的故事非常相似，训练时期数量减少了一半。平均而言，具有 1 个输入特征和 1 个神经元的模型优于其他配置。
 
-```
+```py
        features_1  features_2  features_3  features_4  features_5
 count   10.000000   10.000000   10.000000   10.000000   10.000000
 mean   109.262674  158.295172  120.340623  149.741882  201.992209

@@ -41,7 +41,7 @@ EMC Data Science Global Hackathon 数据集或简称“_ 空气质量预测 _”
 
 具体而言，对于多个站点，每小时提供 8 天的温度，压力，风速和风向等天气观测。目标是预测未来三天在多个地点的空气质量测量。预测的提前期不是连续的;相反，必须在 72 小时预测期内预测具体的提前期;他们是：
 
-```
+```py
 +1, +2, +3, +4, +5, +10, +17, +24, +48, +72
 ```
 
@@ -91,7 +91,7 @@ EMC Data Science Global Hackathon 数据集或简称“_ 空气质量预测 _”
 
 以下是数据文件的前几行供参考。
 
-```
+```py
 "rowID","chunkID","position_within_chunk","month_most_common","weekday","hour","Solar.radiation_64","WindDirection..Resultant_1","WindDirection..Resultant_1018","WindSpeed..Resultant_1","WindSpeed..Resultant_1018","Ambient.Max.Temperature_14","Ambient.Max.Temperature_22","Ambient.Max.Temperature_50","Ambient.Max.Temperature_52","Ambient.Max.Temperature_57","Ambient.Max.Temperature_76","Ambient.Max.Temperature_2001","Ambient.Max.Temperature_3301","Ambient.Max.Temperature_6005","Ambient.Min.Temperature_14","Ambient.Min.Temperature_22","Ambient.Min.Temperature_50","Ambient.Min.Temperature_52","Ambient.Min.Temperature_57","Ambient.Min.Temperature_76","Ambient.Min.Temperature_2001","Ambient.Min.Temperature_3301","Ambient.Min.Temperature_6005","Sample.Baro.Pressure_14","Sample.Baro.Pressure_22","Sample.Baro.Pressure_50","Sample.Baro.Pressure_52","Sample.Baro.Pressure_57","Sample.Baro.Pressure_76","Sample.Baro.Pressure_2001","Sample.Baro.Pressure_3301","Sample.Baro.Pressure_6005","Sample.Max.Baro.Pressure_14","Sample.Max.Baro.Pressure_22","Sample.Max.Baro.Pressure_50","Sample.Max.Baro.Pressure_52","Sample.Max.Baro.Pressure_57","Sample.Max.Baro.Pressure_76","Sample.Max.Baro.Pressure_2001","Sample.Max.Baro.Pressure_3301","Sample.Max.Baro.Pressure_6005","Sample.Min.Baro.Pressure_14","Sample.Min.Baro.Pressure_22","Sample.Min.Baro.Pressure_50","Sample.Min.Baro.Pressure_52","Sample.Min.Baro.Pressure_57","Sample.Min.Baro.Pressure_76","Sample.Min.Baro.Pressure_2001","Sample.Min.Baro.Pressure_3301","Sample.Min.Baro.Pressure_6005","target_1_57","target_10_4002","target_10_8003","target_11_1","target_11_32","target_11_50","target_11_64","target_11_1003","target_11_1601","target_11_4002","target_11_8003","target_14_4002","target_14_8003","target_15_57","target_2_57","target_3_1","target_3_50","target_3_57","target_3_1601","target_3_4002","target_3_6006","target_4_1","target_4_50","target_4_57","target_4_1018","target_4_1601","target_4_2001","target_4_4002","target_4_4101","target_4_6006","target_4_8003","target_5_6006","target_7_57","target_8_57","target_8_4002","target_8_6004","target_8_8003","target_9_4002","target_9_8003"
 1,1,1,10,"Saturday",21,0.01,117,187,0.3,0.3,NA,NA,NA,14.9,NA,NA,NA,NA,NA,NA,NA,NA,5.8,NA,NA,NA,NA,NA,NA,NA,NA,747,NA,NA,NA,NA,NA,NA,NA,NA,750,NA,NA,NA,NA,NA,NA,NA,NA,743,NA,NA,NA,NA,NA,2.67923294292042,6.1816228132982,NA,0.114975168664303,0.114975168664303,0.114975168664303,0.114975168664303,0.114975168664303,0.114975168664303,0.114975168664303,NA,2.38965627997991,NA,5.56815355612325,0.690015329704154,NA,NA,NA,NA,NA,NA,2.84349016287551,0.0920223353681394,1.69321097077376,0.368089341472558,0.184044670736279,0.368089341472558,0.276067006104418,0.892616653070952,1.74842437199465,NA,NA,5.1306307034019,1.34160578423204,2.13879182993514,3.01375212399952,NA,5.67928016629218,NA
 2,1,2,10,"Saturday",22,0.01,231,202,0.5,0.6,NA,NA,NA,14.9,NA,NA,NA,NA,NA,NA,NA,NA,5.8,NA,NA,NA,NA,NA,NA,NA,NA,747,NA,NA,NA,NA,NA,NA,NA,NA,750,NA,NA,NA,NA,NA,NA,NA,NA,743,NA,NA,NA,NA,NA,2.67923294292042,8.47583334194495,NA,0.114975168664303,0.114975168664303,0.114975168664303,0.114975168664303,0.114975168664303,0.114975168664303,0.114975168664303,NA,1.99138023331659,NA,5.56815355612325,0.923259948195698,NA,NA,NA,NA,NA,NA,3.1011527019063,0.0920223353681394,1.94167127626774,0.368089341472558,0.184044670736279,0.368089341472558,0.368089341472558,1.73922213845783,2.14412041407765,NA,NA,5.1306307034019,1.19577906855465,2.72209869264472,3.88871241806389,NA,7.42675098668978,NA
@@ -102,14 +102,14 @@ EMC Data Science Global Hackathon 数据集或简称“_ 空气质量预测 _”
 
 我们可以使用 Pandas [read_csv（）函数](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html)将数据文件加载到内存中，并在第 0 行指定标题行。
 
-```
+```py
 # load dataset
 dataset = read_csv('AirQualityPrediction/TrainingData.csv', header=0)
 ```
 
 我们还可以快速了解数据集中有多少缺失数据。我们可以通过首先修剪前几列来删除字符串工作日数据并将剩余列转换为浮点值来实现。
 
-```
+```py
 # trim and transform to floats
 values = dataset.values
 data = values[:, 6:].astype('float32')
@@ -117,7 +117,7 @@ data = values[:, 6:].astype('float32')
 
 然后，我们可以计算缺失观测的总数和缺失的值的百分比。
 
-```
+```py
 # summarize amount of missing data
 total_missing = count_nonzero(isnan(data))
 percent_missing = total_missing / data.size * 100
@@ -126,7 +126,7 @@ print('Total Missing: %d/%d (%.1f%%)' % (total_missing, data.size, percent_missi
 
 下面列出了完整的示例。
 
-```
+```py
 # load dataset
 from numpy import isnan
 from numpy import count_nonzero
@@ -150,7 +150,7 @@ print('Total Missing: %d/%d (%.1f%%)' % (total_missing, data.size, percent_missi
 
 我们还可以看到有超过 40％的数据丢失。这很多。数据非常不完整，在建模问题之前我们必须很好地理解这一点。
 
-```
+```py
 (37821, 95)
 Total Missing: 1922092/3366069 (57.1%)
 ```
@@ -169,13 +169,13 @@ Total Missing: 1922092/3366069 (57.1%)
 
 我们首先将数据拆分成块。我们可以先获得唯一的块标识符列表。
 
-```
+```py
 chunk_ids = unique(values[:, 1])
 ```
 
 然后，我们可以收集每个块标识符的所有行，并将它们存储在字典中以便于访问。
 
-```
+```py
 chunks = dict()
 # sort rows by chunk id
 for chunk_id in chunk_ids:
@@ -185,7 +185,7 @@ for chunk_id in chunk_ids:
 
 下面定义了一个名为 _to_chunks（）_ 的函数，它接受加载数据的 NumPy 数组，并将 _chunk_id_ 的字典返回到块的行。
 
-```
+```py
 # split the dataset by 'chunkID', return a dict of id to rows
 def to_chunks(values, chunk_ix=1):
 	chunks = dict()
@@ -202,7 +202,7 @@ def to_chunks(values, chunk_ix=1):
 
 一旦数据被分类成块，我们就可以计算每个块中的行数并查看分布，例如使用框和胡须图。
 
-```
+```py
 # plot distribution of chunk durations
 def plot_chunk_durations(chunks):
 	# chunk durations in hours
@@ -219,7 +219,7 @@ def plot_chunk_durations(chunks):
 
 下面列出了将所有这些联系在一起的完整示例
 
-```
+```py
 # split data into chunks
 from numpy import unique
 from pandas import read_csv
@@ -263,7 +263,7 @@ plot_chunk_durations(chunks)
 
 我们可以看到有 208，这表明每小时观察的数量确实必须在各个块之间变化。
 
-```
+```py
 Total Chunks: 208
 ```
 
@@ -289,7 +289,7 @@ Total Chunks: 208
 
 下面的 _plot_discontinuous_chunks（）_ 实现了这种行为，在同一个图上为每个缺少行的块创建一个系列或行。期望的是，突破线将帮助我们看到这些不完整的块是多么连续或不连续。
 
-```
+```py
 # plot chunks that do not have all data
 def plot_discontiguous_chunks(chunks, row_in_chunk_ix=2):
 	n_steps = 8 * 24
@@ -312,7 +312,7 @@ def plot_discontiguous_chunks(chunks, row_in_chunk_ix=2):
 
 下面列出了完整的示例。
 
-```
+```py
 # plot discontiguous chunks
 from numpy import nan
 from numpy import unique
@@ -386,7 +386,7 @@ plot_discontiguous_chunks(chunks)
 
 此外，当收集块的第一个小时时，我们小心只从那些具有所有八天数据的块中收集它，以防丢失数据的块在块的开头没有观察，我们知道发生。
 
-```
+```py
 # plot distribution of chunk start hour
 def plot_chunk_start_hour(chunks, hour_in_chunk_ix=5):
 	# chunk start hour
@@ -403,7 +403,7 @@ def plot_chunk_start_hour(chunks, hour_in_chunk_ix=5):
 
 下面列出了完整的示例。
 
-```
+```py
 # plot distribution of chunk start hour
 from numpy import nan
 from numpy import unique
@@ -461,7 +461,7 @@ plot_chunk_start_hour(chunks)
 
 前六个（索引 0 到 5）是块的元数据信息和观察的时间。他们是：
 
-```
+```py
 rowID
 chunkID
 position_within_chunk
@@ -472,7 +472,7 @@ hour
 
 其余 50 个描述了特定地点的气象信息;他们是：
 
-```
+```py
 Solar.radiation_64
 WindDirection..Resultant_1
 WindDirection..Resultant_1018
@@ -527,7 +527,7 @@ Sample.Min.Baro.Pressure_6005
 
 真的，只有八个气象输入变量：
 
-```
+```py
 Solar.radiation
 WindDirection..Resultant
 WindSpeed..Resultant
@@ -540,7 +540,7 @@ Sample.Min.Baro.Pressure
 
 这些变量记录在 23 个独特的站点中;他们是：
 
-```
+```py
 1, 14, 22, 50, 52, 57, 64, 76, 1018, 2001, 3301, 6005
 ```
 
@@ -568,7 +568,7 @@ Sample.Min.Baro.Pressure
 
 下面名为 _plot_chunk_inputs（）_ 的函数获取块格式的数据和要绘制的块 ID 列表。它将创建一个包含 50 个线图的图形，每个输入变量一个，每个图块 n 行，每个块一个。
 
-```
+```py
 # plot all inputs for one or more chunk ids
 def plot_chunk_inputs(chunks, c_ids):
 	pyplot.figure()
@@ -586,7 +586,7 @@ def plot_chunk_inputs(chunks, c_ids):
 
 下面列出了完整的示例。
 
-```
+```py
 # plot inputs for a chunk
 from numpy import unique
 from pandas import read_csv
@@ -638,7 +638,7 @@ plot_chunk_inputs(chunks, [1])
 
 我们可以更新示例并绘制前三个块的输入变量，并进行完整的八天观察。
 
-```
+```py
 plot_chunk_inputs(chunks, [1, 3 ,5])
 ```
 
@@ -660,7 +660,7 @@ plot_chunk_inputs(chunks, [1, 3 ,5])
 
 下面的 _plot_chunk_input_boxplots（）_ 将为每个输入要素创建一个盒子和胡须，用于一个块的数据。
 
-```
+```py
 # boxplot for input variables for a chuck
 def plot_chunk_input_boxplots(chunks, c_id):
 	rows = chunks[c_id]
@@ -670,7 +670,7 @@ def plot_chunk_input_boxplots(chunks, c_id):
 
 下面列出了完整的示例。
 
-```
+```py
 # boxplots of inputs for a chunk
 from numpy import unique
 from numpy import isnan
@@ -726,13 +726,13 @@ plot_chunk_input_boxplots(chunks, 1)
 
 从列标题中，它们是：
 
-```
+```py
 "target_1_57","target_10_4002","target_10_8003","target_11_1","target_11_32","target_11_50","target_11_64","target_11_1003","target_11_1601","target_11_4002","target_11_8003","target_14_4002","target_14_8003","target_15_57","target_2_57","target_3_1","target_3_50","target_3_57","target_3_1601","target_3_4002","target_3_6006","target_4_1","target_4_50","target_4_57","target_4_1018","target_4_1601","target_4_2001","target_4_4002","target_4_4101","target_4_6006","target_4_8003","target_5_6006","target_7_57","target_8_57","target_8_4002","target_8_6004","target_8_8003","target_9_4002","target_9_8003"
 ```
 
 这些列标题的命名约定是：
 
-```
+```py
 target_[variable identifier]_[site identifier]]
 ```
 
@@ -740,7 +740,7 @@ target_[variable identifier]_[site identifier]]
 
 结果如下：
 
-```
+```py
 var, site
 1,57
 10,4002
@@ -787,7 +787,7 @@ var, site
 
 我们可以看到，可能需要跨多个站点预测一个变量;例如，在站点 1,32,50 等处预测的变量 11，等等：
 
-```
+```py
 var, site
 11,1
 11,32
@@ -801,7 +801,7 @@ var, site
 
 我们可以看到，对于给定的站点，可能需要预测不同的变量。例如，站点 50 需要变量 11,3 和 4：
 
-```
+```py
 var, site
 11,50
 3,50
@@ -810,7 +810,7 @@ var, site
 
 我们可以将目标的小数据集保存到名为“ _targets.txt_ ”的文件中并加载它以进行快速分析。
 
-```
+```py
 # summarize targets
 from numpy import unique
 from pandas import read_csv
@@ -826,7 +826,7 @@ print('Unique Sites: %d' % len(unique(values[:, 1])))
 
 如果我们预测所有站点的所有变量，我们可以看到 39 个目标变量远小于（12 * 14）168。
 
-```
+```py
 Unique Variables: 12
 Unique Sites: 14
 ```
@@ -845,7 +845,7 @@ Unique Sites: 14
 
 下面的函数名为 _plot_chunk_targets（）_，以块格式和块 ID 列表绘制。它将创建一个包含 39 个线图的图形，每个目标变量一个，每个图块 n 行，每个块一个。
 
-```
+```py
 # plot all targets for one or more chunk ids
 def plot_chunk_targets(chunks, c_ids):
 	pyplot.figure()
@@ -863,7 +863,7 @@ def plot_chunk_targets(chunks, c_ids):
 
 下面列出了完整的示例。
 
-```
+```py
 # plot targets for a chunk
 from numpy import unique
 from pandas import read_csv
@@ -923,7 +923,7 @@ plot_chunk_targets(chunks, [1])
 
 我们可以重新运行该示例并使用完整数据绘制前三个块的目标变量。
 
-```
+```py
 # plot targets for some chunks
 plot_chunk_targets(chunks, [1, 3 ,5])
 ```
@@ -950,7 +950,7 @@ plot_chunk_targets(chunks, [1, 3 ,5])
 
 可以为每个目标并排创建单独的箱图，允许在相同比例下直接比较值的形状和范围。
 
-```
+```py
 # boxplot for target variables for a chuck
 def plot_chunk_targets_boxplots(chunks, c_id):
 	rows = chunks[c_id]
@@ -960,7 +960,7 @@ def plot_chunk_targets_boxplots(chunks, c_id):
 
 下面列出了完整的示例。
 
-```
+```py
 # boxplots of targets for a chunk
 from numpy import unique
 from numpy import isnan
@@ -1008,7 +1008,7 @@ plot_chunk_targets_boxplots(chunks, 1)
 
 下面列出了完整的示例。
 
-```
+```py
 # boxplots of targets for all chunks
 from pandas import read_csv
 from matplotlib import pyplot
@@ -1043,7 +1043,7 @@ plot_target_boxplots(values)
 
 下面的 _plot_col_percentage_missing（）_ 函数实现了这个功能。
 
-```
+```py
 # bar chart of the ratio of missing data per column
 def plot_col_percentage_missing(values, ix_start=5):
 	ratios = list()
@@ -1061,7 +1061,7 @@ def plot_col_percentage_missing(values, ix_start=5):
 
 下面列出了完整的示例。
 
-```
+```py
 # summarize missing data per column
 from numpy import isnan
 from numpy import count_nonzero
@@ -1095,7 +1095,7 @@ plot_col_percentage_missing(values)
 
 有趣的是，其中七个是目标变量（指数 56 或更高）。
 
-```
+```py
 11 91.48885539779488
 20 91.48885539779488
 29 91.48885539779488
@@ -1132,7 +1132,7 @@ matplotlib 中 _hist（）_ 函数的一个问题是它对 NaN 值不稳健。�
 
 下面的函数执行此操作，并为一个或多个块的每个目标变量创建一个直方图。
 
-```
+```py
 # plot distribution of targets for one or more chunk ids
 def plot_chunk_targets_hist(chunks, c_ids):
 	pyplot.figure()
@@ -1155,7 +1155,7 @@ def plot_chunk_targets_hist(chunks, c_ids):
 
 下面列出了完整的示例。
 
-```
+```py
 # plot distribution of targets for a chunk
 from numpy import unique
 from numpy import isnan
@@ -1218,7 +1218,7 @@ plot_chunk_targets_hist(chunks, [1])
 
 下面列出了完整的示例。
 
-```
+```py
 # plot distribution of all targets
 from numpy import isnan
 from numpy import count_nonzero
@@ -1271,7 +1271,7 @@ plot_target_hist(values)
 
 这是在标题为“[目标变量确实是](https://www.kaggle.com/c/dsg-hackathon/discussion/1830)”的表格帖子中提供的，部分复制如下：
 
-```
+```py
 Description						Target Variable
 Carbon monoxide, 				8
 Sulfur dioxide, 				4

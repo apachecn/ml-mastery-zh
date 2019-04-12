@@ -118,7 +118,7 @@
 
 例如，下面是文件“ _1.csv_ ”的前 5 行：
 
-```
+```py
 0,1502,2215,2153,1
 1,1667,2072,2047,1
 2,1611,1957,1906,1
@@ -131,7 +131,7 @@
 
 下面名为 _load_dataset（）_ 的函数将加载 HAR 目录中的所有 CSV 文件，删除第一列并返回 15 个 NumPy 数组的列表。
 
-```
+```py
 # load sequence for each subject, returns a list of numpy arrays
 def load_dataset(prefix=''):
 	subjects = list()
@@ -149,7 +149,7 @@ def load_dataset(prefix=''):
 
 下面列出了完整的示例。
 
-```
+```py
 # load dataset
 from os import listdir
 from pandas import read_csv
@@ -175,7 +175,7 @@ print('Loaded %d subjects' % len(subjects))
 
 运行该示例将加载所有数据并打印已加载主题的数量。
 
-```
+```py
 Loaded 15 subjects
 ```
 
@@ -191,7 +191,7 @@ Loaded 15 subjects
 
 下面的函数 _plot_subject（）_ 将绘制给定主题的数据。
 
-```
+```py
 # plot the x, y, z acceleration and activities for a single subject
 def plot_subject(subject):
 	pyplot.figure()
@@ -204,7 +204,7 @@ def plot_subject(subject):
 
 我们可以将它与上一节中的数据加载结合起来，并绘制第一个加载主题的数据。
 
-```
+```py
 # plot a subject
 from os import listdir
 from pandas import read_csv
@@ -252,7 +252,7 @@ plot_subject(subjects[0])
 
 我们可以重新运行此代码并绘制第二个加载的主题（可能是 _10.csv_ ）。
 
-```
+```py
 ...
 # plot activities for a single subject
 plot_subject(subjects[1])
@@ -282,7 +282,7 @@ plot_subject(subjects[1])
 
 我们可以通过为每个主题创建字典并按活动存储所有跟踪数据来完成此操作。下面的 _group_by_activity（）_ 功能将为每个主题执行此分组。
 
-```
+```py
 # returns a list of dict, where each dict has one sequence per activity
 def group_by_activity(subjects, activities):
 	grouped = [{a:s[s[:,-1]==a] for a in activities} for s in subjects]
@@ -295,7 +295,7 @@ def group_by_activity(subjects, activities):
 
 以下名为 _plot_durations（）_ 的函数将计算每个主题的每个活动的持续时间，并将结果绘制为箱线图。盒状和须状图是总结每个活动的 15 个持续时间的有用方式，因为它描述了持续时间的扩展而不假设分布。
 
-```
+```py
 # calculate total duration in sec for each activity per subject and plot
 def plot_durations(grouped, activities):
 	# calculate the lengths for each activity for each subject
@@ -307,7 +307,7 @@ def plot_durations(grouped, activities):
 
 下面列出了绘制活动持续时间分布的完整示例。
 
-```
+```py
 # durations by activity
 from os import listdir
 from pandas import read_csv
@@ -370,7 +370,7 @@ plot_durations(grouped, activities)
 
 以下名为 _plot_subjects（）_ 的函数将在单独的图上绘制 15 个主题中每个主题的加速度计数据。每个 x，y 和 z 数据的迹线分别绘制为橙色，绿色和蓝色。
 
-```
+```py
 # plot the x, y, z acceleration for each subject
 def plot_subjects(subjects):
 	pyplot.figure()
@@ -385,7 +385,7 @@ def plot_subjects(subjects):
 
 下面列出了完整的示例。
 
-```
+```py
 # plot accelerometer data for all subjects
 from os import listdir
 from pandas import read_csv
@@ -452,7 +452,7 @@ plot_subjects(subjects)
 
 更新的 _plot_subjects（）_ 函数用于绘制直方图而不是线图，如下所示。 _hist（）_ 函数用于为加速度计数据的每个轴创建直方图，并且使用大量箱（100）来帮助展开图中的数据。子图也都共享相同的 x 轴以帮助进行比较。
 
-```
+```py
 # plot the x, y, z acceleration for each subject
 def plot_subjects(subjects):
 	pyplot.figure()
@@ -470,7 +470,7 @@ def plot_subjects(subjects):
 
 下面列出了完整的示例
 
-```
+```py
 # plot histograms of trace data for all subjects
 from os import listdir
 from pandas import read_csv

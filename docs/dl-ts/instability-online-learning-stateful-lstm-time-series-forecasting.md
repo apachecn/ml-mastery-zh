@@ -80,7 +80,7 @@
 
 下面的示例加载并创建已加载数据集的图。
 
-```
+```py
 # load and plot dataset
 from pandas import read_csv
 from pandas import datetime
@@ -98,7 +98,7 @@ pyplot.show()
 
 运行该示例将数据集作为 Pandas Series 加载并打印前 5 行。
 
-```
+```py
 Month
 1901-01-01 266.0
 1901-02-01 145.9
@@ -180,7 +180,7 @@ Name: Sales, dtype: float64
 
 在现代硬件上运行可能需要几个小时。
 
-```
+```py
 from pandas import DataFrame
 from pandas import Series
 from pandas import concat
@@ -321,7 +321,7 @@ run()
 
 自己重新运行实验可能会给出不同的结果，因为我们没有为随机数生成器播种。
 
-```
+```py
 ...
 116.39769471284067
 105.0459745537738
@@ -343,7 +343,7 @@ run()
 
 下面的代码段会加载结果文件并计算一些描述性统计信息。
 
-```
+```py
 from pandas import DataFrame
 from pandas import read_csv
 from numpy import mean
@@ -364,7 +364,7 @@ pyplot.show()
 
 我们还可以看到观察到的最佳测试 RMSE 大约是 90 个销售，而更差的是不到 200 个，这是相当多的分数。
 
-```
+```py
           results
 count  100.000000
 mean   107.051146
@@ -408,7 +408,7 @@ max    198.568771
 
 完整的代码清单如下。
 
-```
+```py
 from pandas import DataFrame
 from pandas import read_csv
 from numpy import median
@@ -435,7 +435,7 @@ pyplot.show()
 
 随着重复次数的增加，打印分布的累积大小，平均值和中值。截断的输出如下所示。
 
-```
+```py
 ...
 90 105.759546832 101.477640071
 91 105.876449555 102.384620485
