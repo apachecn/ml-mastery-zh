@@ -51,7 +51,7 @@
 
 本教程不需要 GPU，但您可以在 Amazon Web Services 上以低成本方式访问 GPU。在本教程中学习如何：
 
-*   [如何设置 Amazon AWS EC2 GPU 以培训 Keras 深度学习模型（循序渐进）](https://machinelearningmastery.com/develop-evaluate-large-deep-learning-models-keras-amazon-web-services/)
+*   [如何设置 Amazon AWS EC2 GPU 以训练 Keras 深度学习模型（循序渐进）](https://machinelearningmastery.com/develop-evaluate-large-deep-learning-models-keras-amazon-web-services/)
 
 让我们潜入。
 
@@ -74,7 +74,7 @@
 *   标点符号周围有空格，如句号，逗号和括号。
 *   文本每行被分成一个句子。
 
-该数据已用于一些相关的自然语言处理任务。对于分类，机器学习模型（例如支持向量机）对数据的性能在高 70％到低 80％（例如 78％-82％）的范围内。
+该数据已用于一些相关的自然语言处理任务。对于分类，机器学习模型（例如支持向量机）对数据的表现在高 70％到低 80％（例如 78％-82％）的范围内。
 
 更复杂的数据准备可以看到高达 86％的结果，交叉验证 10 倍。如果我们想在现代方法的实验中使用这个数据集，这给了我们 80 年代中期的球场。
 
@@ -110,7 +110,7 @@
 
 这是 90％的列车，10％的数据分割。
 
-通过使用评论的文件名可以轻松实现拆分，其中评论为 000 至 899 的评论用于培训数据，而评论为 900 以上的评论用于测试。
+通过使用评论的文件名可以轻松实现拆分，其中评论为 000 至 899 的评论用于训练数据，而评论为 900 以上的评论用于测试。
 
 ### 装载和清洁评论
 
@@ -367,7 +367,7 @@ vocab = vocab.split()
 vocab = set(vocab)
 ```
 
-接下来，我们需要加载所有培训数据电影评论。为此，我们可以调整上一节中的 _process_docs（）_ 来加载文档，清理它们，并将它们作为字符串列表返回，每个字符串有一个文档。我们希望每个文档都是一个字符串，以便以后简单编码为整数序列。
+接下来，我们需要加载所有训练数据电影评论。为此，我们可以调整上一节中的 _process_docs（）_ 来加载文档，清理它们，并将它们作为字符串列表返回，每个字符串有一个文档。我们希望每个文档都是一个字符串，以便以后简单编码为整数序列。
 
 清理文档涉及根据空白区域拆分每个评论，删除标点符号，然后过滤掉不在词汇表中的所有标记。
 
@@ -537,7 +537,7 @@ _________________________________________________________________
 
 我们使用二元交叉熵损失函数，因为我们正在学习的问题是二元分类问题。使用随机梯度下降的高效 Adam 实现，除了训练期间的损失之外，我们还跟踪准确性。该模型训练 10 个时期，或 10 次通过训练数据。
 
-通过一些试验和错误找到了网络配置和培训计划，但对于此问题并不是最佳选择。如果您可以使用其他配置获得更好的结果，请告诉我们。
+通过一些试验和错误找到了网络配置和训练计划，但对于此问题并不是最佳选择。如果您可以使用其他配置获得更好的结果，请告诉我们。
 
 ```
 # compile network
@@ -546,7 +546,7 @@ model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy']
 model.fit(Xtrain, ytrain, epochs=10, verbose=2)
 ```
 
-在拟合模型之后，在测试数据集上对其进行评估。此数据集包含我们以前从未见过的单词和在培训期间未看到的评论。
+在拟合模型之后，在测试数据集上对其进行评估。此数据集包含我们以前从未见过的单词和在训练期间未看到的评论。
 
 ```
 # evaluate
@@ -784,7 +784,7 @@ print('Total training sentences: %d' % len(sentences))
 
 我们将使用 Gensim Python 库中提供的 word2vec 实现。具体是 [Word2Vec 类](https://radimrehurek.com/gensim/models/word2vec.html)。
 
-有关使用 Gensim 培训独立单词的更多信息，请参阅帖子：
+有关使用 Gensim 训练独立单词的更多信息，请参阅帖子：
 
 *   [如何使用 Gensim](https://machinelearningmastery.com/develop-word-embeddings-python-gensim/) 在 Python 中开发 Word 嵌入
 
@@ -1107,11 +1107,11 @@ loss, acc = model.evaluate(Xtest, ytest, verbose=0)
 print('Test Accuracy: %f' % (acc*100))
 ```
 
-运行该示例显示性能未得到改善。
+运行该示例显示表现未得到改善。
 
 事实上，表现差得多。结果表明训练数据集是成功学习的，但对测试数据集的评估非常差，准确度仅略高于 50％。
 
-测试性能差的原因可能是因为选择了 word2vec 配置或选择的神经网络配置。
+测试表现差的原因可能是因为选择了 word2vec 配置或选择的神经网络配置。
 
 ```
 ...
@@ -1155,11 +1155,11 @@ Test Accuracy: 57.500000
 
 让我们尝试在我们的模型中使用预先训练的矢量。
 
-您可以从斯坦福网页下载[预训练的 GloVe 载体](https://nlp.stanford.edu/projects/glove/)。具体来说，培训维基百科数据的矢量：
+您可以从斯坦福网页下载[预训练的 GloVe 载体](https://nlp.stanford.edu/projects/glove/)。具体来说，训练维基百科数据的矢量：
 
 *   [手套.6B.zip](http://nlp.stanford.edu/data/glove.6B.zip) （822 兆字节下载）
 
-解压缩文件，您将找到各种不同尺寸的预先培训嵌入。我们将在文件' _glove.6B.100d.txt_ '中加载 100 维版本
+解压缩文件，您将找到各种不同尺寸的预先训练嵌入。我们将在文件' _glove.6B.100d.txt_ '中加载 100 维版本
 
 Glove 文件不包含头文件，因此在将嵌入加载到内存时我们不需要跳过第一行。下面列出了更新的 _load_embedding（）_ 功能。
 
@@ -1357,7 +1357,7 @@ loss, acc = model.evaluate(Xtest, ytest, verbose=0)
 print('Test Accuracy: %f' % (acc*100))
 ```
 
-运行该示例显示了更好的性能。
+运行该示例显示了更好的表现。
 
 同样，训练数据集很容易学习，模型在测试数据集上达到 76％的准确度。这很好，但不如使用学习的嵌入层。
 

@@ -36,7 +36,7 @@ Keras 深度学习库提供了一些基本工具来帮助您准备文本数据�
 
 使用文本时，第一步是将其拆分为单词。
 
-单词称为标记，将文本拆分为标记的过程称为标记化。
+单词称为标记，将文本拆分为标记的过程称为分词。
 
 Keras 提供 [text_to_word_sequence（）函数](https://keras.io/preprocessing/text/#text_to_word_sequence)，您可以使用它将文本拆分为单词列表。
 
@@ -71,7 +71,7 @@ print(result)
 
 将文档表示为整数值序列是很流行的，其中文档中的每个单词都表示为唯一的整数。
 
-Keras 提供 [one_hot（）函数](https://keras.io/preprocessing/text/#one_hot)，您可以使用它来一步对文本文档进行标记化和整数编码。该名称表明它将创建文档的单热编码，但事实并非如此。
+Keras 提供 [one_hot（）函数](https://keras.io/preprocessing/text/#one_hot)，您可以使用它来一步对文本文档进行分词和整数编码。该名称表明它将创建文档的单热编码，但事实并非如此。
 
 相反，该函数是下一节中描述的 hashing_trick（）函数的包装器。该函数返回文档的整数编码版本。散列函数的使用意味着可能存在冲突，并且不是所有单词都将被分配唯一的整数值。
 
@@ -124,7 +124,7 @@ print(result)
 
 此方法的替代方法是使用单向散列函数将单词转换为整数。这避免了跟踪词汇表的需要，词汇表更快并且需要更少的内存。
 
-Keras 提供了 [hashing_trick（）函数](https://keras.io/preprocessing/text/#hashing_trick)，它标记化然后对文档进行整数编码，就像 one_hot（）函数一样。它提供了更大的灵活性，允许您将散列函数指定为“散列”（默认）或其他散列函数，例如内置的 md5 函数或您自己的函数。
+Keras 提供了 [hashing_trick（）函数](https://keras.io/preprocessing/text/#hashing_trick)，它分词然后对文档进行整数编码，就像 one_hot（）函数一样。它提供了更大的灵活性，允许您将散列函数指定为“散列”（默认）或其他散列函数，例如内置的 md5 函数或您自己的函数。
 
 下面是使用 md5 哈希函数对文档进行整数编码的示例。
 

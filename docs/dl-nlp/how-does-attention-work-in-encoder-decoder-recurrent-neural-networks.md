@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/how-does-attention-work-in-encoder-decoder-recurrent-neural-networks/](https://machinelearningmastery.com/how-does-attention-work-in-encoder-decoder-recurrent-neural-networks/)
 
-注意力是一种机制，旨在提高机器翻译中编码器 - 解码器 RNN 的性能。
+注意力是一种机制，旨在提高机器翻译中编码器 - 解码器 RNN 的表现。
 
 在本教程中，您将发现编码器 - 解码器模型的注意机制。
 

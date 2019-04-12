@@ -1,4 +1,4 @@
-# 如何准备照片标题数据集以培训深度学习模型
+# 如何准备照片标题数据集以训练深度学习模型
 
 > 原文： [https://machinelearningmastery.com/prepare-photo-caption-dataset-training-deep-learning-model/](https://machinelearningmastery.com/prepare-photo-caption-dataset-training-deep-learning-model/)
 
@@ -23,7 +23,7 @@
 
 ![How to Prepare a Photo Caption Dataset for Training a Deep Learning Model](img/ed876dc6c1e515e527db6e72f03e47ab.jpg)
 
-如何准备照片标题数据集以培训深度学习模型
+如何准备照片标题数据集以训练深度学习模型
 照片由 [beverlyislike](https://www.flickr.com/photos/beverlyislike/3307325815/) ，保留一些权利。
 
 ## 教程概述
@@ -278,7 +278,7 @@ dump(features, open('features.pkl', 'wb'))
 
 花点时间谈谈描述是很重要的;有一些可用。
 
-文件 _Flickr8k.token.txt_ 包含图像标识符列表（用于图像文件名）和标记化描述。每个图像都有多个描述。
+文件 _Flickr8k.token.txt_ 包含图像标识符列表（用于图像文件名）和分词描述。每个图像都有多个描述。
 
 以下是文件中的描述示例，显示了单个图像的 5 种不同描述。
 
@@ -395,7 +395,7 @@ Loaded: 8092
 
 ## 准备说明文字
 
-描述是标记化的;这意味着每个标记由用空格分隔的单词组成。
+描述是分词的;这意味着每个标记由用空格分隔的单词组成。
 
 它还意味着标点符号被分隔为它们自己的标记，例如句点（'。'）和单词复数（'s）的撇号。
 
@@ -1093,7 +1093,7 @@ print(inputs[1].shape)
 print(outputs.shape)
 ```
 
-运行该示例打印单个批处理的输入和输出示例的形状（例如，13 个输入 - 输出对）：
+运行该示例打印单个批量的输入和输出示例的形状（例如，13 个输入 - 输出对）：
 
 ```
 (13, 224, 224, 3)

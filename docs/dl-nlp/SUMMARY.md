@@ -33,7 +33,7 @@
 +   [如何为机器翻译准备法语到英语的数据集](prepare-french-english-dataset-machine-translation.md)
 +   [如何为情感分析准备电影评论数据](prepare-movie-review-data-sentiment-analysis.md)
 +   [如何为文本摘要准备新闻文章](prepare-news-articles-text-summarization.md)
-+   [如何准备照片标题数据集以培训深度学习模型](prepare-photo-caption-dataset-training-deep-learning-model.md)
++   [如何准备照片标题数据集以训练深度学习模型](prepare-photo-caption-dataset-training-deep-learning-model.md)
 +   [如何使用 Keras 为深度学习准备文本数据](prepare-text-data-deep-learning-keras.md)
 +   [如何使用 scikit-learn 为机器学习准备文本数据](prepare-text-data-machine-learning-scikit-learn.md)
 +   [自然语言处理神经网络模型入门](primer-neural-network-models-natural-language-processing.md)

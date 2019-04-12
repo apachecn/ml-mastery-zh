@@ -4,9 +4,9 @@
 
 文本数据需要特殊准备才能开始使用它进行预测建模。
 
-必须解析文本以删除称为标记化的单词。然后，需要将单词编码为整数或浮点值，以用作机器学习算法的输入，称为特征提取（或向量化）。
+必须解析文本以删除称为分词的单词。然后，需要将单词编码为整数或浮点值，以用作机器学习算法的输入，称为特征提取（或向量化）。
 
-scikit-learn 库提供易于使用的工具，可以执行文本数据的标记化和特征提取。
+scikit-learn 库提供易于使用的工具，可以执行文本数据的分词和特征提取。
 
 在本教程中，您将了解如何使用 scikit-learn 在 Python 中为预测建模准备文本数据。
 
@@ -85,7 +85,7 @@ print(vector.toarray())
 print(vectorizer.vocabulary_)
 ```
 
-我们可以看到默认情况下所有单词都是小写的，并且忽略了标点符号。可以配置标记化的这些和其他方面，我建议您查看 [API 文档](http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html)中的所有选项。
+我们可以看到默认情况下所有单词都是小写的，并且忽略了标点符号。可以配置分词的这些和其他方面，我建议您查看 [API 文档](http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html)中的所有选项。
 
 首先运行该示例打印词汇表，然后打印编码文档的形状。我们可以看到词汇中有 8 个单词，因此编码的向量长度为​​8。
 
@@ -241,7 +241,7 @@ print(vector.toarray())
 
 在本教程中，您了解了如何使用 scikit-learn 为机器学习准备文本文档。
 
-我们在这些示例中只是略微表面，我想强调这些类有许多配置细节来影响值得探索的文档的标记化。
+我们在这些示例中只是略微表面，我想强调这些类有许多配置细节来影响值得探索的文档的分词。
 
 你有任何问题吗？
 在下面的评论中提出您的问题，我会尽力回答。
