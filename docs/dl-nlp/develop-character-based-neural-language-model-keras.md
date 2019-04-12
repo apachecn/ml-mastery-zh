@@ -248,7 +248,7 @@ ng of sixpe
 
 在本节中，我们将为准备好的序列数据开发神经语言模型。
 
-该模型将读取编码字符并预测序列中的下一个字符。将使用长短期记忆递归神经网络隐藏层来从输入序列学习上下文以进行预测。
+该模型将读取编码字符并预测序列中的下一个字符。将使用长短期记忆循环神经网络隐藏层来从输入序列学习上下文以进行预测。
 
 ### 加载数据
 
@@ -651,7 +651,7 @@ hello worls e pake wofey. The
 如果您要深入了解，本节将提供有关该主题的更多资源。
 
 *   [在维基百科上演六便士之歌](https://en.wikipedia.org/wiki/Sing_a_Song_of_Sixpence)
-*   [使用 Keras](https://machinelearningmastery.com/text-generation-lstm-recurrent-neural-networks-python-keras/) 在 Python 中使用 LSTM 回归神经网络生成文本
+*   [使用 Keras](https://machinelearningmastery.com/text-generation-lstm-recurrent-neural-networks-python-keras/) 在 Python 中使用 LSTM 循环神经网络生成文本
 *   [Keras Utils API](https://keras.io/utils/)
 *   [Keras 序列处理 API](https://keras.io/preprocessing/sequence/)
 

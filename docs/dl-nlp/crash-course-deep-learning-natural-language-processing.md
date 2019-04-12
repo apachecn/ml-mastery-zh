@@ -58,10 +58,10 @@
 1.  **第 01 课**：深度学习和自然语言
 2.  **第 02 课**：清理文本数据
 3.  **第 03 课**：Bag-of-Words 模型
-4.  **第 04 课**：Word 嵌入表示
+4.  **第 04 课**：词嵌入表示
 5.  **第 05 课**：学习嵌入
 6.  **第 06 课**：文本分类
-7.  **第 07 课**：电影评论情绪分析项目
+7.  **第 07 课**：电影评论情感分析项目
 
 每节课可能需要 60 秒或 30 分钟。花点时间，按照自己的进度完成课程。在下面的评论中提出问题甚至发布结果。
 
@@ -304,13 +304,13 @@ print(encoded_docs)
 
 在下一课中，您将发现单词嵌入。
 
-## 第 04 课：Word 嵌入表示法
+## 第 04 课：词嵌入表示法
 
 在本课程中，您将发现嵌入分布式表示的单词以及如何使用 Gensim Python 库开发单词嵌入。
 
-### Word 嵌入
+### 词嵌入
 
-Word 嵌入是一种单词表示，允许具有相似含义的单词具有相似的表示。
+词嵌入是一种单词表示，允许具有相似含义的单词具有相似的表示。
 
 它们是文本的分布式表示，这可能是深度学习方法在挑战自然语言处理问题上令人印象深刻的表现的关键突破之一。
 
@@ -389,8 +389,8 @@ pyplot.show()
 
 ### 更多信息
 
-*   [什么是 Word 嵌入文本？](https://machinelearningmastery.com/what-are-word-embeddings/)
-*   [如何使用 Gensim](https://machinelearningmastery.com/develop-word-embeddings-python-gensim/) 在 Python 中开发 Word 嵌入
+*   [什么是词嵌入文本？](https://machinelearningmastery.com/what-are-word-embeddings/)
+*   [如何使用 Gensim](https://machinelearningmastery.com/develop-word-embeddings-python-gensim/) 在 Python 中开发词嵌入
 *   [Gutenberg 项目](http://www.gutenberg.org/)
 
 在下一课中，您将了解如何将词嵌入作为深度学习模型的一部分进行学习。
@@ -399,7 +399,7 @@ pyplot.show()
 
 在本课程中，您将学习如何学习嵌入字的分布式表示的单词，作为拟合深度学习模型的一部分
 
-### 嵌入图层
+### 嵌入层
 
 Keras 提供了一个嵌入层，可用于文本数据的神经网络。
 
@@ -455,7 +455,7 @@ print(model.summary())
 ### 更多信息
 
 *   [可变长度输入序列的数据准备](https://machinelearningmastery.com/data-preparation-variable-length-input-sequences-sequence-prediction/)
-*   [如何使用 Keras 深入学习使用 Word 嵌入层](https://machinelearningmastery.com/use-word-embedding-layers-deep-learning-keras/)
+*   [如何使用 Keras 深入学习使用词嵌入层](https://machinelearningmastery.com/use-word-embedding-layers-deep-learning-keras/)
 
 在下一课中，您将了解如何开发用于分类文本的深度学习模型。
 
@@ -465,7 +465,7 @@ print(model.summary())
 
 ### 文件分类
 
-文本分类描述了一类问题，例如预测推文和电影评论的情绪，以及将电子邮件分类为垃圾邮件。
+文本分类描述了一类问题，例如预测推文和电影评论的情感，以及将电子邮件分类为垃圾邮件。
 
 它是自然语言处理的一个重要领域，也是开始在文本数据上使用深度学习技术的好地方。
 
@@ -510,11 +510,11 @@ print(model.summary())
 
 *   [深度学习文档分类的最佳实践](https://machinelearningmastery.com/best-practices-document-classification-deep-learning/)
 
-在下一课中，您将了解如何处理情绪分析预测问题。
+在下一课中，您将了解如何处理情感分析预测问题。
 
-## 第 07 课：电影评论情绪分析项目
+## 第 07 课：电影评论情感分析项目
 
-在本课程中，您将了解如何准备文本数据，开发和评估深度学习模型以预测电影评论的情绪。
+在本课程中，您将了解如何准备文本数据，开发和评估深度学习模型以预测电影评论的情感。
 
 我希望您将在此速成课程中学到的所有内容联系在一起，并通过端到端的实际问题进行处理。
 
@@ -544,9 +544,9 @@ print(model.summary())
 
 ### 更多信息
 
-*   [如何为情绪分析准备电影评论数据](https://machinelearningmastery.com/prepare-movie-review-data-sentiment-analysis/)
-*   [如何开发一种用于预测电影评论情绪的深度学习词袋模型](https://machinelearningmastery.com/deep-learning-bag-of-words-model-sentiment-analysis/)
-*   [如何开发用于预测电影评论情绪的词嵌入模型](https://machinelearningmastery.com/develop-word-embedding-model-predicting-movie-review-sentiment/)
+*   [如何为情感分析准备电影评论数据](https://machinelearningmastery.com/prepare-movie-review-data-sentiment-analysis/)
+*   [如何开发一种用于预测电影评论情感的深度学习词袋模型](https://machinelearningmastery.com/deep-learning-bag-of-words-model-sentiment-analysis/)
+*   [如何开发用于预测电影评论情感的词嵌入模型](https://machinelearningmastery.com/develop-word-embedding-model-predicting-movie-review-sentiment/)
 
 ## 结束！
 （看你有多远）

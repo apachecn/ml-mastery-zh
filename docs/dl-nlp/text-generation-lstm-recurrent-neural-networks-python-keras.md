@@ -1,8 +1,8 @@
-# 使用 Keras 在 Python 中使用 LSTM 循环神经网络生成文本
+# 使用 Keras 在 Python 中进行 LSTM 循环神经网络的文本生成
 
 > 原文： [https://machinelearningmastery.com/text-generation-lstm-recurrent-neural-networks-python-keras/](https://machinelearningmastery.com/text-generation-lstm-recurrent-neural-networks-python-keras/)
 
-递归神经网络也可以用作生成模型。
+循环神经网络也可以用作生成模型。
 
 这意味着除了用于预测模型（进行预测）之外，他们还可以学习问题的序列，然后为问题域生成全新的合理序列。
 
@@ -13,12 +13,12 @@
 阅读这篇文章后你会知道：
 
 *   在哪里下载免费的文本语料库，您可以使用它来训练文本生成模型。
-*   如何将文本序列问题构建为递归神经网络生成模型。
+*   如何将文本序列问题构建为循环神经网络生成模型。
 *   如何开发 LSTM 以针对给定问题生成合理的文本序列。
 
 让我们开始吧。
 
-**注意**：LSTM 递归神经网络训练速度很慢，强烈建议您在 GPU 硬件上进行训练。您可以使用 Amazon Web Services 非常便宜地访问云中的 GPU 硬件，[请参阅此处的教程](http://machinelearningmastery.com/develop-evaluate-large-deep-learning-models-keras-amazon-web-services/)。
+**注意**：LSTM 循环神经网络训练速度很慢，强烈建议您在 GPU 硬件上进行训练。您可以使用 Amazon Web Services 非常便宜地访问云中的 GPU 硬件，[请参阅此处的教程](http://machinelearningmastery.com/develop-evaluate-large-deep-learning-models-keras-amazon-web-services/)。
 
 *   **2016 年 10 月更新**：修复了代码中的一些小错误拼写错误。
 *   **2017 年 3 月更新**：更新了 Keras 2.0.2，TensorFlow 1.0.1 和 Theano 0.9.0 的示例。
@@ -26,7 +26,7 @@
 ![Text Generation With LSTM Recurrent Neural Networks in Python with Keras](img/ce1bbf908214dba8ac5ef35fd8c2b3e6.jpg)
 
 用 Keras
-在 Python 中使用 LSTM 回归神经网络生成文本 [Russ Sanderlin](https://www.flickr.com/photos/tearstone/5028273685/) ，保留一些权利。
+在 Python 中使用 LSTM 循环神经网络生成文本 [Russ Sanderlin](https://www.flickr.com/photos/tearstone/5028273685/) ，保留一些权利。
 
 ## 问题描述：古腾堡项目
 
@@ -62,7 +62,7 @@ THE END
 
 您应该留下一个包含大约 3,330 行文本的文本文件。
 
-## 开发小型 LSTM 回归神经网络
+## 开发小型 LSTM 循环神经网络
 
 在本节中，我们将开发一个简单的 LSTM 网络，以学习 Alice in Wonderland 中的角色序列。在下一节中，我们将使用此模型生成新的字符序列。
 
@@ -440,7 +440,7 @@ and the tabdit was the wiite rabbit, and
 
 结果并不完美。在下一节中，我们将通过开发更大的 LSTM 网络来提高结果的质量。
 
-## 更大的 LSTM 递归神经网络
+## 更大的 LSTM 循环神经网络
 
 我们得到了结果，但在上一节中没有出色的结果。现在，我们可以尝试通过创建更大的网络来提高生成文本的质量。
 
@@ -651,25 +651,25 @@ seared to see it was a little lad good to the little good
 *   尝试对输入序列进行热编码。
 *   在填充句子而不是随机字符序列上训练模型。
 *   将训练时期的数量增加到 100 或数百。
-*   将 dropout 添加到可见输入图层并考虑调整丢失百分比。
+*   将 dropout 添加到可见输入层并考虑调整丢失百分比。
 *   调整批量大小，尝试批量大小为 1 作为（非常慢）基线，并从那里开始更大的尺寸。
 *   向层和/或更多层添加更多内存单元。
 *   在解释预测概率时，对比例因子（[温度](https://en.wikipedia.org/wiki/Softmax_function#Reinforcement_learning)）进行实验。
-*   将 LSTM 图层更改为“有状态”以维护批次之间的状态。
+*   将 LSTM 层更改为“有状态”以维护批次之间的状态。
 
 你尝试过这些扩展吗？在评论中分享您的结果。
 
 ## 资源
 
-该字符文本模型是使用递归神经网络生成文本的流行方式。
+该字符文本模型是使用循环神经网络生成文本的流行方式。
 
-如果您有兴趣深入了解，下面是一些关于该主题的更多资源和教程。也许最受欢迎的是 Andrej Karpathy 的教程，题为“[回归神经网络的不合理效力](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)”。
+如果您有兴趣深入了解，下面是一些关于该主题的更多资源和教程。也许最受欢迎的是 Andrej Karpathy 的教程，题为“[循环神经网络的不合理效力](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)”。
 
-*   [使用递归神经网络生成文本](http://www.cs.utoronto.ca/~ilya/pubs/2011/LANG-RNN.pdf) [pdf]，2011
+*   [使用循环神经网络生成文本](http://www.cs.utoronto.ca/~ilya/pubs/2011/LANG-RNN.pdf) [pdf]，2011
 *   [用于文本生成的 LSTM 的 Keras 代码示例](https://github.com/fchollet/keras/blob/master/examples/lstm_text_generation.py)。
 *   [用于文本生成的 LSTM 的烤宽面条代码示例](https://github.com/Lasagne/Recipes/blob/master/examples/lstm_text_generation.py)。
 *   [MXNet 教程，用于使用 LSTM 进行文本生成](http://mxnetjl.readthedocs.io/en/latest/tutorial/char-lstm.html)。
-*   [使用递归神经网络](https://larseidnes.com/2015/10/13/auto-generating-clickbait-with-recurrent-neural-networks/)自动生成 Clickbait。
+*   [使用循环神经网络](https://larseidnes.com/2015/10/13/auto-generating-clickbait-with-recurrent-neural-networks/)自动生成 Clickbait。
 
 ## 摘要
 

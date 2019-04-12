@@ -1,4 +1,4 @@
-# 7 深度学习在自然语言处理中的应用
+# 深度学习在自然语言处理中的 7 个应用
 
 > 原文： [https://machinelearningmastery.com/applications-of-deep-learning-for-natural-language-processing/](https://machinelearningmastery.com/applications-of-deep-learning-for-natural-language-processing/)
 
@@ -44,7 +44,7 @@
 
 - 第 575 页，[统计自然语言处理基础](http://amzn.to/2ePBz9t)，1999。
 
-一个流行的分类示例是[情绪分析](https://en.wikipedia.org/wiki/Sentiment_analysis)，其中类标签表示源文本的情绪基调，例如“_ 阳性 _”或“_ 阴性 _”。
+一个流行的分类示例是[情感分析](https://en.wikipedia.org/wiki/Sentiment_analysis)，其中类标签表示源文本的情感基调，例如“_ 阳性 _”或“_ 阴性 _”。
 
 以下是另外 3 个例子：
 
@@ -65,7 +65,7 @@
     *   [深度无序构成对象文本分类的句法方法](https://cs.umd.edu/~miyyer/pubs/2015_acl_dan.pdf)，2015。
 *   亚马逊产品评论的情感分析，IMDB 电影评论和新闻文章的主题分类。
     *   [利用卷积神经网络有效使用词序进行文本分类](https://arxiv.org/abs/1412.1058)，2015。
-*   电影评论的情感分析，将句子分类为主观或客观，分类问题类型，产品评论情绪等。
+*   电影评论的情感分析，将句子分类为主观或客观，分类问题类型，产品评论情感等。
     *   [用于句子分类的卷积神经网络](https://arxiv.org/abs/1408.5882)，2014。
 
 ## 2.语言建模
@@ -89,7 +89,7 @@
 有关语言建模的更多信息，请参阅：
 
 *   维基百科上的[语言模型](https://en.wikipedia.org/wiki/Language_model)
-*   [回归神经网络的不合理有效性](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)，2015 年。
+*   [循环神经网络的不合理有效性](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)，2015 年。
 *   [基于生成模型的文本到语音合成](https://github.com/oxford-cs-deepnlp-2017/lectures/blob/master/Lecture%2010%20-%20Text%20to%20Speech.pdf)，第 10 讲，牛津，2017
 
 以下是语言建模的深度学习示例（仅限）：
@@ -124,9 +124,9 @@
 以下是语音识别深度学习的 3 个例子。
 
 *   英语演讲文本。
-    *   [连接主义时间分类：用递归神经网络标记未分段的序列数据](http://www.cs.toronto.edu/~graves/icml_2006.pdf)，2006。
+    *   [连接主义时间分类：用循环神经网络标记未分段的序列数据](http://www.cs.toronto.edu/~graves/icml_2006.pdf)，2006。
 *   英语演讲文本。
-    *   [深度递归神经网络语音识别](https://arxiv.org/abs/1303.5778)，2013。
+    *   [深度循环神经网络语音识别](https://arxiv.org/abs/1303.5778)，2013。
 *   英语演讲文本。
     *   [探索用于语音识别的卷积神经网络结构和优化技术](https://www.microsoft.com/en-us/research/publication/exploring-convolutional-neural-network-structures-and-optimization-techniques-for-speech-recognition/)，2014。
 
@@ -188,7 +188,7 @@
 *   文本从英语翻译成法语。
     *   [通过联合学习对齐和翻译的神经机器翻译](https://arxiv.org/abs/1409.0473)，2014。
 *   文本从英语翻译成法语。
-    *   [联合语言和翻译建模与回归神经网络](https://www.microsoft.com/en-us/research/publication/joint-language-and-translation-modeling-with-recurrent-neural-networks/)，2013。
+    *   [联合语言和翻译建模与循环神经网络](https://www.microsoft.com/en-us/research/publication/joint-language-and-translation-modeling-with-recurrent-neural-networks/)，2013。
 
 ## 6.文件摘要
 

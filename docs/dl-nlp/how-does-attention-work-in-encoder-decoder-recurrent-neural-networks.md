@@ -1,4 +1,4 @@
-# 编码器 - 解码器递归神经网络中的注意事项如何工作
+# 编码器 - 解码器循环神经网络中的注意力如何工作
 
 > 原文： [https://machinelearningmastery.com/how-does-attention-work-in-encoder-decoder-recurrent-neural-networks/](https://machinelearningmastery.com/how-does-attention-work-in-encoder-decoder-recurrent-neural-networks/)
 
@@ -27,7 +27,7 @@
 
 ## 编码器 - 解码器模型
 
-两篇论文介绍了用于递归神经网络的编码器 - 解码器模型。
+两篇论文介绍了用于循环神经网络的编码器 - 解码器模型。
 
 两者都开发了技术来解决机器翻译的序列到序列的性质，其中输入序列的长度与输出序列不同。
 
@@ -42,7 +42,7 @@ Kyunghyun Cho，et al。在“[学习短语表示使用 RNN 编码器 - 解码�
 
 ![Encoder-Decoder Recurrent Neural Network Model.](img/047c218a5eed4d8b21b095b8e19b7a80.jpg)
 
-编码器 - 解码器递归神经网络模型。
+编码器 - 解码器循环神经网络模型。
 取自“使用 RNN 编码器 - 解码器进行统计机器翻译的学习短语表示”
 
 > 我们提出了一种新颖的神经网络体系结构，它学习将可变长度序列编码成固定长度的向量表示，并将给定的固定长度向量表示解码回可变长度序列。
@@ -63,7 +63,7 @@ Kyunghyun Cho，et al。在“[学习短语表示使用 RNN 编码器 - 解码�
 
 ## 注意模型
 
-Dzmitry Bahdanau 等人提出了注意事项。在他们的论文“[神经机器翻译中通过联合学习来对齐和翻译](https://arxiv.org/abs/1409.0473)”，这是他们以前在编码器 - 解码器模型上工作的自然延伸。
+Dzmitry Bahdanau 等人提出了注意力。在他们的论文“[神经机器翻译中通过联合学习来对齐和翻译](https://arxiv.org/abs/1409.0473)”，这是他们以前在编码器 - 解码器模型上工作的自然延伸。
 
 提出注意作为对编码器 - 解码器模型的限制的解决方案，该编码器 - 解码器模型将输入序列编码为一个固定长度向量，从该向量解码每个输出时间步长。在解码长序列时，这个问题被认为是更多的问题。
 
@@ -83,7 +83,7 @@ Dzmitry Bahdanau 等人提出了注意事项。在他们的论文“[神经机�
 
 ![Example of Attention](img/e825a9af99294073846960f320d8a4e5.jpg)
 
-注意事项
+注意力
 取自“通过共同学习协调和翻译的神经机器翻译”，2015 年。
 
 与编码器 - 解码器纸一样，该技术应用于机器翻译问题并使用 GRU 单元而不是 LSTM 存储器单元。在这种情况下，使用双向输入，其中向前和向后提供输入序列，然后在传递到解码器之前将其连接。
@@ -293,7 +293,7 @@ Minh-Thang Luong，et al。在他们的 2015 年论文中，“[基于注意力�
 
 ### 更多关于注意力
 
-*   [长期短期记忆回归神经网络](http://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/)的注意事项
+*   [长期短期记忆循环神经网络](http://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/)的注意力
 *   [第 10 讲：神经机器翻译和注意模型](https://www.youtube.com/watch?v=IxQtK2SjWWM)，斯坦福大学，2017 年
 *   [第 8 讲 - 引起注意的语言](https://www.youtube.com/watch?v=ah7_mfl7LD0)，牛津大学。
 

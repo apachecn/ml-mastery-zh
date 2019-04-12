@@ -1,8 +1,8 @@
-# 如何使用 Gensim 在 Python 中开发 Word 嵌入
+# 如何使用 Gensim 在 Python 中开发词嵌入
 
 > 原文： [https://machinelearningmastery.com/develop-word-embeddings-python-gensim/](https://machinelearningmastery.com/develop-word-embeddings-python-gensim/)
 
-Word 嵌入是一种在自然语言处理中表示文本的现代方法。
+词嵌入是一种在自然语言处理中表示文本的现代方法。
 
 嵌入算法如 word2vec 和 GloVe 是神经网络模型在机器翻译等自然语言处理问题上获得的最先进结果的关键。
 
@@ -19,26 +19,26 @@ Word 嵌入是一种在自然语言处理中表示文本的现代方法。
 ![How to Develop Word Embeddings in Python with Gensim](img/33cc3e32854514592a90afc05c1aa9c8.jpg)
 
 如何使用 Gensim
-在 Python 中开发 Word 嵌入照片由 [dilettantiquity](https://www.flickr.com/photos/flyingblogspot/15361704293/) ，保留一些权利。
+在 Python 中开发词嵌入照片由 [dilettantiquity](https://www.flickr.com/photos/flyingblogspot/15361704293/) ，保留一些权利。
 
 ## 教程概述
 
 本教程分为 6 个部分;他们是：
 
-1.  Word 嵌入
+1.  词嵌入
 2.  Gensim 库
 3.  开发 Word2Vec 嵌入
-4.  可视化 Word 嵌入
+4.  可视化词嵌入
 5.  加载 Google 的 Word2Vec 嵌入
 6.  加载斯坦福的 GloVe 嵌入
 
-## Word 嵌入
+## 词嵌入
 
 单词嵌入是一种提供单词的密集向量表示的方法，可以捕获关于其含义的单词。
 
 字嵌入是对简单的字袋模型字编码方案（如字数和频率）的改进，这些方案导致描述文档而不是字的含义的大且稀疏的向量（通常为 0 值）。
 
-Word 嵌入通过使用算法来训练一组基于大的文本语料库的固定长度密集和连续值向量。每个单词由嵌入空间中的一个点表示，并且这些点基于围绕目标单词的单词被学习和移动。
+词嵌入通过使用算法来训练一组基于大的文本语料库的固定长度密集和连续值向量。每个单词由嵌入空间中的一个点表示，并且这些点基于围绕目标单词的单词被学习和移动。
 
 它正在由公司定义一个单词，它保留了允许单词嵌入来学习单词含义的东西。单词的向量空间表示提供了一个投影，其中具有相似含义的单词在空间内局部聚类。
 
@@ -213,7 +213,7 @@ Word2Vec(vocab=14, size=100, alpha=0.025)
 
 您可以看到，通过一些准备文本文档的工作，您可以使用 Gensim 轻松创建自己的单词嵌入。
 
-## 可视化 Word 嵌入
+## 可视化词嵌入
 
 在学习了文本数据的单词嵌入之后，可以通过可视化来探索它。
 
@@ -419,7 +419,7 @@ print(result)
 
 如果您要深入了解，本节将提供有关该主题的更多资源。
 
-*   [Word 嵌入维基百科](https://en.wikipedia.org/wiki/Word2vec)
+*   [词嵌入维基百科](https://en.wikipedia.org/wiki/Word2vec)
 *   [维基百科上的 Word2Vec](https://en.wikipedia.org/wiki/Word2vec)
 *   [谷歌 word2vec 项目](https://code.google.com/archive/p/word2vec/)
 *   [Stanford GloVe 项目](https://nlp.stanford.edu/projects/glove/)

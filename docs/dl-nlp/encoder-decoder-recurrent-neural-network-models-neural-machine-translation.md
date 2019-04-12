@@ -1,8 +1,8 @@
-# 用于神经机器翻译的编码器 - 解码器递归神经网络模型
+# 用于神经机器翻译的编码器 - 解码器循环神经网络模型
 
 > 原文： [https://machinelearningmastery.com/encoder-decoder-recurrent-neural-network-models-neural-machine-translation/](https://machinelearningmastery.com/encoder-decoder-recurrent-neural-network-models-neural-machine-translation/)
 
-用于递归神经网络的编码器 - 解码器架构是标准的神经机器翻译方法，其可以与传统的统计机器翻译方法相媲美并且在某些情
+用于循环神经网络的编码器 - 解码器架构是标准的神经机器翻译方法，其可以与传统的统计机器翻译方法相媲美并且在某些情
 
 这种架构非常新颖，仅在 2014 年率先推出，但已被采纳为 [Google 翻译服务](https://translate.google.com/)的核心技术。
 
@@ -18,12 +18,12 @@
 
 ![Encoder-Decoder Recurrent Neural Network Models for Neural Machine Translation](img/37525e20edcb357c3f9a4f90b69ef230.jpg)
 
-用于神经机器翻译的编码器 - 解码器递归神经网络模型
+用于神经机器翻译的编码器 - 解码器循环神经网络模型
 [Fabio Pani](https://www.flickr.com/photos/fabiuxfabiux/34223907581/) 的照片，保留一些权利。
 
 ## 用于 NMT 的编码器 - 解码器架构
 
-具有递归神经网络的编码器 - 解码器架构已成为神经机器翻译（NMT）和序列到序列（seq2seq）预测的有效和标准方法。
+具有循环神经网络的编码器 - 解码器架构已成为神经机器翻译（NMT）和序列到序列（seq2seq）预测的有效和标准方法。
 
 该方法的主要优点是能够直接在源语句和目标语句上训练单个端到端模型，以及处理可变长度输入和输出文本序列的能力。
 
@@ -120,14 +120,14 @@
 
 该模型使用相同的双模型方法，这里给出了编码器 - 解码器架构的明确名称。
 
-> ...称为 RNN 编码器 - 解码器，由两个递归神经网络（RNN）组成。一个 RNN 将符号序列编码成固定长度的向量表示，而另一个 RNN 将该表示解码成另一个符号序列。
+> ...称为 RNN 编码器 - 解码器，由两个循环神经网络（RNN）组成。一个 RNN 将符号序列编码成固定长度的向量表示，而另一个 RNN 将该表示解码成另一个符号序列。
 
 ![Depiction of the Encoder-Decoder architecture](img/733acefebad1632bfbddd1e52fc8f434.jpg)
 
 描述编码器 - 解码器架构。
 取自“使用 RNN 编码器 - 解码器进行统计机器翻译的学习短语表示”。
 
-实施不使用 LSTM 单位;相反，开发了一种更简单的递归神经网络单元，称为门控循环单元或 GRU。
+实施不使用 LSTM 单位;相反，开发了一种更简单的循环神经网络单元，称为门控循环单元或 GRU。
 
 > ......我们还提出了一种新型的隐藏单元，它受 LSTM 单元的推动，但计算和实现起来要简单得多。
 

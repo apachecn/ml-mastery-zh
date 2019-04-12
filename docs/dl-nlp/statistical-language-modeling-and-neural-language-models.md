@@ -133,15 +133,15 @@
 
 > 我们提供了充分的实证证据，表明连接语言模型优于标准的 n-gram 技术，除了它们的高计算（训练）复杂性。
 
-- [基于递归神经网络的语言模型](http://www.fit.vutbr.cz/research/groups/speech/publi/2010/mikolov_interspeech2010_IS100722.pdf)，2010。
+- [基于循环神经网络的语言模型](http://www.fit.vutbr.cz/research/groups/speech/publi/2010/mikolov_interspeech2010_IS100722.pdf)，2010。
 
 最初，前馈神经网络模型用于介绍该方法。
 
 最近，循环神经网络以及具有长期记忆的网络（如长短期记忆网络或 LSTM）允许模型在比更简单的前馈网络更长的输入序列上学习相关的上下文。
 
-> [RNN 语言模型]提供了进一步的概括：不考虑前面几个单词，假设具有来自循环连接的输入的神经元代表短期记忆。该模型从数据中学习如何表示内存。虽然浅前馈神经网络（仅具有一个隐藏层的神经网络）只能聚类相似的词，但是递归神经网络（可以被认为是深层架构）可以执行类似历史的聚类。这允许例如具有可变长度的模式的有效表示。
+> [RNN 语言模型]提供了进一步的概括：不考虑前面几个单词，假设具有来自循环连接的输入的神经元代表短期记忆。该模型从数据中学习如何表示内存。虽然浅前馈神经网络（仅具有一个隐藏层的神经网络）只能聚类相似的词，但是循环神经网络（可以被认为是深层架构）可以执行类似历史的聚类。这允许例如具有可变长度的模式的有效表示。
 
-- [递归神经网络语言模型的扩展](http://ieeexplore.ieee.org/abstract/document/5947611/)，2011。
+- [循环神经网络语言模型的扩展](http://ieeexplore.ieee.org/abstract/document/5947611/)，2011。
 
 最近，研究人员一直在寻求这些语言模型的极限。在文章“[探索语言建模的极限](https://arxiv.org/abs/1602.02410)”中，评估大数据集上的语言模型，例如一百万字的语料库，作者发现基于 LSTM 的神经语言模型胜过经典方法。
 
@@ -171,8 +171,8 @@
 *   [神经概率语言模型](https://papers.nips.cc/paper/1839-a-neural-probabilistic-language-model.pdf)，NIPS，2001。
 *   [神经概率语言模型](http://www.jmlr.org/papers/v3/bengio03a.html)，JMLR，2003。
 *   [用于大词汇量连续语音识别的连接语言建模](https://pdfs.semanticscholar.org/b4db/83366f925e9a1e1528ee9f6b41d7cd666f41.pdf)，2002。
-*   [基于递归神经网络的语言模型](http://www.fit.vutbr.cz/research/groups/speech/publi/2010/mikolov_interspeech2010_IS100722.pdf)，2010。
-*   [递归神经网络语言模型的扩展](http://ieeexplore.ieee.org/abstract/document/5947611/)，2011。
+*   [基于循环神经网络的语言模型](http://www.fit.vutbr.cz/research/groups/speech/publi/2010/mikolov_interspeech2010_IS100722.pdf)，2010。
+*   [循环神经网络语言模型的扩展](http://ieeexplore.ieee.org/abstract/document/5947611/)，2011。
 *   [字符感知神经语言模型](https://arxiv.org/abs/1508.06615)，2015。
 *   [用于语言建模的 LSTM 神经网络](https://pdfs.semanticscholar.org/f9a1/b3850dfd837793743565a8af95973d395a4e.pdf)，2012
 *   [探索语言建模的局限](https://arxiv.org/abs/1602.02410)，2016。

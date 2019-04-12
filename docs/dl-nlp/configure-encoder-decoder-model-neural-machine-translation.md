@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/configure-encoder-decoder-model-neural-machine-translation/](https://machinelearningmastery.com/configure-encoder-decoder-model-neural-machine-translation/)
 
-用于递归神经网络的编码器 - 解码器架构在标准机器翻译基准上实现了最先进的结果，并且正在用于工业翻译服务的核心。
+用于循环神经网络的编码器 - 解码器架构在标准机器翻译基准上实现了最先进的结果，并且正在用于工业翻译服务的核心。
 
 该模型很简单，但考虑到训练它所需的大量数据，调整模型中的无数设计决策以获得最佳表现问题可能实际上难以处理。值得庆幸的是，研究科学家已经使用 Google 规模的硬件为我们完成这项工作，并提供了一套启发式方法，用于如何配置编码器 - 解码器模型进行神经机器翻译和一般的序列预测。
 
@@ -23,7 +23,7 @@
 
 ## 神经机器翻译的编码器 - 解码器模型
 
-用于递归神经网络的编码器 - 解码器架构正在取代基于经典短语的统计机器翻译系统，以获得最先进的结果。
+用于循环神经网络的编码器 - 解码器架构正在取代基于经典短语的统计机器翻译系统，以获得最先进的结果。
 
 作为证据，他们的 2016 年论文“[谷歌的神经机器翻译系统：缩小人机翻译之间的差距](https://arxiv.org/abs/1609.08144)”，谷歌现在将这种方法用于他们的谷歌翻译服务的核心。
 
@@ -38,7 +38,7 @@
 有关编码器 - 解码器架构和注意机制的更多背景信息，请参阅帖子：
 
 *   [编码器 - 解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
-*   [长期短期记忆回归神经网络](https://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/)的注意事项
+*   [长期短期记忆循环神经网络](https://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/)的注意事项
 
 ## 基线模型
 
@@ -78,7 +78,7 @@
 
 ## RNN 细胞类型
 
-通常使用三种类型的递归神经网络细胞：
+通常使用三种类型的循环神经网络细胞：
 
 *   简单的 RNN。
 *   长期短期记忆或 LSTM。

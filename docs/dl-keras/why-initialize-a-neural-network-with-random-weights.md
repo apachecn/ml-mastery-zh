@@ -171,7 +171,7 @@
 
 有关详细信息，请参阅[文档](https://keras.io/initializers/)。
 
-出于兴趣，Keras 开发人员为不同的图层类型选择的默认初始值设定项如下：
+出于兴趣，Keras 开发人员为不同的层类型选择的默认初始值设定项如下：
 
 *   **致密**（例如 MLP）： _glorot_uniform_
 *   **LSTM** ： _glorot_uniform_

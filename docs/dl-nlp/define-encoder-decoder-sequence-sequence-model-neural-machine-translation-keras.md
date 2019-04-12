@@ -1,8 +1,8 @@
-# 如何定义 Keras 中神经机器翻译的编码器 - 解码器序列 - 序列模型
+# 如何在 Keras 中定义神经机器翻译的编码器 - 解码器序列 - 序列模型
 
 > 原文： [https://machinelearningmastery.com/define-encoder-decoder-sequence-sequence-model-neural-machine-translation-keras/](https://machinelearningmastery.com/define-encoder-decoder-sequence-sequence-model-neural-machine-translation-keras/)
 
-编码器 - 解码器模型提供了使用递归神经网络来解决具有挑战性的序列到序列预测问题（例如机器翻译）的模式。
+编码器 - 解码器模型提供了使用循环神经网络来解决具有挑战性的序列到序列预测问题（例如机器翻译）的模式。
 
 可以在 Keras Python 深度学习库中开发编码器 - 解码器模型，并且在 Keras 博客上描述了使用该模型开发的神经机器翻译系统的示例，其中示例代码与 Keras 项目一起分发。
 
@@ -84,7 +84,7 @@ Stop!	Arrête-toi !
 
 ## 机器翻译模型
 
-神经翻译模型是编码器 - 解码器递归神经网络。
+神经翻译模型是编码器 - 解码器循环神经网络。
 
 它由读取可变长度输入序列的编码器和预测可变长度输出序列的解码器组成。
 
@@ -96,7 +96,7 @@ Stop!	Arrête-toi !
 
 编码器的输入是一系列字符，每个字符编码为长度为 _num_encoder_tokens_ 的单热向量。
 
-编码器中的 LSTM 层定义为 _return_state_ 参数设置为 _True_ 。这将返回 LSTM 图层返回的隐藏状态输出，以及图层中所有单元格的隐藏状态和单元格状态。这些在定义解码器时使用。
+编码器中的 LSTM 层定义为 _return_state_ 参数设置为 _True_ 。这将返回 LSTM 层返回的隐藏状态输出，以及层中所有单元格的隐藏状态和单元格状态。这些在定义解码器时使用。
 
 ```py
 # Define an input sequence and process it.

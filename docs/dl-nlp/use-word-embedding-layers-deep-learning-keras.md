@@ -1,14 +1,14 @@
-# 如何使用 Keras 将 Word 嵌入图层用于深度学习
+# 如何使用 Keras 将词嵌入层用于深度学习
 
 > 原文： [https://machinelearningmastery.com/use-word-embedding-layers-deep-learning-keras/](https://machinelearningmastery.com/use-word-embedding-layers-deep-learning-keras/)
 
-Word 嵌入提供了单词及其相对含义的密集表示。
+词嵌入提供了单词及其相对含义的密集表示。
 
 它们是对简单包含的单词模型表示中使用的稀疏表示的改进。
 
-可以从文本数据中学习 Word 嵌入，并在项目中重用。它们也可以作为在文本数据上拟合神经网络的一部分来学习。
+可以从文本数据中学习词嵌入，并在项目中重用。它们也可以作为在文本数据上拟合神经网络的一部分来学习。
 
-在本教程中，您将了解如何使用 Word 嵌入在 Python 中使用 Keras 进行深度学习。
+在本教程中，您将了解如何使用词嵌入在 Python 中使用 Keras 进行深度学习。
 
 完成本教程后，您将了解：
 
@@ -23,7 +23,7 @@ Word 嵌入提供了单词及其相对含义的密集表示。
 ![How to Use Word Embedding Layers for Deep Learning with Keras](img/2218ca2cd0b8ce367f990aafb1cebca5.jpg)
 
 如何使用 Keras
-使用 Word 嵌入图层深度学习照片由 [thisguy](https://www.flickr.com/photos/davebloggs007/36375879215/) 拍摄，保留一些权利。
+使用词嵌入层深度学习照片由 [thisguy](https://www.flickr.com/photos/davebloggs007/36375879215/) 拍摄，保留一些权利。
 
 ## 教程概述
 
@@ -81,11 +81,11 @@ Keras 提供[嵌入](https://keras.io/layers/embeddings/#embedding)层，可用�
 e = Embedding(200, 32, input_length=50)
 ```
 
-嵌入层具有学习的权重。如果将模型保存到文件，则将包括嵌入图层的权重。
+嵌入层具有学习的权重。如果将模型保存到文件，则将包括嵌入层的权重。
 
 _ 嵌入 _ 层的输出是 2D 向量，在输入的单词序列（输入文档）中为每个单词嵌入一个。
 
-如果您希望将 _Dense_ 层直接连接到嵌入层，则必须先使用 _Flatten_ 图层将 2D 输出矩阵展平为 1D 向量。
+如果您希望将 _Dense_ 层直接连接到嵌入层，则必须先使用 _Flatten_ 层将 2D 输出矩阵展平为 1D 向量。
 
 现在，让我们看看我们如何在实践中使用嵌入层。
 
@@ -93,7 +93,7 @@ _ 嵌入 _ 层的输出是 2D 向量，在输入的单词序列（输入文档�
 
 在本节中，我们将看看如何在将神经网络拟合到文本分类问题时学习单词嵌入。
 
-我们将定义一个小问题，其中我们有 10 个文本文档，每个文档都有一个学生提交的工作评论。每个文本文档被分类为正“1”或负“0”。这是一个简单的情绪分析问题。
+我们将定义一个小问题，其中我们有 10 个文本文档，每个文档都有一个学生提交的工作评论。每个文本文档被分类为正“1”或负“0”。这是一个简单的情感分析问题。
 
 首先，我们将定义文档及其类标签。
 
@@ -271,7 +271,7 @@ Keras 嵌入层还可以使用在其他地方学习的单词嵌入。
 
 最小的嵌入包是 822Mb，称为“_ 手套.6B.zip_ ”。它是在 10 亿个令牌（单词）的数据集上训练的，词汇量为 40 万字。有一些不同的嵌入向量大小，包括 50,100,200 和 300 维度。
 
-您可以下载这个嵌入集合，我们可以使用训练数据集中单词的训练前嵌入的权重对 Keras _ 嵌入 _ 图层进行播种。
+您可以下载这个嵌入集合，我们可以使用训练数据集中单词的训练前嵌入的权重对 Keras _ 嵌入 _ 层进行播种。
 
 这个例子的灵感来自 Keras 项目中的一个例子： [pretrained_word_embeddings.py](https://github.com/fchollet/keras/blob/master/examples/pretrained_word_embeddings.py) 。
 
@@ -466,7 +466,7 @@ Accuracy: 100.000000
 
 如果您要深入了解，本节将提供有关该主题的更多资源。
 
-*   [Word 嵌入维基百科](https://en.wikipedia.org/wiki/Word_embedding)
+*   [词嵌入维基百科](https://en.wikipedia.org/wiki/Word_embedding)
 *   [Keras 嵌入层 API](https://keras.io/layers/embeddings/#embedding)
 *   [在 Keras 模型中使用预训练的字嵌入](https://blog.keras.io/using-pre-trained-word-embeddings-in-a-keras-model.html)，2016
 *   [在 Keras](https://github.com/fchollet/keras/blob/master/examples/pretrained_word_embeddings.py) 中使用预先训练的 GloVe 嵌入的示例
@@ -476,7 +476,7 @@ Accuracy: 100.000000
 
 ## 摘要
 
-在本教程中，您了解了如何使用 Word 嵌入在 Python 中使用 Keras 进行深度学习。
+在本教程中，您了解了如何使用词嵌入在 Python 中使用 Keras 进行深度学习。
 
 具体来说，你学到了：
 

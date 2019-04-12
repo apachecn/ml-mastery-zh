@@ -128,7 +128,7 @@ Abigail See 等人描述了这种方法。来自斯坦福大学 2017 年论文�
 *   [使用序列到序列 RNN 及其后的抽象文本摘要](https://arxiv.org/abs/1602.06023)，2016。
 *   [达到要点：指针生成器网络汇总](https://arxiv.org/abs/1704.04368)（[见代码](https://github.com/abisee/pointer-generator)），2017 年。
 *   [使用 TensorFlow 进行文本摘要](https://research.googleblog.com/2016/08/text-summarization-with-tensorflow.html)（[参见代码](https://github.com/tensorflow/models/tree/master/textsum)），2016
-*   [驯服回归神经网络以实现更好的总结](http://www.abigailsee.com/2017/04/16/taming-rnns-for-better-summarization.html)，2017 年。
+*   [驯服循环神经网络以实现更好的总结](http://www.abigailsee.com/2017/04/16/taming-rnns-for-better-summarization.html)，2017 年。
 
 ## 摘要
 

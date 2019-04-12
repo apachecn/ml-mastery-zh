@@ -40,8 +40,8 @@
 下面是一些很好的初学者文本分类数据集。
 
 *   [路透社 Newswire 主题分类](http://kdd.ics.uci.edu/databases/reuters21578/reuters21578.html)（路透社-21578）。 1987 年路透社出现的一系列新闻文件，按类别编制索引。 [另见 RCV1，RCV2 和 TRC2](http://trec.nist.gov/data/reuters/reuters.html) 。
-*   [IMDB 电影评论情感分类](http://ai.stanford.edu/~amaas/data/sentiment/)（斯坦福）。来自网站 imdb.com 的一系列电影评论及其积极或消极的情绪。
-*   [新闻集团电影评论情感分类](http://www.cs.cornell.edu/people/pabo/movie-review-data/)（康奈尔）。来自网站 imdb.com 的一系列电影评论及其积极或消极的情绪。
+*   [IMDB 电影评论情感分类](http://ai.stanford.edu/~amaas/data/sentiment/)（斯坦福）。来自网站 imdb.com 的一系列电影评论及其积极或消极的情感。
+*   [新闻集团电影评论情感分类](http://www.cs.cornell.edu/people/pabo/movie-review-data/)（康奈尔）。来自网站 imdb.com 的一系列电影评论及其积极或消极的情感。
 
 有关更多信息，请参阅帖子：
 

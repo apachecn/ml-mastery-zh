@@ -4,7 +4,7 @@
 
 文本摘要是自然语言处理中的一个问题，即创建源文档的简短，准确和流畅的摘要。
 
-为机器翻译开发的编码器 - 解码器递归神经网络架构在应用于文本摘要问题时已被证明是有效的。
+为机器翻译开发的编码器 - 解码器循环神经网络架构在应用于文本摘要问题时已被证明是有效的。
 
 在 Keras 深度学习库中应用这种架构可能很困难，因为为了使库清洁，简单和易于使用而牺牲了一些灵活性。
 
@@ -58,7 +58,7 @@
 
 有关编码器 - 解码器架构中的注意事项的更多信息，请参阅帖子：
 
-*   [长期短期记忆回归神经网络](https://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/)的注意事项
+*   [长期短期记忆循环神经网络](https://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/)的注意事项
 
 编码器 - 解码器体系结构受到关注，是一组自然语言处理问题，它产生可变长度的输出序列，例如文本摘要。
 
@@ -71,7 +71,7 @@
 
 编码器是模型的复杂性所在，因为它负责捕获源文档的含义。
 
-可以使用不同类型的编码器，但是更常用的是双向递归神经网络，例如 LSTM。在编码器中使用递归神经网络的情况下，使用字嵌入来提供字的分布式表示。
+可以使用不同类型的编码器，但是更常用的是双向循环神经网络，例如 LSTM。在编码器中使用循环神经网络的情况下，使用字嵌入来提供字的分布式表示。
 
 亚历山大拉什等人。使用一个简单的词袋编码器来丢弃单词顺序和卷积编码器，明确地尝试捕获 n-gram。
 
@@ -79,11 +79,11 @@
 
 - [抽象句概括的神经注意模型](https://arxiv.org/abs/1509.00685)，2015。
 
-Konstantin Lopyrev 使用深度堆叠的 4 个 LSTM 递归神经网络作为编码器。
+Konstantin Lopyrev 使用深度堆叠的 4 个 LSTM 循环神经网络作为编码器。
 
 > 编码器作为输入被输入一个单词一次的新闻文章的文本。每个单词首先通过嵌入层，该嵌入层将单词转换为分布式表示。然后使用多层神经网络组合该分布式表示
 
-- [使用递归神经网络生成新闻标题](https://arxiv.org/abs/1512.01712)，2015 年。
+- [使用循环神经网络生成新闻标题](https://arxiv.org/abs/1512.01712)，2015 年。
 
 Abigail See，et al。使用单层双向 LSTM 作为编码器。
 
@@ -91,7 +91,7 @@ Abigail See，et al。使用单层双向 LSTM 作为编码器。
 
 - [达到要点：利用指针生成器网络汇总](https://arxiv.org/abs/1704.04368)，2017 年。
 
-Ramesh Nallapati，et al。在编码器中使用双向 GRU 递归神经网络，并在输入序列中包含有关每个字的附加信息。
+Ramesh Nallapati，et al。在编码器中使用双向 GRU 循环神经网络，并在输入序列中包含有关每个字的附加信息。
 
 > 编码器由双向 GRU-RNN 组成......
 
@@ -125,9 +125,9 @@ Ramesh Nallapati，et al。在编码器中使用双向 GRU 递归神经网络，
 
 > 解码器将输入文本的最后一个单词后生成的隐藏层作为输入。首先，再次使用嵌入层将符号结束符号作为输入馈入，以将符号变换为分布式表示。 [...]。在生成下一个单词时，生成每个单词后输入相同的单词作为输入。
 
-- [使用递归神经网络生成新闻标题](https://arxiv.org/abs/1512.01712)，2015 年。
+- [使用循环神经网络生成新闻标题](https://arxiv.org/abs/1512.01712)，2015 年。
 
-Ramesh Nallapati，et al。使用 GRU 递归神经网络生成输出序列。
+Ramesh Nallapati，et al。使用 GRU 循环神经网络生成输出序列。
 
 > ...解码器由单向 GRU-RNN 组成，其具有与编码器相同的隐藏状态大小
 
@@ -294,14 +294,14 @@ model.compile(loss='categorical_crossentropy', optimizer='adam')
 ### 文件
 
 *   [抽象句概括的神经注意模型](https://arxiv.org/abs/1509.00685)，2015。
-*   [使用递归神经网络生成新闻标题](https://arxiv.org/abs/1512.01712)，2015 年。
+*   [使用循环神经网络生成新闻标题](https://arxiv.org/abs/1512.01712)，2015 年。
 *   [使用序列到序列 RNN 及其后的抽象文本摘要](https://arxiv.org/abs/1602.06023)，2016。
 *   [达到要点：利用指针生成器网络汇总](https://arxiv.org/abs/1704.04368)，2017 年。
 
 ### 有关
 
 *   [编码器 - 解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
-*   [长期短期记忆回归神经网络](https://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/)的注意事项
+*   [长期短期记忆循环神经网络](https://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/)的注意事项
 
 ## 摘要
 

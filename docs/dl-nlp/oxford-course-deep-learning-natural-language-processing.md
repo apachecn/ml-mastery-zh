@@ -42,7 +42,7 @@
 
 从课程：
 
-> 这将是一个应用课程，侧重于使用递归神经网络分析和生成语音和文本的最新进展。我们将介绍相关机器学习模型的数学定义，并推导出它们相关的优化算法。
+> 这将是一个应用课程，侧重于使用循环神经网络分析和生成语音和文本的最新进展。我们将介绍相关机器学习模型的数学定义，并推导出它们相关的优化算法。
 
 ## 先决条件
 
@@ -104,7 +104,7 @@
 
 *   [实用 1：word2vec](https://github.com/oxford-cs-deepnlp-2017/practical-1)
 *   [实用 2：文本分类](https://github.com/oxford-cs-deepnlp-2017/practical-2)
-*   [实用 3：用于文本分类和语言建模的递归神经网络](https://github.com/oxford-cs-deepnlp-2017/practical-3)
+*   [实用 3：用于文本分类和语言建模的循环神经网络](https://github.com/oxford-cs-deepnlp-2017/practical-3)
 *   [实用 4：开放实用](https://github.com/oxford-cs-deepnlp-2017/practical-open)
 
 ## 进一步阅读

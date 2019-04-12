@@ -1,4 +1,4 @@
-# 斯坦福自然语言处理深度学习课程述评
+# 斯坦福自然语言处理深度学习课程评价
 
 > 原文： [https://machinelearningmastery.com/stanford-deep-learning-for-natural-language-processing-course/](https://machinelearningmastery.com/stanford-deep-learning-for-natural-language-processing-course/)
 
@@ -102,14 +102,14 @@
 *   第 5 讲：反向传播和项目建议
 *   第 6 讲：依赖性解析
 *   第 7 讲：TensorFlow 简介
-*   第 8 讲：回归神经网络和语言模型
+*   第 8 讲：循环神经网络和语言模型
 *   第 9 讲：机器翻译和高级复现 LSTM 和 GRU
 *   审查会议：中期审查
 *   第 10 讲：神经机器翻译和注意模型
 *   第 11 讲：门控复发单元和 NMT 的其他主题
 *   第 12 讲：语音处理的端到端模型
 *   第 13 讲：卷积神经网络
-*   第 14 讲：树递归神经网络和选区解析
+*   第 14 讲：树循环神经网络和选区解析
 *   第 15 讲：共同决议
 *   第 16 讲：用于问答的动态神经网络
 *   第 17 讲：NLP 中的问题和 NLP 的可能架构

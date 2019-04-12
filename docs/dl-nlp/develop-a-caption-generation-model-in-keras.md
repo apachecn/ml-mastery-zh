@@ -1,4 +1,4 @@
-# 如何利用小实验开发 Keras 中的字幕生成模型
+# 如何利用小实验在 Keras 中开发字幕生成模型
 
 > 原文： [https://machinelearningmastery.com/develop-a-caption-generation-model-in-keras/](https://machinelearningmastery.com/develop-a-caption-generation-model-in-keras/)
 
@@ -33,7 +33,7 @@
 2.  基线标题生成模型
 3.  网络大小参数
 4.  配置特征提取模型
-5.  Word 嵌入模型
+5.  词嵌入模型
 6.  结果分析
 
 ### Python 环境
@@ -680,7 +680,7 @@ def define_model(vocab_size, max_length):
 	return model
 ```
 
-要了解模型的结构，特别是图层的形状，请参阅下面列出的摘要。
+要了解模型的结构，特别是层的形状，请参阅下面列出的摘要。
 
 ```py
 ____________________________________________________________________________________________________
@@ -1692,7 +1692,7 @@ max    0.909690  0.097952
 
 ### 没有合并
 
-我们可以删除 GlobalMaxPooling2D 并展平 3D 照片功能并将其直接送入 Dense 图层。
+我们可以删除 GlobalMaxPooling2D 并展平 3D 照片功能并将其直接送入 Dense 层。
 
 我不认为这是一个很好的模型设计，但值得测试这个假设。
 
@@ -1781,7 +1781,7 @@ min    0.031235  0.020850
 max    0.091661  0.044688
 ```
 
-## Word 嵌入模型
+## 词嵌入模型
 
 模型的关键部分是序列学习模型，它必须解释到目前为止为照片生成的单词序列。
 

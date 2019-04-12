@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/best-practices-document-classification-deep-learning/](https://machinelearningmastery.com/best-practices-document-classification-deep-learning/)
 
-文本分类描述了一类问题，例如预测推文和电影评论的情绪，以及将电子邮件分类为垃圾邮件。
+文本分类描述了一类问题，例如预测推文和电影评论的情感，以及将电子邮件分类为垃圾邮件。
 
 深度学习方法在文本分类方面证明非常好，在一系列标准学术基准问题上实现了最先进的结果。
 
@@ -25,13 +25,13 @@
 
 本教程分为 5 个部分;他们是：
 
-1.  Word 嵌入+ CNN =文本分类
+1.  词嵌入+ CNN =文本分类
 2.  使用单层 CNN 架构
 3.  拨入 CNN 超参数
 4.  考虑字符级 CNN
 5.  考虑更深入的 CNN 进行分类
 
-## 1\. Word 嵌入+ CNN =文本分类
+## 1\. 词嵌入+ CNN =文本分类
 
 文本分类的操作方法涉及使用单词嵌入来表示单词和卷积神经网络（CNN）来学习如何区分分类问题的文档。
 

@@ -1,8 +1,8 @@
-# 什么是 Word 嵌入文本？
+# 什么是用于文本的词嵌入？
 
 > 原文： [https://machinelearningmastery.com/what-are-word-embeddings/](https://machinelearningmastery.com/what-are-word-embeddings/)
 
-Word 嵌入是一种单词表示，允许具有相似含义的单词具有相似的表示。
+词嵌入是一种单词表示，允许具有相似含义的单词具有相似的表示。
 
 它们是文本的分布式表示，这可能是深度学习方法在挑战自然语言处理问题上令人印象深刻的表现的关键突破之一。
 
@@ -18,18 +18,18 @@ Word 嵌入是一种单词表示，允许具有相似含义的单词具有相似
 
 ![What Are Word Embeddings for Text?](img/23e8161466890c5f0b0351c94167ab1f.jpg)
 
-什么是 Word 嵌入文本？
+什么是词嵌入文本？
 照片来自 [Heather](https://www.flickr.com/photos/woolgenie/32248092754/) ，保留一些权利。
 
 ## 概观
 
 这篇文章分为 3 部分;他们是：
 
-1.  什么是 Word 嵌入？
+1.  什么是词嵌入？
 2.  单词嵌入算法
-3.  使用 Word 嵌入
+3.  使用词嵌入
 
-## 什么是 Word 嵌入？
+## 什么是词嵌入？
 
 单词嵌入是文本的学习表示，其中具有相同含义的单词具有相似的表示。
 
@@ -77,7 +77,7 @@ Word 嵌入是一种单词表示，允许具有相似含义的单词具有相似
 
 - 第 49 页，[自然语言处理中的神经网络方法](http://amzn.to/2wycQKA)，2017。
 
-单热编码的单词被映射到单词向量。如果使用多层感知器模型，则在作为模型的输入馈送之前，将字向量连接起来。如果使用递归神经网络，则每个字可以作为序列中的一个输入。
+单热编码的单词被映射到单词向量。如果使用多层感知器模型，则在作为模型的输入馈送之前，将字向量连接起来。如果使用循环神经网络，则每个字可以作为序列中的一个输入。
 
 这种学习嵌入层的方法需要大量的训练数据并且可能很慢，但是将学习嵌入特定文本数据和 NLP 任务的嵌入。
 
@@ -129,7 +129,7 @@ GloVe 不是使用窗口来定义本地上下文，而是使用整个文本语�
 
 - [GloVe：Word 表示的全局向量](https://nlp.stanford.edu/pubs/glove.pdf)，2014。
 
-## 使用 Word 嵌入
+## 使用词嵌入
 
 当您在自然语言处理项目中使用单词嵌入时，您有一些选择。
 
@@ -171,7 +171,7 @@ GloVe 不是使用窗口来定义本地上下文，而是使用整个文本语�
 
 ### 用品
 
-*   [维基百科上的 Word 嵌入](https://en.wikipedia.org/wiki/Word_embedding)
+*   [维基百科上的词嵌入](https://en.wikipedia.org/wiki/Word_embedding)
 *   [维基百科上的 Word2vec](https://en.wikipedia.org/wiki/Word2vec)
 *   维基百科上的 [GloVe](https://en.wikipedia.org/wiki/GloVe_(machine_learning))
 *   [词汇嵌入概述及其与分布式语义模型的联系](http://blog.aylien.com/overview-word-embeddings-history-word2vec-cbow-glove/)，2016。
@@ -198,7 +198,7 @@ GloVe 不是使用窗口来定义本地上下文，而是使用整个文本语�
 
 ## 摘要
 
-在这篇文章中，您发现了 Word 嵌入作为深度学习应用程序中文本的表示方法。
+在这篇文章中，您发现了词嵌入作为深度学习应用程序中文本的表示方法。
 
 具体来说，你学到了：
 

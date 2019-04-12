@@ -1,4 +1,4 @@
-# 文本概述的温和介绍
+# 文本摘要的温和介绍
 
 > 原文： [https://machinelearningmastery.com/gentle-introduction-text-summarization/](https://machinelearningmastery.com/gentle-introduction-text-summarization/)
 
@@ -140,7 +140,7 @@
 
 这些自动文本摘要的深度学习方法可以被认为是抽象方法，并通过学习特定于源文档的语言生成模型来生成全新的描述。
 
-> ......序列到序列模型的最近成功，其中递归神经网络（RNN）既读取又自由生成文本，使得抽象概括成为可能
+> ......序列到序列模型的最近成功，其中循环神经网络（RNN）既读取又自由生成文本，使得抽象概括成为可能
 
 - [达到要点：利用指针生成器网络汇总](https://arxiv.org/abs/1704.04368)，2017 年。
 
@@ -179,7 +179,7 @@
 *   [自动摘要](https://en.wikipedia.org/wiki/Automatic_summarization)
 *   [使用 TensorFlow 进行文本摘要](https://research.googleblog.com/2016/08/text-summarization-with-tensorflow.html)，2016 年
 *   [深度学习是否已应用于自动文本摘要（成功）？](https://www.quora.com/Has-Deep-Learning-been-applied-to-automatic-text-summarization-successfully)
-*   [驯服回归神经网络以实现更好的总结](http://www.abigailsee.com/2017/04/16/taming-rnns-for-better-summarization.html)，2017 年。
+*   [驯服循环神经网络以实现更好的总结](http://www.abigailsee.com/2017/04/16/taming-rnns-for-better-summarization.html)，2017 年。
 *   [深度学习文本摘要](http://deeplearningkit.org/2016/04/23/deep-learning-for-text-summarization/)
 
 ## 摘要

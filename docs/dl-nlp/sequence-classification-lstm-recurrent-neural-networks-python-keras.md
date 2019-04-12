@@ -1,4 +1,4 @@
-# 用 Keras 进行 Python 中 LSTM 回归神经网络的序列分类
+# 用 Keras 进行 Python 中 LSTM 循环神经网络的序列分类
 
 > 原文： [https://machinelearningmastery.com/sequence-classification-lstm-recurrent-neural-networks-python-keras/](https://machinelearningmastery.com/sequence-classification-lstm-recurrent-neural-networks-python-keras/)
 
@@ -23,13 +23,13 @@
 ![Sequence Classification with LSTM Recurrent Neural Networks in Python with Keras](img/0f56cceecbb4dedba0833021799047d2.jpg)
 
 用 Keras
-用 Python 中的 LSTM 回归神经网络进行序列分类 [photophilde](https://www.flickr.com/photos/photophilde/4875287879/) ，保留一些权利。
+用 Python 中的 LSTM 循环神经网络进行序列分类 [photophilde](https://www.flickr.com/photos/photophilde/4875287879/) ，保留一些权利。
 
 ## 问题描述
 
-我们将在本教程中用于演示序列学习的问题是 [IMDB 电影评论情绪分类问题](http://ai.stanford.edu/~amaas/data/sentiment/)。每个电影评论是一个可变的单词序列，每个电影评论的情绪必须分类。
+我们将在本教程中用于演示序列学习的问题是 [IMDB 电影评论情感分类问题](http://ai.stanford.edu/~amaas/data/sentiment/)。每个电影评论是一个可变的单词序列，每个电影评论的情感必须分类。
 
-大型电影评论数据集（通常称为 IMDB 数据集）包含 25,000 个用于训练的高极电影评论（好或坏），并且再次用于测试。问题是确定给定的电影评论是否具有积极或消极的情绪。
+大型电影评论数据集（通常称为 IMDB 数据集）包含 25,000 个用于训练的高极电影评论（好或坏），并且再次用于测试。问题是确定给定的电影评论是否具有积极或消极的情感。
 
 这些数据由[斯坦福研究人员收集并用于 2011 年的论文](http://ai.stanford.edu/~amaas/papers/wvSent_acl2011.pdf)，其中 50-50 的数据被用于训练和测试。准确度达到 88.89％。
 
@@ -45,7 +45,7 @@ Keras 提供了一种方便的方法，可以将单词的正整数表示转换�
 
 我们将每个单词映射到 32 长度的实值向量上。我们还将对建模感兴趣的单词总数限制为 5000 个最常用的单词，其余为零。最后，每个评论中的序列长度（单词数量）各不相同，因此我们将每个评论限制为 500 个单词，截断长评论并用零值填充较短的评论。
 
-现在我们已经定义了我们的问题以及如何准备和建模数据，我们已经准备好开发 LSTM 模型来对电影评论的情绪进行分类。
+现在我们已经定义了我们的问题以及如何准备和建模数据，我们已经准备好开发 LSTM 模型来对电影评论的情感进行分类。
 
 ## 用于序列分类的简单 LSTM
 
@@ -162,9 +162,9 @@ Accuracy: 86.79%
 
 ## LSTM 用于带有 Dropout 的序列分类
 
-像 LSTM 这样的递归神经网络通常具有过度拟合的问题。
+像 LSTM 这样的循环神经网络通常具有过度拟合的问题。
 
-可以使用 Dropout Keras 图层在图层之间应用 Dropout。我们可以通过在 Embedding 和 LSTM 图层以及 LSTM 和 Dense 输出图层之间添加新的 Dropout 图层来轻松完成此操作。例如：
+可以使用 Dropout Keras 层在层之间应用 Dropout。我们可以通过在 Embedding 和 LSTM 层以及 LSTM 和 Dense 输出层之间添加新的 Dropout 层来轻松完成此操作。例如：
 
 ```py
 model = Sequential()
@@ -175,7 +175,7 @@ model.add(Dropout(0.2))
 model.add(Dense(1, activation='sigmoid'))
 ```
 
-上面添加了 Dropout 图层的完整代码列表示例如下：
+上面添加了 Dropout 层的完整代码列表示例如下：
 
 ```py
 # LSTM with Dropout for sequence classification in the IMDB dataset
@@ -291,7 +291,7 @@ Dropout 是一种强大的技术，用于对抗 LSTM 模型中的过度拟合，
 
 卷积神经网络在学习输入数据的空间结构方面表现出色。
 
-IMDB 评论数据确实在评论中的单词序列中具有一维空间结构，并且 CNN 可能能够针对良好和不良情绪挑选不变特征。然后，可以通过 LSTM 层将该学习的空间特征学习为序列。
+IMDB 评论数据确实在评论中的单词序列中具有一维空间结构，并且 CNN 可能能够针对良好和不良情感挑选不变特征。然后，可以通过 LSTM 层将该学习的空间特征学习为序列。
 
 我们可以在嵌入层之后轻松添加一维 CNN 和最大池池，然后将合并的特征提供给 LSTM。我们可以使用一小组 32 个特征，滤波器长度为 3 小。池化层可以使用标准长度 2 来将特征映射大小减半。
 
@@ -306,7 +306,7 @@ model.add(LSTM(100))
 model.add(Dense(1, activation='sigmoid'))
 ```
 
-下面列出了具有 CNN 和 LSTM 图层的完整代码清单，以确保完整性。
+下面列出了具有 CNN 和 LSTM 层的完整代码清单，以确保完整性。
 
 ```py
 # LSTM and CNN for sequence classification in the IMDB dataset
@@ -366,7 +366,7 @@ Accuracy: 86.36%
 
 *   [LSTM 的 Theano 教程应用于 IMDB 数据集](http://deeplearning.net/tutorial/lstm.html)
 *   在 IMDB 数据集上使用 [LSTM 和 CNN](https://github.com/fchollet/keras/blob/master/examples/imdb_lstm.py) 和 [LSTM 的 Keras 代码示例。](https://github.com/fchollet/keras/blob/master/examples/imdb_cnn_lstm.py)
-*   [监督序列标记与回归神经网络](http://www.amazon.com/dp/3642247962?tag=inspiredalgor-20)，2012 年由 Alex Graves（[和 PDF 预打印](https://www.cs.toronto.edu/~graves/preprint.pdf)）出版。
+*   [监督序列标记与循环神经网络](http://www.amazon.com/dp/3642247962?tag=inspiredalgor-20)，2012 年由 Alex Graves（[和 PDF 预打印](https://www.cs.toronto.edu/~graves/preprint.pdf)）出版。
 
 ## 摘要
 

@@ -24,7 +24,7 @@
 
 ![How to Develop a Word Embedding Model for Predicting Movie Review Sentiment](img/eb22780eed5923389f03e367a305ea48.jpg)
 
-如何开发用于预测电影评论情绪的词嵌入模型
+如何开发用于预测电影评论情感的词嵌入模型
 照片由 [Katrina Br *？＃*！@ nd](https://www.flickr.com/photos/fuzzyblue/6351564408/) ，保留一些权利。
 
 ## 教程概述
@@ -100,7 +100,7 @@
 
 ### 分为火车和测试装置
 
-我们假装我们正在开发一种系统，可以预测文本电影评论的情绪是积极的还是消极的。
+我们假装我们正在开发一种系统，可以预测文本电影评论的情感是积极的还是消极的。
 
 这意味着在开发模型之后，我们需要对新的文本评论进行预测。这将要求对这些新评论执行所有相同的数据准备，就像对模型的训练数据执行一样。
 
@@ -339,11 +339,11 @@ columbia
 
 如果您不熟悉单词嵌入，请参阅帖子：
 
-*   [什么是 Word 嵌入文本？](https://machinelearningmastery.com/what-are-word-embeddings/)
+*   [什么是词嵌入文本？](https://machinelearningmastery.com/what-are-word-embeddings/)
 
-如果您不熟悉 Keras 中的字嵌入图层，请参阅帖子：
+如果您不熟悉 Keras 中的字嵌入层，请参阅帖子：
 
-*   [如何使用 Keras 深入学习使用 Word 嵌入层](https://machinelearningmastery.com/use-word-embedding-layers-deep-learning-keras/)
+*   [如何使用 Keras 深入学习使用词嵌入层](https://machinelearningmastery.com/use-word-embedding-layers-deep-learning-keras/)
 
 第一步是加载词汇表。我们将用它来过滤我们不感兴趣的电影评论中的单词。
 
@@ -450,7 +450,7 @@ max_length = max([len(s.split()) for s in train_docs])
 Xtrain = pad_sequences(encoded_docs, maxlen=max_length, padding='post')
 ```
 
-最后，我们可以定义训练数据集的类标签，以适应监督的神经网络模型来预测评论的情绪。
+最后，我们可以定义训练数据集的类标签，以适应监督的神经网络模型来预测评论的情感。
 
 ```py
 # define training labels
@@ -489,7 +489,7 @@ vocab_size = len(tokenizer.word_index) + 1
 
 我们使用卷积神经网络（CNN），因为它们已经证明在文档分类问题上是成功的。保守的 CNN 配置与 32 个滤波器（用于处理字的并行字段）和具有整流线性（'relu'）激活功能的 8 的内核大小一起使用。接下来是一个池化层，它将卷积层的输出减少一半。
 
-接下来，将来自模型的 CNN 部分的 2D 输出展平为一个长 2D 向量，以表示由 CNN 提取的“特征”。模型的后端是标准的多层感知器层，用于解释 CNN 功能。输出层使用 sigmoid 激活函数为评论中的消极和积极情绪输出介于 0 和 1 之间的值。
+接下来，将来自模型的 CNN 部分的 2D 输出展平为一个长 2D 向量，以表示由 CNN 提取的“特征”。模型的后端是标准的多层感知器层，用于解释 CNN 功能。输出层使用 sigmoid 激活函数为评论中的消极和积极情感输出介于 0 和 1 之间的值。
 
 有关文本分类的有效深度学习模型配置的更多建议，请参阅帖子：
 
@@ -786,7 +786,7 @@ print('Total training sentences: %d' % len(sentences))
 
 有关使用 Gensim 训练独立单词的更多信息，请参阅帖子：
 
-*   [如何使用 Gensim](https://machinelearningmastery.com/develop-word-embeddings-python-gensim/) 在 Python 中开发 Word 嵌入
+*   [如何使用 Gensim](https://machinelearningmastery.com/develop-word-embeddings-python-gensim/) 在 Python 中开发词嵌入
 
 在构造类时，该模型是合适的。我们从训练数据中传入干净的句子列表，然后指定嵌入向量空间的大小（我们再次使用 100），在学习如何在训练句子中嵌入每个单词时要查看的相邻单词的数量（我们使用 5 个邻居），在拟合模型时使用的线程数（我们使用 8，但是如果你有更多或更少的 CPU 核心则更改它），以及词汇表中要考虑的单词的最小出现次数（我们将其设置为 1 因为我们已经准备好了词汇表）。
 
@@ -946,7 +946,7 @@ embedding_layer = Embedding(vocab_size, 100, weights=[embedding_vectors], input_
 
 请注意，准备好的权重矩阵 _embedding_vectors_ 作为参数传递给新的嵌入层，并且我们将'_ 可训练 _'参数设置为' _False_ '以确保网络不会尝试将预先学习的向量作为训练网络的一部分。
 
-我们现在可以将此图层添加到我们的模型中。我们还有一个稍微不同的模型配置，在 CNN 模型中有更多的过滤器（128），以及在开发 word2vec 嵌入时匹配用作邻居的 5 个单词的内核。最后，简化了模型的后端。
+我们现在可以将此层添加到我们的模型中。我们还有一个稍微不同的模型配置，在 CNN 模型中有更多的过滤器（128），以及在开发 word2vec 嵌入时匹配用作邻居的 5 个单词的内核。最后，简化了模型的后端。
 
 ```py
 # define model

@@ -111,7 +111,7 @@
 
 - 第 461 页，[深度学习](http://amzn.to/2xBEsBJ)，2016 年。
 
-有关编码器 - 解码器递归神经网络架构的更多信息，请参阅帖子：
+有关编码器 - 解码器循环神经网络架构的更多信息，请参阅帖子：
 
 *   [编码器 - 解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 
@@ -136,7 +136,7 @@ https://translate.google.com
 
 有关关注的更多信息，请参阅帖子：
 
-*   [长期短期记忆回归神经网络](https://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/)的注意事项
+*   [长期短期记忆循环神经网络](https://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/)的注意事项
 
 虽然有效，但神经机器翻译系统仍然存在一些问题，例如缩放到较大的单词词汇表以及训练模型的速度慢。目前有大型生产神经翻译系统的重点领域，例如 Google 系统。
 
