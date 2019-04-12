@@ -58,11 +58,11 @@ EMC Data Science Global Hackathon 数据集或简称“空气质量预测”数�
 
 *   [把所有东西都扔进随机森林：Ben Hamner 赢得空气质量预测黑客马拉松](http://blog.kaggle.com/2012/05/01/chucking-everything-into-a-random-forest-ben-hamner-on-winning-the-air-quality-prediction-hackathon/)，2012。
 
-在本教程中，我们将探索如何为可用作基线的问题开发天真预测，以确定模型是否具有该问题的技能。
+在本教程中，我们将探索如何为可用作基线的问题开发朴素预测，以确定模型是否具有该问题的技能。
 
 ## 模型评估
 
-在我们评估天真的预测方法之前，我们必须开发一个测试工具。
+在我们评估朴素的预测方法之前，我们必须开发一个测试工具。
 
 这至少包括如何准备数据以及如何评估预测。
 
@@ -440,7 +440,7 @@ def summarize_error(name, total_mae, times_mae):
 	pyplot.show()
 ```
 
-我们现在准备开始探索天真预测方法的表现。
+我们现在准备开始探索朴素预测方法的表现。
 
 机器学习建模
 
