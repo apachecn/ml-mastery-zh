@@ -109,9 +109,9 @@ plt.show()
 
 ![Plot of Model Accuracy on Train and Validation Datasets](img/aa735153796f8cda098d2fe7fb675e75.png)
 
-列车和验证数据集的模型精度图
+训练和验证数据集的模型精度图
 
-从损失图中，我们可以看到该模型在列车和验证数据集上都具有可比性（标记为测试）。如果这些平行的地块开始一致地离开，那么可能是在早期时期停止训练的迹象。
+从损失图中，我们可以看到该模型在训练和验证数据集上都具有可比性（标记为测试）。如果这些平行的地块开始一致地离开，那么可能是在早期时期停止训练的迹象。
 
 ![Plot of Model Loss on Training and Validation Datasets](img/429db1e26cf59719f9b941d5e8a7b919.png)
 

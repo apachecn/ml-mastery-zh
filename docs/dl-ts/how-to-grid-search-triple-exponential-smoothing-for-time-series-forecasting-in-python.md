@@ -109,7 +109,7 @@ def exp_smoothing_forecast(history, config):
 	return yhat[0]
 ```
 
-接下来，我们需要建立一些函数，通过[前向验证](https://machinelearningmastery.com/backtest-machine-learning-models-time-series-forecasting/)重复拟合和评估模型，包括将数据集拆分为火车和测试集并评估一步预测。
+接下来，我们需要建立一些函数，通过[前向验证](https://machinelearningmastery.com/backtest-machine-learning-models-time-series-forecasting/)重复拟合和评估模型，包括将数据集拆分为训练和测试集并评估一步预测。
 
 我们可以使用给定指定大小的分割的切片来分割列表或 NumPy 数据数组，例如，从测试集中的数据中使用的时间步数。
 

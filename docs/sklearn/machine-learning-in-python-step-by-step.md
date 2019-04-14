@@ -448,7 +448,7 @@ X_train, X_validation, Y_train, Y_validation = model_selection.train_test_split(
 
 我们将使用 10 倍交叉验证来估计准确性。
 
-这会将我们的数据集分成 10 个部分，在 9 上训练并在 1 上进行测试，并重复列车测试分割的所有组合。
+这会将我们的数据集分成 10 个部分，在 9 上训练并在 1 上进行测试，并重复训练测试分割的所有组合。
 
 ```
 # Test options and evaluation metric

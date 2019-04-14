@@ -424,7 +424,7 @@ print(C)
 
 ### 其他
 
-*   [Tensor 列车格式中大规模数据分析的基本张量操作](https://arxiv.org/abs/1405.7786)，2016。
+*   [Tensor 训练格式中大规模数据分析的基本张量操作](https://arxiv.org/abs/1405.7786)，2016。
 *   张量积，直接和，[量子力学 I](http://hitoshi.berkeley.edu/221a/tensorproduct.pdf) ，2006。
 *   [Tensorphobia 和外部产品](https://jeremykun.com/2016/03/28/tensorphobia-outer-product/)，2016 年。
 *   [Tensor 产品](https://jmanton.wordpress.com/2011/10/12/the-tensor-product/)，2011

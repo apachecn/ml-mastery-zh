@@ -160,7 +160,7 @@ model.compile(loss='mean_squared_error', optimizer='adam')
 model.fit(trainX, trainY, epochs=200, batch_size=2, verbose=2)
 ```
 
-一旦模型拟合，我们就可以估计模型在列车和测试数据集上的表现。这将为我们提供新模型的比较点。
+一旦模型拟合，我们就可以估计模型在训练和测试数据集上的表现。这将为我们提供新模型的比较点。
 
 ```py
 # Estimate model performance
@@ -170,9 +170,9 @@ testScore = model.evaluate(testX, testY, verbose=0)
 print('Test Score: %.2f MSE (%.2f RMSE)' % (testScore, math.sqrt(testScore)))
 ```
 
-最后，我们可以使用模型为列车和测试数据集生成预测，以获得模型技能的直观指示。
+最后，我们可以使用模型为训练和测试数据集生成预测，以获得模型技能的直观指示。
 
-由于数据集是如何准备的，我们必须改变预测，以便它们在 x 轴上与原始数据集一致。准备好后，绘制数据，以蓝色显示原始数据集，以绿色显示火车数据集的预测，以红色显示未见测试数据集的预测。
+由于数据集是如何准备的，我们必须改变预测，以便它们在 x 轴上与原始数据集一致。准备好后，绘制数据，以蓝色显示原始数据集，以绿色显示训练数据集的预测，以红色显示未见测试数据集的预测。
 
 ```py
 # generate predictions for training

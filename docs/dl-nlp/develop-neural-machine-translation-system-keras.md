@@ -33,7 +33,7 @@
 
 1.  德语到英语翻译数据集
 2.  准备文本数据
-3.  列车神经翻译模型
+3.  训练神经翻译模型
 4.  评估神经翻译模型
 
 ### Python 环境
@@ -329,11 +329,11 @@ save_clean_data(train, 'english-german-train.pkl')
 save_clean_data(test, 'english-german-test.pkl')
 ```
 
-运行该示例将创建三个新文件： _english-german-both.pkl_ ，其中包含我们可用于定义问题参数的所有训练和测试示例，例如最大短语长度和词汇，以及火车和测试数据集的 _english-german-train.pkl_ 和 _english-german-test.pkl_ 文件。
+运行该示例将创建三个新文件： _english-german-both.pkl_ ，其中包含我们可用于定义问题参数的所有训练和测试示例，例如最大短语长度和词汇，以及训练和测试数据集的 _english-german-train.pkl_ 和 _english-german-test.pkl_ 文件。
 
 我们现在准备开始开发我们的翻译模型。
 
-## 列车神经翻译模型
+## 训练神经翻译模型
 
 在本节中，我们将开发神经翻译模型。
 
@@ -356,7 +356,7 @@ train = load_clean_sentences('english-german-train.pkl')
 test = load_clean_sentences('english-german-test.pkl')
 ```
 
-我们将使用“两者”或列车和测试数据集的组合来定义问题的最大长度和词汇。
+我们将使用“两者”或训练和测试数据集的组合来定义问题的最大长度和词汇。
 
 这是为了简单起见。或者，我们可以单独从训练数据集定义这些属性，并截断测试集中的例子，这些例子太长或者词汇不在词汇表中。
 
@@ -648,9 +648,9 @@ Epoch 00029: val_loss did not improve
 
 ## 评估神经翻译模型
 
-我们将评估列车上的模型和测试数据集。
+我们将评估训练上的模型和测试数据集。
 
-该模型应该在火车数据集上表现很好，并且理想情况下已被推广以在测试数据集上表现良好。
+该模型应该在训练数据集上表现很好，并且理想情况下已被推广以在测试数据集上表现良好。
 
 理想情况下，我们将使用单独的验证数据集来帮助在训练期间选择模型而不是测试集。您可以尝试将其作为扩展名。
 

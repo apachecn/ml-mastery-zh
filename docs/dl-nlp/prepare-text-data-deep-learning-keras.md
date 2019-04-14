@@ -192,7 +192,7 @@ print(t.word_index)
 print(t.word_docs)
 ```
 
-一旦 Tokenizer 适合训练数据，它就可用于编码列车或测试数据集中的文档。
+一旦 Tokenizer 适合训练数据，它就可用于编码训练或测试数据集中的文档。
 
 Tokenizer 上的 texts_to_matrix（）函数可用于为每个输入提供每个文档创建一个向量。向量的长度是词汇表的总大小。
 

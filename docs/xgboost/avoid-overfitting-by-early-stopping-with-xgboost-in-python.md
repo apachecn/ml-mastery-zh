@@ -197,7 +197,7 @@ pyplot.title('XGBoost Classification Error')
 pyplot.show()
 ```
 
-运行此代码会报告每个纪元的列车和测试数据集的分类错误。我们可以通过在 **fit（）**函数的调用中设置 **verbose = False** （默认值）来关闭它。
+运行此代码会报告每个纪元的训练和测试数据集的分类错误。我们可以通过在 **fit（）**函数的调用中设置 **verbose = False** （默认值）来关闭它。
 
 创建了两个图。第一个显示了训练和测试数据集中每个时期的 XGBoost 模型的对数损失。
 
