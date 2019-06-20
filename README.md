@@ -16,7 +16,7 @@
 
 ## 负责人
 
-* [飞龙](https://github.com/wizardforcel)：562826179
+* [mooker](https://github.com/ElmaDavies)
 
 ## 贡献指南
 
