@@ -16,7 +16,7 @@
 
 ## 负责人
 
-* [mooker](https://github.com/ElmaDavies)
+* [mooker](https://github.com/ElmaDavies): 1306014226
 
 ## 贡献指南
 
