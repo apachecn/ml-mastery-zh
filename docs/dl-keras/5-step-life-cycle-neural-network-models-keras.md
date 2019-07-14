@@ -17,38 +17,33 @@
 *   **2017 年 3 月更新**：更新了 Keras 2.0.2，TensorFlow 1.0.1 和 Theano 0.9.0 的示例。
 *   **更新 March / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
 
-![Deep Learning Neural Network Life-Cycle in Keras](img/ba26805ccbbb3318546dbf2663ddbef9.png)
+![Deep Learning Neural Network Life-Cycle in Keras](img/ba26805ccbbb3318546dbf2663ddbef9.png)<center><font face="黑体" color=gray size=2 >Keras 的深度学习神经网络生命周期<br>照片由[Martin Stitchener](https://www.flickr.com/photos/dxhawk/6842278135/)提供，并保留所属权利。</br></font></center>
 
-Keras 的深度学习神经网络生命周期
-[Martin Stitchener](https://www.flickr.com/photos/dxhawk/6842278135/) 的照片，保留一些权利。
+## 概述
 
-## 概观
+Keras 神经网络模型生命周期的 5 个步骤如下所示：
 
-下面概述了我们将要研究的 Keras 神经网络模型生命周期的 5 个步骤。
-
-1.  定义网络。
-2.  编译网络。
-3.  适合网络。
-4.  评估网络。
+1.  定义网络；
+2.  编译网络；
+3.  适合网络；
+4.  评估网络；
 5.  作出预测。
 
-![5 Step Life-Cycle for Neural Network Models in Keras](img/2996eabdf1f9d9a0bc2b5e1c62d6b4e5.png)
+![5步生命周期](img/2996eabdf1f9d9a0bc2b5e1c62d6b4e5.png)
+Keras 神经网络模型的5个生命周期</br>
 
-Keras 中神经网络模型的 5 步生命周期
 
-## 步骤 1.定义网络
+## 1. 定义网络
 
-第一步是定义您的神经网络。
+第一步是定义您的神经网络，神经网络在 Keras 中定义为层序列。这些层的容器是 Sequential 类。
 
-神经网络在 Keras 中定义为层序列。这些层的容器是 Sequential 类。
-
-第一步是创建 Sequential 类的实例。然后，您可以创建层并按照它们应连接的顺序添加它们。
-
+第一步是创建 Sequential 类的实例，然后，您可以创建层并按照它们应连接的顺序添加它们。
 例如，我们可以分两步完成：
 
 ```py
 model = Sequential()
 model.add(Dense(2))
+
 ```
 
 但是我们也可以通过创建一个层数组并将其传递给 Sequential 的构造函数来一步完成。
@@ -58,7 +53,7 @@ layers = [Dense(2)]
 model = Sequential(layers)
 ```
 
-网络中的第一层必须定义预期的输入数量。指定它的方式可能因网络类型而异，但对于 Multilayer Perceptron 模型，这由 input_dim 属性指定。
+网络中的第一层必须定义预期的输入数量。指定它的方式可能因网络类型而异，但对于 多层感知器模型，这由 input_dim 属性指定。
 
 例如，一个小的多层感知器模型，在可见层中有 2 个输入，隐藏层中有 5 个神经元，输出层中有一个神经元，可以定义为：
 
@@ -85,10 +80,10 @@ model.add(Activation('sigmoid'))
 例如，下面是一些常见的预测建模问题类型以及可以在输出层中使用的结构和标准激活函数：
 
 *   **回归**：线性激活函数或'线性'和与输出数匹配的神经元数。
-*   **二元分类（2 级）**：Logistic 激活函数或'sigmoid'和一个神经元输出层。
-*   **多类分类（＆gt; 2 类）**：假设单热编码输出模式，Softmax 激活函数或'softmax'和每类值一个输出神经元。
+*   **二元分类（2 类）**：Logistic 激活函数或`sigmoid`和一个神经元输出层。
+*   **多类分类（> 2 类）**：假设单热编码输出模式，`Softmax` 激活函数或`softmax`和每类值一个输出神经元。
 
-## 第 2 步。编译网络
+## 2.编译网络
 
 一旦我们定义了网络，我们就必须编译它。
 
@@ -98,9 +93,9 @@ model.add(Activation('sigmoid'))
 
 定义模型后始终需要编译。这包括在使用优化方案训练之前以及从保存文件加载一组预先训练的权重之前。原因是编译步骤准备了网络的有效表示，这也是对硬件进行预测所必需的。
 
-编译需要指定许多参数，专门用于训练您的网络。具体地，用于训练网络的优化算法和用于评估由优化算法最小化的网络的损失函数。
+编译需要指定许多参数，专门用于训练您的网络。具体地，包括用于训练网络的优化算法和用于评估由优化算法最小化的网络的损失函数。
 
-例如，下面是编译定义模型并指定随机梯度下降（sgd）优化算法和均方误差（mse）损失函数的情况，用于回归类型问题。
+例如，下面是编译定义模型并用于回归类型问题指定随机梯度下降（sgd）优化算法和均方误差（mse）损失函数的情况。
 
 ```py
 model.compile(optimizer='sgd', loss='mse')
@@ -110,9 +105,9 @@ model.compile(optimizer='sgd', loss='mse')
 
 例如，下面是不同预测模型类型的一些标准损失函数：
 
-*   **回归**：均值平方误差或' _mse_ '。
-*   **二元分类（2 类）**：对数损失，也称为交叉熵或' _binary_crossentropy_ '。
-*   **多类分类（＆gt; 2 类）**：多类对数损失或'_ 分类 _ 交响曲 _'。
+*   **回归**：均值平方误差或` _mse_ `。
+*   **二元分类（2 类）**：对数损失，也称为交叉熵或`_binary_crossentropy_ `。
+*   **多类分类（> 2 类）**：多元对数损失或`交叉分类`。
 
 您可以查看 Keras 支持的[损失函数套件。](http://keras.io/objectives/)
 
@@ -120,9 +115,9 @@ model.compile(optimizer='sgd', loss='mse')
 
 也许最常用的优化算法因为它们通常具有更好的表现：
 
-*   **随机梯度下降**或' _sgd_ '，需要调整学习速度和动量。
-*   **ADAM** 或' _adam_ '需要调整学习率。
-*   **RMSprop** 或' _rmsprop_ '需要调整学习率。
+*   **随机梯度下降**或` _sgd_ `，需要调整学习速度和动量。
+*   **ADAM** 或`_adam_`需要调整学习率。
+*   **RMSprop** 或` _rmsprop_ `需要调整学习率。
 
 最后，除了损失函数之外，您还可以指定在拟合模型时收集的度量标准。通常，要收集的最有用的附加度量标准是分类问题的准确性。要收集的度量标准由数组中的名称指定。
 
@@ -132,9 +127,9 @@ model.compile(optimizer='sgd', loss='mse')
 model.compile(optimizer='sgd', loss='mse', metrics=['accuracy'])
 ```
 
-## 步骤 3.适合网络
+## 3. 拟合网络
 
-一旦网络被编译，它就可以适合，这意味着在训练数据集上调整权重。
+一旦网络被编译，它就可以拟合，这意味着在训练数据集上调整权重。
 
 安装网络需要指定训练数据，输入模式矩阵 X 和匹配输出模式 y 的阵列。
 
@@ -150,17 +145,17 @@ model.compile(optimizer='sgd', loss='mse', metrics=['accuracy'])
 history = model.fit(X, y, batch_size=10, epochs=100)
 ```
 
-适合后，将返回历史对象，该对象提供训练期间模型表现的摘要。这包括损失和编译模型时指定的任何其他指标，记录每个迭代。
+拟合后，将返回历史对象，该对象提供训练期间模型表现的摘要。这包括在编译模型时指定的损耗和任何其他指标,这些指标记录了每个迭代。
 
-## 第 4 步。评估网络
+## 4. 评估网络
 
 一旦网络被训练，就可以对其进行评估。
 
 可以在训练数据上评估网络，但是这不会提供作为预测模型的网络表现的有用指示，因为它之前已经看到了所有这些数据。
 
-我们可以在测试期间看不到的单独数据集上评估网络的表现。这将提供对网络表现的估计，以便对未来看不见的数据进行预测。
+我们可以在不可见的测试期间的评估单独数据集在网络上的表现，这将提供网络在预测未来不可见数据时的性能估计值。
 
-该模型评估所有测试模式的损失，以及编译模型时指定的任何其他指标，如分类准确性。返回评估指标列表。
+该模型能评估所有测试模式的损失，以及编译模型时指定的任何其他指标，如分类准确性，返回评估指标列表等。
 
 例如，对于使用精度度量编制的模型，我们可以在新数据集上对其进行评估，如下所示：
 
@@ -168,11 +163,11 @@ history = model.fit(X, y, batch_size=10, epochs=100)
 loss, accuracy = model.evaluate(X, y)
 ```
 
-## 第 5 步。做出预测
+## 5. 做出预测
 
 最后，一旦我们对拟合模型的表现感到满意，我们就可以用它来预测新数据。
 
-这就像使用新输入模式数组调用模型上的 predict（）函数一样简单。
+这就像使用新输入模式数组调用模型上的`predict()`函数一样简单。
 
 例如：
 
@@ -182,7 +177,7 @@ predictions = model.predict(x)
 
 预测将以网络输出层提供的格式返回。
 
-在回归问题的情况下，这些预测可以是直接问题的格式，由线性激活函数提供。
+这些预测可能直接以问题的形式由线性激活函数提供。
 
 对于二元分类问题，预测可以是第一类的概率数组，其可以通过舍入转换为 1 或 0。
 
@@ -194,47 +189,49 @@ predictions = model.predict(x)
 
 这个例子将使用皮马印第安人发病的糖尿病二元分类问题，即可以从 UCI 机器学习库下载[（更新：](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
 
-该问题有 8 个输入变量和一个输出类变量，其整数值为 0 和 1。
+该问题有 8 个输入变量和一个输出类变量，其为整数类型的0或1。
 
-我们将构建一个多层感知器神经网络，在可见层中有 8 个输入，隐藏层中有 12 个神经元，具有整流器激活功能，输出层中有 1 个神经元具有 S 形激活功能。
+我们将构建一个多层感知器神经网络，在可见层中有 8 个输入，隐藏层中有 12 个神经元，具有整流器激活函数，输出层中有 1 个神经元具有sigmod激活函数。
 
-我们将使用 ADAM 优化算法和对数损失函数对批量大小为 10 的 100 个时期进行网络训练。
+我们将使用 ADAM 优化算法和对数损失函数对批量大小为 10 的网络进行100次迭代训练。
 
-一旦适合，我们将评估训练数据的模型，然后对训练数据进行独立预测。这是为了简洁起见，通常我们会在单独的测试数据集上评估模型并对新数据进行预测。
+一旦拟合完成，我们将评估训练数据的模型，然后对训练数据进行独立预测。这是为了简洁起见，通常我们会在单独的测试数据集上评估模型并对新数据进行预测。
 
-完整的代码清单如下。
+完整的代码清单如下：
 
-```py
-# Sample Multilayer Perceptron Neural Network in Keras
+
+```
+#Sample Multilayer Perceptron Neural Network in Keras
 from keras.models import Sequential
 from keras.layers import Dense
 import numpy
-# load and prepare the dataset
+# 载入准备好的数据
 dataset = numpy.loadtxt("pima-indians-diabetes.csv", delimiter=",")
 X = dataset[:,0:8]
 Y = dataset[:,8]
-# 1\. define the network
+# 1. 定义网络
 model = Sequential()
 model.add(Dense(12, input_dim=8, activation='relu'))
 model.add(Dense(1, activation='sigmoid'))
-# 2\. compile the network
+# 2. 编译网络
 model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
-# 3\. fit the network
+# 3. 拟合网络
 history = model.fit(X, Y, epochs=100, batch_size=10)
-# 4\. evaluate the network
+# 4. 评估网络
 loss, accuracy = model.evaluate(X, Y)
 print("\nLoss: %.2f, Accuracy: %.2f%%" % (loss, accuracy*100))
-# 5\. make predictions
+# 5. 开始预测
 probabilities = model.predict(X)
 predictions = [float(round(x)) for x in probabilities]
 accuracy = numpy.mean(predictions == Y)
 print("Prediction Accuracy: %.2f%%" % (accuracy*100))
+
 ```
 
 运行此示例将生成以下输出：
 
 ```py
-...
+
 768/768 [==============================] - 0s - loss: 0.5219 - acc: 0.7591
 Epoch 99/100
 768/768 [==============================] - 0s - loss: 0.5250 - acc: 0.7474
@@ -247,7 +244,7 @@ Prediction Accuracy: 74.87%
 
 ## 摘要
 
-在这篇文章中，您使用 Keras 库发现了深度学习神经网络的 5 步生命周期。
+在这篇文章中，您使用 Keras 库了解了深度学习神经网络的 5 步生命周期。
 
 具体来说，你学到了：
 
