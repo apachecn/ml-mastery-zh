@@ -188,7 +188,7 @@ predictions = model.predict(x)
 
 这个例子将使用皮马印第安人发病的糖尿病二元分类问题，即可以从 UCI 机器学习库下载[（更新：](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
 
-该问题有 8 个输入变量和一个输出类变量，其为整数类型的0或1。
+该问题有 8 个输入变量和一个输出类变量，其类型为整数类型的0或1。
 
 我们将构建一个多层感知器神经网络，在可见层中有 8 个输入，隐藏层中有 12 个神经元，具有整流器激活函数，输出层中有 1 个神经元具有sigmod激活函数。
 
