@@ -403,7 +403,7 @@ from keras.datasets import mnist
 
 将文件下载到您的计算机可能需要一些时间。
 
->一个小提示：您 Keras [Conv2D](http://keras.io/layers/convolutional/) 作为您的第一个隐藏层，数据的格式为 通道 x 宽 x 高图像数据，其中 MNIST 数据集具有 1 个通道，因为图像是宽度和高度都是28像素的灰度级图像，您可以很容易的在代码中重新改变数据的格式，如下代码所示:
+>一个小提示：您 Keras [Conv2D](http://keras.io/layers/convolutional/) 作为您的第一个隐藏层，数据的格式为`通道 x 宽 x 高`的图像数据，其中 MNIST 数据集具有 1 个通道，因为图像是宽度和高度都是28像素的灰度级图像，您可以很容易的在代码中重新改变数据的格式，如下代码所示:
 
 ```py
 X_train = X_train.reshape(X_train.shape[0], 1, 28, 28)
