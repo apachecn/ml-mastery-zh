@@ -2,17 +2,17 @@
 
 > 原文： [https://machinelearningmastery.com/custom-metrics-deep-learning-keras-python/](https://machinelearningmastery.com/custom-metrics-deep-learning-keras-python/)
 
-Keras 库提供了一种在训练深度学习模型时计算和报告一套标准指标的方法。
+Keras 库提供了一种在训练深度学习模型时的计算方法和报告一系列标准指标的方法。
 
-除了为分类和回归问题提供标准指标外，Keras 还允许您在训练深度学习模型时定义和报告您自己的自定义指标。如果您想要跟踪在训练期间更好地捕获模型技能的表现度量，这将特别有用。
+除了为分类和回归问题提供标准指标外，Keras 还允许您在训练深度学习模型时定义和报告您自己的自定义指标。当您想要在训练期间更好地获取模型函数的表现度量时，这将特别有用。
 
 在本教程中，您将了解如何使用内置指标以及如何在 Keras 中训练深度学习模型时定义和使用您自己的指标。
 
 完成本教程后，您将了解：
 
 *   Keras 指标的工作原理以及在训练模型时如何使用它们。
-*   如何使用 Keras 中的回归和分类指标与工作示例。
-*   如何使用工作示例在 Keras 中定义和使用您自己的自定义指标。
+*   通过实例了解如何使用 Keras 中的回归和分类指标。
+*   通过实例如何在 Keras 中定义和使用您自己的自定义指标。
 
 让我们开始吧。
 
@@ -25,12 +25,12 @@ Keras 库提供了一种在训练深度学习模型时计算和报告一套标�
 
 本教程分为 4 个部分;他们是：
 
-1.  Keras Metrics
+1.  Keras 指标
 2.  Keras 回归指标
 3.  Keras 分类指标
 4.  Keras 的自定义指标
 
-## Keras Metrics
+## Keras 指标
 
 Keras 允许您列出在模型训练期间要监控的指标。
 
@@ -44,7 +44,7 @@ model.compile(..., metrics=['mse'])
 
 您列出的特定指标可以是 Keras 函数的名称（如 _mean_squared_error_ ）或这些函数的字符串别名（如' _mse_ '）。
 
-度量值记录在训练数据集的每个迭代的末尾。如果还提供了验证数据集，则还会为验证数据集计算记录的度量标准。
+度量值记录在训练数据集的每个迭代的末尾。如果还提供了验证数据集，则还会记录为验证数据集计算的度量指标。
 
 所有度量都以详细输出和从调用 _fit（）_ 函数返回的历史对象中报告。在这两种情况下，度量函数的名称都用作度量值的键。对于验证数据集的度量标准，将“ _val__ ”前缀添加到密钥。
 
@@ -54,12 +54,12 @@ model.compile(..., metrics=['mse'])
 
 以下是您可以在 Keras 中用于回归问题的指标列表。
 
-*   **均方误差**：mean_squared_error，MSE 或 mse
+*   **均方差**：mean_squared_error，MSE 或 mse
 *   **平均绝对误差**：mean_absolute_error，MAE，mae
-*   **平均绝对百分比误差**：mean_absolute_percentage_error，MAPE，mape
-*   **Cosine Proximity** ：cosine_proximity，余弦
+*   **均匀绝对百分比误差**：mean_absolute_percentage_error，MAPE，mape
+*   **余弦近似** ：cosine_proximity，cosine
 
-下面的示例演示了这个简单的人为回归问题的 4 个内置回归指标。
+下面的示例演示了一个简单的人为回归问题中的 4 个内置回归指标。
 
 ```py
 from numpy import array
@@ -83,7 +83,7 @@ pyplot.plot(history.history['cosine_proximity'])
 pyplot.show()
 ```
 
-运行该示例将在每个迭代的末尾打印度量标准值。
+运行该示例将在每次迭代结束后打印度量标准值。
 
 ```py
 ...
@@ -138,11 +138,11 @@ model.compile(loss='mse', optimizer='adam', metrics=['msle'])
 *   **前 k 个分类准确度**：top_k_categorical_accuracy（要求你指定一个 k 参数）
 *   **稀疏顶部 k 分类精度**：sparse_top_k_categorical_accuracy（需要指定 k 参数）
 
-准确性很特殊。
+准确度是具体的数值。
 
 无论您的问题是二元分类还是多类分类问题，您都可以指定' _acc_ '指标来报告准确性。
 
-下面是一个二元分类问题的示例，其中显示了内置的精度指标。
+下面是一个使用了内置的精度指标的二元分类问题的示例。
 
 ```py
 from numpy import array
@@ -164,7 +164,7 @@ pyplot.plot(history.history['acc'])
 pyplot.show()
 ```
 
-运行该示例报告每个训练时期结束时的准确性。
+运行该示例，在每个训练时期结束时输出了准确率。
 
 ```py
 ...
@@ -180,7 +180,7 @@ Epoch 400/400
 0s - loss: 0.5925 - acc: 0.9000
 ```
 
-创建精确度超过迭代的线图。
+创建每次迭代结束后的精确度线图。
 
 ![Line Plot of Built-in Keras Metrics for Classification](img/cf206a9fc0040edff578d8bec2c9cb16.png)
 
@@ -203,7 +203,7 @@ def mean_squared_error(y_true, y_pred):
 
 K 是 Keras 使用的后端。
 
-从该示例和损失函数和度量的其他示例，该方法是在后端使用标准数学函数来计算感兴趣的度量。
+该示例和损失函数和度量的其他示例中的方法是在后端使用标准数学函数来计算想要的度量。
 
 例如，我们可以编写自定义指标来计算 RMSE，如下所示：
 
@@ -214,7 +214,7 @@ def rmse(y_true, y_pred):
 	return backend.sqrt(backend.mean(backend.square(y_pred - y_true), axis=-1))
 ```
 
-您可以看到该函数与 MSE 的代码相同，并添加了 _sqrt（）_ 包装结果。
+您可以发现该函数与 MSE 的代码相同，只是添加了 _sqrt（）_ 包装结果。
 
 我们可以在我们的回归示例中对此进行如下测试。请注意，我们只是直接列出函数名称，而不是将其作为 Keras 要解析的字符串或别名提供。
 
@@ -242,7 +242,7 @@ pyplot.plot(history.history['rmse'])
 pyplot.show()
 ```
 
-运行该示例在每个训练时期结束时报告自定义 RMSE 度量标准。
+运行该示例，在每个训练时期结束后返回自定义 RMSE 度量指标。
 
 ```py
 ...
@@ -264,7 +264,7 @@ Epoch 500/500
 
 用于回归的自定义 RMSE Keras 度量的线图
 
-您的自定义度量函数必须在 Keras 内部数据结构上运行，根据所使用的后端可能会有所不同（例如 _tensorflow.python.framework.ops.Tensor_ 使用 tensorflow 时）而不是 raw yhat 和 y 值直接。
+您的自定义度量函数必须在 Keras 内部数据结构上运行，根据所使用的后端可能会有所不同（例如使用 tensorflow 时 _tensorflow.python.framework.ops.Tensor_ ）而不是直接使用 原始 yhat 和 y 值。
 
 出于这个原因，我建议尽可能使用后端数学函数来保持一致性和执行速度。
 
@@ -272,12 +272,12 @@ Epoch 500/500
 
 如果您要深入了解，本节将提供有关该主题的更多资源。
 
-*   [Keras Metrics API 文档](https://keras.io/metrics/)
+*   [Keras 指标 API 文档](https://keras.io/metrics/)
 *   [Keras 指标源代码](https://github.com/fchollet/keras/blob/master/keras/metrics.py)
-*   [Keras Loss API 文档](https://keras.io/losses/)
-*   [Keras 损耗源代码](https://github.com/fchollet/keras/blob/master/keras/losses.py)
+*   [Keras 损失函数 API 文档](https://keras.io/losses/)
+*   [Keras 损失函数源代码](https://github.com/fchollet/keras/blob/master/keras/losses.py)
 
-## 摘要
+## 总结
 
 在本教程中，您了解了在训练深度学习模型时如何使用 Keras 指标。
 
@@ -285,7 +285,7 @@ Epoch 500/500
 
 *   Keras 指标的工作原理以及如何配置模型以在训练期间报告指标。
 *   如何使用 Keras 内置的分类和回归指标。
-*   如何在训练深度学习模型的同时有效地定义和报告自己的自定义指标。
+*   如何在训练深度学习模型的同时有效地定义和返回自己的自定义指标。
 
 你有任何问题吗？
 在下面的评论中提出您的问题，我会尽力回答。
