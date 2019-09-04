@@ -2,11 +2,11 @@
 
 > 原文： [https://machinelearningmastery.com/deep-learning-books/](https://machinelearningmastery.com/deep-learning-books/)
 
-目前关于深度学习的书籍并不多，因为它是一个如此年轻的学习领域。
+目前关于深度学习的书籍并不多，因为它是一个较新的学习领域。
 
-虽然有一些书籍可供使用，还有一些非常有趣的书籍可以通过早期访问购买。
+虽然有一些书籍可供使用，还有一些非常有趣未出版的书籍可以提前体验购买到。
 
-在这篇文章中，您将发现现在可用于深度学习的书籍。
+在这篇文章中，您将了解到现在可用于深度学习的书籍。
 
 让我们开始吧。
 
@@ -17,17 +17,17 @@
 
 ## 深度学习教科书
 
-有一本深入学习的教科书已经开发了几年，简称[深度学习](http://www.deeplearningbook.org/)。
+有一本深入学习的教科书已经出版了几年，简称[深度学习](http://www.deeplearningbook.org/)。
 
-它由顶级深度学习科学家 [Ian Goodfellow](https://www.linkedin.com/in/ian-goodfellow-b7187213) ， [Yoshua Bengio](https://www.linkedin.com/in/yoshuabengio) 和 [Aaron Courville](https://www.linkedin.com/in/aaron-courville-53a63459) 撰写，包括该领域所有主要算法的报道甚至一些练习。
+它由顶级深度学习科学家 [Ian Goodfellow](https://www.linkedin.com/in/ian-goodfellow-b7187213) ， [Yoshua Bengio](https://www.linkedin.com/in/yoshuabengio) 和 [Aaron Courville](https://www.linkedin.com/in/aaron-courville-53a63459) 撰写，包括该领域所有主要算法和一些练习。
 
-我认为它将成为在该领域阅读的主要文本，主要是因为他们免费赠送（很像[统计学习要素](http://www.amazon.com/dp/0387848576?tag=inspiredalgor-20)是机器学习中必读的）。
+我认为它应该是该领域的重点阅读材料，主要是因为他们免费开源（很像[统计学习要素](http://www.amazon.com/dp/0387848576?tag=inspiredalgor-20)是机器学习中必读的）。
 
-其中很多已经完成，我强烈建议阅读它以获得深度学习算法的背景理论。
+书的内容很多已经完成，我强烈建议阅读它以获得深度学习算法的背景理论。
 
 [![Amazon Image](img/ee355a2aacdc70cce857b65c712bb041.png)](http://www.amazon.com/dp/0262035618?tag=inspiredalgor-20)
 
-目前的工作目录如下：
+目前的目录如下：
 
 *   第一部分：应用数学和机器学习基础
     *   线性代数
@@ -48,13 +48,13 @@
     *   表征学习
     *   深度学习的结构化概率模型
     *   蒙特卡罗方法
-    *   面对分区功能
+    *   对抗配分函数
     *   近似推论
     *   深度生成模型
 
 ## 来自 O'Reilly 的深度学习书籍
 
-目前有两本来自 O'Reilly 的书正在筹备中，我很兴奋：
+目前有两本来自 O'Reilly 的书正在筹备中，这让我很兴奋：
 
 *   [深度学习：从业者的方法](http://www.amazon.com/dp/1491914254?tag=inspiredalgor-20)
 *   [深度学习基础：设计下一代机器智能算法](http://www.amazon.com/dp/1491925612?tag=inspiredalgor-20)
@@ -63,15 +63,15 @@
 
 这是由 DeepLearning4J 的两个创作者编写的应用书： [Adam Gibson](https://www.linkedin.com/in/agibsonccc) 和 [Josh Patterson](https://www.linkedin.com/in/joshlpatterson) 。 [DeepLearning4J](http://deeplearning4j.org/) （或 DL4J）是 Java 应用程序的深度学习框架。
 
-本书是实用的，为 Java 开发人员和数据科学家编写，我只能假设它提供了使用 DL4J 框架的示例。
+本书是为 Java 开发人员和数据科学家编写的实用书籍，我只能假设它提供了使用 DL4J 框架的示例。
 
-这本书将于 2016 年 5 月出版，目前没有目录（我能找到）。
+这本书将于 2016 年 5 月出版，目前没有我能找到的目录。
 
 [![Amazon Image](img/717ae728128d92f139938bd1c4c3b457.png)](http://www.amazon.com/dp/1491914254?tag=inspiredalgor-20)
 
 ### 深度学习的基础知识：设计下一代机器智能算法
 
-这是 [Nikhil Buduma](https://www.linkedin.com/in/nikhilbuduma) 编写的另一本 Python 应用书。它涵盖了深度学习概念和示例。您可以尽早访问本书，撰写本文时共有 5 章。
+这是 [Nikhil Buduma](https://www.linkedin.com/in/nikhilbuduma) 编写的另一本 Python 应用书。它涵盖了深度学习概念和示例。您可以提前阅读本书，撰写本文时共有 5 章。
 
 本书目前的工作目录如下：
 
@@ -85,7 +85,7 @@
 *   记忆增强的深度学习模型
 *   生成性深度学习模型
 *   深度强化学习
-*   走向一般无监督学习
+*   面向一般无监督学习
 *   训练极深度神经网络
 
 我很高兴能得到这本书。
@@ -94,7 +94,7 @@
 
 ## Packt Publishing 的深度学习
 
-数据包发布 2016 年 5 月出版了一本书，由 [Yusuke Sugomori](https://www.linkedin.com/in/yusugomori) 撰写，题为[深度学习与 Java](http://www.amazon.com/dp/1785282190?tag=inspiredalgor-20) 。它还针对 Java 开发人员和数据科学家，并将使用 DeepLearning4J 框架提供示例。
+Packet 2016 年 5 月出版了一本书，由 [Yusuke Sugomori](https://www.linkedin.com/in/yusugomori) 撰写，题为[深度学习与 Java](http://www.amazon.com/dp/1785282190?tag=inspiredalgor-20) 。它适合于 Java 开发人员和数据科学家，并将使用 DeepLearning4J 框架提供示例。
 
 似乎没有可用于本书的目录，但我相信你可以[尽早获得它](https://www.packtpub.com/big-data-and-business-intelligence/deep-learning-java)。
 
@@ -142,7 +142,7 @@
 目录如下：
 
 *   神经网络基础知识
-*   自组织地图
+*   自组织映射
 *   Hopfield 和 Boltzmann 机器
 *   前馈神经网络
 *   训练和评估
@@ -158,7 +158,7 @@
 *   可视化
 *   用神经网络建模
 
-一般来说，杰夫是一个很好的沟通者，他的书得到了社区的关注，因为他[在创作过程中使用了 KickStarter](https://www.kickstarter.com/projects/jeffheaton/artificial-intelligence-for-humans-vol-3-deep-lear) 。如果你正在寻找神经网络的介绍并发现深度学习适合的地方，他的系列的第三部分可能是一个很好的阅读。
+一般来说，杰夫是一个很好的交流对象，他的书得到了社区的关注，因为他[在创作过程中使用了 KickStarter](https://www.kickstarter.com/projects/jeffheaton/artificial-intelligence-for-humans-vol-3-deep-lear) 。如果你正在寻找神经网络的介绍并发现深度学习适合的地方，他书籍系列的第三部分会是很好的阅读材料。
 
 ## R 的深度学习
 
@@ -174,7 +174,7 @@ N. D. Lewis 有一系列关于统计学和机器学习的书籍，包括有关�
 *   自动编码器的秘密
 *   坚果壳中的堆叠自动编码器
 *   受限制的玻尔兹曼机器
-*   深信仰网络
+*   深度信念网络
 
 ## 更新：更多书籍
 
