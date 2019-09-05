@@ -17,6 +17,7 @@
 ## 负责人
 
 * [mooker](https://github.com/ElmaDavies): 1306014226
+* [Lnssssss](https://github.com/Lnssssss)
 
 **负责人要求**
 
