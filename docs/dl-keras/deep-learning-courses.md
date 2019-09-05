@@ -14,7 +14,7 @@
 
 让我们现在开始吧。
 
-## 概观
+## 概述
 
 我们将快速浏览以下 6 个深度学习课程。
 
@@ -25,9 +25,9 @@
 5.  斯坦福大学视觉识别的卷积神经网络
 6.  舍布鲁克大学的神经网络课程
 
-最后还有一个“其他课程”部分，以收集其他视频课程，这些课程并不是不是免费的，而是零散的课程，并且适合更为细分的领域，并不完全适合本摘要评审。
+最后还有一个“其他课程”部分，以收集其他视频课程，这些课程并不是免费的，而且是零散的课程，并且适合更为细分的领域，并不完全适合本摘要评审。
 
-## 课程提示和如何文章使用指南
+## 课程提示和文章使用指南
 
 有很多课程和很多很棒的免费材料。
 
@@ -37,7 +37,7 @@
 
 这与大多数人的建议相反。
 
-你“认真”并且挑选“最好的”课程学习并完成所有的课程材料的冲动会导致你几乎肯定失败。
+你“认真”并且挑选“最好的”课程学习并完成所有的课程材料的冲动会几乎导致你肯定失败。
 
 材料很难，你需要花时间在每个主题上获得不同的观点。
 
@@ -45,13 +45,13 @@
 
 您无需了解所有主题，也无需使用单一来源来理解单个主题。
 
-将此页面添加为书签，然后在您需要时浏览，采样并深入了解您需要的材料，同时学习如何使用 [Keras](http://machinelearningmastery.com/tutorial-first-neural-network-python-keras/) 等平台在代码中实现真正的真实深度学习模型。
+将此页面添加为书签，然后在您需要时浏览案例并深入了解您需要的材料，同时学习如何使用 [Keras](http://machinelearningmastery.com/tutorial-first-neural-network-python-keras/) 等平台在代码中实现真正的真实深度学习模型。
 
 ## 牛津深度学习
 
 这是一个机器学习课程，侧重于 Nando de Freitas 在牛津大学教授的深度学习。
 
-我真的很喜欢这门课程。我在花费了双倍时间观看了所有视频并做了笔记，它提供了良好的理论基础，涵盖了现代深度学习主题，如 LSTM，代码示例显示在 Torch 中。
+我真的很喜欢这门课程，我花费了双倍时间观看了所有视频并做了笔记，它提供了良好的理论基础，涵盖了现代深度学习主题，如 LSTM，代码示例显示在 Torch 中。
 
 
 我注意到教学大纲与实际可用的视频讲座不同，YouTube 播放列表列出了无序的讲座，因此以下是 2015 年视频讲座的顺序：
@@ -102,7 +102,7 @@
 
 该课程很短，但分为许多短视频并且 Udacity 的界面友好， Vincent 似乎出现在我看过的所有视频中（这很棒），视频也显示在 YouTube 界面中。
 
-还有一个讨论表格，您可以通过流畅的[话语软件](https://www.discourse.org/)来提问和回答问题。
+还有一个讨论表格，您可以通过流畅的[对话软件](https://www.discourse.org/)来提问和回答问题。
 
 我倾向于深入了解我感兴趣的视频，而不是完成整个课程或完成任何课程作业。
 
@@ -117,7 +117,7 @@
 
 根据该网站，暑期学校的目标是研究生和工业工程师以及已经掌握机器学习基础知识的研究人员。
 
-在从入门材料到最新研究的一系列主题的深度学习领域，至少有自著名研究人员的 30 场演讲（有 30 个视频）。
+在从入门材料到最新研究的一系列主题的深度学习领域，至少有著名研究人员的 30 场演讲（有 30 个视频）。
 
 ![Deep Learning Summer School at Montreal](img/65a7874651021d24638d4636aa14a1d4.png)
 
@@ -182,8 +182,8 @@ YouTube 播放列表的文件名称很差，而且有些缺少讲座， 2016 年
 *   [第 2 讲：简单的单词向量表示：word2vec，GloVe](https://www.youtube.com/watch?v=T8tQZChniMk&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=2)
 *   [第 3 讲：高级单词向量表示：语言模型，softmax，单层网络](https://www.youtube.com/watch?v=T1j2Q9_FgTM&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=3)
 *   [第 4 讲：词窗分类和神经网络](https://www.youtube.com/watch?v=MRH9ABxCUZ0&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=4)
-*   [第五讲：项目建议，神经网络和反支柱（全部详细信息）](https://www.youtube.com/watch?v=I2TfdXfSOfc&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=5)
-*   [第六讲：实用技巧：梯度检查，过度拟合，正则化，激活功能，细节](https://www.youtube.com/watch?v=DTbI7XisZcQ&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=6)
+*   [第 5 讲：项目建议，神经网络和反支柱（全部详细信息）](https://www.youtube.com/watch?v=I2TfdXfSOfc&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=5)
+*   [第 6 讲：实用技巧：梯度检查，过度拟合，正则化，激活功能，细节](https://www.youtube.com/watch?v=DTbI7XisZcQ&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=6)
 *   [第 7 讲：用于语言建模和其他任务的循环神经网络](https://www.youtube.com/watch?v=rFVYTydGLr4&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=7)
 *   [第 7 讲（8！？）：用于机器翻译的 GRU 和 LSTM](https://www.youtube.com/watch?v=OFCuW8VA7A4&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=8)
 *   [第 9 讲：递归神经网络的解析](https://www.youtube.com/watch?v=DJHvaGU9SW8&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=9)
@@ -195,7 +195,7 @@ YouTube 播放列表的文件名称很差，而且有些缺少讲座， 2016 年
 *   [与杰森韦斯顿的客座讲座：记忆网络](https://www.youtube.com/watch?v=Xumy3Yjq4zk&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=15)
 *   [与 Elliot 英语的客座讲座：高效的实现和 GPU](https://www.youtube.com/watch?v=8Uxe8umUDYA&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=16)
 
-如果您正在深入学习 NLP，这将是一个非常优秀的领域，这是一个很好的材料。
+如果您正在深入学习 NLP，这将是一个非常优秀的领域，这也是一个很好的学习材料。
 
 ### 资源
 
@@ -210,9 +210,9 @@ YouTube 播放列表的文件名称很差，而且有些缺少讲座， 2016 年
 
 这是斯坦福大学的另一门课程，这次由 Andrej Karpathy 和其他人讲授。
 
-不幸的是，课程视频被删除了，但是一些聪明的人已经找到了将它们放回其他地方的方法。请参阅下面资源部分中的播放列表。
+不幸的是，课程视频被删除了，但是一些聪明的人已经找到了将它们放回其他地方的方法，请参阅下面资源部分中的播放列表。
 
-> 我很遗憾地告诉我们，由于法律问题，我们被迫删除了 CS231n 视频，只有25万社会观点提供服务而受益
+> 我现在很遗憾的通知，由于法律问题，我们被迫删除了 CS231n 视频。仅仅有25万的社会观点因此服务而受益。
 >
 > - Andrej Karpathy（@karpathy） [2016 年 5 月 3 日](https://twitter.com/karpathy/status/727618058471112704)
 
@@ -248,7 +248,7 @@ YouTube 播放列表的文件名称很差，而且有些缺少讲座， 2016 年
 
 这是由魁北克舍布鲁克大学的 Hugo Larochelle 教授的神经网络课程。
 
-有大量的材料，一吨(笑哭)。
+有大量的材料，至少一吨（笑哭`^_^`）。
 
 视频是一对一而不是讲座，每个主题都有许多小视频，而不是大型的一小时视频信息。
 
@@ -268,7 +268,7 @@ YouTube 播放列表的文件名称很差，而且有些缺少讲座， 2016 年
 *   主题 9：计算机视觉
 *   主题 10：自然语言处理
 
-我的建议是使用主菜单主页浏览主题，然后将这些链接用于特定视频， YouTube 播放列表中有太多视频无法播放和理解，选择的悖论会杀死你。
+我的建议是使用主菜单主页浏览主题，然后将这利用这些链接学习特定视频， YouTube 播放列表中有太多视频无法播放和理解，选择的悖论会杀死你。
 
 ### 资源
 
