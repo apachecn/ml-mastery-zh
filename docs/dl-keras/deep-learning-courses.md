@@ -223,16 +223,16 @@ YouTube 播放列表的文件名称很差，而且有些缺少讲座， 2016 年
 *   [第 1 讲 引言及历史背景](https://www.youtube.com/watch?v=F-g0-6_RRUA&index=1&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
 *   [第 2 讲 数据驱动方法，kNN，线性分类 1](https://www.youtube.com/watch?v=ZM4umP6F1Jc&index=2&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
 *   [第 3 讲 线性分类 2，优化](https://www.youtube.com/watch?v=Q_UWHTY_TEQ&index=4&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
-*   [第 4 讲 反向传播，神经网络 1](https://www.youtube.com/watch?v=jhUZ800C650&index=5&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
+*   [第 4 讲 神经网络第 1 部分，反向传播](https://www.youtube.com/watch?v=jhUZ800C650&index=5&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
 *   [第 5 讲 神经网络第 2 部分](https://www.youtube.com/watch?v=jhUZ800C650&index=5&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
-*   [第 6 讲 神经网络第 3 部分卷入介绍](https://www.youtube.com/watch?v=egPTd9zZzec&index=6&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
+*   [第 6 讲 神经网络第 3 部分,卷积介绍](https://www.youtube.com/watch?v=egPTd9zZzec&index=6&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
 *   [第 7 讲 卷积神经网络](https://www.youtube.com/watch?v=sHyIqu_S5Ks&index=7&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
 *   [第 8 讲 定位和检测](https://www.youtube.com/watch?v=sHyIqu_S5Ks&index=7&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
 *   [第 9 讲 可视化，深度梦想，神经风格，对抗性实例](https://www.youtube.com/watch?v=ASdbG_7KMhc&index=9&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
 *   [讲座 10 回归神经网络，图像字幕，LSTM](https://www.youtube.com/watch?v=R1rXkuJ5w20&index=10&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
-*   [第 11 讲实践中的讲座](https://www.youtube.com/watch?v=G3m6HusAJTg&index=11&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
-*   [第 12 讲深度学习库](https://www.youtube.com/watch?v=b6RntuTiKQo&index=12&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
-*   [第 13 讲分段，软注意，空间变换器](https://www.youtube.com/watch?v=yCrkzVFsEX0&index=13&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
+*   [第 11 讲 实践中的讲座](https://www.youtube.com/watch?v=G3m6HusAJTg&index=11&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
+*   [第 12 讲 深度学习库](https://www.youtube.com/watch?v=b6RntuTiKQo&index=12&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
+*   [第 13 讲 分段，软注意，空间变换器](https://www.youtube.com/watch?v=yCrkzVFsEX0&index=13&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
 *   [第 14 讲 视频和无监督学习](https://www.youtube.com/watch?v=k645B_f4a6Y&index=14&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
 *   [第 15 讲 由 Jeff Dean 邀请演讲](https://www.youtube.com/watch?v=qtm4JgbxuEc&index=15&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
 
@@ -248,7 +248,7 @@ YouTube 播放列表的文件名称很差，而且有些缺少讲座， 2016 年
 
 这是由魁北克舍布鲁克大学的 Hugo Larochelle 教授的神经网络课程。
 
-有大量的材料，至少一吨（笑哭`^_^`）。
+有大量的材料，至少一吨（`^_^`）。
 
 视频是一对一而不是讲座，每个主题都有许多小视频，而不是大型的一小时视频信息。
 
