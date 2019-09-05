@@ -4,13 +4,15 @@
 
 深入学习可能很难开始。
 
-值得庆幸的是，许多大学免费开设了深度学习课程材料，当您希望更好地理解深度学习的基础时，这可能是一个很好的启动。
+值得庆幸的是，许多大学免费开设了深度学习的课程，当您希望更好地理解深度学习的基础时，这可能是一个很好的起点。
 
-在这篇文章中，您将发现深度学习课程，您可以浏览和工作，以发展和巩固您对该领域的理解。
+在这篇文章中，您将了解关于深度学习的课程，您可以浏览和学习，以发展和巩固您对该领域的理解。
 
-这是一篇很长的帖子，可以深入链接到很多视频。它旨在为您提供书签，浏览和跨课程的特定主题，而不是选择一门课程并完成端到端的课程。
+这是一篇很长的文章，可以深入链接到很多视频，你可以收藏，跳转到整个课程的特定目录，而不是选择一门课程并从头至尾完成。
 
-让我们开始吧。
+通过我的新书中的几行代码，了解如何为一系列问题的预测建模并开发深度学习模型，总共包括18个分步教程和9个项目。
+
+让我们现在开始吧。
 
 ## 概观
 
@@ -23,23 +25,23 @@
 5.  斯坦福大学视觉识别的卷积神经网络
 6.  舍布鲁克大学的神经网络课程
 
-最后还有一个“其他课程”部分，以收集其他视频课程，这些课程不是免费的，破碎的或更小的范围，并不完全适合本摘要评审。
+最后还有一个“其他课程”部分，以收集其他视频课程，这些课程并不是不是免费的，而是零散的课程，并且适合更为细分的领域，并不完全适合本摘要评审。
 
-## 课程提示和如何使用这篇文章
+## 课程提示和如何文章使用指南
 
-那里有很多课程和很多很棒的免费材料。
+有很多课程和很多很棒的免费材料。
 
 我最好的建议是：
 
-> 不要选择一门课程并通过端到端的方式完成。
+> 不要选择一门课程并通过从头至尾的方式学习。
 
 这与大多数人的建议相反。
 
-你的冲动将是“_ 变得严肃 _”并选择“_ 最好 _”课程并完成所有材料。你几乎肯定会失败。
+你“认真”并且挑选“最好的”课程学习并完成所有的课程材料的冲动会导致你几乎肯定失败。
 
 材料很难，你需要花时间在每个主题上获得不同的观点。
 
-真正进入这一材料的最好方法是逐个主题地学习，并从所有课程中抽取，直到你真正理解一个主题，然后再进入下一个主题。
+真正进入这一材料的最好方法是逐个主题地学习，并从所有课程中选取相关介绍，直到你真正理解一个主题，然后再进入下一个主题学习。
 
 您无需了解所有主题，也无需使用单一来源来理解单个主题。
 
@@ -49,11 +51,10 @@
 
 这是一个机器学习课程，侧重于 Nando de Freitas 在牛津大学教授的深度学习。
 
-我真的很喜欢这门课程。我在双倍时间观看了所有视频并做了笔记。它提供了理论上的良好基础，涵盖了现代深度学习主题，如 LSTM。代码示例显示在 Torch 中。
+我真的很喜欢这门课程。我在花费了双倍时间观看了所有视频并做了笔记，它提供了良好的理论基础，涵盖了现代深度学习主题，如 LSTM，代码示例显示在 Torch 中。
 
-&lt;iframe allowfullscreen="" frameborder="0" height="281" src="https://www.youtube.com/embed/videoseries?list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu" width="500"&gt;&lt;/iframe&gt;
 
-我注意到教学大纲与实际可用的视频讲座不同，YouTube 播放列表列出了无序的讲座，因此以下是 2015 年视频讲座的顺序。
+我注意到教学大纲与实际可用的视频讲座不同，YouTube 播放列表列出了无序的讲座，因此以下是 2015 年视频讲座的顺序：
 
 *   [深度学习讲座 1：简介](https://www.youtube.com/watch?v=PlhFWT7vAEw&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu&index=16)
 *   [深度学习讲座 2：线性模型](https://www.youtube.com/watch?v=DHspIG64CVM&index=5&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu)
@@ -61,18 +62,18 @@
 *   [深度学习第 4 讲：正则化，模型复杂性和数据复杂性（第 1 部分）](https://www.youtube.com/watch?v=VR0W_PNwLGw&index=7&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu)
 *   [深度学习第五讲：正则化，模型复杂性和数据复杂性（第 2 部分）](https://www.youtube.com/watch?v=qz9bKfOqd0Y&index=8&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu)
 *   [深度学习第六讲：优化](https://www.youtube.com/watch?v=0qUAb94CpOw&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu&index=9)
-*   [深度学习第 7 讲：逻辑回归，火炬方法](https://www.youtube.com/watch?v=FYgsztDxSvE&index=11&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu)
-*   [深度学习第 8 讲：模块化反向传播，逻辑回归和火炬](https://www.youtube.com/watch?v=-YRB0eFxeQA&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu&index=10)
+*   [深度学习第 7 讲：逻辑回归，Torch实现](https://www.youtube.com/watch?v=FYgsztDxSvE&index=11&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu)
+*   [深度学习第 8 讲：模块化反向传播，逻辑回归和Torch](https://www.youtube.com/watch?v=-YRB0eFxeQA&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu&index=10)
 *   [深度学习讲座 9：Torch 中的神经网络和模块化设计](https://www.youtube.com/watch?v=NUKp0c4xb8w&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu&index=12)
 *   [深度学习讲座 10：卷积神经网络](https://www.youtube.com/watch?v=bEUX_56Lojc&index=13&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu)
 *   [深度学习讲座 11：最大边缘学习，转移和记忆网络](https://www.youtube.com/watch?v=jCGplSKrl2Y&index=15&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu)
 *   [深度学习讲座 12：递归神经网络和 LSTM](https://www.youtube.com/watch?v=56TYLaQN4N8&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu&index=14)
-*   [深度学习讲座 13：Alex Graves 关于 RNNs 的幻觉](https://www.youtube.com/watch?v=-yX1SYeDHbg&index=4&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu)
+*   [深度学习讲座 13：Alex Graves 关于 RNNs 的设想](https://www.youtube.com/watch?v=-yX1SYeDHbg&index=4&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu)
 *   [深度学习第 14 讲：关于变分自动编码器和图像生成的 Karol Gregor](https://www.youtube.com/watch?v=P78QYjWh5sM&index=3&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu)
 *   [深度学习讲座 15：深度强化学习 - 政策检索](https://www.youtube.com/watch?v=kUiR0RLmGCo&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu&index=2)
 *   [深度学习第 16 讲：强化学习和神经动态规划](https://www.youtube.com/watch?v=dV80NAlEins&index=1&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu)
 
-对我来说，最重要的是 [Alex Graves](http://www.cs.toronto.edu/~graves/) 关于 RNN 的讨论（[第 13 讲](https://www.youtube.com/watch?v=-yX1SYeDHbg&index=4&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu)）。一个聪明的人做伟大的工作。我在观看这个视频的时候正在阅读很多亚历克斯的论文，所以我可能会有偏见。
+对我来说，最重要的课程是 [Alex Graves](http://www.cs.toronto.edu/~graves/) 关于 RNN 的讨论（[第 13 讲](https://www.youtube.com/watch?v=-yX1SYeDHbg&index=4&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu)），这是一个聪明的人做的伟大的工作，我在观看这个视频的时候正在阅读很多亚历克斯的论文，所以我可能会有偏见。
 
 ### 资源
 
@@ -86,11 +87,11 @@
 
 该课程是免费的，托管在 Udacity 上，专注于 TensorFlow。它是 Udacity 上托管的[机器学习工程师 Nanodegree 的一小部分](https://www.udacity.com/course/machine-learning-engineer-nanodegree-by-google--nd009)。
 
-&lt;iframe allowfullscreen="" frameborder="0" height="281" src="https://www.youtube.com/embed/X_B9NADf2wk?feature=oembed" width="500"&gt;&lt;/iframe&gt;
+
 
 您必须注册 Udacity，但一旦您登录，您就可以免费访问此课程。
 
-所有课程视频都在 YouTube 上，但（有意）很难找到不良的命名和链接。如果有人知道所有视频的盗版播放列表，请在评论中发布。
+所有课程视频都在 YouTube 上，但（有意）很难找到不良的命名和链接，如果有人知道所有视频的盗版播放列表，请在评论中发布。
 
 该课程分为 4 课：
 
@@ -99,9 +100,9 @@
 *   第 3 课：卷积神经网络
 *   第 4 课：文本和序列的深层模型
 
-该课程很短，但分为许多短视频和 Udacity 界面很好。 Vincent 似乎出现在我看过的所有视频中（这很棒），视频也显示在 YouTube 界面中。
+该课程很短，但分为许多短视频并且 Udacity 的界面友好， Vincent 似乎出现在我看过的所有视频中（这很棒），视频也显示在 YouTube 界面中。
 
-还有一个讨论表格，您可以通过光滑的[话语软件](https://www.discourse.org/)来提问和回答问题。
+还有一个讨论表格，您可以通过流畅的[话语软件](https://www.discourse.org/)来提问和回答问题。
 
 我倾向于深入了解我感兴趣的视频，而不是完成整个课程或完成任何课程作业。
 
@@ -112,19 +113,19 @@
 
 ## 蒙特利尔深度学习暑期学校
 
-2015 年在蒙特利尔大学举办了深度学习晚餐学校。
+2015 年在蒙特利尔大学举办了深度学习暑期学校。
 
 根据该网站，暑期学校的目标是研究生和工业工程师以及已经掌握机器学习基础知识的研究人员。
 
-在从入门材料到最新研究的一系列主题的深度学习领域，至少有 30 场演讲（有 30 个视频）来自着名研究人员。
+在从入门材料到最新研究的一系列主题的深度学习领域，至少有自著名研究人员的 30 场演讲（有 30 个视频）。
 
 ![Deep Learning Summer School at Montreal](img/65a7874651021d24638d4636aa14a1d4.png)
 
 蒙特利尔深度学习暑期学校
 
-这些视频是真正的宝库。花点时间仔细挑选您的主题。所有视频都在 VideoLectures.net 网站上托管，该网站具有足够好的界面，但不如 YouTube 干净。
+这些视频是真正的宝库，花点时间仔细挑选您的主题。所有视频都在 VideoLectures.net 网站上托管，该网站具有足够好的界面，但不如 YouTube 干净。
 
-许多（所有？）谈话都在视频下方链接了 PDF 幻灯片，更多信息可从官方网站的日程页面获得。
+许多（所有？）谈话都在视频下方提供了 PDF 幻灯片的下载链接，更多信息可从官方网站的日程页面获得。
 
 以下是讲座主题的完整列表，其中包含视频链接。我试图将相关视频列在一起（例如，第 1 部分，第 2 部分）。
 
@@ -136,14 +137,14 @@
 *   [深度学习分布估计](http://videolectures.net/deeplearning2015_larochelle_deep_learning/)
 *   [无向图形模型](http://videolectures.net/deeplearning2015_courville_graphical_models/)
 *   [受限制的玻尔兹曼机器](http://videolectures.net/deeplearning2015_lee_boltzmann_machines/)
-*   [在歧管和自动编码器](http://videolectures.net/deeplearning2015_vincent_autoencoders/)上
+*   [在歧管和自动编码器](http://videolectures.net/deeplearning2015_vincent_autoencoders/)
 *   [视觉特征：从傅立叶到 Gabor](http://videolectures.net/deeplearning2015_memisevic_fourier_gabor/)
 *   [视觉特征 II](http://videolectures.net/deeplearning2015_memisevic_visual_features/)
 *   [卷积网络](http://videolectures.net/deeplearning2015_lee_convolutional_networks/)
 *   [学习比较](http://videolectures.net/deeplearning2015_taylor_learning_compare/)
-*   [NLP 和深度学习 1：人类语言＆amp;单词向量](http://videolectures.net/deeplearning2015_manning_language_vectors/)
+*   [NLP 和深度学习 1：人类语言单词向量](http://videolectures.net/deeplearning2015_manning_language_vectors/)
 *   [NLP 和深度学习 2：成分深度学习](http://videolectures.net/deeplearning2015_manning_deep_learning/)
-*   [看到深度学习的人](http://videolectures.net/deeplearning2015_taylor_deep_learning/)
+*   [使用深度学习看人](http://videolectures.net/deeplearning2015_taylor_deep_learning/)
 *   [深度学习](http://videolectures.net/deeplearning2015_salakhutdinov_deep_learning/)
 *   [深度学习 2](http://videolectures.net/deeplearning2015_salakhutdinov_deep_learning_2/)
 *   [语音识别和深度学习](http://videolectures.net/deeplearning2015_coates_speech_recognition/)
@@ -159,7 +160,7 @@
 *   [变分自动编码器和扩展](http://videolectures.net/deeplearning2015_courville_autoencoder_extension/)
 *   [深度生成模型](http://videolectures.net/deeplearning2015_bengio_generative_models/)
 
-选择一个主题并潜入。非常好！
+选择一个主题并深入学习，效果会非常好！
 
 看起来[会有一个 2016 暑期学校](https://sites.google.com/site/deeplearningsummerschool2016/)，希望会有视频。
 
@@ -172,11 +173,10 @@
 
 这是一个深度学习课程，重点是斯坦福大学 [Richard Socher](http://www.socher.org/) 教授的自然语言处理（NLP）。
 
-一个有趣的说明是，您可以访问 PDF 版本的学生报告，这些工作可能会激发您的灵感或给您提供想法。
+一个有趣的说明是，您可以访问 PDF 版本的学生报告，这些工作可能会激发您的灵感或给您提供具有创意的想法。
 
-&lt;iframe allowfullscreen="" frameborder="0" height="281" src="https://www.youtube.com/embed/videoseries?list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q" width="500"&gt;&lt;/iframe&gt;
 
-YouTube 播放列表的文件名称很差，而且有些缺少讲座。 2016 年的视频尚未全部上传。以下是 2015 年讲座和视频链接的列表。只是跳进一个特定主题就容易多了。
+YouTube 播放列表的文件名称很差，而且有些缺少讲座， 2016 年的视频尚未全部上传。以下是 2015 年讲座和视频链接的列表。只是选择进一个特定主题就轻松多了。
 
 *   [讲座 1：NLP 和深度学习简介](https://www.youtube.com/watch?v=sU_Yu_USrNc&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=1)
 *   [第 2 讲：简单的单词向量表示：word2vec，GloVe](https://www.youtube.com/watch?v=T8tQZChniMk&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=2)
@@ -186,16 +186,16 @@ YouTube 播放列表的文件名称很差，而且有些缺少讲座。 2016 年
 *   [第六讲：实用技巧：梯度检查，过度拟合，正则化，激活功能，细节](https://www.youtube.com/watch?v=DTbI7XisZcQ&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=6)
 *   [第 7 讲：用于语言建模和其他任务的循环神经网络](https://www.youtube.com/watch?v=rFVYTydGLr4&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=7)
 *   [第 7 讲（8！？）：用于机器翻译的 GRU 和 LSTM](https://www.youtube.com/watch?v=OFCuW8VA7A4&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=8)
-*   [第 9 讲：解析](https://www.youtube.com/watch?v=DJHvaGU9SW8&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=9)的递归神经网络
+*   [第 9 讲：递归神经网络的解析](https://www.youtube.com/watch?v=DJHvaGU9SW8&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=9)
 *   [第 10 讲：针对不同任务的递归神经网络（例如情绪分析）](https://www.youtube.com/watch?v=sVXp0UwheXw&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=10)
 *   [第 11 讲：期中考试](https://www.youtube.com/watch?v=HYLZCCX4q5o&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=13)
 *   [第 13 讲：用于句子分类的卷积神经网络](https://www.youtube.com/watch?v=EevTPpQvxiU&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=11)
-*   [第 15 讲：DL 对 NLP 的应用](https://www.youtube.com/watch?v=BVbQRrrsJo0&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=12)
+*   [第 15 讲：DL 在 NLP方面上 的应用](https://www.youtube.com/watch?v=BVbQRrrsJo0&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=12)
 *   [与 Andrew Maas 的客座讲座：语音识别](https://www.youtube.com/watch?v=6D8_4GkEWUg&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=14)
 *   [与杰森韦斯顿的客座讲座：记忆网络](https://www.youtube.com/watch?v=Xumy3Yjq4zk&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=15)
 *   [与 Elliot 英语的客座讲座：高效的实现和 GPU](https://www.youtube.com/watch?v=8Uxe8umUDYA&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=16)
 
-如果您正在深入学习 NLP 这是一个非常优秀的领域，这是一个很好的材料。
+如果您正在深入学习 NLP，这将是一个非常优秀的领域，这是一个很好的材料。
 
 ### 资源
 
@@ -212,29 +212,29 @@ YouTube 播放列表的文件名称很差，而且有些缺少讲座。 2016 年
 
 不幸的是，课程视频被删除了，但是一些聪明的人已经找到了将它们放回其他地方的方法。请参阅下面资源部分中的播放列表。
 
-> 我很遗憾地告诉我们，由于法律问题，我们被迫删除了 CS231n 视频。只有 1/4 百万的社会观点受益
-> 
+> 我很遗憾地告诉我们，由于法律问题，我们被迫删除了 CS231n 视频，只有25万社会观点提供服务而受益
+>
 > - Andrej Karpathy（@karpathy） [2016 年 5 月 3 日](https://twitter.com/karpathy/status/727618058471112704)
 
 另一个很棒的课程
 
-以下是 2016 年课程的视频讲座，但我不确定这些链接会持续多长时间。发表评论让我知道如果你发现链接变坏了我会解决它们。
+以下是 2016 年课程的视频讲座，但我不确定这些链接会持续多长时间，如果链接失效，请发表评论以便于我及时修复链接。
 
-*   [第 1 讲引言及历史背景](https://www.youtube.com/watch?v=F-g0-6_RRUA&index=1&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
-*   [第 2 讲数据驱动方法，kNN，线性分类 1](https://www.youtube.com/watch?v=ZM4umP6F1Jc&index=2&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
-*   [第 3 讲线性分类 2，优化](https://www.youtube.com/watch?v=Q_UWHTY_TEQ&index=4&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
-*   [讲座 4 反向传播，神经网络 1](https://www.youtube.com/watch?v=jhUZ800C650&index=5&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
-*   [第 5 讲神经网络第 2 部分](https://www.youtube.com/watch?v=jhUZ800C650&index=5&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
-*   [讲座 6 神经网络第 3 部分卷入介绍](https://www.youtube.com/watch?v=egPTd9zZzec&index=6&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
-*   [讲座 7 卷积神经网络](https://www.youtube.com/watch?v=sHyIqu_S5Ks&index=7&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
-*   [第 8 讲定位和检测](https://www.youtube.com/watch?v=sHyIqu_S5Ks&index=7&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
-*   [第 9 讲可视化，深度梦想，神经风格，对抗性实例](https://www.youtube.com/watch?v=ASdbG_7KMhc&index=9&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
+*   [第 1 讲 引言及历史背景](https://www.youtube.com/watch?v=F-g0-6_RRUA&index=1&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
+*   [第 2 讲 数据驱动方法，kNN，线性分类 1](https://www.youtube.com/watch?v=ZM4umP6F1Jc&index=2&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
+*   [第 3 讲 线性分类 2，优化](https://www.youtube.com/watch?v=Q_UWHTY_TEQ&index=4&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
+*   [第 4 讲 反向传播，神经网络 1](https://www.youtube.com/watch?v=jhUZ800C650&index=5&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
+*   [第 5 讲 神经网络第 2 部分](https://www.youtube.com/watch?v=jhUZ800C650&index=5&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
+*   [第 6 讲 神经网络第 3 部分卷入介绍](https://www.youtube.com/watch?v=egPTd9zZzec&index=6&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
+*   [第 7 讲 卷积神经网络](https://www.youtube.com/watch?v=sHyIqu_S5Ks&index=7&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
+*   [第 8 讲 定位和检测](https://www.youtube.com/watch?v=sHyIqu_S5Ks&index=7&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
+*   [第 9 讲 可视化，深度梦想，神经风格，对抗性实例](https://www.youtube.com/watch?v=ASdbG_7KMhc&index=9&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
 *   [讲座 10 回归神经网络，图像字幕，LSTM](https://www.youtube.com/watch?v=R1rXkuJ5w20&index=10&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
 *   [第 11 讲实践中的讲座](https://www.youtube.com/watch?v=G3m6HusAJTg&index=11&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
 *   [第 12 讲深度学习库](https://www.youtube.com/watch?v=b6RntuTiKQo&index=12&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
 *   [第 13 讲分段，软注意，空间变换器](https://www.youtube.com/watch?v=yCrkzVFsEX0&index=13&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
-*   [讲座 14 视频和无监督学习](https://www.youtube.com/watch?v=k645B_f4a6Y&index=14&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
-*   [第 15 讲由 Jeff Dean 邀请演讲](https://www.youtube.com/watch?v=qtm4JgbxuEc&index=15&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
+*   [第 14 讲 视频和无监督学习](https://www.youtube.com/watch?v=k645B_f4a6Y&index=14&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
+*   [第 15 讲 由 Jeff Dean 邀请演讲](https://www.youtube.com/watch?v=qtm4JgbxuEc&index=15&list=PLLvH2FwAQhnpj1WEB-jHmPuUeQ8mX-XXG)
 
 ### 资源
 
@@ -248,13 +248,12 @@ YouTube 播放列表的文件名称很差，而且有些缺少讲座。 2016 年
 
 这是由魁北克舍布鲁克大学的 Hugo Larochelle 教授的神经网络课程。
 
-有大量的材料。一吨。
+有大量的材料，一吨(笑哭)。
 
-视频是一对一而不是讲座，每个主题都有许多小视频，而不是大型的一小时信息转储。
+视频是一对一而不是讲座，每个主题都有许多小视频，而不是大型的一小时视频信息。
 
-&lt;iframe allowfullscreen="" frameborder="0" height="375" src="https://www.youtube.com/embed/videoseries?list=PL6Xpj9I5qXYEcOhn7TqghAJ6NAPrNmUBH" width="500"&gt;&lt;/iframe&gt;
 
-我认为这可能是比传统讲座更好的格式，但我还没有完全胜过。困难的是有 92 个视频（!!!）可供浏览，很难找到要观看的特定视频。
+我认为这可能是比传统讲座更好的方式，但我还没有完全尝试并比较，困难的是有 92 个视频（!!!）可供浏览，很难找到要观看的特定视频。
 
 教材包括 10 个主题：
 
@@ -269,7 +268,7 @@ YouTube 播放列表的文件名称很差，而且有些缺少讲座。 2016 年
 *   主题 9：计算机视觉
 *   主题 10：自然语言处理
 
-我的建议是使用主菜单主页浏览主题，然后将这些链接用于特定视频。 YouTube 播放列表中有太多视频无法浏览和理解。选择的悖论会杀了你。
+我的建议是使用主菜单主页浏览主题，然后将这些链接用于特定视频， YouTube 播放列表中有太多视频无法播放和理解，选择的悖论会杀死你。
 
 ### 资源
 
@@ -294,9 +293,8 @@ YouTube 播放列表的文件名称很差，而且有些缺少讲座。 2016 年
 
 注意这篇文章顶部的建议。
 
-按主题浏览并深入讲座，不要尝试整个课程。学习一件事，而不是尝试学习一切。
+按主题浏览并深入讲座学习，而不要尝试学习整个课程，学习一件事，而不是尝试学习一切。
 
-花点时间，为此页面添加书签，以便您可以回来，享受乐趣。
+你可以花点时间，为此页面添加书签，以便您可以方便回来享受学习的乐趣。
 
-你知道我还没有列出其他深度学习的视频课程吗？
-请在评论中告诉我，我会更新清单。
+你知道我还没有列出其他深度学习的视频课程吗？请在评论中告诉我，我会更新清单。
