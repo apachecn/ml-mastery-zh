@@ -29,8 +29,8 @@
 1.  定义网络
 2.  编译网络
 3.  拟合网络
-4.  评估网络.
-5.  做出预测.
+4.  评估网络
+5.  做出预测
 
 ![5 Step Life-Cycle for Neural Network Models in Keras](img/2996eabdf1f9d9a0bc2b5e1c62d6b4e5.png)
 
