@@ -108,12 +108,14 @@ plt.show()
 从精度图中我们可以看到，由于两个数据集的精度趋势在过去几个训练迭代中仍在上升，因此模型可能可以受到更多的训练，我们还可以看到，两个数据集可比较的技巧，显示了模型尚未过度学习训练数据集。
 
 ![Plot of Model Accuracy on Train and Validation Datasets](img/aa735153796f8cda098d2fe7fb675e75.png)
+
 图：训练和验证数据集的模型精度图
 
 从损失图中我们可以看到，模型在训练和验证数据集（标记测试）上具有可比较的性能，如果这些相互平行图开始一较为一致的分散，这可能是一个模型过早停止训练的信号。
 
 ![Plot of Model Loss on Training and Validation Datasets](img/429db1e26cf59719f9b941d5e8a7b919.png)
-图：关于训练和验证数据集的模型损失情节
+
+图：关于训练和验证数据集的模型损失图
 
 ## 摘要
 
