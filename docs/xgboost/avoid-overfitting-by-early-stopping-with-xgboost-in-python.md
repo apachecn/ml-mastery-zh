@@ -28,7 +28,7 @@
 
 [提前停止(early stopping)](https://en.wikipedia.org/wiki/Early_stopping)是一种训练复杂机器学习模型时避免过拟合的方法。
 
-它通过监测在单独的测试数据集上训练模型的表现，并且注意到一旦在固定数量的训练迭代之后测试数据集上的表现没有得到改善就停止训练过程。
+它通过监测在单独的测试数据集上训练模型的表现，并且观察到一旦在固定数量的训练迭代之后测试数据集上的表现没有得到改善，就会停止训练过程。
 
 通过尝试自动选出测试数据集上的表现开始降低而训练数据集上的表现继续提高这样的过拟合发生迹象拐点来避免过拟合。
 
@@ -38,7 +38,7 @@
 
 XGBoost模型可以在训练期间评估和报告模型在测试集上的表现。
 
-它通过在训练模型和获取verbose输出中调用 **model.fit（）**的同时指定测试数据集以及评估度量（evaluation metric）来支持此功能。
+它通过在训练模型和获取verbose output中调用 **model.fit（）**的同时指定测试数据集以及评估度量（evaluation metric）来支持此功能。
 
 例如，我们可以在训练XGBoost模型时，在独立测试集（ **eval_set** ）上报告二值分类误差（"error"），如下所示：
 
@@ -112,7 +112,7 @@ Accuracy: 77.95%
 
 ## 通过学习曲线评估XGBoost模型
 
-我们可以在评估数据集上检视模型的表现，并通过绘制图表以更深入地展开了解训练中是如何学习的。
+我们可以在评估数据集上检视模型的表现，并通过绘制图像以更深入地展开了解训练中是如何学习的。
 
 在训练XGBoost模型时，我们为**eval_metric**参数提供了一对X和y数组。除了测试集，我们也可以一并提供训练数据集。它将说明模型在训练期间在训练集和测试集上分别表现的情况。
 
@@ -201,25 +201,25 @@ pyplot.show()
 
 运行这段代码会显示每个epoch中训练数据集和测试数据集的分类误差。我们可以通过在 **fit（）**函数的调用中设置 **verbose = False** （默认值）来关闭这个功能。
 
-我们看到结果创建了两张图。第一张图显示了训练数据集和测试数据集中每个epoch中XGBoost模型的对数损失（logarithmic loss）。
+我们看到结果创建了两张图。第一张图显示了训练数据集和测试数据集每个epoch中XGBoost模型的对数损失（logarithmic loss）。
 
 ![XGBoost Learning Curve Log Loss](img/3dd164f486ba1862fa97f82eb6693360.jpg)
 
 XGBoost学习曲线（对数损失（log loss））
 
-第二张图显示了训练数据集和测试数据集中每个epoch中XGBoost模型的分类误差（classification error）。
+第二张图显示了训练数据集和测试数据集每个epoch中XGBoost模型的分类误差（classification error）。
 
 ![XGBoost Learning Curve Classification Error](img/cdfec3000bac01a37daacb6f874ff978.jpg)
 
 XGBoost学习曲线（分类误差（classification error））
 
-通过回顾logloss的图像，我们像是有提前停止学习过程的机会，也许在epoch 20到epoch 40之间的某个阶段。
+通过回顾logloss的图像，我们看起来是有提前停止学习过程的机会，也许在epoch 20到epoch 40之间的某个阶段。
 
 在分类误差的图像中，我们也观察到了类似的情况，误差似乎在epoch 40左右出现上升。
 
 ## 在XGBoost中使用提前停止(early stopping)
 
-XGBoost支持在固定次数的迭代后提前停止(early stopping)。
+XGBoost可以支持在固定次数的迭代后提前停止(early stopping)。
 
 除了为每个epoch指定用于评估的度量和测试数据集之外，还必须指定一个epoch窗长，它代表没有观察到任何改善的epoch数目。它可以在**early_stopping_rounds**参数中实现。
 
@@ -277,18 +277,18 @@ Stopping. Best iteration:
 [32]	validation_0-logloss:0.487297
 ```
 
-我们可以看到模型在epoch 42停止训练（接近我们对学习曲线手动判断的预期），并且在epoch 32观察到具有最佳损失结果的模型。
+我们可以看到模型在epoch 42停止训练（接近我们对学习曲线人为判断的预期），并且在epoch 32观察到具有最佳损失结果的模型。
 
-通常情况下，选择 **early_stopping_rounds** 作为训练epoch总数（在这种情况下为 10％）是个不错的主意，或者尝试找到对应的可能观察到的学习曲线拐点时期。
+通常情况下，选择 **early_stopping_rounds** 作为训练epoch总数（在这种情况下为 10％）是个不错的主意，或者尝试找到可能观察到的学习曲线拐点时期。
 
 ## 总结
 
-在这篇文章中，您实际了解了监测性能表现和提前停止(early stopping)。
+在这篇文章中，您了解到了如何监测性能表现和提前停止(early stopping)。
 
-所学到的是：
+所学到的要点是：
 
-*   提前停止(early stopping)技术能够在训练数据集上发生过拟合之前就停止模型训练。
+*   提前停止(early stopping)技术能够在训练数据集发生过拟合之前就停止模型训练。
 *   如何在训练期间监测XGBoost模型的表现并绘制学习曲线。
 *   如何在训练XGBoost模型中配置提前停止(early stopping)。
 
-您对过拟合或这篇文章有任何疑问吗？请在评论中提出您的问题，我会尽力回答。
+您对过拟合或这篇文章有任何疑问吗？请在评论中提出您的问题，我将会尽力回答。
