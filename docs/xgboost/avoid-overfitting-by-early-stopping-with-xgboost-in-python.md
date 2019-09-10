@@ -1,4 +1,4 @@
-# 在Python中应用XGBoost通过提前停止(early stopping)避免过拟合（overfitting）现象
+# 通过提前停止(early stopping)避免Python中应用XGBoost的过拟合（overfitting）
 
 > 原文： [https://machinelearningmastery.com/avoid-overfitting-by-early-stopping-with-xgboost-in-python/](https://machinelearningmastery.com/avoid-overfitting-by-early-stopping-with-xgboost-in-python/)
 
@@ -12,17 +12,17 @@
 *   如何在训练期间监测XGBoost模型的表现并绘制学习曲线。
 *   如何使用提前停止(early stopping)来适时及早终止训练处于最佳epoch中的XGBoost模型。
 
-请在我的新书[https://machinelearningmastery.com/xgboost-with-python/]中找到如何通过XGBoost配置、训练、调试和评估梯度提升模型，它包括了15个Step-by-Step的示例课程以及完整的Python代码。
+请在我的[新书](https://machinelearningmastery.com/xgboost-with-python/)中找到如何通过XGBoost配置、训练、调试和评估梯度提升模型，其中包括了15个手把手（Step-by-Step）的示例课程以及完整的Python代码。
 
 让我们开始吧。
 
-*   **2017 年 1 月更新**：已更新，以反映 scikit-learn API 版本 0.18.1 中的更改​​。
-*   **更新 March / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
+*   **2017年1月更新**：更新为反映scikit-learn API版本0.18.1中的更改。
+*   **2018年3月更新**：为下载数据集添加了备用链接，旧链接已被移除。
 
 ![Avoid Overfitting By Early Stopping With XGBoost In Python](img/3b5a137b9d5bd85033c44aac0f3068ff.jpg)
 
-通过 Python 中的 XGBoost 提前停止来避免过度拟合
-照片由 [Michael Hamann](https://www.flickr.com/photos/michitux/7218180540/) 拍摄，保留一些权利。
+通过提前停止(early stopping)避免Python中应用XGBoost的过拟合（overfitting）
+照片由[Michael Hamann](https://www.flickr.com/photos/michitux/7218180540/)拍摄，保留部分版权。
 
 ## 提前停止以避免过度拟合
 
