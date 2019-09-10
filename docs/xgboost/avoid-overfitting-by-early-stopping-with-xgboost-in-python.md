@@ -24,40 +24,40 @@
 通过提前停止(early stopping)避免Python中应用XGBoost的过拟合（overfitting）
 照片由[Michael Hamann](https://www.flickr.com/photos/michitux/7218180540/)拍摄，保留部分版权。
 
-## 提前停止以避免过度拟合
+## 通过提前停止(early stopping)避免过拟合
 
-[早期停止](https://en.wikipedia.org/wiki/Early_stopping)是一种训练复杂机器学习模型的方法，以避免过度拟合。
+[提前停止(early stopping)](https://en.wikipedia.org/wiki/Early_stopping)是一种训练复杂机器学习模型时避免过拟合的方法。
 
-它通过监视在单独的测试数据集上训练的模型的表现并且一旦在固定数量的训练迭代之后测试数据集上的表现没有改善就停止训练过程。
+它通过监测在单独的测试数据集上训练模型的表现，并且注意到一旦在固定数量的训练迭代之后测试数据集上的表现没有得到改善就停止训练过程。
 
-它通过尝试自动选择测试数据集上的表现开始降低的拐点来避免过度拟合，同时随着模型开始过度拟合，训练数据集上的表现继续提高。
+通过尝试自动选出测试数据集上的表现开始降低而训练数据集上的表现继续提高这样过拟合发生迹象的拐点来避免过拟合。
 
-表现度量可以是针对训练模型而优化的损失函数（例如对数损失），或者一般对问题感兴趣的外部度量（例如分类准确度）。
+表现度量可以是通过训练模型而进行优化的损失函数（例如对数损失函数），或者通常情况下问题所关注的外部度量（例如分类精度）。
 
-## 使用 XGBoost 监控训练表现
+## 在XGBoost中监测训练表现
 
-XGBoost 模型可以在训练期间评估和报告模型的测试集上的表现。
+XGBoost模型可以在训练期间评估和报告模型在测试集上的表现。
 
-它通过在训练模型和指定详细输出时调用 **model.fit（）**时指定测试数据集和评估指标来支持此功能。
+它通过在训练模型和获取verbose输出中调用 **model.fit（）**的同时指定测试数据集以及评估度量来支持此功能。
 
-例如，我们可以在独立测试集（ **eval_set** ）上报告二进制分类错误率（“_ 错误 _”），同时训练 XGBoost 模型，如下所示：
+例如，我们可以在训练 XGBoost模型时，在独立测试集（ **eval_set** ）上估计二值分类误差（"error"），如下所示：
 
 ```py
 eval_set = [(X_test, y_test)]
 model.fit(X_train, y_train, eval_metric="error", eval_set=eval_set, verbose=True)
 ```
 
-XGBoost 支持一套评估指标，不仅限于：
+XGBoost所支持的评估度量集合包括但不仅限于：
 
-*   “ _rmse_ ”表示均方根误差。
-*   “ _mae_ ”表示平均绝对误差。
-*   “ _logloss_ ”用于二元对数损失，“ _mlogloss_ ”用于多级对数损失（交叉熵）。
-*   “_ 错误 _”表示分类错误。
-*   “ _auc_ ”用于 ROC 曲线下的面积。
+*   “rmse”表示均方根误差。
+*   “mae”表示平均绝对误差。
+*   “logloss”表示二值对数损失，“mlogloss”表示多类对数损失（交叉熵）。
+*   “error”表示分类误差。
+*   “auc”表示ROC 曲线下的面积。
 
-完整列表在 XGBoost 参数网页的“[学习任务参数](http://xgboost.readthedocs.io/en/latest//parameter.html)”部分中提供。
+完整列表请参照XGBoost参数网页“[学习任务参数(Learning Task Parameters)](http://xgboost.readthedocs.io/en/latest//parameter.html)”。
 
-例如，我们可以演示如何跟踪 [Pima 印第安人糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)的 XGBoost 模型训练的表现，可从 UCI 机器学习库获取（更新：[从此处下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
+例如，我们可以展示如何追踪XGBoost模型训练的表现，应用对象是[Pima印第安人糖尿病数据集(Pima Indians onset of diabetes dataset)](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)，它可从UCI机器学习库(UCI Machine Learning Repository)获取（更新：[从此处下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
 
 完整示例如下：
 
@@ -86,9 +86,9 @@ accuracy = accuracy_score(y_test, predictions)
 print("Accuracy: %.2f%%" % (accuracy * 100.0))
 ```
 
-运行此示例在 67％的数据上训练模型，并在 33％的测试数据集上评估每个训练时期的模型。
+运行此示例将会在67％的数据上训练模型，并在剩余33％的测试数据集上评估每个训练epoch的模型。
 
-每次迭代都会报告分类错误，最后报告分类准确性。
+每次迭代都会报告分类误差，分类精度将会在最后给出。
 
 下面提供了输出，为简洁起见，将其截断。我们可以看到，每次训练迭代都会报告分类错误（在每个提升的树被添加到模型之后）。
 
