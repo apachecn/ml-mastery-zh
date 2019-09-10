@@ -1,12 +1,12 @@
-# 通过提前停止(early stopping)避免Python中应用XGBoost的过拟合（overfitting）
+# 通过提前停止(early stopping)避免Python中应用XGBoost时发生得过拟合（overfitting）现象
 
 > 原文： [https://machinelearningmastery.com/avoid-overfitting-by-early-stopping-with-xgboost-in-python/](https://machinelearningmastery.com/avoid-overfitting-by-early-stopping-with-xgboost-in-python/)
 
 过拟合是非线性学习算法（例如梯度提升）中常见的一个复杂问题。
 
-在这篇文章中，您将了解如何通过提前停止(early stopping)来抑制在Python中应用XGBoost的过拟合现象。
+在这篇文章中，您将了解如何通过提前停止(early stopping)来抑制在Python中应用XGBoost时的过拟合现象。
 
-阅读这篇文章后，您会知道：
+阅读这篇文章，您会学习到：
 
 *   提前停止(early stopping)是减少训练数据过拟合的一种方法。
 *   如何在训练期间监测XGBoost模型的表现并绘制学习曲线。
@@ -16,12 +16,12 @@
 
 让我们开始吧。
 
-*   **2017年1月更新**：更新为反映scikit-learn API版本0.18.1中的更改。
+*   **2017年1月更新**：此次更新为对应scikit-learn API版本0.18.1中的更改。
 *   **2018年3月更新**：为下载数据集添加了备用链接，旧链接已被移除。
 
 ![Avoid Overfitting By Early Stopping With XGBoost In Python](img/3b5a137b9d5bd85033c44aac0f3068ff.jpg)
 
-通过提前停止(early stopping)避免Python中应用XGBoost的过拟合（overfitting）
+通过提前停止(early stopping)避免Python中应用XGBoost时发生得过拟合（overfitting）现象
 照片由[Michael Hamann](https://www.flickr.com/photos/michitux/7218180540/)拍摄，保留部分版权。
 
 ## 通过提前停止(early stopping)避免过拟合
@@ -30,24 +30,24 @@
 
 它通过监测在单独的测试数据集上训练模型的表现，并且注意到一旦在固定数量的训练迭代之后测试数据集上的表现没有得到改善就停止训练过程。
 
-通过尝试自动选出测试数据集上的表现开始降低而训练数据集上的表现继续提高这样过拟合发生迹象的拐点来避免过拟合。
+通过尝试自动选出测试数据集上的表现开始降低而训练数据集上的表现继续提高这样的过拟合发生迹象拐点来避免过拟合。
 
-表现度量可以是通过训练模型而进行优化的损失函数（例如对数损失函数（logarithmic loss）），或者通常情况下问题所关注的外部度量（例如分类精度）。
+表现度量可以是通过训练模型而进行优化的损失函数（例如对数损失函数（logarithmic loss）），或者通常情况下问题所关注的外部指标（例如分类精度）。
 
 ## 在XGBoost中监测训练表现
 
 XGBoost模型可以在训练期间评估和报告模型在测试集上的表现。
 
-它通过在训练模型和获取verbose输出中调用 **model.fit（）**的同时指定测试数据集以及评估度量来支持此功能。
+它通过在训练模型和获取verbose输出中调用 **model.fit（）**的同时指定测试数据集以及评估度量（evaluation metric）来支持此功能。
 
-例如，我们可以在训练 XGBoost模型时，在独立测试集（ **eval_set** ）上报告二值分类误差（"error"），如下所示：
+例如，我们可以在训练XGBoost模型时，在独立测试集（ **eval_set** ）上报告二值分类误差（"error"），如下所示：
 
 ```py
 eval_set = [(X_test, y_test)]
 model.fit(X_train, y_train, eval_metric="error", eval_set=eval_set, verbose=True)
 ```
 
-XGBoost所支持的评估度量集合包括但不仅限于：
+XGBoost所支持的评估度量（evaluation metric）集合包括但不仅限于：
 
 *   “rmse”表示均方根误差。
 *   “mae”表示平均绝对误差。
@@ -57,9 +57,9 @@ XGBoost所支持的评估度量集合包括但不仅限于：
 
 完整列表请参照XGBoost参数网页“[学习任务参数(Learning Task Parameters)](http://xgboost.readthedocs.io/en/latest//parameter.html)”。
 
-例如，我们可以展示如何追踪XGBoost模型训练的表现，应用对象是[Pima印第安人糖尿病数据集(Pima Indians onset of diabetes dataset)](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)，它可从UCI机器学习库(UCI Machine Learning Repository)获取（更新：[从此处下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
+例如，我们可以展示如何追踪XGBoost模型训练的表现，应用对象是[Pima印第安人糖尿病数据集(Pima Indians onset of diabetes dataset)](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)，可以从UCI机器学习库(UCI Machine Learning Repository)获取下载（更新：[从此处下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
 
-完整示例如下：
+完整示例代码如下：
 
 ```py
 # monitor training performance
@@ -90,7 +90,7 @@ print("Accuracy: %.2f%%" % (accuracy * 100.0))
 
 每一次迭代的结果都将会报告分类误差，而分类精度将会在最后给出。
 
-下面给出了结果输出，为简洁明了，只截取末尾部分。我们可以看到每次训练迭代都会报告分类误差（在每个boosted tree被添加到模型之后）。
+下面展示了结果输出，为简洁明了，只截取末尾部分。我们可以看到每次训练迭代都会报告分类误差（在每个boosted tree被添加到模型之后）。
 
 ```py
 ...
@@ -141,13 +141,13 @@ print(results)
 
 'validation_0'和'validation_1'对应于在**fit（）**调用中向 **eval_set** 参数提供数据集的顺序。
 
-若需要访问特定的结果数组，例如针对第一个数据集和其误差度量，可以操作如下：
+若需要访问特定的结果数组，例如针对第一个数据集和其误差指标，可以操作如下：
 
 ```py
 results['validation_0']['error']
 ```
 
-此外，我们可以通过向**fit（）**函数的eval_metric参数提供度量数组，来指定更多的评估度量指标用于评价和汇总。
+此外，我们可以通过向**fit（）**函数的eval_metric参数提供度量数组，来指定更多的评估度量（evaluation metric）用于评价和汇总。
 
 我们可以使用这些汇总的表现度量来创建曲线图，并进一步解读模型在训练epochs过程中分别在训练数据集和测试数据集上的表现。
 
@@ -230,7 +230,7 @@ eval_set = [(X_test, y_test)]
 model.fit(X_train, y_train, early_stopping_rounds=10, eval_metric="logloss", eval_set=eval_set, verbose=True)
 ```
 
-如果提供了多个评估数据集或多个评估指标，则提前停止(early stopping)将使用列表中的最后一个。
+如果提供了多个评估数据集或多个评估度量（evaluation metric），则提前停止(early stopping)将使用列表中的最后一个。
 
 下面展示提前停止(early stopping)的一个完整示例。
 
