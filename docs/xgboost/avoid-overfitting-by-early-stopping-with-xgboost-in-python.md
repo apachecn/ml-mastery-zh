@@ -1,16 +1,18 @@
-# 通过在 Python 中使用 XGBoost 提前停止来避免过度拟合
+# 在Python中应用XGBoost通过提前停止(early stopping)避免过拟合（overfitting）现象
 
 > 原文： [https://machinelearningmastery.com/avoid-overfitting-by-early-stopping-with-xgboost-in-python/](https://machinelearningmastery.com/avoid-overfitting-by-early-stopping-with-xgboost-in-python/)
 
-过度拟合是复杂的非线性学习算法（例如梯度提升）的问题。
+过拟合是非线性学习算法（例如梯度提升）中常见的一个复杂问题。
 
-在这篇文章中，您将了解如何使用早期停止来限制 Python 中的 XGBoost 过度拟合。
+在这篇文章中，您将了解如何通过提前停止(early stopping)来抑制在Python中应用XGBoost的过拟合现象。
 
-阅读这篇文章后，你会知道：
+阅读这篇文章后，您会知道：
 
-*   关于早期停止作为减少训练数据过度拟合的方法。
-*   如何在训练期间监控 XGBoost 模型的表现并绘制学习曲线。
-*   如何使用早期停止来提前停止在最佳时期训练 XGBoost 模型。
+*   提前停止(early stopping)是减少训练数据过拟合的一种方法。
+*   如何在训练期间监测XGBoost模型的表现并绘制学习曲线。
+*   如何使用提前停止(early stopping)来适时及早终止训练处于最佳epoch中的XGBoost模型。
+
+请在我的新书[https://machinelearningmastery.com/xgboost-with-python/]中找到如何通过XGBoost配置、训练、调试和评估梯度提升模型，它包括了15个Step-by-Step的示例课程以及完整的Python代码。
 
 让我们开始吧。
 
