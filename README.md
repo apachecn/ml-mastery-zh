@@ -43,4 +43,10 @@
 
 ## 赞助我们
 
+组织：
+
 ![Donate](http://data.apachecn.org/img/about/donate.jpg)
+
+贡献者：
+
+（虚位以待）
