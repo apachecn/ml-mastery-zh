@@ -1,4 +1,4 @@
-# 评估 Keras 中深度学习模型的表现
+# 评估 Keras 中深度学习模型的性能
 
 > 原文： [https://machinelearningmastery.com/evaluate-performance-deep-learning-models-keras/](https://machinelearningmastery.com/evaluate-performance-deep-learning-models-keras/)
 
