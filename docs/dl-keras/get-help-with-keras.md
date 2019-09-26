@@ -69,7 +69,7 @@ StackOverflow 是一个致力于编程问题的问答网站，在这里有大量
 
 *   StackOverflow 上的 [Keras 标签](https://stackoverflow.com/questions/tagged/keras)
 
-## 5. CrossValidated Keras 标签
+## 5. CrossValidated 上的Keras 标签
 
 ![Keras tag on CrossValidated](img/6074ebf72c384434cedd2411d8a7f962.png)
 
@@ -102,7 +102,7 @@ CrossValidated 是一个致力于机器学习的问答网站，并且有很多�
 
 Quora 是一个大型的通用问答网站（类似于中国的知乎），虽然它是通用的，但是仍然拥有很多技术相关的话题，包括 Keras 和深度学习。
 
-问题的重点个更多是基于文本和说明性的，您可能会获得有关技术的更多详细信息，而不是实现细节。
+这些问题的重点更多是基于文本解释和说明性的，您可能会获得有关技术的更多详细信息，而不是实现细节。
 
 我建议您直接在“ _Keras_ ”主题中搜索和提问。
 
