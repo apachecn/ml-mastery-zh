@@ -18,7 +18,7 @@ Keras 非常易于使用，您可以在几分钟内开发出您的第一个[多�
 
 以下是您可以使用的一些提示：
 
-*   将您的问题简化为最简单的形式，例如：不应该是“_我的模型不起作用_” 而是转化为 “_x 如何工作 _”。
+*   将您的问题简化为最简单的形式，例如：不应该是“_我的模型不起作用_” 而是转化为 “_x如何工_”。
 *   在提问之前搜索答案。
 *   提供尽可能小的工作示例来演示您的问题。
 
@@ -30,9 +30,9 @@ Keras 用户 Google Group
 
 也许向 Keras 社区提问的最直接的地方就是在 Google 群组（旧的 usenet）上的 Keras Users 群组上。
 
-在这里，你不需要接受任何电子邮件;你可以直接在线访问，我推荐以下方式：
+在这里，你不需要接受任何电子邮件，你可以直接在线访问，我推荐以下方式：
 
-*   [Keras 用户谷歌集团](https://groups.google.com/forum/#!forum/keras-users)
+*   [Keras Google 用户组](https://groups.google.com/forum/#!forum/keras-users)
 
 ## 2\. Keras Slack Channel
 
@@ -54,7 +54,7 @@ Keras 用户 Google Group
 
 
 
-另一个交流Keras的好地方是Keras Giiter，尽管比较松散，但这个平台上仍然有大量的人。
+另一个交流Keras的好地方是Keras Giiter，尽管组织比较松散，但这个平台上仍然有大量的人。
 
 尽管在这个论坛里尽情“遨游”吧！
 
@@ -65,16 +65,14 @@ Keras 用户 Google Group
 ![Keras tag on StackOverflow](img/30e6e1be6cd09de3ce9d725b9ca33188.png)
 
 
-
-StackOverflow 是一个致力于编程问题的问答网站，在这里有大量有关深度学习和与Keras相关的问题。我建议您可以直接搜索带有“_Keras_”标签的相关回答。
+StackOverflow 是一个致力于编程问题的问答网站，在这里有大量有关深度学习和与Keras相关的问题，我建议您可以直接搜索带有“_Keras_”标签的相关回答。
 
 *   StackOverflow 上的 [Keras 标签](https://stackoverflow.com/questions/tagged/keras)
 
-## 5.交叉验证的 Keras 标签
+## 5. CrossValidated Keras 标签
 
 ![Keras tag on CrossValidated](img/6074ebf72c384434cedd2411d8a7f962.png)
 
-CrossValidated上的 Keras 标签
 
 CrossValidated 是一个致力于机器学习的问答网站，并且有很多关于Keras相关的问题，但它们可能多的是一些理论上的问题集合，而不是专注于代码和编程。
 
@@ -86,13 +84,12 @@ CrossValidated 是一个致力于机器学习的问答网站，并且有很多�
 
 ![Keras tag on DataScience Stack Exchange](img/e0d34ef7b223c8edb1e2ec490aa2c563.png)
 
-数据科学堆栈交换中的 Keras 标记
 
 支持 StackOverflow 和 CrossValidated 的 StackExchange 网站也有一个专用于 DataScience 的站点。
 
 它现在仍处于测试阶段，尚未成为该网站的正式成员，尽管如此，该网站上还是有很多关于 Keras 的话题。
 
-与其他两个站点不同，这些话题题可能更多的关注于过程导向。
+与其他两个站点不同，这些话题题可能更多的以过程导向为主。
 
 同样，我建议搜索并访问带有“ _keras_ ”标签的话题。
 
@@ -105,7 +102,7 @@ CrossValidated 是一个致力于机器学习的问答网站，并且有很多�
 
 Quora 是一个大型的通用问答网站（类似于中国的知乎），虽然它是通用的，但是仍然拥有很多技术相关的话题，包括 Keras 和深度学习。
 
-问题的焦点更多是基于文本和说明性的。您可能会获得有关技术的更多详细信息，而不是实现细节。
+这些问题的焦点更多是基于文本和说明性的，您可能会获得有关技术的更多详细信息，而不是实现细节。
 
 我建议您直接在“ _Keras_ ”主题中搜索和提问。
 
@@ -153,4 +150,4 @@ GitHub 提供了一个基本的问题管理系统，Keras 项目报告了很多�
 
 你有没有使用过这些资源？你是怎么做到的？
 
-您是否有兴趣在 Keras 寻求帮助的地方？请在下面的评论中告诉我。
+您是否想在其他地方获得有关Keras的帮助？请在下面的评论中告诉我。
