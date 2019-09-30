@@ -59,7 +59,7 @@ def create_model():
 model = KerasClassifier(build_fn=create_model)
 ```
 
-**KerasClassifier** 类的构造函数可以使用传递给 **`model.fit()`**的调用的默认参数，例如迭代数和批量大小。
+**KerasClassifier** 类的构造函数可以使用传递给 `model.fit()`的调用的默认参数，例如迭代数和批量大小。
 
 例如：
 
@@ -71,7 +71,7 @@ def create_model():
 model = KerasClassifier(build_fn=create_model, epochs=10)
 ```
 
-**KerasClassifier** 类的构造函数也可以采用传递给自定义 **`create_model()`**函数的新参数。这些新参数也必须在 **`create_model()`**函数的签名中使用默认参数进行定义。
+**KerasClassifier** 类的构造函数也可以采用传递给自定义 `create_model()`函数的新参数。这些新参数也必须在 `create_model()`函数的签名中使用默认参数进行定义。
 
 例如：
 
@@ -107,7 +107,7 @@ grid = GridSearchCV(estimator=model, param_grid=param_grid, n_jobs=-1)
 grid_result = grid.fit(X, Y)
 ```
 
-完成后，您可以在 **`grid.fit()`**返回的结果对象中访问网格搜索的结果。 **best_score_** 成员提供对优化过程中观察到的最佳分数的访问， 并且**best_params_** 描述了获得最佳结果的参数组合。
+完成后，您可以在 `grid.fit()`返回的结果对象中访问网格搜索的结果。 **best_score_** 成员提供对优化过程中观察到的最佳分数的访问， 并且**best_params_** 描述了获得最佳结果的参数组合。
 
 您可以在 scikit-learn API 文档中了解有关 [GridSearchCV 类的更多信息。](http://scikit-learn.org/stable/modules/generated/sklearn.grid_search.GridSearchCV.html#sklearn.grid_search.GridSearchCV)
 
@@ -123,7 +123,7 @@ grid_result = grid.fit(X, Y)
 
 ### 并行化网格搜索的注意事项
 
-所有示例都配置为使用并行性（ **n_jobs = -1** ）。
+所有示例都配置为使用并行性（ **n_jobs = -1** ）.
 
 如果您收到如下错误：
 
