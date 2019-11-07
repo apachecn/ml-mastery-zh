@@ -16,7 +16,7 @@
 
 让我们开始吧。
 
-*   **更新**：本文中的示例已针对最新的 Keras API 进行了更新， ·`datagen.next()`函数已被删除。
+*   **更新**：本文中的示例已针对最新的 Keras API 进行了更新， `datagen.next()`函数已被删除。
 *   **2016 年 10 月更新**：更新了 Keras 1.1.0，TensorFlow 0.10.0 和 scikit-learn v0.18 的示例。
 *   **2017 年 1 月更新**：更新了 Keras 1.2.0 和 TensorFlow 0.12.1 的示例。
 *   **2017 年 3 月更新**：更新了 Keras 2.0.2，TensorFlow 1.0.1 和 Theano 0.9.0 的示例。
@@ -42,19 +42,19 @@ datagen = ImageDataGenerator()
 
 API 不是在内存中对整个图像数据集执行操作，而是通过深度学习模型拟合过程进行迭代，为您及时创建增强的图像数据，这可以减少内存开销，但在模型训练期间会增加一些额外的时间成本。
 
-创建并配置 **ImageDataGenerator** 后，你需要通过数据拟合，这个过程将计算实际执行图像数据转换所需的任何统计信息，您可以通过调用数据生成器上的 **fit()**函数并将其传递给训练数据集来完成此操作。
+创建并配置 **ImageDataGenerator** 后，你需要通过数据拟合，这个过程将计算实际执行图像数据转换所需的任何统计信息，您可以通过调用数据生成器上的`fit()`函数并将其传递给训练数据集来完成此操作。
 
 ```py
 datagen.fit(train)
 ```
 
-数据生成器本身实际上是一个迭代器，在请求时返回批量的图像样本。我们可以通过调用 **flow()**函数来配置批量大小并准备数据生成器并获取批量图像。
+数据生成器本身实际上是一个迭代器，在请求时返回批量的图像样本。我们可以通过调用 `flow()`函数来配置批量大小并准备数据生成器并获取批量图像。
 
 ```py
 X_batch, y_batch = datagen.flow(train, train, batch_size=32)
 ```
 
-最后我们可以使用数据生成器,我们必须调用 **fit_generator()**函数并传入数据生成器和所需的时间长度，训练的迭代次数以及总数，而不是在我们的模型上调用 **fit（）**函数。
+最后我们可以使用数据生成器,我们必须调用 `fit_generator()`函数并传入数据生成器和所需的时间长度，训练的迭代次数以及总数，而不是在我们的模型上调用 `fit()`函数。
 
 ```py
 fit_generator(datagen, samples_per_epoch=len(train), epochs=100)
@@ -74,7 +74,7 @@ from keras.datasets import mnist
 from matplotlib import pyplot
 # 加载数据
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
-# create a grid of 3x3 images
+# 创建一个3×3的网格图像
 for i in range(0, 9):
 	pyplot.subplot(330 + 1 + i)
 	pyplot.imshow(X_train[i], cmap=pyplot.get_cmap('gray'))
