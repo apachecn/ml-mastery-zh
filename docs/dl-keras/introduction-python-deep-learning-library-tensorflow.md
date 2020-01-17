@@ -6,14 +6,16 @@ TensorFlow 是一个用于 Google 创建和发布的快速数值计算的 Python
 
 它是一个基础库，可用于直接创建深度学习模型，或使用包装库来简化在 TensorFlow 之上构建的过程。
 
-在这篇文章中，您将发现用于深度学习的 TensorFlow 库。
+在这篇文章中，您将学习用于深度学习的 TensorFlow 库。
+
+在我的[新书](https://machinelearningmastery.com/deep-learning-with-python/)中，通过 18 个渐进式的教程和 9 个项目，探索如何用几行代码为一系列预测建模问题开发深度学习模型。
 
 让我们开始吧。
 
 ![Introduction to the Python Deep Learning Library TensorFlow](img/fe8f0396c0f9d7b02308150c33abe2da.png)
 
 Python 深度学习库简介 TensorFlow
-摄影： [Nicolas Raymond](https://www.flickr.com/photos/82955120@N05/15932303392/) ，保留一些权利。
+摄影： [Nicolas Raymond](https://www.flickr.com/photos/82955120@N05/15932303392/) ，保留权利。
 
 ## 什么是 TensorFlow？
 
@@ -21,7 +23,7 @@ TensorFlow 是一个用于快速数值计算的开源库。
 
 它由 Google 创建并维护，并在 Apache 2.0 开源许可下发布。虽然可以访问底层的 C ++ API，但 API 名义上是用于 Python 编程语言的。
 
-与 Theano 等深度学习中使用的其他数值库不同，TensorFlow 设计用于研究和开发以及生产系统，尤其是谷歌搜索中的 [RankBrain 和有趣的](https://en.wikipedia.org/wiki/RankBrain) [DeepDream 项目](https://en.wikipedia.org/wiki/DeepDream) ]。
+与 Theano 等深度学习中使用的其他库不同，TensorFlow 设计用于研究和开发以及企业生产环境系统，尤其是 [谷歌搜索RankBrain项目 ](https://en.wikipedia.org/wiki/RankBrain) 和有趣的[DeepDream 项目](https://en.wikipedia.org/wiki/DeepDream) ]。
 
 它可以在单 CPU 系统，GPU 以及移动设备和数百台机器的大规模分布式系统上运行。
 
@@ -31,21 +33,21 @@ TensorFlow 是一个用于快速数值计算的开源库。
 
 TensorFlow 适用于 Python 2.7 和 Python 3.3+。您可以按照 TensorFlow 网站上的[下载和设置说明](https://www.tensorflow.org/versions/r0.8/get_started/os_setup.html)进行操作。通过 PyPI 进行安装可能是最简单的，并且下载和设置网页上有用于 Linux 或 Mac OS X 平台的 pip 命令的特定说明。
 
-如果您愿意，还可以使用 [virtualenv](http://docs.python-guide.org/en/latest/dev/virtualenvs/) 和[泊坞窗图像](https://www.docker.com/)。
+如果您愿意，还可以使用 [虚拟机环境](http://docs.python-guide.org/en/latest/dev/virtualenvs/) 和[docker镜像](https://www.docker.com/)。
 
-要使用 GPU，只支持 Linux，它需要 Cuda Toolkit。
+只有Linux系统支持GPU,并且还需要安装Cuda工具包。
 
-## 你在 TensorFlow 中的第一个例子
+## 使用TensorFlow创建第一个示例
 
 根据有向图的结构中的数据流和操作来描述计算。
 
 *   **节点**：节点执行计算并具有零个或多个输入和输出。在节点之间移动的数据称为张量，它是实数值的多维数组。
-*   **Edges** ：该图定义了数据流，分支，循环和状态更新。特殊边缘可用于同步图形中的行为，例如等待完成多个输入的计算。
-*   **操作**：一个操作是一个命名的抽象计算，它可以获取输入属性并产生输出属性。例如，您可以定义添加或乘法操作。
+*   **边界** ：该图定义了数据流，分支，循环和状态更新。特殊边缘可用于同步图形中的行为，例如等待完成多个输入的计算。
+*   **操作**：一个操作是一个命名的抽象计算，它可以获取输入属性并产生输出属性。例如，您可以定义加法或乘法操作。
 
-### 用 TensorFlow 计算
+### 使用 TensorFlow 计算
 
-第一个示例是 [TensorFlow 网站](https://github.com/tensorflow/tensorflow)上的示例的修改版本。它显示了如何使用会话创建会话，定义常量和使用这些常量执行计算。
+第一个示例是 [TensorFlow](https://github.com/tensorflow/tensorflow)上的示例的修改版本。它向你展示了如何创建一个session，在这个session中定义常量并使用常量进行计算。
 
 ```py
 import tensorflow as tf
@@ -63,11 +65,11 @@ print(sess.run(a+b))
 
 ### 使用 TensorFlow 进行线性回归
 
-下一个例子来自 [TensorFlow 教程](https://www.tensorflow.org/versions/r0.8/get_started/index.html)的介绍。
+第二个示例来自 [TensorFlow 教程](https://www.tensorflow.org/versions/r0.8/get_started/index.html)的介绍。
 
-此示例显示了如何定义变量（例如 W 和 b）以及作为计算结果的变量（y）。
+此示例显示了如何定义变量（例如 W 和 b）以及变量（y）接收结果输出。
 
-我们对 TensorFlow 有一定的了解，它将计算的定义和声明与会话中的执行和运行调用分开。
+我们对 TensorFlow 有一定的了解，它将计算的定义和声明与session中的执行和运行调用分开。
 
 ```py
 import tensorflow as tf
@@ -105,7 +107,7 @@ for step in xrange(201):
 # Learns best fit is W: [0.1], b: [0.3]
 ```
 
-运行此示例将输出以下输出：
+运行此示例将输出以下内容：
 
 ```py
 (0, array([ 0.2629351], dtype=float32), array([ 0.28697217], dtype=float32))
@@ -121,19 +123,19 @@ for step in xrange(201):
 (200, array([ 0.1000006], dtype=float32), array([ 0.29999971], dtype=float32))
 ```
 
-您可以在[基本使用指南](https://www.tensorflow.org/versions/r0.8/get_started/basic_usage.html)中了解有关 TensorFlow 机制的更多信息。
+您可以在[基本使用指南](https://www.tensorflow.org/versions/r0.8/get_started/basic_usage.html)中了解有关 TensorFlow 的更多信息。
 
 ## 更多深度学习模型
 
-您的 TensorFlow 安装附带了许多深度学习模型，您可以直接使用它们进行试验。
+您的 TensorFlow 安装包中附带了许多深度学习模型，您可以直接使用它们。
 
-首先，您需要找出系统上 TensorFlow 的安装位置。例如，您可以使用以下 Python 脚本：
+首先，您需要找到 TensorFlow 的安装位置。例如，您可以使用以下 Python 脚本：
 
 ```py
 python -c 'import os; import inspect; import tensorflow; print(os.path.dirname(inspect.getfile(tensorflow)))'
 ```
 
-例如，这可能是：
+例如，它可能是这样的：
 
 ```py
 /usr/lib/python2.7/site-packages/tensorflow
@@ -141,17 +143,17 @@ python -c 'import os; import inspect; import tensorflow; print(os.path.dirname(i
 
 切换到此目录并记下 models 子目录。包括许多深度学习模型，包含类似教程的注释，例如：
 
-*   多线程 word2vec 迷你批量跳过克模型。
-*   多线程 word2vec unbatched skip-gram 模型。
-*   CNN 用于 CIFAR-10 网络。
+*   多线程 word2vec 小批量skip-gram模型。
+*   多线程 word2vec 全量 skip-gram 模型。
+*   CNN CIFAR-10 网络。
 *   简单，端到端，类似 LeNet-5 的卷积 MNIST 模型示例。
-*   具有注意机制的序列到序列模型。
+*   Seq2seq模型。
 
 还要检查 examples 目录，因为它包含使用 MNIST 数据集的示例。
 
-在 TensorFlow 主网站上还有一个很棒的[教程列表](https://www.tensorflow.org/versions/r0.8/tutorials/index.html)。它们展示了如何使用不同的网络类型，不同的数据集以及如何以各种不同的方式使用框架。
+在 TensorFlow 主网站上还有一个很全好的[教程列表](https://www.tensorflow.org/versions/r0.8/tutorials/index.html)。它们展示了如何使用不同的网络类型，不同的数据集以及如何以各种不同的方式使用框架。
 
-最后，有 [TensorFlow 游乐场](http://playground.tensorflow.org/)，您可以在 Web 浏览器中试验小型网络。
+最后，有 [TensorFlow实验室](http://playground.tensorflow.org/)，您可以在 Web 浏览器中试验小型网络。
 
 ## TensorFlow 资源
 
