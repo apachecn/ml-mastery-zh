@@ -6,7 +6,7 @@ Python 中两个为深度学习研究和开发提供基础的顶级数字平台�
 
 两者都是非常强大的库，但两者都难以直接用于创建深度学习模型。
 
-在这篇文章中，您将发现 Keras Python 库，它提供了一种在 Theano 或 TensorFlow 上创建一系列深度学习模型的简洁方便的方法。
+在这篇文章中，您将发现 Keras Python 库，它提供了一种在 Theano 或 TensorFlow 上创建一系列深度学习模型的简便的方法。
 
 让我们开始吧。
 
@@ -21,7 +21,7 @@ Python 深度学习库 Keras 简介
 
 Keras 是一个用于深度学习的极简主义 Python 库，可以在 Theano 或 TensorFlow 之上运行。
 
-它的开发旨在使研究和开发尽可能快速简便地实施深度学习模型。
+它的开发旨在使深度学习模型的研究和开发尽可能快速简便地实施。
 
 它运行在 Python 2.7 或 3.5 上，并且可以在给定底层框架的情况下在 GPU 和 CPU 上无缝执行。它是在许可的 MIT 许可下发布的。
 
@@ -34,7 +34,7 @@ Keras 由[FrançoisChollet](https://www.linkedin.com/in/fchollet)开发和维护
 
 ## 如何安装 Keras
 
-如果您已经拥有可用的 Python 和 SciPy 环境，那么 Keras 的安装相对简单。
+如果您已经拥有可用的 Python 和 SciPy 环境，那么 Keras 的安装将相对简单。
 
 您还必须在系统上安装 Theano 或 TensorFlow。
 
@@ -63,7 +63,7 @@ python -c "import keras; print keras.__version__"
 1.1.0
 ```
 
-您可以使用相同的方法升级 Keras 的安装：
+您可以使用相同的方法升级 Keras ：
 
 ```py
 sudo pip install --upgrade keras
@@ -105,7 +105,7 @@ Using TensorFlow backend.
 tensorflow
 ```
 
-您还可以通过指定 KERAS_BACKEND 环境变量在命令行上指定 Keras 使用的后端，如下所示：
+您还可以在命令行上通过指定 KERAS_BACKEND 环境变量来指定 Keras 使用的后端，如下所示：
 
 ```py
 KERAS_BACKEND=theano python -c "from keras import backend; print(backend._BACKEND)"
@@ -120,41 +120,41 @@ theano
 
 ## 使用 Keras 构建深度学习模型
 
-Keras 的重点是模型的概念。
+Keras 的核心是模型(`model`)的概念。
 
-主要类型的模型称为序列，它是层的线性堆栈。
+主要类型的模型称为序列(`Sequential`)模型，它由多个网络层(`layer`)线性堆叠。
 
-您可以按照希望执行计算的顺序创建序列并向其添加层。
+您可以按照希望执行计算的顺序来创建序列并向其添加层。
 
-一旦定义，您就可以编译模型，该模型利用底层框架来优化模型执行的计算。在此，您可以指定损失函数和要使用的优化程序。
+一旦定义完成，您就可以配置模型，该模型将利用底层基础框架来优化计算。在此，您可以指定损失函数和所要使用的优化器。
 
-编译后，模型必须适合数据。这可以一次完成一批数据，也可以通过启动整个模型训练制度来完成。这是所有计算发生的地方。
+模型配置完成后，必须使用适合数据来训练模型。可以一次完成一批数据，也可以通过启动整个模型训练方案来完成。这是所有计算发生的地方。
 
-经过训练，您可以使用模型对新数据进行预测。
+完成训练后，您可以使用模型对新数据进行预测。
 
-我们可以总结一下 Keras 深度学习模型的构建如下：
+我们可以总结一下 Keras 深度学习模型的构建过程如下：
 
-1.  **定义你的模型**。创建序列并添加层。
-2.  **编译你的模型**。指定损失函数和优化器。
-3.  **适合您的型号**。使用数据执行模型。
-4.  **做出预测**。使用该模型生成对新数据的预测。
+1.  **定义模型**。创建序列并添加层。
+2.  **配置模型**。指定损失函数和优化器。
+3.  **训练模型**。使用数据训练模型。
+4.  **模型预测**。使用该模型生成对新数据的预测。
 
 ## Keras 资源
 
-下面的列表提供了一些其他资源，您可以使用它们来了解有关 Keras 的更多信息。
+下面的列表提供了一些其他资源，您可以通过它们来了解有关 Keras 的更多信息。
 
 *   [Keras 官方主页](http://keras.io/)（文档）
 *   [GitHub 上的 Keras 项目](https://github.com/fchollet/keras)
 *   [Keras 用户组](https://groups.google.com/forum/#!forum/keras-users)
 
-您是否正在寻找一个良好的深度学习教程来开始，请看看：
+您是否正在寻找一个良好的深度学习教程来开启学习之旅，请看看：
 
 *   [用 Keras 逐步开发 Python 中的第一个神经网络](http://machinelearningmastery.com/tutorial-first-neural-network-python-keras/)
 
 ## 摘要
 
-在这篇文章中，您发现了用于深度学习研究和开发的 Keras Python 库。
+在这篇文章中，您了解了用于深度学习研究和开发的 Keras Python 库。
 
-您发现 Keras 专为极简主义和模块化而设计，允许您快速定义深度学习模型并在 Theano 或 TensorFlow 后端运行它们。
+知晓 Keras 专为极简主义和模块化而设计，允许您快速定义深度学习模型并以 Theano 或 TensorFlow 作为后端运行它们。
 
-你对 Keras 或这篇文章有任何疑问吗？在评论中提出您的问题，我会尽力回答。
+你对 Keras 或这篇文章有任何疑问吗？请在评论中提出您的问题，我会尽力回答。
