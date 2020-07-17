@@ -1,3 +1,4 @@
++   [Machine Learning Mastery 深度学习 NLP 教程](README.md)
 +   [深度学习在自然语言处理中的 7 个应用](applications-of-deep-learning-for-natural-language-processing.md)
 +   [如何实现自然语言处理的波束搜索解码器](beam-search-decoder-natural-language-processing.md)
 +   [深度学习文档分类的最佳实践](best-practices-document-classification-deep-learning.md)

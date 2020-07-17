@@ -1,3 +1,4 @@
++   [Machine Learning Mastery 深度学习时间序列教程](README.md)
 +   [如何开发人类活动识别的一维卷积神经网络模型](cnn-models-for-human-activity-recognition-time-series-classification.md)
 +   [人类活动识别的深度学习模型](deep-learning-models-for-human-activity-recognition.md)
 +   [如何评估人类活动识别的机器学习算法](evaluate-machine-learning-algorithms-for-human-activity-recognition.md)
