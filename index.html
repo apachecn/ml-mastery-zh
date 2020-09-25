@@ -58,12 +58,15 @@
     }
     
     window.$docsify = {
-      loadSidebar: 'sidebar.md',
+      loadSidebar: 'SUMMARY.md',
       name: 'Machine Learning Mastery 博客文章翻译',
       auto2top: true,
       themeColor: '#84abc7',
       repo: 'apachecn/ml-mastery-zh',
       plugins: [window.docsPlugin],
+      alias: {
+        '/.*/SUMMARY.md': '/SUMMARY.md',
+      },
       search: {
         paths: 'auto',
         placeholder: '搜索',
