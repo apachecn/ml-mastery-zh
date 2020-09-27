@@ -28,6 +28,16 @@
 - 能够组织小组来优化翻译和宣传该项目
 - 欢迎联系：[飞龙](https://github.com/wizardforcel) 562826179
 
+## 下载
+
+### NPM
+
+```
+npm install -g ml-mastery-zh
+ml-mastery-zh <port>
+# 访问 http://localhost:{port} 查看文档
+```
+
 ## 贡献指南
 
 项目当前处于校对阶段，请查看[贡献指南](CONTRIBUTING.md)，并在[整体进度](https://github.com/apachecn/ml-mastery-zh/issues/1)中领取任务。
