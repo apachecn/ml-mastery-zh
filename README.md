@@ -4,7 +4,7 @@
 >
 > 协议：[CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 >
-> 欢迎任何人参与和完善：一个人可以走的很快，但是一群人却可以走的更远。
+> 你们当中很多人都知道程序员的美德，那就是懒惰、急躁以及傲慢。——Larry Wall
 
 * [在线阅读](http://mlm.apachecn.org)
 * [在线阅读（Gitee）](https://apachecn.gitee.io/ml-mastery-zh/)
