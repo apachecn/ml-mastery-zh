@@ -27,11 +27,11 @@ Iris花卉数据集的样本，来自 [Wikipedia](http://en.wikipedia.org/wiki/I
 首先，我们需要创建一个数据源。这是原始数据，我们可以从中创建原始数据的数据集或视图。
 
 1.  登录您的BigML帐户。
-2.  单击“ _Dashboard_ ”按钮转到BigML仪表板。
-3.  单击“ _Source_ ”选项卡列出您帐户的所有数据源。
+2.  单击“`Dashboard`”按钮转到BigML仪表板。
+3.  单击“`Source`”选项卡列出您帐户的所有数据源。
 4.  单击“链接”按钮以指定远程数据文件。
 5.  输入网址（ [http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data](http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data) ）和说明（“_鸢尾花数据源_] “）用于UCI机器学习库中的Iris花数据集。
-6.  单击“ _Create_ ”按钮创建新数据源。
+6.  单击“`Create`”按钮创建新数据源。
 7.  点击“_鸢尾花数据源_”进行查看。
 
 [![BigML Data Source](img/b42317d54affb3d3c1fe0614eee3b0aa.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/04/bigml-data-source.png)
@@ -66,7 +66,7 @@ BigML数据集
 1.  点击“_虹膜花数据源的数据集|训练（80％）_“_数据集_”选项卡中的数据集。
 2.  单击云图标，然后选择“ _1-Click Model_ ”。
 3.  将鼠标悬停在模型中的不同节点上，以通过决策树查看数据流。
-4.  单击“ _Sunburst_ ”按钮打开模型的旭日视图并浏览决策树。
+4.  单击“`Sunburst`”按钮打开模型的旭日视图并浏览决策树。
 5.  单击“_模型摘要报告_”按钮以查看从决策树模型派生的规则的文本描述。
 
 [![BigML Predictive Model](img/4b96afd25e23a1f342469ed70a9e0441.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/04/bigml-predictive-model.png)
@@ -77,7 +77,7 @@ BigML预测模型
 
 现在，您将评估使用测试数据集创建的预测模型的预测准确性。
 
-1.  单击“ _Models_ ”选项卡中的虹膜花型。
+1.  单击“`Models`”选项卡中的虹膜花型。
 2.  单击云按钮并选择“_评估_”
 3.  评估将自动选择您之前创建的测试数据集，该数据集包含预测模型之前未见过的原始数据集的20％。
 4.  单击“_评估_”按钮以评估模型。
@@ -92,9 +92,9 @@ BigML评估预测模型，显示混淆矩阵
 
 现在，您将使用模型之前未见过的数据的预测模型进行预测。
 
-1.  单击“ _Models_ ”选项卡中的虹膜花型。
+1.  单击“`Models`”选项卡中的虹膜花型。
 2.  单击云按钮并选择“_批量预测_”。
-3.  单击“_搜索数据集..._ ”下拉菜单并键入“ _iris_ ”。
+3.  单击“_搜索数据集..._ ”下拉菜单并键入“`iris`”。
 4.  选择“_鸢尾花数据源的数据集|测试20％_“数据集。
 5.  单击“_预测_”按钮
 6.  单击“_下载批量预测_”文件，以获取测试数据集中每行的预测。

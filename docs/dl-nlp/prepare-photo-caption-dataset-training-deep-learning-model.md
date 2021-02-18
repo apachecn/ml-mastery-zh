@@ -599,7 +599,7 @@ Loaded 8092
 desc_text = list(descriptions.values())
 ```
 
-我们可以使用 Keras _Tokenizer_ 类将词汇表中的每个单词一致地映射为整数。首先，创建对象，然后将其放在描述文本上。稍后可以将拟合标记器保存到文件中，以便将预测一致地解码回词汇单词。
+我们可以使用 Keras`Tokenizer`类将词汇表中的每个单词一致地映射为整数。首先，创建对象，然后将其放在描述文本上。稍后可以将拟合标记器保存到文件中，以便将预测一致地解码回词汇单词。
 
 ```py
 from keras.preprocessing.text import Tokenizer

@@ -96,11 +96,11 @@ SARIMA(p,d,q)(P,D,Q)m
 SARIMA(3,1,0)(1,1,0)12
 ```
 
-重要的是， _m_ 参数影响 _P_ ， _D_ 和 _Q_ 参数。例如，月度数据的 m 为 12 表示每年的季节性周期。
+重要的是，`m`参数影响`P`，`D`和`Q`参数。例如，月度数据的 m 为 12 表示每年的季节性周期。
 
-_P_ = 1 将利用模型中的第一个季节性偏移观察，例如 t-（m * 1）或 t-12。 _P_ = 2，将使用最后两个季节性偏移的观测值 t-（m * 1），t-（m * 2）。
+_P_ = 1 将利用模型中的第一个季节性偏移观察，例如 t-（m * 1）或 t-12。`P`= 2，将使用最后两个季节性偏移的观测值 t-（m * 1），t-（m * 2）。
 
-类似地，1 的 _D_ 将计算一阶季节差异，并且 _Q_ = 1 将使用模型中的一阶误差（例如，移动平均值）。
+类似地，1 的`D`将计算一阶季节差异，并且`Q`= 1 将使用模型中的一阶误差（例如，移动平均值）。
 
 > 季节性 ARIMA 模型使用等于季节数的滞后差异来消除加性季节效应。与滞后 1 差分去除趋势一样，滞后差分引入移动平均项。季节性 ARIMA 模型包括滞后 s 处的自回归和移动平均项。
 
@@ -151,7 +151,7 @@ model = SARIMAX(data, ...)
 
 这些是并行时间序列变量，它们不是通过 AR，I 或 MA 过程直接建模，而是作为模型的加权输入提供。
 
-外源变量是可选的，可以通过“ _exog_ ”参数指定。
+外源变量是可选的，可以通过“`exog`”参数指定。
 
 ```py
 # specify training data
@@ -162,7 +162,7 @@ other_data = ...
 model = SARIMAX(data, exog=other_data, ...)
 ```
 
-趋势和季节性超参数分别指定为“_ 顺序 _”和“ _seasonal_order_ ”参数的 3 和 4 元素元组。
+趋势和季节性超参数分别指定为“_ 顺序 _”和“`seasonal_order`”参数的 3 和 4 元素元组。
 
 必须指定这些元素。
 
@@ -188,7 +188,7 @@ model = SARIMAX(data, order=my_order, seasonal_order=my_seasonal_order, ...)
 
 通过调用 [fit（）函数](http://www.statsmodels.org/dev/generated/statsmodels.tsa.statespace.sarimax.SARIMAX.fit.html)来拟合模型。
 
-拟合模型返回 _SARIMAXResults_ 类的实例。此对象包含拟合的详细信息，例如数据和系数，以及可用于使用模型的函数。
+拟合模型返回`SARIMAXResults`类的实例。此对象包含拟合的详细信息，例如数据和系数，以及可用于使用模型的函数。
 
 ```py
 # specify training data
@@ -207,7 +207,7 @@ model_fit = model.fit()
 
 适合后，该模型可用于进行预测。
 
-可以通过在调用 fit 返回的 _SARIMAXResults_ 对象上调用 _forecast（）_ 或 _predict（）_ 函数来进行预测。
+可以通过在调用 fit 返回的`SARIMAXResults`对象上调用 _forecast（）_ 或 _predict（）_ 函数来进行预测。
 
 [forecast（）函数](http://www.statsmodels.org/dev/generated/statsmodels.tsa.statespace.sarimax.SARIMAXResults.forecast.html)采用单个参数指定要预测的采样时间步数，或者如果未提供参数则采用一步预测。
 

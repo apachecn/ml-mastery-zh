@@ -105,7 +105,7 @@ Standard Error: 6.996
 
 _forecast（）_ 函数允许指定置信区间。
 
-_forecast（）_ 函数的 _alpha_ 参数指定置信度。它默认设置为 alpha = 0.05，这是 95％的置信区间。这是一个明智且广泛使用的置信区间。
+_forecast（）_ 函数的`alpha`参数指定置信度。它默认设置为 alpha = 0.05，这是 95％的置信区间。这是一个明智且广泛使用的置信区间。
 
 α为 0.05 意味着 ARIMA 模型将估计预测周围的上限值和下限值，其中实际值不会在该范围内的可能性仅为 5％。
 
@@ -142,7 +142,7 @@ for a in intervals:
 	print('%.1f%% Confidence Interval: %.3f between %.3f and %.3f' % ((1-a)*100, forecast, conf[0][0], conf[0][1]))
 ```
 
-运行该示例将打印每个 _alpha_ 值的预测和置信区间。
+运行该示例将打印每个`alpha`值的预测和置信区间。
 
 我们可以看到，我们每次都获得相同的预测值，并且随着我们对“更安全”间隔的需求增加而扩展的间隔。我们可以看到，在这种特定情况下，80％可以很好地捕获我们的实际值。
 
@@ -159,7 +159,7 @@ for a in intervals:
 
 ARIMAResults 对象提供 [plot_predict（）](http://statsmodels.sourceforge.net/devel/generated/statsmodels.tsa.arima_model.ARIMAResults.plot_predict.html)函数，可用于进行预测并绘制显示最近观察结果，预测和置信区间的结果。
 
-与 _forecast（）_ 函数一样，可以通过指定 _alpha_ 参数来配置置信区间。默认值为 0.05（95％置信度），这是一个合理的默认值。
+与 _forecast（）_ 函数一样，可以通过指定`alpha`参数来配置置信区间。默认值为 0.05（95％置信度），这是一个合理的默认值。
 
 以下示例显示使用此函数绘制的相同预测。
 
@@ -178,7 +178,7 @@ model_fit.plot_predict(len(train)-10, len(train)+1)
 pyplot.show()
 ```
 
-如果预测间隔覆盖训练数据， _plot_predict（）_ 将绘制观察到的 _y_ 值。
+如果预测间隔覆盖训练数据， _plot_predict（）_ 将绘制观察到的`y`值。
 
 在这种情况下，我们预测前 10 天和下一天。这对于查看从样本到样本时间索引（蓝色）的预测是有用的。这与过去 10 天（绿色）的实际观察结果一致。
 

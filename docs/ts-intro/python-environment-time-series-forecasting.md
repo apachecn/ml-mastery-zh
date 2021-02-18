@@ -55,7 +55,7 @@ Python 机器学习工作与 R 机器学习工作
 
 [pandas 库](http://pandas.pydata.org)提供了用于在 Python 中加载和处理数据的高表现工具。
 
-它建立在 SciPy 生态系统的基础上，主要使用 NumPy 阵列，但提供方便易用的数据结构，如 _DataFrame_ 和 _ 系列 _，用于表示数据。
+它建立在 SciPy 生态系统的基础上，主要使用 NumPy 阵列，但提供方便易用的数据结构，如`DataFrame`和 _ 系列 _，用于表示数据。
 
 Pandas 提供[特别关注对时间序列数据的支持](http://pandas.pydata.org/pandas-docs/stable/timeseries.html)。
 
@@ -148,7 +148,7 @@ sudo port select --set python3 python35
 
 安装 SciPy 的方法有很多种。
 
-例如，两种流行的方法是在您的平台上使用包管理（例如 RedHat 上的 _dnf_ 或 OS X 上的 _macports_ ）或使用 Python 包管理工具，如 _pip_ 。
+例如，两种流行的方法是在您的平台上使用包管理（例如 RedHat 上的`dnf`或 OS X 上的`macports`）或使用 Python 包管理工具，如`pip`。
 
 SciPy 文档非常出色，涵盖了页面上许多不同平台的操作说明[安装 SciPy Stack](https://www.scipy.org/install.html) 。
 
@@ -160,14 +160,14 @@ SciPy 文档非常出色，涵盖了页面上许多不同平台的操作说明[�
 *   大熊猫
 *   statsmodels
 
-在带有 _macports_ 的 Mac OS X 上，我会输入：
+在带有`macports`的 Mac OS X 上，我会输入：
 
 ```py
 sudo port install py35-numpy py35-scipy py35-matplotlib py35-pandas py35-statsmodels py35-pip
 sudo port select --set pip pip35
 ```
 
-在 Fedora Linux 上使用 _dnf_ ，我会输入：
+在 Fedora Linux 上使用`dnf`，我会输入：
 
 ```py
 sudo dnf install python3-numpy python3-scipy python3-pandas python3-matplotlib python3-statsmodels
@@ -179,7 +179,7 @@ scikit-learn 库必须单独安装。
 
 我建议您使用相同的方法安装 scikit-learn，就像您以前安装 SciPy 一样。
 
-有[指令用于安装 scikit-learn](http://scikit-learn.org/stable/install.html) ，但它们仅限于使用 Python _pip_ 包管理器。
+有[指令用于安装 scikit-learn](http://scikit-learn.org/stable/install.html) ，但它们仅限于使用 Python`pip`包管理器。
 
 在 Linux 和 Mac OS X 上，我输入了 scikit-learn：
 

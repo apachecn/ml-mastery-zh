@@ -92,7 +92,7 @@ Bias: -0.100000
 mean_absolute_error = mean( abs(forecast_error) )
 ```
 
-其中 _abs（）_ 使值为正， _forecast_error_ 是一个或一系列预测误差， _mean（）_ 计算平均值。
+其中 _abs（）_ 使值为正，`forecast_error`是一个或一系列预测误差， _mean（）_ 计算平均值。
 
 我们可以使用 scikit-learn 库中的 [mean_absolute_error（）](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_absolute_error.html#sklearn.metrics.mean_absolute_error)函数来计算预测列表的平均绝对误差。以下示例演示了此功能。
 

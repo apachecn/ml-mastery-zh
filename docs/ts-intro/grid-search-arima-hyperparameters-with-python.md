@@ -53,7 +53,7 @@
     3.  商店预测;获取并存储实际观察结果。
 3.  计算预测的误差分数与预期值的比较。
 
-我们可以在 Python 中实现这个作为一个名为 _evaluate_arima_model（）_ 的新独立函数，它将时间序列数据集作为输入，以及 _p_ ， _d_ 的元组]和 _q_ 参数用于评估模型。
+我们可以在 Python 中实现这个作为一个名为 _evaluate_arima_model（）_ 的新独立函数，它将时间序列数据集作为输入，以及`p`，`d`的元组]和`q`参数用于评估模型。
 
 数据集分为两部分：初始训练数据集为 66％，测试数据集为剩余的 34％。
 
@@ -89,7 +89,7 @@ def evaluate_arima_model(X, arima_order):
 
 评估一组参数相对简单。
 
-用户必须指定 _p_ ， _d_ 和 _q_ ARIMA 参数的网格进行迭代。通过调用上一节中描述的 _evaluate_arima_model（）_ 函数，为每个参数创建模型并评估其表现。
+用户必须指定`p`，`d`和`q`ARIMA 参数的网格进行迭代。通过调用上一节中描述的 _evaluate_arima_model（）_ 函数，为每个参数创建模型并评估其表现。
 
 该函数必须跟踪观察到的最低错误分数和导致它的配置。这可以在函数的末尾进行总结，并打印出标准输出。
 
@@ -158,9 +158,9 @@ def parser(x):
 series = read_csv('shampoo-sales.csv', header=0, parse_dates=[0], index_col=0, squeeze=True, date_parser=parser)
 ```
 
-加载后，我们可以指定 _p_ ， _d_ 和 _q_ 值的位点进行搜索并将它们传递给 _evaluate_models（）_ 功能。
+加载后，我们可以指定`p`，`d`和`q`值的位点进行搜索并将它们传递给 _evaluate_models（）_ 功能。
 
-我们将尝试一组滞后值（ _p_ ）和一些差异迭代（ _d_ ）和残余误差滞后值（ _q_ ）。
+我们将尝试一组滞后值（`p`）和一些差异迭代（`d`）和残余误差滞后值（`q`）。
 
 ```py
 # evaluate parameters

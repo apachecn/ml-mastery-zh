@@ -131,7 +131,7 @@ t, 	Input1,				Input2,		Output
 
 在这里，您可以看到如何使用模型的递归使用来构建输出序列。
 
-在预测期间， _inference_encoder_ 模型用于编码输入序列，其返回用于初始化 _inference_decoder_ 模型的状态。从那时起， _inference_decoder_ 模型用于逐步生成预测。
+在预测期间，`inference_encoder`模型用于编码输入序列，其返回用于初始化`inference_decoder`模型的状态。从那时起，`inference_decoder`模型用于逐步生成预测。
 
 在训练模型以生成给定源序列的目标序列之后，可以使用下面名为 _predict_sequence（）_的函数。
 

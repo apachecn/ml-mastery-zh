@@ -124,7 +124,7 @@ statsmodels 库提供适合 ARIMA 模型的功能。
 
 可以使用 statsmodels 库创建 ARIMA 模型，如下所示：
 
-1.  通过调用 [ARIMA（）](http://statsmodels.sourceforge.net/devel/generated/statsmodels.tsa.arima_model.ARIMA.html)并传入 _p_ ， _d_ 和 _q_ 参数来定义模型。
+1.  通过调用 [ARIMA（）](http://statsmodels.sourceforge.net/devel/generated/statsmodels.tsa.arima_model.ARIMA.html)并传入`p`，`d`和`q`参数来定义模型。
 2.  通过调用 [fit（）](http://statsmodels.sourceforge.net/devel/generated/statsmodels.tsa.arima_model.ARIMA.fit.html)函数，在训练数据上准备模型。
 3.  可以通过调用 [predict（）](http://statsmodels.sourceforge.net/devel/generated/statsmodels.tsa.arima_model.ARIMA.predict.html)函数并指定要预测的时间或索引的时间来进行预测。
 
@@ -132,7 +132,7 @@ statsmodels 库提供适合 ARIMA 模型的功能。
 
 首先，我们拟合 ARIMA（5,1,0）模型。这将自动回归的滞后值设置为 5，使用差值顺序 1 使时间序列静止，并使用 0 的移动平均模型。
 
-在拟合模型时，提供了许多关于线性回归模型拟合的调试信息。我们可以通过将 _disp_ 参数设置为 0 来关闭它。
+在拟合模型时，提供了许多关于线性回归模型拟合的调试信息。我们可以通过将`disp`参数设置为 0 来关闭它。
 
 ```py
 from pandas import read_csv
@@ -228,7 +228,7 @@ ARIMA 模型可用于预测未来的时间步长。
 
 如果我们在训练数据集中使用 100 个观测值来拟合模型，那么用于进行预测的下一个时间步骤的索引将被指定给预测函数，因为 _start = 101，end = 101_ 。这将返回一个包含预测的一个元素的数组。
 
-如果我们在配置模型时执行任何差分（ _d&gt; 0_ ），我们还希望预测值处于原始比例。这可以通过将 _typ_ 参数设置为值 _'水平'_： _typ ='水平'_ 来指定。
+如果我们在配置模型时执行任何差分（ _d&gt; 0_ ），我们还希望预测值处于原始比例。这可以通过将`typ`参数设置为值 _'水平'_： _typ ='水平'_ 来指定。
 
 或者，我们可以通过使用 [forecast（）](http://statsmodels.sourceforge.net/devel/generated/statsmodels.tsa.arima_model.ARIMAResults.forecast.html)函数来避免所有这些规范，该函数使用模型执行一步预测。
 

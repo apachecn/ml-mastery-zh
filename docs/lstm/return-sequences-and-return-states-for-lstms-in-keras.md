@@ -40,7 +40,7 @@ Keras深度学习库提供了长期短期记忆或LSTM循环神经网络的实�
 
 创建一层LSTM内存单元允许您指定层中的内存单元数。
 
-层内的每个单元或单元具有内部单元状态，通常缩写为“ _c_ ”，并输出隐藏状态，通常缩写为“ _h_ ”。
+层内的每个单元或单元具有内部单元状态，通常缩写为“`c`”，并输出隐藏状态，通常缩写为“`h`”。
 
 Keras API允许您访问这些数据，这在开发复杂的循环神经网络架构（如编码器 - 解码器模型）时非常有用甚至是必需的。
 
@@ -48,7 +48,7 @@ Keras API允许您访问这些数据，这在开发复杂的循环神经网络�
 
 ## 返回序列
 
-每个LSTM单元将为每个输入输出一个隐藏状态 _h_ 。
+每个LSTM单元将为每个输入输出一个隐藏状态`h`。
 
 ```py
 h = LSTM(X)
@@ -93,7 +93,7 @@ print(model.predict(data))
 
 可以访问每个输入时间步的隐藏状态输出。
 
-这可以通过在定义LSTM层时将 _return_sequences_ 属性设置为 _True_ 来完成，如下所示：
+这可以通过在定义LSTM层时将`return_sequences`属性设置为`True`来完成，如下所示：
 
 ```py
 LSTM(1, return_sequences=True)
@@ -130,7 +130,7 @@ print(model.predict(data))
 
 *   [堆叠长短期内存网络](https://machinelearningmastery.com/stacked-long-short-term-memory-networks/)
 
-在使用包含在TimeDistributed层中的 _Dense_ 输出层预测输出序列时，您可能还需要访问隐藏状态输出序列。有关详细信息，请参阅此帖子：
+在使用包含在TimeDistributed层中的`Dense`输出层预测输出序列时，您可能还需要访问隐藏状态输出序列。有关详细信息，请参阅此帖子：
 
 *   [如何在Python](https://machinelearningmastery.com/timedistributed-layer-for-long-short-term-memory-networks-in-python/) 中为长期短期内存网络使用时间分布层
 
@@ -138,17 +138,17 @@ print(model.predict(data))
 
 LSTM单元或单元层的输出称为隐藏状态。
 
-这很令人困惑，因为每个LSTM单元都保留一个不输出的内部状态，称为单元状态，或 _c_ 。
+这很令人困惑，因为每个LSTM单元都保留一个不输出的内部状态，称为单元状态，或`c`。
 
 通常，我们不需要访问单元状态，除非我们正在开发复杂模型，其中后续层可能需要使用另一层的最终单元状态初始化其单元状态，例如在编码器 - 解码器模型中。
 
-Keras为LSTM层提供了return_state参数，该参数将提供对隐藏状态输出（ _state_h_ ）和单元状态（ _state_c_ ）的访问。例如：
+Keras为LSTM层提供了return_state参数，该参数将提供对隐藏状态输出（`state_h`）和单元状态（`state_c`）的访问。例如：
 
 ```py
 lstm1, state_h, state_c = LSTM(1, return_state=True)
 ```
 
-这可能看起来很混乱，因为lstm1和 _state_h_ 都指向相同的隐藏状态输出。这两个张量分离的原因将在下一节中明确。
+这可能看起来很混乱，因为lstm1和`state_h`都指向相同的隐藏状态输出。这两个张量分离的原因将在下一节中明确。
 
 我们可以使用下面列出的工作示例演示对LSTM层中单元格的隐藏和单元格状态的访问。
 

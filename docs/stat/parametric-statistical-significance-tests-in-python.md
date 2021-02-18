@@ -84,7 +84,7 @@ data2: mean=51.764 stdv=4.660
 
 ## 学生的t-测试
 
-[学生t检验](https://en.wikipedia.org/wiki/Student%27s_t-test)是一个统计假设检验，两个独立的数据样本已知具有高斯分布，具有相同的高斯分布，以William Gosset命名，使用化名“ _Student_ ]“。
+[学生t检验](https://en.wikipedia.org/wiki/Student%27s_t-test)是一个统计假设检验，两个独立的数据样本已知具有高斯分布，具有相同的高斯分布，以William Gosset命名，使用化名“`Student`]“。
 
 > 最常用的t检验之一是独立样本t检验。当您想要比较给定变量上两个独立样本的均值时，可以使用此测试。
 

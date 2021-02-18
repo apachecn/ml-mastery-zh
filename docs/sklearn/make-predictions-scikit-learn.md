@@ -54,7 +54,7 @@ Cosimo 的照片，保留一些权利。
 
 下面是针对简单二元分类问题的最终 [LogisticRegression](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) 模型的示例代码。
 
-虽然我们在本教程中使用 _LogisticRegression_ ，但在 scikit-learn 中几乎所有的分类算法都可以使用相同的函数。
+虽然我们在本教程中使用`LogisticRegression`，但在 scikit-learn 中几乎所有的分类算法都可以使用相同的函数。
 
 ```
 # example of training a final classification model
@@ -83,7 +83,7 @@ model.fit(X, y)
 
 我们可以使用 _predict（）_ 函数在 scikit-learn 中使用我们最终的分类模型来预测新数据实例的类。
 
-例如，我们在名为 _Xnew_ 的数组中有一个或多个数据实例。这可以传递给我们模型上的 _predict（）_ 函数，以预测数组中每个实例的类值。
+例如，我们在名为`Xnew`的数组中有一个或多个数据实例。这可以传递给我们模型上的 _predict（）_ 函数，以预测数组中每个实例的类值。
 
 ```
 Xnew = [[...], [...]]
@@ -150,9 +150,9 @@ X=[-0.79415228, 2.10495117], Predicted=0
 
 准备好数据后，您将把域中的类值（例如字符串）映射到整数值。您可能使用过 [LabelEncoder](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html#sklearn.preprocessing.LabelEncoder) 。
 
-此 _LabelEncoder_ 可用于通过 _inverse_transform（）_ 函数将整数转换回字符串值。
+此`LabelEncoder`可用于通过 _inverse_transform（）_ 函数将整数转换回字符串值。
 
-因此，您可能希望在拟合最终模型时保存（pickle）用于编码 y 值的 _LabelEncoder_ 。
+因此，您可能希望在拟合最终模型时保存（pickle）用于编码 y 值的`LabelEncoder`。
 
 ### 概率预测
 
@@ -169,7 +169,7 @@ ynew = model.predict_proba(Xnew)
 
 此功能仅适用于能够进行概率预测的分类模型，这是大多数但不是所有模型。
 
-以下示例对数据实例的 _Xnew_ 数组中的每个示例进行概率预测。
+以下示例对数据实例的`Xnew`数组中的每个示例进行概率预测。
 
 ```
 # example of making multiple probability predictions
@@ -203,7 +203,7 @@ X=[-2.18773166 3.33352125], Predicted=[0.98437415 0.01562585]
 
 回归是一种监督学习问题，在给定输入示例的情况下，模型学习映射到合适的输出量，例如“0.1”和“0.2”等。
 
-下面是最终的 _LinearRegression_ 模型的示例。同样，用于进行回归预测的函数适用于 scikit-learn 中可用的所有回归模型。
+下面是最终的`LinearRegression`模型的示例。同样，用于进行回归预测的函数适用于 scikit-learn 中可用的所有回归模型。
 
 ```
 # example of training a final regression model

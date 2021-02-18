@@ -99,7 +99,7 @@
 
 - 第294页，[深度学习](http://amzn.to/2fwdoKR)，2016年。
 
-在Keras深度学习库中，您可以通过在训练之前在优化器上设置 _clipnorm_ 或 _clipvalue_ 参数来使用梯度剪辑。
+在Keras深度学习库中，您可以通过在训练之前在优化器上设置`clipnorm`或`clipvalue`参数来使用梯度剪辑。
 
 好的默认值是 _clipnorm = 1.0_ 和 _clipvalue = 0.5_ 。
 
@@ -115,7 +115,7 @@
 
 — [On the difficulty of training recurrent neural networks](http://proceedings.mlr.press/v28/pascanu13.pdf), 2013.
 
-在Keras深度学习库中，您可以通过在层上设置 _kernel_regularizer_ 参数并使用 _L1_ 或 _L2_ 正则化器来使用权重正则化。
+在Keras深度学习库中，您可以通过在层上设置`kernel_regularizer`参数并使用`L1`或`L2`正则化器来使用权重正则化。
 
 *   [Keras API](https://keras.io/regularizers/) 中正则化器的使用
 

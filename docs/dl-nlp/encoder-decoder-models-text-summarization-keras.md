@@ -112,7 +112,7 @@ Ramesh Nallapati，et al。在编码器中使用双向 GRU 循环神经网络，
 
 - [达到要点：利用指针生成器网络汇总](https://arxiv.org/abs/1704.04368)，2017 年。
 
-亚历山大拉什等人。在 _x_ 是源文档的图表中干净地显示， _enc_ 是提供源文档内部表示的编码器， _yc_ 是先前的序列生成的单词。
+亚历山大拉什等人。在`x`是源文档的图表中干净地显示，`enc`是提供源文档内部表示的编码器，`yc`是先前的序列生成的单词。
 
 ![Example of inputs to the decoder for text summarization](img/2453ff0732cb22ffb4e8569f76989116.jpg)
 

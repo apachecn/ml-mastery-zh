@@ -102,7 +102,7 @@ sub_metering_remainder = (global_active_power * 1000 / 60) - (sub_metering_1 + s
 dataset = read_csv('household_power_consumption.txt', sep=';', header=0, low_memory=False, infer_datetime_format=True, parse_dates={'datetime':[0,1]}, index_col=['datetime'])
 ```
 
-接下来，我们可以用'_ 标记所有[缺失值](https://machinelearningmastery.com/handle-missing-timesteps-sequence-prediction-problems-python/)？_ '具有 _NaN_ 值的字符，这是一个浮点数。
+接下来，我们可以用'_ 标记所有[缺失值](https://machinelearningmastery.com/handle-missing-timesteps-sequence-prediction-problems-python/)？_ '具有`NaN`值的字符，这是一个浮点数。
 
 这将允许我们将数据作为一个浮点值数组而不是混合类型（效率较低）。
 
@@ -210,7 +210,7 @@ dataset.to_csv('household_power_consumption.csv')
 
 数据集的这种框架还表明，将每分钟功耗的观察结果下采样到每日总数是有用的。这不是必需的，但考虑到我们对每天的总功率感兴趣，这是有道理的。
 
-我们可以使用 pandas DataFrame 上的 [resample（）函数](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.resample.html)轻松实现这一点。使用参数' _D_ '调用此函数允许按日期时间索引的加载数据按天分组（[查看所有偏移别名](http://pandas.pydata.org/pandas-docs/stable/timeseries.html#offset-aliases)）。然后，我们可以计算每天所有观测值的总和，并为八个变量中的每一个创建每日耗电量数据的新数据集。
+我们可以使用 pandas DataFrame 上的 [resample（）函数](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.resample.html)轻松实现这一点。使用参数'`D`'调用此函数允许按日期时间索引的加载数据按天分组（[查看所有偏移别名](http://pandas.pydata.org/pandas-docs/stable/timeseries.html#offset-aliases)）。然后，我们可以计算每天所有观测值的总和，并为八个变量中的每一个创建每日耗电量数据的新数据集。
 
 下面列出了完整的示例。
 
@@ -559,7 +559,7 @@ Input, Output
 
 我们可以通过跟踪输入和输出的开始和结束索引来实现这一点，因为我们在时间步长方面迭代展平数据的长度。
 
-我们也可以通过参数化输入和输出的数量来实现这一点（例如 _n_input_ ， _n_out_ ），这样您就可以尝试不同的值或根据自己的问题进行调整。
+我们也可以通过参数化输入和输出的数量来实现这一点（例如`n_input`，`n_out`），这样您就可以尝试不同的值或根据自己的问题进行调整。
 
 下面是一个名为 _to_supervised（）_ 的函数，它采用周（历史）列表和用作输入和输出的时间步数，并以重叠移动窗口格式返回数据。
 
@@ -842,7 +842,7 @@ lstm: [399.456] 419.4, 422.1, 384.5, 395.1, 403.9, 317.7, 441.5
 
 具有向量输出和 7 天输入的单变量 LSTM 的每日 RMSE 线图
 
-我们可以通过更改 _n_input_ 变量来增加用作 7 到 14 之间输入的前几天的数量。
+我们可以通过更改`n_input`变量来增加用作 7 到 14 之间输入的前几天的数量。
 
 ```py
 # evaluate model and get scores
@@ -916,7 +916,7 @@ model.add(TimeDistributed(Dense(1)))
 
 只有一个功能，每日消耗的总功率，总有七个功能。因此，单个一周的预测将具有以下大小：[ _1,7,1_ ]。
 
-因此，在训练模型时，我们必须重新构造输出数据（ _y_ ）以具有三维结构而不是[_ 样本的二维结构，特征 _]用于上一节。
+因此，在训练模型时，我们必须重新构造输出数据（`y`）以具有三维结构而不是[_ 样本的二维结构，特征 _]用于上一节。
 
 ```py
 # reshape output into [samples, timesteps, features]
@@ -1621,7 +1621,7 @@ model.add(ConvLSTM2D(filters=64, kernel_size=(1,3), activation='relu', input_sha
 model.add(Flatten())
 ```
 
-我们还将参数化子序列的数量（ _n_steps_ ）和每个子序列的长度（ _n_length_ ）并将它们作为参数传递。
+我们还将参数化子序列的数量（`n_steps`）和每个子序列的长度（`n_length`）并将它们作为参数传递。
 
 模型和训练的其余部分是相同的。下面列出了具有这些更改的 _build_model（）_ 函数。
 

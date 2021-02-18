@@ -497,7 +497,7 @@ Dropout 可以应用于 LSTM 节点内的输入连接。
 
 输入的丢失意味着对于给定的概率，每个 LSTM 块的输入连接上的数据将从节点激活和权重更新中排除。
 
-在 Keras 中，在创建 LSTM 层时使用 _dropout_ 参数指定。丢失值是 0（无丢失）和 1（无连接）之间的百分比。
+在 Keras 中，在创建 LSTM 层时使用`dropout`参数指定。丢失值是 0（无丢失）和 1（无连接）之间的百分比。
 
 在这个实验中，我们将比较没有 dropout 率和 20％，40％和 60％的输入 dropout 率。
 
@@ -678,7 +678,7 @@ def run():
 
 丢失也可以应用于 LSTM 单元上的循环输入信号。
 
-在 Keras 中，这是通过在定义 LSTM 层时设置 _recurrent_dropout_ 参数来实现的。
+在 Keras 中，这是通过在定义 LSTM 层时设置`recurrent_dropout`参数来实现的。
 
 在这个实验中，我们将比较没有 dropout 率与 20％，40％和 60％的复发 dropout 率。
 

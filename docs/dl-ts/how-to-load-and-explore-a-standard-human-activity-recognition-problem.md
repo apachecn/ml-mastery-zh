@@ -110,7 +110,7 @@
 
 *   [下载数据集](https://archive.ics.uci.edu/ml/machine-learning-databases/00287/Activity%20Recognition%20from%20Single%20Chest-Mounted%20Accelerometer.zip)
 
-将数据集解压缩到名为“ _HAR_ ”的新目录中。
+将数据集解压缩到名为“`HAR`”的新目录中。
 
 该目录包含 CSV 文件列表，每个主题一个（1-15）和自述文件。
 

@@ -114,7 +114,7 @@ series = Series.from_csv('daily-births.csv', header=0)
 习惯于在 Python 中探索加载的时间序列数据：
 
 *   使用 _head（）_ 功能打印前几行。
-*   使用 _size_ 属性打印数据集的尺寸。
+*   使用`size`属性打印数据集的尺寸。
 *   使用日期时间字符串查询数据集。
 *   打印观察的摘要统计。
 

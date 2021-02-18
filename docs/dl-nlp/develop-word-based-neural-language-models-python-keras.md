@@ -103,7 +103,7 @@ encoded = tokenizer.texts_to_sequences([data])[0]
 
 我们稍后需要知道词汇表的大小，以便在模型中定义单词嵌入层，以及使用一个热编码对输出单词进行编码。
 
-通过访问 _word_index_ 属性，可以从训练好的 Tokenizer 中检索词汇表的大小。
+通过访问`word_index`属性，可以从训练好的 Tokenizer 中检索词汇表的大小。
 
 ```py
 # determine the vocabulary size
@@ -132,7 +132,7 @@ print('Total Sequences: %d' % len(sequences))
 Total Sequences: 24
 ```
 
-然后我们可以将序列分成输入（ _X_ ）和输出元素（ _y_ ）。这很简单，因为我们在数据中只有两列。
+然后我们可以将序列分成输入（`X`）和输出元素（`y`）。这很简单，因为我们在数据中只有两列。
 
 ```py
 # split into X and y elements
@@ -195,7 +195,7 @@ model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accur
 model.fit(X, y, epochs=500, verbose=2)
 ```
 
-在模型拟合之后，我们通过从词汇表中传递给定的单词并让模型预测下一个单词来测试它。在这里我们通过编码传递' _Jack_ '并调用 _model.predict_classes（）_ 来获得预测单词的整数输出。然后在词汇表映射中查找，以提供相关的单词。
+在模型拟合之后，我们通过从词汇表中传递给定的单词并让模型预测下一个单词来测试它。在这里我们通过编码传递'`Jack`'并调用 _model.predict_classes（）_ 来获得预测单词的整数输出。然后在词汇表映射中查找，以提供相关的单词。
 
 ```py
 # evaluate
@@ -328,7 +328,7 @@ jack => fell
 
 等等。
 
-在运行结束时，传入' _Jack_ '并生成预测或新序列。
+在运行结束时，传入'`Jack`'并生成预测或新序列。
 
 我们得到一个合理的序列作为输出，它有一些源的元素。
 
@@ -508,7 +508,7 @@ print(generate_seq(model, tokenizer, max_length-1, 'Jill', 4))
 
 运行该示例可以更好地适应源数据。添加的上下文允许模型消除一些示例的歧义。
 
-仍有两行文字以“ _Jack_ ”开头，可能仍然是网络的问题。
+仍有两行文字以“`Jack`”开头，可能仍然是网络的问题。
 
 ```py
 ...
@@ -524,9 +524,9 @@ Epoch 500/500
 0s - loss: 0.1032 - acc: 0.9524
 ```
 
-在运行结束时，我们生成两个具有不同种子词的序列：' _Jack_ '和' _Jill_ '。
+在运行结束时，我们生成两个具有不同种子词的序列：'`Jack`'和'`Jill`'。
 
-第一个生成的行看起来很好，直接匹配源文本。第二个有点奇怪。这是有道理的，因为网络只在输入序列中看到' _Jill_ '，而不是在序列的开头，所以它强制输出使用' _Jill_ 这个词'，即押韵的最后一行。
+第一个生成的行看起来很好，直接匹配源文本。第二个有点奇怪。这是有道理的，因为网络只在输入序列中看到'`Jill`'，而不是在序列的开头，所以它强制输出使用'`Jill`这个词'，即押韵的最后一行。
 
 ```py
 Jack fell down and broke

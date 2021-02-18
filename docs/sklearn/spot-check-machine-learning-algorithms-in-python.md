@@ -76,7 +76,7 @@
 
 必须针对给定问题实现该功能，并专门针对该问题。它可能涉及从一个或多个 CSV 文件加载数据。
 
-我们将调用此函数 _load_data（）_;它不需要参数并返回输入（ _X_ ）和输出（ _y_ ）用于预测问题。
+我们将调用此函数 _load_data（）_;它不需要参数并返回输入（`X`）和输出（`y`）用于预测问题。
 
 ```
 # load the dataset, returns X and y elements
@@ -99,7 +99,7 @@ def load_dataset():
 
 每个模型应该是一个很好的机会，可以很好地解决问题。这可能意味着提供模型的一些变体，使用不同的常见或众所周知的配置，平均表现良好。
 
-我们将调用此函数 _define_models（）_。它将返回映射到 scikit-learn 模型对象的模型名称字典。名称应该很短，例如' _svm_ '，并且可以包括配置细节，例如“KNN-7”。
+我们将调用此函数 _define_models（）_。它将返回映射到 scikit-learn 模型对象的模型名称字典。名称应该很短，例如'`svm`'，并且可以包括配置细节，例如“KNN-7”。
 
 该函数还将字典作为可选参数;如果未提供，则创建并填充新字典。如果提供了字典，则会向其添加模型。
 
@@ -149,7 +149,7 @@ def make_pipeline(model):
 
 我们将定义一个名为 _evaluate_model（）_ 的函数，该函数将获取数据，定义的模型，多个折叠以及用于评估结果的表现指标。它将返回分数列表。
 
-该函数调用 _make_pipeline（）_ 为定义的模型准备所需的任何数据变换，然后调用 [cross_val_score（）](http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html) scikit-learn 函数。重要的是， _n_jobs_ 参数设置为-1，以允许模型评估并行发生，从而利用硬件上可用的核心数量。
+该函数调用 _make_pipeline（）_ 为定义的模型准备所需的任何数据变换，然后调用 [cross_val_score（）](http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html) scikit-learn 函数。重要的是，`n_jobs`参数设置为-1，以允许模型评估并行发生，从而利用硬件上可用的核心数量。
 
 ```
 # evaluate a single model
@@ -231,7 +231,7 @@ def evaluate_models(X, y, models, folds=10, metric='accuracy'):
 
 盒子和须状图假设没有分布，并提供了一种直观的方法，可以直接比较模型的分数在中位数表现和分数差异方面的分布。
 
-我们将定义一个名为 _summarize_results（）_ 的函数，该函数获取结果字典，打印结果摘要，并创建保存到文件的 boxplot 图像。该函数接受一个参数来指定评估得分是否最大化，默认情况下为 _True_ 。要汇总的结果数也可以作为可选参数提供，默认为 10。
+我们将定义一个名为 _summarize_results（）_ 的函数，该函数获取结果字典，打印结果摘要，并创建保存到文件的 boxplot 图像。该函数接受一个参数来指定评估得分是否最大化，默认情况下为`True`。要汇总的结果数也可以作为可选参数提供，默认为 10。
 
 该功能首先在打印摘要和创建框和须图之前对得分进行排序。
 
@@ -883,11 +883,11 @@ def define_gbm_models(models=dict(), use_xgb=True):
 	return models
 ```
 
-默认情况下，该函数将使用 XGBoost 模型，但如果函数的 _use_xgb_ 参数设置为 _False_ ，则可以使用 sklearn 梯度增强模型。
+默认情况下，该函数将使用 XGBoost 模型，但如果函数的`use_xgb`参数设置为`False`，则可以使用 sklearn 梯度增强模型。
 
 同样，我们并没有尝试在问题上优化调整 GBM，只是很快找到配置空间中可能值得进一步调查的区域。
 
-此功能可以直接用于分类和回归问题，只需稍微改变“ _XGBClassifier_ ”到“ _XGBRegressor_ ”和“ _GradientBoostingClassifier_ ”到“[HTG6” ] GradientBoostingRegressor “。例如：
+此功能可以直接用于分类和回归问题，只需稍微改变“`XGBClassifier`”到“`XGBRegressor`”和“`GradientBoostingClassifier`”到“[HTG6” ] GradientBoostingRegressor “。例如：
 
 ```
 # define gradient boosting models
@@ -1600,7 +1600,7 @@ results = evaluate_models(X, y, models, pipelines)
 summarize_results(results)
 ```
 
-运行该示例表明，我们通过将管道号添加到算法描述名称的开头来区分每个管道的结果，例如， ' _0rf_ '表示第一个管道的 RF，没有变换。
+运行该示例表明，我们通过将管道号添加到算法描述名称的开头来区分每个管道的结果，例如， '`0rf`'表示第一个管道的 RF，没有变换。
 
 树算法的集合在这个问题上表现良好，并且这些算法对于数据缩放是不变的。这意味着它们在每个管道上的结果将是相似的（或相同的），反过来它们将挤出前 10 个列表中的其他算法。
 

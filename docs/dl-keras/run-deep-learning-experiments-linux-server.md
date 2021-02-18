@@ -81,7 +81,7 @@ python -u myscript5.py >myscript5.py.log 2>&1
 
 该文件将保存为“ _run.sh”_，与代码文件放在同一目录中并在服务器上运行。
 
-例如，如果所有代码和 run.sh 脚本都位于“ _ec2-user_ ”主目录的“ _experiments_ ”目录中，则脚本将按如下方式运行：
+例如，如果所有代码和 run.sh 脚本都位于“ _ec2-user_ ”主目录的“`experiments`”目录中，则脚本将按如下方式运行：
 
 ```py
 nohup /home/ec2-user/experiments/run.sh > /home/ec2-user/experiments/run.sh.log </dev/null 2>&1 &

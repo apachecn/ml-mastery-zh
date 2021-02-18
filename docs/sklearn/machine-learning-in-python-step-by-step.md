@@ -438,7 +438,7 @@ seed = 7
 X_train, X_validation, Y_train, Y_validation = model_selection.train_test_split(X, Y, test_size=validation_size, random_state=seed)
 ```
 
-您现在在 _X_train_ 和 _Y_train_ 中有训练数据用于准备模型， _X_validation_ 和 _Y_validation_ 设置我们以后可以使用。
+您现在在`X_train`和`Y_train`中有训练数据用于准备模型，`X_validation`和`Y_validation`设置我们以后可以使用。
 
 请注意，我们使用 python 切片来选择 NumPy 数组中的列。如果这对您来说是新手，您可能需要查看此帖子：
 

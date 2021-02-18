@@ -66,7 +66,7 @@ Gensim 由捷克自然语言处理研究员[RadimŘehůřek](https://www.linkedi
 
 *   [如何使用 Anaconda 设置用于机器学习和深度学习的 Python 环境](http://machinelearningmastery.com/setup-python-environment-machine-learning-deep-learning-anaconda/)
 
-使用 _pip_ 或 _easy_install_ 可以轻松安装 Gensim。
+使用`pip`或`easy_install`可以轻松安装 Gensim。
 
 例如，您可以通过在命令行上键入以下内容来使用 pip 安装 Gensim：
 
@@ -109,7 +109,7 @@ model = Word2Vec(sentences)
 
 刚开始时，默认值通常足够好。如果您拥有大量核心，就像大多数现代计算机那样，我强烈建议您增加工作人员以匹配核心数量（例如 8）。
 
-训练模型后，可通过“ _wv_ ”属性访问该模型。这是可以进行查询的实际单词向量模型。
+训练模型后，可通过“`wv`”属性访问该模型。这是可以进行查询的实际单词向量模型。
 
 例如，您可以打印所学习的令牌（单词）词汇，如下所示：
 

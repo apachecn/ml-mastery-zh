@@ -108,7 +108,7 @@ Date Temperature
 Temp(t+1) = B0 + B1*Temp(t-1) + B2*Temp(t-2) ... Bn*Temp(t-n)
 ```
 
-其中 _Temp（t + 1）_ 是预测序列中的下一个温度， _B0_ 到 _Bn_ 是从训练数据和 _Temp（ t-1）_ 至 _Temp（tn）_ 是滞后观察。
+其中 _Temp（t + 1）_ 是预测序列中的下一个温度，`B0`到`Bn`是从训练数据和 _Temp（ t-1）_ 至 _Temp（tn）_ 是滞后观察。
 
 这可能是很好的甚至是许多问题所要求的。
 

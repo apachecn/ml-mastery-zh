@@ -85,7 +85,7 @@ e = Embedding(200, 32, input_length=50)
 
 _ 嵌入 _ 层的输出是 2D 向量，在输入的单词序列（输入文档）中为每个单词嵌入一个。
 
-如果您希望将 _Dense_ 层直接连接到嵌入层，则必须先使用 _Flatten_ 层将 2D 输出矩阵展平为 1D 向量。
+如果您希望将`Dense`层直接连接到嵌入层，则必须先使用`Flatten`层将 2D 输出矩阵展平为 1D 向量。
 
 现在，让我们看看我们如何在实践中使用嵌入层。
 
@@ -137,7 +137,7 @@ print(padded_docs)
 
 _ 嵌入 _ 的词汇量为 50，输入长度为 4.我们将选择 8 维的小嵌入空间。
 
-该模型是一个简单的二元分类模型。重要的是，_ 嵌入 _ 层的输出将是 4 个向量，每个维度为 8 维，每个单词一个。我们将其展平为一个 32 元素向量，以传递给 _Dense_ 输出层。
+该模型是一个简单的二元分类模型。重要的是，_ 嵌入 _ 层的输出将是 4 个向量，每个维度为 8 维，每个单词一个。我们将其展平为一个 32 元素向量，以传递给`Dense`输出层。
 
 ```py
 # define the model
@@ -287,7 +287,7 @@ the -0.038194 -0.24487 0.72812 -0.39961 0.083172 0.043953 -0.39141 0.3344 -0.575
 
 在这种情况下，我们需要能够将单词映射到整数以及将整数映射到单词。
 
-Keras 提供了一个 [Tokenizer](https://keras.io/preprocessing/text/#tokenizer) 类，它可以适应训练数据，可以通过调用 _Tokenizer_ 类上的 _texts_to_sequences（）_ 方法将文本转换为序列，并提供对 _word_index_ 属性中单词到整数的字典映射的访问。
+Keras 提供了一个 [Tokenizer](https://keras.io/preprocessing/text/#tokenizer) 类，它可以适应训练数据，可以通过调用`Tokenizer`类上的 _texts_to_sequences（）_ 方法将文本转换为序列，并提供对`word_index`属性中单词到整数的字典映射的访问。
 
 ```py
 # define documents
@@ -348,7 +348,7 @@ for word, i in t.word_index.items():
 
 现在我们可以像以前一样定义我们的模型，拟合并评估它。
 
-关键的区别在于嵌入层可以使用 GloVe 字嵌入权重进行播种。我们选择了 100 维版本，因此必须在 _output_dim_ 设置为 100 的情况下定义嵌入层。最后，我们不想更新此模型中的学习单词权重，因此我们将设置 _]模型的可训练 _ 属性为 _False_ 。
+关键的区别在于嵌入层可以使用 GloVe 字嵌入权重进行播种。我们选择了 100 维版本，因此必须在`output_dim`设置为 100 的情况下定义嵌入层。最后，我们不想更新此模型中的学习单词权重，因此我们将设置 _]模型的可训练 _ 属性为`False`。
 
 ```py
 e = Embedding(vocab_size, 100, weights=[embedding_matrix], input_length=4, trainable=False)

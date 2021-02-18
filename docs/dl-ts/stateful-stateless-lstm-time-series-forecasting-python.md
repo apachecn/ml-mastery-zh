@@ -384,7 +384,7 @@ def fit_lstm(train, batch_size, nb_epoch, neurons):
 	return model
 ```
 
-具有改组实验的无状态涉及在 _fit_lstm（）_ 函数中调用 fit 时将 _shuffle_ 参数设置为 _True_ 。该实验的结果写入文件“ _experiment_stateless_shuffle.csv_ ”。
+具有改组实验的无状态涉及在 _fit_lstm（）_ 函数中调用 fit 时将`shuffle`参数设置为`True`。该实验的结果写入文件“ _experiment_stateless_shuffle.csv_ ”。
 
 完整更新的 _fit_lstm（）_ 功能如下所示。
 

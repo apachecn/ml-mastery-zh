@@ -151,7 +151,7 @@ model.compile(optimizer='adam', loss='mse')
 
 输入的时间步数是我们在准备数据集时选择的数字，作为 _split_sequence（）_ 函数的参数。
 
-每个样本的输入维度在第一个隐藏层定义的 _input_dim_ 参数中指定。从技术上讲，模型将每个时间步骤视为单独的特征而不是单独的时间步骤。
+每个样本的输入维度在第一个隐藏层定义的`input_dim`参数中指定。从技术上讲，模型将每个时间步骤视为单独的特征而不是单独的时间步骤。
 
 我们几乎总是有多个样本，因此，模型将期望训练数据的输入组件具有尺寸或形状：
 
@@ -159,9 +159,9 @@ model.compile(optimizer='adam', loss='mse')
 [samples, features]
 ```
 
-我们在上一节中的 _split_sequence（）_ 函数输出 _X_ ，形状 _[样本，特征]_ 准备用于建模。
+我们在上一节中的 _split_sequence（）_ 函数输出`X`，形状 _[样本，特征]_ 准备用于建模。
 
-使用随机梯度下降的有效 [Adam 版本拟合该模型，并使用均方误差或' _mse_ '，损失函数进行优化。](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/)
+使用随机梯度下降的有效 [Adam 版本拟合该模型，并使用均方误差或'`mse`'，损失函数进行优化。](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/)
 
 定义模型后，我们可以将其放在训练数据集上。
 
@@ -563,7 +563,7 @@ print(yhat)
 
 可以使用 [Keras 功能 API](https://machinelearningmastery.com/keras-functional-api-deep-learning/) 在 Keras 中定义此类型的模型。
 
-首先，我们可以将第一个输入模型定义为 MLP，其输入层需要具有 _n_steps_ 特征的向量。
+首先，我们可以将第一个输入模型定义为 MLP，其输入层需要具有`n_steps`特征的向量。
 
 ```py
 # first input model
@@ -795,7 +795,7 @@ for i in range(len(X)):
 	print(X[i], y[i])
 ```
 
-首先运行该实例打印制备的 _X_ 和 _y_ 组分的形状。
+首先运行该实例打印制备的`X`和`y`组分的形状。
 
 _X_ 的形状是三维的，包括样品的数量（6），每个样品选择的时间步数（3），以及平行时间序列或特征的数量（3）。
 
@@ -1180,7 +1180,7 @@ MLP 可以直接输出向量，可以解释为多步预测。
 
 在前一节中看到这种方法是每个输出时间序列的一个时间步骤被预测为向量。
 
-通过 _n_steps_in_ 和 _n_steps_out_ 变量中指定的输入和输出步数，我们可以定义一个多步骤时间序列预测模型。
+通过`n_steps_in`和`n_steps_out`变量中指定的输入和输出步数，我们可以定义一个多步骤时间序列预测模型。
 
 ```py
 # define model
@@ -1575,7 +1575,7 @@ for i in range(len(X)):
 
 首先运行该示例打印准备好的训练数据集的形状。
 
-我们可以看到数据集的输入（ _X_ ）和输出（ _Y_ ）元素分别对于样本数，时间步长和变量或并行时间序列是三维的。 。
+我们可以看到数据集的输入（`X`）和输出（`Y`）元素分别对于样本数，时间步长和变量或并行时间序列是三维的。 。
 
 然后将每个系列的输入和输出元素并排打印，以便我们可以确认数据是按照我们的预期准备的。
 

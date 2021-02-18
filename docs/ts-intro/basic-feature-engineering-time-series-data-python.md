@@ -118,7 +118,7 @@ Month, Day, Temperature
 Month, Day, Temperature
 ```
 
-我们可以使用 Pandas 来做到这一点。首先，时间序列作为 Pandas _ 系列 _ 加载。然后，我们为转换后的数据集创建一个新的 Pandas _DataFrame_ 。
+我们可以使用 Pandas 来做到这一点。首先，时间序列作为 Pandas _ 系列 _ 加载。然后，我们为转换后的数据集创建一个新的 Pandas`DataFrame`。
 
 接下来，每次添加一列，其中从系列中的每个观察的时间戳信息中提取月和日信息。
 
@@ -191,7 +191,7 @@ NaN, 20.7
 
 我们可以使用 [concat（）函数](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.concat.html)沿着列轴（_ 轴= 1_ ）将移位列连接到一个新的 DataFrame 中。
 
-综合这些，下面是为我们的日常温度数据集创建滞后特征的示例。从加载的序列中提取值，并创建这些值的移位和未移位列表。为清楚起见，每列也在 _DataFrame_ 中命名。
+综合这些，下面是为我们的日常温度数据集创建滞后特征的示例。从加载的序列中提取值，并创建这些值的移位和未移位列表。为清楚起见，每列也在`DataFrame`中命名。
 
 ```py
 from pandas import Series
@@ -369,7 +369,7 @@ min mean max t+1
 
 另一种可能有用的窗口包括该系列中的所有先前数据。
 
-这称为扩展窗口，可以帮助跟踪可观察数据的范围。与 _DataFrame_ 上的 _rolling（）_ 函数一样，Pandas 提供 [expand（）函数](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.expanding.html)，它收集每个时间步的所有先前值的集合。
+这称为扩展窗口，可以帮助跟踪可观察数据的范围。与`DataFrame`上的 _rolling（）_ 函数一样，Pandas 提供 [expand（）函数](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.expanding.html)，它收集每个时间步的所有先前值的集合。
 
 可以汇总这些先前数字列表并将其作为新功能包括在内。例如，下面是系列前 5 个步骤的展开窗口中的数字列表：
 

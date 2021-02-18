@@ -120,7 +120,7 @@ def load_file(filepath):
 	return dataframe.values
 ```
 
-考虑到目录布局和文件名的相似性，我们可以调用此函数来加载给定训练或测试集组的 _X_ 和 _y_ 文件。下面的 _load_dataset_group（）_ 函数将为一个组加载这两个文件，并将 X 和 y 元素作为 NumPy 数组返回。然后，此函数可用于加载训练和测试组的 X 和 y 元素。
+考虑到目录布局和文件名的相似性，我们可以调用此函数来加载给定训练或测试集组的`X`和`y`文件。下面的 _load_dataset_group（）_ 函数将为一个组加载这两个文件，并将 X 和 y 元素作为 NumPy 数组返回。然后，此函数可用于加载训练和测试组的 X 和 y 元素。
 
 ```py
 # load a dataset group, such as train or test
@@ -470,7 +470,7 @@ def load_dataset_group(group, prefix=''):
 
 我们可以使用 NumPy 重塑功能执行此操作，并将[_ 样本，时间步长，特征 _]的三个维度转换为[_ 样本，时间步长*特征 _]的两个维度。
 
-下面的 _load_dataset（）_ 函数实现了这种行为，并返回训练并测试 _X_ 和 _y_ 元素，以便拟合和评估定义的模型。
+下面的 _load_dataset（）_ 函数实现了这种行为，并返回训练并测试`X`和`y`元素，以便拟合和评估定义的模型。
 
 ```py
 # load the dataset, returns train and test X and y elements

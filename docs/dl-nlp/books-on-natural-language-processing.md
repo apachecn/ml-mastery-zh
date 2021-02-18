@@ -97,7 +97,7 @@
 
 代码示例在 R.
 
-代码侧重于 Hadley Wickham（[论文](https://www.jstatsoft.org/article/view/v059i10)）的“ _tidy_ ”原则和作者的 [tidytext](https://github.com/juliasilge/tidytext) 包。
+代码侧重于 Hadley Wickham（[论文](https://www.jstatsoft.org/article/view/v059i10)）的“`tidy`”原则和作者的 [tidytext](https://github.com/juliasilge/tidytext) 包。
 
 在这三本书中，这是最近出版的，对演示有更实际和现代的感觉。
 

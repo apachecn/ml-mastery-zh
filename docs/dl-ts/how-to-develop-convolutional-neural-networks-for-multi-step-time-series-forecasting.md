@@ -74,7 +74,7 @@ sub_metering_remainder = (global_active_power * 1000 / 60) - (sub_metering_1 + s
 dataset = read_csv('household_power_consumption.txt', sep=';', header=0, low_memory=False, infer_datetime_format=True, parse_dates={'datetime':[0,1]}, index_col=['datetime'])
 ```
 
-接下来，我们可以用'_ 标记所有[缺失值](https://machinelearningmastery.com/handle-missing-timesteps-sequence-prediction-problems-python/)？_ '具有 _NaN_ 值的字符，这是一个浮点数。
+接下来，我们可以用'_ 标记所有[缺失值](https://machinelearningmastery.com/handle-missing-timesteps-sequence-prediction-problems-python/)？_ '具有`NaN`值的字符，这是一个浮点数。
 
 这将允许我们将数据作为一个浮点值数组而不是混合类型（效率较低）。
 
@@ -182,7 +182,7 @@ dataset.to_csv('household_power_consumption.csv')
 
 数据集的这种框架还表明，将每分钟功耗的观察结果下采样到每日总数是有用的。这不是必需的，但考虑到我们对每天的总功率感兴趣，这是有道理的。
 
-我们可以使用 pandas DataFrame 上的 [resample（）函数](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.resample.html)轻松实现这一点。使用参数' _D_ '调用此函数允许按日期时间索引的加载数据按天分组（[查看所有偏移别名](http://pandas.pydata.org/pandas-docs/stable/timeseries.html#offset-aliases)）。然后，我们可以计算每天所有观测值的总和，并为八个变量中的每一个创建每日耗电量数据的新数据集。
+我们可以使用 pandas DataFrame 上的 [resample（）函数](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.resample.html)轻松实现这一点。使用参数'`D`'调用此函数允许按日期时间索引的加载数据按天分组（[查看所有偏移别名](http://pandas.pydata.org/pandas-docs/stable/timeseries.html#offset-aliases)）。然后，我们可以计算每天所有观测值的总和，并为八个变量中的每一个创建每日耗电量数据的新数据集。
 
 下面列出了完整的示例。
 
@@ -353,7 +353,7 @@ Input, 						Predict
 
 下面提供了评估此数据集上预测模型的前瞻性验证方法，命名为 _evaluate_model（）_。
 
-标准周格式的训练和测试数据集作为参数提供给函数。提供了另一个参数 _n_input_ ，用于定义模型将用作输入以进行预测的先前观察的数量。
+标准周格式的训练和测试数据集作为参数提供给函数。提供了另一个参数`n_input`，用于定义模型将用作输入以进行预测的先前观察的数量。
 
 调用两个新函数：一个用于根据称为 _build_model（）_ 的训练数据构建模型，另一个用于使用该模型对每个新标准周进行预测，称为 _forecast（）_ 。这些将在后续章节中介绍。
 
@@ -512,7 +512,7 @@ Input, Output
 
 我们可以通过跟踪输入和输出的开始和结束索引来实现这一点，因为我们在时间步长方面迭代展平数据的长度。
 
-我们也可以通过参数化输入和输出的数量来实现这一点（例如 _n_input_ ， _n_out_ ），这样您就可以尝试不同的值或根据自己的问题进行调整。
+我们也可以通过参数化输入和输出的数量来实现这一点（例如`n_input`，`n_out`），这样您就可以尝试不同的值或根据自己的问题进行调整。
 
 下面是一个名为 _to_supervised（）_ 的函数，它采用周（历史）列表和用作输入和输出的时间步数，并以重叠移动窗口格式返回数据。
 
@@ -796,7 +796,7 @@ cnn: [404.411] 436.1, 400.6, 346.2, 388.2, 405.5, 326.0, 502.9
 
 具有 7 天输入的单变量 CNN 每日 RMSE 的线图
 
-我们可以通过更改 _n_input_ 变量来增加用作 7 到 14 之间输入的前几天的数量。
+我们可以通过更改`n_input`变量来增加用作 7 到 14 之间输入的前几天的数量。
 
 ```py
 # evaluate model and get scores

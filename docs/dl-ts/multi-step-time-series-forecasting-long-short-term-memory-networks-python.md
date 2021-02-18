@@ -206,7 +206,7 @@ def series_to_supervised(data, n_in=1, n_out=1, dropnan=True):
 	return agg
 ```
 
-可以通过将加载的系列值传入 _n_in_ 值 1 和 n_out 值 3 来调用该函数;例如：
+可以通过将加载的系列值传入`n_in`值 1 和 n_out 值 3 来调用该函数;例如：
 
 ```py
 supervised = series_to_supervised(raw_values, 1, 3)
@@ -570,7 +570,7 @@ def difference(dataset, interval=1):
 	return Series(diff)
 ```
 
-我们可以使用 sklearn 库中的 _MinMaxScaler_ 来缩放数据。
+我们可以使用 sklearn 库中的`MinMaxScaler`来缩放数据。
 
 将这些放在一起，我们可以更新 _prepare_data（）_ 函数以首先区分数据并重新调整它，然后执行转换为监督学习问题并训练测试集，就像我们之前使用持久性示例一样。
 
@@ -694,7 +694,7 @@ forecasts = make_forecasts(model, 1, train, test, 1, 3)
 
 这是必要的，以便我们可以计算与其他模型相当的错误分数和图，例如上面的持久性预测。
 
-我们可以使用提供 _inverse_transform（）_ 函数的 _MinMaxScaler_ 对象直接反转预测的比例。
+我们可以使用提供 _inverse_transform（）_ 函数的`MinMaxScaler`对象直接反转预测的比例。
 
 我们可以通过将最后一个观察值（前几个月的洗发水销售额）添加到第一个预测值来反转差异，然后将值传播到预测值之下。
 

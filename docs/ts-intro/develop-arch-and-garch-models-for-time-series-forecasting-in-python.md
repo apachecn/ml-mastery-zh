@@ -55,7 +55,7 @@ ARCH 或自回归条件异方差性方法提供了一种模拟时间序列变化
 
 - [广义自回归条件异方差](https://www.sciencedirect.com/science/article/pii/0304407686900631)，1986。
 
-必须指定滞后参数以定义要包括在模型中的先前残留错误的数量。使用 GARCH 模型的符号（稍后讨论），我们可以将此参数称为“ _q_ ”。最初，这个参数被称为“ _p_ ”，在本教程后面使用的 arch Python 包中也被称为“ _p_ ”。
+必须指定滞后参数以定义要包括在模型中的先前残留错误的数量。使用 GARCH 模型的符号（稍后讨论），我们可以将此参数称为“`q`”。最初，这个参数被称为“`p`”，在本教程后面使用的 arch Python 包中也被称为“`p`”。
 
 *   **q** ：包含在 ARCH 模型中的滞后平方残差的数量。
 
@@ -86,7 +86,7 @@ ARCH 或自回归条件异方差性方法提供了一种模拟时间序列变化
 *   **p** ：GARCH 模型中包含的滞后变化数。
 *   **q** ：要包含在 GARCH 模型中的滞后残差的数量。
 
-GARCH 模型的普遍接受的符号是用 _p_ 和 _q_ 参数 GARCH（p，q）指定 GARCH（）函数;例如，GARCH（1,1）将是一阶 GARCH 模型。
+GARCH 模型的普遍接受的符号是用`p`和`q`参数 GARCH（p，q）指定 GARCH（）函数;例如，GARCH（1,1）将是一阶 GARCH 模型。
 
 GARCH 模型包含 ARCH 模型，其中 GARCH（0，q）等效于 ARCH（q）模型。
 
@@ -202,7 +202,7 @@ train, test = data[:-n_test], data[-n_test:]
 
 可以通过调用 [arch_model（）函数](http://arch.readthedocs.io/en/latest/univariate/introduction.html#arch.arch_model)来定义模型。我们可以为该系列的平均值指定一个模型：在这种情况下， _mean ='Zero'_ 是一个合适的模型。然后我们可以指定方差的模型：在这种情况下 _vol ='ARCH'_。我们还可以为 ARCH 模型指定滞后参数：在这种情况下 _p = 15_ 。
 
-注意，在 arch 库中，ARCH / GARCH 的 _p_ 和 _q_ 参数的名称已被颠倒。
+注意，在 arch 库中，ARCH / GARCH 的`p`和`q`参数的名称已被颠倒。
 
 ```py
 # define model

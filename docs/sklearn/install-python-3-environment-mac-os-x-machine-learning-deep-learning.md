@@ -36,7 +36,7 @@ XCode 是 OS X 上的开发 IDE。
 
 此步骤假定您已拥有 Apple App Store 帐户，并且您具有足够的管理权限以在工作站上安装软件。
 
-*   1.打开“ _App Store_ ”应用程序。搜索“ _XCode_ ”并单击“ _Get_ ”按钮进行安装。
+*   1.打开“ _App Store_ ”应用程序。搜索“`XCode`”并单击“`Get`”按钮进行安装。
 
 系统将提示您输入 App Store 密码。
 
@@ -46,7 +46,7 @@ XCode 是免费的，大小至少为 4.5 GB，可能需要一些时间才能下�
 
 App Store 搜索 XCode
 
-*   2.打开“_ 应用程序 _”，然后找到并启动“ _XCode_ ”。
+*   2.打开“_ 应用程序 _”，然后找到并启动“`XCode`”。
 
 在启动 XCode 之前，系统可能会提示您安装其他组件。同意并安装。
 
@@ -80,7 +80,7 @@ xcode-select -p
 sudo xcodebuild -license
 ```
 
-使用“ _space_ ”键导航到底部并同意。
+使用“`space`”键导航到底部并同意。
 
 您现在已安装 XCode 和 XCode 命令行工具。
 

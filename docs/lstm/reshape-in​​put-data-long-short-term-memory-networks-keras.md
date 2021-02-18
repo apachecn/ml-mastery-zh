@@ -34,7 +34,7 @@
 
 ### LSTM输入层
 
-LSTM输入层由网络的第一个隐藏层上的“ _input_shape_ ”参数指定。
+LSTM输入层由网络的第一个隐藏层上的“`input_shape`”参数指定。
 
 这会让初学者感到困惑。
 
@@ -58,7 +58,7 @@ model.add(Dense(1))
 
 这意味着输入层在拟合模型和进行预测时需要3D数据阵列，即使数组的特定尺寸包含单个值，例如，一个样本或一个特征。
 
-定义LSTM网络的输入层时，网络假定您有一个或多个样本，并要求您指定时间步数和要素数。您可以通过指定“ _input_shape_ ”参数的元组来完成此操作。
+定义LSTM网络的输入层时，网络假定您有一个或多个样本，并要求您指定时间步数和要素数。您可以通过指定“`input_shape`”参数的元组来完成此操作。
 
 例如，下面的模型定义了一个输入层，该输入层需要1个或更多样本，50个时间步长和2个特征。
 
@@ -116,7 +116,7 @@ print(data.shape)
 (1, 10, 1)
 ```
 
-此数据现在可以用作输入（ _X_ ）到LSTM，其input_shape为（10,1）。
+此数据现在可以用作输入（`X`）到LSTM，其input_shape为（10,1）。
 
 ```py
 model = Sequential()
@@ -185,7 +185,7 @@ Running the example prints the new 3D shape of the single sample.
 (1, 10, 2)
 ```
 
-此数据现在可以用作输入（ _X_ ）到LSTM，其input_shape为（10,2）。
+此数据现在可以用作输入（`X`）到LSTM，其input_shape为（10,2）。
 
 ```py
 model = Sequential()
@@ -205,8 +205,8 @@ model.add(Dense(1))
 
 *   LSTM输入层必须为3D。
 *   3个输入维度的含义是：样本，时间步长和功能。
-*   LSTM输入层由第一个隐藏层上的 _input_shape_ 参数定义。
-*   _input_shape_ 参数采用两个值的元组来定义时间步长和特征的数量。
+*   LSTM输入层由第一个隐藏层上的`input_shape`参数定义。
+*  `input_shape`参数采用两个值的元组来定义时间步长和特征的数量。
 *   假设样本数为1或更多。
 *   NumPy阵列上的 _reshape（）_功能可用于将您的1D或2D数据重塑为3D。
 *   _reshape（）_函数将元组作为定义新形状的参数。

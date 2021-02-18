@@ -47,7 +47,7 @@
 
 LSTM功能强大，但难以使用且难以配置，尤其适合初学者。
 
-另一个复杂因素是 [TimeDistributed](https://keras.io/layers/wrappers/#timedistributed) Layer（以及之前的 _TimeDistributedDense_ 层），它被隐式描述为层包装器：
+另一个复杂因素是 [TimeDistributed](https://keras.io/layers/wrappers/#timedistributed) Layer（以及之前的`TimeDistributedDense`层），它被隐式描述为层包装器：
 
 > 这个包装器允许我们将一个层应用于输入的每个时间片。
 
@@ -311,7 +311,7 @@ _________________________________________________________________
 y = seq.reshape(1, length, 1)
 ```
 
-我们可以通过将“ _return_sequences_ ”参数设置为true来定义LSTM隐藏层以返回序列而不是单个值。
+我们可以通过将“`return_sequences`”参数设置为true来定义LSTM隐藏层以返回序列而不是单个值。
 
 ```py
 model.add(LSTM(n_neurons, input_shape=(length, 1), return_sequences=True))

@@ -350,7 +350,7 @@ def measure_rmse(actual, predicted):
 
 我们现在可以实现[前进验证方案](https://machinelearningmastery.com/backtest-machine-learning-models-time-series-forecasting/)。这是评估尊重观测时间顺序的时间序列预测模型的标准方法。
 
-首先，使用 _train_test_split（_ _）_ 函数将提供的单变量时间序列数据集分成训练集和测试集。然后枚举测试集中的观察数。对于每一个我们都适合所有历史的模型，并进行一步预测。然后将对时间步骤的真实观察添加到历史中，并重复该过程。调用 _simple_forecast_ _（）_ 函数以适合模型并进行预测。最后，通过调用 _measure_rmse（）_ 函数，将所有一步预测与实际测试集进行比较，计算错误分数。
+首先，使用 _train_test_split（_ _）_ 函数将提供的单变量时间序列数据集分成训练集和测试集。然后枚举测试集中的观察数。对于每一个我们都适合所有历史的模型，并进行一步预测。然后将对时间步骤的真实观察添加到历史中，并重复该过程。调用`simple_forecast`_（）_ 函数以适合模型并进行预测。最后，通过调用 _measure_rmse（）_ 函数，将所有一步预测与实际测试集进行比较，计算错误分数。
 
 下面的 _walk_forward_validation（）_ 函数实现了这一点，采用单变量时间序列，在测试集中使用的一些时间步骤，以及模型配置数组。
 
@@ -375,7 +375,7 @@ def walk_forward_validation(data, n_test, cfg):
 	return error
 ```
 
-如果您对进行多步预测感兴趣，可以在 _simple_forecast_ _（）_ 函数中更改 _ 预测（_ _）_ 的调用并且还改变 _measure_rmse（）_ 函数中的误差计算。
+如果您对进行多步预测感兴趣，可以在`simple_forecast`_（）_ 函数中更改 _ 预测（_ _）_ 的调用并且还改变 _measure_rmse（）_ 函数中的误差计算。
 
 我们可以使用不同的模型配置列表重复调用 _walk_forward_validation（）_。
 
@@ -427,7 +427,7 @@ executor = Parallel(n_jobs=cpu_count(), backend='multiprocessing')
 tasks = (delayed(score_model)(data, n_test, cfg) for cfg in cfg_list)
 ```
 
-最后，我们可以使用 _Parallel_ 对象并行执行任务列表。
+最后，我们可以使用`Parallel`对象并行执行任务列表。
 
 ```py
 scores = executor(tasks)
@@ -615,7 +615,7 @@ def simple_configs(max_length, offsets=[1]):
 				configs.append(cfg)
 	return configs
 
-if __name__ == '__main__':
+if`_name_`== '__main__':
 	# define dataset
 	data = [10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0]
 	print(data)
@@ -813,7 +813,7 @@ def simple_configs(max_length, offsets=[1]):
 				configs.append(cfg)
 	return configs
 
-if __name__ == '__main__':
+if`_name_`== '__main__':
 	# define dataset
 	series = read_csv('daily-total-female-births.csv', header=0, index_col=0)
 	data = series.values
@@ -1010,7 +1010,7 @@ def simple_configs(max_length, offsets=[1]):
 def custom_parser(x):
 	return datetime.strptime('195'+x, '%Y-%m')
 
-if __name__ == '__main__':
+if`_name_`== '__main__':
 	# load dataset
 	series = read_csv('shampoo.csv', header=0, index_col=0, date_parser=custom_parser)
 	data = series.values
@@ -1208,7 +1208,7 @@ def simple_configs(max_length, offsets=[1]):
 				configs.append(cfg)
 	return configs
 
-if __name__ == '__main__':
+if`_name_`== '__main__':
 	# define dataset
 	series = read_csv('monthly-mean-temp.csv', header=0, index_col=0)
 	data = series.values
@@ -1402,7 +1402,7 @@ def simple_configs(max_length, offsets=[1]):
 				configs.append(cfg)
 	return configs
 
-if __name__ == '__main__':
+if`_name_`== '__main__':
 	# define dataset
 	series = read_csv('monthly-car-sales.csv', header=0, index_col=0)
 	data = series.values

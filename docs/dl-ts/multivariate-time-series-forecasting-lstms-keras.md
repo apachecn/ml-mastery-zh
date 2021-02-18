@@ -293,7 +293,7 @@ print(train_X.shape, train_y.shape, test_X.shape, test_y.shape)
 
 该模型适用于批量大小为 72 的 50 个训练时期。请记住，Keras 中 LSTM 的内部状态在每个批次结束时重置，因此内部状态可能是若干天的函数。有帮助（试试这个）。
 
-最后，我们通过在 fit（）函数中设置 _validation_data_ 参数来跟踪训练期间的训练和测试丢失。在运行结束时，绘制训练和测试损失。
+最后，我们通过在 fit（）函数中设置`validation_data`参数来跟踪训练期间的训练和测试丢失。在运行结束时，绘制训练和测试损失。
 
 ```py
 # design network

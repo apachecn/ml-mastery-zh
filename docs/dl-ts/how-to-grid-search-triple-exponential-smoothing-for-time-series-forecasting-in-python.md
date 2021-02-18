@@ -70,18 +70,18 @@
 
 该模型具有超参数，可控制为系列，趋势和季节性执行的指数的性质，具体为：
 
-*   **smoothing_level** （ _alpha_ ）：该级别的平滑系数。
-*   **smoothing_slope** （ _beta_ ）：趋势的平滑系数。
-*   **smoothing_seasonal** （ _gamma_ ）：季节性成分的平滑系数。
-*   **damping_slope** （ _phi_ ）：阻尼趋势的系数。
+*   **smoothing_level** （`alpha`）：该级别的平滑系数。
+*   **smoothing_slope** （`beta`）：趋势的平滑系数。
+*   **smoothing_seasonal** （`gamma`）：季节性成分的平滑系数。
+*   **damping_slope** （`phi`）：阻尼趋势的系数。
 
 在定义模型时，可以指定所有这四个超参数。如果未指定它们，库将自动调整模型并找到这些超参数的最佳值（例如 _optimized = True_ ）。
 
 还有其他超参数，模型不会自动调整您可能想要指定的;他们是：
 
-*   **趋势**：趋势分量的类型，作为加法的“_ 加 _”或乘法的“ _mul_ ”。可以通过将趋势设置为“无”来禁用对趋势建模。
+*   **趋势**：趋势分量的类型，作为加法的“_ 加 _”或乘法的“`mul`”。可以通过将趋势设置为“无”来禁用对趋势建模。
 *   **阻尼**：趋势分量是否应该被阻尼，无论是真还是假。
-*   **季节性**：季节性成分的类型，为“_ 添加 _”为添加剂或“ _mul_ ”为乘法。可以通过将季节性组件设置为“无”来禁用它。
+*   **季节性**：季节性成分的类型，为“_ 添加 _”为添加剂或“`mul`”为乘法。可以通过将季节性组件设置为“无”来禁用它。
 *   **seasonal_periods** ：季节性时间段内的时间步数，例如在一年一度的季节性结构中 12 个月 12 个月。
 *   **use_boxcox** ：是否执行系列的幂变换（True / False）或指定变换的 lambda。
 
@@ -202,7 +202,7 @@ def score_model(data, n_test, cfg, debug=False):
 
 通过并行评估模型配置，我们可以大大加快网格搜索过程。一种方法是使用 [Joblib 库](https://pythonhosted.org/joblib/)。
 
-我们可以定义一个 _Parallel_ 对象，其中包含要使用的核心数，并将其设置为硬件中检测到的 CPU 核心数。
+我们可以定义一个`Parallel`对象，其中包含要使用的核心数，并将其设置为硬件中检测到的 CPU 核心数。
 
 ```py
 executor = Parallel(n_jobs=cpu_count(), backend='multiprocessing')
@@ -214,7 +214,7 @@ executor = Parallel(n_jobs=cpu_count(), backend='multiprocessing')
 tasks = (delayed(score_model)(data, n_test, cfg) for cfg in cfg_list)
 ```
 
-最后，我们可以使用 _Parallel_ 对象并行执行任务列表。
+最后，我们可以使用`Parallel`对象并行执行任务列表。
 
 ```py
 scores = executor(tasks)
@@ -411,7 +411,7 @@ def exp_smoothing_configs(seasonal=[None]):
 							models.append(cfg)
 	return models
 
-if __name__ == '__main__':
+if`_name_`== '__main__':
 	# define dataset
 	data = [10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0]
 	print(data)
@@ -449,7 +449,7 @@ done
 
 我们不报告模型本身优化的模型参数。假设您可以通过指定更广泛的超参数来再次获得相同的结果，并允许库找到相同的内部参数。
 
-您可以通过重新配置具有相同配置的独立模型并在模型拟合上打印' _params_ '属性的内容来访问这些内部参数;例如：
+您可以通过重新配置具有相同配置的独立模型并在模型拟合上打印'`params`'属性的内容来访问这些内部参数;例如：
 
 ```py
 print(model_fit.params)
@@ -598,7 +598,7 @@ def exp_smoothing_configs(seasonal=[None]):
 							models.append(cfg)
 	return models
 
-if __name__ == '__main__':
+if`_name_`== '__main__':
 	# load dataset
 	series = read_csv('daily-total-female-births.csv', header=0, index_col=0)
 	data = series.values
@@ -801,7 +801,7 @@ def exp_smoothing_configs(seasonal=[None]):
 							models.append(cfg)
 	return models
 
-if __name__ == '__main__':
+if`_name_`== '__main__':
 	# load dataset
 	series = read_csv('shampoo.csv', header=0, index_col=0)
 	data = series.values
@@ -1003,7 +1003,7 @@ def exp_smoothing_configs(seasonal=[None]):
 							models.append(cfg)
 	return models
 
-if __name__ == '__main__':
+if`_name_`== '__main__':
 	# load dataset
 	series = read_csv('monthly-mean-temp.csv', header=0, index_col=0)
 	data = series.values
@@ -1260,7 +1260,7 @@ def exp_smoothing_configs(seasonal=[None]):
 							models.append(cfg)
 	return models
 
-if __name__ == '__main__':
+if`_name_`== '__main__':
 	# load dataset
 	series = read_csv('monthly-car-sales.csv', header=0, index_col=0)
 	data = series.values

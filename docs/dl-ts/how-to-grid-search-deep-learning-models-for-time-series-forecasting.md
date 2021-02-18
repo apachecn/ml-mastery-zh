@@ -557,7 +557,7 @@ history = difference(history, n_diff)
 
 准备好之后，我们可以使用历史数据创建单个样本作为模型的输入，以进行一步预测。
 
-一个样本的形状必须是[1，n_input]，其中 _n_input_ 是要使用的滞后观察数的选定数量。
+一个样本的形状必须是[1，n_input]，其中`n_input`是要使用的滞后观察数的选定数量。
 
 ```py
 # shape input for model

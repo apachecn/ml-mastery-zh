@@ -72,7 +72,7 @@ sub_metering_remainder = (global_active_power * 1000 / 60) - (sub_metering_1 + s
 dataset = read_csv('household_power_consumption.txt', sep=';', header=0, low_memory=False, infer_datetime_format=True, parse_dates={'datetime':[0,1]}, index_col=['datetime'])
 ```
 
-接下来，我们可以用'_ 标记所有[缺失值](https://machinelearningmastery.com/handle-missing-timesteps-sequence-prediction-problems-python/)？_ '具有 _NaN_ 值的字符，这是一个浮点数。
+接下来，我们可以用'_ 标记所有[缺失值](https://machinelearningmastery.com/handle-missing-timesteps-sequence-prediction-problems-python/)？_ '具有`NaN`值的字符，这是一个浮点数。
 
 这将允许我们将数据作为一个浮点值数组而不是混合类型（效率较低）。
 
@@ -180,7 +180,7 @@ dataset.to_csv('household_power_consumption.csv')
 
 数据集的这种框架还表明，将每分钟功耗的观察结果下采样到每日总数是有用的。这不是必需的，但考虑到我们对每天的总功率感兴趣，这是有道理的。
 
-我们可以使用 pandas DataFrame 上的 [resample（）函数](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.resample.html)轻松实现这一点。使用参数' _D_ '调用此函数允许按日期时间索引的加载数据按天分组（[查看所有偏移别名](http://pandas.pydata.org/pandas-docs/stable/timeseries.html#offset-aliases)）。然后，我们可以计算每天所有观测值的总和，并为八个变量中的每一个创建每日耗电量数据的新数据集。
+我们可以使用 pandas DataFrame 上的 [resample（）函数](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.resample.html)轻松实现这一点。使用参数'`D`'调用此函数允许按日期时间索引的加载数据按天分组（[查看所有偏移别名](http://pandas.pydata.org/pandas-docs/stable/timeseries.html#offset-aliases)）。然后，我们可以计算每天所有观测值的总和，并为八个变量中的每一个创建每日耗电量数据的新数据集。
 
 下面列出了完整的示例。
 
@@ -351,7 +351,7 @@ Input, 						Predict
 
 评估此数据集上的预测模型的前瞻性验证方法在下面的函数中提供，名为 _evaluate_model（）_。
 
-提供 scikit-learn 模型对象作为函数的参数，以及训练和测试数据集。提供了另一个参数 _n_input_ ，用于定义模型将用作输入以进行预测的先前观察的数量。
+提供 scikit-learn 模型对象作为函数的参数，以及训练和测试数据集。提供了另一个参数`n_input`，用于定义模型将用作输入以进行预测的先前观察的数量。
 
 关于 scikit-learn 模型如何适合并进行预测的细节将在后面的章节中介绍。
 
@@ -514,7 +514,7 @@ _forecast（）_ 函数将使用该模型进行递归多步预测。
 
 递归预测涉及迭代多步预测所需的七天中的每一天。
 
-将模型的输入数据作为 _input_data_ 列表的最后几个观察值。此列表附有训练数据最后一行的所有观察结果，当我们使用模型进行预测时，它们会添加到此列表的末尾。因此，我们可以从该列表中获取最后的 _n_input_ 观测值，以实现提供先前输出作为输入的效果。
+将模型的输入数据作为`input_data`列表的最后几个观察值。此列表附有训练数据最后一行的所有观察结果，当我们使用模型进行预测时，它们会添加到此列表的末尾。因此，我们可以从该列表中获取最后的`n_input`观测值，以实现提供先前输出作为输入的效果。
 
 该模型用于对准备好的输入数据进行预测，并将输出添加到我们将返回的实际输出序列的列表和输入数据列表中，我们将从中输出观察值作为模型的输入。下一次迭代。
 
@@ -837,7 +837,7 @@ sgd: [383.177] 400.3, 386.0, 333.0, 368.9, 401.5, 303.9, 466.9
 
 首先，我们必须更新 _to_supervised（）_ 函数以准备数据，例如用作输入的前一周观察数据以及用作输出的下周特定日期的观察结果。
 
-下面列出了实现此行为的更新的 _to_supervised（）_ 函数。它需要一个参数 _output_ix_ 来定义下一周的日[0,6]以用作输出。
+下面列出了实现此行为的更新的 _to_supervised（）_ 函数。它需要一个参数`output_ix`来定义下一周的日[0,6]以用作输出。
 
 ```py
 # convert history into inputs and outputs
@@ -854,9 +854,9 @@ def to_supervised(history, output_ix):
 
 接下来，我们可以更新 _sklearn_predict（）_ 函数，为一周预测中的每一天创建一个新数据集和一个新模型。
 
-函数的主体大部分没有变化，只是在输出序列中每天在循环中使用它，其中“ _i_ ”的索引被传递给 _to_supervised 的调用（ ）_ 为了准备一个特定的数据集来训练模型来预测那一天。
+函数的主体大部分没有变化，只是在输出序列中每天在循环中使用它，其中“`i`”的索引被传递给 _to_supervised 的调用（ ）_ 为了准备一个特定的数据集来训练模型来预测那一天。
 
-该函数不再采用 _n_input_ 参数，因为我们已将输入修复为前一周的七天。
+该函数不再采用`n_input`参数，因为我们已将输入修复为前一周的七天。
 
 ```py
 # fit a model and make a forecast
@@ -1057,7 +1057,7 @@ sgd: [403.526] 441.4, 378.2, 354.5, 423.9, 382.4, 345.8, 480.3
 
 直接提前期方法是相同的，除了 _to_supervised（）_ 使用更多的训练数据集。
 
-该函数与递归模型示例中定义的函数相同，只是它需要额外的 _output_ix_ 参数来定义下一周中用作输出的日期。
+该函数与递归模型示例中定义的函数相同，只是它需要额外的`output_ix`参数来定义下一周中用作输出的日期。
 
 下面列出了直接每个引导时间策略的更新 _to_supervised（）_ 函数。
 

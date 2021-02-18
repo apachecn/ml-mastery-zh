@@ -123,7 +123,7 @@ scikit-learn 机器学习库允许您诊断分类器的概率校准并校准可�
 
 在 scikit-learn 中，这称为校准曲线。
 
-这可以通过首先计算 [calibration_curve（）函数](http://scikit-learn.org/stable/modules/generated/sklearn.calibration.calibration_curve.html)来实现。此函数采用数据集的真实类值和主类的预测概率（class = 1）。该函数返回每个 bin 的真实概率和每个 bin 的预测概率。可以通过 _n_bins_ 参数指定箱数，默认为 5。
+这可以通过首先计算 [calibration_curve（）函数](http://scikit-learn.org/stable/modules/generated/sklearn.calibration.calibration_curve.html)来实现。此函数采用数据集的真实类值和主类的预测概率（class = 1）。该函数返回每个 bin 的真实概率和每个 bin 的预测概率。可以通过`n_bins`参数指定箱数，默认为 5。
 
 例如，下面是显示 API 使用情况的代码段：
 
@@ -184,7 +184,7 @@ calibrator.fit(trainX, trainy)
 yhat = calibrator.predict(testX)
 ```
 
-CalibratedClassifierCV 类支持两种类型的概率校准;具体而言，参数' _sigmoid_ '方法（Platt 方法）和非参数'_ 等渗 _'方法可以通过'_ 方法 _'参数指定。
+CalibratedClassifierCV 类支持两种类型的概率校准;具体而言，参数'`sigmoid`'方法（Platt 方法）和非参数'_ 等渗 _'方法可以通过'_ 方法 _'参数指定。
 
 ## 工作的校准 SVM 概率的示例
 
@@ -194,7 +194,7 @@ CalibratedClassifierCV 类支持两种类型的概率校准;具体而言，参�
 
 SVM 是一个很好的候选校准模型，因为它本身不能预测概率，这意味着概率通常是未经校准的。
 
-**关于 SVM** 的注释：可以通过在拟合模型上调用 _decision_function（）_ 函数而不是通常的 _predict_proba（）_ 函数来预测概率。概率不是标准化的，但可以通过将' _normalize_ '参数设置为' _True_ '来调用 _calibration_curve（）_ 函数时进行归一化。
+**关于 SVM** 的注释：可以通过在拟合模型上调用 _decision_function（）_ 函数而不是通常的 _predict_proba（）_ 函数来预测概率。概率不是标准化的，但可以通过将'`normalize`'参数设置为'`True`'来调用 _calibration_curve（）_ 函数时进行归一化。
 
 以下示例拟合测试问题的 SVM 模型，预测概率，并将概率的校准绘制为可靠性图，
 

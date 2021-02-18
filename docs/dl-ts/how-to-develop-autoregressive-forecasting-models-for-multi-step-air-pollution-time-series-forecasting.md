@@ -69,7 +69,7 @@ EMC Data Science Global Hackathon 数据集或简称“空气质量预测”数�
 
 数据集可以从 Kaggle 网站免费下载。您可能必须创建一个帐户并登录才能下载数据集。
 
-下载整个数据集，例如“_ 将所有 _”下载到您的工作站，并使用名为' _AirQualityPrediction_ '的文件夹解压缩当前工作目录中的存档。
+下载整个数据集，例如“_ 将所有 _”下载到您的工作站，并使用名为'`AirQualityPrediction`'的文件夹解压缩当前工作目录中的存档。
 
 *   [EMC 数据科学全球黑客马拉松（空气质量预测）数据](https://www.kaggle.com/c/dsg-hackathon/data)
 
@@ -100,7 +100,7 @@ for chunk_id in chunk_ids:
 	chunks[chunk_id] = values[selection, :]
 ```
 
-下面定义了一个名为 _to_chunks（）_ 的函数，它接受加载数据的 NumPy 数组，并将 _chunk_id_ 的字典返回到块的行。
+下面定义了一个名为 _to_chunks（）_ 的函数，它接受加载数据的 NumPy 数组，并将`chunk_id`的字典返回到块的行。
 
 ```py
 # split the dataset by 'chunkID', return a dict of id to rows
@@ -155,7 +155,7 @@ Total Chunks: 208
 
 我们可以将每个块分成前五天的训练观察和最后三天的测试。
 
-每个观察都有一行称为' _position_within_chunk_ '，从 1 到 192（8 天* 24 小时）不等。因此，我们可以将此列中值小于或等于 120（5 * 24）的所有行作为训练数据，将任何大于 120 的值作为测试数据。
+每个观察都有一行称为'`position_within_chunk`'，从 1 到 192（8 天* 24 小时）不等。因此，我们可以将此列中值小于或等于 120（5 * 24）的所有行作为训练数据，将任何大于 120 的值作为测试数据。
 
 此外，任何在训练或测试分割中没有任何观察的块都可以被丢弃，因为不可行。
 
@@ -202,7 +202,7 @@ def get_lead_times():
 
 接下来，我们可以将测试数据集缩减为仅在首选提前期的数据。
 
-我们可以通过查看' _position_within_chunk_ '列并使用提前期作为距离训练数据集末尾的偏移量来实现，例如： 120 + 1,120 +2 等
+我们可以通过查看'`position_within_chunk`'列并使用提前期作为距离训练数据集末尾的偏移量来实现，例如： 120 + 1,120 +2 等
 
 如果我们在测试集中找到匹配的行，则保存它，否则生成一行 NaN 观测值。
 
@@ -369,7 +369,7 @@ def prepare_test_forecasts(test_chunks):
 
 我们将使用平均绝对误差或 MAE 来评估模型。这是在竞争中使用的度量，并且在给定目标变量的非高斯分布的情况下是合理的选择。
 
-如果提前期不包含测试集中的数据（例如 _NaN_ ），则不会计算该预测的错误。如果提前期确实在测试集中有数据但预测中没有数据，那么观察的全部大小将被视为错误。最后，如果测试集具有观察值并进行预测，则绝对差值将被记录为误差。
+如果提前期不包含测试集中的数据（例如`NaN`），则不会计算该预测的错误。如果提前期确实在测试集中有数据但预测中没有数据，那么观察的全部大小将被视为错误。最后，如果测试集具有观察值并进行预测，则绝对差值将被记录为误差。
 
 _calculate_error（）_ 函数实现这些规则并返回给定预测的错误。
 
@@ -465,9 +465,9 @@ def summarize_error(name, total_mae, times_mae):
 
 因此，第一步是研究目标变量的完整性或不完整性。
 
-对于给定变量，可能缺少由缺失行定义的观察值。具体地，每个观察具有' _position_within_chunk_ '。我们期望训练数据集中的每个块有 120 个观察值，其中“ _positions_within_chunk_ ”从 1 到 120 包含。
+对于给定变量，可能缺少由缺失行定义的观察值。具体地，每个观察具有'`position_within_chunk`'。我们期望训练数据集中的每个块有 120 个观察值，其中“`positions_within_chunk`”从 1 到 120 包含。
 
-因此，我们可以为每个变量创建一个 120 纳米值的数组，使用' _positions_within_chunk_ '值标记块中的所有观察值，剩下的任何内容都将标记为 _NaN_ 。然后我们可以绘制每个变量并寻找差距。
+因此，我们可以为每个变量创建一个 120 纳米值的数组，使用'`positions_within_chunk`'值标记块中的所有观察值，剩下的任何内容都将标记为`NaN`。然后我们可以绘制每个变量并寻找差距。
 
 下面的 _variable_to_series（）_ 函数将获取目标变量的块和给定列索引的行，并将为变量返回一系列 120 个时间步长，所有可用数据都标记为来自块。
 
@@ -1170,7 +1170,7 @@ def forecast_variable(hours, chunk_train, chunk_test, lead_times, target_ix):
 model = ARIMA(series, order=(1,0,0))
 ```
 
-接下来，该模型适用于推算系列。我们通过将 _disp_ 设置为 _False_ 来关闭拟合期间的详细信息。
+接下来，该模型适用于推算系列。我们通过将`disp`设置为`False`来关闭拟合期间的详细信息。
 
 ```py
 # fit the model
@@ -1195,7 +1195,7 @@ return yhat[indices]
 
 statsmodels ARIMA 模型使用线性代数库来拟合封面下的模型，有时适合过程在某些数据上可能不稳定。因此，它可以抛出异常或报告大量警告。
 
-我们将捕获异常并返回 _NaN_ 预测，并在拟合和评估期间忽略所有警告。
+我们将捕获异常并返回`NaN`预测，并在拟合和评估期间忽略所有警告。
 
 下面的 _fit_and_forecast（）_ 函数将所有这些联系在一起。
 
@@ -1520,7 +1520,7 @@ def impute_missing(train_chunks, rows, hours, series, col_ix):
 	return imputed
 ```
 
-为了将 train_chunks 传递给 _impute_missing（）_ 函数，我们必须更新 _forecast_variable（）_ 函数以将 _train_chunks_ 作为参数并传递给它，然后更新 _forecast_chunks（）_ 函数以传递 _train_chunks_ 。
+为了将 train_chunks 传递给 _impute_missing（）_ 函数，我们必须更新 _forecast_variable（）_ 函数以将`train_chunks`作为参数并传递给它，然后更新 _forecast_chunks（）_ 函数以传递`train_chunks`。
 
 下面列出了使用全局插补策略的完整示例。
 

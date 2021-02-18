@@ -97,7 +97,7 @@ nohup python /home/ec2-user/script.py >/home/ec2-user/script.py.log </dev/null 2
 
 例如，您选择的 EC2 实例可能有 4 个 GPU，您可以选择在每个实例上运行一个脚本。
 
-使用 CUDA，您可以指定要与环境变量 _CUDA_VISIBLE_DEVICES_ 一起使用的 GPU 设备。
+使用 CUDA，您可以指定要与环境变量`CUDA_VISIBLE_DEVICES`一起使用的 GPU 设备。
 
 我们可以使用上面相同的命令来运行脚本并指定要使用的特定 GPU 设备，如下所示：
 
@@ -109,7 +109,7 @@ CUDA_VISIBLE_DEVICES=0 nohup python /home/ec2-user/script.py >/home/ec2-user/scr
 
 我希望这可以用于 Theano 后端，但我只测试了用于 Keras 的 TensorFlow 后端。
 
-您可以在帖子中了解有关 _CUDA_VISIBLE_DEVICES_ 的更多信息：
+您可以在帖子中了解有关`CUDA_VISIBLE_DEVICES`的更多信息：
 
 *   [CUDA Pro 提示：使用 CUDA_VISIBLE_DEVICES 控制 GPU 可见性](https://devblogs.nvidia.com/parallelforall/cuda-pro-tip-control-gpu-visibility-cuda_visible_devices/)
 
@@ -162,7 +162,7 @@ top -p PID -M
 
 如果您计划并行运行多个脚本并使用 GPU RAM，再次强调请关注运行 GPU 的 GPU 利用率。
 
-您可以使用 _nvidia-smi_ 命令来关注 GPU 的使用情况。我喜欢使用 _watch_ 命令来保持终端打开并为每个新结果清屏。
+您可以使用 _nvidia-smi_ 命令来关注 GPU 的使用情况。我喜欢使用`watch`命令来保持终端打开并为每个新结果清屏。
 
 ```py
 watch "nvidia-smi"
@@ -172,7 +172,7 @@ watch "nvidia-smi"
 
 密切关注哪些脚本仍在运行也很重要。
 
-您可以使用 _ps_ 命令执行此操作。
+您可以使用`ps`命令执行此操作。
 
 同样，我喜欢使用 watch 命令来保持终端打开。
 
@@ -184,7 +184,7 @@ watch "ps -ef | grep python"
 
 我建议不要在服务器上编辑文件，除非你真的需要。
 
-不过，您可以使用 _vi_ 编辑器编辑文件。
+不过，您可以使用`vi`编辑器编辑文件。
 
 下面的示例将在 vi 中打开您的脚本。
 

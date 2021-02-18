@@ -286,7 +286,7 @@ Samples are likely drawn from different distributions (reject H0)
 
 我们无法按原样使用学生t检验。实际上，我们必须使用名为Welch t检验的测试的修改版本。
 
-在SciPy中，这是相同的 [ttest_ind（）](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html)函数，但我们必须将“ _equal_var_ ”参数设置为“ _False_ ”以指示差异不相等。
+在SciPy中，这是相同的 [ttest_ind（）](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html)函数，但我们必须将“`equal_var`”参数设置为“`False`”以指示差异不相等。
 
 我们可以通过一个例子证明这一点，我们生成两组结果，其中非常相似（50对51）和非常不同的标准差（1对10）。我们将生成100个样本。
 

@@ -63,7 +63,7 @@ CSV 文件中的注释在行的开头用散列（“＃”）表示。
 
 ### 使用 Python 标准库加载 CSV
 
-Python API 提供模块 _CSV_ 和函数 _reader（）_，可用于加载 CSV 文件。
+Python API 提供模块`CSV`和函数 _reader（）_，可用于加载 CSV 文件。
 
 加载后，将 CSV 数据转换为 NumPy 数组并将其用于机器学习。
 

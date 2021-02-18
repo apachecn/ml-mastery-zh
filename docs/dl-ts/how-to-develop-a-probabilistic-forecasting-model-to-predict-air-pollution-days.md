@@ -474,16 +474,16 @@ pyplot.show()
 
 有许多参数可以调整模型，但调整模型的一些好的启发式方法包括：
 
-*   降低学习率（ _learning_rate_ ），同时增加决策树的数量（ _n_estimators_ ）。
-*   增加决策树的最大深度（ _max_depth_ ），同时减少可用于拟合树的样本数（_ 样本 _）。
+*   降低学习率（`learning_rate`），同时增加决策树的数量（`n_estimators`）。
+*   增加决策树的最大深度（`max_depth`），同时减少可用于拟合树的样本数（_ 样本 _）。
 
 我们可以根据这些原则检查一些参数，而不是网格搜索值。如果您有时间和计算资源，可以自己探索这些参数的网格搜索。
 
 我们将比较 GBM 模型的四种配置：
 
-*   **基线**：如前一节测试的那样（ _learning_rate_ = 0.1， _n_estimators_ = 100，_ 子样本 _ = 1.0， _max_depth_ = 3）
-*   **lr** ，学习率较低且树木较多（ _learning_rate_ = 0.01， _n_estimators_ = 500，_ 子样本 _ = 1.0， _max_depth_ = 3）
-*   **深度**，最大树深度增加，数据集采样量减少（ _learning_rate_ = 0.1， _n_estimators_ = 100，_ 子样本 _ = 0.7， _max_depth_ =）
+*   **基线**：如前一节测试的那样（`learning_rate`= 0.1，`n_estimators`= 100，_ 子样本 _ = 1.0，`max_depth`= 3）
+*   **lr** ，学习率较低且树木较多（`learning_rate`= 0.01，`n_estimators`= 500，_ 子样本 _ = 1.0，`max_depth`= 3）
+*   **深度**，最大树深度增加，数据集采样量减少（`learning_rate`= 0.1，`n_estimators`= 100，_ 子样本 _ = 0.7，`max_depth`=）
 *   **所有**，所有修改。
 
 下面列出了完整的示例。

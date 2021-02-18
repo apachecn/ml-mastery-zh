@@ -92,7 +92,7 @@ clean 文件的开头应如下所示：
 例如：
 
 *   如果我们有兴趣开发 [Kafkaesque](http://www.thefreedictionary.com/Kafkaesk) 语言模型，我们可能希望保留所有案例，引号和其他标点符号。
-*   如果我们有兴趣将文件分类为“ _Kafka_ ”和“ _Not Kafka_ ”，那么我们可能会想要删除案例，标点符号，甚至修剪单词。
+*   如果我们有兴趣将文件分类为“`Kafka`”和“ _Not Kafka_ ”，那么我们可能会想要删除案例，标点符号，甚至修剪单词。
 
 使用您的任务作为镜头，通过它选择如何准备文本数据。
 
@@ -165,7 +165,7 @@ words = re.split(r'\W+', text)
 print(words[:100])
 ```
 
-再次，运行示例我们可以看到我们得到了单词列表。这一次，我们可以看到“_ 盔甲式 _”现在是两个词“_ 装甲 _”和“_ 喜欢 _”（精）但是收缩像“ _]什么是 _“也是两个词”_ 什么 _“和” _s_ “（不是很好）。
+再次，运行示例我们可以看到我们得到了单词列表。这一次，我们可以看到“_ 盔甲式 _”现在是两个词“_ 装甲 _”和“_ 喜欢 _”（精）但是收缩像“ _]什么是 _“也是两个词”_ 什么 _“和”`s`“（不是很好）。
 
 ```py
 ['One', 'morning', 'when', 'Gregor', 'Samsa', 'woke', 'from', 'troubled', 'dreams', 'he', 'found', 'himself', 'transformed', 'in', 'his', 'bed', 'into', 'a', 'horrible', 'vermin', 'He', 'lay', 'on', 'his', 'armour', 'like', 'back', 'and', 'if', 'he', 'lifted', 'his', 'head', 'a', 'little', 'he', 'could', 'see', 'his', 'brown', 'belly', 'slightly', 'domed', 'and', 'divided', 'by', 'arches', 'into', 'stiff', 'sections', 'The', 'bedding', 'was', 'hardly', 'able', 'to', 'cover', 'it', 'and', 'seemed', 'ready', 'to', 'slide', 'off', 'any', 'moment', 'His', 'many', 'legs', 'pitifully', 'thin', 'compared', 'with', 'the', 'size', 'of', 'the', 'rest', 'of', 'him', 'waved', 'about', 'helplessly', 'as', 'he', 'looked', 'What', 's', 'happened', 'to', 'me', 'he', 'thought', 'It', 'wasn', 't', 'a', 'dream', 'His', 'room']
@@ -218,7 +218,7 @@ print(stripped[:100])
 
 我们可以看到，这主要是产生了预期的效果。
 
-像“_ 什么 _”这样的收缩已成为“_ 什么 _”，但“_ 盔甲式 _”已成为“ _armourlike_ ”。
+像“_ 什么 _”这样的收缩已成为“_ 什么 _”，但“_ 盔甲式 _”已成为“`armourlike`”。
 
 ```py
 ['One', 'morning', 'when', 'Gregor', 'Samsa', 'woke', 'from', 'troubled', 'dreams', 'he', 'found', 'himself', 'transformed', 'in', 'his', 'bed', 'into', 'a', 'horrible', 'vermin', 'He', 'lay', 'on', 'his', 'armourlike', 'back', 'and', 'if', 'he', 'lifted', 'his', 'head', 'a', 'little', 'he', 'could', 'see', 'his', 'brown', 'belly', 'slightly', 'domed', 'and', 'divided', 'by', 'arches', 'into', 'stiff', 'sections', 'The', 'bedding', 'was', 'hardly', 'able', 'to', 'cover', 'it', 'and', 'seemed', 'ready', 'to', 'slide', 'off', 'any', 'moment', 'His', 'many', 'legs', 'pitifully', 'thin', 'compared', 'with', 'the', 'size', 'of', 'the', 'rest', 'of', 'him', 'waved', 'about', 'helplessly', 'as', 'he', 'looked', 'Whats', 'happened', 'to', 'me', 'he', 'thought', 'It', 'wasnt', 'a', 'dream', 'His', 'room', 'a', 'proper', 'human']
@@ -230,7 +230,7 @@ print(stripped[:100])
 
 将所有单词转换为一个案例是很常见的。
 
-这意味着词汇量会缩小，但会丢失一些区别（例如“ _Apple_ ”公司与“ _apple_ ”水果是一个常用的例子）。
+这意味着词汇量会缩小，但会丢失一些区别（例如“`Apple`”公司与“`apple`”水果是一个常用的例子）。
 
 我们可以通过调用每个单词的 lower（）函数将所有单词转换为小写。
 
@@ -329,7 +329,7 @@ print(sentences[0])
 
 NLTK 提供了一个名为 _word_tokenize（）_ 的函数，用于将字符串拆分为标记（名义上为单词）。
 
-它根据空格和标点符号分割标记。例如，逗号和句点被视为单独的标记。收缩被分开（例如“_ 什么 _”变成“_ 什么 _”“' _s_ ”）。行情保留，等等。
+它根据空格和标点符号分割标记。例如，逗号和句点被视为单独的标记。收缩被分开（例如“_ 什么 _”变成“_ 什么 _”“'`s`”）。行情保留，等等。
 
 例如：
 
@@ -381,7 +381,7 @@ print(words[:100])
 
 [停用词](https://en.wikipedia.org/wiki/Stop_words)是那些对词组的深层含义没有贡献的词。
 
-它们是最常见的词，例如：“”，“ _a_ ”和“_ 是 _”。
+它们是最常见的词，例如：“”，“`a`”和“_ 是 _”。
 
 对于某些应用程序（如文档分类），删除停用词可能有意义。
 
@@ -436,9 +436,9 @@ words = [w for w in words if not w in stop_words]
 print(words[:100])
 ```
 
-运行这个例子，我们可以看到除了所有其他变换之外，还删除了诸如“ _a_ ”和“_ 到 _”之类的停用词。
+运行这个例子，我们可以看到除了所有其他变换之外，还删除了诸如“`a`”和“_ 到 _”之类的停用词。
 
-我注意到我们仍然留下像“ _nt_ ”这样的令牌。兔子洞很深;我们总能做得更多。
+我注意到我们仍然留下像“`nt`”这样的令牌。兔子洞很深;我们总能做得更多。
 
 ```py
 ['one', 'morning', 'gregor', 'samsa', 'woke', 'troubled', 'dreams', 'found', 'transformed', 'bed', 'horrible', 'vermin', 'lay', 'armourlike', 'back', 'lifted', 'head', 'little', 'could', 'see', 'brown', 'belly', 'slightly', 'domed', 'divided', 'arches', 'stiff', 'sections', 'bedding', 'hardly', 'able', 'cover', 'seemed', 'ready', 'slide', 'moment', 'many', 'legs', 'pitifully', 'thin', 'compared', 'size', 'rest', 'waved', 'helplessly', 'looked', 'happened', 'thought', 'nt', 'dream', 'room', 'proper', 'human', 'room', 'although', 'little', 'small', 'lay', 'peacefully', 'four', 'familiar', 'walls', 'collection', 'textile', 'samples', 'lay', 'spread', 'table', 'samsa', 'travelling', 'salesman', 'hung', 'picture', 'recently', 'cut', 'illustrated', 'magazine', 'housed', 'nice', 'gilded', 'frame', 'showed', 'lady', 'fitted', 'fur', 'hat', 'fur', 'boa', 'sat', 'upright', 'raising', 'heavy', 'fur', 'muff', 'covered', 'whole', 'lower', 'arm', 'towards', 'viewer']
@@ -448,7 +448,7 @@ print(words[:100])
 
 [词干](https://en.wikipedia.org/wiki/Stemming)指的是将每个单词缩减为其根或基数的过程。
 
-例如“_ 钓鱼 _”，“_ 捕捞 _”，“ _fisher_ ”全部减少到茎“_ 鱼 _”。
+例如“_ 钓鱼 _”，“_ 捕捞 _”，“`fisher`”全部减少到茎“_ 鱼 _”。
 
 一些应用程序，如文档分类，可以从词干分析中受益，以便既减少词汇量又专注于文档的感觉或情感，而不是更深层的含义。
 
@@ -472,7 +472,7 @@ stemmed = [porter.stem(word) for word in tokens]
 print(stemmed[:100])
 ```
 
-运行这个例子，你可以看到单词已经减少到它们的词干，例如“ _trouble_ ”变成了“ _troubl_ ”。您还可以看到，词干实现还将令牌减少为小写，可能是字表中的内部查找。
+运行这个例子，你可以看到单词已经减少到它们的词干，例如“`trouble`”变成了“`troubl`”。您还可以看到，词干实现还将令牌减少为小写，可能是字表中的内部查找。
 
 您还可以看到，词干实现还将令牌减少为小写，可能是字表中的内部查找。
 

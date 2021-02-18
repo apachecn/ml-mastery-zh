@@ -71,7 +71,7 @@
 *   [Flickr8k_Dataset.zip](https://github.com/jbrownlee/Datasets/releases/download/Flickr8k/Flickr8k_Dataset.zip)
 *   [Flickr8k_text.zip](https://github.com/jbrownlee/Datasets/releases/download/Flickr8k/Flickr8k_text.zip)
 
-将照片和说明分别解压缩到 _Flicker8k_Dataset_ 和 _Flickr8k_text_ 目录中的当前工作目录中。
+将照片和说明分别解压缩到`Flicker8k_Dataset`和`Flickr8k_text`目录中的当前工作目录中。
 
 数据准备分为两部分，它们是：
 
@@ -442,7 +442,7 @@ def train_test_split(dataset):
 
 下面是函数 _load_clean_descriptions（）_，它为来自' _descriptionss.txt_ '的已清除文本描述加载给定的一组标识符，并将标识符字典返回给文本。
 
-我们将开发的模型将生成给定照片的标题，并且标题将一次生成一个单词。将提供先前生成的单词的序列作为输入。因此，我们需要一个“_ 第一个字 _”来启动生成过程和'_ 最后一个字 _'来表示标题的结束。为此，我们将使用字符串' _startseq_ '和' _endseq_ '。
+我们将开发的模型将生成给定照片的标题，并且标题将一次生成一个单词。将提供先前生成的单词的序列作为输入。因此，我们需要一个“_ 第一个字 _”来启动生成过程和'_ 最后一个字 _'来表示标题的结束。为此，我们将使用字符串'`startseq`'和'`endseq`'。
 
 ```py
 # load clean descriptions into memory
@@ -606,7 +606,7 @@ photo	startseq, little, girl, running, in, field, endseq
 
 稍后，当模型用于生成描述时，生成的单词将被连接并递归地提供作为输入以生成图像的标题。
 
-下面给出标记器 _create_sequences（）_ 的函数，单个干净的描述，照片的特征和最大描述长度将为训练模型准备一组输入 - 输出对。调用此函数将返回 _X1_ 和 _X2_ ，用于图像数据和输入序列数据的数组以及输出字的 _y_ 值。
+下面给出标记器 _create_sequences（）_ 的函数，单个干净的描述，照片的特征和最大描述长度将为训练模型准备一组输入 - 输出对。调用此函数将返回`X1`和`X2`，用于图像数据和输入序列数据的数组以及输出字的`y`值。
 
 输入序列是整数编码的，输出字是一个热编码的，以表示在整个可能单词的词汇表中预期单词的概率分布。
 
@@ -729,7 +729,7 @@ ________________________________________________________________________________
 
 函数 _data_generator（）_ 定义数据生成器，给定加载的照片描述字典，照片特征，整数编码序列的分词器以及数据集中的最大序列长度。
 
-生成器永远循环，并在被问及时保持产生批量的输入 - 输出对。我们还有一个 _n_step_ 参数，它允许我们调整每批次要生成的输入输出对的图像数量。平均序列有 10 个字，即 10 个输入 - 输出对，良好的批量大小可能是 30 个样本，大约 2 到 3 个图像值。
+生成器永远循环，并在被问及时保持产生批量的输入 - 输出对。我们还有一个`n_step`参数，它允许我们调整每批次要生成的输入输出对的图像数量。平均序列有 10 个字，即 10 个输入 - 输出对，良好的批量大小可能是 30 个样本，大约 2 到 3 个图像值。
 
 ```py
 # data generator, intended to be used in a call to model.fit_generator()
@@ -776,7 +776,7 @@ model.fit_generator(data_generator(train_descriptions, train_features, tokenizer
 
 首先，我们需要能够使用训练有素的模型生成照片的描述。
 
-这包括传入开始描述标记' _startseq_ '，生成一个单词，然后以生成的单词作为输入递归调用模型，直到到达序列标记结尾' _endseq_ '或达到最大描述长度。
+这包括传入开始描述标记'`startseq`'，生成一个单词，然后以生成的单词作为输入递归调用模型，直到到达序列标记结尾'`endseq`'或达到最大描述长度。
 
 以下名为 _generate_desc（）_ 的函数实现此行为，并在给定训练模型和给定准备照片作为输入的情况下生成文本描述。它调用函数 _word_for_id（）_ 以将整数预测映射回一个字。
 
@@ -1209,7 +1209,7 @@ max    0.058660  0.060624
 
 让我们训练一个模型并从训练和测试集生成一些描述作为健全性检查。
 
-将重复次数更改为 1，将运行名称更改为“ _baseline_generate_ ”。
+将重复次数更改为 1，将运行名称更改为“`baseline_generate`”。
 
 ```py
 model_name = 'baseline_generate'
@@ -1327,7 +1327,7 @@ def define_model(vocab_size, max_length):
 	return model
 ```
 
-我们将此模型命名为“ _size_sm_fixed_vec_ ”。
+我们将此模型命名为“`size_sm_fixed_vec`”。
 
 ```py
 model_name = 'size_sm_fixed_vec'
@@ -1374,7 +1374,7 @@ def define_model(vocab_size, max_length):
 	return model
 ```
 
-我们将此配置命名为“ _size_lg_fixed_vec_ ”。
+我们将此配置命名为“`size_lg_fixed_vec`”。
 
 ```py
 model_name = 'size_lg_fixed_vec'

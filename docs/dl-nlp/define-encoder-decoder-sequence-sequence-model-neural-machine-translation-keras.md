@@ -94,9 +94,9 @@ Stop!	Arrête-toi !
 
 第一步是定义编码器。
 
-编码器的输入是一系列字符，每个字符编码为长度为 _num_encoder_tokens_ 的单热向量。
+编码器的输入是一系列字符，每个字符编码为长度为`num_encoder_tokens`的单热向量。
 
-编码器中的 LSTM 层定义为 _return_state_ 参数设置为 _True_ 。这将返回 LSTM 层返回的隐藏状态输出，以及层中所有单元格的隐藏状态和单元格状态。这些在定义解码器时使用。
+编码器中的 LSTM 层定义为`return_state`参数设置为`True`。这将返回 LSTM 层返回的隐藏状态输出，以及层中所有单元格的隐藏状态和单元格状态。这些在定义解码器时使用。
 
 ```py
 # Define an input sequence and process it.
@@ -109,15 +109,15 @@ encoder_states = [state_h, state_c]
 
 接下来，我们定义解码器。
 
-解码器输入被定义为法语字符一热编码到二元向量的序列，其长度为 _num_decoder_tokens_ 。
+解码器输入被定义为法语字符一热编码到二元向量的序列，其长度为`num_decoder_tokens`。
 
 LSTM 层定义为返回序列和状态。忽略最终的隐藏和单元状态，仅引用隐藏状态的输出序列。
 
 重要的是，编码器的最终隐藏和单元状态用于初始化解码器的状态。这意味着每次编码器模型对输入序列进行编码时，编码器模型的最终内部状态将用作输出输出序列中第一个字符的起始点。这也意味着编码器和解码器 LSTM 层必须具有相同数量的单元，在这种情况下为 256。
 
-_Dense_ 输出层用于预测每个字符。该 _Dense_ 用于以一次性方式产生输出序列中的每个字符，而不是递归地，至少在训练期间。这是因为在训练期间已知输入模型所需的整个目标序列。
+_Dense_ 输出层用于预测每个字符。该`Dense`用于以一次性方式产生输出序列中的每个字符，而不是递归地，至少在训练期间。这是因为在训练期间已知输入模型所需的整个目标序列。
 
-Dense 不需要包含在 _TimeDistributed_ 层中。
+Dense 不需要包含在`TimeDistributed`层中。
 
 ```py
 # Set up the decoder, using `encoder_states` as initial state.
@@ -193,7 +193,7 @@ plot_model(model, to_file='model.png', show_shapes=True)
 
 定义推理模型需要参考示例中用于训练的模型的元素。或者，可以定义具有相同形状的新模型并从文件加载权重。
 
-编码器模型被定义为从训练模型中的编码器获取输入层（ _encoder_inputs_ ）并输出隐藏和单元状态张量（ _encoder_states_ ）。
+编码器模型被定义为从训练模型中的编码器获取输入层（`encoder_inputs`）并输出隐藏和单元状态张量（`encoder_states`）。
 
 ```py
 # define encoder inference model

@@ -113,14 +113,14 @@ train_X, train_y = train[:,0], train[:,1]
 test_X, test_y = test[:,0], test[:,1]
 ```
 
-通过预测输出值（ _y_ ）作为输入值（ _x_ ）的副本来应用持久性模型。
+通过预测输出值（`y`）作为输入值（`x`）的副本来应用持久性模型。
 
 ```py
 # persistence model
 predictions = [x for x in test_X]
 ```
 
-然后将残余误差计算为预期结果（ _test_y_ ）和预测（_ 预测 _）之间的差异。
+然后将残余误差计算为预期结果（`test_y`）和预测（_ 预测 _）之间的差异。
 
 ```py
 # calculate residuals

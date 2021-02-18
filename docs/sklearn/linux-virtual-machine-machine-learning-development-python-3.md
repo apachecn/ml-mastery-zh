@@ -32,7 +32,7 @@ Linux 是使用 Python 进行机器学习开发的绝佳环境。
 
 也许最有利的一点是第一个，能够轻松使用您的环境不支持的机器学习工具。
 
-我是 OS X 用户，即使可以使用 _brew_ 和 _macports_ 安装机器学习工具，我仍然发现设置和使用 Linux 虚拟机进行机器学习开发更容易。
+我是 OS X 用户，即使可以使用`brew`和`macports`安装机器学习工具，我仍然发现设置和使用 Linux 虚拟机进行机器学习开发更容易。
 
 ## 概观
 
@@ -97,7 +97,7 @@ VirtualBox 是一个免费的开源平台，用于创建和管理虚拟机。
 现在，让我们在 VirtualBox 中创建 Fedora 虚拟机。
 
 *   1.打开 VirtualBox 软件。
-*   2.单击“ _New_ ”按钮。
+*   2.单击“`New`”按钮。
 *   3.选择名称和操作系统。
     *   名称： _Fedora25_
     *   类型： _Linux_
@@ -134,7 +134,7 @@ VirtualBox 是一个免费的开源平台，用于创建和管理虚拟机。
 
 *   3.单击“_ 启动 _”按钮。
 *   4.选择第一个选项“_ 启动 Fedora-Live-Workstation-Live 25_ ”，然后按 _ 确认 _ 键。
-*   5.点击“ _Esc_ ”键跳过检查。
+*   5.点击“`Esc`”键跳过检查。
 *   6.选择“_ 实时系统用户 _”。
 *   7.选择“_ 安装到硬盘 _”。
 
@@ -167,9 +167,9 @@ VirtualBox 是一个免费的开源平台，用于创建和管理虚拟机。
 
 已经安装了 Fedora Linux;让我们完成安装并准备好使用它。
 
-*   1.在 VirtualBox 中选择 Fedora25 VM，在“ _Storage_ ”下，单击“ _Optical Drive_ ”。
+*   1.在 VirtualBox 中选择 Fedora25 VM，在“`Storage`”下，单击“ _Optical Drive_ ”。
     *   选择“_ 从虚拟驱动器 _ 中删除磁盘”以弹出 ISO 映像。
-*   2.单击“ _Start_ ”按钮启动 Fedora Linux 安装。
+*   2.单击“`Start`”按钮启动 Fedora Linux 安装。
 *   3.以您创建的用户身份登录。
 
 ![Fedora Login as New User](img/b4d986f3056bc613299ed1d0d336805e.jpg)
@@ -179,7 +179,7 @@ Fedora 以新用户身份登录
 *   4.完成安装
     *   选择语言“_ 英语 _”
     *   点击“_ 下一个 _”
-    *   选择键盘“ _US_ ”
+    *   选择键盘“`US`”
     *   点击“_ 下一个 _”
     *   配置隐私
     *   点击“_ 下一个 _”
@@ -229,7 +229,7 @@ Python3 版本
     *   Statsmodels
     *   Scikit-学习
 
-[DNF](https://en.wikipedia.org/wiki/DNF_(software)) 是软件安装系统，正式为 yum。第一次运行 _dnf_ 时，它会更新软件包数据库，这可能需要一分钟。
+[DNF](https://en.wikipedia.org/wiki/DNF_(software)) 是软件安装系统，正式为 yum。第一次运行`dnf`时，它会更新软件包数据库，这可能需要一分钟。
 
 Type:
 
@@ -239,7 +239,7 @@ sudo dnf install python3-numpy python3-scipy python3-scikit-learn python3-pandas
 
 出现提示时输入密码。
 
-按“ _y_ ”和“_ 进入 _”按钮提示确认安装。
+按“`y`”和“_ 进入 _”按钮提示确认安装。
 
 ### 3.2 确认 Python 环境
 
@@ -247,7 +247,7 @@ sudo dnf install python3-numpy python3-scipy python3-scikit-learn python3-pandas
 
 *   1.打开 Gedit。
     *   点击“_ 活动 _”
-    *   输入“ _gedit_ ”
+    *   输入“`gedit`”
     *   单击图标或按 Enter 键
 *   2.键入以下脚本并将其另存为主目录中的 _versions.py_ 。
 

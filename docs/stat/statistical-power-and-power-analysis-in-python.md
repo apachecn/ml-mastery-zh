@@ -141,7 +141,7 @@ Pr(True Positive) = 1 - Pr(False Negative)
 
 statsmodels库提供 [TTestIndPower](http://www.statsmodels.org/dev/generated/statsmodels.stats.power.TTestIndPower.html) 类，用于计算具有独立样本的Student t检验的功效分析。值得注意的是 [TTestPower](http://www.statsmodels.org/dev/generated/statsmodels.stats.power.TTestPower.html) 类可以对配对的Student t检验执行相同的分析。
 
-函数 [solve_power（）](http://www.statsmodels.org/dev/generated/statsmodels.stats.power.TTestIndPower.solve_power.html)可用于计算功率分析中的四个参数之一。在我们的例子中，我们有兴趣计算样本量。我们可以通过提供我们知道的三条信息（ _alpha_ ，_效果_和 _power_ ）并设置我们想要计算的参数大小来使用该功能（ _nobs1_ ）对“_无_”的答案。这告诉函数要计算什么。
+函数 [solve_power（）](http://www.statsmodels.org/dev/generated/statsmodels.stats.power.TTestIndPower.solve_power.html)可用于计算功率分析中的四个参数之一。在我们的例子中，我们有兴趣计算样本量。我们可以通过提供我们知道的三条信息（`alpha`，_效果_和`power`）并设置我们想要计算的参数大小来使用该功能（`nobs1`）对“_无_”的答案。这告诉函数要计算什么。
 
 关于样本大小的注释：该函数有一个称为比率的参数，即一个样本中的样本数与另一个样本中的样本数之比。如果预期两个样本具有相同的观察数量，则该比率为1.0。例如，如果预计第二个样本的观察量是观察量的一半，那么该比率将为0.5。
 
@@ -178,7 +178,7 @@ Sample Size: 25.525
 
 功效曲线是线图，显示变量的变化（如效应大小和样本大小）如何影响统计检验的功效。
 
-[plot_power（）函数](http://www.statsmodels.org/dev/generated/statsmodels.stats.power.TTestIndPower.plot_power.html)可用于创建功率曲线。因变量（x轴）必须在' _dep_var_ '参数中通过名称指定。然后可以为样本大小（ _nobs_ ），效应大小（ _effect_size_ ）和显着性（ _alpha_ ）参数指定值数组。然后绘制一条或多条曲线，显示对统计功效的影响。
+[plot_power（）函数](http://www.statsmodels.org/dev/generated/statsmodels.stats.power.TTestIndPower.plot_power.html)可用于创建功率曲线。因变量（x轴）必须在'`dep_var`'参数中通过名称指定。然后可以为样本大小（`nobs`），效应大小（`effect_size`）和显着性（`alpha`）参数指定值数组。然后绘制一条或多条曲线，显示对统计功效的影响。
 
 例如，我们可以假设0.05的显着性（函数的默认值）并探索样本大小在5到100之间的变化，具有低，中和高效果大小。
 
@@ -204,7 +204,7 @@ analysis.plot_power(dep_var='nobs', nobs=sample_sizes, effect_size=effect_sizes)
 pyplot.show()
 ```
 
-运行该示例创建的图表显示了随着样本大小（x轴）增加，对三种不同效果大小（ _es_ ）的统计功效（y轴）的影响。
+运行该示例创建的图表显示了随着样本大小（x轴）增加，对三种不同效果大小（`es`）的统计功效（y轴）的影响。
 
 我们可以看到，如果我们对一个大的影响感兴趣，那么在统计功效方面的收益递减点发生在大约40到50个观测值。
 

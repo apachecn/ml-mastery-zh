@@ -90,7 +90,7 @@ sudo pip install --upgrade keras
 }
 ```
 
-在此配置文件中，您可以将“_ 后端 _”属性从“ _tensorflow_ ”（默认值）更改为“ _theano_ ”。然后 Keras 将在下次运行时使用该配置。
+在此配置文件中，您可以将“_ 后端 _”属性从“`tensorflow`”（默认值）更改为“`theano`”。然后 Keras 将在下次运行时使用该配置。
 
 您可以在命令行上使用以下代码段确认 Keras 使用的后端：
 

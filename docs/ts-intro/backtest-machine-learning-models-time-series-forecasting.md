@@ -192,18 +192,18 @@ pyplot.show()
 
 我们可以通过使用不同的分割点重复上一节中描述的过程来手动执行此操作。
 
-或者，scikit-learn 库在 _TimeSeriesSplit_ 对象中为我们提供了这种功能。
+或者，scikit-learn 库在`TimeSeriesSplit`对象中为我们提供了这种功能。
 
-您必须指定要创建的拆分数量，并指定 _TimeSeriesSplit_ 以返回训练的索引并测试每个请求拆分的观测值。
+您必须指定要创建的拆分数量，并指定`TimeSeriesSplit`以返回训练的索引并测试每个请求拆分的观测值。
 
-每次拆分迭代（ _i_ ）计算训练和测试观察的总数如下：
+每次拆分迭代（`i`）计算训练和测试观察的总数如下：
 
 ```py
 training_size = i * n_samples / (n_splits + 1) + n_samples % (n_splits + 1)
 test_size = n_samples / (n_splits + 1)
 ```
 
-其中 _n_samples_ 是观察总数， _n_splits_ 是分裂总数。
+其中`n_samples`是观察总数，`n_splits`是分裂总数。
 
 让我们以一个例子来具体化。假设我们有 100 个观察值，我们想要创建 2 个分割。
 

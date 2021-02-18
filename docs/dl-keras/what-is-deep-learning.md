@@ -106,7 +106,7 @@
 
 [Geoffrey Hinton](https://en.wikipedia.org/wiki/Geoffrey_Hinton) 是人工神经网络领域的先驱，并共同发表了关于[反向传播](https://en.wikipedia.org/wiki/Backpropagation)算法的第一篇论文，用于训练多层感知器网络。
 
-他可能已经开始引入措辞“ _deep_ ”来描述大型人工神经网络的发展。
+他可能已经开始引入措辞“`deep`”来描述大型人工神经网络的发展。
 
 他在 2006 年共同撰写了一篇题为“[深度信念网快速学习算法](http://www.mitpressjournals.org/doi/pdf/10.1162/neco.2006.18.7.1527)”的论文，其中描述了一种训练“深度”（如在多层网络中）受限制的 Boltzmann 机器的方法。
 

@@ -91,7 +91,7 @@ CrossValidated 是一个致力于机器学习的问答网站，并且有很多�
 
 与其他两个站点不同，这些话题可能更多的以过程导向为主。
 
-同样，我建议搜索并访问带有“ _keras_ ”标签的话题。
+同样，我建议搜索并访问带有“`keras`”标签的话题。
 
 *   [数据科学堆栈交换中的 Keras 标签](https://datascience.stackexchange.com/questions/tagged/keras)
 
@@ -104,7 +104,7 @@ Quora 是一个大型的通用问答网站（类似于中国的知乎），虽�
 
 这些问题的重点更多是基于文本解释和说明性的，您可能会获得有关技术的更多详细信息，而不是实现细节。
 
-我建议您直接在“ _Keras_ ”主题中搜索和提问。
+我建议您直接在“`Keras`”主题中搜索和提问。
 
 *   关于 Quora 的 [Keras 主题](https://www.quora.com/topic/Keras)
 
@@ -128,9 +128,9 @@ GitHub 提供了一个基本的问题管理系统，Keras 项目报告了很多�
 
 您可以直接在 Twitter 上快速获有关Keras的相关问题。
 
-我建议您直接在 Twitter 搜索“ _keras_ ”。
+我建议您直接在 Twitter 搜索“`keras`”。
 
-我建议您还可以使用“ _keras_ ”标签进行搜索并发布新的问题。
+我建议您还可以使用“`keras`”标签进行搜索并发布新的问题。
 
 *   Twitter 上的 [Keras 话题标签](https://twitter.com/hashtag/keras)
 

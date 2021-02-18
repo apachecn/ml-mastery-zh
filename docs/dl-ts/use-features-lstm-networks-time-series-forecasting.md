@@ -152,7 +152,7 @@ Name: Sales, dtype: float64
 
 使用有状态 LSTM 时，具有 1 输入要素的表示将是默认表示。设计使用 2 到 5 个功能。希望是滞后观测的附加背景可以改善预测模型的表现。
 
-在训练模型之前，单变量时间序列被转换为监督学习问题。指定数量的特征定义用于预测下一次观察的输入变量（ _X_ ）的数量（ _y_ ）。因此，对于表示中使用的每个要素，必须从数据集的开头删除许多行。这是因为没有先前的观察结果可用作数据集中第一个值的特征。
+在训练模型之前，单变量时间序列被转换为监督学习问题。指定数量的特征定义用于预测下一次观察的输入变量（`X`）的数量（`y`）。因此，对于表示中使用的每个要素，必须从数据集的开头删除许多行。这是因为没有先前的观察结果可用作数据集中第一个值的特征。
 
 下面提供了测试 1 输入功能的完整代码清单。
 
@@ -375,7 +375,7 @@ lstm_model = fit_lstm(train_scaled, 1, 500, 1, features)
 lstm_model = fit_lstm(train_scaled, 1, 500, features, features)
 ```
 
-此外，我们可以通过在文件名中添加“ __neurons_ ”后缀来保持写入文件的结果与第一个实验的结果分开，例如，更改：
+此外，我们可以通过在文件名中添加“`_neurons`”后缀来保持写入文件的结果与第一个实验的结果分开，例如，更改：
 
 ```py
 results.to_csv('experiment_features_1.csv', index=False)
@@ -458,7 +458,7 @@ lstm_model = fit_lstm(train_scaled, 1, 500, features, features)
 lstm_model = fit_lstm(train_scaled, 1, 1000, features, features)
 ```
 
-此外，我们可以通过在文件名中添加“ _1000_ ”后缀来保持写入文件的结果与上一次实验的结果分开，例如，更改：
+此外，我们可以通过在文件名中添加“`1000`”后缀来保持写入文件的结果与上一次实验的结果分开，例如，更改：
 
 ```py
 results.to_csv('experiment_features_1_neurons.csv', index=False)

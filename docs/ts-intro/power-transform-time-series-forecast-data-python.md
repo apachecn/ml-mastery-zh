@@ -150,7 +150,7 @@ pyplot.show()
 
 与上面的方形和平方根情况一样，我们可以通过一个简单的例子来证明这一点。
 
-下面的代码通过将数字从 1 提高到 99 来创建指数分布 _e_ ，这是[自然对数](https://en.wikipedia.org/wiki/Natural_logarithm)或[欧拉数](https://en.wikipedia.org/wiki/E_(mathematical_constant))的基数（ 2.718 ...）。
+下面的代码通过将数字从 1 提高到 99 来创建指数分布`e`，这是[自然对数](https://en.wikipedia.org/wiki/Natural_logarithm)或[欧拉数](https://en.wikipedia.org/wiki/E_(mathematical_constant))的基数（ 2.718 ...）。
 
 ```py
 from matplotlib import pyplot
@@ -239,7 +239,7 @@ pyplot.show()
 transform = log(constant + x)
 ```
 
-当 _ 变换 _ 是变换序列时，_ 常数 _ 是一个固定值，它将所有观测值提升到零以上， _x_ 是时间序列。
+当 _ 变换 _ 是变换序列时，_ 常数 _ 是一个固定值，它将所有观测值提升到零以上，`x`是时间序列。
 
 ## Box-Cox 变换
 
@@ -249,15 +249,15 @@ transform = log(constant + x)
 
 更重要的是，它可以配置为自动评估一组变换并选择最佳拟合。它可以被认为是一种电动工具，可以消除时间序列中基于功率的变化。得到的序列可能更线性，得到的分布更高斯或均匀，这取决于生成它的基础过程。
 
-_scipy.stats_ 库提供了 Box-Cox 变换的实现。 [boxcox（）](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.boxcox.html)函数接受一个名为 _lambda_ 的参数，它控制要执行的变换类型。
+_scipy.stats_ 库提供了 Box-Cox 变换的实现。 [boxcox（）](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.boxcox.html)函数接受一个名为`lambda`的参数，它控制要执行的变换类型。
 
 以下是 lambda 的一些常见值
 
-*   _lambda_ = -1。是一个互惠的变换。
-*   _lambda_ = -0.5 是倒数平方根变换。
-*   _lambda_ = 0.0 是对数变换。
-*   _lambda_ = 0.5 是平方根变换。
-*   _lambda_ = 1.0 是无变换。
+*  `lambda`= -1。是一个互惠的变换。
+*  `lambda`= -0.5 是倒数平方根变换。
+*  `lambda`= 0.0 是对数变换。
+*  `lambda`= 0.5 是平方根变换。
+*  `lambda`= 1.0 是无变换。
 
 例如，我们可以使用 _boxcox（）_ 函数执行日志转换，如下所示：
 
@@ -288,7 +288,7 @@ BoxCox 日志变换的航空公司乘客数据集图
 
 我们可以将 lambda 参数设置为 None（默认值），并让函数找到统计调整的值。
 
-以下示例演示了此用法，返回已转换的数据集和所选的 _lambda_ 值。
+以下示例演示了此用法，返回已转换的数据集和所选的`lambda`值。
 
 ```py
 from pandas import Series
@@ -310,7 +310,7 @@ pyplot.hist(dataframe['passengers'])
 pyplot.show()
 ```
 
-运行该示例发现 _lambda_ 值为 0.148023。
+运行该示例发现`lambda`值为 0.148023。
 
 我们可以看到这非常接近λ值为 0.0，导致对数变换并且对于平方根变换更强（小于）0.5。
 

@@ -63,7 +63,7 @@ SciPy 生态系统由以下与机器学习相关的核心模块组成：
 
 [scikit-learn](http://scikit-learn.org/) 库是如何在 python 中开发和练习机器学习的。
 
-它建立在 SciPy 生态系统的基础之上。名称“ _scikit_ ”表明它是一个 SciPy 插件或工具包。您可以查看[完整的 SciKits](http://scikits.appspot.com/scikits) 列表。
+它建立在 SciPy 生态系统的基础之上。名称“`scikit`”表明它是一个 SciPy 插件或工具包。您可以查看[完整的 SciKits](http://scikits.appspot.com/scikits) 列表。
 
 该库的重点是用于分类，回归，聚类等的机器学习算法。它还为相关任务提供工具，例如评估模型，调整参数和预处理数据。
 
@@ -106,7 +106,7 @@ SciPy 文档非常出色，涵盖了页面上许多不同平台的操作说明[�
 *   matplotlib
 *   大熊猫
 
-安装后，您可以确认安装是否成功。通过在命令行键入“ _python_ ”打开 python 交互式环境，然后键入并运行以下 python 代码以打印已安装库的版本。
+安装后，您可以确认安装是否成功。通过在命令行键入“`python`”打开 python 交互式环境，然后键入并运行以下 python 代码以打印已安装库的版本。
 
 ```
 # scipy

@@ -69,7 +69,7 @@ sub_metering_remainder = (global_active_power * 1000 / 60) - (sub_metering_1 + s
 dataset = read_csv('household_power_consumption.txt', sep=';', header=0, low_memory=False, infer_datetime_format=True, parse_dates={'datetime':[0,1]}, index_col=['datetime'])
 ```
 
-接下来，我们可以用'_ 标记所有[缺失值](https://machinelearningmastery.com/handle-missing-timesteps-sequence-prediction-problems-python/)？_ '具有 _NaN_ 值的字符，这是一个浮点数。
+接下来，我们可以用'_ 标记所有[缺失值](https://machinelearningmastery.com/handle-missing-timesteps-sequence-prediction-problems-python/)？_ '具有`NaN`值的字符，这是一个浮点数。
 
 这将允许我们将数据作为一个浮点值数组而不是混合类型（效率较低）。
 
@@ -177,7 +177,7 @@ dataset.to_csv('household_power_consumption.csv')
 
 数据集的这种框架还表明，将每分钟功耗的观察结果下采样到每日总数是有用的。这不是必需的，但考虑到我们对每天的总功率感兴趣，这是有道理的。
 
-我们可以使用 pandas DataFrame 上的 [resample（）函数](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.resample.html)轻松实现这一点。使用参数' _D_ '调用此函数允许按日期时间索引的加载数据按天分组（[查看所有偏移别名](http://pandas.pydata.org/pandas-docs/stable/timeseries.html#offset-aliases)）。然后，我们可以计算每天所有观测值的总和，并为八个变量中的每一个创建每日耗电量数据的新数据集。
+我们可以使用 pandas DataFrame 上的 [resample（）函数](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.resample.html)轻松实现这一点。使用参数'`D`'调用此函数允许按日期时间索引的加载数据按天分组（[查看所有偏移别名](http://pandas.pydata.org/pandas-docs/stable/timeseries.html#offset-aliases)）。然后，我们可以计算每天所有观测值的总和，并为八个变量中的每一个创建每日耗电量数据的新数据集。
 
 下面列出了完整的示例。
 
@@ -348,7 +348,7 @@ Input, 						Predict
 
 评估此数据集上的预测模型的前瞻性验证方法在下面实现，命名为 _evaluate_model（）_。
 
-为模型提供函数的名称作为参数“ _model_func_ ”。该功能负责定义模型，使模型适合训练数据，并进行一周的预测。
+为模型提供函数的名称作为参数“`model_func`”。该功能负责定义模型，使模型适合训练数据，并进行一周的预测。
 
 然后使用先前定义的 _evaluate_forecasts（）_ 函数，针对测试数据集评估模型所做的预测。
 

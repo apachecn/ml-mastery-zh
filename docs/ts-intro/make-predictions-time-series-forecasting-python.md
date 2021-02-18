@@ -168,9 +168,9 @@ Test MSE: 52.696
 
 这包括首先在所有可用数据上训练模型，然后将模型保存到文件。
 
-时间序列模型的 _statsmodels_ 实现通过在拟合[上调用 _save（）_ 和 _load（）_ 来提供内置的保存和加载模型的功能。 ] ARResults](http://statsmodels.sourceforge.net/devel/generated/statsmodels.tsa.ar_model.ARResults.html) 对象。
+时间序列模型的`statsmodels`实现通过在拟合[上调用 _save（）_ 和 _load（）_ 来提供内置的保存和加载模型的功能。 ] ARResults](http://statsmodels.sourceforge.net/devel/generated/statsmodels.tsa.ar_model.ARResults.html) 对象。
 
-例如，下面的代码将在整个女性出生数据集上训练 AR（6）模型，并使用内置的 _save（）_ 函数保存它，这将基本上腌制 _ARResults_ 对象。
+例如，下面的代码将在整个女性出生数据集上训练 AR（6）模型，并使用内置的 _save（）_ 函数保存它，这将基本上腌制`ARResults`对象。
 
 还必须保存差异训练数据，既可以用于进行预测所需的滞后变量，也可以用于 _ 预测（）_ ARResults 的函数所需观察数量的知识。 对象。
 

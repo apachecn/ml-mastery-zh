@@ -74,7 +74,7 @@ features = fit.transform(X)
 print(features[0:5,:])
 ```
 
-您可以看到每个属性的分数和选择的 4 个属性（分数最高的分数）： _plas_ ， _test_ ， _mass_ 和 _age_ 。
+您可以看到每个属性的分数和选择的 4 个属性（分数最高的分数）：`plas`，`test`，`mass`和`age`。
 
 ```
 [  111.52   1411.887    17.605    53.108  2175.565   127.669     5.393
@@ -117,9 +117,9 @@ print("Selected Features: %s") % fit.support_
 print("Feature Ranking: %s") % fit.ranking_
 ```
 
-你可以看到 RFE 选择前[3]特征为 _preg_ ，_ 质量 _ 和 _pedi_ 。
+你可以看到 RFE 选择前[3]特征为`preg`，_ 质量 _ 和`pedi`。
 
-这些在 _support__ 数组中标记为 True，并在 _ranking__ 数组中标记为选项“1”。
+这些在`support_`数组中标记为 True，并在`ranking_`数组中标记为选项“1”。
 
 ```
 Num Features: 3
@@ -192,7 +192,7 @@ model.fit(X, Y)
 print(model.feature_importances_)
 ```
 
-您可以看到我们获得了每个属性的重要性分数，其中分数越大，属性越重要。评分表明 _plas_ ，_ 年龄 _ 和 _ 质量 _ 的重要性。
+您可以看到我们获得了每个属性的重要性分数，其中分数越大，属性越重要。评分表明`plas`，_ 年龄 _ 和 _ 质量 _ 的重要性。
 
 ```
 [ 0.11070069  0.2213717   0.08824115  0.08068703  0.07281761  0.14548537 0.12654214  0.15415431]

@@ -159,9 +159,9 @@ ARIMA 月度洗发水销售数据集预测
 
 现在让我们深入研究一些其他 ARIMA 参数。
 
-## “ _disp_ ”参数
+## “`disp`”参数
 
-我们将看到的第一个参数是 _disp_ 参数。
+我们将看到的第一个参数是`disp`参数。
 
 这描述如下：
 
@@ -171,7 +171,7 @@ ARIMA 月度洗发水销售数据集预测
 
 我们首先要处理这个问题，因为在使用前向验证评估 ARIMA 模型时，删除所有收敛输出至关重要。
 
-设置为 _False_ 会关闭所有这些噪音。
+设置为`False`会关闭所有这些噪音。
 
 下面列出了完整的示例。
 
@@ -215,7 +215,7 @@ Test RMSE: 81.545
 
 我们将在以下所有示例中留下 _disp = False_ 。
 
-## “ _transparams_ ”参数
+## “`transparams`”参数
 
 此参数控制是否对 AR 参数执行变换。
 
@@ -223,7 +223,7 @@ Test RMSE: 81.545
 
 > 是否转换参数以确保平稳性。使用 Jones（1980）中提出的转换。如果为假，则不检查平稳性或可逆性。
 
-默认情况下， _transparams_ 设置为 _True_ ，表示执行此转换。
+默认情况下，`transparams`设置为`True`，表示执行此转换。
 
 此参数也用于 ARIMA 实现的 R 版本（[参见 docs](http://stat.ethz.ch/R-manual/R-devel/library/stats/html/arima.html) ），我希望这就是它在 statsmodels 中的原因。
 
@@ -267,7 +267,7 @@ print('Test RMSE: %.3f' % rmse)
 
 运行此示例会导致解算器收到更多收敛警告。
 
-关闭 _transparams_ 的模型的 RMSE 也会导致该数据集的结果略差。
+关闭`transparams`的模型的 RMSE 也会导致该数据集的结果略差。
 
 在数据集上打开和关闭此参数并确认它会带来好处。
 
@@ -286,7 +286,7 @@ _ 趋势 _ 参数为模型添加了一个额外的常数项。可以把它想象
 
 > 是否包含常数。 'c'包括常数，'nc'没有常量。
 
-默认情况下，在 _ 趋势 _ 设置为' _c_ '时启用趋势项。
+默认情况下，在 _ 趋势 _ 设置为'`c`'时启用趋势项。
 
 如果我们重新运行原始示例并打印前向验证的每个步骤的模型系数并将其与关闭的趋势项进行比较，我们可以清楚地看到效果。
 
@@ -398,7 +398,7 @@ _ 求解器 _ 参数指定数值优化方法以使系数适合数据。
 
 > 要使用的解算器。默认为'lbfgs'（有限的内存 Broyden-Fletcher-Goldfarb-Shanno）。其他选择是'bfgs'，'newton'（Newton-Raphson），'nm'（Nelder-Mead），'cg' - （共轭梯度），'ncg'（非共轭梯度）和'powell'。默认情况下，有限内存 BFGS 使用 m = 12 来近似 Hessian，投影梯度容差为 1e-8，factr = 1e2。您可以使用 kwargs 更改这些内容。
 
-默认为快速“ _lbfgs_ ”方法（[限制内存 BFGS](https://en.wikipedia.org/wiki/Limited-memory_BFGS) ）。
+默认为快速“`lbfgs`”方法（[限制内存 BFGS](https://en.wikipedia.org/wiki/Limited-memory_BFGS) ）。
 
 然而，下面是一个比较 RMSE 模型技能和每个求解器执行时间的实验。
 
@@ -476,13 +476,13 @@ ARIMA 模型误差（测试 RMSE）与求解器
 
 还创建了 _ 求解器 _ 与执行时间（以秒为单位）的图表。该图显示了求解器之间的显着差异。
 
-通常，“ _lbfgs_ ”和“ _bfgs_ ”在速度，表现和稳定性之间提供了良好的实际权衡。
+通常，“`lbfgs`”和“`bfgs`”在速度，表现和稳定性之间提供了良好的实际权衡。
 
 ![ARIMA Execution Time vs Solver](img/9faceef50b8880366ad0b289fa682451.jpg)
 
 ARIMA 执行时间（秒）vs Solver
 
-如果你决定测试求解器，你可能还想改变“ _maxiter_ ”来限制收敛前的迭代次数，“ _tol_ ”参数定义精度收敛，以及定义被优化的成本函数的“_ 方法 _”参数。
+如果你决定测试求解器，你可能还想改变“`maxiter`”来限制收敛前的迭代次数，“`tol`”参数定义精度收敛，以及定义被优化的成本函数的“_ 方法 _”参数。
 
 ## 其他资源
 

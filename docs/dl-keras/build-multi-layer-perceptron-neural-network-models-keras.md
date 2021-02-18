@@ -139,9 +139,9 @@ model.compile(optimizer='sgd')
 
 您可以通过 loss 参数指定要用于编译函数的 loss 函数的名称。一些常见的例子包括：
 
-*   ' _mse_ '：表示均方误差。
-*   ' _binary_crossentropy_ '：用于二进制对数损失（logloss）。
-*   ' _categorical_crossentropy_ '：用于多类对数损失（logloss）。
+*   '`mse`'：表示均方误差。
+*   '`binary_crossentropy`'：用于二进制对数损失（logloss）。
+*   '`categorical_crossentropy`'：用于多类对数损失（logloss）。
 
 您可以在[目标用途](http://keras.io/objectives/)页面上了解更多关于 Keras 支持的损失函数。
 

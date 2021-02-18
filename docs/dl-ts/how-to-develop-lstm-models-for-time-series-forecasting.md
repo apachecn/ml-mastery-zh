@@ -165,7 +165,7 @@ model.compile(optimizer='adam', loss='mse')
 
 输入的时间步数是我们在准备数据集时选择的数字，作为 _split_sequence（）_ 函数的参数。
 
-每个样本的输入形状在第一个隐藏层定义的 _input_shape_ 参数中指定。
+每个样本的输入形状在第一个隐藏层定义的`input_shape`参数中指定。
 
 我们几乎总是有多个样本，因此，模型将期望训练数据的输入组件具有尺寸或形状：
 
@@ -183,7 +183,7 @@ X = X.reshape((X.shape[0], X.shape[1], n_features))
 
 在这种情况下，我们定义隐藏层中具有 50 个 LSTM 单元的模型和预测单个数值的输出层。
 
-使用随机梯度下降的有效 [Adam 版本拟合该模型，并使用均方误差或' _mse_ '损失函数进行优化。](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/)
+使用随机梯度下降的有效 [Adam 版本拟合该模型，并使用均方误差或'`mse`'损失函数进行优化。](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/)
 
 定义模型后，我们可以将其放在训练数据集上。
 
@@ -427,7 +427,7 @@ CNN 模型可以在具有 LSTM 后端的混合模型中使用，其中 CNN 用�
 
 第一步是将输入序列分成可由 CNN 模型处理的子序列。例如，我们可以首先将单变量时间序列数据拆分为输入/输出样本，其中四个步骤作为输入，一个作为输出。然后可以将每个样品分成两个子样品，每个子样品具有两个时间步骤。 CNN 可以解释两个时间步的每个子序列，并提供对 LSTM 模型的子序列的时间序列解释以作为输入进行处理。
 
-我们可以对此进行参数化，并将子序列的数量定义为 _n_seq_ ，将每个子序列的时间步数定义为 _n_steps_ 。然后可以将输入数据重新整形为具有所需的结构：
+我们可以对此进行参数化，并将子序列的数量定义为`n_seq`，将每个子序列的时间步数定义为`n_steps`。然后可以将输入数据重新整形为具有所需的结构：
 
 ```py
 [samples, subsequences, timesteps, features]
@@ -542,7 +542,7 @@ ConvLSTM 是为读取二维时空数据而开发的，但可以用于单变量�
 [samples, timesteps, rows, columns, features]
 ```
 
-为了我们的目的，我们可以将每个样本分成时序将成为子序列数的子序列，或 _n_seq_ ，并且列将是每个子序列的时间步数，或 _n_steps_ 。当我们使用一维数据时，行数固定为 1。
+为了我们的目的，我们可以将每个样本分成时序将成为子序列数的子序列，或`n_seq`，并且列将是每个子序列的时间步数，或`n_steps`。当我们使用一维数据时，行数固定为 1。
 
 我们现在可以将准备好的样品重新塑造成所需的结构。
 
@@ -824,7 +824,7 @@ for i in range(len(X)):
 
 可以使用前一节中的任何种类的 LSTM，例如香草，堆叠，双向，CNN 或 ConvLSTM 模型。
 
-我们将使用 Vanilla LSTM，其中通过 _input_shape_ 参数为输入层指定时间步数和并行系列（特征）。
+我们将使用 Vanilla LSTM，其中通过`input_shape`参数为输入层指定时间步数和并行系列（特征）。
 
 ```py
 # define model
@@ -1054,7 +1054,7 @@ y 的形状是二维的，正如我们可能期望的样本数量（6）和每�
 
 可以使用前一节中的任何种类的 LSTM，例如香草，堆叠，双向，CNN 或 ConvLSTM 模型。
 
-我们将使用 Stacked LSTM，其中通过 _input_shape_ 参数为输入层指定时间步数和并行系列（特征）。并行序列的数量也用于指定输出层中模型预测的值的数量;再次，这是三个。
+我们将使用 Stacked LSTM，其中通过`input_shape`参数为输入层指定时间步数和并行系列（特征）。并行序列的数量也用于指定输出层中模型预测的值的数量;再次，这是三个。
 
 ```py
 # define model
@@ -1272,7 +1272,7 @@ n_features = 1
 X = X.reshape((X.shape[0], X.shape[1], n_features))
 ```
 
-通过 _n_steps_in_ 和 _n_steps_out_ 变量中指定的输入和输出步数，我们可以定义一个多步骤时间序列预测模型。
+通过`n_steps_in`和`n_steps_out`变量中指定的输入和输出步数，我们可以定义一个多步骤时间序列预测模型。
 
 可以使用任何呈现的 LSTM 模型类型，例如香草，堆叠，双向，CNN-LSTM 或 ConvLSTM。下面定义了用于多步预测的 Stacked LSTM。
 

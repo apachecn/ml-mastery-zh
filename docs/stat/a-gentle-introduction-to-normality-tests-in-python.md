@@ -156,7 +156,7 @@ pyplot.show()
 
 分布的完美匹配将通过从绘图的左下角到右上角的45度角的点线来显示。通常在图上绘制一条线以帮助明确这种期望。线上的点偏差表示与预期分布的偏差。
 
-我们可以使用 [qqplot（）statsmodels函数](http://www.statsmodels.org/dev/generated/statsmodels.graphics.gofplots.qqplot.html)在Python中开发QQ图。该函数采用数据样本，默认情况下假设我们将其与高斯分布进行比较。我们可以通过将'_行_'参数设置为' _s_ '来绘制标准化行。
+我们可以使用 [qqplot（）statsmodels函数](http://www.statsmodels.org/dev/generated/statsmodels.graphics.gofplots.qqplot.html)在Python中开发QQ图。该函数采用数据样本，默认情况下假设我们将其与高斯分布进行比较。我们可以通过将'_行_'参数设置为'`s`'来绘制标准化行。
 
 下面提供了将测试数据集绘制为QQ图的完整示例。
 

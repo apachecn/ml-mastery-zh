@@ -86,7 +86,7 @@
 
 *   [电影评论 Polarity Dataset](http://www.cs.cornell.edu/people/pabo/movie-review-data/review_polarity.tar.gz) （review_polarity.tar.gz，3MB）
 
-解压缩文件后，您将有一个名为“ _txt_sentoken_ ”的目录，其中包含两个子目录，其中包含文本“ _neg_ ”和“ _pos_ ”的负数和积极的评论。对于每个 neg 和 pos，每个文件存储一个评论，命名约定为 cv000 到 cv999。
+解压缩文件后，您将有一个名为“`txt_sentoken`”的目录，其中包含两个子目录，其中包含文本“`neg`”和“`pos`”的负数和积极的评论。对于每个 neg 和 pos，每个文件存储一个评论，命名约定为 cv000 到 cv999。
 
 接下来，我们来看看加载和准备文本数据。
 
@@ -387,7 +387,7 @@ def clean_doc(doc, vocab):
 	return tokens
 ```
 
-更新的 _process_docs（）_ 然后可以为' _pos_ '和' _neg_ '目录中的每个文档调用 _clean_doc（）_ 在我们的训练数据集中。
+更新的 _process_docs（）_ 然后可以为'`pos`'和'`neg`'目录中的每个文档调用 _clean_doc（）_ 在我们的训练数据集中。
 
 ```py
 # load all docs in a directory
@@ -483,7 +483,7 @@ ytest = array([0 for _ in range(100)] + [1 for _ in range(100)])
 vocab_size = len(tokenizer.word_index) + 1
 ```
 
-我们将使用 100 维向量空间，但您可以尝试其他值，例如 50 或 150.最后，最大文档长度在填充期间使用的 _max_length_ 变量中计算。
+我们将使用 100 维向量空间，但您可以尝试其他值，例如 50 或 150.最后，最大文档长度在填充期间使用的`max_length`变量中计算。
 
 下面列出了完整的模型定义，包括嵌入层。
 
@@ -800,7 +800,7 @@ words = list(model.wv.vocab)
 print('Vocabulary size: %d' % len(words))
 ```
 
-最后，我们使用模型的' _wv_ '（字向量）属性上的 [save_word2vec_format（）](https://radimrehurek.com/gensim/models/keyedvectors.html)将学习的嵌入向量保存到文件中。嵌入以 ASCII 格式保存，每行一个字和向量。
+最后，我们使用模型的'`wv`'（字向量）属性上的 [save_word2vec_format（）](https://radimrehurek.com/gensim/models/keyedvectors.html)将学习的嵌入向量保存到文件中。嵌入以 ASCII 格式保存，每行一个字和向量。
 
 下面列出了完整的示例。
 
@@ -893,7 +893,7 @@ Vocabulary size: 25767
 
 我们可以使用前一节中开发的预训练单词嵌入和之前部分开发的 CNN 模型。
 
-第一步是将单词嵌入作为单词目录加载到向量。单词嵌入保存在包含标题行的所谓' _word2vec_ '格式中。加载嵌入时我们将跳过此标题行。
+第一步是将单词嵌入作为单词目录加载到向量。单词嵌入保存在包含标题行的所谓'`word2vec`'格式中。加载嵌入时我们将跳过此标题行。
 
 下面名为 _load_embedding（）_ 的函数加载嵌入并返回映射到 NumPy 格式的向量的单词目录。
 
@@ -944,7 +944,7 @@ embedding_vectors = get_weight_matrix(raw_embedding, tokenizer.word_index)
 embedding_layer = Embedding(vocab_size, 100, weights=[embedding_vectors], input_length=max_length, trainable=False)
 ```
 
-请注意，准备好的权重矩阵 _embedding_vectors_ 作为参数传递给新的嵌入层，并且我们将'_ 可训练 _'参数设置为' _False_ '以确保网络不会尝试将预先学习的向量作为训练网络的一部分。
+请注意，准备好的权重矩阵`embedding_vectors`作为参数传递给新的嵌入层，并且我们将'_ 可训练 _'参数设置为'`False`'以确保网络不会尝试将预先学习的向量作为训练网络的一部分。
 
 我们现在可以将此层添加到我们的模型中。我们还有一个稍微不同的模型配置，在 CNN 模型中有更多的过滤器（128），以及在开发 word2vec 嵌入时匹配用作邻居的 5 个单词的内核。最后，简化了模型的后端。
 

@@ -422,7 +422,7 @@ def sarima_configs(seasonal=[0]):
 									models.append(cfg)
 	return models
 
-if __name__ == '__main__':
+if`_name_`== '__main__':
 	# define dataset
 	data = [10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0]
 	print(data)
@@ -604,7 +604,7 @@ def sarima_configs(seasonal=[0]):
 									models.append(cfg)
 	return models
 
-if __name__ == '__main__':
+if`_name_`== '__main__':
 	# load dataset
 	series = read_csv('daily-total-female-births.csv', header=0, index_col=0)
 	data = series.values
@@ -798,7 +798,7 @@ def sarima_configs(seasonal=[0]):
 def custom_parser(x):
 	return datetime.strptime('195'+x, '%Y-%m')
 
-if __name__ == '__main__':
+if`_name_`== '__main__':
 	# load dataset
 	series = read_csv('shampoo.csv', header=0, index_col=0, date_parser=custom_parser)
 	data = series.values
@@ -991,7 +991,7 @@ def sarima_configs(seasonal=[0]):
 									models.append(cfg)
 	return models
 
-if __name__ == '__main__':
+if`_name_`== '__main__':
 	# load dataset
 	series = read_csv('monthly-mean-temp.csv', header=0, index_col=0)
 	data = series.values
@@ -1183,7 +1183,7 @@ def sarima_configs(seasonal=[0]):
 									models.append(cfg)
 	return models
 
-if __name__ == '__main__':
+if`_name_`== '__main__':
 	# load dataset
 	series = read_csv('monthly-car-sales.csv', header=0, index_col=0)
 	data = series.values

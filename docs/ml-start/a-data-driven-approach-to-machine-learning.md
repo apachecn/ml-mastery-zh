@@ -77,7 +77,7 @@
 
 赛车算法的一个关键问题是您无法轻松地将结果从一个问题转移到另一个问题。如果你认为这个陈述是正确的，那么阅读论文和博客中的算法竞赛并不会告诉你哪个算法可以尝试解决你的问题。
 
-如果算法 _A_ 在问题 _X_ 上杀死算法 _B_ ，那么它会告诉你什么算法 _A_ 和 _B_ 问题 _Y_ ？你必须努力解决问题 _X_ 和 _Y_ 。它们是否具有被研究中的算法利用的相同或相似的属性（属性，属性分布，功能形式）？这是一些艰苦的工作。
+如果算法`A`在问题`X`上杀死算法`B`，那么它会告诉你什么算法`A`和`B`问题`Y`？你必须努力解决问题`X`和`Y`。它们是否具有被研究中的算法利用的相同或相似的属性（属性，属性分布，功能形式）？这是一些艰苦的工作。
 
 我们对一台机器学习算法比另一台机器学习算法效果更好有一个细粒度的理解。
 
@@ -137,7 +137,7 @@
 
 它不需要依赖于偏见和最喜欢的算法和配置。获得良好而强大的结果是一项艰苦的工作。
 
-结果是你不再关心算法炒作，它只是包含在[现场检查套件](http://machinelearningmastery.com/why-you-should-be-spot-checking-algorithms-on-your-machine-learning-problems/ "Why you should be Spot-Checking Algorithms on your Machine Learning Problems")中的另一种方法。你不再担心你是否错过了不使用算法 _X_ 或 _Y_ 或配置 _A_ 或 _B_ （ []害怕失去](http://machinelearningmastery.com/the-best-machine-learning-algorithm/ "The Best Machine Learning Algorithm")），你把它们混在一起。
+结果是你不再关心算法炒作，它只是包含在[现场检查套件](http://machinelearningmastery.com/why-you-should-be-spot-checking-algorithms-on-your-machine-learning-problems/ "Why you should be Spot-Checking Algorithms on your Machine Learning Problems")中的另一种方法。你不再担心你是否错过了不使用算法`X`或`Y`或配置`A`或`B`（ []害怕失去](http://machinelearningmastery.com/the-best-machine-learning-algorithm/ "The Best Machine Learning Algorithm")），你把它们混在一起。
 
 ### 利用自动化
 

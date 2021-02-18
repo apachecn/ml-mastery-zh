@@ -75,7 +75,7 @@
 
 *   [电影评论 Polarity Dataset](https://www.cs.cornell.edu/people/pabo/movie-review-data/review_polarity.tar.gz) （review_polarity.tar.gz，3MB）
 
-解压缩文件后，您将有一个名为“ _txt_sentoken_ ”的目录，其中包含两个子目录，其中包含文本“ _neg_ ”和“ _pos_ ”的负数和积极的评论。对于每个 neg 和 pos，每个文件存储一个评论约定 _cv000_ 到 _cv999_ 。
+解压缩文件后，您将有一个名为“`txt_sentoken`”的目录，其中包含两个子目录，其中包含文本“`neg`”和“`pos`”的负数和积极的评论。对于每个 neg 和 pos，每个文件存储一个评论约定`cv000`到`cv999`。
 
 接下来，我们来看看加载和准备文本数据。
 

@@ -130,9 +130,9 @@ Keras 中有一个 KerasClassifier 类，可以用作 scikit-learn 中的 Estima
 4 inputs -> [8 hidden nodes] -> 3 outputs
 ```
 
-请注意，我们在输出层使用“ _softmax_ ”激活功能。这是为了确保输出值在 0 和 1 的范围内，并且可以用作预测概率。
+请注意，我们在输出层使用“`softmax`”激活功能。这是为了确保输出值在 0 和 1 的范围内，并且可以用作预测概率。
 
-最后，网络使用具有对数损失函数的高效 Adam 梯度下降优化算法，在 Keras 中称为“ _categorical_crossentropy_ ”。
+最后，网络使用具有对数损失函数的高效 Adam 梯度下降优化算法，在 Keras 中称为“`categorical_crossentropy`”。
 
 ```py
 # define baseline model

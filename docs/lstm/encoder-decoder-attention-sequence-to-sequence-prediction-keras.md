@@ -170,7 +170,7 @@ print(decoded)
 
 最后，我们需要一个能够创建输入和输出序列对的函数来训练和评估模型。
 
-下面命名为 _get_pair（）_的函数将返回一个输入和输出序列对，给定指定的输入长度，输出长度和基数。输入和输出序列的长度和输入序列的长度相同，但输出序列将作为输入序列的第一个 _n_ 字符，并用零值填充到所需长度。
+下面命名为 _get_pair（）_的函数将返回一个输入和输出序列对，给定指定的输入长度，输出长度和基数。输入和输出序列的长度和输入序列的长度相同，但输出序列将作为输入序列的第一个`n`字符，并用零值填充到所需长度。
 
 然后对整数序列进行编码，然后重新成形为循环神经网络所需的3D格式，其尺寸为：_样本_，_时间步长_和_特征_。在这种情况下，样本总是1，因为我们只生成一个输入 - 输出对，时间步长是输入序列长度，特征是每个时间步长的基数。
 
@@ -412,7 +412,7 @@ Expected: [32, 33, 0, 0, 0] Predicted [32, 32, 0, 0, 0]
 
 [Zafarali Ahmed](http://www.zafarali.me/) [Datalogue](https://www.datalogue.io/) 的实习生为Keras开发了一个[自定义层](https://keras.io/layers/writing-your-own-keras-layers/)，提供了关注支持，在一篇名为“[如何可视化您的复发的帖子中提出2017年Keras](https://medium.com/datalogue/attention-in-keras-1892773a4f22) 中关注的神经网络和GitHub项目称为“ [keras-attention](https://github.com/datalogue/keras-attention) ”。
 
-自定义注意层称为 _AttentionDecoder_ ，可在GitHub项目的 [custom_recurrents.py](https://github.com/datalogue/keras-attention/blob/master/models/custom_recurrents.py) 文件中找到。我们可以在项目的 [GNU Affero通用公共许可证v3.0许可证](https://github.com/datalogue/keras-attention/blob/master/LICENSE)下重用此代码。
+自定义注意层称为`AttentionDecoder`，可在GitHub项目的 [custom_recurrents.py](https://github.com/datalogue/keras-attention/blob/master/models/custom_recurrents.py) 文件中找到。我们可以在项目的 [GNU Affero通用公共许可证v3.0许可证](https://github.com/datalogue/keras-attention/blob/master/LICENSE)下重用此代码。
 
 下面列出了自定义层的副本以确保完整性。将其复制并粘贴到当前工作目录中名为“ _attention_decoder.py_ ”的新单独文件中。
 

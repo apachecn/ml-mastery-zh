@@ -112,7 +112,7 @@ def predict(coef, history):
 
 自回归模型或 AR 是滞后观察的线性回归模型。
 
-具有滞后 _k_ 的 AR 模型可以在 ARIMA 模型中指定如下：
+具有滞后`k`的 AR 模型可以在 ARIMA 模型中指定如下：
 
 ```py
 model = ARIMA(history, order=(k,0,0))
@@ -156,9 +156,9 @@ rmse = sqrt(mean_squared_error(test, predictions))
 print('Test RMSE: %.3f' % rmse)
 ```
 
-请注意，ARIMA 实施将自动为时间序列中的趋势建模。这为回归方程式增加了一个常数，我们不需要用于演示目的。我们通过将 _fit（）_ 函数中的'trend'参数设置为' _nc_ '为' _no constant_ '来关闭这个便利性。
+请注意，ARIMA 实施将自动为时间序列中的趋势建模。这为回归方程式增加了一个常数，我们不需要用于演示目的。我们通过将 _fit（）_ 函数中的'trend'参数设置为'`nc`'为' _no constant_ '来关闭这个便利性。
 
-[fit（）](http://statsmodels.sourceforge.net/devel/generated/statsmodels.tsa.arima_model.ARIMA.fit.html)函数还输出了许多详细消息，我们可以通过将' _disp_ '参数设置为' _False_ '来关闭。
+[fit（）](http://statsmodels.sourceforge.net/devel/generated/statsmodels.tsa.arima_model.ARIMA.fit.html)函数还输出了许多详细消息，我们可以通过将'`disp`'参数设置为'`False`'来关闭。
 
 运行该示例将每次迭代打印预测值和期望值 7 天。印刷的最终 RMSE 显示该简单模型的平均误差约为 1.9 摄氏度。
 
@@ -189,7 +189,7 @@ model = ARIMA(history, order=(0,0,k))
 
 如上所述，进行预测需要我们从拟合模型中检索 MA 系数，并将它们与剩余误差值的滞后一起使用，并调用上面定义的自定义 _predict（）_ 函数。
 
-训练期间的残留误差存储在 ARIMA 模型中 _ARIMAResults_ 对象的' _resid_ '参数下。
+训练期间的残留误差存储在 ARIMA 模型中`ARIMAResults`对象的'`resid`'参数下。
 
 ```py
 model_fit.resid
@@ -245,7 +245,7 @@ print('Test RMSE: %.3f' % rmse)
 Test RMSE: 7.568
 ```
 
-您可以看到，当新的观察结果可用时，在 _ARIMAResults_ 对象之外手动跟踪残留误差是多么简单。例如：
+您可以看到，当新的观察结果可用时，在`ARIMAResults`对象之外手动跟踪残留误差是多么简单。例如：
 
 ```py
 residuals = list()
@@ -299,7 +299,7 @@ rmse = sqrt(mean_squared_error(test, predictions))
 print('Test RMSE: %.3f' % rmse)
 ```
 
-您可以看到预测（ _yhat_ ）是 AR 系数和滞后观察的点积与 MA 系数和滞后残差之和。
+您可以看到预测（`yhat`）是 AR 系数和滞后观察的点积与 MA 系数和滞后残差之和。
 
 ```py
 yhat = predict(ar_coef, history) + predict(ma_coef, resid)

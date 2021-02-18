@@ -131,15 +131,15 @@
 
 *   [UCI HAR Dataset.zip](https://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.zip)
 
-下载数据集并将所有文件解压缩到当前工作目录中名为“ _HARDataset_ ”的新目录中。
+下载数据集并将所有文件解压缩到当前工作目录中名为“`HARDataset`”的新目录中。
 
 检查解压缩的内容，您会注意到以下几点：
 
-*   存在“ _train_ ”和“ _test_ ”文件夹，其包含用于建模的数据的分割部分（例如，70％/ 30％）。
+*   存在“`train`”和“`test`”文件夹，其包含用于建模的数据的分割部分（例如，70％/ 30％）。
 *   有一个“ _README.txt_ ”文件，其中包含数据集的详细技术说明和解压缩文件的内容。
 *   有一个“ _features.txt_ ”文件，其中包含工程特性的技术说明。
 
-“ _train_ ”和“ _test_ ”文件夹的内容类似（例如文件夹和文件名），尽管它们包含的特定数据存在差异。
+“`train`”和“`test`”文件夹的内容类似（例如文件夹和文件名），尽管它们包含的特定数据存在差异。
 
 检查“train”文件夹显示了一些重要元素：
 
@@ -156,7 +156,7 @@
 *   _x，y 和 z 轴的身体加速度 _ 数据文件： _body_acc_x_train.txt_ ， _body_acc_y_train.txt_ ，body_acc_z_train.txt。
 *   _x，y 和 z 轴的体陀螺 _ 数据文件： _body_gyro_x_train.txt_ ， _body_gyro_y_train.txt_ ， _body_gyro_z_train.txt_ 。
 
-该结构在“ _test_ ”目录中进行镜像。
+该结构在“`test`”目录中进行镜像。
 
 我们将把注意力集中在“_ 惯性信号 _”中的数据，因为这是开发可以学习合适表示的机器学习模型中最有趣的，而不是使用特定于域的特征工程。
 
@@ -267,7 +267,7 @@ print(total_acc.shape)
 
 给定训练和测试文件夹中的并行结构，我们可以开发一个新函数来加载给定文件夹的所有输入和输出数据。该函数可以构建要加载的所有 9 个数据文件的列表，将它们作为一个具有 9 个特征的 NumPy 数组加载，然后加载包含输出类的数据文件。
 
-下面的 _load_dataset（）_ 函数实现了这种行为。它可以被称为“ _train_ ”组或“ _test_ ”组，作为字符串参数传递。
+下面的 _load_dataset（）_ 函数实现了这种行为。它可以被称为“`train`”组或“`test`”组，作为字符串参数传递。
 
 ```py
 # load a dataset group, such as train or test
@@ -465,7 +465,7 @@ Class=6, total=1944, percentage=18.876
 trainX, trainy = load_dataset('train', 'HARDataset/')
 ```
 
-接下来，我们可以在' _train_ '目录中加载' _subject_train.txt_ '，该目录提供行到它所属主题的映射。
+接下来，我们可以在'`train`'目录中加载' _subject_train.txt_ '，该目录提供行到它所属主题的映射。
 
 我们可以使用 _load_file（）_ 函数加载这个文件。加载后，我们还可以使用 _unique（）_ NumPy 函数来检索训练数据集中的唯一主题列表。
 
@@ -479,7 +479,7 @@ print(train_subjects)
 
 我们可以通过查找属于给定主题的所有行号并使用这些行号从训练数据集中加载的 X 和 y 数据中选择样本来完成此操作。
 
-下面的 _data_for_subject（）_ 函数实现了这种行为。它将获取加载的训练数据，行号到主题的加载映射，以及我们感兴趣的主题的主题标识号，并将返回 _X_ 和 _y_ 仅针对该主题的数据。
+下面的 _data_for_subject（）_ 函数实现了这种行为。它将获取加载的训练数据，行号到主题的加载映射，以及我们感兴趣的主题的主题标识号，并将返回`X`和`y`仅针对该主题的数据。
 
 ```py
 # get all data for one subject
@@ -512,7 +512,7 @@ def to_series(windows):
 
 每个系列将具有相同数量的时间步长（x 轴的长度），因此，为每个变量创建一个子图并垂直对齐所有图可能很有用，这样我们就可以比较每个变量的运动。
 
-下面的 _plot_subject（）_ 函数为单个主题的 _X_ 和 _y_ 数据实现此行为。该函数采用与 _load_dataset（）_ 函数中加载的变量（第 3 轴）相同的顺序。每个情节都会添加粗略的标题，因此我们不会轻易混淆我们正在看的内容。
+下面的 _plot_subject（）_ 函数为单个主题的`X`和`y`数据实现此行为。该函数采用与 _load_dataset（）_ 函数中加载的变量（第 3 轴）相同的顺序。每个情节都会添加粗略的标题，因此我们不会轻易混淆我们正在看的内容。
 
 ```py
 # plot the data for one subject

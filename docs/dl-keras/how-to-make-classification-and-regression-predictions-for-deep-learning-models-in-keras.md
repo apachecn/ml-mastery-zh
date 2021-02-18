@@ -172,9 +172,9 @@ X=[0.89337759 0.65864154], Predicted=[0]
 
 请注意，在准备数据时，您将把域中的类值（例如字符串）映射到整数值。您可能使用过 _[LabelEncoder](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html#sklearn.preprocessing.LabelEncoder)_ 。
 
-此 _LabelEncoder_ 可用于通过 `inverse_transform()` 函数将整数转换回字符串值。
+此`LabelEncoder`可用于通过 `inverse_transform()` 函数将整数转换回字符串值。
 
-因此，您可能希望在拟合最终模型时保存（pickle）用于编码`y`值的 _LabelEncoder_ 。
+因此，您可能希望在拟合最终模型时保存（pickle）用于编码`y`值的`LabelEncoder`。
 
 ### 概率预测
 
@@ -193,7 +193,7 @@ ynew = model.predict_proba(Xnew)
 
 在多类分类问题的情况下，通常在输出层上使用 `softmax` 激活函数，并且将每个类的概率观测值作为向量返回。
 
-以下示例对数据实例的 _Xnew_ 数组中的每个示例进行概率预测。
+以下示例对数据实例的`Xnew`数组中的每个示例进行概率预测。
 
 ```py
 # 为分类问题做出概率预测的示例

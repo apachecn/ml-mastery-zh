@@ -131,7 +131,7 @@ Zae Myung Kim 于 2016 年 9 月发现了这个错误，并报告了这个错误
 
 我们可以解决这个问题。修复涉及两件事：
 
-1.  定义适合 ARIMA 对象的 ___getnewargs___ 函数的实现。
+1.  定义适合 ARIMA 对象的`__getnewargs__`函数的实现。
 2.  将新功能添加到 ARIMA。
 
 值得庆幸的是，Zae Myung Kim 在他的错误报告中提供了该函数的示例，因此我们可以直接使用它：
@@ -145,7 +145,7 @@ Python 允许我们[猴子补丁](https://en.wikipedia.org/wiki/Monkey_patch)一
 
 我们可以使用赋值在现有对象上定义新函数。
 
-我们可以为 ARIMA 对象上的 ___getnewargs___ 函数执行此操作，如下所示：
+我们可以为 ARIMA 对象上的`__getnewargs__`函数执行此操作，如下所示：
 
 ```py
 ARIMA.__getnewargs__ = __getnewargs__

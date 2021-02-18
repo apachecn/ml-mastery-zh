@@ -111,7 +111,7 @@ P（class = 1）= count（class = 1）/（count（class = 0）+ count（class = 
 
 条件概率是给定类值的每个属性值的频率除以具有该类值的实例的频率。
 
-例如，如果“ _weather_ ”属性的值为“ _sunny_ ”和“ _rainy_ ”，并且class属性的类值为“_” -out_ “和” _stay-home_ “，然后每个类别值的每个天气值的条件概率可以计算为：
+例如，如果“`weather`”属性的值为“`sunny`”和“`rainy`”，并且class属性的类值为“_” -out_ “和” _stay-home_ “，然后每个类别值的每个天气值的条件概率可以计算为：
 
 *   P（weather = sunny | class = go-out）= count（天气=晴天和class = go-out的实例）/ count（class = go-out的实例）
 *   P（天气=晴天| class = stay-home）=计数（天气=阳光和班级=住宿的实例）/计数（班级=住宿的情况）
@@ -134,7 +134,7 @@ stay-home = P（天气=晴天| class = stay-home）* P（class = stay -家）
 P（go-out | weather = sunny）= go-out /（go-out + stay-home）
 P（stay-home | weather = sunny）= stay-home /（go-out + stay-home ）
 
-如果我们有更多的输入变量，我们可以扩展上面的例子。例如，假装我们有一个“ _car_ ”属性，其值为“_正在工作_”和“_打破_”。我们可以将这个概率乘以等式。
+如果我们有更多的输入变量，我们可以扩展上面的例子。例如，假装我们有一个“`car`”属性，其值为“_正在工作_”和“_打破_”。我们可以将这个概率乘以等式。
 
 例如，下面是“go-out”类标签的计算，添加了car input变量设置为“working”：
 

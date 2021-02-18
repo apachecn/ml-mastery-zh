@@ -61,7 +61,7 @@ pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git
 
 在本节中，我们将演示一个简单的 Python 脚本，它为您提供了 Theano 的味道。
 
-它取自 [Theano 概览指南](http://deeplearning.net/software/theano/introduction.html)。在这个例子中，我们定义了两个符号浮点变量 _a_ 和 _b_ 。
+它取自 [Theano 概览指南](http://deeplearning.net/software/theano/introduction.html)。在这个例子中，我们定义了两个符号浮点变量`a`和`b`。
 
 我们定义了一个使用这些变量 _（c = a + b）_ 的表达式。
 

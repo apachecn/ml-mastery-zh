@@ -405,7 +405,7 @@ Keras 提供了一个嵌入层，可用于文本数据的神经网络。
 
 它要求输入数据是整数编码的，以便每个单词由唯一的整数表示。可以使用 Keras 提供的 Tokenizer API 来执行该数据准备步骤。
 
-使用随机权重初始化嵌入层，并将学习训练数据集中所有单词的嵌入。你必须指定 _input_dim_ ，这是词汇量的大小， _output_dim_ 是嵌入的向量空间的大小，可选择 _input_length_ 是输入序列中的单词数。
+使用随机权重初始化嵌入层，并将学习训练数据集中所有单词的嵌入。你必须指定`input_dim`，这是词汇量的大小，`output_dim`是嵌入的向量空间的大小，可选择`input_length`是输入序列中的单词数。
 
 ```py
 layer = Embedding(input_dim, output_dim, input_length=??)

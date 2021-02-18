@@ -32,7 +32,7 @@ Tom Mitchell 在他的书[机器学习](http://www.amazon.com/dp/0070428077?tag=
 
 在他的介绍中，他提供了一个简短的形式主义，你会看到很多重复：
 
-A computer program is said to **learn** from experience _E_ with respect to some class of tasks _T_ and performance measure _P_, if its performance at tasks in _T_, as measured by _P_, improves with experience _E_.
+A computer program is said to **learn** from experience`E`with respect to some class of tasks`T`and performance measure _P_, if its performance at tasks in _T_, as measured by _P_, improves with experience _E_.
 
 不要让术语的定义吓跑你，这是一种非常有用的形式主义。
 

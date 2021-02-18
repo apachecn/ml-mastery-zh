@@ -33,7 +33,7 @@
 
 [学生t检验](https://en.wikipedia.org/wiki/Student%27s_t-test)是一项统计假设检验，用于检验是否预期两个样本来自同一人群。
 
-它以William Gosset使用的化名“ _Student_ ”命名，他开发了该测试。
+它以William Gosset使用的化名“`Student`”命名，他开发了该测试。
 
 测试通过检查来自两个样品的平均值来确定它们是否彼此显着不同。它通过计算均值之间差异的标准误差来做到这一点，如果两个样本具有相同的均值（零假设），可以解释为差异的可能性。
 
@@ -82,7 +82,7 @@ t = observed difference between sample means / standard error of the difference 
 t = (mean(X1) - mean(X2)) / sed
 ```
 
-其中 _X1_ 和 _X2_ 是第一和第二数据样本而 _sed_ 是平均值之差的标准误差。
+其中`X1`和`X2`是第一和第二数据样本而`sed`是平均值之差的标准误差。
 
 平均值之间差异的标准误差可以计算如下：
 
@@ -90,7 +90,7 @@ t = (mean(X1) - mean(X2)) / sed
 sed = sqrt(se1^2 + se2^2)
 ```
 
-其中 _se1_ 和 _se2_ 是第一和第二数据集的标准误差。
+其中`se1`和`se2`是第一和第二数据集的标准误差。
 
 样本的标准误差可以计算为：
 
@@ -98,7 +98,7 @@ sed = sqrt(se1^2 + se2^2)
 se = std / sqrt(n)
 ```
 
-当 _se_ 是样品的标准误差时， _std_ 是样品标准偏差， _n_ 是样品中的观察数。
+当`se`是样品的标准误差时，`std`是样品标准偏差，`n`是样品中的观察数。
 
 这些计算做出以下假设：
 
@@ -110,7 +110,7 @@ se = std / sqrt(n)
 
 我们可以使用Python标准库，NumPy和SciPy中的函数轻松实现这些方程。
 
-假设我们的两个数据样本存储在变量 _data1_ 和 _data2_ 中。
+假设我们的两个数据样本存储在变量`data1`和`data2`中。
 
 我们可以从计算这些样本的平均值开始，如下所示：
 
@@ -360,15 +360,15 @@ Reject the null hypothesis that the means are equal.
 t = (mean(X1) - mean(X2)) / sed
 ```
 
-Where _X1_ and _X2_ are the first and second data samples and _sed_ is the standard error of the difference between the means.
+Where`X1`and`X2`are the first and second data samples and`sed`is the standard error of the difference between the means.
 
-这里， _sed_ 计算如下：
+这里，`sed`计算如下：
 
 ```py
 sed = sd / sqrt(n)
 ```
 
-其中 _sd_ 是依赖样本平均值与_之间的差异的标准偏差n_ 是配对观察的总数（例如每个样本的大小）。
+其中`sd`是依赖样本平均值与_之间的差异的标准偏差n_ 是配对观察的总数（例如每个样本的大小）。
 
 _sd_ 的计算首先需要计算样本之间的平方差之和：
 
@@ -401,7 +401,7 @@ sd = sqrt((d1 - (d2**2 / n)) / (n - 1))
 mean1, mean2 = mean(data1), mean(data2)
 ```
 
-接下来，我们将需要对的数量（ _n_ ）。我们将在几个不同的计算中使用它。
+接下来，我们将需要对的数量（`n`）。我们将在几个不同的计算中使用它。
 
 ```py
 # number of paired samples

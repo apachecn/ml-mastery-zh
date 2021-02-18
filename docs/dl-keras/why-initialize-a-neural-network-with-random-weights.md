@@ -177,7 +177,7 @@
 *   **LSTM** ： _glorot_uniform_
 *   **CNN** ： _glorot_uniform_
 
-您可以在本文中了解更多关于“ _glorot_uniform_ ”，也称为“ _Xavier normal_ ”，以 Xavier Glorot 方法的开发人员命名：
+您可以在本文中了解更多关于“`glorot_uniform`”，也称为“ _Xavier normal_ ”，以 Xavier Glorot 方法的开发人员命名：
 
 *   [了解深度前馈神经网络训练的难度](http://proceedings.mlr.press/v9/glorot10a.html)，2010。
 
