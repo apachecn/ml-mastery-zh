@@ -387,7 +387,7 @@ save_doc(sequences, out_filename)
 
 ### 加载序列
 
-我们可以使用我们在上一节中开发的 _load_doc（）_ 函数加载我们的训练数据。
+我们可以使用我们在上一节中开发的`load_doc()`函数加载我们的训练数据。
 
 加载后，我们可以通过基于新行的拆分将数据拆分为单独的训练序列。
 
@@ -632,7 +632,7 @@ dump(tokenizer, open('tokenizer.pkl', 'wb'))
 
 我们可以使用上一节中的相同代码来加载文本的训练数据序列。
 
-具体来说， _load_doc（）_ 功能。
+具体来说，`load_doc()`功能。
 
 ```py
 # load doc into memory
@@ -665,7 +665,7 @@ seq_length = len(lines[0].split()) - 1
 
 我们现在可以从文件加载模型。
 
-Keras 提供 _load_model（）_ 功能，用于加载模型，随时可以使用。
+Keras 提供`load_model()`功能，用于加载模型，随时可以使用。
 
 ```py
 # load the model
@@ -720,13 +720,13 @@ for word, index in tokenizer.word_index.items():
 
 然后，我们可以将此单词附加到种子文本并重复该过程。
 
-重要的是，输入序列将变得太长。在输入序列编码为整数后，我们可以将其截断为所需的长度。 Keras 提供了 _pad_sequences（）_ 函数，我们可以使用它来执行此截断。
+重要的是，输入序列将变得太长。在输入序列编码为整数后，我们可以将其截断为所需的长度。 Keras 提供了`pad_sequences()`函数，我们可以使用它来执行此截断。
 
 ```py
 encoded = pad_sequences([encoded], maxlen=seq_length, truncating='pre')
 ```
 
-我们可以将所有这些包装成一个名为 _generate_seq（）_ 的函数，该函数将模型，标记生成器，输入序列长度，种子文本和要生成的单词数作为输入。然后它返回由模型生成的一系列单词。
+我们可以将所有这些包装成一个名为`generate_seq()`的函数，该函数将模型，标记生成器，输入序列长度，种子文本和要生成的单词数作为输入。然后它返回由模型生成的一系列单词。
 
 ```py
 # generate a sequence from a language model

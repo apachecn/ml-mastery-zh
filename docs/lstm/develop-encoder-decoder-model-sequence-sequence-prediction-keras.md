@@ -198,7 +198,7 @@ Source,						Target
 n_features = 50 + 1
 ```
 
-我们可以使用 _randint（）_ python函数生成1到1范围内的随机整数 - 减去问题基数的大小。下面的 _generate_sequence（）_生成一系列随机整数。
+我们可以使用`randint()`python函数生成1到1范围内的随机整数 - 减去问题基数的大小。下面的 _generate_sequence（）_生成一系列随机整数。
 
 ```py
 # generate a sequence of random integers

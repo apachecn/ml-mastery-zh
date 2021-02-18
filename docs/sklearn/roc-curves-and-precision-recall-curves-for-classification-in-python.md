@@ -120,7 +120,7 @@ ROC 曲线是一个有用的工具，原因如下：
 
 ## Python 中的 ROC 曲线和 AUC
 
-我们可以使用 _roc_curve（）_ scikit-learn 函数在 Python 中绘制模型的 ROC 曲线。
+我们可以使用`roc_curve()`scikit-learn 函数在 Python 中绘制模型的 ROC 曲线。
 
 该函数获取测试集的真实结果（0,1）和 1 类的预测概率。该函数返回每个阈值的误报率，每个阈值的真正正率和阈值。
 
@@ -129,9 +129,9 @@ ROC 曲线是一个有用的工具，原因如下：
 fpr, tpr, thresholds = roc_curve(y, probs)
 ```
 
-可以使用 _roc_auc_score（）_ 函数计算 ROC 的 AUC。
+可以使用`roc_auc_score()`函数计算 ROC 的 AUC。
 
-与 _roc_curve（）_ 函数一样，AUC 函数同时获取测试集中的真实结果（0,1）和 1 类的预测概率。它返回的 AUC 分数在 0.0 和 1.0 之间，分别对于没有技能和完美技能。
+与`roc_curve()`函数一样，AUC 函数同时获取测试集中的真实结果（0,1）和 1 类的预测概率。它返回的 AUC 分数在 0.0 和 1.0 之间，分别对于没有技能和完美技能。
 
 ```
 # calculate AUC
@@ -245,30 +245,30 @@ Recall == Sensitivity
 
 ## Python 中的 Precision-Recall 曲线
 
-可以通过 _precision_score（）_ 和 _recall_score（）_ 函数以 scikit-learn 计算精度和召回率。
+可以通过`precision_score()`和`recall_score()`函数以 scikit-learn 计算精度和召回率。
 
-可以使用 _precision_recall_curve（）_ 函数计算阈值的精度和调用，该函数将真实输出值和正类的概率作为输出，并返回精度，调用和阈值。
+可以使用`precision_recall_curve()`函数计算阈值的精度和调用，该函数将真实输出值和正类的概率作为输出，并返回精度，调用和阈值。
 
 ```
 # calculate precision-recall curve
 precision, recall, thresholds = precision_recall_curve(testy, probs)
 ```
 
-可以通过调用 _f1_score（）_ 函数来计算 F1 得分，该函数将真实的类值和预测的类值作为参数。
+可以通过调用`f1_score()`函数来计算 F1 得分，该函数将真实的类值和预测的类值作为参数。
 
 ```
 # calculate F1 score
 f1 = f1_score(testy, yhat)
 ```
 
-精确调用曲线下的面积可以通过调用 _auc（）_ 函数并将其传递给每个阈值计算的调用和精度值来近似。
+精确调用曲线下的面积可以通过调用`auc()`函数并将其传递给每个阈值计算的调用和精度值来近似。
 
 ```
 # calculate precision-recall AUC
 auc = auc(recall, precision)
 ```
 
-最后，可以通过调用 _average_precision_score（）_ 函数并将其传递给真实的类值和预测的类值来计算平均精度。
+最后，可以通过调用`average_precision_score()`函数并将其传递给真实的类值和预测的类值来计算平均精度。
 
 下面列出了完整的示例。
 

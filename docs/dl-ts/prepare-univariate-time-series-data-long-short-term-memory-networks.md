@@ -158,7 +158,7 @@ print(data.shape)
 (25, 200)
 ```
 
-接下来，我们可以使用 _reshape（）_ 函数为我们的单个特征添加一个额外的维度。
+接下来，我们可以使用`reshape()`函数为我们的单个特征添加一个额外的维度。
 
 ```py
 # reshape into [samples, timesteps, features]

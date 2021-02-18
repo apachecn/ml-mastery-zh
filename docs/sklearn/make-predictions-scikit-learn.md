@@ -81,9 +81,9 @@ model.fit(X, y)
 
 我们不知道新数据的结果类。这就是我们首先需要模型的原因。
 
-我们可以使用 _predict（）_ 函数在 scikit-learn 中使用我们最终的分类模型来预测新数据实例的类。
+我们可以使用`predict()`函数在 scikit-learn 中使用我们最终的分类模型来预测新数据实例的类。
 
-例如，我们在名为`Xnew`的数组中有一个或多个数据实例。这可以传递给我们模型上的 _predict（）_ 函数，以预测数组中每个实例的类值。
+例如，我们在名为`Xnew`的数组中有一个或多个数据实例。这可以传递给我们模型上的`predict()`函数，以预测数组中每个实例的类值。
 
 ```
 Xnew = [[...], [...]]
@@ -122,7 +122,7 @@ X=[-2.18773166  3.33352125], Predicted=0
 
 ### 单一类预测
 
-如果您只有一个新数据实例，则可以将此数据包装为 _predict（）_ 函数;例如：
+如果您只有一个新数据实例，则可以将此数据包装为`predict()`函数;例如：
 
 ```
 # example of making a single class prediction
@@ -150,7 +150,7 @@ X=[-0.79415228, 2.10495117], Predicted=0
 
 准备好数据后，您将把域中的类值（例如字符串）映射到整数值。您可能使用过 [LabelEncoder](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html#sklearn.preprocessing.LabelEncoder) 。
 
-此`LabelEncoder`可用于通过 _inverse_transform（）_ 函数将整数转换回字符串值。
+此`LabelEncoder`可用于通过`inverse_transform()`函数将整数转换回字符串值。
 
 因此，您可能希望在拟合最终模型时保存（pickle）用于编码 y 值的`LabelEncoder`。
 
@@ -160,7 +160,7 @@ X=[-0.79415228, 2.10495117], Predicted=0
 
 这被称为概率预测，其中给定新实例，模型将每个结果类的概率返回为 0 和 1 之间的值。
 
-您可以通过调用 _predict_proba（）_ 函数在 scikit-learn 中进行这些类型的预测，例如：
+您可以通过调用`predict_proba()`函数在 scikit-learn 中进行这些类型的预测，例如：
 
 ```
 Xnew = [[...], [...]]
@@ -216,7 +216,7 @@ model = LinearRegression()
 model.fit(X, y)
 ```
 
-我们可以通过在最终模型上调用 _predict（）_ 函数来使用最终的回归模型预测数量。
+我们可以通过在最终模型上调用`predict()`函数来使用最终的回归模型预测数量。
 
 与分类一样，predict（）函数采用一个或多个数据实例的列表或数组。
 

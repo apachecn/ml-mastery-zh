@@ -97,7 +97,7 @@ statsmodels 库在名为 [seasonal_decompose（）](http://www.statsmodels.org/d
 
 两者都会产生结果，在解释结果时必须小心谨慎。对时间序列图和一些汇总统计数据的回顾通常可以是一个很好的开始，可以了解您的时间序列问题是否具有加性或乘法性。
 
-_seasonal_decompose（）_ 函数返回结果对象。结果对象包含用于从分解中访问四个数据的数组。
+`seasonal_decompose()`函数返回结果对象。结果对象包含用于从分解中访问四个数据的数组。
 
 例如，下面的代码段显示了假设添加模型如何将一系列分解为趋势，季节和残差分量。
 
@@ -113,7 +113,7 @@ print(result.resid)
 print(result.observed)
 ```
 
-通过调用 _plot（）_ 函数，可以直接从结果对象绘制这四个时间序列。例如：
+通过调用`plot()`函数，可以直接从结果对象绘制这四个时间序列。例如：
 
 ```py
 from statsmodels.tsa.seasonal import seasonal_decompose

@@ -113,7 +113,7 @@
 *   删除所有已知停用词的单词。
 *   删除长度为＆lt; = 1 个字符的所有单词。
 
-我们可以将所有这些步骤放入一个名为 _clean_doc（）_ 的函数中，该函数将从文件加载的原始文本作为参数，并返回已清理的标记列表。我们还可以定义一个函数 _load_doc（）_，它从文件中加载文件，以便与 _clean_doc（）_ 函数一起使用。下面列出了清理第一次正面评价的示例。
+我们可以将所有这些步骤放入一个名为`clean_doc()`的函数中，该函数将从文件加载的原始文本作为参数，并返回已清理的标记列表。我们还可以定义一个函数 _load_doc（）_，它从文件中加载文件，以便与`clean_doc()`函数一起使用。下面列出了清理第一次正面评价的示例。
 
 ```py
 from nltk.corpus import stopwords
@@ -165,7 +165,7 @@ print(tokens)
 
 我们现在可以使用该功能来清理评论并将其应用于所有评论。
 
-为此，我们将在下面开发一个名为 _process_docs（）_ 的新函数，它将遍历目录中的所有评论，清理它们并将它们作为列表返回。
+为此，我们将在下面开发一个名为`process_docs()`的新函数，它将遍历目录中的所有评论，清理它们并将它们作为列表返回。
 
 我们还将为函数添加一个参数，以指示函数是处理序列还是测试评论，这样可以过滤文件名（如上所述），并且只清理和返回所请求的那些训练或测试评论。
 
@@ -208,7 +208,7 @@ testY = [0 for _ in range(100)] + [1 for _ in range(100)]
 
 最后，我们希望将准备好的训练和测试集保存到文件中，以便我们以后可以加载它们进行建模和模型评估。
 
-下面命名为 _save_dataset（）_ 的函数将使用 pickle API 将给定的准备数据集（X 和 y 元素）保存到文件中。
+下面命名为`save_dataset()`的函数将使用 pickle API 将给定的准备数据集（X 和 y 元素）保存到文件中。
 
 ```py
 # save a dataset to file
@@ -314,7 +314,7 @@ save_dataset([testX,testY], 'test.pkl')
 
 第一步是加载已清理的训练数据集。
 
-可以调用以下名为 _load_dataset（）_ 的函数来加载 pickle 训练数据集。
+可以调用以下名为`load_dataset()`的函数来加载 pickle 训练数据集。
 
 ```py
 # load a clean dataset
@@ -326,7 +326,7 @@ trainLines, trainLabels = load_dataset('train.pkl')
 
 接下来，我们必须在训练数据集上安装 Keras Tokenizer。我们将使用此标记器来定义嵌入层的词汇表，并将审阅文档编码为整数。
 
-下面的函数 _create_tokenizer（）_ 将创建一个给定文档列表的 Tokenizer。
+下面的函数`create_tokenizer()`将创建一个给定文档列表的 Tokenizer。
 
 ```py
 # fit a tokenizer
@@ -338,7 +338,7 @@ def create_tokenizer(lines):
 
 我们还需要知道输入序列的最大长度作为模型的输入并将所有序列填充到固定长度。
 
-下面的函数 _max_length（）_ 将计算训练数据集中所有评论的最大长度（单词数）。
+下面的函数`max_length()`将计算训练数据集中所有评论的最大长度（单词数）。
 
 ```py
 # calculate the maximum document length
@@ -357,7 +357,7 @@ vocab_size = len(tokenizer.word_index) + 1
 
 最后，我们可以整数编码并填充干净的电影评论文本。
 
-名为 _encode_text（）_ 的以下函数将编码和填充文本数据到最大查看长度。
+名为`encode_text()`的以下函数将编码和填充文本数据到最大查看长度。
 
 ```py
 # encode a list of lines

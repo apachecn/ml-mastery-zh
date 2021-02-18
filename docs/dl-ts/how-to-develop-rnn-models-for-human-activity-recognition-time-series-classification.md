@@ -111,7 +111,7 @@ LSTM 网络模型是一种循环神经网络，能够学习和记忆长输入数
 
 信号存储在 train 和 test 子目录下的/ _Inertial Signals_ /目录中。每个信号的每个轴都存储在一个单独的文件中，这意味着每个训练和测试数据集都有九个要加载的输入文件和一个要加载的输出文件。在给定一致的目录结构和文件命名约定的情况下，我们可以批量加载这些文件。
 
-输入数据采用 CSV 格式，其中列由空格分隔。这些文件中的每一个都可以作为 NumPy 数组加载。下面的 _load_file（）_ 函数在给定文件填充路径的情况下加载数据集，并将加载的数据作为 NumPy 数组返回。
+输入数据采用 CSV 格式，其中列由空格分隔。这些文件中的每一个都可以作为 NumPy 数组加载。下面的`load_file()`函数在给定文件填充路径的情况下加载数据集，并将加载的数据作为 NumPy 数组返回。
 
 ```py
 # load a single file as a numpy array
@@ -124,7 +124,7 @@ def load_file(filepath):
 
 为了更清楚，有 128 个时间步和 9 个特征，其中样本数是任何给定原始信号数据文件中的行数。
 
-下面的 _load_group（）_ 函数实现了这种行为。 [dstack（）NumPy 函数](https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.dstack.html)允许我们将每个加载的 3D 数组堆叠成单个 3D 数组，其中变量在第三维（特征）上分开。
+下面的`load_group()`函数实现了这种行为。 [dstack（）NumPy 函数](https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.dstack.html)允许我们将每个加载的 3D 数组堆叠成单个 3D 数组，其中变量在第三维（特征）上分开。
 
 ```py
 # load a list of files into a 3D array of [samples, timesteps, features]
@@ -140,7 +140,7 @@ def load_group(filenames, prefix=''):
 
 我们可以使用此功能加载给定组的所有输入信号数据，例如训练或测试。
 
-下面的 _load_dataset_group（）_ 函数使用目录之间的一致命名约定加载单个组的所有输入信号数据和输出数据。
+下面的`load_dataset_group()`函数使用目录之间的一致命名约定加载单个组的所有输入信号数据和输出数据。
 
 ```py
 # load a dataset group, such as train or test
@@ -165,7 +165,7 @@ def load_dataset_group(group, prefix=''):
 
 输出数据定义为类号的整数。我们必须对这些类整数进行热编码，以使数据适合于拟合神经网络多类分类模型。我们可以通过调用 [to_categorical（）Keras 函数](https://keras.io/utils/#to_categorical)来实现。
 
-下面的 _load_dataset（）_ 函数实现了这种行为，并返回训练并测试 X 和 y 元素，以便拟合和评估定义的模型。
+下面的`load_dataset()`函数实现了这种行为，并返回训练并测试 X 和 y 元素，以便拟合和评估定义的模型。
 
 ```py
 # load the dataset, returns train and test X and y elements
@@ -190,7 +190,7 @@ def load_dataset(prefix=''):
 
 现在我们已将数据加载到内存中以便进行建模，我们可以定义，拟合和评估 LSTM 模型。
 
-我们可以定义一个名为 _evaluate_model（）_ 的函数，它接受训练和测试数据集，拟合训练数据集上的模型，在测试数据集上对其进行评估，并返回模型表现的估计值。
+我们可以定义一个名为`evaluate_model()`的函数，它接受训练和测试数据集，拟合训练数据集上的模型，在测试数据集上对其进行评估，并返回模型表现的估计值。
 
 首先，我们必须使用 Keras 深度学习库来定义 LSTM 模型。该模型需要使用[_ 样本，时间步长，特征 _]进行三维输入。
 
@@ -227,7 +227,7 @@ model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accur
 
 注意，在拟合 LSTM 时，通常不对值序列数据进行混洗。这里我们在训练期间对输入数据的窗口进行随机播放（默认）。在这个问题中，我们感兴趣的是利用 LSTM 的能力来学习和提取窗口中时间步长的功能，而不是跨窗口。
 
-下面列出了完整的 _evaluate_model（）_ 函数。
+下面列出了完整的`evaluate_model()`函数。
 
 ```py
 # fit and evaluate a model
@@ -257,7 +257,7 @@ def evaluate_model(trainX, trainy, testX, testy):
 
 这是网络的一个特征，它为模型提供了自适应能力，但需要对模型进行稍微复杂的评估。
 
-我们将多次重复对模型的评估，然后在每次运行中总结模型的表现。例如，我们可以调用 _evaluate_model（）_ 共 10 次。这将导致必须总结的模型评估分数。
+我们将多次重复对模型的评估，然后在每次运行中总结模型的表现。例如，我们可以调用`evaluate_model()`共 10 次。这将导致必须总结的模型评估分数。
 
 ```py
 # repeat experiment
@@ -271,7 +271,7 @@ for r in range(repeats):
 
 我们可以通过计算和报告绩效的均值和标准差来总结得分样本。均值给出了数据集上模型的平均精度，而标准差给出了精度与平均值的平均方差。
 
-下面的函数 _summarize_results（）_ 总结了运行的结果。
+下面的函数`summarize_results()`总结了运行的结果。
 
 ```py
 # summarize scores

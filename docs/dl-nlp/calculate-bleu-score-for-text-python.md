@@ -183,7 +183,7 @@ Individual 4-gram: 1.000000
 
 累积分数指的是从 1 到 n 的所有阶数的单个 n-gram 分数的计算，并通过计算加权几何平均值对它们进行加权。
 
-默认情况下， _sentence_bleu（）_ 和 _corpus_bleu（）_ 分数计算累积的 4 克 BLEU 分数，也称为 BLEU-4。
+默认情况下，`sentence_bleu()`和`corpus_bleu()`分数计算累积的 4 克 BLEU 分数，也称为 BLEU-4。
 
 对于 1 克，2 克，3 克和 4 克的分数，BLEU-4 的重量分别为 1/4（25％）或 0.25。例如：
 

@@ -138,7 +138,7 @@ n1, n2 = len(data1), len(data2)
 se1, se2 = std1/sqrt(n1), std2/sqrt(n2)
 ```
 
-或者，我们可以使用 _sem（）_ SciPy函数直接计算标准误差。
+或者，我们可以使用`sem()`SciPy函数直接计算标准误差。
 
 ```py
 # calculate standard errors

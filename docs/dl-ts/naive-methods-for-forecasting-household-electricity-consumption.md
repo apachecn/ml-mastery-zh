@@ -62,7 +62,7 @@ sub_metering_remainder = (global_active_power * 1000 / 60) - (sub_metering_1 + s
 
 下载数据集并将其解压缩到当前工作目录中。您现在将拥有大约 127 兆字节的文件“ _household_power_consumption.txt_ ”并包含所有观察结果。
 
-我们可以使用 _read_csv（）_ 函数来加载数据，并将前两列合并到一个日期时间列中，我们可以将其用作索引。
+我们可以使用`read_csv()`函数来加载数据，并将前两列合并到一个日期时间列中，我们可以将其用作索引。
 
 ```py
 # load all data
@@ -82,7 +82,7 @@ dataset = dataset.astype('float32')
 
 我们还需要填写缺失值，因为它们已被标记。
 
-一种非常简单的方法是从前一天的同一时间复制观察。我们可以在一个名为 _fill_missing（）_ 的函数中实现它，该函数将从 24 小时前获取数据的 NumPy 数组并复制值。
+一种非常简单的方法是从前一天的同一时间复制观察。我们可以在一个名为`fill_missing()`的函数中实现它，该函数将从 24 小时前获取数据的 NumPy 数组并复制值。
 
 ```py
 # fill missing values with a value at the same time one day ago
@@ -217,7 +217,7 @@ daily_data.to_csv('household_power_consumption_days.csv')
 
 可以使用的一个可能的分数是所有预测天数的 RMSE。
 
-下面的函数 _evaluate_forecasts（）_ 将实现此行为并基于多个七天预测返回模型的表现。
+下面的函数`evaluate_forecasts()`将实现此行为并基于多个七天预测返回模型的表现。
 
 ```py
 # evaluate one or more weekly forecasts against expected values
@@ -274,7 +274,7 @@ def evaluate_forecasts(actual, predicted):
 2010-01-02,1309.2679999999998,199.54600000000016,352332.8399999997,5489.7999999999865,801.0,298.0,6425.0,14297.133406600002
 ```
 
-下面的函数 _split_dataset（）_ 将每日数据拆分为训练集和测试集，并将每个数据组织成标准周。
+下面的函数`split_dataset()`将每日数据拆分为训练集和测试集，并将每个数据组织成标准周。
 
 使用特定行偏移来使用数据集的知识来分割数据。然后使用 NumPy [split（）函数](https://docs.scipy.org/doc/numpy/reference/generated/numpy.split.html)将分割数据集组织成每周数据。
 
@@ -350,7 +350,7 @@ Input, 						Predict
 
 为模型提供函数的名称作为参数“`model_func`”。该功能负责定义模型，使模型适合训练数据，并进行一周的预测。
 
-然后使用先前定义的 _evaluate_forecasts（）_ 函数，针对测试数据集评估模型所做的预测。
+然后使用先前定义的`evaluate_forecasts()`函数，针对测试数据集评估模型所做的预测。
 
 ```py
 # evaluate a single model
@@ -374,7 +374,7 @@ def evaluate_model(model_func, train, test):
 
 一旦我们对模型进行评估，我们就可以总结表现。
 
-以下名为 _summarize_scores（）_ 的函数将模型的表现显示为单行，以便与其他模型进行比较。
+以下名为`summarize_scores()`的函数将模型的表现显示为单行，以便与其他模型进行比较。
 
 ```py
 # summarize scores
@@ -403,7 +403,7 @@ def summarize_scores(name, score, scores):
 
 该模型从预测期间（例如星期六）之前的最后一天获取有效功率，并将其用作预测期间（星期日至星期六）中每天的功率值。
 
-下面的 _daily_persistence（）_ 函数实现了每日持久性预测策略。
+下面的`daily_persistence()`函数实现了每日持久性预测策略。
 
 ```py
 # daily persistence model
@@ -423,7 +423,7 @@ def daily_persistence(history):
 
 这是基于下周将与本周非常相似的想法。
 
-下面的 _weekly_persistence（）_ 函数实现了每周持久性预测策略。
+下面的`weekly_persistence()`函数实现了每周持久性预测策略。
 
 ```py
 # weekly persistence model
@@ -439,7 +439,7 @@ def weekly_persistence(history):
 
 也就是说，使用 52 周前的观察周作为预测，基于下周将与一年前的同一周相似的想法。
 
-下面的 _week_one_year_ago_persistence（）_ 函数实现了一年前的预测策略。
+下面的`week_one_year_ago_persistence()`函数实现了一年前的预测策略。
 
 ```py
 # week one year ago persistence model

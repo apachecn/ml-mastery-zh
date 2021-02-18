@@ -106,7 +106,7 @@ def load_doc(filename):
 
 我们有两个目录，每个目录有 1,000 个文档。我们可以依次使用 [listdir（）函数](https://docs.python.org/3/library/os.html#os.listdir)获取目录中的文件列表来依次处理每个目录，然后依次加载每个文件。
 
-例如，我们可以使用 _load_doc（）_ 函数在负目录中加载每个文档来进行实际加载。
+例如，我们可以使用`load_doc()`函数在负目录中加载每个文档来进行实际加载。
 
 ```py
 from os import listdir
@@ -146,7 +146,7 @@ Loaded cv998_15691.txt
 Loaded cv999_14636.txt
 ```
 
-我们也可以将文档的处理转换为函数，稍后将其用作模板，以开发清除文件夹中所有文档的函数。例如，下面我们定义一个 _process_docs（）_ 函数来做同样的事情。
+我们也可以将文档的处理转换为函数，稍后将其用作模板，以开发清除文件夹中所有文档的函数。例如，下面我们定义一个`process_docs()`函数来做同样的事情。
 
 ```py
 from os import listdir
@@ -189,7 +189,7 @@ process_docs(directory)
 
 分成代币
 
-首先，让我们加载一个文档，然后查看由空格分割的原始标记。我们将使用上一节中开发的 _load_doc（）_ 函数。我们可以使用 _split（）_ 函数将加载的文档拆分为由空格分隔的标记。
+首先，让我们加载一个文档，然后查看由空格分割的原始标记。我们将使用上一节中开发的`load_doc()`函数。我们可以使用`split()`函数将加载的文档拆分为由空格分隔的标记。
 
 ```py
 # load doc into memory
@@ -227,8 +227,8 @@ print(tokens)
 
 一些想法：
 
-*   我们可以使用字符串 _translate（）_ 函数从标记中过滤出标点符号。
-*   我们可以通过对每个标记使用 _isalpha（）_ 检查来删除只是标点符号或包含数字的标记。
+*   我们可以使用字符串`translate()`函数从标记中过滤出标点符号。
+*   我们可以通过对每个标记使用`isalpha()`检查来删除只是标点符号或包含数字的标记。
 *   我们可以使用 NLTK 加载的列表删除英语停用词。
 *   我们可以通过检查短标记来过滤掉短标记。
 
@@ -273,7 +273,7 @@ print(tokens)
 'explanation', 'craziness', 'came', 'oh', 'way', 'horror', 'teen', 'slasher', 'flick', 'packaged', 'look', 'way', 'someone', 'apparently', 'assuming', 'genre', 'still', 'hot', 'kids', 'also', 'wrapped', 'production', 'two', 'years', 'ago', 'sitting', 'shelves', 'ever', 'since', 'whatever', 'skip', 'wheres', 'joblo', 'coming', 'nightmare', 'elm', 'street', 'blair', 'witch', 'crow', 'crow', 'salvation', 'lost', 'highway', 'memento', 'others', 'stir', 'echoes']
 ```
 
-我们可以将它放入一个名为 _clean_doc（）_ 的函数中，并在另一个评论中测试它，这次是一个积极的评论。
+我们可以将它放入一个名为`clean_doc()`的函数中，并在另一个评论中测试它，这次是一个积极的评论。
 
 ```py
 from nltk.corpus import stopwords
@@ -335,9 +335,9 @@ print(tokens)
 
 我们可以在[计数器](https://docs.python.org/3/library/collections.html#collections.Counter)中跟踪词汇，这是一个单词及其计数字典，带有一些额外的便利功能。
 
-我们需要开发一个新函数来处理文档并将其添加到词汇表中。该函数需要通过调用先前开发的 _load_doc（）_ 函数来加载文档。它需要使用先前开发的 _clean_doc（）_ 函数清理加载的文档，然后需要将所有标记添加到 Counter，并更新计数。我们可以通过调用计数器对象上的 _update（）_ 函数来完成最后一步。
+我们需要开发一个新函数来处理文档并将其添加到词汇表中。该函数需要通过调用先前开发的`load_doc()`函数来加载文档。它需要使用先前开发的`clean_doc()`函数清理加载的文档，然后需要将所有标记添加到 Counter，并更新计数。我们可以通过调用计数器对象上的`update()`函数来完成最后一步。
 
-下面是一个名为 _add_doc_to_vocab（）_ 的函数，它将文档文件名和计数器词汇表作为参数。
+下面是一个名为`add_doc_to_vocab()`的函数，它将文档文件名和计数器词汇表作为参数。
 
 ```py
 # load doc and add to vocab
@@ -460,7 +460,7 @@ print(len(tokens))
 
 然后，我们可以将选择的单词词汇保存到新文件中。我喜欢将词汇表保存为 ASCII，每行一个单词。
 
-下面定义了一个名为 _save_list（）_ 的函数来保存项目列表，在这种情况下，标记为文件，每行一个。
+下面定义了一个名为`save_list()`的函数来保存项目列表，在这种情况下，标记为文件，每行一个。
 
 ```py
 def save_list(lines, filename):
@@ -599,9 +599,9 @@ vocab = set(vocab)
 
 一种方法可以是将所有正面评论保存在一个文件中，将所有负面评论保存在另一个文件中，将过滤后的标记用空格分隔，以便在单独的行上进行每次评审。
 
-首先，我们可以定义一个函数来处理文档，清理它，过滤它，然后将它作为可以保存在文件中的单行返回。下面定义 _doc_to_line（）_ 函数，将文件名和词汇（作为一组）作为参数。
+首先，我们可以定义一个函数来处理文档，清理它，过滤它，然后将它作为可以保存在文件中的单行返回。下面定义`doc_to_line()`函数，将文件名和词汇（作为一组）作为参数。
 
-它调用先前定义的 _load_doc（）_ 函数来加载文档，调用 _clean_doc（）_ 来标记文档。
+它调用先前定义的`load_doc()`函数来加载文档，调用`clean_doc()`来标记文档。
 
 ```py
 # load doc, clean and return line of tokens
@@ -615,7 +615,7 @@ def doc_to_line(filename, vocab):
 	return ' '.join(tokens)
 ```
 
-接下来，我们可以定义新版本的 _process_docs（）_ 来逐步浏览文件夹中的所有评论，并通过为每个文档调用 _doc_to_line（）_ 将它们转换为行。然后返回行列表。
+接下来，我们可以定义新版本的`process_docs()`来逐步浏览文件夹中的所有评论，并通过为每个文档调用`doc_to_line()`将它们转换为行。然后返回行列表。
 
 ```py
 # load all docs in a directory
@@ -635,7 +635,7 @@ def process_docs(directory, vocab):
 	return lines
 ```
 
-然后我们可以为正面和负面评论的目录调用 _process_docs（）_，然后从上一节调用 _save_list（）_ 将每个处理过的评论列表保存到文件中。
+然后我们可以为正面和负面评论的目录调用 _process_docs（）_，然后从上一节调用`save_list()`将每个处理过的评论列表保存到文件中。
 
 完整的代码清单如下。
 

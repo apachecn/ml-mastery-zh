@@ -107,7 +107,7 @@ Flickr8K 数据集是开始使用图像字幕时使用的一个很好的数据�
 997722733_0cb5439472.jpg
 ```
 
-Keras 提供 _load_img（）_ 函数，可用于将图像文件直接作为像素数组加载。
+Keras 提供`load_img()`函数，可用于将图像文件直接作为像素数组加载。
 
 ```py
 from keras.preprocessing.image import load_img
@@ -116,7 +116,7 @@ image = load_img('990890291_afc72be141.jpg')
 
 像素数据需要转换为 NumPy 阵列以便在 Keras 中使用。
 
-我们可以使用 _img_to_array（）_ keras 函数来转换加载的数据。
+我们可以使用`img_to_array()`keras 函数来转换加载的数据。
 
 ```py
 from keras.preprocessing.image import img_to_array
@@ -127,7 +127,7 @@ image = img_to_array(image)
 
 牛津视觉几何组（VGG）模型很受欢迎，可用于 Keras。
 
-如果我们决定在模型中使用这个预先训练的模型作为特征提取器，我们可以使用 Keras 中的 _preprocess_input（）_ 函数预处理模型的像素数据，例如：
+如果我们决定在模型中使用这个预先训练的模型作为特征提取器，我们可以使用 Keras 中的`preprocess_input()`函数预处理模型的像素数据，例如：
 
 ```py
 from keras.applications.vgg16 import preprocess_input
@@ -138,7 +138,7 @@ image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
 image = preprocess_input(image)
 ```
 
-我们可能还想强制加载照片以使其具有与 VGG 模型相同的像素尺寸，即 224 x 224 像素。我们可以在调用 _load_img（）_ 时这样做，例如：
+我们可能还想强制加载照片以使其具有与 VGG 模型相同的像素尺寸，即 224 x 224 像素。我们可以在调用`load_img()`时这样做，例如：
 
 ```py
 image = load_img('990890291_afc72be141.jpg', target_size=(224, 224))
@@ -218,7 +218,7 @@ print(model.summary())
 
 通过设置 _include_top = False_ ，从模型中删除两个密集输出层以及分类输出层。最终汇集层的输出被视为从图像中提取的特征。
 
-接下来，我们可以像上一节一样遍历图像目录中的所有图像，并在模型上为每个准备好的图像调用 _predict（）_ 函数以获取提取的特征。然后可以将这些特征存储在键入图像 id 的字典中。
+接下来，我们可以像上一节一样遍历图像目录中的所有图像，并在模型上为每个准备好的图像调用`predict()`函数以获取提取的特征。然后可以将这些特征存储在键入图像 id 的字典中。
 
 下面列出了完整的示例。
 
@@ -343,7 +343,7 @@ image_desc = ' '.join(image_desc)
 
 我们可以把所有这些放在一个函数中。
 
-下面定义 _load_descriptions（）_ 函数，它将获取加载的文件，逐行处理，并将图像标识符字典返回到它们的第一个描述。
+下面定义`load_descriptions()`函数，它将获取加载的文件，逐行处理，并将图像标识符字典返回到它们的第一个描述。
 
 ```py
 # load doc into memory
@@ -405,7 +405,7 @@ Loaded: 8092
 *   从标记中删除所有标点符号。
 *   删除包含一个或多个字符的所有标记（删除标点符号后），例如'a'和挂's'字符。
 
-我们可以在一个函数中实现这些简单的清理操作，该函数清除上一节中加载的字典中的每个描述。下面定义了 _clean_descriptions（）_ 函数，它将清理每个加载的描述。
+我们可以在一个函数中实现这些简单的清理操作，该函数清除上一节中加载的字典中的每个描述。下面定义了`clean_descriptions()`函数，它将清理每个加载的描述。
 
 ```py
 # clean description text
@@ -427,7 +427,7 @@ def clean_descriptions(descriptions):
 
 然后我们可以将干净的文本保存到文件中以供我们的模型稍后使用。
 
-每行将包含图像标识符，后跟干净描述。下面定义了 _save_doc（）_ 函数，用于将已清理的描述保存到文件中。
+每行将包含图像标识符，后跟干净描述。下面定义了`save_doc()`函数，用于将已清理的描述保存到文件中。
 
 ```py
 # save descriptions to file, one per line
@@ -617,7 +617,7 @@ print('Vocabulary Size: %d' % vocab_size)
 sequences = tokenizer.texts_to_sequences(desc_text)
 ```
 
-该模型将要求所有输出序列具有相同的训练长度。我们可以通过填充所有编码序列以使其具有与最长编码序列相同的长度来实现这一点。我们可以在单词列表之后用 0 值填充序列。 Keras 提供 _pad_sequences（）_ 函数来填充序列。
+该模型将要求所有输出序列具有相同的训练长度。我们可以通过填充所有编码序列以使其具有与最长编码序列相同的长度来实现这一点。我们可以在单词列表之后用 0 值填充序列。 Keras 提供`pad_sequences()`函数来填充序列。
 
 ```py
 from keras.preprocessing.sequence import pad_sequences
@@ -627,7 +627,7 @@ print('Description Length: %d' % max_length)
 padded = pad_sequences(sequences, maxlen=max_length, padding='post')
 ```
 
-最后，我们可以对填充序列进行热编码，以便为序列中的每个字提供一个稀疏向量。 Keras 提供 _to_categorical（）_ 函数来执行此操作。
+最后，我们可以对填充序列进行热编码，以便为序列中的每个字提供一个稀疏向量。 Keras 提供`to_categorical()`函数来执行此操作。
 
 ```py
 from keras.utils import to_categorical
@@ -886,7 +886,7 @@ Description Length: 28
 
 一种解决方案是根据模型逐步加载照片和描述。
 
-Keras 通过在模型上使用 _fit_generator（）_ 函数来支持逐步加载的数据集。生成器是用于描述用于返回模型进行训练的批量样本的函数的术语。这可以像独立函数一样简单，其名称在拟合模型时传递给 _fit_generator（）_ 函数。
+Keras 通过在模型上使用`fit_generator()`函数来支持逐步加载的数据集。生成器是用于描述用于返回模型进行训练的批量样本的函数的术语。这可以像独立函数一样简单，其名称在拟合模型时传递给`fit_generator()`函数。
 
 作为提醒，模型适用于多个时期，其中一个时期是一个遍历整个训练数据集的时期，例如所有照片。一个时期由多批示例组成，其中模型权重在每批结束时更新。
 
@@ -925,7 +925,7 @@ def data_generator(mapping, tokenizer, max_length):
 
 生成器返回一个包含模型输入（X）和输出（y）的数组。输入包括一个数组，其中包含两个输入图像和编码单词序列的项目。输出是一个热编码的单词。
 
-你可以看到它调用一个名为 _load_photo（）_ 的函数来加载一张照片并返回像素和图像标识符。这是本教程开头开发的照片加载功能的简化版本。
+你可以看到它调用一个名为`load_photo()`的函数来加载一张照片并返回像素和图像标识符。这是本教程开头开发的照片加载功能的简化版本。
 
 ```py
 # load a single photo intended as input for the VGG feature extractor model
@@ -942,7 +942,7 @@ def load_photo(filename):
 	return image, image_id
 ```
 
-调用名为 _create_sequences（）_ 的另一个函数来创建图像序列，输入单词序列和输出单词，然后我们将其输出给调用者。这是一个功能，包括上一节中讨论的所有内容，还可以创建图像像素的副本，每个输入 - 输出对都是根据照片的描述创建的。
+调用名为`create_sequences()`的另一个函数来创建图像序列，输入单词序列和输出单词，然后我们将其输出给调用者。这是一个功能，包括上一节中讨论的所有内容，还可以创建图像像素的副本，每个输入 - 输出对都是根据照片的描述创建的。
 
 ```py
 # create sequences of images, input sequences and output words for an image
@@ -972,7 +972,7 @@ def create_sequences(tokenizer, max_length, descriptions, images):
 
 在准备使用数据生成器的模型之前，我们必须加载干净的描述，准备标记生成器，并计算最大序列长度。必须将所有 3 个作为参数传递给 _data_generator（）_。
 
-我们使用先前开发的相同 _load_clean_descriptions（）_ 函数和新的 _create_tokenizer（）_ 函数来简化标记生成器的创建。
+我们使用先前开发的相同`load_clean_descriptions()`函数和新的`create_tokenizer()`函数来简化标记生成器的创建。
 
 将所有这些结合在一起，下面列出了完整的数据生成器，随时可用于训练模型。
 

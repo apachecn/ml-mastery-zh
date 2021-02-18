@@ -336,7 +336,7 @@ bs_ref = brier_score_loss(testy, yhat)
 
 我们可以一般地评估单个 scikit-learn 模型的技能。
 
-下面定义名为 _evaluate_once（）_ 的函数，该函数适合并评估给定的已定义和配置的 scikit-learn 模型并返回 Brier 技能分数（BSS）。
+下面定义名为`evaluate_once()`的函数，该函数适合并评估给定的已定义和配置的 scikit-learn 模型并返回 Brier 技能分数（BSS）。
 
 ```py
 # evaluate a sklearn model

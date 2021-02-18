@@ -168,9 +168,9 @@ Test MSE: 52.696
 
 这包括首先在所有可用数据上训练模型，然后将模型保存到文件。
 
-时间序列模型的`statsmodels`实现通过在拟合[上调用 _save（）_ 和 _load（）_ 来提供内置的保存和加载模型的功能。 ] ARResults](http://statsmodels.sourceforge.net/devel/generated/statsmodels.tsa.ar_model.ARResults.html) 对象。
+时间序列模型的`statsmodels`实现通过在拟合[上调用`save()`和`load()`来提供内置的保存和加载模型的功能。 ] ARResults](http://statsmodels.sourceforge.net/devel/generated/statsmodels.tsa.ar_model.ARResults.html) 对象。
 
-例如，下面的代码将在整个女性出生数据集上训练 AR（6）模型，并使用内置的 _save（）_ 函数保存它，这将基本上腌制`ARResults`对象。
+例如，下面的代码将在整个女性出生数据集上训练 AR（6）模型，并使用内置的`save()`函数保存它，这将基本上腌制`ARResults`对象。
 
 还必须保存差异训练数据，既可以用于进行预测所需的滞后变量，也可以用于 _ 预测（）_ ARResults 的函数所需观察数量的知识。 对象。
 
@@ -301,13 +301,13 @@ print(last_ob)
 
 进行预测涉及加载已保存的模型并在下一个时间步骤估计观测值。
 
-如果 ARResults 对象被序列化，我们可以使用 _predict（）_ 函数来预测下一个时间段。
+如果 ARResults 对象被序列化，我们可以使用`predict()`函数来预测下一个时间段。
 
 下面的示例显示了如何预测下一个时间段。
 
 从文件加载模型，训练数据和最后观察。
 
-该周期被指定为 _predict（）_ 函数，作为训练数据集结束后的下一个时间索引。该索引可以直接存储在文件中，而不是存储整个训练数据，这可以是效率。
+该周期被指定为`predict()`函数，作为训练数据集结束后的下一个时间索引。该索引可以直接存储在文件中，而不是存储整个训练数据，这可以是效率。
 
 进行预测，该预测是在差异数据集的背景下进行的。要将预测转回原始单位，必须将其添加到最后已知的观察中。
 

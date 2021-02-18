@@ -43,7 +43,7 @@
 
 在当前工作目录中使用文件名“ _monthly-airline-passengers.csv_ ”保存文件。
 
-我们可以使用函数 _read_csv（）_ 将此数据集作为 Pandas 系列加载。
+我们可以使用函数`read_csv()`将此数据集作为 Pandas 系列加载。
 
 ```py
 # load
@@ -123,7 +123,7 @@ pyplot.show()
 
 我们将使用前 11 年（132 个观测值）进行训练，最后 12 个用于测试集。
 
-下面的 _train_test_split（）_ 函数将拆分系列，将原始观察值和在测试集中使用的观察数作为参数。
+下面的`train_test_split()`函数将拆分系列，将原始观察值和在测试集中使用的观察数作为参数。
 
 ```py
 # split a univariate dataset into train/test sets
@@ -172,7 +172,7 @@ Nan,		1
 
 可以删除具有 NaN 值的行。
 
-下面的 _series_to_supervised（）_ 函数实现了这种行为，允许您指定输入中使用的滞后观察数和每个样本的输出中使用的数。它还将删除具有 NaN 值的行，因为它们不能用于训练或测试模型。
+下面的`series_to_supervised()`函数实现了这种行为，允许您指定输入中使用的滞后观察数和每个样本的输出中使用的数。它还将删除具有 NaN 值的行，因为它们不能用于训练或测试模型。
 
 ```py
 # transform list into supervised learning format
@@ -202,11 +202,11 @@ def series_to_supervised(data, n_in=1, n_out=1):
 
 然而，时间步骤的真实观察可以用作输入的一部分，用于在下一个时间步骤上进行预测。
 
-首先，数据集分为训练集和测试集。我们将调用 _train_test_split（）_ 函数来执行此拆分并传入预先指定数量的观察值以用作测试数据。
+首先，数据集分为训练集和测试集。我们将调用`train_test_split()`函数来执行此拆分并传入预先指定数量的观察值以用作测试数据。
 
 对于给定配置，模型将适合训练数据集一次。
 
-我们将定义一个通用的 _model_fit（）_ 函数来执行此操作，可以为我们稍后可能感兴趣的给定类型的神经网络填充该操作。该函数获取训练数据集和模型配置，并返回准备好进行预测的拟合模型。
+我们将定义一个通用的`model_fit()`函数来执行此操作，可以为我们稍后可能感兴趣的给定类型的神经网络填充该操作。该函数获取训练数据集和模型配置，并返回准备好进行预测的拟合模型。
 
 ```py
 # fit a model
@@ -216,7 +216,7 @@ def model_fit(train, config):
 
 枚举测试数据集的每个时间步。使用拟合模型进行预测。
 
-同样，我们将定义一个名为 _model_predict（）_ 的通用函数，它采用拟合模型，历史和模型配置，并进行单个一步预测。
+同样，我们将定义一个名为`model_predict()`的通用函数，它采用拟合模型，历史和模型配置，并进行单个一步预测。
 
 ```py
 # forecast with a pre-fit model
@@ -230,7 +230,7 @@ def model_predict(model, history, config):
 
 我们将计算预测和真实值之间的均方根误差或 RMSE。
 
-RMSE 计算为预测值与实际值之间的平方差的平均值的平方根。 _measure_rmse（）_ 使用 [mean_squared_error（）scikit-learn](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html) 函数在计算平方根之前首先计算均方误差或 MSE。
+RMSE 计算为预测值与实际值之间的平方差的平均值的平方根。`measure_rmse()`使用 [mean_squared_error（）scikit-learn](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html) 函数在计算平方根之前首先计算均方误差或 MSE。
 
 ```py
 # root mean squared error or rmse
@@ -238,7 +238,7 @@ def measure_rmse(actual, predicted):
 	return sqrt(mean_squared_error(actual, predicted))
 ```
 
-下面列出了将所有这些联系在一起的完整 _walk_forward_validation（）_ 函数。
+下面列出了将所有这些联系在一起的完整`walk_forward_validation()`函数。
 
 它采用数据集，用作测试集的观察数量以及模型的配置，并返回测试集上模型表现的 RMSE。
 
@@ -280,7 +280,7 @@ def walk_forward_validation(data, n_test, cfg):
 
 对于大型神经网络而言，这并不总是可行的，并且可能仅适用于能够在几分钟或几小时内完成的小型网络。
 
-下面的 _repeat_evaluate（）_ 函数实现了这一点，并允许将重复次数指定为默认为 10 的可选参数，并返回所有重复的平均 RMSE 分数。
+下面的`repeat_evaluate()`函数实现了这一点，并允许将重复次数指定为默认为 10 的可选参数，并返回所有重复的平均 RMSE 分数。
 
 ```py
 # score a model, return None on failure
@@ -299,7 +299,7 @@ def repeat_evaluate(data, config, n_test, n_repeats=10):
 
 我们现在拥有框架的所有部分。
 
-剩下的就是驱动搜索的功能。我们可以定义 _grid_search（）_ 函数，该函数获取数据集，要搜索的配置列表以及用作测试集的观察数量并执行搜索。
+剩下的就是驱动搜索的功能。我们可以定义`grid_search()`函数，该函数获取数据集，要搜索的配置列表以及用作测试集的观察数量并执行搜索。
 
 一旦为每个配置计算平均分数，配置列表将按升序排序，以便首先列出最佳分数。
 
@@ -319,7 +319,7 @@ def grid_search(data, cfg_list, n_test):
 
 现在我们已经定义了测试工具的元素，我们可以将它们绑定在一起并定义一个简单的持久性模型。
 
-我们不需要拟合模型，因此 _model_fit（）_ 函数将被实现为简单地返回 None。
+我们不需要拟合模型，因此`model_fit()`函数将被实现为简单地返回 None。
 
 ```py
 # fit a model
@@ -334,7 +334,7 @@ def model_fit(train, config):
 cfg_list = [1, 6, 12, 24, 36]
 ```
 
-可以实现 _model_predict（）_ 函数以使用此配置将值保持在负相对偏移处。
+可以实现`model_predict()`函数以使用此配置将值保持在负相对偏移处。
 
 ```py
 # forecast with a pre-fit model
@@ -508,7 +508,7 @@ model.compile(loss='mse', optimizer='adam')
 model.fit(train_x, train_y, epochs=n_epochs, batch_size=n_batch, verbose=0)
 ```
 
-下面列出了 _model_fit（）_ 函数的完整实现。
+下面列出了`model_fit()`函数的完整实现。
 
 ```py
 # fit a model
@@ -571,17 +571,17 @@ x_input = array(history[-n_input:]).reshape((1, n_input))
 yhat = model.predict(x_input, verbose=0)
 ```
 
-下面列出了 _model_predict（）_ 函数的完整实现。
+下面列出了`model_predict()`函数的完整实现。
 
 接下来，我们必须定义要为每个超参数尝试的值范围。
 
-我们可以定义 _model_configs（）_ 函数，该函数创建要尝试的不同参数组合的列表。
+我们可以定义`model_configs()`函数，该函数创建要尝试的不同参数组合的列表。
 
 我们将定义一小部分配置作为示例，包括 12 个月的差异，我们预计这将是必需的。建议您尝试使用独立模型，查看学习曲线诊断图，并使用有关域的信息来设置超参数值到网格搜索的范围。
 
 我们还鼓励您重复网格搜索以缩小显示更好表现的值范围。
 
-下面列出了 _model_configs（）_ 函数的实现。
+下面列出了`model_configs()`函数的实现。
 
 ```py
 # create a list of configs to try
@@ -836,7 +836,7 @@ n_features = 1
 train_x = train_x.reshape((train_x.shape[0], train_x.shape[1], n_features))
 ```
 
-下面列出了 _model_fit（）_ 函数的完整实现。
+下面列出了`model_fit()`函数的完整实现。
 
 ```py
 # fit a model
@@ -873,7 +873,7 @@ def model_fit(train, config):
 x_input = array(history[-n_input:]).reshape((1, n_input, 1))
 ```
 
-下面列出了 _model_predict（）_ 函数的完整实现。
+下面列出了`model_predict()`函数的完整实现。
 
 ```py
 # forecast with the fit model
@@ -893,7 +893,7 @@ def model_predict(model, history, config):
 
 最后，我们可以定义要评估的模型的配置列表。和以前一样，我们可以通过定义超参数值列表来尝试将它们组合成一个列表。我们将尝试少量配置以确保示例在合理的时间内执行。
 
-完整的 _model_configs（）_ 功能如下所示。
+完整的`model_configs()`功能如下所示。
 
 ```py
 # create a list of configs to try
@@ -1151,7 +1151,7 @@ n_features = 1
 train_x = train_x.reshape((train_x.shape[0], train_x.shape[1], n_features))
 ```
 
-下面列出了 _model_fit（）_ 函数的完整实现。
+下面列出了`model_fit()`函数的完整实现。
 
 ```py
 # fit a model
@@ -1186,7 +1186,7 @@ def model_fit(train, config):
 x_input = array(history[-n_input:]).reshape((1, n_input, 1))
 ```
 
-完整的 _model_predict（）_ 功能如下所示。
+完整的`model_predict()`功能如下所示。
 
 ```py
 # forecast with the fit model

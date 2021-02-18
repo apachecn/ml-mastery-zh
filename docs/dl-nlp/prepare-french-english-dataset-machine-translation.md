@@ -134,7 +134,7 @@ def load_doc(filename):
 
 接下来，我们可以将文件拆分成句子。
 
-通常，在每一行上存储一个话语。我们可以将它们视为句子并用新行字符拆分文件。下面的函数 _to_sentences（）_ 将拆分加载的文档。
+通常，在每一行上存储一个话语。我们可以将它们视为句子并用新行字符拆分文件。下面的函数`to_sentences()`将拆分加载的文档。
 
 ```py
 # split a loaded document into sentences
@@ -212,7 +212,7 @@ French data: sentences=2007723, min=0, max=693
 
 这些只是一些基本操作作为起点;您可能知道或需要更复杂的数据清理操作。
 
-下面的函数 _clean_lines（）_ 实现了这些清理操作。一些说明：
+下面的函数`clean_lines()`实现了这些清理操作。一些说明：
 
 *   我们使用 unicode API 来规范化 unicode 字符，将法语字符转换为拉丁语字符。
 *   我们使用逆正则表达式匹配来仅保留可打印单词中的那些字符。
@@ -364,7 +364,7 @@ lune des personnes qui vient detre assassinee au sri lanka est m kumar ponnambal
 
 在本节中，我们将减少英语和法语文本的词汇量，并使用特殊标记标记所有词汇（OOV）单词。
 
-我们可以从加载上一节保存的酸洗干净线开始。下面的 _load_clean_sentences（）_ 函数将加载并返回给定文件名的列表。
+我们可以从加载上一节保存的酸洗干净线开始。下面的`load_clean_sentences()`函数将加载并返回给定文件名的列表。
 
 ```py
 # load a clean dataset
@@ -374,7 +374,7 @@ def load_clean_sentences(filename):
 
 接下来，我们可以计算数据集中每个单词的出现次数。为此，我们可以使用`Counter`对象，这是一个键入单词的 Python 字典，每次添加每个单词的新出现时都会更新计数。
 
-下面的 _to_vocab（）_ 函数为给定的句子列表创建词汇表。
+下面的`to_vocab()`函数为给定的句子列表创建词汇表。
 
 ```py
 # create a frequency table for all words
@@ -388,7 +388,7 @@ def to_vocab(lines):
 
 然后，我们可以处理创建的词汇表，并从计数器中删除出现低于特定阈值的所有单词。
 
-下面的 _trim_vocab（）_ 函数执行此操作并接受最小出现次数作为参数并返回更新的词汇表。
+下面的`trim_vocab()`函数执行此操作并接受最小出现次数作为参数并返回更新的词汇表。
 
 ```py
 # remove all words with a frequency below a threshold
@@ -399,7 +399,7 @@ def trim_vocab(vocab, min_occurance):
 
 最后，我们可以更新句子，删除不在修剪词汇表中的所有单词，并用特殊标记标记它们的删除，在本例中为字符串“`unk`”。
 
-下面的 _update_dataset（）_ 函数执行此操作并返回更新行的列表，然后可以将其保存到新文件中。
+下面的`update_dataset()`函数执行此操作并返回更新行的列表，然后可以将其保存到新文件中。
 
 ```py
 # mark all OOV with "unk" for all lines

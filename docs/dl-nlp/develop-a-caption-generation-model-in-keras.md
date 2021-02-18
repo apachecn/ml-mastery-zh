@@ -100,7 +100,7 @@ filename = 'Flickr8k_text/Flickr8k.token.txt'
 doc = load_doc(filename)
 ```
 
-每张照片都有唯一的标识符。这用于照片文件名和描述的文本文件中。接下来，我们将逐步浏览照片说明列表并保存每张照片的第一个描述。下面定义了一个名为 _load_descriptions（）_ 的函数，给定加载的文档文本，它将返回照片标识符的字典到描述。
+每张照片都有唯一的标识符。这用于照片文件名和描述的文本文件中。接下来，我们将逐步浏览照片说明列表并保存每张照片的第一个描述。下面定义了一个名为`load_descriptions()`的函数，给定加载的文档文本，它将返回照片标识符的字典到描述。
 
 ```py
 # extract descriptions for images
@@ -136,7 +136,7 @@ print('Loaded: %d ' % len(descriptions))
 *   删除所有标点符号。
 *   删除所有长度不超过一个字符的单词（例如“a”）。
 
-下面定义 _clean_descriptions（）_ 函数，给定描述图像标识符的字典，逐步执行每个描述并清理文本。
+下面定义`clean_descriptions()`函数，给定描述图像标识符的字典，逐步执行每个描述并清理文本。
 
 ```py
 import string
@@ -166,7 +166,7 @@ print('Vocabulary Size: %d' % len(vocabulary))
 
 最后，我们将图像标识符和描述字典保存到名为 _descriptionss.txt_ 的新文件中，每行有一个图像标识符和描述。
 
-下面定义了 _save_doc（）_ 函数，该函数给出了包含标识符到描述和文件名的映射的字典，将映射保存到文件。
+下面定义了`save_doc()`函数，该函数给出了包含标识符到描述和文件名的映射的字典，将映射保存到文件。
 
 ```py
 # save descriptions to file, one per line
@@ -299,7 +299,7 @@ Keras 直接提供这种预先训练的模型。请注意，第一次使用此�
 
 Keras 还提供了用于将加载的照片整形为模型的优选尺寸的工具（例如，3 通道 224×224 像素图像）。
 
-下面是一个名为 _extract_features（）_ 的函数，给定目录名称将加载每张照片，为 VGG 准备并从 VGG 模型中收集预测的特征。图像特征是具有形状（7,7,512）的三维阵列。
+下面是一个名为`extract_features()`的函数，给定目录名称将加载每张照片，为 VGG 准备并从 VGG 模型中收集预测的特征。图像特征是具有形状（7,7,512）的三维阵列。
 
 该函数返回图像标识符的字典到图像特征。
 
@@ -405,7 +405,7 @@ dump(features, open('features.pkl', 'wb'))
 
 首先，我们需要加载预定义的照片子集。提供的数据集具有用于训练，测试和开发的单独集合，这些集合实际上只是不同的照片标识符组。我们将加载开发集并使用前 100 个列表标识符和第二个 100 标识符（例如从 100 到 200）作为测试集。
 
-下面的函数 _load_set（）_ 将加载一组预定义的标识符，我们将使用' _Flickr_8k.devImages.txt_ '文件名作为参数调用它。
+下面的函数`load_set()`将加载一组预定义的标识符，我们将使用' _Flickr_8k.devImages.txt_ '文件名作为参数调用它。
 
 ```py
 # load a pre-defined list of photo identifiers
@@ -427,7 +427,7 @@ def load_set(filename):
 
 我们将首先通过对标识符进行排序来对它们进行排序，以确保我们始终在机器和运行中对它们进行一致的分割，然后将前 100 个用于训练，接下来的 100 个用于测试。
 
-下面的 _train_test_split（）_ 函数将在加载的标识符集作为输入的情况下创建此拆分。
+下面的`train_test_split()`函数将在加载的标识符集作为输入的情况下创建此拆分。
 
 ```py
 # split a dataset into train/test elements
@@ -464,7 +464,7 @@ def load_clean_descriptions(filename, dataset):
 
 接下来，我们可以加载给定数据集的照片功能。
 
-下面定义了一个名为 _load_photo_features（）_ 的函数，它加载了整套照片描述，然后返回给定照片标识符集的感兴趣子集。这不是非常有效，因为所有照片功能的加载字典大约是 700 兆字节。然而，这将使我们快速起步。
+下面定义了一个名为`load_photo_features()`的函数，它加载了整套照片描述，然后返回给定照片标识符集的感兴趣子集。这不是非常有效，因为所有照片功能的加载字典大约是 700 兆字节。然而，这将使我们快速起步。
 
 请注意，如果您有更好的方法，请在下面的评论中分享。
 
@@ -606,7 +606,7 @@ photo	startseq, little, girl, running, in, field, endseq
 
 稍后，当模型用于生成描述时，生成的单词将被连接并递归地提供作为输入以生成图像的标题。
 
-下面给出标记器 _create_sequences（）_ 的函数，单个干净的描述，照片的特征和最大描述长度将为训练模型准备一组输入 - 输出对。调用此函数将返回`X1`和`X2`，用于图像数据和输入序列数据的数组以及输出字的`y`值。
+下面给出标记器`create_sequences()`的函数，单个干净的描述，照片的特征和最大描述长度将为训练模型准备一组输入 - 输出对。调用此函数将返回`X1`和`X2`，用于图像数据和输入序列数据的数组以及输出字的`y`值。
 
 输入序列是整数编码的，输出字是一个热编码的，以表示在整个可能单词的词汇表中预期单词的概率分布。
 
@@ -651,7 +651,7 @@ def create_sequences(tokenizer, desc, image, max_length):
 
 该模型预测了词汇表中的概率分布，因此使用 softmax 激活函数，并且在拟合网络时最小化分类交叉熵损失函数。
 
-函数 _define_model（）_ 定义基线模型，给定词汇量的大小和照片描述的最大长度。 Keras 功能 API 用于定义模型，因为它提供了定义采用两个输入流并组合它们的模型所需的灵活性。
+函数`define_model()`定义基线模型，给定词汇量的大小和照片描述的最大长度。 Keras 功能 API 用于定义模型，因为它提供了定义采用两个输入流并组合它们的模型所需的灵活性。
 
 ```py
 # define the captioning model
@@ -727,7 +727,7 @@ ________________________________________________________________________________
 
 调用时，生成器将产生结果。在 Keras 中，它将产生一批输入 - 输出样本，用于估计误差梯度并更新模型权重。
 
-函数 _data_generator（）_ 定义数据生成器，给定加载的照片描述字典，照片特征，整数编码序列的分词器以及数据集中的最大序列长度。
+函数`data_generator()`定义数据生成器，给定加载的照片描述字典，照片特征，整数编码序列的分词器以及数据集中的最大序列长度。
 
 生成器永远循环，并在被问及时保持产生批量的输入 - 输出对。我们还有一个`n_step`参数，它允许我们调整每批次要生成的输入输出对的图像数量。平均序列有 10 个字，即 10 个输入 - 输出对，良好的批量大小可能是 30 个样本，大约 2 到 3 个图像值。
 
@@ -756,7 +756,7 @@ def data_generator(descriptions, features, tokenizer, max_length, n_step):
 			yield [[array(Ximages), array(XSeq)], array(y)]
 ```
 
-通过调用 _fit_generator（）_ 并将其传递给数据生成器以及所需的所有参数，可以拟合模型。在拟合模型时，我们还可以指定每个时期运行的批次数和时期数。
+通过调用`fit_generator()`并将其传递给数据生成器以及所需的所有参数，可以拟合模型。在拟合模型时，我们还可以指定每个时期运行的批次数和时期数。
 
 ```py
 model.fit_generator(data_generator(train_descriptions, train_features, tokenizer, max_length, n_photos_per_update), steps_per_epoch=n_batches_per_epoch, epochs=n_epochs, verbose=verbose)
@@ -778,7 +778,7 @@ model.fit_generator(data_generator(train_descriptions, train_features, tokenizer
 
 这包括传入开始描述标记'`startseq`'，生成一个单词，然后以生成的单词作为输入递归调用模型，直到到达序列标记结尾'`endseq`'或达到最大描述长度。
 
-以下名为 _generate_desc（）_ 的函数实现此行为，并在给定训练模型和给定准备照片作为输入的情况下生成文本描述。它调用函数 _word_for_id（）_ 以将整数预测映射回一个字。
+以下名为`generate_desc()`的函数实现此行为，并在给定训练模型和给定准备照片作为输入的情况下生成文本描述。它调用函数`word_for_id()`以将整数预测映射回一个字。
 
 ```py
 # map an integer to a word
@@ -817,7 +817,7 @@ def generate_desc(model, tokenizer, photo, max_length):
 
 我们将为训练数据集和测试数据集中的所有照片生成预测。
 
-以下名为 _evaluate_model（）_ 的函数将针对给定的照片描述和照片特征数据集评估训练模型。使用语料库 BLEU 分数收集和评估实际和预测的描述，该分数总结了生成的文本与预期文本的接近程度。
+以下名为`evaluate_model()`的函数将针对给定的照片描述和照片特征数据集评估训练模型。使用语料库 BLEU 分数收集和评估实际和预测的描述，该分数总结了生成的文本与预期文本的接近程度。
 
 ```py
 # evaluate the skill of the model
@@ -1216,7 +1216,7 @@ model_name = 'baseline_generate'
 n_repeats = 1
 ```
 
-然后更新 _evaluate_model（）_ 函数以仅评估数据集中的前 5 张照片并打印描述，如下所示。
+然后更新`evaluate_model()`函数以仅评估数据集中的前 5 张照片并打印描述，如下所示。
 
 ```py
 # evaluate the skill of the model
@@ -1645,7 +1645,7 @@ max    0.086948  0.102469
 
 *   [网络网络](https://arxiv.org/abs/1312.4400)，2013 年。
 
-下面列出了更新的 _define_model（）_ 函数和实验名称。
+下面列出了更新的`define_model()`函数和实验名称。
 
 ```py
 # define the captioning model
@@ -1981,7 +1981,7 @@ Saved Embedding
 
 接下来，我们可以加载此嵌入并使用单词向量作为嵌入层中的固定权重。
 
-下面提供 _load_embedding（）_ 函数，它加载自定义 word2vec 嵌入并返回新的嵌入层以供在模型中使用。
+下面提供`load_embedding()`函数，它加载自定义 word2vec 嵌入并返回新的嵌入层以供在模型中使用。
 
 ```py
 # load a word embedding
@@ -2001,7 +2001,7 @@ def load_embedding(tokenizer, vocab_size, max_length):
 	return layer
 ```
 
-我们可以通过直接从 _define_model（）_ 函数调用函数在我们的模型中使用它。
+我们可以通过直接从`define_model()`函数调用函数在我们的模型中使用它。
 
 ```py
 # define the captioning model
@@ -2048,7 +2048,7 @@ max    0.133967  0.054939
 
 我们可以重复之前的实验，并允许模型在拟合模型时调整单词向量。
 
-下面列出了允许微调嵌入层的更新的 _load_embedding（）_ 功能。
+下面列出了允许微调嵌入层的更新的`load_embedding()`功能。
 
 ```py
 # load a word embedding

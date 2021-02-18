@@ -12,7 +12,7 @@ statsmodels Python API 提供了执行一步和多步样本外预测的功能。
 
 *   如何进行一步到位的样本预测。
 *   如何进行多步骤样本外预测。
-*   _forecast（）_ 和 _ 之间的差异预测（）_ 的功能。
+*  `forecast()`和 _ 之间的差异预测（）_ 的功能。
 
 让我们开始吧。
 
@@ -250,7 +250,7 @@ ARIMA 模型非常适合一步预测。
 
 statsmodel ARIMAResults 对象提供 [_forecast（）_ 函数](http://statsmodels.sourceforge.net/stable/generated/statsmodels.tsa.arima_model.ARIMAResults.forecast.html)用于进行预测。
 
-默认情况下，此功能可以进行单步样本预测。因此，我们可以直接调用它并进行预测。 _forecast（）_ 函数的结果是包含预测值，预测的标准误差和置信区间信息的数组。现在，我们只关注此预测的第一个元素，如下所示。
+默认情况下，此功能可以进行单步样本预测。因此，我们可以直接调用它并进行预测。`forecast()`函数的结果是包含预测值，预测的标准误差和置信区间信息的数组。现在，我们只关注此预测的第一个元素，如下所示。
 
 ```py
 # one-step out-of sample forecast
@@ -383,7 +383,7 @@ forecast = inverse_difference(X, forecast, days_in_year)
 print('Forecast: %f' % forecast)
 ```
 
-使用 _forecast（）_ 函数时，运行该示例将打印与上述相同的预测。
+使用`forecast()`函数时，运行该示例将打印与上述相同的预测。
 
 ```py
 Forecast: 14.861669
@@ -395,13 +395,13 @@ Forecast: 14.861669
 
 ## 5.多步骤样本外预测
 
-我们还可以使用 _forecast（）_ 和 _predict（）_ 函数进行多步预测。
+我们还可以使用`forecast()`和`predict()`函数进行多步预测。
 
 天气数据通常会进行一周（7 天）预测，因此在本节中我们将研究预测接下来的 7 个样本外时间步的最低日常温度。
 
 ### 预测功能
 
-_forecast（）_ 函数有一个名为 _ 步骤 _ 的参数，允许您指定预测的时间步数。
+`forecast()`函数有一个名为 _ 步骤 _ 的参数，允许您指定预测的时间步数。
 
 默认情况下，对于一步式样本外预测，此参数设置为 1。我们可以将其设置为 7 以获得接下来 7 天的预测。
 
@@ -410,7 +410,7 @@ _forecast（）_ 函数有一个名为 _ 步骤 _ 的参数，允许您指定预
 forecast = model_fit.forecast(steps=7)[0]
 ```
 
-然后，我们可以反转每个预测的时间步骤，一次一个并打印值。请注意，要将 t + 2 的预测值反转，我们需要 t + 1 的反转预测值。在这里，我们将它们添加到名为 history 的列表的末尾，以便在调用 _inverse_difference（）_ 时使用。
+然后，我们可以反转每个预测的时间步骤，一次一个并打印值。请注意，要将 t + 2 的预测值反转，我们需要 t + 1 的反转预测值。在这里，我们将它们添加到名为 history 的列表的末尾，以便在调用`inverse_difference()`时使用。
 
 ```py
 # invert the differenced forecast to something usable
@@ -477,7 +477,7 @@ Day 7: 12.674711
 
 ### 预测功能
 
-_predict（）_ 函数还可以预测接下来的 7 个样本外时间步长。
+`predict()`函数还可以预测接下来的 7 个样本外时间步长。
 
 使用时间步长索引，我们可以将结束索引指定为未来 6 个以上的时间步长;例如：
 
@@ -530,7 +530,7 @@ for yhat in forecast:
 	day += 1
 ```
 
-运行该示例会产生与上一节中调用 _forecast（）_ 函数相同的结果，如您所料。
+运行该示例会产生与上一节中调用`forecast()`函数相同的结果，如您所料。
 
 ```py
 Day 1: 14.861669
@@ -550,6 +550,6 @@ Day 7: 12.674711
 
 *   如何进行一步到位的样本预测。
 *   如何进行为期 7 天的多步样本预测。
-*   如何在预测时使用 _forecast（）_ 和 _predict（）_ 函数。
+*   如何在预测时使用`forecast()`和`predict()`函数。
 
 您对样本外预测或此帖有任何疑问吗？在评论中提出您的问题，我会尽力回答。

@@ -100,7 +100,7 @@ for chunk_id in chunk_ids:
 	chunks[chunk_id] = values[selection, :]
 ```
 
-下面定义了一个名为 _to_chunks（）_ 的函数，它接受加载数据的 NumPy 数组，并将`chunk_id`的字典返回到块的行。
+下面定义了一个名为`to_chunks()`的函数，它接受加载数据的 NumPy 数组，并将`chunk_id`的字典返回到块的行。
 
 ```py
 # split the dataset by 'chunkID', return a dict of id to rows
@@ -161,7 +161,7 @@ Total Chunks: 208
 
 在使用朴素模型时，我们只对目标变量感兴趣，而不对输入的气象变量感兴趣。因此，我们可以删除输入数据，并使训练和测试数据仅包含每个块的 39 个目标变量，以及块和观察时间内的位置。
 
-下面的 _split_train_test（）_ 函数实现了这种行为;给定一个块的字典，它将每个分成训练和测试块数据。
+下面的`split_train_test()`函数实现了这种行为;给定一个块的字典，它将每个分成训练和测试块数据。
 
 ```py
 # split each chunk into train/test sets
@@ -206,7 +206,7 @@ def get_lead_times():
 
 如果我们在测试集中找到匹配的行，则保存它，否则生成一行 NaN 观测值。
 
-下面的函数 _to_forecasts（）_ 实现了这一点，并为每个块的每个预测提前期返回一行 NumPy 数组。
+下面的函数`to_forecasts()`实现了这一点，并为每个块的每个预测提前期返回一行 NumPy 数组。
 
 ```py
 # convert the rows in a test chunk to forecasts
@@ -349,7 +349,7 @@ Test Rows: (2070, 42)
 
 模型有望以这种格式进行预测。
 
-我们还可以重新构建测试数据集以使此数据集进行比较。下面的 _prepare_test_forecasts（）_ 函数实现了这一点。
+我们还可以重新构建测试数据集以使此数据集进行比较。下面的`prepare_test_forecasts()`函数实现了这一点。
 
 ```py
 # convert the test dataset in chunks to [chunk][variable][time] format
@@ -371,7 +371,7 @@ def prepare_test_forecasts(test_chunks):
 
 如果提前期不包含测试集中的数据（例如`NaN`），则不会计算该预测的错误。如果提前期确实在测试集中有数据但预测中没有数据，那么观察的全部大小将被视为错误。最后，如果测试集具有观察值并进行预测，则绝对差值将被记录为误差。
 
-_calculate_error（）_ 函数实现这些规则并返回给定预测的错误。
+`calculate_error()`函数实现这些规则并返回给定预测的错误。
 
 ```py
 # calculate the error between an actual and predicted value
@@ -422,7 +422,7 @@ def evaluate_forecasts(predictions, testset):
 
 一旦我们对模型进行评估，我们就可以呈现它。
 
-下面的 _summarize_error（）_ 函数首先打印模型表现的一行摘要，然后创建每个预测提前期的 MAE 图。
+下面的`summarize_error()`函数首先打印模型表现的一行摘要，然后创建每个预测提前期的 MAE 图。
 
 ```py
 # summarize scores
@@ -469,7 +469,7 @@ def summarize_error(name, total_mae, times_mae):
 
 因此，我们可以为每个变量创建一个 120 纳米值的数组，使用'`positions_within_chunk`'值标记块中的所有观察值，剩下的任何内容都将标记为`NaN`。然后我们可以绘制每个变量并寻找差距。
 
-下面的 _variable_to_series（）_ 函数将获取目标变量的块和给定列索引的行，并将为变量返回一系列 120 个时间步长，所有可用数据都标记为来自块。
+下面的`variable_to_series()`函数将获取目标变量的块和给定列索引的行，并将为变量返回一系列 120 个时间步长，所有可用数据都标记为来自块。
 
 ```py
 # layout a variable with breaks in the data for missing positions
@@ -487,7 +487,7 @@ def variable_to_series(chunk_train, col_ix, n_steps=5*24):
 
 然后我们可以在一个块中为每个目标变量调用此函数并创建一个线图。
 
-下面名为 _plot_variables（）_ 的函数将实现此功能并创建一个图形，其中 39 个线图水平堆叠。
+下面名为`plot_variables()`的函数将实现此功能并创建一个图形，其中 39 个线图水平堆叠。
 
 ```py
 # plot variables horizontally with gaps for missing data
@@ -620,7 +620,7 @@ rows = train_chunks[3]
 
 首先，我们需要为每个块计算一个小时的并行序列，我们可以使用它来为块中的每个变量计算特定于小时的数据。
 
-给定一系列部分填充的小时，下面的 _interpolate_hours（）_ 函数将填充一天中缺少的小时数。它通过找到第一个标记的小时，然后向前计数，填写一天中的小时，然后向后执行相同的操作来完成此操作。
+给定一系列部分填充的小时，下面的`interpolate_hours()`函数将填充一天中缺少的小时数。它通过找到第一个标记的小时，然后向前计数，填写一天中的小时，然后向后执行相同的操作来完成此操作。
 
 ```py
 # interpolate series of hours (in place) in 24 hour time
@@ -700,7 +700,7 @@ print(data)
 
 我们可以使用此函数为一个块准备一系列小时，这些块可用于使用特定于小时的信息填充块的缺失值。
 
-我们可以从上一节中调用相同的 _variable_to_series（）_ 函数来创建具有缺失值的小时系列（列索引 2），然后调用 _interpolate_hours（）_ 来填补空白。
+我们可以从上一节中调用相同的`variable_to_series()`函数来创建具有缺失值的小时系列（列索引 2），然后调用`interpolate_hours()`来填补空白。
 
 ```py
 # prepare sequence of hours for the chunk
@@ -713,7 +713,7 @@ interpolate_hours(hours)
 
 让我们尝试在相同系列中使用相同小时填充值中的缺失值。具体来说，我们将在系列中找到所有具有相同小时的行并计算中值。
 
-下面的 _impute_missing（）_ 获取块中的所有行，准备好的块的一天中的小时数，以及具有变量的缺失值和变量的列索引的系列。
+下面的`impute_missing()`获取块中的所有行，准备好的块的一天中的小时数，以及具有变量的缺失值和变量的列索引的系列。
 
 它首先检查系列是否全部缺失数据，如果是这种情况则立即返回，因为不能执行任何插补。然后，它会在系列的时间步骤中进行枚举，当它检测到没有数据的时间步长时，它会收集序列中所有行，并使用相同小时的数据并计算中值。
 
@@ -741,11 +741,11 @@ def impute_missing(rows, hours, series, col_ix):
 	return imputed
 ```
 
-要查看此推算策略的影响，我们可以更新上一节中的 _plot_variables（）_ 函数，首先绘制插补系列，然后绘制具有缺失值的原始系列。
+要查看此推算策略的影响，我们可以更新上一节中的`plot_variables()`函数，首先绘制插补系列，然后绘制具有缺失值的原始系列。
 
 这将允许插补值在原始系列的间隙中闪耀，我们可以看到结果是否合理。
 
-_plot_variables（）_ 函数的更新版本在下面列出了此更改，调用 _impute_missing（）_ 函数来创建系列的推算版本并将小时系列作为参数。
+`plot_variables()`函数的更新版本在下面列出了此更改，调用`impute_missing()`函数来创建系列的推算版本并将小时系列作为参数。
 
 ```py
 # plot variables horizontally with gaps for missing data
@@ -920,11 +920,11 @@ rows = train_chunks[0]
 
 statsmodels 库提供 [plot_acf（）](http://www.statsmodels.org/dev/generated/statsmodels.graphics.tsaplots.plot_acf.html)和 [plot_pacf（）](http://www.statsmodels.org/dev/generated/statsmodels.graphics.tsaplots.plot_pacf.html)函数，可分别用于绘制 ACF 和 PACF 图。
 
-我们可以更新 _plot_variables（）_ 来创建这些图，这些图是 39 系列中每一个的每种类型之一。这是很多情节。
+我们可以更新`plot_variables()`来创建这些图，这些图是 39 系列中每一个的每种类型之一。这是很多情节。
 
 我们将垂直向左堆叠所有 ACF 图，并在右侧垂直堆叠所有 PACF 图。这是两列 39 个图。我们将绘图所考虑的滞后时间限制为 24 个时间步长（小时），并忽略每个变量与其自身的相关性，因为它是多余的。
 
-下面列出了用于绘制 ACF 和 PACF 图的更新的 _plot_variables（）_ 函数。
+下面列出了用于绘制 ACF 和 PACF 图的更新的`plot_variables()`函数。
 
 ```py
 # plot acf and pacf plots for each imputed variable series
@@ -1110,7 +1110,7 @@ plot_variables(rows, hours)
 
 该功能为训练数据集和测试集的输入列（块 ID，块和小时的位置）执行任务，并返回具有 _[chunk] [变量] [时间]的预期 3D 格式的所有块的预测 _。
 
-该函数枚举预测中的块，然后枚举 39 个目标列，调用另一个名为 _forecast_variable（）_ 的新函数，以便对给定目标变量的每个提前期进行预测。
+该函数枚举预测中的块，然后枚举 39 个目标列，调用另一个名为`forecast_variable()`的新函数，以便对给定目标变量的每个提前期进行预测。
 
 完整的功能如下所列。
 
@@ -1135,13 +1135,13 @@ def forecast_chunks(train_chunks, test_input):
 	return array(predictions)
 ```
 
-我们现在可以实现 _forecast_variable（）_ 的一个版本。
+我们现在可以实现`forecast_variable()`的一个版本。
 
 对于每个变量，我们首先检查是否没有数据（例如所有 NaN），如果是，我们返回每个预测提前期的 NaN 预测。
 
-然后我们使用 _variable_to_series（）_ 从变量创建一个系列，然后通过调用 _impute_missing（）_ 使用系列中的中位数来计算缺失值，两者都是在上一节。
+然后我们使用`variable_to_series()`从变量创建一个系列，然后通过调用`impute_missing()`使用系列中的中位数来计算缺失值，两者都是在上一节。
 
-最后，我们调用一个名为 _fit_and_forecast（）_ 的新函数，该函数适合模型并预测 10 个预测前置时间。
+最后，我们调用一个名为`fit_and_forecast()`的新函数，该函数适合模型并预测 10 个预测前置时间。
 
 ```py
 # forecast all lead times for one variable
@@ -1197,7 +1197,7 @@ statsmodels ARIMA 模型使用线性代数库来拟合封面下的模型，有�
 
 我们将捕获异常并返回`NaN`预测，并在拟合和评估期间忽略所有警告。
 
-下面的 _fit_and_forecast（）_ 函数将所有这些联系在一起。
+下面的`fit_and_forecast()`函数将所有这些联系在一起。
 
 ```py
 # fit AR model and generate a forecast
@@ -1461,7 +1461,7 @@ AR: [0.492 MAE] +1 0.225, +2 0.342, +3 0.410, +4 0.475, +5 0.512, +10 0.593, +17
 
 AR 与预测 AR 的预测时间（1）
 
-我们可以更改代码以测试其他 AR 模型。具体是 _fit_and_forecast（）_ 函数中 ARIMA 模型的顺序。
+我们可以更改代码以测试其他 AR 模型。具体是`fit_and_forecast()`函数中 ARIMA 模型的顺序。
 
 AR（2）模型可以定义为：
 
@@ -1495,7 +1495,7 @@ AR: [0.491 MAE] +1 0.232, +2 0.345, +3 0.412, +4 0.472, +5 0.504, +10 0.556, +17
 
 我们可以计算所有块中变量的相同值，而不是计算块中系列中相同小时的中值。
 
-我们可以更新 _impute_missing（）_ 以将所有训练块作为参数，然后从给定小时的所有块收集行，以计算用于估算的中值。下面列出了该功能的更新版本。
+我们可以更新`impute_missing()`以将所有训练块作为参数，然后从给定小时的所有块收集行，以计算用于估算的中值。下面列出了该功能的更新版本。
 
 ```py
 # impute missing data
@@ -1520,7 +1520,7 @@ def impute_missing(train_chunks, rows, hours, series, col_ix):
 	return imputed
 ```
 
-为了将 train_chunks 传递给 _impute_missing（）_ 函数，我们必须更新 _forecast_variable（）_ 函数以将`train_chunks`作为参数并传递给它，然后更新 _forecast_chunks（）_ 函数以传递`train_chunks`。
+为了将 train_chunks 传递给`impute_missing()`函数，我们必须更新`forecast_variable()`函数以将`train_chunks`作为参数并传递给它，然后更新`forecast_chunks()`函数以传递`train_chunks`。
 
 下面列出了使用全局插补策略的完整示例。
 

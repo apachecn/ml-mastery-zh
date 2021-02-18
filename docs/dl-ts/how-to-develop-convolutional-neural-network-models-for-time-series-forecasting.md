@@ -71,7 +71,7 @@ X,				y
 ...
 ```
 
-下面的 _split_sequence（）_ 函数实现了这种行为，并将给定的单变量序列分成多个样本，其中每个样本具有指定的时间步长，输出是单个时间步长。
+下面的`split_sequence()`函数实现了这种行为，并将给定的单变量序列分成多个样本，其中每个样本具有指定的时间步长，输出是单个时间步长。
 
 ```py
 # split a univariate sequence into samples
@@ -160,7 +160,7 @@ model.compile(optimizer='adam', loss='mse')
 
 我们正在使用单变量系列，因此对于一个变量，要素的数量是一个。
 
-输入的时间步数是我们在准备数据集时选择的数字，作为 _split_sequence（）_ 函数的参数。
+输入的时间步数是我们在准备数据集时选择的数字，作为`split_sequence()`函数的参数。
 
 每个样本的输入形状在第一个隐藏层定义的`input_shape`参数中指定。
 
@@ -170,7 +170,7 @@ model.compile(optimizer='adam', loss='mse')
 [samples, timesteps, features]
 ```
 
-我们在前一节中的 _split_sequence（）_ 函数输出具有[_ 样本，时间步长 _]形状​​的 X，因此我们可以轻松地对其进行整形，以便为一个特征提供额外的维度。
+我们在前一节中的`split_sequence()`函数输出具有[_ 样本，时间步长 _]形状​​的 X，因此我们可以轻松地对其进行整形，以便为一个特征提供额外的维度。
 
 ```py
 # reshape from [samples, timesteps] into [samples, timesteps, features]
@@ -372,7 +372,7 @@ print(dataset)
 
 我们可以看到，在将时间序列转换为输入/输出样本以训练模型时，我们将不得不从输出时间序列中丢弃一些值，其中我们在先前时间步骤中没有输入时间序列中的值。反过来，选择输入时间步数的大小将对使用多少训练数据产生重要影响。
 
-我们可以定义一个名为 _split_sequences（）_ 的函数，该函数将采用数据集，因为我们已经为时间步长和行定义了并行序列和返回输入/输出样本的列。
+我们可以定义一个名为`split_sequences()`的函数，该函数将采用数据集，因为我们已经为时间步长和行定义了并行序列和返回输入/输出样本的列。
 
 ```py
 # split a multivariate sequence into samples
@@ -767,7 +767,7 @@ print(yhat)
 40, 45, 85
 ```
 
-下面的 _split_sequences（）_ 函数将分割多个并行时间序列，其中时间步长为行，每列一个系列为所需的输入/输出形状。
+下面的`split_sequences()`函数将分割多个并行时间序列，其中时间步长为行，每列一个系列为所需的输入/输出形状。
 
 ```py
 # split a multivariate sequence into samples
@@ -1143,7 +1143,7 @@ print(yhat)
 [40, 50]
 ```
 
-下面的 _split_sequence（）_ 函数实现了这种行为，并将给定的单变量时间序列分割为具有指定数量的输入和输出时间步长的样本。
+下面的`split_sequence()`函数实现了这种行为，并将给定的单变量时间序列分割为具有指定数量的输入和输出时间步长的样本。
 
 ```py
 # split a univariate sequence into samples
@@ -1365,7 +1365,7 @@ print(yhat)
 85
 ```
 
-下面的 _split_sequences（）_ 函数实现了这种行为。
+下面的`split_sequences()`函数实现了这种行为。
 
 ```py
 # split a multivariate sequence into samples
@@ -1569,7 +1569,7 @@ print(yhat)
 50, 55, 105
 ```
 
-下面的 _split_sequences（）_ 函数实现了这种行为。
+下面的`split_sequences()`函数实现了这种行为。
 
 ```py
 # split a multivariate sequence into samples

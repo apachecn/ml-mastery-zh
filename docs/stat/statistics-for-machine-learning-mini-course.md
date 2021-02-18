@@ -231,7 +231,7 @@ Post your answer in the comments below. I would love to see what you discover.
 
 我们可以使用称为Pearson相关系数的统计方法量化两个变量样本之间的关系，该方法以该方法的开发者Karl Pearson命名。
 
-_pearsonr（）_ NumPy函数可用于计算两个变量样本的Pearson相关系数。
+`pearsonr()`NumPy函数可用于计算两个变量样本的Pearson相关系数。
 
 下面列出了完整的示例，显示了一个变量依赖于第二个变量的计算。
 
@@ -284,7 +284,7 @@ Post your answer in the comments below. I would love to see what you discover.
 
 默认假设是样本之间没有差异，而拒绝此假设表明存在一些显着差异。测试假设两个样本均来自高斯分布并具有相同的方差。
 
-Student's t-test可以通过 _ttest_ind（）_ SciPy函数在Python中实现。
+Student's t-test可以通过`ttest_ind()`SciPy函数在Python中实现。
 
 下面是计算和解释已知不同的两个数据样本的学生t检验的示例。
 
@@ -344,7 +344,7 @@ Post your answer in the comments below. I would love to see what you discover.
 
 计算分类算法的置信区间的简单方法是计算二项式比例置信区间，其可以提供围绕模型的估计精度或误差的区间。
 
-这可以使用 _confint（）_ Statsmodels函数在Python中实现。
+这可以使用`confint()`Statsmodels函数在Python中实现。
 
 该函数将成功（或失败）计数，试验总数和显着性水平作为参数，并返回置信区间的下限和上限。
 
@@ -391,7 +391,7 @@ Post your answer in the comments below. I would love to see what you discover.
 
 它是学生t检验的非参数等价物，但不假设数据是从高斯分布中提取的。
 
-该测试可以通过 _mannwhitneyu（）_ SciPy函数在Python中实现。
+该测试可以通过`mannwhitneyu()`SciPy函数在Python中实现。
 
 下面的例子演示了从已知不同的均匀分布中抽取的两个数据样本的测试。
 

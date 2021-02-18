@@ -48,9 +48,9 @@ sudo pip install h5py
 
 JSON 是一种用于分层描述数据的简单文件格式。
 
-Keras 提供了使用带有 _to_json（）_ 函数的 JSON 格式描述任何模型的功能。这可以保存到文件中，然后通过 _model_from_json（）_ 函数加载，该函数将根据 JSON 规范创建新模型。
+Keras 提供了使用带有`to_json()`函数的 JSON 格式描述任何模型的功能。这可以保存到文件中，然后通过`model_from_json()`函数加载，该函数将根据 JSON 规范创建新模型。
 
-使用 _save_weights（）_ 函数直接从模型保存权重，然后使用对称 _load_weights（）_ 函数加载。
+使用`save_weights()`函数直接从模型保存权重，然后使用对称`load_weights()`函数加载。
 
 以下示例训练和评估 Pima Indians 数据集上的简单模型。然后将模型转换为 JSON 格式并写入本地目录中的 model.json。网络权重写入本地目录中的 _model.h5_ 。
 
@@ -227,7 +227,7 @@ acc: 78.78%
 
 此示例与上述 JSON 示例大致相同，只是 [YAML](https://en.wikipedia.org/wiki/YAML) 格式用于模型规范。
 
-使用 YAML 描述模型，保存到文件 model.yaml，然后通过 _model_from_yaml（）_ 函数加载到新模型中。权重的处理方式与上面 HDF5 格式相同，如 model.h5。
+使用 YAML 描述模型，保存到文件 model.yaml，然后通过`model_from_yaml()`函数加载到新模型中。权重的处理方式与上面 HDF5 格式相同，如 model.h5。
 
 ```py
 # MLP for Pima Indians Dataset serialize to YAML and HDF5

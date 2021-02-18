@@ -45,7 +45,7 @@
 
 在当前工作目录中使用文件名“ _monthly-car-sales.csv_ ”保存文件。
 
-我们可以使用函数 _read_csv（）_ 将此数据集作为 Pandas 系列加载。
+我们可以使用函数`read_csv()`将此数据集作为 Pandas 系列加载。
 
 ```py
 # load
@@ -131,7 +131,7 @@ SARIMA 模型的表现可以衡量问题的良好模型。任何在过去 12 个
 
 我们将使用前八年（96 个观测值）进行训练，最后 12 个用于测试集。
 
-下面的 _train_test_split（）_ 函数将拆分系列，将原始观察值和在测试集中使用的观察数作为参数。
+下面的`train_test_split()`函数将拆分系列，将原始观察值和在测试集中使用的观察数作为参数。
 
 ```py
 # split a univariate dataset into train/test sets
@@ -180,7 +180,7 @@ Nan,		1
 
 可以去除具有`NaN`值的行。
 
-下面的 _series_to_supervised（）_ 函数实现了这种行为，允许您指定输入中使用的滞后观察数和每个样本的输出中使用的数。它还将删除具有`NaN`值的行，因为它们不能用于训练或测试模型。
+下面的`series_to_supervised()`函数实现了这种行为，允许您指定输入中使用的滞后观察数和每个样本的输出中使用的数。它还将删除具有`NaN`值的行，因为它们不能用于训练或测试模型。
 
 ```py
 # transform list into supervised learning format
@@ -210,11 +210,11 @@ def series_to_supervised(data, n_in=1, n_out=1):
 
 然而，时间步骤的真实观察可以用作输入的一部分，用于在下一个时间步骤上进行预测。
 
-首先，数据集分为训练集和测试集。我们将调用 _train_test_split（）_ 函数来执行此拆分并传入预先指定数量的观察值以用作测试数据。
+首先，数据集分为训练集和测试集。我们将调用`train_test_split()`函数来执行此拆分并传入预先指定数量的观察值以用作测试数据。
 
 对于给定配置，模型将适合训练数据集一次。
 
-我们将定义一个通用的 _model_fit（）_ 函数来执行此操作，可以为我们稍后可能感兴趣的给定类型的神经网络填充该操作。该函数获取训练数据集和模型配置，并返回准备好进行预测的拟合模型。
+我们将定义一个通用的`model_fit()`函数来执行此操作，可以为我们稍后可能感兴趣的给定类型的神经网络填充该操作。该函数获取训练数据集和模型配置，并返回准备好进行预测的拟合模型。
 
 ```py
 # fit a model
@@ -224,7 +224,7 @@ def model_fit(train, config):
 
 枚举测试数据集的每个时间步。使用拟合模型进行预测。
 
-同样，我们将定义一个名为 _model_predict（）_ 的通用函数，它采用拟合模型，历史和模型配置，并进行单个一步预测。
+同样，我们将定义一个名为`model_predict()`的通用函数，它采用拟合模型，历史和模型配置，并进行单个一步预测。
 
 ```py
 # forecast with a pre-fit model
@@ -238,7 +238,7 @@ def model_predict(model, history, config):
 
 我们将计算预测和真实值之间的均方根误差或 RMSE。
 
-RMSE 计算为预测值与实际值之间的平方差的平均值的平方根。 _measure_rmse（）_ 使用 [mean_squared_error（）scikit-learn 函数](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html)在计算平方根之前首先计算均方误差或 MSE。
+RMSE 计算为预测值与实际值之间的平方差的平均值的平方根。`measure_rmse()`使用 [mean_squared_error（）scikit-learn 函数](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html)在计算平方根之前首先计算均方误差或 MSE。
 
 ```py
 # root mean squared error or rmse
@@ -246,7 +246,7 @@ def measure_rmse(actual, predicted):
 	return sqrt(mean_squared_error(actual, predicted))
 ```
 
-下面列出了将所有这些联系在一起的完整 _walk_forward_validation（）_ 函数。
+下面列出了将所有这些联系在一起的完整`walk_forward_validation()`函数。
 
 它采用数据集，用作测试集的观察数量以及模型的配置，并返回测试集上模型表现的 RMSE。
 
@@ -288,7 +288,7 @@ def walk_forward_validation(data, n_test, cfg):
 
 对于大型神经网络而言，这并不总是可行的，并且可能仅适用于能够在几分钟或几小时内完成的小型网络。
 
-下面的 _repeat_evaluate（）_ 函数实现了这一点，并允许将重复次数指定为默认为 30 的可选参数，并返回模型表现得分列表：在本例中为 RMSE 值。
+下面的`repeat_evaluate()`函数实现了这一点，并允许将重复次数指定为默认为 30 的可选参数，并返回模型表现得分列表：在本例中为 RMSE 值。
 
 ```py
 # repeat evaluation of a config
@@ -306,7 +306,7 @@ def repeat_evaluate(data, config, n_test, n_repeats=30):
 
 我们还将使用盒子和须状图绘制模型表现分数的分布，以帮助了解表现的传播。
 
-下面的 _summarize_scores（）_ 函数实现了这一点，取了评估模型的名称和每次重复评估的分数列表，打印摘要并显示图表。
+下面的`summarize_scores()`函数实现了这一点，取了评估模型的名称和每次重复评估的分数列表，打印摘要并显示图表。
 
 ```py
 # summarize model performance
@@ -325,7 +325,7 @@ def summarize_scores(name, scores):
 
 具体而言，我们将计算先前观察的子集相对于预测时间的中值。
 
-我们不需要拟合模型，因此 _model_fit（）_ 函数将被实现为简单地返回 _ 无 _。
+我们不需要拟合模型，因此`model_fit()`函数将被实现为简单地返回 _ 无 _。
 
 ```py
 # fit a model
@@ -506,7 +506,7 @@ persistence: 1841.156 RMSE (+/- 0.000)
 
 MLP 可用于时间序列预测，方法是在先前时间步骤中进行多次观测，称为滞后观测，并将其用作输入要素并根据这些观测预测一个或多个时间步长。
 
-这正是上一节中 _series_to_supervised（）_ 函数提供的问题的框架。
+这正是上一节中`series_to_supervised()`函数提供的问题的框架。
 
 因此，训练数据集是样本列表，其中每个样本在预测时间之前的几个月具有一定数量的观察，并且预测是序列中的下个月。例如：
 
@@ -543,7 +543,7 @@ model.compile(loss='mse', optimizer='adam')
 
 该模型将适合一些训练时期（对训练数据的暴露），并且可以指定批量大小以定义在每个时期内权重的更新频率。
 
-下面列出了用于在训练数据集上拟合 MLP 模型的 _model_fit（）_ 函数。
+下面列出了用于在训练数据集上拟合 MLP 模型的`model_fit()`函数。
 
 该函数要求配置为具有以下配置超参数的列表：
 
@@ -570,7 +570,7 @@ def model_fit(train, config):
 	return model
 ```
 
-使用拟合 MLP 模型进行预测与调用 _predict（）_ 函数并传入进行预测所需的一个样本值输入值一样简单。
+使用拟合 MLP 模型进行预测与调用`predict()`函数并传入进行预测所需的一个样本值输入值一样简单。
 
 ```py
 yhat = model.predict(x_input, verbose=0)
@@ -578,11 +578,11 @@ yhat = model.predict(x_input, verbose=0)
 
 为了使预测超出已知数据的限制，这要求将最后 n 个已知观察值作为数组并用作输入。
 
-_predict（）_ 函数在进行预测时需要一个或多个输入样本，因此提供单个样本需要阵列具有`[1, n_input]`形状​​，其中`n_input`是模型期望作为输入的时间步数。
+`predict()`函数在进行预测时需要一个或多个输入样本，因此提供单个样本需要阵列具有`[1, n_input]`形状​​，其中`n_input`是模型期望作为输入的时间步数。
 
-类似地， _predict（）_ 函数返回一个预测数组，每个样本一个作为输入提供。在一个预测的情况下，将存在具有一个值的数组。
+类似地，`predict()`函数返回一个预测数组，每个样本一个作为输入提供。在一个预测的情况下，将存在具有一个值的数组。
 
-下面的 _model_predict（）_ 函数实现了这种行为，将模型，先前观察和模型配置作为参数，制定输入样本并进行一步预测，然后返回。
+下面的`model_predict()`函数实现了这种行为，将模型，先前观察和模型配置作为参数，制定输入样本并进行一步预测，然后返回。
 
 ```py
 # forecast with a pre-fit model
@@ -814,7 +814,7 @@ CNN 模型期望输入数据采用多个样本的形式，其中每个样本具�
 train_x = train_x.reshape((train_x.shape[0], train_x.shape[1], 1))
 ```
 
-下面列出了用于在训练数据集上拟合 CNN 模型的 _model_fit（）_ 函数。
+下面列出了用于在训练数据集上拟合 CNN 模型的`model_fit()`函数。
 
 该模型将以下五个配置参数作为列表：
 
@@ -854,7 +854,7 @@ def model_fit(train, config):
 [1, n_input, 1]
 ```
 
-下面的 _model_predict（）_ 函数实现了这种行为。
+下面的`model_predict()`函数实现了这种行为。
 
 ```py
 # forecast with a pre-fit model
@@ -1116,7 +1116,7 @@ def difference(data, interval):
 
 我们可以使差值顺序成为模型的超参数，并且只有在提供非零值的情况下才执行操作。
 
-下面提供了用于拟合 LSTM 模型的 _model_fit（）_ 函数。
+下面提供了用于拟合 LSTM 模型的`model_fit()`函数。
 
 该模型需要一个包含五个模型超参数的列表;他们是：
 
@@ -1154,7 +1154,7 @@ def model_fit(train, config):
 
 如果执行差异操作，我们必须添加模型进行预测后减去的值。在制定用于进行预测的单个输入之前，我们还必须区分历史数据。
 
-下面的 _model_predict（）_ 函数实现了这种行为。
+下面的`model_predict()`函数实现了这种行为。
 
 ```py
 # forecast with a pre-fit model
@@ -1407,7 +1407,7 @@ model.add(Dense(n_nodes, activation='relu'))
 model.add(Dense(1))
 ```
 
-完整的 _model_fit（）_ 功能如下所示。
+完整的`model_fit()`功能如下所示。
 
 该模型需要一个包含七个超参数的列表;他们是：
 
@@ -1451,7 +1451,7 @@ def model_fit(train, config):
 x_input = array(history[-n_input:]).reshape((1, n_seq, n_steps, 1))
 ```
 
-更新后的 _model_predict（）_ 功能如下所示。
+更新后的`model_predict()`功能如下所示。
 
 ```py
 # forecast with a pre-fit model
@@ -1697,7 +1697,7 @@ model.add(ConvLSTM2D(filters=n_filters, kernel_size=(1,n_kernel), activation='re
 *   **n_epochs** ：将模型公开给整个训练数据集的次数。
 *   **n_batch** ：更新权重的时期内的样本数。
 
-下面列出了实现所有这些功能的 _model_fit（）_ 函数。
+下面列出了实现所有这些功能的`model_fit()`函数。
 
 ```py
 # fit a model
@@ -1728,7 +1728,7 @@ def model_fit(train, config):
 x_input = array(history[-n_input:]).reshape((1, n_seq, 1, n_steps, 1))
 ```
 
-下面列出了用于进行单个一步预测的 _model_predict（）_ 函数。
+下面列出了用于进行单个一步预测的`model_predict()`函数。
 
 ```py
 # forecast with a pre-fit model

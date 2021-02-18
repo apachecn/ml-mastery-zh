@@ -162,9 +162,9 @@ Statsmodels Python 库中提供了 Python 中的指数平滑的实现。
 
 可以通过 SimpleExpSmoothing Statsmodels 类在 Python 中实现单指数平滑或简单平滑。
 
-首先，必须实例化`SimpleExpSmoothing`类的实例并传递训练数据。然后调用 _fit（）_ 函数提供拟合配置，特别是称为`smoothing_level`的`alpha`值。如果没有提供或设置为 _ 无 _，模型将自动优化该值。
+首先，必须实例化`SimpleExpSmoothing`类的实例并传递训练数据。然后调用`fit()`函数提供拟合配置，特别是称为`smoothing_level`的`alpha`值。如果没有提供或设置为 _ 无 _，模型将自动优化该值。
 
-此 _fit（）_ 函数返回包含学习系数的`HoltWintersResults`类的实例。可以调用结果对象上的 _forecast（）_ 或 _predict（）_ 函数进行预测。
+此`fit()`函数返回包含学习系数的`HoltWintersResults`类的实例。可以调用结果对象上的`forecast()`或`predict()`函数进行预测。
 
 例如：
 
@@ -195,7 +195,7 @@ yhat = model_fit.predict(...)
 *   **季节性**：季节性成分的类型，为“_ 添加 _”为添加剂或“`mul`”为乘法。可以通过将季节性组件设置为“无”来禁用它。
 *   **seasonal_periods** ：季节性时间段内的时间步数，例如每年季节性结构 12 个月 12 个月（[更多](https://robjhyndman.com/hyndsight/seasonal-periods/)）。
 
-然后通过调用 _fit（）_ 函数将模型拟合到训练数据上。
+然后通过调用`fit()`函数将模型拟合到训练数据上。
 
 此功能允许您指定指数平滑模型的平滑系数或对其进行优化。默认情况下，它们已经过优化（例如 _ 优化= True_ ）。这些系数包括：
 
@@ -208,7 +208,7 @@ yhat = model_fit.predict(...)
 
 *   **use_boxcox** ：是否执行系列的幂变换（True / False）或指定变换的 lambda。
 
-_fit（）_ 函数将返回包含学习系数的`HoltWintersResults`类的实例。可以调用结果对象上的 _forecast（）_ 或 _predict（）_ 函数进行预测。
+`fit()`函数将返回包含学习系数的`HoltWintersResults`类的实例。可以调用结果对象上的`forecast()`或`predict()`函数进行预测。
 
 ```py
 # double or triple exponential smoothing

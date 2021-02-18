@@ -129,7 +129,7 @@
 
 首先，我们可以将每个文件作为单个 NumPy 数组加载并删除第一列。
 
-下面名为 _load_dataset（）_ 的函数将加载 HAR 目录中的所有 CSV 文件，删除第一列并返回 15 个 NumPy 数组的列表。
+下面名为`load_dataset()`的函数将加载 HAR 目录中的所有 CSV 文件，删除第一列并返回 15 个 NumPy 数组的列表。
 
 ```py
 # load sequence for each subject, returns a list of numpy arrays
@@ -189,7 +189,7 @@ Loaded 15 subjects
 
 我们可以为给定主题的每个变量创建一个图形，包括 x，y 和 z 加速度计数据，以及相关的类类值。
 
-下面的函数 _plot_subject（）_ 将绘制给定主题的数据。
+下面的函数`plot_subject()`将绘制给定主题的数据。
 
 ```py
 # plot the x, y, z acceleration and activities for a single subject
@@ -280,7 +280,7 @@ plot_subject(subjects[1])
 
 首先，我们可以为每个主题分组活动。
 
-我们可以通过为每个主题创建字典并按活动存储所有跟踪数据来完成此操作。下面的 _group_by_activity（）_ 功能将为每个主题执行此分组。
+我们可以通过为每个主题创建字典并按活动存储所有跟踪数据来完成此操作。下面的`group_by_activity()`功能将为每个主题执行此分组。
 
 ```py
 # returns a list of dict, where each dict has one sequence per activity
@@ -293,7 +293,7 @@ def group_by_activity(subjects, activities):
 
 我们知道加速度计数据是以 52Hz 记录的，因此我们可以将每个活动的每个跟踪的长度除以 52，以便以秒为单位总结持续时间。
 
-以下名为 _plot_durations（）_ 的函数将计算每个主题的每个活动的持续时间，并将结果绘制为箱线图。盒状和须状图是总结每个活动的 15 个持续时间的有用方式，因为它描述了持续时间的扩展而不假设分布。
+以下名为`plot_durations()`的函数将计算每个主题的每个活动的持续时间，并将结果绘制为箱线图。盒状和须状图是总结每个活动的 15 个持续时间的有用方式，因为它描述了持续时间的扩展而不假设分布。
 
 ```py
 # calculate total duration in sec for each activity per subject and plot
@@ -368,7 +368,7 @@ plot_durations(grouped, activities)
 
 一种方法是在单个图形上绘制单个主题的所有迹线，然后垂直排列所有图形。这将允许跨主题和主题内的痕迹进行比较。
 
-以下名为 _plot_subjects（）_ 的函数将在单独的图上绘制 15 个主题中每个主题的加速度计数据。每个 x，y 和 z 数据的迹线分别绘制为橙色，绿色和蓝色。
+以下名为`plot_subjects()`的函数将在单独的图上绘制 15 个主题中每个主题的加速度计数据。每个 x，y 和 z 数据的迹线分别绘制为橙色，绿色和蓝色。
 
 ```py
 # plot the x, y, z acceleration for each subject
@@ -450,7 +450,7 @@ plot_subjects(subjects)
 
 与上一节一样，我们可以为每个主题创建一个绘图，然后将所有主题的绘图与相同的 x 轴垂直对齐，以帮助发现展开的明显差异。
 
-更新的 _plot_subjects（）_ 函数用于绘制直方图而不是线图，如下所示。 _hist（）_ 函数用于为加速度计数据的每个轴创建直方图，并且使用大量箱（100）来帮助展开图中的数据。子图也都共享相同的 x 轴以帮助进行比较。
+更新的`plot_subjects()`函数用于绘制直方图而不是线图，如下所示。`hist()`函数用于为加速度计数据的每个轴创建直方图，并且使用大量箱（100）来帮助展开图中的数据。子图也都共享相同的 x 轴以帮助进行比较。
 
 ```py
 # plot the x, y, z acceleration for each subject

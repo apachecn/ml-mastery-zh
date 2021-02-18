@@ -92,7 +92,7 @@ Jill,	went
 
 源文本中的每个小写字都被赋予一个唯一的整数，我们可以将单词序列转换为整数序列。
 
-Keras 提供了 [Tokenizer](https://keras.io/preprocessing/text/#tokenizer) 类，可用于执行此编码。首先，Tokenizer 适合源文本，以开发从单词到唯一整数的映射。然后通过调用 _texts_to_sequences（）_ 函数将文本序列转换为整数序列。
+Keras 提供了 [Tokenizer](https://keras.io/preprocessing/text/#tokenizer) 类，可用于执行此编码。首先，Tokenizer 适合源文本，以开发从单词到唯一整数的映射。然后通过调用`texts_to_sequences()`函数将文本序列转换为整数序列。
 
 ```py
 # integer encode text
@@ -142,7 +142,7 @@ X, y = sequences[:,0],sequences[:,1]
 
 我们将使用我们的模型来预测词汇表中所有单词的概率分布。这意味着我们需要将输出元素从单个整数转换为一个热编码，对于词汇表中的每个单词都为 0，对于值的实际单词为 1。这为网络提供了一个基本事实，我们可以从中计算错误并更新模型。
 
-Keras 提供 _to_categorical（）_ 函数，我们可以使用它将整数转换为一个热编码，同时指定类的数量作为词汇表大小。
+Keras 提供`to_categorical()`函数，我们可以使用它将整数转换为一个热编码，同时指定类的数量作为词汇表大小。
 
 ```py
 # one hot encode outputs
@@ -406,7 +406,7 @@ model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accur
 model.fit(X, y, epochs=500, verbose=2)
 ```
 
-我们可以像以前一样使用该模型生成新序列。通过在每次迭代中将预测添加到输入词列表中，可以更新 _generate_seq（）_ 函数以建立输入序列。
+我们可以像以前一样使用该模型生成新序列。通过在每次迭代中将预测添加到输入词列表中，可以更新`generate_seq()`函数以建立输入序列。
 
 ```py
 # generate a sequence from a language model

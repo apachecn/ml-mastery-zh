@@ -69,7 +69,7 @@ data = ...
 result, lmbda = boxcox(data)
 ```
 
-变换可以反转，但需要一个名为 _invert_boxcox（）_ 的下面列出的自定义函数，它接受一个变换值和用于执行变换的 lambda 值。
+变换可以反转，但需要一个名为`invert_boxcox()`的下面列出的自定义函数，它接受一个变换值和用于执行变换的 lambda 值。
 
 ```py
 from math import log
@@ -127,7 +127,7 @@ print(inverted)
 
 通过从前一季节中减去观察值，可以以类似的方式去除季节性结构。 12 个步骤之前的月度数据与年度季节性结构。
 
-可以使用下面列出的名为 _difference（）_ 的自定义函数计算系列中的单个差异值。该函数采用时间序列和差值计算的间隔，例如， 1 表示趋势差异，12 表示季节性差异。
+可以使用下面列出的名为`difference()`的自定义函数计算系列中的单个差异值。该函数采用时间序列和差值计算的间隔，例如， 1 表示趋势差异，12 表示季节性差异。
 
 ```py
 # difference dataset
@@ -135,7 +135,7 @@ def difference(data, interval):
 	return [data[i] - data[i - interval] for i in range(interval, len(data))]
 ```
 
-同样，可以使用自定义函数反转此操作，该函数将原始值添加回名为 _invert_difference（）_ 的差值，该值采用原始序列和间隔。
+同样，可以使用自定义函数反转此操作，该函数将原始值添加回名为`invert_difference()`的差值，该值采用原始序列和间隔。
 
 ```py
 # invert difference
@@ -185,7 +185,7 @@ print(inverted)
 
 我们可以使用 scikit-learn 库中的 Python 中的 [StandardScaler](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html) 对象执行标准化。
 
-此类允许通过调用 _fit（）_ 将变换拟合到训练数据集上，通过调用 _transform（）_ 应用于一个或多个数据集（例如训练和测试）并且还提供通过调用 _inverse_transform（）_ 来反转变换的函数。
+此类允许通过调用`fit()`将变换拟合到训练数据集上，通过调用`transform()`应用于一个或多个数据集（例如训练和测试）并且还提供通过调用`inverse_transform()`来反转变换的函数。
 
 下面应用完整的示例。
 

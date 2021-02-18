@@ -88,7 +88,7 @@ Word2Vec 模型需要大量文本，例如整个维基百科语料库。然而�
 
 Gensim 提供 [Word2Vec](https://radimrehurek.com/gensim/models/word2vec.html) 类用于处理 Word2Vec 模型。
 
-学习从文本嵌入的单词涉及将文本加载和组织成句子并将它们提供给新的 _Word2Vec（）_ 实例的构造函数。例如：
+学习从文本嵌入的单词涉及将文本加载和组织成句子并将它们提供给新的`Word2Vec()`实例的构造函数。例如：
 
 ```py
 sentences = ...
@@ -124,7 +124,7 @@ print(words)
 print(model['word'])
 ```
 
-最后，通过调用单词向量模型上的 _save_word2vec_format（）_ 函数，可以将训练好的模型保存到文件中。
+最后，通过调用单词向量模型上的`save_word2vec_format()`函数，可以将训练好的模型保存到文件中。
 
 默认情况下，模型以二进制格式保存以节省空间。例如：
 
@@ -134,7 +134,7 @@ model.wv.save_word2vec_format('model.bin')
 
 入门时，您可以将学习的模型保存为 ASCII 格式并查看内容。
 
-您可以通过在调用 _save_word2vec_format（）_ 函数时设置 _binary = False_ 来执行此操作，例如：
+您可以通过在调用`save_word2vec_format()`函数时设置 _binary = False_ 来执行此操作，例如：
 
 ```py
 model.wv.save_word2vec_format('model.txt', binary=False)
@@ -326,7 +326,7 @@ queen = (king - man) + woman
 
 这就是女王这个词是最接近的一个词，因为人们从国王那里减去了男人的概念，并添加了女人这个词。国王的“男人”被“女人”所取代，给了我们女王。一个非常酷的概念。
 
-Gensim 提供了一个接口，用于在训练或加载的模型上的 _most_similar（）_ 函数中执行这些类型的操作。
+Gensim 提供了一个接口，用于在训练或加载的模型上的`most_similar()`函数中执行这些类型的操作。
 
 例如：
 
@@ -367,7 +367,7 @@ print(result)
 
 您可以下载 GloVe 预训练的单词向量，并使用 gensim 轻松加载它们。
 
-第一步是将 GloVe 文件格式转换为 word2vec 文件格式。唯一的区别是添加了一个小标题行。这可以通过调用 _glove2word2vec（）_ 函数来完成。例如：
+第一步是将 GloVe 文件格式转换为 word2vec 文件格式。唯一的区别是添加了一个小标题行。这可以通过调用`glove2word2vec()`函数来完成。例如：
 
 ```py
 from gensim.scripts.glove2word2vec import glove2word2vec

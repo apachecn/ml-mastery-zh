@@ -120,7 +120,7 @@ cov(X, Y) = (sum (x - mean(X)) * (y - mean(Y))) * 1/(n-1)
 
 协方差的符号可以解释为两个变量是在相同方向上变化（正）还是在不同方向上变化（负）。协方差的大小不容易解释。协方差值为零表示两个变量完全独立。
 
-_cov（）_ NumPy函数可用于计算两个或更多个变量之间的协方差矩阵。
+`cov()`NumPy函数可用于计算两个或更多个变量之间的协方差矩阵。
 
 ```py
 covariance = cov(data1, data2)
@@ -178,7 +178,7 @@ Pearson's correlation coefficient = covariance(X, Y) / (stdv(X) * stdv(Y))
 
 系数返回介于-1和1之间的值，表示从完全负相关到完全正相关的相关限制。值0表示没有相关性。必须解释该值，其中低于-0.5或高于0.5的值通常表示显着的相关性，低于这些值的值表明相关性较不显着。
 
-_pearsonr（）_ SciPy函数可用于计算具有相同长度的两个数据样本之间的Pearson相关系数。
+`pearsonr()`SciPy函数可用于计算具有相同长度的两个数据样本之间的Pearson相关系数。
 
 我们可以计算出测试问题中两个变量之间的相关性。
 
@@ -231,7 +231,7 @@ Spearman's correlation coefficient = covariance(rank(X), rank(Y)) / (stdv(rank(X
 
 如果您不确定两个变量之间的分布和可能的关系，Spearman相关系数是一个很好的工具。
 
-_spearmanr（）_ SciPy函数可用于计算具有相同长度的两个数据样本之间的Spearman相关系数。
+`spearmanr()`SciPy函数可用于计算具有相同长度的两个数据样本之间的Spearman相关系数。
 
 We can calculate the correlation between the two variables in our test problem.
 

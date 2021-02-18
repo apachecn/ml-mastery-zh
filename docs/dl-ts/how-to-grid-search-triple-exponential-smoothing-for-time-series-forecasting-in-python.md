@@ -89,7 +89,7 @@
 
 我们可以通过定义一个适合具有给定配置的模型的函数来开始，并进行一步预测。
 
-下面的 _exp_smoothing_forecast（）_ 实现了这种行为。
+下面的`exp_smoothing_forecast()`实现了这种行为。
 
 该函数采用连续先前观察的数组或列表以及用于配置模型的配置参数列表。
 
@@ -113,7 +113,7 @@ def exp_smoothing_forecast(history, config):
 
 我们可以使用给定指定大小的分割的切片来分割列表或 NumPy 数据数组，例如，从测试集中的数据中使用的时间步数。
 
-下面的 _train_test_split（）_ 函数为提供的数据集和要在测试集中使用的指定数量的时间步骤实现此功能。
+下面的`train_test_split()`函数为提供的数据集和要在测试集中使用的指定数量的时间步骤实现此功能。
 
 ```py
 # split a univariate dataset into train/test sets
@@ -125,7 +125,7 @@ def train_test_split(data, n_test):
 
 时间序列预测有许多流行的错误分数。在这种情况下，我们将使用均方根误差（RMSE），但您可以将其更改为您的首选度量，例如 MAPE，MAE 等
 
-下面的 _measure_rmse（）_ 函数将根据实际（测试集）和预测值列表计算 RMSE。
+下面的`measure_rmse()`函数将根据实际（测试集）和预测值列表计算 RMSE。
 
 ```py
 # root mean squared error or rmse
@@ -135,9 +135,9 @@ def measure_rmse(actual, predicted):
 
 我们现在可以实现前向验证方案。这是评估尊重观测时间顺序的时间序列预测模型的标准方法。
 
-首先，使用 _train_test_split（）_ 函数将提供的单变量时间序列数据集分成训练集和测试集。然后枚举测试集中的观察数。对于每一个，我们在所有历史记录中拟合模型并进行一步预测。然后将对时间步骤的真实观察添加到历史中，并重复该过程。调用 _exp_smoothing_forecast（）_ 函数以适合模型并进行预测。最后，通过调用 _measure_rmse（）_ 函数，将所有一步预测与实际测试集进行比较，计算错误分数。
+首先，使用`train_test_split()`函数将提供的单变量时间序列数据集分成训练集和测试集。然后枚举测试集中的观察数。对于每一个，我们在所有历史记录中拟合模型并进行一步预测。然后将对时间步骤的真实观察添加到历史中，并重复该过程。调用`exp_smoothing_forecast()`函数以适合模型并进行预测。最后，通过调用`measure_rmse()`函数，将所有一步预测与实际测试集进行比较，计算错误分数。
 
-下面的 _walk_forward_validation（）_ 函数实现了这一点，采用了单变量时间序列，在测试集中使用的一些时间步骤，以及一组模型配置。
+下面的`walk_forward_validation()`函数实现了这一点，采用了单变量时间序列，在测试集中使用的一些时间步骤，以及一组模型配置。
 
 ```py
 # walk-forward validation for univariate data
@@ -160,7 +160,7 @@ def walk_forward_validation(data, n_test, cfg):
 	return error
 ```
 
-如果您对进行多步预测感兴趣，可以在 _exp_smoothing_forecast（）_ 函数中更改 _predict（）_ 的调用，并更改 _ 中的错误计算 measure_rmse（）_ 功能。
+如果您对进行多步预测感兴趣，可以在`exp_smoothing_forecast()`函数中更改`predict()`的调用，并更改 _ 中的错误计算 measure_rmse（）_ 功能。
 
 我们可以使用不同的模型配置列表重复调用 _walk_forward_validation（）_。
 
@@ -168,9 +168,9 @@ def walk_forward_validation(data, n_test, cfg):
 
 此外，某些型号还可能会对某些数据发出警告，例如：来自 statsmodels 库调用的线性代数库。
 
-我们可以在网格搜索期间捕获异常并忽略警告，方法是将所有调用包含在 _walk_forward_validation（）_ 中，并使用 try-except 和 block 来忽略警告。我们还可以添加调试支持来禁用这些保护，以防我们想要查看实际情况。最后，如果确实发生错误，我们可以返回 _ 无 _ 结果;否则，我们可以打印一些关于评估的每个模型的技能的信息。当评估大量模型时，这很有用。
+我们可以在网格搜索期间捕获异常并忽略警告，方法是将所有调用包含在`walk_forward_validation()`中，并使用 try-except 和 block 来忽略警告。我们还可以添加调试支持来禁用这些保护，以防我们想要查看实际情况。最后，如果确实发生错误，我们可以返回 _ 无 _ 结果;否则，我们可以打印一些关于评估的每个模型的技能的信息。当评估大量模型时，这很有用。
 
-下面的 _score_model（）_ 函数实现了这个并返回（键和结果）的元组，其中键是测试模型配置的字符串版本。
+下面的`score_model()`函数实现了这个并返回（键和结果）的元组，其中键是测试模型配置的字符串版本。
 
 ```py
 # score a model, return None on failure
@@ -198,7 +198,7 @@ def score_model(data, n_test, cfg, debug=False):
 
 接下来，我们需要一个循环来测试不同模型配置的列表。
 
-这是驱动网格搜索过程的主要功能，并将为每个模型配置调用 _score_model（）_ 函数。
+这是驱动网格搜索过程的主要功能，并将为每个模型配置调用`score_model()`函数。
 
 通过并行评估模型配置，我们可以大大加快网格搜索过程。一种方法是使用 [Joblib 库](https://pythonhosted.org/joblib/)。
 
@@ -208,7 +208,7 @@ def score_model(data, n_test, cfg, debug=False):
 executor = Parallel(n_jobs=cpu_count(), backend='multiprocessing')
 ```
 
-然后我们可以创建一个并行执行的任务列表，这将是对我们拥有的每个模型配置的 _score_model（）_ 函数的一次调用。
+然后我们可以创建一个并行执行的任务列表，这将是对我们拥有的每个模型配置的`score_model()`函数的一次调用。
 
 ```py
 tasks = (delayed(score_model)(data, n_test, cfg) for cfg in cfg_list)
@@ -238,7 +238,7 @@ scores = [r for r in scores if r[1] != None]
 
 然后我们可以按照升序排列列表中的所有元组（最好是第一个），然后返回此分数列表以供审阅。
 
-给定单变量时间序列数据集，模型配置列表（列表列表）以及在测试集中使用的时间步数，下面的 _grid_search（）_ 函数实现此行为。可选的并行参数允许对所有内核的模型进行开启或关闭调整，默认情况下处于打开状态。
+给定单变量时间序列数据集，模型配置列表（列表列表）以及在测试集中使用的时间步数，下面的`grid_search()`函数实现此行为。可选的并行参数允许对所有内核的模型进行开启或关闭调整，默认情况下处于打开状态。
 
 ```py
 # grid search configs
@@ -264,7 +264,7 @@ def grid_search(data, cfg_list, n_test, parallel=True):
 
 我们可以一般地定义它。我们可能想要指定的唯一参数是系列中季节性组件的周期性（如果存在）。默认情况下，我们假设没有季节性组件。
 
-下面的 _exp_smoothing_configs（）_ 函数将创建要评估的模型配置列表。
+下面的`exp_smoothing_configs()`函数将创建要评估的模型配置列表。
 
 可以指定季节性时段的可选列表，您甚至可以更改该功能以指定您可能了解的有关时间序列的其他元素。
 
@@ -477,7 +477,7 @@ print(model_fit.params)
 
 在当前工作目录中使用文件名“ _daily-total-female-births.csv_ ”保存文件。
 
-我们可以使用函数 _read_csv（）_ 将此数据集作为 Pandas 系列加载。
+我们可以使用函数`read_csv()`将此数据集作为 Pandas 系列加载。
 
 ```py
 series = read_csv('daily-total-female-births.csv', header=0, index_col=0)
@@ -675,7 +675,7 @@ done
 
 在当前工作目录中使用文件名“shampoo.csv”保存文件。
 
-我们可以使用函数 _read_csv（）_ 将此数据集作为 Pandas 系列加载。
+我们可以使用函数`read_csv()`将此数据集作为 Pandas 系列加载。
 
 ```py
 # parse dates
@@ -866,7 +866,7 @@ done
 
 在当前工作目录中使用文件名“monthly-mean-temp.csv”保存文件。
 
-我们可以使用函数 _read_csv（）_ 将此数据集作为 Pandas 系列加载。
+我们可以使用函数`read_csv()`将此数据集作为 Pandas 系列加载。
 
 ```py
 series = read_csv('monthly-mean-temp.csv', header=0, index_col=0)
@@ -883,7 +883,7 @@ data = data[-(5*12):]
 
 季节性成分的周期约为一年，或 12 个观测值。
 
-在准备模型配置时，我们将此作为调用 _exp_smoothing_configs（）_ 函数的季节性时段。
+在准备模型配置时，我们将此作为调用`exp_smoothing_configs()`函数的季节性时段。
 
 ```py
 # model configs
@@ -1132,7 +1132,7 @@ done
 
 在当前工作目录中使用文件名“monthly-car-sales.csv”保存文件。
 
-我们可以使用函数 _read_csv（）_ 将此数据集作为 Pandas 系列加载。
+我们可以使用函数`read_csv()`将此数据集作为 Pandas 系列加载。
 
 ```py
 series = read_csv('monthly-car-sales.csv', header=0, index_col=0)
@@ -1140,7 +1140,7 @@ series = read_csv('monthly-car-sales.csv', header=0, index_col=0)
 
 数据集有九年，或 108 个观测值。我们将使用去年或 12 个观测值作为测试集。
 
-季节性成分的期限可能是六个月或 12 个月。在准备模型配置时，我们将尝试将两者作为调用 _exp_smoothing_configs（）_ 函数的季节性时段。
+季节性成分的期限可能是六个月或 12 个月。在准备模型配置时，我们将尝试将两者作为调用`exp_smoothing_configs()`函数的季节性时段。
 
 ```py
 # model configs

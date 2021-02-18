@@ -183,7 +183,7 @@ for chunk_id in chunk_ids:
 	chunks[chunk_id] = values[selection, :]
 ```
 
-下面定义了一个名为 _to_chunks（）_ 的函数，它接受加载数据的 NumPy 数组，并将`chunk_id`的字典返回到块的行。
+下面定义了一个名为`to_chunks()`的函数，它接受加载数据的 NumPy 数组，并将`chunk_id`的字典返回到块的行。
 
 ```py
 # split the dataset by 'chunkID', return a dict of id to rows
@@ -287,7 +287,7 @@ Total Chunks: 208
 
 反过来说，我们可以假设我们对一个块中的所有时间步都有 NaN 值，然后使用'`position_within_chunk`'列（索引 2）来确定具有值的时间步长并用它们标记它们。块 ID。
 
-下面的 _plot_discontinuous_chunks（）_ 实现了这种行为，在同一个图上为每个缺少行的块创建一个系列或行。期望的是，突破线将帮助我们看到这些不完整的块是多么连续或不连续。
+下面的`plot_discontinuous_chunks()`实现了这种行为，在同一个图上为每个缺少行的块创建一个系列或行。期望的是，突破线将帮助我们看到这些不完整的块是多么连续或不连续。
 
 ```py
 # plot chunks that do not have all data
@@ -566,7 +566,7 @@ Sample.Min.Baro.Pressure
 
 我们可以针对几个块重复这一点，以了解时间结构如何在块之间有所不同。
 
-下面名为 _plot_chunk_inputs（）_ 的函数获取块格式的数据和要绘制的块 ID 列表。它将创建一个包含 50 个线图的图形，每个输入变量一个，每个图块 n 行，每个块一个。
+下面名为`plot_chunk_inputs()`的函数获取块格式的数据和要绘制的块 ID 列表。它将创建一个包含 50 个线图的图形，每个输入变量一个，每个图块 n 行，每个块一个。
 
 ```py
 # plot all inputs for one or more chunk ids
@@ -658,7 +658,7 @@ plot_chunk_inputs(chunks, [1, 3 ,5])
 
 我们可以使用 box 和 whisker 图粗略地查看输入变量的分布。
 
-下面的 _plot_chunk_input_boxplots（）_ 将为每个输入要素创建一个盒子和胡须，用于一个块的数据。
+下面的`plot_chunk_input_boxplots()`将为每个输入要素创建一个盒子和胡须，用于一个块的数据。
 
 ```py
 # boxplot for input variables for a chuck
@@ -1041,7 +1041,7 @@ plot_target_boxplots(values)
 
 我们可以通过创建每列缺失数据比率的条形图来进一步研究明显的缺失数据，不包括开头的元数据列（例如前五列）。
 
-下面的 _plot_col_percentage_missing（）_ 函数实现了这个功能。
+下面的`plot_col_percentage_missing()`函数实现了这个功能。
 
 ```py
 # bar chart of the ratio of missing data per column
@@ -1128,7 +1128,7 @@ plot_col_percentage_missing(values)
 
 我们可以通过查看目标变量的直方图来查看单个块的数据。
 
-matplotlib 中 _hist（）_ 函数的一个问题是它对 NaN 值不稳健。我们可以通过在绘制之前检查每列是否具有非 NaN 值并排除具有 NaN 值的行来克服此问题。
+matplotlib 中`hist()`函数的一个问题是它对 NaN 值不稳健。我们可以通过在绘制之前检查每列是否具有非 NaN 值并排除具有 NaN 值的行来克服此问题。
 
 下面的函数执行此操作，并为一个或多个块的每个目标变量创建一个直方图。
 

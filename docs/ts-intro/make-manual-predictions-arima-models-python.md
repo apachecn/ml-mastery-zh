@@ -90,7 +90,7 @@ y = dot_product(ar_coefficients, lags) + dot_product(ma_coefficients, residuals)
 *   **AR 系数**：model_fit.arparams
 *   **MA 系数**：model_fit.maparams
 
-我们可以使用这些检索到的系数来使用以下手册 _predict（）_ 函数进行预测。
+我们可以使用这些检索到的系数来使用以下手册`predict()`函数进行预测。
 
 ```py
 def predict(coef, history):
@@ -120,7 +120,7 @@ model = ARIMA(history, order=(k,0,0))
 
 在此示例中，我们将使用简单的 AR（1）进行演示。
 
-进行预测需要我们从拟合模型中检索 AR 系数，并将它们与观测值的滞后一起使用，并调用上面定义的自定义 _predict（）_ 函数。
+进行预测需要我们从拟合模型中检索 AR 系数，并将它们与观测值的滞后一起使用，并调用上面定义的自定义`predict()`函数。
 
 下面列出了完整的示例。
 
@@ -156,7 +156,7 @@ rmse = sqrt(mean_squared_error(test, predictions))
 print('Test RMSE: %.3f' % rmse)
 ```
 
-请注意，ARIMA 实施将自动为时间序列中的趋势建模。这为回归方程式增加了一个常数，我们不需要用于演示目的。我们通过将 _fit（）_ 函数中的'trend'参数设置为'`nc`'为' _no constant_ '来关闭这个便利性。
+请注意，ARIMA 实施将自动为时间序列中的趋势建模。这为回归方程式增加了一个常数，我们不需要用于演示目的。我们通过将`fit()`函数中的'trend'参数设置为'`nc`'为' _no constant_ '来关闭这个便利性。
 
 [fit（）](http://statsmodels.sourceforge.net/devel/generated/statsmodels.tsa.arima_model.ARIMA.fit.html)函数还输出了许多详细消息，我们可以通过将'`disp`'参数设置为'`False`'来关闭。
 
@@ -187,7 +187,7 @@ model = ARIMA(history, order=(0,0,k))
 
 在这个例子中，我们将使用简单的 MA（1）进行演示。
 
-如上所述，进行预测需要我们从拟合模型中检索 MA 系数，并将它们与剩余误差值的滞后一起使用，并调用上面定义的自定义 _predict（）_ 函数。
+如上所述，进行预测需要我们从拟合模型中检索 MA 系数，并将它们与剩余误差值的滞后一起使用，并调用上面定义的自定义`predict()`函数。
 
 训练期间的残留误差存储在 ARIMA 模型中`ARIMAResults`对象的'`resid`'参数下。
 
@@ -324,7 +324,7 @@ Test RMSE: 1.405
 
 ARIMA 中的 I 代表积分，指的是在线性回归模型中进行预测之前对时间序列观察进行的差分。
 
-在进行手动预测时，我们必须在调用 _predict（）_ 函数之前执行数据集的这种差分。下面是一个实现整个数据集差异的函数。
+在进行手动预测时，我们必须在调用`predict()`函数之前执行数据集的这种差分。下面是一个实现整个数据集差异的函数。
 
 ```py
 def difference(dataset):
@@ -385,7 +385,7 @@ rmse = sqrt(mean_squared_error(test, predictions))
 print('Test RMSE: %.3f' % rmse)
 ```
 
-您可以看到，在使用 AR 系数调用 _predict（）_ 函数之前，滞后观察值是不同的。还将关于这些差异输入值计算残差。
+您可以看到，在使用 AR 系数调用`predict()`函数之前，滞后观察值是不同的。还将关于这些差异输入值计算残差。
 
 运行该示例会在每次迭代时打印预测值和期望值，并总结所有预测的表现。
 

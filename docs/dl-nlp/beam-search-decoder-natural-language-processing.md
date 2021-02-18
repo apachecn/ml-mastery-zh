@@ -72,7 +72,7 @@ data = array(data)
 
 [argmax（）](https://en.wikipedia.org/wiki/Arg_max)数学函数可用于选择具有最大值的数组的索引。我们可以使用此函数来选择序列中每个步骤最有可能的单词索引。该功能直接在 [numpy](https://docs.scipy.org/doc/numpy-1.9.3/reference/generated/numpy.argmax.html) 中提供。
 
-下面的 _greedy_decoder（）_ 函数使用 argmax 函数实现此解码器策略。
+下面的`greedy_decoder()`函数使用 argmax 函数实现此解码器策略。
 
 ```py
 # greedy decoder
@@ -141,7 +141,7 @@ print(result)
 
 概率是小数字，将小数字相乘可以产生非常小的数字。为了避免使浮点数下溢，概率的自然对数相乘，这使得数字更大且易于管理。此外，通常通过最小化分数来执行搜索也是常见的，因此，概率的负对数相乘。最后的调整意味着我们可以按照他们的分数按升序对所有候选序列进行排序，并选择第一个 k 作为最可能的候选序列。
 
-下面的 _beam_search_decoder（）_ 函数实现了波束搜索解码器。
+下面的`beam_search_decoder()`函数实现了波束搜索解码器。
 
 ```py
 # beam search

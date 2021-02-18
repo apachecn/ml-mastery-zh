@@ -29,7 +29,7 @@
 
 查看原始数据可以揭示您无法通过任何其他方式获得的见解。它还可以种植种子，这些种子可能会成为如何更好地预处理和处理机器学习任务数据的想法。
 
-您可以使用 Pandas DataFrame 上的 _head（）_ 函数查看数据的前 20 行。
+您可以使用 Pandas DataFrame 上的`head()`函数查看数据的前 20 行。
 
 ```
 # View first 20 rows
@@ -129,7 +129,7 @@ dtype: object
 
 描述性统计可以让您深入了解每个属性的形状。
 
-通常，您可以创建比您有时间审核的摘要更多的摘要。 Pandas DataFrame 上的 _describe（）_ 函数列出了每个属性的 8 个统计属性：
+通常，您可以创建比您有时间审核的摘要更多的摘要。 Pandas DataFrame 上的`describe()`函数列出了每个属性的 8 个统计属性：
 
 *   计数
 *   意思
@@ -200,7 +200,7 @@ class
 
 计算相关性的最常用方法是 [Pearson 相关系数](https://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient)，它假定所涉及属性的正态分布。 -1 或 1 的相关性分别显示完全的负相关或正相关。值 0 表示根本没有相关性。
 
-如果数据集中存在高度相关的属性，则某些机器学习算法（如线性和逻辑回归）可能会遇到表现较差的情况。因此，最好检查数据集中属性的所有成对关联。您可以使用 Pandas DataFrame 上的 _corr（）_ 函数来计算相关矩阵。
+如果数据集中存在高度相关的属性，则某些机器学习算法（如线性和逻辑回归）可能会遇到表现较差的情况。因此，最好检查数据集中属性的所有成对关联。您可以使用 Pandas DataFrame 上的`corr()`函数来计算相关矩阵。
 
 ```
 # Pairwise Pearson correlations
@@ -235,7 +235,7 @@ class  0.222  0.467  0.065  0.075  0.131  0.293  0.174  0.238  1.000
 
 许多机器学习算法假设高斯分布。知道属性有偏差可能允许您执行数据准备以纠正偏斜，然后提高模型的准确性。
 
-您可以使用 Pandas DataFrame 上的 _skew（）_ 函数计算每个属性的偏斜。
+您可以使用 Pandas DataFrame 上的`skew()`函数计算每个属性的偏斜。
 
 ```
 # Skew for each attribute

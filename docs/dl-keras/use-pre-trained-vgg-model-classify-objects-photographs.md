@@ -190,7 +190,7 @@ plot_model(model, to_file='vgg.png')
 
 VGG 模型中的层图
 
-_VGG（）_ 类需要一些参数，如果您希望在自己的项目中使用该模型，可能只会感兴趣。转学习。
+`VGG()`类需要一些参数，如果您希望在自己的项目中使用该模型，可能只会感兴趣。转学习。
 
 例如：
 
@@ -236,7 +236,7 @@ model = VGG16()
 
 Keras 提供了一些帮助完成此步骤的工具。
 
-首先，我们可以使用 _load_img（）_ 函数加载图像并将其大小调整为所需的 224×224 像素大小。
+首先，我们可以使用`load_img()`函数加载图像并将其大小调整为所需的 224×224 像素大小。
 
 ```py
 from keras.preprocessing.image import load_img
@@ -244,7 +244,7 @@ from keras.preprocessing.image import load_img
 image = load_img('mug.png', target_size=(224, 224))
 ```
 
-接下来，我们可以将像素转换为 NumPy 数组，以便我们可以在 Keras 中使用它。我们可以使用 _img_to_array（）_ 函数。
+接下来，我们可以将像素转换为 NumPy 数组，以便我们可以在 Keras 中使用它。我们可以使用`img_to_array()`函数。
 
 ```py
 from keras.preprocessing.image import img_to_array
@@ -254,7 +254,7 @@ image = img_to_array(image)
 
 网络期望一个或多个图像作为输入;这意味着输入数组需要是 4 维的：样本，行，列和通道。
 
-我们只有一个样本（一个图像）。我们可以通过调用 _reshape（）_ 并添加额外的维度来重新整形数组。
+我们只有一个样本（一个图像）。我们可以通过调用`reshape()`并添加额外的维度来重新整形数组。
 
 ```py
 # reshape data for the model
@@ -267,7 +267,7 @@ image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
 
 - [用于大规模图像识别的非常深的卷积网络](https://arxiv.org/abs/1409.1556)，2014 年。
 
-Keras 提供了一个名为 _preprocess_input（）_ 的函数来为网络准备新的输入。
+Keras 提供了一个名为`preprocess_input()`的函数来为网络准备新的输入。
 
 ```py
 from keras.applications.vgg16 import preprocess_input
@@ -279,7 +279,7 @@ image = preprocess_input(image)
 
 ### 4.进行预测
 
-我们可以在模型上调用 _predict（）_ 函数，以便预测属于 1000 种已知对象类型中的每一种的图像的概率。
+我们可以在模型上调用`predict()`函数，以便预测属于 1000 种已知对象类型中的每一种的图像的概率。
 
 ```py
 # predict the probability across all output classes
@@ -290,7 +290,7 @@ yhat = model.predict(image)
 
 ### 5.解释预测
 
-Keras 提供了解释称为 _decode_predictions（）_ 的概率的函数。
+Keras 提供了解释称为`decode_predictions()`的概率的函数。
 
 它可以返回类列表及其概率，以防您想要呈现照片中可能存在的前 3 个对象。
 

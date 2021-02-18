@@ -266,7 +266,7 @@ pyplot.show()
 
 我们可以使用 arch 库轻松地拟合 GARCH 模型。
 
-_arch_model（）_ 函数可以指定 GARCH 而不是 ARCH 模型 vol ='GARCH'以及两者的滞后参数。
+`arch_model()`函数可以指定 GARCH 而不是 ARCH 模型 vol ='GARCH'以及两者的滞后参数。
 
 ```py
 # define model

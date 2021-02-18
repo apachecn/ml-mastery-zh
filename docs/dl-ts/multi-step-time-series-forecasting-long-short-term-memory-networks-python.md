@@ -172,7 +172,7 @@ Sep,	Oct, Nov, Dec
 
 第一步是将数据从一系列转换为监督学习问题。
 
-这是从数字列表到输入和输出模式列表。我们可以使用一个名为 _series_to_supervised（）_ 的预先准备的函数来实现这一点。
+这是从数字列表到输入和输出模式列表。我们可以使用一个名为`series_to_supervised()`的预先准备的函数来实现这一点。
 
 有关此功能的更多信息，请参阅帖子：
 
@@ -320,7 +320,7 @@ Train: (23, 4), Test: (10, 4)
 
 下一步是进行持久性预测。
 
-我们可以在名为 _persistence（）_ 的函数中轻松实现持久性预测，该函数将最后一次观察和预测步骤的数量保持不变。此函数返回包含预测的数组。
+我们可以在名为`persistence()`的函数中轻松实现持久性预测，该函数将最后一次观察和预测步骤的数量保持不变。此函数返回包含预测的数组。
 
 ```py
 # make a persistence forecast
@@ -355,7 +355,7 @@ forecasts = make_forecasts(train, test, 1, 3)
 
 最后一步是评估预测。
 
-我们可以通过计算多步预测的每个时间步长的 RMSE 来做到这一点，在这种情况下给出 3 个 RMSE 分数。下面的函数 _evaluate_forecasts（）_ 计算并打印每个预测时间步的 RMSE。
+我们可以通过计算多步预测的每个时间步长的 RMSE 来做到这一点，在这种情况下给出 3 个 RMSE 分数。下面的函数`evaluate_forecasts()`计算并打印每个预测时间步的 RMSE。
 
 ```py
 # evaluate the RMSE for each forecast time step
@@ -375,7 +375,7 @@ evaluate_forecasts(test, forecasts, 1, 3)
 
 在原始数据集的上下文中绘制预测图也有助于了解 RMSE 分数如何与上下文中的问题相关联。
 
-我们可以首先绘制整个 Shampoo 数据集，然后将每个预测绘制为红线。下面的函数 _plot_forecasts（）_ 将创建并显示此图。
+我们可以首先绘制整个 Shampoo 数据集，然后将每个预测绘制为红线。下面的函数`plot_forecasts()`将创建并显示此图。
 
 ```py
 # plot the forecasts in the context of the original dataset
@@ -401,7 +401,7 @@ plot_forecasts(series, forecasts, 12)
 
 我们可以通过将持久预测与原始数据集中的实际持久值相关联来使绘图更好。
 
-这将需要将最后观察到的值添加到预测的前面。以下是具有此改进的 _plot_forecasts（）_ 功能的更新版本。
+这将需要将最后观察到的值添加到预测的前面。以下是具有此改进的`plot_forecasts()`功能的更新版本。
 
 ```py
 # plot the forecasts in the context of the original dataset
@@ -572,7 +572,7 @@ def difference(dataset, interval=1):
 
 我们可以使用 sklearn 库中的`MinMaxScaler`来缩放数据。
 
-将这些放在一起，我们可以更新 _prepare_data（）_ 函数以首先区分数据并重新调整它，然后执行转换为监督学习问题并训练测试集，就像我们之前使用持久性示例一样。
+将这些放在一起，我们可以更新`prepare_data()`函数以首先区分数据并重新调整它，然后执行转换为监督学习问题并训练测试集，就像我们之前使用持久性示例一样。
 
 除了训练和测试数据集之外，该函数现在返回一个缩放器。
 
@@ -616,7 +616,7 @@ LSTM 是有状态的;这意味着我们必须在每个训练时代结束时手�
 
 必须使用相同的批量大小进行训练和预测，并且我们需要在测试数据集的每个时间步进行预测。这意味着必须使用批量大小为 1。批量大小为 1 也称为在线学习，因为在每个训练模式之后的训练期间将更新网络权重（与小批量或批量更新相反）。
 
-我们可以将所有这些放在一个名为 _fit_lstm（）_ 的函数中。该函数采用了许多可用于稍后调整网络的关键参数，并且该函数返回适合 LSTM 模型以备预测。
+我们可以将所有这些放在一个名为`fit_lstm()`的函数中。该函数采用了许多可用于稍后调整网络的关键参数，并且该函数返回适合 LSTM 模型以备预测。
 
 ```py
 # fit an LSTM network to training data
@@ -653,7 +653,7 @@ model = fit_lstm(train, 1, 3, 1, 1500, 1)
 
 通过调用 _model.predict（）_，可以使用拟合 LSTM 网络进行单个预测。同样，必须将数据格式化为具有[_ 样本，时间步长，特征 _]格式的 3D 阵列。
 
-我们可以将它包装成一个名为 _forecast_lstm（）_ 的函数。
+我们可以将它包装成一个名为`forecast_lstm()`的函数。
 
 ```py
 # make one forecast with an LSTM,
@@ -666,7 +666,7 @@ def forecast_lstm(model, X, n_batch):
 	return [x for x in forecast[0, :]]
 ```
 
-我们可以从 _make_forecasts（）_ 函数调用此函数并更新它以接受模型作为参数。更新版本如下所示。
+我们可以从`make_forecasts()`函数调用此函数并更新它以接受模型作为参数。更新版本如下所示。
 
 ```py
 # evaluate the persistence model
@@ -681,7 +681,7 @@ def make_forecasts(model, n_batch, train, test, n_lag, n_seq):
 	return forecasts
 ```
 
-可以按如下方式调用 _make_forecasts（）_ 函数的更新版本：
+可以按如下方式调用`make_forecasts()`函数的更新版本：
 
 ```py
 # make forecasts
@@ -694,11 +694,11 @@ forecasts = make_forecasts(model, 1, train, test, 1, 3)
 
 这是必要的，以便我们可以计算与其他模型相当的错误分数和图，例如上面的持久性预测。
 
-我们可以使用提供 _inverse_transform（）_ 函数的`MinMaxScaler`对象直接反转预测的比例。
+我们可以使用提供`inverse_transform()`函数的`MinMaxScaler`对象直接反转预测的比例。
 
 我们可以通过将最后一个观察值（前几个月的洗发水销售额）添加到第一个预测值来反转差异，然后将值传播到预测值之下。
 
-这有点儿繁琐;我们可以在函数名 _inverse_difference（）_ 中包含行为，它将预测之前的最后观察值和预测作为参数，并返回反向预测。
+这有点儿繁琐;我们可以在函数名`inverse_difference()`中包含行为，它将预测之前的最后观察值和预测作为参数，并返回反向预测。
 
 ```py
 # invert differenced forecast
@@ -712,7 +712,7 @@ def inverse_difference(last_ob, forecast):
 	return inverted
 ```
 
-将它们放在一起，我们可以创建一个 _inverse_transform（）_ 函数，该函数可以处理每个预测，首先反转比例，然后反转差异，将预测恢复到原始比例。
+将它们放在一起，我们可以创建一个`inverse_transform()`函数，该函数可以处理每个预测，首先反转比例，然后反转差异，将预测恢复到原始比例。
 
 ```py
 # inverse data transform on forecasts

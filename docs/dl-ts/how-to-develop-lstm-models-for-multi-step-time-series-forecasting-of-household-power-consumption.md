@@ -95,7 +95,7 @@ sub_metering_remainder = (global_active_power * 1000 / 60) - (sub_metering_1 + s
 
 下载数据集并将其解压缩到当前工作目录中。您现在将拥有大约 127 兆字节的文件“ _household_power_consumption.txt_ ”并包含所有观察结果。
 
-我们可以使用 _read_csv（）_ 函数来加载数据，并将前两列合并到一个日期时间列中，我们可以将其用作索引。
+我们可以使用`read_csv()`函数来加载数据，并将前两列合并到一个日期时间列中，我们可以将其用作索引。
 
 ```py
 # load all data
@@ -115,7 +115,7 @@ dataset = dataset.astype('float32')
 
 我们还需要填写缺失值，因为它们已被标记。
 
-一种非常简单的方法是从前一天的同一时间复制观察。我们可以在一个名为 _fill_missing（）_ 的函数中实现它，该函数将从 24 小时前获取数据的 NumPy 数组并复制值。
+一种非常简单的方法是从前一天的同一时间复制观察。我们可以在一个名为`fill_missing()`的函数中实现它，该函数将从 24 小时前获取数据的 NumPy 数组并复制值。
 
 ```py
 # fill missing values with a value at the same time one day ago
@@ -250,7 +250,7 @@ daily_data.to_csv('household_power_consumption_days.csv')
 
 可以使用的一个可能的分数是所有预测天数的 RMSE。
 
-下面的函数 _evaluate_forecasts（）_ 将实现此行为并基于多个七天预测返回模型的表现。
+下面的函数`evaluate_forecasts()`将实现此行为并基于多个七天预测返回模型的表现。
 
 ```py
 # evaluate one or more weekly forecasts against expected values
@@ -307,7 +307,7 @@ def evaluate_forecasts(actual, predicted):
 2010-01-02,1309.2679999999998,199.54600000000016,352332.8399999997,5489.7999999999865,801.0,298.0,6425.0,14297.133406600002
 ```
 
-下面的函数 _split_dataset（）_ 将每日数据拆分为训练集和测试集，并将每个数据组织成标准周。
+下面的函数`split_dataset()`将每日数据拆分为训练集和测试集，并将每个数据组织成标准周。
 
 使用特定行偏移来使用数据集的知识来分割数据。然后使用 NumPy [split（）函数](https://docs.scipy.org/doc/numpy/reference/generated/numpy.split.html)将分割数据集组织成每周数据。
 
@@ -383,13 +383,13 @@ Input, 						Predict
 
 标准周格式的训练和测试数据集作为参数提供给函数。提供了另一个参数 n_input，用于定义模型将用作输入以进行预测的先前观察的数量。
 
-调用两个新函数：一个用于根据称为 _build_model（）_ 的训练数据构建模型，另一个用于使用该模型对每个新标准周进行预测，称为 _forecast（）_。这些将在后续章节中介绍。
+调用两个新函数：一个用于根据称为`build_model()`的训练数据构建模型，另一个用于使用该模型对每个新标准周进行预测，称为 _forecast（）_。这些将在后续章节中介绍。
 
 我们正在使用神经网络，因此，它们通常很难训练，但很快就能进行评估。这意味着模型的首选用法是在历史数据上构建一次，并使用它们来预测前向验证的每个步骤。模型在评估期间是静态的（即未更新）。
 
 这与其他模型不同，这些模型可以更快地进行训练，在新数据可用时，可以重新拟合或更新模型的每个步骤。有了足够的资源，就可以通过这种方式使用神经网络，但在本教程中我们不会这样做。
 
-下面列出了完整的 _evaluate_model（）_ 函数。
+下面列出了完整的`evaluate_model()`函数。
 
 ```py
 # evaluate a single model
@@ -415,7 +415,7 @@ def evaluate_model(train, test, n_input):
 
 一旦我们对模型进行评估，我们就可以总结表现。
 
-以下名为 _summarize_scores（）_ 的函数将模型的表现显示为单行，以便与其他模型进行比较。
+以下名为`summarize_scores()`的函数将模型的表现显示为单行，以便与其他模型进行比较。
 
 ```py
 # summarize scores
@@ -561,7 +561,7 @@ Input, Output
 
 我们也可以通过参数化输入和输出的数量来实现这一点（例如`n_input`，`n_out`），这样您就可以尝试不同的值或根据自己的问题进行调整。
 
-下面是一个名为 _to_supervised（）_ 的函数，它采用周（历史）列表和用作输入和输出的时间步数，并以重叠移动窗口格式返回数据。
+下面是一个名为`to_supervised()`的函数，它采用周（历史）列表和用作输入和输出的时间步数，并以重叠移动窗口格式返回数据。
 
 ```py
 # convert history into inputs and outputs
@@ -598,7 +598,7 @@ def to_supervised(train, n_input, n_out=7):
 
 小批量大小和算法的随机性意味着相同的模型将在每次训练时学习输入到输出的略微不同的映射。这意味着评估模型时结果可能会有所不同。您可以尝试多次运行模型并计算模型表现的平均值。
 
-下面的 _build_model（）_ 准备训练数据，定义模型，并将模型拟合到训练数据上，使拟合模型准备好进行预测。
+下面的`build_model()`准备训练数据，定义模型，并将模型拟合到训练数据上，使拟合模型准备好进行预测。
 
 ```py
 # train the model
@@ -667,7 +667,7 @@ yhat = model.predict(input_x, verbose=0)
 yhat = yhat[0]
 ```
 
-下面的 _forecast（）_ 函数实现了这个功能，并将模型拟合到训练数据集，到目前为止观察到的数据历史以及模型预期的输入时间步数。
+下面的`forecast()`函数实现了这个功能，并将模型拟合到训练数据集，到目前为止观察到的数据历史以及模型预期的输入时间步数。
 
 ```py
 # make a forecast
@@ -923,7 +923,7 @@ model.add(TimeDistributed(Dense(1)))
 train_y = train_y.reshape((train_y.shape[0], train_y.shape[1], 1))
 ```
 
-我们可以将所有这些绑定到下面列出的更新的 _build_model（）_ 函数中。
+我们可以将所有这些绑定到下面列出的更新的`build_model()`函数中。
 
 ```py
 # train the model
@@ -1122,7 +1122,7 @@ LSTM 将依次创建每个输入序列的内部表示，其将由解码器一起
 X.append(data[in_start:in_end, :])
 ```
 
-下面列出了具有此更改的完整 _to_supervised（）_ 功能。
+下面列出了具有此更改的完整`to_supervised()`功能。
 
 ```py
 # convert history into inputs and outputs
@@ -1156,7 +1156,7 @@ input_x = data[-n_input:, :]
 input_x = input_x.reshape((1, input_x.shape[0], input_x.shape[1]))
 ```
 
-下面列出了具有此更改的完整 _forecast（）_ 函数：
+下面列出了具有此更改的完整`forecast()`函数：
 
 ```py
 # make a forecast
@@ -1364,7 +1364,7 @@ model.add(Flatten())
 
 唯一的另一个变化是将训练时期的数量设置为 20。
 
-下面列出了具有这些更改的 _build_model（）_ 函数。
+下面列出了具有这些更改的`build_model()`函数。
 
 ```py
 # train the model
@@ -1623,7 +1623,7 @@ model.add(Flatten())
 
 我们还将参数化子序列的数量（`n_steps`）和每个子序列的长度（`n_length`）并将它们作为参数传递。
 
-模型和训练的其余部分是相同的。下面列出了具有这些更改的 _build_model（）_ 函数。
+模型和训练的其余部分是相同的。下面列出了具有这些更改的`build_model()`函数。
 
 ```py
 # train the model
@@ -1651,14 +1651,14 @@ def build_model(train, n_steps, n_length, n_input):
 	return model
 ```
 
-该模型期望五维数据作为输入。因此，我们还必须在进行预测时更新 _forecast（）_ 函数中单个样本的准备。
+该模型期望五维数据作为输入。因此，我们还必须在进行预测时更新`forecast()`函数中单个样本的准备。
 
 ```py
 # reshape into [samples, time steps, rows, cols, channels]
 input_x = input_x.reshape((1, n_steps, 1, n_length, 1))
 ```
 
-具有此变化的 _forecast（）_ 函数以及参数化子序列如下所示。
+具有此变化的`forecast()`函数以及参数化子序列如下所示。
 
 ```py
 # make a forecast

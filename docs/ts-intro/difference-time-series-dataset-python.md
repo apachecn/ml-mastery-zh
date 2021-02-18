@@ -88,7 +88,7 @@ pyplot.show()
 
 这涉及开发一个创建差异数据集的新功能。该函数将遍历提供的序列并以指定的间隔或滞后计算差异值。
 
-以下名为 _difference（）_ 的函数实现了此过程。
+以下名为`difference()`的函数实现了此过程。
 
 ```py
 # create a differenced series
@@ -140,7 +140,7 @@ pyplot.show()
 
 Pandas 库提供了自动计算数据集差异的功能。
 
-在[系列](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.diff.html)和 [DataFrame](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.diff.html) 对象上都提供了 _diff（）_ 功能。
+在[系列](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.diff.html)和 [DataFrame](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.diff.html) 对象上都提供了`diff()`功能。
 
 与上一节中手动定义的差异函数一样，它需要一个参数来指定间隔或滞后，在本例中称为 _ 周期 _。
 

@@ -136,7 +136,7 @@ Keras 直接提供这种预先训练的模型。请注意，第一次使用此�
 
 Keras 还提供了用于将加载的照片整形为模型的优选尺寸的工具（例如，3 通道 224×224 像素图像）。
 
-下面是一个名为 _extract_features（）_ 的函数，给定目录名称，将加载每张照片，为 VGG 准备，并从 VGG 模型中收集预测的特征。图像特征是 1 维 4,096 元素向量。
+下面是一个名为`extract_features()`的函数，给定目录名称，将加载每张照片，为 VGG 准备，并从 VGG 模型中收集预测的特征。图像特征是 1 维 4,096 元素向量。
 
 该函数返回图像标识符的字典到图像特征。
 
@@ -294,7 +294,7 @@ print('Loaded: %d ' % len(descriptions))
 *   删除所有长度不超过一个字符的单词（例如“a”）。
 *   删除包含数字的所有单词。
 
-下面定义 _clean_descriptions（）_ 函数，给定描述图像标识符的字典，逐步执行每个描述并清理文本。
+下面定义`clean_descriptions()`函数，给定描述图像标识符的字典，逐步执行每个描述并清理文本。
 
 ```py
 import string
@@ -344,7 +344,7 @@ print('Vocabulary Size: %d' % len(vocabulary))
 
 最后，我们可以将图像标识符和描述字典保存到名为 _descriptionss.txt_ 的新文件中，每行一个图像标识符和描述。
 
-下面定义 _save_descriptions（）_ 函数，给定包含标识符到描述和文件名的映射的字典，将映射保存到文件。
+下面定义`save_descriptions()`函数，给定包含标识符到描述和文件名的映射的字典，将映射保存到文件。
 
 ```py
 # save descriptions to file, one per line
@@ -491,7 +491,7 @@ Vocabulary Size: 8,763
 
 训练和开发数据集已分别在 _Flickr_8k.trainImages.txt_ 和 _Flickr_8k.devImages.txt_ 文件中预定义，两者都包含照片文件名列表。从这些文件名中，我们可以提取照片标识符并使​​用这些标识符来过滤每组的照片和说明。
 
-下面的函数 _load_set（）_ 将在给定训练或开发集文件名的情况下加载一组预定义的标识符。
+下面的函数`load_set()`将在给定训练或开发集文件名的情况下加载一组预定义的标识符。
 
 ```py
 # load doc into memory
@@ -552,7 +552,7 @@ def load_clean_descriptions(filename, dataset):
 
 接下来，我们可以加载给定数据集的照片功能。
 
-下面定义了一个名为 _load_photo_features（）_ 的函数，它加载了整套照片描述，然后返回给定照片标识符集的感兴趣子集。
+下面定义了一个名为`load_photo_features()`的函数，它加载了整套照片描述，然后返回给定照片标识符集的感兴趣子集。
 
 这不是很有效;尽管如此，这将使我们快速起步。
 
@@ -652,7 +652,7 @@ Photos: train=6,000
 
 编码数据的第一步是创建从单词到唯一整数值​​的一致映射。 Keras 提供`Tokenizer`类，可以从加载的描述数据中学习这种映射。
 
-下面定义 _to_lines（）_ 将描述字典转换为字符串列表和 _create_tokenizer（）_ 函数，在给定加载的照片描述文本的情况下，它将适合 Tokenizer。
+下面定义`to_lines()`将描述字典转换为字符串列表和`create_tokenizer()`函数，在给定加载的照片描述文本的情况下，它将适合 Tokenizer。
 
 ```py
 # convert a dictionary of clean descriptions to a list of descriptions
@@ -724,7 +724,7 @@ def create_sequences(tokenizer, max_length, descriptions, photos):
 	return array(X1), array(X2), array(y)
 ```
 
-我们需要计算最长描述中的最大字数。名为 _max_length（）_ 的短辅助函数定义如下。
+我们需要计算最长描述中的最大字数。名为`max_length()`的短辅助函数定义如下。
 
 ```py
 # calculate the length of the description with the most words
@@ -848,7 +848,7 @@ filepath = 'model-ep{epoch:03d}-loss{loss:.3f}-val_loss{val_loss:.3f}.h5'
 checkpoint = ModelCheckpoint(filepath, monitor='val_loss', verbose=1, save_best_only=True, mode='min')
 ```
 
-然后我们可以通过 _ 回调 _ 参数在 _fit（）_ 的调用中指定检查点。我们还必须通过`validation_data`参数在 _fit（）_ 中指定开发数据集。
+然后我们可以通过 _ 回调 _ 参数在`fit()`的调用中指定检查点。我们还必须通过`validation_data`参数在`fit()`中指定开发数据集。
 
 我们只适用于 20 个时代的模型，但考虑到训练数据的数量，每个时代在现代硬件上可能需要 30 分钟。
 
@@ -1106,7 +1106,7 @@ Memory Error
 
 我们将保持简单，并使数据生成器每批产生一张照片的数据。这将是为照片及其描述生成的所有序列。
 
-_data_generator（）_ 下面的函数将是数据生成器，将采用加载的文本描述，照片功能，标记器和最大长度。在这里，我假设您可以将这些训练数据放入内存中，我相信 8GB 的 RAM 应该更有能力。
+`data_generator()`下面的函数将是数据生成器，将采用加载的文本描述，照片功能，标记器和最大长度。在这里，我假设您可以将这些训练数据放入内存中，我相信 8GB 的 RAM 应该更有能力。
 
 这是如何运作的？阅读上面刚才提到的引入数据生成器的帖子。
 
@@ -1122,7 +1122,7 @@ def data_generator(descriptions, photos, tokenizer, max_length):
 			yield [[in_img, in_seq], out_word]
 ```
 
-您可以看到我们正在调用 _create_sequence（）_ 函数来为单个照片而不是整个数据集创建一批数据。这意味着我们必须更新 _create_sequences（）_ 函数以删除 for 循环的“迭代所有描述”。
+您可以看到我们正在调用`create_sequence()`函数来为单个照片而不是整个数据集创建一批数据。这意味着我们必须更新`create_sequences()`函数以删除 for 循环的“迭代所有描述”。
 
 更新的功能如下：
 
@@ -1151,7 +1151,7 @@ def create_sequences(tokenizer, max_length, desc_list, photo):
 
 我们现在拥有我们所需要的一切。
 
-注意，这是一个非常基本的数据生成器。它提供的大内存节省是在拟合模型之前不在存储器中具有训练和测试数据的展开序列，这些样本（例如来自 _create_sequences（）_ 的结果）是根据每张照片的需要创建的。
+注意，这是一个非常基本的数据生成器。它提供的大内存节省是在拟合模型之前不在存储器中具有训练和测试数据的展开序列，这些样本（例如来自`create_sequences()`的结果）是根据每张照片的需要创建的。
 
 一些关于进一步改进这种数据生成器的袖口想法包括：
 
@@ -1180,7 +1180,7 @@ print(outputs.shape)
 (47, 7579)
 ```
 
-最后，我们可以在模型上使用 _fit_generator（）_ 函数来使用此数据生成器训练模型。
+最后，我们可以在模型上使用`fit_generator()`函数来使用此数据生成器训练模型。
 
 在这个简单的例子中，我们将丢弃开发数据集和模型检查点的加载，并在每个训练时期之后简单地保存模型。然后，您可以在训练后返回并加载/评估每个已保存的模型，以找到我们可以在下一部分中使用的最低损失的模型。
 
@@ -1393,7 +1393,7 @@ for i in range(epochs):
 
 这包括传入开始描述标记'`startseq`'，生成一个单词，然后以生成的单词作为输入递归调用模型，直到到达序列标记结尾'`endseq`'或达到最大描述长度。
 
-以下名为 _generate_desc（）_ 的函数实现此行为，并在给定训练模型和给定准备照片作为输入的情况下生成文本描述。它调用函数 _word_for_id（）_ 以将整数预测映射回一个字。
+以下名为`generate_desc()`的函数实现此行为，并在给定训练模型和给定准备照片作为输入的情况下生成文本描述。它调用函数`word_for_id()`以将整数预测映射回一个字。
 
 ```py
 # map an integer to a word
@@ -1432,7 +1432,7 @@ def generate_desc(model, tokenizer, photo, max_length):
 
 我们将为测试数据集和训练数据集中的所有照片生成预测。
 
-以下名为 _evaluate_model（）_ 的函数将针对给定的照片描述和照片特征数据集评估训练模型。使用语料库 BLEU 分数收集和评估实际和预测的描述，该分数总结了生成的文本与预期文本的接近程度。
+以下名为`evaluate_model()`的函数将针对给定的照片描述和照片特征数据集评估训练模型。使用语料库 BLEU 分数收集和评估实际和预测的描述，该分数总结了生成的文本与预期文本的接近程度。
 
 ```py
 # evaluate the skill of the model
@@ -1461,7 +1461,7 @@ BLEU 分数用于文本翻译，用于针对一个或多个参考翻译评估翻
 
 *   [计算 Python 中文本的 BLEU 分数的温和介绍](https://machinelearningmastery.com/calculate-bleu-score-for-text-python/)
 
-[NLTK Python 库在 _corpus_bleu（）_ 函数中实现 BLEU 得分](http://www.nltk.org/api/nltk.translate.html)计算。接近 1.0 的较高分数更好，接近零的分数更差。
+[NLTK Python 库在`corpus_bleu()`函数中实现 BLEU 得分](http://www.nltk.org/api/nltk.translate.html)计算。接近 1.0 的较高分数更好，接近零的分数更差。
 
 我们可以将所有这些与上一节中的函数一起用于加载数据。我们首先需要加载训练数据集以准备 Tokenizer，以便我们可以将生成的单词编码为模型的输入序列。使用与训练模型时使用的完全相同的编码方案对生成的单词进行编码至关重要。
 
@@ -1768,7 +1768,7 @@ model = load_model('model-ep002-loss3.245-val_loss3.612.h5')
 
 接下来，我们必须加载要描述的照片并提取特征。
 
-我们可以通过重新定义模型并向其添加 VGG-16 模型来实现这一目标，或者我们可以使用 VGG 模型预测特征并将其用作现有模型的输入。我们将使用后者并使用在数据准备期间使用的 _extract_features（）_ 函数的修改版本，但适用于处理单张照片。
+我们可以通过重新定义模型并向其添加 VGG-16 模型来实现这一目标，或者我们可以使用 VGG 模型预测特征并将其用作现有模型的输入。我们将使用后者并使用在数据准备期间使用的`extract_features()`函数的修改版本，但适用于处理单张照片。
 
 ```py
 # extract features from each photo in the directory
@@ -1794,7 +1794,7 @@ def extract_features(filename):
 photo = extract_features('example.jpg')
 ```
 
-然后，我们可以使用在评估模型时定义的 _generate_desc（）_ 函数生成描述。
+然后，我们可以使用在评估模型时定义的`generate_desc()`函数生成描述。
 
 下面列出了为全新独立照片生成描述的完整示例。
 

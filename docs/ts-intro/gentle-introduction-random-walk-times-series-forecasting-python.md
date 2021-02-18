@@ -27,7 +27,7 @@ Python 标准库包含[随机模块](https://docs.python.org/2.7/library/random.
 
 [randrange（）](https://docs.python.org/2.7/library/random.html#random.randrange)函数可用于生成 0 和上限之间的随机整数。
 
-我们可以使用 _randrange（）_ 函数生成 0 到 10 之间的 1,000 个随机整数的列表。下面列出了这个例子。
+我们可以使用`randrange()`函数生成 0 到 10 之间的 1,000 个随机整数的列表。下面列出了这个例子。
 
 ```py
 from random import seed
@@ -108,7 +108,7 @@ pyplot.show()
 
 考虑到构建随机游走的方式，我们期望与先前的观察结果具有强烈的自相关性，并且具有先前滞后值的线性下降。
 
-我们可以使用 Pandas 中的 _autocorrelation_plot（）_ 函数来绘制随机游走的相关图。
+我们可以使用 Pandas 中的`autocorrelation_plot()`函数来绘制随机游走的相关图。
 
 下面列出了完整的示例。
 

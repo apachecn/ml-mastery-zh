@@ -501,7 +501,7 @@ Dropout 可以应用于 LSTM 节点内的输入连接。
 
 在这个实验中，我们将比较没有 dropout 率和 20％，40％和 60％的输入 dropout 率。
 
-下面列出了更新的 _fit_lstm（）_，_ 实验（）_ 和 _run（）_ 函数，用于将输入丢失与 LSTM 一起使用。
+下面列出了更新的 _fit_lstm（）_，_ 实验（）_ 和`run()`函数，用于将输入丢失与 LSTM 一起使用。
 
 ```py
 # fit an LSTM network to training data
@@ -605,7 +605,7 @@ max    123.578235  104.528209  96.687333  99.660331
 
 我们可以查看 40％的输入丢失如何影响模型的动态，同时适合训练数据。
 
-下面的代码总结了 _fit_lstm（）_ 和 _run（）_ 函数与诊断脚本基线版本的更新。
+下面的代码总结了`fit_lstm()`和`run()`函数与诊断脚本基线版本的更新。
 
 ```py
 # fit an LSTM network to training data
@@ -682,7 +682,7 @@ def run():
 
 在这个实验中，我们将比较没有 dropout 率与 20％，40％和 60％的复发 dropout 率。
 
-下面列出了更新的 _fit_lstm（）_，_ 实验（）_ 和 _run（）_ 函数，用于将输入丢失与 LSTM 一起使用。
+下面列出了更新的 _fit_lstm（）_，_ 实验（）_ 和`run()`函数，用于将输入丢失与 LSTM 一起使用。
 
 ```py
 # fit an LSTM network to training data
@@ -784,7 +784,7 @@ max    113.400863  106.222955  104.347850  114.160922
 
 我们可以查看 40％的经常性 dropout 率如何影响模型的动态，同时适合训练数据。
 
-下面的代码总结了 _fit_lstm（）_ 和 _run（）_ 函数与诊断脚本基线版本的更新。
+下面的代码总结了`fit_lstm()`和`run()`函数与诊断脚本基线版本的更新。
 
 ```py
 # fit an LSTM network to training data

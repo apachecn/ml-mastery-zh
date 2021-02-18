@@ -120,7 +120,7 @@ Wow!	Donnerwetter!
 
 ### 1.清洁文字
 
-首先，我们必须以保留 Unicode 德语字符的方式加载数据。下面的函数 _load_doc（）_ 将把文件加载为一团文本。
+首先，我们必须以保留 Unicode 德语字符的方式加载数据。下面的函数`load_doc()`将把文件加载为一团文本。
 
 ```py
 # load doc into memory
@@ -136,7 +136,7 @@ def load_doc(filename):
 
 每行包含一对短语，首先是英语，然后是德语，由制表符分隔。
 
-我们必须逐行拆分加载的文本，然后按短语拆分。下面的函数 _to_pairs（）_ 将拆分加载的文本。
+我们必须逐行拆分加载的文本，然后按短语拆分。下面的函数`to_pairs()`将拆分加载的文本。
 
 ```py
 # split a loaded document into sentences
@@ -156,7 +156,7 @@ def to_pairs(doc):
 
 我们将对加载的数据集中每对的每个短语执行这些操作。
 
-下面的 _clean_pairs（）_ 函数实现了这些操作。
+下面的`clean_pairs()`函数实现了这些操作。
 
 ```py
 # clean a list of lines
@@ -190,7 +190,7 @@ def clean_pairs(lines):
 
 最后，既然已经清理了数据，我们可以将短语对列表保存到准备使用的文件中。
 
-函数 _save_clean_data（）_ 使用 pickle API 将干净文本列表保存到文件中。
+函数`save_clean_data()`使用 pickle API 将干净文本列表保存到文件中。
 
 将所有这些结合在一起，下面列出了完整的示例。
 
@@ -343,7 +343,7 @@ save_clean_data(test, 'english-german-test.pkl')
 
 这涉及加载和准备准备好建模的清洁文本数据，以及在准备好的数据上定义和训练模型。
 
-让我们从加载数据集开始，以便我们可以准备数据。以下名为 _load_clean_sentences（）_ 的函数可用于依次加载 train，test 和两个数据集。
+让我们从加载数据集开始，以便我们可以准备数据。以下名为`load_clean_sentences()`的函数可用于依次加载 train，test 和两个数据集。
 
 ```py
 # load a clean dataset
@@ -360,7 +360,7 @@ test = load_clean_sentences('english-german-test.pkl')
 
 这是为了简单起见。或者，我们可以单独从训练数据集定义这些属性，并截断测试集中的例子，这些例子太长或者词汇不在词汇表中。
 
-我们可以根据建模需要使用 Keras`Tokenize`类将单词映射到整数。我们将为英语序列和德语序列使用单独的分词器。下面命名为 _create_tokenizer（）_ 的函数将在短语列表上训练一个分词器。
+我们可以根据建模需要使用 Keras`Tokenize`类将单词映射到整数。我们将为英语序列和德语序列使用单独的分词器。下面命名为`create_tokenizer()`的函数将在短语列表上训练一个分词器。
 
 ```py
 # fit a tokenizer
@@ -370,7 +370,7 @@ def create_tokenizer(lines):
 	return tokenizer
 ```
 
-类似地，下面名为 _max_length（）_ 的函数将找到短语列表中最长序列的长度。
+类似地，下面名为`max_length()`的函数将找到短语列表中最长序列的长度。
 
 ```py
 # max sentence length
@@ -397,7 +397,7 @@ print('German Max Length: %d' % (ger_length))
 
 我们现在准备准备训练数据集。
 
-每个输入和输出序列必须编码为整数并填充到最大短语长度。这是因为我们将对输入序列使用字嵌入，并对输出序列进行热编码。以下名为 _encode_sequences（）_ 的函数将执行这些操作并返回结果。
+每个输入和输出序列必须编码为整数并填充到最大短语长度。这是因为我们将对输入序列使用字嵌入，并对输出序列进行热编码。以下名为`encode_sequences()`的函数将执行这些操作并返回结果。
 
 ```py
 # encode and pad sequences
@@ -411,7 +411,7 @@ def encode_sequences(tokenizer, length, lines):
 
 输出序列需要进行单热编码。这是因为模型将预测词汇表中每个单词作为输出的概率。
 
-下面的函数 _encode_output（）_ 将对英文输出序列进行单热编码。
+下面的函数`encode_output()`将对英文输出序列进行单热编码。
 
 ```py
 # one hot encode target sequence
@@ -442,7 +442,7 @@ testY = encode_output(testY, eng_vocab_size)
 
 我们将在这个问题上使用编码器 - 解码器 LSTM 模型。在这种架构中，输入序列由称为编码器的前端模型编码，然后由称为解码器的后端模型逐字解码。
 
-下面的函数 _define_model（）_ 定义了模型，并采用了许多用于配置模型的参数，例如输入和输出词汇的大小，输入和输出短语的最大长度以及数字用于配置模型的内存单元。
+下面的函数`define_model()`定义了模型，并采用了许多用于配置模型的参数，例如输入和输出词汇的大小，输入和输出短语的最大长度以及数字用于配置模型的内存单元。
 
 该模型使用有效的 Adam 方法训练随机梯度下降并最小化分类损失函数，因为我们将预测问题框定为多类分类。
 
@@ -705,7 +705,7 @@ def word_for_id(integer, tokenizer):
 
 我们可以为转换中的每个整数执行此映射，并将结果作为一个单词串返回。
 
-下面的函数 _predict_sequence（）_ 对单个编码的源短语执行此操作。
+下面的函数`predict_sequence()`对单个编码的源短语执行此操作。
 
 ```py
 # generate target given source sequence
@@ -731,7 +731,7 @@ def predict_sequence(model, tokenizer, source):
 
 *   [计算 Python 中文本的 BLEU 分数的温和介绍](https://machinelearningmastery.com/calculate-bleu-score-for-text-python/)
 
-下面的 _evaluate_model（）_ 函数实现了这一点，为提供的数据集中的每个短语调用上述 _predict_sequence（）_ 函数。
+下面的`evaluate_model()`函数实现了这一点，为提供的数据集中的每个短语调用上述`predict_sequence()`函数。
 
 ```py
 # evaluate the skill of the model

@@ -35,7 +35,7 @@
 
 这些秘籍中的一个警告是 [cross_val_score](http://scikit-learn.org/stable/modules/generated/sklearn.cross_validation.cross_val_score.html) 函数用于报告每个秘籍中的表现。它允许使用将要讨论的不同评分指标，但报告所有得分以便可以对它们进行排序升序（最高分是最好的）。
 
-一些评估指标（如均方误差）是自然下降的分数（最小分数最好），因此 _cross_val_score（）_ 函数报告为负数。这一点很重要，因为有些分数会被报告为负数，根据定义，它们永远不会是负数。
+一些评估指标（如均方误差）是自然下降的分数（最小分数最好），因此`cross_val_score()`函数报告为负数。这一点很重要，因为有些分数会被报告为负数，根据定义，它们永远不会是负数。
 
 您可以在页面上了解更多关于 scikit-learn 支持的机器学习算法表现指标[模型评估：量化预测质量](http://scikit-learn.org/stable/modules/model_evaluation.html)。
 
@@ -115,7 +115,7 @@ results = model_selection.cross_val_score(model, X, Y, cv=kfold, scoring=scoring
 print("Logloss: %.3f (%.3f)") % (results.mean(), results.std())
 ```
 
-较小的 logloss 更好，0 表示完美的 logloss。如上所述，当使用 _cross_val_score（）_ 函数时，度量被反转为上升。
+较小的 logloss 更好，0 表示完美的 logloss。如上所述，当使用`cross_val_score()`函数时，度量被反转为上升。
 
 ```
 Logloss: -0.493 (0.047)
@@ -206,7 +206,7 @@ print(matrix)
 
 在处理分类问题时，Scikit-learn 确实提供了便利报告，使您可以使用多种方法快速了解模型的准确性。
 
-_classification_report（）_ 函数显示每个类的精度，召回率，f1 分数和支持。
+`classification_report()`函数显示每个类的精度，召回率，f1 分数和支持。
 
 下面的示例演示了有关二元分类问题的报告。
 
@@ -280,7 +280,7 @@ results = model_selection.cross_val_score(model, X, Y, cv=kfold, scoring=scoring
 print("MAE: %.3f (%.3f)") % (results.mean(), results.std())
 ```
 
-值 0 表示没有错误或完美预测。与 logloss 一样，该指标由 _cross_val_score（）_ 函数反转。
+值 0 表示没有错误或完美预测。与 logloss 一样，该指标由`cross_val_score()`函数反转。
 
 ```
 MAE: -4.005 (2.084)

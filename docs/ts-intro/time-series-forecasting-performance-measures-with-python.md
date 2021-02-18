@@ -86,13 +86,13 @@ Bias: -0.100000
 
 [平均绝对误差](https://en.wikipedia.org/wiki/Mean_absolute_error)或 MAE 计算为预测误差值的平均值，其中所有预测值都被强制为正值。
 
-强制值为正值称为绝对值。这由绝对函数 _abs（）_ 表示，或者在数学上显示为值周围的两个管道字符： _| value |_ 。
+强制值为正值称为绝对值。这由绝对函数`abs()`表示，或者在数学上显示为值周围的两个管道字符： _| value |_ 。
 
 ```py
 mean_absolute_error = mean( abs(forecast_error) )
 ```
 
-其中 _abs（）_ 使值为正，`forecast_error`是一个或一系列预测误差， _mean（）_ 计算平均值。
+其中`abs()`使值为正，`forecast_error`是一个或一系列预测误差，`mean()`计算平均值。
 
 我们可以使用 scikit-learn 库中的 [mean_absolute_error（）](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_absolute_error.html#sklearn.metrics.mean_absolute_error)函数来计算预测列表的平均绝对误差。以下示例演示了此功能。
 
@@ -150,7 +150,7 @@ MSE: 0.022000
 rmse = sqrt(mean_squared_error)
 ```
 
-这可以通过使用 _sqrt（）_ 数学函数计算平均误差，使用 _mean_squared_error（）_ scikit-learn 函数计算得出。
+这可以通过使用`sqrt()`数学函数计算平均误差，使用`mean_squared_error()`scikit-learn 函数计算得出。
 
 ```py
 from sklearn.metrics import mean_squared_error

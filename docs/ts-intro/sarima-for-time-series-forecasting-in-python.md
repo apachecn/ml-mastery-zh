@@ -207,7 +207,7 @@ model_fit = model.fit()
 
 适合后，该模型可用于进行预测。
 
-可以通过在调用 fit 返回的`SARIMAXResults`对象上调用 _forecast（）_ 或 _predict（）_ 函数来进行预测。
+可以通过在调用 fit 返回的`SARIMAXResults`对象上调用`forecast()`或`predict()`函数来进行预测。
 
 [forecast（）函数](http://www.statsmodels.org/dev/generated/statsmodels.tsa.statespace.sarimax.SARIMAXResults.forecast.html)采用单个参数指定要预测的采样时间步数，或者如果未提供参数则采用一步预测。
 
@@ -222,9 +222,9 @@ model_fit = model.fit()
 yhat = model_fit.forecast()
 ```
 
-_predict（）_ 函数需要指定开始和结束日期或索引。
+`predict()`函数需要指定开始和结束日期或索引。
 
-此外，如果在定义模型时提供了外生变量，则它们也必须在 _predict（）_ 函数的预测期内提供。
+此外，如果在定义模型时提供了外生变量，则它们也必须在`predict()`函数的预测期内提供。
 
 ```py
 # specify training data

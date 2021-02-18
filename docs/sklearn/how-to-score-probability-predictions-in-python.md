@@ -273,7 +273,7 @@ BSS = 1 - (BS / BS_ref)
 
 Brier 技能分数报告了概率预测相对于朴素预测的相对技能。
 
-对 scikit-learn API 的一个很好的更新是将参数添加到 _brier_score_loss（）_ 以支持 Brier 技能分数的计算。
+对 scikit-learn API 的一个很好的更新是将参数添加到`brier_score_loss()`以支持 Brier 技能分数的计算。
 
 ![Line Plot of Predicting Log Loss for Imbalanced Dataset](img/cb1e0d8825a3d33a345063df82180fa7.jpg)
 

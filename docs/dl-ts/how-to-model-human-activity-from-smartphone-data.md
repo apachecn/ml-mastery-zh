@@ -176,7 +176,7 @@
 dataframe = read_csv(filepath, header=None, delim_whitespace=True)
 ```
 
-我们可以将它包装在名为 _load_file（）_ 的函数中。下面列出了此功能的完整示例。
+我们可以将它包装在名为`load_file()`的函数中。下面列出了此功能的完整示例。
 
 ```py
 # load dataset
@@ -209,11 +209,11 @@ print(data.shape)
 
 这有助于分析，并且是对诸如卷积神经网络和循环神经网络的深度学习模型的期望。
 
-我们可以通过多次调用上面的 _load_file（）_ 函数来实现这一点，对于组中的每个文件一次。
+我们可以通过多次调用上面的`load_file()`函数来实现这一点，对于组中的每个文件一次。
 
 一旦我们将每个文件作为 NumPy 数组加载，我们就可以将所有三个数组组合或堆叠在一起。我们可以使用 [dstack（）NumPy 函数](https://www.numpy.org/devdocs/reference/generated/numpy.dstack.html)来确保每个数组的堆叠方式使得要素在第三维中分离，正如我们所希望的那样。
 
-函数 _load_group（）_ 对文件名列表实现此行为，如下所示。
+函数`load_group()`对文件名列表实现此行为，如下所示。
 
 ```py
 # load a list of files, such as x, y, z data for a given variable
@@ -267,7 +267,7 @@ print(total_acc.shape)
 
 给定训练和测试文件夹中的并行结构，我们可以开发一个新函数来加载给定文件夹的所有输入和输出数据。该函数可以构建要加载的所有 9 个数据文件的列表，将它们作为一个具有 9 个特征的 NumPy 数组加载，然后加载包含输出类的数据文件。
 
-下面的 _load_dataset（）_ 函数实现了这种行为。它可以被称为“`train`”组或“`test`”组，作为字符串参数传递。
+下面的`load_dataset()`函数实现了这种行为。它可以被称为“`train`”组或“`test`”组，作为字符串参数传递。
 
 ```py
 # load a dataset group, such as train or test
@@ -356,7 +356,7 @@ print(testX.shape, testy.shape)
 
 我们可以开发一个函数来总结输出变量的细分，例如： y 变量。
 
-下面的函数 _class_breakdown（）_ 实现了这种行为，首先将提供的 NumPy 数组包装在 DataFrame 中，按类值对行进行分组，并计算每个组的大小（行数）。然后总结结果，包括计数和百分比。
+下面的函数`class_breakdown()`实现了这种行为，首先将提供的 NumPy 数组包装在 DataFrame 中，按类值对行进行分组，并计算每个组的大小（行数）。然后总结结果，包括计数和百分比。
 
 ```py
 # summarize the balance of classes in an output variable column
@@ -467,7 +467,7 @@ trainX, trainy = load_dataset('train', 'HARDataset/')
 
 接下来，我们可以在'`train`'目录中加载' _subject_train.txt_ '，该目录提供行到它所属主题的映射。
 
-我们可以使用 _load_file（）_ 函数加载这个文件。加载后，我们还可以使用 _unique（）_ NumPy 函数来检索训练数据集中的唯一主题列表。
+我们可以使用`load_file()`函数加载这个文件。加载后，我们还可以使用`unique()`NumPy 函数来检索训练数据集中的唯一主题列表。
 
 ```py
 sub_map = load_file('HARDataset/train/subject_train.txt')
@@ -479,7 +479,7 @@ print(train_subjects)
 
 我们可以通过查找属于给定主题的所有行号并使用这些行号从训练数据集中加载的 X 和 y 数据中选择样本来完成此操作。
 
-下面的 _data_for_subject（）_ 函数实现了这种行为。它将获取加载的训练数据，行号到主题的加载映射，以及我们感兴趣的主题的主题标识号，并将返回`X`和`y`仅针对该主题的数据。
+下面的`data_for_subject()`函数实现了这种行为。它将获取加载的训练数据，行号到主题的加载映射，以及我们感兴趣的主题的主题标识号，并将返回`X`和`y`仅针对该主题的数据。
 
 ```py
 # get all data for one subject
@@ -494,7 +494,7 @@ def data_for_subject(X, y, sub_map, sub_id):
 
 数据由具有重叠的窗口组成。我们可以编写一个函数来消除这种重叠，并将窗口向下挤压给定变量，将其压缩成一个可以直接绘制为线图的长序列。
 
-下面的 _to_series（）_ 函数对给定变量实现此行为，例如窗户阵列。
+下面的`to_series()`函数对给定变量实现此行为，例如窗户阵列。
 
 ```py
 # convert a series of windows to a 1D list
@@ -512,7 +512,7 @@ def to_series(windows):
 
 每个系列将具有相同数量的时间步长（x 轴的长度），因此，为每个变量创建一个子图并垂直对齐所有图可能很有用，这样我们就可以比较每个变量的运动。
 
-下面的 _plot_subject（）_ 函数为单个主题的`X`和`y`数据实现此行为。该函数采用与 _load_dataset（）_ 函数中加载的变量（第 3 轴）相同的顺序。每个情节都会添加粗略的标题，因此我们不会轻易混淆我们正在看的内容。
+下面的`plot_subject()`函数为单个主题的`X`和`y`数据实现此行为。该函数采用与`load_dataset()`函数中加载的变量（第 3 轴）相同的顺序。每个情节都会添加粗略的标题，因此我们不会轻易混淆我们正在看的内容。
 
 ```py
 # plot the data for one subject
@@ -693,7 +693,7 @@ sub_id = train_subjects[1]
 
 我们可以通过绘制和比较受试者的运动数据的直方图来检查这一点。一种有用的方法是为每个受试者创建一个图并绘制给定数据的所有三个轴（例如总加速度），然后对多个受试者重复此操作。可以修改绘图以使用相同的轴并水平对齐，以便可以比较跨主题的每个变量的分布。
 
-下面的 _plot_subject_histograms（）_ 函数实现了这种行为。该函数采用加载的数据集和行到主题的映射以及要绘制的最大主题数，默认情况下固定为 10。
+下面的`plot_subject_histograms()`函数实现了这种行为。该函数采用加载的数据集和行到主题的映射以及要绘制的最大主题数，默认情况下固定为 10。
 
 为每个主题创建一个绘图，并将一个数据类型的三个变量绘制为具有 100 个二进制位的直方图，以帮助使分布明显。每个图共享相同的轴，该轴固定在-1 和 1 的边界。
 
@@ -818,7 +818,7 @@ plot_subject_histograms(X, y, sub_map)
 
 10 个受试者的总加速度数据的直方图
 
-我们可以更新 _plot_subject_histograms（）_ 函数，接下来绘制身体加速度的分布。更新的功能如下所示。
+我们可以更新`plot_subject_histograms()`函数，接下来绘制身体加速度的分布。更新的功能如下所示。
 
 ```py
 # plot histograms for multiple subjects
@@ -892,7 +892,7 @@ def plot_subject_histograms(X, y, sub_map, n=10):
 
 我们可以通过创建每个活动的直方图来检查这一点，每个图上给定数据类型的三个轴。同样，可以水平排列图以比较每个数据轴的活动分布。我们希望看到各地活动的分布存在差异。
 
-首先，我们必须按活动对主题的跟踪进行分组。下面的 _data_by_activity（）_ 函数实现了这种行为。
+首先，我们必须按活动对主题的跟踪进行分组。下面的`data_by_activity()`函数实现了这种行为。
 
 ```py
 # group data by activity
@@ -903,7 +903,7 @@ def data_by_activity(X, y, activities):
 
 我们现在可以为给定主题的每个活动创建绘图。
 
-下面的 _plot_activity_histograms（）_ 函数为给定主题的跟踪数据实现此功能。
+下面的`plot_activity_histograms()`函数为给定主题的跟踪数据实现此功能。
 
 首先，按活动对数据进行分组，然后为每个活动创建一个子图，并将数据类型的每个轴添加为直方图。该函数仅枚举数据的前三个特征，即总加速度变量。
 
@@ -1035,7 +1035,7 @@ plot_activity_histograms(subX, suby)
 
 按活动计算的总加速度数据的直方图
 
-我们可以使用 _plot_activity_histograms（）_ 的更新版本重新运行相同的示例，该版本将绘制车身加速度数据。
+我们可以使用`plot_activity_histograms()`的更新版本重新运行相同的示例，该版本将绘制车身加速度数据。
 
 更新的功能如下所示。
 
@@ -1117,7 +1117,7 @@ def plot_activity_histograms(X, y):
 
 审查这些数据的一种方便方法是将分布总结为箱线图，显示中位数（线），中间 50％（方框），数据的一般范围（四分位数间距）和异常值（以点为单位） 。
 
-下面的函数 _plot_activity_durations_by_subject（）_ 通过首先按主题分割数据集，然后按活动分割主题数据并计算在每个活动上花费的行，然后最终创建持续时间测量的每个活动的箱线图来实现此行为。
+下面的函数`plot_activity_durations_by_subject()`通过首先按主题分割数据集，然后按活动分割主题数据并计算在每个活动上花费的行，然后最终创建持续时间测量的每个活动的箱线图来实现此行为。
 
 ```py
 # plot activity durations by subject

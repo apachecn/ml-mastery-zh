@@ -124,7 +124,7 @@ scikit-learn 库提供了在评估期间管道模型的能力。这允许在用�
 
 我们可以定义一个函数，在评估之前准备给定的模型，以允许在抽样检查过程中使用特定的变换。它们将以一揽子方式对所有模型进行。这对于执行标准化，规范化和特征选择等操作非常有用。
 
-我们将定义一个名为 _make_pipeline（）_ 的函数，它接受一个已定义的模型并返回一个管道。下面是准备管道的示例，该管道将首先标准化输入数据，然后在拟合模型之前对其进行标准化。
+我们将定义一个名为`make_pipeline()`的函数，它接受一个已定义的模型并返回一个管道。下面是准备管道的示例，该管道将首先标准化输入数据，然后在拟合模型之前对其进行标准化。
 
 ```
 # create a feature preparation pipeline for a model
@@ -147,9 +147,9 @@ def make_pipeline(model):
 
 我们将使用 k-fold 交叉验证评估模型的标准。对每个定义的模型的评估将产生结果列表。这是因为该模型的 10 个不同版本将被拟合和评估，从而得到 k 分数列表。
 
-我们将定义一个名为 _evaluate_model（）_ 的函数，该函数将获取数据，定义的模型，多个折叠以及用于评估结果的表现指标。它将返回分数列表。
+我们将定义一个名为`evaluate_model()`的函数，该函数将获取数据，定义的模型，多个折叠以及用于评估结果的表现指标。它将返回分数列表。
 
-该函数调用 _make_pipeline（）_ 为定义的模型准备所需的任何数据变换，然后调用 [cross_val_score（）](http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html) scikit-learn 函数。重要的是，`n_jobs`参数设置为-1，以允许模型评估并行发生，从而利用硬件上可用的核心数量。
+该函数调用`make_pipeline()`为定义的模型准备所需的任何数据变换，然后调用 [cross_val_score（）](http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html) scikit-learn 函数。重要的是，`n_jobs`参数设置为-1，以允许模型评估并行发生，从而利用硬件上可用的核心数量。
 
 ```
 # evaluate a single model
@@ -167,7 +167,7 @@ def evaluate_model(X, y, model, folds, metric):
 
 在抽查时我们不关心异常或警告。我们只想知道哪些有效，哪些有效。因此，我们可以在评估每个模型时捕获异常并忽略所有警告。
 
-名为 _robust_evaluate_model（）_ 的函数实现了此行为。 _evaluate_model（）_ 的调用方式是捕获异常并忽略警告。如果发生异常并且给定模型无法得到结果，则返回 _ 无 _ 结果。
+名为`robust_evaluate_model()`的函数实现了此行为。`evaluate_model()`的调用方式是捕获异常并忽略警告。如果发生异常并且给定模型无法得到结果，则返回 _ 无 _ 结果。
 
 ```
 # evaluate a model and try to trap errors and and hide warnings
@@ -184,7 +184,7 @@ def robust_evaluate_model(X, y, model, folds, metric):
 
 最后，我们可以定义顶级函数来评估已定义模型的列表。
 
-我们将定义一个名为 _evaluate_models（）_ 的函数，它将模型字典作为参数，并将模型名称字典返回到结果列表。
+我们将定义一个名为`evaluate_models()`的函数，它将模型字典作为参数，并将模型名称字典返回到结果列表。
 
 交叉验证过程中的折叠数可以由默认为 10 的可选参数指定。根据模型的预测计算的度量也可以由可选参数指定，默认为分类精度。
 
@@ -214,7 +214,7 @@ def evaluate_models(X, y, models, folds=10, metric='accuracy'):
 	return results
 ```
 
-请注意，如果由于某种原因您想要查看警告和错误，您可以更新 _evaluate_models（）_ 以直接调用 _evaluate_model（）_ 函数，绕过强大的错误处理。在测试静默失败的新方法或方法配置时，我发现这很有用。
+请注意，如果由于某种原因您想要查看警告和错误，您可以更新`evaluate_models()`以直接调用`evaluate_model()`函数，绕过强大的错误处理。在测试静默失败的新方法或方法配置时，我发现这很有用。
 
 ### 总结结果
 
@@ -231,7 +231,7 @@ def evaluate_models(X, y, models, folds=10, metric='accuracy'):
 
 盒子和须状图假设没有分布，并提供了一种直观的方法，可以直接比较模型的分数在中位数表现和分数差异方面的分布。
 
-我们将定义一个名为 _summarize_results（）_ 的函数，该函数获取结果字典，打印结果摘要，并创建保存到文件的 boxplot 图像。该函数接受一个参数来指定评估得分是否最大化，默认情况下为`True`。要汇总的结果数也可以作为可选参数提供，默认为 10。
+我们将定义一个名为`summarize_results()`的函数，该函数获取结果字典，打印结果摘要，并创建保存到文件的 boxplot 图像。该函数接受一个参数来指定评估得分是否最大化，默认情况下为`True`。要汇总的结果数也可以作为可选参数提供，默认为 10。
 
 该功能首先在打印摘要和创建框和须图之前对得分进行排序。
 
@@ -310,7 +310,7 @@ def load_dataset():
 
 此外，我为一些算法添加了多种配置，如 Ridge，kNN 和 SVM，以便为他们提供很好的解决问题的机会。
 
-下面列出了完整的 _define_models（）_ 函数。
+下面列出了完整的`define_models()`函数。
 
 ```
 # create a dict of standard models to evaluate {name:object}
@@ -548,7 +548,7 @@ Rank=10, Name=ridge-0.5, Score=0.848 (+/- 0.038)
 
 我们可以使用 [make_regression（）函数](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_regression.html#sklearn.datasets.make_regression)来生成一个人为的回归问题，包括 1,000 个示例和 50 个特征，其中一些是冗余的。
 
-定义的 _load_dataset（）_ 功能如下所示。
+定义的`load_dataset()`功能如下所示。
 
 ```
 # load the dataset, returns X and y elements
@@ -556,7 +556,7 @@ def load_dataset():
 	return make_regression(n_samples=1000, n_features=50, noise=0.1, random_state=1)
 ```
 
-然后我们可以指定一个 _get_models（）_ 函数来定义一套回归方法。
+然后我们可以指定一个`get_models()`函数来定义一套回归方法。
 
 Scikit-learn 提供了广泛的线性回归方法，非常出色。并非所有这些都可能是您的问题所必需的。我建议使用最小的线性回归和弹性网，后者有一套很好的 alpha 和 lambda 参数。
 
@@ -591,7 +591,7 @@ Scikit-learn 提供了广泛的线性回归方法，非常出色。并非所有�
 *   额外的树木
 *   梯度增压机
 
-完整的 _get_models（）_ 功能如下所示。
+完整的`get_models()`功能如下所示。
 
 ```
 # create a dict of standard models to evaluate {name:object}
@@ -638,14 +638,14 @@ def get_models(models=dict()):
 
 默认情况下，框架使用分类准确性作为评估模型预测的方法。
 
-这对回归没有意义，我们可以改变这对回归更有意义的东西，例如均方误差。我们可以通过在调用 _evaluate_models（）_ 函数时传递 _metric ='neg_mean_squared_error'_ 参数来做到这一点。
+这对回归没有意义，我们可以改变这对回归更有意义的东西，例如均方误差。我们可以通过在调用`evaluate_models()`函数时传递 _metric ='neg_mean_squared_error'_ 参数来做到这一点。
 
 ```
 # evaluate models
 results = evaluate_models(models, metric='neg_mean_squared_error')
 ```
 
-请注意，默认情况下，scikit-learn 会反转错误分数，以便最大化而不是最小化。这就是为什么均方误差为负，并在汇总时会有负号。因为分数被反转，我们可以继续假设我们在 _summarize_results（）_ 函数中最大化分数，并且不需要像我们在使用时所预期的那样指定 _maximize = False_ 。错误指标。
+请注意，默认情况下，scikit-learn 会反转错误分数，以便最大化而不是最小化。这就是为什么均方误差为负，并在汇总时会有负号。因为分数被反转，我们可以继续假设我们在`summarize_results()`函数中最大化分数，并且不需要像我们在使用时所预期的那样指定 _maximize = False_ 。错误指标。
 
 完整的代码示例如下所示。
 
@@ -1125,7 +1125,7 @@ XGBoost 分类问题前 10 个抽样检验算法的箱线图
 
 例如，在评估诸如袋装或增强决策树之类的随机算法时，最好在相同的训练/测试集（称为重复）上多次运行每个实验，以便考虑学习算法的随机性质。
 
-我们可以更新 _evaluate_model（）_ 函数来重复给定模型的 n 次评估，每次都有不同的数据分割，然后返回所有分数。例如，10 次交叉验证的三次重复将导致每次 30 分，以计算模型的平均表现。
+我们可以更新`evaluate_model()`函数来重复给定模型的 n 次评估，每次都有不同的数据分割，然后返回所有分数。例如，10 次交叉验证的三次重复将导致每次 30 分，以计算模型的平均表现。
 
 ```
 # evaluate a single model
@@ -1147,7 +1147,7 @@ def evaluate_model(X, y, model, folds, repeats, metric):
 
 *   [如何评估深度学习模型的技巧](https://machinelearningmastery.com/evaluate-skill-deep-learning-models/)
 
-然后我们可以更新 _robust_evaluate_model（）_ 函数来传递重复参数和 _evaluate_models（）_ 函数来定义默认值，例如 3。
+然后我们可以更新`robust_evaluate_model()`函数来传递重复参数和`evaluate_models()`函数来定义默认值，例如 3。
 
 下面列出了具有三次重复模型评估的二元分类示例的完整示例。
 
@@ -1341,7 +1341,7 @@ Rank=10, Name=ridge-0.5, Score=0.848 (+/- 0.038)
 
 我们可以更新框架，以便对每个模型的多个不同表示进行抽查。
 
-一种方法是更新 _evaluate_models（）_ 函数，以便我们可以提供可用于每个已定义模型的 _make_pipeline（）_ 函数列表。
+一种方法是更新`evaluate_models()`函数，以便我们可以提供可用于每个已定义模型的`make_pipeline()`函数列表。
 
 ```
 # evaluate a dict of models {name:object}, returns {name:score}
@@ -1365,7 +1365,7 @@ def evaluate_models(X, y, models, pipe_funcs, folds=10, metric='accuracy'):
 	return results
 ```
 
-然后，可以将所选择的流水线函数向下传递给 _robust_evaluate_model（）_ 函数以及可以使用它的 _evaluate_model（）_ 函数。
+然后，可以将所选择的流水线函数向下传递给`robust_evaluate_model()`函数以及可以使用它的`evaluate_model()`函数。
 
 然后我们可以定义一堆不同的管道函数;例如：
 
@@ -1410,7 +1410,7 @@ def pipeline_std_norm(model):
 	return pipeline
 ```
 
-然后创建一个可以提供给 _evaluate_models（）_ 函数的函数名列表。
+然后创建一个可以提供给`evaluate_models()`函数的函数名列表。
 
 ```
 # define transform pipelines

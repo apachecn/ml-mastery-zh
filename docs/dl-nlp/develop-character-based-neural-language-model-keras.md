@@ -94,7 +94,7 @@ And pecked off her nose.
 
 我们必须将文本加载到内存中，以便我们可以使用它。
 
-下面是一个名为 _load_doc（）_ 的函数，它将加载给定文件名的文本文件并返回加载的文本。
+下面是一个名为`load_doc()`的函数，它将加载给定文件名的文本文件并返回加载的文本。
 
 ```py
 # load doc into memory
@@ -254,7 +254,7 @@ ng of sixpe
 
 第一步是从' _char_sequences.txt_ '加载准备好的字符序列数据。
 
-我们可以使用上一节中开发的相同 _load_doc（）_ 函数。加载后，我们按新行分割文本，以提供准备编码的序列列表。
+我们可以使用上一节中开发的相同`load_doc()`函数。加载后，我们按新行分割文本，以提供准备编码的序列列表。
 
 ```py
 # load doc into memory
@@ -326,7 +326,7 @@ X, y = sequences[:,:-1], sequences[:,-1]
 
 接下来，我们需要对每个字符进行一次热编码。也就是说，只要词汇表（38 个元素）标记为特定字符，每个字符就变成一个向量。这为网络提供了更精确的输入表示。它还为网络预测提供了明确的目标，其中模型可以输出字符的概率分布，并与所有 0 值的理想情况进行比较，实际的下一个字符为 1。
 
-我们可以使用 Keras API 中的 _to_categorical（）_ 函数对输入和输出序列进行热编码。
+我们可以使用 Keras API 中的`to_categorical()`函数对输入和输出序列进行热编码。
 
 ```py
 sequences = [to_categorical(x, num_classes=vocab_size) for x in X]
@@ -385,7 +385,7 @@ model.fit(X, y, epochs=100, verbose=2)
 
 模型适合后，我们将其保存到文件中供以后使用。
 
-Keras 模型 API 提供 _save（）_ 函数，我们可以使用它将模型保存到单个文件，包括权重和拓扑信息。
+Keras 模型 API 提供`save()`函数，我们可以使用它将模型保存到单个文件，包括权重和拓扑信息。
 
 ```py
 # save the model to file
@@ -493,7 +493,7 @@ Epoch 100/100
 
 第一步是将保存的模型加载到文件' _model.h5_ '中。
 
-我们可以使用 Keras API 中的 _load_model（）_ 函数。
+我们可以使用 Keras API 中的`load_model()`函数。
 
 ```py
 # load the model
@@ -522,7 +522,7 @@ mapping = load(open('mapping.pkl', 'rb'))
 encoded = [mapping[char] for char in in_text]
 ```
 
-接下来，序列需要使用 _to_categorical（）_ Keras 函数进行热编码。
+接下来，序列需要使用`to_categorical()`Keras 函数进行热编码。
 
 ```py
 # one hot encode
@@ -531,7 +531,7 @@ encoded = to_categorical(encoded, num_classes=len(mapping))
 
 然后我们可以使用该模型来预测序列中的下一个字符。
 
-我们使用 _predict_classes（）_ 而不是 _predict（）_ 来直接选择具有最高概率的字符的整数，而不是在整个字符集中获得完整的概率分布。
+我们使用`predict_classes()`而不是`predict()`来直接选择具有最高概率的字符的整数，而不是在整个字符集中获得完整的概率分布。
 
 ```py
 # predict character
@@ -550,9 +550,9 @@ for char, index in mapping.items():
 
 然后可以将此字符添加到输入序列中。然后，我们需要通过截断输入序列文本中的第一个字符来确保输入序列是 10 个字符。
 
-我们可以使用 Keras API 中的 _pad_sequences（）_ 函数来执行此截断操作。
+我们可以使用 Keras API 中的`pad_sequences()`函数来执行此截断操作。
 
-将所有这些放在一起，我们可以定义一个名为 _generate_seq（）_ 的新函数，用于使用加载的模型生成新的文本序列。
+将所有这些放在一起，我们可以定义一个名为`generate_seq()`的新函数，用于使用加载的模型生成新的文本序列。
 
 ```py
 # generate a sequence of characters with a language model

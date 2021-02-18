@@ -87,7 +87,7 @@ pyplot.show()
 
 因为该示例是完全二次的，我们期望变换数据的线图显示直线。因为平方序列的源是线性的，我们期望直方图显示均匀分布。
 
-下面的示例对时间序列执行 _sqrt（）_ 变换并绘制结果。
+下面的示例对时间序列执行`sqrt()`变换并绘制结果。
 
 ```py
 from matplotlib import pyplot
@@ -259,7 +259,7 @@ _scipy.stats_ 库提供了 Box-Cox 变换的实现。 [boxcox（）](https://doc
 *  `lambda`= 0.5 是平方根变换。
 *  `lambda`= 1.0 是无变换。
 
-例如，我们可以使用 _boxcox（）_ 函数执行日志转换，如下所示：
+例如，我们可以使用`boxcox()`函数执行日志转换，如下所示：
 
 ```py
 from pandas import Series

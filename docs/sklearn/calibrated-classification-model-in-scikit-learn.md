@@ -194,7 +194,7 @@ CalibratedClassifierCV 类支持两种类型的概率校准;具体而言，参�
 
 SVM 是一个很好的候选校准模型，因为它本身不能预测概率，这意味着概率通常是未经校准的。
 
-**关于 SVM** 的注释：可以通过在拟合模型上调用 _decision_function（）_ 函数而不是通常的 _predict_proba（）_ 函数来预测概率。概率不是标准化的，但可以通过将'`normalize`'参数设置为'`True`'来调用 _calibration_curve（）_ 函数时进行归一化。
+**关于 SVM** 的注释：可以通过在拟合模型上调用`decision_function()`函数而不是通常的`predict_proba()`函数来预测概率。概率不是标准化的，但可以通过将'`normalize`'参数设置为'`True`'来调用`calibration_curve()`函数时进行归一化。
 
 以下示例拟合测试问题的 SVM 模型，预测概率，并将概率的校准绘制为可靠性图，
 

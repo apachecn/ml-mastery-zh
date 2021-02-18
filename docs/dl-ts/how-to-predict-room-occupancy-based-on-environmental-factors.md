@@ -102,7 +102,7 @@
 ...
 ```
 
-然后我们可以使用 Pandas _read_csv（）_ 函数加载数据文件，如下所示：
+然后我们可以使用 Pandas`read_csv()`函数加载数据文件，如下所示：
 
 ```py
 # load all data

@@ -369,7 +369,7 @@ LSTM 网络的好处是它们能够维持状态并学习序列。
 
 *   **期望 2** ：期​​望没有改组的无状态 LSTM 将通过改组跑赢无状态 LSTM。
 
-代码更改为上面的有状态 LSTM 示例以使其无状态涉及在 LSTM 层中设置 _ 无状态=假 _ 并使用自动训练时代训练而不是手动。结果将写入名为“ _experiment_stateless.csv_ ”的新文件。更新后的 _fit_lstm（）_ 功能如下所示。
+代码更改为上面的有状态 LSTM 示例以使其无状态涉及在 LSTM 层中设置 _ 无状态=假 _ 并使用自动训练时代训练而不是手动。结果将写入名为“ _experiment_stateless.csv_ ”的新文件。更新后的`fit_lstm()`功能如下所示。
 
 ```py
 # fit an LSTM network to training data
@@ -384,9 +384,9 @@ def fit_lstm(train, batch_size, nb_epoch, neurons):
 	return model
 ```
 
-具有改组实验的无状态涉及在 _fit_lstm（）_ 函数中调用 fit 时将`shuffle`参数设置为`True`。该实验的结果写入文件“ _experiment_stateless_shuffle.csv_ ”。
+具有改组实验的无状态涉及在`fit_lstm()`函数中调用 fit 时将`shuffle`参数设置为`True`。该实验的结果写入文件“ _experiment_stateless_shuffle.csv_ ”。
 
-完整更新的 _fit_lstm（）_ 功能如下所示。
+完整更新的`fit_lstm()`功能如下所示。
 
 ```py
 # fit an LSTM network to training data
@@ -463,7 +463,7 @@ max    114.958430  100.334725          99.870445
 理解有状态和无状态 LSTM 之间差异的关键是“当内部状态被重置时”。
 
 *   **无状态**：在无状态 LSTM 配置中，内部状态在每个训练批次或每个批次进行预测后重置。
-*   **有状态**：在有状态 LSTM 配置中，只有在调用 _reset_state（）_ 功能时才会复位内部状态。
+*   **有状态**：在有状态 LSTM 配置中，只有在调用`reset_state()`功能时才会复位内部状态。
 
 如果这是唯一的区别，则可以使用大批量大小来模拟具有无状态 LSTM 的有状态 LSTM。
 
@@ -471,7 +471,7 @@ max    114.958430  100.334725          99.870445
 
 我们可以使用 Shampoo Sales 数据集将训练数据截断到 12 个月，并将测试数据保留为 12 个月。这将允许无状态 LSTM 使用 12 的批量大小。如果以一次性方式（一个函数调用）执行训练和测试，那么“_ 无状态 _”的内部状态可能是 LSTM 不会被重置，两种配置都会产生相同的结果。
 
-我们将使用第一个实验的有状态结果作为起点。 _forecast_lstm（）_ 功能被修改为在一个步骤中预测一年的观察。 _ 实验（）_ 功能被修改为将训练数据集截断为 12 个月的数据，使用批量大小为 12，并处理从 _forecast_lstm（）_ 返回的批量预测功能。下面列出了这些更新的功能。结果将写入文件“ _experiment_stateful_batch12.csv_ ”。
+我们将使用第一个实验的有状态结果作为起点。`forecast_lstm()`功能被修改为在一个步骤中预测一年的观察。 _ 实验（）_ 功能被修改为将训练数据集截断为 12 个月的数据，使用批量大小为 12，并处理从`forecast_lstm()`返回的批量预测功能。下面列出了这些更新的功能。结果将写入文件“ _experiment_stateful_batch12.csv_ ”。
 
 ```py
 # make a one-step forecast
@@ -519,7 +519,7 @@ def experiment(repeats, series):
 	return error_scores
 ```
 
-我们将使用前一个实验中的无状态 LSTM 配置，将训练模式混洗作为起点。该实验使用与上面列出的相同的 _forecast_lstm（）_ 和 _experiment（）_ 函数。结果写入文件“ _experiment_stateless_batch12.csv_ ”。
+我们将使用前一个实验中的无状态 LSTM 配置，将训练模式混洗作为起点。该实验使用与上面列出的相同的`forecast_lstm()`和`experiment()`函数。结果写入文件“ _experiment_stateless_batch12.csv_ ”。
 
 运行此实验后，您将有两个结果文件：
 
@@ -608,7 +608,7 @@ max          114.567780         110.014679
 
 下面列出了各种重置/不重置和播种/不播种所需的修改。
 
-我们可以通过在每次预测之后在模型上添加对 _reset_states（）_ 的调用来更新 _forecast_lstm（）_ 函数以在每次测试之后更新。更新的 _forecast_lstm（）_ 功能如下所示。
+我们可以通过在每次预测之后在模型上添加对`reset_states()`的调用来更新`forecast_lstm()`函数以在每次测试之后更新。更新的`forecast_lstm()`功能如下所示。
 
 ```py
 # make a one-step forecast
@@ -619,7 +619,7 @@ def forecast_lstm(model, batch_size, X):
 	return yhat[0,0]
 ```
 
-我们可以通过删除对 _reset_states（）_ 的调用来更新 _fit_lstm（）_ 函数，使其在每个迭代后不复位。完整的功能如下所列。
+我们可以通过删除对`reset_states()`的调用来更新`fit_lstm()`函数，使其在每个迭代后不复位。完整的功能如下所列。
 
 ```py
 # fit an LSTM network to training data
@@ -635,7 +635,7 @@ def fit_lstm(train, batch_size, nb_epoch, neurons):
 	return model
 ```
 
-通过循环训练数据集并进行一步预测，我们可以在训练后通过训练数据集对训练数据集进行训练，使 LSTM 状态成为种子。在对测试数据集进行一步预测之前，可以将其添加到 _run（）_ 函数中。更新的 _run（）_ 功能如下所示。
+通过循环训练数据集并进行一步预测，我们可以在训练后通过训练数据集对训练数据集进行训练，使 LSTM 状态成为种子。在对测试数据集进行一步预测之前，可以将其添加到`run()`函数中。更新的`run()`功能如下所示。
 
 ```py
 # run a repeated experiment

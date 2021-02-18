@@ -149,7 +149,7 @@ for chunk_id in chunk_ids:
 	chunks[chunk_id] = values[selection, :]
 ```
 
-下面定义了一个名为 _to_chunks（）_ 的函数，它接受加载数据的 NumPy 数组，并将`chunk_id`的字典返回到块的行。
+下面定义了一个名为`to_chunks()`的函数，它接受加载数据的 NumPy 数组，并将`chunk_id`的字典返回到块的行。
 
 ```py
 # split the dataset by 'chunkID', return a dict of id to rows
@@ -210,7 +210,7 @@ Total Chunks: 208
 
 在使用朴素模型时，我们只对目标变量感兴趣，而不对输入的气象变量感兴趣。因此，我们可以删除输入数据，并使训练和测试数据仅包含每个块的 39 个目标变量，以及块和观察时间内的位置。
 
-下面的 _split_train_test（）_ 函数实现了这种行为;给定一个块的字典，它将每个分成训练和测试块数据。
+下面的`split_train_test()`函数实现了这种行为;给定一个块的字典，它将每个分成训练和测试块数据。
 
 ```py
 # split each chunk into train/test sets
@@ -255,7 +255,7 @@ def get_lead_times():
 
 如果我们在测试集中找到匹配的行，则保存它，否则生成一行 NaN 观测值。
 
-下面的函数 _to_forecasts（）_ 实现了这一点，并为每个块的每个预测提前期返回一行 NumPy 数组。
+下面的函数`to_forecasts()`实现了这一点，并为每个块的每个预测提前期返回一行 NumPy 数组。
 
 ```py
 # convert the rows in a test chunk to forecasts
@@ -398,7 +398,7 @@ Test Rows: (2070, 42)
 
 模型有望以这种格式进行预测。
 
-我们还可以重新构建测试数据集以使此数据集进行比较。下面的 _prepare_test_forecasts（）_ 函数实现了这一点。
+我们还可以重新构建测试数据集以使此数据集进行比较。下面的`prepare_test_forecasts()`函数实现了这一点。
 
 ```py
 # convert the test dataset in chunks to [chunk][variable][time] format
@@ -420,7 +420,7 @@ def prepare_test_forecasts(test_chunks):
 
 如果提前期不包含测试集中的数据（例如`NaN`），则不会计算该预测的错误。如果提前期确实在测试集中有数据但预测中没有数据，那么观察的全部大小将被视为错误。最后，如果测试集具有观察值并进行预测，则绝对差值将被记录为误差。
 
-_calculate_error（）_ 函数实现这些规则并返回给定预测的错误。
+`calculate_error()`函数实现这些规则并返回给定预测的错误。
 
 ```py
 # calculate the error between an actual and predicted value
@@ -471,7 +471,7 @@ def evaluate_forecasts(predictions, testset):
 
 一旦我们对模型进行评估，我们就可以呈现它。
 
-下面的 _summarize_error（）_ 函数首先打印模型表现的一行摘要，然后创建每个预测提前期的 MAE 图。
+下面的`summarize_error()`函数首先打印模型表现的一行摘要，然后创建每个预测提前期的 MAE 图。
 
 ```py
 # summarize scores
@@ -503,7 +503,7 @@ def summarize_error(name, total_mae, times_mae):
 
 该函数获取测试集的训练数据集和输入列（块 ID，块中的位置和小时），并返回具有 _[块] [变量] [时间]的预期 3D 格式的所有块的预测 _。
 
-该函数枚举预测中的块，然后枚举 39 个目标列，调用另一个名为 _forecast_variable（）_ 的新函数，以便对给定目标变量的每个提前期进行预测。
+该函数枚举预测中的块，然后枚举 39 个目标列，调用另一个名为`forecast_variable()`的新函数，以便对给定目标变量的每个提前期进行预测。
 
 完整的功能如下所列。
 
@@ -524,11 +524,11 @@ def forecast_chunks(train_chunks, test_input):
 	return array(predictions)
 ```
 
-我们现在可以实现 _forecast_variable（）_ 的一个版本，该版本计算给定系列的平均值，并预测每个提前期的平均值。
+我们现在可以实现`forecast_variable()`的一个版本，该版本计算给定系列的平均值，并预测每个提前期的平均值。
 
-首先，我们必须在所有块中收集目标列中的所有观测值，然后计算观测值的平均值，同时忽略 NaN 值。 _nanmean（）_ NumPy 函数将计算阵列的平均值并忽略`NaN`值。
+首先，我们必须在所有块中收集目标列中的所有观测值，然后计算观测值的平均值，同时忽略 NaN 值。`nanmean()`NumPy 函数将计算阵列的平均值并忽略`NaN`值。
 
-下面的 _forecast_variable（）_ 函数实现了这种行为。
+下面的`forecast_variable()`函数实现了这种行为。
 
 ```py
 # forecast all lead times for one variable
@@ -697,7 +697,7 @@ MAE 按预测带领全球均值时间
 
 考虑到数据似乎显示的非高斯分布，中值可能比使用该数据的均值更有意义地用作集中趋势。
 
-NumPy 提供 _nanmedian（）_ 功能，我们可以在 _forecast_variable（）_ 函数中代替 _nanmean（）_。
+NumPy 提供`nanmedian()`功能，我们可以在`forecast_variable()`函数中代替 _nanmean（）_。
 
 完整更新的示例如下所示。
 
@@ -852,7 +852,7 @@ MAE 预测带领全球中位数的时间
 
 我们在测试数据集中记录一天中的小时数，并在进行预测时将其提供给模型。一个问题是，在某些情况下，测试数据集没有给定提前期的记录，而且必须用`NaN`值发明一个，包括小时的`NaN`值。在这些情况下，不需要预测，因此我们将跳过它们并预测`NaN`值。
 
-下面的 _forecast_variable（）_ 函数实现了这种行为，返回给定变量的每个提前期的预测。
+下面的`forecast_variable()`函数实现了这种行为，返回给定变量的每个提前期的预测。
 
 效率不高，首先为每个变量预先计算每小时的中值，然后使用查找表进行预测可能会更有效。此时效率不是问题，因为我们正在寻找模型表现的基线。
 
@@ -1053,7 +1053,7 @@ MAE 按预测带领时间以全球中位数按天计算
 
 预测块的最后一次非 NaN 观察可能是最简单的模型，通常称为持久性模型或朴素模型。
 
-下面的 _forecast_variable（）_ 函数实现了此预测策略。
+下面的`forecast_variable()`函数实现了此预测策略。
 
 ```py
 # forecast all lead times for one variable
@@ -1236,7 +1236,7 @@ MAE 通过持续性预测提前期
 
 具体来说，我们可以计算出系列的中位数，正如我们在上一节中发现的那样，似乎可以带来更好的表现。
 
-_forecast_variable（）_ 实现了这种本地策略。
+`forecast_variable()`实现了这种本地策略。
 
 ```py
 # forecast all lead times for one variable
@@ -1403,7 +1403,7 @@ MAE by Forecast Lead Time via Local Median
 
 发现这种方法在全球战略中是有效的。尽管存在使用更小数据样本的风险，但仅使用来自块的数据可能是有效的。
 
-下面的 _forecast_variable（）_ 函数实现了这个策略，首先查找具有预测提前期小时的所有行，然后计算给定目标变量的那些行的中值。
+下面的`forecast_variable()`函数实现了这个策略，首先查找具有预测提前期小时的所有行，然后计算给定目标变量的那些行的中值。
 
 ```py
 # forecast all lead times for one variable

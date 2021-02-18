@@ -177,7 +177,7 @@ pyplot.show()
 *   根据过去 24 小时内的天气状况和污染情况预测下一小时的污染情况。
 *   如上所述预测下一小时的污染，并给出下一小时的“预期”天气状况。
 
-我们可以使用博客文章中开发的 _series_to_supervised（）_ 函数来转换数据集：
+我们可以使用博客文章中开发的`series_to_supervised()`函数来转换数据集：
 
 *   [如何将时间序列转换为 Python 中的监督学习问题](http://machinelearningmastery.com/convert-time-series-supervised-learning-problem-python/)
 

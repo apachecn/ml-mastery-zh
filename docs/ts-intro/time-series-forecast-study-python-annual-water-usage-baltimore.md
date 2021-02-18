@@ -159,7 +159,7 @@ Dataset 69, Validation 10
 
 在计算和报告 RMSE 之前，必须反转对数据的任何变换，以使不同方法之间的表现直接相当。
 
-我们可以使用 scikit-learn 库 _mean_squared_error（）_ 中的辅助函数计算 RMSE，它计算预期值列表（测试集）和预测列表之间的均方误差。然后我们可以取这个值的平方根来给我们一个 RMSE 分数。
+我们可以使用 scikit-learn 库`mean_squared_error()`中的辅助函数计算 RMSE，它计算预期值列表（测试集）和预测列表之间的均方误差。然后我们可以取这个值的平方根来给我们一个 RMSE 分数。
 
 例如：
 
@@ -845,7 +845,7 @@ TypeError: __new__() takes at least 3 arguments (1 given)
 
 当我测试它时，这个 bug 似乎也出现在 statsmodels 的 0.8 版本候选版本 1 中。有关详细信息，请参阅 [Zae Myung Kim](http://zaemyung.com/) 的[讨论和解决此 GitHub 问题](https://github.com/statsmodels/statsmodels/pull/3217)。
 
-我们可以使用一个猴子补丁来解决这个问题，该补丁在保存之前将 ___getnewargs __（）_ 实例函数添加到 ARIMA 类。
+我们可以使用一个猴子补丁来解决这个问题，该补丁在保存之前将 ___getnewargs`_()`实例函数添加到 ARIMA 类。
 
 下面的示例将拟合模型保存到正确状态的文件，以便以后可以成功加载。
 
@@ -885,7 +885,7 @@ numpy.save('model_bias.npy', [bias])
 
 一个自然的例子可能是加载模型并进行单一预测。
 
-这是相对简单的，包括恢复保存的模型和偏差并调用 _forecast（）_ 函数。
+这是相对简单的，包括恢复保存的模型和偏差并调用`forecast()`函数。
 
 下面的示例加载模型，对下一个时间步进行预测，并打印预测。
 

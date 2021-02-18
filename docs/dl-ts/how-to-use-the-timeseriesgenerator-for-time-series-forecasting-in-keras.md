@@ -105,7 +105,7 @@ for i in range(len(generator)):
 	...
 ```
 
-从技术上讲，该类不是一个生成器，因为它不是 [Python 生成器](https://wiki.python.org/moin/Generators)，你不能在它上面使用 _next（）_ 函数。
+从技术上讲，该类不是一个生成器，因为它不是 [Python 生成器](https://wiki.python.org/moin/Generators)，你不能在它上面使用`next()`函数。
 
 除了指定时间序列问题的输入和输出方面外，还应该配置一些其他参数;例如：
 
@@ -132,7 +132,7 @@ print(len(generator))
 
 一旦定义了 TimeseriesGenerator 实例，它就可以用于训练神经网络模型。
 
-可以使用 TimeseriesGenerator 作为数据生成器来训练模型。这可以通过使用 _fit_generator（）_ 函数拟合定义的模型来实现。
+可以使用 TimeseriesGenerator 作为数据生成器来训练模型。这可以通过使用`fit_generator()`函数拟合定义的模型来实现。
 
 此函数将生成器作为参数。它还需要`steps_per_epoch`参数来定义每个时期中使用的样本数。可以将此值设置为 TimeseriesGenerator 实例的长度，以使用生成器中的所有样本。
 
@@ -147,7 +147,7 @@ model = ...
 model.fit_generator(generator, steps_per_epoch=len(generator), ...)
 ```
 
-类似地，生成器可用于通过调用 _evaluate_generator（）_ 函数来评估拟合模型，并使用拟合模型使用 _predict_generator（）_ 函数对新数据进行预测。
+类似地，生成器可用于通过调用`evaluate_generator()`函数来评估拟合模型，并使用拟合模型使用`predict_generator()`函数对新数据进行预测。
 
 与数据生成器匹配的模型不必使用 evaluate 和 predict 函数的生成器版本。只有在您希望数据生成器为模型准备数据时，才能使用它们。
 
@@ -252,7 +252,7 @@ model.add(Dense(1))
 model.compile(optimizer='adam', loss='mse')
 ```
 
-然后我们可以使用 _fit_generator（）_ 函数将模型与生成器拟合。我们在生成器中只有一批数据，因此我们将`steps_per_epoch`设置为 1.该模型适用于 200 个时期。
+然后我们可以使用`fit_generator()`函数将模型与生成器拟合。我们在生成器中只有一批数据，因此我们将`steps_per_epoch`设置为 1.该模型适用于 200 个时期。
 
 ```py
 # fit model
@@ -377,7 +377,7 @@ in_seq1 = in_seq1.reshape((len(in_seq1), 1))
 in_seq2 = in_seq2.reshape((len(in_seq2), 1))
 ```
 
-我们现在可以通过调用 _hstack（）_ NumPy 函数将列水平堆叠到数据集中。
+我们现在可以通过调用`hstack()`NumPy 函数将列水平堆叠到数据集中。
 
 ```py
 # horizontally stack columns

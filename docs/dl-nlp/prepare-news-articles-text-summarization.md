@@ -143,7 +143,7 @@ Los Angeles (CNN) --
 
 我们可以先编写一个函数来加载给定文件名的单个文档。数据有一些 unicode 字符，因此我们将通过强制编码为 [UTF-8](https://en.wikipedia.org/wiki/UTF-8) 来加载数据集。
 
-下面名为 _load_doc（）_ 的函数将加载单个文档作为给定文件名的文本。
+下面名为`load_doc()`的函数将加载单个文档作为给定文件名的文本。
 
 ```py
 # load doc into memory
@@ -159,7 +159,7 @@ def load_doc(filename):
 
 接下来，我们需要跳过 stories 目录中的每个文件名并加载它们。
 
-我们可以使用 _listdir（）_ 函数加载目录中的所有文件名，然后依次加载每个文件名。以下名为 _load_stories（）_ 的函数实现了此行为，并为准备加载的文档提供了一个起点。
+我们可以使用`listdir()`函数加载目录中的所有文件名，然后依次加载每个文件名。以下名为`load_stories()`的函数实现了此行为，并为准备加载的文档提供了一个起点。
 
 ```py
 # load all stories in a directory
@@ -174,7 +174,7 @@ def load_stories(directory):
 
 这两点的分割是第一次出现' _@highlight_ '令牌。拆分后，我们可以将亮点组织到列表中。
 
-以下名为 _split_story（）_ 的函数实现了此行为，并将给定的已加载文档文本拆分为故事和高亮列表。
+以下名为`split_story()`的函数实现了此行为，并将给定的已加载文档文本拆分为故事和高亮列表。
 
 ```py
 # split a document into news story and highlights
@@ -188,7 +188,7 @@ def split_story(doc):
 	return story, highlights
 ```
 
-我们现在可以更新 _load_stories（）_ 函数，为每个加载的文档调用 _split_story（）_ 函数，然后将结果存储在列表中。
+我们现在可以更新`load_stories()`函数，为每个加载的文档调用`split_story()`函数，然后将结果存储在列表中。
 
 ```py
 # load all stories in a directory
@@ -309,7 +309,7 @@ line = [w.translate(table) for w in line]
 line = [word for word in line if word.isalpha()]
 ```
 
-将这一切放在一起，下面是一个名为 _clean_lines（）_ 的新函数，它接受一行文本行并返回一个简洁的文本行列表。
+将这一切放在一起，下面是一个名为`clean_lines()`的新函数，它接受一行文本行并返回一个简洁的文本行列表。
 
 ```py
 # clean a list of lines

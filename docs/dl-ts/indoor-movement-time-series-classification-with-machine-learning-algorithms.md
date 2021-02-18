@@ -188,7 +188,7 @@ for name in listdir(directory):
 	sequences.append(values)
 ```
 
-我们可以将所有这些绑定到一个名为 _load_dataset（）_ 的函数中，并将数据加载到内存中。
+我们可以将所有这些绑定到一个名为`load_dataset()`的函数中，并将数据加载到内存中。
 
 下面列出了完整的示例。
 
@@ -243,7 +243,7 @@ print('Class=+1: %d %.3f%%' % (class2, class2/len(targets)*100))
 
 接下来，我们可以通过绘制原始值的直方图来查看四个锚点中每一个的传感器强度值的分布。
 
-这要求我们创建一个包含所有观察行的数组，以便我们可以绘制每列的分布。 _vstack（）_ NumPy 函数将为我们完成这项工作。
+这要求我们创建一个包含所有观察行的数组，以便我们可以绘制每列的分布。`vstack()`NumPy 函数将为我们完成这项工作。
 
 ```py
 # histogram for each anchor point
@@ -370,7 +370,7 @@ pyplot.show()
 
 我们可以使用 [lstsq（）NumPy 函数](https://docs.scipy.org/doc/numpy/reference/generated/numpy.linalg.lstsq.html)对给定系列拟合线性回归。
 
-下面的函数 _regress（）_ 将一系列作为单个变量，通过最小二乘拟合线性回归模型，并预测每个时间步的输出返回捕获数据趋势的序列。
+下面的函数`regress()`将一系列作为单个变量，通过最小二乘拟合线性回归模型，并预测每个时间步的输出返回捕获数据趋势的序列。
 
 ```py
 # fit a linear regression function and return the predicted values for the series
@@ -589,7 +589,7 @@ m, s = mean(scores), std(scores)
 
 跟踪数据中最小的时间步长为 19，因此，我们将使用 _n = 19_ 作为起点。
 
-下面名为 _create_dataset（）_ 的函数将使用平面一维向量中每条迹线的最后`n`观测值创建一个固定长度向量，然后将目标添加为最后一个元素向量。
+下面名为`create_dataset()`的函数将使用平面一维向量中每条迹线的最后`n`观测值创建一个固定长度向量，然后将目标添加为最后一个元素向量。
 
 简单的机器学习算法需要对跟踪数据进行扁平化。
 
@@ -620,7 +620,7 @@ def create_dataset(sequences, targets):
 
 我们可以像以前一样加载数据集，并将其分类到数据集 1,2 和 3 中，如“_ 模型评估 _”部分所述。
 
-然后我们可以调用 _create_dataset（）_ 函数来创建 ES1 和 ES2 案例所需的数据集，特别是 ES1 组合数据集 1 和 2，而 ES2 使用数据集 1 和 2 作为训练集，数据集 3 作为测试集。
+然后我们可以调用`create_dataset()`函数来创建 ES1 和 ES2 案例所需的数据集，特别是 ES1 组合数据集 1 和 2，而 ES2 使用数据集 1 和 2 作为训练集，数据集 3 作为测试集。
 
 下面列出了完整的示例。
 
@@ -805,7 +805,7 @@ max_length = 200
 seq = pad(seq, ((max_length-len(seq),0),(0,0)), 'constant', constant_values=(0.0))
 ```
 
-具有填充支持的 _create_dataset（）_ 功能的更新版本如下。
+具有填充支持的`create_dataset()`功能的更新版本如下。
 
 我们将尝试 _n = 25_ 以包括每个载体中每个序列中的 25 个最后观察结果。虽然您可能想要探索其他配置是否会带来更好的技能，但可以通过一些试验和错误找到此值。
 

@@ -103,7 +103,7 @@ for chunk_id in chunk_ids:
 	chunks[chunk_id] = values[selection, :]
 ```
 
-下面定义了一个名为 _to_chunks（）_ 的函数，它接受加载数据的 NumPy 数组，并将`chunk_id`的字典返回到块的行。
+下面定义了一个名为`to_chunks()`的函数，它接受加载数据的 NumPy 数组，并将`chunk_id`的字典返回到块的行。
 
 ```py
 # split the dataset by 'chunkID', return a dict of id to rows
@@ -164,7 +164,7 @@ Total Chunks: 208
 
 在使用朴素模型时，我们只对目标变量感兴趣，而不对输入的气象变量感兴趣。因此，我们可以删除输入数据，并使训练和测试数据仅包含每个块的 39 个目标变量，以及块和观察时间内的位置。
 
-下面的 _split_train_test（）_ 函数实现了这种行为;给定一个块的字典，它将每个分成训练和测试块数据。
+下面的`split_train_test()`函数实现了这种行为;给定一个块的字典，它将每个分成训练和测试块数据。
 
 ```py
 # split each chunk into train/test sets
@@ -209,7 +209,7 @@ def get_lead_times():
 
 如果我们在测试集中找到匹配的行，则保存它，否则生成一行 NaN 观测值。
 
-下面的函数 _to_forecasts（）_ 实现了这一点，并为每个块的每个预测提前期返回一行 NumPy 数组。
+下面的函数`to_forecasts()`实现了这一点，并为每个块的每个预测提前期返回一行 NumPy 数组。
 
 ```py
 # convert the rows in a test chunk to forecasts
@@ -352,7 +352,7 @@ Test Rows: (2070, 42)
 
 模型有望以这种格式进行预测。
 
-我们还可以重新构建测试数据集以使此数据集进行比较。下面的 _prepare_test_forecasts（）_ 函数实现了这一点。
+我们还可以重新构建测试数据集以使此数据集进行比较。下面的`prepare_test_forecasts()`函数实现了这一点。
 
 ```py
 # convert the test dataset in chunks to [chunk][variable][time] format
@@ -374,7 +374,7 @@ def prepare_test_forecasts(test_chunks):
 
 如果提前期不包含测试集中的数据（例如`NaN`），则不会计算该预测的错误。如果提前期确实在测试集中有数据但预测中没有数据，那么观察的全部大小将被视为错误。最后，如果测试集具有观察值并进行预测，则绝对差值将被记录为误差。
 
-_calculate_error（）_ 函数实现这些规则并返回给定预测的错误。
+`calculate_error()`函数实现这些规则并返回给定预测的错误。
 
 ```py
 # calculate the error between an actual and predicted value
@@ -425,7 +425,7 @@ def evaluate_forecasts(predictions, testset):
 
 一旦我们对模型进行评估，我们就可以呈现它。
 
-下面的 _summarize_error（）_ 函数首先打印模型表现的一行摘要，然后创建每个预测提前期的 MAE 图。
+下面的`summarize_error()`函数首先打印模型表现的一行摘要，然后创建每个预测提前期的 MAE 图。
 
 ```py
 # summarize scores
@@ -522,7 +522,7 @@ def summarize_error(name, total_mae, times_mae):
 
 因此，我们可以为每个变量创建一个 120`NaN`值的数组，使用'`positions_within_chunk`'值标记块中的所有观察值，剩下的任何值都将被标记为`NaN`。然后我们可以绘制每个变量并寻找差距。
 
-下面的 _variable_to_series（）_ 函数将获取目标变量的块和给定列索引的行，并将为变量返回一系列 120 个时间步长，所有可用数据都标记为来自块。
+下面的`variable_to_series()`函数将获取目标变量的块和给定列索引的行，并将为变量返回一系列 120 个时间步长，所有可用数据都标记为来自块。
 
 ```py
 # layout a variable with breaks in the data for missing positions
@@ -540,7 +540,7 @@ def variable_to_series(chunk_train, col_ix, n_steps=5*24):
 
 我们需要为每个块计算一个小时的并行序列，我们可以使用它来为块中的每个变量输入小时特定数据。
 
-给定一系列部分填充的小时，下面的 _interpolate_hours（）_ 函数将填充一天中缺少的小时数。它通过找到第一个标记的小时，然后向前计数，填写一天中的小时，然后向后执行相同的操作来完成此操作。
+给定一系列部分填充的小时，下面的`interpolate_hours()`函数将填充一天中缺少的小时数。它通过找到第一个标记的小时，然后向前计数，填写一天中的小时，然后向后执行相同的操作来完成此操作。
 
 ```py
 # interpolate series of hours (in place) in 24 hour time
@@ -569,7 +569,7 @@ def interpolate_hours(hours):
 			hours[i] = hour % 24
 ```
 
-我们可以调用相同的 _variable_to_series（）_ 函数（上面）来创建具有缺失值的系列小时（列索引 2），然后调用 _interpolate_hours（）_ 来填补空白。
+我们可以调用相同的`variable_to_series()`函数（上面）来创建具有缺失值的系列小时（列索引 2），然后调用`interpolate_hours()`来填补空白。
 
 ```py
 # prepare sequence of hours for the chunk
@@ -582,7 +582,7 @@ interpolate_hours(hours)
 
 我们现在可以尝试在同一系列中使用相同小时填充值中的缺失值。具体来说，我们将在系列中找到所有具有相同小时的行并计算中值。
 
-下面的 _impute_missing（）_ 获取块中的所有行，准备好的块的一天中的小时数，以及具有变量的缺失值和变量的列索引的系列。
+下面的`impute_missing()`获取块中的所有行，准备好的块的一天中的小时数，以及具有变量的缺失值和变量的列索引的系列。
 
 它首先检查系列是否全部缺失数据，如果是这种情况则立即返回，因为不能执行任何插补。然后，它会在系列的时间步骤中进行枚举，当它检测到没有数据的时间步长时，它会收集序列中所有行，并使用相同小时的数据并计算中值。
 
@@ -649,7 +649,7 @@ X,			y
 
 我们可以从定义一个函数开始，该函数将为给定的完整（插补）系列创建输入输出模式。
 
-下面的 _supervised_for_lead_time（）_ 函数将采用一系列滞后观察作为输入，预测前置时间进行预测，然后返回从该系列中抽取的输入/输出行列表。
+下面的`supervised_for_lead_time()`函数将采用一系列滞后观察作为输入，预测前置时间进行预测，然后返回从该系列中抽取的输入/输出行列表。
 
 ```py
 # created input/output patterns from a sequence
@@ -723,7 +723,7 @@ print(result)
 
 我们现在可以为给定目标变量系列的每个预测提前期调用 _supervised_for_lead_time（）_。
 
-下面的 _target_to_supervised（）_ 函数实现了这个功能。首先，将目标变量转换为系列，并使用上一节中开发的函数进行估算。然后为每个目标提前期创建训练样本。还创建了目标变量的测试样本。
+下面的`target_to_supervised()`函数实现了这个功能。首先，将目标变量转换为系列，并使用上一节中开发的函数进行估算。然后为每个目标提前期创建训练样本。还创建了目标变量的测试样本。
 
 然后，为该目标变量返回每个预测提前期的训练数据和测试输入数据。
 
@@ -756,7 +756,7 @@ def target_to_supervised(chunks, rows, hours, col_ix, n_lag):
 
 结果是具有维度 _[var] [提前期] [样本]_ 的训练数据集，其中最终维度是目标变量的预测提前期的训练样本行。该函数还返回具有维度 _[chunk] [var] [样本]_ 的测试数据集，其中最终维度是用于对块的目标变量进行预测的输入数据。
 
-下面的 _data_prep（）_ 函数实现了这种行为，并将块格式的数据和指定数量的滞后观察值用作输入。
+下面的`data_prep()`函数实现了这种行为，并将块格式的数据和指定数量的滞后观察值用作输入。
 
 ```py
 # prepare training [var][lead time][sample] and test [chunk][var][sample]
@@ -981,7 +981,7 @@ save('AirQualityPrediction/supervised_test.npy', test_data)
 
 在我们开始评估算法之前，我们需要更多的测试工具元素。
 
-首先，我们需要能够在训练数据上使用 scikit-learn 模型。下面的 _fit_model（）_ 函数将复制模型配置，并使其适合所提供的训练数据。我们需要适应每个配置模型的许多（360）版本，因此这个函数将被调用很多。
+首先，我们需要能够在训练数据上使用 scikit-learn 模型。下面的`fit_model()`函数将复制模型配置，并使其适合所提供的训练数据。我们需要适应每个配置模型的许多（360）版本，因此这个函数将被调用很多。
 
 ```py
 # fit a single model
@@ -997,7 +997,7 @@ def fit_model(model, X, y):
 
 我们可以通过首先通过变量枚举训练数据集，然后通过提前期来完成此操作。然后我们可以拟合模型并将其存储在具有相同结构的列表列表中，具体为： _[var] [time] [model]_ 。
 
-下面的 _fit_models（）_ 函数实现了这一点。
+下面的`fit_models()`函数实现了这一点。
 
 ```py
 # fit one model for each variable and each forecast lead time [var][time][model]
@@ -1023,7 +1023,7 @@ def fit_models(model, train):
 
 准备好的测试数据集首先按块组织，然后按目标变量组织。预测很快，首先要检查是否可以进行预测（我们有输入数据），如果是，则使用适当的模型作为目标变量。然后，将使用每个直接模型预测变量的 10 个预测前置时间中的每一个。
 
-下面的 _make_predictions（）_ 函数实现了这一点，将模型列表列表和加载的测试数据集作为参数，并返回结构 _[chunks] [var] [time]的预测数组 _。
+下面的`make_predictions()`函数实现了这一点，将模型列表列表和加载的测试数据集作为参数，并返回结构 _[chunks] [var] [time]的预测数组 _。
 
 ```py
 # return forecasts as [chunks][var][time]
@@ -1058,7 +1058,7 @@ def make_predictions(models, test):
 
 我们需要一个要评估的模型列表。
 
-我们可以定义一个通用的 _get_models（）_ 函数，该函数负责定义映射到已配置的 scikit-learn 模型对象的模型名称字典。
+我们可以定义一个通用的`get_models()`函数，该函数负责定义映射到已配置的 scikit-learn 模型对象的模型名称字典。
 
 ```py
 # prepare a list of ml models
@@ -1071,7 +1071,7 @@ def get_models(models=dict()):
 
 给定模型字典，枚举模型，首先在训练数据上拟合模型矩阵，预测测试数据集，评估预测，并总结结果。
 
-下面的 _evaluate_models（）_ 函数实现了这一点。
+下面的`evaluate_models()`函数实现了这一点。
 
 ```py
 # evaluate a suite of models
@@ -1108,7 +1108,7 @@ def evaluate_models(models, train, test, actual):
 *   被动攻击性回归
 *   随机梯度下降回归
 
-我们可以在 _get_models（）_ 函数中定义这些模型。
+我们可以在`get_models()`函数中定义这些模型。
 
 ```py
 # prepare a list of ml models
@@ -1354,7 +1354,7 @@ sgd: 0.457 MAE
 *   额外的树木
 *   梯度增压机
 
-下面的 _get_models（）_ 函数定义了这九个模型。
+下面的`get_models()`函数定义了这九个模型。
 
 ```py
 # prepare a list of ml models

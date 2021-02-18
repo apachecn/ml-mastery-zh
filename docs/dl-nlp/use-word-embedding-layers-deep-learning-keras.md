@@ -287,7 +287,7 @@ the -0.038194 -0.24487 0.72812 -0.39961 0.083172 0.043953 -0.39141 0.3344 -0.575
 
 在这种情况下，我们需要能够将单词映射到整数以及将整数映射到单词。
 
-Keras 提供了一个 [Tokenizer](https://keras.io/preprocessing/text/#tokenizer) 类，它可以适应训练数据，可以通过调用`Tokenizer`类上的 _texts_to_sequences（）_ 方法将文本转换为序列，并提供对`word_index`属性中单词到整数的字典映射的访问。
+Keras 提供了一个 [Tokenizer](https://keras.io/preprocessing/text/#tokenizer) 类，它可以适应训练数据，可以通过调用`Tokenizer`类上的`texts_to_sequences()`方法将文本转换为序列，并提供对`word_index`属性中单词到整数的字典映射的访问。
 
 ```py
 # define documents

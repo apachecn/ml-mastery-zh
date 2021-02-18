@@ -111,7 +111,7 @@
 
 输入数据采用 CSV 格式，其中列通过空格分隔。这些文件中的每一个都可以作为 NumPy 数组加载。
 
-下面的 _load_file（）_ 函数在给定文件的文件路径的情况下加载数据集，并将加载的数据作为 NumPy 数组返回。
+下面的`load_file()`函数在给定文件的文件路径的情况下加载数据集，并将加载的数据作为 NumPy 数组返回。
 
 ```py
 # load a single file as a numpy array
@@ -120,7 +120,7 @@ def load_file(filepath):
 	return dataframe.values
 ```
 
-考虑到目录布局和文件名的相似性，我们可以调用此函数来加载给定训练或测试集组的`X`和`y`文件。下面的 _load_dataset_group（）_ 函数将为一个组加载这两个文件，并将 X 和 y 元素作为 NumPy 数组返回。然后，此函数可用于加载训练和测试组的 X 和 y 元素。
+考虑到目录布局和文件名的相似性，我们可以调用此函数来加载给定训练或测试集组的`X`和`y`文件。下面的`load_dataset_group()`函数将为一个组加载这两个文件，并将 X 和 y 元素作为 NumPy 数组返回。然后，此函数可用于加载训练和测试组的 X 和 y 元素。
 
 ```py
 # load a dataset group, such as train or test
@@ -180,7 +180,7 @@ trainX, trainy, testX, testy = load_dataset()
 
 我们将定义模型并将它们存储在字典中，该字典将模型对象映射到有助于分析结果的简短名称。
 
-下面的 _define_models（）_ 函数定义了我们将评估的八个模型。
+下面的`define_models()`函数定义了我们将评估的八个模型。
 
 ```py
 # create a dict of standard models to evaluate {name:object}
@@ -209,7 +209,7 @@ def define_models(models=dict()):
 
 我们将通过首先将其拟合到训练数据集上，对测试数据集进行预测，然后使用度量来评估预测来评估单个模型。在这种情况下，我们将使用分类精度来捕获模型的表现（或误差），给出六个活动（或类）的平衡观察。
 
-下面的 _evaluate_model（）_ 函数实现了此行为，评估给定模型并将分类精度返回为百分比。
+下面的`evaluate_model()`函数实现了此行为，评估给定模型并将分类精度返回为百分比。
 
 ```py
 # evaluate a single model
@@ -223,9 +223,9 @@ def evaluate_model(trainX, trainy, testX, testy, model):
 	return accuracy * 100.0
 ```
 
-我们现在可以为每个定义的模型重复调用 _evaluate_model（）_ 函数。
+我们现在可以为每个定义的模型重复调用`evaluate_model()`函数。
 
-下面的 _evaluate_models（）_ 函数实现此行为，获取已定义模型的字典，并返回映射到其分类精度的模型名称字典。
+下面的`evaluate_models()`函数实现此行为，获取已定义模型的字典，并返回映射到其分类精度的模型名称字典。
 
 因为模型的评估可能需要几分钟，所以该函数在评估每个模型作为一些详细的反馈之后打印它们的表现。
 
@@ -249,7 +249,7 @@ def evaluate_models(trainX, trainy, testX, testy, models):
 
 然后可以打印评估模型的结果，清楚地显示每个评估模型的相对等级。
 
-下面的 _summarize_results（）_ 函数实现了这种行为。
+下面的`summarize_results()`函数实现了这种行为。
 
 ```py
 # print and plot the results
@@ -427,7 +427,7 @@ Name=bayes, Score=77.027
 
 首先，我们可以将给定组的所有数据加载到单个三维 NumPy 数组中，其中数组的维数为[样本，时间步长，特征]。为了更清楚，有 128 个时间步和 9 个特征，其中样本数是任何给定原始信号数据文件中的行数。
 
-下面的 _load_group（）_ 函数实现了这种行为。 _dstack（）_ NumPy 函数允许我们将每个加载的 3D 数组堆叠成单个 3D 数组，其中变量在第三维（特征）上分开。
+下面的`load_group()`函数实现了这种行为。`dstack()`NumPy 函数允许我们将每个加载的 3D 数组堆叠成单个 3D 数组，其中变量在第三维（特征）上分开。
 
 ```py
 # load a list of files into a 3D array of [samples, timesteps, features]
@@ -443,7 +443,7 @@ def load_group(filenames, prefix=''):
 
 我们可以使用此功能加载给定组的所有输入信号数据，例如训练或测试。
 
-下面的 _load_dataset_group（）_ 函数使用目录之间的一致命名约定加载单个组的所有输入信号数据和输出数据。
+下面的`load_dataset_group()`函数使用目录之间的一致命名约定加载单个组的所有输入信号数据和输出数据。
 
 ```py
 # load a dataset group, such as train or test
@@ -470,7 +470,7 @@ def load_dataset_group(group, prefix=''):
 
 我们可以使用 NumPy 重塑功能执行此操作，并将[_ 样本，时间步长，特征 _]的三个维度转换为[_ 样本，时间步长*特征 _]的两个维度。
 
-下面的 _load_dataset（）_ 函数实现了这种行为，并返回训练并测试`X`和`y`元素，以便拟合和评估定义的模型。
+下面的`load_dataset()`函数实现了这种行为，并返回训练并测试`X`和`y`元素，以便拟合和评估定义的模型。
 
 ```py
 # load the dataset, returns train and test X and y elements
