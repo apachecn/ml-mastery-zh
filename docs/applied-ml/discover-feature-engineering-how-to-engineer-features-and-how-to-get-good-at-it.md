@@ -300,7 +300,7 @@ _未知_可能很特别，但对于模型来说，它看起来只是另一种颜
 
 例如，您可以以克为单位`Item_Weight`，其值为6289.您可以创建一个新的要素，其中此数量（公斤）为6.289或舍入公斤（如6）。如果域名是运输数据，可能是公斤`Item_Weight`的精度足够或更有用（噪音更小）。
 
-_Item_Weight_ 可以分为两个特征：`Item_Weight_Kilograms`和`Item_Weight_Remainder_Grams`，示例值分别为6和289。
+`Item_Weight`可以分为两个特征：`Item_Weight_Kilograms`和`Item_Weight_Remainder_Grams`，示例值分别为6和289。
 
 可能存在领域知识，即权重大于4的项目会产生更高的税率。该魔术域号可用于创建新的二进制特征`Item_Above_4kg`，其值为“`1`”，我们的示例为6289克。
 

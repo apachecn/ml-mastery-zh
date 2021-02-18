@@ -123,7 +123,7 @@ chmod 600 keras-aws-keypair.pem
 ssh -i keras-aws-keypair.pem ec2-user@54.186.97.77
 ```
 
-*   4.出现提示时，键入“_yes_ ”并按 Enter 键。
+*   4.出现提示时，键入`yes`并按 Enter 键。
 
 您现在已登录到您的服务器。
 

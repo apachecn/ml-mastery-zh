@@ -134,7 +134,7 @@ chi_critical = chi2.isf(q=prob, df=dof)
 interval = sqrt((dof * (1 + (1/n)) * gauss_critical^2) / chi_critical)
 ```
 
-_dof_ 是自由度数，`n`是数据样本的大小，`gauss_critical`是临界值，如95％覆盖率为1.96人口中，`chi_critical`是所希望的置信度和自由度的Chi Squared临界值。
+`dof`是自由度数，`n`是数据样本的大小，`gauss_critical`是临界值，如95％覆盖率为1.96人口中，`chi_critical`是所希望的置信度和自由度的Chi Squared临界值。
 
 ```py
 interval = sqrt((dof * (1 + (1/n)) * gauss_critical**2) / chi_critical)

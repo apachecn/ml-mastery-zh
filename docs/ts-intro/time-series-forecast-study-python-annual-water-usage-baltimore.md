@@ -527,7 +527,7 @@ pyplot.show()
 *   ACF 没有显着滞后。
 *   PACF 也没有显着滞后。
 
-_p_ 和`q`值的良好起点也是 0。
+`p`和`q`值的良好起点也是 0。
 
 ![ACF and PACF Plots of Stationary Annual Water Usage Dataset](img/4d62634c4361e4b2deb6d8831a65303a.jpg)
 

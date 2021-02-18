@@ -534,7 +534,7 @@ pyplot.show()
 *   PACF 显示出可能持续 2 个月的显着滞后，显着滞后可能持续 12 个月。
 *   ACF 和 PACF 都在同一点下降，可能表明 AR 和 MA 的混合。
 
-_p_ 和`q`值的良好起点是 1 或 2。
+`p`和`q`值的良好起点是 1 或 2。
 
 ![Monthly Boston Robberies ACF and PACF Plots](img/36ac70b6c8bfa815c1be9760c00b1ae9.jpg)
 

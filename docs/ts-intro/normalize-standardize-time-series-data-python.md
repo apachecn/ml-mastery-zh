@@ -81,7 +81,7 @@ y = 0.72
 
 您可以使用 scikit-learn 对象 [MinMaxScaler](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html) 来规范化数据集。
 
-_MinMaxScaler_ 和其他重新缩放技术的良好实践用法如下：
+`MinMaxScaler`和其他重新缩放技术的良好实践用法如下：
 
 1.  **使用可用的训练数据**调整定标器。对于归一化，这意味着训练数据将用于估计最小和最大可观察值。这是通过调用 _fit（）_ 函数来完成的，
 2.  **将比例应用于训练数据**。这意味着您可以使用标准化数据来训练模型。这是通过调用 _transform（）_ 函数来完成的
@@ -172,7 +172,7 @@ _ 表示 _ 的计算方法如下：
 mean = sum(x) / count(x)
 ```
 
-_standard_deviation_ 计算如下：
+`standard_deviation`计算如下：
 
 ```py
 standard_deviation = sqrt( sum( (x - mean)^2 ) / count(x))

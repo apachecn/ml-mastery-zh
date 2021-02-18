@@ -464,7 +464,7 @@ Samples: 8
 
 样本的三维结构意味着生成器不能直接用于像 MLP 这样的简单模型。
 
-这可以通过首先将时间序列数据集展平为一维向量，然后将其提供给 TimeseriesGenerator 并将长度设置为用作输入的步数乘以系列中的列数（ _n_steps 来实现。 * n_features_ ）。
+这可以通过首先将时间序列数据集展平为一维向量，然后将其提供给 TimeseriesGenerator 并将长度设置为用作输入的步数乘以系列中的列数（`n_steps * n_features`）来实现。。
 
 这种方法的局限性在于生成器只允许您预测一个变量。几乎可以肯定，编写自己的函数来为 MLP 准备多变量时间序列比使用 TimeseriesGenerator 更好。
 
