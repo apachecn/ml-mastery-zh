@@ -414,7 +414,7 @@ Expected: [32, 33, 0, 0, 0] Predicted [32, 32, 0, 0, 0]
 
 自定义注意层称为`AttentionDecoder`，可在GitHub项目的 [custom_recurrents.py](https://github.com/datalogue/keras-attention/blob/master/models/custom_recurrents.py) 文件中找到。我们可以在项目的 [GNU Affero通用公共许可证v3.0许可证](https://github.com/datalogue/keras-attention/blob/master/LICENSE)下重用此代码。
 
-下面列出了自定义层的副本以确保完整性。将其复制并粘贴到当前工作目录中名为“ _attention_decoder.py_ ”的新单独文件中。
+下面列出了自定义层的副本以确保完整性。将其复制并粘贴到当前工作目录中名为“`attention_decoder.py`”的新单独文件中。
 
 ```py
 import tensorflow as tf

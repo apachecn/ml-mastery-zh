@@ -195,7 +195,7 @@ model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accur
 model.fit(X, y, epochs=500, verbose=2)
 ```
 
-在模型拟合之后，我们通过从词汇表中传递给定的单词并让模型预测下一个单词来测试它。在这里我们通过编码传递'`Jack`'并调用 _model.predict_classes（）_ 来获得预测单词的整数输出。然后在词汇表映射中查找，以提供相关的单词。
+在模型拟合之后，我们通过从词汇表中传递给定的单词并让模型预测下一个单词来测试它。在这里我们通过编码传递'`Jack`'并调用`model.predict_classes()`来获得预测单词的整数输出。然后在词汇表映射中查找，以提供相关的单词。
 
 ```py
 # evaluate

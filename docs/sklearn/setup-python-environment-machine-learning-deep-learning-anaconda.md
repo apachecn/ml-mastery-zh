@@ -167,7 +167,7 @@ import sklearn
 print('sklearn: %s' % sklearn.__version__)
 ```
 
-将脚本保存为名为 _versions.py_ 的文件。
+将脚本保存为名为`versions.py`的文件。
 
 在命令行上，将目录更改为保存脚本的位置并键入：
 
@@ -217,7 +217,7 @@ conda update scikit-learn
 conda install -c anaconda scikit-learn=0.18.1
 ```
 
-确认安装成功并通过键入以下命令重新运行 _versions.py_ 脚本来更新 scikit-learn：
+确认安装成功并通过键入以下命令重新运行`versions.py`脚本来更新 scikit-learn：
 
 ```
 python versions.py
@@ -287,7 +287,7 @@ import keras
 print('keras: %s' % keras.__version__)
 ```
 
-将脚本保存到文件 _deep_versions.py_ 。键入以下命令运行脚本：
+将脚本保存到文件`deep_versions.py`。键入以下命令运行脚本：
 
 ```
 python deep_versions.py

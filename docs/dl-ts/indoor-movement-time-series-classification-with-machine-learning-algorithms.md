@@ -696,7 +696,7 @@ savetxt('es2_train.csv', es2_train, delimiter=',')
 savetxt('es2_test.csv', es2_test, delimiter=',')
 ```
 
-运行该示例创建三个新的 CSV 文件，特别是' _es1.csv_ '，' _es2_train.csv_ '和' _es2_test.csv_ '用于 ES1 和分别为 ES2 病例。
+运行该示例创建三个新的 CSV 文件，特别是'`es1.csv`'，'`es2_train.csv`'和'`es2_test.csv`'用于 ES1 和分别为 ES2 病例。
 
 还总结了这些数据集的形状。
 

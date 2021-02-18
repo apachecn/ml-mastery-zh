@@ -54,7 +54,7 @@
 
 在运行时，Python 解释器可能不会经常刷新输出，尤其是在系统负载不足的情况下。我们可以使用 Python 解释器上的 _-u_ 标志强制将输出刷新到日志中。
 
-运行单个脚本（ _myscript.py_ ）如下所示：
+运行单个脚本（`myscript.py`）如下所示：
 
 ```py
 python -u myscript.py >myscript.py.log 2>&1

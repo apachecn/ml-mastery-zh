@@ -261,7 +261,7 @@ outcome = model_fit.forecast()[0]
 
 在本课程中，您将使用从所有先前课程中学到的技能来处理新的时间序列预测问题。
 
-从 DataMarket 以 CSV 格式下载[季度 S＆amp; P 500 指数，1900-1996 数据集](https://datamarket.com/data/set/22rk/quarterly-sp-500-index-1900-1996)，并以文件名“ _sp500.csv_ ”保存。
+从 DataMarket 以 CSV 格式下载[季度 S＆amp; P 500 指数，1900-1996 数据集](https://datamarket.com/data/set/22rk/quarterly-sp-500-index-1900-1996)，并以文件名“`sp500.csv`”保存。
 
 拆分数据，可能会将最后 4 或 8 个季度提取到单独的文件中。解决问题并为缺失的数据制定预测，包括：
 

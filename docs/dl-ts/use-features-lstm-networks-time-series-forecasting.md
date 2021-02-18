@@ -156,7 +156,7 @@ Name: Sales, dtype: float64
 
 下面提供了测试 1 输入功能的完整代码清单。
 
-对于 5 个实验中的每一个，`run()`函数中的特征参数从 1 到 5 变化。此外，结果在实验结束时保存到文件中，并且还必须针对每个不同的实验运行更改该文件名，例如， _experiment_features_1.csv_ ， _experiment_features_2.csv_ 等
+对于 5 个实验中的每一个，`run()`函数中的特征参数从 1 到 5 变化。此外，结果在实验结束时保存到文件中，并且还必须针对每个不同的实验运行更改该文件名，例如，`experiment_features_1.csv`，`experiment_features_2.csv`等
 
 ```py
 from pandas import DataFrame

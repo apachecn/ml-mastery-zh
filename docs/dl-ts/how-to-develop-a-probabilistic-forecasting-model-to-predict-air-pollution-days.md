@@ -78,7 +78,7 @@
 
 *   [臭氧水平检测数据集](https://archive.ics.uci.edu/ml/datasets/ozone+level+detection)
 
-我们只会查看本教程中的 8 小时数据。下载“ _eighthr.data_ ”并将其放在当前的工作目录中。
+我们只会查看本教程中的 8 小时数据。下载“`eighthr.data`”并将其放在当前的工作目录中。
 
 检查数据文件，我们可以看到不同尺度的观察结果。
 

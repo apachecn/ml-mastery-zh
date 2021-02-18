@@ -52,7 +52,7 @@ Francois 的实现提供了一个模板，用于在编写本文时在 Keras 深�
 
 *   [法语 - 英语 fra-eng.zip](http://www.manythings.org/anki/fra-eng.zip)
 
-下面是解压缩下载的存档后您将看到的 _fra.txt_ 数据文件的前 10 行示例。
+下面是解压缩下载的存档后您将看到的`fra.txt`数据文件的前 10 行示例。
 
 ```py
 Go.		Va !

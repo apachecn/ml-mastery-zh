@@ -264,7 +264,7 @@ Epoch 500/500
 
 用于回归的自定义 RMSE Keras 度量的线图
 
-您的自定义度量函数必须在 Keras 内部数据结构上运行，根据所使用的后端可能会有所不同（例如使用 tensorflow 时 _tensorflow.python.framework.ops.Tensor_ ）而不是直接使用 原始 yhat 和 y 值。
+您的自定义度量函数必须在 Keras 内部数据结构上运行，根据所使用的后端可能会有所不同（例如使用 tensorflow 时`tensorflow.python.framework.ops.Tensor`）而不是直接使用 原始 yhat 和 y 值。
 
 出于这个原因，我建议尽可能使用后端数学函数来保持一致性和执行速度。
 

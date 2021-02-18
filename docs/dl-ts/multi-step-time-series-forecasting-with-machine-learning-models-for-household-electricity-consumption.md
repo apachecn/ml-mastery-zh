@@ -63,7 +63,7 @@ sub_metering_remainder = (global_active_power * 1000 / 60) - (sub_metering_1 + s
 
 *   [household_power_consumption.zip](https://archive.ics.uci.edu/ml/machine-learning-databases/00235/household_power_consumption.zip)
 
-下载数据集并将其解压缩到当前工作目录中。您现在将拥有大约 127 兆字节的文件“ _household_power_consumption.txt_ ”并包含所有观察结果。
+下载数据集并将其解压缩到当前工作目录中。您现在将拥有大约 127 兆字节的文件“`household_power_consumption.txt`”并包含所有观察结果。
 
 我们可以使用`read_csv()`函数来加载数据，并将前两列合并到一个日期时间列中，我们可以将其用作索引。
 
@@ -112,7 +112,7 @@ values = dataset.values
 dataset['sub_metering_4'] = (values[:,0] * 1000 / 60) - (values[:,4] + values[:,5] + values[:,6])
 ```
 
-我们现在可以将清理后的数据集版本保存到新文件中;在这种情况下，我们只需将文件扩展名更改为.csv，并将数据集保存为“ _household_power_consumption.csv_ ”。
+我们现在可以将清理后的数据集版本保存到新文件中;在这种情况下，我们只需将文件扩展名更改为.csv，并将数据集保存为“`household_power_consumption.csv`”。
 
 ```py
 # save updated dataset
@@ -151,7 +151,7 @@ dataset['sub_metering_4'] = (values[:,0] * 1000 / 60) - (values[:,4] + values[:,
 dataset.to_csv('household_power_consumption.csv')
 ```
 
-运行该示例将创建新文件' _household_power_consumption.csv_ '，我们可以将其用作建模项目的起点。
+运行该示例将创建新文件'`household_power_consumption.csv`'，我们可以将其用作建模项目的起点。
 
 ## 模型评估
 
@@ -199,7 +199,7 @@ print(daily_data.head())
 daily_data.to_csv('household_power_consumption_days.csv')
 ```
 
-运行该示例将创建一个新的每日总功耗数据集，并将结果保存到名为“ _household_power_consumption_days.csv_ ”的单独文件中。
+运行该示例将创建一个新的每日总功耗数据集，并将结果保存到名为“`household_power_consumption_days.csv`”的单独文件中。
 
 我们可以将其用作数据集，用于拟合和评估所选问题框架的预测模型。
 

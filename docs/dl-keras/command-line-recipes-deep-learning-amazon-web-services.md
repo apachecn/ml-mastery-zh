@@ -34,7 +34,7 @@
 
 为保持一致性，还做了一些其他假设：
 
-*   您的服务器 IP 地址是 _54.218.86.47_ ;将其更改为您服务器的 IP 地址。
+*   您的服务器 IP 地址是`54.218.86.47`;将其更改为您服务器的 IP 地址。
 *   您的用户名是 _ec2-user_ ;将其更改为您的用户名。
 *   您的 SSH 密钥位于 _〜/ .ssh /_ 中，文件名为 _aws-keypair.pem_ ;将其更改为 SSH 密钥位置和文件名。
 *   您正在使用 Python 脚本。
@@ -61,7 +61,7 @@ ssh -i ~/.ssh/aws-keypair.pem ec2-user@54.218.86.47
 
 使用安全副本（scp）将文件从工作站复制到服务器。
 
-以下示例在您的工作站上运行，将工作站本地目录中的 _script.py_ Python 脚本复制到您的服务器中。
+以下示例在您的工作站上运行，将工作站本地目录中的`script.py`Python 脚本复制到您的服务器中。
 
 ```py
 scp -i ~/.ssh/aws-keypair.pem script.py ec2-user@54.218.86.47:~/
@@ -79,7 +79,7 @@ scp -i ~/.ssh/aws-keypair.pem script.py ec2-user@54.218.86.47:~/
 nohup python /home/ec2-user/script.py >/home/ec2-user/script.py.log </dev/null 2>&1 &
 ```
 
-这基于假设您正在运行位于 _/ home / ec2-user /_ 目录中的 _script.py_ Python 脚本，并且您希望将此脚本的输出转发到文件 _script.py.log_ 位于同一目录中。
+这基于假设您正在运行位于 _/ home / ec2-user /_ 目录中的`script.py`Python 脚本，并且您希望将此脚本的输出转发到文件`script.py.log`位于同一目录中。
 
 调整你的需求。
 

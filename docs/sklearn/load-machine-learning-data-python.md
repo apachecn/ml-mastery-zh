@@ -87,11 +87,11 @@ print(data.shape)
 (768, 9)
 ```
 
-有关 _csv.reader（）_ 函数的更多信息，请参阅 Python API 文档中的 [CSV 文件读取和写入](https://docs.python.org/2/library/csv.html)。
+有关`csv.reader()`函数的更多信息，请参阅 Python API 文档中的 [CSV 文件读取和写入](https://docs.python.org/2/library/csv.html)。
 
 ### 使用 NumPy 加载 CSV 文件
 
-您可以使用 NumPy 和 _numpy.loadtxt（）_ 功能加载 CSV 数据。
+您可以使用 NumPy 和`numpy.loadtxt()`功能加载 CSV 数据。
 
 此函数假定没有标题行，并且所有数据都具有相同的格式。下面的示例假定文件 _pima-indians-diabetes.data.csv_ 位于您当前的工作目录中。
 
@@ -134,7 +134,7 @@ print(dataset.shape)
 
 ### 使用 Pandas 加载 CSV 文件
 
-您可以使用 Pandas 和 _pandas.read_csv（）_ 功能加载 CSV 数据。
+您可以使用 Pandas 和`pandas.read_csv()`功能加载 CSV 数据。
 
 此功能非常灵活，可能是我推荐的加载机器学习数据的方法。该函数返回一个 [pandas.DataFrame](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html) ，您可以立即开始汇总和绘图。
 

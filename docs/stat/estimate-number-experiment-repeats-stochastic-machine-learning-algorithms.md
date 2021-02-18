@@ -42,7 +42,7 @@
 
 我们将使用60的平均分，标准差为10。
 
-下面的代码生成1000个随机结果的样本，并将它们保存到名为 _results.csv_ 的CSV文件中。
+下面的代码生成1000个随机结果的样本，并将它们保存到名为`results.csv`的CSV文件中。
 
 我们使用 [seed（）](https://docs.scipy.org/doc/numpy/reference/generated/numpy.random.seed.html)函数为随机数生成器播种，以确保每次运行此代码时我们始终获得相同的结果（因此您得到的数字与我相同）。然后我们使用 [normal（）](https://docs.scipy.org/doc/numpy/reference/generated/numpy.random.normal.html)函数生成高斯随机数和 [savetxt（）](https://docs.scipy.org/doc/numpy/reference/generated/numpy.savetxt.html)函数以ASCII格式保存数字数组。
 
@@ -60,7 +60,7 @@ results = normal(mean, stev, 1000)
 savetxt('results.csv', results)
 ```
 
-你现在应该有一个名为 _results.csv_ 的文件，我们假装的随机算法测试工具有1000个最终结果。
+你现在应该有一个名为`results.csv`的文件，我们假装的随机算法测试工具有1000个最终结果。
 
 以下是文件中最后10行的上下文。
 
@@ -90,7 +90,7 @@ savetxt('results.csv', results)
 2.  使用盒子和须状图检查数据的传播。
 3.  使用直方图查看数据的分布。
 
-下面的代码执行此基本分析。首先加载 _results.csv_ ，计算汇总统计数据，并显示图表。
+下面的代码执行此基本分析。首先加载`results.csv`，计算汇总统计数据，并显示图表。
 
 ```py
 from pandas import DataFrame

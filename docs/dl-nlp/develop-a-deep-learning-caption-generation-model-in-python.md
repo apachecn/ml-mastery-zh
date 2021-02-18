@@ -172,7 +172,7 @@ def extract_features(directory):
 	return features
 ```
 
-我们可以调用此函数来准备用于测试模型的照片数据，然后将生成的字典保存到名为“ _features.pkl_ ”的文件中。
+我们可以调用此函数来准备用于测试模型的照片数据，然后将生成的字典保存到名为“`features.pkl`”的文件中。
 
 下面列出了完整的示例。
 
@@ -225,7 +225,7 @@ dump(features, open('features.pkl', 'wb'))
 
 运行此数据准备步骤可能需要一段时间，具体取决于您的硬件，可能需要一个小时的 CPU 与现代工作站。
 
-在运行结束时，您将提取的特征存储在' _features.pkl_ '中供以后使用。该文件大小约为 127 兆字节。
+在运行结束时，您将提取的特征存储在'`features.pkl`'中供以后使用。该文件大小约为 127 兆字节。
 
 ## 准备文本数据
 
@@ -342,7 +342,7 @@ vocabulary = to_vocabulary(descriptions)
 print('Vocabulary Size: %d' % len(vocabulary))
 ```
 
-最后，我们可以将图像标识符和描述字典保存到名为 _descriptionss.txt_ 的新文件中，每行一个图像标识符和描述。
+最后，我们可以将图像标识符和描述字典保存到名为`descriptionss.txt`的新文件中，每行一个图像标识符和描述。
 
 下面定义`save_descriptions()`函数，给定包含标识符到描述和文件名的映射的字典，将映射保存到文件。
 
@@ -459,7 +459,7 @@ Loaded: 8,092
 Vocabulary Size: 8,763
 ```
 
-最后，干净的描述写入' _descriptionss.txt_ '。
+最后，干净的描述写入'`descriptionss.txt`'。
 
 看一下这个文件，我们可以看到这些描述已经准备好进行建模了。文件中的描述顺序可能有所不同。
 
@@ -489,7 +489,7 @@ Vocabulary Size: 8,763
 
 我们将训练训练数据集中所有照片和标题的数据。在训练期间，我们将监控模型在开发数据集上的表现，并使用该表现来决定何时将模型保存到文件。
 
-训练和开发数据集已分别在 _Flickr_8k.trainImages.txt_ 和 _Flickr_8k.devImages.txt_ 文件中预定义，两者都包含照片文件名列表。从这些文件名中，我们可以提取照片标识符并使​​用这些标识符来过滤每组的照片和说明。
+训练和开发数据集已分别在`Flickr_8k.trainImages.txt`和`Flickr_8k.devImages.txt`文件中预定义，两者都包含照片文件名列表。从这些文件名中，我们可以提取照片标识符并使​​用这些标识符来过滤每组的照片和说明。
 
 下面的函数`load_set()`将在给定训练或开发集文件名的情况下加载一组预定义的标识符。
 
@@ -521,7 +521,7 @@ def load_set(filename):
 
 现在，我们可以使用预定义的一系列训练或开发标识符来加载照片和描述。
 
-下面是函数 _load_clean_descriptions（）_，它为来自' _descriptionss.txt_ '的已清除文本描述加载给定的一组标识符，并将标识符字典返回给文本描述列表。
+下面是函数 _load_clean_descriptions（）_，它为来自'`descriptionss.txt`'的已清除文本描述加载给定的一组标识符，并将标识符字典返回给文本描述列表。
 
 我们将开发的模型将生成给定照片的标题，并且标题将一次生成一个单词。将提供先前生成的单词的序列作为输入。因此，我们需要一个'_ 第一个字 _'来启动生成过程，'_ 最后一个字 _'来表示标题的结尾。
 
@@ -1657,7 +1657,7 @@ BLEU-4: 0.131446
 
 我们可以硬编码最大序列长度。通过文本编码，我们可以创建标记生成器并将其保存到文件中，以便我们可以在需要时快速加载它而无需整个 Flickr8K 数据集。另一种方法是使用我们自己的词汇表文件并在训练期间映射到整数函数。
 
-我们可以像以前一样创建 Tokenizer 并将其保存为 pickle 文件 _tokenizer.pkl_ 。下面列出了完整的示例。
+我们可以像以前一样创建 Tokenizer 并将其保存为 pickle 文件`tokenizer.pkl`。下面列出了完整的示例。
 
 ```py
 from keras.preprocessing.text import Tokenizer
@@ -1748,9 +1748,9 @@ dump(tokenizer, open('tokenizer.pkl', 'wb'))
 
 我们将使用我们的模型为它生成描述。
 
-下载照片并将其保存到本地目录，文件名为“ _example.jpg_ ”。
+下载照片并将其保存到本地目录，文件名为“`example.jpg`”。
 
-首先，我们必须从 _tokenizer.pkl_ 加载 Tokenizer，并定义填充输入所需的生成序列的最大长度。
+首先，我们必须从`tokenizer.pkl`加载 Tokenizer，并定义填充输入所需的生成序列的最大长度。
 
 ```py
 # load the tokenizer

@@ -904,7 +904,7 @@ CNN 的一个重要超参数是滤波器映射的数量。我们可以尝试一�
 n_params = [8, 16, 32, 64, 128, 256]
 ```
 
-我们可以使用上一节中的相同代码并更新`evaluate_model()`函数，以使用提供的参数作为 Conv1D 层中的过滤器数量。我们还可以更新`summarize_results()`函数，将箱图保存为 _exp_cnn_filters.png_ 。
+我们可以使用上一节中的相同代码并更新`evaluate_model()`函数，以使用提供的参数作为 Conv1D 层中的过滤器数量。我们还可以更新`summarize_results()`函数，将箱图保存为`exp_cnn_filters.png`。
 
 完整的代码示例如下所示。
 

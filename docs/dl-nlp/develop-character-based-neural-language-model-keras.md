@@ -66,7 +66,7 @@ When down came a blackbird
 And pecked off her nose.
 ```
 
-复制文本并将其保存在当前工作目录中的新文件中，文件名为“ _rhyme.txt_ ”。
+复制文本并将其保存在当前工作目录中的新文件中，文件名为“`rhyme.txt`”。
 
 ## 数据准备
 
@@ -108,7 +108,7 @@ def load_doc(filename):
 	return text
 ```
 
-我们可以使用童谣' _rhyme.txt_ '的文件名调用此函数，将文本加载到内存中。然后将文件的内容作为完整性检查打印到屏幕。
+我们可以使用童谣'`rhyme.txt`'的文件名调用此函数，将文本加载到内存中。然后将文件的内容作为完整性检查打印到屏幕。
 
 ```py
 # load text
@@ -171,7 +171,7 @@ def save_doc(lines, filename):
 	file.close()
 ```
 
-我们可以调用这个函数并将我们准备好的序列保存到我们当前工作目录中的文件名' _char_sequences.txt_ '。
+我们可以调用这个函数并将我们准备好的序列保存到我们当前工作目录中的文件名'`char_sequences.txt`'。
 
 ```py
 # save sequences to file
@@ -224,7 +224,7 @@ out_filename = 'char_sequences.txt'
 save_doc(sequences, out_filename)
 ```
 
-运行该示例以创建' _char_seqiences.txt_ '文件。
+运行该示例以创建'`char_seqiences.txt`'文件。
 
 看看里面你应该看到如下内容：
 
@@ -252,7 +252,7 @@ ng of sixpe
 
 ### 加载数据
 
-第一步是从' _char_sequences.txt_ '加载准备好的字符序列数据。
+第一步是从'`char_sequences.txt`'加载准备好的字符序列数据。
 
 我们可以使用上一节中开发的相同`load_doc()`函数。加载后，我们按新行分割文本，以提供准备编码的序列列表。
 
@@ -481,7 +481,7 @@ Epoch 100/100
 0s - loss: 0.1910 - acc: 0.9950
 ```
 
-在运行结束时，您将有两个文件保存到当前工作目录，特别是 _model.h5_ 和 _mapping.pkl_ 。
+在运行结束时，您将有两个文件保存到当前工作目录，特别是`model.h5`和`mapping.pkl`。
 
 接下来，我们可以看一下使用学习模型。
 
@@ -491,7 +491,7 @@ Epoch 100/100
 
 ### 加载模型
 
-第一步是将保存的模型加载到文件' _model.h5_ '中。
+第一步是将保存的模型加载到文件'`model.h5`'中。
 
 我们可以使用 Keras API 中的`load_model()`函数。
 
@@ -500,7 +500,7 @@ Epoch 100/100
 model = load_model('model.h5')
 ```
 
-我们还需要加载 pickle 字典，用于将字符映射到文件' _mapping.pkl_ '中的整数。我们将使用 Pickle API 加载对象。
+我们还需要加载 pickle 字典，用于将字符映射到文件'`mapping.pkl`'中的整数。我们将使用 Pickle API 加载对象。
 
 ```py
 # load the mapping

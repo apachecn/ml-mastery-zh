@@ -164,7 +164,7 @@ vocabulary = set(all_tokens)
 print('Vocabulary Size: %d' % len(vocabulary))
 ```
 
-最后，我们将图像标识符和描述字典保存到名为 _descriptionss.txt_ 的新文件中，每行有一个图像标识符和描述。
+最后，我们将图像标识符和描述字典保存到名为`descriptionss.txt`的新文件中，每行有一个图像标识符和描述。
 
 下面定义了`save_doc()`函数，该函数给出了包含标识符到描述和文件名的映射的字典，将映射保存到文件。
 
@@ -266,7 +266,7 @@ Loaded: 8092
 Vocabulary Size: 4484
 ```
 
-然后将干净的描述写入' _descriptionss.txt_ '。看一下文件，我们可以看到描述已准备好进行建模。
+然后将干净的描述写入'`descriptionss.txt`'。看一下文件，我们可以看到描述已准备好进行建模。
 
 看一下文件，我们可以看到描述已准备好进行建模。
 
@@ -332,7 +332,7 @@ def extract_features(directory):
 	return features
 ```
 
-我们可以调用此函数来准备用于测试模型的照片数据，然后将生成的字典保存到名为“ _features.pkl_ ”的文件中。
+我们可以调用此函数来准备用于测试模型的照片数据，然后将生成的字典保存到名为“`features.pkl`”的文件中。
 
 下面列出了完整的示例。
 
@@ -382,7 +382,7 @@ dump(features, open('features.pkl', 'wb'))
 
 运行此数据准备步骤可能需要一段时间，具体取决于您的硬件，可能需要一个小时的 CPU 与现代工作站。
 
-在运行结束时，您将提取的特征存储在' _features.pkl_ '中供以后使用。
+在运行结束时，您将提取的特征存储在'`features.pkl`'中供以后使用。
 
 ## 基线标题生成模型
 
@@ -405,7 +405,7 @@ dump(features, open('features.pkl', 'wb'))
 
 首先，我们需要加载预定义的照片子集。提供的数据集具有用于训练，测试和开发的单独集合，这些集合实际上只是不同的照片标识符组。我们将加载开发集并使用前 100 个列表标识符和第二个 100 标识符（例如从 100 到 200）作为测试集。
 
-下面的函数`load_set()`将加载一组预定义的标识符，我们将使用' _Flickr_8k.devImages.txt_ '文件名作为参数调用它。
+下面的函数`load_set()`将加载一组预定义的标识符，我们将使用'`Flickr_8k.devImages.txt`'文件名作为参数调用它。
 
 ```py
 # load a pre-defined list of photo identifiers
@@ -440,7 +440,7 @@ def train_test_split(dataset):
 
 现在，我们可以使用预定义的一组训练或测试标识符加载照片描述。
 
-下面是函数 _load_clean_descriptions（）_，它为来自' _descriptionss.txt_ '的已清除文本描述加载给定的一组标识符，并将标识符字典返回给文本。
+下面是函数 _load_clean_descriptions（）_，它为来自'`descriptionss.txt`'的已清除文本描述加载给定的一组标识符，并将标识符字典返回给文本。
 
 我们将开发的模型将生成给定照片的标题，并且标题将一次生成一个单词。将提供先前生成的单词的序列作为输入。因此，我们需要一个“_ 第一个字 _”来启动生成过程和'_ 最后一个字 _'来表示标题的结束。为此，我们将使用字符串'`startseq`'和'`endseq`'。
 
@@ -1157,7 +1157,7 @@ Description Length: 25
 
 该示例在 GPU 硬件上需要大约 20 分钟，在 CPU 硬件上需要更长时间。
 
-在运行结束时，训练集上报告的平均 BLEU 为 0.06，测试集上报告为 0.04。结果存储在 _baseline1.csv_ 中。
+在运行结束时，训练集上报告的平均 BLEU 为 0.06，测试集上报告为 0.04。结果存储在`baseline1.csv`中。
 
 ```py
           train      test
@@ -1823,7 +1823,7 @@ filename = 'custom_embedding.txt'
 model.wv.save_word2vec_format(filename, binary=False)
 ```
 
-单词嵌入保存到文件' _custom_embedding.txt_ '。
+单词嵌入保存到文件'`custom_embedding.txt`'。
 
 现在，我们可以将嵌入加载到内存中，只检索词汇表中单词的单词向量，然后将它们保存到新文件中。
 
@@ -1966,7 +1966,7 @@ dump(cust_embedding, open('word2vec_embedding.pkl', 'wb'))
 print('Saved Embedding')
 ```
 
-运行此示例将创建存储在文件' _word2vec_embedding.pkl_ '中的单词到单词向量的新字典映射。
+运行此示例将创建存储在文件'`word2vec_embedding.pkl`'中的单词到单词向量的新字典映射。
 
 ```py
 Dataset: 1000

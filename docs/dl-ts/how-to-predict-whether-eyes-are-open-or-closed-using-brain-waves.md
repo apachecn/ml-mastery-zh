@@ -87,7 +87,7 @@ EEG 传感器位于受试者身上的卡通
 
 完整的代码示例如下所示。
 
-该示例假定您具有 CSV 格式的数据集副本，文件名为“ _EEG_Eye_State.csv_ ”，与代码位于同一目录中。
+该示例假定您具有 CSV 格式的数据集副本，文件名为“`EEG_Eye_State.csv`”，与代码位于同一目录中。
 
 ```py
 # visualize dataset
@@ -115,7 +115,7 @@ pyplot.show()
 
 去除异常值以更好地理解 EEG 痕迹与眼睛的开/闭状态之间的关系是有用的。
 
-下面的示例将删除所有具有 EEG 观测值的行，这些行是平均值的四个标准偏差或更多。数据集将保存到名为“ _EEG_Eye_State_no_outliers.csv_ ”的新文件中。
+下面的示例将删除所有具有 EEG 观测值的行，这些行是平均值的四个标准偏差或更多。数据集将保存到名为“`EEG_Eye_State_no_outliers.csv`”的新文件中。
 
 这是[离群值检测和删除](https://machinelearningmastery.com/how-to-use-statistics-to-identify-outliers-in-data/)的快速而肮脏的实现，但是完成了工作。我相信你可以设计出更高效的实施方案。
 
@@ -181,7 +181,7 @@ savetxt('EEG_Eye_State_no_outliers.csv', values, delimiter=',')
 >deleted 59 rows
 ```
 
-我们现在可以通过加载新的' _EEG_Eye_State_no_outliers.csv_ '文件来显示没有异常值的数据。
+我们现在可以通过加载新的'`EEG_Eye_State_no_outliers.csv`'文件来显示没有异常值的数据。
 
 ```py
 # visualize dataset without outliers

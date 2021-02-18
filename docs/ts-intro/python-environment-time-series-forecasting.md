@@ -211,7 +211,7 @@ Python 3.5.3
 
 现在，确认已成功安装库。
 
-创建一个名为 versions.py 的新文件，并将以下代码段复制并粘贴到其中，并将文件另存为 _versions.py_ 。
+创建一个名为 versions.py 的新文件，并将以下代码段复制并粘贴到其中，并将文件另存为`versions.py`。
 
 ```py
 # scipy

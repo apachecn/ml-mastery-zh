@@ -294,9 +294,9 @@ def run():
 run()
 ```
 
-运行实验会将结果保存到名为“ _experiment_stateful.csv_ ”的文件中。
+运行实验会将结果保存到名为“`experiment_stateful.csv`”的文件中。
 
-再次运行实验并将实验写入的文件名更改为“ _experiment_stateful2.csv_ ”，以便不覆盖第一次运行的结果。
+再次运行实验并将实验写入的文件名更改为“`experiment_stateful2.csv`”，以便不覆盖第一次运行的结果。
 
 您现在应该在文件的当前工作目录中有两组结果：
 
@@ -369,7 +369,7 @@ LSTM 网络的好处是它们能够维持状态并学习序列。
 
 *   **期望 2** ：期​​望没有改组的无状态 LSTM 将通过改组跑赢无状态 LSTM。
 
-代码更改为上面的有状态 LSTM 示例以使其无状态涉及在 LSTM 层中设置 _ 无状态=假 _ 并使用自动训练时代训练而不是手动。结果将写入名为“ _experiment_stateless.csv_ ”的新文件。更新后的`fit_lstm()`功能如下所示。
+代码更改为上面的有状态 LSTM 示例以使其无状态涉及在 LSTM 层中设置 _ 无状态=假 _ 并使用自动训练时代训练而不是手动。结果将写入名为“`experiment_stateless.csv`”的新文件。更新后的`fit_lstm()`功能如下所示。
 
 ```py
 # fit an LSTM network to training data
@@ -384,7 +384,7 @@ def fit_lstm(train, batch_size, nb_epoch, neurons):
 	return model
 ```
 
-具有改组实验的无状态涉及在`fit_lstm()`函数中调用 fit 时将`shuffle`参数设置为`True`。该实验的结果写入文件“ _experiment_stateless_shuffle.csv_ ”。
+具有改组实验的无状态涉及在`fit_lstm()`函数中调用 fit 时将`shuffle`参数设置为`True`。该实验的结果写入文件“`experiment_stateless_shuffle.csv`”。
 
 完整更新的`fit_lstm()`功能如下所示。
 
@@ -471,7 +471,7 @@ max    114.958430  100.334725          99.870445
 
 我们可以使用 Shampoo Sales 数据集将训练数据截断到 12 个月，并将测试数据保留为 12 个月。这将允许无状态 LSTM 使用 12 的批量大小。如果以一次性方式（一个函数调用）执行训练和测试，那么“_ 无状态 _”的内部状态可能是 LSTM 不会被重置，两种配置都会产生相同的结果。
 
-我们将使用第一个实验的有状态结果作为起点。`forecast_lstm()`功能被修改为在一个步骤中预测一年的观察。 _ 实验（）_ 功能被修改为将训练数据集截断为 12 个月的数据，使用批量大小为 12，并处理从`forecast_lstm()`返回的批量预测功能。下面列出了这些更新的功能。结果将写入文件“ _experiment_stateful_batch12.csv_ ”。
+我们将使用第一个实验的有状态结果作为起点。`forecast_lstm()`功能被修改为在一个步骤中预测一年的观察。 _ 实验（）_ 功能被修改为将训练数据集截断为 12 个月的数据，使用批量大小为 12，并处理从`forecast_lstm()`返回的批量预测功能。下面列出了这些更新的功能。结果将写入文件“`experiment_stateful_batch12.csv`”。
 
 ```py
 # make a one-step forecast
@@ -519,7 +519,7 @@ def experiment(repeats, series):
 	return error_scores
 ```
 
-我们将使用前一个实验中的无状态 LSTM 配置，将训练模式混洗作为起点。该实验使用与上面列出的相同的`forecast_lstm()`和`experiment()`函数。结果写入文件“ _experiment_stateless_batch12.csv_ ”。
+我们将使用前一个实验中的无状态 LSTM 配置，将训练模式混洗作为起点。该实验使用与上面列出的相同的`forecast_lstm()`和`experiment()`函数。结果写入文件“`experiment_stateless_batch12.csv`”。
 
 运行此实验后，您将有两个结果文件：
 
@@ -594,15 +594,15 @@ max          114.567780         110.014679
 
 没有种子：
 
-*   **noseed_1** ：在每个训练时期之后重置状态而不是在测试期间（来自 _experiment_stateful.csv_ 中的第一个实验的有状态结果）。
-*   **noseed_2** ：在每个训练时期之后和每个一步预测之后复位状态（ _experiment_stateful_reset_test.csv_ ）。
-*   **noseed_3** ：训练后无需重置或进行一步预测（ _experiment_stateful_noreset.csv_ ）。
+*   **noseed_1** ：在每个训练时期之后重置状态而不是在测试期间（来自`experiment_stateful.csv`中的第一个实验的有状态结果）。
+*   **noseed_2** ：在每个训练时期之后和每个一步预测之后复位状态（`experiment_stateful_reset_test.csv`）。
+*   **noseed_3** ：训练后无需重置或进行一步预测（`experiment_stateful_noreset.csv`）。
 
 播种：
 
-*   **seed_1** ：在每个训练时期之后重置状态，在对测试数据集进行一步预测之前对训练数据集进行一步预测的种子状态（ _experiment_stateful_seed_train.csv_ ）。
-*   **seed_2** ：在每个训练时期后重置状态，在训练数据集上进行一步预测的种子状态，然后对测试数据集进行一步预测，并在训练和测试集上的每个一步预测后重置状态（ _experiment_stateful_seed_train_resets.csv_ ）。
-*   **seed_3** ：在进行一步预测之前训练数据集上的种子，在预测训练期间没有重置（ _experiment_stateful_seed_train_no_resets.csv_ ）。
+*   **seed_1** ：在每个训练时期之后重置状态，在对测试数据集进行一步预测之前对训练数据集进行一步预测的种子状态（`experiment_stateful_seed_train.csv`）。
+*   **seed_2** ：在每个训练时期后重置状态，在训练数据集上进行一步预测的种子状态，然后对测试数据集进行一步预测，并在训练和测试集上的每个一步预测后重置状态（`experiment_stateful_seed_train_resets.csv`）。
+*   **seed_3** ：在进行一步预测之前训练数据集上的种子，在预测训练期间没有重置（`experiment_stateful_seed_train_no_resets.csv`）。
 
 来自第一个“A vs A”实验的有状态实验代码用作基础。
 

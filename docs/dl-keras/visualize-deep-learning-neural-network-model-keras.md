@@ -119,7 +119,7 @@ model.add(Dense(1, activation='sigmoid'))
 plot_model(model, to_file='model_plot.png', show_shapes=True, show_layer_names=True)
 ```
 
-运行该示例将创建文件 _model_plot.png_ ，其中包含已创建模型的图。
+运行该示例将创建文件`model_plot.png`，其中包含已创建模型的图。
 
 ![Plot of Neural Network Model Graph](img/cd2ea0cb6ea3f16f73d52c1580d22310.png)
 

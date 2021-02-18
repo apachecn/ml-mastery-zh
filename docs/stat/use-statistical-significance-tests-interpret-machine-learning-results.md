@@ -48,7 +48,7 @@
 
 我们可以通过生成两个以略微不同的方式分布的高斯随机数群来模拟这一点。
 
-下面的代码生成第一个算法的结果。总共1000个结果存储在名为 _results1.csv_ 的文件中。结果来自高斯分布，平均值为50，标准差为10。
+下面的代码生成第一个算法的结果。总共1000个结果存储在名为`results1.csv`的文件中。结果来自高斯分布，平均值为50，标准差为10。
 
 ```py
 from numpy.random import seed
@@ -64,7 +64,7 @@ results = normal(mean, stev, 1000)
 savetxt('results1.csv', results)
 ```
 
-下面是 _results1.csv_ 的前5行数据片段。
+下面是`results1.csv`的前5行数据片段。
 
 ```py
 6.624345363663240960e+01
@@ -75,7 +75,7 @@ savetxt('results1.csv', results)
 ...
 ```
 
-我们现在可以生成第二个算法的结果。我们将使用相同的方法，并从稍微不同的高斯分布绘制结果（具有相同标准偏差的平均值为60）。结果写入 _results2.csv_ 。
+我们现在可以生成第二个算法的结果。我们将使用相同的方法，并从稍微不同的高斯分布绘制结果（具有相同标准偏差的平均值为60）。结果写入`results2.csv`。
 
 ```py
 from numpy.random import seed
@@ -91,7 +91,7 @@ results = normal(mean, stev, 1000)
 savetxt('results2.csv', results)
 ```
 
-以下是 _results2.csv_ 的前5行样本。
+以下是`results2.csv`的前5行样本。
 
 ```py
 7.624345363663240960e+01
@@ -134,7 +134,7 @@ results.hist()
 pyplot.show()
 ```
 
-该示例加载两组结果，并通过打印摘要统计信息开始。 _results1.csv_ 中的数据称为“A”， _results2.csv_ 中的数据称为“B”，为简洁起见。
+该示例加载两组结果，并通过打印摘要统计信息开始。`results1.csv`中的数据称为“A”，`results2.csv`中的数据称为“B”，为简洁起见。
 
 我们假设数据代表测试数据集上的错误分数，并且最小化分数是目标。
 
@@ -184,7 +184,7 @@ A的结果看起来比B好。
 
 如果p值大于0.05，我们就不能拒绝这个假设。如果p值&lt;= 0.05，我们拒绝这个假设。在这种情况下，我们相信分布不正常，95％的置信度。
 
-下面的代码加载 _results1.csv_ 并确定数据是否可能是高斯数据。
+下面的代码加载`results1.csv`并确定数据是否可能是高斯数据。
 
 ```py
 from pandas import read_csv
@@ -201,14 +201,14 @@ else:
 
 运行该示例首先打印计算的统计量和从高斯分布计算统计量的p值。
 
-我们可以看到 _results1.csv_ 很可能是高斯分布。
+我们可以看到`results1.csv`很可能是高斯分布。
 
 ```py
 2.99013078116 0.224233941463
 It is likely that result1 is normal
 ```
 
-我们可以使用来自 _results2.csv_ 的数据重复相同的测试。
+我们可以使用来自`results2.csv`的数据重复相同的测试。
 
 完整的代码清单如下。
 

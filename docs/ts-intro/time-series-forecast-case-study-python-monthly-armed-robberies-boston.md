@@ -100,7 +100,7 @@ statsmodels: 0.6.1
 
 [您可以了解有关此数据集的更多信息，并直接从 DataMarket](https://datamarket.com/data/set/22ob/monthly-boston-armed-robberies-jan1966-oct1975-deutsch-and-alt-1977) 下载。
 
-将数据集下载为 CSV 文件，并将其放在当前工作目录中，文件名为“ _robberies.csv_ ”。
+将数据集下载为 CSV 文件，并将其放在当前工作目录中，文件名为“`robberies.csv`”。
 
 ## 3.测试线束
 
@@ -119,7 +119,7 @@ statsmodels: 0.6.1
 
 最后一年的数据将用于验证最终模型。
 
-下面的代码将数据集作为 Pandas 系列加载并分成两部分，一部分用于模型开发（ _dataset.csv_ ），另一部分用于验证（ _validation.csv_ ）。
+下面的代码将数据集作为 Pandas 系列加载并分成两部分，一部分用于模型开发（`dataset.csv`），另一部分用于验证（`validation.csv`）。
 
 ```py
 from pandas import Series
@@ -139,8 +139,8 @@ Dataset 106, Validation 12
 
 这些文件的具体内容是：
 
-*   _dataset.csv_ ：1966 年 1 月至 1974 年 10 月的观察结果（106 次观察）
-*   _validation.csv_ ：1974 年 11 月至 1975 年 10 月的观察结果（12 次观察）
+*  `dataset.csv`：1966 年 1 月至 1974 年 10 月的观察结果（106 次观察）
+*  `validation.csv`：1974 年 11 月至 1975 年 10 月的观察结果（12 次观察）
 
 验证数据集是原始数据集的 10％。
 
@@ -148,7 +148,7 @@ Dataset 106, Validation 12
 
 ### 3.2。模型评估
 
-模型评估仅对上一节中准备的 _dataset.csv_ 中的数据进行。
+模型评估仅对上一节中准备的`dataset.csv`中的数据进行。
 
 模型评估涉及两个要素：
 
@@ -301,7 +301,7 @@ RMSE: 51.844
 
 ### 5.1 摘要统计。
 
-在文本编辑器中打开数据 _dataset.csv_ 文件和/或原始 _robberies.csv_ 文件并查看数据。
+在文本编辑器中打开数据`dataset.csv`文件和/或原始`robberies.csv`文件并查看数据。
 
 快速检查表明没有明显缺失的观察结果。如果我们试图将系列强制为浮点值和`NaN`或'_ 等值，我们可能已经注意到了这一点。_ '在数据中。
 
@@ -459,7 +459,7 @@ pyplot.show()
 
 时间序列几乎肯定是非平稳的。我们可以通过首先对系列进行差分并使用统计检验确认结果是静止的来使其静止。
 
-下面的示例创建了该系列的固定版本并将其保存到文件 _stationary.csv_ 。
+下面的示例创建了该系列的固定版本并将其保存到文件`stationary.csv`。
 
 ```py
 from pandas import Series
@@ -980,7 +980,7 @@ numpy.save('model_lambda.npy', [lam])
 
 运行该示例将创建两个本地文件：
 
-*   **model.pkl** 这是调用 _ARIMA.fit（）_ 的 ARIMAResult 对象。这包括系数和拟合模型时返回的所有其他内部数据。
+*   **model.pkl** 这是调用`ARIMA.fit()`的 ARIMAResult 对象。这包括系数和拟合模型时返回的所有其他内部数据。
 *   **model_lambda.npy** 这是存储为单行，单列 NumPy 数组的 lambda 值。
 
 这可能是矫枉过正的，操作使用真正需要的是模型中的 AR 和 MA 系数，差异数量的`d`参数，可能是滞后观察和模型残差，以及λ值为了变革。
@@ -1070,7 +1070,7 @@ Predicted: 452.043
 
 在测试工具部分中，我们将原始数据集的最后 12 个月保存在单独的文件中以验证最终模型。
 
-我们现在可以加载这个 _validation.csv_ 文件并使用它看看我们的模型在“看不见的”数据上的真实程度。
+我们现在可以加载这个`validation.csv`文件并使用它看看我们的模型在“看不见的”数据上的真实程度。
 
 我们可以通过两种方式进行：
 

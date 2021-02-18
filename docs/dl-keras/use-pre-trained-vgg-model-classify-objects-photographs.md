@@ -218,7 +218,7 @@ VGG 模型中的层图
 咖啡杯
 摄影： [jfanaian](https://www.flickr.com/photos/jfanaian/4994221690/) ，保留一些权利。
 
-下载图像并将其保存到当前工作目录，文件名为“ _mug.png_ ”。
+下载图像并将其保存到当前工作目录，文件名为“`mug.png`”。
 
 ### 2.加载 VGG 模型
 

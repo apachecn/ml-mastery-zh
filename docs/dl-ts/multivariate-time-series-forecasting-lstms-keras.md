@@ -73,7 +73,7 @@
 
 *   [北京 PM2.5 数据集](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pollution.csv)
 
-下载数据集并将其放在当前工作目录中，文件名为“ _raw.csv_ ”。
+下载数据集并将其放在当前工作目录中，文件名为“`raw.csv`”。
 
 ## 2.基本数据准备
 
@@ -119,7 +119,7 @@ print(dataset.head(5))
 dataset.to_csv('pollution.csv')
 ```
 
-运行该示例将打印转换数据集的前 5 行，并将数据集保存到“ _pollution.csv_ ”。
+运行该示例将打印转换数据集的前 5 行，并将数据集保存到“`pollution.csv`”。
 
 ```py
                      pollution  dew  temp   press wnd_dir  wnd_spd  snow  rain
@@ -133,7 +133,7 @@ date
 
 现在我们以易于使用的形式获得数据，我们可以创建每个系列的快速绘图并查看我们拥有的内容。
 
-下面的代码加载新的“ _pollution.csv_ ”文件，并将每个系列绘制为一个单独的子图，除了风速 dir，这是绝对的。
+下面的代码加载新的“`pollution.csv`”文件，并将每个系列绘制为一个单独的子图，除了风速 dir，这是绝对的。
 
 ```py
 from pandas import read_csv
@@ -181,7 +181,7 @@ pyplot.show()
 
 *   [如何将时间序列转换为 Python 中的监督学习问题](http://machinelearningmastery.com/convert-time-series-supervised-learning-problem-python/)
 
-首先，加载“ _pollution.csv_ ”数据集。风速特征是标签编码的（整数编码）。如果您有兴趣探索它，将来可能会进一步编码。
+首先，加载“`pollution.csv`”数据集。风速特征是标签编码的（整数编码）。如果您有兴趣探索它，将来可能会进一步编码。
 
 接下来，将所有特征标准化，然后将数据集转换为监督学习问题。然后移除要预测的小时（t）的天气变量。
 
@@ -340,7 +340,7 @@ print('Test RMSE: %.3f' % rmse)
 
 下面列出了完整的示例。
 
-**注**：此示例假设您已正确准备数据，例如将下载的“ _raw.csv_ ”转换为准备好的“ _pollution.csv_ ”。请参阅本教程的第一部分。
+**注**：此示例假设您已正确准备数据，例如将下载的“`raw.csv`”转换为准备好的“`pollution.csv`”。请参阅本教程的第一部分。
 
 ```py
 from math import sqrt

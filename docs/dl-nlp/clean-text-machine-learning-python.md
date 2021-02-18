@@ -50,9 +50,9 @@ Metamorphosis 的全文可从 Project Gutenberg 免费获得。
 
 *   [变形由 Franz Kafka 纯文本 UTF-8](http://www.gutenberg.org/cache/epub/5200/pg5200.txt) （可能需要加载页面两次）。
 
-下载文件并将其放在当前工作目录中，文件名为“ _metamorphosis.txt_ ”。
+下载文件并将其放在当前工作目录中，文件名为“`metamorphosis.txt`”。
 
-该文件包含我们不感兴趣的页眉和页脚信息，特别是版权和许可证信息。打开文件并删除页眉和页脚信息，并将文件另存为“ _metamorphosis_clean.txt_ ”。
+该文件包含我们不感兴趣的页眉和页脚信息，特别是版权和许可证信息。打开文件并删除页眉和页脚信息，并将文件另存为“`metamorphosis_clean.txt`”。
 
 clean 文件的开头应如下所示：
 
@@ -179,7 +179,7 @@ print(words[:100])
 
 一种方法是通过空格将文档拆分为单词（如“ _2.按空白划分 _”），然后使用字符串翻译将所有标点符号替换为空（例如删除它）。
 
-Python 提供了一个名为 _string.punctuation_ 的常量，它提供了一个很好的标点字符列表。例如：
+Python 提供了一个名为`string.punctuation`的常量，它提供了一个很好的标点字符列表。例如：
 
 ```py
 print(string.punctuation)
@@ -306,7 +306,7 @@ python -m nltk.downloader all
 
 NLTK 提供`sent_tokenize()`函数将文本拆分成句子。
 
-下面的示例将“ _metamorphosis_clean.txt_ ”文件加载到内存中，将其拆分为句子，然后打印第一个句子。
+下面的示例将“`metamorphosis_clean.txt`”文件加载到内存中，将其拆分为句子，然后打印第一个句子。
 
 ```py
 # load data

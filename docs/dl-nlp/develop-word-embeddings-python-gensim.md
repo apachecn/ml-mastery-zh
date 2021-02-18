@@ -140,7 +140,7 @@ model.wv.save_word2vec_format('model.bin')
 model.wv.save_word2vec_format('model.txt', binary=False)
 ```
 
-然后可以通过调用 _Word2Vec.load（）_ 函数再次加载保存的模型。例如：
+然后可以通过调用`Word2Vec.load()`函数再次加载保存的模型。例如：
 
 ```py
 model = Word2Vec.load('model.bin')
@@ -306,7 +306,7 @@ Word2Vec 模型 PCA 投影的散点图
 
 解压缩后，二进制文件（GoogleNews-vectors-negative300.bin）为 3.4 千兆字节。
 
-Gensim 库提供了加载此文件的工具。具体来说，您可以调用 _KeyedVectors.load_word2vec_format（）_ 函数将此模型加载到内存中，例如：
+Gensim 库提供了加载此文件的工具。具体来说，您可以调用`KeyedVectors.load_word2vec_format()`函数将此模型加载到内存中，例如：
 
 ```py
 from gensim.models import KeyedVectors
@@ -395,7 +395,7 @@ word2vec_output_file = 'glove.6B.100d.txt.word2vec'
 glove2word2vec(glove_input_file, word2vec_output_file)
 ```
 
-您现在拥有 word2vec 格式的 GloVe 模型副本，文件名为 _glove.6B.100d.txt.word2vec_ 。
+您现在拥有 word2vec 格式的 GloVe 模型副本，文件名为`glove.6B.100d.txt.word2vec`。
 
 现在我们可以加载它并执行相同的（国王 - 男人）+女人=？按照上一节进行测试。完整的代码清单如下。请注意，转换后的文件是 ASCII 格式，而不是二进制格式，因此我们在加载时设置 _binary = False_ 。
 

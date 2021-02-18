@@ -69,7 +69,7 @@ sub_metering_remainder = (global_active_power * 1000 / 60) - (sub_metering_1 + s
 
 *   [household_power_consumption.zip](https://archive.ics.uci.edu/ml/machine-learning-databases/00235/household_power_consumption.zip)
 
-下载数据集并将其解压缩到当前工作目录中。您现在将拥有大约 127 兆字节的文件“ _household_power_consumption.txt_ ”并包含所有观察结果
+下载数据集并将其解压缩到当前工作目录中。您现在将拥有大约 127 兆字节的文件“`household_power_consumption.txt`”并包含所有观察结果
 
 检查数据文件。
 
@@ -143,7 +143,7 @@ values = dataset.values.astype('float32')
 dataset['sub_metering_4'] = (values[:,0] * 1000 / 60) - (values[:,4] + values[:,5] + values[:,6])
 ```
 
-我们现在可以将清理后的数据集版本保存到新文件中;在这种情况下，我们只需将文件扩展名更改为.csv，并将数据集保存为“ _household_power_consumption.csv_ ”。
+我们现在可以将清理后的数据集版本保存到新文件中;在这种情况下，我们只需将文件扩展名更改为.csv，并将数据集保存为“`household_power_consumption.csv`”。
 
 ```py
 # save updated dataset
@@ -209,7 +209,7 @@ datetime                                       ...
 2006-12-16 17:28:00                3.666       ...             43.100000
 ```
 
-我们可以查看新的' _household_power_consumption.csv_ '文件并检查缺失的观察结果是否用空列标记，大熊猫将正确读作 NaN，例如第 190,499 行：
+我们可以查看新的'`household_power_consumption.csv`'文件并检查缺失的观察结果是否用空列标记，大熊猫将正确读作 NaN，例如第 190,499 行：
 
 ```py
 ...

@@ -249,7 +249,7 @@ sudo dnf install python3-numpy python3-scipy python3-scikit-learn python3-pandas
     *   点击“_ 活动 _”
     *   输入“`gedit`”
     *   单击图标或按 Enter 键
-*   2.键入以下脚本并将其另存为主目录中的 _versions.py_ 。
+*   2.键入以下脚本并将其另存为主目录中的`versions.py`。
 
 ```
 # scipy

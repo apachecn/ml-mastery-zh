@@ -85,7 +85,7 @@
 
 ### 文件：SiteLocations_with_more_sites.csv
 
-此文件具有与 _SiteLocations.csv_ 相同的格式，并且似乎列出与该文件相同的所有位置以及一些其他位置。
+此文件具有与`SiteLocations.csv`相同的格式，并且似乎列出与该文件相同的所有位置以及一些其他位置。
 
 正如文件名所示，它只是网站列表的更新版本。
 

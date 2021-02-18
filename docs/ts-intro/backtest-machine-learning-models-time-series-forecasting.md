@@ -88,7 +88,7 @@
 
 [在此处下载并了解有关数据集的更多信息](https://datamarket.com/data/set/22ti/zuerich-monthly-sunspot-numbers-1749-1983)。
 
-下载数据集并将其保存到当前工作目录中，文件名为“ _sunspots.csv_ ”。
+下载数据集并将其保存到当前工作目录中，文件名为“`sunspots.csv`”。
 
 ## 加载太阳黑子数据集
 

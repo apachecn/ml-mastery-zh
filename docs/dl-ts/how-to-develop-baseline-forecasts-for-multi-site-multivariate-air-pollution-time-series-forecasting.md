@@ -122,7 +122,7 @@ EMC Data Science Global Hackathon 数据集或简称“_ 空气质量预测 _”
 
 *   [EMC 数据科学全球黑客马拉松（空气质量预测）数据](https://www.kaggle.com/c/dsg-hackathon/data)
 
-我们的重点将是包含训练数据集的' _TrainingData.csv_ '文件，特别是块中的数据，其中每个块是八个连续的观察日和目标变量。
+我们的重点将是包含训练数据集的'`TrainingData.csv`'文件，特别是块中的数据，其中每个块是八个连续的观察日和目标变量。
 
 我们可以使用 Pandas [read_csv（）函数](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html)将数据文件加载到内存中，并在第 0 行指定标题行。
 
@@ -382,7 +382,7 @@ savetxt('AirQualityPrediction/naive_test.csv', test_rows, delimiter=',')
 
 我们还可以看到测试数据集的显着缩小版本，其中行仅在预测前置时间。
 
-新的训练和测试数据集分别保存在' _naive_train.csv_ '和' _naive_test.csv_ '文件中。
+新的训练和测试数据集分别保存在'`naive_train.csv`'和'`naive_test.csv`'文件中。
 
 ```py
 >dropping chunk=69: train=(0, 95), test=(28, 95)

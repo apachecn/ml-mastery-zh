@@ -205,9 +205,9 @@ numpy.save('ar_data.npy', X)
 numpy.save('ar_obs.npy', [series.values[-1]])
 ```
 
-此代码将创建一个文件 _ar_model.pkl_ ，您可以稍后加载该文件并用于进行预测。
+此代码将创建一个文件`ar_model.pkl`，您可以稍后加载该文件并用于进行预测。
 
-整个训练数据集保存为 _ar_data.npy_ ，最后一个观察结果保存在文件 _ar_obs.npy_ 中，作为带有一个项目的数组。
+整个训练数据集保存为`ar_data.npy`，最后一个观察结果保存在文件`ar_obs.npy`中，作为带有一个项目的数组。
 
 NumPy [save（）](https://docs.scipy.org/doc/numpy/reference/generated/numpy.save.html)功能用于保存差异训练数据和观察。然后可以使用 [load（）](https://docs.scipy.org/doc/numpy/reference/generated/numpy.load.html)函数来加载这些数组。
 
@@ -271,7 +271,7 @@ numpy.save('man_data.npy', lag)
 numpy.save('man_obs.npy', [series.values[-1]])
 ```
 
-系数保存在本地文件 _man_model.npy_ 中，滞后历史记录保存在文件 _man_data.npy_ 中，最后一次观察保存在文件 _man_obs 中。 npy_ 。
+系数保存在本地文件`man_model.npy`中，滞后历史记录保存在文件`man_data.npy`中，最后一次观察保存在文件 _man_obs 中。 npy_ 。
 
 然后可以按如下方式再次加载这些值：
 
@@ -376,7 +376,7 @@ Prediction: 46.755211
 让我们假设该系列中的下一个实际观察结果为 48\.
 新观察必须首先与最后一次观察不同。然后可以将其存储在差异观察列表中。最后，该值可以存储为最后一个观察值。
 
-对于存储的 AR 模型，我们可以更新 _ar_data.npy_ 和 _ar_obs.npy_ 文件。完整示例如下：
+对于存储的 AR 模型，我们可以更新`ar_data.npy`和`ar_obs.npy`文件。完整示例如下：
 
 ```py
 # update the data for the AR model with a new obs
@@ -395,7 +395,7 @@ last_ob[0] = observation
 numpy.save('ar_obs.npy', last_ob)
 ```
 
-我们可以对手动案例的数据文件进行相同的更改。具体来说，我们可以分别更新 _man_data.npy_ 和 _man_obs.npy_ 。
+我们可以对手动案例的数据文件进行相同的更改。具体来说，我们可以分别更新`man_data.npy`和`man_obs.npy`。
 
 下面列出了完整的示例。
 

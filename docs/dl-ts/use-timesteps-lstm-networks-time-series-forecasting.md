@@ -156,7 +156,7 @@ Name: Sales, dtype: float64
 
 下面列出了测试 1 个时间步的完整代码清单。
 
-对于 5 个实验中的每一个，`run()`函数中的时间步长参数从 1 到 5 变化。此外，结果将在实验结束时保存到文件中，并且还必须针对每个不同的实验运行更改此文件名;例如： _experiment_timesteps_1.csv_ ， _experiment_timesteps_2.csv_ 等。
+对于 5 个实验中的每一个，`run()`函数中的时间步长参数从 1 到 5 变化。此外，结果将在实验结束时保存到文件中，并且还必须针对每个不同的实验运行更改此文件名;例如：`experiment_timesteps_1.csv`，`experiment_timesteps_2.csv`等。
 
 ```py
 from pandas import DataFrame

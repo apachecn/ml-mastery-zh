@@ -315,7 +315,7 @@ run()
 
 运行实验会在测试数据集中保存拟合模型的 RMSE 分数。
 
-结果保存到文件“ _experiment_stateful.csv_ ”。
+结果保存到文件“`experiment_stateful.csv`”。
 
 下面提供了截断的结果列表。
 

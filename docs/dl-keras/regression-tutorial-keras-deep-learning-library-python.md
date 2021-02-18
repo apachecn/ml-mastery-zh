@@ -29,7 +29,7 @@ Keras 是一个深度学习库，包含高效的数字库 Theano 和 TensorFlow�
 
 我们将在本教程中看到的问题是[波士顿房价数据集](https://archive.ics.uci.edu/ml/datasets/Housing)。
 
-您可以下载此数据集并将其保存到当前工作中，直接使用文件名 _housing.csv_ （更新：[从此处下载数据](https://raw.githubusercontent.com/jbrownlee/Datasets/master/housing.data)）。
+您可以下载此数据集并将其保存到当前工作中，直接使用文件名`housing.csv`（更新：[从此处下载数据](https://raw.githubusercontent.com/jbrownlee/Datasets/master/housing.data)）。
 
 该数据集描述了波士顿郊区房屋的 13 个数字属性，并涉及以数千美元模拟这些郊区房屋的价格。因此，这是回归预测建模问题。输入属性包括犯罪率，非经营业务占地比例，化学品浓度等。
 

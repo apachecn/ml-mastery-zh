@@ -210,7 +210,7 @@ import sklearn
 print('sklearn: %s' % sklearn.__version__)
 ```
 
-使用文件名 _versions.py_ 保存脚本。
+使用文件名`versions.py`保存脚本。
 
 将目录更改为保存脚本的位置并键入：
 
@@ -276,7 +276,7 @@ import keras
 print('keras: %s' % keras.__version__)
 ```
 
-将脚本保存到文件 _deep_versions.py_ 。
+将脚本保存到文件`deep_versions.py`。
 
 键入以下命令运行脚本：
 

@@ -268,7 +268,7 @@ dump(features, open('features.pkl', 'wb'))
 
 该示例可能需要一些时间才能完成，可能需要一个小时。
 
-提取所有功能后，字典将存储在当前工作目录中的“ _features.pkl_ ”文件中。
+提取所有功能后，字典将存储在当前工作目录中的“`features.pkl`”文件中。
 
 然后可以稍后加载这些特征并将其用作训练语言模型的输入。
 
@@ -278,7 +278,7 @@ dump(features, open('features.pkl', 'wb'))
 
 花点时间谈谈描述是很重要的;有一些可用。
 
-文件 _Flickr8k.token.txt_ 包含图像标识符列表（用于图像文件名）和分词描述。每个图像都有多个描述。
+文件`Flickr8k.token.txt`包含图像标识符列表（用于图像文件名）和分词描述。每个图像都有多个描述。
 
 以下是文件中的描述示例，显示了单个图像的 5 种不同描述。
 
@@ -290,9 +290,9 @@ dump(features, open('features.pkl', 'wb'))
 1305564994_00513f9a5b.jpg#4 Two person in race uniform in a street car .
 ```
 
-文件 _ExpertAnnotations.txt_ 表示每个图像的哪些描述是由“_ 专家 _”编写的，这些描述是由众包工作者写的，要求描述图像。
+文件`ExpertAnnotations.txt`表示每个图像的哪些描述是由“_ 专家 _”编写的，这些描述是由众包工作者写的，要求描述图像。
 
-最后，文件 _CrowdFlowerAnnotations.txt_ 提供群众工作者的频率，指示字幕是否适合每个图像。可以概率地解释这些频率。
+最后，文件`CrowdFlowerAnnotations.txt`提供群众工作者的频率，指示字幕是否适合每个图像。可以概率地解释这些频率。
 
 该论文的作者描述了注释如下：
 
@@ -304,7 +304,7 @@ dump(features, open('features.pkl', 'wb'))
 
 第一步是决定使用哪些字幕。最简单的方法是对每张照片使用第一个描述。
 
-首先，我们需要一个函数将整个注释文件（' _Flickr8k.token.txt_ '）加载到内存中。下面是一个执行此操作的函数，称为 _load_doc（）_，给定文件名，将以字符串形式返回文档。
+首先，我们需要一个函数将整个注释文件（'`Flickr8k.token.txt`'）加载到内存中。下面是一个执行此操作的函数，称为 _load_doc（）_，给定文件名，将以字符串形式返回文档。
 
 ```py
 # load doc into memory
@@ -518,14 +518,14 @@ print('Vocabulary Size: %d' % len(vocabulary))
 save_doc(descriptions, 'descriptions.txt')
 ```
 
-运行该示例首先加载 8,092 个描述，清除它们，汇总 4,484 个唯一单词的词汇表，然后将它们保存到名为“ _descriptionss.txt_ ”的新文件中。
+运行该示例首先加载 8,092 个描述，清除它们，汇总 4,484 个唯一单词的词汇表，然后将它们保存到名为“`descriptionss.txt`”的新文件中。
 
 ```py
 Loaded: 8092
 Vocabulary Size: 4484
 ```
 
-在文本编辑器中打开新文件' _descriptionss.txt_ '并查看内容。您应该看到准备好进行建模的照片的可读描述。
+在文本编辑器中打开新文件'`descriptionss.txt`'并查看内容。您应该看到准备好进行建模的照片的可读描述。
 
 ```py
 ...
@@ -556,7 +556,7 @@ Vocabulary Size: 4484
 
 我们可以使用 Keras 中的工具来准备此类模型的描述。
 
-第一步是将图像标识符的映射加载到存储在' _descriptionss.txt_ '中的干净描述中。
+第一步是将图像标识符的映射加载到存储在'`descriptionss.txt`'中的干净描述中。
 
 ```py
 # load doc into memory

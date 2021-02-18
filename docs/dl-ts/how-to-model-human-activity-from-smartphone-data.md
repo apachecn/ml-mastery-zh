@@ -136,31 +136,31 @@
 检查解压缩的内容，您会注意到以下几点：
 
 *   存在“`train`”和“`test`”文件夹，其包含用于建模的数据的分割部分（例如，70％/ 30％）。
-*   有一个“ _README.txt_ ”文件，其中包含数据集的详细技术说明和解压缩文件的内容。
-*   有一个“ _features.txt_ ”文件，其中包含工程特性的技术说明。
+*   有一个“`README.txt`”文件，其中包含数据集的详细技术说明和解压缩文件的内容。
+*   有一个“`features.txt`”文件，其中包含工程特性的技术说明。
 
 “`train`”和“`test`”文件夹的内容类似（例如文件夹和文件名），尽管它们包含的特定数据存在差异。
 
 检查“train”文件夹显示了一些重要元素：
 
 *   包含预处理数据的“ _Inertial Signals_ ”文件夹。
-*   “ _X_train.txt_ ”文件，包含用于拟合模型的工程特征。
-*   “ _y_train.txt_ ”包含每个观察的类标签（1-6）。
-*   “ _subject_train.txt_ ”文件，其中包含数据文件中每一行的映射及其主题标识符（1-30）。
+*   “`X_train.txt`”文件，包含用于拟合模型的工程特征。
+*   “`y_train.txt`”包含每个观察的类标签（1-6）。
+*   “`subject_train.txt`”文件，其中包含数据文件中每一行的映射及其主题标识符（1-30）。
 
 每个文件中的行数匹配，表示每行是每个数据文件中的一个记录。
 
 “ _Inertial Signals_ ”目录包含 9 个文件。
 
-*   _x，y 和 z 轴的重力加速度 _ 数据文件： _total_acc_x_train.txt_ ， _total_acc_y_train.txt_ ， _total_acc_z_train.txt_ 。
-*   _x，y 和 z 轴的身体加速度 _ 数据文件： _body_acc_x_train.txt_ ， _body_acc_y_train.txt_ ，body_acc_z_train.txt。
-*   _x，y 和 z 轴的体陀螺 _ 数据文件： _body_gyro_x_train.txt_ ， _body_gyro_y_train.txt_ ， _body_gyro_z_train.txt_ 。
+*   _x，y 和 z 轴的重力加速度 _ 数据文件：`total_acc_x_train.txt`，`total_acc_y_train.txt`，`total_acc_z_train.txt`。
+*   _x，y 和 z 轴的身体加速度 _ 数据文件：`body_acc_x_train.txt`，`body_acc_y_train.txt`，body_acc_z_train.txt。
+*   _x，y 和 z 轴的体陀螺 _ 数据文件：`body_gyro_x_train.txt`，`body_gyro_y_train.txt`，`body_gyro_z_train.txt`。
 
 该结构在“`test`”目录中进行镜像。
 
 我们将把注意力集中在“_ 惯性信号 _”中的数据，因为这是开发可以学习合适表示的机器学习模型中最有趣的，而不是使用特定于域的特征工程。
 
-检查数据文件显示列由空格分隔，值显示为缩放到-1,1。此缩放可以通过数据集随附的 _README.txt_ 文件中的注释确认。
+检查数据文件显示列由空格分隔，值显示为缩放到-1,1。此缩放可以通过数据集随附的`README.txt`文件中的注释确认。
 
 现在我们知道了我们拥有的数据，我们可以弄清楚如何将其加载到内存中。
 
@@ -191,7 +191,7 @@ data = load_file('HARDataset/train/Inertial Signals/total_acc_y_train.txt')
 print(data.shape)
 ```
 
-运行该示例加载文件' _total_acc_y_train.txt_ '，返回 NumPy 数组，并打印数组的形状。
+运行该示例加载文件'`total_acc_y_train.txt`'，返回 NumPy 数组，并打印数组的形状。
 
 我们可以看到训练数据由 7,352 行或数据窗口组成，其中每个窗口有 128 个观察值。
 
@@ -465,7 +465,7 @@ Class=6, total=1944, percentage=18.876
 trainX, trainy = load_dataset('train', 'HARDataset/')
 ```
 
-接下来，我们可以在'`train`'目录中加载' _subject_train.txt_ '，该目录提供行到它所属主题的映射。
+接下来，我们可以在'`train`'目录中加载'`subject_train.txt`'，该目录提供行到它所属主题的映射。
 
 我们可以使用`load_file()`函数加载这个文件。加载后，我们还可以使用`unique()`NumPy 函数来检索训练数据集中的唯一主题列表。
 

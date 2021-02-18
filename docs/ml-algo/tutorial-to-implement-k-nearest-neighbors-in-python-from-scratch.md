@@ -53,7 +53,7 @@ kNN算法属于基于实例的竞争学习和懒惰学习算法的家族。
 
 *   [下载鸢尾花数据集](https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data)
 
-使用文件名“ _iris.data_ ”将文件保存在当前工作目录中。
+使用文件名“`iris.data`”将文件保存在当前工作目录中。
 
 ## 如何在Python中实现k-Nearest Neighbors
 

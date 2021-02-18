@@ -112,7 +112,7 @@ Date
 1990-12-31,13.0
 ```
 
-下面的代码将加载数据集，将其拆分为训练和验证数据集，并将它们分别保存到文件 _dataset.csv_ 和 _validation.csv_ 。
+下面的代码将加载数据集，将其拆分为训练和验证数据集，并将它们分别保存到文件`dataset.csv`和`validation.csv`。
 
 ```py
 # split the dataset
@@ -133,7 +133,7 @@ dataset.csv 中的最后一个观察是 1990 年平安夜：
 1990-12-24,10.0
 ```
 
-这意味着 1990 年圣诞节及以后是在 _dataset.csv_ 上训练的模型的样本外时间步长。
+这意味着 1990 年圣诞节及以后是在`dataset.csv`上训练的模型的样本外时间步长。
 
 ## 3.开发模型
 
@@ -299,7 +299,7 @@ forecast = inverse_difference(X, forecast, days_in_year)
 print('Forecast: %f' % forecast)
 ```
 
-运行该示例打印 14.8 度，接近 _validation.csv_ 文件中预期的 12.9 度。
+运行该示例打印 14.8 度，接近`validation.csv`文件中预期的 12.9 度。
 
 ```py
 Forecast: 14.861669

@@ -100,7 +100,7 @@ statsmodels: 0.6.1
 
 [您可以了解有关此数据集的更多信息，并直接从 DataMarket](https://datamarket.com/data/set/22r5/perrin-freres-monthly-champagne-sales-millions-64-72) 下载。
 
-将数据集下载为 CSV 文件，并将其放在当前工作目录中，文件名为“ _champagne.csv_ ”。
+将数据集下载为 CSV 文件，并将其放在当前工作目录中，文件名为“`champagne.csv`”。
 
 ## 3.测试线束
 
@@ -119,7 +119,7 @@ statsmodels: 0.6.1
 
 最后一年的数据将用于验证最终模型。
 
-下面的代码将数据集作为 Pandas 系列加载并分成两部分，一部分用于模型开发（ _dataset.csv_ ），另一部分用于验证（ _validation.csv_ ）。
+下面的代码将数据集作为 Pandas 系列加载并分成两部分，一部分用于模型开发（`dataset.csv`），另一部分用于验证（`validation.csv`）。
 
 ```py
 from pandas import Series
@@ -139,8 +139,8 @@ Dataset 93, Validation 12
 
 这些文件的具体内容是：
 
-*   _dataset.csv_ ：1964 年 1 月至 1971 年 9 月的观察结果（93 次观察）
-*   _validation.csv_ ：1971 年 10 月至 1972 年 9 月的观测（12 次观测）
+*  `dataset.csv`：1964 年 1 月至 1971 年 9 月的观察结果（93 次观察）
+*  `validation.csv`：1971 年 10 月至 1972 年 9 月的观测（12 次观测）
 
 验证数据集约占原始数据集的 11％。
 
@@ -148,7 +148,7 @@ Dataset 93, Validation 12
 
 ### 3.2。模型评估
 
-模型评估仅对上一节中准备的 _dataset.csv_ 中的数据进行。
+模型评估仅对上一节中准备的`dataset.csv`中的数据进行。
 
 模型评估涉及两个要素：
 
@@ -490,7 +490,7 @@ ARIMA（ _p，d，q_ ）模型需要三个参数，并且传统上是手动配�
 
 该系列的季节性似乎是逐年的。季节性数据可以通过从前一周期中的同一时间减去观察值来区分，在这种情况下是前一年的同一月份。这确实意味着我们将失去第一年的观察，因为没有前一年的差异。
 
-下面的示例创建该系列的延长版本并将其保存到文件 _stationary.csv_ 。
+下面的示例创建该系列的延长版本并将其保存到文件`stationary.csv`。
 
 ```py
 from pandas import Series
@@ -1095,8 +1095,8 @@ numpy.save('model_bias.npy', [bias])
 
 运行该示例将创建两个本地文件：
 
-*   _model.pkl_ 这是调用 _ARIMA.fit（）_ 的 ARIMAResult 对象。这包括系数和拟合模型时返回的所有其他内部数据。
-*   _model_bias.npy_ 这是存储为单行，单列 NumPy 数组的偏差值。
+*  `model.pkl`这是调用`ARIMA.fit()`的 ARIMAResult 对象。这包括系数和拟合模型时返回的所有其他内部数据。
+*  `model_bias.npy`这是存储为单行，单列 NumPy 数组的偏差值。
 
 ### 7.2 进行预测
 
@@ -1130,7 +1130,7 @@ print('Predicted: %.3f' % yhat)
 Predicted: 6794.773
 ```
 
-如果我们查看 _validation.csv_ ，我们可以看到下一个时间段第一行的值是 6981。
+如果我们查看`validation.csv`，我们可以看到下一个时间段第一行的值是 6981。
 
 预测是在正确的球场。
 
@@ -1140,7 +1140,7 @@ Predicted: 6794.773
 
 在测试工具部分中，我们将原始数据集的最后 12 个月保存在单独的文件中以验证最终模型。
 
-我们现在可以加载这个 _validation.csv_ 文件并使用它看看我们的模型在“看不见的”数据上的真实程度。
+我们现在可以加载这个`validation.csv`文件并使用它看看我们的模型在“看不见的”数据上的真实程度。
 
 我们可以通过两种方式进行：
 

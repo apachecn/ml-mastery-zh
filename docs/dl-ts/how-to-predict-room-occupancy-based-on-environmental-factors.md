@@ -90,7 +90,7 @@
 "no","date","Temperature","Humidity","Light","CO2","HumidityRatio","Occupancy"
 ```
 
-下面是带有修改的 _datatraining.txt_ 文件的前五行示例。
+下面是带有修改的`datatraining.txt`文件的前五行示例。
 
 ```py
 "no","date","Temperature","Humidity","Light","CO2","HumidityRatio","Occupancy"
@@ -139,9 +139,9 @@ pyplot.show()
 
 运行该示例会为每个数据集创建一个具有不同颜色的绘图：
 
-*   _datatest.txt_ （测试）：蓝色
-*   _datatraining.txt_ （训练）：橙色
-*   _datatest2.txt_ （val）：绿色
+*  `datatest.txt`（测试）：蓝色
+*  `datatraining.txt`（训练）：橙色
+*  `datatest2.txt`（val）：绿色
 
 我们可以看到测试和训练集之间的小差距以及训练和验证集之间的较大差距。
 
@@ -159,7 +159,7 @@ pyplot.show()
 
 **注意**：这种简化不考虑数据中的时间间隙，并且依赖于先前时​​间步骤的一系列观察的算法可能需要不同的数据组织。
 
-下面的示例加载数据，将其连接到时间上一致的数据集，并将结果保存到名为“ _combined.csv_ ”的新文件中。
+下面的示例加载数据，将其连接到时间上一致的数据集，并将结果保存到名为“`combined.csv`”的新文件中。
 
 ```py
 from pandas import read_csv
@@ -176,7 +176,7 @@ data.drop('no', axis=1, inplace=True)
 data.to_csv('combined.csv')
 ```
 
-运行该示例将连接的数据集保存到新文件' _combined.csv_ '。
+运行该示例将连接的数据集保存到新文件'`combined.csv`'。
 
 ## 简单的预测模型
 

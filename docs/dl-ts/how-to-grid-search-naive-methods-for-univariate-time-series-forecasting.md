@@ -873,7 +873,7 @@ done
 
 *   [shampoo.csv](https://raw.githubusercontent.com/jbrownlee/Datasets/master/shampoo.csv)
 
-在当前工作目录中使用文件名“ _shampoo.csv_ ”保存文件。
+在当前工作目录中使用文件名“`shampoo.csv`”保存文件。
 
 我们可以使用函数`read_csv()`将此数据集作为 Pandas 系列加载。
 

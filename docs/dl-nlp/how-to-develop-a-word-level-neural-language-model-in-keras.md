@@ -44,7 +44,7 @@
 
 *   [下载柏拉图共和国](http://www.gutenberg.org/cache/epub/1497/pg1497.txt)
 
-下载书籍文本并将其直接放在当前工作中，文件名为“ _republic.txt_ ”
+下载书籍文本并将其直接放在当前工作中，文件名为“`republic.txt`”
 
 在文本编辑器中打开文件并删除前后问题。这包括开头的书籍详细信息，长篇分析以及最后的许可证信息。
 
@@ -155,7 +155,7 @@ def load_doc(filename):
 	return text
 ```
 
-使用此函数，我们可以在文件' _republic_clean.txt_ '中加载文档的清洁版本，如下所示：
+使用此函数，我们可以在文件'`republic_clean.txt`'中加载文档的清洁版本，如下所示：
 
 ```py
 # load document
@@ -283,7 +283,7 @@ def save_doc(lines, filename):
 	file.close()
 ```
 
-我们可以调用此函数并将训练序列保存到文件' _republic_sequences.txt_ '。
+我们可以调用此函数并将训练序列保存到文件'`republic_sequences.txt`'。
 
 ```py
 # save sequences to file
@@ -367,7 +367,7 @@ out_filename = 'republic_sequences.txt'
 save_doc(sequences, out_filename)
 ```
 
-您现在应该将训练数据存储在当前工作目录中的文件' _republic_sequences.txt_ '中。
+您现在应该将训练数据存储在当前工作目录中的文件'`republic_sequences.txt`'中。
 
 接下来，让我们看看如何使语言模型适合这些数据。
 
@@ -391,7 +391,7 @@ save_doc(sequences, out_filename)
 
 加载后，我们可以通过基于新行的拆分将数据拆分为单独的训练序列。
 
-下面的代码段将从当前工作目录加载' _republic_sequences.txt_ '数据文件。
+下面的代码段将从当前工作目录加载'`republic_sequences.txt`'数据文件。
 
 ```py
 # load doc into memory
@@ -546,7 +546,7 @@ Epoch 100/100
 
 在运行结束时，训练的模型将保存到文件中。
 
-在这里，我们使用 Keras 模型 API 将模型保存到当前工作目录中的文件' _model.h5_ '。
+在这里，我们使用 Keras 模型 API 将模型保存到当前工作目录中的文件'`model.h5`'。
 
 之后，当我们加载模型进行预测时，我们还需要将单词映射到整数。这是在 Tokenizer 对象中，我们也可以使用 Pickle 保存它。
 
@@ -701,7 +701,7 @@ print(seed_text + '\n')
 encoded = tokenizer.texts_to_sequences([seed_text])[0]
 ```
 
-该模型可以通过调用 _model.predict_classes（）_ 直接预测下一个单词，该模型将返回具有最高概率的单词的索引。
+该模型可以通过调用`model.predict_classes()`直接预测下一个单词，该模型将返回具有最高概率的单词的索引。
 
 ```py
 # predict probabilities for each word

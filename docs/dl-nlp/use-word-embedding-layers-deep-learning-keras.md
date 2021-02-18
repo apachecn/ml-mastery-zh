@@ -275,7 +275,7 @@ Keras 嵌入层还可以使用在其他地方学习的单词嵌入。
 
 这个例子的灵感来自 Keras 项目中的一个例子： [pretrained_word_embeddings.py](https://github.com/fchollet/keras/blob/master/examples/pretrained_word_embeddings.py) 。
 
-下载并解压缩后，您将看到一些文件，其中一个是“ _glove.6B.100d.txt_ ”，其中包含 100 维版本的嵌入。
+下载并解压缩后，您将看到一些文件，其中一个是“`glove.6B.100d.txt`”，其中包含 100 维版本的嵌入。
 
 如果您查看文件内部，您将看到一个标记（单词），后面跟着每行的权重（100 个数字）。例如，下面是嵌入 ASCII 文本文件的第一行，显示“”的嵌入。
 

@@ -33,7 +33,7 @@ Keras 深度学习库的多类分类教程
 
 虹膜花数据集是一个充分研究的问题，我们可以[期望在 95％至 97％的范围内实现模型精度](http://www.is.umk.pl/projects/rules.html#Iris)。这为开发我们的模型提供了一个很好的目标。
 
-您可以[从 UCI 机器学习库下载虹膜花数据集](http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data)，并将其放在当前工作目录中，文件名为“ _iris.csv_ ”。
+您可以[从 UCI 机器学习库下载虹膜花数据集](http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data)，并将其放在当前工作目录中，文件名为“`iris.csv`”。
 
 ## 2.导入类和函数
 

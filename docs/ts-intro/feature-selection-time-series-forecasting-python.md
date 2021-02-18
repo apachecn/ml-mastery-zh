@@ -205,7 +205,7 @@ dataframe.to_csv('lags_12months_features.csv', index=False)
 1962-01-01   561.0   470.0  3395.0   360.0  3440.0
 ```
 
-从新数据集中删除前 12 行，结果保存在文件“ _lags_12months_features.csv_ ”中。
+从新数据集中删除前 12 行，结果保存在文件“`lags_12months_features.csv`”中。
 
 这个过程可以以任意数量的时间步长重复，例如 6 个月或 24 个月，我建议进行实验。
 

@@ -320,7 +320,7 @@ for i in range(10):
 	print(sentences[i])
 ```
 
-运行后，干净的句子分别保存在 _english.pkl_ 和 _french.pkl_ 文件中。
+运行后，干净的句子分别保存在`english.pkl`和`french.pkl`文件中。
 
 作为运行的一部分，我们还打印每个清晰句子列表的前几行，转载如下。
 
@@ -501,7 +501,7 @@ for i in range(10):
 	print(lines[i])
 ```
 
-首先，报告英语词汇的大小，然后是更新的大小。更新的数据集将保存到文件' _english_vocab.pkl_ '，并打印一些更新的示例的现场检查，其中包含用“`unk`”替换的词汇单词。
+首先，报告英语词汇的大小，然后是更新的大小。更新的数据集将保存到文件'`english_vocab.pkl`'，并打印一些更新的示例的现场检查，其中包含用“`unk`”替换的词汇单词。
 
 ```py
 English Vocabulary: 105357
@@ -524,7 +524,7 @@ you will be aware from the press and television that there have been a number of
 one of the people assassinated very recently in sri lanka was mr unk unk who had visited the european parliament just a few months ago
 ```
 
-然后对 French 数据集执行相同的过程，将结果保存到文件' _french_vocab.pkl_ '。
+然后对 French 数据集执行相同的过程，将结果保存到文件'`french_vocab.pkl`'。
 
 ```py
 French Vocabulary: 141642

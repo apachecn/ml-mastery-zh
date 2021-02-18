@@ -50,7 +50,7 @@ Kyunghyun Cho 是纽约大学的学者，已经提供了下载数据集：
 
 *   [cnn_stories.tgz](https://drive.google.com/uc?export=download&id=0BwmD_VLjROrfTHk4NFg2SndKcjQ) （151 兆字节）
 
-此数据集包含超过 93,000 篇新闻文章，其中每篇文章都存储在单个“ _.story_ ”文件中。
+此数据集包含超过 93,000 篇新闻文章，其中每篇文章都存储在单个“`.story`”文件中。
 
 将此数据集下载到您的工作站并解压缩。下载后，您可以在命令行上解压缩存档，如下所示：
 
@@ -58,7 +58,7 @@ Kyunghyun Cho 是纽约大学的学者，已经提供了下载数据集：
 tar xvf cnn_stories.tgz
 ```
 
-这将创建一个 _cnn / stories /_ 目录，其中包含 _.story_ 文件。
+这将创建一个 _cnn / stories /_ 目录，其中包含`.story`文件。
 
 例如，我们可以在命令行上计算故事文件的数量，如下所示：
 
@@ -434,7 +434,7 @@ from pickle import dump
 dump(stories, open('cnn_dataset.pkl', 'wb'))
 ```
 
-这将创建一个名为 _cnn_dataset.pkl_ 的新文件，其中包含所有已清理的数据。该文件大小约为 374 兆字节。
+这将创建一个名为`cnn_dataset.pkl`的新文件，其中包含所有已清理的数据。该文件大小约为 374 兆字节。
 
 然后我们可以稍后加载它并将其与文本摘要模型一起使用，如下所示：
 
