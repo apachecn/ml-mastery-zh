@@ -19,11 +19,11 @@
 
 ## 深度学习是大型神经网络
 
-[来自百度研究院 Coursera 和首席科学家的 Andrew Ng](https://en.wikipedia.org/wiki/Andrew_Ng) 正式成立了 [Google Brain](https://en.wikipedia.org/wiki/Google_Brain) ，最终促成了大量 Google 服务中深度学习技术的产品化。
+[来自百度研究院 Coursera 和首席科学家的 Andrew Ng](https://en.wikipedia.org/wiki/Andrew_Ng) 正式成立了谷歌大脑 ([Google Brain](https://en.wikipedia.org/wiki/Google_Brain)) ，最终促成了大量 Google 服务中深度学习技术的产品化。
 
 他谈论过也写过很多关于深度学习的内容，这些都是学习深度学习的很好的起点。
 
-在深度学习的早期讨论中，Andrew 描述了传统人工神经网络背景下的深度学习。在 2013 年题为“[深度学习，自学习和无监督特征学习](https://www.youtube.com/watch?v=n1ViNeWhC24)”的演讲中，他将深度学习的理念描述为：
+在深度学习的早期讨论中，Andrew 描述了传统人工神经网络背景下的深度学习。在 2013 年题为“[深度学习，自学习和非监督特征学习](https://www.youtube.com/watch?v=n1ViNeWhC24)”的演讲中，他将深度学习的理念描述为：
 
 > 使用大脑模拟，希望：
 > 
@@ -35,7 +35,7 @@
 
 后来他的评论变得更加细致入微了。
 
-根据 Andrew 的观点，深度学习的核心是我们现在拥有足够快的计算机和足够多的数据来真正训练大型神经网络。关于为什么深度学习是在现在开始迅猛发展的问题，他在2015年的ExtractConf上一个标题为“[为什么数据科学家需要了解深度学习](https://www.youtube.com/watch?v=O0VN0pGgBZM)”的演讲中评论道：
+根据 Andrew 的观点，深度学习的核心是我们现在拥有足够快的计算机和足够多的数据来真正训练大型神经网络。关于为什么深度学习是在现在开始迅猛发展的问题，他在 2015 年的 ExtractConf 上一个标题为“[为什么数据科学家需要了解深度学习](https://www.youtube.com/watch?v=O0VN0pGgBZM)”的演讲中评论道：
 
 > 我们现在拥有的非常大的神经网络......以及我们可以访问大量的数据。
 
@@ -50,11 +50,11 @@
 为什么是深度学习？
 滑动 [Andrew Ng](http://www.slideshare.net/ExtractConf) ，保留所有权利。
 
-最后，他清楚地指出，我们在实践中看到的深度学习的好处来自监督学习（supervised learning）。在2015年的 ExtractConf 演讲中，他评论道：
+最后，他清楚地指出，我们在实践中看到的深度学习的好处来自监督学习（supervised learning）。在 2015年 的 ExtractConf 演讲中，他评论道：
 
 > 如今深度学习的所有价值几乎都是通过监督学习或从已标记的数据中学习而得到的。
 
-早在2014年，他在斯坦福大学的一次题为“[深度学习](https://www.youtube.com/watch?v=W15K9PegQt0)”的演讲中作了类似的评论：
+早在 2014 年，他在斯坦福大学的一次题为“[深度学习](https://www.youtube.com/watch?v=W15K9PegQt0)”的演讲中作了类似的评论：
 
 > 深度学习突飞猛进的一个原因是它在监督学习中的表现十分惊人。
 
@@ -73,33 +73,33 @@ Andrew 经常说我们应该，也将会看到更多的来自深度学习中非�
 更多数据、更大模型、更多运算，带来更好的结果，
 滑动 [Jeff Dean](http://static.googleusercontent.com/media/research.google.com/en//people/jeff/BayLearn2015.pdf) ，保留所有权利。
 
-## 深度学习是分层特征学习
+## 深度学习是层次特征学习 （Hierarchical Feature Learning）
 
-除了可扩展性之外，深度学习模型的另一个经常被引用的好处是它们能够从原始数据执行自动特征提取，也称为[特征学习](https://en.wikipedia.org/wiki/Feature_learning)。
+除了可扩展性之外，深度学习模型的另一个经常被引用的好处是它们能够从原始数据中自动提取特征（feature），也称为[特征学习](https://en.wikipedia.org/wiki/Feature_learning) (feature learning)。
 
-[Yoshua Bengio](https://en.wikipedia.org/wiki/Yoshua_Bengio) 是深度学习的另一个领导者，尽管他开始对大型神经网络能够实现的自动特征学习产生浓厚的兴趣。
+[Yoshua Bengio](https://en.wikipedia.org/wiki/Yoshua_Bengio) 是深度学习领域的另一个领军人物，尽管他刚开始时感兴趣的领域是大型神经网络能够实现的自动特征学习（automatic feature learning）。
 
-他描述了使用特征学习发现和学习良好表示的算法能力方面的深度学习。在 2012 年题为“[深度学习无监督和转移学习的表达](http://www.jmlr.org/proceedings/papers/v27/bengio12a/bengio12a.pdf)”的论文中，他评论道：
+他从深度学习算法利用特征学习从数据中发现并学习表征（representation）的能力方面描述了深度学习。在 2012 年题为“[非监督和转移学习之表征深度学习](http://www.jmlr.org/proceedings/papers/v27/bengio12a/bengio12a.pdf)”的论文中，他评论道：
 
-> 深度学习算法试图利用输入分布中的未知结构，以便通常在多个级别上发现良好的表示，并使用较低级别的特征定义更高级别的学习特征
+> 深度学习算法试图开发输入（input）数据分布中的未知结构，以便发现良好的表征。良好的表征通常是在多个级别上的，即用较低级别的特征定义更高级别的特征。
 
-他在 2009 年的技术报告“[为 AI](http://www.iro.umontreal.ca/~lisa/publications2/index.php/publications/show/239) 学习深层架构”中提供了深入学习的详细视角，其中强调了特征学习中层次结构的重要性。
+他在 2009 年的技术报告“[为 AI 学习深度结构](http://www.iro.umontreal.ca/~lisa/publications2/index.php/publications/show/239) ”中详细阐述了深度学习，其中强调了特征学习中层次（hierarchy）的重要性。
 
-> 深度学习方法旨在学习具有来自较低级别特征的组成所形成的较高级别的层级的特征的特征层级。在多个抽象级别自动学习功能允许系统学习直接从数据将输入映射到输出的复杂功能，而不完全依赖于人工制作的功能。
+> 深度学习方法旨在学习特征层次（feature hierarchies），它们是由来自较高级别的层次（higher levels of the hierarchy）中的特征组成的，而这些较高级别的层次（higher levels of the hierarchy）则是由较低级别的特征（lower level features）所组成的。自动学习在多个抽象水平上的特征允许一个系统能够学习到数据背后复杂的函数，这些函数直接从数据中将输入映射到输出，而不完全依赖于人工设计的特征。
 
-在即将出版的名为“[深度学习](http://www.deeplearningbook.org)”的书中，他与 Ian Goodfellow 和 Aaron Courville 合着，他们根据模型的架构深度来定义深度学习。
+在即将出版的与 Ian Goodfellow 和 Aaron Courville 合著的名为“[深度学习](http://www.deeplearningbook.org)”的书中，他们根据模型的架构（architecture ）深度来定义深度学习。
 
-> 概念的层次结构允许计算机通过用简单的概念构建它们来学习复杂的概念。如果我们绘制一个图表来显示这些概念是如何相互构建的，那么图表很深，有很多层。出于这个原因，我们将这种方法称为 AI 深度学习。
+> 概念的层次结构(the hierarchy of concepts)允许计算机去学习复杂的概念（concepts）。这些复杂的概念是由计算机从简单的概念中建立起来的。如果我们可以画一个图来表示这些概念是如何在各自的基础上互相构建的，那么这个图会很深(deep)，有很多层（layers）。出于这个原因，我们将这种方法称为 AI 深度学习。
 
-这是一本重要的书，有可能在一段时间内成为该领域的权威资源。本书继续描述多层感知器作为深度学习领域中使用的算法，给出了深度学习已包含在人工神经网络中的观点。
+这是一本重要的书，有可能在一段时间内成为该领域的权威资源。本书继续描述深度学习领域使用的算法 —— 多层感知器(multilayer perceptrons, MLP)，因为深度学习已经被归入人工神经网络这一更大的领域中。
 
-> 深度学习模型的典型例子是前馈深度网络或多层感知器（MLP）。
+> 深度学习模型的一个典型例子就是前馈深度网络（feedforward deep network）或多层感知器（multilayer perceptrons，MLP）。
 
-[Peter Norvig](https://en.wikipedia.org/wiki/Peter_Norvig) 是谷歌研究部主任，以其题为“[人工智能：现代方法](http://www.amazon.com/dp/0136042597?tag=inspiredalgor-20)”的人工智能教科书而闻名。
+[Peter Norvig](https://en.wikipedia.org/wiki/Peter_Norvig) 是谷歌研究部主任，因其题为“[人工智能：现代方法](http://www.amazon.com/dp/0136042597?tag=inspiredalgor-20)”的人工智能教科书而闻名。
 
-在 2016 年的一次演讲中，他给出了题为“[深度学习和可理解性与软件工程和验证](https://www.youtube.com/watch?v=X769cyzBNVw)”的内容，他以与 Yoshua 非常相似的方式定义了深度学习，重点关注使用更深层网络结构所允许的抽象功能。
+在 2016 年的一次题为“[深度学习及其可理解性 VS 软件工程和验证](https://www.youtube.com/watch?v=X769cyzBNVw)”的演讲中，他以和 Yoshua 非常相似的方式定义了深度学习，重点强调更深层网络结构所激发的抽象能力。
 
-> 一种学习，你形成的表示有几个抽象层次，而不是输出的直接输入
+> 深度学习通过由很多抽象层次所形成的表征来学习，而不是从直接输入和输出中学习。
 
 ## 为什么称它为“深度学习”？
 为什么不只是“人工神经网络”？
