@@ -15,7 +15,7 @@
 ![What is Deep Learning?](img/17428dfdb9702ab6ce021befb3d7b812.png)
 
 什么是深度学习？
-[Kiran Foster](https://www.flickr.com/photos/rueful/7885846128/) 的照片，保留一些权利。
+[Kiran Foster](https://www.flickr.com/photos/rueful/7885846128/) 的图片。保留部分权利。
 
 ## 深度学习是大型神经网络
 
@@ -48,7 +48,7 @@
 ![Why Deep Learning?](img/7e971b08f1a9d6b073c9659bc13010e5.png)
 
 为什么是深度学习？
-滑动 [Andrew Ng](http://www.slideshare.net/ExtractConf) ，保留所有权利。
+[Andrew Ng](http://www.slideshare.net/ExtractConf)的幻灯片。保留所有权利。
 
 最后，他清楚地指出，我们在实践中看到的深度学习的好处来自监督学习（supervised learning）。在 2015年 的 ExtractConf 演讲中，他评论道：
 
@@ -66,12 +66,12 @@ Andrew 经常说我们应该，也将会看到更多的来自深度学习中非�
 
 > 当你听到深度学习这个词的时候，就想想一个大的深度神经网络(deep neural net)。深度（deep）通常指神经网络的层数，书籍出版时就采用这种流行的术语。我通常就把它们想成深度神经网络。
 
-他曾多次做过这个演讲，在[同一演讲的修正版的幻灯片中](http://static.googleusercontent.com/media/research.google.com/en//people/jeff/BayLearn2015.pdf)，他强调了神经网络的可扩展性，表明随着更多数据和更大的模型会使模型的结果变得更好，这反过来也需要更多的计算机运算去训练模型。
+他曾多次做过这个演讲，在[同一演讲的修正版的幻灯片中](http://static.googleusercontent.com/media/research.google.com/en//people/jeff/BayLearn2015.pdf)，他强调了神经网络的可扩展性，表明更多数据和更大的模型会使模型的结果变得更好，这反过来也需要更多的运算能力去训练模型。
 
 ![Results Get Better With More Data, Larger Models, More Compute](img/f12c1bb681a84a2372eacda56b1aeadc.png)
 
 更多数据、更大模型、更多运算，带来更好的结果，
-滑动 [Jeff Dean](http://static.googleusercontent.com/media/research.google.com/en//people/jeff/BayLearn2015.pdf) ，保留所有权利。
+[Jeff Dean](http://static.googleusercontent.com/media/research.google.com/en//people/jeff/BayLearn2015.pdf)的幻灯片。保留所有权利。
 
 ## 深度学习是层次特征学习 （Hierarchical Feature Learning）
 
@@ -102,36 +102,36 @@ Andrew 经常说我们应该，也将会看到更多的来自深度学习中非�
 > 深度学习通过由很多抽象层次所形成的表征来学习，而不是从直接输入和输出中学习。
 
 ## 为什么称它为“深度学习”？
-为什么不只是“人工神经网络”？
+## 为什么不只是“人工神经网络”？
 
-[Geoffrey Hinton](https://en.wikipedia.org/wiki/Geoffrey_Hinton) 是人工神经网络领域的先驱，并共同发表了关于[反向传播](https://en.wikipedia.org/wiki/Backpropagation)算法的第一篇论文，用于训练多层感知器网络。
+[Geoffrey Hinton](https://en.wikipedia.org/wiki/Geoffrey_Hinton) 是人工神经网络领域的先驱，并与他人合著了第一篇用于训练多层感知器网络的[反向传播](https://en.wikipedia.org/wiki/Backpropagation)算法的论文。
 
-他可能已经开始引入措辞“`deep`”来描述大型人工神经网络的发展。
+他可能是第一个用“`deep`”（深度）这个词来描述大型人工神经网络发展的人。
 
-他在 2006 年共同撰写了一篇题为“[深度信念网快速学习算法](http://www.mitpressjournals.org/doi/pdf/10.1162/neco.2006.18.7.1527)”的论文，其中描述了一种训练“深度”（如在多层网络中）受限制的 Boltzmann 机器的方法。
+他在 2006 年与他人合著了一篇题为“[深度信念网的快速学习算法](http://www.mitpressjournals.org/doi/pdf/10.1162/neco.2006.18.7.1527)”的论文，其中描述了一种训练“深度”（如在多层网络中）受限玻尔兹曼机（Restricted Boltzmann Machine) 的方法。
 
-> 使用互补先验，我们推导出一种快速，贪婪的算法，可以一次一层地学习深层定向信念网络，前提是前两层形成一个无向联想记忆。
+> 使用互补先验，我们推导出一种快速、贪婪（greedy）的算法，它可以一次学习一层深层有向信念网络（Directed Belief Networks），前提是前两层形成一个无向联想记忆。
 
-本文和 Geoff 在一个无向深度网络上共同撰写的题为“ [Deep Boltzmann Machines](http://www.jmlr.org/proceedings/papers/v5/salakhutdinov09a/salakhutdinov09a.pdf) ”的相关论文得到了社区的好评（现已引用数百次），因为它们是贪婪层的成功例子 - 明智的网络训练，在前馈网络中允许更多层。
+这篇文章和 Geoff 的另一篇与他人合著的关于无向深度网络（Undirected Deep Network）的题为“ [深度玻尔兹曼机](http://www.jmlr.org/proceedings/papers/v5/salakhutdinov09a/salakhutdinov09a.pdf) ”的论文得到了社区的好评（现已引用数百次），因为它们是贪婪的按层训练网络的成功例子。在前馈网络中，这种方法允许更多的层。
 
-在科学的一篇题为“[用神经网络降低数据维度](https://www.cs.toronto.edu/~hinton/science.pdf)”的共同撰写的文章中，他们坚持使用相同的“深度”描述来描述他们开发网络的方法，这些网络的层数比以前更多。
+在科学杂志上的一篇题为“[用神经网络降低数据维度](https://www.cs.toronto.edu/~hinton/science.pdf)”的合著的文章中，同样按照之前对“深度”的定义，他们描述了他们开发网络的方法，这些网络的层数比以前典型网络的层数更多。
 
-> 我们描述了一种初始化权重的有效方法，它允许深度自动编码器网络学习低维度代码，这些代码比主成分分析更好地作为减少数据维度的工具。
+> 我们阐述了一种有效的初始化权重的方法，它允许深度自动编码器（Auto-encoder）网络学习低维度代码（low-dimensional codes）。作为减少数据维度的工具，这些代码比主成分分析（Principal Components Analysis）更好。
 
-在同一篇文章中，他们发表了一篇有趣的评论，与 Andrew Ng 关于最近计算能力的提高以及对大型数据集的访问的评论相互关联，这些数据集在大规模使用时释放了神经网络尚未开发的能力。
+在同一篇文章中，他们还有一个有趣的评论。这个评论与 Andrew Ng 关于最近计算能力的提高以及对大型数据集的访问的评论不谋而合。他们都认为大规模使用这些数据集可以激发神经网络的潜能。
 
-> 自 20 世纪 80 年代以来，显而易见的是，通过深度自动编码器的反向传播对于非线性降维是非常有效的，只要计算机足够快，数据集足够大，并且初始权重足够接近良好的解决方案。现在满足所有这三个条件。
+> 自 20 世纪 80 年代以来，显而易见的是，通过深度自动编码器的反向传播（backpropagation）对于非线性降维是非常有效的，只要计算机足够快，数据集足够大，并且初始权重足够接近良好解。如今，这三个条件都满足了。
 
-在 2016 年皇家学会题为“[深度学习](https://www.youtube.com/watch?v=VhmE_UXDOGs)”的演讲中，Geoff 评论说深度信念网络是 2006 年深度学习的开始，并且这一新的深度学习浪潮的首次成功应用是 2009 年的语音识别标题为“[声学建模使用深度信念网络](http://www.cs.toronto.edu/~asamir/papers/speechDBN_jrnl.pdf)”，实现了最先进的结果。
+在 2016 年皇家学会题为“[深度学习](https://www.youtube.com/watch?v=VhmE_UXDOGs)”的演讲中，Geoff 评论说深度信念网络是 2006 年深度学习的开始，这一新的深度学习浪潮的首次成功应用是 2009 年的语音识别，这个文章的标题为“[基于深度信念网络的声学建模](http://www.cs.toronto.edu/~asamir/papers/speechDBN_jrnl.pdf)”，他们达到了最先进的水平。
 
-结果使语音识别和神经网络社区注意到，使用“深度”作为先前神经网络技术的差异因素，可能导致名称改变。
+这个结果使语音识别和神经网络社区注意到，可能是因为使用“深度”来与先前的神经网络进行区分而导致了名称的改变。
 
-皇家学会谈话中对深度学习的描述非常反向传播，正如您所期望的那样。有趣的是，他提出了为什么反向传播（读“深度学习”）在上世纪 90 年代没有起飞的 4 个原因。前两点与安德鲁·吴（Andrew Ng）的评论相符，关于数据集太小而计算机太慢。
+在皇家学会的谈话中，大概正如您所期望的那样，他们对深度学习的描述非常专注于反向传播。有趣的是，他提出了为什么反向传播（应读作“深度学习”）在上世纪 90 年代没有起飞的 4 个原因。前两点与 Andrew Ng 的评论相符，即数据集太小而且计算机太慢。
 
 ![What Was Actually Wrong With Backpropagation in 1986?](img/fba7c01fd78761e808c4f093eff4ccd1.png)
 
-1986 年背向传播实际上是错误的？
-滑动 [Geoff Hinton](https://www.youtube.com/watch?v=VhmE_UXDOGs) ，保留所有权利。
+1986 年的反向传播到底错在哪里？
+ [Geoff Hinton](https://www.youtube.com/watch?v=VhmE_UXDOGs) 的幻灯片。保留所有权利。
 
 ## 深度学习作为跨域的可扩展学习
 
@@ -148,7 +148,7 @@ Andrew 经常说我们应该，也将会看到更多的来自深度学习中非�
 ![Deep Learning = Learning Hierarchical Representations](img/662da48b47adc3aaeccc61fa6245b2a0.png)
 
 深度学习=学习等级表示
-滑动 [Yann LeCun](https://www.youtube.com/watch?v=Qk4SqF9FT-M) ，保留所有权利。
+[Yann LeCun](https://www.youtube.com/watch?v=Qk4SqF9FT-M)的幻灯片。保留所有权利。
 
 [Jurgen Schmidhuber](https://en.wikipedia.org/wiki/J%C3%BCrgen_Schmidhuber) 是另一种流行算法的父亲，它像 MLP 和 CNN 一样也可以根据模型大小和数据集大小进行扩展，并且可以通过反向传播进行训练，而是针对学习序列数据进行定制，称为 [Long 短期记忆网络（LSTM）](http://machinelearningmastery.com/crash-course-recurrent-neural-networks-deep-learning/)，一种递归神经网络。
 
