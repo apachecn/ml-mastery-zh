@@ -2,6 +2,8 @@
 
 > 原文： [https://machinelearningmastery.com/what-is-deep-learning/](https://machinelearningmastery.com/what-is-deep-learning/)
 
+> 校对：[linmeishang](https://github.com/linmeishang)
+
 深度学习（Deep Learning）是机器学习的一个子领域，涉及受大脑结构和功能激发的算法，这些算法被称为人工神经网络 (Artificial Neural Networks)。
 
 如果你刚刚接触深度学习，或者你有过一些有关神经网络的经验，你可能会感到困惑。我记得我刚开始学习时也很困惑，许多同事和朋友在 90 年代和 21 世纪初学习和使用神经网络时也是如此。
