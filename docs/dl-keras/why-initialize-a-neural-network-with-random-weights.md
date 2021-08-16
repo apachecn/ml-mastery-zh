@@ -75,7 +75,7 @@
 
 这为随机搜索过程提供了多个机会来启动和遍历候选解决方案的空间，以寻找更好的候选解决方案 - 即所谓的全局最优解（global optima）。
 
-我们通常用山脉和山谷景观的类比（例如[健身景观](https://en.wikipedia.org/wiki/Fitness_landscape)）来描述在候选解决方案空间的搜索过程。如果我们想要寻找最大解，我们可以将景观中的小山丘视为局部的最大解，将最大的山丘视为全局最大解。
+我们通常用山脉和山谷景观的类比（例如[适应度景观](https://en.wikipedia.org/wiki/Fitness_landscape)）来描述在候选解决方案空间的搜索过程。如果我们想要寻找最大解，我们可以将景观中的小山丘视为局部的最大解，将最大的山丘视为全局最大解。
 
 这是一个吸引人的研究领域，我在这个领域有一些研究。您可以参见我的书：
 
@@ -131,97 +131,97 @@
 
 每次训练网络时，我们都可以使用相同的随机数。
 
-在评估网络配置时，这没有用。
+在评估网络架构时，这没有用。
 
-在生产环境中使用模型的情况下，给定训练数据集训练相同的最终网络权重集可能是有帮助的。
+但这在生产环境中使用模型的情况下，给定训练数据集，训练相同的最终网络权重集时可能是有帮助的。
 
-您可以在此文章中了解有关修复使用 Keras 开发的神经网络的随机种子的更多信息：
+您可以在如下这篇文章中了解有关由 Keras 开发的使用固定随机种子（random seed) 来训练神经网络的更多信息：
 
-*   [如何使用 Keras](https://machinelearningmastery.com/reproducible-results-neural-networks-keras/) 获得可重现的结果
+*   [如何用 Keras 得到可重现的结果(https://machinelearningmastery.com/reproducible-results-neural-networks-keras/)
 
 ## 初始化方法
 
 传统上，神经网络的权重被设置为小的随机数。
 
-神经网络权重的初始化是一个完整的研究领域，因为网络的仔细初始化可以加速学习过程。
+神经网络权重的初始化是一个完整的研究领域，因为精心地初始化一个网络可以加速学习过程。
 
 现代深度学习库，例如 Keras，提供了许多网络初始化方法，所有这些都是用小随机数初始化权重的变体。
 
-例如，在为所有网络类型编写时，Keras 中提供了当前的方法：
+例如，目前 Keras 为所有类型的网络编写提供了如下方法：
 
-*   **Zeros** ：生成张量初始化为 0 的初始值设定项。
-*   **Ones** ：生成张量初始化为 1 的初始值设定项。
-*   **常量**：生成张量初始化为常量值的初始值设定项。
-*   **RandomNormal** ：生成具有正态分布的张量的初始化器。
-*   **RandomUniform** ：生成具有均匀分布的张量的初始化器。
-*   **TruncatedNormal** ：生成截断正态分布的初始化程序。
-*   **VarianceScaling** ：初始化程序，能够使其比例适应权重的形状。
-*   **Orthogonal** ：生成随机正交矩阵的初始化器。
-*   **Identity** ：生成单位矩阵的初始化程序。
-*   **lecun_uniform** ：LeCun 统一初始化器。
-*   **glorot_normal** ：Glorot 正常初始化器，也称为 Xavier 正常初始化器。
-*   **glorot_uniform** ：Glorot 统一初始化器，也叫 Xavier 统一初始化器。
-*   **he_normal** ：他正常的初始化程序。
-*   **lecun_normal** ：LeCun 正常初始化程序。
-*   **he_uniform** ：他统一方差缩放初始化器。
+*   **Zeros** ：使张量（tensor）初始化为 0 的初始化器（initializer） 。
+*   **Ones** ：使张量初始化为 1 的初始化器。
+*   **常量**：使张量初始化为某个常数的初始化器。
+*   **RandomNormal** ：使张量符合正态分布的初始化器。
+*   **RandomUniform** ：使张量符合均匀分布的初始化器。
+*   **TruncatedNormal** ：使张量符合截断正态分布的初始化器。
+*   **VarianceScaling** ：可以根据权重的形状改变其规模的初始化器。
+*   **Orthogonal** ：可以生成随机正交矩阵的初始化器。
+*   **Identity** ：可以生成单位矩阵的初始化器。
+*   **lecun_uniform** ：LeCun 均匀分布初始化器。
+*   **glorot_normal** ：Glorot 正态分布初始化器，也称为 Xavier 正态分布初始化器。
+*   **glorot_uniform** ：Glorot 均匀初始化器，也叫 Xavier 均匀初始化器。
+*   **he_normal** He 正态分布初始化器。
+*   **lecun_normal** ：LeCun 正态分布初始化器。
+*   **he_uniform** ：He 均匀方差调节初始化器。
 
-有关详细信息，请参阅[文档](https://keras.io/initializers/)。
+更多信息请参阅[文档](https://keras.io/initializers/)。
 
-出于兴趣，Keras 开发人员为不同的层类型选择的默认初始值设定项如下：
+出于兴趣，Keras 开发人员为不同类型的神经网络层选择的默认初始值设定如下：
 
-*   **致密**（例如 MLP）： _glorot_uniform_
+*   **Dense**（例如 MLP）： _glorot_uniform_
 *   **LSTM** ： _glorot_uniform_
 *   **CNN** ： _glorot_uniform_
 
-您可以在本文中了解更多关于“`glorot_uniform`”，也称为“ _Xavier normal_ ”，以 Xavier Glorot 方法的开发人员命名：
+您可以在本文中了解更多关于“`glorot_uniform`”的信息，它也被称为“ _Xavier normal_ ”，是以本方法的开发人员 Xavier Glorot 的名字来命名的：
 
-*   [了解深度前馈神经网络训练的难度](http://proceedings.mlr.press/v9/glorot10a.html)，2010。
+*   [理解深度前馈神经网络训练的难度](http://proceedings.mlr.press/v9/glorot10a.html)，2010。
 
 没有单一的最佳方法来初始化神经网络的权重。
 
-> 现代初始化策略简单且具有启发性。设计改进的初始化策略是一项艰巨的任务，因为神经网络优化还不是很清楚。 [...]我们对初始点如何影响泛化的理解特别原始，几乎没有为如何选择初始点提供指导。
+> 现代初始化策略是简单且是启发式的。设计更好的初始化策略是一项艰巨的任务，因为我们还没能清楚理解神经网络优化。 [...]我们对初始点如何影响神经网络的预测能力的理解还特别粗略，几乎还不能为如何选择初始点提供任何指导。
 
 - 第 301 页，[深度学习](https://amzn.to/2H5wjfg)，2016 年。
 
-这是一个超级参数，供您探索，测试和试验您的特定预测建模问题。
+因此，初始器也是一个超级参数。您可以在您的特定预测建模问题上探索、测试和试验这个超参数。
 
-你有一个最喜欢的重量初始化方法吗？
+您有没有最喜欢的权重初始化方法？
 请在下面的评论中告诉我。
 
 ## 进一步阅读
 
-如果您希望深入了解，本节将提供有关该主题的更多资源。
+如果您希望深入了解此话题，本节将提供更多相关资源。
 
-### 图书
+### 书籍
 
 *   [深度学习](https://amzn.to/2H5wjfg)，2016 年。
 
-### 用品
+### 文章
 
 *   维基百科上的[非确定性算法](https://en.wikipedia.org/wiki/Nondeterministic_algorithm)
 *   [维基百科上的随机算法](https://en.wikipedia.org/wiki/Randomized_algorithm)
 *   [维基百科上的随机优化](https://en.wikipedia.org/wiki/Stochastic_optimization)
 *   [维基百科上的随机梯度下降](https://en.wikipedia.org/wiki/Stochastic_gradient_descent)
-*   [维基百科上的健身景观](https://en.wikipedia.org/wiki/Fitness_landscape)
+*   [维基百科上的适应度景观](https://en.wikipedia.org/wiki/Fitness_landscape)
 *   [神经网络常见问题](ftp://ftp.sas.com/pub/neural/FAQ.html)
-*   [Keras 重量初始化](https://keras.io/initializers/)
+*   [Keras 权重初始化](https://keras.io/initializers/)
 *   [了解深度前馈神经网络训练的难度](http://proceedings.mlr.press/v9/glorot10a.html)，2010。
 
 ### 讨论
 
-*   [神经网络中有哪些好的初始权重？](https://stats.stackexchange.com/questions/47590/what-are-good-initial-weights-in-a-neural-network)
+*   [神经网络中什么样的初始权重是好的？](https://stats.stackexchange.com/questions/47590/what-are-good-initial-weights-in-a-neural-network)
 *   [为什么神经网络的权重应该初始化为随机数？](https://stackoverflow.com/questions/20027598/why-should-weights-of-neural-networks-be-initialized-to-random-numbers)
-*   [神经网络中有哪些好的初始权重？](https://www.quora.com/What-are-good-initial-weights-in-a-neural-network)
+*   [神经网络中什么样的初始权重是好的？](https://www.quora.com/What-are-good-initial-weights-in-a-neural-network)
 
 ## 摘要
 
-在这篇文章中，您发现了为什么必须随机初始化神经网络权重。
+在这篇文章中，您学习了为什么必须随机初始化神经网络的权重。
 
-具体来说，你学到了：
+具体来说，您学到了：
 
-*   关于针对具有挑战性的问题的非确定性和随机算法的需求。
-*   在随机优化算法中初始化和搜索期间使用随机性。
+*   为什么具有挑战性的问题需要非确定性和随机算法。
+*   在随机优化算法的初始化和搜索过程中使用随机性。
 *   随机梯度下降是随机优化算法，需要随机初始化网络权重。
 
-你有任何问题吗？
-在下面的评论中提出您的问题，我会尽力回答。
+您还有任何问题吗？
+请在下面的评论中提问，我会尽力回答。
