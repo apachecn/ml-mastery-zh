@@ -44,7 +44,7 @@
 
 另一种解决方案是使用[非确定性算法](https://en.wikipedia.org/wiki/Nondeterministic_algorithm)。这些是在算法执行期间做决策时使用[随机性](https://en.wikipedia.org/wiki/Randomized_algorithm)元素的算法。这意味着当在相同数据上重新运行相同的算法时，将遵循不同的步骤顺序。
 
-他们可以大大加快获得解决方案的过程，但解决方案将是近似的，或者说是“_ 好的 _”，但往往不是 “_ 最佳的 _。” 不确定性算法往往不能很好地保证运行时间或其解决方案的质量。
+他们可以大大加快获得解决方案的过程，但解决方案将是近似的，或者说是“_好的_”, 但往往不是 “_最佳的_”。 不确定性算法往往不能很好地保证运行时间或其解决方案的质量。
 
 不过这不是问题。因为这类算法想要解决的问题通常非常难，所以任何好的解决方案都已经可以使人满意了。
 
@@ -52,7 +52,7 @@
 
 搜索问题通常非常具有挑战性，这类问题需要使用非确定性算法，而非确定性算法则往往很大程度上依赖随机性。
 
-这类算法本身并不是随机的，而是他们谨慎地使用随机性。它们在一定边界内是随机的，被称为[随机算法（stochastic algorithms）] (https://en.wikipedia.org/wiki/Stochastic_optimization)。
+这类算法本身并不是随机的，而是他们谨慎地使用随机性。它们在一定边界内是随机的，被称为[随机算法](https://en.wikipedia.org/wiki/Stochastic_optimization)。
 
 搜索算法的逐步搜索（incremental or step-wise search）的性质通常意味着搜索过程和搜索算法是一种从初始状态或位置到最终状态或位置的优化（optimization）过程。例如，随机优化问题或随机优化算法，这其中的例子是遗传算法（genetic algorithm），模拟退火（simulated annealing）和随机梯度下降（stochastic gradient descent）。
 
@@ -95,7 +95,7 @@
 
 如前一节所述，诸如随机梯度下降的随机优化算法在选择搜索的起始点和搜索的过程中使用随机性。
 
-具体而言，随机梯度下降要求将网络的权重初始化为小的随机数（随机，但接近零，例如[0.0,0.1]）。在每个时期（epoch）之前,训练数据集也使用随机性来进行混合（shuffling），这反过来导致每个批次 (batch) 的梯度估计（gradient estimate）也会不同。
+具体而言，随机梯度下降要求将网络的权重初始化为小的随机数（随机，但接近零，例如[0.0, 0.1]）。在每个时期（epoch）之前，训练数据集也使用随机性来进行混合（shuffling），这反过来导致每个批次 (batch) 的梯度估计（gradient estimate）也会不同。
 
 您可以在这篇文章中了解更多关于随机梯度下降的信息：
 
@@ -111,17 +111,17 @@
 
 您可以在这篇文章中了解有关神经网络有效评估的更多信息：
 
-*   [如何评估深度学习模型的技巧](https://machinelearningmastery.com/evaluate-skill-deep-learning-models/)
+*   [如何评估深度学习模型的表现](https://machinelearningmastery.com/evaluate-skill-deep-learning-models/)
 
 ### 为什么不将权重设置为零？
 
 每次训练网络时，我们都可以使用相同的权重集。例如，您可以对所有权重使用 0.0 的值。
 
-在这种情况下，学习算法（learning algorithm）的方程将无法对网络权重进行任何更改，并且模型将被卡住。重要的是要注意，每个神经元中的偏差权重（bias weight）默认设置为零，而不是一个小的随机值。
+在这种情况下，学习算法（learning algorithm）的方程将无法对网络权重进行任何更改，模型将被卡住。重要的是要注意，每个神经元中的偏差权重（bias weight）默认设置为零，而不是一个小的随机值。
 
 具体地，连接到相同输入（input）的隐藏层中并排的神经元（nodes）必须用不同权重，这样学习算法才可以更新权重。
 
-这通常被称为在训练期间打破对称性的需要（the need to break symmetry）。
+这通常被称为“在训练期间打破对称性的需要”（the need to break symmetry）。
 
 > 关于神经网络的学习算法，也许我们只知道一个完全确定的属性，即初始参数需要在不同神经元之间“打破对称性”。如果具有相同激活函数（activation function）的两个隐藏神经元连接到相同的输入（input），则这些神经元必须具有不同的初始参数。如果它们具有相同的初始参数，那么确定性学习算法（这些算法用于确定性成本和模型）将以相同方式不断更新这两个神经元。
 
@@ -137,7 +137,7 @@
 
 您可以在如下这篇文章中了解有关由 Keras 开发的使用固定随机种子（random seed) 来训练神经网络的更多信息：
 
-*   [如何用 Keras 得到可重现的结果(https://machinelearningmastery.com/reproducible-results-neural-networks-keras/)
+*   [如何用 Keras 得到可重现的结果]((https://machinelearningmastery.com/reproducible-results-neural-networks-keras/)
 
 ## 初始化方法
 
@@ -151,7 +151,7 @@
 
 *   **Zeros** ：使张量（tensor）初始化为 0 的初始化器（initializer） 。
 *   **Ones** ：使张量初始化为 1 的初始化器。
-*   **常量**：使张量初始化为某个常数的初始化器。
+*   **Constant**：使张量初始化为某个常数的初始化器。
 *   **RandomNormal** ：使张量符合正态分布的初始化器。
 *   **RandomUniform** ：使张量符合均匀分布的初始化器。
 *   **TruncatedNormal** ：使张量符合截断正态分布的初始化器。
@@ -161,7 +161,7 @@
 *   **lecun_uniform** ：LeCun 均匀分布初始化器。
 *   **glorot_normal** ：Glorot 正态分布初始化器，也称为 Xavier 正态分布初始化器。
 *   **glorot_uniform** ：Glorot 均匀初始化器，也叫 Xavier 均匀初始化器。
-*   **he_normal** He 正态分布初始化器。
+*   **he_normal** : He 正态分布初始化器。
 *   **lecun_normal** ：LeCun 正态分布初始化器。
 *   **he_uniform** ：He 均匀方差调节初始化器。
 
@@ -183,7 +183,7 @@
 
 - 第 301 页，[深度学习](https://amzn.to/2H5wjfg)，2016 年。
 
-因此，初始器也是一个超级参数。您可以在您的特定预测建模问题上探索、测试和试验这个超参数。
+因此，初始器也是一个超参数。您可以在特定预测建模问题上探索、测试和试验这个超参数。
 
 您有没有最喜欢的权重初始化方法？
 请在下面的评论中告诉我。
@@ -198,7 +198,7 @@
 
 ### 文章
 
-*   维基百科上的[非确定性算法](https://en.wikipedia.org/wiki/Nondeterministic_algorithm)
+*   [维基百科上的非确定性算法](https://en.wikipedia.org/wiki/Nondeterministic_algorithm)
 *   [维基百科上的随机算法](https://en.wikipedia.org/wiki/Randomized_algorithm)
 *   [维基百科上的随机优化](https://en.wikipedia.org/wiki/Stochastic_optimization)
 *   [维基百科上的随机梯度下降](https://en.wikipedia.org/wiki/Stochastic_gradient_descent)
@@ -209,9 +209,9 @@
 
 ### 讨论
 
-*   [神经网络中什么样的初始权重是好的？](https://stats.stackexchange.com/questions/47590/what-are-good-initial-weights-in-a-neural-network)
+*   [stackexchange 论坛：神经网络中什么样的初始权重是好的？](https://stats.stackexchange.com/questions/47590/what-are-good-initial-weights-in-a-neural-network)
 *   [为什么神经网络的权重应该初始化为随机数？](https://stackoverflow.com/questions/20027598/why-should-weights-of-neural-networks-be-initialized-to-random-numbers)
-*   [神经网络中什么样的初始权重是好的？](https://www.quora.com/What-are-good-initial-weights-in-a-neural-network)
+*   [quora 论坛：神经网络中什么样的初始权重是好的？](https://www.quora.com/What-are-good-initial-weights-in-a-neural-network)
 
 ## 摘要
 
