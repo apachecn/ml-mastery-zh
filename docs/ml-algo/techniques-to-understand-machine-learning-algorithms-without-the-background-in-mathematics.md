@@ -1,4 +1,4 @@
-# 在没有数学背景的情况下理解机器学习算法的5种技术
+# 在没有数学背景的情况下理解机器学习算法的5种技巧
 
 > 原文： [https://machinelearningmastery.com/techniques-to-understand-machine-learning-algorithms-without-the-background-in-mathematics/](https://machinelearningmastery.com/techniques-to-understand-machine-learning-algorithms-without-the-background-in-mathematics/)
 
@@ -124,7 +124,7 @@
 2.  精算资料来源，例如首次描述算法的论文和文章。
 3.  最先进的资源，描述了算法的最新扩展和实验。
 4.  启发式消息来源，如机器学习竞赛，Q＆amp; A网站和会议论文的帖子。
-5.  实施源，例如工具和库的开源代码，博客文章和技术报告。
+5.  实现源，例如工具和库的开源代码，博客文章和技术报告。
 
 您不需要成为博士研究员也不需要是机器学习算法专家。
 
@@ -186,7 +186,7 @@
 2.  选择要实现的算法，从容易的事情开始（参见下面的列表）。
 3.  在开发时选择一个问题来测试您的实现，2D数据有利于可视化（甚至在Excel中）。
 4.  研究算法并利用许多不同的信息来源（例如阅读教程，论文，其他实现等）。
-5.  单元测试算法以确认您的理解并验证实施。
+5.  单元测试算法以确认您的理解并验证实现。
 
 从小处着手，建立信心。
 
@@ -200,7 +200,7 @@
 
 另见帖子：
 
-*   “[从零开始实施机器学习算法的好处](http://machinelearningmastery.com/benefits-of-implementing-machine-learning-algorithms-from-scratch/)”
+*   “[从零开始实现机器学习算法的好处](http://machinelearningmastery.com/benefits-of-implementing-machine-learning-algorithms-from-scratch/)”
 *   “[在实现机器学习算法时不要从开源代码开始](http://machinelearningmastery.com/dont-start-with-open-source-code-when-implementing-machine-learning-algorithms/)”
 
 ## 理论不仅仅适用于数学家

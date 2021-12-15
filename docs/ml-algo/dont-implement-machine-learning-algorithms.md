@@ -7,7 +7,7 @@
 
 停止。
 
-您是否正在实施机器学习算法？
+您是否正在实现机器学习算法？
 
 为什么？
 
@@ -23,10 +23,10 @@
 
 ![Don't Implement Machine Learning Algorithms](img/7e0b20781e6e1d8d803f468aebe287bd.jpg)
 
-不要实施机器学习算法
+不要实现机器学习算法
 照 [kirandulo](https://www.flickr.com/photos/kirandulo/16555448595/) ，保留一些权利。
 
-## 抓住了实施陷阱
+## 抓住了实现陷阱
 
 这是我收到的电子邮件的片段：
 
@@ -89,7 +89,7 @@
 
 它可能需要专门的缓存知识才能充分利用您的硬件。
 
-在你得到“ _hello world_ ”实现工作之后，这些并不是特殊的技巧。这些是包含算法实施项目的工程挑战。
+在你得到“ _hello world_ ”实现工作之后，这些并不是特殊的技巧。这些是包含算法实现项目的工程挑战。
 
 ### 正确的算法
 
@@ -103,13 +103,13 @@
 
 这不仅仅是单元测试的问题，而是要深入了解该技术并设计案例来证明实现符合预期并处理边缘情况。
 
-## 使用现成的实施
+## 使用现成的实现
 
 你可能是一名优秀的工程师。
 
 但是，与现成的实现相比，你的“ _hello world_ ”算法的实现可能不会削减它。
 
-您的实现可能基于教科书描述，这意味着它将是朴素和缓慢的。您可能有也可能没有专业知识来设计测试以确保实施的正确性。
+您的实现可能基于教科书描述，这意味着它将是朴素和缓慢的。您可能有也可能没有专业知识来设计测试以确保实现的正确性。
 
 开源库中的现成实现是为了速度和/或稳健性而构建的。
 
@@ -127,9 +127,9 @@
 
 通用目的库通常以某种速度为代价而更加强大。
 
-黑客工程师的照明快速实施经常遭受糟糕的文档记录，并且在满足他们的期望时非常迂腐。
+黑客工程师的照明快速实现经常遭受糟糕的文档记录，并且在满足他们的期望时非常迂腐。
 
-选择实施时请考虑这一点。
+选择实现时请考虑这一点。
 
 ### 建议
 
@@ -141,7 +141,7 @@
 
 这些只是我的建议，还有更多的机器学习平台可供选择。
 
-## 有时你必须实施
+## 有时你必须实现
 
 在开始机器学习时，您不必实现机器学习算法。
 
@@ -163,7 +163,7 @@
 
 您不必通过实现机器学习算法**启动**。通过在实现机器学习算法之前学习如何使用机器学习算法，您将更快地建立机器学习的信心和技能。
 
-完成实施所需的实施和任何研究将改善您的理解。在下次使用该算法时，可以帮助您获得更好的结果。
+完成实现所需的实现和任何研究将改善您的理解。在下次使用该算法时，可以帮助您获得更好的结果。
 
 ## 摘要
 
@@ -181,5 +181,5 @@ _在评论中分享您的经验。_
 ### 进一步阅读
 
 *   [程序员在机器学习中开始犯下的错误](http://machinelearningmastery.com/mistakes-programmers-make-when-starting-in-machine-learning/)
-*   [从零开始实施机器学习算法](http://machinelearningmastery.com/understand-machine-learning-algorithms-by-implementing-them-from-scratch/)
-*   [从零开始实施机器学习算法的好处](http://machinelearningmastery.com/benefits-of-implementing-machine-learning-algorithms-from-scratch/)
+*   [从零开始实现机器学习算法](http://machinelearningmastery.com/understand-machine-learning-algorithms-by-implementing-them-from-scratch/)
+*   [从零开始实现机器学习算法的好处](http://machinelearningmastery.com/benefits-of-implementing-machine-learning-algorithms-from-scratch/)

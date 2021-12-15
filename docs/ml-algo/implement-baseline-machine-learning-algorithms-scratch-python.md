@@ -19,7 +19,7 @@
 
 ![How To Implement Baseline Machine Learning Algorithms From Scratch With Python](img/a6eef0a4a1a40fdd7d4ea80ebe51c609.jpg)
 
-如何使用Python从零开始实施基线机器学习算法
+如何使用Python从零开始实现基线机器学习算法
 照片由 [Vanesser III](https://www.flickr.com/photos/hapinachu/13767713/) ，保留一些权利。
 
 ## 描述

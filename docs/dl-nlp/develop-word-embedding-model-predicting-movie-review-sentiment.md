@@ -1409,7 +1409,7 @@ Test Accuracy: 76.000000
 ### 相关文章
 
 *   [在 Keras 模型中使用预训练的字嵌入](https://blog.keras.io/using-pre-trained-word-embeddings-in-a-keras-model.html)，2016。
-*   [在 TensorFlow](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/) ，2015 年实施 CNN 进行文本分类。
+*   [在 TensorFlow](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/) ，2015 年实现 CNN 进行文本分类。
 
 ## 摘要
 

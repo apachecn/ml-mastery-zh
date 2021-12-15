@@ -1,4 +1,4 @@
-# 机器学习的逻辑回归
+# 机器学习中的逻辑回归
 
 > 原文： [https://machinelearningmastery.com/logistic-regression-for-machine-learning/](https://machinelearningmastery.com/logistic-regression-for-machine-learning/)
 

@@ -31,7 +31,7 @@
 2.  文本摘要编码器
 3.  文本摘要解码器
 4.  阅读源文本
-5.  实施模型
+5.  实现模型
 
 ## 编解码器架构
 
@@ -152,7 +152,7 @@ Ramesh Nallapati，et al。使用 GRU 循环神经网络生成输出序列。
 
 - [抽象句概括的神经注意模型](https://arxiv.org/abs/1509.00685)，2015。
 
-## 实施模型
+## 实现模型
 
 在本节中，我们将介绍如何在 Keras 深度学习库中实现用于文本摘要的编解码器架构。
 
@@ -284,7 +284,7 @@ model = Model(inputs=[inputs1, inputs2], outputs=outputs)
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 ```
 
-您还有其他替代实施方案吗？
+您还有其他替代实现方案吗？
 请在下面的评论中告诉我。
 
 ## 进一步阅读

@@ -171,7 +171,7 @@ trainX, trainy, testX, testy = load_dataset()
 *   支持向量机
 *   朴素贝叶斯
 
-集合算法：
+集成算法：
 
 *   袋装决策树
 *   随机森林

@@ -1,4 +1,4 @@
-# 用于机器学习的支持向量机
+# 机器学习中的支持向量机
 
 > 原文： [https://machinelearningmastery.com/support-vector-machines-for-machine-learning/](https://machinelearningmastery.com/support-vector-machines-for-machine-learning/)
 
@@ -17,7 +17,7 @@
 
 SVM是一种令人兴奋的算法，概念相对简单。这篇文章是为那些在统计学和线性代数方面很少或根本没有背景的开发人员编写的。
 
-因此，我们将在此描述中保持高级别，并专注于具体的实施问题。关于为何使用特定方程式或如何使用它们的问题未被涵盖，您可能希望深入了解更多阅读部分。
+因此，我们将在此描述中保持高级别，并专注于具体的实现问题。关于为何使用特定方程式或如何使用它们的问题未被涵盖，您可能希望深入了解更多阅读部分。
 
 让我们开始吧。
 

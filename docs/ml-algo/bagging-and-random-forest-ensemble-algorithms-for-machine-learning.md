@@ -1,10 +1,10 @@
-# 用于机器学习的装袋和随机森林集合算法
+# 机器学习中的装袋和随机森林集成算法
 
 > 原文： [https://machinelearningmastery.com/bagging-and-random-forest-ensemble-algorithms-for-machine-learning/](https://machinelearningmastery.com/bagging-and-random-forest-ensemble-algorithms-for-machine-learning/)
 
 随机森林是最流行和最强大的机器学习算法之一。它是一种称为Bootstrap Aggregation或bagging的集成机器学习算法。
 
-在这篇文章中，您将发现Bagging集合算法和用于预测建模的随机森林算法。阅读本文后，您将了解：
+在这篇文章中，您将发现Bagging集成算法和用于预测建模的随机森林算法。阅读本文后，您将了解：
 
 *   用于从样本估计统计量的自助方法。
 *   Bootstrap Aggregation算法，用于从单个训练数据集创建多个不同的模型。
@@ -18,7 +18,7 @@
 
 ![Bagging and Random Forest Ensemble Algorithms for Machine Learning](img/fe96503a5f5ea1aafb65de137f9e6a7f.jpg)
 
-用于机器学习的套袋和随机森林集合算法
+用于机器学习的套袋和随机森林集成算法
 照片由 [Nicholas A. Tonelli](https://www.flickr.com/photos/nicholas_t/9660920448/) 拍摄，保留一些权利。
 
 ## Bootstrap方法

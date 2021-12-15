@@ -182,7 +182,7 @@ Gartner 高级分析平台的魔力象限来自 [Gartner](http://www.gartner.com
 
 程序员开发机器学习技能的一个好方法是使用他们现有的编程技能并从零开始实现机器学习算法。
 
-我在博客文章“[通过实施他们从零开始](http://machinelearningmastery.com/understand-machine-learning-algorithms-by-implementing-them-from-scratch/)了解机器学习算法”中谈论了这个方法，并提供了很好的技巧和资源。
+我在博客文章“[通过实现他们从零开始](http://machinelearningmastery.com/understand-machine-learning-algorithms-by-implementing-them-from-scratch/)了解机器学习算法”中谈论了这个方法，并提供了很好的技巧和资源。
 
 我从博客文章中推荐的这种方法的三本书是：
 

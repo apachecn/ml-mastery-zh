@@ -31,7 +31,7 @@
 
 3 种非线性机器学习算法：
 
-1.  K-Nearest Neighbors
+1.  K 最近邻
 2.  分类和回归树
 3.  支持向量机
 
@@ -175,9 +175,9 @@ Running the example provides an estimate of the mean squared error.
 
 本节提供了如何使用 3 种不同的非线性机器学习算法在 Python 中使用 scikit-learn 进行回归的示例。
 
-### 1\. K-Nearest Neighbors
+### 1\. K 最近邻
 
-K-Nearest Neighbors（或 KNN）在训练数据集中为新数据实例定位 K 个最相似的实例。从 K 个邻居中，将平均或中值输出变量作为预测。值得注意的是使用的距离度量（_ 度量 _ 参数）。默认情况下使用 [Minkowski 距离](https://en.wikipedia.org/wiki/Minkowski_distance)，它是欧几里德距离（当所有输入具有相同比例时使用）和曼哈顿距离（当输入变量的比例不同时）的推广。
+K 最近邻（或 KNN）在训练数据集中为新数据实例定位 K 个最相似的实例。从 K 个邻居中，将平均或中值输出变量作为预测。值得注意的是使用的距离度量（_ 度量 _ 参数）。默认情况下使用 [Minkowski 距离](https://en.wikipedia.org/wiki/Minkowski_distance)，它是欧几里德距离（当所有输入具有相同比例时使用）和曼哈顿距离（当输入变量的比例不同时）的推广。
 
 您可以使用 [KNeighborsRegressor](http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html) 类构建用于回归的 KNN 模型。
 
@@ -283,7 +283,7 @@ Running the example provides an estimate of the mean squared error.
 
 3 Nonlinear Machine Learning Algorithms:
 
-*   K-Nearest Neighbors
+*   K 最近邻
 *   分类和回归树
 *   支持向量机
 

@@ -470,7 +470,7 @@ scoring = 'accuracy'
 
 *   逻辑回归（LR）
 *   线性判别分析（LDA）
-*   K-Nearest Neighbors（KNN）。
+*   K 最近邻（KNN）。
 *   分类和回归树（CART）。
 *   高斯朴素贝叶斯（NB）。
 *   支持向量机（SVM）。

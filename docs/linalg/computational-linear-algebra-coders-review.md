@@ -35,7 +35,7 @@
 
 这些材料使用自上而下的方法进行教学，就像 [MachineLearningMastery](https://machinelearningmastery.com/machine-learning-for-programmers/) 一样，旨在让人们了解如何做事，然后再解释这些方法的工作原理。
 
-> 了解如何实施这些算法将使您能够更好地组合和利用它们，并使您可以根据需要自定义它们。
+> 了解如何实现这些算法将使您能够更好地组合和利用它们，并使您可以根据需要自定义它们。
 
 ## 课程先决条件和参考
 

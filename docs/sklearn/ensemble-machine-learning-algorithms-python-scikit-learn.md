@@ -34,9 +34,9 @@
 
 这篇文章中的每个秘籍都是独立设计的。这样您就可以将其复制并粘贴到项目中并立即开始使用。
 
-来自 UCI 机器学习库的标准分类问题用于演示每个集合算法。这是[皮马印第安人糖尿病数据集的发病](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)（更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。这是一个二分类问题，其中所有输入变量都是数字的并且具有不同的比例。
+来自 UCI 机器学习库的标准分类问题用于演示每个集成算法。这是[皮马印第安人糖尿病数据集的发病](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)（更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。这是一个二分类问题，其中所有输入变量都是数字的并且具有不同的比例。
 
-每个集合算法使用 10 倍交叉验证进行演示，这是一种标准技术，用于估计任何机器学习算法对未见数据的表现。
+每个集成算法使用 10 倍交叉验证进行演示，这是一种标准技术，用于估计任何机器学习算法对未见数据的表现。
 
 ## 套袋算法
 
@@ -155,7 +155,7 @@ Running the example provides a mean estimate of classification accuracy.
 
 ## 提升算法
 
-提升集合算法会创建一系列模型，尝试在序列中纠正模型之前的错误。
+提升集成算法会创建一系列模型，尝试在序列中纠正模型之前的错误。
 
 一旦创建，模型做出预测，可以通过其显示的准确度加权，并将结果组合以创建最终输出预测。
 

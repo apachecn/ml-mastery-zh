@@ -1,19 +1,19 @@
-# 教程从零开始在Python中实现k-Nearest Neighbors
+# 从零开始在Python中实现 K 最近邻
 
 > 原文： [https://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/](https://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/)
 
-k-Nearest Neighbors算法（或简称kNN）是一种易于理解和实现的算法，是您可以随意使用的强大工具。
+K 最近邻算法（或简称kNN）是一种易于理解和实现的算法，是您可以随意使用的强大工具。
 
-在本教程中，您将从零开始在Python（2.7）中实现k-Nearest Neighbors算法。实施将特定于分类问题，并将使用虹膜花分类问题进行演示。
+在本教程中，您将从零开始在Python（2.7）中实现K 最近邻算法。实现将特定于分类问题，并将使用虹膜花分类问题进行演示。
 
-本教程适合您，如果您是Python程序员，或者可以快速获取python的程序员，并且您对如何从零开始实现k-Nearest Neighbors算法感兴趣。
+本教程适合您，如果您是Python程序员，或者可以快速获取python的程序员，并且您对如何从零开始实现K 最近邻算法感兴趣。
 
-[![k-Nearest Neighbors algorithm](img/db0046e6a5d2174b405ded8fd90d8edb.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/09/k-Nearest-Neighbors-algorithm.png)
+[![K 最近邻 algorithm](img/db0046e6a5d2174b405ded8fd90d8edb.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/09/k-Nearest-Neighbors-algorithm.png)
 
-k-Nearest Neighbors algorithm
+K 最近邻 algorithm
 图片来自 [Wikipedia](http://en.wikipedia.org/wiki/File:Map1NN.png) ，保留所有权利
 
-## 什么是k-Nearest Neighbors
+## 什么是K 最近邻
 
 kNN的模型是整个训练数据集。当对于看不见的数据实例需要预测时，kNN算法将在训练数据集中搜索k个最相似的实例。总结了最相似实例的预测属性，并将其作为未见实例的预测返回。
 
@@ -21,7 +21,7 @@ kNN的模型是整个训练数据集。当对于看不见的数据实例需要�
 
 在回归问题的情况下，可以返回预测属性的平均值。在分类的情况下，可以返回最普遍的类别。
 
-## k-Nearest Neighbors是如何工作的
+## K 最近邻是如何工作的
 
 kNN算法属于基于实例的竞争学习和懒惰学习算法的家族。
 
@@ -55,7 +55,7 @@ kNN算法属于基于实例的竞争学习和懒惰学习算法的家族。
 
 使用文件名“`iris.data`”将文件保存在当前工作目录中。
 
-## 如何在Python中实现k-Nearest Neighbors
+## 如何在Python中实现K 最近邻
 
 本教程分为以下几个步骤：
 
@@ -357,13 +357,13 @@ Accuracy: 98.0392156862745%
 
 *   **回归**：您可以调整实现以适应回归问题（预测实值属性）。最接近的实例的摘要可涉及取预测属性的均值或中值。
 *   **标准化**：当属性之间的度量单位不同时，属性可能在它们对距离度量的贡献中占主导地位。对于这些类型的问题，您需要在计算相似度之前将所有数据属性重新缩放到0-1范围内（称为规范化）。更新模型以支持数据规范化。
-*   **替代距离测量**：有许多可用的距离测量，如果您愿意，您甚至可以开发自己的特定于域的距离测量。实施替代距离测量，例如曼哈顿距离或向量点积。
+*   **替代距离测量**：有许多可用的距离测量，如果您愿意，您甚至可以开发自己的特定于域的距离测量。实现替代距离测量，例如曼哈顿距离或向量点积。
 
 您可能希望探索此算法的更多扩展。另外两个想法包括支持对预测的k-最相似实例的距离加权贡献以及用于搜索类似实例的更高级的基于数据树的结构。
 
 ## 资源了解更多
 
-本节将提供一些资源，您可以使用这些资源来了解k-Nearest Neighbors算法的更多信息，包括它的工作原理和原理以及在代码中实现它的实际问题。
+本节将提供一些资源，您可以使用这些资源来了解K 最近邻算法的更多信息，包括它的工作原理和原理以及在代码中实现它的实际问题。
 
 ### 问题
 
@@ -372,14 +372,14 @@ Accuracy: 98.0392156862745%
 
 ### 码
 
-本节链接到流行的机器学习库中的kNN的开源实现。如果您正在考虑实施自己的方法版本以供操作使用，请查看这些内容。
+本节链接到流行的机器学习库中的kNN的开源实现。如果您正在考虑实现自己的方法版本以供操作使用，请查看这些内容。
 
 *   [在scikit-learn中实现kNN](https://github.com/scikit-learn/scikit-learn/tree/master/sklearn/neighbors)
-*   [在Weka中实施kNN](https://github.com/baron/weka/blob/master/weka/src/main/java/weka/classifiers/lazy/IBk.java) （非正式）
+*   [在Weka中实现kNN](https://github.com/baron/weka/blob/master/weka/src/main/java/weka/classifiers/lazy/IBk.java) （非正式）
 
 ### 图书
 
-您可能有一本或多本关于应用机器学习的书籍。本节重点介绍有关机器学习的常见应用书籍中涉及k-Nearest Neighbors的章节或章节。
+您可能有一本或多本关于应用机器学习的书籍。本节重点介绍有关机器学习的常见应用书籍中涉及K 最近邻的章节或章节。
 
 *   [Applied Predictive Modeling](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20) ，第159和350页。
 *   [数据挖掘：实用机器学习工具和技术，第三版（数据管理系统中的Morgan Kaufmann系列）](http://www.amazon.com/dp/0123748569?tag=inspiredalgor-20)，第76,128和235页。

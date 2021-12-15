@@ -81,7 +81,7 @@
 
 我这样做是因为这是应用机器学习的基础，在这个过程中需要学习很多东西，从数据准备到算法，再到沟通结果。
 
-更深层次的涉及专业化。例如，您可以深入了解机器学习算法。你可以[研究它们](http://machinelearningmastery.com/how-to-study-machine-learning-algorithms/ "How to Study Machine Learning Algorithms")，[制作列表](http://machinelearningmastery.com/create-lists-of-machine-learning-algorithms/ "Take Control By Creating Targeted Lists of Machine Learning Algorithms")，[描述它们](http://machinelearningmastery.com/how-to-learn-a-machine-learning-algorithm/ "How to Learn a Machine Learning Algorithm")和[从零开始实现它们](http://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/ "Tutorial To Implement k-Nearest Neighbors in Python From Scratch")。事实上，您可以潜水的深度没有限制，但您确实想要选择一个您觉得引人注目的区域。
+更深层次的涉及专业化。例如，您可以深入了解机器学习算法。你可以[研究它们](http://machinelearningmastery.com/how-to-study-machine-learning-algorithms/ "How to Study Machine Learning Algorithms")，[制作列表](http://machinelearningmastery.com/create-lists-of-machine-learning-algorithms/ "Take Control By Creating Targeted Lists of Machine Learning Algorithms")，[描述它们](http://machinelearningmastery.com/how-to-learn-a-machine-learning-algorithm/ "How to Learn a Machine Learning Algorithm")和[从零开始实现它们](http://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/ "Tutorial To Implement K 最近邻 in Python From Scratch")。事实上，您可以潜水的深度没有限制，但您确实想要选择一个您觉得引人注目的区域。
 
 我建议通过自学更深入的一般框架是我的[小项目方法](http://machinelearningmastery.com/self-study-machine-learning-projects/ "4 Self-Study Machine Learning Projects")。这是您定义一个小项目（5 到 10 个小时的努力），执行它们并共享结果，然后重复的地方。
 

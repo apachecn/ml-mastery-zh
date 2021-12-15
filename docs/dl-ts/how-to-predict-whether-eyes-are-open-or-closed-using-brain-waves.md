@@ -117,7 +117,7 @@ pyplot.show()
 
 下面的示例将删除所有具有 EEG 观测值的行，这些行是平均值的四个标准偏差或更多。数据集将保存到名为“`EEG_Eye_State_no_outliers.csv`”的新文件中。
 
-这是[离群值检测和删除](https://machinelearningmastery.com/how-to-use-statistics-to-identify-outliers-in-data/)的快速而肮脏的实现，但是完成了工作。我相信你可以设计出更高效的实施方案。
+这是[离群值检测和删除](https://machinelearningmastery.com/how-to-use-statistics-to-identify-outliers-in-data/)的快速而肮脏的实现，但是完成了工作。我相信你可以设计出更高效的实现方案。
 
 ```py
 # remove outliers from the EEG data

@@ -174,15 +174,15 @@
 *   [RNN引入的注意机制究竟是什么？ Quora上的](https://www.quora.com/What-is-exactly-the-attention-mechanism-introduced-to-RNN-recurrent-neural-network-It-would-be-nice-if-you-could-make-it-easy-to-understand)。
 *   [什么是神经网络中的注意机制？](https://www.quora.com/What-is-Attention-Mechanism-in-Neural-Networks)
 
-在撰写本文时，Keras并未提供开箱即用的注意事项，但很少有第三方实施。看到：
+在撰写本文时，Keras并未提供开箱即用的注意事项，但很少有第三方实现。看到：
 
 *   [使用Keras进行问答的深度语言建模](http://ben.bolte.cc/blog/2016/language.html)
 *   [注意模型可用！](https://github.com/fchollet/keras/issues/2067)
 *   [Keras注意机制](https://github.com/philipperemy/keras-attention-mechanism)
 *   [注意和增强循环神经网络](http://distill.pub/2016/augmented-rnns/)
 *   [如何在循环层（文本分类）](https://github.com/fchollet/keras/issues/4962)之上添加注意
-*   [注意机制实施问题](https://github.com/fchollet/keras/issues/1472)
-*   [实施简单的神经注意模型（用于填充输入）](https://github.com/fchollet/keras/issues/2612)
+*   [注意机制实现问题](https://github.com/fchollet/keras/issues/1472)
+*   [实现简单的神经注意模型（用于填充输入）](https://github.com/fchollet/keras/issues/2612)
 *   [注意层需要另一个PR](https://github.com/fchollet/keras/issues/1094)
 *   [seq2seq库](https://github.com/farizrahman4u/seq2seq)
 

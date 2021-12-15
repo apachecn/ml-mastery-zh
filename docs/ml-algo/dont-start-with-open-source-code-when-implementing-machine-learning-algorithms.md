@@ -10,21 +10,21 @@ Edward在创建这个库时实现了很多算法，最近我和他联系并询�
 
 [![Implement Machine Learning Algorithms from Scratch](img/ee2d2be174f6f3355360894c7cc4cd86.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/10/Implement-Machine-Learning-Algorithms-from-Scratch.jpg)
 
-从零开始实施机器学习算法
+从零开始实现机器学习算法
 照 [hackNY.org](http://www.flickr.com/photos/hackny/7036401939) ，保留一些权利
 
 ## 不要阅读其他人民源代码
 
 至少，不是最初的。
 
-是什么让我问爱德华有关他从零开始实施机器学习算法的建议的问题是他对Reddit问题的评论，题目是“[实施机器学习算法](http://www.reddit.com/r/MachineLearning/comments/2h94uj/implementing_machine_learning_algorithms/)”。
+是什么让我问爱德华有关他从零开始实现机器学习算法的建议的问题是他对Reddit问题的评论，题目是“[实现机器学习算法](http://www.reddit.com/r/MachineLearning/comments/2h94uj/implementing_machine_learning_algorithms/)”。
 
 在[他的评论](http://www.reddit.com/r/MachineLearning/comments/2h94uj/implementing_machine_learning_algorithms/ckqrn1t)中，Edward建议初学者尽可能避免查看其他开源实现的源代码。他知道这与大多数建议相反（[甚至是我自己的](http://machinelearningmastery.com/how-to-implement-a-machine-learning-algorithm/ "How to Implement a Machine Learning Algorithm")），它确实引起了我的注意。
 
 Edward开始建议在实现机器学习算法时有两个完全不同的任务：
 
-1.  ****实施**熟知算法**。这些在许多论文，书籍，网站讲义等中都有很好的描述。你有很多来源，他们的算法比较直接，他们是自我教育的好案例研究。
-2.  **从论文**实施算法。这些算法在文献中具有有限和稀疏的描述，并且需要大量的工作和先前的知识来理解和实施。
+1.  ****实现**熟知算法**。这些在许多论文，书籍，网站讲义等中都有很好的描述。你有很多来源，他们的算法比较直接，他们是自我教育的好案例研究。
+2.  **从论文**实现算法。这些算法在文献中具有有限和稀疏的描述，并且需要大量的工作和先前的知识来理解和实现。
 
 ## 获取免费算法思维导图
 
@@ -56,7 +56,7 @@ Edward开始建议在实现机器学习算法时有两个完全不同的任务�
 
 Edward建议如果你没有首先实现众所周知的算法，那么从纸上实现机器学习算法是一个很大的进步，如上所述。
 
-根据Edwards的评论，您可以从零开始实施学习机器学习算法的过程。我对该过程的解释如下所示：
+根据Edwards的评论，您可以从零开始实现学习机器学习算法的过程。我对该过程的解释如下所示：
 
 1.  从零开始实现算法。
 2.  将表现与现成的实现进行比较。
@@ -69,7 +69,7 @@ Edward建议如果你没有首先实现众所周知的算法，那么从纸上�
 
 ## 给初学者的建议
 
-在通过电子邮件进行一些讨论后，爱德华扩展了他的评论并在一篇题为“[初学者关于学习实施ML算法的建议](http://jsatml.blogspot.com.au/2014/10/beginner-advice-on-learning-to.html)”的博客文章中写下了他的想法。
+在通过电子邮件进行一些讨论后，爱德华扩展了他的评论并在一篇题为“[初学者关于学习实现ML算法的建议](http://jsatml.blogspot.com.au/2014/10/beginner-advice-on-learning-to.html)”的博客文章中写下了他的想法。
 
 这是一篇很棒的文章。在其中，他提出了三个关键问题：如何从零开始实现机器学习算法，为初学者提供常见陷阱以及可能有用的资源。
 

@@ -1,4 +1,4 @@
-# 朴素贝叶斯机器学习教程
+# 机器学习中的朴素贝叶斯教程
 
 > 原文： [https://machinelearningmastery.com/naive-bayes-tutorial-for-machine-learning/](https://machinelearningmastery.com/naive-bayes-tutorial-for-machine-learning/)
 

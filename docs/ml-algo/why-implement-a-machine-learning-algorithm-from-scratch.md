@@ -12,7 +12,7 @@
 
 ![Why Implement a Machine Learning Algorithm From Scratch](img/eb1a35be0f1f24f7f32e26c4fcfc220f.jpg)
 
-为什么从零开始实施机器学习算法
+为什么从零开始实现机器学习算法
 照片由 [psyberartist](https://www.flickr.com/photos/psyberartist/3518056742/) ，保留一些权利。
 
 ## （重新）实现算法的两个主要原因
@@ -20,9 +20,9 @@
 我认为所有的答案都可以分解为两个阵营：
 
 1.  **自学**，其中算法被实现为学习练习。
-2.  **操作要求**，其中实施了一种算法以满足生产系统的需求。
+2.  **操作要求**，其中实现了一种算法以满足生产系统的需求。
 
-## 实施自学算法
+## 实现自学算法
 
 [Charles Gee](http://qr.ae/RgpWsi) 从自学角度给出了很好的答案。他评论道：
 
@@ -39,7 +39,7 @@ Charles描述了4种不同的用例，从零开始实现机器学习算法是非
 
 [Xavier Amatriain](http://qr.ae/RgpWnT) 在他的回答中关注这个话题。他评论道：
 
-> 首先我要说的是，我确实认为任何团队都应该默认重新使用现有的实现。 ...但是，公司可能决定实施自己版本的ML算法的原因也很多。
+> 首先我要说的是，我确实认为任何团队都应该默认重新使用现有的实现。 ...但是，公司可能决定实现自己版本的ML算法的原因也很多。
 
 Xavier列出了实现机器学习算法的5个理由，如下所示：
 
@@ -62,7 +62,7 @@ Xavier列出了实现机器学习算法的5个理由，如下所示：
 
 关于这个主题的进一步阅读包括：
 
-*   [从零开始实施机器学习算法的好处](http://machinelearningmastery.com/benefits-of-implementing-machine-learning-algorithms-from-scratch/)
-*   [通过从零开始实施它们来理解机器学习算法（以及解决不良代码的策略）](http://machinelearningmastery.com/understand-machine-learning-algorithms-by-implementing-them-from-scratch/)
+*   [从零开始实现机器学习算法的好处](http://machinelearningmastery.com/benefits-of-implementing-machine-learning-algorithms-from-scratch/)
+*   [通过从零开始实现它们来理解机器学习算法（以及解决不良代码的策略）](http://machinelearningmastery.com/understand-machine-learning-algorithms-by-implementing-them-from-scratch/)
 *   [实现机器学习算法时不要从开源代码开始](http://machinelearningmastery.com/dont-start-with-open-source-code-when-implementing-machine-learning-algorithms/)
 *   [如何实现机器学习算法](http://machinelearningmastery.com/how-to-implement-a-machine-learning-algorithm/)

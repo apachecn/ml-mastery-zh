@@ -1,4 +1,4 @@
-# 朴素贝叶斯机器学习
+# 机器学习中的朴素贝叶斯
 
 > 原文： [https://machinelearningmastery.com/naive-bayes-for-machine-learning/](https://machinelearningmastery.com/naive-bayes-for-machine-learning/)
 

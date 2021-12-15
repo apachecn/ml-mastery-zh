@@ -70,7 +70,7 @@ print(result)
 
 它提供了[实用程序，用于保存和加载有效利用 NumPy 数据结构的 Python 对象](https://pythonhosted.org/joblib/generated/joblib.dump.html)。
 
-这对于需要大量参数或存储整个数据集的某些机器学习算法（如 K-Nearest Neighbors）非常有用。
+这对于需要大量参数或存储整个数据集的某些机器学习算法（如 K 最近邻）非常有用。
 
 下面的示例演示了如何在 Pima Indians 糖尿病数据集开始时训练逻辑回归模型，使用 joblib 将模型保存到文件并加载它以对看不见的测试集做出预测。
 

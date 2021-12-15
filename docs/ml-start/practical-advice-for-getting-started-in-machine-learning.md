@@ -40,7 +40,7 @@
 在提出一些介绍性资源后，David 继续在现场开始时提供一些实用的建议。
 
 *   **不要指望第一次得到任何东西**。 David 建议从多个不同来源阅读相同方法的描述。这与我在[算法描述模板](http://machinelearningmastery.com/how-to-learn-a-machine-learning-algorithm/ "How to Learn a Machine Learning Algorithm")中提出的建议相同，我出于必要而提出。
-*   **实施模型**。我同意 David 的观点，在你[自己实现它](http://machinelearningmastery.com/how-to-implement-a-machine-learning-algorithm/ "How to Implement a Machine Learning Algorithm")并将其付诸实践之前，你无法完全理解这个模型。 David 建议将您的实现与其他实现进行比较，例如开源中的实现，并寻找并理解所使用的任何提高效率的数学或编程技巧。
+*   **实现模型**。我同意 David 的观点，在你[自己实现它](http://machinelearningmastery.com/how-to-implement-a-machine-learning-algorithm/ "How to Implement a Machine Learning Algorithm")并将其付诸实践之前，你无法完全理解这个模型。 David 建议将您的实现与其他实现进行比较，例如开源中的实现，并寻找并理解所使用的任何提高效率的数学或编程技巧。
 *   **阅读论文**。大卫讲述了一篇关于每日通勤隐藏的论文的轶事。考虑选择算法或问题，并阅读与该论文相关的主要来源。
 *   **挑选一张纸并在其中生活一周**。大卫建议成为一个有纸的人，并且在你熟悉它之前要思考一周。例如，他建议您填写任何派生方程的进展中的空白。我可以根据经验说话，建议你仔细挑选你的论文。我选择的文件花了我多年的时间来交流。
 

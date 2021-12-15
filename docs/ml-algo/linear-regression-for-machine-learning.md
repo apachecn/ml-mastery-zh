@@ -1,4 +1,4 @@
-# 机器学习的线性回归
+# 机器学习中的线性回归
 
 > 原文： [https://machinelearningmastery.com/linear-regression-for-machine-learning/](https://machinelearningmastery.com/linear-regression-for-machine-learning/)
 
@@ -105,7 +105,7 @@ y = B0 + B1 * x
 
 该方法将数据视为矩阵，并使用线性代数运算来估计系数的最佳值。这意味着所有数据都必须可用，并且您必须有足够的内存来适应数据并执行矩阵运算。
 
-除非作为线性代数中的练习，否则自己实施普通最小二乘法是不常见的。您更有可能在线性代数库中调用过程。此过程计算速度非常快。
+除非作为线性代数中的练习，否则自己实现普通最小二乘法是不常见的。您更有可能在线性代数库中调用过程。此过程计算速度非常快。
 
 ### 3.梯度下降
 

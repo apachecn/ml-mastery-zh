@@ -1,4 +1,4 @@
-# 机器学习的线性判别分析
+# 机器学习中的线性判别分析
 
 > 原文： [https://machinelearningmastery.com/linear-discriminant-analysis-for-machine-learning/](https://machinelearningmastery.com/linear-discriminant-analysis-for-machine-learning/)
 

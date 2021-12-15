@@ -1,4 +1,4 @@
-# 机器学习的简单线性回归教程
+# 机器学习中的简单线性回归教程
 
 > 原文： [https://machinelearningmastery.com/simple-linear-regression-tutorial-for-machine-learning/](https://machinelearningmastery.com/simple-linear-regression-tutorial-for-machine-learning/)
 

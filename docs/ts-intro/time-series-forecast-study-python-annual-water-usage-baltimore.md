@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/time-series-forecast-study-python-annual-water-usage-baltimore/](https://machinelearningmastery.com/time-series-forecast-study-python-annual-water-usage-baltimore/)
 
-时间序列预测是一个过程，获得良好预测的唯一方法是实施此过程。
+时间序列预测是一个过程，获得良好预测的唯一方法是实现此过程。
 
 在本教程中，您将了解如何使用 Python 预测巴尔的摩的年用水量。
 
@@ -570,7 +570,7 @@ print('RMSE: %.3f' % rmse)
 
 运行此示例会导致 RMSE 为 22.311，略高于上面的持久性模型。
 
-这可能是因为 ARIMA 实施的细节，例如计算和添加的自动趋势常数。
+这可能是因为 ARIMA 实现的细节，例如计算和添加的自动趋势常数。
 
 ```py
 ...

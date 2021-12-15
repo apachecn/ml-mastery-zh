@@ -1,8 +1,8 @@
-# K-Nearest Neighbors for Machine Learning
+# 机器学习中的 K 最近邻
 
 > 原文： [https://machinelearningmastery.com/k-nearest-neighbors-for-machine-learning/](https://machinelearningmastery.com/k-nearest-neighbors-for-machine-learning/)
 
-在这篇文章中，您将发现用于分类和回归的k-Nearest Neighbors（KNN）算法。阅读这篇文章后你会知道的。
+在这篇文章中，您将发现用于分类和回归的K 最近邻（KNN）算法。阅读这篇文章后你会知道的。
 
 *   KNN使用的模型表示。
 *   如何使用KNN学习模型（暗示，不是）。
@@ -15,9 +15,9 @@
 
 让我们开始吧。
 
-![K-Nearest Neighbors for Machine Learning](img/59dba4b611cf5b92ccc9d47703a27bb8.jpg)
+![K 最近邻 for Machine Learning](img/59dba4b611cf5b92ccc9d47703a27bb8.jpg)
 
-K-Nearest Neighbors for Machine Learning
+K 最近邻 for Machine Learning
 照片由 [Valentin Ottone](https://www.flickr.com/photos/saneboy/3050001226/) 保留，保留一些权利。
 
 ## KNN模型表示
@@ -121,7 +121,7 @@ KNN适用于少量输入变量（p），但在输入数量非常大时会遇到�
 3.  [做数据科学：从前线直接谈话](http://www.amazon.com/dp/1449358659?tag=inspiredalgor-20)，第71页
 4.  [机器学习](http://www.amazon.com/dp/0070428077?tag=inspiredalgor-20)，第8章
 
-还可以在维基百科上查看 [K-Nearest Neighbors](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm) 。
+还可以在维基百科上查看 [K 最近邻](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm) 。
 
 ## 摘要
 

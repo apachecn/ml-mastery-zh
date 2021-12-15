@@ -94,7 +94,7 @@ LSTM，例如 Vanilla LSTMs 在问题上进行了评估并表现出相对较差�
 
 这并不奇怪，因为它反映了其他地方的发现。
 
-> 我们最初的 LSTM 实施相对于最先进的方法没有表现出优越的表现。
+> 我们最初的 LSTM 实现相对于最先进的方法没有表现出优越的表现。
 
 - [优步神经网络的时间序列极端事件预测](http://roseyu.com/time-series-workshop/submissions/TSW2017_paper_3.pdf)，2017。
 

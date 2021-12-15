@@ -112,7 +112,7 @@ LSTM网络具有连接到层中的存储块，而不是神经元。
 *   [深入研究循环神经网络](http://nikhilbuduma.com/2015/01/11/a-deep-dive-into-recurrent-neural-networks/)
 *   [经常性网络和LSTM初学者指南](http://deeplearning4j.org/lstm.html)
 
-实施LSTM的热门教程。
+实现LSTM的热门教程。
 
 *   [使用TensorFlow进行语言建模的LSTM](https://www.tensorflow.org/versions/r0.9/tutorials/recurrent/index.html)
 *   [在Theano中进行口语理解的RNN](http://deeplearning.net/tutorial/rnnslu.html)

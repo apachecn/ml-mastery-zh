@@ -53,7 +53,7 @@
 
 4 种非线性机器学习算法：
 
-1.  K-Nearest Neighbors
+1.  K 最近邻
 2.  朴素贝叶斯
 3.  分类和回归树
 4.  支持向量机
@@ -134,9 +134,9 @@ Running the example prints the mean estimated accuracy.
 
 本节演示了如何使用 4 种非线性机器学习算法的最小秘籍。
 
-### 1\. K-Nearest Neighbors
+### 1\. K 最近邻
 
-K-Nearest Neighbors（或 KNN）使用距离度量来查找新实例的训练数据中的 K 个最相似的实例，并将邻居的平均结果作为预测。
+K 最近邻（或 KNN）使用距离度量来查找新实例的训练数据中的 K 个最相似的实例，并将邻居的平均结果作为预测。
 
 您可以使用 [KNeighborsClassifier](http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html) 类构建 KNN 模型。
 
@@ -271,7 +271,7 @@ Running the example prints the mean estimated accuracy.
 
 4 种非线性机器学习算法
 
-1.  K-Nearest Neighbors
+1.  K 最近邻
 2.  朴素贝叶斯
 3.  分类和回归树
 4.  支持向量机

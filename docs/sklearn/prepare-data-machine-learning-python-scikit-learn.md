@@ -52,7 +52,7 @@
 
 当您的数据由具有不同比例的属性组成时，许多机器学习算法可以从重新调整属性中受益，所有属性具有相同的比例。
 
-这通常被称为归一化，并且属性通常被重新调整到 0 和 1 之间的范围。这对于在诸如梯度下降的机器学习算法的核心中使用的优化算法是有用的。对于使用诸如回归和神经网络之类的输入以及使用诸如 K-Nearest Neighbors 之类的距离度量的算法的算法，它也是有用的。
+这通常被称为归一化，并且属性通常被重新调整到 0 和 1 之间的范围。这对于在诸如梯度下降的机器学习算法的核心中使用的优化算法是有用的。对于使用诸如回归和神经网络之类的输入以及使用诸如 K 最近邻 之类的距离度量的算法的算法，它也是有用的。
 
 您可以使用 [MinMaxScaler](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html) 类使用 scikit-learn 重新调整数据。
 
@@ -127,7 +127,7 @@ print(rescaledX[0:5,:])
 
 scikit-learn 中的规范化是指将每个观察（行）重新缩放为长度为 1（在线性代数中称为单位范数）。
 
-当使用加权输入值的算法（如神经网络和使用距离测量的算法，如 K-Nearest Neighbors）时，此预处理对于具有不同比例属性的稀疏数据集（大量零）非常有用。
+当使用加权输入值的算法（如神经网络和使用距离测量的算法，如 K 最近邻）时，此预处理对于具有不同比例属性的稀疏数据集（大量零）非常有用。
 
 您可以使用 [Normalizer](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.Normalizer.html) 类通过 scikit-learn 对 Python 中的数据进行规范化。
 

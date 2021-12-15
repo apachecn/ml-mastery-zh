@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/time-series-forecast-study-python-monthly-sales-french-champagne/](https://machinelearningmastery.com/time-series-forecast-study-python-monthly-sales-french-champagne/)
 
-时间序列预测是一个过程，获得良好预测的唯一方法是实施此过程。
+时间序列预测是一个过程，获得良好预测的唯一方法是实现此过程。
 
 在本教程中，您将了解如何使用 Python 预测法国香槟的月销售额。
 

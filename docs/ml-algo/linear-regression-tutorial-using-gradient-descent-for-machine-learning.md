@@ -1,4 +1,4 @@
-# 使用梯度下降进行机器学习的线性回归教程
+# 机器学习中使用梯度下降的线性回归教程
 
 > 原文： [https://machinelearningmastery.com/linear-regression-tutorial-using-gradient-descent-for-machine-learning/](https://machinelearningmastery.com/linear-regression-tutorial-using-gradient-descent-for-machine-learning/)
 

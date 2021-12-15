@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/time-series-forecast-case-study-python-monthly-armed-robberies-boston/](https://machinelearningmastery.com/time-series-forecast-case-study-python-monthly-armed-robberies-boston/)
 
-时间序列预测是一个过程，获得良好预测的唯一方法是实施此过程。
+时间序列预测是一个过程，获得良好预测的唯一方法是实现此过程。
 
 在本教程中，您将了解如何使用 Python 预测波士顿每月持械抢劫的数量。
 
@@ -1181,7 +1181,7 @@ RMSE: 53.078
 *   **置信区间**。显示验证数据集上预测的置信区间。
 *   **数据选择**。考虑在没有前两年数据的情况下对问题进行建模，看看这是否会对预测技能产生影响。
 
-您是否实施了这些扩展？你能获得更好的结果吗？
+您是否实现了这些扩展？你能获得更好的结果吗？
 在下面的评论中分享您的发现。
 
 ## 摘要

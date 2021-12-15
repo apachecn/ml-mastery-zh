@@ -1,4 +1,4 @@
-# 参数化和非参数机器学习算法
+# 参数化和非参数化机器学习算法
 
 > 原文： [https://machinelearningmastery.com/parametric-and-nonparametric-machine-learning-algorithms/](https://machinelearningmastery.com/parametric-and-nonparametric-machine-learning-algorithms/)
 

@@ -1,4 +1,4 @@
-# 机器学习的逻辑回归教程
+# 机器学习中的逻辑回归教程
 
 > 原文： [https://machinelearningmastery.com/logistic-regression-tutorial-for-machine-learning/](https://machinelearningmastery.com/logistic-regression-tutorial-for-machine-learning/)
 

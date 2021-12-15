@@ -242,7 +242,7 @@ print(B)
 
 *   [主成分分析与 numpy](https://glowingpython.blogspot.com.au/2011/07/principal-component-analysis-with-numpy.html) ，2011。
 *   [PCA 和图像压缩与 numpy](https://glowingpython.blogspot.com.au/2011/07/pca-and-image-compression-with-numpy.html) ，2011。
-*   [实施主成分分析（PCA）](http://sebastianraschka.com/Articles/2014_pca_step_by_step.html)，2014 年。
+*   [实现主成分分析（PCA）](http://sebastianraschka.com/Articles/2014_pca_step_by_step.html)，2014 年。
 
 ## 摘要
 

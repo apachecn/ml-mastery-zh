@@ -172,7 +172,7 @@ O'Reilly 民意调查结果 - 使用 Python.png 的专业人士百分比
 
 - 生产工程师 Aswath Muralidharan。响应 Quora 问题“[机器学习的前 5 种编程语言是什么？](https://www.quora.com/What-are-the-top-5-programming-languages-for-Machine-Learning) “
 
-> 我还推荐 Python，因为它是一种非常棒的全面编程语言，对于绘制代码片段和探索数据非常有用（使用 IPython shell），非常适合在分析流程链中记录步骤和结果（IPython Notebook），为几乎所有机器学习目标提供了大量库，甚至可以针对生产系统实施进行优化。在我看来，在任何这些类别中都有一些优于 Python 的语言 - 但它们都没有提供这种多功能性。
+> 我还推荐 Python，因为它是一种非常棒的全面编程语言，对于绘制代码片段和探索数据非常有用（使用 IPython shell），非常适合在分析流程链中记录步骤和结果（IPython Notebook），为几乎所有机器学习目标提供了大量库，甚至可以针对生产系统实现进行优化。在我看来，在任何这些类别中都有一些优于 Python 的语言 - 但它们都没有提供这种多功能性。
 
 - Benedikt Koehler，创始人兼 CEO DataLion。回答 Quora 问题“[第一次学习机器学习时使用的最佳语言是什么？](https://www.quora.com/What-is-the-best-language-to-use-while-learning-machine-learning-for-the-first-time) “
 

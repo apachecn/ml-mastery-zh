@@ -337,7 +337,7 @@ print("Logloss: %.3f (%.3f)") % (results.mean(), results.std())
 *   在数据集上检查一些非线性算法（例如 KNN，SVM 和 CART）。
 *   在数据集上对一些复杂的集成算法进行抽查（例如随机森林和随机梯度增强）。
 
-例如，下面的片段在波士顿房价数据集上点检查 K-Nearest Neighbors 算法。
+例如，下面的片段在波士顿房价数据集上点检查 K 最近邻 算法。
 
 ```
 # KNN Regression

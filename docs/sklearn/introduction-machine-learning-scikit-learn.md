@@ -106,7 +106,7 @@ Mark 花了一些时间研究 scikit-learn 的好处，建议：
 
 ## 视频 4：使用 scikit-learn 做出预测
 
-本视频重点介绍如何在 scikit-learn 中构建您的第一个机器学习模型。 K-Nearest Neighbors 模型。
+本视频重点介绍如何在 scikit-learn 中构建您的第一个机器学习模型。 K 最近邻 模型。
 
 涉及的主题包括：
 

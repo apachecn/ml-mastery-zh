@@ -156,7 +156,7 @@ rmse = sqrt(mean_squared_error(test, predictions))
 print('Test RMSE: %.3f' % rmse)
 ```
 
-请注意，ARIMA 实施将自动为时间序列中的趋势建模。这为回归方程式增加了一个常数，我们不需要用于演示目的。我们通过将`fit()`函数中的'trend'参数设置为'`nc`'为' _no constant_ '来关闭这个便利性。
+请注意，ARIMA 实现将自动为时间序列中的趋势建模。这为回归方程式增加了一个常数，我们不需要用于演示目的。我们通过将`fit()`函数中的'trend'参数设置为'`nc`'为' _no constant_ '来关闭这个便利性。
 
 [fit（）](http://statsmodels.sourceforge.net/devel/generated/statsmodels.tsa.arima_model.ARIMA.fit.html)函数还输出了许多详细消息，我们可以通过将'`disp`'参数设置为'`False`'来关闭。
 

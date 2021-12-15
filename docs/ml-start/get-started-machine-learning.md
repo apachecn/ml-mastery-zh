@@ -45,7 +45,7 @@
 
 *   学习解决问题的逐步过程（ [KDD](http://machinelearningmastery.com/what-is-data-mining-and-kdd/ "What is Data Mining and KDD") ， [Crisp-DM](http://en.wikipedia.org/wiki/Cross_Industry_Standard_Process_for_Data_Mining) ， [OSEMN](http://www.dataists.com/2010/09/a-taxonomy-of-data-science/) ，等等）。
 *   学习一个现成的工具或工具链，让你重复这个过程（如 [WEKA](http://machinelearningmastery.com/how-to-run-your-first-classifier-in-weka/ "How to Run Your First Classifier in Weka") ， [scikit-learn](http://machinelearningmastery.com/a-gentle-introduction-to-scikit-learn-a-python-machine-learning-library/ "A Gentle Introduction to Scikit-Learn: A Python Machine Learning Library") 或 [R](http://machinelearningmastery.com/what-is-r/ "What is R") ）。
-*   在适合内存的小型标准数据集上实施该过程（如 [UCI 机器学习库](http://archive.ics.uci.edu/ml/)上的那些）。
+*   在适合内存的小型标准数据集上实现该过程（如 [UCI 机器学习库](http://archive.ics.uci.edu/ml/)上的那些）。
 
 这将建立您对工作问题的信心，并解决出现的新问题。您还将开始了解算法和技能的适用位置，找出您擅长的内容以及您需要处理的内容，从而优先考虑您接下来要学习的内容。
 

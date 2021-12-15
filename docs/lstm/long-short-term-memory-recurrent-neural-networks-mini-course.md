@@ -146,7 +146,7 @@ LSTM迷你课程概述
 *   什么算法用于训练LSTM？
 *   Backpropagation Through Time如何运作？
 *   什么是截断的BPTT，它提供了什么好处？
-*   如何在Keras中实施和配置BPTT？
+*   如何在Keras中实现和配置BPTT？
 
 ### Further Reading
 
@@ -265,7 +265,7 @@ LSTM迷你课程概述
 *   什么是CNN LSTM架构？
 *   有哪些CNN LSTM的例子？
 *   CNN LSTM提供哪些好处？
-*   如何在Keras中实施CNN LSTM架构？
+*   如何在Keras中实现CNN LSTM架构？
 
 ### Experiment
 
@@ -334,7 +334,7 @@ LSTM迷你课程概述
 *   LSTM型号的注意事项是什么？
 *   在LSTM中使用注意力的一些例子是什么？
 *   注意为序列预测提供了什么好处？
-*   如何在Keras中实施注意力架构？
+*   如何在Keras中实现注意力架构？
 
 ### Experiment
 

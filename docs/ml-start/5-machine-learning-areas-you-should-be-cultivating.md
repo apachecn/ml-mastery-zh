@@ -38,7 +38,7 @@
 
 阅读，研究甚至[从多个应用和理论来源构建您自己的算法描述](http://machinelearningmastery.com/how-to-learn-a-machine-learning-algorithm/ "How to Learn a Machine Learning Algorithm")。
 
-[从零开始实现算法](http://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/ "Tutorial To Implement k-Nearest Neighbors in Python From Scratch")，以熟悉任何给定的算法实现必须使用的无数微决策。
+[从零开始实现算法](http://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/ "Tutorial To Implement K 最近邻 in Python From Scratch")，以熟悉任何给定的算法实现必须使用的无数微决策。
 
 试验算法。研究他们的行为以及他们的参数对他们的影响，并在多个标准问题实例中进行推广。
 

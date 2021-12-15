@@ -476,11 +476,11 @@ print(result.mean())
 
 当缺少数据时，并非所有算法都会失败。
 
-有些算法可以对丢失的数据进行鲁棒处理，例如 k-Nearest Neighbors 可以在缺少值时忽略距离测量中的列。
+有些算法可以对丢失的数据进行鲁棒处理，例如 K 最近邻 可以在缺少值时忽略距离测量中的列。
 
 还有一些算法可以在构建预测模型时使用缺失值作为唯一且不同的值，例如分类和回归树。
 
-遗憾的是，决策树和 k-Nearest Neighbors 的 scikit-learn 实现对于缺失值并不健壮。 [虽然正在考虑](https://github.com/scikit-learn/scikit-learn/issues/5870)。
+遗憾的是，决策树和 K 最近邻 的 scikit-learn 实现对于缺失值并不健壮。 [虽然正在考虑](https://github.com/scikit-learn/scikit-learn/issues/5870)。
 
 然而，如果您考虑使用其他算法实现（例如 [xgboost](http://machinelearningmastery.com/xgboost-python-mini-course/) ）或开发自己的实现，这仍然是一个选项。
 

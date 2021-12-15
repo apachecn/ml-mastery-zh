@@ -57,7 +57,7 @@ CNN LSTM是针对视觉时间序列预测问题以及从图像序列（例如视
 
 卷积神经网络长短期记忆网络架构
 
-## 在Keras实施CNN LSTM
+## 在Keras实现CNN LSTM
 
 我们可以定义一个在Keras联合训练的CNN LSTM模型。
 
