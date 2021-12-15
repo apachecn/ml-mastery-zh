@@ -1,4 +1,4 @@
-# 更好的朴素贝叶斯：从朴素贝叶斯算法中获取最多的12个技巧
+# 更好的朴素贝叶斯：从朴素贝叶斯算法中收益最大的12个技巧
 
 > 原文： [https://machinelearningmastery.com/better-naive-bayes/](https://machinelearningmastery.com/better-naive-bayes/)
 
