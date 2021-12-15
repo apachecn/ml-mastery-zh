@@ -1,8 +1,8 @@
-# LSTM自动编码器的温和介绍
+# LSTM自编码器的温和介绍
 
 > 原文： [https://machinelearningmastery.com/lstm-autoencoders/](https://machinelearningmastery.com/lstm-autoencoders/)
 
-LSTM自动编码器是使用编解码器LSTM架构的用于序列数据的自动编码器的实现。
+LSTM自编码器是使用编解码器LSTM架构的用于序列数据的自编码器的实现。
 
 一旦拟合，模型的编码器部分可用于编码或压缩序列数据，而序列数据又可用于数据可视化或作为监督学习模型的特征向量输入。
 
@@ -10,31 +10,31 @@ LSTM自动编码器是使用编解码器LSTM架构的用于序列数据的自动
 
 阅读这篇文章后，你会知道：
 
-*   自动编码器是一种自我监督的学习模型，可以学习输入数据的压缩表示。
-*   LSTM自动编码器可以学习序列数据的压缩表示，并且已经用于视频，文本，音频和时间序列序列数据。
+*   自编码器是一种自我监督的学习模型，可以学习输入数据的压缩表示。
+*   LSTM自编码器可以学习序列数据的压缩表示，并且已经用于视频，文本，音频和时间序列序列数据。
 *   如何使用Keras深度学习库在Python中开发LSTM Autoencoder模型。
 
 让我们开始吧。
 
 ![A Gentle Introduction to LSTM Autoencoders](img/a1145896d29c99171989ea64360abd88.jpg)
 
-LSTM自动编码器
+LSTM自编码器
 的温和介绍 [Ken Lund](https://www.flickr.com/photos/kenlund/2379512850/) 的照片，保留一些权利。
 
 ## 概观
 
 这篇文章分为六个部分;他们是：
 
-1.  什么是自动编码器？
+1.  什么是自编码器？
 2.  序列问题
 3.  编解码器LSTM模型
-4.  什么是LSTM自动编码器？
-5.  LSTM自动编码器的早期应用
-6.  如何在Keras中创建LSTM自动编码器
+4.  什么是LSTM自编码器？
+5.  LSTM自编码器的早期应用
+6.  如何在Keras中创建LSTM自编码器
 
-## 什么是自动编码器？
+## 什么是自编码器？
 
-[自动编码器](https://en.wikipedia.org/wiki/Autoencoder)是一种神经网络模型，旨在学习输入的压缩表示。
+[自编码器](https://en.wikipedia.org/wiki/Autoencoder)是一种神经网络模型，旨在学习输入的压缩表示。
 
 它们是一种无监督的学习方法，尽管从技术上讲，它们是使用有监督的学习方法训练的，称为自我监督。它们通常作为试图重新创建输入的更广泛模型的一部分进行训练。
 
@@ -44,9 +44,9 @@ LSTM自动编码器
 X = model.predict(X)
 ```
 
-自动编码器模型的设计有目的地通过将架构限制在模型的中点处的瓶颈来实现这种挑战，从中执行输入数据的重建。
+自编码器模型的设计有目的地通过将架构限制在模型的中点处的瓶颈来实现这种挑战，从中执行输入数据的重建。
 
-有许多类型的自动编码器，它们的使用各不相同，但更常见的用途可能是学习或自动特征提取模型。
+有许多类型的自编码器，它们的使用各不相同，但更常见的用途可能是学习或自动特征提取模型。
 
 在这种情况下，一旦模型拟合，就可以丢弃模型的重建方面，并且可以使用直到瓶颈点的模型。瓶颈处的模型输出是固定长度向量，其提供输入数据的压缩表示。
 
@@ -82,9 +82,9 @@ LSTM网络可以组织成称为编解码器LSTM的架构，该架构允许该模
 
 *   [编解码器长短期记忆网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 
-## 什么是LSTM自动编码器？
+## 什么是LSTM自编码器？
 
-LSTM自动编码器是使用编解码器LSTM架构的用于序列数据的自动编码器的实现。
+LSTM自编码器是使用编解码器LSTM架构的用于序列数据的自编码器的实现。
 
 对于给定的序列数据集，编解码器LSTM被配置为读取输入序列，对其进行编码，对其进行解码并重新创建它。基于模型重新创建输入序列的能力来评估模型的表现。
 
@@ -92,13 +92,13 @@ LSTM自动编码器是使用编解码器LSTM架构的用于序列数据的自动
 
 然后，所得到的向量可以用于各种应用中，尤其是作为序列的压缩表示，作为另一个监督学习模型的输入。
 
-## LSTM自动编码器的早期应用
+## LSTM自编码器的早期应用
 
 LSTM Autoencoder的早期和广泛引用的应用之一是在2015年的论文“[使用LSTM的视频表示的无监督学习](https://arxiv.org/abs/1502.04681)”。
 
 ![LSTM Autoencoder Model](img/88127e694b4a784f9ad9742b19e19fcc.jpg)
 
-LSTM自动编码器模型
+LSTM自编码器模型
 取自“使用LSTM的无监督学习视频表示”
 
 在论文中，Nitish Srivastava等人。将LSTM Autoencoder描述为编解码器LSTM的扩展或应用。
@@ -123,7 +123,7 @@ LSTM自动编码器模型
 
 - [使用LSTM的视频表示的无监督学习](https://arxiv.org/abs/1502.04681)，2015。
 
-还研究了更精细的自动编码器模型，其中两个解码器模型用于一个编码器：一个用于预测序列中的下一帧，一个用于重建序列中的帧，称为复合模型。
+还研究了更精细的自编码器模型，其中两个解码器模型用于一个编码器：一个用于预测序列中的下一帧，一个用于重建序列中的帧，称为复合模型。
 
 > ...重建输入和预测未来可以组合起来创建一个复合[...]。在这里，编码器LSTM被要求提出一种状态，我们既可以预测接下来的几帧，也可以重建输入。
 
@@ -131,7 +131,7 @@ LSTM自动编码器模型
 
 ![LSTM Autoencoder Model With Two Decoders](img/7979859a410719d5f2f8c0ef347fe9fd.jpg)
 
-具有两个解码器的LSTM自动编码器模型
+具有两个解码器的LSTM自编码器模型
 取自“使用LSTM的视频表示的无监督学习”
 
 模型以多种方式进行评估，包括使用编码器来播种分类器。看来，不是使用编码器的输出作为分类输入，而是选择直接使用编码器模型的权重为独立的LSTM分类器播种。鉴于实施的复杂性，这是令人惊讶的。
@@ -142,21 +142,21 @@ LSTM自动编码器模型
 
 发现在解码器上没有调节的复合模型在他们的实验中表现最佳。
 
-> 表现最佳的模型是组合自动编码器和未来预测器的复合模型。条件变量在微调后的分类准确度方面没有给出任何显着的改进，但是它们确实给出了略低的预测误差。
+> 表现最佳的模型是组合自编码器和未来预测器的复合模型。条件变量在微调后的分类准确度方面没有给出任何显着的改进，但是它们确实给出了略低的预测误差。
 
 - [使用LSTM的视频表示的无监督学习](https://arxiv.org/abs/1502.04681)，2015。
 
-已经演示了LSTM自动编码器的许多其他应用，尤其是文本序列，音频数据和时间序列。
+已经演示了LSTM自编码器的许多其他应用，尤其是文本序列，音频数据和时间序列。
 
-## 如何在Keras中创建LSTM自动编码器
+## 如何在Keras中创建LSTM自编码器
 
-在Keras中创建LSTM自动编码器可以通过实现编解码器LSTM架构并配置模型来重新创建输入序列来实现。
+在Keras中创建LSTM自编码器可以通过实现编解码器LSTM架构并配置模型来重新创建输入序列来实现。
 
 让我们看几个例子来说明这一点。
 
-### 重建LSTM自动编码器
+### 重建LSTM自编码器
 
-最简单的LSTM自动编码器是学习重建每个输入序列的自动编码器。
+最简单的LSTM自编码器是学习重建每个输入序列的自编码器。
 
 对于这些演示，我们将使用九个时间步骤和一个特征的一个样本的数据集：
 
@@ -226,7 +226,7 @@ yhat = model.predict(sequence, verbose=0)
 print(yhat[0,:,0])
 ```
 
-运行该示例适合自动编码器并打印重建的输入序列。
+运行该示例适合自编码器并打印重建的输入序列。
 
 结果足够接近，非常小的舍入误差。
 
@@ -239,9 +239,9 @@ print(yhat[0,:,0])
 
 ![LSTM Autoencoder for Sequence Reconstruction](img/5c47ad60098371eb69ae603fe30ad184.jpg)
 
-用于序列重建的LSTM自动编码器
+用于序列重建的LSTM自编码器
 
-### 预测LSTM自动编码器
+### 预测LSTM自编码器
 
 我们可以修改重建LSTM Autoencoder来预测序列中的下一步。
 
@@ -309,11 +309,11 @@ print(yhat[0,:,0])
 
 ![LSTM Autoencoder for Sequence Prediction](img/bd8570b95f40c8577397e53902062617.jpg)
 
-用于序列预测的LSTM自动编码器
+用于序列预测的LSTM自编码器
 
-### 复合LSTM自动编码器
+### 复合LSTM自编码器
 
-最后，我们可以创建一个复合LSTM自动编码器，它具有一个编码器和两个解码器，一个用于重建，另一个用于预测。
+最后，我们可以创建一个复合LSTM自编码器，它具有一个编码器和两个解码器，一个用于重建，另一个用于预测。
 
 我们可以使用功能API在Keras中实现这个多输出模型。您可以在此帖子中了解有关功能API的更多信息：
 
@@ -421,7 +421,7 @@ array([[[0.16298929],
 
 ![Composite LSTM Autoencoder for Sequence Reconstruction and Prediction](img/03ca4b90546e7dde0560ddc2d03a5cf7.jpg)
 
-用于序列重建和预测的复合LSTM自动编码器
+用于序列重建和预测的复合LSTM自编码器
 
 ### 保留独立LSTM编码器
 
@@ -436,7 +436,7 @@ array([[[0.16298929],
 model = Model(inputs=model.inputs, outputs=model.layers[0].output)
 ```
 
-下面列出了使用重建LSTM自动编码器执行此操作的完整示例。
+下面列出了使用重建LSTM自编码器执行此操作的完整示例。
 
 ```py
 # lstm autoencoder recreate sequence
@@ -509,11 +509,11 @@ print(yhat)
 
 *   [用序列做出预测](https://machinelearningmastery.com/sequence-prediction/)
 *   [编解码器长短期记忆网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
-*   [自动编码器，维基百科](https://en.wikipedia.org/wiki/Autoencoder)
+*   [自编码器，维基百科](https://en.wikipedia.org/wiki/Autoencoder)
 *   [使用LSTM进行视频表示的无监督学习](https://arxiv.org/abs/1502.04681)，ArXiv 2015。
 *   [使用LSTM进行视频表示的无监督学习](http://proceedings.mlr.press/v37/srivastava15.pdf)，PMLR，PDF，2015。
 *   [使用LSTM](https://github.com/emansim/unsupervised-videos) ，GitHub存储库进行视频表示的无监督学习。
-*   [在Keras建立自动编码器](https://blog.keras.io/building-autoencoders-in-keras.html)，2016年。
+*   [在Keras建立自编码器](https://blog.keras.io/building-autoencoders-in-keras.html)，2016年。
 *   [如何使用Keras功能API进行深度学习](https://machinelearningmastery.com/keras-functional-api-deep-learning/)
 
 ## 摘要
@@ -522,8 +522,8 @@ print(yhat)
 
 具体来说，你学到了：
 
-*   自动编码器是一种自我监督的学习模型，可以学习输入数据的压缩表示。
-*   LSTM自动编码器可以学习序列数据的压缩表示，并且已经用于视频，文本，音频和时间序列序列数据。
+*   自编码器是一种自我监督的学习模型，可以学习输入数据的压缩表示。
+*   LSTM自编码器可以学习序列数据的压缩表示，并且已经用于视频，文本，音频和时间序列序列数据。
 *   如何使用Keras深度学习库在Python中开发LSTM Autoencoder模型。
 
 你有任何问题吗？

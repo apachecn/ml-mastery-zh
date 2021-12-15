@@ -1,4 +1,4 @@
-# 如何重塑Keras中长短期存储网络的输入数据
+# 如何在Keras中重塑长短期存储网络的输入数据
 
 > 原文： [https://machinelearningmastery.com/reshape-in​​put-data-long-short-term-memory-networks-keras/](https://machinelearningmastery.com/reshape-input-data-long-short-term-memory-networks-keras/)
 

@@ -679,6 +679,6 @@ seared to see it was a little lad good to the little good
 
 *   在哪里可以免费下载经典书籍的 ASCII 文本，以便进行训练。
 *   如何在文本序列上训练 LSTM 网络以及如何使用训练有素的网络生成新序列。
-*   如何开发堆叠 LSTM 网络并提升模型的表现。
+*   如何开发栈式 LSTM 网络并提升模型的表现。
 
 您对 LSTM 网络或此帖子的文本生成有任何疑问吗？在下面的评论中提出您的问题，我会尽力回答。

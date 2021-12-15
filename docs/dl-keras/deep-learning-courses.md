@@ -69,7 +69,7 @@
 *   [深度学习讲座 11：最大边缘学习，转移和记忆网络](https://www.youtube.com/watch?v=jCGplSKrl2Y&index=15&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu)
 *   [深度学习讲座 12：递归神经网络和 LSTM](https://www.youtube.com/watch?v=56TYLaQN4N8&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu&index=14)
 *   [深度学习讲座 13：Alex Graves 关于 RNNs 的设想](https://www.youtube.com/watch?v=-yX1SYeDHbg&index=4&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu)
-*   [深度学习第 14 讲：关于变分自动编码器和图像生成的 Karol Gregor](https://www.youtube.com/watch?v=P78QYjWh5sM&index=3&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu)
+*   [深度学习第 14 讲：关于变分自编码器和图像生成的 Karol Gregor](https://www.youtube.com/watch?v=P78QYjWh5sM&index=3&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu)
 *   [深度学习讲座 15：深度强化学习 - 政策检索](https://www.youtube.com/watch?v=kUiR0RLmGCo&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu&index=2)
 *   [深度学习第 16 讲：强化学习和神经动态规划](https://www.youtube.com/watch?v=dV80NAlEins&index=1&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu)
 
@@ -137,7 +137,7 @@
 *   [深度学习分布估计](http://videolectures.net/deeplearning2015_larochelle_deep_learning/)
 *   [无向图形模型](http://videolectures.net/deeplearning2015_courville_graphical_models/)
 *   [受限制的玻尔兹曼机器](http://videolectures.net/deeplearning2015_lee_boltzmann_machines/)
-*   [在歧管和自动编码器](http://videolectures.net/deeplearning2015_vincent_autoencoders/)
+*   [在歧管和自编码器](http://videolectures.net/deeplearning2015_vincent_autoencoders/)
 *   [视觉特征：从傅立叶到 Gabor](http://videolectures.net/deeplearning2015_memisevic_fourier_gabor/)
 *   [视觉特征 II](http://videolectures.net/deeplearning2015_memisevic_visual_features/)
 *   [卷积网络](http://videolectures.net/deeplearning2015_lee_convolutional_networks/)
@@ -157,7 +157,7 @@
 *   [记忆，阅读和理解](http://videolectures.net/deeplearning2015_blunsom_memory_reading/)
 *   [平滑，有限和凸优化深度学习暑期学校](http://videolectures.net/deeplearning2015_schmidt_smooth_finite/)
 *   [非平滑，非有限和非凸优化](http://videolectures.net/deeplearning2015_schmidt_nonsmooth_nonfinite/)
-*   [变分自动编码器和扩展](http://videolectures.net/deeplearning2015_courville_autoencoder_extension/)
+*   [变分自编码器和扩展](http://videolectures.net/deeplearning2015_courville_autoencoder_extension/)
 *   [深度生成模型](http://videolectures.net/deeplearning2015_bengio_generative_models/)
 
 选择一个主题并深入学习，效果会非常好！
@@ -262,7 +262,7 @@ YouTube 播放列表的文件名称很差，而且有些缺少讲座， 2016 年
 *   主题 3：条件随机字段
 *   主题 4：训练条件随机字段
 *   主题 5：受限制的玻尔兹曼机器
-*   主题 6：自动编码器
+*   主题 6：自编码器
 *   主题 7：深度学习
 *   主题 8：稀疏编码
 *   主题 9：计算机视觉

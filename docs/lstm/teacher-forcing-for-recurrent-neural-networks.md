@@ -1,4 +1,4 @@
-# 什么是教师强制循环神经网络？
+# 什么是循环神经网络的教师强制？
 
 > 原文： [https://machinelearningmastery.com/teacher-forcing-for-recurrent-neural-networks/](https://machinelearningmastery.com/teacher-forcing-for-recurrent-neural-networks/)
 

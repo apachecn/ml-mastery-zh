@@ -81,9 +81,9 @@ LSTM的一些现代实现允许您指定用于更新的时间步数，将用作�
 
 ## 6.使用编解码器架构
 
-您可以使用自动编码器来学习长序列的新表示长度，然后使用解码器网络将编码表示解释为所需的输出。
+您可以使用自编码器来学习长序列的新表示长度，然后使用解码器网络将编码表示解释为所需的输出。
 
-这可能涉及无监督自动编码器作为序列的预处理传递，或者用于自然语言翻译的更新近的[编解码器LSTM样式网络](http://machinelearningmastery.com/learn-add-numbers-seq2seq-recurrent-neural-networks/)。
+这可能涉及无监督自编码器作为序列的预处理传递，或者用于自然语言翻译的更新近的[编解码器LSTM样式网络](http://machinelearningmastery.com/learn-add-numbers-seq2seq-recurrent-neural-networks/)。
 
 同样，从非常长的序列中学习可能仍然存在困难，但是更复杂的架构可以提供额外的杠杆或技能，特别是如果与上述一种或多种技术结合使用。
 

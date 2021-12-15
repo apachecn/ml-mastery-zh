@@ -1141,7 +1141,7 @@ model.compile(loss='mse', optimizer='adam')
 model.fit(train_x, train_y, epochs=n_epochs, batch_size=n_batch, verbose=0)
 ```
 
-探索调整其他配置（例如使用双向输入层，堆叠 LSTM 层，甚至是具有 CNN 或 ConvLSTM 输入模型的混合模型）可能会很有趣。
+探索调整其他配置（例如使用双向输入层，栈式 LSTM 层，甚至是具有 CNN 或 ConvLSTM 输入模型的混合模型）可能会很有趣。
 
 与 CNN 模型一样，LSTM 模型期望输入数据具有样本，时间步长和特征的三维形状。
 

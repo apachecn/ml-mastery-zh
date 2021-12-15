@@ -1,4 +1,4 @@
-# 使用Python中的长短期记忆网络演示内存
+# 在Python中使用长短期记忆网络演示记忆
 
 > 原文： [https://machinelearningmastery.com/memory-in-a-long-short-term-memory-network/](https://machinelearningmastery.com/memory-in-a-long-short-term-memory-network/)
 
@@ -12,7 +12,7 @@
 
 完成本教程后，您将了解：
 
-*   如何定义一个小序列预测问题，只有像LSTM这样的RNN可以使用内存来解决。
+*   如何定义一个小序列预测问题，只有像LSTM这样的RNN可以使用记忆来解决。
 *   如何转换问题表示，使其适合LSTM学习。
 *   如何设计LSTM来正确解决问题。
 
@@ -452,7 +452,7 @@ X=2.0 y=4.0, yhat=4.0
 
 具体来说，你学到了：
 
-*   如何定义一个小序列预测问题，只有像LSTM这样的RNN可以使用内存来解决。
+*   如何定义一个小序列预测问题，只有像LSTM这样的RNN可以使用记忆来解决。
 *   如何转换问题表示，使其适合LSTM学习。
 *   如何设计LSTM来正确解决问题。
 

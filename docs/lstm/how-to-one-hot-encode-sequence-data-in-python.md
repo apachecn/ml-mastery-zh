@@ -14,7 +14,7 @@
 
 *   什么是整数编码和单热编码，以及为什么它们在机器学习中是必需的。
 *   如何在Python中手动计算整数编码和单热编码。
-*   如何使用scikit-learn和Keras库在Python中自动编码序列数据。
+*   如何使用scikit-learn和Keras库在Python中自编码序列数据。
 
 让我们开始吧。
 
@@ -315,7 +315,7 @@ print(inverted)
 
 *   什么是整数编码和单热编码，以及为什么它们在机器学习中是必需的。
 *   如何在Python中手动计算整数编码和单热编码。
-*   如何使用scikit-learn和Keras库在Python中自动编码序列数据。
+*   如何使用scikit-learn和Keras库在Python中自编码序列数据。
 
 您对准备序列数据有任何疑问吗？
 在评论中提出您的问题，我会尽力回答。

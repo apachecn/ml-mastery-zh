@@ -126,7 +126,7 @@ print(model.predict(data))
   [-0.11457888]]]
 ```
 
-堆叠LSTM层时必须设置 _return_sequences = True_ ，以便第二个LSTM层具有三维序列输入。有关更多详细信息，请参阅帖子：
+栈式LSTM层时必须设置 _return_sequences = True_ ，以便第二个LSTM层具有三维序列输入。有关更多详细信息，请参阅帖子：
 
 *   [堆叠长短期记忆网络](https://machinelearningmastery.com/stacked-long-short-term-memory-networks/)
 

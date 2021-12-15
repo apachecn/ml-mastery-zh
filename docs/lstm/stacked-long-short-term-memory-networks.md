@@ -1,4 +1,4 @@
-# 堆叠长短期记忆网络
+# 栈式长短期记忆网络
 
 > 原文： [https://machinelearningmastery.com/stacked-long-short-term-memory-networks/](https://machinelearningmastery.com/stacked-long-short-term-memory-networks/)
 
@@ -15,7 +15,7 @@ Stacked LSTM是此模型的扩展，具有多个隐藏的LSTM层，其中每个�
 
 *   深度神经网络架构的好处。
 *   Stacked LSTM循环神经网络架构。
-*   如何使用Keras在Python中实现堆叠LSTM。
+*   如何使用Keras在Python中实现栈式LSTM。
 
 让我们开始吧。
 
@@ -29,12 +29,12 @@ Stacked LSTM是此模型的扩展，具有多个隐藏的LSTM层，其中每个�
 这篇文章分为3个部分，它们是：
 
 1.  为什么要增加深度？
-2.  堆叠式LSTM架构
-3.  在Keras中实现堆叠LSTM
+2.  栈式LSTM架构
+3.  在Keras中实现栈式LSTM
 
 ## 为什么要增加深度？
 
-堆叠LSTM隐藏层使得模型更深入，更准确地将描述作为深度学习技术获得。
+栈式LSTM隐藏层使得模型更深入，更准确地将描述作为深度学习技术获得。
 
 神经网络的深度通常归因于该方法在广泛的挑战性预测问题上的成功。
 
@@ -50,7 +50,7 @@ Stacked LSTM是此模型的扩展，具有多个隐藏的LSTM层，其中每个�
 
 - [如何构建深度循环神经网络](https://arxiv.org/abs/1312.6026)，2013。
 
-## 堆叠式LSTM架构
+## 栈式LSTM架构
 
 LSTM可以利用相同的好处。
 
@@ -68,13 +68,13 @@ Graves等人介绍了堆叠的LSTM或深LSTM。在将LSTM应用于语音识别�
 
 在同样的工作中，他们发现网络的深度比给定层中的存储器单元的数量更重要。
 
-堆叠式LSTM现在是用于挑战序列预测问题的稳定技术。堆叠LSTM架构可以定义为由多个LSTM层组成的LSTM模型。上面的LSTM层提供序列输出而不是单个值输出到下面的LSTM层。具体地说，每个输入时间步长一个输出，而不是所有输入时间步长的一个输出时间步长。
+栈式LSTM现在是用于挑战序列预测问题的稳定技术。栈式LSTM架构可以定义为由多个LSTM层组成的LSTM模型。上面的LSTM层提供序列输出而不是单个值输出到下面的LSTM层。具体地说，每个输入时间步长一个输出，而不是所有输入时间步长的一个输出时间步长。
 
 ![Stacked Long Short-Term Memory Archiecture](img/18919d3d5e8e3ef675e8f630308fa156.jpg)
 
 堆叠长短期内存架构
 
-## 在Keras中实现堆叠LSTM
+## 在Keras中实现栈式LSTM
 
 我们可以在Keras Python深度学习库中轻松创建Stacked LSTM模型
 
@@ -103,7 +103,7 @@ print(model.predict(data))
 [[ 0.00031043]]
 ```
 
-要堆叠LSTM层，我们需要更改先前LSTM层的配置，以输出3D数组作为后续层的输入。
+要栈式LSTM层，我们需要更改先前LSTM层的配置，以输出3D数组作为后续层的输入。
 
 我们可以通过将层上的return_sequences参数设置为True（默认为False）来完成此操作。这将为每个输入时间步返回一个输出并提供3D数组。
 以下是与return_sequences = True相同的例子。
@@ -168,7 +168,7 @@ model.add(Dense(...))
 
 *   深度神经网络架构的好处。
 *   Stacked LSTM循环神经网络架构。
-*   如何使用Keras在Python中实现堆叠LSTM。
+*   如何使用Keras在Python中实现栈式LSTM。
 
 你有任何问题吗？
 在下面的评论中提出您的问题，我会尽力回答。

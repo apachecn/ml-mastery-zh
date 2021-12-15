@@ -1,4 +1,4 @@
-# 5学习LSTM循环神经网络的简单序列预测问题的例子
+# 5个使用LSTM循环神经网络的简单序列预测问题的示例
 
 > 原文： [https://machinelearningmastery.com/sequence-prediction-problems-learning-lstm-recurrent-neural-networks/](https://machinelearningmastery.com/sequence-prediction-problems-learning-lstm-recurrent-neural-networks/)
 

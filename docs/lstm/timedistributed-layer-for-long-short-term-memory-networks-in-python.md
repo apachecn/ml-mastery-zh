@@ -1,4 +1,4 @@
-# 如何在Python中使用TimeDistributed Layer for Long Short-Term Memory Networks
+# 如何在Python中对长短期记忆网络使用`TimeDistributed`层
 
 > 原文： [https://machinelearningmastery.com/timedistributed-layer-for-long-short-term-memory-networks-in-python/](https://machinelearningmastery.com/timedistributed-layer-for-long-short-term-memory-networks-in-python/)
 

@@ -1,4 +1,4 @@
-# 逆向神经网络中的深度学习速成课程
+# 面向深度学习的循环神经网络的速成课程
 
 > 原文： [https://machinelearningmastery.com/crash-course-recurrent-neural-networks-deep-learning/](https://machinelearningmastery.com/crash-course-recurrent-neural-networks-deep-learning/)
 

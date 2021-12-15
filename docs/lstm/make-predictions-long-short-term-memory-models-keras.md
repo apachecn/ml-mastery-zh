@@ -1,4 +1,4 @@
-# 如何用Keras中的长短期记忆模型做出预测
+# 如何在Keras中用长短期记忆模型做出预测
 
 > 原文： [https://machinelearningmastery.com/make-predictions-long-short-term-memory-models-keras/](https://machinelearningmastery.com/make-predictions-long-short-term-memory-models-keras/)
 

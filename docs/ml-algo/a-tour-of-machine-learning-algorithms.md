@@ -216,7 +216,7 @@ Example problems are classification and regression.
 *   深玻尔兹曼机（DBM）
 *   深信仰网络（DBN）
 *   卷积神经网络（CNN）
-*   堆叠式自动编码器
+*   栈式自编码器
 
 ### 降维算法
 

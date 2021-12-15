@@ -1,4 +1,4 @@
-# 如何准备Keras中截断反向传播的序列预测
+# 如何在Keras中为截断BPTT准备序列预测
 
 > 原文： [https://machinelearningmastery.com/truncated-backpropagation-through-time-in-keras/](https://machinelearningmastery.com/truncated-backpropagation-through-time-in-keras/)
 

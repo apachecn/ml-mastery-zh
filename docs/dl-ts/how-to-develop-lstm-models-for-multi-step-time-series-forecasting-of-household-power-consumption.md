@@ -887,7 +887,7 @@ model = Sequential()
 model.add(LSTM(200, activation='relu', input_shape=(n_timesteps, n_features)))
 ```
 
-我们将使用一种易于在 Keras 中实现的简单编解码器架构，它与 LSTM 自动编码器的架构有很多相似之处。
+我们将使用一种易于在 Keras 中实现的简单编解码器架构，它与 LSTM 自编码器的架构有很多相似之处。
 
 首先，输入序列的内部表示重复多次，输出序列中的每个时间步长一次。该序列的向量将被呈现给 LSTM 解码器。
 

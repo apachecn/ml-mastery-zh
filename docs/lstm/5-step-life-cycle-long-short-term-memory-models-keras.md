@@ -94,7 +94,7 @@ model.add(LSTM(5, input_shape=(2,1)))
 model.add(Dense(1))
 ```
 
-可以通过将LSTM层添加到Sequential模型来堆叠LSTM层。重要的是，在堆叠LSTM层时，我们必须为每个输入输出一个序列而不是一个值，以便后续的LSTM层可以具有所需的3D输入。我们可以通过将return_sequences参数设置为True来完成此操作。例如：
+可以通过将LSTM层添加到Sequential模型来栈式LSTM层。重要的是，在栈式LSTM层时，我们必须为每个输入输出一个序列而不是一个值，以便后续的LSTM层可以具有所需的3D输入。我们可以通过将return_sequences参数设置为True来完成此操作。例如：
 
 ```py
 model = Sequential()

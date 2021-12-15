@@ -85,7 +85,7 @@ LSTM迷你课程概述
 ### 楷模
 
 *   **第05课**：如何开发香草LSTMs
-*   **第06课**：如何开发堆叠式LSTM
+*   **第06课**：如何开发栈式LSTM
 *   **第07课**：如何开发CNN LSTM
 *   **第08课**：如何开发编解码器LSTM
 *   **第09课**：如何开发双向LSTM
@@ -230,7 +230,7 @@ LSTM迷你课程概述
 *   [用Keras](http://machinelearningmastery.com/time-series-prediction-lstm-recurrent-neural-networks-python-keras/) 用Python中的LSTM循环神经网络进行时间序列预测
 *   [Python中长期短期记忆网络的时间序列预测](http://machinelearningmastery.com/time-series-forecasting-long-short-term-memory-network-python/)
 
-## 第6课：如何开发堆叠LSTM
+## 第6课：如何开发栈式LSTM
 
 ### Goal
 
@@ -240,13 +240,13 @@ LSTM迷你课程概述
 
 *   在层次结构的序列问题上使用香草LSTM有什么困难？
 *   堆叠的LSTM是什么？
-*   什么是堆叠LSTM应用于何处的示例？
-*   堆叠式LSTM提供哪些好处？
-*   如何在Keras中实现堆叠LSTM？
+*   什么是栈式LSTM应用于何处的示例？
+*   栈式LSTM提供哪些好处？
+*   如何在Keras中实现栈式LSTM？
 
 ### Experiment
 
-设计并执行一个实验，演示具有分层输入结构的序列预测问题的堆叠LSTM。
+设计并执行一个实验，演示具有分层输入结构的序列预测问题的栈式LSTM。
 
 ### Further Reading
 

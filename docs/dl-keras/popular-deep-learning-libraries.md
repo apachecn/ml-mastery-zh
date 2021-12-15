@@ -37,7 +37,7 @@ Theano 是由 LISA 集团（现为 [MILA](http://mila.umontreal.ca/en/) ）开�
 然而，有一个优秀的深度学习教程，向您展示如何为深度学习创建类和函数。例如，它提供了创建以下深度学习算法的分步示例：
 
 *   [深度卷积网络](http://deeplearning.net/tutorial/lenet.html)
-*   [堆叠去噪自动编码器](http://deeplearning.net/tutorial/SdA.html)
+*   [堆叠去噪自编码器](http://deeplearning.net/tutorial/SdA.html)
 *   [深信仰网络](http://deeplearning.net/tutorial/DBN.html)
 
 在线查看[整个教程](http://deeplearning.net/tutorial/contents.html)或下载 [PDF 版](http://deeplearning.net/tutorial/deeplearning.pdf)
@@ -109,7 +109,7 @@ DeepLearning4J（简称 DL4J）是由 [Adam Gibson](https://www.linkedin.com/in/
 DeepLearning4J 是一个灵活的平台，它提供了一套最先进的深度学习算法，不仅限于：
 
 *   深信仰网络
-*   堆叠去噪自动编码器
+*   堆叠去噪自编码器
 *   卷积神经网络
 *   长短期记忆单位
 *   递归神经网络

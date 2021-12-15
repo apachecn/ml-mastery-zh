@@ -1,4 +1,4 @@
-# 如何用Keras开发用于Python序列分类的双向LSTM
+# 如何用Python和Keras开发用于序列分类的双向LSTM
 
 > 原文： [https://machinelearningmastery.com/develop-bidirectional-lstm-sequence-classification-python-keras/](https://machinelearningmastery.com/develop-bidirectional-lstm-sequence-classification-python-keras/)
 

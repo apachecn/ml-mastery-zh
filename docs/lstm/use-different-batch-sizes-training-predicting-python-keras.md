@@ -1,4 +1,4 @@
-# 如何在使用LSTM进行训练和预测时使用不同的批量大小
+# 如何在将LSTM用于训练和预测时使用不同的批量大小
 
 > 原文： [https://machinelearningmastery.com/use-different-batch-sizes-training-predicting-python-keras/](https://machinelearningmastery.com/use-different-batch-sizes-training-predicting-python-keras/)
 
