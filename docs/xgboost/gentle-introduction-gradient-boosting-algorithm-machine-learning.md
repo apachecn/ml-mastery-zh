@@ -241,8 +241,8 @@ AdaBoost 和相关算法首先由 Breiman 称之为 ARCing 算法的统计框架
 ### 教科书中的梯度提升
 
 *   第 8.2.3 节 Boosting，第 321 页，[统计学习简介：在 R](http://www.amazon.com/dp/1461471370?tag=inspiredalgor-20) 中的应用。
-*   第 8.6 节 Boosting，第 203 页，[应用预测建模](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20)。
-*   第 14.5 节“随机梯度提升”，第 390 页，[应用预测建模](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20)。
+*   第 8.6 节 Boosting，第 203 页，[应用预测性建模](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20)。
+*   第 14.5 节“随机梯度提升”，第 390 页，[应用预测性建模](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20)。
 *   第 16.4 节 Boosting，第 556 页，[机器学习：概率视角](http://www.amazon.com/dp/0262018020?tag=inspiredalgor-20)
 *   第 10 章 Boosting 和 Additive 树，第 337 页，[统计学习的要素：数据挖掘，推理和预测](http://www.amazon.com/dp/0387848576?tag=inspiredalgor-20)
 
@@ -267,7 +267,7 @@ AdaBoost 和相关算法首先由 Breiman 称之为 ARCing 算法的统计框架
 
 ## 摘要
 
-在这篇文章中，您发现了用于机器学习中预测建模的梯度提升算法。
+在这篇文章中，您发现了用于机器学习中预测性建模的梯度提升算法。
 
 具体来说，你学到了：
 

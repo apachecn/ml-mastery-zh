@@ -201,7 +201,7 @@ Gartner 高级分析平台的魔力象限来自 [Gartner](http://www.gartner.com
 通过系统地处理问题并提供独立模型，您可以学到很多东西。
 
 *   [数据挖掘：实用机器学习工具和技术](http://www.amazon.com/dp/0123748569?tag=inspiredalgor-20)
-*   [应用预测建模](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20)
+*   [应用预测性建模](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20)
 
 在“[处理机器学习问题的过程](http://machinelearningmastery.com/process-for-working-through-machine-learning-problems/)”中查看我的系统过程，以便端到端地处理机器学习问题。
 
@@ -238,7 +238,7 @@ Gartner 高级分析平台的魔力象限来自 [Gartner](http://www.gartner.com
 
 然而，包含这种组合的一些以数据科学为中心的机器学习资源是：
 
-*   [应用预测建模](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20)
+*   [应用预测性建模](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20)
 *   [统计学习简介：在 R](http://www.amazon.com/dp/1461471370?tag=inspiredalgor-20) 中的应用
 *   [黑客机器学习](http://www.amazon.com/dp/1449303714?tag=inspiredalgor-20)
 

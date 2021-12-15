@@ -3,7 +3,7 @@
 > 原文： [https://machinelearningmastery.com/get-good-results-fast-deep-learning-time-series-forecasting/](https://machinelearningmastery.com/get-good-results-fast-deep-learning-time-series-forecasting/)
 
 #### 3
-您的预测建模问题设计实验和管理复杂性的策略。
+您的预测性建模问题设计实验和管理复杂性的策略。
 
 新的时间序列预测项目很难开始。
 

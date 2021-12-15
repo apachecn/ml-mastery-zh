@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/machine-learning-development-environment/](https://machinelearningmastery.com/machine-learning-development-environment/)
 
-用于机器学习的开发环境可能与用于解决预测建模问题的机器学习方法一样重要。
+用于机器学习的开发环境可能与用于解决预测性建模问题的机器学习方法一样重要。
 
 一周几次，我得到一个问题，如：
 

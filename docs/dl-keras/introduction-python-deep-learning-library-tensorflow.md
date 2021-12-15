@@ -8,7 +8,7 @@ TensorFlow 是一个用于 Google 创建和发布的快速数值计算的 Python
 
 在这篇文章中，您将学习用于深度学习的 TensorFlow 库。
 
-在我的[新书](https://machinelearningmastery.com/deep-learning-with-python/)中，通过 18 个渐进式的教程和 9 个项目，探索如何用几行代码为一系列预测建模问题开发深度学习模型。
+在我的[新书](https://machinelearningmastery.com/deep-learning-with-python/)中，通过 18 个渐进式的教程和 9 个项目，探索如何用几行代码为一系列预测性建模问题开发深度学习模型。
 
 让我们开始吧。
 

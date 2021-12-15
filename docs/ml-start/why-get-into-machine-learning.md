@@ -1,4 +1,4 @@
-# 为什么要进入机器学习？
+# 为什么要入门机器学习？
 
 > 原文： [https://machinelearningmastery.com/why-get-into-machine-learning/](https://machinelearningmastery.com/why-get-into-machine-learning/)
 

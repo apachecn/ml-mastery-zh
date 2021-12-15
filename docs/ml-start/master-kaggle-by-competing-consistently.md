@@ -1,4 +1,4 @@
-# 通过竞争一致的大师 Kaggle
+# 通过持续的竞赛精通 Kaggle
 
 > 原文： [https://machinelearningmastery.com/master-kaggle-by-competing-consistently/](https://machinelearningmastery.com/master-kaggle-by-competing-consistently/)
 

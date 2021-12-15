@@ -1,4 +1,4 @@
-# ÁlvaroLemos 如何在数据科学团队中获得机器学习实习
+# AlvaroLemos 如何在数据科学团队中获得机器学习实习
 
 > 原文： [https://machinelearningmastery.com/student-got-machine-learning-internship-job-data-science-team/](https://machinelearningmastery.com/student-got-machine-learning-internship-job-data-science-team/)
 

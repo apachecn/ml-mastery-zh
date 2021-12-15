@@ -11,7 +11,7 @@
 *   如何准备您的数据以充分利用KNN。
 *   在哪里可以了解有关KNN算法的更多信息。
 
-这篇文章是为开发人员编写的，并没有统计或数学方面的背景。重点是算法如何工作以及如何将其用于预测建模问题。如果您有任何疑问，请发表评论，我会尽力回答。
+这篇文章是为开发人员编写的，并没有统计或数学方面的背景。重点是算法如何工作以及如何将其用于预测性建模问题。如果您有任何疑问，请发表评论，我会尽力回答。
 
 让我们开始吧。
 
@@ -114,9 +114,9 @@ KNN适用于少量输入变量（p），但在输入数量非常大时会遇到�
 
 *   [教程从零开始在Python中实现k-最近邻](http://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/)
 
-以下是从预测建模角度介绍KNN算法的一些优秀的机器学习文本。
+以下是从预测性建模角度介绍KNN算法的一些优秀的机器学习文本。
 
-1.  [应用预测建模](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20)，第7章用于回归，第13章用于分类。
+1.  [应用预测性建模](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20)，第7章用于回归，第13章用于分类。
 2.  [数据挖掘：实用机器学习工具和技术](http://www.amazon.com/dp/0123748569?tag=inspiredalgor-20)，第76和128页
 3.  [做数据科学：从前线直接谈话](http://www.amazon.com/dp/1449358659?tag=inspiredalgor-20)，第71页
 4.  [机器学习](http://www.amazon.com/dp/0070428077?tag=inspiredalgor-20)，第8章

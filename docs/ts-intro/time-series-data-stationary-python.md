@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/time-series-data-stationary-python/](https://machinelearningmastery.com/time-series-data-stationary-python/)
 
-时间序列不同于更传统的分类和回归预测建模问题。
+时间序列不同于更传统的分类和回归预测性建模问题。
 
 时间结构为观察增加了顺序。这种强加的顺序意味着需要专门处理关于这些观察的一致性的重要假设。
 

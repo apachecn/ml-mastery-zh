@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/classification-and-regression-trees-for-machine-learning/](https://machinelearningmastery.com/classification-and-regression-trees-for-machine-learning/)
 
-决策树是用于预测建模机器学习的重要算法类型。
+决策树是用于预测性建模机器学习的重要算法类型。
 
 经典的决策树算法已经存在了几十年，现代变体如随机森林是最有效的技术之一。
 
@@ -27,7 +27,7 @@
 
 ## 决策树
 
-分类和回归树或简称CART是 [Leo Breiman](https://en.wikipedia.org/wiki/Leo_Breiman) 引用的术语，指的是可用于分类或回归预测建模问题的[决策树](https://en.wikipedia.org/wiki/Decision_tree_learning)算法。
+分类和回归树或简称CART是 [Leo Breiman](https://en.wikipedia.org/wiki/Leo_Breiman) 引用的术语，指的是可用于分类或回归预测性建模问题的[决策树](https://en.wikipedia.org/wiki/Decision_tree_learning)算法。
 
 传统上，这种算法被称为“决策树”，但在某些平台上，如R，它们被更现代的术语CART所引用。
 
@@ -96,7 +96,7 @@ Therefore: Female
 
 以贪婪的方式评估和选择所有输入变量和所有可能的分裂点（例如，每次选择最佳分裂点）。
 
-对于回归预测建模问题，最小化以选择分割点的成本函数是落在矩形内的所有训练样本的总平方误差：
+对于回归预测性建模问题，最小化以选择分割点的成本函数是落在矩形内的所有训练样本的总平方误差：
 
 sum（y - 预测）^ 2
 

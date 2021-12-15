@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/implement-resampling-methods-scratch-python/](https://machinelearningmastery.com/implement-resampling-methods-scratch-python/)
 
-预测建模的目标是创建能够对新数据进行良好预测的模型。
+预测性建模的目标是创建能够对新数据进行良好预测的模型。
 
 我们在训练时无法访问这些新数据，因此我们必须使用统计方法来估计模型在新数据上的表现。
 

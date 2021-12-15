@@ -1,4 +1,4 @@
-# 评估自己作为数据科学家并利用结果建立惊人的数据科学团队
+# 像数据科学家一样评估自己
 
 > 原文： [https://machinelearningmastery.com/data-science-skills-simple-method-can-use-evaluate-use-results-build-amazing-data-science-teams/](https://machinelearningmastery.com/data-science-skills-simple-method-can-use-evaluate-use-results-build-amazing-data-science-teams/)
 

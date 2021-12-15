@@ -1,4 +1,4 @@
-# 扩展机器学习工具并展示掌握
+# 扩展机器学习工具并展示熟练度
 
 > 原文： [https://machinelearningmastery.com/extend-machine-learning-tools/](https://machinelearningmastery.com/extend-machine-learning-tools/)
 

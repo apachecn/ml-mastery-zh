@@ -23,7 +23,7 @@
 
 ## 动力传动系统方法
 
-霍华德在Strata 2012上发表了一个35分钟的演讲，名为“ [_从预测建模到优化：下一个前沿_](https://www.youtube.com/watch?v=vYrWTDxoeGg) ”。
+霍华德在Strata 2012上发表了一个35分钟的演讲，名为“ [_从预测性建模到优化：下一个前沿_](https://www.youtube.com/watch?v=vYrWTDxoeGg) ”。
 
 &lt;iframe allowfullscreen="" frameborder="0" height="281" src="https://www.youtube.com/embed/vYrWTDxoeGg?feature=oembed" width="500"&gt;&lt;/iframe&gt;
 

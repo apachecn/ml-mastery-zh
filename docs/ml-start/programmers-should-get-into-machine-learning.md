@@ -1,4 +1,4 @@
-# 程序员应该进入机器学习
+# 程序员应该入门机器学习
 
 > 原文： [https://machinelearningmastery.com/programmers-should-get-into-machine-learning/](https://machinelearningmastery.com/programmers-should-get-into-machine-learning/)
 

@@ -1,4 +1,4 @@
-# 应用机器学习是一种精英政治
+# 应用机器学习是一种精英统治
 
 > 原文： [https://machinelearningmastery.com/applied-machine-learning-is-a-meritocracy/](https://machinelearningmastery.com/applied-machine-learning-is-a-meritocracy/)
 

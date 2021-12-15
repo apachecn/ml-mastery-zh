@@ -1,4 +1,4 @@
-# 程序员的机器学习
+# 面向程序员的机器学习
 
 > 原文： [https://machinelearningmastery.com/machine-learning-for-programmers/](https://machinelearningmastery.com/machine-learning-for-programmers/)
 

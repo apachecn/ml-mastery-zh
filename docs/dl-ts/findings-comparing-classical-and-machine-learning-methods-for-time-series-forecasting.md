@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/findings-comparing-classical-and-machine-learning-methods-for-time-series-forecasting/](https://machinelearningmastery.com/findings-comparing-classical-and-machine-learning-methods-for-time-series-forecasting/)
 
-通常报告机器学习和深度学习方法是所有预测建模问题的关键解决方案。
+通常报告机器学习和深度学习方法是所有预测性建模问题的关键解决方案。
 
 最近一项重要的研究评估并比较了许多经典和现代机器学习和深度学习方法在 1000 多个单变量时间序列预测问题的大量不同组合中的表现。
 

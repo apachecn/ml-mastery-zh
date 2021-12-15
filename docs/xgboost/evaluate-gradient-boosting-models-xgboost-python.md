@@ -119,7 +119,7 @@ print("Accuracy: %.2f%% (%.2f%%)" % (results.mean()*100, results.std()*100))
 Accuracy: 76.69% (7.11%)
 ```
 
-如果您有许多类用于分类类型预测建模问题，或者类是不平衡的（一个类的实例比另一个类多得多），那么在执行交叉验证时创建分层折叠可能是个好主意。
+如果您有许多类用于分类类型预测性建模问题，或者类是不平衡的（一个类的实例比另一个类多得多），那么在执行交叉验证时创建分层折叠可能是个好主意。
 
 这具有在执行交叉验证评估时在每个折叠中强制执行与在整个训练数据集中相同的类分布的效果。 scikit-learn 库在 [StratifiedKFold](http://scikit-learn.org/stable/modules/generated/sklearn.cross_validation.StratifiedKFold.html) 类中提供此功能。
 

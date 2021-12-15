@@ -1,4 +1,4 @@
-# 机器学习在一年
+# 一年内掌握机器学习
 
 > 原文： [https://machinelearningmastery.com/machine-learning-year/](https://machinelearningmastery.com/machine-learning-year/)
 

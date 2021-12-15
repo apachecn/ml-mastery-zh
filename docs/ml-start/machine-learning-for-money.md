@@ -1,4 +1,4 @@
-# 机器学习金钱
+# 机器学习与赚钱
 
 > 原文： [https://machinelearningmastery.com/machine-learning-for-money/](https://machinelearningmastery.com/machine-learning-for-money/)
 

@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/naive-bayes-for-machine-learning/](https://machinelearningmastery.com/naive-bayes-for-machine-learning/)
 
-Naive Bayes是一种简单但令人惊讶的强大的预测建模算法。
+Naive Bayes是一种简单但令人惊讶的强大的预测性建模算法。
 
 在这篇文章中，您将发现朴素贝叶斯算法的分类。阅读这篇文章后，你会知道：
 

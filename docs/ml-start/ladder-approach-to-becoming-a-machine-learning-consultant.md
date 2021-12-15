@@ -1,4 +1,4 @@
-# 获得付费申请机器学习
+# 应用机器学习获得回报
 
 > 原文： [https://machinelearningmastery.com/ladder-approach-to-becoming-a-machine-learning-consultant/](https://machinelearningmastery.com/ladder-approach-to-becoming-a-machine-learning-consultant/)
 

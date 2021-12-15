@@ -95,6 +95,6 @@
 
 以下是您可能希望了解的一些书籍，以了解有关此实验设计和优化方法的更多信息。
 
-*   [应用预测建模](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20)
+*   [应用预测性建模](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20)
 *   [响应面方法：使用设计实验的过程和产品优化](http://www.amazon.com/dp/0470174463?tag=inspiredalgor-20)
 *   [通过代理建模进行工程设计：实用指南](http://www.amazon.com/dp/0470060689?tag=inspiredalgor-20)

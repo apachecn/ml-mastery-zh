@@ -1,4 +1,4 @@
-# 初学者如何在机器学习中弄错
+# 初学者如何在机器学习中犯错
 
 > 原文： [https://machinelearningmastery.com/beginners-get-it-wrong/](https://machinelearningmastery.com/beginners-get-it-wrong/)
 
@@ -84,11 +84,11 @@
 
 然后再缩小它。
 
-最有价值的机器学习领域是[预测建模](http://machinelearningmastery.com/gentle-introduction-to-predictive-modeling/)。从数据创建模型以做出预测。
+最有价值的机器学习领域是[预测性建模](http://machinelearningmastery.com/gentle-introduction-to-predictive-modeling/)。从数据创建模型以做出预测。
 
 从那里开始。
 
-接下来，重点关注一种与您最相关或最感兴趣的预测建模。
+接下来，重点关注一种与您最相关或最感兴趣的预测性建模。
 
 然后坚持下去。
 

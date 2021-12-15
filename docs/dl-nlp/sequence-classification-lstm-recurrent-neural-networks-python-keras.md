@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/sequence-classification-lstm-recurrent-neural-networks-python-keras/](https://machinelearningmastery.com/sequence-classification-lstm-recurrent-neural-networks-python-keras/)
 
-序列分类是一种预测建模问题，您可以在空间或时间上获得一些输入序列，任务是预测序列的类别。
+序列分类是一种预测性建模问题，您可以在空间或时间上获得一些输入序列，任务是预测序列的类别。
 
 使这个问题困难的原因是序列的长度可以变化，由输入符号的非常大的词汇表组成，并且可能要求模型学习输入序列中的符号之间的长期上下文或依赖性。
 
@@ -370,7 +370,7 @@ Accuracy: 86.36%
 
 ## 摘要
 
-在这篇文章中，您了解了如何为序列分类预测建模问题开发 LSTM 网络模型。
+在这篇文章中，您了解了如何为序列分类预测性建模问题开发 LSTM 网络模型。
 
 具体来说，你学到了：
 

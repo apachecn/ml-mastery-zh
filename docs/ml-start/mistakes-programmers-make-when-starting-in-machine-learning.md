@@ -1,4 +1,4 @@
-# 5 程序员在机器学习中开始犯错误
+# 5 个程序员在机器学习中的错误
 
 > 原文： [https://machinelearningmastery.com/mistakes-programmers-make-when-starting-in-machine-learning/](https://machinelearningmastery.com/mistakes-programmers-make-when-starting-in-machine-learning/)
 

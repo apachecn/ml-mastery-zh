@@ -1,4 +1,4 @@
-# 程序员可以进入机器学习
+# 程序员可以入门机器学习
 
 > 原文： [https://machinelearningmastery.com/programmers-can-get-into-machine-learning/](https://machinelearningmastery.com/programmers-can-get-into-machine-learning/)
 

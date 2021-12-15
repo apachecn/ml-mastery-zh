@@ -394,7 +394,7 @@ a E R
 
 两个很好的起点是：
 
-*   [数学栈交换](https://math.stackexchange.com/)
+*   [数学StackExchange](https://math.stackexchange.com/)
 *   [交叉验证](https://stats.stackexchange.com/)
 
 通过数学符号你的技巧是什么？

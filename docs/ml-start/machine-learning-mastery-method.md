@@ -1,4 +1,4 @@
-# 机器学习掌握方法
+# 掌握机器学习的方法
 
 > 原文： [https://machinelearningmastery.com/machine-learning-mastery-method/](https://machinelearningmastery.com/machine-learning-mastery-method/)
 
@@ -63,8 +63,8 @@
     *   [实用机器学习问题](http://machinelearningmastery.com/practical-machine-learning-problems/)
 *   您应该知道机器学习是解决一些复杂问题的唯一方法。
     *   [机器学习事项](http://machinelearningmastery.com/machine-learning-matters/)
-*   您应该知道预测建模是应用机器学习中最有用的部分。
-    *   [预测建模的温和介绍](http://machinelearningmastery.com/gentle-introduction-to-predictive-modeling/)
+*   您应该知道预测性建模是应用机器学习中最有用的部分。
+    *   [预测性建模的温和介绍](http://machinelearningmastery.com/gentle-introduction-to-predictive-modeling/)
 *   您应该知道机器学习在人工智能和数据科学方面的适用范围
     *   [机器学习适合哪里？](http://machinelearningmastery.com/where-does-machine-learning-fit-in/)
 *   您应该知道可用的机器学习算法的类型。
@@ -188,7 +188,7 @@ This post might help:
 
 *   [应用机器学习过程](http://machinelearningmastery.com/process-for-working-through-machine-learning-problems/)
 
-您不必使用此过程，但确实需要一个系统的过程来处理预测建模问题。
+您不必使用此过程，但确实需要一个系统的过程来处理预测性建模问题。
 
 ## 第 3 步：选择一个工具
 

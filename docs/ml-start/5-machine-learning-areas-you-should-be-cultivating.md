@@ -1,4 +1,4 @@
-# 你应该训练的 5 个机器学习领域
+# 你应该专注的 5 个机器学习领域
 
 > 原文： [https://machinelearningmastery.com/5-machine-learning-areas-you-should-be-cultivating/](https://machinelearningmastery.com/5-machine-learning-areas-you-should-be-cultivating/)
 

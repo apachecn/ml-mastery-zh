@@ -1,4 +1,4 @@
-# 缺乏自学机器学习的路线图
+# 自学机器学习的失落的路线图
 
 > 原文： [https://machinelearningmastery.com/machine-learning-roadmap-your-self-study-guide-to-machine-learning/](https://machinelearningmastery.com/machine-learning-roadmap-your-self-study-guide-to-machine-learning/)
 

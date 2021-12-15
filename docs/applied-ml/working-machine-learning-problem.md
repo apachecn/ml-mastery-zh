@@ -89,6 +89,6 @@
 
 ### 更新：
 
-如果您正在努力，我强烈建议您在处理预测建模问题时遵循此过程：
+如果您正在努力，我强烈建议您在处理预测性建模问题时遵循此过程：
 
 *   [应用机器学习过程](https://machinelearningmastery.com/start-here/#process)

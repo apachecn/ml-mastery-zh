@@ -1,4 +1,4 @@
-# 温和地介绍预测建模
+# 预测性建模的温和简介
 
 > 原文： [https://machinelearningmastery.com/gentle-introduction-to-predictive-modeling/](https://machinelearningmastery.com/gentle-introduction-to-predictive-modeling/)
 
@@ -12,11 +12,11 @@
 
 这是一个很好的问题。
 
-在这篇文章中，我想对预测建模进行温和的介绍。
+在这篇文章中，我想对预测性建模进行温和的介绍。
 
 ![Basics of Predictive Modeling](img/9449cc72b3ce4703b63997a40be662c3.jpg)
 
-预测建模基础知识
+预测性建模基础知识
 [Steve Jurvetson](https://www.flickr.com/photos/jurvetson/2542450115/) 的照片，保留一些权利。
 
 ## 1.样本数据
@@ -71,9 +71,9 @@
 
 ## 摘要
 
-在这篇文章中，我们对预测建模进行了非常温和的介绍。
+在这篇文章中，我们对预测性建模进行了非常温和的介绍。
 
-我们研究的预测建模的三个方面是：
+我们研究的预测性建模的三个方面是：
 
 1.  **样本数据**：我们收集的数据描述了输入和输出之间已知关系的问题。
 2.  **学习模型**：我们在样本数据上使用的算法，用于创建我们以后可以反复使用的模型。

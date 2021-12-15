@@ -8,7 +8,7 @@ Jeremy Howard， [Kaggle](http://www.kaggle.com/) 的正式演出于2013年中�
 
 [![Competitive Machine Learning is a Meritocracy](img/5dab5e85e1fd800e2906680bb1b7db51.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/08/Competitive-Machine-Learning-is-a-Meritocracy.jpg)
 
-机器学习竞赛是一种精英政治
+机器学习竞赛是一种精英统治
 摄影作者 [PaulBarber](https://www.flickr.com/photos/boipevassu/7742521640) ，保留一些权利
 
 ## 南佛罗里达大学的大数据
@@ -27,7 +27,7 @@ Jeremy Howard， [Kaggle](http://www.kaggle.com/) 的正式演出于2013年中�
 4.  **创新**：竞争导致技术创新。
 5.  **社区**：像大脑一样找到对方并分享想法。
 
-## 1.精英政治
+## 1.精英统治
 
 数据科学或机器学习竞赛是一种精英。这意味着等级仅根据优点确定。
 

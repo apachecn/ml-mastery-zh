@@ -1,4 +1,4 @@
-# 我如何开始机器学习？ （简短版）
+# 我如何开始机器学习？（简短版）
 
 > 原文： [https://machinelearningmastery.com/how-do-i-get-started-in-machine-learning/](https://machinelearningmastery.com/how-do-i-get-started-in-machine-learning/)
 

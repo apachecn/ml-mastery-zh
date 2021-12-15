@@ -2,13 +2,13 @@
 
 > 原文： [https://machinelearningmastery.com/prepare-text-data-machine-learning-scikit-learn/](https://machinelearningmastery.com/prepare-text-data-machine-learning-scikit-learn/)
 
-文本数据需要特殊准备才能开始使用它做出预测建模。
+文本数据需要特殊准备才能开始使用它做出预测性建模。
 
 必须解析文本以删除称为分词的单词。然后，需要将单词编码为整数或浮点值，以用作机器学习算法的输入，称为特征提取（或向量化）。
 
 scikit-learn 库提供易于使用的工具，可以执行文本数据的分词和特征提取。
 
-在本教程中，您将了解如何使用 scikit-learn 在 Python 中为预测建模准备文本数据。
+在本教程中，您将了解如何使用 scikit-learn 在 Python 中为预测性建模准备文本数据。
 
 完成本教程后，您将了解：
 

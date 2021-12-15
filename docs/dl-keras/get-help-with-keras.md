@@ -93,7 +93,7 @@ CrossValidated 是一个致力于机器学习的问答网站，并且有很多�
 
 同样，我建议搜索并访问带有“`keras`”标签的话题。
 
-*   [数据科学栈交换中的 Keras 标签](https://datascience.stackexchange.com/questions/tagged/keras)
+*   [数据科学StackExchange中的 Keras 标签](https://datascience.stackexchange.com/questions/tagged/keras)
 
 ## 7\. Quora 上的 Keras 主题
 

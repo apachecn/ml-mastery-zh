@@ -32,7 +32,7 @@ Kaggle 提供机器学习竞赛，并对参赛者在比赛中使用的工具和�
 
 Ben 评论说 MATLAB / Octave 是一种很好的矩阵运算语言，在使用定义明确的特征矩阵时可能会很好。 Python 是全面的，并且可能非常慢，除非你进入 C.他不喜欢使用定义好的特征矩阵并使用 Pandas 和 NLTK。本评论说：“作为一般规则，如果它被发现对统计学家来说很有意思，那么它已经在 R 中实现了”（很好地说）。他还抱怨语言本身是丑陋和痛苦的。最后，Ben 评论朱莉娅，这对库的方式并不多，但却是他最喜欢的语言。他评论说它具有 MATLAB 和 Python 等语言的简洁性和 C 的速度。
 
-Kaggle 首席执行官 Anthony Goldbloom 在 2011 年向 Bay Area R 用户组发表演讲，介绍 R 在 Kaggle 比赛中的受欢迎程度，题为[预测建模竞赛：使数据科学成为一项运动](http://www.meetup.com/R-Users/events/16946398/)（参见 [powerpoint）幻灯片](http://files.meetup.com/1225993/Goldbloom%20-%20Predictive%20modeling%20competitions%20-%20April%202011.ppt)）。演示幻灯片提供了有关编程语言使用的更多细节，并建议了一个与 R 的使用一样大的其他类别。收集原始数据会很好（为什么不是把它发布到他们自己的数据社区，认真！？）。
+Kaggle 首席执行官 Anthony Goldbloom 在 2011 年向 Bay Area R 用户组发表演讲，介绍 R 在 Kaggle 比赛中的受欢迎程度，题为[预测性建模竞赛：使数据科学成为一项运动](http://www.meetup.com/R-Users/events/16946398/)（参见 [powerpoint）幻灯片](http://files.meetup.com/1225993/Goldbloom%20-%20Predictive%20modeling%20competitions%20-%20April%202011.ppt)）。演示幻灯片提供了有关编程语言使用的更多细节，并建议了一个与 R 的使用一样大的其他类别。收集原始数据会很好（为什么不是把它发布到他们自己的数据社区，认真！？）。
 
 [![popular languages on kaggle](img/4546506115fb99b38b25b437e06f56d4.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/05/popular-languages-on-kaggle.png)
 

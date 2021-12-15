@@ -2,17 +2,17 @@
 
 > 译文： [https://machinelearningmastery.com/spot-check-machine-learning-algorithms-in-python/](https://machinelearningmastery.com/spot-check-machine-learning-algorithms-in-python/)
 
-[抽样检查算法](https://machinelearningmastery.com/spot-check-classification-machine-learning-algorithms-python-scikit-learn/)是一种应用机器学习技术，旨在快速客观地为新的预测建模问题提供第一组结果。
+[抽样检查算法](https://machinelearningmastery.com/spot-check-classification-machine-learning-algorithms-python-scikit-learn/)是一种应用机器学习技术，旨在快速客观地为新的预测性建模问题提供第一组结果。
 
 与寻找算法的最佳算法或最佳配置的网格搜索和其他类型的算法调整不同，点检查旨在快速评估各种算法并提供粗略的第一切结果。如果问题或问题表示确实是可预测的，则可以使用该第一剪切结果，如果是，则可能值得进一步研究该问题的算法类型。
 
 现场检查是一种帮助克服应用机器学习的“[难题](https://machinelearningmastery.com/applied-machine-learning-is-hard/)”的方法，并鼓励您清楚地考虑在任何机器学习项目中执行的[高阶搜索问题](https://machinelearningmastery.com/applied-machine-learning-as-a-search-problem/) 。
 
-在本教程中，您将发现现场检查算法对新预测建模问题的有用性，以及如何在 python 中为分类和回归问题开发用于抽样检查算法的标准框架。
+在本教程中，您将发现现场检查算法对新预测性建模问题的有用性，以及如何在 python 中为分类和回归问题开发用于抽样检查算法的标准框架。
 
 完成本教程后，您将了解：
 
-*   抽样检查提供了一种快速发现在预测建模问题上表现良好的算法类型的方法。
+*   抽样检查提供了一种快速发现在预测性建模问题上表现良好的算法类型的方法。
 *   如何开发用于加载数据，定义模型，评估模型和总结结果的通用框架。
 *   如何应用框架进行分类和回归问题。
 
@@ -35,7 +35,7 @@
 
 ## 1.抽样检查算法
 
-我们事先无法知道哪些算法在给定的预测建模问题上表现良好。
+我们事先无法知道哪些算法在给定的预测性建模问题上表现良好。
 
 这是应用机器学习的[难点部分，只能通过系统实验来解决。](https://machinelearningmastery.com/applied-machine-learning-is-hard/)
 
@@ -87,9 +87,9 @@ def load_dataset():
 
 ### 定义模型
 
-下一步是定义模型以评估预测建模问题。
+下一步是定义模型以评估预测性建模问题。
 
-定义的模型将特定于类型预测建模问题，例如，分类或回归。
+定义的模型将特定于类型预测性建模问题，例如，分类或回归。
 
 定义的模型应该是多样的，包括以下的混合：
 
@@ -544,7 +544,7 @@ Rank=10, Name=ridge-0.5, Score=0.848 (+/- 0.038)
 
 ## 4.现场检查回归
 
-我们可以通过非常小的变化来探索回归预测建模问题的相同框架。
+我们可以通过非常小的变化来探索回归预测性建模问题的相同框架。
 
 我们可以使用 [make_regression（）函数](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_regression.html#sklearn.datasets.make_regression)来生成一个人为的回归问题，包括 1,000 个示例和 50 个特征，其中一些是冗余的。
 
@@ -1637,11 +1637,11 @@ Rank=10, Name=2gbm, Score=0.865 (+/- 0.044)
 
 ## 摘要
 
-在本教程中，您发现了点检查算法对新预测建模问题的有用性，以及如何为 python 中的点检查算法开发标准框架以用于分类和回归问题。
+在本教程中，您发现了点检查算法对新预测性建模问题的有用性，以及如何为 python 中的点检查算法开发标准框架以用于分类和回归问题。
 
 具体来说，你学到了：
 
-*   抽样检查提供了一种快速发现在预测建模问题上表现良好的算法类型的方法。
+*   抽样检查提供了一种快速发现在预测性建模问题上表现良好的算法类型的方法。
 *   如何开发用于加载数据，定义模型，评估模型和总结结果的通用框架。
 *   如何应用框架进行分类和回归问题。
 

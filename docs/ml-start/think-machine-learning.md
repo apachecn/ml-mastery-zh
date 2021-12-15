@@ -4,7 +4,7 @@
 
 机器学习是一个庞大的跨学科研究领域。
 
-通过机器学习，您可以获得令人印象深刻的结果，并找到解决非常具有挑但这只是更广泛的机器学习领域的一个小角落，通常称为预测建模或预测分析。
+通过机器学习，您可以获得令人印象深刻的结果，并找到解决非常具有挑但这只是更广泛的机器学习领域的一个小角落，通常称为预测性建模或预测分析。
 
 在这篇文章中，您将了解如何改变您对机器学习的看法，以便最好地为您作为机器学习从业者。
 
@@ -148,7 +148,7 @@ This could encompass diverse types of learning such as:
 
 同样，这并不意味着这些并不重要，只是在模型技能之后或与模型技能相结合时考虑它们。
 
-第三，以这种方式构建问题非常适合另一个称为预测建模的研究领域。这是一个研究领域，它借鉴了机器学习的方法，目的是开发出能够进行技巧预测的模型。
+第三，以这种方式构建问题非常适合另一个称为预测性建模的研究领域。这是一个研究领域，它借鉴了机器学习的方法，目的是开发出能够进行技巧预测的模型。
 
 在某些业务领域，该领域也可称为预测分析，并且不仅包括建模组件，还包括收集和准备数据以及部署和维护模型的相关活动。
 
@@ -182,7 +182,7 @@ This could encompass diverse types of learning such as:
 *   为什么专家不能只告诉你使用什么算法。
 *   为什么您无法通过模型中的预测实现零错误率。
 
-它可以帮助您查看您尝试解决的预测建模问题的不明确性质，并设定合理的期望。
+它可以帮助您查看您尝试解决的预测性建模问题的不明确性质，并设定合理的期望。
 
 ### 下一步
 
@@ -198,7 +198,7 @@ This could encompass diverse types of learning such as:
 
 ### 帖子
 
-*   [预测建模的温和介绍](https://machinelearningmastery.com/gentle-introduction-to-predictive-modeling/)
+*   [预测性建模的温和介绍](https://machinelearningmastery.com/gentle-introduction-to-predictive-modeling/)
 *   [机器学习算法的工作原理](https://machinelearningmastery.com/how-machine-learning-algorithms-work/)
 *   [什么是机器学习？](https://machinelearningmastery.com/what-is-machine-learning/)
 *   [应用机器学习作为搜索问题的温和介绍](https://machinelearningmastery.com/applied-machine-learning-as-a-search-problem/)
@@ -207,7 +207,7 @@ This could encompass diverse types of learning such as:
 ### 用品
 
 *   [维基百科上的机器学习](https://en.wikipedia.org/wiki/Machine_learning)
-*   [维基百科上的预测建模](https://en.wikipedia.org/wiki/Predictive_analytics)
+*   [维基百科上的预测性建模](https://en.wikipedia.org/wiki/Predictive_analytics)
 *   [维基百科上的预测分析](https://en.wikipedia.org/wiki/Predictive_analytics)
 
 ## 摘要

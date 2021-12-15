@@ -1,8 +1,8 @@
-# 项目焦点：Shashank Singh 的人脸识别
+# 项目聚焦：Shashank Singh 的人脸识别
 
 > 原文： [https://machinelearningmastery.com/project-spotlight-face-recognition-with-shashank-singh/](https://machinelearningmastery.com/project-spotlight-face-recognition-with-shashank-singh/)
 
-Shashank Singh 是程序员和机器学习爱好者，这是一个项目焦点。
+Shashank Singh 是程序员和机器学习爱好者，这是一个项目聚焦。
 
 ## 你能介绍一下自己吗？
 

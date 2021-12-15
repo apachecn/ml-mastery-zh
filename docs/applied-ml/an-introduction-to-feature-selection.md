@@ -19,7 +19,7 @@
 
 特征选择也称为变量选择或属性选择。
 
-它是自动选择数据中的属性（例如表格数据中的列），这些属性与您正在处理的预测建模问题最相关。
+它是自动选择数据中的属性（例如表格数据中的列），这些属性与您正在处理的预测性建模问题最相关。
 
 > 特征选择...是选择用于模型构建的相关特征子集的过程
 
@@ -103,7 +103,7 @@
 
 ## 功能选择清单
 
-Isabelle Guyon和Andre Elisseeff是“[变量和特征选择简介](http://jmlr.csail.mit.edu/papers/volume3/guyon03a/guyon03a.pdf)”（PDF）的作者提供了一个很好的清单，您可以在下次需要为预测建模问题选择数据特征时使用它。
+Isabelle Guyon和Andre Elisseeff是“[变量和特征选择简介](http://jmlr.csail.mit.edu/papers/volume3/guyon03a/guyon03a.pdf)”（PDF）的作者提供了一个很好的清单，您可以在下次需要为预测性建模问题选择数据特征时使用它。
 
 我在这里复制了清单的重要部分：
 

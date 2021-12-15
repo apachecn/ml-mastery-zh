@@ -212,7 +212,7 @@ print('%.1f confidence interval %.1f%% and %.1f%%' % (alpha*100, lower*100, uppe
 *   [Bootstrap置信区间](https://projecteuclid.org/download/pdf_1/euclid.ss/1032280214)，统计科学，1996
 *   第5.2.3节，Bootstrap置信区间，[人工智能的经验方法](http://www.amazon.com/dp/0262032252?tag=inspiredalgor-20)
 *   维基百科上的 [Bootstrapping](https://en.wikipedia.org/wiki/Bootstrapping_(statistics))
-*   第4.4节重采样技术，[应用预测建模](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20)
+*   第4.4节重采样技术，[应用预测性建模](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20)
 
 ## 摘要
 

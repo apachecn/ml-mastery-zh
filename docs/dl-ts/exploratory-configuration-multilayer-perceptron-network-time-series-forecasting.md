@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/exploratory-configuration-multilayer-perceptron-network-time-series-forecasting/](https://machinelearningmastery.com/exploratory-configuration-multilayer-perceptron-network-time-series-forecasting/)
 
-当开始使用神经网络的新预测建模项目时，可能会很困难。
+当开始使用神经网络的新预测性建模项目时，可能会很困难。
 
 有很多配置，并没有明确的想法从哪里开始。
 

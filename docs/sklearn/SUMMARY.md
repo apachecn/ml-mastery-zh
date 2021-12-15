@@ -25,7 +25,7 @@
 +   [用于评估 Python 中机器学习算法的度量标准](metrics-evaluate-machine-learning-algorithms-python.md)
 +   [使用 Pandas 为 Python 中的机器学习准备数据](prepare-data-for-machine-learning-in-python-with-pandas.md)
 +   [如何使用 Scikit-Learn 为 Python 机器学习准备数据](prepare-data-machine-learning-python-scikit-learn.md)
-+   [项目焦点：使用 Artem Yankov 在 Python 中进行事件推荐](project-spotlight-with-artem-yankov.md)
++   [项目聚焦：使用 Artem Yankov 在 Python 中进行事件推荐](project-spotlight-with-artem-yankov.md)
 +   [用于机器学习的 Python 生态系统](python-ecosystem-machine-learning.md)
 +   [Python 是应用机器学习的成长平台](python-growing-platform-applied-machine-learning.md)
 +   [Python 机器学习书籍](python-machine-learning-books.md)

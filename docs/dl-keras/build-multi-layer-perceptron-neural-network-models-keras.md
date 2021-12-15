@@ -6,7 +6,7 @@
 
 在这篇文章中，您将了解用来创建神经网络的简单组件和使用 Keras 的简单深度学习模型。
 
-您可以通过[我新书](https://machinelearningmastery.com/deep-learning-with-python/)中的一些代码了解如何为一系列预测建模问题开发深度学习模型，书中包含18个分步教程和9个项目。
+您可以通过[我新书](https://machinelearningmastery.com/deep-learning-with-python/)中的一些代码了解如何为一系列预测性建模问题开发深度学习模型，书中包含18个分步教程和9个项目。
 
 让我们开始吧。
 

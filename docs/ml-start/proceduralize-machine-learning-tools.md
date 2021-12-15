@@ -1,4 +1,4 @@
-# 使用秘籍的任何机器学习工具快速启动
+# 使用任何机器学习工具和秘籍快速启动
 
 > 原文： [https://machinelearningmastery.com/proceduralize-machine-learning-tools/](https://machinelearningmastery.com/proceduralize-machine-learning-tools/)
 

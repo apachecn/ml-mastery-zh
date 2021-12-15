@@ -1,4 +1,4 @@
-# 有关机器学习的有用知识
+# 机器学习的有用知识
 
 > 原文： [https://machinelearningmastery.com/useful-things-to-know-about-machine-learning/](https://machinelearningmastery.com/useful-things-to-know-about-machine-learning/)
 

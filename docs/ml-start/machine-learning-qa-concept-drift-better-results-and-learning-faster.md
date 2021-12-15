@@ -1,4 +1,4 @@
-# 机器学习 Q＆amp; A：概念漂移，更好的结果和学习更快
+# 机器学习 Q&A：概念漂移，更好的结果和更快的学习
 
 > 原文： [https://machinelearningmastery.com/machine-learning-qa-concept-drift-better-results-and-learning-faster/](https://machinelearningmastery.com/machine-learning-qa-concept-drift-better-results-and-learning-faster/)
 

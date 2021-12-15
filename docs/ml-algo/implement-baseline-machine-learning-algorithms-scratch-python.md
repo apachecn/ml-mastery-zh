@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/implement-baseline-machine-learning-algorithms-scratch-python/](https://machinelearningmastery.com/implement-baseline-machine-learning-algorithms-scratch-python/)
 
-在预测建模问题上建立基线表现非常重要。
+在预测性建模问题上建立基线表现非常重要。
 
 基线为您稍后评估的更高级方法提供了比较点。
 

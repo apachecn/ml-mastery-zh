@@ -1,4 +1,4 @@
-# 构建机器学习组合
+# 构建机器学习项目库
 
 > 原文： [https://machinelearningmastery.com/build-a-machine-learning-portfolio/](https://machinelearningmastery.com/build-a-machine-learning-portfolio/)
 
