@@ -2,7 +2,7 @@
 +   [Keras中长短期记忆模型的5步生命周期](5-step-life-cycle-long-short-term-memory-models-keras.md)
 +   [长短期记忆循环神经网络的注意事项](attention-long-short-term-memory-recurrent-neural-networks.md)
 +   [CNN长短期记忆网络](cnn-long-short-term-memory-networks.md)
-+   [面向深度学习的循环神经网络的速成课程](crash-course-recurrent-neural-networks-deep-learning.md)
++   [深度学习中的循环神经网络的速成课程](crash-course-recurrent-neural-networks-deep-learning.md)
 +   [可变长度输入序列的数据准备](data-preparation-variable-length-input-sequences-sequence-prediction.md)
 +   [如何用Python和Keras开发用于序列分类的双向LSTM](develop-bidirectional-lstm-sequence-classification-python-keras.md)
 +   [如何在 Keras 中开发用于序列到序列预测的编解码器模型](develop-encoder-decoder-model-sequence-sequence-prediction-keras.md)
