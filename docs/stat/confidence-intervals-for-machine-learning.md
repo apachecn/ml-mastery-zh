@@ -1,4 +1,4 @@
-# 机器学习的置信区间
+# 机器学习中的置信区间
 
 > 原文： [https://machinelearningmastery.com/confidence-intervals-for-machine-learning/](https://machinelearningmastery.com/confidence-intervals-for-machine-learning/)
 

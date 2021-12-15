@@ -1,4 +1,4 @@
-# 机器学习评估统计的温和介绍
+# 机器学习中的评估统计的温和介绍
 
 > 原文： [https://machinelearningmastery.com/estimation-statistics-for-machine-learning/](https://machinelearningmastery.com/estimation-statistics-for-machine-learning/)
 

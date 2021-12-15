@@ -1,4 +1,4 @@
-# 机器学习的所有统计量
+# 机器学习中的所有统计量
 
 > 原文： [https://machinelearningmastery.com/all-of-statistics-for-machine-learning/](https://machinelearningmastery.com/all-of-statistics-for-machine-learning/)
 
