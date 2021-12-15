@@ -1,24 +1,24 @@
-# 如何在Python中从头开始编写学生t检验
+# 如何在Python中从零开始编写学生t检验
 
 > 原文： [https://machinelearningmastery.com/how-to-code-the-students-t-test-from-scratch-in-python/](https://machinelearningmastery.com/how-to-code-the-students-t-test-from-scratch-in-python/)
 
 也许最广泛使用的统计假设检验之一是学生t检验。
 
-因为有一天你可能会自己使用这个测试，所以深入了解测试的工作原理非常重要。作为开发人员，通过从头开始实施假设检验，可以最好地实现这种理解。
+因为有一天你可能会自己使用这个测试，所以深入了解测试的工作原理非常重要。作为开发人员，通过从零开始实施假设检验，可以最好地实现这种理解。
 
-在本教程中，您将了解如何在Python中从头开始实施Student's t检验统计假设检验。
+在本教程中，您将了解如何在Python中从零开始实施Student's t检验统计假设检验。
 
 完成本教程后，您将了解：
 
 *   学生的t检验将评论是否可能观察到两个样本，因为样本来自同一人群。
-*   如何从头开始实施学生t检验两个独立样本。
-*   如何从头开始对两个相关样本实施配对学生t检验。
+*   如何从零开始实施学生t检验两个独立样本。
+*   如何从零开始对两个相关样本实施配对学生t检验。
 
 让我们开始吧。
 
 ![How to Code the Student's t-Test from Scratch in Python](img/18c211273ce8051c7807ef2e09b805d7.jpg)
 
-如何在Python中从头开始编写学生t检验
+如何在Python中从零开始编写学生t检验
 照片由 [n1d](https://www.flickr.com/photos/62400641@N07/33385804523/) ，保留一些权利。
 
 ## 教程概述
@@ -619,13 +619,13 @@ Reject the null hypothesis that the means are equal.
 
 ## 摘要
 
-在本教程中，您了解了如何在Python中从头开始实施Student's t检验统计假设检验。
+在本教程中，您了解了如何在Python中从零开始实施Student's t检验统计假设检验。
 
 具体来说，你学到了：
 
 *   学生的t检验将评论是否可能观察到两个样本，因为样本来自同一人群。
-*   如何从头开始实施学生t检验两个独立样本。
-*   如何从头开始对两个相关样本实施配对学生t检验。
+*   如何从零开始实施学生t检验两个独立样本。
+*   如何从零开始对两个相关样本实施配对学生t检验。
 
 你有任何问题吗？
 在下面的评论中提出您的问题，我会尽力回答。

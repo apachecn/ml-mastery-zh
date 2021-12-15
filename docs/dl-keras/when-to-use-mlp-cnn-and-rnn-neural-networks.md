@@ -30,7 +30,7 @@
 这篇文章分为五个部分;他们是：
 
 1.  什么神经网络要关注？
-2.  何时使用多层感知器？
+2.  何时使用多层感知机？
 3.  何时使用卷积神经网络？
 4.  何时使用递归神经网络？
 5.  混合网络模型
@@ -47,7 +47,7 @@
 
 有三类人工神经网络我建议您一般关注。他们是：
 
-*   多层感知器（Multilayer Perceptron，MLP）
+*   多层感知机（Multilayer Perceptron，MLP）
 *   卷积神经网络（Convolutional Neural Network，CNN）
 *   递归神经网络（Recurrent Neural Network，RNN）
 
@@ -55,15 +55,15 @@
 
 现在我们知道要关注哪些网络，让我们看看何时可以使用每一类神经网络。
 
-## 何时使用多层感知器？
+## 何时使用多层感知机？
 
-多层感知器（简称 MLP）是经典类型的神经网络。
+多层感知机（简称 MLP）是经典类型的神经网络。
 
 它们由一层或多层神经元(neuron)组成。数据被馈送到输入层（input layer），之后可能有一个或多个隐藏层(hidden layer)来提供更高水平的抽象（abstraction）关系，并且在输出层(output layer)（也称为可见层(visiable layer)）上做出预测。
 
 有关 MLP 的更多详细信息，请参阅帖子：
 
-*   [多层感知器神经网络速成课程](https://machinelearningmastery.com/neural-networks-crash-course/)
+*   [多层感知机神经网络速成课程](https://machinelearningmastery.com/neural-networks-crash-course/)
 
 ![简单神经网络模型](img/98d0e7f8e58b0a5cb817d172e0256fe0.png)
 
@@ -203,7 +203,7 @@ CNN 或 RNN 模型很少单独使用。
 如果您希望深入了解此话题，可参见有关该主题的更多资源：
 
 *   [什么是深度学习？](https://machinelearningmastery.com/what-is-deep-learning/)
-*   [多层感知器神经网络速成课程](https://machinelearningmastery.com/neural-networks-crash-course/)
+*   [多层感知机神经网络速成课程](https://machinelearningmastery.com/neural-networks-crash-course/)
 *   [用于机器学习的卷积神经网络的速成课程](https://machinelearningmastery.com/crash-course-convolutional-neural-networks/)
 *   [深度学习的递归神经网络速成课程](https://machinelearningmastery.com/crash-course-recurrent-neural-networks-deep-learning/)
 *   [递归神经网络序列预测模型的简要介绍](https://machinelearningmastery.com/models-sequence-prediction-recurrent-neural-networks/)

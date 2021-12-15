@@ -84,7 +84,7 @@
 如果您想深入思考这个问题，我已经列出了一些资源。它有点深，我相信我们可以产生一些很好的讨论。
 
 *   向上滚动并阅读上面列出的 StackOverflow 问题的一些答案。有些答案会阻止程序员，除非他们知道数学，但还有其他非常令人鼓舞的答案会真正让你振作起来。
-*   [为什么成为一名数据科学家可能比你想象的更容易](http://gigaom.com/2012/10/14/why-becoming-a-data-scientist-might-be-easier-than-you-think/)一篇 Gigaom 帖子指的是分析性倾向（如程序员）在数据科学中从头开始并迅速成为具有国际竞争力的一般机会的案例研究。
+*   [为什么成为一名数据科学家可能比你想象的更容易](http://gigaom.com/2012/10/14/why-becoming-a-data-scientist-might-be-easier-than-you-think/)一篇 Gigaom 帖子指的是分析性倾向（如程序员）在数据科学中从零开始并迅速成为具有国际竞争力的一般机会的案例研究。
 *   [编程需要数学吗？](http://stackoverflow.com/questions/157354/is-mathematics-necessary-for-programming) 有趣的是，我认为支持和反对的论据是非常相关的，也是一个有用的观点。
 
 这是一篇非常有用的帖子，我对你的想法非常感兴趣。与朋友讨论这个问题，我确实听到了很多关于“技术员”机器学习学徒的危险区域和进展选项。我将在以后的帖子中跟进这两个主题。

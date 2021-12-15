@@ -1,4 +1,4 @@
-# 如何在Python中从头开始实现感知器算法
+# 如何在Python中从零开始实现感知机算法
 
 > 原文： [https://machinelearningmastery.com/implement-perceptron-algorithm-scratch-python/](https://machinelearningmastery.com/implement-perceptron-algorithm-scratch-python/)
 
@@ -6,7 +6,7 @@ Perceptron算法是最简单的人工神经网络。
 
 它是单个神经元的模型，可用于两类分类问题，并为以后开发更大的网络提供基础。
 
-在本教程中，您将了解如何使用Python从头开始实现Perceptron算法。
+在本教程中，您将了解如何使用Python从零开始实现Perceptron算法。
 
 完成本教程后，您将了解：
 
@@ -21,14 +21,14 @@ Perceptron算法是最简单的人工神经网络。
 
 ![How To Implement The Perceptron Algorithm From Scratch In Python](img/99556d3de6e9574ec7ac5641fa5490cb.jpg)
 
-如何在Python中从头开始实现感知器算法
+如何在Python中从零开始实现感知机算法
 照片由 [Les Haines](https://www.flickr.com/photos/leshaines123/5835538829/) ，保留一些权利。
 
 ## 描述
 
 本节简要介绍Perceptron算法和我们稍后将应用它的Sonar数据集。
 
-### 感知器算法
+### 感知机算法
 
 Perceptron的灵感来自于称为神经元的单个神经细胞的信息处理。
 
@@ -459,7 +459,7 @@ Mean Accuracy: 72.947%
 
 ## 评论
 
-在本教程中，您了解了如何使用Python从头开始使用随机梯度下降来实现Perceptron算法。
+在本教程中，您了解了如何使用Python从零开始使用随机梯度下降来实现Perceptron算法。
 
 你学到了
 

@@ -1,4 +1,4 @@
-# 机器学习的梯度下降
+# 机器学习中的梯度下降
 
 > 原文： [https://machinelearningmastery.com/gradient-descent-for-machine-learning/](https://machinelearningmastery.com/gradient-descent-for-machine-learning/)
 

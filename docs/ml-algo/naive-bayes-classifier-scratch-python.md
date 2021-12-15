@@ -1,10 +1,10 @@
-# 如何在Python中从头开始实现朴素贝叶斯
+# 如何在Python中从零开始实现朴素贝叶斯
 
 > 原文： [https://machinelearningmastery.com/naive-bayes-classifier-scratch-python/](https://machinelearningmastery.com/naive-bayes-classifier-scratch-python/)
 
 朴素贝叶斯算法简单有效，应该是您尝试分类问题的第一种方法之一。
 
-在本教程中，您将学习Naive Bayes算法，包括它的工作原理以及如何在Python中从头开始实现它。
+在本教程中，您将学习Naive Bayes算法，包括它的工作原理以及如何在Python中从零开始实现它。
 
 *   **更新**：查看关于使用朴素贝叶斯算法的提示的后续内容：“ [Better Naive Bayes：从Naive Bayes算法中获取最多的12个技巧](http://machinelearningmastery.com/better-naive-bayes/ "Better Naive Bayes: 12 Tips To Get The Most From The Naive Bayes Algorithm")”。
 *   **更新March / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
@@ -502,7 +502,7 @@ Accuracy: 66.6666666667
 
 最后，我们需要将它们结合在一起。
 
-下面提供了从头开始在Python中实现的Naive Bayes的完整代码清单。
+下面提供了从零开始在Python中实现的Naive Bayes的完整代码清单。
 
 Complete code for implementing Naive Bayes from scratch in Python Python
 
@@ -623,7 +623,7 @@ Accuracy: 76.3779527559%
 
 本节为您提供了可以应用的扩展的概念，并使用您在本教程中实现的Python代码进行调查。
 
-您已经从头开始在python中实现了自己的Gaussian Naive Bayes版本。
+您已经从零开始在python中实现了自己的Gaussian Naive Bayes版本。
 
 您可以进一步扩展实施。
 
@@ -668,7 +668,7 @@ Accuracy: 76.3779527559%
 
 采取行动。
 
-按照教程从头开始实施Naive Bayes。使示例适应另一个问题。遵循扩展并改进实施。
+按照教程从零开始实施Naive Bayes。使示例适应另一个问题。遵循扩展并改进实施。
 
 发表评论并分享您的经验。
 

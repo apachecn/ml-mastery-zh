@@ -1,4 +1,4 @@
-# 如何在Python中从头开始实现重采样方法
+# 如何在Python中从零开始实现重采样方法
 
 > 原文： [https://machinelearningmastery.com/implement-resampling-methods-scratch-python/](https://machinelearningmastery.com/implement-resampling-methods-scratch-python/)
 
@@ -8,7 +8,7 @@
 
 这类方法称为重采样方法，因为它们重新采样您可用的训练数据。
 
-在本教程中，您将了解如何在Python中从头开始实现重采样方法。
+在本教程中，您将了解如何在Python中从零开始实现重采样方法。
 
 完成本教程后，您将了解：
 
@@ -255,7 +255,7 @@ print(folds)
 
 ## 评论
 
-在本教程中，您了解了如何从头开始在Python中实现重采样方法。
+在本教程中，您了解了如何从零开始在Python中实现重采样方法。
 
 具体来说，你学到了：
 

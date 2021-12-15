@@ -62,7 +62,7 @@ b0 + b1 * x1 + b2 * x2 = 0
 
 参数机器学习算法的更多示例包括：
 
-*   Logistic回归
+*   逻辑回归
 *   线性判别分析
 *   感知
 *   朴素贝叶斯
@@ -125,7 +125,7 @@ b0 + b1 * x1 + b2 * x2 = 0
 *   [非参数方法在机器学习中有哪些缺点？ Quora上的](https://www.quora.com/What-are-the-disadvantages-of-non-parametric-methods-in-machine-learning)
 *   维基百科上的[非参数统计](https://en.wikipedia.org/wiki/Nonparametric_statistics)
 *   维基百科上的[参数统计](https://en.wikipedia.org/wiki/Parametric_statistics)
-*   堆栈交换上的[参数与非参数](http://stats.stackexchange.com/questions/50141/parametric-vs-nonparametric)
+*   栈交换上的[参数与非参数](http://stats.stackexchange.com/questions/50141/parametric-vs-nonparametric)
 
 ## 摘要
 

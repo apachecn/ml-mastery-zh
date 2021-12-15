@@ -20,7 +20,7 @@
 +   [机器学习评估统计的温和介绍](estimation-statistics-for-machine-learning.md)
 +   [如何计算Python中的非参数秩相关性](how-to-calculate-nonparametric-rank-correlation-in-python.md)
 +   [如何在Python中计算数据的5位数摘要](how-to-calculate-the-5-number-summary-for-your-data-in-python.md)
-+   [如何在Python中从头开始编写学生t检验](how-to-code-the-students-t-test-from-scratch-in-python.md)
++   [如何在Python中从零开始编写学生t检验](how-to-code-the-students-t-test-from-scratch-in-python.md)
 +   [如何在Python中生成随机数](how-to-generate-random-numbers-in-python.md)
 +   [如何转换数据以更好地拟合正态分布](how-to-transform-data-to-fit-the-normal-distribution.md)
 +   [如何使用相关来理解变量之间的关系](how-to-use-correlation-to-understand-the-relationship-between-variables.md)

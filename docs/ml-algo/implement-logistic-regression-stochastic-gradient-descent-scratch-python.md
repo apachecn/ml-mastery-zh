@@ -1,12 +1,12 @@
-# 如何利用Python从头开始随机梯度下降实现Logistic回归
+# 如何利用Python从零开始实现逻辑回归
 
 > 原文： [https://machinelearningmastery.com/implement-logistic-regression-stochastic-gradient-descent-scratch-python/](https://machinelearningmastery.com/implement-logistic-regression-stochastic-gradient-descent-scratch-python/)
 
-Logistic回归是两类问题的首选线性分类算法。
+逻辑回归是两类问题的首选线性分类算法。
 
 它易于实现，易于理解，并且可以在各种各样的问题上获得很好的结果，即使这些方法对您的数据的期望受到侵犯也是如此。
 
-在本教程中，您将了解如何使用Python从头开始随机梯度下降实现逻辑回归。
+在本教程中，您将了解如何使用Python从零开始随机梯度下降实现逻辑回归。
 
 完成本教程后，您将了解：
 
@@ -22,17 +22,17 @@ Logistic回归是两类问题的首选线性分类算法。
 
 ![How To Implement Logistic Regression With Stochastic Gradient Descent From Scratch With Python](img/5bf94c3190b2f31398104e303c49125d.jpg)
 
-如何使用随机梯度下降实现Logistic回归从Python [照片](https://www.flickr.com/photos/31246066@N04/15171955576/) [Ian Sane](https://www.flickr.com/photos/31246066@N04/15171955576/) ，保留一些权利。
+如何使用随机梯度下降实现逻辑回归从Python [照片](https://www.flickr.com/photos/31246066@N04/15171955576/) [Ian Sane](https://www.flickr.com/photos/31246066@N04/15171955576/) ，保留一些权利。
 
 ## 描述
 
 本节将简要介绍逻辑回归技术，随机梯度下降和我们将在本教程中使用的Pima Indians糖尿病数据集。
 
-### Logistic回归
+### 逻辑回归
 
 逻辑回归以在该方法的核心使用的函数命名，即逻辑函数。
 
-Logistic回归使用方程作为表示，非常类似于线性回归。使用权重或系数值线性组合输入值（ **X** ）以预测输出值（ **y** ）。
+逻辑回归使用方程作为表示，非常类似于线性回归。使用权重或系数值线性组合输入值（ **X** ）以预测输出值（ **y** ）。
 
 与线性回归的主要区别在于，建模的输出值是二进制值（0或1）而不是数值。
 
@@ -491,7 +491,7 @@ Mean Accuracy: 77.124%
 
 ## 评论
 
-在本教程中，您了解了如何使用Python从头开始使用随机梯度下降来实现逻辑回归。
+在本教程中，您了解了如何使用Python从零开始使用随机梯度下降来实现逻辑回归。
 
 你学到了
 

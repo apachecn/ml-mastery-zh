@@ -112,7 +112,7 @@
 
 例如，使用R统计语言，使用R统计语言，请参阅“[评估模型表现 - 过拟合和数据大小对预测影响的实际示例](http://www.r-bloggers.com/evaluating-model-performance-a-practical-example-of-the-effects-of-overfitting-and-data-size-on-prediction/)”。
 
-有关使用SPSS的详细教程，请参阅幻灯片“ [Logistic回归 - 完整问题](http://www.utexas.edu/courses/schwab/sw388r7/SolvingProblems/LogisticRegression_CompleteProblems.ppt)”（PPT）。
+有关使用SPSS的详细教程，请参阅幻灯片“ [逻辑回归 - 完整问题](http://www.utexas.edu/courses/schwab/sw388r7/SolvingProblems/LogisticRegression_CompleteProblems.ppt)”（PPT）。
 
 有关SAS用户指南的介绍，请参阅“ [GLMSELECT程序](http://support.sas.com/documentation/cdl/en/statug/65328/HTML/default/viewer.htm#statug_glmselect_details25.htm)”。
 

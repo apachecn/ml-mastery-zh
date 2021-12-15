@@ -10,7 +10,7 @@ Backpropagation Through Time或BPTT是用于更新LSTM等循环神经网络中�
 
 阅读这篇文章后，你会知道：
 
-*   什么反向传播是时间以及它如何与多层感知器网络使用的反向传播训练算法相关。
+*   什么反向传播是时间以及它如何与多层感知机网络使用的反向传播训练算法相关。
 *   导致需要通过时间截断反向传播的动机，这是用于训练LSTM的深度学习中最广泛使用的变体。
 *   考虑如何配置截断反向传播时间以及研究和深度学习库中使用的规范配置的符号。
 
@@ -44,7 +44,7 @@ Backpropagation Through Time或BPTT是用于更新LSTM等循环神经网络中�
 
 有关Backpropagation的更多信息，请参阅帖子：
 
-*   [如何在Python中从头开始实现反向传播算法](http://machinelearningmastery.com/implement-backpropagation-algorithm-scratch-python/)
+*   [如何在Python中从零开始实现反向传播算法](http://machinelearningmastery.com/implement-backpropagation-algorithm-scratch-python/)
 
 反向传播训练算法适用于训练固定大小的输入 - 输出对上的前馈神经网络，但是可能在时间上排序的序列数据呢？
 
@@ -165,7 +165,7 @@ TBPTT算法需要考虑两个参数：
 
 具体来说，你学到了：
 
-*   什么反向传播是时间以及它如何与多层感知器网络使用的反向传播训练算法相关。
+*   什么反向传播是时间以及它如何与多层感知机网络使用的反向传播训练算法相关。
 *   导致需要通过时间截断反向传播的动机，这是用于训练LSTM的深度学习中最广泛使用的变体。
 *   考虑如何配置截断反向传播时间以及研究和深度学习库中使用的规范配置的符号。
 

@@ -79,13 +79,13 @@
 
 通过自己实现算法，您将感受到如何自定义算法并选择要公开的内容以及要修复的决策点。
 
-从头开始实施算法将帮助您理解算法的数学描述和扩展。这听起来可能违反直觉。数学描述是理想化的，并且通常提供算法内给定过程的快照描述。一旦将它们转换为代码，这些描述的含义可能会更加明显。
+从零开始实施算法将帮助您理解算法的数学描述和扩展。这听起来可能违反直觉。数学描述是理想化的，并且通常提供算法内给定过程的快照描述。一旦将它们转换为代码，这些描述的含义可能会更加明显。
 
 您可以利用算法的教程和开源实现来帮助您完成这些困难的部分。
 
 请注意，算法的“_我的第一个实现_”将比您在机器学习工具或库中找到的生产级实现更不可扩展且更脆弱。
 
-看看我的[教程，在Python](http://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/ "Tutorial To Implement k-Nearest Neighbors in Python From Scratch") 中从头开始实现k-最近邻居。
+看看我的[教程，在Python](http://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/ "Tutorial To Implement k-Nearest Neighbors in Python From Scratch") 中从零开始实现k-最近邻居。
 
 您可能也对我的帖子“[如何实现机器学习算法](http://machinelearningmastery.com/how-to-implement-a-machine-learning-algorithm/ "How to Implement a Machine Learning Algorithm")”感兴趣。
 

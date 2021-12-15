@@ -6,7 +6,7 @@ Naive Bayes是一种简单而强大的技术，您应该在分类问题上进行
 
 它易于理解，可以提供良好的结果，并且可以快速构建模型并做出预测。仅出于这些原因，您应该仔细查看算法。
 
-在最近的博客文章中，[学习了如何在python](http://machinelearningmastery.com/naive-bayes-classifier-scratch-python/ "How To Implement Naive Bayes From Scratch in Python") 中从头开始实现Naive Bayes算法。
+在最近的博客文章中，[学习了如何在python](http://machinelearningmastery.com/naive-bayes-classifier-scratch-python/ "How To Implement Naive Bayes From Scratch in Python") 中从零开始实现Naive Bayes算法。
 
 在这篇文章中，您将学习从Naive Bayes算法中获得最大收益的技巧和窍门。
 

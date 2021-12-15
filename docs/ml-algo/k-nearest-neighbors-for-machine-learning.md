@@ -110,9 +110,9 @@ KNN适用于少量输入变量（p），但在输入数量非常大时会遇到�
 
 ## 进一步阅读
 
-如果您有兴趣从头开始在Python中实现KNN，请查看帖子：
+如果您有兴趣从零开始在Python中实现KNN，请查看帖子：
 
-*   [教程从头开始在Python中实现k-最近邻](http://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/)
+*   [教程从零开始在Python中实现k-最近邻](http://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/)
 
 以下是从预测建模角度介绍KNN算法的一些优秀的机器学习文本。
 

@@ -104,7 +104,7 @@
 如果您希望深入了解，本节将提供有关该主题的更多资源。
 
 *   [如何使用Python进行时间序列预测的基线预测](https://machinelearningmastery.com/persistence-time-series-forecasting-with-python/)
-*   [如何使用Python从头开始实施基线机器学习算法](https://machinelearningmastery.com/implement-baseline-machine-learning-algorithms-scratch-python/)
+*   [如何使用Python从零开始实施基线机器学习算法](https://machinelearningmastery.com/implement-baseline-machine-learning-algorithms-scratch-python/)
 *   [机器学习表现改进备忘单](https://machinelearningmastery.com/machine-learning-performance-improvement-cheat-sheet/)
 
 ## 摘要

@@ -1,4 +1,4 @@
-# 如何用Python从头开始实现基线机器学习算法
+# 如何用Python从零开始实现基线机器学习算法
 
 > 原文： [https://machinelearningmastery.com/implement-baseline-machine-learning-algorithms-scratch-python/](https://machinelearningmastery.com/implement-baseline-machine-learning-algorithms-scratch-python/)
 
@@ -6,7 +6,7 @@
 
 基线为您稍后评估的更高级方法提供了比较点。
 
-在本教程中，您将了解如何在Python中从头开始实现基线机器学习算法。
+在本教程中，您将了解如何在Python中从零开始实现基线机器学习算法。
 
 完成本教程后，您将了解：
 
@@ -19,7 +19,7 @@
 
 ![How To Implement Baseline Machine Learning Algorithms From Scratch With Python](img/a6eef0a4a1a40fdd7d4ea80ebe51c609.jpg)
 
-如何使用Python从头开始实施基线机器学习算法
+如何使用Python从零开始实施基线机器学习算法
 照片由 [Vanesser III](https://www.flickr.com/photos/hapinachu/13767713/) ，保留一些权利。
 
 ## 描述

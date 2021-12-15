@@ -198,7 +198,7 @@ rainy	broken	stay-home	0.02	0.24	stay-home
 
 ## 摘要
 
-在这篇文章中，您发现了如何从头开始实现Naive Bayes。你了解到：
+在这篇文章中，您发现了如何从零开始实现Naive Bayes。你了解到：
 
 *   如何使用Naive Bayes处理分类数据。
 *   如何根据训练数据计算班级概率。

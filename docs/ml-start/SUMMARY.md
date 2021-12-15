@@ -53,7 +53,7 @@
 +   [程序员可以进入机器学习](programmers-can-get-into-machine-learning.md)
 +   [程序员应该进入机器学习](programmers-should-get-into-machine-learning.md)
 +   [项目焦点：Shashank Singh 的人脸识别](project-spotlight-face-recognition-with-shashank-singh.md)
-+   [项目焦点：使用 Mahout 和 Konstantin Slisenko 进行堆栈交换群集](project-spotlight-stack-exchange-clustering-using-mahout-with-konstantin-slisenko.md)
++   [项目焦点：使用 Mahout 和 Konstantin Slisenko 进行栈交换群集](project-spotlight-stack-exchange-clustering-using-mahout-with-konstantin-slisenko.md)
 +   [机器学习自学指南](self-study-guide-to-machine-learning.md)
 +   [4 个自学机器学习项目](self-study-machine-learning-projects.md)
 +   [ÁlvaroLemos 如何在数据科学团队中获得机器学习实习](student-got-machine-learning-internship-job-data-science-team.md)

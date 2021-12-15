@@ -31,7 +31,7 @@
 
 在每个秘籍中，数据集直接从 [UCI 机器学习库](https://archive.ics.uci.edu/ml/index.html)下载。
 
-所有秘籍都会评估相同的算法，分类的 Logistic 回归和回归问题的线性回归。 10 倍交叉验证测试工具用于演示每个指标，因为这是您将采用不同算法评估指标的最可能情况。
+所有秘籍都会评估相同的算法，分类的 逻辑回归和回归问题的线性回归。 10 倍交叉验证测试工具用于演示每个指标，因为这是您将采用不同算法评估指标的最可能情况。
 
 这些秘籍中的一个警告是 [cross_val_score](http://scikit-learn.org/stable/modules/generated/sklearn.cross_validation.cross_val_score.html) 函数用于报告每个秘籍中的表现。它允许使用将要讨论的不同评分指标，但报告所有得分以便可以对它们进行排序升序（最高分是最好的）。
 
@@ -94,7 +94,7 @@ Accuracy: 0.770 (0.048)
 
 您可以在分类维基百科文章的[损失函数中了解更多关于对数的信息。](https://en.wikipedia.org/wiki/Loss_functions_for_classification)
 
-以下是计算 Pima Indians 糖尿病数据集开始时 Logistic 回归预测的 logloss 的示例。
+以下是计算 Pima Indians 糖尿病数据集开始时 逻辑回归预测的 logloss 的示例。
 
 ```
 # Cross Validation Classification LogLoss

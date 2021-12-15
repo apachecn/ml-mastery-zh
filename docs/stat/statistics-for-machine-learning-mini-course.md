@@ -207,7 +207,7 @@ print('Standard Deviation: %.3f' % std(data))
 
 ### Your Task
 
-在本课程中，您必须在Python中从头开始计算一个描述性统计信息，例如计算样本均值。
+在本课程中，您必须在Python中从零开始计算一个描述性统计信息，例如计算样本均值。
 
 Post your answer in the comments below. I would love to see what you discover.
 

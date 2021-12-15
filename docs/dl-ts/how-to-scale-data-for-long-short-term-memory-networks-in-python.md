@@ -272,7 +272,7 @@ Mean: 5.355556, StandardDeviation: 2.712568
 
 如果有疑问，请将输入序列标准化。如果您拥有这些资源，请使用原始数据，标准化数据和标准化来探索建模，并查看是否存在有益的差异。
 
-> 如果输入变量是线性组合的，就像在 MLP [多层感知器]中一样，那么至少在理论上很少有必要对输入进行标准化。 ......但是，有很多实际的原因可以解释为什么标准化输入可以使训练更快，并减少陷入局部最优的机会。
+> 如果输入变量是线性组合的，就像在 MLP [多层感知机]中一样，那么至少在理论上很少有必要对输入进行标准化。 ......但是，有很多实际的原因可以解释为什么标准化输入可以使训练更快，并减少陷入局部最优的机会。
 
 - [我应该规范化/标准化/重新缩放数据吗？](ftp://ftp.sas.com/pub/neural/FAQ2.html#A_std) 神经网络常见问题解答
 
@@ -324,7 +324,7 @@ Mean: 5.355556, StandardDeviation: 2.712568
 *   [我应该规范化/标准化/重新调整数据吗？](ftp://ftp.sas.com/pub/neural/FAQ2.html#A_std) 神经网络常见问题解答
 *   [MinMaxScaler scikit-learn API 文档](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)
 *   [StandardScaler scikit-learn API 文档](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html)
-*   [如何使用 Python 从头开始扩展机器学习数据](http://machinelearningmastery.com/scale-machine-learning-data-scratch-python/)
+*   [如何使用 Python 从零开始扩展机器学习数据](http://machinelearningmastery.com/scale-machine-learning-data-scratch-python/)
 *   [如何在 Python 中标准化和标准化时间序列数据](http://machinelearningmastery.com/normalize-standardize-time-series-data-python/)
 *   [如何使用 Scikit-Learn 为 Python 机器学习准备数据](http://machinelearningmastery.com/prepare-data-machine-learning-python-scikit-learn/)
 

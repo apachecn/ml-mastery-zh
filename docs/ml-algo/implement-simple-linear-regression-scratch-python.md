@@ -1,4 +1,4 @@
-# 如何用Python从头开始实现简单线性回归
+# 如何用Python从零开始实现简单线性回归
 
 > 原文： [https://machinelearningmastery.com/implement-simple-linear-regression-scratch-python/](https://machinelearningmastery.com/implement-simple-linear-regression-scratch-python/)
 
@@ -6,7 +6,7 @@
 
 [简单线性回归](http://machinelearningmastery.com/simple-linear-regression-tutorial-for-machine-learning/)是一个很好的第一个机器学习算法，因为它需要你从训练数据集中估计属性，但是对于初学者来说很简单。
 
-在本教程中，您将了解如何在Python中从头开始实现简单的线性回归算法。
+在本教程中，您将了解如何在Python中从零开始实现简单的线性回归算法。
 
 完成本教程后，您将了解：
 
@@ -582,7 +582,7 @@ RMSE: 33.630
 
 ## 评论
 
-在本教程中，您了解了如何在Python中从头开始实现简单的线性回归算法。
+在本教程中，您了解了如何在Python中从零开始实现简单的线性回归算法。
 
 具体来说，你学到了：
 

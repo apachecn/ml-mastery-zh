@@ -1,4 +1,4 @@
-# 如何用Python从头开始实现Bagging
+# 如何用Python从零开始实现装袋
 
 > 原文： [https://machinelearningmastery.com/implement-bagging-scratch-python/](https://machinelearningmastery.com/implement-bagging-scratch-python/)
 
@@ -8,7 +8,7 @@
 
 使决策树更加健壮并实现更好表现的技术称为引导程序聚合或简称包装。
 
-在本教程中，您将了解如何使用Python从头开始使用决策树实现装袋过程。
+在本教程中，您将了解如何使用Python从零开始使用决策树实现装袋过程。
 
 完成本教程后，您将了解：
 
@@ -423,7 +423,7 @@ Mean Accuracy: 76.098%
 
 ## 评论
 
-在本教程中，您了解了如何使用Python从头开始实现引导程序聚合。
+在本教程中，您了解了如何使用Python从零开始实现引导程序聚合。
 
 具体来说，你学到了：
 

@@ -24,7 +24,7 @@ Scikit-learn 通过 Python 中的一致接口提供一系列有监督和无监�
 
 它根据许可的简化 BSD 许可证授权，并在许多 Linux 发行版下分发，鼓励学术和商业用途。
 
-该库是基于 SciPy（Scientific Python）构建的，必须先安装才能使用 scikit-learn。这个堆栈包括：
+该库是基于 SciPy（Scientific Python）构建的，必须先安装才能使用 scikit-learn。这个栈包括：
 
 *   **NumPy** ：基本 n 维数组包
 *   **SciPy** ：科学计算的基础库

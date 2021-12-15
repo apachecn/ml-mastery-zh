@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/prepare-data-for-machine-learning-in-python-with-pandas/](https://machinelearningmastery.com/prepare-data-for-machine-learning-in-python-with-pandas/)
 
-如果您使用 Python 堆栈来学习和应用机器学习，那么您将要用于数据分析和数据操作的库是 Pandas。
+如果您使用 Python 栈来学习和应用机器学习，那么您将要用于数据分析和数据操作的库是 Pandas。
 
 这篇文章为您提供了熊猫库的快速介绍，并指出了正确的入门方向。
 
@@ -13,7 +13,7 @@
 
 ## Python 中的数据分析
 
-Python SciPy 堆栈通常适用于科学计算。它提供了强大的库来处理网格数据（如 NumPy）和绘图（如 matplotlib）。直到最近，套件中缺少的一个部件才是处理数据的好库。
+Python SciPy 栈通常适用于科学计算。它提供了强大的库来处理网格数据（如 NumPy）和绘图（如 matplotlib）。直到最近，套件中缺少的一个部件才是处理数据的好库。
 
 数据通常不是以易于使用的形式出现的。处理机器学习等数据驱动问题的很大一部分是数据分析和数据调整。
 
@@ -42,7 +42,7 @@ Wes 描述了 Pandas 对 crate 的看法：用于任何语言的最强大，最�
 
 根据我的经验，它简单，优雅，直观。来自 R，成语和操作是熟悉和相关的。
 
-Pandas 构建在 SciPy 堆栈中的标准库之上。它使用 NumPy 进行快速数组处理，并为 StatsModels 的一些统计操作和 Matplotlib 的图表提供方便的包装。
+Pandas 构建在 SciPy 栈中的标准库之上。它使用 NumPy 进行快速数组处理，并为 StatsModels 的一些统计操作和 Matplotlib 的图表提供方便的包装。
 
 鉴于库在金融领域的开始，人们非常关注时间序列。它还非常关注用于处理标准网格数据的数据帧。数据处理是此类库的核心要求，速度已成为优先事项。它速度快，提供数据结构和操作，如索引和稀疏性处理。
 

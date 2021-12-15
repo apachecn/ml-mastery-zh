@@ -34,7 +34,7 @@ Shashank Singh
 
 帮助匿名应用程序
 
-我们目前的技术堆栈如下：
+我们目前的技术栈如下：
 
 *   服务器端：Ruby on Rails
 *   客户端：适用于 Android 的 Java，适用于 IOS 的 Objective C，适用于 NGO 的 Web 前端

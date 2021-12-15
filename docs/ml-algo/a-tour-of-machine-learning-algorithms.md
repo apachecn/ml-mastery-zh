@@ -42,7 +42,7 @@
 
 示例问题是分类和回归。
 
-示例算法包括Logistic回归和Back Propagation神经网络。
+示例算法包括逻辑回归和Back Propagation神经网络。
 
 ### **2.无监督学习**
 
@@ -106,7 +106,7 @@ Example problems are classification and regression.
 
 *   普通最小二乘回归（OLSR）
 *   线性回归
-*   Logistic回归
+*   逻辑回归
 *   逐步回归
 *   多元自适应回归样条（MARS）
 *   局部估计的散点图平滑（LOESS）
@@ -296,11 +296,11 @@ Example problems are classification and regression.
 *   [如何创建机器学习算法的目标列表](http://machinelearningmastery.com/create-lists-of-machine-learning-algorithms/)：如何创建自己的机器学习算法系统列表，以便开始研究下一个机器学习问题。
 *   [如何研究机器学习算法](http://machinelearningmastery.com/how-to-research-a-machine-learning-algorithm/)：一种系统方法，可用于研究机器学习算法（与上面列出的模板方法协同工作）。
 *   [如何调查机器学习算法行为](http://machinelearningmastery.com/how-to-investigate-machine-learning-algorithm-behavior/)：一种方法，您可以通过创建和执行非常小的研究来了解机器学习算法的工作原理。研究不仅仅适用于学者！
-*   [如何实现机器学习算法](http://machinelearningmastery.com/how-to-implement-a-machine-learning-algorithm/)：从头开始实现机器学习算法的过程和提示和技巧。
+*   [如何实现机器学习算法](http://machinelearningmastery.com/how-to-implement-a-machine-learning-algorithm/)：从零开始实现机器学习算法的过程和提示和技巧。
 
 ### 如何运行机器学习算法
 
-有时你只想潜入代码。下面是一些可用于运行机器学习算法的链接，使用标准库对其进行编码或从头开始实现。
+有时你只想潜入代码。下面是一些可用于运行机器学习算法的链接，使用标准库对其进行编码或从零开始实现。
 
 *   [如何开始使用R中的机器学习算法](http://machinelearningmastery.com/how-to-get-started-with-machine-learning-algorithms-in-r/)：链接到该站点上的大量代码示例，演示了R中的机器学习算法。
 *   [机器学习算法scikit-learn中的秘籍](http://machinelearningmastery.com/get-your-hands-dirty-with-scikit-learn-now/)：Python代码示例的集合，演示了如何使用scikit-learn创建预测模型。

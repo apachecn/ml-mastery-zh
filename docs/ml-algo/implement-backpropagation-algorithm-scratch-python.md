@@ -1,4 +1,4 @@
-# 如何在Python中从头开始实现反向传播算法
+# 如何在Python中从零开始实现反向传播算法
 
 > 原文： [https://machinelearningmastery.com/implement-backpropagation-algorithm-scratch-python/](https://machinelearningmastery.com/implement-backpropagation-algorithm-scratch-python/)
 
@@ -6,7 +6,7 @@
 
 这种技术仍然用于训练大型[深度学习](http://machinelearningmastery.com/what-is-deep-learning/)网络。
 
-在本教程中，您将了解如何使用Python从头开始实现反向传播算法。
+在本教程中，您将了解如何使用Python从零开始实现反向传播算法。
 
 完成本教程后，您将了解：
 
@@ -24,7 +24,7 @@
 
 ![How to Implement the Backpropagation Algorithm From Scratch In Python](img/d97e39d3b77378dff36499a1877a9015.jpg)
 
-如何在Python中从头开始实现反向传播算法
+如何在Python中从零开始实现反向传播算法
 照片由 [NICHD](https://www.flickr.com/photos/nichd/21086425615/) ，保留一些权利。
 
 ## 描述
@@ -84,7 +84,7 @@
 5.  预测。
 6.  种子数据集案例研究。
 
-这些步骤将为您提供从头开始实现反向传播算法所需的基础，并将其应用于您自己的预测建模问题。
+这些步骤将为您提供从零开始实现反向传播算法所需的基础，并将其应用于您自己的预测建模问题。
 
 ### 1.初始化网络
 
@@ -975,7 +975,7 @@ Mean Accuracy: 93.333%
 
 ## 评论
 
-在本教程中，您了解了如何从头开始实现Backpropagation算法。
+在本教程中，您了解了如何从零开始实现Backpropagation算法。
 
 具体来说，你学到了：
 

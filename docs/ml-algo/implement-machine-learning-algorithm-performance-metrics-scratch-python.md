@@ -1,4 +1,4 @@
-# 如何用Python从头开始实现机器学习算法表现指标
+# 如何用Python从零开始实现机器学习算法指标
 
 > 原文： [https://machinelearningmastery.com/implement-machine-learning-algorithm-performance-metrics-scratch-python/](https://machinelearningmastery.com/implement-machine-learning-algorithm-performance-metrics-scratch-python/)
 
@@ -8,7 +8,7 @@
 
 了解一组预测有多好，可以让您估算出问题的给定机器学习模型的好坏，
 
-在本教程中，您将了解如何在Python中从头开始实现四个标准预测评估指标。
+在本教程中，您将了解如何在Python中从零开始实现四个标准预测评估指标。
 
 阅读本教程后，您将了解：
 
@@ -23,7 +23,7 @@
 
 ![How To Implement Machine Learning Algorithm Performance Metrics From Scratch In Python](img/3bb0770ef9a693bf253daed634235bc5.jpg)
 
-如何使用Python从头开始实现机器学习算法表现指标
+如何使用Python从零开始实现机器学习算法表现指标
 照片由[HernánPiñera](https://www.flickr.com/photos/hernanpc/8407944523/)，保留一些权利。
 
 ## 描述
@@ -38,7 +38,7 @@
 *   不同的机器学习模型训练相同的数据。
 *   针对相同数据训练的机器学习模型的不同配置。
 
-因此，表现指标是从头开始实现机器学习算法的必要构建块。
+因此，表现指标是从零开始实现机器学习算法的必要构建块。
 
 ## 教程
 
@@ -413,7 +413,7 @@ RMSE值总是略高于MSE值，随着预测误差的增加，MSE值变得更加�
 
 ## 评论
 
-在本教程中，您了解了如何在Python中从头开始实现算法预测表现指标。
+在本教程中，您了解了如何在Python中从零开始实现算法预测表现指标。
 
 具体来说，你学到了：
 

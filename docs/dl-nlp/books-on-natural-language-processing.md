@@ -30,7 +30,7 @@
 
 [![Amazon Image](img/19f0f750991783bf68f45d8dd511f0b3.jpg)](http://www.amazon.com/dp/0596516495?tag=inspiredalgor-20)
 
-本书介绍了使用 Python 堆栈为从业者提供的 NLP。
+本书介绍了使用 Python 栈为从业者提供的 NLP。
 
 本书侧重于使用 [NLTK Python 库](http://www.nltk.org/)，这对于常见的 NLP 任务非常流行。
 

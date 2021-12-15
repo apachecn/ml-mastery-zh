@@ -4,7 +4,7 @@
 
 Keras 是一个 Python 深度学习库，可以使用高效的 Theano 或 TensorFlow 符号数学库作为后端。
 
-Keras 非常易于使用，您可以在几分钟内开发出您的第一个[多层感知器](http://machinelearningmastery.com/tutorial-first-neural-network-python-keras/)，[卷积神经网络](http://machinelearningmastery.com/handwritten-digit-recognition-using-convolutional-neural-networks-python-keras/)或 [LSTM 递归神经网络](http://machinelearningmastery.com/time-series-prediction-lstm-recurrent-neural-networks-python-keras/)。
+Keras 非常易于使用，您可以在几分钟内开发出您的第一个[多层感知机](http://machinelearningmastery.com/tutorial-first-neural-network-python-keras/)，[卷积神经网络](http://machinelearningmastery.com/handwritten-digit-recognition-using-convolutional-neural-networks-python-keras/)或 [LSTM 递归神经网络](http://machinelearningmastery.com/time-series-prediction-lstm-recurrent-neural-networks-python-keras/)。
 
 当您开始使用 Keras 时，您可能会遇到技术问题，这时候您可能需要一些帮助。
 
@@ -93,7 +93,7 @@ CrossValidated 是一个致力于机器学习的问答网站，并且有很多�
 
 同样，我建议搜索并访问带有“`keras`”标签的话题。
 
-*   [数据科学堆栈交换中的 Keras 标签](https://datascience.stackexchange.com/questions/tagged/keras)
+*   [数据科学栈交换中的 Keras 标签](https://datascience.stackexchange.com/questions/tagged/keras)
 
 ## 7\. Quora 上的 Keras 主题
 

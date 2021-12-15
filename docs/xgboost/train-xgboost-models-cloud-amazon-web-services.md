@@ -166,7 +166,7 @@ cat /proc/cpuinfo | grep processor | wc -l
 
 第一步是安装所有软件包以支持 XGBoost。
 
-这包括 GCC，Python 和 SciPy 堆栈。我们将使用 Fedora 包管理器 [dnf](https://en.wikipedia.org/wiki/DNF_(software)) （新的 yum）。
+这包括 GCC，Python 和 SciPy 栈。我们将使用 Fedora 包管理器 [dnf](https://en.wikipedia.org/wiki/DNF_(software)) （新的 yum）。
 
 这是一行：
 

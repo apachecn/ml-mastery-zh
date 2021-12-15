@@ -292,7 +292,7 @@ Expected=64, Predicted=64 (err=0)
 
 我们解决的问题有多个输入但技术上不是序列预测问题。
 
-实际上，您可以使用多层感知器（MLP）轻松解决它。例如：
+实际上，您可以使用多层感知机（MLP）轻松解决它。例如：
 
 ```py
 from random import seed
@@ -408,7 +408,7 @@ MLP旨在学习映射功能，并且可以轻松解决学习如何相加数字�
 
 我们可以通过添加两个数字来保持简单，但我们可以看到这可以如何缩放到可变数量的术语和数学运算，可以作为模型的输入供学习和概括。
 
-请注意，这个形式和本例的其余部分受到了Keras项目中[添加seq2seq示例](https://github.com/fchollet/keras/blob/master/examples/addition_rnn.py)的启发，尽管我从头开始重新开发它。
+请注意，这个形式和本例的其余部分受到了Keras项目中[添加seq2seq示例](https://github.com/fchollet/keras/blob/master/examples/addition_rnn.py)的启发，尽管我从零开始重新开发它。
 
 ### Data Generation
 

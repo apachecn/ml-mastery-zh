@@ -8,7 +8,7 @@
 
 随机森林是套袋的扩展，除了根据训练数据的多个样本构建树木之外，它还限制了可用于构建树木的特征，迫使树木变得不同。反过来，这可以提升表现。
 
-在本教程中，您将了解如何在Python中从头开始实现随机森林算法。
+在本教程中，您将了解如何在Python中从零开始实现随机森林算法。
 
 完成本教程后，您将了解：
 
@@ -25,7 +25,7 @@
 
 ![How to Implement Random Forest From Scratch in Python](img/bd883c81857661285726387e7733a170.jpg)
 
-如何在Python中从头开始实现随机森林
+如何在Python中从零开始实现随机森林
 照片由 [InspireFate Photography](https://www.flickr.com/photos/inspirefatephotography/7569736320/) ，保留一些权利。
 
 ## 描述
@@ -387,7 +387,7 @@ Mean Accuracy: 78.537%
 
 ## 评论
 
-在本教程中，您了解了如何从头开始实现随机森林算法。
+在本教程中，您了解了如何从零开始实现随机森林算法。
 
 具体来说，你学到了：
 

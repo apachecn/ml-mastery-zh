@@ -31,7 +31,7 @@
 
 ![How to Develop a Deep Learning Caption Generation Model in Python from Scratch](img/7c3093e713bfc0f44e9aa591c5ae3415.jpg)
 
-如何从头开始在 Python 中开发深度学习字幕生成模型
+如何从零开始在 Python 中开发深度学习字幕生成模型
 照片由[生活在蒙罗维亚](https://www.flickr.com/photos/livinginmonrovia/8069637650/)，保留一些权利。
 
 ## 教程概述

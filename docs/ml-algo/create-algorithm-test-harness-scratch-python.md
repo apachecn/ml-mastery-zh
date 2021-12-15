@@ -1,4 +1,4 @@
-# 如何使用Python从头开始创建算法测试工具
+# 如何使用Python从零开始创建算法测试工具
 
 > 原文： [https://machinelearningmastery.com/create-algorithm-test-harness-scratch-python/](https://machinelearningmastery.com/create-algorithm-test-harness-scratch-python/)
 
@@ -6,7 +6,7 @@
 
 因此，我们需要设计一个可用于评估不同机器学习算法的测试工具。
 
-在本教程中，您将了解如何在Python中从头开始开发机器学习算法测试工具。
+在本教程中，您将了解如何在Python中从零开始开发机器学习算法测试工具。
 
 完成本教程后，您将了解：
 
@@ -323,7 +323,7 @@ Mean Accuracy: 65.098%
 
 ## 评论
 
-在本教程中，您了解了如何从头开始创建测试工具以评估您的机器学习算法。
+在本教程中，您了解了如何从零开始创建测试工具以评估您的机器学习算法。
 
 具体来说，您现在知道：
 

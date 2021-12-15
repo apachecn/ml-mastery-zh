@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/why-implement-a-machine-learning-algorithm-from-scratch/](https://machinelearningmastery.com/why-implement-a-machine-learning-algorithm-from-scratch/)
 
-当现有API中提供了如此多的算法时，为什么要从头开始实现机器学习算法？
+当现有API中提供了如此多的算法时，为什么要从零开始实现机器学习算法？
 
 这是一个很好的问题。在编写第一行代码之前必须考虑的问题。
 
@@ -12,7 +12,7 @@
 
 ![Why Implement a Machine Learning Algorithm From Scratch](img/eb1a35be0f1f24f7f32e26c4fcfc220f.jpg)
 
-为什么从头开始实施机器学习算法
+为什么从零开始实施机器学习算法
 照片由 [psyberartist](https://www.flickr.com/photos/psyberartist/3518056742/) ，保留一些权利。
 
 ## （重新）实现算法的两个主要原因
@@ -28,7 +28,7 @@
 
 > ...假设我们没有谈论机器学习算法，而是谈论排序算法。当然，许多数据结构都有一个排序函数，几乎不需要编码，但你真的会聘请一个无法做出反对的程序员吗？选择排序？插入排序？归并排序？快速排序？二叉搜索树？
 
-Charles描述了4种不同的用例，从头开始实现机器学习算法是非常可取的：
+Charles描述了4种不同的用例，从零开始实现机器学习算法是非常可取的：
 
 *   作为机器学习领域的初学者。
 *   作为机器学习领域的研究员。
@@ -51,14 +51,14 @@ Xavier列出了实现机器学习算法的5个理由，如下所示：
 
 ## 摘要
 
-在这篇文章中，您发现有两个主要原因可能需要从头开始实现算法。
+在这篇文章中，您发现有两个主要原因可能需要从零开始实现算法。
 
 1.  要了解有关算法如何用于自学的更多信息。
 2.  自定义生产系统的算法实现。
 
 ## 进一步阅读
 
-我已经多次发布了从头开始实现机器学习算法的好处。
+我已经多次发布了从零开始实现机器学习算法的好处。
 
 关于这个主题的进一步阅读包括：
 

@@ -15,7 +15,7 @@
 如果我不擅长数学怎么办
 [meneldur](http://www.flickr.com/photos/meneldur/59465632/sizes/l/) 的照片，保留一些权利
 
-## 从头开始学习
+## 从零开始学习
 
 在开始编程之前，我没有学习布尔逻辑。
 

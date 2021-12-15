@@ -1,14 +1,14 @@
-# 如何用Python从头开始实现堆栈泛化（Stacking）
+# 如何用Python从零开始实现堆叠泛化
 
 > 原文： [https://machinelearningmastery.com/implementing-stacking-scratch-python/](https://machinelearningmastery.com/implementing-stacking-scratch-python/)
 
-#### 使用Python从头开始编写堆栈集合，循序渐进。
+#### 使用Python从零开始编写栈集合，循序渐进。
 
 集合方法是提高机器学习问题预测表现的绝佳方法。
 
 堆叠泛化或堆叠是一种集合技术，它使用新模型来学习如何最佳地组合来自数据集上训练的两个或更多模型的预测。
 
-在本教程中，您将了解如何在Python中从头开始实现堆叠。
+在本教程中，您将了解如何在Python中从零开始实现堆叠。
 
 完成本教程后，您将了解：
 
@@ -22,7 +22,7 @@
 
 ![How to Implementing Stacking From Scratch With Python](img/2960d608a0641f5cd292c91a7669c364.jpg)
 
-如何使用Python从头开始实现堆叠
+如何使用Python从零开始实现堆叠
 [Kiran Foster](https://www.flickr.com/photos/rueful/7885846128/) 的照片，保留一些权利。
 
 ## 描述
@@ -74,8 +74,8 @@
 这部分分为3个部分：
 
 1.  子模型＃1：k-Nearest Neighbors。
-2.  子模型＃2：感知器。
-3.  聚合器模型：Logistic回归。
+2.  子模型＃2：感知机。
+3.  聚合器模型：逻辑回归。
 
 每个模型将根据用于训练模型的函数和用于做出预测的函数来描述。
 
@@ -127,7 +127,7 @@ def knn_predict(model, test_row, num_neighbors=2):
 
 现在我们已经有了kNN模型的构建块，让我们来看看Perceptron算法。
 
-#### 1.2子模型＃2：感知器
+#### 1.2子模型＃2：感知机
 
 Perceptron算法的模型是从训练数据中学习的一组权重。
 
@@ -160,9 +160,9 @@ def perceptron_model(train, l_rate=0.01, n_epoch=5000):
 
 我们现在已经实现了两个子模型，让我们看一下实现聚合器模型。
 
-#### 1.3聚合器模型：Logistic回归
+#### 1.3聚合器模型：逻辑回归
 
-与Perceptron算法一样，Logistic回归使用一组称为系数的权重作为模型的表示。
+与Perceptron算法一样，逻辑回归使用一组称为系数的权重作为模型的表示。
 
 与Perceptron算法一样，通过迭代地对训练数据做出预测并更新它们来学习系数。
 
@@ -267,7 +267,7 @@ def to_stacked_row(models, predict_list, row):
 
 我们将使用k-fold交叉验证来估计学习模型在看不见的数据上的表现。这意味着我们将构建和评估k模型并将表现估计为平均模型误差。分类精度将用于评估模型。这些行为在 **cross_validation_split（）**， **accuracy_metric（）**和 **evaluate_algorithm（）**辅助函数中提供。
 
-我们将使用上面实现的k-Nearest Neighbors，Perceptron和Logistic回归算法。我们还将使用我们的技术来创建上一步中定义的新堆叠数据集。
+我们将使用上面实现的k-Nearest Neighbors，Perceptron和逻辑回归算法。我们还将使用我们的技术来创建上一步中定义的新堆叠数据集。
 
 开发了新的函数名 **stacking（）**。这个功能做了4件事：
 
@@ -492,7 +492,7 @@ Mean Accuracy: 74.879%
 
 ## 评论
 
-在本教程中，您了解了如何在Python中从头开始实现堆叠算法。
+在本教程中，您了解了如何在Python中从零开始实现堆叠算法。
 
 具体来说，你学到了：
 

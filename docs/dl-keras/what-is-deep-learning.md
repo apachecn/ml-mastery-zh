@@ -93,9 +93,9 @@ Andrew 经常说，我们应该，也将会看到更多的来自深度学习中�
 
 > 概念的层次结构(the hierarchy of concepts)允许计算机去学习复杂的概念（concepts）。这些复杂的概念是由计算机从简单的概念中建立起来的。如果我们可以画一个图来表示这些概念是如何在各自的基础上互相构建的，那么这个图会很深(deep)，有很多层（layers）。出于这个原因，我们将这种方法称为 AI 深度学习。
 
-这是一本重要的书，有可能在一段时间内成为该领域的权威资源。本书继续描述深度学习领域使用的算法 —— 多层感知器(multilayer perceptrons, MLP)，因为深度学习已经被归入人工神经网络这一更大的领域中。
+这是一本重要的书，有可能在一段时间内成为该领域的权威资源。本书继续描述深度学习领域使用的算法 —— 多层感知机(multilayer perceptrons, MLP)，因为深度学习已经被归入人工神经网络这一更大的领域中。
 
-> 深度学习模型的一个典型例子就是前馈深度网络（feedforward deep network）或多层感知器（multilayer perceptrons，MLP）。
+> 深度学习模型的一个典型例子就是前馈深度网络（feedforward deep network）或多层感知机（multilayer perceptrons，MLP）。
 
 [Peter Norvig](https://en.wikipedia.org/wiki/Peter_Norvig) 是谷歌研究部主任，因其题为“[人工智能：现代方法](http://www.amazon.com/dp/0136042597?tag=inspiredalgor-20)”的人工智能教科书而闻名。
 
@@ -106,7 +106,7 @@ Andrew 经常说，我们应该，也将会看到更多的来自深度学习中�
 ## 为什么称它为“深度学习”？
 ## 为什么不只是“人工神经网络”？
 
-[Geoffrey Hinton](https://en.wikipedia.org/wiki/Geoffrey_Hinton) 是人工神经网络领域的先驱，并与他人合著了第一篇用于训练多层感知器网络的[反向传播](https://en.wikipedia.org/wiki/Backpropagation)算法的论文。
+[Geoffrey Hinton](https://en.wikipedia.org/wiki/Geoffrey_Hinton) 是人工神经网络领域的先驱，并与他人合著了第一篇用于训练多层感知机网络的[反向传播](https://en.wikipedia.org/wiki/Backpropagation)算法的论文。
 
 他可能是第一个用“`deep`”（深度）这个词来描述大型人工神经网络发展的人。
 
@@ -139,7 +139,7 @@ Andrew 经常说，我们应该，也将会看到更多的来自深度学习中�
 
 深度学习在相似输入（甚至输出）的问题上表现优异。意思是，它们不是少量的表格数据，而是像素数据的图像、文本文档或音频数据。
 
-[Yann LeCun](https://en.wikipedia.org/wiki/Yann_LeCun) 是脸书研究部（Facebook Research）的主管，也是[卷积神经网络（CNN）](http://machinelearningmastery.com/crash-course-convolutional-neural-networks/) 架构之父，这种网络擅长图像数据中的对象（object）识别。这种技术非常成功，因为像多层感知器（MLP）前馈神经网络一样，该技术可以根据数据和模型大小进行扩展，并且可以通过反向传播进行训练。
+[Yann LeCun](https://en.wikipedia.org/wiki/Yann_LeCun) 是脸书研究部（Facebook Research）的主管，也是[卷积神经网络（CNN）](http://machinelearningmastery.com/crash-course-convolutional-neural-networks/) 架构之父，这种网络擅长图像数据中的对象（object）识别。这种技术非常成功，因为像多层感知机（MLP）前馈神经网络一样，该技术可以根据数据和模型大小进行扩展，并且可以通过反向传播进行训练。
 
 这使他对深度学习的定义更专注于大型 CNN ，这些 CNN 在照片中的对象识别方面取得了巨大成功。
 
@@ -182,7 +182,7 @@ Andrew 经常说，我们应该，也将会看到更多的来自深度学习中�
 
 虽然 Hinton 和其合作者发表的早期的方法侧重于贪婪的分层训练（greedy layerwise training）和无监督方法，如自编码器，但现代最先进的深度学习主要集中在使用反向传播算法训练深层（多层）神经网络模型。最流行的技术有：
 
-*   多层感知器网络（MLP）。
+*   多层感知机网络（MLP）。
 *   卷积神经网络（CNN)。
 *   长短期记忆递归神经网络(LSTM)。
 

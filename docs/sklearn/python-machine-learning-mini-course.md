@@ -268,7 +268,7 @@ print(rescaledX[0:5,:])
 *   使用 k 折交叉验证估算算法的准确率。
 *   使用留一交叉验证估算算法的准确率。
 
-下面的片段使用 scikit-learn 使用 10 倍交叉验证来估计 Pima Indians 糖尿病数据集开始时 Logistic 回归算法的准确率。
+下面的片段使用 scikit-learn 使用 10 倍交叉验证来估计 Pima Indians 糖尿病数据集开始时 逻辑回归算法的准确率。
 
 ```
 # Evaluate using Cross Validation
@@ -371,7 +371,7 @@ print(results.mean())
 *   将相同算法的不同配置相互比较。
 *   创建比较算法的结果图。
 
-以下示例将 Pima Indians 糖尿病数据集开始时的 Logistic 回归和线性判别分析相互比较。
+以下示例将 Pima Indians 糖尿病数据集开始时的 逻辑回归和线性判别分析相互比较。
 
 ```
 # Compare Algorithms
@@ -487,7 +487,7 @@ print(results.mean())
 练习使用您的模型对新数据做出预测（在训练和测试期间看不到的数据）。
 练习保存训练有素的模型进行归档并重新加载。
 
-例如，下面的代码段显示了如何创建 Logistic 回归模型，将其保存到文件，然后稍后加载并对未见数据做出预测。
+例如，下面的代码段显示了如何创建 逻辑回归模型，将其保存到文件，然后稍后加载并对未见数据做出预测。
 
 ```
 # Save Model Using Pickle

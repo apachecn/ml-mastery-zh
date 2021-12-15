@@ -1,8 +1,8 @@
-# 机器学习的Logistic回归教程
+# 机器学习的逻辑回归教程
 
 > 原文： [https://machinelearningmastery.com/logistic-regression-tutorial-for-machine-learning/](https://machinelearningmastery.com/logistic-regression-tutorial-for-machine-learning/)
 
-Logistic回归是用于二分类的最流行的机器学习算法之一。这是因为它是一种简单的算法，可以很好地解决各种各样的问题。
+逻辑回归是用于二分类的最流行的机器学习算法之一。这是因为它是一种简单的算法，可以很好地解决各种各样的问题。
 
 在这篇文章中，您将逐步发现二分类的逻辑回归算法。阅读这篇文章后你会知道：
 
@@ -10,7 +10,7 @@ Logistic回归是用于二分类的最流行的机器学习算法之一。这是
 *   如何使用随机梯度下降来学习逻辑回归模型的系数。
 *   如何使用逻辑回归模型做出预测。
 
-这篇文章是为开发人员编写的，不承担统计或概率的背景。打开电子表格并按照说明进行操作。如果您对Logistic回归有任何疑问，请在评论中提出，我会尽力回答。
+这篇文章是为开发人员编写的，不承担统计或概率的背景。打开电子表格并按照说明进行操作。如果您对逻辑回归有任何疑问，请在评论中提出，我会尽力回答。
 
 让我们开始吧。
 
@@ -18,7 +18,7 @@ Logistic回归是用于二分类的最流行的机器学习算法之一。这是
 
 ![Logistic Regression Tutorial for Machine Learning](img/703ec066a22749619c753bfcc77f4213.jpg)
 
-机器学习的Logistic回归教程
+机器学习的逻辑回归教程
 照片由 [Brian Gratwicke](https://www.flickr.com/photos/briangratwicke/6118345858) 拍摄，保留一些权利。
 
 ## 教程数据集
@@ -49,7 +49,7 @@ X1		X2		Y
 
 ![Logistic Regression Tutorial Dataset](img/1b9a5032b58df3ac16965ac5efe3582d.jpg)
 
-Logistic回归教程数据集
+逻辑回归教程数据集
 
 ## 物流功能
 
@@ -96,7 +96,7 @@ X	Transformed
 
 下载，打印并使用它。
 
-## Logistic回归模型
+## 逻辑回归模型
 
 逻辑回归模型采用实值输入并对输入属于默认类（类0）的概率做出预测。
 
@@ -116,7 +116,7 @@ p（class = 0）= 1 /（1 + e ^（ - 输出））
 
 p（class = 0）= 1 /（1 + EXP（-output））
 
-## 随机梯度下降的Logistic回归
+## 随机梯度下降的逻辑回归
 
 我们可以使用随机梯度下降来估计系数的值。
 
@@ -193,7 +193,7 @@ b2 = -0.09564513761
 
 ![Logistic Regression with Gradient Descent Accuracy versus Iteration](img/a7031b0865ce5bdb6a761d9cf76a625a.jpg)
 
-具有梯度下降精度与迭代的Logistic回归
+具有梯度下降精度与迭代的逻辑回归
 
 您可以看到模型很快就能在训练数据集上实现100％的准确率。
 
@@ -255,7 +255,7 @@ b2 = -1.104746259
 
 ## 摘要
 
-在这篇文章中，您了解了如何从头开始逐步实现逻辑回归。你了解到：
+在这篇文章中，您了解了如何从零开始逐步实现逻辑回归。你了解到：
 
 *   如何计算物流函数。
 *   如何使用随机梯度下降来学习逻辑回归模型的系数。

@@ -1,4 +1,4 @@
-# 如何用Python从头开始实现学习向量量化
+# 如何用Python从零开始实现学习向量量化
 
 > 原文： [https://machinelearningmastery.com/implement-learning-vector-quantization-scratch-python/](https://machinelearningmastery.com/implement-learning-vector-quantization-scratch-python/)
 
@@ -6,7 +6,7 @@
 
 [学习向量量化](http://machinelearningmastery.com/learning-vector-quantization-for-machine-learning/)算法通过学习最能代表训练数据的更小的模式子集来解决这个问题。
 
-在本教程中，您将了解如何使用Python从头开始实现学习向量量化算法。
+在本教程中，您将了解如何使用Python从零开始实现学习向量量化算法。
 
 完成本教程后，您将了解：
 
@@ -21,7 +21,7 @@
 
 ![How To Implement Learning Vector Quantization From Scratch With Python](img/9116ae5fdf9659e09d1603c386bd07bd.jpg)
 
-如何用Python从头开始实现学习向量量化
+如何用Python从零开始实现学习向量量化
 照片由 [Tony Faiola](https://www.flickr.com/photos/tonyfaiola/10303914233/) ，保留一些权利。
 
 ## 描述
@@ -590,7 +590,7 @@ Mean Accuracy: 87.143%
 
 ## 评论
 
-在本教程中，您了解了如何在Python中从头开始实现学习向量量化算法。
+在本教程中，您了解了如何在Python中从零开始实现学习向量量化算法。
 
 具体来说，你学到了：
 

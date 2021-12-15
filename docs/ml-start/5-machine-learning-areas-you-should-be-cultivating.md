@@ -38,7 +38,7 @@
 
 阅读，研究甚至[从多个应用和理论来源构建您自己的算法描述](http://machinelearningmastery.com/how-to-learn-a-machine-learning-algorithm/ "How to Learn a Machine Learning Algorithm")。
 
-[从头开始实现算法](http://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/ "Tutorial To Implement k-Nearest Neighbors in Python From Scratch")，以熟悉任何给定的算法实现必须使用的无数微决策。
+[从零开始实现算法](http://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/ "Tutorial To Implement k-Nearest Neighbors in Python From Scratch")，以熟悉任何给定的算法实现必须使用的无数微决策。
 
 试验算法。研究他们的行为以及他们的参数对他们的影响，并在多个标准问题实例中进行推广。
 
@@ -87,7 +87,7 @@
 这五个领域又是：
 
 1.  **机器学习基础和理论**：为定义，术语，原理和理论奠定坚实的基础。
-2.  **机器学习算法**：读取和研究算法，从头开始实现算法并对它们进行实验，以便为它们的工作方式和原因建立直觉。
+2.  **机器学习算法**：读取和研究算法，从零开始实现算法并对它们进行实验，以便为它们的工作方式和原因建立直觉。
 3.  **机器学习工具**：在愤怒中学习和使用机器学习工具和库，以有效利用您的时间。
 4.  **机器学习问题**：研究问题案例研究，并不断研究应用机器学习的过程（或 KDD 或任何你想称之为的）。
 5.  **保持最新**：让自己了解算法，问题工具甚至炒作的最新动态。期待一切都继续前进。

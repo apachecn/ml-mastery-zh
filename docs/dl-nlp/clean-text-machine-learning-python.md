@@ -22,7 +22,7 @@
 
 ![How to Develop Multilayer Perceptron Models for Time Series Forecasting](img/3845e70194ea7d465b653bbb0d8b993a.jpg)
 
-如何开发用于时间序列预测的多层感知器模型
+如何开发用于时间序列预测的多层感知机模型
 照片由土地管理局提供，保留一些权利。
 
 ## 教程概述

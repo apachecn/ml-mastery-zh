@@ -30,7 +30,7 @@
 
 1.  努力学习数学背景。
 2.  努力学习机器学习理论。
-3.  努力从头开始实施算法
+3.  努力从零开始实施算法
 4.  **???** （_ 插入魔法 _）
 5.  最后开始使用机器学习（**你的目标！**）。
 
@@ -137,9 +137,9 @@
 Wring Way Go Back
 照片由 [Dallas](https://www.flickr.com/photos/begnaud/243996426/) 拍摄，保留一些权利。
 
-## 4）不要从头开始实施一切
+## 4）不要从零开始实施一切
 
-你可以从[从头开始实现算法](http://machinelearningmastery.com/understand-machine-learning-algorithms-by-implementing-them-from-scratch/)中学到很多东西。
+你可以从[从零开始实现算法](http://machinelearningmastery.com/understand-machine-learning-algorithms-by-implementing-them-from-scratch/)中学到很多东西。
 
 有时你甚至需要实现一种技术，因为没有合适的或可用的实现。
 
@@ -218,7 +218,7 @@ Wring Way Go Back
 1.  不要从理论开始。
 2.  不要学习所有的机器学习。
 3.  不要乱用算法。
-4.  不要从头开始实施一切。
+4.  不要从零开始实施一切。
 5.  不要一直改变工具。
 
 你陷入了这些陷阱吗？

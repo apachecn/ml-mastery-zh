@@ -1,4 +1,4 @@
-# 如何在Python中从头开始实现决策树算法
+# 如何在Python中从零开始实现决策树算法
 
 > 原文： [https://machinelearningmastery.com/implement-decision-tree-algorithm-scratch-python/](https://machinelearningmastery.com/implement-decision-tree-algorithm-scratch-python/)
 
@@ -8,7 +8,7 @@
 
 决策树还为更先进的集合方法提供了基础，例如装袋，随机森林和梯度增强。
 
-在本教程中，您将了解如何使用Python从头开始实现[分类和回归树算法](http://machinelearningmastery.com/classification-and-regression-trees-for-machine-learning/)。
+在本教程中，您将了解如何使用Python从零开始实现[分类和回归树算法](http://machinelearningmastery.com/classification-and-regression-trees-for-machine-learning/)。
 
 完成本教程后，您将了解：
 
@@ -25,7 +25,7 @@
 
 ![How To Implement The Decision Tree Algorithm From Scratch In Python](img/6ae5db916a10295dfba3cc0aaba924b8.jpg)
 
-如何在Python中从头开始实施决策树算法
+如何在Python中从零开始实施决策树算法
 [Martin Cathrae](https://www.flickr.com/photos/suckamc/4325870801/) 的照片，保留一些权利。
 
 ## 说明
@@ -94,7 +94,7 @@ CART模型的表示是二叉树。这是来自算法和数据结构的相同二�
 4.  做一个预测。
 5.  钞票案例研究。
 
-这些步骤将为您提供从头开始实施CART算法所需的基础，并将其应用于您自己的预测建模问题。
+这些步骤将为您提供从零开始实施CART算法所需的基础，并将其应用于您自己的预测建模问题。
 
 ### 基尼系数
 
@@ -946,7 +946,7 @@ Mean Accuracy: 97.299%
 
 ## 评论
 
-在本教程中，您了解了如何使用Python从头开始实现决策树算法。
+在本教程中，您了解了如何使用Python从零开始实现决策树算法。
 
 具体来说，你学到了：
 

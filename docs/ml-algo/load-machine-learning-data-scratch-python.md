@@ -1,4 +1,4 @@
-# 如何在Python中从头开始加载机器学习数据
+# 如何在Python中从零开始加载机器学习数据
 
 > 原文： [https://machinelearningmastery.com/load-machine-learning-data-scratch-python/](https://machinelearningmastery.com/load-machine-learning-data-scratch-python/)
 
@@ -6,7 +6,7 @@
 
 在开始时，最好使用标准文件格式（如逗号分隔值（.csv））来坚持使用小型内存数据集。
 
-在本教程中，您将了解如何从头开始在Python中加载数据，包括：
+在本教程中，您将了解如何从零开始在Python中加载数据，包括：
 
 *   如何加载CSV文件。
 *   如何将字符串从文件转换为浮点数。
@@ -19,7 +19,7 @@
 
 ![How to Load Machine Learning Data From Scratch In Python](img/2fe1327d264ccbc63c79513f4fa3fd1c.jpg)
 
-如何在Python中从头开始加载机器学习数据
+如何在Python中从零开始加载机器学习数据
 照片由 [Amanda B](https://www.flickr.com/photos/muddybones/5550623402/) ，保留一些权利。
 
 ## 描述
@@ -336,7 +336,7 @@ NumPy提供 [loadtxt（）](http://docs.scipy.org/doc/numpy/reference/generated/
 
 ## 评论
 
-在本教程中，您了解了如何在Python中从头开始加载机器学习数据。
+在本教程中，您了解了如何在Python中从零开始加载机器学习数据。
 
 具体来说，你学到了：
 

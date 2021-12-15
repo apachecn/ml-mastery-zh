@@ -93,7 +93,7 @@ print(results.mean())
 1.  主成分分析的特征提取（3 个特征）
 2.  统计选择特征提取（6 个特征）
 3.  特色联盟
-4.  学习 Logistic 回归模型
+4.  学习 逻辑回归模型
 
 The pipeline is then evaluated using 10-fold cross validation.
 

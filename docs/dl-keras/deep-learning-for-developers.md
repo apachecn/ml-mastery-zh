@@ -118,7 +118,7 @@ _（我教这种方法并帮助超过 1,145 名开发人员
 
 我们可以将这个类比扩展到深度学习吗？
 
-您是否需要从第一原理推导出反向传播方程并从头开始实现？相反，我们可以在深度学习 API 上调用 model.fit（）。
+您是否需要从第一原理推导出反向传播方程并从零开始实现？相反，我们可以在深度学习 API 上调用 model.fit（）。
 
 ## 等等......顶级工程师怎么样？
 
@@ -242,7 +242,7 @@ Keras 还提供了从业者友好的 API（即简单直观）。它包含了 [Th
 
 标准机器学习数据集的好处是你有一个基准分数来比较你的结果。
 
-还不确定你的偏好吗？从 UCI 机器学习库的标准数据集开始使用多层感知器（[这是一个教程](http://machinelearningmastery.com/tutorial-first-neural-network-python-keras/)）。然后在标准物体识别问题上尝试卷积神经网络（[这里是一个教程](http://machinelearningmastery.com/object-recognition-convolutional-neural-networks-keras-deep-learning-library/)）。在简单的时间序列问题上转向 Recurrent Neural Networks（[这是一个教程](http://machinelearningmastery.com/time-series-prediction-lstm-recurrent-neural-networks-python-keras/)）。
+还不确定你的偏好吗？从 UCI 机器学习库的标准数据集开始使用多层感知机（[这是一个教程](http://machinelearningmastery.com/tutorial-first-neural-network-python-keras/)）。然后在标准物体识别问题上尝试卷积神经网络（[这里是一个教程](http://machinelearningmastery.com/object-recognition-convolutional-neural-networks-keras-deep-learning-library/)）。在简单的时间序列问题上转向 Recurrent Neural Networks（[这是一个教程](http://machinelearningmastery.com/time-series-prediction-lstm-recurrent-neural-networks-python-keras/)）。
 
 然后，去挑战像 Kaggle 那样的机器学习竞赛中使用的更复杂的问题。进一步研究定义自己的问题并从创意共享中收集数据。
 
@@ -273,4 +273,4 @@ Keras 还提供了从业者友好的 API（即简单直观）。它包含了 [Th
 
 *   [用 Keras 逐步开发 Python 中的第一个神经网络](http://machinelearningmastery.com/tutorial-first-neural-network-python-keras/)
 *   [8 深度学习的鼓舞人心的应用](http://machinelearningmastery.com/inspirational-applications-deep-learning/)
-*   [多层感知器神经网络崩溃课程](http://machinelearningmastery.com/crash-course-recurrent-neural-networks-deep-learning/)
+*   [多层感知机神经网络崩溃课程](http://machinelearningmastery.com/crash-course-recurrent-neural-networks-deep-learning/)

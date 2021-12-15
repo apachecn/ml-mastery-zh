@@ -116,7 +116,7 @@
 
 以下是我建议发布问题的热门地点列表。请务必在发布之前搜索您的问题，以防以前被询问和回答。
 
-*   [数学堆栈交换中的线性代数标签](https://math.stackexchange.com/?tags=linear-algebra)
+*   [数学栈交换中的线性代数标签](https://math.stackexchange.com/?tags=linear-algebra)
 *   [交叉验证的线性代数标签](https://stats.stackexchange.com/questions/tagged/linear-algebra)
 *   [Stack Overflow](https://stackoverflow.com/questions/tagged/linear-algebra) 上的线性代数标签
 *   [Quora 上的线性代数](https://www.quora.com/topic/Linear-Algebra)

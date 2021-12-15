@@ -141,11 +141,11 @@ X,				y
 *   [如何将时间序列转换为 Python 中的监督学习问题](https://machinelearningmastery.com/convert-time-series-supervised-learning-problem-python/)
 *   [如何为长期短期记忆网络准备单变量时间序列数据](https://machinelearningmastery.com/prepare-univariate-time-series-data-long-short-term-memory-networks/)
 
-在下一课中，您将了解如何开发用于预测单变量时间序列的多层感知器深度学习模型。
+在下一课中，您将了解如何开发用于预测单变量时间序列的多层感知机深度学习模型。
 
 ## 第 03 课：时间序列预测的 MLP
 
-在本课程中，您将了解如何为单变量时间序列预测开发多层感知器模型或 MLP。
+在本课程中，您将了解如何为单变量时间序列预测开发多层感知机模型或 MLP。
 
 我们可以将一个简单的单变量问题定义为整数序列，使模型适合该序列，并让模型预测序列中的下一个值。我们将问题框架为 3 输入和 1 输出，例如：[10,20,30]作为输入，[40]作为输出。
 
@@ -191,9 +191,9 @@ print(yhat)
 
 ### 更多信息
 
-*   [多层感知器神经网络速成课程](https://machinelearningmastery.com/neural-networks-crash-course/)
+*   [多层感知机神经网络速成课程](https://machinelearningmastery.com/neural-networks-crash-course/)
 *   [Keras 中深度学习的时间序列预测](https://machinelearningmastery.com/time-series-prediction-with-deep-learning-in-python-with-keras/)
-*   [用于时间序列预测的多层感知器网络的探索性配置](https://machinelearningmastery.com/exploratory-configuration-multilayer-perceptron-network-time-series-forecasting/)
+*   [用于时间序列预测的多层感知机网络的探索性配置](https://machinelearningmastery.com/exploratory-configuration-multilayer-perceptron-network-time-series-forecasting/)
 
 在下一课中，您将了解如何开发用于预测单变量时间序列的卷积神经网络模型。
 
@@ -467,7 +467,7 @@ print(yhat)
 
 *   深度学习神经网络对时间序列预测问题的承诺。
 *   如何将时间序列数据集转换为监督学习问题。
-*   如何为单变量时间序列预测问题开发多层感知器模型。
+*   如何为单变量时间序列预测问题开发多层感知机模型。
 *   如何建立一个单变量时间序列预测问题的卷积神经网络模型。
 *   如何为单变量时间序列预测问题开发长短期记忆网络模型。
 *   如何为单变量时间序列预测问题开发混合 CNN-LSTM 模型。

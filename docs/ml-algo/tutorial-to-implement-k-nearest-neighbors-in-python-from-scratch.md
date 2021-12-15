@@ -1,12 +1,12 @@
-# 教程从头开始在Python中实现k-Nearest Neighbors
+# 教程从零开始在Python中实现k-Nearest Neighbors
 
 > 原文： [https://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/](https://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/)
 
 k-Nearest Neighbors算法（或简称kNN）是一种易于理解和实现的算法，是您可以随意使用的强大工具。
 
-在本教程中，您将从头开始在Python（2.7）中实现k-Nearest Neighbors算法。实施将特定于分类问题，并将使用虹膜花分类问题进行演示。
+在本教程中，您将从零开始在Python（2.7）中实现k-Nearest Neighbors算法。实施将特定于分类问题，并将使用虹膜花分类问题进行演示。
 
-本教程适合您，如果您是Python程序员，或者可以快速获取python的程序员，并且您对如何从头开始实现k-Nearest Neighbors算法感兴趣。
+本教程适合您，如果您是Python程序员，或者可以快速获取python的程序员，并且您对如何从零开始实现k-Nearest Neighbors算法感兴趣。
 
 [![k-Nearest Neighbors algorithm](img/db0046e6a5d2174b405ded8fd90d8edb.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/09/k-Nearest-Neighbors-algorithm.png)
 
@@ -255,7 +255,7 @@ print(accuracy)
 
 我们现在拥有算法的所有元素，我们可以将它们与主函数绑定在一起。
 
-下面是在Python中从头开始实现kNN算法的完整示例。
+下面是在Python中从零开始实现kNN算法的完整示例。
 
 Example of kNN implemented from Scratch in Python Python
 
@@ -389,7 +389,7 @@ Accuracy: 98.0392156862745%
 
 ## 教程摘要
 
-在本教程中，您了解了k-Nearest Neighbor算法，它的工作原理以及可用于思考算法并将其与其他算法相关联的一些隐喻。您从头开始在Python中实现kNN算法，以便您了解每行代码并调整实现以探索扩展并满足您自己的项目需求。
+在本教程中，您了解了k-Nearest Neighbor算法，它的工作原理以及可用于思考算法并将其与其他算法相关联的一些隐喻。您从零开始在Python中实现kNN算法，以便您了解每行代码并调整实现以探索扩展并满足您自己的项目需求。
 
 以下是本教程的5个主要学习内容：
 

@@ -1,4 +1,4 @@
-# 项目焦点：使用 Mahout 和 Konstantin Slisenko 进行堆栈交换群集
+# 项目焦点：使用 Mahout 和 Konstantin Slisenko 进行栈交换群集
 
 > 原文： [https://machinelearningmastery.com/project-spotlight-stack-exchange-clustering-using-mahout-with-konstantin-slisenko/](https://machinelearningmastery.com/project-spotlight-stack-exchange-clustering-using-mahout-with-konstantin-slisenko/)
 
@@ -18,7 +18,7 @@ Konstantin Slisenko
 
 我的项目是 [stackoverflow.com](http://stackoverflow.com/) 网站的数据集群。
 
-目标是对 stackoverflow 问题和答案进行分组。分组后，您可以看到堆栈溢出数据的常见图片以及问题之间的关系。如果您想进行市场调查或撰写有关特定问题的文章（或活动手册），这可能会有所帮助。
+目标是对 stackoverflow 问题和答案进行分组。分组后，您可以看到栈溢出数据的常见图片以及问题之间的关系。如果您想进行市场调查或撰写有关特定问题的文章（或活动手册），这可能会有所帮助。
 
 [![Stackexchange clustering using Mahout Tags](img/82e009380c84081b07654cb0038a03a1.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/03/Stackexchange-clustering-using-Mahout-tags.png)
 
@@ -48,7 +48,7 @@ Konstantin Slisenko
 
 [![Stack Exchange Clustering using Mahout by Konstantin Slisenko](img/bea95becffcd97609771221e9ba400ef.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/03/Stack-Exchange-Clustering-using-Mahout.png)
 
-使用 Konstantin Slisenko 的 Mahout 堆栈交换群集
+使用 Konstantin Slisenko 的 Mahout 栈交换群集
 
 [K-Means 聚类](http://en.wikipedia.org/wiki/K-means_clustering)算法要求您设置聚类 K 的初始数量。我想动态地进行 K 计算。出于这个原因，我打算找到另一种算法。
 

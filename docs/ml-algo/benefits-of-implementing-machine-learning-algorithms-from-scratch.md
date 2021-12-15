@@ -1,4 +1,4 @@
-# 从头开始实施机器学习算法的好处
+# 从零开始实施机器学习算法的好处
 
 > 原文： [https://machinelearningmastery.com/benefits-of-implementing-machine-learning-algorithms-from-scratch/](https://machinelearningmastery.com/benefits-of-implementing-machine-learning-algorithms-from-scratch/)
 
@@ -6,9 +6,9 @@
 
 它可以感到压倒性的。
 
-可用于处理机器学习算法和实践的方法是从头开始实现它们。这将使您深入了解算法的工作原理以及方法中可以参数化或修改以将其调整为特定问题的所有微决策点。
+可用于处理机器学习算法和实践的方法是从零开始实现它们。这将使您深入了解算法的工作原理以及方法中可以参数化或修改以将其调整为特定问题的所有微决策点。
 
-在本文中，您将了解从头开始实现机器学习算法的优势和局限性，以及如何通过完成算法教程来加速此过程。
+在本文中，您将了解从零开始实现机器学习算法的优势和局限性，以及如何通过完成算法教程来加速此过程。
 
 [![Follow Tutorials to Implement Machine Learning Algorithms](img/f8a3ba83b77e6650418b843c89b38d56.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/09/Follow-Tutorials-to-Implement-Machine-Learning-Algorithms.jpg)
 
@@ -17,11 +17,11 @@
 
 ## 实现机器学习算法
 
-从头开始实现机器学习算法可以让您深入理解算法以及仅通过应用该方法难以实现的置信度和所有权感。
+从零开始实现机器学习算法可以让您深入理解算法以及仅通过应用该方法难以实现的置信度和所有权感。
 
 ### 优点
 
-从头开始实施算法的好处是：
+从零开始实施算法的好处是：
 
 *   **了解**：您将深入了解该算法的工作原理。您了解该方法的数学描述如何与您编码操作的数字的向量和矩阵相关。您还将了解所有参数的使用方式，效果，甚至可以深入了解如何进一步参数化以使其专门针对问题。
 *   **起点**：您的实施将为更高级的扩展甚至是使用该算法的操作系统提供基础。您对算法和实现的深入了解可以让您在使用不透明的现成库时了解自己代码的空间和时间复杂性。
@@ -48,7 +48,7 @@
 
 ## 实现算法的局限性
 
-从头开始实现算法是我们之前讨论过的一种方法。 [是我的](http://machinelearningmastery.com/how-to-implement-a-machine-learning-algorithm/ "How to Implement a Machine Learning Algorithm")[小型项目方法论](http://machinelearningmastery.com/self-study-machine-learning-projects/ "4 Self-Study Machine Learning Projects")中的项目类型之一。在此项目类型中，我建议您在实施之前执行自己的文献调查并首先研究算法的工作原理。
+从零开始实现算法是我们之前讨论过的一种方法。 [是我的](http://machinelearningmastery.com/how-to-implement-a-machine-learning-algorithm/ "How to Implement a Machine Learning Algorithm")[小型项目方法论](http://machinelearningmastery.com/self-study-machine-learning-projects/ "4 Self-Study Machine Learning Projects")中的项目类型之一。在此项目类型中，我建议您在实施之前执行自己的文献调查并首先研究算法的工作原理。
 
 这进一步导致了算法描述模板，为[提供了一个如何有效地描述机器学习算法的工具](http://machinelearningmastery.com/how-to-learn-a-machine-learning-algorithm/ "How to Learn a Machine Learning Algorithm")，以便您深入理解它。
 
@@ -62,7 +62,7 @@
 
 您可以通过跟随并完成教程来简化此过程。
 
-机器学习算法教程解释了该方法，并向您展示如何从头开始逐步实现算法，以便最终实现一个有效的实现。您可以从头开始获得算法实现的所有好处，而无需研究和破译教科书和学术论文。
+机器学习算法教程解释了该方法，并向您展示如何从零开始逐步实现算法，以便最终实现一个有效的实现。您可以从零开始获得算法实现的所有好处，而无需研究和破译教科书和学术论文。
 
 一个好的教程有许多原则：
 
@@ -75,14 +75,14 @@
 
 这是一种在编程中学习算法和数据结构的流行方法，并且这种方法因其简单性而容易被忽视。因此，很少有好的机器学习算法教程可用。
 
-对于python程序员来说，这是一本很好的资源：[编程集体智能：构建智能Web 2.0应用程序](http://www.amazon.com/dp/0596529325?tag=inspiredalgor-20)。本书将从头开始逐步创建一系列机器学习系统。
+对于python程序员来说，这是一本很好的资源：[编程集体智能：构建智能Web 2.0应用程序](http://www.amazon.com/dp/0596529325?tag=inspiredalgor-20)。本书将从零开始逐步创建一系列机器学习系统。
 
 ## 摘要
 
-在这篇文章中，您发现了从头开始实现机器学习算法的好处，以及它可以提供的复杂算法的信心和主人翁意识。
+在这篇文章中，您发现了从零开始实现机器学习算法的好处，以及它可以提供的复杂算法的信心和主人翁意识。
 
 您发现了这种方法的局限性，以及在教科书和研究论文可以实施之前研究，提炼和总结算法需要多长时间。
 
-最后，您发现了一个简短的方法是遵循机器学习算法教程，该教程向您展示如何从头开始实现算法并为您提供优势并使您不必进行研究。
+最后，您发现了一个简短的方法是遵循机器学习算法教程，该教程向您展示如何从零开始实现算法并为您提供优势并使您不必进行研究。
 
-我目前正在准备一系列关于如何从头开始实现算法的机器学习教程。如果您对此感兴趣，请发表评论并告诉我。
+我目前正在准备一系列关于如何从零开始实现算法的机器学习教程。如果您对此感兴趣，请发表评论并告诉我。

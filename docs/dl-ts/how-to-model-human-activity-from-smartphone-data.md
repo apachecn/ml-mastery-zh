@@ -1328,7 +1328,7 @@ plot_activity_durations_by_subject(X, y, sub_map)
 在这里，可以探索模型复杂性的进展，以确定最合适的问题模型;一些候选模型包括：
 
 *   常见的线性，非线性和集成机器学习算法。
-*   多层感知器。
+*   多层感知机。
 *   卷积神经网络，特别是 1D CNN。
 *   循环神经网络，特别是 LSTM。
 *   CNN 和 LSTMS 的杂交体，例如 CNN-LSTM 和 ConvLSTM。

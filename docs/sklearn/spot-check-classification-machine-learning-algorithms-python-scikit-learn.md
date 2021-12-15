@@ -48,7 +48,7 @@
 
 2 线性机器学习算法：
 
-1.  Logistic 回归
+1.  逻辑回归
 2.  线性判别分析
 
 4 种非线性机器学习算法：
@@ -70,9 +70,9 @@
 
 本节演示了如何使用两种线性机器学习算法的最小秘籍：逻辑回归和线性判别分析。
 
-### 1\. Logistic 回归
+### 1\. 逻辑回归
 
-Logistic 回归假定数值输入变量的高斯分布，并且可以模拟二分类问题。
+逻辑回归假定数值输入变量的高斯分布，并且可以模拟二分类问题。
 
 您可以使用 [LogisticRegression](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) 类构建逻辑回归模型。
 
@@ -266,7 +266,7 @@ Running the example prints the mean estimated accuracy.
 
 2 线性机器学习算法
 
-1.  Logistic 回归
+1.  逻辑回归
 2.  线性判别分析
 
 4 种非线性机器学习算法

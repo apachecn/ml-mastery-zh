@@ -27,9 +27,9 @@
 
 这些秘籍向您展示了您现在可以开始练习 scikit-learn。别推迟了。
 
-## Logistic 回归
+## 逻辑回归
 
-Logistic 回归将逻辑模型与数据拟合，并对事件的概率（0 到 1 之间）做出预测。
+逻辑回归将逻辑模型与数据拟合，并对事件的概率（0 到 1 之间）做出预测。
 
 该秘籍显示了逻辑回归模型与虹膜数据集的拟合。因为这是一个多分类问题，逻辑回归使得预测在 0 和 1 之间，所以使用了一对一方案（每个类一个模型）。
 
@@ -54,7 +54,7 @@ print(metrics.classification_report(expected, predicted))
 print(metrics.confusion_matrix(expected, predicted))
 ```
 
-有关更多信息，请参阅 Logistic 回归的 [API 参考，以获取有关配置算法参数的详细信息。另请参阅用户指南](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression)的 [Logistic 回归部分。](http://scikit-learn.org/stable/modules/linear_model.html#logistic-regression)
+有关更多信息，请参阅 逻辑回归的 [API 参考，以获取有关配置算法参数的详细信息。另请参阅用户指南](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression)的 [逻辑回归部分。](http://scikit-learn.org/stable/modules/linear_model.html#logistic-regression)
 
 ## 朴素贝叶斯
 

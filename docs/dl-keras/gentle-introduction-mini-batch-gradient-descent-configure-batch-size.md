@@ -56,7 +56,7 @@ for i in n_epochs:
 有关更多信息，请参阅帖子：
 
 *   [机器学习的梯度下降](http://machinelearningmastery.com/gradient-descent-for-machine-learning/)
-*   [如何利用 Python 从头开始随机梯度下降实现线性回归](http://machinelearningmastery.com/implement-linear-regression-stochastic-gradient-descent-scratch-python/)
+*   [如何利用 Python 从零开始随机梯度下降实现线性回归](http://machinelearningmastery.com/implement-linear-regression-stochastic-gradient-descent-scratch-python/)
 
 ## 对比 3 种类型的梯度下降
 
@@ -163,7 +163,7 @@ for i in n_epochs:
 ### 相关文章
 
 *   [机器学习的梯度下降](http://machinelearningmastery.com/gradient-descent-for-machine-learning/)
-*   [如何利用 Python 从头开始随机梯度下降实现线性回归](http://machinelearningmastery.com/implement-linear-regression-stochastic-gradient-descent-scratch-python/)
+*   [如何利用 Python 从零开始随机梯度下降实现线性回归](http://machinelearningmastery.com/implement-linear-regression-stochastic-gradient-descent-scratch-python/)
 
 ### 补充阅读
 

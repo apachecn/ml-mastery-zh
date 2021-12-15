@@ -168,7 +168,7 @@ O'Reilly 民意调查结果 - 使用 Python.png 的专业人士百分比
 
 以下是从 [Quora](https://www.quora.com/) 问题中使用 Python 进行机器学习的一些樱桃选择引文。
 
-> Python 如果是一种流行的科学语言和机器学习的后起之秀。如果能从 R 中获取数据分析，我会感到惊讶，但 NumPy 中的矩阵处理可能会挑战 MATLAB，而像 IPython 这样的通信工具非常具有吸引力，是未来再现性的一个步骤。我认为用于机器学习和数据分析的 SciPy 堆栈可以用于一次性项目（如论文），而像 scikit-learn 这样的框架可能已经足够成熟，可以用于生产系统。
+> Python 如果是一种流行的科学语言和机器学习的后起之秀。如果能从 R 中获取数据分析，我会感到惊讶，但 NumPy 中的矩阵处理可能会挑战 MATLAB，而像 IPython 这样的通信工具非常具有吸引力，是未来再现性的一个步骤。我认为用于机器学习和数据分析的 SciPy 栈可以用于一次性项目（如论文），而像 scikit-learn 这样的框架可能已经足够成熟，可以用于生产系统。
 
 - 生产工程师 Aswath Muralidharan。响应 Quora 问题“[机器学习的前 5 种编程语言是什么？](https://www.quora.com/What-are-the-top-5-programming-languages-for-Machine-Learning) “
 

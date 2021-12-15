@@ -1,4 +1,4 @@
-# 用于时间序列预测的多层感知器网络的探索性配置
+# 用于时间序列预测的多层感知机网络的探索性配置
 
 > 原文： [https://machinelearningmastery.com/exploratory-configuration-multilayer-perceptron-network-time-series-forecasting/](https://machinelearningmastery.com/exploratory-configuration-multilayer-perceptron-network-time-series-forecasting/)
 
@@ -8,7 +8,7 @@
 
 系统化很重要。您可以打破糟糕的假设并快速磨练有效的配置和可能需要进一步调查的区域。
 
-在本教程中，您将了解如何使用多层感知器（MLP）神经网络的探索性配置来为时间序列预测找到良好的首先模型。
+在本教程中，您将了解如何使用多层感知机（MLP）神经网络的探索性配置来为时间序列预测找到良好的首先模型。
 
 完成本教程后，您将了解：
 
@@ -22,7 +22,7 @@
 
 ![Exploratory Configuration of a Multilayer Perceptron Network for Time Series Forecasting](img/9ed1db54db87c397d09434b8aa65366e.jpg)
 
-用于时间序列预测的多层感知器网络的探索性配置
+用于时间序列预测的多层感知机网络的探索性配置
 照片由 [Lachlan Donald](https://www.flickr.com/photos/lox/33885582/) 拍摄，保留一些权利。
 
 ## 教程概述
@@ -749,7 +749,7 @@ def run():
 
 ## 摘要
 
-在本教程中，您了解了如何使用系统实验来探索多层感知器在时间序列预测中的配置，并开发出第一个切割模型。
+在本教程中，您了解了如何使用系统实验来探索多层感知机在时间序列预测中的配置，并开发出第一个切割模型。
 
 具体来说，你学到了：
 

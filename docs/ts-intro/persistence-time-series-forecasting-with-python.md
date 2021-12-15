@@ -261,7 +261,7 @@ pyplot.plot([None for i in train_y] + [x for x in predictions])
 pyplot.show()
 ```
 
-我们已经看到了从头开始为 Shampoo Sales 问题开发的持久性模型的示例。
+我们已经看到了从零开始为 Shampoo Sales 问题开发的持久性模型的示例。
 
 持久性算法很幼稚。它通常被称为 _ 朴素的预测 _。
 
@@ -280,7 +280,7 @@ pyplot.show()
 具体来说，你学到了：
 
 *   建立基线和可以使用的持久性算法的重要性。
-*   如何从头开始在 Python 中实现持久性算法。
+*   如何从零开始在 Python 中实现持久性算法。
 *   如何评估持久性算法的预测并将其用作基线。
 
 您对基线表现或本教程有任何疑问吗？

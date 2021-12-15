@@ -294,7 +294,7 @@ pyplot.show()
 
 *   使用新的样本空间重新创建一个分布的PDF和CDF图。
 *   计算并绘制Cauchy和Laplace分布的PDF和CDF。
-*   从头开始查找并实现PDF和CDF的方程式。
+*   从零开始查找并实现PDF和CDF的方程式。
 
 如果你探索任何这些扩展，我很想知道。
 

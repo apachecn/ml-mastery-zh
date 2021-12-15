@@ -1,4 +1,4 @@
-# 如何利用Python从头开始随机梯度下降实现线性回归
+# 如何利用Python从零开始实现线性回归
 
 > 原文： [https://machinelearningmastery.com/implement-linear-regression-stochastic-gradient-descent-scratch-python/](https://machinelearningmastery.com/implement-linear-regression-stochastic-gradient-descent-scratch-python/)
 
@@ -8,7 +8,7 @@
 
 机器学习中最常用的优化算法是随机梯度下降。
 
-在本教程中，您将了解如何实现随机梯度下降，以便从头开始使用Python优化线性回归算法。
+在本教程中，您将了解如何实现随机梯度下降，以便从零开始使用Python优化线性回归算法。
 
 完成本教程后，您将了解：
 
@@ -457,7 +457,7 @@ Mean RMSE: 0.126
 
 ## 评论
 
-在本教程中，您了解了如何使用Python从头开始使用随机梯度下降来实现线性回归。
+在本教程中，您了解了如何使用Python从零开始使用随机梯度下降来实现线性回归。
 
 你学到了
 

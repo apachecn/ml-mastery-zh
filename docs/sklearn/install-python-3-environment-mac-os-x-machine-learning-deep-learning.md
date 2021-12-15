@@ -357,7 +357,7 @@ sudo pip freeze
 *   [MacPorts 安装](https://www.macports.org/install.php)
 *   [第 2 章安装 MacPorts](https://guide.macports.org/chunked/installing.macports.html)
 *   [第 3 章使用 MacPorts](https://guide.macports.org/chunked/using.html)
-*   [安装 SciPy 堆栈](https://www.scipy.org/install.html)
+*   [安装 SciPy 栈](https://www.scipy.org/install.html)
 *   [Scikit-learn 安装](http://scikit-learn.org/stable/install.html)
 *   [安装 Theano](http://deeplearning.net/software/theano/install.html)
 *   [安装 TensorFlow Anaconda](https://www.tensorflow.org/get_started/os_setup#anaconda_installation)

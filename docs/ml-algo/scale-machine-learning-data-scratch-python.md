@@ -1,4 +1,4 @@
-# 如何使用Python从头开始扩展机器学习数据
+# 如何使用Python从零开始扩展机器学习数据
 
 > 原文： [https://machinelearningmastery.com/scale-machine-learning-data-scratch-python/](https://machinelearningmastery.com/scale-machine-learning-data-scratch-python/)
 
@@ -8,8 +8,8 @@
 
 在本教程中，您将了解如何重新调整数据以进行机器学习。阅读本教程后，您将了解：
 
-*   如何从头开始标准化您的数据。
-*   如何从头开始标准化您的数据。
+*   如何从零开始标准化您的数据。
+*   如何从零开始标准化您的数据。
 *   何时进行标准化而不是标准化数据。
 
 让我们开始吧。
@@ -20,7 +20,7 @@
 
 ![How To Prepare Machine Learning Data From Scratch With Python](img/32fa1f42f072869aeab7b8fa797cd3db.jpg)
 
-如何使用Python从头开始准备机器学习数据
+如何使用Python从零开始准备机器学习数据
 照片由 [Ondra Chotovinsky](https://www.flickr.com/photos/-chetta-/5634966046/) ，保留一些权利。
 
 ## 描述
@@ -501,12 +501,12 @@ Loaded data file pima-indians-diabetes.csv with 768 rows and 9 columns
 
 ## 评论
 
-在本教程中，您了解了如何从头开始重新调整数据以进行机器学习。
+在本教程中，您了解了如何从零开始重新调整数据以进行机器学习。
 
 具体来说，你学到了：
 
-*   如何从头开始标准化数据。
-*   如何从头开始标准化数据。
+*   如何从零开始标准化数据。
+*   如何从零开始标准化数据。
 *   何时对数据使用规范化或标准化。
 
 您对扩展数据或此帖子有任何疑问吗？

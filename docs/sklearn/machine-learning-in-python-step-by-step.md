@@ -20,7 +20,7 @@
 *   **2017 年 3 月更新**：添加了帮助设置 Python 环境的链接。
 *   **Update Apr / 2018** ：添加了一些有关随机性和预测的有用链接。
 *   **Update Sep / 2018** ：由于 UCI 变得不可靠，添加了我自己托管的数据集版本的链接。
-*   **2002 年 2 月更新**：更新以解决使用 SVM 和 Logistic 回归的 sklearn API 版本 0.20+的警告，还更新了结果和图表。
+*   **2002 年 2 月更新**：更新以解决使用 SVM 和 逻辑回归的 sklearn API 版本 0.20+的警告，还更新了结果和图表。
 
 ![Your First Machine Learning Project in Python Step-By-Step](img/02ab3d89e258179499b21b04ee0e1c5a.jpg)
 
@@ -468,7 +468,7 @@ scoring = 'accuracy'
 
 让我们评估 6 种不同的算法：
 
-*   Logistic 回归（LR）
+*   逻辑回归（LR）
 *   线性判别分析（LDA）
 *   K-Nearest Neighbors（KNN）。
 *   分类和回归树（CART）。

@@ -58,7 +58,7 @@ R 是统计分析和扩展机器学习的主力军。很多人都在谈论学习
 
 Python 如果是一种流行的科学语言和机器学习的后起之秀。如果可以从 R 中获取数据分析，我会感到惊讶，但 NumPy 中的矩阵处理可能会挑战 MATLAB，而 [IPython](http://machinelearningmastery.com/ipython-from-the-shell-to-a-book-with-a-single-tool-with-fernando-perez/ "IPython from the shell to a book with a single tool with Fernando Perez") 等通信工具非常具有吸引力，是未来再现性的一步。
 
-我认为用于机器学习和数据分析的 SciPy 堆栈可用于一次性项目（如论文），而 [scikit-learn](http://machinelearningmastery.com/a-gentle-introduction-to-scikit-learn-a-python-machine-learning-library/ "A Gentle Introduction to Scikit-Learn: A Python Machine Learning Library") 等框架已经足够成熟，可用于生产系统。
+我认为用于机器学习和数据分析的 SciPy 栈可用于一次性项目（如论文），而 [scikit-learn](http://machinelearningmastery.com/a-gentle-introduction-to-scikit-learn-a-python-machine-learning-library/ "A Gentle Introduction to Scikit-Learn: A Python Machine Learning Library") 等框架已经足够成熟，可用于生产系统。
 
 ### Java 的家庭/ C 家族
 

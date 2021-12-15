@@ -1,8 +1,8 @@
-# 如何开发用于时间序列预测的多层感知器模型
+# 如何开发用于时间序列预测的多层感知机模型
 
 > 原文： [https://machinelearningmastery.com/how-to-develop-multilayer-perceptron-models-for-time-series-forecasting/](https://machinelearningmastery.com/how-to-develop-multilayer-perceptron-models-for-time-series-forecasting/)
 
-多层感知器（简称 MLP）可应用于时间序列预测。
+多层感知机（简称 MLP）可应用于时间序列预测。
 
 使用 MLP 进行时间序列预测的一个挑战是准备数据。具体而言，必须将滞后观察平坦化为特征向量。
 
@@ -10,7 +10,7 @@
 
 本教程的目的是为每种类型的时间序列问题提供每个模型的独立示例，作为模板，您可以根据特定的时间序列预测问题进行复制和调整。
 
-在本教程中，您将了解如何针对一系列标准时间序列预测问题开发一套多层感知器模型。
+在本教程中，您将了解如何针对一系列标准时间序列预测问题开发一套多层感知机模型。
 
 完成本教程后，您将了解：
 
@@ -22,7 +22,7 @@
 
 ![How to Develop Multilayer Perceptron Models for Time Series Forecasting](img/3845e70194ea7d465b653bbb0d8b993a.jpg)
 
-如何开发用于时间序列预测的多层感知器模型
+如何开发用于时间序列预测的多层感知机模型
 照片由[土地管理局](https://www.flickr.com/photos/mypubliclands/16358796247/)，保留一些权利。
 
 ## 教程概述
@@ -36,7 +36,7 @@
 
 ## 单变量 MLP 模型
 
-多层感知器（简称 MLP）可用于模拟单变量时间序列预测问题。
+多层感知机（简称 MLP）可用于模拟单变量时间序列预测问题。
 
 单变量时间序列是由具有时间顺序的单个观察序列组成的数据集，并且需要模型来从过去的一系列观察中学习以预测序列中的下一个值。
 
@@ -1693,7 +1693,7 @@ print(yhat)
 
 ## 摘要
 
-在本教程中，您了解了如何针对一系列标准时间序列预测问题开发一套多层感知器或 MLP 模型。
+在本教程中，您了解了如何针对一系列标准时间序列预测问题开发一套多层感知机或 MLP 模型。
 
 具体来说，你学到了：
 

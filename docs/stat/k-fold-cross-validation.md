@@ -202,7 +202,7 @@ scikit-learn库提供了一套交叉验证实现。您可以在[模型选择API]
 
 ### 帖子
 
-*   [如何在Python中从头开始实现重采样方法](https://machinelearningmastery.com/implement-resampling-methods-scratch-python/)
+*   [如何在Python中从零开始实现重采样方法](https://machinelearningmastery.com/implement-resampling-methods-scratch-python/)
 *   [使用重采样](https://machinelearningmastery.com/evaluate-performance-machine-learning-algorithms-python-using-resampling/)评估Python中机器学习算法的表现
 *   [测试和验证数据集有什么区别？](https://machinelearningmastery.com/difference-test-validation-datasets/)
 *   [机器学习中的数据泄漏](https://machinelearningmastery.com/data-leakage-machine-learning/)
