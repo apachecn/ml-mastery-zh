@@ -28,7 +28,7 @@ Shashank Singh
 
 我们从一个简单的 Ruby on Rails API 服务器开始，接受来自应用程序和其他来源的信息。我们一直在缓慢但稳定地增加这个简单服务器的复杂性，以创建更多功能。
 
-为了保持日益复杂的检查，我们使用面向服务的体系结构，整个系统被分解为更小的模块化应用程序，在线上相互连接。所以最后我们使用最适合手头任务的语言或框架。
+为了保持日益复杂的检查，我们使用面向服务的架构，整个系统被分解为更小的模块化应用程序，在线上相互连接。所以最后我们使用最适合手头任务的语言或框架。
 
 [![Helping Faceless App](img/416db4700e98f262ccea58d47a8fd149.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/04/helping-faceless-app.jpg)
 

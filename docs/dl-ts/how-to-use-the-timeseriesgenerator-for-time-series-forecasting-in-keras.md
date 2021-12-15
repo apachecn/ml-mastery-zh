@@ -1,4 +1,4 @@
-# 如何使用 TimeseriesGenerator 进行 Keras 中的时间序列预测
+# 如何将 Keras `TimeseriesGenerator`用于时间序列预测
 
 > 原文： [https://machinelearningmastery.com/how-to-use-the-timeseriesgenerator-for-time-series-forecasting-in-keras/](https://machinelearningmastery.com/how-to-use-the-timeseriesgenerator-for-time-series-forecasting-in-keras/)
 
@@ -301,7 +301,7 @@ print(yhat)
 [[11.510406]]
 ```
 
-我们还可以使用生成器来适应循环神经网络，例如长短期内存网络或 LSTM。
+我们还可以使用生成器来适应循环神经网络，例如长短期记忆网络或 LSTM。
 
 LSTM 期望数据输入具有[_ 样本，时间步长，特征 _]的形状，而到目前为止描述的生成器提供滞后观察作为特征或形状[_ 样本，特征 _]。
 

@@ -1,4 +1,4 @@
-# 如何在 Python 中进行时间序列预测的网格搜索三次指数平滑
+# 如何在 Python 中为时间序列预测网格搜索三次指数平滑
 
 > 原文： [https://machinelearningmastery.com/how-to-grid-search-triple-exponential-smoothing-for-time-series-forecasting-in-python/](https://machinelearningmastery.com/how-to-grid-search-triple-exponential-smoothing-for-time-series-forecasting-in-python/)
 

@@ -6,7 +6,7 @@
 
 与回归预测建模不同，时间序列还增加了输入变量之间序列依赖性的复杂性。
 
-设计用于处理序列依赖性的强大类型的神经网络称为[循环神经网络](http://machinelearningmastery.com/crash-course-recurrent-neural-networks-deep-learning/)。长短期内存网络或 LSTM 网络是一种用于深度学习的循环神经网络，因为可以成功训练非常大的架构。
+设计用于处理序列依赖性的强大类型的神经网络称为[循环神经网络](http://machinelearningmastery.com/crash-course-recurrent-neural-networks-deep-learning/)。长短期记忆网络或 LSTM 网络是一种用于深度学习的循环神经网络，因为可以成功训练非常大的架构。
 
 在本文中，您将了解如何使用 Keras 深度学习库在 Python 中开发 LSTM 网络，以解决演示时间序列预测问题。
 

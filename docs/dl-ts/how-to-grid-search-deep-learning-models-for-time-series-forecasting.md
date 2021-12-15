@@ -1,4 +1,4 @@
-# 如何网格搜索深度学习模型进行时间序列预测
+# 如何为时间序列预测网格搜索深度学习模型
 
 > 原文： [https://machinelearningmastery.com/how-to-grid-search-deep-learning-models-for-time-series-forecasting/](https://machinelearningmastery.com/how-to-grid-search-deep-learning-models-for-time-series-forecasting/)
 

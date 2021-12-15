@@ -1,4 +1,4 @@
-# 堆叠长短期内存网络
+# 堆叠长短期记忆网络
 
 > 原文： [https://machinelearningmastery.com/stacked-long-short-term-memory-networks/](https://machinelearningmastery.com/stacked-long-short-term-memory-networks/)
 

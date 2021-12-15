@@ -1,4 +1,4 @@
-# 如何开发卷积神经网络用于多步时间序列预测
+# 如何开发用于多步时间序列预测的卷积神经网络
 
 > 原文： [https://machinelearningmastery.com/how-to-develop-convolutional-neural-networks-for-multi-step-time-series-forecasting/](https://machinelearningmastery.com/how-to-develop-convolutional-neural-networks-for-multi-step-time-series-forecasting/)
 

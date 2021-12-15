@@ -1,4 +1,4 @@
-# 如何对单变量时间序列预测的网格搜索朴素方法
+# 如何为单变量时间序列预测网格搜索朴素方法
 
 > 原文： [https://machinelearningmastery.com/how-to-grid-search-naive-methods-for-univariate-time-series-forecasting/](https://machinelearningmastery.com/how-to-grid-search-naive-methods-for-univariate-time-series-forecasting/)
 

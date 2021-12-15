@@ -1,4 +1,4 @@
-# 如何开始深度学习的时间序列预测（7 天迷你课程）
+# 如何开始用于时间序列预测的深度学习（7 天迷你课程）
 
 > 原文： [https://machinelearningmastery.com/how-to-get-started-with-deep-learning-for-time-series-forecasting-7-day-mini-course/](https://machinelearningmastery.com/how-to-get-started-with-deep-learning-for-time-series-forecasting-7-day-mini-course/)
 
@@ -386,7 +386,7 @@ print(yhat)
 ### 更多信息
 
 *   [CNN 长短期记忆网络](https://machinelearningmastery.com/cnn-long-short-term-memory-networks/)
-*   [如何在 Python](https://machinelearningmastery.com/timedistributed-layer-for-long-short-term-memory-networks-in-python/) 中为长期短期内存网络使用时间分布层
+*   [如何在 Python](https://machinelearningmastery.com/timedistributed-layer-for-long-short-term-memory-networks-in-python/) 中为长期短期记忆网络使用时间分布层
 
 在下一课中，您将了解如何开发用于多步时间序列预测的编解码器 LSTM 网络模型。
 

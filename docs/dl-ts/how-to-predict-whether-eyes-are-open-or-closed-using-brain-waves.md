@@ -1,4 +1,4 @@
-# 如何使用脑波预测人眼是开放还是闭合
+# 如何使用脑波预测人眼是打开还是关闭
 
 > 原文： [https://machinelearningmastery.com/how-to-predict-whether-eyes-are-open-or-closed-using-brain-waves/](https://machinelearningmastery.com/how-to-predict-whether-eyes-are-open-or-closed-using-brain-waves/)
 

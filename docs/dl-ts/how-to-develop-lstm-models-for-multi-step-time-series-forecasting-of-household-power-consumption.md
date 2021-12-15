@@ -1,4 +1,4 @@
-# 如何开发 LSTM 模型用于家庭用电的多步时间序列预测
+# 如何开发用于家庭用电的多步时间序列预测的 LSTM 模型
 
 > 原文： [https://machinelearningmastery.com/how-to-develop-lstm-models-for-multi-step-time-series-forecasting-of-household-power-consumption/](https://machinelearningmastery.com/how-to-develop-lstm-models-for-multi-step-time-series-forecasting-of-household-power-consumption/)
 
@@ -438,7 +438,7 @@ def summarize_scores(name, score, scores):
 
 *   [深度学习的循环神经网络崩溃课程](https://machinelearningmastery.com/crash-course-recurrent-neural-networks-deep-learning/)
 
-有关长期短期内存网络的更多信息，请参阅帖子：
+有关长期短期记忆网络的更多信息，请参阅帖子：
 
 *   [专家对长短期记忆网络的简要介绍](https://machinelearningmastery.com/gentle-introduction-long-short-term-memory-networks-experts/)
 
@@ -466,7 +466,7 @@ LSTM 在多步时间序列预测方面具有许多优势;他们是：
 
 一种流行的方法是将 CNN 与 LSTM 组合，其中 CNN 作为编码器来学习输入数据的子序列的特征，这些子序列作为 LSTM 的时间步长提供。该架构称为 [CNN-LSTM](https://machinelearningmastery.com/cnn-long-short-term-memory-networks/) 。
 
-有关此体系结构的更多信息，请参阅帖子：
+有关此架构的更多信息，请参阅帖子：
 
 *   [CNN 长短期记忆网络](https://machinelearningmastery.com/cnn-long-short-term-memory-networks/)
 

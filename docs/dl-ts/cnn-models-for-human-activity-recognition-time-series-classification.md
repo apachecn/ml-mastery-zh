@@ -1262,7 +1262,7 @@ def evaluate_model(trainX, trainy, testX, testy):
 	return accuracy
 ```
 
-创建模型时，会创建网络体系结构图;如下所示，它清楚地说明了构建的模型如何组合在一起。
+创建模型时，会创建网络架构图;如下所示，它清楚地说明了构建的模型如何组合在一起。
 
 ![Plot of the Multi-Headed 1D Convolutional Neural Network](img/c1fe9958045eb17f2e1b6aeaeca1dbb8.jpg)
 

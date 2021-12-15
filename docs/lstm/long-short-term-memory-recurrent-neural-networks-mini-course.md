@@ -175,7 +175,7 @@ LSTM迷你课程概述
 
 ### Further Reading
 
-*   [如何在Python中扩展长短期内存网络的数据](http://machinelearningmastery.com/how-to-scale-data-for-long-short-term-memory-networks-in-python/)
+*   [如何在Python中扩展长短期记忆网络的数据](http://machinelearningmastery.com/how-to-scale-data-for-long-short-term-memory-networks-in-python/)
 *   [如何使用Python编写一个热编码序列数据](http://machinelearningmastery.com/how-to-one-hot-encode-sequence-data-in-python/)
 *   [如何使用Python处理序列预测问题中的缺失时间步长](http://machinelearningmastery.com/handle-missing-timesteps-sequence-prediction-problems-python/)
 *   [如何将时间序列转换为Python中的监督学习问题](http://machinelearningmastery.com/convert-time-series-supervised-learning-problem-python/)
@@ -296,7 +296,7 @@ LSTM迷你课程概述
 
 ### Further Reading
 
-*   [如何在Python](http://machinelearningmastery.com/timedistributed-layer-for-long-short-term-memory-networks-in-python/) 中为长期短期内存网络使用时间分布层
+*   [如何在Python](http://machinelearningmastery.com/timedistributed-layer-for-long-short-term-memory-networks-in-python/) 中为长期短期记忆网络使用时间分布层
 *   [如何学习使用seq2seq循环神经网络添加数字](http://machinelearningmastery.com/learn-add-numbers-seq2seq-recurrent-neural-networks/)
 *   [如何将编解码器LSTM用于随机整数的回波序列](http://machinelearningmastery.com/how-to-use-an-encoder-decoder-lstm-to-echo-sequences-of-random-integers/)
 

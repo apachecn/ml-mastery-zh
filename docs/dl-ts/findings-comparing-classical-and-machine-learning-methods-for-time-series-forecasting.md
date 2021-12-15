@@ -1,4 +1,4 @@
-# 比较经典和机器学习方法进行时间序列预测的结果
+# 比较时间序列预测的的经典和机器学习方法的结果
 
 > 原文： [https://machinelearningmastery.com/findings-comparing-classical-and-machine-learning-methods-for-time-series-forecasting/](https://machinelearningmastery.com/findings-comparing-classical-and-machine-learning-methods-for-time-series-forecasting/)
 

@@ -68,7 +68,7 @@
 
 ![Encoder-Decoder LSTM Model Architecture](img/4bcb998fc39d11b4abf0c21d80e57c76.jpg)
 
-编解码器LSTM模型体系结构
+编解码器LSTM模型架构
 
 ## 编解码器LSTM的应用
 

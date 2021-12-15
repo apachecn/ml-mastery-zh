@@ -1,4 +1,4 @@
-# 如何建立预测大气污染日的概率预测模型
+# 如何建立预测大气每日污染的概率预测模型
 
 > 原文： [https://machinelearningmastery.com/how-to-develop-a-probabilistic-forecasting-model-to-predict-air-pollution-days/](https://machinelearningmastery.com/how-to-develop-a-probabilistic-forecasting-model-to-predict-air-pollution-days/)
 
@@ -20,7 +20,7 @@
 
 ![How to Develop a Probabilistic Forecasting Model to Predict Air Pollution Days](img/155050bf84791ee8f293a979787b4719.jpg)
 
-如何建立预测空气污染日的概率预测模型
+如何建立预测空气每日污染的概率预测模型
 照片由 [paramita](https://www.flickr.com/photos/parramitta/6715213551/) ，保留一些权利。
 
 ## 教程概述
@@ -37,7 +37,7 @@
 
 空气污染的特征在于地面臭氧的高度测量，通常被称为“[不良臭氧](https://en.wikipedia.org/wiki/Tropospheric_ozone)”，以区​​别于高层大气中的臭氧。
 
-臭氧预测问题是时间序列分类预测问题，其涉及预测第二天是否将是高空气污染日（臭氧日）。气象组织可以利用臭氧日的预测来警告公众，使他们能够采取预防措施。
+臭氧预测问题是时间序列分类预测问题，其涉及预测第二天是否将是高空气每日污染（臭氧日）。气象组织可以利用臭氧日的预测来警告公众，使他们能够采取预防措施。
 
 该数据集最初由 Kun Zhang 等人研究。他们在 2006 年的论文“[预测偏差随机臭氧天数：分析和解决方案](https://ieeexplore.ieee.org/abstract/document/4053100/)”，然后在他们的后续报告中再次提到“[预测偏差随机臭氧天：分析，解决方案及其他](https://link.springer.com/article/10.1007/s10115-007-0095-1) “。
 

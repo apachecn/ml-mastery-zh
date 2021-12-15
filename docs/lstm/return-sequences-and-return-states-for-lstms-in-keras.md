@@ -128,11 +128,11 @@ print(model.predict(data))
 
 堆叠LSTM层时必须设置 _return_sequences = True_ ，以便第二个LSTM层具有三维序列输入。有关更多详细信息，请参阅帖子：
 
-*   [堆叠长短期内存网络](https://machinelearningmastery.com/stacked-long-short-term-memory-networks/)
+*   [堆叠长短期记忆网络](https://machinelearningmastery.com/stacked-long-short-term-memory-networks/)
 
 在使用包含在TimeDistributed层中的`Dense`输出层预测输出序列时，您可能还需要访问隐藏状态输出序列。有关详细信息，请参阅此帖子：
 
-*   [如何在Python](https://machinelearningmastery.com/timedistributed-layer-for-long-short-term-memory-networks-in-python/) 中为长期短期内存网络使用时间分布层
+*   [如何在Python](https://machinelearningmastery.com/timedistributed-layer-for-long-short-term-memory-networks-in-python/) 中为长期短期记忆网络使用时间分布层
 
 ## 返回国家
 

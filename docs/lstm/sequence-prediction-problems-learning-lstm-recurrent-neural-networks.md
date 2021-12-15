@@ -337,7 +337,7 @@ print(y)
 
 *   [长期短期记忆](http://www.bioinf.jku.at/publications/older/2604.pdf)，1997年
 *   [如何使用Keras](http://machinelearningmastery.com/use-different-batch-sizes-training-predicting-python-keras/) 在Python中使用不同的批量大小进行训练和预测
-*   [用Python中的长短期内存网络演示内存](http://machinelearningmastery.com/memory-in-a-long-short-term-memory-network/)
+*   [用Python中的长短期记忆网络演示内存](http://machinelearningmastery.com/memory-in-a-long-short-term-memory-network/)
 *   [如何通过长短期记忆循环神经网络学习回声随机整数](http://machinelearningmastery.com/learn-echo-random-integers-long-short-term-memory-recurrent-neural-networks/)
 *   [如何将编解码器LSTM用于随机整数的回波序列](http://machinelearningmastery.com/learn-echo-random-integers-long-short-term-memory-recurrent-neural-networks/)
 *   [如何使用Keras开发用于Python序列分类的双向LSTM](http://machinelearningmastery.com/develop-bidirectional-lstm-sequence-classification-python-keras/)

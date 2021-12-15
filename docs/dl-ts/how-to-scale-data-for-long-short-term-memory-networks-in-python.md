@@ -1,4 +1,4 @@
-# 如何在 Python 中扩展长短期内存网络的数据
+# 如何在 Python 中扩展长短期记忆网络的数据
 
 > 原文： [https://machinelearningmastery.com/how-to-scale-data-for-long-short-term-memory-networks-in-python/](https://machinelearningmastery.com/how-to-scale-data-for-long-short-term-memory-networks-in-python/)
 
@@ -18,7 +18,7 @@
 
 ![How to Scale Data for Long Short-Term Memory Networks in Python](img/873e95dd71301bfac68e206f7783e0c0.jpg)
 
-如何在 Python 中扩展长短期内存网络的数据
+如何在 Python 中扩展长短期记忆网络的数据
 图片来自 [Mathias Appel](https://www.flickr.com/photos/mathiasappel/25527849934/) ，保留一些权利。
 
 ## 教程概述

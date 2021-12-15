@@ -1,4 +1,4 @@
-# 如何从智能手机数据模拟人类活动
+# 如何从智能手机数据建模人类活动
 
 > 原文： [https://machinelearningmastery.com/how-to-model-human-activity-from-smartphone-data/](https://machinelearningmastery.com/how-to-model-human-activity-from-smartphone-data/)
 

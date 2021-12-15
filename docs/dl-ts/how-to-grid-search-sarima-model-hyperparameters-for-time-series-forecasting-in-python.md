@@ -1,4 +1,4 @@
-# 如何在 Python 中搜索 SARIMA 模型超参数用于时间序列预测
+# 如何在 Python 中为时间序列预测搜索 SARIMA 模型超参数
 
 > 原文： [https://machinelearningmastery.com/how-to-grid-search-sarima-model-hyperparameters-for-time-series-forecasting-in-python/](https://machinelearningmastery.com/how-to-grid-search-sarima-model-hyperparameters-for-time-series-forecasting-in-python/)
 

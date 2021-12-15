@@ -1,4 +1,4 @@
-# 如何开发人类活动识别时间序列分类的 RNN 模型
+# 如何为人类活动识别时间序列分类开发 RNN 模型
 
 > 原文： [https://machinelearningmastery.com/how-to-develop-rnn-models-for-human-activity-recognition-time-series-classification/](https://machinelearningmastery.com/how-to-develop-rnn-models-for-human-activity-recognition-time-series-classification/)
 
@@ -8,7 +8,7 @@
 
 最近，诸如 LSTM 之类的循环神经网络和利用一维卷积神经网络或 CNN 的变化等深度学习方法已经被证明可以在很少或没有数据的情况下提供具有挑战性的活动识别任务的最新结果特征工程，而不是使用原始数据的特征学习。
 
-在本教程中，您将发现三种循环神经网络体系结构，用于对活动识别时间序列分类问题进行建模。
+在本教程中，您将发现三种循环神经网络架构，用于对活动识别时间序列分类问题进行建模。
 
 完成本教程后，您将了解：
 
@@ -891,7 +891,7 @@ Accuracy: 90.801% (+/-0.886)
 
 ## 摘要
 
-在本教程中，您发现了三种循环神经网络体系结构，用于对活动识别时间序列分类问题进行建模。
+在本教程中，您发现了三种循环神经网络架构，用于对活动识别时间序列分类问题进行建模。
 
 具体来说，你学到了：
 

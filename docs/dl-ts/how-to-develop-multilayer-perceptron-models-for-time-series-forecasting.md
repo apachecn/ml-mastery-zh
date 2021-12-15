@@ -1,4 +1,4 @@
-# 如何开发多层感知器模型进行时间序列预测
+# 如何开发时间序列预测的多层感知器模型
 
 > 原文： [https://machinelearningmastery.com/how-to-develop-multilayer-perceptron-models-for-time-series-forecasting/](https://machinelearningmastery.com/how-to-develop-multilayer-perceptron-models-for-time-series-forecasting/)
 

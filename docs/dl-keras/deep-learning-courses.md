@@ -153,7 +153,7 @@
 *   [对抗性实例](http://videolectures.net/deeplearning2015_goodfellow_adversarial_examples/)
 *   [从语言建模到机器翻译](http://videolectures.net/deeplearning2015_blunsom_machine_translation/)
 *   [深 NLP 递归神经网络](http://videolectures.net/deeplearning2015_socher_deep_nlp/)
-*   [Deep NLP 应用程序和动态内存网络](http://videolectures.net/deeplearning2015_socher_nlp_applications/)
+*   [Deep NLP 应用程序和动态记忆网络](http://videolectures.net/deeplearning2015_socher_nlp_applications/)
 *   [记忆，阅读和理解](http://videolectures.net/deeplearning2015_blunsom_memory_reading/)
 *   [平滑，有限和凸优化深度学习暑期学校](http://videolectures.net/deeplearning2015_schmidt_smooth_finite/)
 *   [非平滑，非有限和非凸优化](http://videolectures.net/deeplearning2015_schmidt_nonsmooth_nonfinite/)
