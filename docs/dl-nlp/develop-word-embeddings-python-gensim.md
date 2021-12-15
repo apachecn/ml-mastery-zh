@@ -1,4 +1,4 @@
-# 如何使用 Gensim 在 Python 中开发词嵌入
+# 如何使用 Python 和 Gensim 开发词嵌入
 
 > 原文： [https://machinelearningmastery.com/develop-word-embeddings-python-gensim/](https://machinelearningmastery.com/develop-word-embeddings-python-gensim/)
 

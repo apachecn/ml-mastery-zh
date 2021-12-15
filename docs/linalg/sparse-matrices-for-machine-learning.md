@@ -1,4 +1,4 @@
-# 使用于机器学习的稀疏矩阵的温和介绍
+# 用于机器学习的稀疏矩阵的温和介绍
 
 > 原文： [https://machinelearningmastery.com/sparse-matrices-for-machine-learning/](https://machinelearningmastery.com/sparse-matrices-for-machine-learning/)
 

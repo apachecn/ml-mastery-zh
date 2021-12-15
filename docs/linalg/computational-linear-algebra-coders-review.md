@@ -1,4 +1,4 @@
-# 使用于编码器审查的计算线性代数
+# 用于编码器审查的计算线性代数
 
 > 原文： [https://machinelearningmastery.com/computational-linear-algebra-coders-review/](https://machinelearningmastery.com/computational-linear-algebra-coders-review/)
 

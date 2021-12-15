@@ -1,12 +1,12 @@
-# 如何利用小实验在 Keras 中开发字幕生成模型
+# 如何利用小实验在 Keras 中开发标题生成模型
 
 > 原文： [https://machinelearningmastery.com/develop-a-caption-generation-model-in-keras/](https://machinelearningmastery.com/develop-a-caption-generation-model-in-keras/)
 
-字幕生成是一个具有挑战性的人工智能问题，其中必须为照片生成文本描述。
+标题生成是一个具有挑战性的人工智能问题，其中必须为照片生成文本描述。
 
 它既需要计算机视觉的方法来理解图像的内容，也需要来自自然语言处理领域的语言模型，以便将图像的理解转化为正确的单词。最近，深度学习方法已经在该问题的示例上获得了现有技术的结果。
 
-在您自己的数据上开发字幕生成模型可能很困难，主要是因为数据集和模型太大而需要数天才能进行训练。另一种方法是使用较小数据集的小样本来探索模型配置。
+在您自己的数据上开发标题生成模型可能很困难，主要是因为数据集和模型太大而需要数天才能进行训练。另一种方法是使用较小数据集的小样本来探索模型配置。
 
 在本教程中，您将了解如何使用标准照片字幕数据集的小样本来探索不同的深度模型设计。
 
@@ -22,7 +22,7 @@
 
 ![How to Use Small Experiments to Develop a Caption Generation Model in Keras](img/7d34b218f89d903c2711e5c2dc7e3027.jpg)
 
-如何使用小实验开发 Keras 中的字幕生成模型
+如何使用小实验开发 Keras 中的标题生成模型
 照片由 [Per](https://www.flickr.com/photos/perry-pics/5968641588/) ，保留一些权利。
 
 ## 教程概述

@@ -1,4 +1,4 @@
-# 使用于文本摘要的编解码器深度学习模型
+# 用于文本摘要的编解码器深度学习模型
 
 > 原文： [https://machinelearningmastery.com/encoder-decoder-deep-learning-models-text-summarization/](https://machinelearningmastery.com/encoder-decoder-deep-learning-models-text-summarization/)
 

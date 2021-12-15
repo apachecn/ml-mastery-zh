@@ -1,4 +1,4 @@
-# 使用于机器学习开发人员的 Python 崩溃课程
+# 用于机器学习开发人员的 Python 崩溃课程
 
 > 原文： [https://machinelearningmastery.com/crash-course-python-machine-learning-developers/](https://machinelearningmastery.com/crash-course-python-machine-learning-developers/)
 

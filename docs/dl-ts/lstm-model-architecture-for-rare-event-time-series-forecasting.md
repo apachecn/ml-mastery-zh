@@ -1,4 +1,4 @@
-# 使用于罕见事件时间序列预测的 LSTM 模型体系结构
+# 用于罕见事件时间序列预测的 LSTM 模型体系结构
 
 > 原文： [https://machinelearningmastery.com/lstm-model-architecture-for-rare-event-time-series-forecasting/](https://machinelearningmastery.com/lstm-model-architecture-for-rare-event-time-series-forecasting/)
 

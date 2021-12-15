@@ -11,7 +11,7 @@
 +   [自然语言处理的数据集](datasets-natural-language-processing.md)
 +   [如何开发一种深度学习的词袋模型来预测电影评论情感](deep-learning-bag-of-words-model-sentiment-analysis.md)
 +   [深度学习字幕生成模型的温和介绍](deep-learning-caption-generation-models.md)
-+   [如何在 Keras 中定义神经机器翻译的编解码器序列 - 序列模型](define-encoder-decoder-sequence-sequence-model-neural-machine-translation-keras.md)
++   [如何在 Keras 中定义神经机器翻译的编解码器序列到序列模型](define-encoder-decoder-sequence-sequence-model-neural-machine-translation-keras.md)
 +   [如何利用小实验在 Keras 中开发字幕生成模型](develop-a-caption-generation-model-in-keras.md)
 +   [如何从头开发深度学习图片标题生成器](develop-a-deep-learning-caption-generation-model-in-python.md)
 +   [如何在 Keras 中开发基于字符的神经语言模型](develop-character-based-neural-language-model-keras.md)

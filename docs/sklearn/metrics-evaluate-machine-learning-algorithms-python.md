@@ -1,4 +1,4 @@
-# 使用于评估 Python 中机器学习算法的度量标准
+# 用于评估 Python 中机器学习算法的度量标准
 
 > 原文： [https://machinelearningmastery.com/metrics-evaluate-machine-learning-algorithms-python/](https://machinelearningmastery.com/metrics-evaluate-machine-learning-algorithms-python/)
 

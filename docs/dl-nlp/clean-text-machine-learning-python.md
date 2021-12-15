@@ -1,4 +1,4 @@
-# 如何用 Python 清理机器学习的文本
+# 如何用 Python 为机器学习清理文本
 
 > 原文： [https://machinelearningmastery.com/clean-text-machine-learning-python/](https://machinelearningmastery.com/clean-text-machine-learning-python/)
 

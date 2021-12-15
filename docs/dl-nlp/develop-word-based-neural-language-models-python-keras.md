@@ -1,4 +1,4 @@
-# 如何在 Python 中用 Keras 开发基于单词的神经语言模型
+# 如何用 Python 和 Keras 开发基于单词的神经语言模型
 
 > 原文： [https://machinelearningmastery.com/develop-word-based-neural-language-models-python-keras/](https://machinelearningmastery.com/develop-word-based-neural-language-models-python-keras/)
 

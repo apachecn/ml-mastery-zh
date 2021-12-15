@@ -1,4 +1,4 @@
-# 使用于机器学习的线性代数（7 天迷你课程）
+# 用于机器学习的线性代数（7 天迷你课程）
 
 > 原文： [https://machinelearningmastery.com/linear-algebra-machine-learning-7-day-mini-course/](https://machinelearningmastery.com/linear-algebra-machine-learning-7-day-mini-course/)
 

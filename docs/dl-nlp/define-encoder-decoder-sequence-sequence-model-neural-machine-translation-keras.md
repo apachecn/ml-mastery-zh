@@ -1,4 +1,4 @@
-# 如何在 Keras 中定义神经机器翻译的编解码器序列 - 序列模型
+# 如何在 Keras 中定义神经机器翻译的编解码器序列到序列模型
 
 > 原文： [https://machinelearningmastery.com/define-encoder-decoder-sequence-sequence-model-neural-machine-translation-keras/](https://machinelearningmastery.com/define-encoder-decoder-sequence-sequence-model-neural-machine-translation-keras/)
 
@@ -21,7 +21,7 @@
 ![How to Define an Encoder-Decoder Sequence-to-Sequence Model for Neural Machine Translation in Keras](img/38cae6eb1536c9b0a1ba0bb9d1c6906e.jpg)
 
 如何在 Keras
-中定义用于神经机器翻译的编解码器序列 - 序列模型 [Tom Lee](https://www.flickr.com/photos/68942208@N02/16012752622/) ，保留一些权利。
+中定义用于神经机器翻译的编解码器序列到序列模型 [Tom Lee](https://www.flickr.com/photos/68942208@N02/16012752622/) ，保留一些权利。
 
 ## Keras 中的序列到序列预测
 

@@ -55,7 +55,7 @@ Keras深度学习Python库提供了一个如何实现机器翻译的编解码器
 
 有关此型号的详细分类，请参阅帖子：
 
-*   [如何定义Keras神经机器翻译的编解码器序列 - 序列模型](https://machinelearningmastery.com/define-encoder-decoder-sequence-sequence-model-neural-machine-translation-keras/)
+*   [如何定义Keras神经机器翻译的编解码器序列到序列模型](https://machinelearningmastery.com/define-encoder-decoder-sequence-sequence-model-neural-machine-translation-keras/)
 
 有关使用return_state的更多信息，可能是您的新手，请参阅帖子：
 
@@ -523,7 +523,7 @@ X=[50, 38, 17, 25, 31, 48] y=[17, 38, 50], yhat=[17, 38, 50]
 ### 相关文章
 
 *   [如何使用Anaconda设置用于机器学习和深度学习的Python环境](https://machinelearningmastery.com/setup-python-environment-machine-learning-deep-learning-anaconda/)
-*   [如何定义Keras神经机器翻译的编解码器序列 - 序列模型](https://machinelearningmastery.com/define-encoder-decoder-sequence-sequence-model-neural-machine-translation-keras/)
+*   [如何定义Keras神经机器翻译的编解码器序列到序列模型](https://machinelearningmastery.com/define-encoder-decoder-sequence-sequence-model-neural-machine-translation-keras/)
 *   [了解Keras中LSTM的返回序列和返回状态之间的差异](https://machinelearningmastery.com/return-sequences-and-return-states-for-lstms-in-keras/)
 *   [如何使用Keras功能API进行深度学习](https://machinelearningmastery.com/keras-functional-api-deep-learning/)
 
