@@ -1,4 +1,4 @@
-# 对自然语言处理的深度学习的承诺
+# 用于自然语言处理的深度学习的承诺
 
 > 原文： [https://machinelearningmastery.com/promise-deep-learning-natural-language-processing/](https://machinelearningmastery.com/promise-deep-learning-natural-language-processing/)
 

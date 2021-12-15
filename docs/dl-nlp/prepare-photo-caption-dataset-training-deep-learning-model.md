@@ -1,4 +1,4 @@
-# 如何准备照片标题数据集以训练深度学习模型
+# 如何准备照片标题数据集来训练深度学习模型
 
 > 原文： [https://machinelearningmastery.com/prepare-photo-caption-dataset-training-deep-learning-model/](https://machinelearningmastery.com/prepare-photo-caption-dataset-training-deep-learning-model/)
 
