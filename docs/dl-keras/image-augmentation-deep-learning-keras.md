@@ -1,4 +1,4 @@
-# 用 Keras 进行深度学习的图像增强
+# 使用 Keras 进行深度学习的图像增强
 
 > 原文： [https://machinelearningmastery.com/image-augmentation-deep-learning-keras/](https://machinelearningmastery.com/image-augmentation-deep-learning-keras/)
 

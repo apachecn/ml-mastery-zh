@@ -1,4 +1,4 @@
-# 用 Keras 在 Python 中使用卷积神经网络进行手写数字识别
+# 使用 Keras 在 Python 中使用卷积神经网络进行手写数字识别
 
 > 原文： [https://machinelearningmastery.com/handwritten-digit-recognition-using-convolutional-neural-networks-python-keras/](https://machinelearningmastery.com/handwritten-digit-recognition-using-convolutional-neural-networks-python-keras/)
 

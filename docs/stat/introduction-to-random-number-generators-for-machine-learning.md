@@ -1,4 +1,4 @@
-# 用于Python机器学习的随机数生成器简介
+# 使用于Python机器学习的随机数生成器简介
 
 > 原文： [https://machinelearningmastery.com/introduction-to-random-number-generators-for-machine-learning/](https://machinelearningmastery.com/introduction-to-random-number-generators-for-machine-learning/)
 

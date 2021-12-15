@@ -1,4 +1,4 @@
-# 用 Keras 逐步开发 Python 中的第一个神经网络
+# 使用 Keras 逐步开发 Python 中的第一个神经网络
 
 > 原文： [https://machinelearningmastery.com/tutorial-first-neural-network-python-keras/](https://machinelearningmastery.com/tutorial-first-neural-network-python-keras/)
 

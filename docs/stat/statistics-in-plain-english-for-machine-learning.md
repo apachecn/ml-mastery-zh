@@ -1,4 +1,4 @@
-# 用于机器学习的简明英语统计
+# 使用于机器学习的简明英语统计
 
 > 原文： [https://machinelearningmastery.com/statistics-in-plain-english-for-machine-learning/](https://machinelearningmastery.com/statistics-in-plain-english-for-machine-learning/)
 

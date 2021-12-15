@@ -1,4 +1,4 @@
-# 用于机器学习的线性代数备忘单
+# 使用于机器学习的线性代数备忘单
 
 > 原文： [https://machinelearningmastery.com/linear-algebra-cheat-sheet-for-machine-learning/](https://machinelearningmastery.com/linear-algebra-cheat-sheet-for-machine-learning/)
 

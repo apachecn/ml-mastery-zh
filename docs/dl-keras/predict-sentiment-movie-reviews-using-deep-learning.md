@@ -1,4 +1,4 @@
-# 用深度学习预测电影评论的情感
+# 使用深度学习预测电影评论的情感
 
 > 原文： [https://machinelearningmastery.com/predict-sentiment-movie-reviews-using-deep-learning/](https://machinelearningmastery.com/predict-sentiment-movie-reviews-using-deep-learning/)
 

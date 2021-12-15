@@ -1,4 +1,4 @@
-# 用 Keras 理解 Python 中的有状态 LSTM 循环神经网络
+# 使用 Keras 理解 Python 中的有状态 LSTM 循环神经网络
 
 > 原文： [https://machinelearningmastery.com/understanding-stateful-lstm-recurrent-neural-networks-python-keras/](https://machinelearningmastery.com/understanding-stateful-lstm-recurrent-neural-networks-python-keras/)
 

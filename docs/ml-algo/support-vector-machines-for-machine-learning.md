@@ -1,4 +1,4 @@
-# 用于机器学习的支持向量机
+# 使用于机器学习的支持向量机
 
 > 原文： [https://machinelearningmastery.com/support-vector-machines-for-machine-learning/](https://machinelearningmastery.com/support-vector-machines-for-machine-learning/)
 

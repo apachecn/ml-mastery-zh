@@ -1,4 +1,4 @@
-# 用于时间序列预测的状态 LSTM 在线学习的不稳定性
+# 使用于时间序列预测的状态 LSTM 在线学习的不稳定性
 
 > 原文： [https://machinelearningmastery.com/instability-online-learning-stateful-lstm-time-series-forecasting/](https://machinelearningmastery.com/instability-online-learning-stateful-lstm-time-series-forecasting/)
 

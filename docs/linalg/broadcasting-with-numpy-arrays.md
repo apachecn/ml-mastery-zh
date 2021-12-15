@@ -1,4 +1,4 @@
-# 用 NumPy 阵列轻松介绍广播
+# 使用 NumPy 阵列轻松介绍广播
 
 > 原文： [https://machinelearningmastery.com/broadcasting-with-numpy-arrays/](https://machinelearningmastery.com/broadcasting-with-numpy-arrays/)
 

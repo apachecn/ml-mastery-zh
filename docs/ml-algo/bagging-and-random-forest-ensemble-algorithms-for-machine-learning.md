@@ -1,4 +1,4 @@
-# 用于机器学习的装袋和随机森林集合算法
+# 使用于机器学习的装袋和随机森林集合算法
 
 > 原文： [https://machinelearningmastery.com/bagging-and-random-forest-ensemble-algorithms-for-machine-learning/](https://machinelearningmastery.com/bagging-and-random-forest-ensemble-algorithms-for-machine-learning/)
 

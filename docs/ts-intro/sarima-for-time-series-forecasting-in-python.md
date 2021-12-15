@@ -1,4 +1,4 @@
-# 用 Python 编写 SARIMA 时间序列预测
+# 使用 Python 编写 SARIMA 时间序列预测
 
 > 原文： [https://machinelearningmastery.com/sarima-for-time-series-forecasting-in-python/](https://machinelearningmastery.com/sarima-for-time-series-forecasting-in-python/)
 

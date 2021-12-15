@@ -1,4 +1,4 @@
-# 用 Python 进行时间序列预测的自回归模型
+# 使用 Python 进行时间序列预测的自回归模型
 
 > 原文： [https://machinelearningmastery.com/autoregression-models-time-series-forecasting-python/](https://machinelearningmastery.com/autoregression-models-time-series-forecasting-python/)
 

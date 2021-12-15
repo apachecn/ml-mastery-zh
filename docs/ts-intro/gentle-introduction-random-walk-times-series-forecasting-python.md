@@ -1,4 +1,4 @@
-# 用 Python 简要介绍时间序列的时间序列预测
+# 使用 Python 简要介绍时间序列的时间序列预测
 
 > 原文： [https://machinelearningmastery.com/gentle-introduction-random-walk-times-series-forecasting-python/](https://machinelearningmastery.com/gentle-introduction-random-walk-times-series-forecasting-python/)
 

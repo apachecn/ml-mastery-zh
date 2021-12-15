@@ -1,4 +1,4 @@
-# 用 NumPy 轻松介绍 Python 中的 N 维数组
+# 使用 NumPy 轻松介绍 Python 中的 N 维数组
 
 > 原文： [https://machinelearningmastery.com/gentle-introduction-n-dimensional-arrays-python-numpy/](https://machinelearningmastery.com/gentle-introduction-n-dimensional-arrays-python-numpy/)
 

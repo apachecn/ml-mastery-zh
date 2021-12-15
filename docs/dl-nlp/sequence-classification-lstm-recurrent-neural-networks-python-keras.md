@@ -1,4 +1,4 @@
-# 用 Keras 进行 Python 中 LSTM 循环神经网络的序列分类
+# 使用 Keras 进行 Python 中 LSTM 循环神经网络的序列分类
 
 > 原文： [https://machinelearningmastery.com/sequence-classification-lstm-recurrent-neural-networks-python-keras/](https://machinelearningmastery.com/sequence-classification-lstm-recurrent-neural-networks-python-keras/)
 

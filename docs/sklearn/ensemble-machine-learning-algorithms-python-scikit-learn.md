@@ -1,4 +1,4 @@
-# 用 scikit-learn 在 Python 中集成机器学习算法
+# 使用 scikit-learn 在 Python 中集成机器学习算法
 
 > 原文： [https://machinelearningmastery.com/ensemble-machine-learning-algorithms-python-scikit-learn/](https://machinelearningmastery.com/ensemble-machine-learning-algorithms-python-scikit-learn/)
 

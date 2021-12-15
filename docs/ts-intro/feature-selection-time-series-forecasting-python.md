@@ -1,4 +1,4 @@
-# 用 Python 进行时间序列预测的特征选择
+# 使用 Python 进行时间序列预测的特征选择
 
 > 原文： [https://machinelearningmastery.com/feature-selection-time-series-forecasting-python/](https://machinelearningmastery.com/feature-selection-time-series-forecasting-python/)
 

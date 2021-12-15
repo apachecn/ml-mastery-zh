@@ -1,4 +1,4 @@
-# 用 NumPy 轻松介绍机器学习的张量
+# 使用 NumPy 轻松介绍机器学习的张量
 
 > 原文： [https://machinelearningmastery.com/introduction-to-tensors-for-machine-learning/](https://machinelearningmastery.com/introduction-to-tensors-for-machine-learning/)
 

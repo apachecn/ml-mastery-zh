@@ -1,4 +1,4 @@
-# 用于时间序列预测的 4 种通用机器学习数据变换
+# 使用于时间序列预测的 4 种通用机器学习数据变换
 
 > 原文： [https://machinelearningmastery.com/machine-learning-data-transforms-for-time-series-forecasting/](https://machinelearningmastery.com/machine-learning-data-transforms-for-time-series-forecasting/)
 

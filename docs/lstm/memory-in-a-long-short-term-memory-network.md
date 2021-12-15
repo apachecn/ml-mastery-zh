@@ -1,4 +1,4 @@
-# 用Python中的长短期内存网络演示内存
+# 使用Python中的长短期内存网络演示内存
 
 > 原文： [https://machinelearningmastery.com/memory-in-a-long-short-term-memory-network/](https://machinelearningmastery.com/memory-in-a-long-short-term-memory-network/)
 

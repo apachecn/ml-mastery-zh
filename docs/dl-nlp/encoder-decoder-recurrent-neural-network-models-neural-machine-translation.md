@@ -1,4 +1,4 @@
-# 用于神经机器翻译的编码器 - 解码器循环神经网络模型
+# 使用于神经机器翻译的编码器 - 解码器循环神经网络模型
 
 > 原文： [https://machinelearningmastery.com/encoder-decoder-recurrent-neural-network-models-neural-machine-translation/](https://machinelearningmastery.com/encoder-decoder-recurrent-neural-network-models-neural-machine-translation/)
 

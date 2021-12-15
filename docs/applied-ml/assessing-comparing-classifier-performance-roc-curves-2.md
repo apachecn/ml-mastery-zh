@@ -1,4 +1,4 @@
-# 用ROC曲线评估和比较分类器表现
+# 使用ROC曲线评估和比较分类器表现
 
 > 原文： [https://machinelearningmastery.com/assessing-comparing-classifier-performance-roc-curves-2/](https://machinelearningmastery.com/assessing-comparing-classifier-performance-roc-curves-2/)
 
