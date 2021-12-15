@@ -1,4 +1,4 @@
-# 5机器学习竞赛的好处
+# 五个机器学习竞赛的好处
 
 > 原文： [https://machinelearningmastery.com/5-benefits-of-competitive-machine-learning/](https://machinelearningmastery.com/5-benefits-of-competitive-machine-learning/)
 
