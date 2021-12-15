@@ -175,7 +175,7 @@ accuracy = accuracy_score(y_test, predictions)
 print("Accuracy: %.2f%%" % (accuracy * 100.0))
 ```
 
-在下一课中，我们将研究如何使用早期停止来限制过度拟合。
+在下一课中，我们将研究如何使用早期停止来限制过拟合。
 
 ## 第 04 课：监控表现和提前停止
 

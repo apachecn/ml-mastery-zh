@@ -38,7 +38,7 @@
 *   **使用算法**：你从你尝试过的算法中获得了最大的收益吗？ [使用网格或随机搜索调整算法参数](http://machinelearningmastery.com/how-to-tune-algorithm-parameters-with-scikit-learn/ "How to Tune Algorithm Parameters with Scikit-Learn")。
 *   **结合预测**：尝试结合多个表现良好但不同算法的预测。使用[整体方法](http://machinelearningmastery.com/improve-machine-learning-results-with-boosting-bagging-and-blending-ensemble-methods-in-weka/ "Improve Machine Learning Results with Boosting, Bagging and Blending Ensemble Methods in Weka")，如装袋，加强和混合。
 
-您推动准确度越高，您将模型过度拟合到训练数据的可能性就越高，并且限制了对看不见的数据的适用性。
+您推动准确度越高，您将模型过拟合到训练数据的可能性就越高，并且限制了对看不见的数据的适用性。
 
 重新访问[问题定义](http://machinelearningmastery.com/how-to-define-your-machine-learning-problem/ "How to Define Your Machine Learning Problem")并设置最低精度阈值。通常，“_ 足够好 _”模型比精细调整（和脆弱）模型更实用。
 

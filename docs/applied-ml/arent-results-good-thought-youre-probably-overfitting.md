@@ -1,4 +1,4 @@
-# 为什么我的结果不如我想的那么好？你可能过度拟合了
+# 为什么我的结果不如我想的那么好？你可能过拟合了
 
 > 原文： [https://machinelearningmastery.com/arent-results-good-thought-youre-probably-overfitting/](https://machinelearningmastery.com/arent-results-good-thought-youre-probably-overfitting/)
 
@@ -8,47 +8,47 @@
 
 屈服于这种特殊的诱惑可能会破坏其他完全有效的分析的影响。
 
-对于大多数机器学习算法，考虑如何生成这些结果非常重要：不仅仅是算法，而是数据集及其使用方式会对获得的结果产生重大影响。应用于太小数据集的复杂算法可能导致过度拟合，从而导致误导性良好的结果。
+对于大多数机器学习算法，考虑如何生成这些结果非常重要：不仅仅是算法，而是数据集及其使用方式会对获得的结果产生重大影响。应用于太小数据集的复杂算法可能导致过拟合，从而导致误导性良好的结果。
 
 [![Light at the end of the tunnel](img/a57d86a876769874d5fb8e8bcf1b6b14.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/11/Light-at-the-end-of-the-tunnel.jpg)
 
 在隧道尽头的光
 照片由 [darkday](http://www.flickr.com/photos/drainrat/14928494590) ，保留一些权利
 
-## 什么是过度拟合？
+## 什么是过拟合？
 
-当机器学习算法（例如分类器）不仅识别数据集中的信号而且识别噪声时，发生过度拟合。所有数据集都很吵。实验中记录的值可能会受到许多问题的影响：
+当机器学习算法（例如分类器）不仅识别数据集中的信号而且识别噪声时，发生过拟合。所有数据集都很吵。实验中记录的值可能会受到许多问题的影响：
 
 *   机械问题，例如热量或湿度改变记录装置的特性;
 *   身体问题：有些老鼠比其他老鼠大;
 *   或者只是被调查系统中的固有噪音。例如，来自DNA的蛋白质的产生本质上是有噪声的，不是如通常可视化的那样在稳定的流中发生，而是在一系列步骤中，每个步骤是随机的，取决于在适当时间存在合适的分子。
 *   从人类受试者收集的数据同样受到诸如一天中的时间，受试者的健康状况，甚至他们的情感等因素的影响。
 
-随着数据集中参数数量的增加，情况会恶化。例如，具有100个记录的数据集（每个具有500个观测值）非常容易过度拟合，而具有5个观测值的1000个记录每个将远不是问题。
+随着数据集中参数数量的增加，情况会恶化。例如，具有100个记录的数据集（每个具有500个观测值）非常容易过拟合，而具有5个观测值的1000个记录每个将远不是问题。
 
 > 当您的模型相对于数据点数量的参数太多时，您很容易高估模型的效用。
 
-- Jessica Su in“[过度拟合的直观解释是什么？](http://www.quora.com/What-is-an-intuitive-explanation-of-overfitting) “
+- Jessica Su in“[过拟合的直观解释是什么？](http://www.quora.com/What-is-an-intuitive-explanation-of-overfitting) “
 
-## 为什么过度拟合问题？
+## 为什么过拟合问题？
 
 大多数机器学习算法的目的是找到从数据中的信号，重要值到输出的映射。噪声干扰了这种映射的建立。
 
-过度拟合的实际结果是，似乎在其训练数据上表现良好的分类器可能对来自同一问题的新数据表现不佳，可能非常糟糕。从数据集到数据集，数据中的信号几乎相同，但噪声可能非常不同。
+过拟合的实际结果是，似乎在其训练数据上表现良好的分类器可能对来自同一问题的新数据表现不佳，可能非常糟糕。从数据集到数据集，数据中的信号几乎相同，但噪声可能非常不同。
 
 如果分类器适合噪声和信号，它将无法将信号与新数据上的噪声分开。开发大多数分类器的目的是让它们以可预测的方式推广到新数据。
 
-> 过度拟合的模型通常具有较差的预测表现，因为它可能夸大数据中的微小波动
+> 过拟合的模型通常具有较差的预测表现，因为它可能夸大数据中的微小波动
 
-- 过度拟合，[维基百科](http://en.wikipedia.org/wiki/Overfitting)。
+- 过拟合，[维基百科](http://en.wikipedia.org/wiki/Overfitting)。
 
-## 克服过度拟合
+## 克服过拟合
 
-克服过度拟合有两种主要方法：三组验证和交叉验证。
+克服过拟合有两种主要方法：三组验证和交叉验证。
 
 ### 三套验证
 
-道德分析师如何克服过度拟合的问题？最简单，最难实现的解决方案就是拥有大量的数据。有了足够的数据，分析师就可以在一组数据（训练集）上开发和算法，然后在一个全新的，看不见的数据集上测试其表现，这些数据集由相同的方法（测试集）生成。
+道德分析师如何克服过拟合的问题？最简单，最难实现的解决方案就是拥有大量的数据。有了足够的数据，分析师就可以在一组数据（训练集）上开发和算法，然后在一个全新的，看不见的数据集上测试其表现，这些数据集由相同的方法（测试集）生成。
 
 仅使用两个数据集的问题是，只要您使用测试集，它就会被污染。对集合1进行训练，对集合2进行测试，然后使用这些测试的结果来修改算法的过程意味着集合2实际上是训练数据的一部分。
 
@@ -86,7 +86,7 @@
 
 — Overfitting, [Wikipedia](http://en.wikipedia.org/wiki/Overfitting).
 
-#### 交叉验证的优点，以避免过度拟合
+#### 交叉验证的优点，以避免过拟合
 
 任何形式的交叉验证的主要优点是每个结果都是使用未经过该结果训练的分类器生成的。
 
@@ -103,14 +103,14 @@
 
 ## 统计方法
 
-由于过度拟合是一个普遍存在的问题，因此已经有大量研究使用统计方法来避免这个问题。一些标准教科书对这些方法有很好的报道，包括：
+由于过拟合是一个普遍存在的问题，因此已经有大量研究使用统计方法来避免这个问题。一些标准教科书对这些方法有很好的报道，包括：
 
 *   Duda，R。O.，Hart，P。E.，＆amp; Stork，D.G。（2012）。 [模式分类](http://www.amazon.com/dp/0471056693?tag=inspiredalgor-20)：John Wiley＆amp;儿子。
 *   Bishop，C。M.（2006）。 [模式识别和机器学习](http://www.amazon.com/dp/0387310738?tag=inspiredalgor-20)（第1卷）：施普林格纽约。
 
-## 避免过度拟合的教程
+## 避免过拟合的教程
 
-例如，使用R统计语言，使用R统计语言，请参阅“[评估模型表现 - 过度拟合和数据大小对预测影响的实际示例](http://www.r-bloggers.com/evaluating-model-performance-a-practical-example-of-the-effects-of-overfitting-and-data-size-on-prediction/)”。
+例如，使用R统计语言，使用R统计语言，请参阅“[评估模型表现 - 过拟合和数据大小对预测影响的实际示例](http://www.r-bloggers.com/evaluating-model-performance-a-practical-example-of-the-effects-of-overfitting-and-data-size-on-prediction/)”。
 
 有关使用SPSS的详细教程，请参阅幻灯片“ [Logistic回归 - 完整问题](http://www.utexas.edu/courses/schwab/sw388r7/SolvingProblems/LogisticRegression_CompleteProblems.ppt)”（PPT）。
 
@@ -118,10 +118,10 @@
 
 ## 进一步阅读
 
-有关过度拟合的实际效果的有趣概述可以在麻省理工学院技术评论中找到，题为“[大数据临近预报的新兴陷阱](http://www.technologyreview.com/view/530131/the-emerging-pitfalls-of-nowcasting-with-big-data/)”。
+有关过拟合的实际效果的有趣概述可以在麻省理工学院技术评论中找到，题为“[大数据临近预报的新兴陷阱](http://www.technologyreview.com/view/530131/the-emerging-pitfalls-of-nowcasting-with-big-data/)”。
 
 来自CalTech的优秀入门讲座在YouTube上提供，名为“ [Overfitting](https://www.youtube.com/watch?v=EQWr3GGCdzw) ”：
 
 &lt;iframe allowfullscreen="" frameborder="0" height="281" src="https://www.youtube.com/embed/EQWr3GGCdzw?feature=oembed" width="500"&gt;&lt;/iframe&gt;
 
-来自阿姆斯特丹自由大学（Vrije Universiteit Amsterdam）的一篇更详细的文章，题为“[你看到的可能不是你所得到的：回归型模型过度拟合的非技术性介绍](http://www.cs.vu.nl/~eliens/sg/local/theory/overfitting.pdf)”（PDF）。
+来自阿姆斯特丹自由大学（Vrije Universiteit Amsterdam）的一篇更详细的文章，题为“[你看到的可能不是你所得到的：回归型模型过拟合的非技术性介绍](http://www.cs.vu.nl/~eliens/sg/local/theory/overfitting.pdf)”（PDF）。

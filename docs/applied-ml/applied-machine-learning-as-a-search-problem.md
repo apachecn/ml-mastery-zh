@@ -1,4 +1,4 @@
-# 应用机器学习作为一个搜索问题的温和介绍
+# 作为搜索问题的应用机器学习的温和介绍
 
 > 原文： [https://machinelearningmastery.com/applied-machine-learning-as-a-search-problem/](https://machinelearningmastery.com/applied-machine-learning-as-a-search-problem/)
 

@@ -1,4 +1,4 @@
-# 如何诊断LSTM模型的过度拟合和欠拟合
+# 如何诊断LSTM模型的过拟合和欠拟合
 
 > 原文： [https://machinelearningmastery.com/diagnose-overfitting-underfitting-lstm-models/](https://machinelearningmastery.com/diagnose-overfitting-underfitting-lstm-models/)
 
@@ -276,11 +276,11 @@ pyplot.show()
 
 ## 5.过度配合示例
 
-过度拟合模型是训练组上的表现良好并且持续改进的模型，而验证组上的表现改善到某一点然后开始降级。
+过拟合模型是训练组上的表现良好并且持续改进的模型，而验证组上的表现改善到某一点然后开始降级。
 
 这可以从训练损失向下倾斜并且验证损失向下倾斜，到达拐点并且再次开始向上倾斜的图中诊断出来。
 
-下面的示例演示了一个过度拟合的LSTM模型。
+下面的示例演示了一个过拟合的LSTM模型。
 
 ```py
 from keras.models import Sequential
@@ -325,7 +325,7 @@ pyplot.legend(['train', 'validation'], loc='upper right')
 pyplot.show()
 ```
 
-运行此示例会创建一个图表，显示过度拟合模型的验证丢失中的特征拐点。
+运行此示例会创建一个图表，显示过拟合模型的验证丢失中的特征拐点。
 
 这可能是太多训练时期的标志。
 
@@ -406,7 +406,7 @@ pyplot.show()
 
 *   [历史回调Keras API](https://keras.io/callbacks/#history)
 *   [维基百科机器学习中的学习曲线](https://en.wikipedia.org/wiki/Learning_curve#In_machine_learning)
-*   [维基百科上的过度拟合](https://en.wikipedia.org/wiki/Overfitting)
+*   [维基百科上的过拟合](https://en.wikipedia.org/wiki/Overfitting)
 
 ## 摘要
 

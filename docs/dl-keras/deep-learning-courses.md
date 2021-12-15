@@ -183,7 +183,7 @@ YouTube 播放列表的文件名称很差，而且有些缺少讲座， 2016 年
 *   [第 3 讲：高级单词向量表示：语言模型，softmax，单层网络](https://www.youtube.com/watch?v=T1j2Q9_FgTM&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=3)
 *   [第 4 讲：词窗分类和神经网络](https://www.youtube.com/watch?v=MRH9ABxCUZ0&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=4)
 *   [第 5 讲：项目建议，神经网络和反支柱（全部详细信息）](https://www.youtube.com/watch?v=I2TfdXfSOfc&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=5)
-*   [第 6 讲：实用技巧：梯度检查，过度拟合，正则化，激活功能，细节](https://www.youtube.com/watch?v=DTbI7XisZcQ&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=6)
+*   [第 6 讲：实用技巧：梯度检查，过拟合，正则化，激活功能，细节](https://www.youtube.com/watch?v=DTbI7XisZcQ&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=6)
 *   [第 7 讲：用于语言建模和其他任务的循环神经网络](https://www.youtube.com/watch?v=rFVYTydGLr4&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=7)
 *   [第 7 讲（8！？）：用于机器翻译的 GRU 和 LSTM](https://www.youtube.com/watch?v=OFCuW8VA7A4&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=8)
 *   [第 9 讲：递归神经网络的解析](https://www.youtube.com/watch?v=DJHvaGU9SW8&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=9)

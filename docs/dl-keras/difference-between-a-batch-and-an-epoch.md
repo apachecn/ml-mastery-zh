@@ -103,7 +103,7 @@
 
 有关使用 LSTM 网络学习曲线的诊断信息，请参阅帖子：
 
-*   [如何诊断 LSTM 模型的过度拟合和欠拟合](https://machinelearningmastery.com/diagnose-overfitting-underfitting-lstm-models/)
+*   [如何诊断 LSTM 模型的过拟合和欠拟合](https://machinelearningmastery.com/diagnose-overfitting-underfitting-lstm-models/)
 
 如果仍然不清楚，让我们看看批次和时代之间的差异。
 
@@ -141,7 +141,7 @@
 
 *   [机器学习的梯度下降](https://machinelearningmastery.com/gradient-descent-for-machine-learning/)
 *   [微量批量梯度下降的简要介绍以及如何配置批量大小](https://machinelearningmastery.com/gentle-introduction-mini-batch-gradient-descent-configure-batch-size/)
-*   [如何诊断 LSTM 模型的过度拟合和欠拟合](https://machinelearningmastery.com/diagnose-overfitting-underfitting-lstm-models/)
+*   [如何诊断 LSTM 模型的过拟合和欠拟合](https://machinelearningmastery.com/diagnose-overfitting-underfitting-lstm-models/)
 *   [维基百科上的随机梯度下降](https://en.wikipedia.org/wiki/Stochastic_gradient_descent)
 *   [维基百科上的反向传播](https://en.wikipedia.org/wiki/Backpropagation)
 

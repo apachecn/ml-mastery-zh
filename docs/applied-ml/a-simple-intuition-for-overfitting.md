@@ -1,4 +1,4 @@
-# 过度拟合的简单直觉，或者为什么测试训练数据是一个坏主意
+# 过拟合的简单直觉，或者为什么测试训练数据是一个坏主意
 
 > 原文： [https://machinelearningmastery.com/a-simple-intuition-for-overfitting/](https://machinelearningmastery.com/a-simple-intuition-for-overfitting/)
 
@@ -64,23 +64,23 @@
 
 最佳描述模型对观察到的数据是准确的。最佳预测模型对未观察到的数据是准确的。
 
-## 过度拟合
+## 过拟合
 
 评估训练数据预测模型的缺陷在于，它没有告诉您模型对新的看不见的数据的概括程度。
 
-选择其在训练数据集上的准确性而不是在未看到的测试数据集上的准确性的模型很可能在看不见的测试数据集上具有较低的准确性。原因是模型不是一般化的。它已经规范了训练数据集中的结构。这被称为[过度拟合](http://en.wikipedia.org/wiki/Overfitting)，它比你想象的更加阴险。
+选择其在训练数据集上的准确性而不是在未看到的测试数据集上的准确性的模型很可能在看不见的测试数据集上具有较低的准确性。原因是模型不是一般化的。它已经规范了训练数据集中的结构。这被称为[过拟合](http://en.wikipedia.org/wiki/Overfitting)，它比你想象的更加阴险。
 
 例如，一旦精度停止提高，您可能希望停止训练模型。在这种情况下，训练集的准确性将继续提高，但看不见的数据的准确性开始下降。
 
 你可能会想到自己：“_所以我会训练训练数据集并在我去_时查看测试数据集”。一个好主意，但现在测试数据集不再是看不见的数据，因为它已经涉及并影响了训练数据集。
 
-## 解决过度拟合问题
+## 解决过拟合问题
 
-您必须[在看不见的数据](http://machinelearningmastery.com/how-to-choose-the-right-test-options-when-evaluating-machine-learning-algorithms/ "How To Choose The Right Test Options When Evaluating Machine Learning Algorithms")上测试您的模型以反击过度拟合。
+您必须[在看不见的数据](http://machinelearningmastery.com/how-to-choose-the-right-test-options-when-evaluating-machine-learning-algorithms/ "How To Choose The Right Test Options When Evaluating Machine Learning Algorithms")上测试您的模型以反击过拟合。
 
 [![Tackling Overfitting](img/a77dbce41566e3377c4a95048a3d91a9.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/03/overfit.jpg)
 
-解决过度拟合
+解决过拟合
 照片由 [Adrian Fallace Design＆amp;摄影](http://www.flickr.com/photos/69187071@N02/12688141173/sizes/l/)，保留一些权利。
 
 将数据分成66％/ 34％用于测试数据集的训练是一个良好的开端。使用交叉验证更好，并且使用多次交叉验证更好。您希望花时间并在看不见的数据上获得准确的模型的最佳估计。

@@ -1,5 +1,5 @@
 +   [Machine Learning Mastery XGBoost 教程](README.md)
-+   [通过在 Python 中使用 XGBoost 提前停止来避免过度拟合](avoid-overfitting-by-early-stopping-with-xgboost-in-python.md)
++   [通过在 Python 中使用 XGBoost 提前停止来避免过拟合](avoid-overfitting-by-early-stopping-with-xgboost-in-python.md)
 +   [如何在 Python 中调优 XGBoost 的多线程支持](best-tune-multithreading-support-xgboost-python.md)
 +   [如何配置梯度提升算法](configure-gradient-boosting-algorithm.md)
 +   [在 Python 中使用 XGBoost 进行梯度提升的数据准备](data-preparation-gradient-boosting-xgboost-python.md)

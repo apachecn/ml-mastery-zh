@@ -442,7 +442,7 @@ print('Test RMSE: %.3f' % rmse)
 
 首先运行该示例创建一个图表，显示训练期间的训练和测试损失。
 
-有趣的是，我们可以看到测试损失低于训练损失。该模型可能过度拟合训练数据。在训练期间测量和绘制 RMSE 可能会对此有所了解。
+有趣的是，我们可以看到测试损失低于训练损失。该模型可能过拟合训练数据。在训练期间测量和绘制 RMSE 可能会对此有所了解。
 
 ![Line Plot of Train and Test Loss from the Multivariate LSTM During Training](img/c81631a61c32b40f6acdb00b05c20949.jpg)
 

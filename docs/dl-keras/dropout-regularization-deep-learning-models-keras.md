@@ -25,7 +25,7 @@
 
 ## 神经网络的 dropout 正则化
 
-Dropout 是 Srivastava 等人提出的神经网络模型的正则化技术。在他们的 2014 年论文[dropout：一种防止神经网络过度拟合的简单方法](http://jmlr.org/papers/v15/srivastava14a.html)（[下载 PDF](http://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf) ）。
+Dropout 是 Srivastava 等人提出的神经网络模型的正则化技术。在他们的 2014 年论文[dropout：一种防止神经网络过拟合的简单方法](http://jmlr.org/papers/v15/srivastava14a.html)（[下载 PDF](http://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf) ）。
 
 dropout是一种在训练过程中忽略随机选择的神经元的技术。这些神经元被随机“dropout“，这意味着它们对激活下一层神经元的贡献在正向传递时暂时消除，并且在反向传递时任何权重更新也不会应用于这些神经元。
 
@@ -33,7 +33,7 @@ dropout是一种在训练过程中忽略随机选择的神经元的技术。这�
 
 你可以想象到如果神经元在训练过程中被随机丢弃，那么其他神经元因缺失神经元不得不介入并替代缺失神经元的那部分表征，为预测结果提供信息。人们认为这样网络模型可以学到多种相互独立的内部表征。
 
-其结果是网络对神经元的特定权重变得不那么敏感。这反过来使得网络能够更好地泛化，减少了过度拟合训练数据的可能性。
+其结果是网络对神经元的特定权重变得不那么敏感。这反过来使得网络能够更好地泛化，减少了过拟合训练数据的可能性。
 
 ## Keras的dropout规范化
 
@@ -203,7 +203,7 @@ Hidden: 83.59% (7.31%)
 
 以下是一些资源，您可以用它们来了解有关神经网络和深度学习模型中的 dropout 的更多信息。
 
-*   [dropout：一种防止神经网络过度拟合的简单方法](http://jmlr.org/papers/v15/srivastava14a.html)（原始论文）。
+*   [dropout：一种防止神经网络过拟合的简单方法](http://jmlr.org/papers/v15/srivastava14a.html)（原始论文）。
 *   [通过阻止特征检测器的共同适应来改善神经网络](http://arxiv.org/abs/1207.0580)。
 *   [dropout方法如何在深度学习中发挥作用？ Quora 上的](https://www.quora.com/How-does-the-dropout-method-work-in-deep-learning)。
 

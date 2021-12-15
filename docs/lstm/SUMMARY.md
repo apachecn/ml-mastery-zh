@@ -6,7 +6,7 @@
 +   [可变长度输入序列的数据准备](data-preparation-variable-length-input-sequences-sequence-prediction.md)
 +   [如何用Keras开发用于Python序列分类的双向LSTM](develop-bidirectional-lstm-sequence-classification-python-keras.md)
 +   [如何开发Keras序列到序列预测的编码器 - 解码器模型](develop-encoder-decoder-model-sequence-sequence-prediction-keras.md)
-+   [如何诊断LSTM模型的过度拟合和欠拟合](diagnose-overfitting-underfitting-lstm-models.md)
++   [如何诊断LSTM模型的过拟合和欠拟合](diagnose-overfitting-underfitting-lstm-models.md)
 +   [如何开发一种编码器 - 解码器模型，注重Keras中的序列到序列预测](encoder-decoder-attention-sequence-to-sequence-prediction-keras.md)
 +   [编码器 - 解码器长短期存储器网络](encoder-decoder-long-short-term-memory-networks.md)
 +   [神经网络中爆炸梯度的温和介绍](exploding-gradients-in-neural-networks.md)
