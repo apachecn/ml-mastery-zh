@@ -1,4 +1,4 @@
-# 时间序列预测案例研究与 Python：波士顿每月武装抢劫案
+# Python 中的时间序列预测案例研究：波士顿每月武装抢劫案
 
 > 原文： [https://machinelearningmastery.com/time-series-forecast-case-study-python-monthly-armed-robberies-boston/](https://machinelearningmastery.com/time-series-forecast-case-study-python-monthly-armed-robberies-boston/)
 

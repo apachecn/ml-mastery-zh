@@ -1,4 +1,4 @@
-# 使用 Python 进行季节性持久性预测
+# 将 Python 用于季节性持久性预测
 
 > 原文： [https://machinelearningmastery.com/seasonal-persistence-forecasting-python/](https://machinelearningmastery.com/seasonal-persistence-forecasting-python/)
 

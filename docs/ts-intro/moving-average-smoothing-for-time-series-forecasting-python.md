@@ -1,4 +1,4 @@
-# 使用 Python 进行数据准备，特征工程和时间序列预测的移动平均平滑
+# Python 中用于数据准备和时间序列预测的移动平均平滑
 
 > 原文： [https://machinelearningmastery.com/moving-average-smoothing-for-time-series-forecasting-python/](https://machinelearningmastery.com/moving-average-smoothing-for-time-series-forecasting-python/)
 

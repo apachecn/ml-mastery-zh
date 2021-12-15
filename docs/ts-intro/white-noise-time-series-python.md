@@ -1,4 +1,4 @@
-# 白噪声时间序列与 Python
+# Python中的白噪声时间序列
 
 > 原文： [https://machinelearningmastery.com/white-noise-time-series-python/](https://machinelearningmastery.com/white-noise-time-series-python/)
 

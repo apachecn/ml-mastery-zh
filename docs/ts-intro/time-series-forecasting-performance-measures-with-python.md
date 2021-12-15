@@ -1,4 +1,4 @@
-# 使用 Python 进行时间序列预测表现测量
+# 将 Python 用于时间序列预测表现测量
 
 > 原文： [https://machinelearningmastery.com/time-series-forecasting-performance-measures-with-python/](https://machinelearningmastery.com/time-series-forecasting-performance-measures-with-python/)
 

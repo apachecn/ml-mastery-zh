@@ -1,4 +1,4 @@
-# 如何用 Python 可视化时间序列残差预测错误
+# 如何用 Python 可视化时间序列预测残差
 
 > 原文： [https://machinelearningmastery.com/visualize-time-series-residual-forecast-errors-with-python/](https://machinelearningmastery.com/visualize-time-series-residual-forecast-errors-with-python/)
 
@@ -258,7 +258,7 @@ min    -28.000000
 max     30.000000
 ```
 
-接下来，我们将超越摘要统计，并查看可视化残差错误分布的方法。
+接下来，我们将超越摘要统计，并查看可视化残差分布的方法。
 
 ## 残差直方图和密度图
 

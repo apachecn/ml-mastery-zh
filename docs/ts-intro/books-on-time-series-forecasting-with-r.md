@@ -1,4 +1,4 @@
-# R 的时间序列预测热门书籍
+# R 时间序列预测热门书籍
 
 > 原文： [https://machinelearningmastery.com/books-on-time-series-forecasting-with-r/](https://machinelearningmastery.com/books-on-time-series-forecasting-with-r/)
 

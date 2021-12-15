@@ -1,4 +1,4 @@
-# 使用 Python 进行时间序列预测研究：法国香槟的月销售额
+# Python 中的时间序列预测研究：法国香槟的月销售额
 
 > 原文： [https://machinelearningmastery.com/time-series-forecast-study-python-monthly-sales-french-champagne/](https://machinelearningmastery.com/time-series-forecast-study-python-monthly-sales-french-champagne/)
 

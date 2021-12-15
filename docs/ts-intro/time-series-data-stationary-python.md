@@ -1,4 +1,4 @@
-# 如何使用 Python 检查时间序列数据是否是固定的
+# 如何使用 Python 检查时间序列数据是否是平稳的
 
 > 原文： [https://machinelearningmastery.com/time-series-data-stationary-python/](https://machinelearningmastery.com/time-series-data-stationary-python/)
 

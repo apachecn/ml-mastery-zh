@@ -19,7 +19,7 @@
 +   [如何使用 Python 对 ARIMA 模型进行手动预测](make-manual-predictions-arima-models-python.md)
 +   [如何用 Python 进行时间序列预测的预测](make-predictions-time-series-forecasting-python.md)
 +   [如何使用 Python 中的 ARIMA 进行样本外预测](make-sample-forecasts-arima-python.md)
-+   [如何利用 Python 模拟残差错误来纠正时间序列预测](model-residual-errors-correct-time-series-forecasts-python.md)
++   [如何利用 Python 模拟残差来纠正时间序列预测](model-residual-errors-correct-time-series-forecasts-python.md)
 +   [使用 Python 进行数据准备，特征工程和时间序列预测的移动平均平滑](moving-average-smoothing-for-time-series-forecasting-python.md)
 +   [多步时间序列预测的 4 种策略](multi-step-time-series-forecasting.md)
 +   [如何在 Python 中规范化和标准化时间序列数据](normalize-standardize-time-series-data-python.md)

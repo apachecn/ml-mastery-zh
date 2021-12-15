@@ -1,4 +1,4 @@
-# 使用 Python 的置信区间理解时间序列预测不确定性
+# 使用 Python 和预测区间理解时间序列预测的不确定性
 
 > 原文： [https://machinelearningmastery.com/time-series-forecast-uncertainty-using-confidence-intervals-python/](https://machinelearningmastery.com/time-series-forecast-uncertainty-using-confidence-intervals-python/)
 

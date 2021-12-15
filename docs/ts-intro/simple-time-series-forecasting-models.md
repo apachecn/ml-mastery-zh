@@ -1,4 +1,4 @@
-# 简单的时间序列预测模型进行测试，这样你就不会欺骗自己
+# 用于测试简单的时间序列预测模型，以便不会欺骗自己
 
 > 原文： [https://machinelearningmastery.com/simple-time-series-forecasting-models/](https://machinelearningmastery.com/simple-time-series-forecasting-models/)
 

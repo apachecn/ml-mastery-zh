@@ -1,4 +1,4 @@
-# 10 挑战机器学习时间序列预测问题
+# 10 个机器学习时间序列预测的挑战性问题
 
 > 原文： [https://machinelearningmastery.com/challenge-machine-learning-time-series-forecasting-problems/](https://machinelearningmastery.com/challenging-machine-learning-time-series-forecasting-problems/)
 

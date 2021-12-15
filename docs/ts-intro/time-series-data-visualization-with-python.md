@@ -1,4 +1,4 @@
-# 使用 Python 进行时间序列数据可视化
+# 将 Python 用于时间序列数据可视化
 
 > 原文： [https://machinelearningmastery.com/time-series-data-visualization-with-python/](https://machinelearningmastery.com/time-series-data-visualization-with-python/)
 

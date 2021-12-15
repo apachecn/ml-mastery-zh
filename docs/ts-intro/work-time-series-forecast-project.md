@@ -1,4 +1,4 @@
-# 如何通过时间序列预测项目
+# 如何处理时间序列预测项目
 
 > 原文： [https://machinelearningmastery.com/work-time-series-forecast-project/](https://machinelearningmastery.com/work-time-series-forecast-project/)
 

@@ -1,4 +1,4 @@
-# 基于 ARIMA 的 Python 历史规模敏感性预测技巧分析
+# 基于 Python 和 ARIMA 的历史规模敏感性分析的预测技巧
 
 > 原文： [https://machinelearningmastery.com/sensitivity-analysis-history-size-forecast-skill-arima-python/](https://machinelearningmastery.com/sensitivity-analysis-history-size-forecast-skill-arima-python/)
 

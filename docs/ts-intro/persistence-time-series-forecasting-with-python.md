@@ -1,4 +1,4 @@
-# 如何利用 Python 进行时间序列预测的基线预测
+# 如何利用 Python 为时间序列预测做出基线预测
 
 > 原文： [https://machinelearningmastery.com/persistence-time-series-forecasting-with-python/](https://machinelearningmastery.com/persistence-time-series-forecasting-with-python/)
 

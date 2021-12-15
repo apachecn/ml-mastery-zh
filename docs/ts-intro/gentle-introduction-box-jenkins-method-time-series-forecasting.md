@@ -1,4 +1,4 @@
-# 时间序列预测的 Box-Jenkins 方法简介
+# 用于时间序列预测的 Box-Jenkins 方法简介
 
 > 原文： [https://machinelearningmastery.com/gentle-introduction-box-jenkins-method-time-series-forecasting/](https://machinelearningmastery.com/gentle-introduction-box-jenkins-method-time-series-forecasting/)
 

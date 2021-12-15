@@ -1,4 +1,4 @@
-# 如何使用 Python 对时间序列预测数据进行功率变换
+# 如何使用 Python 对时间序列预测数据执行幂变换
 
 > 原文： [https://machinelearningmastery.com/power-transform-time-series-forecast-data-python/](https://machinelearningmastery.com/power-transform-time-series-forecast-data-python/)
 

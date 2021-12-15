@@ -1,4 +1,4 @@
-# 如何用 ARCH 和 GARCH 模拟波动率进行时间序列预测
+# 如何用 ARCH 和 GARCH 为时间序列预测建模波动率
 
 > 原文： [https://machinelearningmastery.com/develop-arch-and-garch-models-for-time-series-forecasting-in-python/](https://machinelearningmastery.com/develop-arch-and-garch-models-for-time-series-forecasting-in-python/)
 

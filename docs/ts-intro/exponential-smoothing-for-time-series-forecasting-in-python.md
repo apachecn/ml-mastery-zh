@@ -1,4 +1,4 @@
-# Python 中时间序列预测的指数平滑的温和介绍
+# Python 中用于时间序列预测的指数平滑的温和介绍
 
 > 原文： [https://machinelearningmastery.com/exponential-smoothing-for-time-series-forecasting-in-python/](https://machinelearningmastery.com/exponential-smoothing-for-time-series-forecasting-in-python/)
 

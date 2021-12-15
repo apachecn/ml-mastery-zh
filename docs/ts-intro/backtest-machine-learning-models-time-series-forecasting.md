@@ -1,4 +1,4 @@
-# 如何回溯机器学习模型的时间序列预测
+# 如何为时间序列预测回测机器学习模型
 
 > 原文： [https://machinelearningmastery.com/backtest-machine-learning-models-time-series-forecasting/](https://machinelearningmastery.com/backtest-machine-learning-models-time-series-forecasting/)
 

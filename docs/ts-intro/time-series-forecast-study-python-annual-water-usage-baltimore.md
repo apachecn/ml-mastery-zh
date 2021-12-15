@@ -1,4 +1,4 @@
-# Python 的时间序列预测案例研究：巴尔的摩的年度用水量
+# Python 中的时间序列预测案例研究：巴尔的摩的年度用水量
 
 > 原文： [https://machinelearningmastery.com/time-series-forecast-study-python-annual-water-usage-baltimore/](https://machinelearningmastery.com/time-series-forecast-study-python-annual-water-usage-baltimore/)
 

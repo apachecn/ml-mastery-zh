@@ -195,7 +195,7 @@ AR.5            2.9315           -0.0000j            2.9315           -0.0000
 
 ![ARMA Fit Residual Error Line Plot](img/b7c4b246a66fc5f3ceb7d9014663ded8.jpg)
 
-ARMA Fit 残差错误线图
+ARMA Fit 残差线图
 
 接下来，我们得到残差误差值的密度图，表明误差是高斯误差，但可能不是以零为中心。
 

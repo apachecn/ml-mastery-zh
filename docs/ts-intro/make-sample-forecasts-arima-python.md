@@ -1,4 +1,4 @@
-# 如何使用 Python 中的 ARIMA 进行样本外预测
+# 如何使用 Python 对 ARIMA 做出样本外预测
 
 > 原文： [https://machinelearningmastery.com/make-sample-forecasts-arima-python/](https://machinelearningmastery.com/make-sample-forecasts-arima-python/)
 

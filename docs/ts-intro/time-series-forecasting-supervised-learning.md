@@ -1,4 +1,4 @@
-# 时间序列预测作为监督学习
+# 作为监督学习的时间序列预测
 
 > 原文： [https://machinelearningmastery.com/time-series-forecasting-supervised-learning/](https://machinelearningmastery.com/time-series-forecasting-supervised-learning/)
 
