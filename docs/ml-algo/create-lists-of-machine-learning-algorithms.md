@@ -1,4 +1,4 @@
-# 通过创建机器学习算法的目标列表来控制
+# 通过创建机器学习算法的目标列表来获得控制权
 
 > 原文： [https://machinelearningmastery.com/create-lists-of-machine-learning-algorithms/](https://machinelearningmastery.com/create-lists-of-machine-learning-algorithms/)
 

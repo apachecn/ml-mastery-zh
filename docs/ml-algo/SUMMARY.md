@@ -13,7 +13,7 @@
 +   [在实现机器学习算法时，不要从开源代码开始](dont-start-with-open-source-code-when-implementing-machine-learning-algorithms.md)
 +   [不要使用随机猜测作为基线分类器](dont-use-random-guessing-as-your-baseline-classifier.md)
 +   [浅谈机器学习中的概念漂移](gentle-introduction-concept-drift-machine-learning.md)
-+   [温和介绍机器学习中的偏差 - 方差权衡](gentle-introduction-to-the-bias-variance-trade-off-in-machine-learning.md)
++   [温和介绍机器学习中的偏方差权衡](gentle-introduction-to-the-bias-variance-trade-off-in-machine-learning.md)
 +   [机器学习的梯度下降](gradient-descent-for-machine-learning.md)
 +   [机器学习算法如何工作（他们学习输入到输出的映射）](how-machine-learning-algorithms-work.md)
 +   [如何建立机器学习算法的直觉](how-to-build-an-intuition-for-machine-learning-algorithms.md)

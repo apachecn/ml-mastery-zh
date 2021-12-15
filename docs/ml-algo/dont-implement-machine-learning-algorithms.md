@@ -1,4 +1,4 @@
-# 从头开始停止编码机器学习算法
+# 停止从零开始编写机器学习算法
 
 > 原文： [https://machinelearningmastery.com/dont-implement-machine-learning-algorithms/](https://machinelearningmastery.com/dont-implement-machine-learning-algorithms/)
 

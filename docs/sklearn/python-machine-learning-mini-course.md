@@ -30,7 +30,7 @@ Python 机器学习迷你课程
 如果你没有完全匹配这些点，请不要惊慌，你可能只需要在一个或另一个区域刷新以跟上。
 
 *   **开发人员知道如何编写一些代码**。这意味着一旦您了解基本语法，就可以获得像 Python 这样的新编程语言。这并不意味着你是一个向导编码器，只是你可以毫不费力地遵循基本的 C 语言。
-*   **知道一点机器学习的开发人员**。这意味着您了解机器学习的基础知识，如交叉验证，一些算法和[偏差 - 方差权衡](http://machinelearningmastery.com/gentle-introduction-to-the-bias-variance-trade-off-in-machine-learning/)。这并不意味着你是一个机器学习博士，只是你知道地标或知道在哪里查找它们。
+*   **知道一点机器学习的开发人员**。这意味着您了解机器学习的基础知识，如交叉验证，一些算法和[偏方差权衡](http://machinelearningmastery.com/gentle-introduction-to-the-bias-variance-trade-off-in-machine-learning/)。这并不意味着你是一个机器学习博士，只是你知道地标或知道在哪里查找它们。
 
 这个迷你课程既不是 Python 的教科书，也不是机器学习的教科书。
 

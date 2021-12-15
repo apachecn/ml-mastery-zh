@@ -1,8 +1,8 @@
-# 温和介绍机器学习中的偏差 - 方差权衡
+# 机器学习中的偏方差权衡的温和介绍
 
 > 原文： [https://machinelearningmastery.com/gentle-introduction-to-the-bias-variance-trade-off-in-machine-learning/](https://machinelearningmastery.com/gentle-introduction-to-the-bias-variance-trade-off-in-machine-learning/)
 
-通过偏差 - 方差权衡的镜头可以最好地理解有监督的机器学习算法。
+通过偏方差权衡的镜头可以最好地理解有监督的机器学习算法。
 
 在这篇文章中，您将发现Bias-Variance权衡，以及如何使用它来更好地理解机器学习算法并获得更好的数据表现。
 
@@ -10,7 +10,7 @@
 
 ![Gentle Introduction to the Bias-Variance Trade-Off in Machine Learning](img/0ce051963c8ffed602c24e39a03b7b26.jpg)
 
-温和地介绍机器学习中的偏差 - 方差权衡
+温和地介绍机器学习中的偏方差权衡
 [Matt Biddulph](https://www.flickr.com/photos/mbiddulph/3188732826) 的照片，保留一些权利。
 
 ## 偏差和方差概述
@@ -69,7 +69,7 @@
 
 高方差机器学习算法的示例包括：决策树，k-最近邻居和支持向量机。
 
-## 偏差 - 方差权衡
+## 偏方差权衡
 
 任何监督机器学习算法的目标是实现低偏差和低方差。反过来，该算法应该实现良好的预测表现。
 
@@ -80,7 +80,7 @@
 
 机器学习算法的参数化通常是平衡偏差和方差的斗争。
 
-以下是为特定算法配置偏差 - 方差权衡的两个示例：
+以下是为特定算法配置偏方差权衡的两个示例：
 
 *   k-最近邻算法具有低偏差和高方差，但是可以通过增加k的值来改变折衷，这增加了有助于预测的邻居的数量，并且反过来增加了模型的偏差。
 *   支持向量机算法具有低偏差和高方差，但是可以通过增加影响训练数据中允许的余量的违反次数的C参数来改变折衷，这增加了偏差但减小了方差。
@@ -96,15 +96,15 @@
 
 ## 进一步阅读
 
-如果您希望了解有关偏差，方差和偏差 - 方差权衡的更多信息，本节列出了一些推荐资源。
+如果您希望了解有关偏差，方差和偏方差权衡的更多信息，本节列出了一些推荐资源。
 
-*   维基百科上的[偏差 - 方差权衡](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff)
-*   [了解偏差 - 方差权衡](http://scott.fortmann-roe.com/docs/BiasVariance.html)
+*   维基百科上的[偏方差权衡](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff)
+*   [了解偏方差权衡](http://scott.fortmann-roe.com/docs/BiasVariance.html)
 *   维基百科上的[归纳偏见](https://en.wikipedia.org/wiki/Inductive_bias)
 
 ## 摘要
 
-在这篇文章中，您发现了机器学习算法的偏差，方差和偏差 - 方差权衡。
+在这篇文章中，您发现了机器学习算法的偏差，方差和偏方差权衡。
 
 你现在知道：
 
@@ -112,4 +112,4 @@
 *   方差是在给定不同训练数据的情况下目标函数的估计将改变的量。
 *   权衡是偏差和方差引入的误差之间的紧张关系。
 
-您对偏差，方差或偏差 - 方差权衡有任何疑问吗？发表评论并提出您的问题，我会尽力回答。
+您对偏差，方差或偏方差权衡有任何疑问吗？发表评论并提出您的问题，我会尽力回答。

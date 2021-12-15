@@ -41,22 +41,22 @@
 
 ## 偏见和差异
 
-偏差 - 方差权衡是应用机器学习中的一个概念性思想，有助于理解模型中的误差来源。
+偏方差权衡是应用机器学习中的一个概念性思想，有助于理解模型中的误差来源。
 
 *   **偏差**是指学习算法中的假设，它缩小了可以学习的范围。这是有用的，因为它可以加速学习并导致稳定的结果，代价是与现实不同的假设。
 *   **方差**是指学习算法对训练数据的细节的敏感性，例如，噪音和具体观察。这是好的，因为模型将专门用于数据，代价是学习随机噪声并且每次在不同数据上训练时都会变化。
 
-偏差 - 方差权衡是一种概念工具，可以考虑这些误差来源以及它们如何始终保持平衡。
+偏方差权衡是一种概念工具，可以考虑这些误差来源以及它们如何始终保持平衡。
 
 算法中的偏差越大意味着方差越小，反之亦然。
 
 您可以在此帖子中了解有关偏差变化权衡的更多信息：
 
-*   [机器学习中偏差 - 方差权衡的温和介绍](https://machinelearningmastery.com/gentle-introduction-to-the-bias-variance-trade-off-in-machine-learning/)
+*   [机器学习中偏方差权衡的温和介绍](https://machinelearningmastery.com/gentle-introduction-to-the-bias-variance-trade-off-in-machine-learning/)
 
 你可以控制这种平衡。
 
-许多机器学习算法都有超参数，直接或间接允许您控制偏差 - 方差权衡。
+许多机器学习算法都有超参数，直接或间接允许您控制偏方差权衡。
 
 例如，`k`- 最近邻居中的`k`是一个例子。小`k`导致具有高方差和低偏差的预测。大`k`导致预测具有小的方差和大的偏差。
 
@@ -179,15 +179,15 @@
 
 我认为瞄准最佳平均表现并限制下行更为安全。
 
-我认为，导航最终模型的偏差 - 方差权衡的技巧是在样本中思考，而不是单个模型。优化平均模型表现。
+我认为，导航最终模型的偏方差权衡的技巧是在样本中思考，而不是单个模型。优化平均模型表现。
 
 ## 进一步阅读
 
 如果您希望深入了解，本节将提供有关该主题的更多资源。
 
 *   [如何训练最终机器学习模型](https://machinelearningmastery.com/train-final-machine-learning-model/)
-*   [机器学习中偏差 - 方差权衡的温和介绍](https://machinelearningmastery.com/gentle-introduction-to-the-bias-variance-trade-off-in-machine-learning/)
-*   [维基百科上的偏差 - 方差权衡](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff)
+*   [机器学习中偏方差权衡的温和介绍](https://machinelearningmastery.com/gentle-introduction-to-the-bias-variance-trade-off-in-machine-learning/)
+*   [维基百科上的偏方差权衡](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff)
 *   [Checkpoint Ensembles：单一训练过程中的集合方法](https://arxiv.org/abs/1710.03282)，2017。
 
 ## 摘要

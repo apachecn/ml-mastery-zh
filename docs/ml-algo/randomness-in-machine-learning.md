@@ -46,7 +46,7 @@ _算法的不同运行_ _具有相同的数据？_
 
 ### 1.数据收集的随机性
 
-通过训练不同的数据，机器学习算法将构建不同的模型。这取决于算法。模型与不同数据的差异称为模型方差（如[偏差 - 方差权衡](http://machinelearningmastery.com/gentle-introduction-to-the-bias-variance-trade-off-in-machine-learning/)）。
+通过训练不同的数据，机器学习算法将构建不同的模型。这取决于算法。模型与不同数据的差异称为模型方差（如[偏方差权衡](http://machinelearningmastery.com/gentle-introduction-to-the-bias-variance-trade-off-in-machine-learning/)）。
 
 因此，数据本身就是随机性的来源。数据集合中的随机性。
 
