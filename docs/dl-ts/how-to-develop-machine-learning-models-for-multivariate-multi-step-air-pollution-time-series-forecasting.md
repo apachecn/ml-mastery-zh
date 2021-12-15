@@ -1,4 +1,4 @@
-# 如何开发多元多步空气污染时间序列预测的机器学习模型
+# 如何开发用于多元多步空气污染时间序列预测的机器学习模型
 
 > 原文： [https://machinelearningmastery.com/how-to-develop-machine-learning-models-for-multivariate-multi-step-air-pollution-time-series-forecasting/](https://machinelearningmastery.com/how-to-develop-machine-learning-models-for-multivariate-multi-step-air-pollution-time-series-forecasting/)
 

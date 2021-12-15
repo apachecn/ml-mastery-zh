@@ -1,4 +1,4 @@
-# 如何开发人类活动识别的一维卷积神经网络模型
+# 如何开发用于人类活动识别的一维卷积神经网络模型
 
 > 原文： [https://machinelearningmastery.com/cnn-models-for-human-activity-recognition-time-series-classification/](https://machinelearningmastery.com/cnn-models-for-human-activity-recognition-time-series-classification/)
 

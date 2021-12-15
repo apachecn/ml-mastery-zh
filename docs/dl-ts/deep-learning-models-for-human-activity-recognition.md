@@ -1,4 +1,4 @@
-# 人类活动识别的深度学习模型
+# 用于人类活动识别的深度学习模型
 
 > 原文： [https://machinelearningmastery.com/deep-learning-models-for-human-activity-recognition/](https://machinelearningmastery.com/deep-learning-models-for-human-activity-recognition/)
 

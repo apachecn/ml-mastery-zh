@@ -1,4 +1,4 @@
-# Keras 中 LSTM 的多变量时间序列预测
+# Keras 中使用 LSTM 的多变量时间序列预测
 
 > 原文： [https://machinelearningmastery.com/multivariate-time-series-forecasting-lstms-keras/](https://machinelearningmastery.com/multivariate-time-series-forecasting-lstms-keras/)
 

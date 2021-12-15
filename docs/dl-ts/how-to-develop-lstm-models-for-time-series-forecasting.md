@@ -1,4 +1,4 @@
-# 如何开发时间序列预测的 LSTM 模型
+# 如何开发用于时间序列预测的 LSTM 模型
 
 > 原文： [https://machinelearningmastery.com/how-to-develop-lstm-models-for-time-series-forecasting/](https://machinelearningmastery.com/how-to-develop-lstm-models-for-time-series-forecasting/)
 

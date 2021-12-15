@@ -1,4 +1,4 @@
-# 如何开发单变量时间序列预测的深度学习模型
+# 如何开发用于单变量时间序列预测的深度学习模型
 
 > 原文： [https://machinelearningmastery.com/how-to-develop-deep-learning-models-for-univariate-time-series-forecasting/](https://machinelearningmastery.com/how-to-develop-deep-learning-models-for-univariate-time-series-forecasting/)
 

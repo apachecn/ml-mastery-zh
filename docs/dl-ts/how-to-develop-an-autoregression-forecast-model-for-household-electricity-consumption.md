@@ -1,4 +1,4 @@
-# 如何构建家庭用电自回归预测模型
+# 如何构建用于家庭用电的自回归预测模型
 
 > 原文： [https://machinelearningmastery.com/how-to-develop-an-autoregression-forecast-model-for-household-electricity-consumption/](https://machinelearningmastery.com/how-to-develop-an-autoregression-forecast-model-for-household-electricity-consumption/)
 

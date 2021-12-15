@@ -1,4 +1,4 @@
-# 如何开发多步空气污染时间序列预测的自回归预测模型
+# 如何开发用于多步空气污染时间序列预测的自回归预测模型
 
 > 原文： [https://machinelearningmastery.com/how-to-develop-autoregressive-forecasting-models-for-multi-step-air-pollution-time-series-forecasting/](https://machinelearningmastery.com/how-to-develop-autoregressive-forecasting-models-for-multi-step-air-pollution-time-series-forecasting/)
 

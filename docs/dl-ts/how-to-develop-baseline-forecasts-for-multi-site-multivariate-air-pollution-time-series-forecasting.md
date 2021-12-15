@@ -1,4 +1,4 @@
-# 如何开发多站点多元空气污染时间序列预测的基线预测
+# 如何开发用于多站点多元空气污染时间序列预测的基线预测
 
 > 原文： [https://machinelearningmastery.com/how-to-develop-baseline-forecasts-for-multi-site-multivariate-air-pollution-time-series-forecasting/](https://machinelearningmastery.com/how-to-develop-baseline-forecasts-for-multi-site-multivariate-air-pollution-time-series-forecasting/)
 

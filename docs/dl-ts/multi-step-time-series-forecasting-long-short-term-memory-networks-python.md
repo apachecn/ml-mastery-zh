@@ -1,4 +1,4 @@
-# Python 中长短期记忆网络的多步时间序列预测
+# Python 中使用长短期记忆网络的多步时间序列预测
 
 > 原文： [https://machinelearningmastery.com/multi-step-time-series-forecasting-long-short-term-memory-networks-python/](https://machinelearningmastery.com/multi-step-time-series-forecasting-long-short-term-memory-networks-python/)
 

@@ -1,4 +1,4 @@
-# 时间序列预测的多层感知器网络的探索性配置
+# 用于时间序列预测的多层感知器网络的探索性配置
 
 > 原文： [https://machinelearningmastery.com/exploratory-configuration-multilayer-perceptron-network-time-series-forecasting/](https://machinelearningmastery.com/exploratory-configuration-multilayer-perceptron-network-time-series-forecasting/)
 

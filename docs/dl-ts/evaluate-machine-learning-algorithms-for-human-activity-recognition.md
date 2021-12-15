@@ -1,4 +1,4 @@
-# 如何评估人类活动识别的机器学习算法
+# 如何评估用于人类活动识别的机器学习算法
 
 > 原文： [https://machinelearningmastery.com/evaluate-machine-learning-algorithms-for-human-activity-recognition/](https://machinelearningmastery.com/evaluate-machine-learning-algorithms-for-human-activity-recognition/)
 

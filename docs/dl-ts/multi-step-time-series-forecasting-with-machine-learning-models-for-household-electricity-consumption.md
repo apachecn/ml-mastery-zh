@@ -1,4 +1,4 @@
-# 家庭用电机器学习的多步时间序列预测
+# 用于家庭用电机器学习的多步时间序列预测
 
 > 原文： [https://machinelearningmastery.com/multi-step-time-series-forecasting-with-machine-learning-models-for-household-electricity-consumption/](https://machinelearningmastery.com/multi-step-time-series-forecasting-with-machine-learning-models-for-household-electricity-consumption/)
 
