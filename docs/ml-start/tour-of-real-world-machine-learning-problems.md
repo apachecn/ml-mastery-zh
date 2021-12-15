@@ -15,7 +15,7 @@
 
 ## 最受欢迎的 Kaggle 数据集
 
-前 10 个机器学习问题的例子来自竞争机器学习网站 [Kaggle.com](https://www.kaggle.com/) 。受欢迎程度取决于参赛队伍的数量。
+前 10 个机器学习问题的例子来自机器学习竞赛网站 [Kaggle.com](https://www.kaggle.com/) 。受欢迎程度取决于参赛队伍的数量。
 
 *   [奥托集团产品分类挑战赛](https://www.kaggle.com/c/otto-group-product-classification-challenge)。鉴于产品数据的特征，将产品分类为 9 个产品类别之一。
 *   [Rossmann 商店销售](https://www.kaggle.com/c/rossmann-store-sales)。根据商店的产品历史销售数据，预测未来的销售情况。

@@ -1,4 +1,4 @@
-# 通过数据预处理提高模型精度
+# 通过数据预处理提高模型准确率
 
 > 原文： [https://machinelearningmastery.com/improve-model-accuracy-with-data-pre-processing/](https://machinelearningmastery.com/improve-model-accuracy-with-data-pre-processing/)
 
@@ -17,9 +17,9 @@
 
 在建模问题之前，您必须预先处理原始数据。具体准备工作可能取决于您可用的数据和您要使用的机器学习算法。
 
-有时，数据的预处理可能会导致模型精度的意外改善。这可能是因为数据中的关系已被简化或未被遮挡。
+有时，数据的预处理可能会导致模型准确率的意外改善。这可能是因为数据中的关系已被简化或未被遮挡。
 
-[数据准备](http://machinelearningmastery.com/how-to-prepare-data-for-machine-learning/ "How to Prepare Data For Machine Learning")是一个重要的步骤，您应该尝试适合您的数据的数据预处理步骤，看看您是否能够获得模型精度的理想提升。
+[数据准备](http://machinelearningmastery.com/how-to-prepare-data-for-machine-learning/ "How to Prepare Data For Machine Learning")是一个重要的步骤，您应该尝试适合您的数据的数据预处理步骤，看看您是否能够获得模型准确率的理想提升。
 
 您可以为数据考虑三种类型的预处理：
 
@@ -57,7 +57,7 @@
 
 ## 摘要
 
-数据预处理是准备原始数据进行建模，满足特定机器学习算法数据期望所需的重要步骤，并且可以在模型精度方面带来意想不到的提升。
+数据预处理是准备原始数据进行建模，满足特定机器学习算法数据期望所需的重要步骤，并且可以在模型准确率方面带来意想不到的提升。
 
 在这篇文章中，我们发现了三组数据预处理方法：
 
@@ -65,4 +65,4 @@
 *   删除属性
 *   转换属性
 
-下次您希望提高模型精度时，请考虑您可以为数据设计哪些新视角，以便模型进行探索和利用。
+下次您希望提高模型准确率时，请考虑您可以为数据设计哪些新视角，以便模型进行探索和利用。

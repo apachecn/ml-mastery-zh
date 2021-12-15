@@ -1,4 +1,4 @@
-# 为什么One-Hot在机器学习中编码数据？
+# 为什么在机器学习中单热编码数据？
 
 > 原文： [https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/](https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/)
 

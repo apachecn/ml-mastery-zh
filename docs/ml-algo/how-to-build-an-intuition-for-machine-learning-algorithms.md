@@ -104,7 +104,7 @@
 *   [鸢尾花](http://archive.ics.uci.edu/ml/datasets/Iris)：根据花的尺寸描述鸢尾花，分为三个种类。
 *   [电离层](https://archive.ics.uci.edu/ml/datasets/Ionosphere)：描述了表征电离层能量状态的雷达返回数据。所有属性都是数字，类是二进制。
 *   [皮马印第安人糖尿病](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)：皮马印第安人的各种医疗记录数据，其二元类别是患者在收集医疗数据后5年内是否患有糖尿病。
-*   [玻璃鉴定](https://archive.ics.uci.edu/ml/datasets/Glass+Identification)：根据样品的化学成分鉴定类，多个不平衡类。
+*   [玻璃鉴定](https://archive.ics.uci.edu/ml/datasets/Glass+Identification)：根据样品的化学成分鉴定类，多个不平衡类别。
 *   [威斯康星乳腺癌](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Original))：乳腺癌患者的医疗活检信息和样本是否癌变的二元类变量。
 
 您可能会发现这些数据集中的一个或多个在您自己的实验中很有用。

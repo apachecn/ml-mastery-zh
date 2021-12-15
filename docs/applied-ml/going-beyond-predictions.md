@@ -4,7 +4,7 @@
 
 您使用预测模型进行的预测并不重要，而是使用那些重要的预测。
 
-[Jeremy Howard](https://www.linkedin.com/in/howardjeremy) 是竞争机器学习平台 [Kaggle](http://www.kaggle.com/) 的总裁兼首席科学家。 2012年，他在 [O'reilly Strata会议](http://strataconf.com/)上发表了他所谓的动力传动系统方法，用于构建超越预测的“_数据产品_”。
+[Jeremy Howard](https://www.linkedin.com/in/howardjeremy) 是机器学习竞赛平台 [Kaggle](http://www.kaggle.com/) 的总裁兼首席科学家。 2012年，他在 [O'reilly Strata会议](http://strataconf.com/)上发表了他所谓的动力传动系统方法，用于构建超越预测的“_数据产品_”。
 
 在这篇文章中，您将发现Howard的动力传动系统方法以及如何使用它来构建系统的开发而不是做出预测。
 

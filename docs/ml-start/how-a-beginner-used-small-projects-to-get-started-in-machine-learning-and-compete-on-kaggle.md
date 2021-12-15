@@ -40,7 +40,7 @@
 
 作为一个粗略的指导方针，我们使用[流程中描述的工作流程来解决机器学习问题](http://machinelearningmastery.com/process-for-working-through-machine-learning-problems/)。
 
-后来我从你网站上的其他帖子中收集了一些更有用的提示和信息，例如关于竞争机器学习的帖子[或](http://machinelearningmastery.com/how-to-kick-ass-in-competitive-machine-learning/)[关于如何擅长功能工程](http://machinelearningmastery.com/discover-feature-engineering-how-to-engineer-features-and-how-to-get-good-at-it/)的帖子。
+后来我从你网站上的其他帖子中收集了一些更有用的提示和信息，例如关于机器学习竞赛的帖子[或](http://machinelearningmastery.com/how-to-kick-ass-in-competitive-machine-learning/)[关于如何擅长功能工程](http://machinelearningmastery.com/discover-feature-engineering-how-to-engineer-features-and-how-to-get-good-at-it/)的帖子。
 
 ## 问：你如何比较 Python 和 R 在 Kaggle 比赛中的表现？
 

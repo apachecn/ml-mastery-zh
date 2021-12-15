@@ -1,8 +1,8 @@
-# 如何在竞争机器学习中踢屁股
+# 如何在机器学习竞赛中胜出
 
 > 原文： [https://machinelearningmastery.com/how-to-kick-ass-in-competitive-machine-learning/](https://machinelearningmastery.com/how-to-kick-ass-in-competitive-machine-learning/)
 
-[David Kofoed Wind](http://www.davidwind.dk/) 在Kaggle博客No Free Hunch上发表了一篇文章，名为“ [_从最好的_](http://blog.kaggle.com/2014/08/01/learning-from-the-best/) 中学习”。在这篇文章中，大卫总结了6个与参与竞争机器学习相关的关键领域，以及来自表现最好的kagglers的报价。
+[David Kofoed Wind](http://www.davidwind.dk/) 在Kaggle博客No Free Hunch上发表了一篇文章，名为“ [_从最好的_](http://blog.kaggle.com/2014/08/01/learning-from-the-best/) 中学习”。在这篇文章中，大卫总结了6个与参与机器学习竞赛相关的关键领域，以及来自表现最好的kagglers的报价。
 
 在这篇文章中，您将发现从该帖子中提取的竞争性机器学习中做得好的关键启发式方法。
 
@@ -48,7 +48,7 @@ David是[丹麦技术大学](http://www.dtu.dk/english)认知系统系的博士�
 *   小而嘈杂的训练数据集可能导致排行榜和最终结果之间更大的不匹配。
 *   排行榜确实包含信息，可用于模型选择和超参数调整。
 *   Kaggle使得过拟合的危险变得非常真实。
-*   在测试工具上花费大量时间来估算模型精度，甚至忽略排行榜。
+*   在测试工具上花费大量时间来估算模型准确率，甚至忽略排行榜。
 *   将测试工具分数与排行榜分数相关联，以评估您可以放在排行榜中的信任度。
 
 ### 简单模型
@@ -81,7 +81,7 @@ David是[丹麦技术大学](http://www.dtu.dk/english)认知系统系的博士�
 
 ### 额外的建议
 
-本节列出了David和他的受访者在竞争机器学习方面表现良好的其他见解。
+本节列出了David和他的受访者在机器学习竞赛方面表现良好的其他见解。
 
 *   尽快在排行榜上获取一些东西
 *   构建一个加载数据的管道，并可靠地评估模型，这比你想象的要困难得多。
@@ -92,6 +92,6 @@ David是[丹麦技术大学](http://www.dtu.dk/english)认知系统系的博士�
 
 ## 摘要
 
-在这篇文章中，您发现了参与竞争机器学习时的5个问题的框架：特征工程，过拟合，使用简单模型，集合和预测正确的事物。
+在这篇文章中，您发现了参与机器学习竞赛时的5个问题的框架：特征工程，过拟合，使用简单模型，集合和预测正确的事物。
 
 在这篇文章中，我们在关键经验法则中回顾了David的框架，可以用来在参加Kaggle比赛时从数据和算法中获得最大收益。

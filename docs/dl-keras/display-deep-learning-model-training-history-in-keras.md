@@ -109,7 +109,7 @@ plt.show()
 
 ![Plot of Model Accuracy on Train and Validation Datasets](img/aa735153796f8cda098d2fe7fb675e75.png)
 
-图：训练和验证数据集的模型精度图
+图：训练和验证数据集的模型准确率图
 
 从损失图中我们可以看到，模型在训练和验证数据集（标记测试）上具有可比较的性能，如果这些相互平行图开始一较为一致的分散，这可能是一个模型过早停止训练的信号。
 

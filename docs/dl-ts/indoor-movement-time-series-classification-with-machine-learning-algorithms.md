@@ -1021,7 +1021,7 @@ GBM 52.885%
 
 ![Bar chart of model accuracy on ES2](img/b3ecbb4b2558f0998da0419e4426ae26.jpg)
 
-ES2 上模型精度的条形图
+ES2 上模型准确率的条形图
 
 所选择的表示和模型配置确实具有超过预测的技能，准确度为 50％。
 

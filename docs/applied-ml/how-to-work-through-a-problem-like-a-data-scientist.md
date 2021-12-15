@@ -1,4 +1,4 @@
-# 如何解决像数据科学家这样的问题
+# 如何像数据科学家一样解决问题
 
 > 原文： [https://machinelearningmastery.com/how-to-work-through-a-problem-like-a-data-scientist/](https://machinelearningmastery.com/how-to-work-through-a-problem-like-a-data-scientist/)
 
@@ -69,7 +69,7 @@ OSEMN是与“负鼠”或“令人敬畏”押韵的缩写，代表获取，磨
 
 ## 4.模型数据
 
-模型精度通常是给定数据问题的最终目标。这意味着最具预测性的模型是选择模型的过滤器。
+模型准确率通常是给定数据问题的最终目标。这意味着最具预测性的模型是选择模型的过滤器。
 
 > 通常，“最佳”模型是最具预测性的模型
 

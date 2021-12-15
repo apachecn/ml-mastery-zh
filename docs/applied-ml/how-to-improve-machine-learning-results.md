@@ -1,4 +1,4 @@
-# 如何提高机器学习效果
+# 如何改进机器学习结果
 
 > 原文： [https://machinelearningmastery.com/how-to-improve-machine-learning-results/](https://machinelearningmastery.com/how-to-improve-machine-learning-results/)
 

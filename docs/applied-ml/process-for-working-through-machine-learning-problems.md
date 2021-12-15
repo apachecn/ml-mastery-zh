@@ -1,4 +1,4 @@
-# 应用机器学习过程
+# 应用机器学习的过程
 
 > 原文： [https://machinelearningmastery.com/process-for-working-through-machine-learning-problems/](https://machinelearningmastery.com/process-for-working-through-machine-learning-problems/)
 

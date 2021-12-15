@@ -88,7 +88,7 @@
 ### 中间
 
 *   [对算法，问题和工具进行小规模调查](http://machinelearningmastery.com/self-study-machine-learning-projects/ "4 Self-Study Machine Learning Projects")。
-*   通过参与竞争机器学习并从中学习，提高应用机器学习的技能。
+*   通过参与机器学习竞赛并从中学习，提高应用机器学习的技能。
 
 ### 高级
 

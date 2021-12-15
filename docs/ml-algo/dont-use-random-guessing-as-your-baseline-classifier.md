@@ -59,6 +59,6 @@
 
 有关处理不平衡分类问题的更多信息，请参阅帖子：
 
-*   [打击机器学习数据集中不平衡类的8种策略](http://machinelearningmastery.com/tactics-to-combat-imbalanced-classes-in-your-machine-learning-dataset/)
+*   [打击机器学习数据集中不平衡类别的8种策略](http://machinelearningmastery.com/tactics-to-combat-imbalanced-classes-in-your-machine-learning-dataset/)
 
 你对这篇文章有任何疑问吗？在评论中提问。

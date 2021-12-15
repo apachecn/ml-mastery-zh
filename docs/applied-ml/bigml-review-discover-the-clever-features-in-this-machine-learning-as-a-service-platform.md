@@ -31,7 +31,7 @@ BigML交互式决策树
 BigML提供了三种使用该服务的主要模式：
 
 *   **Web界面**：一个快速响应的灵活Web用户界面。 Web界面引导分析人员完成上传数据，制作描述性或预测性模型以及评估模型或根据需要做出预测的过程。这很干净，一旦你购买了管道方法，很有意义。
-*   **命令行界面**：一个名为 [bigmle​​r](https://bigml.com/bigmler) 的命令行工具，它基于服务的成熟Python API，允许比Web界面更灵活，例如选择对构建的模型做出预测本地或远程执行任务，例如交叉验证以近似模型精度。查看[完整的bigmle​​r文档](http://bigmler.readthedocs.org/en/latest/)。
+*   **命令行界面**：一个名为 [bigmle​​r](https://bigml.com/bigmler) 的命令行工具，它基于服务的成熟Python API，允许比Web界面更灵活，例如选择对构建的模型做出预测本地或远程执行任务，例如交叉验证以近似模型准确率。查看[完整的bigmle​​r文档](http://bigmler.readthedocs.org/en/latest/)。
 *   **API** ：提供了 [RESTful API](https://bigml.com/developers) ，可以直接通过curl命令或您喜欢的编程语言中的包装器使用。在撰写本文时， [Python API](http://bigml.readthedocs.org/en/latest/) 是最成熟的，但包装也在Ruby，PHP，Java，C＃，NodeJS，Clojure，Bash（curl调用）和Objective C中提供。
 
 ## 管道流程

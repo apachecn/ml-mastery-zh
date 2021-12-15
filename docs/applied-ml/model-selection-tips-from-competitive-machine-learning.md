@@ -1,4 +1,4 @@
-# 竞争机器学习的模型选择技巧
+# 机器学习竞赛的模型选择技巧
 
 > 原文： [https://machinelearningmastery.com/model-selection-tips-from-competitive-machine-learning/](https://machinelearningmastery.com/model-selection-tips-from-competitive-machine-learning/)
 
@@ -6,7 +6,7 @@
 
 这个问题被称为模型选择，可能很烦人，因为您需要在给定不完整信息的情况下做出选择。这是您创建的[测试线束](http://machinelearningmastery.com/how-to-evaluate-machine-learning-algorithms/ "How to Evaluate Machine Learning Algorithms")和您选择的[测试选项](http://machinelearningmastery.com/how-to-choose-the-right-test-options-when-evaluating-machine-learning-algorithms/ "How To Choose The Right Test Options When Evaluating Machine Learning Algorithms")的关键所在。
 
-在这篇文章中，您将发现模型选择的灵感来自于竞争机器学习，以及如何将这些技巧提升到更高水平并像其他任何复杂系统一样研究测试工具的想法。
+在这篇文章中，您将发现模型选择的灵感来自于机器学习竞赛，以及如何将这些技巧提升到更高水平并像其他任何复杂系统一样研究测试工具的想法。
 
 [![Model Selection](img/5937b602f13b3f1fabf4294f941f6d75.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/10/Model-Selection.jpg)
 
@@ -83,7 +83,7 @@ Log0还提醒选择健壮的模型，即它们本身不太可能过拟合，例�
 
 ## 摘要
 
-在这篇文章中，您发现了在使用机器学习时选择最终模型时可以使用的三个技巧。这些提示对于竞争机器学习非常有用，也可用于数据分析和生产系统，其中来自少数选定模型的预测是整体组合的。
+在这篇文章中，您发现了在使用机器学习时选择最终模型时可以使用的三个技巧。这些提示对于机器学习竞赛非常有用，也可用于数据分析和生产系统，其中来自少数选定模型的预测是整体组合的。
 
 您还学习了如何扩展这些技巧，以及如何针对给定的机器学习问题研究测试工具的配置，就像您使用任何机器学习算法的参数一样。
 

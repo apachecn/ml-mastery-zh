@@ -1,4 +1,4 @@
-# 如何培养最终的机器学习模型
+# 如何训练最终的机器学习模型
 
 > 原文： [https://machinelearningmastery.com/train-final-machine-learning-model/](https://machinelearningmastery.com/train-final-machine-learning-model/)
 

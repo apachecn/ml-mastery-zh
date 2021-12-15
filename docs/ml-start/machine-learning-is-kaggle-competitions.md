@@ -6,11 +6,11 @@
 
 这是一篇有趣的帖子，因为它指出了一个重要的事实。如果你想用机器学习解决业务问题，那么在 [Kaggle](http://www.kaggle.com/) 比赛中表现不错并不是这项技能的良好指标。理由是，在 Kaggle 竞赛中取得好成绩所需的工作只是提供商业利益所需的一部分。
 
-这是一个需要考虑的重点，特别是如果你刚刚开始并发现自己在排行榜上做得很好。在这篇文章中，我们将重点讨论竞争机器学习与应用机器学习的关系。
+这是一个需要考虑的重点，特别是如果你刚刚开始并发现自己在排行榜上做得很好。在这篇文章中，我们将重点讨论机器学习竞赛与应用机器学习的关系。
 
 [![racing algorithms](img/0e7de320d82cb812b3d7b3ab56bb7b4f.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/07/racing-algorithms.jpg)
 
-竞争机器学习
+机器学习竞赛
 照片由 [tableatny](https://www.flickr.com/photos/53370644@N06/4976494944/in/photostream/) ，保留一些权利
 
 ## 比赛与“真实世界”

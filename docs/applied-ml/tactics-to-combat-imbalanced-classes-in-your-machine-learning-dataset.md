@@ -1,4 +1,4 @@
-# 打击机器学习数据集中不平衡类的8种策略
+# 对抗机器学习数据集中不平衡类别的8种策略
 
 > 原文： [https://machinelearningmastery.com/tactics-to-combat-imbalanced-classes-in-your-machine-learning-dataset/](https://machinelearningmastery.com/tactics-to-combat-imbalanced-classes-in-your-machine-learning-dataset/)
 
@@ -97,7 +97,7 @@
 
 准确率不是使用不平衡数据集时使用的指标。我们已经看到它具有误导性。
 
-在使用不平衡类时，有一些指标可以告诉您更真实的故事。
+在使用不平衡类别时，有一些指标可以告诉您更真实的故事。
 
 在我的帖子“[分类准确率不够：可以使用的更多表现指标](http://machinelearningmastery.com/classification-accuracy-is-not-enough-more-performance-measures-you-can-use/)”中，我提供了更多关于选择不同表现指标的建议。
 

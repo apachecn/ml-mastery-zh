@@ -31,7 +31,7 @@ Keras 深度学习库的多类分类教程
 
 这是一个多类别的分类问题，意味着有两个以上的类需要预测，实际上有三种花种。这是用神经网络练习的一个重要问题类型，因为三个类值需要专门的处理。
 
-虹膜花数据集是一个充分研究的问题，我们可以[期望在 95％至 97％的范围内实现模型精度](http://www.is.umk.pl/projects/rules.html#Iris)。这为开发我们的模型提供了一个很好的目标。
+虹膜花数据集是一个充分研究的问题，我们可以[期望在 95％至 97％的范围内实现模型准确率](http://www.is.umk.pl/projects/rules.html#Iris)。这为开发我们的模型提供了一个很好的目标。
 
 您可以[从 UCI 机器学习库下载虹膜花数据集](http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data)，并将其放在当前工作目录中，文件名为“`iris.csv`”。
 
@@ -175,7 +175,7 @@ results = cross_val_score(estimator, X, dummy_y, cv=kfold)
 print("Baseline: %.2f%% (%.2f%%)" % (results.mean()*100, results.std()*100))
 ```
 
-结果总结为数据集上模型精度的均值和标准差。这是对看不见的数据的模型表现的合理估计。对于这个问题，它也属于已知的最佳结果范围。
+结果总结为数据集上模型准确率的均值和标准差。这是对看不见的数据的模型表现的合理估计。对于这个问题，它也属于已知的最佳结果范围。
 
 ```py
 Accuracy: 97.33% (4.42%)

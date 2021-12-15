@@ -1022,7 +1022,7 @@ max     0.935000   0.90500   0.885000   0.910000
 
 ![Box and Whisker Plot for Model Accuracy with Different Word Scoring Methods](img/41c1d5a636ede307ab02540acd449347.jpg)
 
-不同单词评分方法的模型精度框和晶须图
+不同单词评分方法的模型准确率框和晶须图
 
 ## 预测新评论
 

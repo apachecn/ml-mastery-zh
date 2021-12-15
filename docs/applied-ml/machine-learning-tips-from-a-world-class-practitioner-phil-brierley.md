@@ -1,4 +1,4 @@
-# 来自世界级从业者的机器学习技巧：Phil Brierley
+# 来自世界级从业者 Phil Brierley 的机器学习技巧
 
 > 原文： [https://machinelearningmastery.com/machine-learning-tips-from-a-world-class-practitioner-phil-brierley/](https://machinelearningmastery.com/machine-learning-tips-from-a-world-class-practitioner-phil-brierley/)
 

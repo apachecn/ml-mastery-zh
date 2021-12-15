@@ -1,4 +1,4 @@
-# 黑箱机器学习的诱惑陷阱
+# 黑盒机器学习的诱惑陷阱
 
 > 原文： [https://machinelearningmastery.com/the-seductive-trap-of-black-box-machine-learning/](https://machinelearningmastery.com/the-seductive-trap-of-black-box-machine-learning/)
 
@@ -71,7 +71,7 @@
 
 BigML交互式决策树
 
-我将其与所谓的“商业友好型”MLaaS区分开来。我想到 [BigML](http://machinelearningmastery.com/bigml-review-discover-the-clever-features-in-this-machine-learning-as-a-service-platform/ "BigML Review: Discover the Clever Features in This Machine Learning as a Service Platform") 就是这类服务的一个例子。他们是我想象的这样的服务，如果它打扮得很好，可以卖给企业。差异化的一个关键点是以牺牲预测精度为代价进行模型内省的能力。
+我将其与所谓的“商业友好型”MLaaS区分开来。我想到 [BigML](http://machinelearningmastery.com/bigml-review-discover-the-clever-features-in-this-machine-learning-as-a-service-platform/ "BigML Review: Discover the Clever Features in This Machine Learning as a Service Platform") 就是这类服务的一个例子。他们是我想象的这样的服务，如果它打扮得很好，可以卖给企业。差异化的一个关键点是以牺牲预测准确率为代价进行模型内省的能力。
 
 你不仅想要“有史以来最好的预测，该死的”，你想知道如何。这些数字需要围绕它们进行叙述。企业需要这些信息，因此他们可以内化并将其转移到其他问题，并在概念漂移后将来转移到同样的问题。知识是秘诀，而不是创造知识的模型。
 

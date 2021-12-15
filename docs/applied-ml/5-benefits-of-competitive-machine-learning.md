@@ -1,4 +1,4 @@
-# 5竞争机器学习的好处
+# 5机器学习竞赛的好处
 
 > 原文： [https://machinelearningmastery.com/5-benefits-of-competitive-machine-learning/](https://machinelearningmastery.com/5-benefits-of-competitive-machine-learning/)
 
@@ -8,7 +8,7 @@ Jeremy Howard， [Kaggle](http://www.kaggle.com/) 的正式演出于2013年中�
 
 [![Competitive Machine Learning is a Meritocracy](img/5dab5e85e1fd800e2906680bb1b7db51.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/08/Competitive-Machine-Learning-is-a-Meritocracy.jpg)
 
-竞争机器学习是一种精英政治
+机器学习竞赛是一种精英政治
 摄影作者 [PaulBarber](https://www.flickr.com/photos/boipevassu/7742521640) ，保留一些权利
 
 ## 南佛罗里达大学的大数据
@@ -75,6 +75,6 @@ Jeremy Howard， [Kaggle](http://www.kaggle.com/) 的正式演出于2013年中�
 
 ## 摘要
 
-在这篇文章中，您发现了竞争机器学习的五大好处。它们是：精英管理，榜样，推动极限，创新和社区。
+在这篇文章中，您发现了机器学习竞赛的五大好处。它们是：精英管理，榜样，推动极限，创新和社区。
 
 这在机器学习方面并不新鲜，与学术会议合作已有近20年的竞争。新的是参与规模和进入门槛低。无论您的背景如何，这都是进入应用机器学习的激动人心的机会主义时刻。

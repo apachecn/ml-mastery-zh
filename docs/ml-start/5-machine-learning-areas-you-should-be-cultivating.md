@@ -1,4 +1,4 @@
-# 你应该培养的 5 个机器学习领域
+# 你应该训练的 5 个机器学习领域
 
 > 原文： [https://machinelearningmastery.com/5-machine-learning-areas-you-should-be-cultivating/](https://machinelearningmastery.com/5-machine-learning-areas-you-should-be-cultivating/)
 
@@ -14,7 +14,7 @@
 
 [![machine learning skills](img/41caf2696650fba58bae008a5552f909.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/10/machine-learning-skills.jpg)
 
-培养您的机器学习技能摄影： [Rachel Johnson](http://www.flickr.com/photos/rachel-johnson/4298911131) ，保留一些权利
+训练您的机器学习技能摄影： [Rachel Johnson](http://www.flickr.com/photos/rachel-johnson/4298911131) ，保留一些权利
 
 ## 1.机器学习基础和理论
 
@@ -76,13 +76,13 @@
 
 它还意味着随时了解新闻，开发工具（更改日志，会议等），理论和算法（研究论文，博客，会议视频等）。
 
-技术变化很快，这是高科技。它变化得更快。期待并培养这种变化。
+技术变化很快，这是高科技。它变化得更快。期待并训练这种变化。
 
 ## 摘要
 
 这是一篇短文，但我认为很重要。
 
-我们触及了您应该培养的 5 个机器学习领域，以实现您在该领域的目标。
+我们触及了您应该训练的 5 个机器学习领域，以实现您在该领域的目标。
 
 这五个领域又是：
 
@@ -94,4 +94,4 @@
 
 你不能一次完成所有这一切，选择一个区域并花一些时间，然后更改它。
 
-您目前正在培养这五个领域中的哪一个？
+您目前正在训练这五个领域中的哪一个？

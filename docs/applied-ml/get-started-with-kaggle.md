@@ -3,7 +3,7 @@
 > 原文： [https://machinelearningmastery.com/get-started-with-kaggle/](https://machinelearningmastery.com/get-started-with-kaggle/)
 
 #### 入门和擅长
-竞争机器学习的四步流程。
+机器学习竞赛的四步流程。
 
 [Kaggle](https://www.kaggle.com/) 是一个托管机器学习竞赛的社区和网站。
 
@@ -110,7 +110,7 @@ Kaggle有一些特别的好处，你应该认真考虑：
 
 我建议在过去的几年中解决一系列Kaggle问题。
 
-此步骤旨在帮助您了解最佳表现者如何处理竞争机器学习并学习如何将他们的方法集成到您的流程中。
+此步骤旨在帮助您了解最佳表现者如何处理机器学习竞赛并学习如何将他们的方法集成到您的流程中。
 
 *   选择各种不同的问题类型，迫使您学习和应用新的和不同的技术。
 *   研究论坛帖子，获胜者写作博客文章，GitHub存储库以及问题的所有其他信息，并将这些方法合并到您的流程中。
@@ -143,7 +143,7 @@ Kaggle有一些特别的好处，你应该认真考虑：
 
 这里有一些进一步的阅读：
 
-*   [如何在竞争机器学习中踢屁](http://machinelearningmastery.com/how-to-kick-ass-in-competitive-machine-learning/)
+*   [如何在机器学习竞赛中踢屁](http://machinelearningmastery.com/how-to-kick-ass-in-competitive-machine-learning/)
 *   [Master Kaggle一直竞争](http://machinelearningmastery.com/master-kaggle-by-competing-consistently/)
 
 ## 摘要

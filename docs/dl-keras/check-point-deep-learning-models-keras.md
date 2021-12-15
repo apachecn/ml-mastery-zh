@@ -123,7 +123,7 @@ weights-improvement-99-0.78.hdf5
 在这种情况下，只有当验证数据集上模型的分类精度提高到当前最佳时，模型权重才会被写入文件`weights.best.hdf5`.
 
 ```py
-#当验证模型精度最高时，保存权重
+#当验证模型准确率最高时，保存权重
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.callbacks import ModelCheckpoint

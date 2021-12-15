@@ -77,7 +77,7 @@ results = model_selection.cross_val_score(model, X, Y, cv=kfold)
 print(results.mean())
 ```
 
-运行该示例，我们可以获得对模型精度的可靠估计。
+运行该示例，我们可以获得对模型准确率的可靠估计。
 
 ```
 0.770745044429

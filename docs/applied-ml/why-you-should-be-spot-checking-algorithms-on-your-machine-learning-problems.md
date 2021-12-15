@@ -1,4 +1,4 @@
-# 为什么你应该在你的机器学习问题上进行抽样检查算法
+# 为什么你应该在你的机器学习问题上抽样检查算法
 
 > 原文： [https://machinelearningmastery.com/why-you-should-be-spot-checking-algorithms-on-your-machine-learning-problems/](https://machinelearningmastery.com/why-you-should-be-spot-checking-algorithms-on-your-machine-learning-problems/)
 

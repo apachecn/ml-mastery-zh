@@ -1,4 +1,4 @@
-# 简单的三步法到最佳机器学习算法
+# 通往最佳机器学习算法的简单三步法
 
 > 原文： [https://machinelearningmastery.com/steps-to-the-best-machine-learning-algorithm/](https://machinelearningmastery.com/steps-to-the-best-machine-learning-algorithm/)
 

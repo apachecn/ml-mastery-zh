@@ -90,7 +90,7 @@ print(features[0:5,:])
 
 递归特征消除（或 RFE）通过递归地移除属性并在剩余的属性上构建模型来工作。
 
-它使用模型精度来识别哪些属性（和属性组合）对预测目标属性的贡献最大。
+它使用模型准确率来识别哪些属性（和属性组合）对预测目标属性的贡献最大。
 
 您可以在 scikit-learn 文档中了解有关 [RFE](http://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.RFE.html#sklearn.feature_selection.RFE) 类的更多信息。
 

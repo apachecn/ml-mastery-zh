@@ -1,6 +1,6 @@
 +   [Machine Learning Mastery 机器学习入门教程](README.md)
 +   [机器学习入门的四个步骤：初学者入门与实践的自上而下策略](4-steps-to-get-started-in-machine-learning.md)
-+   [你应该培养的 5 个机器学习领域](5-machine-learning-areas-you-should-be-cultivating.md)
++   [你应该训练的 5 个机器学习领域](5-machine-learning-areas-you-should-be-cultivating.md)
 +   [一种选择机器学习算法的数据驱动方法](a-data-driven-approach-to-machine-learning.md)
 +   [机器学习中的分析与数值解](analytical-vs-numerical-solutions-in-machine-learning.md)
 +   [应用机器学习是一种精英政治](applied-machine-learning-is-a-meritocracy.md)

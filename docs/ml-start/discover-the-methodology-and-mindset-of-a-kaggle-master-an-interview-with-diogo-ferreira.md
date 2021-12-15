@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/discover-the-methodology-and-mindset-of-a-kaggle-master-an-interview-with-diogo-ferreira/](https://machinelearningmastery.com/discover-the-methodology-and-mindset-of-a-kaggle-master-an-interview-with-diogo-ferreira/)
 
-在竞争机器学习中做得好怎么办？要真正深入研究这个问题，你需要挖掘那些做得好的人。
+在机器学习竞赛中做得好怎么办？要真正深入研究这个问题，你需要挖掘那些做得好的人。
 
 2010 年，我参加了一场 Kaggle 比赛，以预测未来国际象棋比赛的结果。这是一个令人着迷的问题，因为它要求你从历史游戏中对玩家的评级进行建模，并将这些评级传播到未来以做出预测。
 
@@ -13,7 +13,7 @@
 *   **第 1 部分**探讨了 Diogo 的问题解决背景和方法
 *   **第 2 部分**关于 Kaggle 国际象棋评级比赛
 *   **第 3 部分**潜入迪奥戈的国际象棋评级竞赛解决方案
-*   **第 4 部分**给我们留下了一些关于竞争机器学习从业者的最终想法（最好的部分！）
+*   **第 4 部分**给我们留下了一些关于机器学习竞赛从业者的最终想法（最好的部分！）
 
 喝一杯，坐下来享受吧！
 
