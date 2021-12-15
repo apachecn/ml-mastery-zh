@@ -50,7 +50,7 @@
 5.  朴素贝叶斯
 6.  支持向量机
 
-问题是来自 UCI 机器学习库的标准二元分类数据集，称为 [Pima 印第安人糖尿病](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)问题[更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。该问题有两个类和八个不同比例的数字输入变量。
+问题是来自 UCI 机器学习库的标准二分类数据集，称为 [Pima 印第安人糖尿病](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)问题[更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。该问题有两个类和八个不同比例的数字输入变量。
 
 10 倍交叉验证程序用于评估每个算法，重要的是使用相同的随机种子配置，以确保执行与训练数据相同的分割，并且以完全相同的方式评估每个算法。
 

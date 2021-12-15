@@ -85,7 +85,7 @@ Decay = 0.001
 
 以下示例演示了在 Keras 中使用基于时间的学习率适应计划。
 
-它在[电离层二元分类问题](http://archive.ics.uci.edu/ml/datasets/Ionosphere)上得到证实。这是一个小型数据集，您可以从 UCI 机器学习库下载[。使用文件名 ionosphere.csv 将数据文件放在工作目录中。](http://archive.ics.uci.edu/ml/machine-learning-databases/ionosphere/ionosphere.data)
+它在[电离层二分类问题](http://archive.ics.uci.edu/ml/datasets/Ionosphere)上得到证实。这是一个小型数据集，您可以从 UCI 机器学习库下载[。使用文件名 ionosphere.csv 将数据文件放在工作目录中。](http://archive.ics.uci.edu/ml/machine-learning-databases/ionosphere/ionosphere.data)
 
 电离层数据集适用于使用神经网络进行实践，因为所有输入值都是相同比例的小数值。
 

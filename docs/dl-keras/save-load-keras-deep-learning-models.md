@@ -34,7 +34,7 @@ Keras 将保存模型架构和保存模型权重的问题分开。
 
 每个示例还将演示如何将模型权重保存并加载到 HDF5 格式的文件中。
 
-这些例子将使用在 Pima Indians 糖尿病二元分类数据集开始时训练的相同简单网络。这是一个包含所有数字数据的小型数据集，易于使用。您可以[下载此数据集](http://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/pima-indians-diabetes.data)并将其放在您的工作目录中，文件名为“ _pima-indians-diabetes.csv_ ”（更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
+这些例子将使用在 Pima Indians 糖尿病二分类数据集开始时训练的相同简单网络。这是一个包含所有数字数据的小型数据集，易于使用。您可以[下载此数据集](http://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/pima-indians-diabetes.data)并将其放在您的工作目录中，文件名为“ _pima-indians-diabetes.csv_ ”（更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
 
 确认您安装了最新版本的 Keras（截至 2017 年 3 月的 v1.2.2）。
 

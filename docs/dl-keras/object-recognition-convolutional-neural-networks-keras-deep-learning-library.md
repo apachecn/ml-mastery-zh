@@ -1,4 +1,4 @@
-# 基于卷积神经网络的 Keras 深度学习库中的目标识别
+# Keras 深度学习库中基于卷积神经网络的的目标识别
 
 > 原文： [https://machinelearningmastery.com/object-recognition-convolutional-neural-networks-keras-deep-learning-library/](https://machinelearningmastery.com/object-recognition-convolutional-neural-networks-keras-deep-learning-library/)
 

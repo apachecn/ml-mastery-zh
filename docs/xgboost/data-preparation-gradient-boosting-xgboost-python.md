@@ -99,7 +99,7 @@ XGBClassifier(base_score=0.5, colsample_bylevel=1, colsample_bytree=1,
 Accuracy: 92.00%
 ```
 
-请注意 XGBoost 模型如何配置为使用 **multi：softprob** 目标自动建模多类分类问题，该目标是 softmax loss 函数的一种变体，用于模拟类概率。这表明在内部，输出类自动转换为一种热类型编码。
+请注意 XGBoost 模型如何配置为使用 **multi：softprob** 目标自动建模多分类问题，该目标是 softmax loss 函数的一种变体，用于模拟类概率。这表明在内部，输出类自动转换为一种热类型编码。
 
 ## 一个热编码分类数据
 
@@ -298,7 +298,7 @@ X[X == '?'] = 0
 X = X.astype('float32')
 ```
 
-最后，这是一个二元分类问题，尽管类值用整数 1 和 2 标记。我们将 XGBoost 中的二进制分类问题建模为逻辑 0 和 1 值。我们可以使用 LabelEncoder 轻松地将 Y 数据集转换为 0 和 1 整数，就像我们在虹膜花示例中所做的那样。
+最后，这是一个二分类问题，尽管类值用整数 1 和 2 标记。我们将 XGBoost 中的二进制分类问题建模为逻辑 0 和 1 值。我们可以使用 LabelEncoder 轻松地将 Y 数据集转换为 0 和 1 整数，就像我们在虹膜花示例中所做的那样。
 
 ```py
 # encode Y class values as integers

@@ -10,7 +10,7 @@ BigML是一家全新的，有趣的机器学习服务公司，总部位于美国
 
 ## 虹膜种类分类问题
 
-在本教程中，我们将使用经过充分研究的Iris花卉数据集。该数据集由150个描述鸢尾花测量的实例组成，每个鸢尾花被归类为三种虹膜中的一种。属性是数字，问题是多类分类问题。
+在本教程中，我们将使用经过充分研究的Iris花卉数据集。该数据集由150个描述鸢尾花测量的实例组成，每个鸢尾花被归类为三种虹膜中的一种。属性是数字，问题是多分类问题。
 
 [![Sample of the Iris flower dataset](img/d5bf2d9a92922f6159afb16efbbd7a4f.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/03/iris-dataset-sample.png)
 

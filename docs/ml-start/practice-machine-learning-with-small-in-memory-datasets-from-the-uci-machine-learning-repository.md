@@ -96,12 +96,12 @@ UCI 机器学习库
 
 我建议你考虑一下你想要了解的问题数据集中的特征。
 
-这些可能是您想要建模的特征（如回归），或者是您希望在使用时更熟练的这些特征的模型算法（如随机森林用于多类分类）。
+这些可能是您想要建模的特征（如回归），或者是您希望在使用时更熟练的这些特征的模型算法（如随机森林用于多分类）。
 
 示例程序可能如下所示：
 
-*   二元分类：[皮马印第安人糖尿病数据集](http://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)
-*   多类分类：[虹膜数据集](http://archive.ics.uci.edu/ml/datasets/Iris)
+*   二分类：[皮马印第安人糖尿病数据集](http://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)
+*   多分类：[虹膜数据集](http://archive.ics.uci.edu/ml/datasets/Iris)
 *   回归：[葡萄酒质量数据集](http://archive.ics.uci.edu/ml/datasets/Wine+Quality)
 *   分类属性：[乳腺癌数据集](http://archive.ics.uci.edu/ml/datasets/Breast+Cancer)
 *   整数属性：[计算机硬件数据集](https://archive.ics.uci.edu/ml/datasets/Computer+Hardware)

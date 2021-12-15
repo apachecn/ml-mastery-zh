@@ -164,7 +164,7 @@ def load_dataset_group(group, prefix=''):
 
 最后，我们可以加载每个训练和测试数据集。
 
-输出数据定义为类号的整数。我们必须对这些类整数进行热编码，以使数据适合于拟合神经网络多类分类模型。我们可以通过调用 [to_categorical（）Keras 函数](https://keras.io/utils/#to_categorical)来实现。
+输出数据定义为类号的整数。我们必须对这些类整数进行热编码，以使数据适合于拟合神经网络多分类模型。我们可以通过调用 [to_categorical（）Keras 函数](https://keras.io/utils/#to_categorical)来实现。
 
 下面的`load_dataset()`函数实现了这种行为，并返回训练并测试`X`和`y`元素，以便拟合和评估定义的模型。
 

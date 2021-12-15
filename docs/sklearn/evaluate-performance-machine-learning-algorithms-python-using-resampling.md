@@ -25,7 +25,7 @@
 
 每个秘籍都是独立设计的，因此您可以将其复制并粘贴到项目中并立即使用。
 
-每个秘籍中都使用 [Pima 印第安人糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)。这是一个二元分类问题，其中所有输入变量都是数字。在每个秘籍中，它直接从 [UCI 机器学习库](http://archive.ics.uci.edu/ml/)下载（更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。您可以根据需要将其替换为您自己的数据集。
+每个秘籍中都使用 [Pima 印第安人糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)。这是一个二分类问题，其中所有输入变量都是数字。在每个秘籍中，它直接从 [UCI 机器学习库](http://archive.ics.uci.edu/ml/)下载（更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。您可以根据需要将其替换为您自己的数据集。
 
 ## 评估您的机器学习算法
 

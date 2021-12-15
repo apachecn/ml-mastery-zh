@@ -34,7 +34,7 @@
 
 这篇文章中的每个秘籍都是独立设计的。这样您就可以将其复制并粘贴到项目中并立即开始使用。
 
-来自 UCI 机器学习库的标准分类问题用于演示每个集合算法。这是[皮马印第安人糖尿病数据集的发病](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)（更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。这是一个二元分类问题，其中所有输入变量都是数字的并且具有不同的比例。
+来自 UCI 机器学习库的标准分类问题用于演示每个集合算法。这是[皮马印第安人糖尿病数据集的发病](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)（更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。这是一个二分类问题，其中所有输入变量都是数字的并且具有不同的比例。
 
 每个集合算法使用 10 倍交叉验证进行演示，这是一种标准技术，用于估计任何机器学习算法对未见数据的表现。
 

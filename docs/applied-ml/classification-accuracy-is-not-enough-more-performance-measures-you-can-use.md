@@ -15,13 +15,13 @@
 分类准确度
 摄影：Nina Matthews摄影，保留一些权利
 
-在这篇文章中，我们将介绍Precision和Recall表现度量，您可以使用它们来评估模型的二元分类问题。
+在这篇文章中，我们将介绍Precision和Recall表现度量，您可以使用它们来评估模型的二分类问题。
 
 ## 乳腺癌复发
 
 [乳腺癌数据集](http://archive.ics.uci.edu/ml/datasets/Breast+Cancer)是标准的机器学习数据集。它包含9个属性，描述了286名患有乳腺癌并且在乳腺癌中存活并且在5年内是否复发的女性。
 
-这是一个二元分类问题。在286名女性中，201名患者未复发乳腺癌，剩下的85名女性患乳腺癌。
+这是一个二分类问题。在286名女性中，201名患者未复发乳腺癌，剩下的85名女性患乳腺癌。
 
 我认为对于这个问题，假阴性可能比误报更糟糕。你同意吗？更详细的筛查可以清除误报，但是假阴性被送回家并丢失以进行后续评估。
 
@@ -47,7 +47,7 @@ CART或[分类和回归树](http://en.wikipedia.org/wiki/Predictive_analytics#Cl
 
 用于呈现分类器的预测结果的清晰且明确的方式是使用[混淆矩阵](http://en.wikipedia.org/wiki/Table_of_confusion#Table_of_confusion)（也称为[列联表](http://en.wikipedia.org/wiki/Contingency_table)）。
 
-对于二元分类问题，该表有2行2列。顶部是观察到的类标签，而旁边是预测的类标签。每个单元格包含落入该单元格的分类器所做的预测数量。
+对于二分类问题，该表有2行2列。顶部是观察到的类标签，而旁边是预测的类标签。每个单元格包含落入该单元格的分类器所做的预测数量。
 
 [![Truth Table Confusion Matrix](img/77dddc6647d29c6f5b500f602293112c.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/03/truth_table.png)
 

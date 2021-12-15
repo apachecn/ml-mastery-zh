@@ -1,4 +1,4 @@
-# 如何设置 Amazon AWS EC2 GPU 以训练 Keras 深度学习模型（分步）
+# 如何设置 Amazon AWS EC2 GPU 来训练 Keras 深度学习模型（分步）
 
 > 原文： [https://machinelearningmastery.com/develop-evaluate-large-deep-learning-models-keras-amazon-web-services/](https://machinelearningmastery.com/develop-evaluate-large-deep-learning-models-keras-amazon-web-services/)
 

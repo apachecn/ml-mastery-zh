@@ -58,7 +58,7 @@
 3.  分类和回归树
 4.  支持向量机
 
-每个秘籍都在[皮马印第安人糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)上发表（更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。这是一个二元分类问题，其中所有属性都是数字。
+每个秘籍都在[皮马印第安人糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)上发表（更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。这是一个二分类问题，其中所有属性都是数字。
 
 每个秘籍都是完整且独立的。这意味着您可以将其复制并粘贴到您自己的项目中并立即开始使用它。
 
@@ -72,7 +72,7 @@
 
 ### 1\. Logistic 回归
 
-Logistic 回归假定数值输入变量的高斯分布，并且可以模拟二元分类问题。
+Logistic 回归假定数值输入变量的高斯分布，并且可以模拟二分类问题。
 
 您可以使用 [LogisticRegression](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) 类构建逻辑回归模型。
 
@@ -102,7 +102,7 @@ print(results.mean())
 
 ### 2.线性判别分析
 
-线性判别分析或 LDA 是用于二元和多类分类的统计技术。它也假定数值输入变量的高斯分布。
+线性判别分析或 LDA 是用于二元和多分类的统计技术。它也假定数值输入变量的高斯分布。
 
 您可以使用 [LinearDiscriminantAnalysis](http://scikit-learn.org/stable/modules/generated/sklearn.discriminant_analysis.LinearDiscriminantAnalysis.html) 类构建 LDA 模型。
 

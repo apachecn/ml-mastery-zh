@@ -38,9 +38,9 @@ API 允许您指定要监控的度量标准，例如训练或验证数据集的�
 
 ## 检查点神经网络模型改进
 
-检查点的良好用途是每次在训练期间观察到性能提升时输出模型权重参数。
+检查点的良好用途是每次在训练期间观察到表现提升时输出模型权重参数。
 
-下面的例子为皮马印第安人糖尿病二元分类问题创建了一个小型神经网络。该示例假设 _pima-indians-diabetes.csv_ 文件位于您的工作目录中。
+下面的例子为皮马印第安人糖尿病二分类问题创建了一个小型神经网络。该示例假设 _pima-indians-diabetes.csv_ 文件位于您的工作目录中。
 
 您可以从此处下载数据集：
 
@@ -211,7 +211,7 @@ dataset = numpy.loadtxt("pima-indians-diabetes.csv", delimiter=",")
 # 将数据集划分为输入变量和输出变量
 X = dataset[:,0:8]
 Y = dataset[:,8]
-# 在整个数据集上使用加载的权重参数评估模型性能
+# 在整个数据集上使用加载的权重参数评估模型表现
 scores = model.evaluate(X, Y, verbose=0)
 print("%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
 ```

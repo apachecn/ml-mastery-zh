@@ -653,7 +653,7 @@ ytest = array([0 for _ in range(100)] + [1 for _ in range(100)])
 
 我们将使用具有 50 个神经元和整流线性激活函数的单个隐藏层。输出层是具有 S 形激活函数的单个神经元，用于预测 0 为阴性，1 为阳性评价。
 
-将使用梯度下降的有效 [Adam 实现](http://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/)和二元交叉熵损失函数来训练网络，适合于二元分类问题。在训练和评估模型时，我们将跟踪准确率。
+将使用梯度下降的有效 [Adam 实现](http://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/)和二元交叉熵损失函数来训练网络，适合于二分类问题。在训练和评估模型时，我们将跟踪准确率。
 
 ```py
 # define network

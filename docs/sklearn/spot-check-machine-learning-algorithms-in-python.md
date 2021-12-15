@@ -271,7 +271,7 @@ def summarize_results(results, maximize=True, top_n=10):
 
 ## 3.现场检查分类
 
-我们将使用 [make_classification（）函数](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)生成二元分类问题。
+我们将使用 [make_classification（）函数](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)生成二分类问题。
 
 该函数将生成 1,000 个样本，包含 20 个变量，一些冗余变量和两个类。
 
@@ -913,7 +913,7 @@ def get_gbm_models(models=dict(), use_xgb=True):
 	return models
 ```
 
-为了具体化，下面是更新的二元分类示例，以定义 XGBoost 模型。
+为了具体化，下面是更新的二分类示例，以定义 XGBoost 模型。
 
 ```
 # binary classification spot check script
@@ -1149,7 +1149,7 @@ def evaluate_model(X, y, model, folds, repeats, metric):
 
 然后我们可以更新`robust_evaluate_model()`函数来传递重复参数和`evaluate_models()`函数来定义默认值，例如 3。
 
-下面列出了具有三次重复模型评估的二元分类示例的完整示例。
+下面列出了具有三次重复模型评估的二分类示例的完整示例。
 
 ```
 # binary classification spot check script

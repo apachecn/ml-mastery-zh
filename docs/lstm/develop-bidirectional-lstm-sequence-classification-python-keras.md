@@ -215,7 +215,7 @@ def get_sequence(n_timesteps):
 
 在输出层周围使用TimeDistributed包装层，以便在给定作为输入提供的完整序列的情况下，可以预测每个时间步长一个值。这要求LSTM隐藏层返回一系列值（每个时间步长一个）而不是整个输入序列的单个值。
 
-最后，因为这是二元分类问题，所以使用二进制日志丢失（Keras中的binary_crossentropy）。使用有效的ADAM优化算法来找到权重，并且计算每个时期的精度度量并报告。
+最后，因为这是二分类问题，所以使用二进制日志丢失（Keras中的binary_crossentropy）。使用有效的ADAM优化算法来找到权重，并且计算每个时期的精度度量并报告。
 
 ```py
 # define LSTM

@@ -26,7 +26,7 @@
 
 针对分类和回归类型的机器学习问题演示了度量标准。
 
-*   对于分类指标， [Pima 印第安人糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)的发病被用作示范。这是一个二元分类问题，其中所有输入变量都是数字的（更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
+*   对于分类指标， [Pima 印第安人糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)的发病被用作示范。这是一个二分类问题，其中所有输入变量都是数字的（更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
 *   对于回归指标， [Boston House Price 数据集](https://archive.ics.uci.edu/ml/datasets/Housing)用作演示。这是一个回归问题，其中所有输入变量也是数字的（更新：[从这里下载数据](https://raw.githubusercontent.com/jbrownlee/Datasets/master/housing.data)）。
 
 在每个秘籍中，数据集直接从 [UCI 机器学习库](https://archive.ics.uci.edu/ml/index.html)下载。
@@ -123,11 +123,11 @@ Logloss: -0.493 (0.047)
 
 ### 3\. ROC 曲线下的面积
 
-ROC 曲线下面积（或简称 AUC）是二元分类问题的表现指标。
+ROC 曲线下面积（或简称 AUC）是二分类问题的表现指标。
 
 AUC 代表模型区分正面和负面类别的能力。面积为 1.0 表示完美地预测所有预测的模型。 0.5 的面积表示随机的模型。 [了解更多有关 ROC 的信息](http://machinelearningmastery.com/assessing-comparing-classifier-performance-roc-curves-2/)。
 
-ROC 可以分解为敏感性和特异性。二元分类问题实际上是敏感性和特异性之间的权衡。
+ROC 可以分解为敏感性和特异性。二分类问题实际上是敏感性和特异性之间的权衡。
 
 *   敏感度是真正的正面率，也称为召回率。它是实际正确预测的正（第一）类的数字实例。
 *   特异性也称为真正的负面率。是负类（第二）类中实际预测的实例数是否正确。
@@ -208,7 +208,7 @@ print(matrix)
 
 `classification_report()`函数显示每个类的精度，召回率，f1 分数和支持。
 
-下面的示例演示了有关二元分类问题的报告。
+下面的示例演示了有关二分类问题的报告。
 
 ```
 # Cross Validation Classification Report

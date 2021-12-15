@@ -33,7 +33,7 @@
 
 您可以将它们直接复制并粘贴到项目中并开始工作。
 
-[Pima 印度糖尿病](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)数据集用于每个秘籍。这是一个二元分类问题，其中所有属性都是数字的，并且具有不同的比例。这是可以从预处理中受益的数据集的一个很好的例子。
+[Pima 印度糖尿病](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)数据集用于每个秘籍。这是一个二分类问题，其中所有属性都是数字的，并且具有不同的比例。这是可以从预处理中受益的数据集的一个很好的例子。
 
 您可以在 [UCI 机器学习库](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)网页上了解有关此数据集的更多信息（更新：[从此处下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
 

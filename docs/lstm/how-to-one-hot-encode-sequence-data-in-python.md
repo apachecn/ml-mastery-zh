@@ -305,7 +305,7 @@ print(inverted)
 *   [LabelEncoder scikit-learn API文档](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html)
 *   [to_categorical Keras API文档](https://keras.io/utils/#to_categorical)
 *   [Python中使用XGBoost进行梯度提升的数据准备](http://machinelearningmastery.com/data-preparation-gradient-boosting-xgboost-python/)
-*   [Keras深度学习库的多类分类教程](http://machinelearningmastery.com/multi-class-classification-tutorial-keras-deep-learning-library/)
+*   [Keras深度学习库的多分类教程](http://machinelearningmastery.com/multi-class-classification-tutorial-keras-deep-learning-library/)
 
 ## 摘要
 

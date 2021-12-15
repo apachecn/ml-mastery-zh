@@ -1,4 +1,4 @@
-# 基于 Keras 的深度学习模型中的dropout正则化
+# Keras 深度学习模型中的丢弃正则化
 
 > 原文： [https://machinelearningmastery.com/dropout-regularization-deep-learning-models-keras/](https://machinelearningmastery.com/dropout-regularization-deep-learning-models-keras/)
 
@@ -37,11 +37,11 @@ dropout是一种在训练过程中忽略随机选择的神经元的技术。这�
 
 ## Keras的dropout规范化
 
-通过以每轮权重更新时的给定概率（例如 20％）随机选择要丢弃的节点、。这就是在Keras实施 Dropout 的方式。 Dropout 仅在模型训练期间使用，在评估模型的性能时不使用。
+通过以每轮权重更新时的给定概率（例如 20％）随机选择要丢弃的节点、。这就是在Keras实施 Dropout 的方式。 Dropout 仅在模型训练期间使用，在评估模型的表现时不使用。
 
 接下来，我们将探讨在 Keras 中使用 Dropout 的几种不同方法。
 
-这些示例将使用 [Sonar 数据集](http://archive.ics.uci.edu/ml/datasets/Connectionist+Bench+(Sonar,+Mines+vs.+Rocks))。这是一个二元分类问题，其目标是利用声纳回声正确识别岩石和模拟地雷。它是神经网络的一个很好的测试数据集，因为所有输入值都是数字的并且具有相同的量纲。
+这些示例将使用 [Sonar 数据集](http://archive.ics.uci.edu/ml/datasets/Connectionist+Bench+(Sonar,+Mines+vs.+Rocks))。这是一个二分类问题，其目标是利用声纳回声正确识别岩石和模拟地雷。它是神经网络的一个很好的测试数据集，因为所有输入值都是数字的并且具有相同的量纲。
 
 数据集可以是从 UCI 机器学习库下载的[。您可以将声纳数据集放在当前工作目录中，文件名为 sonar.csv。](http://archive.ics.uci.edu/ml/machine-learning-databases/undocumented/connectionist-bench/sonar/sonar.all-data)
 

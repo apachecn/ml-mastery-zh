@@ -40,7 +40,7 @@ Python 中机器学习的特征选择
 
 每个秘籍都设计为完整且独立，因此您可以将其直接复制并粘贴到项目中并立即使用。
 
-秘籍使用[皮马印第安人糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)来证明特征选择方法（更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。这是一个二元分类问题，其中所有属性都是数字。
+秘籍使用[皮马印第安人糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)来证明特征选择方法（更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。这是一个二分类问题，其中所有属性都是数字。
 
 ### 1.单变量选择
 

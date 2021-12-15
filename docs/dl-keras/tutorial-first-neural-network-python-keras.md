@@ -1,4 +1,4 @@
-# 使用 Keras 逐步开发 Python 中的第一个神经网络
+# 使用 Python 和 Keras 逐步开发第一个神经网络
 
 > 原文： [https://machinelearningmastery.com/tutorial-first-neural-network-python-keras/](https://machinelearningmastery.com/tutorial-first-neural-network-python-keras/)
 
@@ -64,7 +64,7 @@ numpy.random.seed(7)
 
 在本教程中，我们将使用 Pima Indians 糖尿病数据集。这是来自 UCI 机器学习库的标准机器学习数据集。它描述了皮马印第安人的患者病历数据，以及他们是否在五年内患有糖尿病。
 
-因此，它是二元分类问题（糖尿病发作为 1 或不为 0）。描述每个患者的所有输入变量都是数字的。这使得它可以直接用于期望数字输入和输出值的神经网络，是我们在 Keras 的第一个神经网络的理想选择。
+因此，它是二分类问题（糖尿病发作为 1 或不为 0）。描述每个患者的所有输入变量都是数字的。这使得它可以直接用于期望数字输入和输出值的神经网络，是我们在 Keras 的第一个神经网络的理想选择。
 
 *   [数据集文件](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)
 *   [数据集详情](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.names)
@@ -131,7 +131,7 @@ model.add(Dense(1, activation='sigmoid'))
 
 我们必须指定用于评估一组权重的损失函数，用于搜索网络的不同权重的优化器以及我们希望在训练期间收集和报告的任何可选指标。
 
-在这种情况下，我们将使用对数损失，对于二元分类问题，在 Keras 中定义为“ **binary_crossentropy** ”。我们还将使用有效的梯度下降算法“ **adam** ”，因为它是一个有效的默认值。在“ [Adam：随机优化方法](http://arxiv.org/abs/1412.6980)”一文中了解有关 Adam 优化算法的更多信息。
+在这种情况下，我们将使用对数损失，对于二分类问题，在 Keras 中定义为“ **binary_crossentropy** ”。我们还将使用有效的梯度下降算法“ **adam** ”，因为它是一个有效的默认值。在“ [Adam：随机优化方法](http://arxiv.org/abs/1412.6980)”一文中了解有关 Adam 优化算法的更多信息。
 
 最后，因为它是一个分类问题，我们将收集并报告分类准确度作为指标。
 
@@ -320,5 +320,5 @@ print(rounded)
 *   [Keras 神经网络模型的 5 步生命周期](http://machinelearningmastery.com/5-step-life-cycle-neural-network-models-keras/)
 *   [如何使用 Keras 网格搜索 Python 中的深度学习模型的超参数](http://machinelearningmastery.com/grid-search-hyperparameters-deep-learning-models-python-keras/)
 *   [Keras 中深度学习的时间序列预测](http://machinelearningmastery.com/time-series-prediction-with-deep-learning-in-python-with-keras/)
-*   [Keras 深度学习库的多类分类教程](http://machinelearningmastery.com/multi-class-classification-tutorial-keras-deep-learning-library/)
+*   [Keras 深度学习库的多分类教程](http://machinelearningmastery.com/multi-class-classification-tutorial-keras-deep-learning-library/)
 *   [使用 Python 中的 Keras 深度学习库进行回归教程](http://machinelearningmastery.com/regression-tutorial-keras-deep-learning-library-python/)

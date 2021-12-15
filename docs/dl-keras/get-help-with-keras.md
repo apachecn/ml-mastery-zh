@@ -1,4 +1,4 @@
-# 在 Keras 中获得深度学习帮助的 9 种方法
+# 在 Keras 深度学习中获得帮助的 9 种方法
 
 > 原文： [https://machinelearningmastery.com/get-help-with-keras/](https://machinelearningmastery.com/get-help-with-keras/)
 

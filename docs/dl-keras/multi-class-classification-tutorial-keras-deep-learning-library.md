@@ -1,15 +1,15 @@
-# Keras 深度学习库的多类分类教程
+# Keras 深度学习库的多分类教程
 
 > 原文： [https://machinelearningmastery.com/multi-class-classification-tutorial-keras-deep-learning-library/](https://machinelearningmastery.com/multi-class-classification-tutorial-keras-deep-learning-library/)
 
 Keras 是一个深度学习的 Python 库，它包含了高效的数值库 Theano 和 TensorFlow。
 
-在本教程中，您将了解如何使用 Keras 开发和评估多类分类问题的神经网络模型。
+在本教程中，您将了解如何使用 Keras 开发和评估多分类问题的神经网络模型。
 
 完成本分步教程后，您将了解：
 
 *   如何从 CSV 加载数据并使其可供 Keras 使用。
-*   如何用神经网络建立多类分类数据进行建模。
+*   如何用神经网络建立多分类数据进行建模。
 *   如何用 scikit-learn 评估 Keras 神经网络模型。
 
 让我们开始吧。
@@ -20,7 +20,7 @@ Keras 是一个深度学习的 Python 库，它包含了高效的数值库 Thean
 
 ![Multi-Class Classification Tutorial with the Keras Deep Learning Library](img/2dae7dc453b9ee9eecf2783612250927.png)
 
-Keras 深度学习库的多类分类教程
+Keras 深度学习库的多分类教程
 [houroumono](https://www.flickr.com/photos/hourou/8922014724/) 的照片，保留一些权利。
 
 ## 1.问题描述
@@ -82,7 +82,7 @@ Y = dataset[:,4]
 
 输出变量包含三个不同的字符串值。
 
-在使用神经网络对多类分类问题进行建模时，最好将包含每个类值的值的向量的输出属性重新整形为一个矩阵，每个类值都有一个布尔值，以及给定的实例是否具有该值是否有类值。
+在使用神经网络对多分类问题进行建模时，最好将包含每个类值的值的向量的输出属性重新整形为一个矩阵，每个类值都有一个布尔值，以及给定的实例是否具有该值是否有类值。
 
 这称为[一个热编码](https://en.wikipedia.org/wiki/One-hot)或从分类变量创建虚拟变量。
 
@@ -188,9 +188,9 @@ Accuracy: 97.33% (4.42%)
 通过完成本教程，您了解到：
 
 *   如何加载数据并使其可用于 Keras。
-*   如何使用一个热编码准备多类分类数据进行建模。
+*   如何使用一个热编码准备多分类数据进行建模。
 *   如何使用 Keras 神经网络模型与 scikit-learn。
-*   如何使用 Keras 定义神经网络进行多类分类。
+*   如何使用 Keras 定义神经网络进行多分类。
 *   如何使用带有 k-fold 交叉验证的 scikit-learn 来评估 Keras 神经网络模型
 
 您对 Keras 或此帖的深度学习有任何疑问吗？

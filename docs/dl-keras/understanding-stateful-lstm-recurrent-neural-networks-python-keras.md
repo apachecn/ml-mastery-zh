@@ -1,4 +1,4 @@
-# 使用 Keras 理解 Python 中的有状态 LSTM 循环神经网络
+# 使用 Python 和 Keras 理解有状态 LSTM 循环神经网络
 
 > 原文： [https://machinelearningmastery.com/understanding-stateful-lstm-recurrent-neural-networks-python-keras/](https://machinelearningmastery.com/understanding-stateful-lstm-recurrent-neural-networks-python-keras/)
 
@@ -144,7 +144,7 @@ y = np_utils.to_categorical(dataY)
 
 我们将问题框架化为单字母输入到单字母输出对的随机集合。正如我们将看到的那样，这是 LSTM 学习问题的难点框架。
 
-让我们定义一个具有 32 个单元的 LSTM 网络和一个具有 softmax 激活功能的输出层，用于做出预测。因为这是一个多类分类问题，我们可以使用日志丢失函数（在 Keras 中称为“ **categorical_crossentropy** ”），并使用 ADAM 优化函数优化网络。
+让我们定义一个具有 32 个单元的 LSTM 网络和一个具有 softmax 激活功能的输出层，用于做出预测。因为这是一个多分类问题，我们可以使用日志丢失函数（在 Keras 中称为“ **categorical_crossentropy** ”），并使用 ADAM 优化函数优化网络。
 
 该模型适用于 500 个时期，批量大小为 1。
 

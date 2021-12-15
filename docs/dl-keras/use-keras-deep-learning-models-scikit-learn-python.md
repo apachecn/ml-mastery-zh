@@ -1,4 +1,4 @@
-# 在 Python 中使用 Keras 深度学习模型和 Scikit-Learn
+# 将 Keras 深度学习模型和 Python Scikit-Learn 一起使用
 
 > 原文： [https://machinelearningmastery.com/use-keras-deep-learning-models-scikit-learn-python/](https://machinelearningmastery.com/use-keras-deep-learning-models-scikit-learn-python/)
 

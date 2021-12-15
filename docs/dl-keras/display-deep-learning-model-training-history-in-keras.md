@@ -1,4 +1,4 @@
-# 在 Keras 展示深度学习模型训练历史
+# 在 Keras 中展示深度学习模型训练历史
 
 > 原文： [https://machinelearningmastery.com/display-deep-learning-model-training-history-in-keras/](https://machinelearningmastery.com/display-deep-learning-model-training-history-in-keras/)
 
@@ -6,7 +6,7 @@
 
 Keras 是一个功能强大的 Python 库，它提供了一个简洁的交互方式用来创建深度学习模型，并包含更高技术的 TensorFlow 和 Theano 后端。
 
-在本文中，您将了解如何在使用 Keras 进行 Python 训练期间查看和可视化深度学习模型的性能表现。
+在本文中，您将了解如何在使用 Keras 进行 Python 训练期间查看和可视化深度学习模型的表现表现。
 
 让我们开始吧。
 
@@ -53,7 +53,7 @@ print(history.history.keys())
 
 我们可以从收集的历史数据中创建图形。
 
-在下面的例子中，我们创建了一个小型网络来模拟皮马印第安人糖尿病二元分类问题。这是一个可从 UCI 机器学习库获得的小型数据集，您可以[下载数据集](http://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/pima-indians-diabetes.data)并将其保存为当前工作目录中的 _pima-indians-diabetes.csv_ （更新：[从此处下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
+在下面的例子中，我们创建了一个小型网络来模拟皮马印第安人糖尿病二分类问题。这是一个可从 UCI 机器学习库获得的小型数据集，您可以[下载数据集](http://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/pima-indians-diabetes.data)并将其保存为当前工作目录中的 _pima-indians-diabetes.csv_ （更新：[从此处下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
 
 该示例收集从训练模型返回的历史记录并创建两个图表：
 
@@ -111,7 +111,7 @@ plt.show()
 
 图：训练和验证数据集的模型准确率图
 
-从损失图中我们可以看到，模型在训练和验证数据集（标记测试）上具有可比较的性能，如果这些相互平行图开始一较为一致的分散，这可能是一个模型过早停止训练的信号。
+从损失图中我们可以看到，模型在训练和验证数据集（标记测试）上具有可比较的表现，如果这些相互平行图开始一较为一致的分散，这可能是一个模型过早停止训练的信号。
 
 ![Plot of Model Loss on Training and Validation Datasets](img/429db1e26cf59719f9b941d5e8a7b919.png)
 

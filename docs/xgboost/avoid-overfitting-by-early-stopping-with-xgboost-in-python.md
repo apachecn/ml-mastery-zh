@@ -283,7 +283,7 @@ Stopping. Best iteration:
 
 ## 总结
 
-在这篇文章中，您了解到了如何监测性能表现和提前停止(early stopping)。
+在这篇文章中，您了解到了如何监测表现表现和提前停止(early stopping)。
 
 所学到的要点是：
 

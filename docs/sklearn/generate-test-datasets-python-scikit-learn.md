@@ -10,8 +10,8 @@
 
 完成本教程后，您将了解：
 
-*   如何生成多类分类预测测试问题。
-*   如何生成二元分类预测测试问题。
+*   如何生成多分类预测测试问题。
+*   如何生成二分类预测测试问题。
 *   如何生成线性回归预测测试问题。
 
 让我们开始吧。
@@ -58,7 +58,7 @@ scikit-learn 是一个用于机器学习的 Python 库，它提供了生成一�
 
 考虑到斑点的线性可分离性，该问题适用于线性分类问题。
 
-下面的示例生成具有三个 blob 的样本的 2D 数据集作为多类分类预测问题。每个观察有两个输入和 0,1 或 2 个类值。
+下面的示例生成具有三个 blob 的样本的 2D 数据集作为多分类预测问题。每个观察有两个输入和 0,1 或 2 个类值。
 
 ```
 # generate 2d classification dataset
@@ -95,7 +95,7 @@ Blob 测试分类问题的散点图
 
 ### 卫星分类问题
 
-[make_moons（）函数](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_moons.html)用于二元分类，并将生成一个漩涡模式或两个卫星。
+[make_moons（）函数](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_moons.html)用于二分类，并将生成一个漩涡模式或两个卫星。
 
 您可以控制月亮形状的嘈杂程度以及要生成的样本数量。
 
@@ -134,7 +134,7 @@ pyplot.show()
 
 ### 圈子分类问题
 
-[make_circles（）函数](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_circles.html)生成二元分类问题，数据集属于同心圆。
+[make_circles（）函数](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_circles.html)生成二分类问题，数据集属于同心圆。
 
 同样，与卫星测试问题一样，您可以控制形状中的噪声量。
 
@@ -229,8 +229,8 @@ pyplot.show()
 
 具体来说，你学到了：
 
-*   如何生成多类分类预测测试问题。
-*   如何生成二元分类预测测试问题。
+*   如何生成多分类预测测试问题。
+*   如何生成二分类预测测试问题。
 *   如何生成线性回归预测测试问题。
 
 你有任何问题吗？

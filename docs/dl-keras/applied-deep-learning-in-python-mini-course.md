@@ -1,4 +1,4 @@
-# 在 Python 迷你课程中应用深度学习
+# Python 迷你课程中的应用深度学习
 
 > 原文： [https://machinelearningmastery.com/applied-deep-learning-in-python-mini-course/](https://machinelearningmastery.com/applied-deep-learning-in-python-mini-course/)
 
@@ -203,7 +203,7 @@ Keras 允许您在极少数代码行中开发和评估深度学习模型。
 1.  使用 NumPy 或 Pandas 加载数据集；
 2.  定义您的神经网络模型并进行编译；
 3.  拟合您的神经网络模型；
-4.  评估模型在不可见的数据上的性能。
+4.  评估模型在不可见的数据上的表现。
 
 为了给您的学习带来较大帮助，下面是一个完整的工作示例，您可以将其作为您的学习起点。
 
@@ -244,7 +244,7 @@ print("%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
 
 scikit-learn 库是一个基于 SciPy 构建的 Python 通用机器学习框架。
 
-Scikit-learn 擅长仅在几行代码之内评估模型性能和完成优化模型超参数等任务。
+Scikit-learn 擅长仅在几行代码之内评估模型表现和完成优化模型超参数等任务。
 
 Keras 提供了一个封装类，允许您使用 scikit-learn 的深度学习模型，例如，Keras 中的 KerasClassifier 类的实例可以封装您的深度学习模型，并在 scikit-learn 中用作估计器。
 
@@ -266,7 +266,7 @@ def create_model():
 
 # 使用scikit-learn创建分类器
 model = KerasClassifier(build_fn=create_model, nb_epoch=150, batch_size=10)
-# 在scikit-learn中使用10折交叉验证评估模型性能
+# 在scikit-learn中使用10折交叉验证评估模型表现
 kfold = StratifiedKFold(n_splits=10, shuffle=True, random_state=seed)
 results = cross_val_score(model, X, Y, cv=kfold)
 ```
@@ -275,7 +275,7 @@ results = cross_val_score(model, X, Y, cv=kfold)
 
 ## 第 07 课：绘制模型训练历史
 
-您可以通过观察模型整个训练期间的性能了解更多关于神经网络模型和深度学习更多的信息。
+您可以通过观察模型整个训练期间的表现了解更多关于神经网络模型和深度学习更多的信息。
 
 Keras 提供了在训练深度学习模型时注册回调的功能。
 
@@ -283,7 +283,7 @@ Keras 提供了在训练深度学习模型时注册回调的功能。
 
 历史对象通过调用`fit()`函数返回，度量标准保存在返回对象的历史成员的字典中。
 
-您本课程的目标是研究历史对象，并绘制模型在训练期间的性能图像。
+您本课程的目标是研究历史对象，并绘制模型在训练期间的表现图像。
 
 例如，您可以输出历史对象收集的指标列表，如下所示：
 
@@ -340,9 +340,9 @@ model.add(Dropout(0.2))
 
 你可以在 Keras 中了解更多关于的[dropout.](http://keras.io/layers/core/#dropout)的更多信息。
 
-## 第 10 课： 通过学习率计划提升模型性能
+## 第 10 课： 通过学习率计划提升模型表现
 
-通过使用学习率计划，您通常可以提高模型的性能。
+通过使用学习率计划，您通常可以提高模型的表现。
 
 通常称为自适应学习率或退火学习率，随机梯度下降的学习率在训练模型时会发生变化的技术。
 
@@ -385,7 +385,7 @@ model.compile(..., optimizer=sgd)
 
 手写数字识别是一类复杂的计算机视觉分类问题。
 
-MNIST 数据集是用于评估手写数字识别问题的算法的标准问题。它包含可用于训练模型的 60,000 个数字图像，以及可用于评估其性能的 10,000 个图像，如下图所示：
+MNIST 数据集是用于评估手写数字识别问题的算法的标准问题。它包含可用于训练模型的 60,000 个数字图像，以及可用于评估其表现的 10,000 个图像，如下图所示：
 
 ![Example MNIST images](img/256dfb575d54b2eec4be14c906ce2c11.png)
 

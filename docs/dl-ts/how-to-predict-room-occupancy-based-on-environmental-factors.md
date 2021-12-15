@@ -35,7 +35,7 @@
 
 *   [占用检测数据集，UCI 机器学习库](https://archive.ics.uci.edu/ml/datasets/Occupancy+Detection+)
 
-这是一个二元分类问题，需要使用诸如温度和湿度的环境因素的观察来分类房间是否被占用或未被占用。
+这是一个二分类问题，需要使用诸如温度和湿度的环境因素的观察来分类房间是否被占用或未被占用。
 
 该数据集在 2016 年论文“[使用统计学习模型](https://www.sciencedirect.com/science/article/pii/S0378778815304357)”的 Luis M. Candanedo 和 VéroniqueFeldheim 的光，温度，湿度和 CO2 测量的办公室精确占用检测中进行了描述。
 

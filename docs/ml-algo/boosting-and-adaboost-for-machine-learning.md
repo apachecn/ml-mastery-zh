@@ -26,7 +26,7 @@ Boosting是一种集合技术，试图从许多弱分类器中创建一个强分
 
 这是通过从训练数据构建模型，然后创建第二个模型来尝试从第一个模型中纠正错误来完成的。添加模型直到完美预测训练集或添加最大数量的模型。
 
-[AdaBoost](https://en.wikipedia.org/wiki/AdaBoost) 是第一个为二元分类开发的真正成功的增强算法。这是理解助力的最佳起点。
+[AdaBoost](https://en.wikipedia.org/wiki/AdaBoost) 是第一个为二分类开发的真正成功的增强算法。这是理解助力的最佳起点。
 
 现代助推方法建立在AdaBoost上，最着名的是[随机梯度增强机](https://en.wikipedia.org/wiki/Gradient_boosting)。
 
@@ -42,7 +42,7 @@ Boosting是一种集合技术，试图从许多弱分类器中创建一个强分
 
 ## 从数据中学习AdaBoost模型
 
-AdaBoost最适合用于提高决策树在二元分类问题上的表现。
+AdaBoost最适合用于提高决策树在二分类问题上的表现。
 
 AdaBoost最初被Freund和Schapire技术的作者称为AdaBoost.M1。最近，它可能被称为离散AdaBoost，因为它用于分类而不是回归。
 
@@ -144,7 +144,7 @@ w = w * exp（阶段*恐怖）
 在这篇文章中，您发现了用于机器学习的Boosting集合方法。你了解到：
 
 *   提升以及它如何成为一种通用技术，不断增加弱学习器的正确分类错误。
-*   AdaBoost是第一个成功的二元分类问题的提升算法。
+*   AdaBoost是第一个成功的二分类问题的提升算法。
 *   通过加权训练实例和弱学习器自己来学习AdaBoost模型。
 *   通过加权来自弱学习器的预测来预测AdaBoost。
 *   在哪里寻找有关AdaBoost算法的更多理论背景。

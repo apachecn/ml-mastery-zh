@@ -1,4 +1,4 @@
-# 如何使用预训练的 VGG 模型对照片中的物体进行分类
+# 如何使用预训练的 VGG 模型分类照片中的物体
 
 > 原文： [https://machinelearningmastery.com/use-pre-trained-vgg-model-classify-objects-photographs/](https://machinelearningmastery.com/use-pre-trained-vgg-model-classify-objects-photographs/)
 

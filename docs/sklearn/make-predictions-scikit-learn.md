@@ -52,7 +52,7 @@ Cosimo 的照片，保留一些权利。
 
 分类问题是模型学习输入要素和作为标签的输出要素之间的映射的问题，例如“_ 垃圾邮件 _”和“_ 不是垃圾邮件 _”。
 
-下面是针对简单二元分类问题的最终 [LogisticRegression](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) 模型的示例代码。
+下面是针对简单二分类问题的最终 [LogisticRegression](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) 模型的示例代码。
 
 虽然我们在本教程中使用`LogisticRegression`，但在 scikit-learn 中几乎所有的分类算法都可以使用相同的函数。
 

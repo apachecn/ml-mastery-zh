@@ -285,7 +285,7 @@ model.add(LSTM(20, batch_input_shape=(7, 5, 100), return_sequences=True, statefu
 
 我们希望输出层一次输出一个整数，每个输出观察一个。
 
-我们将输出层定义为完全连接的层（Dense），其中100个神经元用于一个热编码中的100个可能的整数值中的每一个。因为我们使用一个热编码并将问题框架化为多类分类，所以我们可以在Dense层中使用softmax激活函数。
+我们将输出层定义为完全连接的层（Dense），其中100个神经元用于一个热编码中的100个可能的整数值中的每一个。因为我们使用一个热编码并将问题框架化为多分类，所以我们可以在Dense层中使用softmax激活函数。
 
 ```py
 Dense(100, activation='softmax')
@@ -299,7 +299,7 @@ Dense(100, activation='softmax')
 model.add(TimeDistributed(Dense(100, activation='softmax')))
 ```
 
-我们将使用适用于多类分类问题的日志丢失函数（categorical_crossentropy）和具有默认超参数的高效ADAM优化算法。
+我们将使用适用于多分类问题的日志丢失函数（categorical_crossentropy）和具有默认超参数的高效ADAM优化算法。
 
 除了报告每个时期的日志损失之外，我们还将报告分类准确率，以了解我们的模型是如何训练的。
 

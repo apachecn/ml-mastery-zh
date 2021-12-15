@@ -239,7 +239,7 @@ Running the example provides an estimate of the mean squared error.
 
 ### 3.支持向量机
 
-支持向量机（SVM）是为二元分类而开发的。该技术已被扩展用于称为支持向量回归（SVR）的预测实值问题。与分类示例一样，SVR 建立在 [LIBSVM 库](https://www.csie.ntu.edu.tw/~cjlin/libsvm/)之上。
+支持向量机（SVM）是为二分类而开发的。该技术已被扩展用于称为支持向量回归（SVR）的预测实值问题。与分类示例一样，SVR 建立在 [LIBSVM 库](https://www.csie.ntu.edu.tw/~cjlin/libsvm/)之上。
 
 您可以使用 [SVR](http://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html) 类为回归创建 SVM 模型。
 

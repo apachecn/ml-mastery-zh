@@ -1,4 +1,4 @@
-# 如何在 Python 中使用 Keras 进行深度学习的度量
+# 如何在 Python 和 Keras 中对深度学习使用度量
 
 > 原文： [https://machinelearningmastery.com/custom-metrics-deep-learning-keras-python/](https://machinelearningmastery.com/custom-metrics-deep-learning-keras-python/)
 
@@ -140,9 +140,9 @@ model.compile(loss='mse', optimizer='adam', metrics=['msle'])
 
 准确度是具体的数值。
 
-无论您的问题是二元分类还是多类分类问题，您都可以指定'`acc`'指标来报告准确率。
+无论您的问题是二分类还是多分类问题，您都可以指定'`acc`'指标来报告准确率。
 
-下面是一个使用了内置的精度指标的二元分类问题的示例。
+下面是一个使用了内置的精度指标的二分类问题的示例。
 
 ```py
 from numpy import array
