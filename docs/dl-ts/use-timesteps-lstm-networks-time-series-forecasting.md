@@ -1,4 +1,4 @@
-# 如何在 LSTM 网络中使用时间序列进行时间序列预测
+# 如何将 LSTM 网络用于时间序列预测
 
 > 原文： [https://machinelearningmastery.com/use-timesteps-lstm-networks-time-series-forecasting/](https://machinelearningmastery.com/use-timesteps-lstm-networks-time-series-forecasting/)
 

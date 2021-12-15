@@ -1,4 +1,4 @@
-# 如何利用长短时记忆循环神经网络处理很长的序列
+# 如何利用长短期记忆循环神经网络处理很长的序列
 
 > 原文： [https://machinelearningmastery.com/handle-long-sequences-long-short-term-memory-recurrent-neural-networks/](https://machinelearningmastery.com/handle-long-sequences-long-short-term-memory-recurrent-neural-networks/)
 

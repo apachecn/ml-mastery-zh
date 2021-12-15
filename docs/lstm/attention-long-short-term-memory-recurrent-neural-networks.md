@@ -1,4 +1,4 @@
-# 长短时记忆循环神经网络的注意事项
+# 长短期记忆循环神经网络的注意事项
 
 > 原文： [https://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/](https://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/)
 

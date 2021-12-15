@@ -1,4 +1,4 @@
-# 如何在 LSTM 中种子状态用于 Python 中的时间序列预测
+# 如何在 Python 和 LSTM 中为时间序列预测播种状态
 
 > 原文： [https://machinelearningmastery.com/seed-state-lstms-time-series-forecasting-python/](https://machinelearningmastery.com/seed-state-lstms-time-series-forecasting-python/)
 

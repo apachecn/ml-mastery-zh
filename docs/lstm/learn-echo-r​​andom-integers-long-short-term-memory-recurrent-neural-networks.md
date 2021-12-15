@@ -1,4 +1,4 @@
-# 如何学习长短时记忆循环神经网络回声随机整数
+# 如何学习长短期记忆循环神经网络回声随机整数
 
 > 原文： [https://machinelearningmastery.com/learn-echo-r​​andom-integers-long-short-term-memory-recurrent-neural-networks/](https://machinelearningmastery.com/learn-echo-random-integers-long-short-term-memory-recurrent-neural-networks/)
 

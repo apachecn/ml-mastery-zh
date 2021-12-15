@@ -1,4 +1,4 @@
-# 如何使用 LSTM 网络中的特征进行时间序列预测
+# 如何为时间序列预测使用 LSTM 网络中的特征
 
 > 原文： [https://machinelearningmastery.com/use-features-lstm-networks-time-series-forecasting/](https://machinelearningmastery.com/use-features-lstm-networks-time-series-forecasting/)
 

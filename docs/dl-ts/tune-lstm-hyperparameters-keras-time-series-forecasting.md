@@ -1,4 +1,4 @@
-# 如何用 Keras 调整 LSTM 超参数进行时间序列预测
+# 如何用 Keras 为时间序列预测调整 LSTM 超参数
 
 > 原文： [https://machinelearningmastery.com/tune-lstm-hyperparameters-keras-time-series-forecasting/](https://machinelearningmastery.com/tune-lstm-hyperparameters-keras-time-series-forecasting/)
 

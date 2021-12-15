@@ -1,4 +1,4 @@
-# 长短时记忆网络在时间序列预测中的适用性
+# 长短期记忆网络在时间序列预测中的适用性
 
 > 原文： [https://machinelearningmastery.com/suitability-long-short-term-memory-networks-time-series-forecasting/](https://machinelearningmastery.com/suitability-long-short-term-memory-networks-time-series-forecasting/)
 

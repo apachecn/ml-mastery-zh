@@ -1,4 +1,4 @@
-# 使用 Python 进行时间序列预测的有状态和无状态 LSTM
+# 使用 Python 用于时间序列预测的有状态和无状态 LSTM
 
 > 原文： [https://machinelearningmastery.com/stateful-stateless-lstm-time-series-forecasting-python/](https://machinelearningmastery.com/stateful-stateless-lstm-time-series-forecasting-python/)
 

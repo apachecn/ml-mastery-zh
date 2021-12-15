@@ -1,4 +1,4 @@
-# 基于 Keras 的 Python 中 LSTM 循环神经网络的时间序列预测
+# 基于 Python 和 Keras 的使用 LSTM 循环神经网络的时间序列预测
 
 > 原文： [https://machinelearningmastery.com/time-series-prediction-lstm-recurrent-neural-networks-python-keras/](https://machinelearningmastery.com/time-series-prediction-lstm-recurrent-neural-networks-python-keras/)
 

@@ -1,4 +1,4 @@
-# 时间序列预测问题的分类
+# 时间序列预测问题的分类系统
 
 > 原文： [https://machinelearningmastery.com/taxonomy-of-time-series-forecasting-problems/](https://machinelearningmastery.com/taxonomy-of-time-series-forecasting-problems/)
 

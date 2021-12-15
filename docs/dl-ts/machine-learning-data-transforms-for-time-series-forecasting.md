@@ -38,7 +38,7 @@
 他们是：
 
 *   电力转换
-*   差异变换
+*   差分变换
 *   标准化
 *   正常化
 
@@ -119,7 +119,7 @@ print(inverted)
 [1.0, 2.0, 2.9999999999999996, 3.999999999999999, 5.000000000000001, 6.000000000000001, 6.999999999999999, 7.999999999999998, 8.999999999999998]
 ```
 
-### 差异变换
+### 差分变换
 
 差分变换是从时间序列中去除系统结构的简单方法。
 
@@ -167,7 +167,7 @@ inverted = invert_difference(data, transformed, 1)
 print(inverted)
 ```
 
-运行该示例将打印原始数据集，差异变换的结果以及转换后的原始值。
+运行该示例将打印原始数据集，差分变换的结果以及转换后的原始值。
 
 注意，变换后序列中的第一个“间隔”值将丢失。这是因为它们在“间隔”之前的时间步长没有值，因此无法区分。
 
@@ -369,7 +369,7 @@ print(inverted)
 ### 帖子
 
 *   [如何使用 Python 进行时间序列预测数据的电源转换](https://machinelearningmastery.com/power-transform-time-series-forecast-data-python/)
-*   [如何使用 Python 中的差异变换删除趋势和季节性](https://machinelearningmastery.com/remove-trends-seasonality-difference-transform-python/)
+*   [如何使用 Python 中的差分变换删除趋势和季节性](https://machinelearningmastery.com/remove-trends-seasonality-difference-transform-python/)
 *   [如何区分时间序列数据集与 Python](https://machinelearningmastery.com/difference-time-series-dataset-python/)
 *   [如何在 Python 中标准化和标准化时间序列数据](https://machinelearningmastery.com/normalize-standardize-time-series-data-python/)
 

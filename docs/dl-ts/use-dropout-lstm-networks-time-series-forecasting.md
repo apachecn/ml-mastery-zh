@@ -1,4 +1,4 @@
-# 如何使用 LSTM 网络的 Dropout 进行时间序列预测
+# 如何为时间序列预测使用 LSTM 网络的丢弃法
 
 > 原文： [https://machinelearningmastery.com/use-dropout-lstm-networks-time-series-forecasting/](https://machinelearningmastery.com/use-dropout-lstm-networks-time-series-forecasting/)
 
