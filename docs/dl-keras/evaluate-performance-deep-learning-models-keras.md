@@ -77,7 +77,7 @@ model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy']
 model.fit(X, Y, validation_split=0.33, epochs=150, batch_size=10)
 ```
 
-运行该示例，您可以看到每个时期的详细输出显示了训练数据集和验证数据集的损失和准确性。
+运行该示例，您可以看到每个时期的详细输出显示了训练数据集和验证数据集的损失和准确率。
 
 ```py
 ...

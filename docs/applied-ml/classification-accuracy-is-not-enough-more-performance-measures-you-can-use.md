@@ -1,14 +1,14 @@
-# 分类准确性不够：可以使用更多表现测量
+# 分类准确率不够：可以使用更多表现测量
 
 > 原文： [https://machinelearningmastery.com/classification-accuracy-is-not-enough-more-performance-measures-you-can-use/](https://machinelearningmastery.com/classification-accuracy-is-not-enough-more-performance-measures-you-can-use/)
 
-当您为分类问题构建模型时，您几乎总是希望将该模型的准确性视为所有预测所做的正确预测的数量。
+当您为分类问题构建模型时，您几乎总是希望将该模型的准确率视为所有预测所做的正确预测的数量。
 
-这是分类准确性。
+这是分类准确率。
 
 在之前的文章中，我们研究了[评估模型](http://machinelearningmastery.com/how-to-choose-the-right-test-options-when-evaluating-machine-learning-algorithms/ "How To Choose The Right Test Options When Evaluating Machine Learning Algorithms")的稳健性，使用交叉验证和多重交叉验证来预测未见数据，其中我们使用了分类准确度和平均分类准确度。
 
-一旦你拥有一个你认为可以做出强有力预测的模型，你需要确定它是否足以解决你的问题。单独的分类准确性通常不足以做出此决定。
+一旦你拥有一个你认为可以做出强有力预测的模型，你需要确定它是否足以解决你的问题。单独的分类准确率通常不足以做出此决定。
 
 [![Classification Accuracy](img/7a329bed5d17347b0e270df35266f1fe.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/03/classification-accuracy.jpg)
 
@@ -25,7 +25,7 @@
 
 我认为对于这个问题，假阴性可能比误报更糟糕。你同意吗？更详细的筛查可以清除误报，但是假阴性被送回家并丢失以进行后续评估。
 
-## 分类准确性
+## 分类准确率
 
 [分类精度](http://en.wikipedia.org/wiki/Accuracy_and_precision)是我们的出发点。它是正确预测的数量除以预测的总数，乘以100将其变为百分比。
 
@@ -35,13 +35,13 @@
 
 ### 所有复发
 
-仅预测乳腺癌复发的模型将达到（85/286）* 100或29.72％的准确度。我们称之为“所有复发”。这个模型具有可怕的准确性，并且会让201名女性认为乳腺癌复发，但实际上没有（高假阳性）。
+仅预测乳腺癌复发的模型将达到（85/286）* 100或29.72％的准确度。我们称之为“所有复发”。这个模型具有可怕的准确率，并且会让201名女性认为乳腺癌复发，但实际上没有（高假阳性）。
 
 ### 大车
 
 CART或[分类和回归树](http://en.wikipedia.org/wiki/Predictive_analytics#Classification_and_regression_trees)是一种功能强大但简单的决策树算法。在这个问题上，CART可以达到69.23％的准确率。这低于我们的“All No Recurrence”模型，但这个模型更有价值吗？
 
-我们可以看出，单独的分类准确性不足以为此问题选择模型。
+我们可以看出，单独的分类准确率不足以为此问题选择模型。
 
 ## 混乱矩阵
 
@@ -83,13 +83,13 @@ CART或[分类和回归树](http://en.wikipedia.org/wiki/Predictive_analytics#Cl
 
 CART混淆矩阵
 
-## 准确性悖论
+## 准确率悖论
 
-正如我们在这个例子中所看到的，准确性可能会产生误导。有时可能需要选择精度较低的模型，因为它对问题具有更强的预测能力。
+正如我们在这个例子中所看到的，准确率可能会产生误导。有时可能需要选择精度较低的模型，因为它对问题具有更强的预测能力。
 
-例如，在存在大类不平衡的问题中，模型可以预测所有预测的多数类的值并实现高分类准确性，问题在于该模型在问题域中没有用。正如我们在乳腺癌中看到的那样。
+例如，在存在大类不平衡的问题中，模型可以预测所有预测的多数类的值并实现高分类准确率，问题在于该模型在问题域中没有用。正如我们在乳腺癌中看到的那样。
 
-这被称为[准确性悖论](http://en.wikipedia.org/wiki/Accuracy_paradox)。对于类似的问题，需要这些额外的措施来评估分类器。
+这被称为[准确率悖论](http://en.wikipedia.org/wiki/Accuracy_paradox)。对于类似的问题，需要这些额外的措施来评估分类器。
 
 ## 精确
 
@@ -127,6 +127,6 @@ CART混淆矩阵
 
 ## 摘要
 
-在这篇文章中，您了解了准确性悖论以及类别不平衡的问题，因为单独的分类准确性无法被信任以选择表现良好的模型。
+在这篇文章中，您了解了准确率悖论以及类别不平衡的问题，因为单独的分类准确率无法被信任以选择表现良好的模型。
 
-通过示例，您了解了混淆矩阵，以此来描述未见数据集的预测中的错误细分。您了解了总结模型精度（准确性）和召回（完整性）的措施，以及F1分数中两者之间平衡的描述。
+通过示例，您了解了混淆矩阵，以此来描述未见数据集的预测中的错误细分。您了解了总结模型精度（准确率）和召回（完整性）的措施，以及F1分数中两者之间平衡的描述。

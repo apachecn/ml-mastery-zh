@@ -55,7 +55,7 @@ AdaBoost 通过对观察结果进行加权，更加重视难以分类的实例�
 
 - [Applied Predictive Modeling](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20) ，2013
 
-通过对弱学习器预测的多数投票进行预测，并根据他们的个人准确性进行加权。 AdaBoost 算法最成功的形式是二进制分类问题，称为 AdaBoost.M1。
+通过对弱学习器预测的多数投票做出预测，并根据他们的个人准确率进行加权。 AdaBoost 算法最成功的形式是二进制分类问题，称为 AdaBoost.M1。
 
 您可以在帖子中了解有关 AdaBoost 算法的更多信息：
 

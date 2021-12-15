@@ -1,12 +1,12 @@
-# 如何用 Keras 进行预测
+# 如何用 Keras 做出预测
 
 > 原文： [https://machinelearningmastery.com/how-to-make-classification-and-regression-predictions-for-deep-learning-models-in-keras/](https://machinelearningmastery.com/how-to-make-classification-and-regression-predictions-for-deep-learning-models-in-keras/)
 
-一旦您在 Keras 中选择并拟合了最终的深度学习模型，您就可以使用它来对新数据实例进行预测。
+一旦您在 Keras 中选择并拟合了最终的深度学习模型，您就可以使用它来对新数据实例做出预测。
 
 初学者对如何做到这一点有一些困惑。我经常看到以下问题：
 
-> 如何在 Keras 中使用我的模型进行预测？
+> 如何在 Keras 中使用我的模型做出预测？
 
 在本教程中，您将了解如何使用 Keras Python 库通过最终的深度学习模型进行分类和回归预测。
 
@@ -32,7 +32,7 @@
 
 ## 1.完成模型
 
-在进行预测之前，必须训练最终模型。
+在做出预测之前，必须训练最终模型。
 
 您可能使用 k 折交叉验证或训练/测试分割数据来训练许多模型，这样做是为了让能够利用模型能估计样本外的数据，例如一些新数据。
 
@@ -72,7 +72,7 @@ model.compile(loss='binary_crossentropy', optimizer='adam')
 model.fit(X, y, epochs=200, verbose=0)
 ```
 
-完成后，您可能希望将模型保存到文件，例如通过 Keras API 保存后，您可以随时加载模型并使用它进行预测，有关此示例，请参阅帖子：
+完成后，您可能希望将模型保存到文件，例如通过 Keras API 保存后，您可以随时加载模型并使用它做出预测，有关此示例，请参阅帖子：
 
 *   [保存并加载您的 Keras 深度学习模型](https://machinelearningmastery.com/save-load-keras-deep-learning-models/)
 
@@ -305,7 +305,7 @@ X=[0.39445118 0.79390858], Predicted=[0.7475489]
 X=[0.02884127 0.6208843 ], Predicted=[0.43370453]
 ```
 
-可以使用相同的函数来对单个数据实例进行预测，只要它适当地包装在列表或者数组的环境中即可。
+可以使用相同的函数来对单个数据实例做出预测，只要它适当地包装在列表或者数组的环境中即可。
 
 例如：
 
@@ -352,7 +352,7 @@ X=[0.29466096 0.30317302], Predicted=[0.17333156]
 *   [保存并加载您的 Keras 深度学习模型](https://machinelearningmastery.com/save-load-keras-deep-learning-models/)
 *   [用 Keras 逐步开发 Python 中的第一个神经网络](https://machinelearningmastery.com/tutorial-first-neural-network-python-keras/)
 *   [Keras 中长期短期记忆模型的 5 步生命周期](https://machinelearningmastery.com/5-step-life-cycle-long-short-term-memory-models-keras/)
-*   [如何用 Keras 中的长短期记忆模型进行预测](https://machinelearningmastery.com/make-predictions-long-short-term-memory-models-keras/)
+*   [如何用 Keras 中的长短期记忆模型做出预测](https://machinelearningmastery.com/make-predictions-long-short-term-memory-models-keras/)
 
 ## 摘要
 

@@ -41,7 +41,7 @@ pickle.dump(model, open("pima.pickle.dat", "wb"))
 loaded_model = pickle.load(open("pima.pickle.dat", "rb"))
 ```
 
-以下示例演示了如何在 [Pima 印第安人糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)上训练 XGBoost 模型，将模型保存到文件中，然后加载它以进行预测（更新：[从此处下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv) ）。
+以下示例演示了如何在 [Pima 印第安人糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)上训练 XGBoost 模型，将模型保存到文件中，然后加载它以做出预测（更新：[从此处下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv) ）。
 
 完整性代码清单如下所示。
 
@@ -85,7 +85,7 @@ print("Accuracy: %.2f%%" % (accuracy * 100.0))
 pima.pickle.dat
 ```
 
-加载模型并对训练数据集进行预测后，将打印模型的准确性。
+加载模型并对训练数据集做出预测后，将打印模型的准确率。
 
 ```py
 Accuracy: 77.95%
@@ -111,7 +111,7 @@ joblib.dump(model, "pima.joblib.dat")
 loaded_model = joblib.load("pima.joblib.dat")
 ```
 
-下面的示例演示了如何训练 XGBoost 模型在 Pima Indians 糖尿病数据集开始时进行分类，使用 Joblib 将模型保存到文件中，并在以后加载它以进行预测。
+下面的示例演示了如何训练 XGBoost 模型在 Pima Indians 糖尿病数据集开始时进行分类，使用 Joblib 将模型保存到文件中，并在以后加载它以做出预测。
 
 ```py
 # Train XGBoost model, save to file using joblib, load and make predictions
@@ -155,7 +155,7 @@ pima.joblib.dat_01.npy
 pima.joblib.dat_02.npy
 ```
 
-加载模型后，将在训练数据集上对其进行评估，并打印预测的准确性。
+加载模型后，将在训练数据集上对其进行评估，并打印预测的准确率。
 
 ```py
 Accuracy: 77.95%
@@ -163,7 +163,7 @@ Accuracy: 77.95%
 
 ## 摘要
 
-在这篇文章中，您了解了如何序列化经过训练的 XGBoost 模型，然后加载它们以进行预测。
+在这篇文章中，您了解了如何序列化经过训练的 XGBoost 模型，然后加载它们以做出预测。
 
 具体来说，你学到了：
 

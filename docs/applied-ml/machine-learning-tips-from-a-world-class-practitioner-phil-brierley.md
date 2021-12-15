@@ -4,7 +4,7 @@
 
 Phil Brierley赢得了[遗产健康奖](http://www.heritagehealthprize.com/c/hhp) Kaggle机器学习竞赛。 Phil是一名机械工程师，并在他的公司 [Tiberius Data Mining](http://www.tiberius.biz/) 中拥有数据挖掘的背景。这些天他很重视R，并在[另一个数据挖掘博客](http://anotherdataminingblog.blogspot.com.au/)上留下了博客。
 
-2013年10月，他向RG特殊利益集团的[墨尔本用户展示了他们。他的演讲题目是“](http://www.meetup.com/MelbURN-Melbourne-Users-of-R-Network/)[提高预测模型](http://www.youtube.com/watch?v=1fIyQL9FiAk)准确性的技术”，您可以在下面观看：
+2013年10月，他向RG特殊利益集团的[墨尔本用户展示了他们。他的演讲题目是“](http://www.meetup.com/MelbURN-Melbourne-Users-of-R-Network/)[提高预测模型](http://www.youtube.com/watch?v=1fIyQL9FiAk)准确率的技术”，您可以在下面观看：
 
 &lt;iframe allowfullscreen="" frameborder="0" height="281" src="http://www.youtube.com/embed/1fIyQL9FiAk?feature=oembed" width="500"&gt;&lt;/iframe&gt;
 

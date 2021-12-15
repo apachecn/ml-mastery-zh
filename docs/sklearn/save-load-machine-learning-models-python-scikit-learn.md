@@ -6,7 +6,7 @@
 
 在这篇文章中，您将了解如何使用 scikit-learn 在 Python 中保存和加载机器学习模型。
 
-这允许您将模型保存到文件并稍后加载以进行预测。
+这允许您将模型保存到文件并稍后加载以做出预测。
 
 让我们开始吧。
 
@@ -26,7 +26,7 @@ Pickle 是在 Python 中序列化对象的标准方法。
 
 稍后您可以加载此文件以反序列化您的模型并使用它来进行新的预测。
 
-下面的例子演示了如何训练 [Pima 印第安人糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)的逻辑回归模型，将模型保存到文件并加载它以对未见的测试集进行预测（更新：[下载从这里](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
+下面的例子演示了如何训练 [Pima 印第安人糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)的逻辑回归模型，将模型保存到文件并加载它以对未见的测试集做出预测（更新：[下载从这里](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
 
 ```
 # Save Model Using Pickle
@@ -58,7 +58,7 @@ result = loaded_model.score(X_test, Y_test)
 print(result)
 ```
 
-运行该示例将模型保存到本地工作目录中的 **finalized_model.sav** 。加载已保存的模型并对其进行评估可以估算模型对未见数据的准确性。
+运行该示例将模型保存到本地工作目录中的 **finalized_model.sav** 。加载已保存的模型并对其进行评估可以估算模型对未见数据的准确率。
 
 ```
 0.755905511811
@@ -72,7 +72,7 @@ print(result)
 
 这对于需要大量参数或存储整个数据集的某些机器学习算法（如 K-Nearest Neighbors）非常有用。
 
-下面的示例演示了如何在 Pima Indians 糖尿病数据集开始时训练逻辑回归模型，使用 joblib 将模型保存到文件并加载它以对看不见的测试集进行预测。
+下面的示例演示了如何在 Pima Indians 糖尿病数据集开始时训练逻辑回归模型，使用 joblib 将模型保存到文件并加载它以对看不见的测试集做出预测。
 
 ```
 # Save Model Using joblib
@@ -104,7 +104,7 @@ result = loaded_model.score(X_test, Y_test)
 print(result)
 ```
 
-运行该示例将模型保存为文件 **finalized_model.sav** ，并为模型中的每个 NumPy 数组创建一个文件（另外四个文件）。加载模型后，将报告模型对未见数据的准确性估计值。
+运行该示例将模型保存为文件 **finalized_model.sav** ，并为模型中的每个 NumPy 数组创建一个文件（另外四个文件）。加载模型后，将报告模型对未见数据的准确率估计值。
 
 ```
 0.755905511811
@@ -116,7 +116,7 @@ print(result)
 
 *   **Python 版**。记下 python 版本。几乎可以肯定，当您稍后加载并反序列化时，您需要使用相同的主要（可能是次要）版本的 Python 来序列化模型。
 *   **库版本**。在反序列化已保存的模型时，机器学习项目中使用的所有主要库的版本几乎肯定需要相同。这不仅限于 NumPy 的版本和 scikit-learn 的版本。
-*   **手动序列化**。您可能希望手动输出学习模型的参数，以便将来可以直接在 scikit-learn 或其他平台中使用它们。通常，机器学习算法用于进行预测的算法比用于学习参数的算法简单得多，可以很容易地在您可以控制的自定义代码中实现。
+*   **手动序列化**。您可能希望手动输出学习模型的参数，以便将来可以直接在 scikit-learn 或其他平台中使用它们。通常，机器学习算法用于做出预测的算法比用于学习参数的算法简单得多，可以很容易地在您可以控制的自定义代码中实现。
 
 请注意该版本，以便您可以在以后因某种原因无法在其他计算机或其他平台上重新加载模型时重新创建环境。
 

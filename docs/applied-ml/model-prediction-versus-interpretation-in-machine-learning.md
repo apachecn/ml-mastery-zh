@@ -2,20 +2,20 @@
 
 > 原文： [https://machinelearningmastery.com/model-prediction-versus-interpretation-in-machine-learning/](https://machinelearningmastery.com/model-prediction-versus-interpretation-in-machine-learning/)
 
-在他们的书 [Applied Predictive Modeling](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20) 中，Kuhn和Johnson早期就模型预测准确性与模型解释的权衡进行了评论。
+在他们的书 [Applied Predictive Modeling](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20) 中，Kuhn和Johnson早期就模型预测准确率与模型解释的权衡进行了评论。
 
-对于给定的问题，清楚地了解哪个是优先级，准确性或可解释性是至关重要的，以便可以明确而不是隐式地进行这种权衡。
+对于给定的问题，清楚地了解哪个是优先级，准确率或可解释性是至关重要的，以便可以明确而不是隐式地进行这种权衡。
 
 在这篇文章中，您将发现并考虑这一重要的权衡。
 
 [![model accuracy](img/89023cffaa133151ce41aa191077b5ce.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/07/model-accuracy.jpg)
 
-模型准确性与可解释性
+模型准确率与可解释性
 摄影：Donald Hobern，保留一些权利
 
-## 准确性和可解释性
+## 准确率和可解释性
 
-模型表现根据其准确性来估计，以预测事件在看不见的数据上的发生。更准确的模型被视为更有价值的模型。
+模型表现根据其准确率来估计，以预测事件在看不见的数据上的发生。更准确的模型被视为更有价值的模型。
 
 模型可解释性提供了对输入和输出之间关系的深入了解。解释模型可以回答关于独立特征为什么预测依赖属性的问题。
 
@@ -35,13 +35,13 @@
 
 ## 准确度特朗普可解释性
 
-在他们的书中，库恩和约翰逊以牺牲解释为代价关注模型的准确性。
+在他们的书中，库恩和约翰逊以牺牲解释为代价关注模型的准确率。
 
 他们评论说：
 
 > “_只要复杂模型得到适当验证，使用为解释而不是预测表现而构建的模型可能是不合适的。_ “
 
-解释是模型准确性的次要因素，它们的例子包括将电子邮件区分为垃圾邮件和非垃圾邮件，以及评估房屋作为问题的例子。医学实例被触及两次，并且在两种情况下都用于捍卫绝对需要和对可解释性准确性的需求，只要模型得到适当的验证。
+解释是模型准确率的次要因素，它们的例子包括将电子邮件区分为垃圾邮件和非垃圾邮件，以及评估房屋作为问题的例子。医学实例被触及两次，并且在两种情况下都用于捍卫绝对需要和对可解释性准确率的需求，只要模型得到适当的验证。
 
 我敢肯定，“但我验证了我的模型”在模型做出导致生命损失的预测时，无法进行调查。然而，有人怀疑这是一个需要仔细考虑的重要问题。
 

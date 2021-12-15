@@ -147,7 +147,7 @@ for i in range(len(X)):
 
 ### 香草 LSTM
 
-Vanilla LSTM 是 LSTM 模型，具有单个隐藏的 LSTM 单元层，以及用于进行预测的输出层。
+Vanilla LSTM 是 LSTM 模型，具有单个隐藏的 LSTM 单元层，以及用于做出预测的输出层。
 
 我们可以如下定义用于单变量时间序列预测的 Vanilla LSTM。
 
@@ -192,7 +192,7 @@ X = X.reshape((X.shape[0], X.shape[1], n_features))
 model.fit(X, y, epochs=200, verbose=0)
 ```
 
-在模型拟合后，我们可以使用它来进行预测。
+在模型拟合后，我们可以使用它来做出预测。
 
 我们可以通过提供输入来预测序列中的下一个值：
 
@@ -206,7 +206,7 @@ model.fit(X, y, epochs=200, verbose=0)
 [100]
 ```
 
-该模型期望输入形状为[_ 样本，时间步长，特征 _]三维，因此，我们必须在进行预测之前对单个输入样本进行整形。
+该模型期望输入形状为[_ 样本，时间步长，特征 _]三维，因此，我们必须在做出预测之前对单个输入样本进行整形。
 
 ```py
 # demonstrate prediction
@@ -262,7 +262,7 @@ yhat = model.predict(x_input, verbose=0)
 print(yhat)
 ```
 
-运行该示例准备数据，拟合模型并进行预测。
+运行该示例准备数据，拟合模型并做出预测。
 
 鉴于算法的随机性，您的结果可能会有所不同;尝试运行几次这个例子。
 
@@ -461,7 +461,7 @@ model.add(TimeDistributed(MaxPooling1D(pool_size=2)))
 model.add(TimeDistributed(Flatten()))
 ```
 
-接下来，我们可以定义模型的 LSTM 部分，该部分解释 CNN 模型对输入序列的读取并进行预测。
+接下来，我们可以定义模型的 LSTM 部分，该部分解释 CNN 模型对输入序列的读取并做出预测。
 
 ```py
 model.add(LSTM(50, activation='relu'))
@@ -560,7 +560,7 @@ X = X.reshape((X.shape[0], n_seq, 1, n_steps, n_features))
 
 我们可以根据过滤器的数量将 ConvLSTM 定义为单个层，并根据（行，列）将二维内核大小定义为单层。当我们使用一维系列时，内核中的行数始终固定为 1。
 
-然后必须将模型的输出展平，然后才能进行解释并进行预测。
+然后必须将模型的输出展平，然后才能进行解释并做出预测。
 
 ```py
 model.add(ConvLSTM2D(filters=64, kernel_size=(1,2), activation='relu', input_shape=(n_seq, 1, n_steps, n_features)))
@@ -834,7 +834,7 @@ model.add(Dense(1))
 model.compile(optimizer='adam', loss='mse')
 ```
 
-在进行预测时，模型需要两个输入时间序列的三个时间步长。
+在做出预测时，模型需要两个输入时间序列的三个时间步长。
 
 我们可以预测输出系列中的下一个值，提供以下输入值：
 
@@ -910,7 +910,7 @@ yhat = model.predict(x_input, verbose=0)
 print(yhat)
 ```
 
-运行该示例准备数据，拟合模型并进行预测。
+运行该示例准备数据，拟合模型并做出预测。
 
 ```py
 [[208.13531]]
@@ -1144,7 +1144,7 @@ yhat = model.predict(x_input, verbose=0)
 print(yhat)
 ```
 
-运行该示例准备数据，拟合模型并进行预测。
+运行该示例准备数据，拟合模型并做出预测。
 
 ```py
 [[101.76599 108.730484 206.63577 ]]
@@ -1285,7 +1285,7 @@ model.add(Dense(n_steps_out))
 model.compile(optimizer='adam', loss='mse')
 ```
 
-该模型可以对单个样本进行预测。我们可以通过提供输入来预测数据集末尾之后的下两个步骤：
+该模型可以对单个样本做出预测。我们可以通过提供输入来预测数据集末尾之后的下两个步骤：
 
 ```py
 [70, 80, 90]
@@ -1297,7 +1297,7 @@ model.compile(optimizer='adam', loss='mse')
 [100, 110]
 ```
 
-正如模型所预期的那样，进行预测时输入数据的单个样本的形状对于 1 个样本，输入的 3 个时间步长和单个特征必须是[1,3,1]。
+正如模型所预期的那样，做出预测时输入数据的单个样本的形状对于 1 个样本，输入的 3 个时间步长和单个特征必须是[1,3,1]。
 
 ```py
 # demonstrate prediction

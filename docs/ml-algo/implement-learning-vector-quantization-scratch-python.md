@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/implement-learning-vector-quantization-scratch-python/](https://machinelearningmastery.com/implement-learning-vector-quantization-scratch-python/)
 
-[k-最近邻居](http://machinelearningmastery.com/k-nearest-neighbors-for-machine-learning/)的限制是您必须保留一个大型训练样例数据库才能进行预测。
+[k-最近邻居](http://machinelearningmastery.com/k-nearest-neighbors-for-machine-learning/)的限制是您必须保留一个大型训练样例数据库才能做出预测。
 
 [学习向量量化](http://machinelearningmastery.com/learning-vector-quantization-for-machine-learning/)算法通过学习最能代表训练数据的更小的模式子集来解决这个问题。
 
@@ -11,7 +11,7 @@
 完成本教程后，您将了解：
 
 *   如何从训练数据集中学习一组码本向量。
-*   如何使用学习的码本向量进行预测。
+*   如何使用学习的码本向量做出预测。
 *   如何将学习向量量化应用于实际预测建模问题。
 
 让我们开始吧。
@@ -32,13 +32,13 @@
 
 学习向量量化（LVQ）算法很像k-Nearest Neighbors。
 
-通过在模式库中找到最佳匹配来进行预测。不同之处在于，模式库是从训练数据中学习的，而不是使用训练模式本身。
+通过在模式库中找到最佳匹配来做出预测。不同之处在于，模式库是从训练数据中学习的，而不是使用训练模式本身。
 
 模式库称为码本向量，每个模式称为码本。将码本向量初始化为来自训练数据集的随机选择的值。然后，在许多时期，它们适于使用学习算法最佳地总结训练数据。
 
 学习算法一次显示一个训练记录，在码本向量中找到最佳匹配单元，如果它们具有相同的类，则将其移动到更接近训练记录，或者如果它们具有不同的类，则更远离训练记录。
 
-一旦准备好，码本向量用于使用k-Nearest Neighbors算法进行预测，其中k = 1。
+一旦准备好，码本向量用于使用k-Nearest Neighbors算法做出预测，其中k = 1。
 
 该算法是为分类预测建模问题而开发的，但可以适用于回归问题。
 
@@ -235,9 +235,9 @@ print(bmu)
 [2.7810836, 2.550537003, 0]
 ```
 
-使用一组码本向量进行预测是一回事。
+使用一组码本向量做出预测是一回事。
 
-我们使用1最近邻居算法。也就是说，对于我们希望进行预测的每个新模式，我们在集合中找到最相似的码本向量并返回其关联的类值。
+我们使用1最近邻居算法。也就是说，对于我们希望做出预测的每个新模式，我们在集合中找到最相似的码本向量并返回其关联的类值。
 
 现在我们知道如何从一组码本向量中获得最佳匹配单元，我们需要学习如何训练它们。
 
@@ -417,7 +417,7 @@ Codebooks: [[2.432316086217663, 2.839821664184211, 0], [7.319592257892681, 1.970
 
 第一步是加载数据集并将加载的数据转换为我们可以与欧氏距离计算一起使用的数字。为此我们将使用辅助函数 **load_csv（）**来加载文件， **str_column_to_float（）**将字符串数转换为浮点数， **str_column_to_int（）**转换​​为class列到整数值。
 
-我们将使用5倍折叠交叉验证来评估算法。这意味着每个折叠中将有351/5 = 70.2或仅超过70个记录。我们将使用辅助函数 **evaluate_algorithm（）**来评估具有交叉验证的算法和 **accuracy_metric（）**来计算预测的准确性。
+我们将使用5倍折叠交叉验证来评估算法。这意味着每个折叠中将有351/5 = 70.2或仅超过70个记录。我们将使用辅助函数 **evaluate_algorithm（）**来评估具有交叉验证的算法和 **accuracy_metric（）**来计算预测的准确率。
 
 The complete example is listed below.
 

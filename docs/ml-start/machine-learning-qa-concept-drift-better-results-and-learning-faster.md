@@ -42,7 +42,7 @@
 
 重新访问[问题定义](http://machinelearningmastery.com/how-to-define-your-machine-learning-problem/ "How to Define Your Machine Learning Problem")并设置最低精度阈值。通常，“_ 足够好 _”模型比精细调整（和脆弱）模型更实用。
 
-请参阅这篇题为“[模型预测准确性与机器学习中的解释](http://machinelearningmastery.com/model-prediction-versus-interpretation-in-machine-learning/ "Model Prediction Accuracy Versus Interpretation in Machine Learning")”的文章。
+请参阅这篇题为“[模型预测准确率与机器学习中的解释](http://machinelearningmastery.com/model-prediction-versus-interpretation-in-machine-learning/ "Model Prediction Accuracy Versus Interpretation in Machine Learning")”的文章。
 
 ## 如何更快地学习机器学习？
 

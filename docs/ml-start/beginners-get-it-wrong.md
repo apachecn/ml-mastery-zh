@@ -84,7 +84,7 @@
 
 然后再缩小它。
 
-最有价值的机器学习领域是[预测建模](http://machinelearningmastery.com/gentle-introduction-to-predictive-modeling/)。从数据创建模型以进行预测。
+最有价值的机器学习领域是[预测建模](http://machinelearningmastery.com/gentle-introduction-to-predictive-modeling/)。从数据创建模型以做出预测。
 
 从那里开始。
 

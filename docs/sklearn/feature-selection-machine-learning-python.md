@@ -22,7 +22,7 @@ Python 中机器学习的特征选择
 
 特征选择是一个过程，您可以自动选择数据中对您感兴趣的预测变量或输出贡献最大的那些特征。
 
-在数据中具有不相关的特征会降低许多模型的准确性，尤其是线性和逻辑回归等线性算法。
+在数据中具有不相关的特征会降低许多模型的准确率，尤其是线性和逻辑回归等线性算法。
 
 在建模数据之前执行特征选择的三个好处是：
 
@@ -212,7 +212,7 @@ print(model.feature_importances_)
 如果您要查找有关功能选择的更多信息，请参阅以下相关帖子：
 
 *   [使用 Caret R 封装进行特征选择](http://machinelearningmastery.com/feature-selection-with-the-caret-r-package/)
-*   [特征选择提高准确性并缩短训练时间](http://machinelearningmastery.com/feature-selection-to-improve-accuracy-and-decrease-training-time/)
+*   [特征选择提高准确率并缩短训练时间](http://machinelearningmastery.com/feature-selection-to-improve-accuracy-and-decrease-training-time/)
 *   [特征选择介绍](http://machinelearningmastery.com/an-introduction-to-feature-selection/)
 *   [使用 Scikit-Learn 在 Python 中进行特征选择](http://machinelearningmastery.com/feature-selection-in-python-with-scikit-learn/)
 

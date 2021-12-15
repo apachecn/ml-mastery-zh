@@ -179,7 +179,7 @@ model.fit(X, y, epochs=, batch_size=)
 *   _model.predict_classes（）_：为输入数据生成类输出。
 *   _model.predict_proba（）_：为输入数据生成类概率。
 
-例如，在分类问题上，您将使用 predict_classes（）函数对测试数据或新数据实例进行预测。
+例如，在分类问题上，您将使用 predict_classes（）函数对测试数据或新数据实例做出预测。
 
 ## 总结模型
 

@@ -60,7 +60,7 @@ Python 中时间序列预测的指数平滑的温和介绍
 
 它需要一个名为`alpha`（`a`）的参数，也称为平滑因子或平滑系数。
 
-该参数控制在先前时间步骤的观察结果的影响以指数方式衰减的速率。 Alpha 通常设置为介于 0 和 1 之间的值。大值意味着模型主要关注最近的过去观察，而较小的值意味着在进行预测时会考虑更多的历史记录。
+该参数控制在先前时间步骤的观察结果的影响以指数方式衰减的速率。 Alpha 通常设置为介于 0 和 1 之间的值。大值意味着模型主要关注最近的过去观察，而较小的值意味着在做出预测时会考虑更多的历史记录。
 
 > 接近 1 的值表示快速学习（即，只有最近的值影响预测），而接近 0 的值表示学习缓慢（过去的观察对预测有很大影响）。
 
@@ -164,7 +164,7 @@ Statsmodels Python 库中提供了 Python 中的指数平滑的实现。
 
 首先，必须实例化`SimpleExpSmoothing`类的实例并传递训练数据。然后调用`fit()`函数提供拟合配置，特别是称为`smoothing_level`的`alpha`值。如果没有提供或设置为 _ 无 _，模型将自动优化该值。
 
-此`fit()`函数返回包含学习系数的`HoltWintersResults`类的实例。可以调用结果对象上的`forecast()`或`predict()`函数进行预测。
+此`fit()`函数返回包含学习系数的`HoltWintersResults`类的实例。可以调用结果对象上的`forecast()`或`predict()`函数做出预测。
 
 例如：
 
@@ -208,7 +208,7 @@ yhat = model_fit.predict(...)
 
 *   **use_boxcox** ：是否执行系列的幂变换（True / False）或指定变换的 lambda。
 
-`fit()`函数将返回包含学习系数的`HoltWintersResults`类的实例。可以调用结果对象上的`forecast()`或`predict()`函数进行预测。
+`fit()`函数将返回包含学习系数的`HoltWintersResults`类的实例。可以调用结果对象上的`forecast()`或`predict()`函数做出预测。
 
 ```py
 # double or triple exponential smoothing

@@ -45,9 +45,9 @@
 
 1.  **选择工具**。如果您不是程序员，我推荐 [Weka](http://machinelearningmastery.com/what-is-the-weka-machine-learning-workbench/ "What is the Weka Machine Learning Workbench") ，因为它提供了图形用户界面。如果你是程序员，我推荐 [scikit-learn](http://machinelearningmastery.com/a-gentle-introduction-to-scikit-learn-a-python-machine-learning-library/ "A Gentle Introduction to Scikit-Learn: A Python Machine Learning Library") 在 Python 或 [R](http://machinelearningmastery.com/what-is-r/ "What is R") 。
 2.  **选择标准数据集**。我推荐来自 [UCI 机器学习库](http://archive.ics.uci.edu/ml/)的标准数据集，虹膜分类问题是一个经典的 hello world 分类问题。
-3.  **查找或设计秘籍**。确定如何使用该工具加载数据集，将其吐入训练和测试数据集，并运行一个算法对该数据集进行预测。如果您使用的是 Weka，您可以[按照此秘籍](http://machinelearningmastery.com/how-to-run-your-first-classifier-in-weka/ "How to Run Your First Classifier in Weka")。我也有 R 和 [scikit-learn](http://machinelearningmastery.com/get-your-hands-dirty-with-scikit-learn-now/ "Get Your Hands Dirty With Scikit-Learn Now") 的[秘籍你可以使用。](http://machinelearningmastery.com/linear-classification-in-r/ "Linear Classification in R")
+3.  **查找或设计秘籍**。确定如何使用该工具加载数据集，将其吐入训练和测试数据集，并运行一个算法对该数据集做出预测。如果您使用的是 Weka，您可以[按照此秘籍](http://machinelearningmastery.com/how-to-run-your-first-classifier-in-weka/ "How to Run Your First Classifier in Weka")。我也有 R 和 [scikit-learn](http://machinelearningmastery.com/get-your-hands-dirty-with-scikit-learn-now/ "Get Your Hands Dirty With Scikit-Learn Now") 的[秘籍你可以使用。](http://machinelearningmastery.com/linear-classification-in-r/ "Linear Classification in R")
 4.  **运行秘籍**。
-5.  **审查结果**。考虑一下您获得的准确性，这意味着什么。是否有关于算法的信息，请考虑这可能意味着什么。
+5.  **审查结果**。考虑一下您获得的准确率，这意味着什么。是否有关于算法的信息，请考虑这可能意味着什么。
 6.  **重复**。尝试不同的算法，不同的算法配置或不同的数据集。运行大量算法。
 
 这很容易。事实上，你应该这样轻松地完成这个程序，并且熟悉所有优秀的机器学习工具和库中的简单问题。

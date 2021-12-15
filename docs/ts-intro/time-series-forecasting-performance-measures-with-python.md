@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/time-series-forecasting-performance-measures-with-python/](https://machinelearningmastery.com/time-series-forecasting-performance-measures-with-python/)
 
-时间序列预测表现度量提供了进行预测的预测模型的技能和能力的总结。
+时间序列预测表现度量提供了做出预测的预测模型的技能和能力的总结。
 
 有许多不同的绩效指标可供选择。知道使用哪种措施以及如何解释结果可能会令人困惑。
 

@@ -1,10 +1,10 @@
-# 使用序列进行预测
+# 使用序列做出预测
 
 > 原文： [https://machinelearningmastery.com/sequence-prediction/](https://machinelearningmastery.com/sequence-prediction/)
 
 序列预测不同于其他类型的监督学习问题。
 
-该序列对训练模型和进行预测时必须保留的观察结果施加顺序。
+该序列对训练模型和做出预测时必须保留的观察结果施加顺序。
 
 通常，涉及序列数据的预测问题被称为序列预测问题，尽管存在一组基于输入和输出序列而不同的问题。
 
@@ -20,7 +20,7 @@
 
 ![Gentle Introduction to Making Predictions with Sequences](img/5d27398ca491850d1f418445f2753c39.jpg)
 
-使用序列进行预测的温和介绍
+使用序列做出预测的温和介绍
 照 [abstrkt.ch](https://www.flickr.com/photos/xa4/6881309290/) ，保留一些权利。
 
 ## 教程概述

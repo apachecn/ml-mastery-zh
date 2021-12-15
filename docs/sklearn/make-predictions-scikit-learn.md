@@ -1,15 +1,15 @@
-# 如何使用 scikit-learn 进行预测
+# 如何使用 scikit-learn 做出预测
 
 > 原文： [https://machinelearningmastery.com/make-predictions-scikit-learn/](https://machinelearningmastery.com/make-predictions-scikit-learn/)
 
 #### 如何使用 Python 中的 scikit-learn 模型预测分类或回归结果
 。
 
-一旦您在 scikit-learn 中选择并适合最终的机器学习模型，您就可以使用它来对新数据实例进行预测。
+一旦您在 scikit-learn 中选择并适合最终的机器学习模型，您就可以使用它来对新数据实例做出预测。
 
 初学者对如何做到这一点有一些困惑。我经常看到以下问题：
 
-如何在 scikit-learn 中使用我的模型进行预测？
+如何在 scikit-learn 中使用我的模型做出预测？
 
 在本教程中，您将了解如何使用 scikit-learn Python 库中的最终机器学习模型进行分类和回归预测。
 
@@ -36,7 +36,7 @@ Cosimo 的照片，保留一些权利。
 
 ## 1.首先完成您的模型
 
-在进行预测之前，必须训练最终模型。
+在做出预测之前，必须训练最终模型。
 
 您可能使用 k 折交叉验证或训练/测试分割数据来训练模型。这样做是为了让您估计模型对样本外数据的技能，例如：新数据。
 
@@ -67,7 +67,7 @@ model = LogisticRegression()
 model.fit(X, y)
 ```
 
-完成模型后，您可能希望将模型保存到文件，例如通过泡菜。保存后，您可以随时加载模型并使用它进行预测。有关此示例，请参阅帖子：
+完成模型后，您可能希望将模型保存到文件，例如通过泡菜。保存后，您可以随时加载模型并使用它做出预测。有关此示例，请参阅帖子：
 
 *   [用 scikit-learn](https://machinelearningmastery.com/save-load-machine-learning-models-python-scikit-learn/) 在 Python 中保存和加载机器学习模型
 
@@ -252,7 +252,7 @@ X=[-2.3015387 0.86540763], Predicted=-127.34448527071137
 
 ### 单回归预测
 
-可以使用相同的函数来对单个数据实例进行预测，只要它适当地包装在周围的列表或数组中即可。
+可以使用相同的函数来对单个数据实例做出预测，只要它适当地包装在周围的列表或数组中即可。
 
 例如：
 

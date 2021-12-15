@@ -301,7 +301,7 @@ model.add(TimeDistributed(Dense(100, activation='softmax')))
 
 我们将使用适用于多类分类问题的日志丢失函数（categorical_crossentropy）和具有默认超参数的高效ADAM优化算法。
 
-除了报告每个时期的日志损失之外，我们还将报告分类准确性，以了解我们的模型是如何训练的。
+除了报告每个时期的日志损失之外，我们还将报告分类准确率，以了解我们的模型是如何训练的。
 
 ```py
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['acc'])
@@ -319,7 +319,7 @@ for epoch in range(500):
 	model.reset_states()
 ```
 
-一旦拟合，我们将通过对一个新的整数随机序列进行预测来评估模型，并将解码的预期输出序列与预测的序列进行比较。
+一旦拟合，我们将通过对一个新的整数随机序列做出预测来评估模型，并将解码的预期输出序列与预测的序列进行比较。
 
 ```py
 # evaluate LSTM
@@ -408,7 +408,7 @@ for i in range(len(X)):
 	print('Expected:', one_hot_decode(y[i]), 'Predicted', one_hot_decode(yhat[i]))
 ```
 
-运行该示例会在每个时期打印日志丢失和准确性。通过生成新的随机序列并将预期序列与预测序列进行比较来结束运行。
+运行该示例会在每个时期打印日志丢失和准确率。通过生成新的随机序列并将预期序列与预测序列进行比较来结束运行。
 
 根据所选择的配置，每次运行时，网络几乎都会收敛到100％的准确度。请注意，您可能会看到不同的最终序列和最终的日志丢失。
 
@@ -586,7 +586,7 @@ for i in range(len(X)):
 	print('Expected:', one_hot_decode(y[i]), 'Predicted', one_hot_decode(yhat[i]))
 ```
 
-运行该示例将显示每个训练时期随机生成的序列的日志丢失和准确性。
+运行该示例将显示每个训练时期随机生成的序列的日志丢失和准确率。
 
 选择的配置意味着模型将收敛到100％的分类准确度。
 

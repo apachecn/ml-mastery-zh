@@ -153,7 +153,7 @@ def difference(dataset, interval=1):
 	return numpy.array(diff)
 ```
 
-我们可以通过在一年前添加观察值来反转此操作。我们需要对经过季节性调整的数据训练的模型进行预测。
+我们可以通过在一年前添加观察值来反转此操作。我们需要对经过季节性调整的数据训练的模型做出预测。
 
 ```py
 # invert differenced value
@@ -248,9 +248,9 @@ ARIMA 模型非常适合一步预测。
 
 ### 预测功能
 
-statsmodel ARIMAResults 对象提供 [_forecast（）_ 函数](http://statsmodels.sourceforge.net/stable/generated/statsmodels.tsa.arima_model.ARIMAResults.forecast.html)用于进行预测。
+statsmodel ARIMAResults 对象提供 [_forecast（）_ 函数](http://statsmodels.sourceforge.net/stable/generated/statsmodels.tsa.arima_model.ARIMAResults.forecast.html)用于做出预测。
 
-默认情况下，此功能可以进行单步样本预测。因此，我们可以直接调用它并进行预测。`forecast()`函数的结果是包含预测值，预测的标准误差和置信区间信息的数组。现在，我们只关注此预测的第一个元素，如下所示。
+默认情况下，此功能可以进行单步样本预测。因此，我们可以直接调用它并做出预测。`forecast()`函数的结果是包含预测值，预测的标准误差和置信区间信息的数组。现在，我们只关注此预测的第一个元素，如下所示。
 
 ```py
 # one-step out-of sample forecast
@@ -307,7 +307,7 @@ Forecast: 14.861669
 
 ### 预测功能
 
-statsmodel ARIMAResults 对象还提供 [_predict（）_ 函数](http://statsmodels.sourceforge.net/stable/generated/statsmodels.tsa.arima_model.ARIMAResults.predict.html)进行预测。
+statsmodel ARIMAResults 对象还提供 [_predict（）_ 函数](http://statsmodels.sourceforge.net/stable/generated/statsmodels.tsa.arima_model.ARIMAResults.predict.html)做出预测。
 
 预测函数可用于预测任意样本内和样本外时间步骤，包括下一个样本外预测时间步骤。
 

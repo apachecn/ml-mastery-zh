@@ -21,7 +21,7 @@
 +   [如何使用 Python 3 为机器学习开发创建 Linux 虚拟机](linux-virtual-machine-machine-learning-development-python-3.md)
 +   [如何在 Python 中加载机器学习数据](load-machine-learning-data-python.md)
 +   [您在 Python 中的第一个机器学习项目循序渐进](machine-learning-in-python-step-by-step.md)
-+   [如何使用 scikit-learn 进行预测](make-predictions-scikit-learn.md)
++   [如何使用 scikit-learn 做出预测](make-predictions-scikit-learn.md)
 +   [用于评估 Python 中机器学习算法的度量标准](metrics-evaluate-machine-learning-algorithms-python.md)
 +   [使用 Pandas 为 Python 中的机器学习准备数据](prepare-data-for-machine-learning-in-python-with-pandas.md)
 +   [如何使用 Scikit-Learn 为 Python 机器学习准备数据](prepare-data-machine-learning-python-scikit-learn.md)

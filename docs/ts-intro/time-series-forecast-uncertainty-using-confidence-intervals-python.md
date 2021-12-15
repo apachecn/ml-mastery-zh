@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/time-series-forecast-uncertainty-using-confidence-intervals-python/](https://machinelearningmastery.com/time-series-forecast-uncertainty-using-confidence-intervals-python/)
 
-时间序列预测模型既可以进行预测，也可以为这些预测提供置信区间。
+时间序列预测模型既可以做出预测，也可以为这些预测提供置信区间。
 
 置信区间为真实观察提供了较高和较低的期望。这些对于评估预测的实际可能结果的范围以及更好地理解模型的技能非常有用
 
@@ -10,7 +10,7 @@
 
 具体来说，您将学到：
 
-*   如何使用 ARIMA 模型进行预测并收集预测诊断信息。
+*   如何使用 ARIMA 模型做出预测并收集预测诊断信息。
 *   如何解释预测的置信区间并配置不同的间隔。
 *   如何在最近观察的背景下绘制置信区间。
 
@@ -25,7 +25,7 @@
 
 statsmodels Python 库中的 ARIMA 实现可用于拟合 [ARIMA](http://statsmodels.sourceforge.net/0.6.0/generated/statsmodels.tsa.arima_model.ARIMA.html) 模型。
 
-它返回一个 ARIMAResults 对象。该对象提供 [forecast（）](http://statsmodels.sourceforge.net/devel/generated/statsmodels.tsa.arima_model.ARIMAResults.forecast.html)函数，该函数可用于对未来时间步骤进行预测，并默认在训练数据结束后的下一个时间步骤预测值。
+它返回一个 ARIMAResults 对象。该对象提供 [forecast（）](http://statsmodels.sourceforge.net/devel/generated/statsmodels.tsa.arima_model.ARIMAResults.forecast.html)函数，该函数可用于对未来时间步骤做出预测，并默认在训练数据结束后的下一个时间步骤预测值。
 
 假设我们只预测下一个时间步，那么 forecast（）方法返回三个值：
 
@@ -65,13 +65,13 @@ pyplot.show()
 
 ## 预测置信区间
 
-在本节中，我们将训练 ARIMA 模型，使用它进行预测，并检查置信区间。
+在本节中，我们将训练 ARIMA 模型，使用它做出预测，并检查置信区间。
 
-首先，我们将训练数据集拆分为训练和测试数据集。几乎所有观测都将用于训练，我们将最后一次观测作为测试数据集，我们将对其进行预测。
+首先，我们将训练数据集拆分为训练和测试数据集。几乎所有观测都将用于训练，我们将最后一次观测作为测试数据集，我们将对其做出预测。
 
 训练 ARIMA（5,1,1）模型。这不是这个问题的最佳模型，只是一个很好的模型用于演示目的。
 
-然后使用训练的模型通过调用`forecast()`函数进行预测。然后打印预测结果。
+然后使用训练的模型通过调用`forecast()`函数做出预测。然后打印预测结果。
 
 下面列出了完整的示例。
 
@@ -157,7 +157,7 @@ for a in intervals:
 
 置信区间可以直接绘制。
 
-ARIMAResults 对象提供 [plot_predict（）](http://statsmodels.sourceforge.net/devel/generated/statsmodels.tsa.arima_model.ARIMAResults.plot_predict.html)函数，可用于进行预测并绘制显示最近观察结果，预测和置信区间的结果。
+ARIMAResults 对象提供 [plot_predict（）](http://statsmodels.sourceforge.net/devel/generated/statsmodels.tsa.arima_model.ARIMAResults.plot_predict.html)函数，可用于做出预测并绘制显示最近观察结果，预测和置信区间的结果。
 
 与`forecast()`函数一样，可以通过指定`alpha`参数来配置置信区间。默认值为 0.05（95％置信度），这是一个合理的默认值。
 

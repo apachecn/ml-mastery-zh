@@ -95,7 +95,7 @@
 
 来自这些方法的预测概率可能未经校准，并且可能通过校准进行修改而受益。
 
-预测概率的校准是在通过预测模型进行预测之后应用的重新缩放操作。
+预测概率的校准是在通过预测模型做出预测之后应用的重新缩放操作。
 
 校准概率有两种流行的方法;它们是 Platt Scaling 和 Isotonic Regression。
 
@@ -166,7 +166,7 @@ calibrator.fit(valX, valy)
 yhat = calibrator.predict(testX)
 ```
 
-或者，CalibratedClassifierCV 可以使用 k 折交叉验证拟合模型的多个副本，并使用保持集校准这些模型预测的概率。使用每个训练模型进行预测。
+或者，CalibratedClassifierCV 可以使用 k 折交叉验证拟合模型的多个副本，并使用保持集校准这些模型预测的概率。使用每个训练模型做出预测。
 
 For example, below is a code snippet showing the API usage:
 

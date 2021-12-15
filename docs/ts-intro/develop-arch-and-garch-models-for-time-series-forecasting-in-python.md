@@ -216,7 +216,7 @@ model = arch_model(train, mean='Zero', vol='ARCH', p=15)
 model_fit = model.fit()
 ```
 
-最后，我们可以通过在拟合模型上调用 [forecast（）函数](http://arch.readthedocs.io/en/latest/univariate/introduction.html#arch.univariate.base.ARCHModelResult.forecast)来进行预测。我们可以指定预测的范围。
+最后，我们可以通过在拟合模型上调用 [forecast（）函数](http://arch.readthedocs.io/en/latest/univariate/introduction.html#arch.univariate.base.ARCHModelResult.forecast)来做出预测。我们可以指定预测的范围。
 
 在这种情况下，我们将预测数据集的最后 10 个时间步的方差，并从模型的训练中扣除它们。
 

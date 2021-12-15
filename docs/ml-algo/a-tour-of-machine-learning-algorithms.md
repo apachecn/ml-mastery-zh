@@ -38,7 +38,7 @@
 
 ![Supervised Learning Algorithms](img/95241c40aaa81e72b7754289befd763c.jpg)输入数据称为训练数据，并且具有已知的标签或结果，例如垃圾邮件/非垃圾邮件或一次的股票价格。
 
-通过训练过程准备模型，其中需要进行预测并在这些预测错误时进行校正。训练过程继续，直到模型在训练数据上达到所需的准确度。
+通过训练过程准备模型，其中需要做出预测并在这些预测错误时进行校正。训练过程继续，直到模型在训练数据上达到所需的准确度。
 
 示例问题是分类和回归。
 
@@ -58,7 +58,7 @@
 
 [![Semi-supervised Learning Algorithms](img/f12c7caccaa57cf156e9ab2539c0c74b.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2013/11/Semi-supervised-Learning-Algorithms.png) 输入数据是标记和未标记示例的混合。
 
-存在期望的预测问题，但模型必须学习组织数据以及进行预测的结构。
+存在期望的预测问题，但模型必须学习组织数据以及做出预测的结构。
 
 Example problems are classification and regression.
 
@@ -115,7 +115,7 @@ Example problems are classification and regression.
 
 ![Instance-based Algorithms](img/ecbc6f66cdc94fab00ae8f9b81668e1d.jpg)基于实例的学习模型是一个决策问题，其中包含被认为对模型重要或需要的训练数据的实例或示例。
 
-这些方法通常建立示例数据的数据库，并使用相似性度量将新数据与数据库进行比较，以便找到最佳匹配并进行预测。出于这个原因，基于实例的方法也称为赢者通吃方法和基于记忆的学习。重点放在实例之间使用的存储实例和相似性度量的表示上。
+这些方法通常建立示例数据的数据库，并使用相似性度量将新数据与数据库进行比较，以便找到最佳匹配并做出预测。出于这个原因，基于实例的方法也称为赢者通吃方法和基于记忆的学习。重点放在实例之间使用的存储实例和相似性度量的表示上。
 
 最流行的基于实例的算法是：
 

@@ -11,7 +11,7 @@ ARIMA 是 AutoRegressive Integrated Moving Average 的缩写。它是一类模�
 完成本教程后，您将了解：
 
 *   关于 ARIMA 模型使用的参数和模型所做的假设。
-*   如何使 ARIMA 模型适合数据并使用它来进行预测。
+*   如何使 ARIMA 模型适合数据并使用它来做出预测。
 *   如何根据时间序列问题配置 ARIMA 模型。
 
 让我们开始吧。
@@ -126,7 +126,7 @@ statsmodels 库提供适合 ARIMA 模型的功能。
 
 1.  通过调用 [ARIMA（）](http://statsmodels.sourceforge.net/devel/generated/statsmodels.tsa.arima_model.ARIMA.html)并传入`p`，`d`和`q`参数来定义模型。
 2.  通过调用 [fit（）](http://statsmodels.sourceforge.net/devel/generated/statsmodels.tsa.arima_model.ARIMA.fit.html)函数，在训练数据上准备模型。
-3.  可以通过调用 [predict（）](http://statsmodels.sourceforge.net/devel/generated/statsmodels.tsa.arima_model.ARIMA.predict.html)函数并指定要预测的时间或索引的时间来进行预测。
+3.  可以通过调用 [predict（）](http://statsmodels.sourceforge.net/devel/generated/statsmodels.tsa.arima_model.ARIMA.predict.html)函数并指定要预测的时间或索引的时间来做出预测。
 
 让我们从简单的事情开始吧。我们将 ARIMA 模型与整个 Shampoo Sales 数据集相匹配，并检查残差。
 
@@ -218,15 +218,15 @@ max    133.237980
 
 请注意，虽然上面我们使用整个数据集进行时间序列分析，但理想情况下，我们会在开发预测模型时仅对训练数据集执行此分析。
 
-接下来，让我们看看如何使用 ARIMA 模型进行预测。
+接下来，让我们看看如何使用 ARIMA 模型做出预测。
 
 ## 滚动预测 ARIMA 模型
 
 ARIMA 模型可用于预测未来的时间步长。
 
-我们可以使用 [ARIMAResults](http://statsmodels.sourceforge.net/devel/generated/statsmodels.tsa.arima_model.ARIMAResults.html) 对象上的 predict（）函数进行预测。它接受将预测作为参数的时间步长索引。这些索引与用于进行预测的训练数据集的起点相关。
+我们可以使用 [ARIMAResults](http://statsmodels.sourceforge.net/devel/generated/statsmodels.tsa.arima_model.ARIMAResults.html) 对象上的 predict（）函数做出预测。它接受将预测作为参数的时间步长索引。这些索引与用于做出预测的训练数据集的起点相关。
 
-如果我们在训练数据集中使用 100 个观测值来拟合模型，那么用于进行预测的下一个时间步骤的索引将被指定给预测函数，因为 _start = 101，end = 101_ 。这将返回一个包含预测的一个元素的数组。
+如果我们在训练数据集中使用 100 个观测值来拟合模型，那么用于做出预测的下一个时间步骤的索引将被指定给预测函数，因为 _start = 101，end = 101_ 。这将返回一个包含预测的一个元素的数组。
 
 如果我们在配置模型时执行任何差分（ _d&gt; 0_ ），我们还希望预测值处于原始比例。这可以通过将`typ`参数设置为值 _'水平'_： _typ ='水平'_ 来指定。
 

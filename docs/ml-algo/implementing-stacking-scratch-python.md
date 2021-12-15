@@ -77,7 +77,7 @@
 2.  子模型＃2：感知器。
 3.  聚合器模型：Logistic回归。
 
-每个模型将根据用于训练模型的函数和用于进行预测的函数来描述。
+每个模型将根据用于训练模型的函数和用于做出预测的函数来描述。
 
 #### 1.1子模型＃1：k-最近邻居
 
@@ -91,9 +91,9 @@ def knn_model(train):
 	return train
 ```
 
-进行预测涉及在训练数据集中查找k个最相似的记录并选择最常见的类值。欧几里德距离函数用于计算训练数据集中新行数据和行之间的相似性。
+做出预测涉及在训练数据集中查找k个最相似的记录并选择最常见的类值。欧几里德距离函数用于计算训练数据集中新行数据和行之间的相似性。
 
-以下是涉及对kNN模型进行预测的这些辅助函数。函数 **euclidean_distance（）**计算两行数据之间的距离， **get_neighbors（）**定位训练数据集中所有邻居的新行数据和 **knn_predict（）** 从邻居做出新行数据的预测。
+以下是涉及对kNN模型做出预测的这些辅助函数。函数 **euclidean_distance（）**计算两行数据之间的距离， **get_neighbors（）**定位训练数据集中所有邻居的新行数据和 **knn_predict（）** 从邻居做出新行数据的预测。
 
 ```py
 # Calculate the Euclidean distance between two vectors
@@ -133,7 +133,7 @@ Perceptron算法的模型是从训练数据中学习的一组权重。
 
 为了训练权重，需要对训练数据进行许多预测以便计算误差值。因此，模型训练和预测都需要预测功能。
 
-下面是实现Perceptron算法的辅助函数。 **perceptron_model（）**函数在训练数据集上训练Perceptron模型， **perceptron_predict（）**用于对一行数据进行预测。
+下面是实现Perceptron算法的辅助函数。 **perceptron_model（）**函数在训练数据集上训练Perceptron模型， **perceptron_predict（）**用于对一行数据做出预测。
 
 ```py
 # Make a prediction with weights
@@ -164,9 +164,9 @@ def perceptron_model(train, l_rate=0.01, n_epoch=5000):
 
 与Perceptron算法一样，Logistic回归使用一组称为系数的权重作为模型的表示。
 
-与Perceptron算法一样，通过迭代地对训练数据进行预测并更新它们来学习系数。
+与Perceptron算法一样，通过迭代地对训练数据做出预测并更新它们来学习系数。
 
-以下是用于实现逻辑回归算法的辅助函数。 **logistic_regression_model（）**函数用于训练训练数据集上的系数， **logistic_regression_predict（）**用于对一行数据进行预测。
+以下是用于实现逻辑回归算法的辅助函数。 **logistic_regression_model（）**函数用于训练训练数据集上的系数， **logistic_regression_predict（）**用于对一行数据做出预测。
 
 ```py
 # Make a prediction with coefficients
@@ -219,7 +219,7 @@ kNN,	Per,	Y
 
 下面是一个名为 **to_stacked_row（）**的函数，它实现了为此堆叠数据集创建新行的过程。
 
-该函数将模型列表作为输入，这些用于进行预测。该函数还将函数列表作为输入，一个函数用于对每个模型进行预测。最后，包括训练数据集中的单行。
+该函数将模型列表作为输入，这些用于做出预测。该函数还将函数列表作为输入，一个函数用于对每个模型做出预测。最后，包括训练数据集中的单行。
 
 一行一列构造一个新行。使用每个模型和训练数据行计算预测。然后将训练数据集行的预期输出值添加为行的最后一列。
 
@@ -272,9 +272,9 @@ def to_stacked_row(models, predict_list, row):
 开发了新的函数名 **stacking（）**。这个功能做了4件事：
 
 1.  它首先训练一个模型列表（kNN和Perceptron）。
-2.  然后，它使用模型进行预测并创建新的堆叠数据集。
+2.  然后，它使用模型做出预测并创建新的堆叠数据集。
 3.  然后，它在堆叠数据集上训练聚合器模型（逻辑回归）。
-4.  然后，它使用子模型和聚合器模型对测试数据集进行预测。
+4.  然后，它使用子模型和聚合器模型对测试数据集做出预测。
 
 下面列出了完整的示例。
 

@@ -2,11 +2,11 @@
 
 > 原文： [https://machinelearningmastery.com/ensemble-machine-learning-algorithms-python-scikit-learn/](https://machinelearningmastery.com/ensemble-machine-learning-algorithms-python-scikit-learn/)
 
-合奏可以提高数据集的准确性。
+合奏可以提高数据集的准确率。
 
 在这篇文章中，您将了解如何使用 scikit-learn 在 Python 中创建一些最强大的集合类型。
 
-本案例研究将引导您完成 Boosting，Bagging 和 Majority Voting，并向您展示如何继续提高您自己数据集上模型的准确性。
+本案例研究将引导您完成 Boosting，Bagging 和 Majority Voting，并向您展示如何继续提高您自己数据集上模型的准确率。
 
 让我们开始吧。
 
@@ -157,7 +157,7 @@ Running the example provides a mean estimate of classification accuracy.
 
 提升集合算法会创建一系列模型，尝试在序列中纠正模型之前的错误。
 
-一旦创建，模型进行预测，可以通过其显示的准确度加权，并将结果组合以创建最终输出预测。
+一旦创建，模型做出预测，可以通过其显示的准确度加权，并将结果组合以创建最终输出预测。
 
 两种最常见的增强集成机器学习算法是：
 
@@ -234,7 +234,7 @@ Running the example provides a mean estimate of classification accuracy.
 
 投票是结合多种机器学习算法的预测的最简单方法之一。
 
-它的工作原理是首先从训练数据集中创建两个或更多独立模型。然后，当被要求对新数据进行预测时，可以使用投票分类器来包装模型并平均子模型的预测。
+它的工作原理是首先从训练数据集中创建两个或更多独立模型。然后，当被要求对新数据做出预测时，可以使用投票分类器来包装模型并平均子模型的预测。
 
 可以对子模型的预测进行加权，但是手动或甚至启发式地指定分类器的权重是困难的。更高级的方法可以学习如何最好地对来自子模型的预测进行加权，但这称为堆叠（堆叠聚合），目前未在 scikit-learn 中提供。
 

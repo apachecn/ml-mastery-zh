@@ -6,7 +6,7 @@
 
 [Jeremy Howard](https://www.linkedin.com/in/howardjeremy) 是竞争机器学习平台 [Kaggle](http://www.kaggle.com/) 的总裁兼首席科学家。 2012年，他在 [O'reilly Strata会议](http://strataconf.com/)上发表了他所谓的动力传动系统方法，用于构建超越预测的“_数据产品_”。
 
-在这篇文章中，您将发现Howard的动力传动系统方法以及如何使用它来构建系统的开发而不是进行预测。
+在这篇文章中，您将发现Howard的动力传动系统方法以及如何使用它来构建系统的开发而不是做出预测。
 
 [![The Drivetrain Approach](img/7d35b5c7e6992228a41104f4f68c9ddf.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/08/drivetrain-approach.png)
 
@@ -17,7 +17,7 @@
 
 在投资和加入公司之前，Jeremy Howard是一位顶级的Kaggle参与者。在像数据科学运动的形成谈话中，您可以深入了解霍华德在深入挖掘数据和建立有效模型方面的敏锐能力。
 
-在2012年的Strata演讲中，霍华德曾在Kaggle工作了一两年，并且看过很多比赛和很多竞争数据科学家。你不能不认为他更加全面的方法论是由于他对专注于预测及其准确性的沮丧而产生的。
+在2012年的Strata演讲中，霍华德曾在Kaggle工作了一两年，并且看过很多比赛和很多竞争数据科学家。你不能不认为他更加全面的方法论是由于他对专注于预测及其准确率的沮丧而产生的。
 
 预测是可访问的部分，它们是竞争的焦点是有道理的。我看到了他的动力传动系统方法，因为他放下了手套，并挑战社区以争取更多。
 
@@ -72,6 +72,6 @@
 
 超越预测的概念需要经常重复。很容易陷入一个特定的问题。我们讨论了很多关于预先定义问题的尝试，以减少这种影响。
 
-霍华德的动力传动系统方法是一种工具，您可以使用它来设计一个系统来解决使用机器学习的复杂问题，而不是使用机器学习来进行预测并将其称为一天。
+霍华德的动力传动系统方法是一种工具，您可以使用它来设计一个系统来解决使用机器学习的复杂问题，而不是使用机器学习来做出预测并将其称为一天。
 
 这些想法与[响应面法（RSM）](http://machinelearningmastery.com/clever-application-of-a-predictive-model/ "Clever Application Of A Predictive Model")有很多重叠。虽然没有明确说明，但Irfan Ahmad在他的[预测模型分类](http://blog.kaggle.com/2012/03/05/irfans-taxonomy-of-predictive-modelling/)中同时暗示了相关帖子中的链接，需要澄清霍华德的一些术语。

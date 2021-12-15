@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/prepare-text-data-machine-learning-scikit-learn/](https://machinelearningmastery.com/prepare-text-data-machine-learning-scikit-learn/)
 
-文本数据需要特殊准备才能开始使用它进行预测建模。
+文本数据需要特殊准备才能开始使用它做出预测建模。
 
 必须解析文本以删除称为分词的单词。然后，需要将单词编码为整数或浮点值，以用作机器学习算法的输入，称为特征提取（或向量化）。
 

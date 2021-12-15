@@ -801,7 +801,7 @@ RepeatVector层可以像适配器一样使用，以将网络的编码器和解�
 model.add(RepeatVector(2))
 ```
 
-该问题被定义为11类的分类问题，因此我们可以优化对数损失（`categorical_crossentropy`）函数，甚至可以跟踪每个训练时期的准确性和损失。
+该问题被定义为11类的分类问题，因此我们可以优化对数损失（`categorical_crossentropy`）函数，甚至可以跟踪每个训练时期的准确率和损失。
 
 把这些放在一起，我们有：
 

@@ -80,7 +80,7 @@ Mark 花了一些时间研究 scikit-learn 的好处，建议：
 
 将 scikit-learn 与 R 进行比较，他建议 R 在开始时更快地进行机器学习，但从长远来看，你可以更深入地学习 scikit-learn。
 
-他还建议 R 具有统计学习焦点，对模型可解释性感兴趣，而 scikit-learn 具有机器学习焦点，对预测准确性感兴趣。
+他还建议 R 具有统计学习焦点，对模型可解释性感兴趣，而 scikit-learn 具有机器学习焦点，对预测准确率感兴趣。
 
 我建议 R 中的[插入符](http://machinelearningmastery.com/caret-r-package-for-applied-predictive-modeling/)是一个功能强大且可能无与伦比的工具。
 
@@ -104,7 +104,7 @@ Mark 花了一些时间研究 scikit-learn 的好处，建议：
 *   输入和响应变量必须是 numpy 数组（ndarray）。
 *   输入和响应变量必须具有一致的形状（行和列）。
 
-## 视频 4：使用 scikit-learn 进行预测
+## 视频 4：使用 scikit-learn 做出预测
 
 本视频重点介绍如何在 scikit-learn 中构建您的第一个机器学习模型。 K-Nearest Neighbors 模型。
 

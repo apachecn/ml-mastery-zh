@@ -132,7 +132,7 @@ SARIMA(3,1,0)(1,1,0)12
 
 1.  定义模型。
 2.  适合定义的模型。
-3.  使用拟合模型进行预测。
+3.  使用拟合模型做出预测。
 
 让我们依次看一下每一步。
 
@@ -203,11 +203,11 @@ model_fit = model.fit()
 
 *   [statsmodels.tsa.statespace.sarimax.SARIMAX.fit API](http://www.statsmodels.org/dev/generated/statsmodels.tsa.statespace.sarimax.SARIMAX.fit.html)
 
-### 3.进行预测
+### 3.做出预测
 
-适合后，该模型可用于进行预测。
+适合后，该模型可用于做出预测。
 
-可以通过在调用 fit 返回的`SARIMAXResults`对象上调用`forecast()`或`predict()`函数来进行预测。
+可以通过在调用 fit 返回的`SARIMAXResults`对象上调用`forecast()`或`predict()`函数来做出预测。
 
 [forecast（）函数](http://www.statsmodels.org/dev/generated/statsmodels.tsa.statespace.sarimax.SARIMAXResults.forecast.html)采用单个参数指定要预测的采样时间步数，或者如果未提供参数则采用一步预测。
 

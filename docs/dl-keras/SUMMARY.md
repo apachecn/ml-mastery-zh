@@ -20,7 +20,7 @@
 +   [在 Keras 中获得深度学习帮助的 9 种方法](get-help-with-keras.md)
 +   [如何使用 Keras 在 Python 中网格搜索深度学习模型的超参数](grid-search-hyperparameters-deep-learning-models-python-keras.md)
 +   [用 Keras 在 Python 中使用卷积神经网络进行手写数字识别](handwritten-digit-recognition-using-convolutional-neural-networks-python-keras.md)
-+   [如何用 Keras 进行预测](how-to-make-classification-and-regression-predictions-for-deep-learning-models-in-keras.md)
++   [如何用 Keras 做出预测](how-to-make-classification-and-regression-predictions-for-deep-learning-models-in-keras.md)
 +   [用 Keras 进行深度学习的图像增强](image-augmentation-deep-learning-keras.md)
 +   [8 个深度学习的鼓舞人心的应用](inspirational-applications-deep-learning.md)
 +   [Python 深度学习库 Keras 简介](introduction-python-deep-learning-library-keras.md)

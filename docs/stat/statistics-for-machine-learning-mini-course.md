@@ -126,7 +126,7 @@ This includes techniques for:
 
 ### 5.预测统计
 
-在使用新数据的最终模型进行预测时，需要统计方法。
+在使用新数据的最终模型做出预测时，需要统计方法。
 
 This includes techniques for:
 

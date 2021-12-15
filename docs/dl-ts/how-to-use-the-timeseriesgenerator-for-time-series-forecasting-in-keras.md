@@ -60,7 +60,7 @@ example input, 		example output
 y = f(X)
 ```
 
-必须将时间序列转换为具有输入和输出组件的样本。该变换既可以告知模型将要学习什么，也可以在进行预测时告知将来如何使用该模型，例如：做出预测需要什么（`X`）和做出预测（`y`）。
+必须将时间序列转换为具有输入和输出组件的样本。该变换既可以告知模型将要学习什么，也可以在做出预测时告知将来如何使用该模型，例如：做出预测需要什么（`X`）和做出预测（`y`）。
 
 对于对一步预测感兴趣的单变量时间序列，在先前时间步骤的观察，即所谓的滞后观察，被用作输入，输出是在当前时间步骤的观察。
 
@@ -147,7 +147,7 @@ model = ...
 model.fit_generator(generator, steps_per_epoch=len(generator), ...)
 ```
 
-类似地，生成器可用于通过调用`evaluate_generator()`函数来评估拟合模型，并使用拟合模型使用`predict_generator()`函数对新数据进行预测。
+类似地，生成器可用于通过调用`evaluate_generator()`函数来评估拟合模型，并使用拟合模型使用`predict_generator()`函数对新数据做出预测。
 
 与数据生成器匹配的模型不必使用 evaluate 和 predict 函数的生成器版本。只有在您希望数据生成器为模型准备数据时，才能使用它们。
 
@@ -242,7 +242,7 @@ n_input = 2
 generator = TimeseriesGenerator(series, series, length=n_input, batch_size=8)
 ```
 
-我们可以定义一个简单的模型，其中一个隐藏层有 50 个节点，一个输出层将进行预测。
+我们可以定义一个简单的模型，其中一个隐藏层有 50 个节点，一个输出层将做出预测。
 
 ```py
 # define model
@@ -261,7 +261,7 @@ model.fit_generator(generator, steps_per_epoch=1, epochs=200, verbose=0)
 
 一旦适合，我们将进行样本预测。
 
-给定输入[9,10]，我们将进行预测并期望模型预测[11]或接近它。该模型没有调整;这只是如何使用发电机的一个例子。
+给定输入[9,10]，我们将做出预测并期望模型预测[11]或接近它。该模型没有调整;这只是如何使用发电机的一个例子。
 
 ```py
 # make a one step prediction out of sample

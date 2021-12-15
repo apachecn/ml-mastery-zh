@@ -141,7 +141,7 @@ model = XGBClassifier()
 model.fit(X_train, y_train)
 ```
 
-然后可以通过在新数据上调用 **model.predict（）**函数来使用该模型进行预测。
+然后可以通过在新数据上调用 **model.predict（）**函数来使用该模型做出预测。
 
 ```py
 y_pred = model.predict(X_test)

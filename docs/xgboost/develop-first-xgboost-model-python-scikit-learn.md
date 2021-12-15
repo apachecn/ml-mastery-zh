@@ -10,7 +10,7 @@ XGBoost 是梯度提升决策树的一种实现，旨在提高竞争机器学习
 
 *   如何在您的系统上安装 XGBoost 以便在 Python 中使用。
 *   如何准备数据并训练您的第一个 XGBoost 模型。
-*   如何使用 XGBoost 模型进行预测。
+*   如何使用 XGBoost 模型做出预测。
 
 让我们开始吧。
 
@@ -31,7 +31,7 @@ XGBoost 是梯度提升决策树的一种实现，旨在提高竞争机器学习
 2.  问题定义和下载数据集。
 3.  加载并准备数据。
 4.  训练 XGBoost 模型。
-5.  进行预测并评估模型。
+5.  做出预测并评估模型。
 6.  将它们结合在一起并运行示例。
 
 ## 1.安装 XGBoost 以便在 Python 中使用
@@ -146,13 +146,13 @@ print(model)
 
 您可以在 [XGBoost 参数页面](http://xgboost.readthedocs.io/en/latest//parameter.html)上了解有关每个参数含义以及如何配置它们的更多信息。
 
-我们现在准备使用训练有素的模型进行预测。
+我们现在准备使用训练有素的模型做出预测。
 
-## 5.使用 XGBoost 模型进行预测
+## 5.使用 XGBoost 模型做出预测
 
-我们可以使用测试数据集上的拟合模型进行预测。
+我们可以使用测试数据集上的拟合模型做出预测。
 
-为了进行预测，我们使用 scikit-learn 函数 **model.predict（）**。
+为了做出预测，我们使用 scikit-learn 函数 **model.predict（）**。
 
 默认情况下，XGBoost 进行的预测是概率。因为这是二元分类问题，所以每个预测是输入模式属于第一类的概率。我们可以通过将它们四舍五入为 0 或 1 来轻松地将它们转换为二进制类值。
 
@@ -162,7 +162,7 @@ y_pred = model.predict(X_test)
 predictions = [round(value) for value in y_pred]
 ```
 
-现在我们已经使用拟合模型对新数据进行预测，我们可以通过将预测值与预期值进行比较来评估预测的表现。为此，我们将在 scikit-learn 中使用内置的 **accuracy_score（）**函数。
+现在我们已经使用拟合模型对新数据做出预测，我们可以通过将预测值与预期值进行比较来评估预测的表现。为此，我们将在 scikit-learn 中使用内置的 **accuracy_score（）**函数。
 
 ```py
 # evaluate predictions
@@ -216,6 +216,6 @@ Accuracy: 77.95%
 
 *   如何在您的系统上安装 XGBoost 以备 Python 使用。
 *   如何在标准机器学习数据集上准备数据并训练您的第一个 XGBoost 模型。
-*   如何使用 scikit-learn 进行预测并评估训练有素的 XGBoost 模型的表现。
+*   如何使用 scikit-learn 做出预测并评估训练有素的 XGBoost 模型的表现。
 
 您对 XGBoost 或该帖子有任何疑问吗？在评论中提出您的问题，我会尽力回答。

@@ -206,7 +206,7 @@ n_timesteps, n_features, n_outputs = trainX.shape[1], trainX.shape[2], trainy.sh
 
 为简单起见，该模型被定义为顺序 Keras 模型。
 
-我们将模型定义为具有单个 LSTM 隐藏层。接下来是一个脱落层，旨在减少模型过拟合到训练数据。最后，在使用最终输出层进行预测之前，使用密集的完全连接层来解释由 LSTM 隐藏层提取的特征。
+我们将模型定义为具有单个 LSTM 隐藏层。接下来是一个脱落层，旨在减少模型过拟合到训练数据。最后，在使用最终输出层做出预测之前，使用密集的完全连接层来解释由 LSTM 隐藏层提取的特征。
 
 随机梯度下降的有效 [Adam 版本将用于优化网络，并且鉴于我们正在学习多类别分类问题，将使用分类交叉熵损失函数。](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/)
 

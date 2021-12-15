@@ -91,7 +91,7 @@ Pandas 提供[特别关注对时间序列数据的支持](http://pandas.pydata.o
 与 scikit-learn 中的时间序列预测相关的主要功能包括：
 
 *   数据准备工具套件，例如缩放和输入数据。
-*   机器学习算法套件，可用于建模数据和进行预测。
+*   机器学习算法套件，可用于建模数据和做出预测。
 *   用于估计模型在看不见的数据上的表现的重采样方法，特别是 [TimeSeriesSplit](http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html) 。
 
 ## Python 生态系统安装

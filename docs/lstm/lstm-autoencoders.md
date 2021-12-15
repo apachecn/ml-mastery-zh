@@ -64,7 +64,7 @@ X = model.predict(X)
 
 您可以在此处详细了解序列预测问题：
 
-*   [用序列进行预测](https://machinelearningmastery.com/sequence-prediction/)
+*   [用序列做出预测](https://machinelearningmastery.com/sequence-prediction/)
 
 ## 编码器 - 解码器LSTM模型
 
@@ -507,7 +507,7 @@ print(yhat)
 
 如果您希望深入了解，本节将提供有关该主题的更多资源。
 
-*   [用序列进行预测](https://machinelearningmastery.com/sequence-prediction/)
+*   [用序列做出预测](https://machinelearningmastery.com/sequence-prediction/)
 *   [编码器 - 解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 *   [自动编码器，维基百科](https://en.wikipedia.org/wiki/Autoencoder)
 *   [使用LSTM进行视频表示的无监督学习](https://arxiv.org/abs/1502.04681)，ArXiv 2015。

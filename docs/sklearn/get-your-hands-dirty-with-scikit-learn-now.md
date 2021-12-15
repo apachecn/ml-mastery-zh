@@ -29,7 +29,7 @@
 
 ## Logistic 回归
 
-Logistic 回归将逻辑模型与数据拟合，并对事件的概率（0 到 1 之间）进行预测。
+Logistic 回归将逻辑模型与数据拟合，并对事件的概率（0 到 1 之间）做出预测。
 
 该秘籍显示了逻辑回归模型与虹膜数据集的拟合。因为这是一个多类分类问题，逻辑回归使得预测在 0 和 1 之间，所以使用了一对一方案（每个类一个模型）。
 
@@ -87,9 +87,9 @@ print(metrics.confusion_matrix(expected, predicted))
 
 ## k-最近邻
 
-k-最近邻（kNN）方法通过将类似情况定位到给定数据实例（使用相似性函数）并返回最相似数据实例的平均或大部分来进行预测。 kNN 算法可用于分类或回归。
+k-最近邻（kNN）方法通过将类似情况定位到给定数据实例（使用相似性函数）并返回最相似数据实例的平均或大部分来做出预测。 kNN 算法可用于分类或回归。
 
-该秘籍显示了使用 kNN 模型对虹膜数据集进行预测。
+该秘籍显示了使用 kNN 模型对虹膜数据集做出预测。
 
 k-Nearest Neighbor Python
 
@@ -118,7 +118,7 @@ print(metrics.confusion_matrix(expected, predicted))
 
 分类和回归树（CART）是通过进行分割来构建的，这些分割可以最好地分离正在进行的类或预测的数据。 CART 算法可用于分类或回归。
 
-此秘籍显示使用 CART 模型对虹膜数据集进行预测。
+此秘籍显示使用 CART 模型对虹膜数据集做出预测。
 
 Decision Tree Classifier Python
 
@@ -147,7 +147,7 @@ print(metrics.confusion_matrix(expected, predicted))
 
 支持向量机（SVM）是一种在转换后的问题空间中使用点的方法，它最好将类分成两组。一对一方法支持多个类的分类。 SVM 还通过使用最小允许误差量对函数建模来支持回归。
 
-该秘籍显示了使用 SVM 模型对虹膜数据集进行预测。
+该秘籍显示了使用 SVM 模型对虹膜数据集做出预测。
 
 Support Vector Machine Python
 

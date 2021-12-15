@@ -29,7 +29,7 @@
 
 如果您处于这种情况，您很可能自己从不同的来源收集数据并选择您认为可能有价值的属性。 [将需要特征选择](http://machinelearningmastery.com/an-introduction-to-feature-selection/ "An Introduction to Feature Selection")和[特征工程](http://machinelearningmastery.com/discover-feature-engineering-how-to-engineer-features-and-how-to-get-good-at-it/ "Discover Feature Engineering, How to Engineer Features and How to Get Good at It")。
 
-在此过程中，您需要了解您迭代尝试定义和收集数据的问题为进行预测提供了有用的基础。
+在此过程中，您需要了解您迭代尝试定义和收集数据的问题为做出预测提供了有用的基础。
 
 ## 一个有用的比较点
 

@@ -126,9 +126,9 @@ def get_split(dataset, n_features):
 
 我们将使用k-fold交叉验证来估计学习模型在看不见的数据上的表现。这意味着我们将构建和评估k模型并将表现估计为平均模型误差。分类精度将用于评估每个模型。这些行为在 **cross_validation_split（）**， **accuracy_metric（）**和 **evaluate_algorithm（）**辅助函数中提供。
 
-我们还将使用适用于装袋的分类和回归树（CART）算法的实现，包括辅助函数 **test_split（）**将数据集分成组， **gini_index（）**来评估分裂点，我们在上一步中讨论的修改后的 **get_split（）**函数， **to_terminal（）**， **split（）**和 **build_tree（）[HTG11用于创建单个决策树，**预测（）**使用决策树进行预测， **subsample（）**制作训练数据集的子样本和 **bagging_predict（ ）**使用决策树列表进行预测。**
+我们还将使用适用于装袋的分类和回归树（CART）算法的实现，包括辅助函数 **test_split（）**将数据集分成组， **gini_index（）**来评估分裂点，我们在上一步中讨论的修改后的 **get_split（）**函数， **to_terminal（）**， **split（）**和 **build_tree（）[HTG11用于创建单个决策树，**预测（）**使用决策树做出预测， **subsample（）**制作训练数据集的子样本和 **bagging_predict（ ）**使用决策树列表做出预测。**
 
-开发了一个新的函数名 **random_forest（）**，它首先从训练数据集的子样本创建决策树列表，然后使用它们进行预测。
+开发了一个新的函数名 **random_forest（）**，它首先从训练数据集的子样本创建决策树列表，然后使用它们做出预测。
 
 如上所述，随机森林和袋装决策树之间的关键区别是树木创建方式的一个小变化，这里是 **get_split（）**函数。
 

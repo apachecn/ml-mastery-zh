@@ -878,7 +878,7 @@ def attention_model(n_timesteps_in, n_features):
 	return model
 ```
 
-然后，我们可以定义一个函数来拟合和评估拟合模型的准确性并返回准确度分数。
+然后，我们可以定义一个函数来拟合和评估拟合模型的准确率并返回准确度分数。
 
 ```py
 # train and evaluate a model, return accuracy
@@ -1005,7 +1005,7 @@ for _ in range(n_repeats):
 print('Mean Accuracy: %.2f%%' % (sum(results)/float(n_repeats)))
 ```
 
-运行此示例将打印每个模型重复的准确性，以便您了解运行的进度。
+运行此示例将打印每个模型重复的准确率，以便您了解运行的进度。
 
 ```py
 Encoder-Decoder Model

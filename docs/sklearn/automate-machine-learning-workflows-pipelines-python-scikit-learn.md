@@ -74,7 +74,7 @@ results = cross_val_score(model, X, Y, cv=kfold)
 print(results.mean())
 ```
 
-运行该示例提供了数据集上设置准确性的摘要。
+运行该示例提供了数据集上设置准确率的摘要。
 
 ```
 0.773462064252
@@ -131,7 +131,7 @@ results = cross_val_score(model, X, Y, cv=kfold)
 print(results.mean())
 ```
 
-运行该示例提供了数据集上管道的准确性摘要。
+运行该示例提供了数据集上管道的准确率摘要。
 
 ```
 0.776042378674

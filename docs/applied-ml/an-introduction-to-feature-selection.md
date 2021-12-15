@@ -35,9 +35,9 @@
 
 ## 问题特征选择解决
 
-特征选择方法可帮助您创建准确的预测模型。它们可以帮助您选择能够提供更好或更好准确性同时需要更少数据的功能。
+特征选择方法可帮助您创建准确的预测模型。它们可以帮助您选择能够提供更好或更好准确率同时需要更少数据的功能。
 
-特征选择方法可用于从数据中识别和移除不需要的，不相关的和冗余的属性，这些属性对预测模型的准确性没有贡献，或者实际上可能降低模型的准确性。
+特征选择方法可用于从数据中识别和移除不需要的，不相关的和冗余的属性，这些属性对预测模型的准确率没有贡献，或者实际上可能降低模型的准确率。
 
 较少的属性是可取的，因为它降低了模型的复杂性，更简单的模型更易于理解和解释。
 
@@ -65,7 +65,7 @@
 
 ### 嵌入式方法
 
-嵌入式方法了解在创建模型时哪些功能最有助于模型的准确性。最常见的嵌入式特征选择方法是正则化方法。
+嵌入式方法了解在创建模型时哪些功能最有助于模型的准确率。最常见的嵌入式特征选择方法是正则化方法。
 
 正则化方法也称为惩罚方法，其将额外约束引入预测算法（例如回归算法）的优化中，该预测算法将模型偏向于较低复杂度（较少系数）。
 
@@ -75,7 +75,7 @@
 
 我们在此博客上看到过许多功能选择示例。
 
-*   **Weka** ：有关如何使用Weka执行特征选择的教程，请参阅“[特征选择以提高准确性并缩短训练时间](http://machinelearningmastery.com/feature-selection-to-improve-accuracy-and-decrease-training-time/ "Feature Selection to Improve Accuracy and Decrease Training Time")”。
+*   **Weka** ：有关如何使用Weka执行特征选择的教程，请参阅“[特征选择以提高准确率并缩短训练时间](http://machinelearningmastery.com/feature-selection-to-improve-accuracy-and-decrease-training-time/ "Feature Selection to Improve Accuracy and Decrease Training Time")”。
 *   **Scikit-Learn** ：有关使用scikit-learn在Python中进行递归特征消除的秘籍，请参阅“使用Scikit-Learn 在Python中使用[特征选择”。](http://machinelearningmastery.com/feature-selection-in-python-with-scikit-learn/ "Feature Selection in Python with Scikit-Learn")
 *   **R** ：使用Caret R软件包进行递归特征消除的秘籍，请参阅“使用Caret R软件包”选择“[特征”](http://machinelearningmastery.com/feature-selection-with-the-caret-r-package/ "Feature Selection with the Caret R Package")
 

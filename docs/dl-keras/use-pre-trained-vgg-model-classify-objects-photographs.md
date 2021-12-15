@@ -275,9 +275,9 @@ from keras.applications.vgg16 import preprocess_input
 image = preprocess_input(image)
 ```
 
-我们现在准备对我们加载和准备好的图像进行预测。
+我们现在准备对我们加载和准备好的图像做出预测。
 
-### 4.进行预测
+### 4.做出预测
 
 我们可以在模型上调用`predict()`函数，以便预测属于 1000 种已知对象类型中的每一种的图像的概率。
 

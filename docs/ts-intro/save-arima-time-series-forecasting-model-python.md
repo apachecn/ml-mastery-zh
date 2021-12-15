@@ -4,7 +4,7 @@
 
 自回归整合移动平均模型（ARIMA）是一种流行的时间序列分析和预测线性模型。
 
-[statsmodels 库](http://statsmodels.sourceforge.net/)提供了用于 Python 的 ARIMA 实现。 ARIMA 模型可以保存到文件中，以便以后用于对新数据进行预测。当前版本的 statsmodels 库中存在一个错误，该错误会阻止加载已保存的模型。
+[statsmodels 库](http://statsmodels.sourceforge.net/)提供了用于 Python 的 ARIMA 实现。 ARIMA 模型可以保存到文件中，以便以后用于对新数据做出预测。当前版本的 statsmodels 库中存在一个错误，该错误会阻止加载已保存的模型。
 
 在本教程中，您将了解如何诊断和解决此问题。
 
