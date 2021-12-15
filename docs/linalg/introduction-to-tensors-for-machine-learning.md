@@ -1,4 +1,4 @@
-# 使用 NumPy 轻松介绍机器学习的张量
+# 面向机器学习的 NumPy 张量的温和介绍
 
 > 原文： [https://machinelearningmastery.com/introduction-to-tensors-for-machine-learning/](https://machinelearningmastery.com/introduction-to-tensors-for-machine-learning/)
 
@@ -36,7 +36,7 @@ Tensor 甚至出现在谷歌旗舰机器学习库的名称中：“TensorFlow”
 
 张量是向量和矩阵的推广，很容易理解为多维数组。
 
-> 在一般情况下，布置在具有可变轴数的规则网格上的数字阵列被称为张量。
+> 在一般情况下，布置在具有可变轴数的规则网格上的数字数组被称为张量。
 
 - 第 33 页，[深度学习](http://amzn.to/2B3MsuU)，2016 年。
 

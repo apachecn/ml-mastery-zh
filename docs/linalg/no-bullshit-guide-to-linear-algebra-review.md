@@ -1,4 +1,4 @@
-# 线性代数评论没有废话指南
+# 线性代数回顾的没有废话的指南
 
 > 原文： [https://machinelearningmastery.com/no-bullshit-guide-to-linear-algebra-review/](https://machinelearningmastery.com/no-bullshit-guide-to-linear-algebra-review/)
 

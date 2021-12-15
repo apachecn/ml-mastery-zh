@@ -526,7 +526,7 @@ def forecast_chunks(train_chunks, test_input):
 
 我们现在可以实现`forecast_variable()`的一个版本，该版本计算给定系列的平均值，并预测每个提前期的平均值。
 
-首先，我们必须在所有块中收集目标列中的所有观测值，然后计算观测值的平均值，同时忽略 NaN 值。`nanmean()`NumPy 函数将计算阵列的平均值并忽略`NaN`值。
+首先，我们必须在所有块中收集目标列中的所有观测值，然后计算观测值的平均值，同时忽略 NaN 值。`nanmean()`NumPy 函数将计算数组的平均值并忽略`NaN`值。
 
 下面的`forecast_variable()`函数实现了这种行为。
 

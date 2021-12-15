@@ -1,4 +1,4 @@
-# 用于机器学习的稀疏矩阵的温和介绍
+# 面向机器学习的稀疏矩阵的温和介绍
 
 > 原文： [https://machinelearningmastery.com/sparse-matrices-for-machine-learning/](https://machinelearningmastery.com/sparse-matrices-for-machine-learning/)
 
@@ -156,7 +156,7 @@ Three examples include:
 
 SciPy 提供了使用多个数据结构创建稀疏矩阵的工具，以及将密集矩阵转换为稀疏矩阵的工具。
 
-在 NumPy 阵列上运行的许多线性代数 NumPy 和 SciPy 函数可以透明地在 SciPy 稀疏数组上运行。此外，使用 NumPy 数据结构的机器学习库也可以在 SciPy 稀疏数组上透明地运行，例如用于一般机器学习的 scikit-learn 和用于深度学习的 Keras。
+在 NumPy 数组上运行的许多线性代数 NumPy 和 SciPy 函数可以透明地在 SciPy 稀疏数组上运行。此外，使用 NumPy 数据结构的机器学习库也可以在 SciPy 稀疏数组上透明地运行，例如用于一般机器学习的 scikit-learn 和用于深度学习的 Keras。
 
 通过调用`csr_matrix()`函数，可以使用 CSR 表示将存储在 NumPy 数组中的密集矩阵转换为稀疏矩阵。
 
@@ -177,7 +177,7 @@ B = S.todense()
 print(B)
 ```
 
-运行该示例首先打印定义的密集阵列，然后是 CSR 表示，然后是重建的密集矩阵。
+运行该示例首先打印定义的密集数组，然后是 CSR 表示，然后是重建的密集矩阵。
 
 ```
 [[1 0 0 1 0 0]

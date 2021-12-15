@@ -197,7 +197,7 @@ mean = sum(data) / length(data)
 mean = 1 / length(data) * sum(data)
 ```
 
-我们可以通过在阵列上使用`mean()`NumPy函数来计算样本的平均值。
+我们可以通过在数组上使用`mean()`NumPy函数来计算样本的平均值。
 
 ```py
 result = mean(data)

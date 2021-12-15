@@ -1,4 +1,4 @@
-# 学习机器学习线性代数的主要资源
+# 在机器学习中学习线性代数的主要资源
 
 > 原文： [https://machinelearningmastery.com/resources-for-linear-algebra-in-machine-learning/](https://machinelearningmastery.com/resources-for-linear-algebra-in-machine-learning/)
 

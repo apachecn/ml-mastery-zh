@@ -201,7 +201,7 @@ trainX, trainY = create_dataset(train, look_back)
 testX, testY = create_dataset(test, look_back)
 ```
 
-LSTM 网络期望输入数据（X）以以下形式提供特定的阵列结构： _[样本，时间步长，特征]_ 。
+LSTM 网络期望输入数据（X）以以下形式提供特定的数组结构： _[样本，时间步长，特征]_ 。
 
 目前，我们的数据形式为：[_ 样本，特征 _]，我们将问题定为每个样本的一个时间步长。我们可以使用 **numpy.reshape（）**将准备好的训练和测试输入数据转换为预期结构，如下所示：
 

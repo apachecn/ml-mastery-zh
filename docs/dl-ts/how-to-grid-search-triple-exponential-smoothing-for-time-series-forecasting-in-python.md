@@ -18,7 +18,7 @@
 
 让我们开始吧。
 
-*   **Oct8 / 2018** ：更新了 ETS 模型的拟合，以使用 NumPy 阵列修复乘法趋势/季节性问题（感谢 Amit Amola）。
+*   **Oct8 / 2018** ：更新了 ETS 模型的拟合，以使用 NumPy 数组修复乘法趋势/季节性问题（感谢 Amit Amola）。
 
 ![How to Grid Search Triple Exponential Smoothing for Time Series Forecasting in Python](img/ffdeee56297777b792330716ee3eddd5.jpg)
 

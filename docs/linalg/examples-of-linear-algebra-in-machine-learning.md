@@ -1,4 +1,4 @@
-# 10 机器学习中的线性代数示例
+# 10 个机器学习中的线性代数示例
 
 > 原文： [https://machinelearningmastery.com/examples-of-linear-algebra-in-machine-learning/](https://machinelearningmastery.com/examples-of-linear-algebra-in-machine-learning/)
 

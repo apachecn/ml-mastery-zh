@@ -1,4 +1,4 @@
-# 用于机器学习的线性代数（7 天迷你课程）
+# 面向机器学习的线性代数（7 天迷你课程）
 
 > 原文： [https://machinelearningmastery.com/linear-algebra-machine-learning-7-day-mini-course/](https://machinelearningmastery.com/linear-algebra-machine-learning-7-day-mini-course/)
 
@@ -216,7 +216,7 @@ Post your answer in the comments below. I would love to see what you discover.
 
 ### 什么是矩阵？
 
-矩阵是具有一个或多个列和一个或多个行的标量的二维阵列。
+矩阵是具有一个或多个列和一个或多个行的标量的二维数组。
 
 矩阵的符号通常是大写字母，例如 A，并且条目由它们的行（i）和列（j）的二维下标引用，例如 aij。例如：
 

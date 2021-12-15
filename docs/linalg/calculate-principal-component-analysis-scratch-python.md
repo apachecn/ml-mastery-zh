@@ -1,4 +1,4 @@
-# 如何从 Python 中的 Scratch 计算主成分分析（PCA）
+# 如何在 Python 中从零开始计算主成分分析（PCA）
 
 > 原文： [https://machinelearningmastery.com/calculate-principal-component-analysis-scratch-python/](https://machinelearningmastery.com/calculate-principal-component-analysis-scratch-python/)
 

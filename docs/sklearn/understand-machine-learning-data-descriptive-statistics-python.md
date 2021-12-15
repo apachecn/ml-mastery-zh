@@ -214,7 +214,7 @@ correlations = data.corr(method='pearson')
 print(correlations)
 ```
 
-矩阵列出了顶部和侧面的所有属性，以给出所有属性对之间的相关性（两次，因为矩阵是对称的）。您可以看到矩阵左上角到右下角的矩阵对角线显示每个属性与自身的完美关联。
+矩数组出了顶部和侧面的所有属性，以给出所有属性对之间的相关性（两次，因为矩阵是对称的）。您可以看到矩阵左上角到右下角的矩阵对角线显示每个属性与自身的完美关联。
 
 ```
         preg   plas   pres   skin   test   mass   pedi    age  class

@@ -279,7 +279,7 @@ Running the example prints:
 
 NumPy 为 SciPy 提供基础数据结构和操作。这些是有效定义和操作的数组（ndarrays）。
 
-### 创建阵列
+### 创建数组
 
 ```
 # define an array

@@ -482,7 +482,7 @@ model.add(TimeDistributed(Dense(100, activation='softmax')))
 model.add(LSTM(150, return_sequences=True, stateful=True))
 ```
 
-这两层不能整齐地配合在一起。编码器层将输出2D阵列（21,150），并且解码器期望3D阵列作为输入（21，α，150）。
+这两层不能整齐地配合在一起。编码器层将输出2D数组（21,150），并且解码器期望3D数组作为输入（21，α，150）。
 
 我们通过在编码器和解码器之间添加RepeatVector（）层来解决这个问题，并确保编码器的输出重复适当的次数以匹配输出序列的长度。在这种情况下，输出序列中两个时间步长为2次。
 

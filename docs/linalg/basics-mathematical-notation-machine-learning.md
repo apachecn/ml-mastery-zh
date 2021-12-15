@@ -1,4 +1,4 @@
-# 机器学习数学符号的基础知识
+# 机器学习中数学符号的基础知识
 
 > 原文： [https://machinelearningmastery.com/basics-mathematical-notation-machine-learning/](https://machinelearningmastery.com/basics-mathematical-notation-machine-learning/)
 
@@ -222,7 +222,7 @@ ln(7.38905...) = 2
 
 机器学习符号通常描述对序列的操作。
 
-序列可以是数据阵列或术语列表。
+序列可以是数据数组或术语列表。
 
 ### 索引
 

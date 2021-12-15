@@ -1,4 +1,4 @@
-# 用于编码器审查的计算线性代数
+# 面向程序员的计算线性代数回顾
 
 > 原文： [https://machinelearningmastery.com/computational-linear-algebra-coders-review/](https://machinelearningmastery.com/computational-linear-algebra-coders-review/)
 
@@ -176,11 +176,11 @@ Videos and Notebook:
 
 ### 第 4 部分。具有鲁棒回归的压缩感知
 
-这部分介绍了 NumPy 阵列（和其他地方）中使用的广播的重要概念以及在机器学习中出现很多的稀疏矩阵。
+这部分介绍了 NumPy 数组（和其他地方）中使用的广播的重要概念以及在机器学习中出现很多的稀疏矩阵。
 
 该部分的应用重点是使用强大的 PCA 在 CT 扫描中去除背景。
 
-> 术语广播描述了在算术运算期间如何处理具有不同形状的阵列。 Numpy 首先使用广播一词，但现在用于其他库，如 Tensorflow 和 Matlab;规则因库而异。
+> 术语广播描述了在算术运算期间如何处理具有不同形状的数组。 Numpy 首先使用广播一词，但现在用于其他库，如 Tensorflow 和 Matlab;规则因库而异。
 
 The topics covered in this lecture are:
 

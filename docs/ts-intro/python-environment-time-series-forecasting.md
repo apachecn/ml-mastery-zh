@@ -55,7 +55,7 @@ Python 机器学习工作与 R 机器学习工作
 
 [pandas 库](http://pandas.pydata.org)提供了用于在 Python 中加载和处理数据的高表现工具。
 
-它建立在 SciPy 生态系统的基础上，主要使用 NumPy 阵列，但提供方便易用的数据结构，如`DataFrame`和 _ 系列 _，用于表示数据。
+它建立在 SciPy 生态系统的基础上，主要使用 NumPy 数组，但提供方便易用的数据结构，如`DataFrame`和 _ 系列 _，用于表示数据。
 
 Pandas 提供[特别关注对时间序列数据的支持](http://pandas.pydata.org/pandas-docs/stable/timeseries.html)。
 
@@ -70,7 +70,7 @@ Pandas 提供[特别关注对时间序列数据的支持](http://pandas.pydata.o
 
 [statsmodels 库](http://statsmodels.sourceforge.net/)提供统计建模工具。
 
-它建立在 SciPy 生态系统的基础上，并支持 NumPy 阵列和 Pandas _ 系列 _ 对象形式的数据。
+它建立在 SciPy 生态系统的基础上，并支持 NumPy 数组和 Pandas _ 系列 _ 对象形式的数据。
 
 它提供了一套统计测试和建模方法，以及专用于时间序列分析的[工具，它们也可用于预测。](http://statsmodels.sourceforge.net/stable/tsa.html)
 

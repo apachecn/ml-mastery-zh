@@ -115,7 +115,7 @@ X -> Y
 Y -> Z
 ```
 
-我们需要将 NumPy 阵列重新整形为 LSTM 网络所期望的格式，即[_ 样本，时间步长，特征 _]。
+我们需要将 NumPy 数组重新整形为 LSTM 网络所期望的格式，即[_ 样本，时间步长，特征 _]。
 
 ```py
 # reshape X to be [samples, time steps, features]

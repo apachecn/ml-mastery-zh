@@ -114,7 +114,7 @@ from keras.preprocessing.image import load_img
 image = load_img('990890291_afc72be141.jpg')
 ```
 
-像素数据需要转换为 NumPy 阵列以便在 Keras 中使用。
+像素数据需要转换为 NumPy 数组以便在 Keras 中使用。
 
 我们可以使用`img_to_array()`keras 函数来转换加载的数据。
 

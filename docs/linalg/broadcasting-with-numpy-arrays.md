@@ -1,24 +1,24 @@
-# 使用 NumPy 阵列轻松介绍广播
+# NumPy 数组广播的温和介绍
 
 > 原文： [https://machinelearningmastery.com/broadcasting-with-numpy-arrays/](https://machinelearningmastery.com/broadcasting-with-numpy-arrays/)
 
 不能添加，减去或通常在算术中使用具有不同大小的数组。
 
-克服这个问题的一种方法是复制较小的数组，使其尺寸和大小与较大的数组相同。这称为阵列广播，在执行数组运算时可在 NumPy 中使用，这可以大大减少和简化代码。
+克服这个问题的一种方法是复制较小的数组，使其尺寸和大小与较大的数组相同。这称为数组广播，在执行数组运算时可在 NumPy 中使用，这可以大大减少和简化代码。
 
-在本教程中，您将发现阵列广播的概念以及如何在 NumPy 中实现它。
+在本教程中，您将发现数组广播的概念以及如何在 NumPy 中实现它。
 
 完成本教程后，您将了解：
 
 *   具有不同大小的数组的算术问题。
 *   广播的解决方案和一维和二维的常见例子。
-*   阵列广播规则和广播失败时。
+*   数组广播规则和广播失败时。
 
 让我们开始吧。
 
 ![Introduction to Broadcasting with NumPy Arrays](img/bae7772c8e64065ad2ec65a9f752813a.jpg)
 
-使用 NumPy 阵列进行广播的介绍
+使用 NumPy 数组进行广播的介绍
 [pbkwee](https://www.flickr.com/photos/rimuhosting/7689904958/) 的照片，保留一些权利。
 
 ## 教程概述
@@ -26,7 +26,7 @@
 本教程分为 4 个部分;他们是：
 
 1.  数组运算的局限性
-2.  阵列广播
+2.  数组广播
 3.  在 NumPy 广播
 4.  广播的局限性
 
@@ -45,21 +45,21 @@ c = a + b
 c = [1 + 1, 2 + 2, 3 + 3]
 ```
 
-严格地说，算术只能在具有相同尺寸和尺寸的相同尺寸的阵列上执行。
+严格地说，算术只能在具有相同尺寸和尺寸的相同尺寸的数组上执行。
 
 这意味着长度为 10 的一维数组只能与另一个长度为 10 的一维数组进行算术运算。
 
-对阵列算术的这种限制确实非常有限。值得庆幸的是，NumPy 提供了一个内置的解决方法，允许在具有不同大小的数组之间进行算术运算。
+对数组算术的这种限制确实非常有限。值得庆幸的是，NumPy 提供了一个内置的解决方法，允许在具有不同大小的数组之间进行算术运算。
 
-## 阵列广播
+## 数组广播
 
 广播是 NumPy 用于允许具有不同形状或大小的数组之间的数组运算的方法的名称。
 
 尽管该技术是针对 [NumPy](https://docs.scipy.org/doc/numpy-1.13.0/user/basics.broadcasting.html) 开发的，但它在其他数值计算库中也被广泛采用，例如 [Theano](http://deeplearning.net/software/theano/tutorial/broadcasting.html) ， [TensorFlow](https://www.tensorflow.org/performance/xla/broadcasting) 和 [Octave](https://www.gnu.org/software/octave/doc/v4.2.1/Broadcasting.html) 。
 
-广播通过实际上沿着最后的不匹配维度复制较小的阵列来解决不同形状的阵列之间的算术问题。
+广播通过实际上沿着最后的不匹配维度复制较小的数组来解决不同形状的数组之间的算术问题。
 
-> 术语广播描述了 numpy 如何在算术运算期间处理具有不同形状的数组。受某些约束的影响，较小的阵列在较大的阵列上“广播”，以便它们具有兼容的形状。
+> 术语广播描述了 numpy 如何在算术运算期间处理具有不同形状的数组。受某些约束的影响，较小的数组在较大的数组上“广播”，以便它们具有兼容的形状。
 
 - [广播](https://docs.scipy.org/doc/numpy-1.13.0/user/basics.broadcasting.html)，SciPy.org
 
@@ -94,7 +94,7 @@ b
 b = [b1, b2, b3]
 ```
 
-然后可以直接添加两个一维阵列。
+然后可以直接添加两个一维数组。
 
 ```
 c = a + b
@@ -137,14 +137,14 @@ A = (a21, a22, a23)
 b
 ```
 
-标量将需要在二维阵列的每一行上进行广播，方法是将其复制 5 次。
+标量将需要在二维数组的每一行上进行广播，方法是将其复制 5 次。
 
 ```
      b11, b12, b13
 B = (b21, b22, b23)
 ```
 
-然后可以直接添加两个二维阵列。
+然后可以直接添加两个二维数组。
 
 ```
 C = A + B
@@ -178,9 +178,9 @@ print(C)
  [3 4 5]]
 ```
 
-### 一维和二维阵列
+### 一维和二维数组
 
-一维数组可用于具有二维阵列的算术。
+一维数组可用于具有二维数组的算术。
 
 例如，我们可以想象一个二维数组“A”，其中 2 行 3 列添加到具有 3 个值的一维数组“b”。
 
@@ -191,7 +191,7 @@ A = (a21, a22, a23)
 b = (b1, b2, b3)
 ```
 
-通过创建第二副本以产生新的二维阵列“B”，在二维阵列的每一行上广播一维阵列。
+通过创建第二副本以产生新的二维数组“B”，在二维数组的每一行上广播一维数组。
 
 ```
      b11, b12, b13
@@ -272,7 +272,7 @@ b.shape = (1 x 1)
 
 当比较失败时，不能执行广播，并且引发错误。
 
-下面的示例尝试将两元素阵列广播到 2 x 3 阵列。这种比较有效：
+下面的示例尝试将两元素数组广播到 2 x 3 数组。这种比较有效：
 
 ```
 A.shape = (2 x 3)
@@ -294,7 +294,7 @@ C = A + b
 print(C)
 ```
 
-运行该示例首先打印阵列的形状，然后在尝试广播时引发错误，正如我们预期的那样。
+运行该示例首先打印数组的形状，然后在尝试广播时引发错误，正如我们预期的那样。
 
 ```
 (2, 3)
@@ -306,9 +306,9 @@ ValueError: operands could not be broadcast together with shapes (2,3) (2,)
 
 本节列出了一些扩展您可能希望探索的教程的想法。
 
-*   使用 NumPy 阵列创建三个新的和不同的广播示例。
+*   使用 NumPy 数组创建三个新的和不同的广播示例。
 *   实现您自己的广播功能，以便在一维和二维情况下进行手动广播。
-*   基准 NumPy 广播和您自己的自定义广播功能，具有非常大的阵列的一维和二维情况。
+*   基准 NumPy 广播和您自己的自定义广播功能，具有非常大的数组的一维和二维情况。
 
 如果你探索任何这些扩展，我很想知道。
 
@@ -326,18 +326,18 @@ ValueError: operands could not be broadcast together with shapes (2,3) (2,)
 *   [TensorFlow](https://www.tensorflow.org/performance/xla/broadcasting) 中的广播语义
 *   [数组广播在 numpy](http://scipy.github.io/old-wiki/pages/EricsBroadcastingDoc) ，EricsBroadcastingDoc 中
 *   [广播](http://deeplearning.net/software/theano/tutorial/broadcasting.html)，Theano
-*   [Numpy](https://eli.thegreenplace.net/2015/broadcasting-arrays-in-numpy/) ，2015 年的广播阵列。
+*   [Numpy](https://eli.thegreenplace.net/2015/broadcasting-arrays-in-numpy/) ，2015 年的广播数组。
 *   [八度广播](https://www.gnu.org/software/octave/doc/v4.2.1/Broadcasting.html)
 
 ## 摘要
 
-在本教程中，您发现了阵列广播的概念以及如何在 NumPy 中实现。
+在本教程中，您发现了数组广播的概念以及如何在 NumPy 中实现。
 
 具体来说，你学到了：
 
 *   具有不同大小的数组的算术问题。
 *   广播的解决方案和一维和二维的常见例子。
-*   阵列广播规则和广播失败时。
+*   数组广播规则和广播失败时。
 
 你有任何问题吗？
 在下面的评论中提出您的问题，我会尽力回答。

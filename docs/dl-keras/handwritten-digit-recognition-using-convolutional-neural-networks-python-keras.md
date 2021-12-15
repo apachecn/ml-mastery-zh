@@ -105,7 +105,7 @@ numpy.random.seed(seed)
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
 ```
 
-训练数据集被构造为实例，图像宽度和图像高度的三维阵列。对于多层感知器模型，我们必须将图像缩小为像素向量，在这种情况下，28×28 大小的图像将是 784 像素输入值。
+训练数据集被构造为实例，图像宽度和图像高度的三维数组。对于多层感知器模型，我们必须将图像缩小为像素向量，在这种情况下，28×28 大小的图像将是 784 像素输入值。
 
 我们可以使用 NumPy 数组上的 [reshape（）函数](http://docs.scipy.org/doc/numpy-1.10.1/reference/generated/numpy.reshape.html)轻松地进行转换，我们还可以通过强制像素值的精度为 32 位来降低我们的内存需求，这是 Keras 使用的默认精度。
 

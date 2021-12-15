@@ -1,4 +1,4 @@
-# 线性代数的深度学习
+# 面向深度学习的线性代数
 
 > 原文： [https://machinelearningmastery.com/linear-algebra-for-deep-learning/](https://machinelearningmastery.com/linear-algebra-for-deep-learning/)
 

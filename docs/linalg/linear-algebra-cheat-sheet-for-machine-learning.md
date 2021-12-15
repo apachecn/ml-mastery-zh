@@ -1,4 +1,4 @@
-# 用于机器学习的线性代数备忘单
+# 面向机器学习的线性代数备忘单
 
 > 原文： [https://machinelearningmastery.com/linear-algebra-cheat-sheet-for-machine-learning/](https://machinelearningmastery.com/linear-algebra-cheat-sheet-for-machine-learning/)
 
@@ -30,7 +30,7 @@
 6.  矩阵分解
 7.  统计
 
-## 1.阵列
+## 1.数组
 
 有很多方法可以创建 NumPy 数组。
 

@@ -1,4 +1,4 @@
-# 用于机器学习的线性代数中的矩阵类型简介
+# 面向机器学习的线性代数中的矩阵类型简介
 
 > 原文： [https://machinelearningmastery.com/introduction-to-types-of-matrices-in-linear-algebra/](https://machinelearningmastery.com/introduction-to-types-of-matrices-in-linear-algebra/)
 

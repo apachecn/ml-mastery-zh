@@ -1,4 +1,4 @@
-# 学习线性代数用于机器学习的 5 个理由
+# 为机器学习学习线性代数的 5 个理由
 
 > 原文： [https://machinelearningmastery.com/why-learn-linear-algebra-for-machine-learning/](https://machinelearningmastery.com/why-learn-linear-algebra-for-machine-learning/)
 

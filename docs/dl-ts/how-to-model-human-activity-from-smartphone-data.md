@@ -494,7 +494,7 @@ def data_for_subject(X, y, sub_map, sub_id):
 
 数据由具有重叠的窗口组成。我们可以编写一个函数来消除这种重叠，并将窗口向下挤压给定变量，将其压缩成一个可以直接绘制为线图的长序列。
 
-下面的`to_series()`函数对给定变量实现此行为，例如窗户阵列。
+下面的`to_series()`函数对给定变量实现此行为，例如窗户数组。
 
 ```py
 # convert a series of windows to a 1D list

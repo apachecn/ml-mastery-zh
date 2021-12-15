@@ -1,4 +1,4 @@
-# NumPy 对预期价值，方差和协方差的简要介绍
+# NumPy 期望值，方差和协方差的简要介绍
 
 > 原文： [https://machinelearningmastery.com/introduction-to-expected-value-variance-and-covariance/](https://machinelearningmastery.com/introduction-to-expected-value-variance-and-covariance/)
 
@@ -21,7 +21,7 @@
 ![A Gentle Introduction to Expected Value, Variance, and Covariance with NumPy](img/66cef2cc9be1b9be684b0918ce2ce69f.jpg)
 
 NumPy
-照片由 [Robyn Jay](https://www.flickr.com/photos/learnscope/15866965009/) 对预期价值，方差和协方差的温和介绍，保留一些权利。
+照片由 [Robyn Jay](https://www.flickr.com/photos/learnscope/15866965009/) 对期望值，方差和协方差的温和介绍，保留一些权利。
 
 ## 教程概述
 
@@ -415,7 +415,7 @@ print(Sigma)
 
 ### 用品
 
-*   [维基百科的预期价值](https://en.wikipedia.org/wiki/Expected_value)
+*   [维基百科的期望值](https://en.wikipedia.org/wiki/Expected_value)
 *   维基百科上的[意思](https://en.wikipedia.org/wiki/Mean)
 *   [维基百科上的差异](https://en.wikipedia.org/wiki/Variance)
 *   [维基百科的标准偏差](https://en.wikipedia.org/wiki/Standard_deviation)
