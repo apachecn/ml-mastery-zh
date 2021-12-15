@@ -84,7 +84,7 @@ Y = dataset[:,4]
 
 在使用神经网络对多分类问题进行建模时，最好将包含每个类值的值的向量的输出属性重新整形为一个矩阵，每个类值都有一个布尔值，以及给定的实例是否具有该值是否有类值。
 
-这称为[一个热编码](https://en.wikipedia.org/wiki/One-hot)或从分类变量创建虚拟变量。
+这称为[单热编码](https://en.wikipedia.org/wiki/One-hot)或从分类变量创建虚拟变量。
 
 例如，在这个问题中，三个类值是 Iris-setosa，Iris-versicolor 和 Iris-virginica。如果我们有观察结果：
 
@@ -103,7 +103,7 @@ Iris-setosa,	Iris-versicolor,	Iris-virginica
 0, 		0, 			1
 ```
 
-我们可以通过首先使用 scikit-learn 类 LabelEncoder 将字符串一致地编码为整数来完成此操作。然后使用 Keras 函数 to_categorical（）将整数向量转换为一个热编码。
+我们可以通过首先使用 scikit-learn 类 LabelEncoder 将字符串一致地编码为整数来完成此操作。然后使用 Keras 函数 to_categorical（）将整数向量转换为单热编码。
 
 ```py
 # encode class values as integers
@@ -188,7 +188,7 @@ Accuracy: 97.33% (4.42%)
 通过完成本教程，您了解到：
 
 *   如何加载数据并使其可用于 Keras。
-*   如何使用一个热编码准备多分类数据进行建模。
+*   如何使用单热编码准备多分类数据进行建模。
 *   如何使用 Keras 神经网络模型与 scikit-learn。
 *   如何使用 Keras 定义神经网络进行多分类。
 *   如何使用带有 k-fold 交叉验证的 scikit-learn 来评估 Keras 神经网络模型

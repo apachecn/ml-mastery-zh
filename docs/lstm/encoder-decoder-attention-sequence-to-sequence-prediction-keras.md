@@ -25,11 +25,11 @@
 
 本教程分为6个部分;他们是：
 
-1.  注意编码器解码器
+1.  注意编解码器
 2.  注意力的测试问题
 3.  编解码器没有注意
 4.  自定义Keras注意层
-5.  注意编码器解码器
+5.  注意编解码器
 6.  模型比较
 
 ### Python环境
@@ -44,7 +44,7 @@
 
 *   [如何使用Anaconda设置用于机器学习和深度学习的Python环境](https://machinelearningmastery.com/setup-python-environment-machine-learning-deep-learning-anaconda/)
 
-## 注意编码器解码器
+## 注意编解码器
 
 用于循环神经网络的编解码器模型是用于序列到序列预测问题的架构。
 
@@ -94,7 +94,7 @@ print(sequence)
 [43, 3, 28, 34, 33]
 ```
 
-接下来，我们需要一个函数[将一个热编码](https://machinelearningmastery.com/how-to-one-hot-encode-sequence-data-in-python/)的离散整数值转换成二进制向量。
+接下来，我们需要一个函数[将单热编码](https://machinelearningmastery.com/how-to-one-hot-encode-sequence-data-in-python/)的离散整数值转换成二进制向量。
 
 如果使用50的基数，则每个整数将由0个值的50个元素向量和指定整数值的索引中的1表示。
 
@@ -113,7 +113,7 @@ def one_hot_encode(sequence, n_unique):
 
 我们还需要能够解码编码序列。需要将预测从模型或编码的预期序列转换回我们可以读取和评估的整数序列。
 
-下面的 _one_hot_decode（）_函数将一个热编码序列解码回整数序列。
+下面的 _one_hot_decode（）_函数将单热编码序列解码回整数序列。
 
 ```py
 # decode a one hot encoded string
@@ -156,7 +156,7 @@ decoded = one_hot_decode(encoded)
 print(decoded)
 ```
 
-首先运行该示例打印随机生成的序列，然后打印一个热编码版本，最后再打印解码序列。
+首先运行该示例打印随机生成的序列，然后打印单热编码版本，最后再打印解码序列。
 
 ```py
 [3, 18, 32, 11, 36]
@@ -737,7 +737,7 @@ from attention_decoder import AttentionDecoder
 
 值得注意的是，自定义层建立在Keras的 [Recurrent](https://github.com/fchollet/keras/blob/master/keras/legacy/layers.py#L762) 层上，在编写本文时，它被标记为遗留代码，并且可能会在某个时候从项目中删除。
 
-## 编码器解码器注意
+## 编解码器注意
 
 现在我们已经可以使用我们的注意力实现，我们可以开发一个编解码器模型，注意我们设计的序列预测问题。
 

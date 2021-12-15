@@ -41,7 +41,7 @@ dropout是一种在训练过程中忽略随机选择的神经元的技术。这�
 
 接下来，我们将探讨在 Keras 中使用 Dropout 的几种不同方法。
 
-这些示例将使用 [Sonar 数据集](http://archive.ics.uci.edu/ml/datasets/Connectionist+Bench+(Sonar,+Mines+vs.+Rocks))。这是一个二分类问题，其目标是利用声纳回声正确识别岩石和模拟地雷。它是神经网络的一个很好的测试数据集，因为所有输入值都是数字的并且具有相同的量纲。
+这些示例将使用 [Sonar 数据集](http://archive.ics.uci.edu/ml/datasets/Connectionist+Bench+(Sonar,+Mines+vs.+Rocks))。这是一个二分类问题，其目标是利用声纳打印正确识别岩石和模拟地雷。它是神经网络的一个很好的测试数据集，因为所有输入值都是数字的并且具有相同的量纲。
 
 数据集可以是从 UCI 机器学习库下载的[。您可以将声纳数据集放在当前工作目录中，文件名为 sonar.csv。](http://archive.ics.uci.edu/ml/machine-learning-databases/undocumented/connectionist-bench/sonar/sonar.all-data)
 

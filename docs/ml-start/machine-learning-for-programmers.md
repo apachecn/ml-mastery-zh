@@ -35,7 +35,7 @@
 
 ## 对机器学习感兴趣的开发人员
 
-您是一名开发人员，您对进入机器学习很感兴趣。那么为何不？这是目前的一个热门话题，它是一个迷人而快速发展的领域。
+您是一名开发人员，您对进入机器学习很感兴趣。那么为何不？这是目前的单热门话题，它是一个迷人而快速发展的领域。
 
 你看过一些博文。你试图深入，但书籍很糟糕。数学专注。理论重点。算法集中。
 
@@ -123,7 +123,7 @@
 
 在线课程，MOOC 和 YouTube 视频模仿大学教学机器学习的方法。再次，如果你有背景，或者你已经完成了半年到十年的学习以获得更高的学位，那么这很好。它对普通开发人员没有帮助。
 
-如果你躲到像 [Quora](http://www.quora.com/How-do-I-learn-machine-learning-1) ， [StackExchange](http://programmers.stackexchange.com/questions/79476/what-skills-are-needed-for-machine-learning-jobs) 或 [Reddit](https://www.reddit.com/r/learnprogramming/comments/3d5ajk/where_to_start_with_machine_learning/) 这样的问题和答案论坛，并温顺地问如何开始，你会被同样的回应打耳光。通常这种反应来自同样失败的开发人员。这是一个同样糟糕建议的大回声室。
+如果你躲到像 [Quora](http://www.quora.com/How-do-I-learn-machine-learning-1) ， [StackExchange](http://programmers.stackexchange.com/questions/79476/what-skills-are-needed-for-machine-learning-jobs) 或 [Reddit](https://www.reddit.com/r/learnprogramming/comments/3d5ajk/where_to_start_with_machine_learning/) 这样的问题和答案论坛，并温顺地问如何开始，你会被同样的回应打耳光。通常这种反应来自同样失败的开发人员。这是一个同样糟糕建议的大打印室。
 
 难怪诚实和勤奋的开发人员想要做正确的事情，认为他们必须回到学校并获得硕士或博士学位。在他们觉得有资格“做”机器学习之前。
 

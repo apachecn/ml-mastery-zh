@@ -250,7 +250,7 @@ def get_dataset(n_in, n_out, cardinality, n_samples):
 	return array(X1), array(X2), array(y)
 ```
 
-最后，我们需要能够解码一个热门的编码序列，使其再次可读。
+最后，我们需要能够解码单热门的编码序列，使其再次可读。
 
 这对于打印所生成的靶序列以及容易地比较完整预测的靶序列是否与预期的靶序列匹配是必需的。 _one_hot_decode（）_函数将解码编码序列。
 

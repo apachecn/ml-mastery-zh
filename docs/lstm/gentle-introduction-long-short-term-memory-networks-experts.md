@@ -65,7 +65,7 @@ LSTM克服的两个技术问题是消失的梯度和爆炸的梯度，这两者�
 
 LSTM解决技术问题的关键是模型中使用的单元的特定内部结构。
 
-> ......受其处理消失和爆炸梯度的能力的支配，这是设计和训练RNN的最常见挑战。为了应对这一挑战，引入了一种特殊形式的经常性网络，称为LSTM，并在翻译和序列生成方面取得了巨大成功。
+> ......受其处理消失和梯度爆炸的能力的支配，这是设计和训练RNN的最常见挑战。为了应对这一挑战，引入了一种特殊形式的经常性网络，称为LSTM，并在翻译和序列生成方面取得了巨大成功。
 
 - Alex Graves等， [Framewise Phoneme Classification with Bidirectional LSTM and other Neural Network Architectures](http://ieeexplore.ieee.org/document/1556215/?reload=true&arnumber=1556215) ，2005。
 
@@ -138,7 +138,7 @@ LSTM的一个常见改进是双向LSTM。
 - Di Wang和Eric Nyberg，[](http://www.aclweb.org/anthology/P15-2116)
 [问题回答](http://www.aclweb.org/anthology/P15-2116)，2015年答案句选择的长短期记忆模型
 
-## 什么是seq2seq LSTM或RNN编码器解码器？
+## 什么是seq2seq LSTM或RNN编解码器？
 
 序列到序列LSTM，也称为编解码器LSTM，是LSTM的应用，由于其令人印象深刻的能力而受到很多关注。
 

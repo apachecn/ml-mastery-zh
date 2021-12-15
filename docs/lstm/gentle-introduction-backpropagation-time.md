@@ -1,4 +1,4 @@
-# 对时间反向传播的温和介绍
+# 沿时间反向传播的温和介绍
 
 > 原文： [https://machinelearningmastery.com/gentle-introduction-backpropagation-time/](https://machinelearningmastery.com/gentle-introduction-backpropagation-time/)
 

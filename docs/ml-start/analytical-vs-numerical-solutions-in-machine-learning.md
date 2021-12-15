@@ -50,7 +50,7 @@
 
 应用机器学习中的一些问题已经明确定义并且具有分析解决方案。
 
-例如，用于将分类变量转换为[一个热编码](https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/)的方法是简单的，可重复的并且（实际上）总是相同的方法，而不管该组中的整数值的数量。
+例如，用于将分类变量转换为[单热编码](https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/)的方法是简单的，可重复的并且（实际上）总是相同的方法，而不管该组中的整数值的数量。
 
 不幸的是，我们在机器学习中解决的大多数问题都没有分析解决方案。
 

@@ -115,7 +115,7 @@
 
 *   [编解码器长短期记忆网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 
-### 带注意的编码器解码器
+### 带注意的编解码器
 
 虽然有效，但编解码器架构在要翻译的长文本序列方面存在问题。
 

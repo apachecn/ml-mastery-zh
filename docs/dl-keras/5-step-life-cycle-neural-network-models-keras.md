@@ -186,7 +186,7 @@ predictions = model.predict(x)
 
 对于二分类问题，预测可以是第一类的概率数组，其可以通过舍入转换为 1 或 0 的整形数表示。
 
-对于多元分类问题，结果可以是概率数组的形式（假设一个热编码输出变量），可能需要使用 [argmax 函数](http://docs.scipy.org/doc/numpy/reference/generated/numpy.argmax.html)将其转换为单个类输出预测。
+对于多元分类问题，结果可以是概率数组的形式（假设单热编码输出变量），可能需要使用 [argmax 函数](http://docs.scipy.org/doc/numpy/reference/generated/numpy.argmax.html)将其转换为单个类输出预测。
 
 ## 端到端工作示例
 

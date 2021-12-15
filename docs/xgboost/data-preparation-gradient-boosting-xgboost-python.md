@@ -11,7 +11,7 @@ XGBoost 因其速度和表现而成为 Gradient Boosting 的流行实现。
 阅读这篇文章后你会知道：
 
 *   如何编码字符串输出变量进行分类。
-*   如何使用一个热编码准备分类输入变量。
+*   如何使用单热编码准备分类输入变量。
 *   如何使用 XGBoost 自动处理丢失的数据。
 
 让我们开始吧。
@@ -101,7 +101,7 @@ Accuracy: 92.00%
 
 请注意 XGBoost 模型如何配置为使用 **multi：softprob** 目标自动建模多分类问题，该目标是 softmax loss 函数的一种变体，用于模拟类概率。这表明在内部，输出类自动转换为一种热类型编码。
 
-## 一个热编码分类数据
+## 单热编码分类数据
 
 一些数据集仅包含分类数据，例如乳腺癌数据集。
 
@@ -166,7 +166,7 @@ left-up, left-low, right-up, right-low, central
 0,0,0,0,1
 ```
 
-这称为[一个热编码](https://en.wikipedia.org/wiki/One-hot)。我们可以使用 scikit-learn 中的 [OneHotEncoder](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html) 类对所有分类输入变量进行热编码。
+这称为[单热编码](https://en.wikipedia.org/wiki/One-hot)。我们可以使用 scikit-learn 中的 [OneHotEncoder](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html) 类对所有分类输入变量进行热编码。
 
 在我们对其进行标签编码后，我们可以对每个功能进行热编码。首先，我们必须将要素数组转换为 2 维 NumPy 数组，其中每个整数值是长度为 1 的要素向量。
 
@@ -181,7 +181,7 @@ onehot_encoder = OneHotEncoder(sparse=False)
 feature = onehot_encoder.fit_transform(feature)
 ```
 
-最后，我们可以通过逐个连接一个热编码特征来建立输入数据集，将它们作为新列添加（轴= 2）。我们最终得到一个由 43 个二进制输入变量组成的输入向量。
+最后，我们可以通过逐个连接单热编码特征来建立输入数据集，将它们作为新列添加（轴= 2）。我们最终得到一个由 43 个二进制输入变量组成的输入向量。
 
 ```py
 # encode string input values as integers
@@ -199,9 +199,9 @@ for i in range(0, X.shape[1]):
 print("X shape: : ", encoded_x.shape)
 ```
 
-理想情况下，我们可以尝试不使用一个热编码输入属性，因为我们可以使用显式序数关系对它们进行编码，例如第一个列的年龄值为'40 -49'和'50 -59'。如果您有兴趣扩展此示例，则将其留作练习。
+理想情况下，我们可以尝试不使用单热编码输入属性，因为我们可以使用显式序数关系对它们进行编码，例如第一个列的年龄值为'40 -49'和'50 -59'。如果您有兴趣扩展此示例，则将其留作练习。
 
-下面是带有标签和一个热编码输入变量和标签编码输出变量的完整示例。
+下面是带有标签和单热编码输入变量和标签编码输出变量的完整示例。
 
 ```py
 # binary classification, breast cancer dataset, label and one hot encoded
@@ -270,7 +270,7 @@ Accuracy: 71.58%
 
 XGBoost 可以自动学习如何最好地处理丢失的数据。
 
-事实上，XGBoost 被设计为处理稀疏数据，如前一节中的一个热编码数据，并且通过最小化损失函数来处理丢失数据的方式与处理稀疏或零值的方式相同。
+事实上，XGBoost 被设计为处理稀疏数据，如前一节中的单热编码数据，并且通过最小化损失函数来处理丢失数据的方式与处理稀疏或零值的方式相同。
 
 有关如何在 XGBoost 中处理缺失值的技术细节的更多信息，请参见文章 [XGBoost：可伸缩树升压系统](https://arxiv.org/abs/1603.02754)中的第 3.4 节“_ 稀疏感知拆分查找 _”。
 
@@ -438,7 +438,7 @@ Accuracy: 79.80%
 具体来说，你学到了：
 
 *   如何使用标签编码为二进制分类准备字符串类值。
-*   如何使用一个热编码准备分类输入变量以将它们建模为二进制变量。
+*   如何使用单热编码准备分类输入变量以将它们建模为二进制变量。
 *   XGBoost 如何自动处理丢失的数据以及如何标记和估算缺失值。
 
 您对如何为 XGBoost 或此帖子准备数据有任何疑问吗？在评论中提出您的问题，我会尽力回答。

@@ -154,7 +154,7 @@ model.add(TimeDistributed(Dense(...)))
 ### 帖子
 
 *   [如何将编解码器LSTM用于随机整数的回波序列](http://machinelearningmastery.com/how-to-use-an-encoder-decoder-lstm-to-echo-sequences-of-random-integers/)
-*   [学习使用编解码器LSTM循环神经网络](http://machinelearningmastery.com/learn-add-numbers-seq2seq-recurrent-neural-networks/)添加数字
+*   [学习使用编解码器LSTM循环神经网络](http://machinelearningmastery.com/learn-add-numbers-seq2seq-recurrent-neural-networks/)相加数字
 *   [长期短期记忆循环神经网络](http://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/)的注意事项
 
 ## 摘要

@@ -13,7 +13,7 @@
 完成本教程后，您将了解：
 
 *   简单的记忆任务，用于测试LSTM的学习记忆能力。
-*   简单的回声任务，用于测试LSTM的学习时间依赖表现力。
+*   简单的打印任务，用于测试LSTM的学习时间依赖表现力。
 *   用于测试LSTM解释能力的简单算术任务。
 
 让我们开始吧。
@@ -29,8 +29,8 @@
 
 1.  序列学习问题
 2.  价值记忆
-3.  回声随机整数
-4.  回声随机子序列
+3.  打印随机整数
+4.  打印随机子序列
 5.  序列分类
 
 ## 问题的属性
@@ -135,7 +135,7 @@ print(seq1)
 [4, 1, 2, 3, 4]
 ```
 
-可以对整数进行归一化，或者更优选地对一个热编码进行归一化。
+可以对整数进行归一化，或者更优选地对单热编码进行归一化。
 
 这些模式引入了皱纹，因为两个序列之间存在冲突的信息，并且模型必须知道每个一步预测的上下文（例如，它当前正在预测的序列），以便正确地预测每个完整序列。
 
@@ -179,9 +179,9 @@ This framing of the problem would be modeled as a many-to-one sequence predictio
 
 同样，多层感知器无法学习这个问题。
 
-## 3.回声随机整数
+## 3.打印随机整数
 
-在这个问题中，生成随机的整数序列。模型必须记住特定滞后时间的整数，并在序列结束时回显它。
+在这个问题中，生成随机的整数序列。模型必须记住特定滞后时间的整数，并在序列结束时打印它。
 
 例如，10个整数的随机序列可以是：
 
@@ -189,7 +189,7 @@ This framing of the problem would be modeled as a many-to-one sequence predictio
 5, 3, 2, 1, 9, 9, 2, 7, 1, 6
 ```
 
-该问题可能被设置为在第5个时间步骤回显该值，在这种情况下为9。
+该问题可能被设置为在第5个时间步骤打印该值，在这种情况下为9。
 
 下面的代码将生成随机的整数序列。
 
@@ -209,9 +209,9 @@ print(generate_sequence())
 [47, 69, 76, 9, 71, 87, 8, 16, 32, 81]
 ```
 
-可以对整数进行归一化，但更优选地，可以使用一个热编码。
+可以对整数进行归一化，但更优选地，可以使用单热编码。
 
-该问题的简单框架是回显当前输入值。
+该问题的简单框架是打印当前输入值。
 
 ```py
 yhat(t) = f(X(t))
@@ -226,7 +226,7 @@ X (timesteps),		y
 
 这个微不足道的问题可以通过多层感知器轻松解决，并可用于测试线束的校准或诊断。
 
-更具挑战性的问题框架是回显前一时间步的值。
+更具挑战性的问题框架是打印前一时间步的值。
 
 ```py
 yhat(t) = f(X(t-1))
@@ -243,17 +243,17 @@ X (timesteps),		y
 
 echo的索引可以进一步推迟，从而对LSTM内存产生更多需求。
 
-与上面的“值记忆”问题不同，每个训练时期都会产生一个新的序列。这将要求模型学习泛化回声解，而不是记忆特定序列或随机数序列。
+与上面的“值记忆”问题不同，每个训练时期都会产生一个新的序列。这将要求模型学习泛化打印解，而不是记忆特定序列或随机数序列。
 
 在这两种情况下，问题都将被建模为多对一序列预测问题。
 
-## 4.回声随机子序列
+## 4.打印随机子序列
 
 该问题还涉及生成随机的整数序列。
 
-这个问题要求模型记住并输出输入序列的部分子序列，而不是像前一个问题那样回显单个前一个时间步骤。
+这个问题要求模型记住并输出输入序列的部分子序列，而不是像前一个问题那样打印单个前一个时间步骤。
 
-最简单的框架将是前一节中的回声问题。相反，我们将专注于序列输出，其中最简单的框架是模型记住并输出整个输入序列。
+最简单的框架将是前一节中的打印问题。相反，我们将专注于序列输出，其中最简单的框架是模型记住并输出整个输入序列。
 
 For example:
 
@@ -277,7 +277,7 @@ X (timesteps),		y
 
 这更具挑战性，因为输入数量与输出数量不匹配。这个问题的多对多模型需要更高级的架构，例如编解码器LSTM。
 
-同样，一个热编码将是优选的，尽管该问题可以被建模为标准化整数值。
+同样，单热编码将是优选的，尽管该问题可以被建模为标准化整数值。
 
 ## 5.序列分类
 
@@ -338,7 +338,7 @@ print(y)
 *   [长期短期记忆](http://www.bioinf.jku.at/publications/older/2604.pdf)，1997年
 *   [如何使用Keras](http://machinelearningmastery.com/use-different-batch-sizes-training-predicting-python-keras/) 在Python中使用不同的批量大小进行训练和预测
 *   [用Python中的长短期记忆网络演示内存](http://machinelearningmastery.com/memory-in-a-long-short-term-memory-network/)
-*   [如何通过长短期记忆循环神经网络学习回声随机整数](http://machinelearningmastery.com/learn-echo-random-integers-long-short-term-memory-recurrent-neural-networks/)
+*   [如何通过长短期记忆循环神经网络学习打印随机整数](http://machinelearningmastery.com/learn-echo-random-integers-long-short-term-memory-recurrent-neural-networks/)
 *   [如何将编解码器LSTM用于随机整数的回波序列](http://machinelearningmastery.com/learn-echo-random-integers-long-short-term-memory-recurrent-neural-networks/)
 *   [如何使用Keras开发用于Python序列分类的双向LSTM](http://machinelearningmastery.com/develop-bidirectional-lstm-sequence-classification-python-keras/)
 
@@ -349,7 +349,7 @@ print(y)
 具体来说，你学到了：
 
 *   简单的记忆任务，用于测试LSTM的学习记忆能力。
-*   简单的回声任务，用于测试LSTM的学习时间依赖表现力。
+*   简单的打印任务，用于测试LSTM的学习时间依赖表现力。
 *   用于测试LSTM解释能力的简单算术任务。
 
 你有任何问题吗？

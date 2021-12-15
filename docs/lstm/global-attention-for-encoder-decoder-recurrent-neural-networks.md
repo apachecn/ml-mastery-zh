@@ -1,4 +1,4 @@
-# 编辑器 - 解码器循环神经网络全局注意的温和介绍
+# 编解码器循环神经网络的全局注意力的温和介绍
 
 > 原文： [https://machinelearningmastery.com/global-attention-for-encoder-decoder-recurrent-neural-networks/](https://machinelearningmastery.com/global-attention-for-encoder-decoder-recurrent-neural-networks/)
 
@@ -18,7 +18,7 @@
 
 ![Gentle Introduction to Global Attention for Encoder-Decoder Recurrent Neural Networks](img/a51f19d286d832f38884cd76cd955d38.jpg)
 
-编辑器 - 解码器循环神经网络全球注意力的温和介绍
+编解码器循环神经网络全球注意力的温和介绍
 [Kathleen Tyler Conklin](https://www.flickr.com/photos/ktylerconk/2400630645/) 的照片，保留一些权利。
 
 ## 概观

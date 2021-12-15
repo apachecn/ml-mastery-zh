@@ -1,4 +1,4 @@
-# 学习使用编码器解码器LSTM循环神经网络添加数字
+# 学习使用编解码器LSTM循环神经网络相加数字
 
 > 原文： [https://machinelearningmastery.com/learn-add-numbers-seq2seq-recurrent-neural-networks/](https://machinelearningmastery.com/learn-add-numbers-seq2seq-recurrent-neural-networks/)
 
@@ -22,14 +22,14 @@ LSTM的一个很好的演示是学习如何使用诸如和的数学运算将多�
 
 ![How to Learn to Add Numbers with seq2seq Recurrent Neural Networks](img/ba6b2b767f7039240f86040b472bd4d2.jpg)
 
-如何学习使用seq2seq循环神经网络添加数字
+如何学习使用seq2seq循环神经网络相加数字
 照片由 [Lima Pix](https://www.flickr.com/photos/minhocos/11161305703/) ，保留一些权利。
 
 ## 教程概述
 
 本教程分为3个部分;他们是：
 
-1.  添加数字
+1.  相加数字
 2.  作为映射问题的添加（初学者的错误）
 3.  作为seq2seq问题添加
 
@@ -43,13 +43,13 @@ LSTM的一个很好的演示是学习如何使用诸如和的数学运算将多�
 
 *   [如何使用Anaconda设置用于机器学习和深度学习的Python环境](http://machinelearningmastery.com/setup-python-environment-machine-learning-deep-learning-anaconda/)
 
-## 添加数字
+## 相加数字
 
 任务是，给定一系列随机选择的整数，返回那些整数的总和。
 
 例如，给定10 + 5，模型应输出15。
 
-该模型将在随机生成的示例中进行训练和测试，以便学习添加数字的一般问题，而不是记住特定情况。
+该模型将在随机生成的示例中进行训练和测试，以便学习相加数字的一般问题，而不是记住特定情况。
 
 ## 作为映射问题添加
 （初学者的错误）
@@ -385,9 +385,9 @@ Expected=127, Predicted=127 (err=0)
 
 也就是说，输入的顺序不再重要。我们可以按照我们想要的任何方式改变它，并且仍然可以解决问题。
 
-MLP旨在学习映射功能，并且可以轻松解决学习如何添加数字的问题。
+MLP旨在学习映射功能，并且可以轻松解决学习如何相加数字的问题。
 
-一方面，这是一种更好的方法来解决添加数字的具体问题，因为模型更简单，结果更好。另一方面，它是反复神经网络的可怕用法。
+一方面，这是一种更好的方法来解决相加数字的具体问题，因为模型更简单，结果更好。另一方面，它是反复神经网络的可怕用法。
 
 这是一个初学者的错误，我看到在网络上的许多“`LSTMs`”的介绍中被​​复制了。
 

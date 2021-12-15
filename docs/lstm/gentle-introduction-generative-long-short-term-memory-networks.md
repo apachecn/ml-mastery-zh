@@ -1,4 +1,4 @@
-# 生成长短期记忆网络的温和介绍
+# 生成式长短期记忆网络的温和介绍
 
 > 原文： [https://machinelearningmastery.com/gentle-introduction-generative-long-short-term-memory-networks/](https://machinelearningmastery.com/gentle-introduction-generative-long-short-term-memory-networks/)
 
@@ -70,7 +70,7 @@ LSTM可以用作生成模型。
 
 用于生成模型的Vanilla LSTM架构
 
-在字符级语言模型的情况下，所有可能字符的字母表是固定的。一个热编码用于学习输入序列和预测输出序列。
+在字符级语言模型的情况下，所有可能字符的字母表是固定的。单热编码用于学习输入序列和预测输出序列。
 
 使用一对一模型，其中针对每个输入时间步骤预测一步。这意味着输入序列可能需要专门处理以便被向量化或格式化以有效地训练监督模型。
 

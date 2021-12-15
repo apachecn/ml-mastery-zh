@@ -608,7 +608,7 @@ photo	startseq, little, girl, running, in, field, endseq
 
 下面给出标记器`create_sequences()`的函数，单个干净的描述，照片的特征和最大描述长度将为训练模型准备一组输入 - 输出对。调用此函数将返回`X1`和`X2`，用于图像数据和输入序列数据的数组以及输出字的`y`值。
 
-输入序列是整数编码的，输出字是一个热编码的，以表示在整个可能单词的词汇表中预期单词的概率分布。
+输入序列是整数编码的，输出字是单热编码的，以表示在整个可能单词的词汇表中预期单词的概率分布。
 
 ```py
 # create sequences of images, input sequences and output words for an image

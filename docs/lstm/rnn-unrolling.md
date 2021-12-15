@@ -99,7 +99,7 @@ RNN适合并在许多时间步骤上做出预测。我们可以通过在输入�
 
 ### 用品
 
-*   [对时间反向传播的温和介绍](http://machinelearningmastery.com/gentle-introduction-backpropagation-time/)
+*   [沿时间反向传播的温和介绍](http://machinelearningmastery.com/gentle-introduction-backpropagation-time/)
 *   [了解LSTM网络](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)，2015年
 *   [滚动和展开RNN](https://shapeofdata.wordpress.com/2016/04/27/rolling-and-unrolling-rnns/) ，2016年
 *   [展开的RNN](http://suriyadeepan.github.io/2017-01-07-unfolding-rnn/) ，2017年

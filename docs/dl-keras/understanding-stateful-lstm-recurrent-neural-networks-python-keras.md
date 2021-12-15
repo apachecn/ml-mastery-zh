@@ -129,7 +129,7 @@ X = numpy.reshape(dataX, (len(dataX), seq_length, 1))
 X = X / float(len(alphabet))
 ```
 
-最后，我们可以将此问题视为序列分类任务，其中 26 个字母中的每一个代表不同的类。因此，我们可以使用 Keras 内置函数 **to_categorical（）**将输出（y）转换为一个热编码。
+最后，我们可以将此问题视为序列分类任务，其中 26 个字母中的每一个代表不同的类。因此，我们可以使用 Keras 内置函数 **to_categorical（）**将输出（y）转换为单热编码。
 
 ```py
 # one hot encode the output variable

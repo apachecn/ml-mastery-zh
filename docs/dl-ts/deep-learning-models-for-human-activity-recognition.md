@@ -259,7 +259,7 @@ LSTM 模型中的一个层由特殊单元组成，这些单元具有控制输入
 
 有关随时间反向传播的更多信息，请参阅帖子：
 
-*   [对时间反向传播的温和介绍](https://machinelearningmastery.com/gentle-introduction-backpropagation-time/)
+*   [沿时间反向传播的温和介绍](https://machinelearningmastery.com/gentle-introduction-backpropagation-time/)
 
 LSTM 可以应用于人类活动识别的问题。
 

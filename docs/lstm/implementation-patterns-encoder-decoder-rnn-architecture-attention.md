@@ -1,4 +1,4 @@
-# 具有注意力的编解码器RNN架构的实现模式
+# 带有注意力的编解码器RNN架构的实现模式
 
 > 原文： [https://machinelearningmastery.com/implementation-patterns-encoder-decoder-rnn-architecture-attention/](https://machinelearningmastery.com/implementation-patterns-encoder-decoder-rnn-architecture-attention/)
 
@@ -21,7 +21,7 @@
 具有注意力的编解码器RNN架构的实现模式
 照片由 [Philip McErlean](https://www.flickr.com/photos/64320477@N05/34172852904/) ，保留一些权利。
 
-## 注意编码器解码器
+## 注意编解码器
 
 用于循环神经网络的编解码器模型是用于序列到序列预测问题的架构，其中输入序列的长度不同于输出序列的长度。
 
@@ -60,7 +60,7 @@
 
 ![Direct Encoder Decoder Model Implementation for Neural Machine Translation](img/a31f6749b553a92893742facbbdadee8.jpg)
 
-神经机器翻译的直接编码器解码器模型实现
+神经机器翻译的直接编解码器模型实现
 
 ## 递归编解码器实现
 
@@ -92,7 +92,7 @@ Below is a depiction of this implementation.
 
 ![Recursive Encoder Decoder Model Implementation for Neural Machine Translation](img/e9464623763ac443ab96c92b649fce29.jpg)
 
-神经机器翻译的递归编码器解码器模型实现
+神经机器翻译的递归编解码器模型实现
 
 为了开始该过程，可能需要向模型提供“_序列开始_”令牌作为到目前为止生成的输出序列的输入。
 
@@ -114,7 +114,7 @@ Below is a depiction of this implementation.
 
 ![Merge Encoder Decoder Model Implementation for Neural Machine Translation](img/efa14d8e50fb240be696e611be02b6c9.jpg)
 
-用于神经机器翻译的合并编码器解码器模型实现
+用于神经机器翻译的合并编解码器模型实现
 
 ## 具有注意实现的直接编解码器
 
@@ -137,7 +137,7 @@ Below is a depiction of this implementation.
 
 ![Direct Encoder Decoder With Attention Model Implementation for Neural Machine Translation](img/25f86b9f1dffd58a35818eea06e520d6.jpg)
 
-基于注意模型的直接编码器解码器在神经机器翻译中的应用
+基于注意模型的直接编解码器在神经机器翻译中的应用
 
 在直接编解码器模型中实现注意力可能具有挑战性。这是因为具有向量化方程的有效神经网络库需要在计算之前获得所有信息。
 
@@ -153,7 +153,7 @@ Below is a depiction of this implementation.
 
 ![Recursive Encoder Decoder With Attention Model Implementation for Neural Machine Translation](img/ba77e61e96b9a1ba8309102cb39dd6be.jpg)
 
-基于注意模型实现神经机器人翻译的递归编码器解码器
+基于注意模型实现神经机器人翻译的递归编解码器
 
 递归方法还为尝试新设计带来了额外的灵活性。
 
