@@ -1,4 +1,4 @@
-# 面向机器学习的线性代数
+# 机器学习中的线性代数
 
 > 原文： [https://machinelearningmastery.com/linear-algebra-machine-learning/](https://machinelearningmastery.com/linear-algebra-machine-learning/)
 

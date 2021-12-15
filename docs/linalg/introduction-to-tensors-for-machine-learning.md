@@ -1,4 +1,4 @@
-# 面向机器学习的 NumPy 张量的温和介绍
+# 机器学习中的 NumPy 张量的温和介绍
 
 > 原文： [https://machinelearningmastery.com/introduction-to-tensors-for-machine-learning/](https://machinelearningmastery.com/introduction-to-tensors-for-machine-learning/)
 

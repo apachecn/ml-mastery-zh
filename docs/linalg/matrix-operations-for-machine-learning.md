@@ -1,4 +1,4 @@
-# 面向机器学习的矩阵运算的温和介绍
+# 机器学习中的矩阵运算的温和介绍
 
 > 原文： [https://machinelearningmastery.com/matrix-operations-for-machine-learning/](https://machinelearningmastery.com/matrix-operations-for-machine-learning/)
 

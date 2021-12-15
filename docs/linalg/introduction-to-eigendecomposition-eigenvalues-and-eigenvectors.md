@@ -1,4 +1,4 @@
-# 面向机器学习的特征分解，特征值和特征向量的温和介绍
+# 机器学习中的特征分解，特征值和特征向量的温和介绍
 
 > 原文： [https://machinelearningmastery.com/introduction-to-eigendecomposition-eigenvalues-and-eigenvectors/](https://machinelearningmastery.com/introduction-to-eigendecomposition-eigenvalues-and-eigenvectors/)
 
