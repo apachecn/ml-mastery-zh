@@ -1,4 +1,4 @@
-# Scikit-Learn 的温和介绍：Python 机器学习库
+# Python 机器学习库 Scikit-Learn 的温和介绍
 
 > 原文： [https://machinelearningmastery.com/a-gentle-introduction-to-scikit-learn-a-python-machine-learning-library/](https://machinelearningmastery.com/a-gentle-introduction-to-scikit-learn-a-python-machine-learning-library/)
 

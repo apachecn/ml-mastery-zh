@@ -1,4 +1,4 @@
-# 如何使用 Scikit-Learn 为 Python 机器学习准备数据
+# 如何使用 Python 和 Scikit-Learn 为机器学习准备数据
 
 > 原文： [https://machinelearningmastery.com/prepare-data-machine-learning-python-scikit-learn/](https://machinelearningmastery.com/prepare-data-machine-learning-python-scikit-learn/)
 
@@ -48,13 +48,13 @@
 
 [scikit-learn 文档](http://scikit-learn.org/stable/modules/preprocessing.html)提供了有关如何使用各种不同预处理方法的一些信息。您可以在此处查看 scikit-learn 中的[预处理 API。](http://scikit-learn.org/stable/modules/classes.html#module-sklearn.preprocessing)
 
-### 1.重新调整数据
+### 1.重缩放数据
 
-当您的数据由具有不同比例的属性组成时，许多机器学习算法可以从重新调整属性中受益，所有属性具有相同的比例。
+当您的数据由具有不同比例的属性组成时，许多机器学习算法可以从重缩放属性中受益，所有属性具有相同的比例。
 
-这通常被称为归一化，并且属性通常被重新调整到 0 和 1 之间的范围。这对于在诸如梯度下降的机器学习算法的核心中使用的优化算法是有用的。对于使用诸如回归和神经网络之类的输入以及使用诸如 K 最近邻 之类的距离度量的算法的算法，它也是有用的。
+这通常被称为归一化，并且属性通常被重缩放到 0 和 1 之间的范围。这对于在诸如梯度下降的机器学习算法的核心中使用的优化算法是有用的。对于使用诸如回归和神经网络之类的输入以及使用诸如 K 最近邻 之类的距离度量的算法的算法，它也是有用的。
 
-您可以使用 [MinMaxScaler](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html) 类使用 scikit-learn 重新调整数据。
+您可以使用 [MinMaxScaler](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html) 类使用 scikit-learn 重缩放数据。
 
 ```
 # Rescale data (between 0 and 1)
@@ -203,7 +203,7 @@ print(binaryX[0:5,:])
 
 你现在有秘籍：
 
-*   重新调整数据。
+*   重缩放数据。
 *   标准化数据。
 *   规范化数据。
 *   二值化数据。

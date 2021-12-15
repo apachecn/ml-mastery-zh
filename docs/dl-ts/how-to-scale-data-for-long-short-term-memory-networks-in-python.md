@@ -140,7 +140,7 @@ Min: 10.000000, Max: 100.000000
 
 ### 标准化系列数据
 
-标准化数据集涉及重新调整值的分布，以便观察值的平均值为 0，标准差为 1。
+标准化数据集涉及重缩放值的分布，以便观察值的平均值为 0，标准差为 1。
 
 这可以被认为是减去平均值或使数据居中。
 
@@ -315,13 +315,13 @@ Mean: 5.355556, StandardDeviation: 2.712568
 *   **数据分析**。使用数据分析可以帮助您更好地了解数据。例如，一个简单的直方图可以帮助您快速了解数量的分布情况，看看标准化是否有意义。
 *   **缩放每个系列**。如果您的问题有多个系列，请将每个系列视为单独的变量，然后分别对其进行缩放。
 *   **在合适的时间缩放**。在正确的时间应用任何缩放变换非常重要。例如，如果您有一系列非静止的数量，则在首次使数据静止后进行缩放可能是合适的。在将系列转换为监督学习问题后对其进行扩展是不合适的，因为每个列的处理方式不同，这是不正确的。
-*   **如果怀疑**则缩放。您可能需要重新调整输入和输出变量。如果有疑问，至少要对数据进行标准化。
+*   **如果怀疑**则缩放。您可能需要重缩放输入和输出变量。如果有疑问，至少要对数据进行标准化。
 
 ## 进一步阅读
 
 本节列出了扩展时要考虑的一些其他资源。
 
-*   [我应该规范化/标准化/重新调整数据吗？](ftp://ftp.sas.com/pub/neural/FAQ2.html#A_std) 神经网络常见问题解答
+*   [我应该规范化/标准化/重缩放数据吗？](ftp://ftp.sas.com/pub/neural/FAQ2.html#A_std) 神经网络常见问题解答
 *   [MinMaxScaler scikit-learn API 文档](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)
 *   [StandardScaler scikit-learn API 文档](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html)
 *   [如何使用 Python 从零开始扩展机器学习数据](http://machinelearningmastery.com/scale-machine-learning-data-scratch-python/)

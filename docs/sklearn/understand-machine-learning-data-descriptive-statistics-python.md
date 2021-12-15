@@ -1,4 +1,4 @@
-# 使用 Python 中的描述性统计来了解您的机器学习数据
+# 使用 Python 中的描述性统计量来了解您的机器学习数据
 
 > 原文： [https://machinelearningmastery.com/understand-machine-learning-data-descriptive-statistics-python/](https://machinelearningmastery.com/understand-machine-learning-data-descriptive-statistics-python/)
 

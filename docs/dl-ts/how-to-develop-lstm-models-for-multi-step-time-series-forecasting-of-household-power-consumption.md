@@ -436,7 +436,7 @@ def summarize_scores(name, score, scores):
 
 有关 Recurrent Neural Networks 的更多信息，请参阅帖子：
 
-*   [深度学习的循环神经网络崩溃课程](https://machinelearningmastery.com/crash-course-recurrent-neural-networks-deep-learning/)
+*   [深度学习的循环神经网络速成课](https://machinelearningmastery.com/crash-course-recurrent-neural-networks-deep-learning/)
 
 有关长期短期记忆网络的更多信息，请参阅帖子：
 
@@ -1861,7 +1861,7 @@ lstm: [367.929] 416.3, 379.7, 334.7, 362.3, 374.7, 284.8, 406.7
 ### 帖子
 
 *   [多步时间序列预测的 4 种策略](https://machinelearningmastery.com/multi-step-time-series-forecasting/)
-*   [深度学习的循环神经网络崩溃课程](https://machinelearningmastery.com/crash-course-recurrent-neural-networks-deep-learning/)
+*   [深度学习的循环神经网络速成课](https://machinelearningmastery.com/crash-course-recurrent-neural-networks-deep-learning/)
 *   [专家对长短期记忆网络的简要介绍](https://machinelearningmastery.com/gentle-introduction-long-short-term-memory-networks-experts/)
 *   [关于 LSTM 对时间序列预测的适用性](https://machinelearningmastery.com/suitability-long-short-term-memory-networks-time-series-forecasting/)
 *   [CNN 长短期记忆网络](https://machinelearningmastery.com/cnn-long-short-term-memory-networks/)

@@ -193,7 +193,7 @@ for i in range(n_timesteps):
 
 有关处理缺失数据的更常用方法，请参阅帖子：
 
-*   [如何使用 Python 处理丢失的数据](http://machinelearningmastery.com/handle-missing-data-python/)
+*   [如何使用 Python 处理缺失数据](http://machinelearningmastery.com/handle-missing-data-python/)
 
 处理缺失序列数据的最佳方法取决于您的问题和您选择的网络配置。我建议探索每种方法，看看哪种方法效果最好。
 

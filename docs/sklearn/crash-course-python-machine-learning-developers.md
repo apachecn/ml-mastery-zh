@@ -1,4 +1,4 @@
-# 用于机器学习开发人员的 Python 崩溃课程
+# 面向机器学习开发人员的 Python 速成课
 
 > 原文： [https://machinelearningmastery.com/crash-course-python-machine-learning-developers/](https://machinelearningmastery.com/crash-course-python-machine-learning-developers/)
 
@@ -16,7 +16,7 @@
 
 ![Crash Course in Python for Machine Learning Developers](img/27b6c4eb23b7b3e865fb6d072acc961d.jpg)
 
-用于机器学习开发人员的 Python 崩溃课程
+用于机器学习开发人员的 Python 速成课
 摄影： [John Clouston](https://www.flickr.com/photos/58017169@N06/5353030024/) ，保留一些权利。
 
 ## Python 速成课程

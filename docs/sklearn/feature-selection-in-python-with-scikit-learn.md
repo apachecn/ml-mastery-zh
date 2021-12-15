@@ -1,4 +1,4 @@
-# 使用 Scikit-Learn 在 Python 中进行特征选择
+# 使用 Python 和 Scikit-Learn 的特征选择
 
 > 原文： [https://machinelearningmastery.com/feature-selection-in-python-with-scikit-learn/](https://machinelearningmastery.com/feature-selection-in-python-with-scikit-learn/)
 

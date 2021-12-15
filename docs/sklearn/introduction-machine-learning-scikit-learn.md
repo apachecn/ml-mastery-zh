@@ -1,4 +1,4 @@
-# 使用 scikit-learn 进行机器学习简介
+# 机器学习中的 scikit-learn 简介
 
 > 原文： [https://machinelearningmastery.com/introduction-machine-learning-scikit-learn/](https://machinelearningmastery.com/introduction-machine-learning-scikit-learn/)
 

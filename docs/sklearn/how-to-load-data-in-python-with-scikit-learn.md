@@ -1,4 +1,4 @@
-# 如何使用 Scikit-Learn 在 Python 中加载数据
+# 如何使用 Python 和 Scikit-Learn 加载数据
 
 > 原文： [https://machinelearningmastery.com/how-to-load-data-in-python-with-scikit-learn/](https://machinelearningmastery.com/how-to-load-data-in-python-with-scikit-learn/)
 

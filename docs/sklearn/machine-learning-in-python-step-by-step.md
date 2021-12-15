@@ -1,4 +1,4 @@
-# 您在 Python 中的第一个机器学习项目循序渐进
+# 您在 Python 中的第一个逐步的机器学习项目
 
 > 原文： [https://machinelearningmastery.com/machine-learning-in-python-step-by-step/](https://machinelearningmastery.com/machine-learning-in-python-step-by-step/)
 

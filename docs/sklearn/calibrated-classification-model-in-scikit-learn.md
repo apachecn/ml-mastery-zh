@@ -1,4 +1,4 @@
-# 如何以及何时使用带有 scikit-learn 的校准分类模型
+# 如何以及何时使用 scikit-learn 中的的校准分类模型
 
 > 原文： [https://machinelearningmastery.com/calibrated-classification-model-in-scikit-learn/](https://machinelearningmastery.com/calibrated-classification-model-in-scikit-learn/)
 

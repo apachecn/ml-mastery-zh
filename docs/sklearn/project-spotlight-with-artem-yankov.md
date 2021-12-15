@@ -1,4 +1,4 @@
-# 项目聚焦：使用 Artem Yankov 在 Python 中进行事件推荐
+# 项目聚焦：使用 Artem Yankov 在 Python 中推荐事件
 
 > 原文： [https://machinelearningmastery.com/project-spotlight-with-artem-yankov/](https://machinelearningmastery.com/project-spotlight-with-artem-yankov/)
 

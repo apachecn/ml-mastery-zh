@@ -83,7 +83,7 @@ print(data.shape)
 如果没有，您可能希望查看插入缺失值，将数据重新采样到新的时间刻度，或者开发可以处理缺失值的模型。看帖子如：
 
 *   [如何使用 Python 处理序列预测问题中的缺失时间步长](https://machinelearningmastery.com/handle-missing-timesteps-sequence-prediction-problems-python/)
-*   [如何使用 Python 处理丢失的数据](https://machinelearningmastery.com/handle-missing-data-python/)
+*   [如何使用 Python 处理缺失数据](https://machinelearningmastery.com/handle-missing-data-python/)
 *   [如何使用 Python 重新取样和插值您的时间序列数据](https://machinelearningmastery.com/resample-interpolate-time-series-data-python/)
 
 在这里，我们只删除第一列：
@@ -186,7 +186,7 @@ print(data.shape)
 *   [如何在 Python 中加载和探索时间序列数据](https://machinelearningmastery.com/load-explore-time-series-data-python/)
 *   [如何在 Python 中加载机器学习数据](https://machinelearningmastery.com/load-machine-learning-data-python/)
 *   [如何使用 Python 处理序列预测问题中的缺失时间步长](https://machinelearningmastery.com/handle-missing-timesteps-sequence-prediction-problems-python/)
-*   [如何使用 Python 处理丢失的数据](https://machinelearningmastery.com/handle-missing-data-python/)
+*   [如何使用 Python 处理缺失数据](https://machinelearningmastery.com/handle-missing-data-python/)
 *   [如何使用 Python 重新取样和插值您的时间序列数据](https://machinelearningmastery.com/resample-interpolate-time-series-data-python/)
 *   [如何处理具有长短期记忆循环神经网络的超长序列](https://machinelearningmastery.com/handle-long-sequences-long-short-term-memory-recurrent-neural-networks/)
 *   [如何准备 Keras 中截断反向传播的序列预测](https://machinelearningmastery.com/truncated-backpropagation-through-time-in-keras/)

@@ -21,7 +21,7 @@
 如何开始深度学习时间序列预测（7 天迷你课程）
 摄影： [Brian Richardson](https://www.flickr.com/photos/seriousbri/3736154699/) ，保留一些权利。
 
-## 谁是这个崩溃课程？
+## 谁是这个速成课？
 
 在我们开始之前，让我们确保您在正确的位置。
 
@@ -317,7 +317,7 @@ print(yhat)
 ### 更多信息
 
 *   [专家对长短期记忆网络的简要介绍](https://machinelearningmastery.com/gentle-introduction-long-short-term-memory-networks-experts/)
-*   [深度学习的循环神经网络崩溃课程](https://machinelearningmastery.com/crash-course-recurrent-neural-networks-deep-learning/)
+*   [深度学习的循环神经网络速成课](https://machinelearningmastery.com/crash-course-recurrent-neural-networks-deep-learning/)
 
 在下一课中，您将了解如何针对单变量时间序列预测问题开发混合 CNN-LSTM 模型。
 

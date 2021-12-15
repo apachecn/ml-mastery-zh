@@ -1,4 +1,4 @@
-# 使用 Scikit-Learn 重新调整 Python 中的机器学习数据
+# 使用 Python 和 Scikit-Learn 重缩放机器学习数据
 
 > 原文： [https://machinelearningmastery.com/rescaling-data-for-machine-learning-in-python-with-scikit-learn/](https://machinelearningmastery.com/rescaling-data-for-machine-learning-in-python-with-scikit-learn/)
 
@@ -10,7 +10,7 @@
 
 [![Data Rescaling](img/fc8259088110f3e7b9ccb32457b8dc37.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/07/Data-Rescaling.jpg)
 
-数据重新调整
+数据重缩放
 照片由 [Quinn Dombrowski](https://www.flickr.com/photos/quinnanya/4508825094) 拍摄，保留一些权利。
 
 ## 数据重新缩放
@@ -73,7 +73,7 @@ standardized_X = preprocessing.scale(X)
 
 ## 提示：使用哪种方法
 
-在应用数据之前，很难知道重新调整数据是否会提高算法的表现。如果经常可以，但并非总是如此。
+在应用数据之前，很难知道重缩放数据是否会提高算法的表现。如果经常可以，但并非总是如此。
 
 一个很好的建议是创建数据集的重新缩放副本，并使用您的测试工具和一些您想要检查的算法将它们相互竞争。这可以快速突出显示使用给定模型重新缩放数据的好处（或缺少），以及哪种重新缩放方法可能值得进一步调查。
 

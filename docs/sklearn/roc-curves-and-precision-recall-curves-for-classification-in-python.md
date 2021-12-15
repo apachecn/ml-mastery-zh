@@ -1,4 +1,4 @@
-# 如何以及何时使用 ROC 曲线和精确调用曲线进行 Python 分类
+# 如何以及何时在 Python 中对分类使用 ROC 曲线和精确召回曲线
 
 > 原文： [https://machinelearningmastery.com/roc-curves-and-precision-recall-curves-for-classification-in-python/](https://machinelearningmastery.com/roc-curves-and-precision-recall-curves-for-classification-in-python/)
 
@@ -34,7 +34,7 @@
 2.  什么是 ROC 曲线？
 3.  Python 中的 ROC 曲线和 AUC
 4.  什么是精确回忆曲线？
-5.  Python 中的精确调用曲线和 AUC
+5.  Python 中的精确召回曲线和 AUC
 6.  何时使用 ROC 与精确回忆曲线？
 
 ## 预测概率
@@ -261,7 +261,7 @@ precision, recall, thresholds = precision_recall_curve(testy, probs)
 f1 = f1_score(testy, yhat)
 ```
 
-精确调用曲线下的面积可以通过调用`auc()`函数并将其传递给每个阈值计算的调用和精度值来近似。
+精确召回曲线下的面积可以通过调用`auc()`函数并将其传递给每个阈值计算的调用和精度值来近似。
 
 ```
 # calculate precision-recall AUC
@@ -329,7 +329,7 @@ f1=0.836 auc=0.892 ap=0.840
 通常，ROC 曲线和精确回忆曲线的使用如下：
 
 *   当每个类的观察数量大致相等时，应使用 ROC 曲线。
-*   当存在中等到大的不平衡时，应使用精确调用曲线。
+*   当存在中等到大的不平衡时，应使用精确召回曲线。
 
 这个建议的原因是 ROC 曲线在具有类不平衡的数据集上呈现模型的乐观图像。
 

@@ -253,7 +253,7 @@ LSTM 模型中的一个层由特殊单元组成，这些单元具有控制输入
 
 有关长期短期记忆网络的更多信息，请参阅帖子：
 
-*   [深度学习的循环神经网络崩溃课程](https://machinelearningmastery.com/crash-course-recurrent-neural-networks-deep-learning/)
+*   [深度学习的循环神经网络速成课](https://machinelearningmastery.com/crash-course-recurrent-neural-networks-deep-learning/)
 
 与可以读取输入序列的 CNN 一样，LSTM 读取输入观察序列并开发其自己的输入序列的内部表示。与 CNN 不同，LSTM 的训练方式应特别注意观察结果和输入序列中时间步长的预测误差，称为反向传播。
 

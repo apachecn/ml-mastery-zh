@@ -1,4 +1,4 @@
-# 用于机器学习的 Python 生态系统
+# 机器学习中的 Python 生态系统
 
 > 原文： [https://machinelearningmastery.com/python-ecosystem-machine-learning/](https://machinelearningmastery.com/python-ecosystem-machine-learning/)
 

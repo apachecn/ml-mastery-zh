@@ -137,7 +137,7 @@ Baseline: 81.68% (7.26%)
 
 神经网络模型尤其适用于在数据规模和分布方面具有一致性的输入值。
 
-建立神经网络模型时表格数据的有效数据chuli1方案是标准化，这是重新调整数据，使得数据每个属性的平均值为 0，标准偏差为 1.这种处理方法保留了高斯和高斯类分布，同时规范了数据每个属性的中心趋势。
+建立神经网络模型时表格数据的有效数据chuli1方案是标准化，这是重缩放数据，使得数据每个属性的平均值为 0，标准偏差为 1.这种处理方法保留了高斯和高斯类分布，同时规范了数据每个属性的中心趋势。
 
 我们可以使用 scikit-learn 使用 [StandardScaler](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html) 类来执行 Sonar 数据集的标准化。
 

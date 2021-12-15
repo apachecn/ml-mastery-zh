@@ -80,7 +80,7 @@ plt.show()
 
 我们将保持简单并按原样处理数据。
 
-通常，研究各种数据准备技术以重新调整数据并使其静止是一个好主意。
+通常，研究各种数据准备技术以重缩放数据并使其静止是一个好主意。
 
 ## 长短期记忆网络
 
@@ -140,7 +140,7 @@ dataset = dataframe.values
 dataset = dataset.astype('float32')
 ```
 
-LSTM 对输入数据的比例敏感，特别是在使用 sigmoid（默认）或 tanh 激活函数时。将数据重新调整到 0 到 1 的范围是一种很好的做法，也称为标准化。我们可以使用 scikit-learn 库中的 **MinMaxScaler** 预处理类轻松地规范化数据集。
+LSTM 对输入数据的比例敏感，特别是在使用 sigmoid（默认）或 tanh 激活函数时。将数据重缩放到 0 到 1 的范围是一种很好的做法，也称为标准化。我们可以使用 scikit-learn 库中的 **MinMaxScaler** 预处理类轻松地规范化数据集。
 
 ```py
 # normalize the dataset

@@ -1,4 +1,4 @@
-# 如何使用 scikit-learn 在 Python 中生成测试数据集
+# 如何使用 Python 和 scikit-learn 生成测试数据集
 
 > 原文： [https://machinelearningmastery.com/generate-test-datasets-python-scikit-learn/](https://machinelearningmastery.com/generate-test-datasets-python-scikit-learn/)
 

@@ -273,4 +273,4 @@ Keras 还提供了从业者友好的 API（即简单直观）。它包含了 [Th
 
 *   [用 Keras 逐步开发 Python 中的第一个神经网络](http://machinelearningmastery.com/tutorial-first-neural-network-python-keras/)
 *   [8 深度学习的鼓舞人心的应用](http://machinelearningmastery.com/inspirational-applications-deep-learning/)
-*   [多层感知机神经网络崩溃课程](http://machinelearningmastery.com/crash-course-recurrent-neural-networks-deep-learning/)
+*   [多层感知机神经网络速成课](http://machinelearningmastery.com/crash-course-recurrent-neural-networks-deep-learning/)

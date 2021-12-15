@@ -1,4 +1,4 @@
-# 使用 scikit-learn 在 Python 中进行 Spot-Check 分类机器学习算法
+# 使用 Python 和 scikit-learn 抽样检查分类机器学习算法
 
 > 原文： [https://machinelearningmastery.com/spot-check-classification-machine-learning-algorithms-python-scikit-learn/](https://machinelearningmastery.com/spot-check-classification-machine-learning-algorithms-python-scikit-learn/)
 

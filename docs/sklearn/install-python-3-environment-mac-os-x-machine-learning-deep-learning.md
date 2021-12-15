@@ -1,4 +1,4 @@
-# 如何在 Mac OS X 上安装 Python 3 环境以进行机器学习和深度学习
+# 如何在 Mac OS X 上为机器学习和深度学习安装 Python 3 环境
 
 > 原文： [https://machinelearningmastery.com/install-python-3-environment-mac-os-x-machine-learning-deep-learning/](https://machinelearningmastery.com/install-python-3-environment-mac-os-x-machine-learning-deep-learning/)
 

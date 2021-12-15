@@ -1,4 +1,4 @@
-# 使用 Pandas 快速和肮脏的数据分析
+# 使用 Pandas 的快速和肮脏的数据分析
 
 > 原文： [https://machinelearningmastery.com/quick-and-dirty-data-analysis-with-pandas/](https://machinelearningmastery.com/quick-and-dirty-data-analysis-with-pandas/)
 

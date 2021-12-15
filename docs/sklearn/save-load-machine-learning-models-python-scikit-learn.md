@@ -1,4 +1,4 @@
-# 使用 scikit-learn 在 Python 中保存和加载机器学习模型
+# 使用 Python 和 scikit-learn 保存和加载机器学习模型
 
 > 原文： [https://machinelearningmastery.com/save-load-machine-learning-models-python-scikit-learn/](https://machinelearningmastery.com/save-load-machine-learning-models-python-scikit-learn/)
 

@@ -1,4 +1,4 @@
-# 使用 Pandas 为 Python 中的机器学习准备数据
+# 使用 Python 和 Pandas 为机器学习准备数据
 
 > 原文： [https://machinelearningmastery.com/prepare-data-for-machine-learning-in-python-with-pandas/](https://machinelearningmastery.com/prepare-data-for-machine-learning-in-python-with-pandas/)
 

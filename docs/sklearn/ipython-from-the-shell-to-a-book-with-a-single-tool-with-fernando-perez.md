@@ -1,4 +1,4 @@
-# 从 shell 到一本带有 Fernando Perez 单一工具的书的 IPython
+# 从 shell 到一本书，Fernando Perez 的单一工具 IPython 简介
 
 > 原文： [https://machinelearningmastery.com/ipython-from-the-shell-to-a-book-with-a-single-tool-with-fernando-perez/](https://machinelearningmastery.com/ipython-from-the-shell-to-a-book-with-a-single-tool-with-fernando-perez/)
 

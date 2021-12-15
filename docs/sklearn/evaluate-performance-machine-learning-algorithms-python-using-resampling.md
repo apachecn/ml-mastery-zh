@@ -1,4 +1,4 @@
-# 使用重采样评估 Python 中机器学习算法的表现
+# 在Python 中使用重采样评估机器学习算法的表现
 
 > 原文： [https://machinelearningmastery.com/evaluate-performance-machine-learning-algorithms-python-using-resampling/](https://machinelearningmastery.com/evaluate-performance-machine-learning-algorithms-python-using-resampling/)
 

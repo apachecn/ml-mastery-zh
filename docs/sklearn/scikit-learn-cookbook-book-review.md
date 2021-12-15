@@ -1,4 +1,4 @@
-# scikit-learn Cookbook 书评
+# scikit-learn 秘籍的书评
 
 > 原文： [https://machinelearningmastery.com/scikit-learn-cookbook-book-review/](https://machinelearningmastery.com/scikit-learn-cookbook-book-review/)
 

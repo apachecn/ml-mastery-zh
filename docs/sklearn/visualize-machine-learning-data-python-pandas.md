@@ -1,4 +1,4 @@
-# 使用 Pandas 在 Python 中可视化机器学习数据
+# 使用 Python 和 Pandas 可视化机器学习数据
 
 > 原文： [https://machinelearningmastery.com/visualize-machine-learning-data-python-pandas/](https://machinelearningmastery.com/visualize-machine-learning-data-python-pandas/)
 

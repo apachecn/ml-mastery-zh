@@ -1,4 +1,4 @@
-# 如何开始使用 Python 进行机器学习
+# 如何开始将 Python 用于机器学习
 
 > 原文： [https://machinelearningmastery.com/how-to-get-started-with-machine-learning-in-python/](https://machinelearningmastery.com/how-to-get-started-with-machine-learning-in-python/)
 

@@ -1,4 +1,4 @@
-# 如何使用 Python 处理丢失的数据
+# 如何使用 Python 处理缺失数据
 
 > 原文： [https://machinelearningmastery.com/handle-missing-data-python/](https://machinelearningmastery.com/handle-missing-data-python/)
 
@@ -476,7 +476,7 @@ print(result.mean())
 
 当缺少数据时，并非所有算法都会失败。
 
-有些算法可以对丢失的数据进行鲁棒处理，例如 K 最近邻 可以在缺少值时忽略距离测量中的列。
+有些算法可以对缺失数据进行鲁棒处理，例如 K 最近邻 可以在缺少值时忽略距离测量中的列。
 
 还有一些算法可以在构建预测模型时使用缺失值作为唯一且不同的值，例如分类和回归树。
 
@@ -486,7 +486,7 @@ print(result.mean())
 
 ## 进一步阅读
 
-*   [在 Pandas](http://pandas.pydata.org/pandas-docs/stable/missing_data.html) 中处理丢失的数据
+*   [在 Pandas](http://pandas.pydata.org/pandas-docs/stable/missing_data.html) 中处理缺失数据
 *   [在 scikit-learn](http://scikit-learn.org/stable/modules/preprocessing.html#imputation-of-missing-values) 中对缺失值的估算
 
 ## 摘要

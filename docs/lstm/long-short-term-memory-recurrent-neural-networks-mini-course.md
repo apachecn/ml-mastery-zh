@@ -126,7 +126,7 @@ LSTM迷你课程概述
 
 ### 进一步阅读
 
-*   [深度学习的循环神经网络崩溃课程](http://machinelearningmastery.com/crash-course-recurrent-neural-networks-deep-learning/)
+*   [深度学习的循环神经网络速成课](http://machinelearningmastery.com/crash-course-recurrent-neural-networks-deep-learning/)
 *   [循环神经网络序列预测模型的简要介绍](http://machinelearningmastery.com/handle-long-sequences-long-short-term-memory-recurrent-neural-networks/)
 *   [循环神经网络对时间序列预测的承诺](http://machinelearningmastery.com/promise-recurrent-neural-networks-time-series-forecasting/)
 *   [关于长短期记忆网络对时间序列预测的适用性](http://machinelearningmastery.com/suitability-long-short-term-memory-networks-time-series-forecasting/)
