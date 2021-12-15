@@ -1,4 +1,4 @@
-# 如何使用 Keras 在 Python 中网格搜索深度学习模型的超参数
+# 如何使用 Python 和 Keras 网格搜索深度学习模型的超参数
 
 > 原文： [https://machinelearningmastery.com/grid-search-hyperparameters-deep-learning-models-python-keras/](https://machinelearningmastery.com/grid-search-hyperparameters-deep-learning-models-python-keras/)
 
