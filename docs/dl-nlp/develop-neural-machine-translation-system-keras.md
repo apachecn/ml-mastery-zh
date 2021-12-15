@@ -927,7 +927,7 @@ BLEU-4: 0.076238
 
 *   [制表符分隔的双语句子对](http://www.manythings.org/anki/)
 *   [德语 - 英语 deu-eng.zip](http://www.manythings.org/anki/deu-eng.zip)
-*   [编解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
+*   [编解码器长短期记忆网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 
 ## 摘要
 

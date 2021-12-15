@@ -1,4 +1,4 @@
-# 如何开发一种编解码器模型，注重Keras中的序列到序列预测
+# 如何在Keras中开发带有注意力的编解码器模型
 
 > 原文： [https://machinelearningmastery.com/encoder-decoder-attention-sequence-to-sequence-prediction-keras/](https://machinelearningmastery.com/encoder-decoder-attention-sequence-to-sequence-prediction-keras/)
 
@@ -258,7 +258,7 @@ n_timesteps_out = 2
 
 有关如何在Keras中定义编解码器架构的更多详细信息，请参阅帖子：
 
-*   [编解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
+*   [编解码器长短期记忆网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 
 我们将使用相同数量的单位配置编码器和解码器，在本例中为150.我们将使用梯度下降的有效Adam实现并优化分类交叉熵损失函数，因为该问题在技术上是一个多类别分类问题。
 
@@ -1045,7 +1045,7 @@ Mean Accuracy: 95.70%
 
 *   [长期短期记忆循环神经网络](https://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/)的注意事项
 *   [编解码器循环神经网络中的注意事项如何工作](https://machinelearningmastery.com/how-does-attention-work-in-encoder-decoder-recurrent-neural-networks/)
-*   [编解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
+*   [编解码器长短期记忆网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 *   [如何评估深度学习模型的技巧](https://machinelearningmastery.com/evaluate-skill-deep-learning-models/)
 *   [如何在Keras中注意循环神经网络](https://medium.com/datalogue/attention-in-keras-1892773a4f22)，2017。
 *   [keras-attention GitHub Project](https://github.com/datalogue/keras-attention)

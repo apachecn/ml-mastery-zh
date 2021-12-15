@@ -1,4 +1,4 @@
-# 如何开发Keras序列到序列预测的编解码器模型
+# 如何在 Keras 中开发用于序列到序列预测的编解码器模型
 
 > 原文： [https://machinelearningmastery.com/develop-encoder-decoder-model-sequence-sequence-prediction-keras/](https://machinelearningmastery.com/develop-encoder-decoder-model-sequence-sequence-prediction-keras/)
 

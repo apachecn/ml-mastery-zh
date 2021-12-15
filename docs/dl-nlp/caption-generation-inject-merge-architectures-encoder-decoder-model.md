@@ -40,9 +40,9 @@
 
 有关编解码器循环神经网络架构的更多信息，请参阅帖子：
 
-*   [编解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
+*   [编解码器长短期记忆网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 
-通常，卷积神经网络用于编码图像，并且循环神经网络（例如长短期存储器网络）用于编码到目前为止生成的文本序列，和/或生成序列中的下一个单词。 。
+通常，卷积神经网络用于编码图像，并且循环神经网络（例如长短期记忆网络）用于编码到目前为止生成的文本序列，和/或生成序列中的下一个单词。 。
 
 对于字幕生成问题，有很多方法可以实现这种架构。
 
@@ -134,7 +134,7 @@
 如果您希望深入了解，本节将提供有关该主题的更多资源。
 
 *   [Marc Tanti 的博客](https://geekyisawesome.blogspot.com.au/)
-*   [编解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
+*   [编解码器长短期记忆网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 *   [将图像放在图像标题生成器](https://arxiv.org/abs/1703.09137)中的位置，2017。
 *   [循环神经网络（RNN）在图像标题生成器中的作用是什么？](https://arxiv.org/abs/1708.02043) ，2017。
 

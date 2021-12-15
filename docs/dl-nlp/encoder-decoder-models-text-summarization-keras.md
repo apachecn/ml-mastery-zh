@@ -44,7 +44,7 @@
 
 有关编解码器架构的更多信息，请参阅帖子：
 
-*   [编解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
+*   [编解码器长短期记忆网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 
 编码器和解码器子模型都是联合训练的，意思是同时进行。
 
@@ -300,7 +300,7 @@ model.compile(loss='categorical_crossentropy', optimizer='adam')
 
 ### 有关
 
-*   [编解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
+*   [编解码器长短期记忆网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 *   [长期短期记忆循环神经网络](https://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/)的注意事项
 
 ## 摘要

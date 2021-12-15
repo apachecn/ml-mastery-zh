@@ -40,7 +40,7 @@
 
 有关架构的更多信息，请参阅帖子：
 
-*   [编解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
+*   [编解码器长短期记忆网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 
 ## Sutskever NMT 模型
 

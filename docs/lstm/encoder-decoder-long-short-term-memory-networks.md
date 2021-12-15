@@ -1,4 +1,4 @@
-# 编解码器长短期存储器网络
+# 编解码器长短期记忆网络
 
 > 原文： [https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 

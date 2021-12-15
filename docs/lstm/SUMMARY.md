@@ -8,7 +8,7 @@
 +   [如何开发Keras序列到序列预测的编解码器模型](develop-encoder-decoder-model-sequence-sequence-prediction-keras.md)
 +   [如何诊断LSTM模型的过拟合和欠拟合](diagnose-overfitting-underfitting-lstm-models.md)
 +   [如何开发一种编解码器模型，注重Keras中的序列到序列预测](encoder-decoder-attention-sequence-to-sequence-prediction-keras.md)
-+   [编解码器长短期存储器网络](encoder-decoder-long-short-term-memory-networks.md)
++   [编解码器长短期记忆网络](encoder-decoder-long-short-term-memory-networks.md)
 +   [神经网络中爆炸梯度的温和介绍](exploding-gradients-in-neural-networks.md)
 +   [对时间反向传播的温和介绍](gentle-introduction-backpropagation-time.md)
 +   [生成长短期记忆网络的温和介绍](gentle-introduction-generative-long-short-term-memory-networks.md)

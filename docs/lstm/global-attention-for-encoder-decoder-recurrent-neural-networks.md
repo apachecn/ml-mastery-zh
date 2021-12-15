@@ -158,7 +158,7 @@
 
 *   [用神经网络进行序列学习的序列](https://arxiv.org/abs/1409.3215)，2014。
 *   [使用RNN编解码器进行统计机器翻译的学习短语表示](https://arxiv.org/abs/1406.1078)，2014。
-*   [编解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
+*   [编解码器长短期记忆网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 
 ### 注意
 
