@@ -1,4 +1,4 @@
-# 如何使用 scikit-learn 在 Python 中开发您的第一个 XGBoost 模型
+# 如何使用 Python 和 scikit-learn 开发您的第一个 XGBoost 模型
 
 > 原文： [https://machinelearningmastery.com/develop-first-xgboost-model-python-scikit-learn/](https://machinelearningmastery.com/develop-first-xgboost-model-python-scikit-learn/)
 

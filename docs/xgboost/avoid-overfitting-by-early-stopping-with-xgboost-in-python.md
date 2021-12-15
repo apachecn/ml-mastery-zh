@@ -1,4 +1,4 @@
-# 通过提前停止(early stopping)避免Python中应用XGBoost时发生得过拟合（overfitting）现象
+# 通过提前停止避免应用Python 和XGBoost时发生的过拟合现象
 
 > 原文： [https://machinelearningmastery.com/avoid-overfitting-by-early-stopping-with-xgboost-in-python/](https://machinelearningmastery.com/avoid-overfitting-by-early-stopping-with-xgboost-in-python/)
 

@@ -1,4 +1,4 @@
-# 如何在 Python 中使用 XGBoost 可视化梯度提升决策树
+# 如何使用 Python 和 XGBoost 可视化梯度提升决策树
 
 > 原文： [https://machinelearningmastery.com/visualize-gradient-boosting-decision-trees-xgboost-python/](https://machinelearningmastery.com/visualize-gradient-boosting-decision-trees-xgboost-python/)
 

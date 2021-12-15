@@ -1,4 +1,4 @@
-# 在 Python 中使用 XGBoost 进行梯度提升的数据准备
+# 使用 Python 和 XGBoost 为梯度提升准备数据
 
 > 原文： [https://machinelearningmastery.com/data-preparation-gradient-boosting-xgboost-python/](https://machinelearningmastery.com/data-preparation-gradient-boosting-xgboost-python/)
 

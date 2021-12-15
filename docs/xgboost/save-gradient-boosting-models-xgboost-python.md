@@ -1,4 +1,4 @@
-# 如何在 Python 中使用 XGBoost 保存梯度提升模型
+# 如何使用 Python 和 XGBoost 保存梯度提升模型
 
 > 原文： [https://machinelearningmastery.com/save-gradient-boosting-models-xgboost-python/](https://machinelearningmastery.com/save-gradient-boosting-models-xgboost-python/)
 

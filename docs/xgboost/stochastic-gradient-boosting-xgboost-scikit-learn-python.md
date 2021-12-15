@@ -1,4 +1,4 @@
-# 在 Python 中使用 XGBoost 和 scikit-learn 进行随机梯度提升
+# 使用 Python、XGBoost 和 scikit-learn 的随机梯度提升
 
 > 原文： [https://machinelearningmastery.com/stochastic-gradient-boosting-xgboost-scikit-learn-python/](https://machinelearningmastery.com/stochastic-gradient-boosting-xgboost-scikit-learn-python/)
 

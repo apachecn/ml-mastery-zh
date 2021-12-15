@@ -1,4 +1,4 @@
-# 如何在 Python 中使用 XGBoost 调整决策树的数量和大小
+# 使用 Python 和 XGBoost 调整决策树的数量和大小
 
 > 原文： [https://machinelearningmastery.com/tune-number-size-decision-trees-xgboost-python/](https://machinelearningmastery.com/tune-number-size-decision-trees-xgboost-python/)
 

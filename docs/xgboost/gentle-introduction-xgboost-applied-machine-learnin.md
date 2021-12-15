@@ -1,4 +1,4 @@
-# 应用机器学习的杀器： XGBoost 简介
+# 应用机器学习的杀器：XGBoost 温和简介
 
 > 原文： [https://machinelearningmastery.com/gentle-introduction-xgboost-applied-machine-learning/](https://machinelearningmastery.com/gentle-introduction-xgboost-applied-machine-learning/)
 

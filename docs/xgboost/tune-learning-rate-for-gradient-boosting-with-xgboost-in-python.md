@@ -1,4 +1,4 @@
-# 在 Python 中使用 XGBoost 调整梯度提升的学习率
+# 使用 Python 和 XGBoost 调整梯度提升的学习率
 
 > 原文： [https://machinelearningmastery.com/tune-learning-rate-for-gradient-boosting-with-xgboost-in-python/](https://machinelearningmastery.com/tune-learning-rate-for-gradient-boosting-with-xgboost-in-python/)
 
