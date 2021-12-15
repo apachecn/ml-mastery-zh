@@ -1,4 +1,4 @@
-# 用于Python机器学习的随机数生成器简介
+# Python机器学习中的随机数生成器简介
 
 > 原文： [https://machinelearningmastery.com/introduction-to-random-number-generators-for-machine-learning/](https://machinelearningmastery.com/introduction-to-random-number-generators-for-machine-learning/)
 
@@ -240,7 +240,7 @@ Reseeded
 ### API
 
 *   [随机Python API](https://docs.python.org/3/library/random.html)
-*   [NumPy中的随机抽样](https://docs.scipy.org/doc/numpy/reference/routines.random.html)
+*   [NumPy中的随机采样](https://docs.scipy.org/doc/numpy/reference/routines.random.html)
 
 ### 用品
 

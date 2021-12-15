@@ -1,4 +1,4 @@
-# 如何在Python中计算数据的5位数摘要
+# 如何在Python中计算数据的五个数字摘要
 
 > 原文： [https://machinelearningmastery.com/how-to-calculate-the-5-number-summary-for-your-data-in-python/](https://machinelearningmastery.com/how-to-calculate-the-5-number-summary-for-your-data-in-python/)
 

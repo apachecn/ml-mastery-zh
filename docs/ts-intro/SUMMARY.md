@@ -27,7 +27,7 @@
 +   [如何使用 Python 对时间序列预测数据进行功率变换](power-transform-time-series-forecast-data-python.md)
 +   [用于时间序列预测的 Python 环境](python-environment-time-series-forecasting.md)
 +   [如何重构时间序列预测问题](reframe-time-series-forecasting-problem.md)
-+   [如何使用 Python 重新采样和插值您的时间序列数据](resample-interpolate-time-series-data-python.md)
++   [如何使用 Python 重采样和插值您的时间序列数据](resample-interpolate-time-series-data-python.md)
 +   [用 Python 编写 SARIMA 时间序列预测](sarima-for-time-series-forecasting-in-python.md)
 +   [如何在 Python 中保存 ARIMA 时间序列预测模型](save-arima-time-series-forecasting-model-python.md)
 +   [使用 Python 进行季节性持久性预测](seasonal-persistence-forecasting-python.md)

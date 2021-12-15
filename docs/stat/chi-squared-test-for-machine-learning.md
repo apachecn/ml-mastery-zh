@@ -1,4 +1,4 @@
-# 浅谈机器学习的Chi-Squared测试
+# 浅谈机器学习的卡方测试
 
 > 原文： [https://machinelearningmastery.com/chi-squared-test-for-machine-learning/](https://machinelearningmastery.com/chi-squared-test-for-machine-learning/)
 
@@ -20,11 +20,11 @@ Pearson的卡方统计假设是分类变量之间独立性检验的一个例子�
 
 让我们开始吧。
 
-*   **更新Jun / 2018** ：从测试中解释关键值的小错误修复（感谢Andrew）。
+*   **更新Jun / 2018** ：从测试中解释临界值的小错误修复（感谢Andrew）。
 
-![A Gentle Introduction to the Chi-Squared Test for Machine Learning](img/e986eb1bedf061678da5260395bae17f.jpg)
+![A Gentle Introduction to the 卡方 Test for Machine Learning](img/e986eb1bedf061678da5260395bae17f.jpg)
 
-机器学习Chi-Squared测试的温和介绍
+机器学习卡方测试的温和介绍
 [NC湿地](https://www.flickr.com/photos/ncwetlands/38431877722/)的照片，保留一些权利
 
 ## 教程概述
@@ -32,8 +32,8 @@ Pearson的卡方统计假设是分类变量之间独立性检验的一个例子�
 本教程分为3个部分;他们是：
 
 1.  列联表
-2.  皮尔逊的Chi-Squared测试
-3.  示例Chi-Squared测试
+2.  皮尔逊的卡方测试
+3.  示例卡方测试
 
 ## 列联表
 
@@ -66,17 +66,17 @@ Female       20,      15,    30
 
 该表由Karl Pearson称为列联表，因为其目的是帮助确定一个变量是否依赖于另一个变量。例如，对数学或科学的兴趣是否取决于性别，还是它们是独立的？
 
-仅从表格中确定这是具有挑战性的;相反，我们可以使用称为Pearson的Chi-Squared测试的统计方法。
+仅从表格中确定这是具有挑战性的;相反，我们可以使用称为Pearson的卡方测试的统计方法。
 
-## 皮尔逊的Chi-Squared测试
+## 皮尔逊的卡方测试
 
-Pearson的Chi-Squared测试，或简称Chi-Squared测试，以Karl Pearson命名，尽管测试有变化。
+Pearson的卡方测试，或简称卡方测试，以Karl Pearson命名，尽管测试有变化。
 
-Chi-Squared测试是一种统计假设检验，假设（零假设）分类变量的观察频率与分类变量的预期频率匹配。该测试计算具有卡方分布的统计量，以希腊大写字母Chi（X）命名为“ki”，如风筝中所示。
+卡方测试是一种统计假设检验，假设（零假设）分类变量的观察频率与分类变量的预期频率匹配。该测试计算具有卡方分布的统计量，以希腊大写字母Chi（X）命名为“ki”，如风筝中所示。
 
 鉴于上面的性/兴趣例子，一个类别（例如男性和女性）的观察数量可能相同或不同。尽管如此，我们可以计算每个兴趣小组中观察的预期频率，并查看按性别划分的利益是否会产生相似或不同的频率。
 
-Chi-Squared测试用于列联表，首先计算组的预期频率，然后确定组的划分（称为观察频率）是否与预期频率匹配。
+卡方测试用于列联表，首先计算组的预期频率，然后确定组的划分（称为观察频率）是否与预期频率匹配。
 
 测试的结果是具有卡方分布的测试统计量，并且可以被解释为拒绝或不能拒绝观察到的和预期的频率相同的假设或零假设。
 
@@ -110,7 +110,7 @@ degrees of freedom: (rows - 1) * (cols - 1)
 
 接下来，让我们看看我们如何计算卡方检验。
 
-## 示例Chi-Squared测试
+## 示例卡方测试
 
 可以使用 [chi2_contingency（）SciPy函数](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.chi2_contingency.html)在Python中计算Pearson的卡方检验。
 
@@ -157,7 +157,7 @@ table = [	[10, 20, 30],
 下面列出了完整的示例。
 
 ```py
-# chi-squared test with similar proportions
+# 卡方 test with similar proportions
 from scipy.stats import chi2_contingency
 from scipy.stats import chi2
 # contingency table
@@ -239,8 +239,8 @@ Independent (fail to reject H0)
 
 ## 用品
 
-*   [维基百科上的卡方测试](https://en.wikipedia.org/wiki/Chi-squared_test)
-*   [Pearson对维基百科的卡方测试](https://en.wikipedia.org/wiki/Pearson%27s_chi-squared_test)
+*   [维基百科上的卡方测试](https://en.wikipedia.org/wiki/卡方_test)
+*   [Pearson对维基百科的卡方测试](https://en.wikipedia.org/wiki/Pearson%27s_卡方_test)
 *   [维基百科上的列联表](https://en.wikipedia.org/wiki/Contingency_table)
 *   [chi测试如何用于机器学习中的特征选择？关于Quora](https://www.quora.com/How-is-chi-test-used-for-feature-selection-in-machine-learning)
 

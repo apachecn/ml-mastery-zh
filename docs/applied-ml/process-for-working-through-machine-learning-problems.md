@@ -21,7 +21,7 @@ _预测模型问题的系统过程__
 
 1.  定义问题
 2.  准备数据
-3.  抽样检查算法
+3.  采样检查算法
 4.  改善结果
 5.  目前的结果
 
@@ -68,7 +68,7 @@ _预测模型问题的系统过程__
 
 我发现了检查算法，这意味着将一堆标准机器学习算法加载到我的测试工具中并执行正式实验。我通常在我准备好的数据集的所有转换和缩放版本中运行来自所有[主要算法系列](http://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/ "A Tour of Machine Learning Algorithms")的10-20个标准算法。
 
-抽样检查的目标是清除擅长挑选问题结构的算法类型和数据集组合，以便通过重点实验更详细地研究它们。
+采样检查的目标是清除擅长挑选问题结构的算法类型和数据集组合，以便通过重点实验更详细地研究它们。
 
 可以在该步骤中执行具有良好表现算法族的更集中的实验，但是算法调整留待下一步骤。
 
@@ -78,7 +78,7 @@ _预测模型问题的系统过程__
 
 您可以在帖子中发现抽查算法的重要性：
 
-*   [为什么你应该在机器学习问题上进行抽样检查算法](http://machinelearningmastery.com/why-you-should-be-spot-checking-algorithms-on-your-machine-learning-problems/ "Why you should be Spot-Checking Algorithms on your Machine Learning Problems")
+*   [为什么你应该在机器学习问题上进行采样检查算法](http://machinelearningmastery.com/why-you-should-be-spot-checking-algorithms-on-your-machine-learning-problems/ "Why you should be Spot-Checking Algorithms on your Machine Learning Problems")
 
 ## 4.改善结果
 

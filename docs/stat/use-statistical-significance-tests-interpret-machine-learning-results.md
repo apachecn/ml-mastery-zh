@@ -10,11 +10,11 @@
 
 统计显着性检验是帮助解释机器学习实验结果的重要工具。此外，这些工具的发现可以帮助您更好，更自信地呈现您的实验结果，并为您的预测性建模问题选择正确的算法和配置。
 
-在本教程中，您将了解如何使用Python中的统计显着性测试来研究和解释机器学习实验结果。
+在本教程中，您将了解如何使用Python中的统计显着性检验来研究和解释机器学习实验结果。
 
 完成本教程后，您将了解：
 
-*   如何应用常态测试来确认您的数据是否（或不是）正态分布。
+*   如何应用正态测试来确认您的数据是否（或不是）正态分布。
 *   如何对正态分布结果应用参数统计显着性检验。
 *   如何对更复杂的结果分布应用非参数统计显着性检验。
 
@@ -110,11 +110,11 @@ savetxt('results2.csv', results)
 
 ## 摘要统计
 
-收集结果后的第一步是查看一些摘要统计信息并了解有关数据分布的更多信息。
+收集结果后的第一步是查看一些摘要统计量并了解有关数据分布的更多信息。
 
-这包括查看摘要统计数据和数据图。
+这包括查看摘要统计量和数据图。
 
-下面是一个完整的代码清单，用于查看两组结果的一些摘要统计信息。
+下面是一个完整的代码清单，用于查看两组结果的一些摘要统计量。
 
 ```py
 from pandas import DataFrame
@@ -134,7 +134,7 @@ results.hist()
 pyplot.show()
 ```
 
-该示例加载两组结果，并通过打印摘要统计信息开始。`results1.csv`中的数据称为“A”，`results2.csv`中的数据称为“B”，为简洁起见。
+该示例加载两组结果，并通过打印摘要统计量开始。`results1.csv`中的数据称为“A”，`results2.csv`中的数据称为“B”，为简洁起见。
 
 我们假设数据代表测试数据集上的错误分数，并且最小化分数是目标。
 
@@ -248,7 +248,7 @@ It is likely that result2 is normal
 
 如果我们得到＆lt; = 0.05的p值，则意味着我们可以拒绝零假设，并且平均值显着不同，置信度为95％。这意味着对于100个中的95个类似样本，平均值将显着不同，并且在100个案例中的5个中并非如此。
 
-除了高斯数据之外，该统计检验的一个重要假设是两个分布具有相同的方差。我们通过回顾上一步中的描述性统计数据来了解这种情况。
+除了高斯数据之外，该统计检验的一个重要假设是两个分布具有相同的方差。我们通过回顾上一步中的描述性统计量来了解这种情况。
 
 The complete code listing is provided below.
 
@@ -271,7 +271,7 @@ else:
 	print('Samples are likely drawn from different distributions (reject H0)')
 ```
 
-运行该示例将打印统计信息和p值。我们可以看到p值远低于0.05。
+运行该示例将打印统计量和p值。我们可以看到p值远低于0.05。
 
 事实上，它是如此之小，我们几乎可以确定手段之间的差异在统计上是显着的。
 
@@ -284,7 +284,7 @@ Samples are likely drawn from different distributions (reject H0)
 
 如果两组结果的均值相同，但方差不同，该怎么办？
 
-我们无法按原样使用学生t检验。实际上，我们必须使用名为Welch t检验的测试的修改版本。
+我们无法按原样使用T检验。实际上，我们必须使用名为Welch t检验的测试的修改版本。
 
 在SciPy中，这是相同的 [ttest_ind（）](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html)函数，但我们必须将“`equal_var`”参数设置为“`False`”以指示差异不相等。
 
@@ -308,7 +308,7 @@ else:
 	print('Samples are likely drawn from different distributions (reject H0)')
 ```
 
-运行该示例将打印测试统计信息和p值。
+运行该示例将打印测试统计量和p值。
 
 我们可以看到，有很好的证据（接近99％）样本来自不同的分布，这些方法有显着差异。
 
@@ -355,7 +355,7 @@ p值与样本大小的线图
 
 ## 比较非高斯结果的均值
 
-如果我们的数据不是高斯数据，我们不能使用学生t检验或韦尔奇t检验。
+如果我们的数据不是高斯数据，我们不能使用T检验或韦尔奇t检验。
 
 我们可以用于非高斯数据的替代统计显着性检验称为Kolmogorov-Smirnov检验。
 
@@ -389,7 +389,7 @@ else:
 	print('Samples are likely drawn from different distributions (reject H0)')
 ```
 
-运行该示例将打印统计信息和p值。
+运行该示例将打印统计量和p值。
 
 p值非常小，表明两种群体之间的差异非常明显。
 
@@ -400,10 +400,10 @@ Samples are likely drawn from different distributions (reject H0)
 
 ## 进一步阅读
 
-本节列出了一些文章和资源，以深入探讨应用机器学习的统计显着性测试领域。
+本节列出了一些文章和资源，以深入探讨应用机器学习的统计显着性检验领域。
 
 *   [维基百科的正常性测试](https://en.wikipedia.org/wiki/Normality_test)
-*   [维基百科上的学生t检验](https://en.wikipedia.org/wiki/Student's_t-test)
+*   [维基百科上的T检验](https://en.wikipedia.org/wiki/Student's_t-test)
 *   [韦尔奇在维基百科上的t检验](https://en.wikipedia.org/wiki/Welch%27s_t-test)
 *   维基百科上的 [Kolmogorov-Smirnov测试](https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test)
 
@@ -415,9 +415,9 @@ Samples are likely drawn from different distributions (reject H0)
 
 你了解到：
 
-*   如何使用常态测试来检查您的实验结果是否为高斯分析。
+*   如何使用正态测试来检查您的实验结果是否为高斯分析。
 *   如何使用统计检验来检查平均结果之间的差异是否对具有相同和不同方差的高斯数据有意义。
 *   如何使用统计检验来检查平均结果之间的差异是否对非高斯数据有意义。
 
-您对此帖子或统计显着性测试有任何疑问吗？
+您对此帖子或统计显着性检验有任何疑问吗？
 在下面的评论中提出您的问题，我会尽力回答。

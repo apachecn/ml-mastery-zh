@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/crash-course-deep-learning-natural-language-processing/](https://machinelearningmastery.com/crash-course-deep-learning-natural-language-processing/)
 
-## NLP 速成班的深度学习。
+## NLP 速成课的深度学习。
 
 #### 在 7 天内为您的文本数据项目带来深度学习方法。
 
@@ -572,7 +572,7 @@ print(model.summary())
 ## 摘要
 
 **你是如何使用迷你课程的？**
-你喜欢这个速成班吗？
+你喜欢这个速成课吗？
 
 **你有什么问题吗？有没有任何问题？**
 让我知道。在下面发表评论。

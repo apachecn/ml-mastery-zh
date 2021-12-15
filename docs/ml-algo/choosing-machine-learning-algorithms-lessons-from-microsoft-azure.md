@@ -51,7 +51,7 @@ one-pager将各种问题类型列为组，以及Azure在每个组中支持的算
 
 原因是，您可能永远不应该分析为您的问题选择一种算法。您应该检查一些算法并使用您对问题的任何要求进行评估。
 
-有关抽样检查算法的更多信息，请参阅文章“[为什么您应该在机器学习问题](http://machinelearningmastery.com/why-you-should-be-spot-checking-algorithms-on-your-machine-learning-problems/)上进行抽样检查算法”。
+有关采样检查算法的更多信息，请参阅文章“[为什么您应该在机器学习问题](http://machinelearningmastery.com/why-you-should-be-spot-checking-algorithms-on-your-machine-learning-problems/)上进行采样检查算法”。
 
 我认为cheatsheet最适合用来了解哪些算法投入到您的抽查中，从您的问题要求的角度来看。
 

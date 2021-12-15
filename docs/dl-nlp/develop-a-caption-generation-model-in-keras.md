@@ -1145,7 +1145,7 @@ print(df.describe())
 df.to_csv(model_name+'.csv', index=False)
 ```
 
-首先运行该示例打印已加载的训练数据的摘要统计信息。
+首先运行该示例打印已加载的训练数据的摘要统计量。
 
 ```py
 Dataset: 1,000

@@ -1,4 +1,4 @@
-# 如何使用统计信息识别数据中的异常值
+# 如何使用统计量识别数据中的异常值
 
 > 原文： [https://machinelearningmastery.com/how-to-use-statistics-to-identify-outliers-in-data/](https://machinelearningmastery.com/how-to-use-statistics-to-identify-outliers-in-data/)
 
@@ -20,7 +20,7 @@
 
 ![How to Use Statistics to Identify Outliers in Data](img/88660edc68a1bce41465108bfae8af1f.jpg)
 
-如何使用统计数据识别数据中的异常值
+如何使用统计量识别数据中的异常值
 照片由 [Jeff Richardson](https://www.flickr.com/photos/richo7/7176319689/) 提供，保留一些权利。
 
 ## 教程概述
@@ -174,7 +174,7 @@ Non-outlier observations: 9971
 
 并非所有数据都是正常的或正常的，足以将其视为从高斯分布中提取。
 
-总结非高斯分布数据样本的一个很好的统计数据是Interquartile Range，简称IQR。
+总结非高斯分布数据样本的一个很好的统计量是Interquartile Range，简称IQR。
 
 IQR计算为数据的第75百分位数和第25百分位数之间的差异，并在框和晶须图中定义框。
 

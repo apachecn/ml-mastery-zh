@@ -33,7 +33,7 @@
 
 ## 一个有用的比较点
 
-您需要针对问题的[抽样检查算法](http://machinelearningmastery.com/why-you-should-be-spot-checking-algorithms-on-your-machine-learning-problems/ "Why you should be Spot-Checking Algorithms on your Machine Learning Problems")，看看您是否有一个有用的基础来建模您的预测问题。但是你怎么知道结果有什么好处呢？
+您需要针对问题的[采样检查算法](http://machinelearningmastery.com/why-you-should-be-spot-checking-algorithms-on-your-machine-learning-problems/ "Why you should be Spot-Checking Algorithms on your Machine Learning Problems")，看看您是否有一个有用的基础来建模您的预测问题。但是你怎么知道结果有什么好处呢？
 
 您需要一个比较结果的基础。您需要一个有意义的参考点来进行比较。
 

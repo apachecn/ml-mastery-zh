@@ -95,7 +95,7 @@ y(t) = Level * Trend * Seasonality * Noise
 
 statsmodels 库在名为 [seasonal_decompose（）](http://www.statsmodels.org/dev/generated/statsmodels.tsa.seasonal.seasonal_decompose.html)的函数中提供了朴素或经典分解方法的实现。它要求您指定模型是加法还是乘法。
 
-两者都会产生结果，在解释结果时必须小心谨慎。对时间序列图和一些汇总统计数据的回顾通常可以是一个很好的开始，可以了解您的时间序列问题是否具有加性或乘法性。
+两者都会产生结果，在解释结果时必须小心谨慎。对时间序列图和一些汇总统计量的回顾通常可以是一个很好的开始，可以了解您的时间序列问题是否具有加性或乘法性。
 
 `seasonal_decompose()`函数返回结果对象。结果对象包含用于从分解中访问四个数据的数组。
 

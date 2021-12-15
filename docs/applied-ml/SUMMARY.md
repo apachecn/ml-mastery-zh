@@ -58,5 +58,5 @@
 +   [使用探索性数据分析了解您的问题并获得更好的结果](understand-problem-get-better-results-using-exploratory-data-analysis.md)
 +   [什么是数据挖掘和KDD](what-is-data-mining-and-kdd.md)
 +   [为什么在机器学习中单热编码数据？](why-one-hot-encode-data-in-machine-learning.md)
-+   [为什么你应该在你的机器学习问题上抽样检查算法](why-you-should-be-spot-checking-algorithms-on-your-machine-learning-problems.md)
++   [为什么你应该在你的机器学习问题上采样检查算法](why-you-should-be-spot-checking-algorithms-on-your-machine-learning-problems.md)
 +   [所以，你正在研究机器学习问题......](working-machine-learning-problem.md)

@@ -74,6 +74,6 @@
 
 了解更多关于设计和执行自学项目的信息，我称之为“_ 小项目方法 _”，后期“ [4 自学机器学习项目](http://machinelearningmastery.com/self-study-machine-learning-projects/ "4 Self-Study Machine Learning Projects")”描述了这种方法。
 
-**你永远不会知道足够的统计数据，数学或编程等等。** 这些并非真正有限的主题。
+**你永远不会知道足够的统计量，数学或编程等等。** 这些并非真正有限的主题。
 
 如果您对机器学习真的很感兴趣，那么您需要做的研究将是终生的，您需要系统和信心来有效地进行研究。

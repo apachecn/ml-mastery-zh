@@ -1,4 +1,4 @@
-# 机器学习的预测间隔
+# 机器学习中的预测区间
 
 > 原文： [https://machinelearningmastery.com/prediction-intervals-for-machine-learning/](https://machinelearningmastery.com/prediction-intervals-for-machine-learning/)
 
@@ -104,8 +104,8 @@ _鉴于给定'x'的'y'预测，'a'到'b'的范围有95％可能覆盖真实结�
 
 *   Delta方法，来自非线性回归领域。
 *   贝叶斯方法，来自贝叶斯建模和统计。
-*   均值 - 方差估计方法，使用估计的统计数据。
-*   Bootstrap方法，使用数据重采样和开发模型集合。
+*   均值 - 方差估计方法，使用估计的统计量。
+*   自举法，使用数据重采样和开发模型集合。
 
 我们可以使用下一节中的工作示例来具体计算预测区间。
 

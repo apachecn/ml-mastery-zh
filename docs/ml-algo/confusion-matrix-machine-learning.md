@@ -206,7 +206,7 @@ no-event	false negative		true negative
 
 下面是在Pima Indians Diabetes数据集上训练k-最近邻算法后，来自Weka Explorer界面的屏幕截图。
 
-混淆矩数组在底部，您可以看到还提供了大量的分类统计数据。
+混淆矩数组在底部，您可以看到还提供了大量的分类统计量。
 
 混淆矩阵将字母a和b分配给类值，并为行提供预期的类值，并为每列提供预测的类值（“分类为”）。
 
@@ -257,7 +257,7 @@ results <- confusionMatrix(data=predicted, reference=expected)
 print(results)
 ```
 
-运行此示例计算混淆矩阵报告和相关统计信息并打印结果。
+运行此示例计算混淆矩阵报告和相关统计量并打印结果。
 
 ```py
 Confusion Matrix and Statistics

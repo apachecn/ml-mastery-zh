@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/model-selection-tips-from-competitive-machine-learning/](https://machinelearningmastery.com/model-selection-tips-from-competitive-machine-learning/)
 
-在[对您的问题进行抽样检查算法](http://machinelearningmastery.com/why-you-should-be-spot-checking-algorithms-on-your-machine-learning-problems/ "Why you should be Spot-Checking Algorithms on your Machine Learning Problems")并调整好几个之后，您最终需要选择一个或两个最佳模型来继续。
+在[对您的问题进行采样检查算法](http://machinelearningmastery.com/why-you-should-be-spot-checking-algorithms-on-your-machine-learning-problems/ "Why you should be Spot-Checking Algorithms on your Machine Learning Problems")并调整好几个之后，您最终需要选择一个或两个最佳模型来继续。
 
 这个问题被称为模型选择，可能很烦人，因为您需要在给定不完整信息的情况下做出选择。这是您创建的[测试线束](http://machinelearningmastery.com/how-to-evaluate-machine-learning-algorithms/ "How to Evaluate Machine Learning Algorithms")和您选择的[测试选项](http://machinelearningmastery.com/how-to-choose-the-right-test-options-when-evaluating-machine-learning-algorithms/ "How To Choose The Right Test Options When Evaluating Machine Learning Algorithms")的关键所在。
 
@@ -69,7 +69,7 @@ Log0还提醒选择健壮的模型，即它们本身不太可能过拟合，例�
 
 ### 研究数据样本的稳定性
 
-采样时可以使用类似的技巧。抽样理论是一个庞大而复杂的主题。我们可以执行如上所述的类似过程，并获取给定大小的n样本并估计准确度，然后尝试不同大小的样本。
+采样时可以使用类似的技巧。采样理论是一个庞大而复杂的主题。我们可以执行如上所述的类似过程，并获取给定大小的n样本并估计准确度，然后尝试不同大小的样本。
 
 将结果绘制为方框图或类似图可以让您了解采样大小的稳定性（以及采样方法，如果您正在对类进行分层或重新平衡 - 您可能应该尝试这样做）。
 

@@ -1,8 +1,8 @@
-# 如何在Python中从零开始编写学生t检验
+# 如何在Python中从零开始编写T检验
 
 > 原文： [https://machinelearningmastery.com/how-to-code-the-students-t-test-from-scratch-in-python/](https://machinelearningmastery.com/how-to-code-the-students-t-test-from-scratch-in-python/)
 
-也许最广泛使用的统计假设检验之一是学生t检验。
+也许最广泛使用的统计假设检验之一是T检验。
 
 因为有一天你可能会自己使用这个测试，所以深入了解测试的工作原理非常重要。作为开发人员，通过从零开始实现假设检验，可以最好地实现这种理解。
 
@@ -11,14 +11,14 @@
 完成本教程后，您将了解：
 
 *   学生的t检验将评论是否可能观察到两个样本，因为样本来自同一人群。
-*   如何从零开始实现学生t检验两个独立样本。
-*   如何从零开始对两个相关样本实现配对学生t检验。
+*   如何从零开始实现T检验两个独立样本。
+*   如何从零开始对两个相关样本实现配对T检验。
 
 让我们开始吧。
 
 ![How to Code the Student's t-Test from Scratch in Python](img/18c211273ce8051c7807ef2e09b805d7.jpg)
 
-如何在Python中从零开始编写学生t检验
+如何在Python中从零开始编写T检验
 照片由 [n1d](https://www.flickr.com/photos/62400641@N07/33385804523/) ，保留一些权利。
 
 ## 教程概述
@@ -31,7 +31,7 @@
 
 ## 学生的t-测试
 
-[学生t检验](https://en.wikipedia.org/wiki/Student%27s_t-test)是一项统计假设检验，用于检验是否预期两个样本来自同一人群。
+[T检验](https://en.wikipedia.org/wiki/Student%27s_t-test)是一项统计假设检验，用于检验是否预期两个样本来自同一人群。
 
 它以William Gosset使用的化名“`Student`”命名，他开发了该测试。
 
@@ -66,7 +66,7 @@ Student's t-test有两个主要版本：
 
 ## 学生对独立样本的t检验
 
-我们将从最常见的学生t检验形式开始：我们比较两个独立样本的平均值的情况。
+我们将从最常见的T检验形式开始：我们比较两个独立样本的平均值的情况。
 
 ### 计算
 
@@ -159,7 +159,7 @@ sed = sqrt(se1**2.0 + se2**2.0)
 t_stat = (mean1 - mean2) / sed
 ```
 
-我们还可以计算一些其他值来帮助解释和呈现统计数据。
+我们还可以计算一些其他值来帮助解释和呈现统计量。
 
 测试的自由度数计算为两个样本中观察值的总和减去2。
 
@@ -342,17 +342,17 @@ Reject the null hypothesis that the means are equal.
 
 ## 学生对依赖样本的t检验
 
-我们现在可以看一下计算依赖样本的学生t检验的情况。
+我们现在可以看一下计算依赖样本的T检验的情况。
 
 在这种情况下，我们收集来自种群的样本的一些观察结果，然后应用一些处理，然后从同一样本收集观察结果。
 
 结果是两个相同大小的样本，其中每个样本中的观察结果是相关的或配对的。
 
-依赖样本的t检验称为配对学生t检验。
+依赖样本的t检验称为配对T检验。
 
 ### Calculation
 
-配对学生t检验的计算与独立样本的情况类似。
+配对T检验的计算与独立样本的情况类似。
 
 主要区别在于分母的计算。
 
@@ -517,7 +517,7 @@ print('Statistics=%.3f, p=%.3f' % (stat, p))
 Statistics=-2.372, p=0.020
 ```
 
-我们现在可以测试我们自己的配对学生t检验的实现。
+我们现在可以测试我们自己的配对T检验的实现。
 
 下面列出了完整的示例，包括已开发的函数和函数结果的解释。
 
@@ -614,7 +614,7 @@ Reject the null hypothesis that the means are equal.
 
 ### 用品
 
-*   [维基百科上的学生t检验](https://en.wikipedia.org/wiki/Student%27s_t-test)
+*   [维基百科上的T检验](https://en.wikipedia.org/wiki/Student%27s_t-test)
 *   [韦尔奇在维基百科上的t检验](https://en.wikipedia.org/wiki/Welch%27s_t-test)
 
 ## 摘要
@@ -624,8 +624,8 @@ Reject the null hypothesis that the means are equal.
 具体来说，你学到了：
 
 *   学生的t检验将评论是否可能观察到两个样本，因为样本来自同一人群。
-*   如何从零开始实现学生t检验两个独立样本。
-*   如何从零开始对两个相关样本实现配对学生t检验。
+*   如何从零开始实现T检验两个独立样本。
+*   如何从零开始对两个相关样本实现配对T检验。
 
 你有任何问题吗？
 在下面的评论中提出您的问题，我会尽力回答。

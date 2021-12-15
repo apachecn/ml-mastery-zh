@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/introduction-to-expected-value-variance-and-covariance/](https://machinelearningmastery.com/introduction-to-expected-value-variance-and-covariance/)
 
-基础统计数据是应用机器学习中的有用工具，可以更好地理解您的数据。
+基础统计量是应用机器学习中的有用工具，可以更好地理解您的数据。
 
 它们也是为更先进的线性代数运算和机器学习方法提供基础的工具，例如协方差矩阵和主成分分析。因此，在线性代数符号的背景下强调基本统计是非常重要的。
 

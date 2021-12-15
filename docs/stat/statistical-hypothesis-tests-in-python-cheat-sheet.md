@@ -1,4 +1,4 @@
-# 15 Python中的统计假设检验（备忘单）
+# 15 个Python中的统计假设检验（备忘单）
 
 > 原文： [https://machinelearningmastery.com/statistical-hypothesis-tests-in-python-cheat-sheet/](https://machinelearningmastery.com/statistical-hypothesis-tests-in-python-cheat-sheet/)
 
@@ -23,7 +23,7 @@
 
 在某些情况下，可以校正数据以满足假设，例如通过去除异常值来将近似正态分布校正为正常，或者在样本具有不同方差时使用统计检验中的自由度校正来命名为二例子。
 
-最后，对于给定的关注点可能存在多个测试，例如，常态。我们无法通过统计数据获得清晰的问题答案;相反，我们得到概率答案。因此，我们可以通过不同方式考虑问题来得出同一问题的不同答案。因此，对于我们可能对数据提出的一些问题，需要进行多种不同的测试。
+最后，对于给定的关注点可能存在多个测试，例如，常态。我们无法通过统计量获得清晰的问题答案;相反，我们得到概率答案。因此，我们可以通过不同方式考虑问题来得出同一问题的不同答案。因此，对于我们可能对数据提出的一些问题，需要进行多种不同的测试。
 
 让我们开始吧。
 
@@ -46,7 +46,7 @@ Python备忘单中的统计假设检验
     1.  皮尔逊的相关系数
     2.  斯皮尔曼的秩相关
     3.  肯德尔的秩相关
-    4.  Chi-Squared测试
+    4.  卡方测试
 3.  **参数统计假设检验**
     1.  学生的t检验
     2.  配对学生的t检验
@@ -226,7 +226,7 @@ More Information
 *   [scipy.stats.kendalltau](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.kendalltau.html)
 *   [维基百科上的肯德尔等级相关系数](https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient)
 
-### Chi-Squared测试
+### 卡方测试
 
 测试两个分类变量是相关的还是独立的。
 
@@ -251,7 +251,7 @@ stat, p, dof, expected = chi2_contingency(table)
 More Information
 
 *   [scipy.stats.chi2_contingency](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.chi2_contingency.html)
-*   [维基百科上的Chi-Squared测试](https://en.wikipedia.org/wiki/Chi-squared_test)
+*   [维基百科上的卡方测试](https://en.wikipedia.org/wiki/卡方_test)
 
 ## 3.参数统计假设检验
 
@@ -283,7 +283,7 @@ stat, p = ttest_ind(data1, data2)
 More Information
 
 *   [scipy.stats.ttest_ind](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html)
-*   [维基百科上的学生t检验](https://en.wikipedia.org/wiki/Student%27s_t-test)
+*   [维基百科上的T检验](https://en.wikipedia.org/wiki/Student%27s_t-test)
 
 ### 配对学生的t检验
 
@@ -312,7 +312,7 @@ stat, p = ttest_rel(data1, data2)
 More Information
 
 *   [scipy.stats.ttest_rel](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_rel.html)
-*   [维基百科上的学生t检验](https://en.wikipedia.org/wiki/Student%27s_t-test)
+*   [维基百科上的T检验](https://en.wikipedia.org/wiki/Student%27s_t-test)
 
 ### 方差检验分析（ANOVA）
 

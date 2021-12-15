@@ -1,4 +1,4 @@
-# Python中非参数统计显着性测试简介
+# Python中非参数统计显着性检验简介
 
 > 原文： [https://machinelearningmastery.com/nonparametric-statistical-significance-tests-in-python/](https://machinelearningmastery.com/nonparametric-statistical-significance-tests-in-python/)
 
@@ -22,7 +22,7 @@
 
 ![Introduction to Nonparametric Statistical Significance Tests in Python](img/1a8e46cdba4be3371ae1f4c72c30b6d6.jpg)
 
-Python中的非参数统计显着性测试介绍
+Python中的非参数统计显着性检验介绍
 [Jirka Matousek](https://www.flickr.com/photos/jirka_matousek/9220286695/) 的照片，保留一些权利。
 
 ## 教程概述
@@ -134,7 +134,7 @@ else:
 	print('Different distribution (reject H0)')
 ```
 
-运行该示例计算数据集上的测试并打印统计信息和p值。
+运行该示例计算数据集上的测试并打印统计量和p值。
 
 p值强烈表明样本分布是不同的，如预期的那样。
 
@@ -151,7 +151,7 @@ Different distribution (reject H0)
 
 机器学习中的配对样本的示例可以是在不同数据集上评估的相同算法，或者在完全相同的训练和测试数据上评估的不同算法。
 
-样品不是独立的，因此不能使用Mann-Whitney U检验。相反，使用 [Wilcoxon符号秩检验](https://en.wikipedia.org/wiki/Wilcoxon_signed-rank_test)，也称为Wilcoxon T检验，以Frank Wilcoxon命名。它相当于配对学生T检验，但是对于排序数据而不是具有高斯分布的实值数据。
+样品不是独立的，因此不能使用Mann-Whitney U检验。相反，使用 [Wilcoxon符号秩检验](https://en.wikipedia.org/wiki/Wilcoxon_signed-rank_test)，也称为Wilcoxon T检验，以Frank Wilcoxon命名。它相当于配对T检验，但是对于排序数据而不是具有高斯分布的实值数据。
 
 > Wilcoxon签名等级测试是一种非参数统计程序，用于比较配对或相关的两个样本。与Wilcoxon签名等级测试相对应的参数等名称包括Student's t检验，匹配对的t检验，配对样本的t检验或依赖样本的t检验。
 
@@ -189,7 +189,7 @@ else:
 	print('Different distribution (reject H0)')
 ```
 
-运行该示例计算并打印统计信息并打印结果。
+运行该示例计算并打印统计量并打印结果。
 
 p值被强烈解释，表明样本是从不同的分布中提取的。
 
@@ -200,7 +200,7 @@ Different distribution (reject H0)
 
 ## Kruskal-Wallis H测试
 
-当使用显着性测试时，例如Mann-Whitney U和Wilcoxon符号秩检验，数据样本之间的比较必须成对进行。
+当使用显着性检验时，例如Mann-Whitney U和Wilcoxon符号秩检验，数据样本之间的比较必须成对进行。
 
 如果您有许多数据样本并且您只对两个或更多样本是否具有不同的分布感兴趣，则这可能是低效的。
 
@@ -282,7 +282,7 @@ Different distributions (reject H0)
 
 我们可以使用 [friedmanchisquare（）SciPy函数](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.friedmanchisquare.html)在Python中实现Friedman测试。此函数将要比较的数据样本作为参数，并返回计算的统计量和p值。
 
-可以在与前一节中使用的测试数据集相同的变体上证明该显着性测试。即三个样本，两个具有相同的总体平均值，一个具有略微不同的平均值。虽然样本没有配对，但我们希望测试发现并非所有样本都具有相同的分布。
+可以在与前一节中使用的测试数据集相同的变体上证明该显着性检验。即三个样本，两个具有相同的总体平均值，一个具有略微不同的平均值。虽然样本没有配对，但我们希望测试发现并非所有样本都具有相同的分布。
 
 The complete code example is listed below.
 
@@ -322,7 +322,7 @@ Different distributions (reject H0)
 本节列出了一些扩展您可能希望探索的教程的想法。
 
 *   更新所有示例以对具有相同分布的数据样本进行操作。
-*   根据每个测试的要求和行为，创建一个流程图，用于选择每个统计显着性测试。
+*   根据每个测试的要求和行为，创建一个流程图，用于选择每个统计显着性检验。
 *   考虑3个在机器学习项目中比较数据样本的情况，假设样本的非高斯分布，并建议可以在每种情况下使用的测试类型。
 
 如果你探索任何这些扩展，我很想知道。

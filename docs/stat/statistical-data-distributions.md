@@ -1,4 +1,4 @@
-# 统计数据分布的简要介绍
+# 统计量分布的简要介绍
 
 > 原文： [https://machinelearningmastery.com/statistical-data-distributions/](https://machinelearningmastery.com/statistical-data-distributions/)
 
@@ -12,13 +12,13 @@
 
 *   简要介绍标准分布，以总结观察的关系。
 *   如何计算和绘制高斯分布的概率和密度函数。
-*   学生t和卡方分布与高斯分布有关。
+*   T和卡方分布与高斯分布有关。
 
 让我们开始吧。
 
 ![A Gentle Introduction to Statistical Data Distributions](img/fe0ace7fadb022a0ebf08a5a1b575cd5.jpg)
 
-统计数据分布的简要介绍
+统计量分布的简要介绍
 [Ed Dunens](https://www.flickr.com/photos/blachswan/35766071323/) 的照片，保留一些权利。
 
 ## 教程概述
@@ -28,7 +28,7 @@
 1.  分布
 2.  高斯分布
 3.  学生的t分布
-4.  Chi-Squared Distribution
+4.  卡方 Distribution
 
 ## 分布
 
@@ -152,7 +152,7 @@ pyplot.show()
 
 自由度的数量描述了用于描述人口数量的信息的数量。例如，平均值具有`n`自由度，因为样本中的所有`n`观察结果用于计算总体平均值的估计值。在计算中使用另一个统计量的统计量必须从自由度中减去1，例如在样本方差的计算中使用均值。
 
-学生t分布中的观察结果是根据正态分布中的观察结果计算的，以便描述正态分布中种群平均值的区间。观察结果计算如下：
+T分布中的观察结果是根据正态分布中的观察结果计算的，以便描述正态分布中种群平均值的区间。观察结果计算如下：
 
 ```py
 data = (x - mean(x)) / S / sqrt(n)
@@ -191,7 +191,7 @@ pyplot.show()
 
 ![Line Plot of the Student's t-Distribution Probability Density Function](img/f07db0b32c121f13196ed56de504302b.jpg)
 
-学生t分布概率密度函数的线图
+T分布概率密度函数的线图
 
 _t.cdf（）_函数可用于创建t分布的累积密度函数。以下示例在与上述相同的范围内创建CDF。
 
@@ -214,9 +214,9 @@ pyplot.show()
 
 ![Line Plot of the Student's t-distribution Cumulative Density Function](img/4c98cae13b3fe153a163ff9e18bb119d.jpg)
 
-学生t分布累积密度函数的线图
+T分布累积密度函数的线图
 
-## Chi-Squared Distribution
+## 卡方 Distribution
 
 卡方分布表示为小写希腊字母chi（X）上升到第二幂（X ^ 2）。
 
@@ -236,10 +236,10 @@ chi = sum x[i]^2 for i=1 to k.
 
 同样，与学生的t分布一样，数据不符合卡方分布;相反，在计算高斯数据样本的统计方法时，从该分布中得出观察结果。
 
-SciPy提供 [stats.chi2模块](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.chi2.html)，用于计算卡方分布的统计数据。 chi2.pdf（）函数可用于计算0到50之间具有20个自由度的样本空间的卡方分布。回想一下，平方和值必须为正，因此需要正样本空间。
+SciPy提供 [stats.chi2模块](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.chi2.html)，用于计算卡方分布的统计量。 chi2.pdf（）函数可用于计算0到50之间具有20个自由度的样本空间的卡方分布。回想一下，平方和值必须为正，因此需要正样本空间。
 
 ```py
-# plot the chi-squared pdf
+# plot the 卡方 pdf
 from numpy import arange
 from matplotlib import pyplot
 from scipy.stats import chi2
@@ -259,14 +259,14 @@ pyplot.show()
 
 尽管分布具有钟形形状，但分布不对称。
 
-![Line Plot of the Chi-Squared Probability Density Function](img/2b99f6c2ce11e54e6ccc91befaddc6b4.jpg)
+![Line Plot of the 卡方 Probability Density Function](img/2b99f6c2ce11e54e6ccc91befaddc6b4.jpg)
 
 Chi-Sared概率密度函数的线图
 
 chi2.cdf（）函数可用于计算同一样本空间的累积密度函数。
 
 ```py
-# plot the chi-squared cdf
+# plot the 卡方 cdf
 from numpy import arange
 from matplotlib import pyplot
 from scipy.stats import chi2
@@ -284,7 +284,7 @@ pyplot.show()
 
 该分布有助于看到20左右的卡方值的可能性，分布右侧的肥尾可能会在情节结束后很长时间内持续。
 
-![Line Plot of the Chi-squared distribution Cumulative Density Function](img/2bf43319992e979ebd7dffefecfbe81e.jpg)
+![Line Plot of the 卡方 distribution Cumulative Density Function](img/2bf43319992e979ebd7dffefecfbe81e.jpg)
 
 卡方分布累积密度函数的线图
 
@@ -308,7 +308,7 @@ pyplot.show()
 
 ### API
 
-*   [统计数据（scipy.stats）](https://docs.scipy.org/doc/scipy/reference/tutorial/stats.html)
+*   [统计量（scipy.stats）](https://docs.scipy.org/doc/scipy/reference/tutorial/stats.html)
 *   [scipy.stats.norm API](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html)
 *   [scipy.stats.t API](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.t.html)
 *   [scipy.stats.chi2 API](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.chi2.html)
@@ -320,7 +320,7 @@ pyplot.show()
 *   [维基百科上的概率质量函数](https://en.wikipedia.org/wiki/Probability_mass_function)
 *   [维基百科上的正态分布](https://en.wikipedia.org/wiki/Normal_distribution)
 *   [学生在维基百科上的t分布](https://en.wikipedia.org/wiki/Student%27s_t-distribution)
-*   [维基百科上的卡方分布](https://en.wikipedia.org/wiki/Chi-squared_distribution)
+*   [维基百科上的卡方分布](https://en.wikipedia.org/wiki/卡方_distribution)
 
 ## 摘要
 
@@ -330,7 +330,7 @@ pyplot.show()
 
 *   简要介绍标准分布，以总结观察的关系。
 *   如何计算和绘制高斯分布的概率和密度函数。
-    学生t和卡方分布与高斯分布有关。
+    T和卡方分布与高斯分布有关。
 
 你有任何问题吗？
 在下面的评论中提出您的问题，我会尽力回答。

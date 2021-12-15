@@ -80,7 +80,7 @@ print(data.shape)
 
 如果您的时间序列数据随着时间的推移是一致的并且没有缺失值，我们可以删除时间列。
 
-如果没有，您可能希望查看插入缺失值，将数据重新采样到新的时间刻度，或者开发可以处理缺失值的模型。看帖子如：
+如果没有，您可能希望查看插入缺失值，将数据重采样到新的时间刻度，或者开发可以处理缺失值的模型。看帖子如：
 
 *   [如何使用 Python 处理序列预测问题中的缺失时间步长](https://machinelearningmastery.com/handle-missing-timesteps-sequence-prediction-problems-python/)
 *   [如何使用 Python 处理缺失数据](https://machinelearningmastery.com/handle-missing-data-python/)

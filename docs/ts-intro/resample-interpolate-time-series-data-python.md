@@ -1,4 +1,4 @@
-# 如何使用 Python 重新采样和插值您的时间序列数据
+# 如何使用 Python 重采样和插值您的时间序列数据
 
 > 原文： [https://machinelearningmastery.com/resample-interpolate-time-series-data-python/](https://machinelearningmastery.com/resample-interpolate-time-series-data-python/)
 
@@ -10,7 +10,7 @@
 
 完成本教程后，您将了解：
 
-*   关于时间序列重新采样，两种类型的重采样，以及您需要使用它们的两个主要原因。
+*   关于时间序列重采样，两种类型的重采样，以及您需要使用它们的两个主要原因。
 *   如何使用 Pandas 将时间序列数据上采样到更高的频率并插入新的观测值。
 *   如何使用 Pandas 将时间序列数据下采样到较低频率并总结较高频率的观测值。
 
@@ -25,7 +25,7 @@
 
 ## 重采样
 
-重新采样涉及更改时间序列观察的频率。
+重采样涉及更改时间序列观察的频率。
 
 两种类型的重采样是：
 
@@ -36,9 +36,9 @@
 
 在上采样的情况下，可能需要小心确定如何使用插值计算细粒度观测值。在下采样的情况下，在选择用于计算新聚合值的摘要统计时可能需要小心。
 
-您可能有兴趣重新采样时间序列数据的原因可能有两个：
+您可能有兴趣重采样时间序列数据的原因可能有两个：
 
-1.  **问题成帧**：如果您的数据与您想要做出预测的频率相同，则可能需要重新采样。
+1.  **问题成帧**：如果您的数据与您想要做出预测的频率相同，则可能需要重采样。
 2.  **特征工程**：重新取样还可用于为监督学习模型提供额外的结构或洞察学习问题。
 
 这两种情况之间存在很多重叠。
@@ -124,7 +124,7 @@ Name: Sales of shampoo over a three year period, dtype: float64
 
 Pandas 库在 _ 系列 _ 和`DataFrame`对象上提供了一个名为`resample()`的函数。这可用于在下采样时对记录进行分组，并在进行上采样时为新观察创建空间。
 
-我们可以使用此功能通过调用重新采样并指定日历日频率或“D”的首选频率，将每月数据集转换为每日数据集。
+我们可以使用此功能通过调用重采样并指定日历日频率或“D”的首选频率，将每月数据集转换为每日数据集。
 
 Pandas 很聪明，您可以轻松地将频率指定为“1D”甚至是特定于域的内容，例如“5D”。请参阅本教程末尾的更多阅读部分，以获取可以使用的别名列表。
 
@@ -309,7 +309,7 @@ Month
 
 通常，当您缺少观察值时，插值是一种有用的工具。
 
-接下来，我们将考虑在另一个方向上重新采样并降低观测频率。
+接下来，我们将考虑在另一个方向上重采样并降低观测频率。
 
 ## 降低洗发水销售量
 
@@ -393,12 +393,12 @@ pyplot.show()
 
 *   [pandas.Series.resample API 文档](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.resample.html)了解有关如何配置 resample（）函数的更多信息。
 *   [Pandas 时间序列重采样示例](http://pandas.pydata.org/pandas-docs/stable/timeseries.html#resampling)，用于更一般的代码示例。
-*   [Pandas Offset 在重新采样](http://pandas.pydata.org/pandas-docs/stable/timeseries.html#offset-aliases)时使用的所有内置方法用于更改数据粒度的别名。
+*   [Pandas Offset 在重采样](http://pandas.pydata.org/pandas-docs/stable/timeseries.html#offset-aliases)时使用的所有内置方法用于更改数据粒度的别名。
 *   [pandas.Series.interpolate API 文档](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.interpolate.html)了解有关如何配置 interpolate（）函数的更多信息。
 
 ## 摘要
 
-在本教程中，您了解了如何使用 Python 中的 Pandas 重新采样时间序列数据。
+在本教程中，您了解了如何使用 Python 中的 Pandas 重采样时间序列数据。
 
 具体来说，你学到了：
 
@@ -406,5 +406,5 @@ pyplot.show()
 *   如何使用 Pandas 对时间序列数据进行上采样以及如何使用不同的插值方案。
 *   如何使用 Pandas 对时间序列数据进行下采样以及如何汇总分组数据。
 
-您对重新采样或插值时间序列数据或本教程有任何疑问吗？
+您对重采样或插值时间序列数据或本教程有任何疑问吗？
 在评论中提出您的问题，我会尽力回答。

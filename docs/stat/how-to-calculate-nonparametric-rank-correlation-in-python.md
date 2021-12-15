@@ -1,4 +1,4 @@
-# 如何计算Python中的非参数秩相关性
+# 如何在Python中计算非参数秩相关性
 
 > 原文： [https://machinelearningmastery.com/how-to-calculate-nonparametric-rank-correlation-in-python/](https://machinelearningmastery.com/how-to-calculate-nonparametric-rank-correlation-in-python/)
 

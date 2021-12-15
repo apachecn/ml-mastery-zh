@@ -457,7 +457,7 @@ print(sequence)
 
 *   [在机器学习中拥抱随机性](https://machinelearningmastery.com/randomness-in-machine-learning/)
 *   [random - 生成伪随机数](https://docs.python.org/3/library/random.html)
-*   [NumPy](https://docs.scipy.org/doc/numpy/reference/routines.random.html) 中的随机抽样
+*   [NumPy](https://docs.scipy.org/doc/numpy/reference/routines.random.html) 中的随机采样
 *   [维基百科上的伪随机数发生器](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
 
 ## 摘要

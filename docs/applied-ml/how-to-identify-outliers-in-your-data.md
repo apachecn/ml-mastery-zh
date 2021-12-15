@@ -85,7 +85,7 @@ Aggarwal评论说，异常模型的可解释性至关重要。对于特定数据
 有很多网页讨论异常值检测，但我建议阅读一本关于这个主题的好书，更具权威性。即使查看机器学习和数据挖掘的入门书籍也不会对您有用。有关统计学家对异常值的经典处理，请查看：
 
 *   [Rousseeuw和Leroy于2003年发布的鲁棒回归和异常检测](http://www.amazon.com/dp/0471488550?tag=inspiredalgor-20)（会员链接）
-*   [Barnett和Lewis于1994年出版的统计数据](http://www.amazon.com/dp/0471930946?tag=inspiredalgor-20)（会员链接）中的异常值
+*   [Barnett和Lewis于1994年出版的统计量](http://www.amazon.com/dp/0471930946?tag=inspiredalgor-20)（会员链接）中的异常值
 *   [异常值的识别](http://www.amazon.com/dp/041221900X?tag=inspiredalgor-20)（会员链接）霍金斯出版于1980年的专着
 
 有关数据挖掘社区对异常值的现代处理，请参阅：

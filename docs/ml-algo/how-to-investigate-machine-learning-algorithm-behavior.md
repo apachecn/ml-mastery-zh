@@ -21,7 +21,7 @@
 
 在研究机器学习算法时，您的目标是找到能够在问题和问题类别中推广的良好结果的行为。
 
-您通过对算法行为进行系统研究来研究机器学习算法。这是通过设计和执行受控实验来完成的。
+您通过对算法行为进行系统研究来研究机器学习算法。这是通过设计和执行对照试验来完成的。
 
 完成实验后，您可以解释并显示结果。结果可让您了解算法更改之间的因果关系，行为以及您可以实现的结果。
 
@@ -83,7 +83,7 @@
 
 如果算法是随机的，您可能需要多次重复实验运行并采用均值和标准差。
 
-如果您正在寻找实验运行（例如不同参数）之间的结果差异，您可能需要使用统计工具来指示差异是否具有统计显着性（例如学生t检验）。
+如果您正在寻找实验运行（例如不同参数）之间的结果差异，您可能需要使用统计工具来指示差异是否具有统计显着性（例如T检验）。
 
 像 [R](http://machinelearningmastery.com/what-is-r/ "What is R") 和 [scikit-learn](http://machinelearningmastery.com/a-gentle-introduction-to-scikit-learn-a-python-machine-learning-library/ "A Gentle Introduction to Scikit-Learn: A Python Machine Learning Library") / SciPy这样的工具有完成这些类型实验的工具，但您需要将它们组合在一起并编写实验脚本。其他工具如 [Weka](http://machinelearningmastery.com/what-is-the-weka-machine-learning-workbench/ "What is the Weka Machine Learning Workbench") 将工具内置到图形用户界面中（请参阅此[教程，了解如何在Weka](http://machinelearningmastery.com/design-and-run-your-first-experiment-in-weka/ "Design and Run your First Experiment in Weka") 中运行您的第一个实验）。您使用的工具比实验设计的问题和严谨性更重要。
 
@@ -117,7 +117,7 @@
 
 ## 行动步骤
 
-在这篇文章中，您发现了通过受控实验研究机器学习算法行为的重要性。您发现了一个简单的5步过程，您可以使用它设计并在机器学习算法上执行第一个实验。
+在这篇文章中，您发现了通过对照试验研究机器学习算法行为的重要性。您发现了一个简单的5步过程，您可以使用它设计并在机器学习算法上执行第一个实验。
 
 采取行动。使用您在本博文中学到的过程，完成第一次机器学习实验。一旦你完成了一个，即使是非常小的一个，你将拥有完成第二个甚至更多的信心，工具和能力。
 

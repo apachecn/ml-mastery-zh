@@ -209,7 +209,7 @@ def clean_doc(doc):
 	return tokens
 ```
 
-我们可以在加载的文档上运行此清理操作，并打印出一些标记和统计信息作为完整性检查。
+我们可以在加载的文档上运行此清理操作，并打印出一些标记和统计量作为完整性检查。
 
 ```py
 # clean document
@@ -225,7 +225,7 @@ print('Unique Tokens: %d' % len(set(tokens)))
 ['book', 'i', 'i', 'went', 'down', 'yesterday', 'to', 'the', 'piraeus', 'with', 'glaucon', 'the', 'son', 'of', 'ariston', 'that', 'i', 'might', 'offer', 'up', 'my', 'prayers', 'to', 'the', 'goddess', 'bendis', 'the', 'thracian', 'artemis', 'and', 'also', 'because', 'i', 'wanted', 'to', 'see', 'in', 'what', 'manner', 'they', 'would', 'celebrate', 'the', 'festival', 'which', 'was', 'a', 'new', 'thing', 'i', 'was', 'delighted', 'with', 'the', 'procession', 'of', 'the', 'inhabitants', 'but', 'that', 'of', 'the', 'thracians', 'was', 'equally', 'if', 'not', 'more', 'beautiful', 'when', 'we', 'had', 'finished', 'our', 'prayers', 'and', 'viewed', 'the', 'spectacle', 'we', 'turned', 'in', 'the', 'direction', 'of', 'the', 'city', 'and', 'at', 'that', 'instant', 'polemarchus', 'the', 'son', 'of', 'cephalus', 'chanced', 'to', 'catch', 'sight', 'of', 'us', 'from', 'a', 'distance', 'as', 'we', 'were', 'starting', 'on', 'our', 'way', 'home', 'and', 'told', 'his', 'servant', 'to', 'run', 'and', 'bid', 'us', 'wait', 'for', 'him', 'the', 'servant', 'took', 'hold', 'of', 'me', 'by', 'the', 'cloak', 'behind', 'and', 'said', 'polemarchus', 'desires', 'you', 'to', 'wait', 'i', 'turned', 'round', 'and', 'asked', 'him', 'where', 'his', 'master', 'was', 'there', 'he', 'is', 'said', 'the', 'youth', 'coming', 'after', 'you', 'if', 'you', 'will', 'only', 'wait', 'certainly', 'we', 'will', 'said', 'glaucon', 'and', 'in', 'a', 'few', 'minutes', 'polemarchus', 'appeared', 'and', 'with', 'him', 'adeimantus', 'glaucons', 'brother', 'niceratus', 'the', 'son', 'of', 'nicias', 'and', 'several', 'others', 'who', 'had', 'been', 'at', 'the', 'procession', 'polemarchus', 'said']
 ```
 
-我们还获得了有关干净文档的一些统计信息。
+我们还获得了有关干净文档的一些统计量。
 
 我们可以看到，干净的文字中只有不到 120,000 个单词，而且词汇量不到 7,500 个单词。这个很小，适合这些数据的模型应该可以在适度的硬件上进行管理。
 
@@ -264,7 +264,7 @@ print('Total Sequences: %d' % len(sequences))
 
 运行此片段会创建一长串的行。
 
-在列表上打印统计数据，我们可以看到我们将有 118,633 种训练模式来适应我们的模型。
+在列表上打印统计量，我们可以看到我们将有 118,633 种训练模式来适应我们的模型。
 
 ```py
 Total Sequences: 118633

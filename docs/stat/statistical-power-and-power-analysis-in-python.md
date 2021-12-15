@@ -1,4 +1,4 @@
-# Python中统计功效和功耗分析的简要介绍
+# Python中统计功效和功效分析的简要介绍
 
 > 原文： [https://machinelearningmastery.com/statistical-power-and-power-analysis-in-python/](https://machinelearningmastery.com/statistical-power-and-power-analysis-in-python/)
 
@@ -34,7 +34,7 @@ Python中统计功效和功率分析的简要介绍
 
 统计假设检验对结果做出假设，称为零假设。
 
-例如，Pearson相关性检验的零假设是两个变量之间没有关系。学生t检验的零假设是两个群体的均值之间没有差异。
+例如，Pearson相关性检验的零假设是两个变量之间没有关系。T检验的零假设是两个群体的均值之间没有差异。
 
 测试通常使用p值来解释，p值是观察结果的概率，假设零假设为真，而不是相反，正如误解的情况一样。
 
@@ -210,9 +210,9 @@ pyplot.show()
 
 ![Power Curves for Student's t Test](img/069ba5aaff77fc71bdc3dc494cb742fc.jpg)
 
-学生t检验的功率曲线
+T检验的功率曲线
 
-有用的是，statsmodels具有[类来执行功率分析](http://www.statsmodels.org/dev/stats.html#power-and-sample-size-calculations)以及其他统计测试，例如F检验，Z检验和Chi-Squared检验。
+有用的是，statsmodels具有[类来执行功率分析](http://www.statsmodels.org/dev/stats.html#power-and-sample-size-calculations)以及其他统计测试，例如F检验，Z检验和卡方检验。
 
 ## 扩展
 
@@ -251,7 +251,7 @@ pyplot.show()
 
 ### 用品
 
-*   [维基百科上的统计数据](https://en.wikipedia.org/wiki/Statistical_power)
+*   [维基百科上的统计量](https://en.wikipedia.org/wiki/Statistical_power)
 *   [维基百科上的统计假设检验](https://en.wikipedia.org/wiki/Statistical_hypothesis_testing)
 *   [维基百科的统计意义](https://en.wikipedia.org/wiki/Statistical_significance)
 *   [维基百科上的样本量确定](https://en.wikipedia.org/wiki/Sample_size_determination)

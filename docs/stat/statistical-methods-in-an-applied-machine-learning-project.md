@@ -1,4 +1,4 @@
-# 10如何在机器学习项目中使用统计方法的示例
+# 10个在机器学习项目中使用统计方法的示例
 
 > 原文： [https://machinelearningmastery.com/statistical-methods-in-an-applied-machine-learning-project/](https://machinelearningmastery.com/statistical-methods-in-an-applied-machine-learning-project/)
 

@@ -1,10 +1,10 @@
-# 如何在Python中使用参数统计显着性测试
+# 如何在Python中计算参数统计显着性检验
 
 > 原文： [https://machinelearningmastery.com/parametric-statistical-significance-tests-in-python/](https://machinelearningmastery.com/parametric-statistical-significance-tests-in-python/)
 
 参数统计方法通常意味着假设数据样本具有高斯分布的那些方法。
 
-在应用机器学习中，我们需要比较数据样本，特别是样本的平均值。也许要看一种技术在一个或多个数据集上的表现是否优于另一种技术。为了量化这个问题并解释结果，我们可以使用参数假设检验方法，如学生t检验和方差分析。
+在应用机器学习中，我们需要比较数据样本，特别是样本的平均值。也许要看一种技术在一个或多个数据集上的表现是否优于另一种技术。为了量化这个问题并解释结果，我们可以使用参数假设检验方法，如T检验和方差分析。
 
 在本教程中，您将发现参数统计显着性检验，用于量化两个或多个数据样本均值之间的差异。
 
@@ -28,7 +28,7 @@ Python中使用参数统计意义测试介绍
 1.  参数统计显着性检验
 2.  测试数据
 3.  学生的t-测试
-4.  配对学生t检验
+4.  配对T检验
 5.  方差检验分析
 6.  重复测量方差分析测试
 
@@ -49,7 +49,7 @@ Python中使用参数统计意义测试介绍
 
 ## 测试数据
 
-在我们查看特定的参数显着性测试之前，让我们首先定义一个测试数据集，我们可以用它来演示每个测试。
+在我们查看特定的参数显着性检验之前，让我们首先定义一个测试数据集，我们可以用它来演示每个测试。
 
 我们将生成从不同分布中抽取的两个样本。每个样本将从高斯分布中抽取。
 
@@ -84,7 +84,7 @@ data2: mean=51.764 stdv=4.660
 
 ## 学生的t-测试
 
-[学生t检验](https://en.wikipedia.org/wiki/Student%27s_t-test)是一个统计假设检验，两个独立的数据样本已知具有高斯分布，具有相同的高斯分布，以William Gosset命名，使用化名“`Student`]“。
+[T检验](https://en.wikipedia.org/wiki/Student%27s_t-test)是一个统计假设检验，两个独立的数据样本已知具有高斯分布，具有相同的高斯分布，以William Gosset命名，使用化名“`Student`]“。
 
 > 最常用的t检验之一是独立样本t检验。当您想要比较给定变量上两个独立样本的均值时，可以使用此测试。
 
@@ -129,7 +129,7 @@ Statistics=-2.262, p=0.025
 Different distributions (reject H0)
 ```
 
-## 配对学生t检验
+## 配对T检验
 
 我们可能希望比较以某种方式相关的两个数据样本之间的平均值。
 
@@ -229,7 +229,7 @@ else:
 	print('Different distributions (reject H0)')
 ```
 
-运行该示例计算并打印测试统计信息和p值。
+运行该示例计算并打印测试统计量和p值。
 
 对p值的解释正确地拒绝了表示一个或多个样本均值不同的零假设。
 
@@ -264,7 +264,7 @@ Different distributions (reject H0)
 本节列出了一些扩展您可能希望探索的教程的想法。
 
 *   更新所有示例以对具有相同分布的数据样本进行操作。
-*   根据每个测试的要求和行为，创建一个流程图，用于选择三个统计显着性测试中的每一个。
+*   根据每个测试的要求和行为，创建一个流程图，用于选择三个统计显着性检验中的每一个。
 *   考虑3个在机器学习项目中比较数据样本的情况，假设样本的非高斯分布，并建议可以在每种情况下使用的测试类型。
 
 如果你探索任何这些扩展，我很想知道。
@@ -288,7 +288,7 @@ Different distributions (reject H0)
 ### 用品
 
 *   [维基百科的统计意义](https://en.wikipedia.org/wiki/Statistical_significance)
-*   [维基百科上的学生t检验](https://en.wikipedia.org/wiki/Student%27s_t-test)
+*   [维基百科上的T检验](https://en.wikipedia.org/wiki/Student%27s_t-test)
 *   [维基百科上的配对差异测试](https://en.wikipedia.org/wiki/Paired_difference_test)
 *   [维基百科](https://en.wikipedia.org/wiki/Analysis_of_variance)的方差分析
 *   [在维基百科](https://en.wikipedia.org/wiki/Repeated_measures_design)上重复测量设计

@@ -80,7 +80,7 @@ _模型的误差在95％置信水平下为x +/- y。_
 
 > 估算为分析和解释结果提供了更具信息性的方法。 [...]知道和思考效应的幅度和精确度对于定量科学比考虑观察至少那个极端数据的可能性更有用，假设绝对没有效果。
 
-- [估算统计数据应取代2016年的显着性检验](https://www.nature.com/articles/nmeth.3729)。
+- [估算统计量应取代2016年的显着性检验](https://www.nature.com/articles/nmeth.3729)。
 
 在实践中，使用统计显着性检验可能优选置信区间。
 
@@ -244,7 +244,7 @@ for _ in range(100):
 	scores.append(statistic)
 ```
 
-一旦我们获得了bootstrap统计数据的样本，我们就可以计算出集中趋势。我们将使用中位数或第50百分位，因为我们不假设任何分布。
+一旦我们获得了bootstrap统计量的样本，我们就可以计算出集中趋势。我们将使用中位数或第50百分位，因为我们不假设任何分布。
 
 ```py
 print('median=%.3f' % median(scores))
@@ -257,7 +257,7 @@ print('median=%.3f' % median(scores))
 alpha = 5.0
 ```
 
-首先，基于所选择的置信区间计算期望的较低百分位数。然后从引导统计数据样本中检索此百分位数的观察结果。
+首先，基于所选择的置信区间计算期望的较低百分位数。然后从引导统计量样本中检索此百分位数的观察结果。
 
 ```py
 # calculate lower percentile (e.g. 2.5)
@@ -313,7 +313,7 @@ upper = min(1.0, percentile(scores, upper_p))
 print('%.1fth percentile = %.3f' % (upper_p, upper))
 ```
 
-运行该示例总结了bootstrap样本统计信息的分布，包括2.5th，50th（中位数）和97.5th百分位数。
+运行该示例总结了bootstrap样本统计量的分布，包括2.5th，50th（中位数）和97.5th百分位数。
 
 ```py
 50th percentile (median) = 0.750
@@ -358,7 +358,7 @@ _范围0.741至0.757的可能性为95％，涵盖了真实的统计平均值。_
 
 ### 文件
 
-*   [估算统计数据应取代2016年的显着性检验](https://www.nature.com/articles/nmeth.3729)。
+*   [估算统计量应取代2016年的显着性检验](https://www.nature.com/articles/nmeth.3729)。
 *   [Bootstrap置信区间，统计科学](https://projecteuclid.org/download/pdf_1/euclid.ss/1032280214)，1996。
 
 ### API

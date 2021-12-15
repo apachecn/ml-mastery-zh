@@ -1,8 +1,8 @@
-# 使用 Python 和 scikit-learn 抽样检查回归机器学习算法
+# 使用 Python 和 scikit-learn 采样检查回归机器学习算法
 
 > 原文： [https://machinelearningmastery.com/spot-check-regression-machine-learning-algorithms-python-scikit-learn/](https://machinelearningmastery.com/spot-check-regression-machine-learning-algorithms-python-scikit-learn/)
 
-抽样检查是一种发现哪些算法在您的机器学习问题上表现良好的方法。
+采样检查是一种发现哪些算法在您的机器学习问题上表现良好的方法。
 
 您无法预先知道哪种算法最适合您的问题。你必须尝试一些方法，并将注意力集中在那些证明自己最有希望的方法上。
 

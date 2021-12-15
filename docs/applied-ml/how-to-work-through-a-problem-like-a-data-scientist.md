@@ -79,7 +79,7 @@ OSEMN是与“负鼠”或“令人敬畏”押韵的缩写，代表获取，磨
 
 您尝试的算法以及您对可以为问题构建的可能模型的假设空间的偏差和减少。做出明智的选择。
 
-有关更多信息，请查看[如何评估模型](http://machinelearningmastery.com/how-to-evaluate-machine-learning-algorithms/ "How to Evaluate Machine Learning Algorithms")和[如何进行抽样检查算法](http://machinelearningmastery.com/why-you-should-be-spot-checking-algorithms-on-your-machine-learning-problems/ "Why you should be Spot-Checking Algorithms on your Machine Learning Problems")。
+有关更多信息，请查看[如何评估模型](http://machinelearningmastery.com/how-to-evaluate-machine-learning-algorithms/ "How to Evaluate Machine Learning Algorithms")和[如何进行采样检查算法](http://machinelearningmastery.com/why-you-should-be-spot-checking-algorithms-on-your-machine-learning-problems/ "Why you should be Spot-Checking Algorithms on your Machine Learning Problems")。
 
 ## 5.解释结果
 

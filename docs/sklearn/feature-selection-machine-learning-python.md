@@ -51,7 +51,7 @@ scikit-learn 库提供 [SelectKBest](http://scikit-learn.org/stable/modules/gene
 以下示例使用卡方检（chi ^ 2）统计检验非负特征来从 Pima Indians 糖尿病数据集中选择 4 个最佳特征。
 
 ```
-# Feature Extraction with Univariate Statistical Tests (Chi-squared for classification)
+# Feature Extraction with Univariate Statistical Tests (卡方 for classification)
 import pandas
 import numpy
 from sklearn.feature_selection import SelectKBest

@@ -1,18 +1,18 @@
-# 如何在 Python 中开发可重复使用的抽样检查算法框架
+# 如何在 Python 中开发可重复使用的采样检查算法框架
 
 > 译文： [https://machinelearningmastery.com/spot-check-machine-learning-algorithms-in-python/](https://machinelearningmastery.com/spot-check-machine-learning-algorithms-in-python/)
 
-[抽样检查算法](https://machinelearningmastery.com/spot-check-classification-machine-learning-algorithms-python-scikit-learn/)是一种应用机器学习技术，旨在快速客观地为新的预测性建模问题提供第一组结果。
+[采样检查算法](https://machinelearningmastery.com/spot-check-classification-machine-learning-algorithms-python-scikit-learn/)是一种应用机器学习技术，旨在快速客观地为新的预测性建模问题提供第一组结果。
 
 与寻找算法的最佳算法或最佳配置的网格搜索和其他类型的算法调整不同，点检查旨在快速评估各种算法并提供粗略的第一切结果。如果问题或问题表示确实是可预测的，则可以使用该第一剪切结果，如果是，则可能值得进一步研究该问题的算法类型。
 
 现场检查是一种帮助克服应用机器学习的“[难题](https://machinelearningmastery.com/applied-machine-learning-is-hard/)”的方法，并鼓励您清楚地考虑在任何机器学习项目中执行的[高阶搜索问题](https://machinelearningmastery.com/applied-machine-learning-as-a-search-problem/) 。
 
-在本教程中，您将发现现场检查算法对新预测性建模问题的有用性，以及如何在 python 中为分类和回归问题开发用于抽样检查算法的标准框架。
+在本教程中，您将发现现场检查算法对新预测性建模问题的有用性，以及如何在 python 中为分类和回归问题开发用于采样检查算法的标准框架。
 
 完成本教程后，您将了解：
 
-*   抽样检查提供了一种快速发现在预测性建模问题上表现良好的算法类型的方法。
+*   采样检查提供了一种快速发现在预测性建模问题上表现良好的算法类型的方法。
 *   如何开发用于加载数据，定义模型，评估模型和总结结果的通用框架。
 *   如何应用框架进行分类和回归问题。
 
@@ -20,20 +20,20 @@
 
 ![How to Develop a Reusable Framework for Spot-Check Algorithms in Python](img/b88f644a7be44ac2949fc3ada31d36be.jpg)
 
-如何在 Python 中开发可重复使用的抽样检查算法框架
+如何在 Python 中开发可重复使用的采样检查算法框架
 [Jeff Turner](https://www.flickr.com/photos/respres/16216077206/) 的照片，保留一些权利。
 
 ## 教程概述
 
 本教程分为五个部分;他们是：
 
-1.  抽样检查算法
+1.  采样检查算法
 2.  Python 中的 Spot-Checking 框架
 3.  现场检查分类
 4.  现场检查回归
 5.  框架扩展
 
-## 1.抽样检查算法
+## 1.采样检查算法
 
 我们事先无法知道哪些算法在给定的预测性建模问题上表现良好。
 
@@ -47,19 +47,19 @@
 *   **它是客观的**，允许您发现什么可能适用于问题，而不是使用您上次使用的。
 *   **得到结果**;您将实际拟合模型，做出预测并了解您的问题是否可以预测以及基线技能可能是什么样子。
 
-抽样检查可能需要您使用数据集的一小部分样本才能快速转换结果。
+采样检查可能需要您使用数据集的一小部分样本才能快速转换结果。
 
 最后，现场检查的结果是一个起点。一个起点。他们建议将注意力集中在问题上，而不是最佳算法。该过程旨在让您摆脱典型的思考和分析，转而关注结果。
 
 您可以在帖子中了解有关抽查的更多信息：
 
-*   [为什么你应该在机器学习问题上进行抽样检查算法](https://machinelearningmastery.com/why-you-should-be-spot-checking-algorithms-on-your-machine-learning-problems/)
+*   [为什么你应该在机器学习问题上进行采样检查算法](https://machinelearningmastery.com/why-you-should-be-spot-checking-algorithms-on-your-machine-learning-problems/)
 
-现在我们知道了什么是现场检查，让我们看看如何在 Python 中系统地执行抽样检查。
+现在我们知道了什么是现场检查，让我们看看如何在 Python 中系统地执行采样检查。
 
 ## 2\. Python 中的 Spot-Checking 框架
 
-在本节中，我们将构建一个脚本框架，该框架可用于在分类或回归问题上对机器学习算法进行抽样检查。
+在本节中，我们将构建一个脚本框架，该框架可用于在分类或回归问题上对机器学习算法进行采样检查。
 
 我们需要开发框架有四个部分;他们是：
 
@@ -122,7 +122,7 @@ def define_models(models=dict()):
 
 scikit-learn 库提供了在评估期间管道模型的能力。这允许在用于拟合模型之前变换数据，并且这以正确的方式完成，使得变换在训练数据上准备并应用于测试数据。
 
-我们可以定义一个函数，在评估之前准备给定的模型，以允许在抽样检查过程中使用特定的变换。它们将以一揽子方式对所有模型进行。这对于执行标准化，规范化和特征选择等操作非常有用。
+我们可以定义一个函数，在评估之前准备给定的模型，以允许在采样检查过程中使用特定的变换。它们将以一揽子方式对所有模型进行。这对于执行标准化，规范化和特征选择等操作非常有用。
 
 我们将定义一个名为`make_pipeline()`的函数，它接受一个已定义的模型并返回一个管道。下面是准备管道的示例，该管道将首先标准化输入数据，然后在拟合模型之前对其进行标准化。
 
@@ -194,7 +194,7 @@ def robust_evaluate_model(X, y, model, folds, metric):
 
 跳过任何无结果，不会将其添加到结果字典中。
 
-重要的是，我们提供了一些详细的输出，总结了每个模型评估后的平均值和标准差。如果数据集上的抽样检查过程需要几分钟到几小时，这将非常有用。
+重要的是，我们提供了一些详细的输出，总结了每个模型评估后的平均值和标准差。如果数据集上的采样检查过程需要几分钟到几小时，这将非常有用。
 
 ```
 # evaluate a dict of models {name:object}, returns {name:score}
@@ -267,7 +267,7 @@ def summarize_results(results, maximize=True, top_n=10):
 	pyplot.savefig('spotcheck.png')
 ```
 
-现在我们已经专门设计了一个用于 Python 中的抽样算法的框架，让我们看一下如何将它应用于分类问题。
+现在我们已经专门设计了一个用于 Python 中的采样算法的框架，让我们看一下如何将它应用于分类问题。
 
 ## 3.现场检查分类
 
@@ -532,7 +532,7 @@ Rank=10, Name=ridge-0.5, Score=0.848 (+/- 0.038)
 
 ![Boxplot of top 10 Spot-Checking Algorithms on a Classification Problem](img/ad46c9453929287e7a7529928eb472d4.jpg)
 
-分类问题前 10 个抽样检验算法的箱线图
+分类问题前 10 个采样检验算法的箱线图
 
 如果这是一个真正的分类问题，我会跟进进一步的抽查，例如：
 
@@ -849,13 +849,13 @@ Rank=10, Name=en-0.0-0.3, Score=-0.011 (+/- 0.001)
 
 ## 5.框架扩展
 
-在本节中，我们将探讨抽样检查框架的一些方便扩展。
+在本节中，我们将探讨采样检查框架的一些方便扩展。
 
 ### 课程网格搜索梯度提升
 
 我发现自己使用 XGBoost 和梯度提升很多直接分类和回归问题。
 
-因此，我喜欢在抽样检查时使用方法的标准配置参数的课程网格。
+因此，我喜欢在采样检查时使用方法的标准配置参数的课程网格。
 
 下面是一个可以直接在现场检查框架中使用的功能。
 
@@ -1111,7 +1111,7 @@ Rank=10, Name=xgb-[0.01, 50, 0.7, 3], Score=0.866 (+/- 0.034)
 
 ![Boxplot of top 10 Spot-Checking Algorithms on a Classification Problem with XGBoost](img/454f743f19d8535ab1ed907c5c3f25f1.jpg)
 
-XGBoost 分类问题前 10 个抽样检验算法的箱线图
+XGBoost 分类问题前 10 个采样检验算法的箱线图
 
 ### 重复评估
 
@@ -1119,7 +1119,7 @@ XGBoost 分类问题前 10 个抽样检验算法的箱线图
 
 我们使用 k 折交叉验证来产生一个分数，但人口很少，计算的平均值会很吵。
 
-只要我们将抽样检查结果作为起点而不是算法对问题的明确结果，这就没问题了。这很难做到;它需要从业者的纪律。
+只要我们将采样检查结果作为起点而不是算法对问题的明确结果，这就没问题了。这很难做到;它需要从业者的纪律。
 
 或者，您可能希望调整框架，使模型评估方案更好地匹配您打算用于特定问题的模型评估方案。
 
@@ -1329,7 +1329,7 @@ Rank=10, Name=ridge-0.5, Score=0.848 (+/- 0.038)
 
 报告的方法仍然存在一些差异，但不到一次 k-fold 交叉验证。
 
-可以增加重复次数以进一步减少这种变化，代价是运行时间较长，并且可能违背抽样检查的意图。
+可以增加重复次数以进一步减少这种变化，代价是运行时间较长，并且可能违背采样检查的意图。
 
 ### 各种输入表示
 
@@ -1627,7 +1627,7 @@ Rank=10, Name=2gbm, Score=0.865 (+/- 0.044)
 
 如果您希望深入了解，本节将提供有关该主题的更多资源。
 
-*   [为什么你应该在机器学习问题上进行抽样检查算法](https://machinelearningmastery.com/why-you-should-be-spot-checking-algorithms-on-your-machine-learning-problems/)
+*   [为什么你应该在机器学习问题上进行采样检查算法](https://machinelearningmastery.com/why-you-should-be-spot-checking-algorithms-on-your-machine-learning-problems/)
 *   [使用 scikit-learn](https://machinelearningmastery.com/spot-check-classification-machine-learning-algorithms-python-scikit-learn/) 在 Python 中进行 Spot-Check 分类机器学习算法
 *   [使用 scikit-learn](https://machinelearningmastery.com/spot-check-regression-machine-learning-algorithms-python-scikit-learn/) 在 Python 中使用 Spot 检查回归机器学习算法
 *   [如何评估深度学习模型的技巧](https://machinelearningmastery.com/evaluate-skill-deep-learning-models/)
@@ -1641,7 +1641,7 @@ Rank=10, Name=2gbm, Score=0.865 (+/- 0.044)
 
 具体来说，你学到了：
 
-*   抽样检查提供了一种快速发现在预测性建模问题上表现良好的算法类型的方法。
+*   采样检查提供了一种快速发现在预测性建模问题上表现良好的算法类型的方法。
 *   如何开发用于加载数据，定义模型，评估模型和总结结果的通用框架。
 *   如何应用框架进行分类和回归问题。
 

@@ -167,7 +167,7 @@ print('Gaussian critical value: %.3f (coverage=%d%%)' % (gauss_critical, prop*10
 # specify confidence
 prob = 0.99
 chi_critical = chi2.isf(q=prob, df=dof)
-print('Chi-Squared critical value: %.3f (prob=%d%%, dof=%d)' % (chi_critical, prob*100, dof))
+print('卡方 critical value: %.3f (prob=%d%%, dof=%d)' % (chi_critical, prob*100, dof))
 # tolerance
 interval = sqrt((dof * (1 + (1/n)) * gauss_critical**2) / chi_critical)
 print('Tolerance Interval: %.3f' % interval)
@@ -181,7 +181,7 @@ print('%.2f to %.2f covers %d%% of data with a confidence of %d%%' % (lower, upp
 
 ```py
 Gaussian critical value: 1.960 (coverage=95%)
-Chi-Squared critical value: 69.230 (prob=99%, dof=99)
+卡方 critical value: 69.230 (prob=99%, dof=99)
 Tolerance Interval: 2.355
 47.95 to 52.66 covers 95% of data with a confidence of 99%
 ```
