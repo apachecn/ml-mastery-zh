@@ -1,4 +1,4 @@
-# Python机器学习中的随机数生成器简介
+# Python 机器学习中的随机数生成器简介
 
 > 原文： [https://machinelearningmastery.com/introduction-to-random-number-generators-for-machine-learning/](https://machinelearningmastery.com/introduction-to-random-number-generators-for-machine-learning/)
 
@@ -13,7 +13,7 @@
 完成本教程后，您将了解：
 
 *   应用机器学习中随机性的来源，侧重于算法。
-*   什么是伪随机数生成器以及如何在Python中使用它们。
+*   什么是伪随机数生成器以及如何在 Python 中使用它们。
 *   何时控制随机数的序列以及何时控制随机数。
 
 让我们开始吧。
@@ -25,7 +25,7 @@
 
 ## 教程概述
 
-本教程分为5个部分;他们是：
+本教程分为 5 个部分;他们是：
 
 1.  机器学习中的随机性
 2.  伪随机数发生器
@@ -53,7 +53,7 @@
 
 我们无法访问域中的所有观察结果。
 
-我们只使用一小部分数据。因此，我们在评估模型时利用随机性，例如使用k折交叉验证来拟合和评估可用数据集的不同子集上的模型。
+我们只使用一小部分数据。因此，我们在评估模型时利用随机性，例如使用 k 折交叉验证来拟合和评估可用数据集的不同子集上的模型。
 
 我们这样做是为了了解模型如何平均工作而不是特定的数据集。
 
@@ -81,7 +81,7 @@
 
 随机数生成器是从真实的随机源生成随机数的系统。经常是物理的东西，比如盖革计数器，结果变成随机数。甚至还有从您可以购买的物理来源生成的随机数书，例如：
 
-*   [百万随机数，100,000正常偏差](http://amzn.to/2CM9dDv)
+*   [百万随机数，100,000 正常偏差](http://amzn.to/2CM9dDv)
 
 我们在机器学习中不需要真正的随机性。相反，我们可以使用伪随机性。伪随机性是看起来接近随机的数字样本，但是使用确定性过程生成。
 
@@ -93,13 +93,13 @@
 
 让我们通过一些例子来具体化。
 
-## Python中的伪随机数生成器
+## Python 中的伪随机数生成器
 
-Python标准库提供了一个名为 [random](https://docs.python.org/3/library/random.html) 的模块，它提供了一组用于生成随机数的函数。
+Python 标准库提供了一个名为 [random](https://docs.python.org/3/library/random.html) 的模块，它提供了一组用于生成随机数的函数。
 
-Python使用一种流行且强大的伪随机数生成器，称为 [Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister) 。
+Python 使用一种流行且强大的伪随机数生成器，称为 [Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister) 。
 
-可以通过调用 _random.seed（）_函数来播种伪随机数发生器。通过调用 _random.random（）_函数可以生成0到1之间的随机浮点值。
+可以通过调用 _random.seed（）_ 函数来播种伪随机数发生器。通过调用 _random.random（）_ 函数可以生成 0 到 1 之间的随机浮点值。
 
 以下示例为伪随机数生成器播种，生成一些随机数，然后重新种子以证明生成了相同的数字序列。
 
@@ -134,15 +134,15 @@ Reseeded
 0.5358820043066892
 ```
 
-## NumPy中的伪随机数生成器
+## NumPy 中的伪随机数生成器
 
-在机器学习中，您可能正在使用诸如scikit-learn和Keras之类的库。
+在机器学习中，您可能正在使用诸如 scikit-learn 和 Keras 之类的库。
 
-这些库使用了NumPy，这个库可以非常有效地处理数字的向量和矩阵。
+这些库使用了 NumPy，这个库可以非常有效地处理数字的向量和矩阵。
 
-NumPy还有自己的[伪随机数生成器](https://docs.scipy.org/doc/numpy/reference/routines.random.html)和便捷包装函数的实现。
+NumPy 还有自己的[伪随机数生成器](https://docs.scipy.org/doc/numpy/reference/routines.random.html)和便捷包装函数的实现。
 
-NumPy还实现了Mersenne Twister伪随机数生成器。重要的是，播种Python伪随机数生成器不会影响NumPy伪随机数生成器。它必须单独播种和使用。
+NumPy 还实现了 Mersenne Twister 伪随机数生成器。重要的是，播种 Python 伪随机数生成器不会影响 NumPy 伪随机数生成器。它必须单独播种和使用。
 
 以下示例为伪随机数生成器提供种子，生成五个随机浮点值的数组，再次为生成器播种，并演示生成相同的随机数序列。
 
@@ -176,7 +176,7 @@ Reseeded
 我们来看两个案例：
 
 *   **数据准备**。数据准备可以使用随机性，例如数据的混洗或值的选择。数据准备必须一致，以便在拟合，评估和使用最终模型做出预测时始终以相同的方式准备数据。
-    **Data Splits** 。必须一致地进行数据的分割，例如用于训练/测试分割或k折叠交叉验证。这是为了确保在相同的数据子样本上以相同的方式训练和评估每个算法。
+    **Data Splits** 。必须一致地进行数据的分割，例如用于训练/测试分割或 k 折叠交叉验证。这是为了确保在相同的数据子样本上以相同的方式训练和评估每个算法。
 
 您可能希望在每个任务之前或在执行一批任务之前为伪随机数生成器播种一次。一般无关紧要。
 
@@ -201,7 +201,7 @@ Reseeded
 *   **数据不确定性**：评估多个数据分割的算法将深入了解算法表现如何随训练和测试数据的变化而变化。
 *   **算法不确定性**：在相同的数据分割上多次评估算法，可以深入了解算法表现如何单独变化。
 
-总的来说，我建议报告这两种不确定因素的总和。这是算法适合每次评估运行的数据的不同分割并具有新的随机序列的地方。评估程序可以在开始时对随机数生成器进行一次播种，并且该过程可以重复大约30次或更多次，以给出可以概括的表现分数群。
+总的来说，我建议报告这两种不确定因素的总和。这是算法适合每次评估运行的数据的不同分割并具有新的随机序列的地方。评估程序可以在开始时对随机数生成器进行一次播种，并且该过程可以重复大约 30 次或更多次，以给出可以概括的表现分数群。
 
 这将对模型表现进行公平的描述，同时考虑到训练数据和学习算法本身的差异。
 
@@ -220,7 +220,7 @@ Reseeded
 
 本节列出了一些扩展您可能希望探索的教程的想法。
 
-*   确认播种Python伪随机数生成器不会影响NumPy伪随机数生成器。
+*   确认播种 Python 伪随机数生成器不会影响 NumPy 伪随机数生成器。
 *   开发在范围和高斯随机数之间生成整数的示例。
 *   找到方程式并实现一个非常简单的伪随机数生成器。
 
@@ -233,14 +233,14 @@ Reseeded
 ### 帖子
 
 *   [在机器学习中拥抱随机性](https://machinelearningmastery.com/randomness-in-machine-learning/)
-*   [如何使用Keras](https://machinelearningmastery.com/reproducible-results-neural-networks-keras/) 获得可重现的结果
+*   [如何使用 Keras](https://machinelearningmastery.com/reproducible-results-neural-networks-keras/) 获得可重现的结果
 *   [如何评估深度学习模型的技巧](https://machinelearningmastery.com/evaluate-skill-deep-learning-models/)
 *   [微量批量梯度下降的简要介绍以及如何配置批量大小](https://machinelearningmastery.com/gentle-introduction-mini-batch-gradient-descent-configure-batch-size/)
 
 ### API
 
-*   [随机Python API](https://docs.python.org/3/library/random.html)
-*   [NumPy中的随机采样](https://docs.scipy.org/doc/numpy/reference/routines.random.html)
+*   [随机 Python API](https://docs.python.org/3/library/random.html)
+*   [NumPy 中的随机采样](https://docs.scipy.org/doc/numpy/reference/routines.random.html)
 
 ### 用品
 

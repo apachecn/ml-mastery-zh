@@ -25,7 +25,7 @@
 
 ## 概观
 
-这篇文章分为4部分;他们是：
+这篇文章分为 4 部分;他们是：
 
 1.  模范技巧是相对的
 2.  基线模型技巧
@@ -66,9 +66,9 @@
 
 ## 什么是最好的分数？
 
-如果您正在处理分类问题，最高分是100％准确率。
+如果您正在处理分类问题，最高分是 100％准确率。
 
-如果您正在处理回归问题，则最佳得分为0.0错误。
+如果您正在处理回归问题，则最佳得分为 0.0 错误。
 
 这些分数不可能达到上/下限。所有预测性建模问题都有预测误差。期待它。该错误来自一系列来源，例如：
 
@@ -91,9 +91,9 @@
 *   **开始高**。选择一种复杂且已知可在一系列预测模型问题上表现良好的机器学习方法，例如随机森林或梯度提升。评估问题的模型并将结果用作近似的高端基准，然后找到实现类似表现的最简单模型。
 *   **详尽搜索**。评估您可以在问题上考虑的所有机器学习方法，并选择相对于基线实现最佳表现的方法。
 
-“_开始高_”方法很快，可以帮助您定义模型技能的界限以期待问题并找到可以获得类似结果的简单（例如Occam Razor）模型。它还可以帮助您快速找出问题是否可解决/可预测，这很重要，因为并非所有问题都是可预测的。
+“_ 开始高 _”方法很快，可以帮助您定义模型技能的界限以期待问题并找到可以获得类似结果的简单（例如 Occam Razor）模型。它还可以帮助您快速找出问题是否可解决/可预测，这很重要，因为并非所有问题都是可预测的。
 
-“_穷举搜索_”速度很慢，非常适合长期运行的项目，其中模型技能比几乎任何其他问题更重要。我经常对这种方法进行各种类似方法的批量测试，并称之为[现场检查](https://machinelearningmastery.com/why-you-should-be-spot-checking-algorithms-on-your-machine-learning-problems/)方法。
+“_ 穷举搜索 _”速度很慢，非常适合长期运行的项目，其中模型技能比几乎任何其他问题更重要。我经常对这种方法进行各种类似方法的批量测试，并称之为[现场检查](https://machinelearningmastery.com/why-you-should-be-spot-checking-algorithms-on-your-machine-learning-problems/)方法。
 
 这两种方法都会为您提供一组模型表现分数，您可以将其与基线进行比较。
 
@@ -103,8 +103,8 @@
 
 如果您希望深入了解，本节将提供有关该主题的更多资源。
 
-*   [如何使用Python进行时间序列预测的基线预测](https://machinelearningmastery.com/persistence-time-series-forecasting-with-python/)
-*   [如何使用Python从零开始实现基线机器学习算法](https://machinelearningmastery.com/implement-baseline-machine-learning-algorithms-scratch-python/)
+*   [如何使用 Python 进行时间序列预测的基线预测](https://machinelearningmastery.com/persistence-time-series-forecasting-with-python/)
+*   [如何使用 Python 从零开始实现基线机器学习算法](https://machinelearningmastery.com/implement-baseline-machine-learning-algorithms-scratch-python/)
 *   [机器学习表现改进备忘单](https://machinelearningmastery.com/machine-learning-performance-improvement-cheat-sheet/)
 
 ## 摘要

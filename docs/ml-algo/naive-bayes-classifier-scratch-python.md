@@ -1,13 +1,13 @@
-# 如何在Python中从零开始实现朴素贝叶斯
+# 如何在 Python 中从零开始实现朴素贝叶斯
 
 > 原文： [https://machinelearningmastery.com/naive-bayes-classifier-scratch-python/](https://machinelearningmastery.com/naive-bayes-classifier-scratch-python/)
 
 朴素贝叶斯算法简单有效，应该是您尝试分类问题的第一种方法之一。
 
-在本教程中，您将学习Naive Bayes算法，包括它的工作原理以及如何在Python中从零开始实现它。
+在本教程中，您将学习 Naive Bayes 算法，包括它的工作原理以及如何在 Python 中从零开始实现它。
 
-*   **更新**：查看关于使用朴素贝叶斯算法的提示的后续内容：“ [Better Naive Bayes：从Naive Bayes算法中获取最多的12个技巧](http://machinelearningmastery.com/better-naive-bayes/ "Better Naive Bayes: 12 Tips To Get The Most From The Naive Bayes Algorithm")”。
-*   **更新March / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
+*   **更新**：查看关于使用朴素贝叶斯算法的提示的后续内容：“ [Better Naive Bayes：从 Naive Bayes 算法中获取最多的 12 个技巧](http://machinelearningmastery.com/better-naive-bayes/ "Better Naive Bayes: 12 Tips To Get The Most From The Naive Bayes Algorithm")”。
+*   **更新 March / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
 
 [![naive bayes classifier](img/e6a92a6bcab0d5c51968019190f71f21.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/12/naive-bayes-classifier.jpg)
 
@@ -32,7 +32,7 @@
 
 方便的机器学习算法思维导图的样本。
 
-我已经创建了一个由类型组织的60多种算法的方便思维导图。
+我已经创建了一个由类型组织的 60 多种算法的方便思维导图。
 
 下载，打印并使用它。
 
@@ -40,11 +40,11 @@
 
 我们将在本教程中使用的测试问题是[皮马印第安人糖尿病问题](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)。
 
-这个问题包括对Pima印第安人专利的医疗细节的768次观察。记录描述了从患者身上获取的瞬时测量值，例如他们的年龄，怀孕次数和血液检查次数。所有患者均为21岁或以上的女性。所有属性都是数字，其单位因属性而异。
+这个问题包括对 Pima 印第安人专利的医疗细节的 768 次观察。记录描述了从患者身上获取的瞬时测量值，例如他们的年龄，怀孕次数和血液检查次数。所有患者均为 21 岁或以上的女性。所有属性都是数字，其单位因属性而异。
 
-每个记录具有类别值，该类别值指示患者在进行测量（1）或不进行测量（0）的5年内是否患有糖尿病。
+每个记录具有类别值，该类别值指示患者在进行测量（1）或不进行测量（0）的 5 年内是否患有糖尿病。
 
-这是一个标准的数据集，已在机器学习文献中进行了大量研究。良好的预测准确率为70％-76％。
+这是一个标准的数据集，已在机器学习文献中进行了大量研究。良好的预测准确率为 70％-76％。
 
 下面是来自 _pima-indians.data.csv_ 文件的示例，以了解我们将要使用的数据（更新：[从此处下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
 
@@ -62,18 +62,18 @@ Sample from the pima-indians.data.csv file
 
 本教程分为以下几个步骤：
 
-1.  **句柄数据**：从CSV文件加载数据并将其拆分为训练和测试数据集。
+1.  **句柄数据**：从 CSV 文件加载数据并将其拆分为训练和测试数据集。
 2.  **汇总数据**：总结训练数据集中的属性，以便我们可以计算概率并做出预测。
 3.  **做出预测**：使用数据集的摘要生成单个预测。
 4.  **制作预测**：根据测试数据集和汇总的训练数据集生成预测。
 5.  **评估准确度**：评估为测试数据集做出的预测的准确率，作为所有预测中的正确百分比。
-6.  **将它绑在一起**：使用所有代码元素来呈现Naive Bayes算法的完整且独立的实现。
+6.  **将它绑在一起**：使用所有代码元素来呈现 Naive Bayes 算法的完整且独立的实现。
 
 ### 1.处理数据
 
-我们需要做的第一件事是加载我们的数据文件。数据为CSV格式，没有标题行或任何引号。我们可以使用open函数打开文件，并使用csv模块中的reader函数读取数据行。
+我们需要做的第一件事是加载我们的数据文件。数据为 CSV 格式，没有标题行或任何引号。我们可以使用 open 函数打开文件，并使用 csv 模块中的 reader 函数读取数据行。
 
-我们还需要将作为字符串加载的属性转换为可以使用它们的数字。下面是用于加载Pima indians数据集的 **loadCsv（）**函数。
+我们还需要将作为字符串加载的属性转换为可以使用它们的数字。下面是用于加载 Pima indians 数据集的 **loadCsv（）**函数。
 
 Load a CSV file of scalars into memory Python
 
@@ -87,7 +87,7 @@ def loadCsv(filename):
 	return dataset
 ```
 
-我们可以通过加载pima indians数据集并打印已加载的数据实例的数量来测试此函数。
+我们可以通过加载 pima indians 数据集并打印已加载的数据实例的数量来测试此函数。
 
 Test the loadCsv() function Python
 
@@ -105,7 +105,7 @@ Example output of testing the loadCsv() function
 Loaded data file pima-indians-diabetes.data.csv rows
 ```
 
-接下来，我们需要将数据拆分为Naive Bayes可用于做出预测的训练数据集和我们可用于评估模型准确率的测试数据集。我们需要将数据集随机分成训练和数据集，比率为67％训练和33％测试（这是在数据集上测试算法的常用比率）。
+接下来，我们需要将数据拆分为 Naive Bayes 可用于做出预测的训练数据集和我们可用于评估模型准确率的测试数据集。我们需要将数据集随机分成训练和数据集，比率为 67％训练和 33％测试（这是在数据集上测试算法的常用比率）。
 
 下面是 **splitDataset（）**函数，它将给定数据集拆分为给定的分割比率。
 
@@ -123,7 +123,7 @@ def splitDataset(dataset, splitRatio):
 	return [trainSet, copy]
 ```
 
-我们可以通过定义一个包含5个实例的模拟数据集来测试它，将其拆分为训练和测试数据集并打印出来以查看哪些数据实例最终到达哪里。
+我们可以通过定义一个包含 5 个实例的模拟数据集来测试它，将其拆分为训练和测试数据集并打印出来以查看哪些数据实例最终到达哪里。
 
 Test the splitDataset() function Python
 
@@ -146,7 +146,7 @@ Split 5 rows into train with [[4], [3], [5]] and test with [[1], [2]]
 
 朴素贝叶斯模型由训练数据集中的数据摘要组成。然后在做出预测时使用此摘要。
 
-收集的训练数据摘要涉及每个属性的平均值和标准偏差，按类别值。例如，如果有两个类值和7个数值属性，那么我们需要每个属性（7）和类值（2）组合的均值和标准差，即14个属性摘要。
+收集的训练数据摘要涉及每个属性的平均值和标准偏差，按类别值。例如，如果有两个类值和 7 个数值属性，那么我们需要每个属性（7）和类值（2）组合的均值和标准差，即 14 个属性摘要。
 
 在做出预测以计算属于每个类值的特定属性值的概率时，这些是必需的。
 
@@ -203,7 +203,7 @@ Separated instances: {0: [[2, 21, 0]], 1: [[1, 20, 1], [3, 22, 1]]}
 
 我们还需要计算类值的每个属性的标准偏差。标准偏差描述了数据传播的变化，我们将用它来表征计算概率时高斯分布中每个属性的预期传播。
 
-标准偏差计算为方差的平方根。方差计算为每个属性值与平均值的平方差的平均值。注意我们使用的是N-1方法，它在计算方差时从属性值的数量中减去1。
+标准偏差计算为方差的平方根。方差计算为每个属性值与平均值的平方差的平均值。注意我们使用的是 N-1 方法，它在计算方差时从属性值的数量中减去 1。
 
 Functions to calculate the mean and standard deviations of attributes
 
@@ -218,7 +218,7 @@ def stdev(numbers):
 	return math.sqrt(variance)
 ```
 
-我们可以通过取1到5的数字的平均值来测试这个。
+我们可以通过取 1 到 5 的数字的平均值来测试这个。
 
 Code to test the mean() and stdev() functions
 
@@ -239,7 +239,7 @@ Summary of [1, 2, 3, 4, 5]: mean=3.0, stdev=1.58113883008
 
 现在我们有了汇总数据集的工具。对于给定的实例列表（对于类值），我们可以计算每个属性的均值和标准差。
 
-zip函数将数据实例中每个属性的值分组到它们自己的列表中，以便我们可以计算属性的均值和标准差值。
+zip 函数将数据实例中每个属性的值分组到它们自己的列表中，以便我们可以计算属性的均值和标准差值。
 
 The summarize() function
 
@@ -466,7 +466,7 @@ Predictions: ['A', 'B']
 
 ### 5.获得准确率
 
-可以将预测与测试数据集中的类值进行比较，并且可以将分类精度计算为0和0之间的准确度比率。和100％。 **getAccuracy（）**将计算此准确率。
+可以将预测与测试数据集中的类值进行比较，并且可以将分类精度计算为 0 和 0 之间的准确度比率。和 100％。 **getAccuracy（）**将计算此准确率。
 
 Code for the getAccuracy() function
 
@@ -502,7 +502,7 @@ Accuracy: 66.6666666667
 
 最后，我们需要将它们结合在一起。
 
-下面提供了从零开始在Python中实现的Naive Bayes的完整代码清单。
+下面提供了从零开始在 Python 中实现的 Naive Bayes 的完整代码清单。
 
 Complete code for implementing Naive Bayes from scratch in Python Python
 
@@ -621,26 +621,26 @@ Accuracy: 76.3779527559%
 
 ## 实现扩展
 
-本节为您提供了可以应用的扩展的概念，并使用您在本教程中实现的Python代码进行调查。
+本节为您提供了可以应用的扩展的概念，并使用您在本教程中实现的 Python 代码进行调查。
 
-您已经从零开始在python中实现了自己的Gaussian Naive Bayes版本。
+您已经从零开始在 python 中实现了自己的 Gaussian Naive Bayes 版本。
 
 您可以进一步扩展实现。
 
-*   **计算类概率**：更新示例以概括属于每个类的数据实例的概率作为比率。这可以被计算为属于一个类的数据实例的概率除以属于每个类的数据实例的概率之和。例如，A类的概率为0.02，B类的概率为0.001，属于A类的实例的可能性为（0.02 /(0.02 + 0.001））* 100，约为95.23％。
-*   **对数概率**：给定属性值的每个类的条件概率很小。当它们相乘时会产生非常小的值，这可能导致浮点下溢（数字太小而无法在Python中表示）。对此的常见修复是将概率的对数组合在一起。研究并实现这一改进。
+*   **计算类概率**：更新示例以概括属于每个类的数据实例的概率作为比率。这可以被计算为属于一个类的数据实例的概率除以属于每个类的数据实例的概率之和。例如，A 类的概率为 0.02，B 类的概率为 0.001，属于 A 类的实例的可能性为（0.02 /(0.02 + 0.001））* 100，约为 95.23％。
+*   **对数概率**：给定属性值的每个类的条件概率很小。当它们相乘时会产生非常小的值，这可能导致浮点下溢（数字太小而无法在 Python 中表示）。对此的常见修复是将概率的对数组合在一起。研究并实现这一改进。
 *   **标称属性**：更新实现以支持名义属性。这非常相似，您可以为每个属性收集的摘要信息是每个类的类别值的比率。深入了解参考资料以获取更多信息。
-*   **不同的密度函数**（`bernoulli`或_多项式_）：我们已经看过高斯朴素贝叶斯，但你也可以看看其他分布。实现不同的分布，例如多项式，bernoulli或内核朴素贝叶斯，它们对属性值的分布和/或它们与类值的关系做出不同的假设。
+*   **不同的密度函数**（`bernoulli`或 _ 多项式 _）：我们已经看过高斯朴素贝叶斯，但你也可以看看其他分布。实现不同的分布，例如多项式，bernoulli 或内核朴素贝叶斯，它们对属性值的分布和/或它们与类值的关系做出不同的假设。
 
 ## 资源和进一步阅读
 
-本节将提供一些资源，您可以使用这些资源来了解Naive Bayes算法的更多信息，包括它的工作原理和原理以及在代码中实现它的实际问题。
+本节将提供一些资源，您可以使用这些资源来了解 Naive Bayes 算法的更多信息，包括它的工作原理和原理以及在代码中实现它的实际问题。
 
 ### 问题
 
 有关预测糖尿病发病问题的更多资源。
 
-*   [Pima Indians糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)：此页面提供对数据集文件的访问，描述属性并列出使用该数据集的论文。
+*   [Pima Indians 糖尿病数据集](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)：此页面提供对数据集文件的访问，描述属性并列出使用该数据集的论文。
 *   [数据集文件](https://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/pima-indians-diabetes.data)：数据集文件。
 *   [数据集摘要](https://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/pima-indians-diabetes.names)：数据集属性的描述。
 *   [糖尿病数据集结果](http://www.is.umk.pl/projects/datasets.html#Diabetes)：该数据集上许多标准算法的准确率。
@@ -649,27 +649,27 @@ Accuracy: 76.3779527559%
 
 本节链接到流行的机器学习库中朴素贝叶斯的开源实现。如果您正在考虑实现自己的方法版本以供操作使用，请查看这些内容。
 
-*   [Scikit-Learn中的朴素贝叶斯](https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/naive_bayes.py)：在scikit-learn库中实现朴素的贝叶斯。
-*   [朴素贝叶斯文档](http://scikit-learn.org/stable/modules/naive_bayes.html)：朴素贝叶斯的Scikit-Learn文档和示例代码
+*   [Scikit-Learn 中的朴素贝叶斯](https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/naive_bayes.py)：在 scikit-learn 库中实现朴素的贝叶斯。
+*   [朴素贝叶斯文档](http://scikit-learn.org/stable/modules/naive_bayes.html)：朴素贝叶斯的 Scikit-Learn 文档和示例代码
 
 ### 图书
 
 您可能有一本或多本关于应用机器学习的书籍。本节重点介绍有关机器学习的常见应用书籍中涉及朴素贝叶斯的部分或章节。
 
-*   [Applied Predictive Modeling](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20) ，第353页
-*   [数据挖掘：实用机器学习工具和技术](http://www.amazon.com/dp/0123748569?tag=inspiredalgor-20)，第94页
-*   [黑客机器学习](http://www.amazon.com/dp/1449303714?tag=inspiredalgor-20)，第78页
-*   [统计学习简介：在R](http://www.amazon.com/dp/1461471370?tag=inspiredalgor-20) 中的应用，第138页
-*   [机器学习：算法视角](http://www.amazon.com/dp/1420067184?tag=inspiredalgor-20)，第171页
-*   [机器学习在行动](http://www.amazon.com/dp/1617290181?tag=inspiredalgor-20)，第61页（第4章）
-*   [机器学习](http://www.amazon.com/dp/0070428077?tag=inspiredalgor-20)，第177页（第6章）
+*   [Applied Predictive Modeling](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20) ，第 353 页
+*   [数据挖掘：实用机器学习工具和技术](http://www.amazon.com/dp/0123748569?tag=inspiredalgor-20)，第 94 页
+*   [黑客机器学习](http://www.amazon.com/dp/1449303714?tag=inspiredalgor-20)，第 78 页
+*   [统计学习简介：在 R](http://www.amazon.com/dp/1461471370?tag=inspiredalgor-20) 中的应用，第 138 页
+*   [机器学习：算法视角](http://www.amazon.com/dp/1420067184?tag=inspiredalgor-20)，第 171 页
+*   [机器学习在行动](http://www.amazon.com/dp/1617290181?tag=inspiredalgor-20)，第 61 页（第 4 章）
+*   [机器学习](http://www.amazon.com/dp/0070428077?tag=inspiredalgor-20)，第 177 页（第 6 章）
 
 ## 下一步
 
 采取行动。
 
-按照教程从零开始实现Naive Bayes。使示例适应另一个问题。遵循扩展并改进实现。
+按照教程从零开始实现 Naive Bayes。使示例适应另一个问题。遵循扩展并改进实现。
 
 发表评论并分享您的经验。
 
-**更新**：查看关于使用朴素贝叶斯算法的提示的后续内容：“ [Better Naive Bayes：从Naive Bayes算法中获取最多的12个技巧](http://machinelearningmastery.com/better-naive-bayes/ "Better Naive Bayes: 12 Tips To Get The Most From The Naive Bayes Algorithm")”
+**更新**：查看关于使用朴素贝叶斯算法的提示的后续内容：“ [Better Naive Bayes：从 Naive Bayes 算法中获取最多的 12 个技巧](http://machinelearningmastery.com/better-naive-bayes/ "Better Naive Bayes: 12 Tips To Get The Most From The Naive Bayes Algorithm")”

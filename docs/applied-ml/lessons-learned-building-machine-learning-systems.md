@@ -2,24 +2,24 @@
 
 > 原文： [https://machinelearningmastery.com/lessons-learned-building-machine-learning-systems/](https://machinelearningmastery.com/lessons-learned-building-machine-learning-systems/)
 
-在 [MLConf](%20http://mlconf.com/) 最近的一次演讲中， [Xavier Amatriain](https://www.linkedin.com/in/xamatriain) 描述了他在Netflix的研究/工程经理建立机器学习系统时学到的10个课程。
+在 [MLConf](%20http://mlconf.com/) 最近的一次演讲中， [Xavier Amatriain](https://www.linkedin.com/in/xamatriain) 描述了他在 Netflix 的研究/工程经理建立机器学习系统时学到的 10 个课程。
 
-在这里，您将从他的演讲和幻灯片中总结发现这10节课。
+在这里，您将从他的演讲和幻灯片中总结发现这 10 节课。
 
 [![Lessons Learned from Building Machine Learning Systems](img/bb21a5fe2d34628dd22e4818f145844a.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/12/Lessons-Learned-from-Building-Machine-Learning-Systems.png)
 
-建筑机器学习系统的经验教训摘自 [Xavier的演讲](https://www.youtube.com/watch?v=WdzWPuazLA8)
+建筑机器学习系统的经验教训摘自 [Xavier 的演讲](https://www.youtube.com/watch?v=WdzWPuazLA8)
 
-## 10经验教训
+## 10 经验教训
 
-Xavier提出的10个课程可归纳如下：
+Xavier 提出的 10 个课程可归纳如下：
 
 1.  更多数据与/和更好的模型
 2.  您可能不需要所有大数据
 3.  更复杂的模型不能改善事物的事实并不意味着你不需要
 4.  要深思熟虑的训练数据
 5.  学会处理（诅咒）演示偏见
-6.  UI是算法唯一最重要的通信渠道：用户
+6.  UI 是算法唯一最重要的通信渠道：用户
 7.  数据和模型都很棒。你知道什么更好吗？正确的评估方法
 8.  分发算法很重要，但知道在哪个级别执行它更为重要
 9.  选择你的超参数是明智的，这是值得的
@@ -29,11 +29,11 @@ Xavier提出的10个课程可归纳如下：
 
 ## 1.更多数据与更好的模型
 
-泽维尔质疑引用的“_更多数据胜过更好的模型_”。我指向 [Anand Rajaraman的](https://www.linkedin.com/in/anandrajaraman)帖子“[更多数据通常胜过更好的算法](http://anand.typepad.com/datawocky/2008/03/more-data-usual.html)”，可以用这句话来概括：
+泽维尔质疑引用的“_ 更多数据胜过更好的模型 _”。我指向 [Anand Rajaraman 的](https://www.linkedin.com/in/anandrajaraman)帖子“[更多数据通常胜过更好的算法](http://anand.typepad.com/datawocky/2008/03/more-data-usual.html)”，可以用这句话来概括：
 
 > 总而言之，如果您的资源有限，请添加更多数据，而不是微调机器学习算法的权重。
 
-他还指出 [Novig 2009年与Facebook工程部就更多数据与更好的算法进行的谈话](http://machinelearningmastery.com/hands-on-big-data-by-peter-norvig/ "Hands on Big Data by Peter Norvig")。
+他还指出 [Novig 2009 年与 Facebook 工程部就更多数据与更好的算法进行的谈话](http://machinelearningmastery.com/hands-on-big-data-by-peter-norvig/ "Hands on Big Data by Peter Norvig")。
 
 然后，他指出了一篇论文“[推荐新电影：甚至一些评级比元数据更有价值](http://anand.typepad.com/datawocky/2008/03/more-data-usual.html)”，其中明确指出，较少数据具有高预测性，而更多数据则不是。
 
@@ -57,7 +57,7 @@ Xavier提出的10个课程可归纳如下：
 
 ## 4.考虑你的训练数据
 
-Xavier评论了对用户行为数据进行非规范化时可能存在的困难。他指出了选择正面和负面案例的问题，在对问题进行建模之前，必须先考虑在哪里绘制线条。这是一个数据表示问题，对您可以实现的结果产生巨大影响。
+Xavier 评论了对用户行为数据进行非规范化时可能存在的困难。他指出了选择正面和负面案例的问题，在对问题进行建模之前，必须先考虑在哪里绘制线条。这是一个数据表示问题，对您可以实现的结果产生巨大影响。
 
 我建议你为许多这样的可能线路产生想法并测试它们，或者最有希望的。
 
@@ -73,26 +73,26 @@ Xavier评论了对用户行为数据进行非规范化时可能存在的困难�
 
 ## 6\. UI＆lt; =＆gt;通过用户的算法
 
-与第5课相关，这是观察到建模算法和用户界面紧密耦合。
+与第 5 课相关，这是观察到建模算法和用户界面紧密耦合。
 
 对用户界面的更改可能需要更改算法。
 
 ## 7.使用正确的评估方法
 
-Xavier概述了所使用的在线离线测试过程。
+Xavier 概述了所使用的在线离线测试过程。
 
 [![Offline Online Training Process](img/0323b2cc3ab0fb058f00a0c703828f34.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/12/Offline-Online-Training-Process.png)
 
 离线在线训练流程
-摘自 [Xavier的演讲](http://www.slideshare.net/xamat/10-lessons-learned-from-building-machine-learning-systems)
+摘自 [Xavier 的演讲](http://www.slideshare.net/xamat/10-lessons-learned-from-building-machine-learning-systems)
 
-该图显示了离线模型的反向测试，以测试假设，并在线进行A / B测试验证这些结果。这是一张有价值的幻灯片。
+该图显示了离线模型的反向测试，以测试假设，并在线进行 A / B 测试验证这些结果。这是一张有价值的幻灯片。
 
 他指出，模型可以针对短期目标（如点击或手表）进行优化，但用户保留是一个真正的目标，称为整体评估标准。
 
 他提醒我们尽可能使用长期指标，只考虑长期指标。
 
-与他们的离线在线方法相关，Xavier评论了将离线指标与在线A / B测试相关联的公开问题。
+与他们的离线在线方法相关，Xavier 评论了将离线指标与在线 A / B 测试相关联的公开问题。
 
 ## 8.选择正确的级别
 
@@ -106,9 +106,9 @@ Xavier概述了所使用的在线离线测试过程。
 
 ## 9.选择你的超参数是明智的，这是值得的
 
-Xavier警告说，在调整模型时选择正确的指标非常重要。但他也提到包括模型复杂性在内的东西也是一个重要问题。
+Xavier 警告说，在调整模型时选择正确的指标非常重要。但他也提到包括模型复杂性在内的东西也是一个重要问题。
 
-除了网格或随机参数搜索之外，Xavier还提醒我们查看可以减少搜索时间的概率方法。
+除了网格或随机参数搜索之外，Xavier 还提醒我们查看可以减少搜索时间的概率方法。
 
 ## 10.离线，在线和近线
 
@@ -118,12 +118,12 @@ Xavier警告说，在调整模型时选择正确的指标非常重要。但他�
 
 这是一套很棒的课程，可以应用于您自己的建模。
 
-您可以在这里查看Xavier的幻灯片：“从建筑机器学习系统中学到的10个经验教训”
+您可以在这里查看 Xavier 的幻灯片：“从建筑机器学习系统中学到的 10 个经验教训”
 
 &lt;iframe allowfullscreen="" frameborder="0" height="356" marginheight="0" marginwidth="0" scrolling="no" src="https://www.slideshare.net/slideshow/embed_code/41571741" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" width="427"&gt;&lt;/iframe&gt;
 
 **[10 Lessons Learned from Building Machine Learning Systems](https://www.slideshare.net/xamat/10-lessons-learned-from-building-machine-learning-systems "10 Lessons Learned from Building Machine Learning Systems")** from **[Xavier Amatriain](http://www.slideshare.net/xamat)**
 
-Xavier的演示文稿被记录下来，您可以在这里观看整个内容：“ [Xavier Amatriain，算法工程总监，Netflix @ MLconf SF](https://www.youtube.com/watch?v=WdzWPuazLA8) ”
+Xavier 的演示文稿被记录下来，您可以在这里观看整个内容：“ [Xavier Amatriain，算法工程总监，Netflix @ MLconf SF](https://www.youtube.com/watch?v=WdzWPuazLA8) ”
 
 &lt;iframe allowfullscreen="" frameborder="0" height="281" src="https://www.youtube.com/embed/WdzWPuazLA8?feature=oembed" width="500"&gt;&lt;/iframe&gt;

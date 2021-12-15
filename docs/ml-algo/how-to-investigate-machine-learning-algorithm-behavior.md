@@ -8,14 +8,14 @@
 
 通过对运行中的机器学习算法进行试验，您可以根据可以在不同类别的问题上实现的结果，建立对算法参数的因果关系的直觉。
 
-在这篇文章中，您将了解如何研究机器学习算法。您将学习一个简单的5步过程，您可以使用它来设计和完成您的第一个机器学习算法实验。
+在这篇文章中，您将了解如何研究机器学习算法。您将学习一个简单的 5 步过程，您可以使用它来设计和完成您的第一个机器学习算法实验。
 
 您会发现，机器学习实验不仅适用于学术，也可以实现，并且在掌握的过程中需要进行实验，因为您将获得的经验因果知识在其他任何地方都无法获得。
 
 [![Investigate Machine Learning Algorithm Behavior](img/1ec819a6ee908b974563dd5606c0a672.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/10/Investigate-Machine-Learning-Algorithm-Behavior.jpg)
 
 调查机器学习算法行为
-照片由[美国陆军RDECOM](http://www.flickr.com/photos/rdecom/7222825892) ，保留一些权利
+照片由[美国陆军 RDECOM](http://www.flickr.com/photos/rdecom/7222825892) ，保留一些权利
 
 ## 什么是调查机器学习算法
 
@@ -31,13 +31,13 @@
 
 方便的机器学习算法思维导图的样本。
 
-我已经创建了一个由类型组织的60多种算法的方便思维导图。
+我已经创建了一个由类型组织的 60 多种算法的方便思维导图。
 
 下载，打印并使用它。
 
 ## 如何研究机器学习算法
 
-在本节中，我们将介绍一个简单的5步过程，您可以使用它来研究机器学习算法。
+在本节中，我们将介绍一个简单的 5 步过程，您可以使用它来研究机器学习算法。
 
 ### 1.选择算法
 
@@ -55,8 +55,8 @@
 
 一些示例问题包括：
 
-*   将kNN中的k增加为训练数据集大小的一部分有什么影响？
-*   在SVM中选择不同内核对二分类问题的影响是什么？
+*   将 kNN 中的 k 增加为训练数据集大小的一部分有什么影响？
+*   在 SVM 中选择不同内核对二分类问题的影响是什么？
 *   不同属性缩放对二分类问题的逻辑回归有什么影响？
 *   在随机森林中将随机属性添加到训练数据集对分类准确率的影响是什么？
 
@@ -66,7 +66,7 @@
 
 选择将构成实验的问题中的元素。
 
-例如，从上面提出以下问题：“_不同属性缩放对二分类问题的逻辑回归有什么影响？_ “
+例如，从上面提出以下问题：“_ 不同属性缩放对二分类问题的逻辑回归有什么影响？_ “
 
 您可以从实验设计中选择的元素包括：
 
@@ -83,9 +83,9 @@
 
 如果算法是随机的，您可能需要多次重复实验运行并采用均值和标准差。
 
-如果您正在寻找实验运行（例如不同参数）之间的结果差异，您可能需要使用统计工具来指示差异是否具有统计显着性（例如T检验）。
+如果您正在寻找实验运行（例如不同参数）之间的结果差异，您可能需要使用统计工具来指示差异是否具有统计显着性（例如 T 检验）。
 
-像 [R](http://machinelearningmastery.com/what-is-r/ "What is R") 和 [scikit-learn](http://machinelearningmastery.com/a-gentle-introduction-to-scikit-learn-a-python-machine-learning-library/ "A Gentle Introduction to Scikit-Learn: A Python Machine Learning Library") / SciPy这样的工具有完成这些类型实验的工具，但您需要将它们组合在一起并编写实验脚本。其他工具如 [Weka](http://machinelearningmastery.com/what-is-the-weka-machine-learning-workbench/ "What is the Weka Machine Learning Workbench") 将工具内置到图形用户界面中（请参阅此[教程，了解如何在Weka](http://machinelearningmastery.com/design-and-run-your-first-experiment-in-weka/ "Design and Run your First Experiment in Weka") 中运行您的第一个实验）。您使用的工具比实验设计的问题和严谨性更重要。
+像 [R](http://machinelearningmastery.com/what-is-r/ "What is R") 和 [scikit-learn](http://machinelearningmastery.com/a-gentle-introduction-to-scikit-learn-a-python-machine-learning-library/ "A Gentle Introduction to Scikit-Learn: A Python Machine Learning Library") / SciPy 这样的工具有完成这些类型实验的工具，但您需要将它们组合在一起并编写实验脚本。其他工具如 [Weka](http://machinelearningmastery.com/what-is-the-weka-machine-learning-workbench/ "What is the Weka Machine Learning Workbench") 将工具内置到图形用户界面中（请参阅此[教程，了解如何在 Weka](http://machinelearningmastery.com/design-and-run-your-first-experiment-in-weka/ "Design and Run your First Experiment in Weka") 中运行您的第一个实验）。您使用的工具比实验设计的问题和严谨性更重要。
 
 总结您的实验结果。您可能想要使用表格和图形。单独呈现结果是不够的。他们只是数字。您必须将数字与问题联系起来，并通过实验设计过滤其含义。
 
@@ -117,7 +117,7 @@
 
 ## 行动步骤
 
-在这篇文章中，您发现了通过对照试验研究机器学习算法行为的重要性。您发现了一个简单的5步过程，您可以使用它设计并在机器学习算法上执行第一个实验。
+在这篇文章中，您发现了通过对照试验研究机器学习算法行为的重要性。您发现了一个简单的 5 步过程，您可以使用它设计并在机器学习算法上执行第一个实验。
 
 采取行动。使用您在本博文中学到的过程，完成第一次机器学习实验。一旦你完成了一个，即使是非常小的一个，你将拥有完成第二个甚至更多的信心，工具和能力。
 

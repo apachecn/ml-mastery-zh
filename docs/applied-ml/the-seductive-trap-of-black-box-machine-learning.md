@@ -10,7 +10,7 @@
 
 我曾多次勾勒出“完美”系统，其中模型运行，调整和结果混合是自动化的，人类的努力专注于定义问题的不同观点。
 
-我甚至用几种不同语言为竞赛建立了几次不完美的系统变体。第一个版本是在十多年前的Java中。最近的版本是在R中使用make文件和bash脚本大约6个月前。
+我甚至用几种不同语言为竞赛建立了几次不完美的系统变体。第一个版本是在十多年前的 Java 中。最近的版本是在 R 中使用 make 文件和 bash 脚本大约 6 个月前。
 
 [![machine learning pipeline](img/8e7964ae28b4b9ec47b735d3dbcdbe8d.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/04/machine-learning-pipeline.jpg)
 
@@ -42,7 +42,7 @@
 如上所述，管道设计旨在让计算机专注于自动化程序，使操作员能够专注于提出有关手头问题的新观点。该方法的一些好处包括：
 
 *   算法一直存在，能够修复，调整和重新运行非常重要。
-*   竞争中的限制因素通常是对问题的新观点，而不是CPU时间或算法调整，持续集成系统可以整天重新运行主脚本寻找新的结果进行整合，使用新的配置，新的混合推广。
+*   竞争中的限制因素通常是对问题的新观点，而不是 CPU 时间或算法调整，持续集成系统可以整天重新运行主脚本寻找新的结果进行整合，使用新的配置，新的混合推广。
 *   该设计允许以新数据视图和新模型配置文件的形式放弃添加想法。
 
 其他报告可以插入“分析报告”部分，其结果旨在激发“数据视图”部分的更多想法。
@@ -53,11 +53,11 @@
 
 ## 徒劳无功
 
-所述系统是一个诱人的陷阱。它放弃了设计数据问题解决方案的责任。根据领域知识和专业知识智能地选择属性和算法。它将问题视为搜索问题并释放CPU猎犬。
+所述系统是一个诱人的陷阱。它放弃了设计数据问题解决方案的责任。根据领域知识和专业知识智能地选择属性和算法。它将问题视为搜索问题并释放 CPU 猎犬。
 
 我认为构建这个系统的生产级版本是徒劳的。我认为这是因为它旨在解决一个人为的问题：机器学习竞赛。
 
-我大多相信这一点，比如99.99％。我一直在探讨这个想法，以防万一我错了。这篇文章是我推动这一信念的界限的一个例子。
+我大多相信这一点，比如 99.99％。我一直在探讨这个想法，以防万一我错了。这篇文章是我推动这一信念的界限的一个例子。
 
 如果我描述的这样的系统存在，我会使用它还是我还想构建我自己的系统版本？你会怎么做？
 
@@ -65,13 +65,13 @@
 
 我认为这种系统的风格确实存在，或者我可以欺骗自己认为它存在是为了争论。我认为这个愿景的商业友好版本已经存在，它是商品化的机器学习或机器学习即服务（MLaaS）。
 
-我上面描述的系统专注于一个问题：给定数据集，可以生成哪些最佳预测？ [谷歌预测API](https://developers.google.com/prediction/) 可能是这种类型的系统的一个例子（如果我关闭一只眼睛并与另一只眼睛斜视）。我不在乎我如何获得最好的结果（或者足够好的结果），只是给他们我，该死的。
+我上面描述的系统专注于一个问题：给定数据集，可以生成哪些最佳预测？ [谷歌预测 API](https://developers.google.com/prediction/) 可能是这种类型的系统的一个例子（如果我关闭一只眼睛并与另一只眼睛斜视）。我不在乎我如何获得最好的结果（或者足够好的结果），只是给他们我，该死的。
 
 [![BigML Interactive Decision Tree](img/9201339dae39c27755ad066f401d4656.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/03/bigml-decision-tree.png)
 
-BigML交互式决策树
+BigML 交互式决策树
 
-我将其与所谓的“商业友好型”MLaaS区分开来。我想到 [BigML](http://machinelearningmastery.com/bigml-review-discover-the-clever-features-in-this-machine-learning-as-a-service-platform/ "BigML Review: Discover the Clever Features in This Machine Learning as a Service Platform") 就是这类服务的一个例子。他们是我想象的这样的服务，如果它打扮得很好，可以卖给企业。差异化的一个关键点是以牺牲预测准确率为代价进行模型内省的能力。
+我将其与所谓的“商业友好型”MLaaS 区分开来。我想到 [BigML](http://machinelearningmastery.com/bigml-review-discover-the-clever-features-in-this-machine-learning-as-a-service-platform/ "BigML Review: Discover the Clever Features in This Machine Learning as a Service Platform") 就是这类服务的一个例子。他们是我想象的这样的服务，如果它打扮得很好，可以卖给企业。差异化的一个关键点是以牺牲预测准确率为代价进行模型内省的能力。
 
 你不仅想要“有史以来最好的预测，该死的”，你想知道如何。这些数字需要围绕它们进行叙述。企业需要这些信息，因此他们可以内化并将其转移到其他问题，并在概念漂移后将来转移到同样的问题。知识是秘诀，而不是创造知识的模型。
 

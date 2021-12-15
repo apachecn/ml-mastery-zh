@@ -15,13 +15,13 @@
 阅读这篇文章后你会知道：
 
 *   混淆矩阵是什么以及为什么需要使用它。
-*   如何从零开始计算2类分类问题的混淆矩阵。
-*   如何在Weka，Python和R中创建混淆矩阵
+*   如何从零开始计算 2 类分类问题的混淆矩阵。
+*   如何在 Weka，Python 和 R 中创建混淆矩阵
 
 让我们开始吧。
 
-*   **2017年10月更新**：修复了工作示例中的一个小错误（感谢Raktim）。
-*   **2017年12月更新**：修正了准确度计算中的一个小错误（感谢Robson Pastor Alexandre）
+*   **2017 年 10 月更新**：修复了工作示例中的一个小错误（感谢 Raktim）。
+*   **2017 年 12 月更新**：修正了准确度计算中的一个小错误（感谢 Robson Pastor Alexandre）
 
 ![What is a Confusion Matrix in Machine Learning](img/302dba7f39692ffff7955a0cd5b7d149.jpg)
 
@@ -36,7 +36,7 @@
 classification accuracy = correct predictions / total predictions
 ```
 
-它通常通过将结果乘以100来表示为百分比。
+它通常通过将结果乘以 100 来表示为百分比。
 
 ```py
 classification accuracy = correct predictions / total predictions * 100
@@ -52,8 +52,8 @@ error rate = (1 - (correct predictions / total predictions)) * 100
 
 分类准确率的主要问题在于它隐藏了您需要的细节，以便更好地理解分类模型的表现。有两个例子，您最有可能遇到此问题：
 
-1.  当你的数据有2个以上的类。对于3个或更多类，您可以获得80％的分类准确度，但是您不知道是否因为所有类都被预测得同样好，或者模型是否忽略了一个或两个类。
-2.  当您的数据没有偶数个类时。您可以达到90％或更高的准确度，但如果每100个记录中有90个记录属于一个类别，则这不是一个好分数，您可以通过始终预测最常见的类值来达到此分数。
+1.  当你的数据有 2 个以上的类。对于 3 个或更多类，您可以获得 80％的分类准确度，但是您不知道是否因为所有类都被预测得同样好，或者模型是否忽略了一个或两个类。
+2.  当您的数据没有偶数个类时。您可以达到 90％或更高的准确度，但如果每 100 个记录中有 90 个记录属于一个类别，则这不是一个好分数，您可以通过始终预测最常见的类值来达到此分数。
 
 分类准确率可以隐藏诊断模型表现所需的详细信息。但幸运的是，我们可以通过混淆矩阵来区分这些细节。
 
@@ -93,17 +93,17 @@ error rate = (1 - (correct predictions / total predictions)) * 100
 
 > 在实践中，诸如此类的二分类器可以产生两种类型的错误：它可能错误地分配默认为无默认类别的个人，或者它可能错误地将未默认的个人分配给默认类别。通常有兴趣确定正在进行这两种类型的错误中的哪一种。混淆矩阵[...]是显示此信息的便捷方式。
 
-- 第145页，[统计学习导论：应用于R](http://www.amazon.com/dp/1461471370?tag=inspiredalgor-20) ，2014年
+- 第 145 页，[统计学习导论：应用于 R](http://www.amazon.com/dp/1461471370?tag=inspiredalgor-20) ，2014 年
 
-该矩阵可用于易于理解的2类问题，但通过向混淆矩阵添加更多行和列，可轻松应用于具有3个或更多类值的问题。
+该矩阵可用于易于理解的 2 类问题，但通过向混淆矩阵添加更多行和列，可轻松应用于具有 3 个或更多类值的问题。
 
 让我们通过一个例子来解释创建混淆矩阵。
 
-## 2级混淆矩阵案例研究
+## 2 级混淆矩阵案例研究
 
 让我们假设我们有一个两级分类问题，即预测照片是否包含男人或女人。
 
-我们有一个包含10个记录的测试数据集，其中包含预期结果和一组来自我们的分类算法的预测。
+我们有一个包含 10 个记录的测试数据集，其中包含预期结果和一组来自我们的分类算法的预测。
 
 ```py
 Expected, 	Predicted
@@ -121,7 +121,7 @@ woman, 		woman
 
 让我们开始并计算这组预测的分类准确率。
 
-该算法使10个预测中的7个正确，准确度为70％。
+该算法使 10 个预测中的 7 个正确，准确度为 70％。
 
 ```py
 accuracy = total correct predictions / total predictions made * 100
@@ -146,7 +146,7 @@ men classified as women: 2
 woman classified as men: 1
 ```
 
-我们现在可以将这些值安排到2级混淆矩阵中：
+我们现在可以将这些值安排到 2 级混淆矩阵中：
 
 ```py
 		men	women
@@ -156,7 +156,7 @@ women	2	4
 
 我们可以从这张桌子上学到很多东西。
 
-*   数据集中的实际总人数是men列（3 + 2）上的值的总和
+*   数据集中的实际总人数是 men 列（3 + 2）上的值的总和
 *   数据集中的实际女性总数是女性专栏中的值总和（1 + 4）。
 *   正确的值组织在矩阵的左上角到右下角的对角线中（3 + 4）。
 *   通过预测男性为女性比预测女性为男性更多的错误。
@@ -167,7 +167,7 @@ women	2	4
 
 如疾病状态或事件，无疾病状态或无事件。
 
-这样，我们可以将事件行分配为“_正_”，将无事件行分配为“_负_”。然后我们可以将预测的事件列分配为“`true`”，将无事件分配为“`false`”。
+这样，我们可以将事件行分配为“_ 正 _”，将无事件行分配为“_ 负 _”。然后我们可以将预测的事件列分配为“`true`”，将无事件分配为“`false`”。
 
 这给了我们：
 
@@ -188,11 +188,11 @@ no-event	false negative		true negative
 
 例如，分类准确度计算为真阳性+真阴性。
 
-> 考虑有两个类的情况。 [...]表格的第一行对应于预测为事件的样本。有些是正确预测的（真正的阳性或TP），而其他的则被错误地分类（假阳性或FP）。类似地，第二行包含具有真阴性（TN）和假阴性（FN）的预测阴性。
+> 考虑有两个类的情况。 [...]表格的第一行对应于预测为事件的样本。有些是正确预测的（真正的阳性或 TP），而其他的则被错误地分类（假阳性或 FP）。类似地，第二行包含具有真阴性（TN）和假阴性（FN）的预测阴性。
 
-- 第256页， [Applied Predictive Modeling](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20) ，2013
+- 第 256 页， [Applied Predictive Modeling](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20) ，2013
 
-现在我们已经完成了一个简单的2级混淆矩阵案例研究，让我们看看如何在现代机器学习工具中计算混淆矩阵。
+现在我们已经完成了一个简单的 2 级混淆矩阵案例研究，让我们看看如何在现代机器学习工具中计算混淆矩阵。
 
 ## 混淆矩阵的代码示例
 
@@ -200,25 +200,25 @@ no-event	false negative		true negative
 
 这些示例将为您提供有关混淆矩阵的内容的背景信息，以便您在实践中使用实际数据和工具。
 
-### Weka中的混淆矩阵示例
+### Weka 中的混淆矩阵示例
 
-在Explorer界面中估计模型的技能时，Weka机器学习工作台将自动显示混淆矩阵。
+在 Explorer 界面中估计模型的技能时，Weka 机器学习工作台将自动显示混淆矩阵。
 
-下面是在Pima Indians Diabetes数据集上训练k-最近邻算法后，来自Weka Explorer界面的屏幕截图。
+下面是在 Pima Indians Diabetes 数据集上训练 k-最近邻算法后，来自 Weka Explorer 界面的屏幕截图。
 
 混淆矩数组在底部，您可以看到还提供了大量的分类统计量。
 
-混淆矩阵将字母a和b分配给类值，并为行提供预期的类值，并为每列提供预测的类值（“分类为”）。
+混淆矩阵将字母 a 和 b 分配给类值，并为行提供预期的类值，并为每列提供预测的类值（“分类为”）。
 
 ![Weka Confusion Matrix and Classification Statistics](img/dbfc8aead6f4b4b654b52d9bc9a47e20.jpg)
 
-Weka混淆矩阵和分类统计
+Weka 混淆矩阵和分类统计
 
-您可以在此处了解有关 [Weka机器学习工作台的更多信息](http://machinelearningmastery.com/applied-machine-learning-weka-mini-course/)。
+您可以在此处了解有关 [Weka 机器学习工作台的更多信息](http://machinelearningmastery.com/applied-machine-learning-weka-mini-course/)。
 
-### 使用scikit-learn在Python中的示例混淆矩阵
+### 使用 scikit-learn 在 Python 中的示例混淆矩阵
 
-Python中用于机器学习的scikit-learn库可以计算混淆矩阵。
+Python 中用于机器学习的 scikit-learn 库可以计算混淆矩阵。
 
 给定一个预期值的数组或列表以及机器学习模型中的预测列表，confusion_matrix（）函数将计算混淆矩阵并将结果作为数组返回。然后，您可以打印此数组并解释结果。
 
@@ -232,18 +232,18 @@ results = confusion_matrix(expected, predicted)
 print(results)
 ```
 
-运行此示例打印混淆矩阵数组，总结设计的2类问题的结果。
+运行此示例打印混淆矩阵数组，总结设计的 2 类问题的结果。
 
 ```py
 [[4 2]
 [1 3]]
 ```
 
-在scikit-learn API文档中了解有关 [confusion_matrix（）函数的更多信息。](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html)
+在 scikit-learn API 文档中了解有关 [confusion_matrix（）函数的更多信息。](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html)
 
-### R中带有插入符号的示例混淆矩阵
+### R 中带有插入符号的示例混淆矩阵
 
-R中用于机器学习的插入符号库可以计算混淆矩阵。
+R 中用于机器学习的插入符号库可以计算混淆矩阵。
 
 给定预期值列表和机器学习模型中的预测列表，confusionMatrix（）函数将计算混淆矩阵并将结果作为详细报告返回。然后，您可以打印此报告并解释结果。
 
@@ -289,7 +289,7 @@ Prediction 0 1
 
 本报告中有大量信息，尤其是混淆矩阵本身。
 
-了解更多关于插入符号API文档 [PDF]中 [confusionMatrix（）函数的信息。](ftp://cran.r-project.org/pub/R/web/packages/caret/caret.pdf)
+了解更多关于插入符号 API 文档 [PDF]中 [confusionMatrix（）函数的信息。](ftp://cran.r-project.org/pub/R/web/packages/caret/caret.pdf)
 
 ## 进一步阅读
 
@@ -307,7 +307,7 @@ Prediction 0 1
 
 *   分类准确率的局限性以及何时可以隐藏重要细节。
 *   混淆矩阵以及如何从零开始计算并解释结果。
-*   如何使用Weka，Python scikit-learn和R插入库来计算混淆矩阵。
+*   如何使用 Weka，Python scikit-learn 和 R 插入库来计算混淆矩阵。
 
 **你有什么问题吗？**
 在下面的评论中提出您的问题，我会尽力回答。

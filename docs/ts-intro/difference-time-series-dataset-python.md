@@ -1,4 +1,4 @@
-# 如何使用Python差分时间序列数据集
+# 如何使用 Python 差分时间序列数据集
 
 > 原文： [https://machinelearningmastery.com/difference-time-series-dataset-python/](https://machinelearningmastery.com/difference-time-series-dataset-python/)
 

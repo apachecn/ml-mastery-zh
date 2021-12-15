@@ -3,7 +3,7 @@
 > 原文： [https://machinelearningmastery.com/dont-implement-machine-learning-algorithms/](https://machinelearningmastery.com/dont-implement-machine-learning-algorithms/)
 
 ### 你不必实现算法
-... _如果你是初学者并且刚刚开始。_
+... _ 如果你是初学者并且刚刚开始。_
 
 停止。
 
@@ -46,11 +46,11 @@
 
 以下是我偶然发现的一些类似问题：
 
-*   _当_ tensorflow _等许多高级API可用时，为什么需要手动实现机器学习算法？_ （Quora 上的[）](https://www.quora.com/Why-is-there-a-need-to-manually-implement-machine-learning-algorithms-when-there-are-many-advanced-APIs-like-tensorflow-available)
-*   _您自己或是否应该使用库，是否有任何实现机器学习算法的价值？_ （Quora 上的[）](https://www.quora.com/Is-there-any-value-implementing-machine-learning-algorithms-by-yourself-or-should-you-use-libraries)
-*   _实现机器学习算法有用吗？_ （Quora 上的[）](https://www.quora.com/Is-it-useful-to-implement-machine-learning-algorithms)
-*   _我应该使用哪种编程语言来实现机器学习算法？_ （Quora 上的[）](https://www.quora.com/Which-programming-language-should-I-use-to-implement-Machine-Learning-algorithms)
-*   _为什么你和其他人有时会从零开始实现机器学习算法？_ （GitHub 上的[）](https://github.com/rasbt/python-machine-learning-book/blob/master/faq/implementing-from-scratch.md)
+*   _ 当 _ tensorflow _ 等许多高级 API 可用时，为什么需要手动实现机器学习算法？_ （Quora 上的[）](https://www.quora.com/Why-is-there-a-need-to-manually-implement-machine-learning-algorithms-when-there-are-many-advanced-APIs-like-tensorflow-available)
+*   _ 您自己或是否应该使用库，是否有任何实现机器学习算法的价值？_ （Quora 上的[）](https://www.quora.com/Is-there-any-value-implementing-machine-learning-algorithms-by-yourself-or-should-you-use-libraries)
+*   _ 实现机器学习算法有用吗？_ （Quora 上的[）](https://www.quora.com/Is-it-useful-to-implement-machine-learning-algorithms)
+*   _ 我应该使用哪种编程语言来实现机器学习算法？_ （Quora 上的[）](https://www.quora.com/Which-programming-language-should-I-use-to-implement-Machine-Learning-algorithms)
+*   _ 为什么你和其他人有时会从零开始实现机器学习算法？_ （GitHub 上的[）](https://github.com/rasbt/python-machine-learning-book/blob/master/faq/implementing-from-scratch.md)
 
 ## 你可能做错了
 
@@ -61,7 +61,7 @@
 1.  学习数学。
 2.  学习理论。
 3.  从零开始实现算法。
-4.  _??? （魔术发生在这里_）。
+4.  _??? （魔术发生在这里 _）。
 5.  应用机器学习。
 
 将机器学习算法应用于问题并获得结果比从头实现它们要容易得多。
@@ -119,9 +119,9 @@
 
 ### 库并非全部创建平等
 
-并非您从Internet下载的所有算法实现都是相同的。
+并非您从 Internet 下载的所有算法实现都是相同的。
 
-来自GitHub的代码片段可能是研究生“ _hello world_ ”实现，或者它可能是由大型组织的整个研究团队贡献的高度优化的实现。
+来自 GitHub 的代码片段可能是研究生“ _hello world_ ”实现，或者它可能是由大型组织的整个研究团队贡献的高度优化的实现。
 
 您需要评估您正在使用的代码的来源。有些来源比其他来源更好或更可靠。
 
@@ -136,7 +136,7 @@
 当被问及时，我通常会推荐以下三种平台之一：
 
 1.  **Weka** 。一个不需要任何代码的图形用户界面。如果您想首先关注机器学习并学习如何解决问题，那就太完美了。
-2.  **Python** 。生态系统包括大熊猫和scikit-learn。非常适合将开发中的机器学习问题的解决方案拼接在一起，该解决方案足够强大，可以部署到操作中。
+2.  **Python** 。生态系统包括大熊猫和 scikit-learn。非常适合将开发中的机器学习问题的解决方案拼接在一起，该解决方案足够强大，可以部署到操作中。
 3.  **R** 。更高级的平台虽然拥有深奥的语言，有时还有错误的软件包，但可以访问由学者直接编写的最先进的方法。非常适合一次性项目和研发。
 
 这些只是我的建议，还有更多的机器学习平台可供选择。
@@ -176,7 +176,7 @@
 您了解到在实现它们之前学习如何使用机器学习算法要容易得多，也更为可取。您还了解到，实现算法是了解更多有关它们如何工作以及从中获取更多信息的好方法，但只有在您知道如何使用它们之后。
 
 **你被困在这个陷阱里吗？**
-_在评论中分享您的经验。_
+_ 在评论中分享您的经验。_
 
 ### 进一步阅读
 

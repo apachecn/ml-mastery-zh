@@ -2,24 +2,24 @@
 
 > 原文： [https://machinelearningmastery.com/how-to-work-through-a-problem-like-a-data-scientist/](https://machinelearningmastery.com/how-to-work-through-a-problem-like-a-data-scientist/)
 
-在2010年的一篇文章中，Hilary Mason和Chris Wiggins将OSEMN流程描述为数据科学家应该感到舒服的任务分类。
+在 2010 年的一篇文章中，Hilary Mason 和 Chris Wiggins 将 OSEMN 流程描述为数据科学家应该感到舒服的任务分类。
 
-该帖子的标题是“[数据科学分类](http://www.dataists.com/2010/09/a-taxonomy-of-data-science/)”，现已解散的数据库博客。这个过程也被用作最近一本书的结构，特别是“命令行的[数据科学：面向未来的经过时间测试的工具](http://www.amazon.com/dp/1491947853?tag=inspiredalgor-20)”，作者是由O'Reilly出版的Jeroen Janssens。
+该帖子的标题是“[数据科学分类](http://www.dataists.com/2010/09/a-taxonomy-of-data-science/)”，现已解散的数据库博客。这个过程也被用作最近一本书的结构，特别是“命令行的[数据科学：面向未来的经过时间测试的工具](http://www.amazon.com/dp/1491947853?tag=inspiredalgor-20)”，作者是由 O'Reilly 出版的 Jeroen Janssens。
 
-在这篇文章中，我们仔细研究了解决数据问题的OSEMN流程。
+在这篇文章中，我们仔细研究了解决数据问题的 OSEMN 流程。
 
 [![Work Through A Problem Like A Data Scientist](img/ee1f6a04ed3c8462c1a89b2df5c85be1.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/12/Work-Through-A-Problem-Like-A-Data-Scientist.jpg)
 
 像数据科学家一样解决问题
-照片来自[美国陆军RDECOM](http://www.flickr.com/photos/rdecom/7336886600) ，保留一些权利
+照片来自[美国陆军 RDECOM](http://www.flickr.com/photos/rdecom/7336886600) ，保留一些权利
 
-## OSEMN流程
+## OSEMN 流程
 
-OSEMN是与“负鼠”或“令人敬畏”押韵的缩写，代表获取，磨砂，探索，模型和iNterpret。
+OSEMN 是与“负鼠”或“令人敬畏”押韵的缩写，代表获取，磨砂，探索，模型和 iNterpret。
 
 这是数据科学家应该熟悉和熟悉的任务列表。尽管如此，作者指出，没有数据科学家会成为所有这些人的专家。
 
-除了任务列表之外，OSEMN还可以用作使用机器学习工具处理数据问题的蓝图。
+除了任务列表之外，OSEMN 还可以用作使用机器学习工具处理数据问题的蓝图。
 
 从这个过程中，作者指出数据黑客符合“`O`”和“`S`”任务，机器学习符合“`E`”和“`M`”任务，而数据科学需要所有元素的组合。
 
@@ -29,9 +29,9 @@ OSEMN是与“负鼠”或“令人敬畏”押韵的缩写，代表获取，磨
 
 他们指向手动过程，如使用鼠标指向和单击，并从文档中复制和粘贴数据。
 
-作者建议您采用一系列工具并使用最适合手头工作的工具。他们指向unix命令行工具，数据库中的SQL，使用Python和shell脚本进行Web抓取和脚本编写。
+作者建议您采用一系列工具并使用最适合手头工作的工具。他们指向 unix 命令行工具，数据库中的 SQL，使用 Python 和 shell 脚本进行 Web 抓取和脚本编写。
 
-最后，作者指出了使用API​​访问数据的重要性，其中API可能是公共的，也可能是组织内部的。数据通常以JSON格式呈现，而像Python这样的脚本语言可以使数据检索变得更加容易。
+最后，作者指出了使用 API​​访问数据的重要性，其中 API 可能是公共的，也可能是组织内部的。数据通常以 JSON 格式呈现，而像 Python 这样的脚本语言可以使数据检索变得更加容易。
 
 ## 2.磨砂数据
 
@@ -39,13 +39,13 @@ OSEMN是与“负鼠”或“令人敬畏”押韵的缩写，代表获取，磨
 
 真实数据可能存在不一致，缺失值和各种其他形式的损坏。如果从困难的数据源中删除它，可能需要跳闸和清理。即使是干净的数据也可能需要进行后期处理才能使其统一和一致。
 
-数据清理或清理需要“命令行fu”和简单的脚本。
+数据清理或清理需要“命令行 fu”和简单的脚本。
 
 作者指出，数据清理是处理数据问题最不性感的部分，但良好的数据清理可以为您实现的结果提供最大的好处。
 
 > 对干净数据的简单分析比对噪声和不规则数据的复杂分析更有成效。
 
-作者指出了简单的命令行工具，如sed，awk，grep和脚本语言，如Python和Perl。
+作者指出了简单的命令行工具，如 sed，awk，grep 和脚本语言，如 Python 和 Perl。
 
 有关更多信息，请查看[数据准备过程](http://machinelearningmastery.com/how-to-prepare-data-for-machine-learning/ "How to Prepare Data For Machine Learning")。
 
@@ -103,8 +103,8 @@ OSEMN是与“负鼠”或“令人敬畏”押韵的缩写，代表获取，磨
 
 ## 摘要
 
-在这篇文章中，你发现了Hilary Mason和Chris Wiggins提出的OSEMN。
+在这篇文章中，你发现了 Hilary Mason 和 Chris Wiggins 提出的 OSEMN。
 
-OSEMN代表Obtain，Scrub，Explore，Model和iNterpret。
+OSEMN 代表 Obtain，Scrub，Explore，Model 和 iNterpret。
 
 与[数据库中的知识发现](http://machinelearningmastery.com/what-is-data-mining-and-kdd/ "What is Data Mining and KDD")和[应用的机器学习过程](http://machinelearningmastery.com/process-for-working-through-machine-learning-problems/ "Process for working through Machine Learning Problems")类似，您可以使用此过程来解决机器学习问题。

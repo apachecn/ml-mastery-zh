@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/how-to-kick-ass-in-competitive-machine-learning/](https://machinelearningmastery.com/how-to-kick-ass-in-competitive-machine-learning/)
 
-[David Kofoed Wind](http://www.davidwind.dk/) 在Kaggle博客No Free Hunch上发表了一篇文章，名为“ [_从最好的_](http://blog.kaggle.com/2014/08/01/learning-from-the-best/) 中学习”。在这篇文章中，大卫总结了6个与参与机器学习竞赛相关的关键领域，以及来自表现最好的kagglers的报价。
+[David Kofoed Wind](http://www.davidwind.dk/) 在 Kaggle 博客 No Free Hunch 上发表了一篇文章，名为“ [_ 从最好的 _](http://blog.kaggle.com/2014/08/01/learning-from-the-best/) 中学习”。在这篇文章中，大卫总结了 6 个与参与机器学习竞赛相关的关键领域，以及来自表现最好的 kagglers 的报价。
 
 在这篇文章中，您将发现从该帖子中提取的竞争性机器学习中做得好的关键启发式方法。
 
@@ -11,13 +11,13 @@
 从[利达](https://www.flickr.com/photos/lidarose/267681376/)的最佳
 照片中学习，保留一些权利
 
-## 向Kaggle Masters学习
+## 向 Kaggle Masters 学习
 
-David是[丹麦技术大学](http://www.dtu.dk/english)认知系统系的博士生。在此之前，他是一名硕士生，他的论文题目是“ [_预测机器学习中的概念_](http://www.davidwind.dk/wp-content/uploads/2014/07/main.pdf) ”。
+David 是[丹麦技术大学](http://www.dtu.dk/english)认知系统系的博士生。在此之前，他是一名硕士生，他的论文题目是“ [_ 预测机器学习中的概念 _](http://www.davidwind.dk/wp-content/uploads/2014/07/main.pdf) ”。
 
-你会从标题中知道它，但这是一个很好的论点。在其中，大卫提炼了3名Kaggle大师 [Tim Salimans](https://www.kaggle.com/users/3375/tim-salimans) ， [Steve Donoho](https://www.kaggle.com/users/9766/breakfastpirate) 和 [Anil Thomas](https://www.kaggle.com/users/7837/anil-thomas) 的建议，并分析了10场比赛的结果。在Kaggle比赛中表现良好，然后通过参加2个案例研究比赛来测试这些课程。
+你会从标题中知道它，但这是一个很好的论点。在其中，大卫提炼了 3 名 Kaggle 大师 [Tim Salimans](https://www.kaggle.com/users/3375/tim-salimans) ， [Steve Donoho](https://www.kaggle.com/users/9766/breakfastpirate) 和 [Anil Thomas](https://www.kaggle.com/users/7837/anil-thomas) 的建议，并分析了 10 场比赛的结果。在 Kaggle 比赛中表现良好，然后通过参加 2 个案例研究比赛来测试这些课程。
 
-他的框架有5个组成部分：
+他的框架有 5 个组成部分：
 
 1.  特征工程是预测机器学习中最重要的部分
 2.  过拟合排行榜是一个真正的问题
@@ -43,11 +43,11 @@ David是[丹麦技术大学](http://www.dtu.dk/english)认知系统系的博士�
 
 ### 过拟合
 
-过拟合是指创建在训练数据上表现良好的模型，而不是在看不见的测试数据上（或远离它）。这扩展到在排行榜上观察到的分数，这是对用于识别竞赛获胜者的验证数据集样本（通常约20％）的模型的评估。
+过拟合是指创建在训练数据上表现良好的模型，而不是在看不见的测试数据上（或远离它）。这扩展到在排行榜上观察到的分数，这是对用于识别竞赛获胜者的验证数据集样本（通常约 20％）的模型的评估。
 
 *   小而嘈杂的训练数据集可能导致排行榜和最终结果之间更大的不匹配。
 *   排行榜确实包含信息，可用于模型选择和超参数调整。
-*   Kaggle使得过拟合的危险变得非常真实。
+*   Kaggle 使得过拟合的危险变得非常真实。
 *   在测试工具上花费大量时间来估算模型准确率，甚至忽略排行榜。
 *   将测试工具分数与排行榜分数相关联，以评估您可以放在排行榜中的信任度。
 
@@ -77,11 +77,11 @@ David是[丹麦技术大学](http://www.dtu.dk/english)认知系统系的博士�
 
 *   头脑风暴可以使用许多不同的方式来对问题进行建模。
 *   建模飞行着陆时间与预计飞行时间比率的总飞行时间的示例。
-*   使用不同的损失函数（即RMSE与MAE）探索模型的准备。
+*   使用不同的损失函数（即 RMSE 与 MAE）探索模型的准备。
 
 ### 额外的建议
 
-本节列出了David和他的受访者在机器学习竞赛方面表现良好的其他见解。
+本节列出了 David 和他的受访者在机器学习竞赛方面表现良好的其他见解。
 
 *   尽快在排行榜上获取一些东西
 *   构建一个加载数据的管道，并可靠地评估模型，这比你想象的要困难得多。
@@ -92,6 +92,6 @@ David是[丹麦技术大学](http://www.dtu.dk/english)认知系统系的博士�
 
 ## 摘要
 
-在这篇文章中，您发现了参与机器学习竞赛时的5个问题的框架：特征工程，过拟合，使用简单模型，集合和预测正确的事物。
+在这篇文章中，您发现了参与机器学习竞赛时的 5 个问题的框架：特征工程，过拟合，使用简单模型，集合和预测正确的事物。
 
-在这篇文章中，我们在关键经验法则中回顾了David的框架，可以用来在参加Kaggle比赛时从数据和算法中获得最大收益。
+在这篇文章中，我们在关键经验法则中回顾了 David 的框架，可以用来在参加 Kaggle 比赛时从数据和算法中获得最大收益。

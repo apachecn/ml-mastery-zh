@@ -27,7 +27,7 @@
 
 特征选择不同于降维。两种方法都试图减少数据集中的属性数量，但维度降低方法通过创建新的属性组合来实现，其中特征选择方法包括和排除数据中存在的属性而不更改它们。
 
-维数降低方法的示例包括主成分分析，奇异值分解和Sammon映射。
+维数降低方法的示例包括主成分分析，奇异值分解和 Sammon 映射。
 
 > 功能选择本身很有用，但它主要用作过滤器，可以清除除现有功能之外无用的功能。
 
@@ -43,7 +43,7 @@
 
 > 变量选择的目标有三个方面：提高预测变量的预测表现，提供更快，更具成本效益的预测变量，并更好地理解生成数据的基础过程。
 
-- Guyon和Elisseeff的“[变量和特征选择介绍](http://jmlr.csail.mit.edu/papers/volume3/guyon03a/guyon03a.pdf)”（PDF）
+- Guyon 和 Elisseeff 的“[变量和特征选择介绍](http://jmlr.csail.mit.edu/papers/volume3/guyon03a/guyon03a.pdf)”（PDF）
 
 ## 特征选择算法
 
@@ -69,15 +69,15 @@
 
 正则化方法也称为惩罚方法，其将额外约束引入预测算法（例如回归算法）的优化中，该预测算法将模型偏向于较低复杂度（较少系数）。
 
-正则化算法的例子是LASSO，弹性网和岭回归。
+正则化算法的例子是 LASSO，弹性网和岭回归。
 
 ## 功能选择教程和秘籍
 
 我们在此博客上看到过许多功能选择示例。
 
-*   **Weka** ：有关如何使用Weka执行特征选择的教程，请参阅“[特征选择以提高准确率并缩短训练时间](http://machinelearningmastery.com/feature-selection-to-improve-accuracy-and-decrease-training-time/ "Feature Selection to Improve Accuracy and Decrease Training Time")”。
-*   **Scikit-Learn** ：有关使用scikit-learn在Python中进行递归特征消除的秘籍，请参阅“使用Scikit-Learn 在Python中使用[特征选择”。](http://machinelearningmastery.com/feature-selection-in-python-with-scikit-learn/ "Feature Selection in Python with Scikit-Learn")
-*   **R** ：使用Caret R软件包进行递归特征消除的秘籍，请参阅“使用Caret R软件包”选择“[特征”](http://machinelearningmastery.com/feature-selection-with-the-caret-r-package/ "Feature Selection with the Caret R Package")
+*   **Weka** ：有关如何使用 Weka 执行特征选择的教程，请参阅“[特征选择以提高准确率并缩短训练时间](http://machinelearningmastery.com/feature-selection-to-improve-accuracy-and-decrease-training-time/ "Feature Selection to Improve Accuracy and Decrease Training Time")”。
+*   **Scikit-Learn** ：有关使用 scikit-learn 在 Python 中进行递归特征消除的秘籍，请参阅“使用 Scikit-Learn 在 Python 中使用[特征选择”。](http://machinelearningmastery.com/feature-selection-in-python-with-scikit-learn/ "Feature Selection in Python with Scikit-Learn")
+*   **R** ：使用 Caret R 软件包进行递归特征消除的秘籍，请参阅“使用 Caret R 软件包”选择“[特征”](http://machinelearningmastery.com/feature-selection-with-the-caret-r-package/ "Feature Selection with the Caret R Package")
 
 ## 选择功能时的陷阱
 
@@ -87,23 +87,23 @@
 
 > ...应该在不同的数据集上进行特征选择，而不是训练[预测模型] ...不这样做的效果是你会过度训练你的训练数据。
 
-- Ben Allison回答“[是否使用相同的数据进行特征选择和交叉验证是否有偏差？](http://stats.stackexchange.com/questions/40576/is-using-the-same-data-for-feature-selection-and-cross-validation-biased-or-not) “
+- Ben Allison 回答“[是否使用相同的数据进行特征选择和交叉验证是否有偏差？](http://stats.stackexchange.com/questions/40576/is-using-the-same-data-for-feature-selection-and-cross-validation-biased-or-not) “
 
 例如，当您使用精确度估计方法（如交叉验证）时，必须在内循环中包含要素选择。这意味着在训练模型之前，在准备好的折叠上执行特征选择。错误是首先执行特征选择以准备数据，然后对所选特征执行模型选择和训练。
 
 > 如果我们采用适当的程序，并在每个折叠中执行特征选择，则在该折叠中使用的特征的选择中不再存在关于所保持的情况的任何信息。
 
-- Dikran Marsupial在机器学习中执行交叉验证时回答“[最终模型的特征选择”](http://stats.stackexchange.com/questions/2306/feature-selection-for-final-model-when-performing-cross-validation-in-machine)
+- Dikran Marsupial 在机器学习中执行交叉验证时回答“[最终模型的特征选择”](http://stats.stackexchange.com/questions/2306/feature-selection-for-final-model-when-performing-cross-validation-in-machine)
 
 原因是选择特征的决策是在整个训练集上进行的，而这些决策又被传递到模型上。这可能会导致一种模式，即所选择的特征比其他正在测试的模型增强的模型可以获得看似更好的结果，而实际上它是有偏差的结果。
 
 > 如果对所有数据执行特征选择然后交叉验证，则交叉验证过程的每个折叠中的测试数据也用于选择特征，这是表现分析的偏差。
 
-- Dikran Marsupial回答“[特征选择和交叉验证](http://stats.stackexchange.com/questions/27750/feature-selection-and-cross-validation)”
+- Dikran Marsupial 回答“[特征选择和交叉验证](http://stats.stackexchange.com/questions/27750/feature-selection-and-cross-validation)”
 
 ## 功能选择清单
 
-Isabelle Guyon和Andre Elisseeff是“[变量和特征选择简介](http://jmlr.csail.mit.edu/papers/volume3/guyon03a/guyon03a.pdf)”（PDF）的作者提供了一个很好的清单，您可以在下次需要为预测性建模问题选择数据特征时使用它。
+Isabelle Guyon 和 Andre Elisseeff 是“[变量和特征选择简介](http://jmlr.csail.mit.edu/papers/volume3/guyon03a/guyon03a.pdf)”（PDF）的作者提供了一个很好的清单，您可以在下次需要为预测性建模问题选择数据特征时使用它。
 
 我在这里复制了清单的重要部分：
 
@@ -113,8 +113,8 @@ Isabelle Guyon和Andre Elisseeff是“[变量和特征选择简介](http://jmlr.
 4.  **您是否需要修剪输入变量（例如成本，速度或数据理解原因）？** 如果不是，则构造析取特征或特征的加权和
 5.  **您是否需要单独评估功能（例如，了解它们对系统的影响，或者因为它们的数量太大而您需要进行首次过滤）？** 如果是，请使用变量排名方法;否则，无论如何都要获得基线结果。
 6.  **你需要预测器吗？** 如果不是，请停止
-7.  **你怀疑你的数据是“脏”的（有一些无意义的输入模式和/或嘈杂的输出或错误的类标签）？** 如果是，则使用在步骤5中获得的排名最高的变量检测异常值示例作为表示;检查和/或丢弃它们。
-8.  **你知道先尝试一下吗？** 如果不是，请使用线性预测器。使用具有“探测”方法的前向选择方法作为停止标准或使用0范数嵌入方法进行比较，遵循步骤5的排序，使用增加的特征子集构建相同性质的预测变量序列。您可以使用较小的子集匹配或改善表现吗？如果是，请尝试使用该子集的非线性预测器。
+7.  **你怀疑你的数据是“脏”的（有一些无意义的输入模式和/或嘈杂的输出或错误的类标签）？** 如果是，则使用在步骤 5 中获得的排名最高的变量检测异常值示例作为表示;检查和/或丢弃它们。
+8.  **你知道先尝试一下吗？** 如果不是，请使用线性预测器。使用具有“探测”方法的前向选择方法作为停止标准或使用 0 范数嵌入方法进行比较，遵循步骤 5 的排序，使用增加的特征子集构建相同性质的预测变量序列。您可以使用较小的子集匹配或改善表现吗？如果是，请尝试使用该子集的非线性预测器。
 9.  **你有新的想法，时间，计算资源和足够的例子吗？** 如果是，请比较几种特征选择方法，包括新想法，相关系数，后向选择和嵌入方法。使用线性和非线性预测变量。选择具有模型选择的最佳方法
 10.  **您想要一个稳定的解决方案（以提高表现和/或理解）吗？** 如果是，请对您的数据进行子采样并重新分析几个“bootstrap”。
 
@@ -122,9 +122,9 @@ Isabelle Guyon和Andre Elisseeff是“[变量和特征选择简介](http://jmlr.
 
 在特定平台上需要有关功能选择的帮助吗？以下是一些可以帮助您快速入门的教程：
 
-*   [如何在Weka](http://machinelearningmastery.com/perform-feature-selection-machine-learning-data-weka/) 中执行特征选择（无代码）
-*   [如何使用scikit-learn](http://machinelearningmastery.com/feature-selection-machine-learning-python/) 在Python中执行功能选择
-*   [如何用插入符号](http://machinelearningmastery.com/feature-selection-with-the-caret-r-package/)在R中执行特征选择
+*   [如何在 Weka](http://machinelearningmastery.com/perform-feature-selection-machine-learning-data-weka/) 中执行特征选择（无代码）
+*   [如何使用 scikit-learn](http://machinelearningmastery.com/feature-selection-machine-learning-python/) 在 Python 中执行功能选择
+*   [如何用插入符号](http://machinelearningmastery.com/feature-selection-with-the-caret-r-package/)在 R 中执行特征选择
 
 要深入了解该主题，您可以选择一本关于该主题的专用书籍，例如以下任何一个：
 

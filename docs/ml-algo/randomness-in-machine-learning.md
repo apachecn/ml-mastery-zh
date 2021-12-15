@@ -2,8 +2,8 @@
 
 > 原文： [https://machinelearningmastery.com/randomness-in-machine-learning/](https://machinelearningmastery.com/randomness-in-machine-learning/)
 
-### _为什么你会得到不同的结果_
-_算法的不同运行_ _具有相同的数据？_
+### _ 为什么你会得到不同的结果 _
+_ 算法的不同运行 _ _ 具有相同的数据？_
 
 应用机器学习是一个突破和思维方式转变的挂毯。
 
@@ -17,7 +17,7 @@ _算法的不同运行_ _具有相同的数据？_
 
 让我们潜入。
 
-（_特别感谢徐章和Nil Fero推荐这篇文章_）
+（_ 特别感谢徐章和 Nil Fero 推荐这篇文章 _）
 
 ![Embrace Randomness in Applied Machine Learning](img/f2cca9b91c060aff80b9963099544ec8.jpg)
 
@@ -32,7 +32,7 @@ _算法的不同运行_ _具有相同的数据？_
 
 我每周都会收到一封电子邮件。
 
-以下是发布到Q＆amp; A网站的类似问题：
+以下是发布到 Q＆amp; A 网站的类似问题：
 
 *   [为什么每次运行算法时都会得到不同的结果？](http://stats.stackexchange.com/questions/56362/why-do-i-get-different-results-each-time-i-run-my-algorithm)
 *   [交叉验证对同一数据](http://stats.stackexchange.com/questions/144387/cross-validation-gives-different-result-on-the-same-data)给出不同的结果
@@ -76,7 +76,7 @@ _算法的不同运行_ _具有相同的数据？_
 
 我们在评估算法时进行采样。
 
-我们使用诸如将数据分成随机训练和测试集之类的技术，或者使用k-fold交叉验证来对数据进行k随机分割。
+我们使用诸如将数据分成随机训练和测试集之类的技术，或者使用 k-fold 交叉验证来对数据进行 k 随机分割。
 
 结果是对看不见的数据的模型（以及用于创建它的过程）的表现估计。
 
@@ -92,7 +92,7 @@ _算法的不同运行_ _具有相同的数据？_
 
 方便的机器学习算法思维导图的样本。
 
-我已经创建了一个由类型组织的60多种算法的方便思维导图。
+我已经创建了一个由类型组织的 60 多种算法的方便思维导图。
 
 下载，打印并使用它。
 
@@ -221,7 +221,7 @@ In fact, this is a best practice.
 
 > 我应该创建许多最终模型，并在保留验证数据集中选择具有最佳精度的模型。
 
-“_没有_”我回答说。
+“_ 没有 _”我回答说。
 
 这将是一个脆弱的过程，高度依赖于所提出的验证数据集的质量。您正在选择针对少量数据样本进行优化的随机数。
 
@@ -235,7 +235,7 @@ In fact, this is a best practice.
 
 使用简单的投票合奏。每个模型做出预测，并将所有预测的平均值报告为最终预测。
 
-使合奏尽可能大。我认为10,30或100是很好的圆形数字。
+使合奏尽可能大。我认为 10,30 或 100 是很好的圆形数字。
 
 也许继续添加新模型，直到预测变得稳定。例如，继续直到预测的方差在某些保持集上收紧。
 

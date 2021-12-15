@@ -10,7 +10,7 @@
 
 如果您阅读一篇关于特征工程的文章，我希望它是这一篇。
 
-> 特征工程是另一个主题，似乎不值得任何评论论文或书籍，甚至书籍章节，但它对ML的成功绝对至关重要。 [...]机器学习的大部分成功实际上是学习器可以理解的工程特征的成功。
+> 特征工程是另一个主题，似乎不值得任何评论论文或书籍，甚至书籍章节，但它对 ML 的成功绝对至关重要。 [...]机器学习的大部分成功实际上是学习器可以理解的工程特征的成功。
 
 - Scott Locklin，“[被忽视的机器学习思路](https://scottlocklin.wordpress.com/2014/07/22/neglected-machine-learning-ideas/)”
 
@@ -55,9 +55,9 @@
 
 **更好的功能意味着更好的结果**。
 
-> 我们使用的算法对于Kagglers来说非常标准。 [...]我们将大部分精力投入到功能工程中。
+> 我们使用的算法对于 Kagglers 来说非常标准。 [...]我们将大部分精力投入到功能工程中。
 
-- Xavier Conort，在“ [Q＆amp; A与Xavier Conort](http://blog.kaggle.com/2013/04/10/qa-with-xavier-conort/) ”上赢得了对Kaggle的Flight Quest挑战
+- Xavier Conort，在“ [Q＆amp; A 与 Xavier Conort](http://blog.kaggle.com/2013/04/10/qa-with-xavier-conort/) ”上赢得了对 Kaggle 的 Flight Quest 挑战
 
 ## 什么是特色工程？
 
@@ -72,7 +72,7 @@
 *   你正在使用的预测模型（SVM？）
 *   您选择和准备的原始数据（样本？格式化？清洁？）
 
-> 特征工程是手动设计输入x应该是什么
+> 特征工程是手动设计输入 x 应该是什么
 
 - Tomasz Malisiewicz，回答“[什么是特征工程？](http://www.quora.com/What-is-feature-engineering) “
 
@@ -82,7 +82,7 @@
 
 在此上下文中，特征工程要求：学习问题解决方案的样本数据的最佳表示是什么？
 
-它太深了。在机器学习方面做得很好，即使在人工智能方面，也可以回到表示问题。知道要使用的最佳表示，_先验_，这可能是不可知的（或者至多是难以处理的）。
+它太深了。在机器学习方面做得很好，即使在人工智能方面，也可以回到表示问题。知道要使用的最佳表示，_ 先验 _，这可能是不可知的（或者至多是难以处理的）。
 
 > 你必须把你的输入变成算法可以理解的东西
 
@@ -108,7 +108,7 @@
 
 例如，对我来说很长一段时间，特征工程是特征构造。
 
-我想我自己“_我现在正在进行特征工程_”并且我会追问“_我如何分解或聚合原始数据以更好地描述潜在问题？_ “目标是正确的，但这种做法是其中之一。
+我想我自己“_ 我现在正在进行特征工程 _”并且我会追问“_ 我如何分解或聚合原始数据以更好地描述潜在问题？_ “目标是正确的，但这种做法是其中之一。
 
 在本节中，我们将介绍这些方法以及它们要解决的具体子问题。每个都可以是他们自己的深度文章，因为它们是实践和研究的重要和重要领域。
 
@@ -120,7 +120,7 @@
 
 与属性分离的特征的概念在问题的上下文中更有意义。功能是对您的问题有用或有意义的属性。它是了解正在建模的问题结构的观察的重要部分。
 
-我使用“_有意义的_”来区分属性和属性。有些人可能没有。我认为没有一个没有意义的功能。如果某个功能对问题没有影响，则不是问题的一部分。
+我使用“_ 有意义的 _”来区分属性和属性。有些人可能没有。我认为没有一个没有意义的功能。如果某个功能对问题没有影响，则不是问题的一部分。
 
 在计算机视觉中，图像是观察，但是特征可以是图像中的线。在自然语言处理中，文档或推文可以是观察，并且短语或单词计数可以是特征。在语音识别中，话语可以是观察，但是特征可以是单个单词或音素。
 
@@ -134,7 +134,7 @@
 
 如果特征与因变量（被预测的事物）高度相关，则该特征可能是重要的。相关系数和其他单变量（每个属性被独立考虑）方法是常用方法。
 
-更复杂的预测性建模算法在构建模型时在内部执行特征重要性和选择。一些例子包括MARS， [Random Forest](http://en.wikipedia.org/wiki/Random_forest#Variable_importance) 和Gradient Boosted Machines。这些模型还可以报告在模型准备过程中确定的变量重要性。
+更复杂的预测性建模算法在构建模型时在内部执行特征重要性和选择。一些例子包括 MARS， [Random Forest](http://en.wikipedia.org/wiki/Random_forest#Variable_importance) 和 Gradient Boosted Machines。这些模型还可以报告在模型准备过程中确定的变量重要性。
 
 ### 特征提取：从原始数据自动构建新特征
 
@@ -144,7 +144,7 @@
 
 [特征提取](http://en.wikipedia.org/wiki/Feature_extraction)是一个将这些类型的观察的维度自动降低为可以建模的更小集合的过程。
 
-对于表格数据，这可能包括主成分分析和无监督聚类方法等投影方法。对于图像数据，这可能包括线或边缘检测。根据域，图像，视频和音频观察结果适用于许多相同类型的DSP方法。
+对于表格数据，这可能包括主成分分析和无监督聚类方法等投影方法。对于图像数据，这可能包括线或边缘检测。根据域，图像，视频和音频观察结果适用于许多相同类型的 DSP 方法。
 
 特征提取的关键是方法是自动的（尽管可能需要用更简单的方法设计和构造）并解决难以管理的高维数据的问题，最常用于以数字格式存储的模拟观测。
 
@@ -162,7 +162,7 @@
 
 还有一些方法可以烘焙特征选择或将其作为模型的副作用。逐步回归是一种算法的示例，该算法自动执行特征选择，作为模型构建过程的一部分。
 
-像LASSO和岭回归这样的正则化方法也可以被认为是具有特征选择的算法，因为它们积极地寻求去除或折扣特征的贡献作为模型构建过程的一部分。
+像 LASSO 和岭回归这样的正则化方法也可以被认为是具有特征选择的算法，因为它们积极地寻求去除或折扣特征的贡献作为模型构建过程的一部分。
 
 在帖子中阅读更多内容：[功能选择简介](http://machinelearningmastery.com/an-introduction-to-feature-selection/ "An Introduction to Feature Selection")。
 
@@ -210,18 +210,18 @@
 
 应用机器学习的过程（缺乏更好的名称）在广泛的刷子意​​义上涉及许多活动。前面是问题定义，接下来是数据选择和准备，中间是模型准备，评估和调整，最后是结果的呈现。
 
-像[数据挖掘和KDD](http://machinelearningmastery.com/what-is-data-mining-and-kdd/ "What is Data Mining and KDD") 这样的过程描述有助于更好地理解任务和子任务。您可以按照自己喜欢的方式挑选和选择流程。 [在](http://machinelearningmastery.com/process-for-working-through-machine-learning-problems/ "Process for working through Machine Learning Problems")之前我已经谈了很多这个。
+像[数据挖掘和 KDD](http://machinelearningmastery.com/what-is-data-mining-and-kdd/ "What is Data Mining and KDD") 这样的过程描述有助于更好地理解任务和子任务。您可以按照自己喜欢的方式挑选和选择流程。 [在](http://machinelearningmastery.com/process-for-working-through-machine-learning-problems/ "Process for working through Machine Learning Problems")之前我已经谈了很多这个。
 
 与我们关于特征工程的讨论相关的图片是此过程的前端。它可能类似于以下内容：
 
 1.  （此前的任务......）
 2.  **选择数据**：整合数据，将其去标准化为数据集，一起收集。
 3.  **预处理数据**：对其进行格式化，清理，对其进行采样，以便您可以使用它。
-4.  **转换数据**：_特征工程师在这里发生_。
+4.  **转换数据**：_ 特征工程师在这里发生 _。
 5.  **模型数据**：创建模型，评估它们并调整它们。
 6.  （此后的任务......）
 
-将“_转换数据_”从原始状态转换为适合建模的状态的传统观念是特征工程适用的地方。转换数据和特征工程实际上可能是同义词。
+将“_ 转换数据 _”从原始状态转换为适合建模的状态的传统观念是特征工程适用的地方。转换数据和特征工程实际上可能是同义词。
 
 这张照片在某些方面有所帮助。
 
@@ -258,9 +258,9 @@
 
 让我们使特征工程的概念更具体。
 
-在本节中，我们将考虑您可能在Excel电子表格中使用的表格数据。我们将看一些您可能想要考虑自己的问题的手动功能构建示例。
+在本节中，我们将考虑您可能在 Excel 电子表格中使用的表格数据。我们将看一些您可能想要考虑自己的问题的手动功能构建示例。
 
-当我听到“_特征工程至关重要_”时，这就是我想到的特征工程类型。这是我熟悉和实践的最常见的形式。
+当我听到“_ 特征工程至关重要 _”时，这就是我想到的特征工程类型。这是我熟悉和实践的最常见的形式。
 
 哪个最好？你事前无法知道。您必须尝试它们并评估结果以实现您的算法和表现测量。
 
@@ -268,7 +268,7 @@
 
 想象一下你有一个分类属性，比如“`Item_Color`”可以是`Red`，`Blue`或`Unknown`。
 
-_未知_可能很特别，但对于模型来说，它看起来只是另一种颜色选择。更好地公开这些信息可能是有益的。
+_ 未知 _ 可能很特别，但对于模型来说，它看起来只是另一种颜色选择。更好地公开这些信息可能是有益的。
 
 您可以创建一个名为“`Has_Color`”的新二进制功能，并在项目有颜色时为其分配值“`1`”，当“`0`”时颜色未知。
 
@@ -278,7 +278,7 @@ _未知_可能很特别，但对于模型来说，它看起来只是另一种颜
 
 ### 分解日期时间
 
-日期时间包含很多信息，模型很难利用它的原生形式，例如 [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) （即2014-09-20T20：45：40Z）。
+日期时间包含很多信息，模型很难利用它的原生形式，例如 [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) （即 2014-09-20T20：45：40Z）。
 
 如果您怀疑时间与其他属性之间存在关系，则可以将日期时间分解为可能允许模型发现和利用这些关系的组成部分。
 
@@ -286,7 +286,7 @@ _未知_可能很特别，但对于模型来说，它看起来只是另一种颜
 
 您可以创建一个名为`Hour_of_Day`的新数字特征，该小时可能有助于回归模型。
 
-您可以使用4个值`Morning`，`Midday`，`Afternoon`，`Night`创建名为`Part_Of_Day`的新序数功能你认为相关的小时边界。这可能对决策树有用。
+您可以使用 4 个值`Morning`，`Midday`，`Afternoon`，`Night`创建名为`Part_Of_Day`的新序数功能你认为相关的小时边界。这可能对决策树有用。
 
 您可以使用类似的方法来选择一周中的时间关系，一个月的时间关系以及一年中各种季节性结构。
 
@@ -298,11 +298,11 @@ _未知_可能很特别，但对于模型来说，它看起来只是另一种颜
 
 您可能拥有重量，距离或时间等数量。线性变换对于回归和其他依赖于尺度的方法可能是有用的。
 
-例如，您可以以克为单位`Item_Weight`，其值为6289.您可以创建一个新的要素，其中此数量（公斤）为6.289或舍入公斤（如6）。如果域名是运输数据，可能是公斤`Item_Weight`的精度足够或更有用（噪音更小）。
+例如，您可以以克为单位`Item_Weight`，其值为 6289.您可以创建一个新的要素，其中此数量（公斤）为 6.289 或舍入公斤（如 6）。如果域名是运输数据，可能是公斤`Item_Weight`的精度足够或更有用（噪音更小）。
 
-`Item_Weight`可以分为两个特征：`Item_Weight_Kilograms`和`Item_Weight_Remainder_Grams`，示例值分别为6和289。
+`Item_Weight`可以分为两个特征：`Item_Weight_Kilograms`和`Item_Weight_Remainder_Grams`，示例值分别为 6 和 289。
 
-可能存在领域知识，即权重大于4的项目会产生更高的税率。该魔术域号可用于创建新的二进制特征`Item_Above_4kg`，其值为“`1`”，我们的示例为6289克。
+可能存在领域知识，即权重大于 4 的项目会产生更高的税率。该魔术域号可用于创建新的二进制特征`Item_Above_4kg`，其值为“`1`”，我们的示例为 6289 克。
 
 您还可以将数量存储为间隔的费率或总数量。例如，`Num_Customer_Purchases`汇总了一年。
 
@@ -316,13 +316,13 @@ _未知_可能很特别，但对于模型来说，它看起来只是另一种颜
 
 在本节中，我们将介绍几个关注特征工程的有趣且值得注意的赛后写作示例。
 
-### 预测2010年KDD杯的学生考试成绩
+### 预测 2010 年 KDD 杯的学生考试成绩
 
-[KDD杯](http://www.sigkdd.org/kddcup/index.php)是每年为知识发现和数据挖掘会议的ACM特别兴趣小组的与会者举办的机器学习竞赛。
+[KDD 杯](http://www.sigkdd.org/kddcup/index.php)是每年为知识发现和数据挖掘会议的 ACM 特别兴趣小组的与会者举办的机器学习竞赛。
 
-2010年，比赛的重点是对学生的学习方式进行建模。提供了一个关于代数问题的学生语料库，用于预测学生未来的表现。
+2010 年，比赛的重点是对学生的学习方式进行建模。提供了一个关于代数问题的学生语料库，用于预测学生未来的表现。
 
-比赛的获胜者是国立台湾大学的一群学生和学者。他们的方法在论文“[特征工程和KDD杯2010分类器集合](http://pslcdatashop.org/KDDCup/workshop/papers/kdd2010ntu.pdf)”中有所描述。
+比赛的获胜者是国立台湾大学的一群学生和学者。他们的方法在论文“[特征工程和 KDD 杯 2010 分类器集合](http://pslcdatashop.org/KDDCup/workshop/papers/kdd2010ntu.pdf)”中有所描述。
 
 本文将特色工程作为获胜的关键方法。特征工程以创建数百万个二进制特征为代价简化了问题的结构。简单的结构使团队能够使用高表现但非常简单的线性方法来实现获胜的预测模型。
 
@@ -332,15 +332,15 @@ _未知_可能很特别，但对于模型来说，它看起来只是另一种颜
 
 ### 预测遗产健康奖的患者准入
 
-[遗产健康奖](https://www.heritagehealthprize.com/c/hhp)获得了300万美元的奖金，该奖项可以最好地预测哪些患者将在明年入院。
+[遗产健康奖](https://www.heritagehealthprize.com/c/hhp)获得了 300 万美元的奖金，该奖项可以最好地预测哪些患者将在明年入院。
 
 该奖项每年都会获得里程碑奖，其中顶级团队将获得奖项，其流程和方法将公开。
 
 我记得读过三个里程碑中的第一个发布的论文，并对所涉及的特征工程的数量印象深刻。
 
-具体来说，菲尔·布里尔利，大卫沃格尔和兰迪阿克塞尔罗德的论文“[第1轮里程碑奖：我们如何做到 - 团队市场创造者](https://kaggle2.blob.core.windows.net/wiki-files/327/e4cd1d25-eca9-49ca-9593-b254a773fe03/Market%20Makers%20-%20Milestone%201%20Description%20V2%201.pdf)”。大多数竞赛都涉及大量的特征工程，但令我印象深刻的是这篇论文的重点。
+具体来说，菲尔·布里尔利，大卫沃格尔和兰迪阿克塞尔罗德的论文“[第 1 轮里程碑奖：我们如何做到 - 团队市场创造者](https://kaggle2.blob.core.windows.net/wiki-files/327/e4cd1d25-eca9-49ca-9593-b254a773fe03/Market%20Makers%20-%20Milestone%201%20Description%20V2%201.pdf)”。大多数竞赛都涉及大量的特征工程，但令我印象深刻的是这篇论文的重点。
 
-本文提供了构造属性所需的属性和SQL表。
+本文提供了构造属性所需的属性和 SQL 表。
 
 本文通过简单分解给出了一些很好的现实世界的特征工程实例。有很多计数，分钟，最大值，大量二进制属性和离散化的数字属性。非常简单的方法用于很好的效果。
 
@@ -375,11 +375,11 @@ _未知_可能很特别，但对于模型来说，它看起来只是另一种颜
 
 以下是一些普遍相关的论文：
 
-*   [关于变量和特征选择的JMLR特刊](http://jmlr.org/papers/special/feature03.html)
+*   [关于变量和特征选择的 JMLR 特刊](http://jmlr.org/papers/special/feature03.html)
 
 以下是一些通常相关且有趣的幻灯片：
 
-*   [特色工程](http://kti.tugraz.at/staff/denis/courses/kddm1/featureengineering.pdf)（PDF），知识发现和数据挖掘1，作者：Roman Kern，[知识技术研究所](http://kti.tugraz.at/staff/denis/courses/kddm1/)
+*   [特色工程](http://kti.tugraz.at/staff/denis/courses/kddm1/featureengineering.pdf)（PDF），知识发现和数据挖掘 1，作者：Roman Kern，[知识技术研究所](http://kti.tugraz.at/staff/denis/courses/kddm1/)
 *   [特色工程与选择](http://www.cs.berkeley.edu/~jordan/courses/294-fall09/lectures/feature/slides.pdf)（PDF），CS 294：[实用机器学习](http://www.cs.berkeley.edu/~jordan/courses/294-fall09/lectures/feature/)，伯克利
 *   [特色工程工作室](http://www.columbia.edu/~rsb2162/FES2013/materials.html)，课程讲座幻灯片和材料，哥伦比亚
 *   [特色工程](http://www.cs.princeton.edu/courses/archive/spring10/cos424/slides/18-feat.pdf)（PDF），Leon Bottou，Princeton
@@ -390,15 +390,15 @@ _未知_可能很特别，但对于模型来说，它看起来只是另一种颜
 
 以下是一些有趣的链接：
 
-*   [特色工程：如何在泰坦尼克号竞赛](http://trevorstephens.com/post/73461351896/titanic-getting-started-with-r-part-4-feature)（Kaggle的入门竞赛）上进行特色工程。有比特征工程更多的数据，但它仍然具有指导意义。
-*   ~~[IPython笔记本](http://nbviewer.ipython.org/url/trust.sce.ntu.edu.sg/~gguo1/blogs/Features.ipynb)由 [Guibing Guo](http://trust.sce.ntu.edu.sg/~gguo1/) ，致力于解释特征工程。有点乱，但值得一撇~~。 （链接看起来很糟糕，对不起。）
+*   [特色工程：如何在泰坦尼克号竞赛](http://trevorstephens.com/post/73461351896/titanic-getting-started-with-r-part-4-feature)（Kaggle 的入门竞赛）上进行特色工程。有比特征工程更多的数据，但它仍然具有指导意义。
+*   ~~[IPython 笔记本](http://nbviewer.ipython.org/url/trust.sce.ntu.edu.sg/~gguo1/blogs/Features.ipynb)由 [Guibing Guo](http://trust.sce.ntu.edu.sg/~gguo1/) ，致力于解释特征工程。有点乱，但值得一撇~~。 （链接看起来很糟糕，对不起。）
 
 ### 影片
 
-关于特征工程的主题有几个视频。迄今为止最好的是由Ryan Baker命名为“[特征工程](https://www.youtube.com/watch?v=drUToKxEAUA)”。它很短（大约9分钟），我建议观看一些很好的实用技巧。
+关于特征工程的主题有几个视频。迄今为止最好的是由 Ryan Baker 命名为“[特征工程](https://www.youtube.com/watch?v=drUToKxEAUA)”。它很短（大约 9 分钟），我建议观看一些很好的实用技巧。
 
 &lt;iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" height="281" src="https://www.youtube.com/embed/drUToKxEAUA?feature=oembed" width="500"&gt;&lt;/iframe&gt;
 
 如果您认为我错过了一个关键概念或资源，请发表评论。
 
-**更新2015** ：我注意到现在有一​​篇关于特色工程的[维基百科文章，它复制了这篇文章的大部分内容。那好吧。](https://en.wikipedia.org/wiki/Feature_engineering)
+**更新 2015** ：我注意到现在有一​​篇关于特色工程的[维基百科文章，它复制了这篇文章的大部分内容。那好吧。](https://en.wikipedia.org/wiki/Feature_engineering)

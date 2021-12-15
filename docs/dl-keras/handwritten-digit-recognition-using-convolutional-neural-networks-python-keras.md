@@ -54,7 +54,7 @@ from keras.datasets import mnist
 import matplotlib.pyplot as plt
 # 加载数据集
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
-# 绘制灰度级别的4幅图像
+# 绘制灰度级别的 4 幅图像
 plt.subplot(221)
 plt.imshow(X_train[0], cmap=plt.get_cmap('gray'))
 plt.subplot(222)
@@ -151,9 +151,9 @@ def baseline_model():
 
 该模型是一个简单的神经网络，其中一个隐藏层具有与输入相同数量的神经元（784），非线性激活函数被用于隐藏层中的神经元。
 
-在输出层上使用 softmax 激活函数将输出转换为类似概率的值，并允许选择 10个类别中的一个类作为模型的输出预测，对数损失用作损失函数（在 Keras 中称为 categorical_crossentropy），并且使用有效的 ADAM 梯度下降算法来学习权重。
+在输出层上使用 softmax 激活函数将输出转换为类似概率的值，并允许选择 10 个类别中的一个类作为模型的输出预测，对数损失用作损失函数（在 Keras 中称为 categorical_crossentropy），并且使用有效的 ADAM 梯度下降算法来学习权重。
 
-我们现在可以拟合和评估模型，该模型将拟合10次迭代，每 200 个图像更新一次。测试数据用作验证数据集，允许您在训练时查看模型的表现。参数`verbose=2`表示将每个训练时期的输出减少到一行。
+我们现在可以拟合和评估模型，该模型将拟合 10 次迭代，每 200 个图像更新一次。测试数据用作验证数据集，允许您在训练时查看模型的表现。参数`verbose=2`表示将每个训练时期的输出减少到一行。
 
 最后，测试数据集用于评估模型并打印分类错误率。
 
@@ -326,7 +326,7 @@ CNN Error: 1.03%
 我们导入类和函数，然后加载与前一个 CNN 示例相同的预处理数据。
 
 ```py
-# MNIST Dataset更大的CNN
+# MNIST Dataset 更大的 CNN
 import numpy
 from keras.datasets import mnist
 from keras.models import Sequential
@@ -361,7 +361,7 @@ num_classes = y_test.shape[1]
 2.  池化层最多超过 2 * 2 patches。
 3.  具有 15 个维度为 3×3 的特征图的卷积层。
 4.  池化层最多超过 2 * 2 patches。
-5.  dropout层的概率设置为 20％。
+5.  dropout 层的概率设置为 20％。
 6.  将矩阵转换为向量。
 7.  完全连接的层有 128 个神经元和非线性激活函数。
 8.  完全连接的层有 50 个神经元和非线性激活函数。
@@ -386,7 +386,7 @@ def larger_model():
 	return model
 ```
 
-与前两个实验一样，该模型拟合10个迭代次数，批大小为 200。
+与前两个实验一样，该模型拟合 10 个迭代次数，批大小为 200。
 
 ```py
 # 构建模型

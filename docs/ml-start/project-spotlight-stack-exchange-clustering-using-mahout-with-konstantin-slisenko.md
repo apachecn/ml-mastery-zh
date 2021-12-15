@@ -1,4 +1,4 @@
-# 项目聚焦：将 Mahout 和 Konstantin Slisenko 用于StackExchange聚类
+# 项目聚焦：将 Mahout 和 Konstantin Slisenko 用于 StackExchange 聚类
 
 > 原文： [https://machinelearningmastery.com/project-spotlight-stack-exchange-clustering-using-mahout-with-konstantin-slisenko/](https://machinelearningmastery.com/project-spotlight-stack-exchange-clustering-using-mahout-with-konstantin-slisenko/)
 
@@ -48,7 +48,7 @@ Konstantin Slisenko
 
 [![Stack Exchange Clustering using Mahout by Konstantin Slisenko](img/bea95becffcd97609771221e9ba400ef.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/03/Stack-Exchange-Clustering-using-Mahout.png)
 
-使用 Konstantin Slisenko 的 Mahout StackExchange群集
+使用 Konstantin Slisenko 的 Mahout StackExchange 群集
 
 [K-Means 聚类](http://en.wikipedia.org/wiki/K-means_clustering)算法要求您设置聚类 K 的初始数量。我想动态地进行 K 计算。出于这个原因，我打算找到另一种算法。
 

@@ -1,4 +1,4 @@
-# 如何诊断LSTM模型的过拟合和欠拟合
+# 如何诊断 LSTM 模型的过拟合和欠拟合
 
 > 原文： [https://machinelearningmastery.com/diagnose-overfitting-underfitting-lstm-models/](https://machinelearningmastery.com/diagnose-overfitting-underfitting-lstm-models/)
 
@@ -6,11 +6,11 @@
 
 您可能获得了良好的模型技能分数，但重要的是要知道您的模型是否适合您的数据，或者它是不合适还是过度适应，并且可以使用不同的配置做得更好。
 
-在本教程中，您将了解如何诊断LSTM模型在序列预测问题上的拟合程度。
+在本教程中，您将了解如何诊断 LSTM 模型在序列预测问题上的拟合程度。
 
 完成本教程后，您将了解：
 
-*   如何收集和绘制LSTM模型的训练历史。
+*   如何收集和绘制 LSTM 模型的训练历史。
 *   如何诊断身体不适，身体健康和过度模特。
 *   如何通过平均多个模型运行来开发更强大的诊断。
 
@@ -18,20 +18,20 @@
 
 ## 教程概述
 
-本教程分为6个部分;他们是：
+本教程分为 6 个部分;他们是：
 
-1.  在Keras训练历史
+1.  在 Keras 训练历史
 2.  诊断图
-3.  Underfit示例
+3.  Underfit 示例
 4.  合适的例子
 5.  适合例子
 6.  多次运行示例
 
-## 1.在Keras训练历史
+## 1.在 Keras 训练历史
 
 通过查看模型的表现，您可以了解很多关于模型行为的信息。
 
-通过调用 _fit（）_函数来训练LSTM模型。此函数返回一个名为_历史记录_的变量，该变量包含损失的跟踪以及在编译模型期间指定的任何其他指标。这些分数记录在每个时代的末尾。
+通过调用 _fit（）_ 函数来训练 LSTM 模型。此函数返回一个名为 _ 历史记录 _ 的变量，该变量包含损失的跟踪以及在编译模型期间指定的任何其他指标。这些分数记录在每个时代的末尾。
 
 ```py
 ...
@@ -40,7 +40,7 @@ history = model.fit(...)
 
 例如，如果编译模型以优化对数损失（`binary_crossentropy`）并测量每个时期的准确度，则将计算对数损失和准确度并记录在每个训练时期的历史记录中。
 
-通过调用 _fit（）_返回的历史对象中的键访问每个分数。默认情况下，在拟合模型时优化的损失称为“_损失_”，精度称为“`acc`”。
+通过调用 _fit（）_ 返回的历史对象中的键访问每个分数。默认情况下，在拟合模型时优化的损失称为“_ 损失 _”，精度称为“`acc`”。
 
 ```py
 ...
@@ -50,16 +50,16 @@ print(history.history['loss'])
 print(history.history['acc'])
 ```
 
-Keras还允许您在拟合模型时指定单独的验证数据集，也可以使用相同的损失和指标进行评估。
+Keras 还允许您在拟合模型时指定单独的验证数据集，也可以使用相同的损失和指标进行评估。
 
-这可以通过在 _fit（）_上设置`validation_split`参数来使用一部分训练数据作为验证数据集来完成。
+这可以通过在 _fit（）_ 上设置`validation_split`参数来使用一部分训练数据作为验证数据集来完成。
 
 ```py
 ...
 history = model.fit(X, Y, epochs=100, validation_split=0.33)
 ```
 
-这也可以通过设置`validation_data`参数并传递X和y数据集的元组来完成。
+这也可以通过设置`validation_data`参数并传递 X 和 y 数据集的元组来完成。
 
 ```py
 ...
@@ -80,9 +80,9 @@ print(history.history['val_acc'])
 
 ## 2.诊断图
 
-LSTM模型的训练历史记录可用于诊断模型的行为。
+LSTM 模型的训练历史记录可用于诊断模型的行为。
 
-您可以使用Matplotlib库绘制模型的表现。例如，您可以如下绘制训练损失与测试损失的关系：
+您可以使用 Matplotlib 库绘制模型的表现。例如，您可以如下绘制训练损失与测试损失的关系：
 
 ```py
 from matplotlib import pyplot
@@ -107,7 +107,7 @@ pyplot.show()
 
 这可以从训练损失低于验证损失的图中诊断出来，并且验证损失具有表明可以进一步改进的趋势。
 
-下面提供了一个下装LSTM模型的小例子。
+下面提供了一个下装 LSTM 模型的小例子。
 
 ```py
 from keras.models import Sequential
@@ -221,7 +221,7 @@ pyplot.show()
 
 这可以从训练和验证损失减少并在同一点附近稳定的图中诊断出来。
 
-下面的小例子演示了一个非常合适的LSTM模型。
+下面的小例子演示了一个非常合适的 LSTM 模型。
 
 ```py
 from keras.models import Sequential
@@ -280,7 +280,7 @@ pyplot.show()
 
 这可以从训练损失向下倾斜并且验证损失向下倾斜，到达拐点并且再次开始向上倾斜的图中诊断出来。
 
-下面的示例演示了一个过拟合的LSTM模型。
+下面的示例演示了一个过拟合的 LSTM 模型。
 
 ```py
 from keras.models import Sequential
@@ -337,9 +337,9 @@ pyplot.show()
 
 ## 6.多次运行示例
 
-LSTM是随机的，这意味着每次运行都会获得不同的诊断图。
+LSTM 是随机的，这意味着每次运行都会获得不同的诊断图。
 
-多次重复诊断运行（例如5,10或30）可能很有用。然后可以绘制来自每次运行的训练和验证轨迹，以更加稳健地了解模型随时间的行为。
+多次重复诊断运行（例如 5,10 或 30）可能很有用。然后可以绘制来自每次运行的训练和验证轨迹，以更加稳健地了解模型随时间的行为。
 
 下面的示例在绘制每次运行的训练跟踪和验证损失之前多次运行相同的实验。
 
@@ -394,7 +394,7 @@ pyplot.xlabel('epoch')
 pyplot.show()
 ```
 
-在得到的图中，我们可以看到欠拟合的总体趋势在5次运行中保持不变，并且可能增加训练时期的数量。
+在得到的图中，我们可以看到欠拟合的总体趋势在 5 次运行中保持不变，并且可能增加训练时期的数量。
 
 ![Diagnostic Line Plot Showing Multiple Runs for a Model](img/5cae28c63c17385e8be130c6a2e9ecdb.jpg)
 
@@ -404,17 +404,17 @@ pyplot.show()
 
 如果您要深入了解，本节将提供有关该主题的更多资源。
 
-*   [历史回调Keras API](https://keras.io/callbacks/#history)
+*   [历史回调 Keras API](https://keras.io/callbacks/#history)
 *   [维基百科机器学习中的学习曲线](https://en.wikipedia.org/wiki/Learning_curve#In_machine_learning)
 *   [维基百科上的过拟合](https://en.wikipedia.org/wiki/Overfitting)
 
 ## 摘要
 
-在本教程中，您了解了如何诊断LSTM模型在序列预测问题上的拟合。
+在本教程中，您了解了如何诊断 LSTM 模型在序列预测问题上的拟合。
 
 具体来说，你学到了：
 
-*   如何收集和绘制LSTM模型的训练历史。
+*   如何收集和绘制 LSTM 模型的训练历史。
 *   如何诊断身体不适，身体健康和过度模特。
 *   如何通过平均多个模型运行来开发更强大的诊断。
 

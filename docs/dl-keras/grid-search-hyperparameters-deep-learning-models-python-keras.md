@@ -11,7 +11,7 @@
 阅读这篇文章后你会知道：
 
 *   如何封装 Keras 模型用于 scikit-learn 以及如何使用网格搜索。
-*   如何网格搜索常见的神经网络参数，如学习率，dropout率，迭代次数和神经元数量。
+*   如何网格搜索常见的神经网络参数，如学习率，dropout 率，迭代次数和神经元数量。
 *   如何在自己的项目中定义自己的超参数调整实验。
 
 让我们开始吧！
@@ -40,7 +40,7 @@
 5.  如何调整学习率和冲量单元。
 6.  如何调整网络权重参数初始化。
 7.  如何调整激活函数。
-8.  如何调节dropout正则化。
+8.  如何调节 dropout 正则化。
 9.  如何调整隐藏层中的神经元数量。
 
 ## 如何在 scikit-learn 中使用 Keras 模型
@@ -97,7 +97,7 @@ model = KerasClassifier(build_fn=create_model, dropout_rate=0.2)
 
 默认情况下，网格搜索仅使用一个线程，通过将 **GridSearchCV** 构造函数中的 **n_jobs** 参数设置为-1，该进程将使用计算机上的所有计算资源，根据您的 Keras 后端，这种方法可能会干扰主要的神经网络训练过程。
 
-然后，**GridSearchCV**流程将为每种参数组合构建和评估一个模型。 尽管可以通过为**GridSearchCV**构造函数指定cv参数来覆盖交叉验证，但是交叉验证用于评估每个单独的模型，并且使用默认的三折交叉验证。
+然后，**GridSearchCV**流程将为每种参数组合构建和评估一个模型。 尽管可以通过为**GridSearchCV**构造函数指定 cv 参数来覆盖交叉验证，但是交叉验证用于评估每个单独的模型，并且使用默认的三折交叉验证。
 
 下面是定义简单网格搜索的示例：
 
@@ -147,13 +147,13 @@ INFO (theano.gof.compilelock): To manually release the lock, delete ...
 完整的代码清单如下。
 
 ```py
-# 使用sklearn网格化搜索批大小和迭代次数
+# 使用 sklearn 网格化搜索批大小和迭代次数
 import numpy
 from sklearn.model_selection import GridSearchCV
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.wrappers.scikit_learn import KerasClassifier
-# KerasClassifier所需的创建模型的函数
+# KerasClassifier 所需的创建模型的函数
 def create_model():
 	# 创建模型
 	model = Sequential()
@@ -211,7 +211,7 @@ Best: 0.686198 using {'epochs': 100, 'batch_size': 20}
 0.542969 (0.157934) with: {'epochs': 100, 'batch_size': 100}
 ```
 
-我们可以看到批大小为20，迭代次数为100时达到了 68％准确度的最佳结果。
+我们可以看到批大小为 20，迭代次数为 100 时达到了 68％准确度的最佳结果。
 
 ## 如何调整训练优化算法
 
@@ -226,13 +226,13 @@ Keras 提供一套不同的最先进的优化算法。
 完整的代码清单如下。
 
 ```py
-# 使用sklearn网格化搜索批大小和迭代次数
+# 使用 sklearn 网格化搜索批大小和迭代次数
 import numpy
 from sklearn.model_selection import GridSearchCV
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.wrappers.scikit_learn import KerasClassifier
-#  KerasClassifier类所需要的创建模型的函数
+#  KerasClassifier 类所需要的创建模型的函数
 def create_model(optimizer='adam'):
 	# 创建模型
 	model = Sequential()
@@ -295,14 +295,14 @@ Best: 0.704427 using {'optimizer': 'Adam'}
 完整的代码清单如下。
 
 ```py
-# 使用sklearn网格化搜索学习率和冲量单元
+# 使用 sklearn 网格化搜索学习率和冲量单元
 import numpy
 from sklearn.model_selection import GridSearchCV
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.wrappers.scikit_learn import KerasClassifier
 from keras.optimizers import SGD
-#KerasClassifier类所需要的创建模型的函数
+#KerasClassifier 类所需要的创建模型的函数
 def create_model(learn_rate=0.01, momentum=0):
 	# 创建模型
 	model = Sequential()
@@ -373,7 +373,7 @@ Best: 0.680990 using {'learn_rate': 0.01, 'momentum': 0.0}
 0.348958 (0.024774) with: {'learn_rate': 0.3, 'momentum': 0.9}
 ```
 
-我们可以看到相对 SGD 在这个问题上表现不是很好，但是使用 0.01 的学习率和 0.0 的冲量单元获得了68%的精确度
+我们可以看到相对 SGD 在这个问题上表现不是很好，但是使用 0.01 的学习率和 0.0 的冲量单元获得了 68%的精确度
 
 ## 如何调整网络权重初始化
 
@@ -388,13 +388,13 @@ Best: 0.680990 using {'learn_rate': 0.01, 'momentum': 0.0}
 完整的代码清单如下。
 
 ```py
-# 使用sklearn网格化搜索权重参数初始化
+# 使用 sklearn 网格化搜索权重参数初始化
 import numpy
 from sklearn.model_selection import GridSearchCV
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.wrappers.scikit_learn import KerasClassifier
-#  KerasClassifier需要的创建模型的函数
+#  KerasClassifier 需要的创建模型的函数
 def create_model(init_mode='uniform'):
 	# 创建模型
 	model = Sequential()
@@ -408,7 +408,7 @@ seed = 7
 numpy.random.seed(seed)
 # 加载数据集
 dataset = numpy.loadtxt("pima-indians-diabetes.csv", delimiter=",")
-# 将输入化为·输入变量X和输出变量y
+# 将输入化为·输入变量 X 和输出变量 y
 X = dataset[:,0:8]
 Y = dataset[:,8]
 # 创建模型
@@ -441,7 +441,7 @@ Best: 0.720052 using {'init_mode': 'uniform'}
 0.678385 (0.004872) with: {'init_mode': 'he_uniform'}
 ```
 
-我们可以看到，使用均匀权重初始化方案实现了最佳结果，能够达到大概72%的表现。
+我们可以看到，使用均匀权重初始化方案实现了最佳结果，能够达到大概 72%的表现。
 
 ## 如何调整神经元激活函数
 
@@ -456,13 +456,13 @@ Best: 0.720052 using {'init_mode': 'uniform'}
 完整的代码清单如下。
 
 ```py
-# 使用sklearn网格化搜索激活函数
+# 使用 sklearn 网格化搜索激活函数
 import numpy
 from sklearn.model_selection import GridSearchCV
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.wrappers.scikit_learn import KerasClassifier
-#  KerasClassifier所需要的创建模型函数
+#  KerasClassifier 所需要的创建模型函数
 def create_model(activation='relu'):
 	# 创建模型
 	model = Sequential()
@@ -511,22 +511,22 @@ Best: 0.722656 using {'activation': 'linear'}
 
 令人惊讶的是（至少对我而言），“线性”激活功能获得了最佳结果，精确度约为 72％。
 
-## 如何调整dropout正则化
+## 如何调整 dropout 正则化
 
-在这个例子中，我们将研究调整正则化的dropout率，以限制过拟合并提高模型的推广能力。
+在这个例子中，我们将研究调整正则化的 dropout 率，以限制过拟合并提高模型的推广能力。
 
-为了获得良好的结果，dropout最好与权重约束相结合，例如最大范数约束。
+为了获得良好的结果，dropout 最好与权重约束相结合，例如最大范数约束。
 
 有关在 Keras 深度学习模型中使用 dropout 的更多信息，请参阅帖子：
 
 *   [具有 Keras 的深度学习模型中的丢失正则化](http://machinelearningmastery.com/dropout-regularization-deep-learning-models-keras/)
 
-这涉及拟合dropout率和权重约束，们将尝试 0.0 到 0.9 之间的dropout失百分比（1.0 没有意义）和 0 到 5 之间的 maxnorm 权重约束值。
+这涉及拟合 dropout 率和权重约束，们将尝试 0.0 到 0.9 之间的 dropout 失百分比（1.0 没有意义）和 0 到 5 之间的 maxnorm 权重约束值。
 
 完整的代码清单如下。
 
 ```py
-#使用sklearn网格化搜索dropout率
+#使用 sklearn 网格化搜索 dropout 率
 import numpy
 from sklearn.model_selection import GridSearchCV
 from keras.models import Sequential
@@ -534,7 +534,7 @@ from keras.layers import Dense
 from keras.layers import Dropout
 from keras.wrappers.scikit_learn import KerasClassifier
 from keras.constraints import maxnorm
-# KerasClassifier需要的创建模型的函数
+# KerasClassifier 需要的创建模型的函数
 def create_model(dropout_rate=0.0, weight_constraint=0):
 	# 创建模型
 	model = Sequential()
@@ -625,7 +625,7 @@ Best: 0.723958 using {'dropout_rate': 0.2, 'weight_constraint': 4}
 0.669271 (0.012075) with: {'dropout_rate': 0.9, 'weight_constraint': 5}
 ```
 
-我们可以看到，20％的dropout率和 4 的最大权重约束能够达到最佳精确度约为 72％。
+我们可以看到，20％的 dropout 率和 4 的最大权重约束能够达到最佳精确度约为 72％。
 
 ## 如何调整隐藏层中的神经元数量
 
@@ -640,7 +640,7 @@ Best: 0.723958 using {'dropout_rate': 0.2, 'weight_constraint': 4}
 完整的代码清单如下。
 
 ```py
-# 使用sklearn网格化搜索神经元数量
+# 使用 sklearn 网格化搜索神经元数量
 import numpy
 from sklearn.model_selection import GridSearchCV
 from keras.models import Sequential
@@ -648,7 +648,7 @@ from keras.layers import Dense
 from keras.layers import Dropout
 from keras.wrappers.scikit_learn import KerasClassifier
 from keras.constraints import maxnorm
-# KerasClassifier所需要的创建模型的函数
+# KerasClassifier 所需要的创建模型的函数
 def create_model(neurons=1):
 	# 创建模型
 	model = Sequential()
@@ -663,7 +663,7 @@ seed = 7
 numpy.random.seed(seed)
 # 加载数据集
 dataset = numpy.loadtxt("pima-indians-diabetes.csv", delimiter=",")
-#将数据集划分为输入变量X和输出变量y
+#将数据集划分为输入变量 X 和输出变量 y
 X = dataset[:,0:8]
 Y = dataset[:,8]
 # 创建模型
@@ -701,7 +701,7 @@ Best: 0.714844 using {'neurons': 5}
 
 本节列出了调整神经网络超参数时要考虑的一些方便提示。
 
-*   **k 折交叉验证**：您可以看到本文中示例的结果显示出一些差异，使用默认的3折交叉验证，但是 k = 5 或 k = 10 可能更稳定，请仔细选择交叉验证配置以确保结果稳定。
+*   **k 折交叉验证**：您可以看到本文中示例的结果显示出一些差异，使用默认的 3 折交叉验证，但是 k = 5 或 k = 10 可能更稳定，请仔细选择交叉验证配置以确保结果稳定。
 *   **回顾整个网格**：不要只关注最佳结果，检查整个结果网格并寻找支持配置决策的趋势。
 *   **并行化**：如果可以的话，使用你所有的核心，神经网络训练很慢，我们经常想尝试很多不同的参数，考虑搞砸很多 [AWS 实例](http://machinelearningmastery.com/develop-evaluate-large-deep-learning-models-keras-amazon-web-services/)。
 *   **使用数据集样本**：因为网络训练很慢，所以尝试在训练数据集的较小样本上训练它们，只是为了了解参数的一般方向而不是最佳配置。

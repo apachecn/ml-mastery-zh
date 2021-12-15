@@ -1,4 +1,4 @@
-# 如何在Keras中开发带有注意力的编解码器模型
+# 如何在 Keras 中开发带有注意力的编解码器模型
 
 > 原文： [https://machinelearningmastery.com/encoder-decoder-attention-sequence-to-sequence-prediction-keras/](https://machinelearningmastery.com/encoder-decoder-attention-sequence-to-sequence-prediction-keras/)
 
@@ -6,7 +6,7 @@
 
 注意力是一种解决编解码器架构在长序列上的限制的机制，并且通常加速学习并且提升模型的技能而没有序列来排序预测问题。
 
-在本教程中，您将了解如何使用Keras在Python中开发一个编解码器循环神经网络。
+在本教程中，您将了解如何使用 Keras 在 Python 中开发一个编解码器循环神经网络。
 
 完成本教程后，您将了解：
 
@@ -18,31 +18,31 @@
 
 ![How to Develop an Encoder-Decoder Model with Attention for Sequence-to-Sequence Prediction in Keras](img/a508d456c2630712158b024c6041c69e.jpg)
 
-如何开发一个编解码器模型，注意Keras中的序列到序列预测
-照片由 [Angela和Andrew](https://www.flickr.com/photos/150568953@N07/34585914155/) ，保留一些权利。
+如何开发一个编解码器模型，注意 Keras 中的序列到序列预测
+照片由 [Angela 和 Andrew](https://www.flickr.com/photos/150568953@N07/34585914155/) ，保留一些权利。
 
 ## 教程概述
 
-本教程分为6个部分;他们是：
+本教程分为 6 个部分;他们是：
 
 1.  注意编解码器
 2.  注意力的测试问题
 3.  编解码器没有注意
-4.  自定义Keras注意层
+4.  自定义 Keras 注意层
 5.  注意编解码器
 6.  模型比较
 
-### Python环境
+### Python 环境
 
-本教程假定您已安装Python 3 SciPy环境。
+本教程假定您已安装 Python 3 SciPy 环境。
 
-您必须安装带有TensorFlow或Theano后端的Keras（2.0或更高版本）。
+您必须安装带有 TensorFlow 或 Theano 后端的 Keras（2.0 或更高版本）。
 
-本教程还假设您安装了scikit-learn，Pandas，NumPy和Matplotlib。
+本教程还假设您安装了 scikit-learn，Pandas，NumPy 和 Matplotlib。
 
 如果您需要有关环境的帮助，请参阅此帖子：
 
-*   [如何使用Anaconda设置用于机器学习和深度学习的Python环境](https://machinelearningmastery.com/setup-python-environment-machine-learning-deep-learning-anaconda/)
+*   [如何使用 Anaconda 设置用于机器学习和深度学习的 Python 环境](https://machinelearningmastery.com/setup-python-environment-machine-learning-deep-learning-anaconda/)
 
 ## 注意编解码器
 
@@ -72,9 +72,9 @@
 
 我们将定义问题，使输入和输出序列长度相同，并根据需要用“0”值填充输出序列。
 
-首先，我们需要一个函数来生成随机整数序列。我们将使用Python [randint（）](https://docs.python.org/3/library/random.html)函数生成0和最大值之间的随机整数，并使用此范围作为问题的基数（例如，要素数或难度轴）。
+首先，我们需要一个函数来生成随机整数序列。我们将使用 Python [randint（）](https://docs.python.org/3/library/random.html)函数生成 0 和最大值之间的随机整数，并使用此范围作为问题的基数（例如，要素数或难度轴）。
 
-下面的函数 _generate_sequence（）_将生成一个固定长度和指定基数的随机整数序列。
+下面的函数 _generate_sequence（）_ 将生成一个固定长度和指定基数的随机整数序列。
 
 ```py
 from random import randint
@@ -88,7 +88,7 @@ sequence = generate_sequence(5, 50)
 print(sequence)
 ```
 
-运行此示例将生成一个包含5个时间步长的序列，其中序列中的每个值都是0到49之间的随机整数。
+运行此示例将生成一个包含 5 个时间步长的序列，其中序列中的每个值都是 0 到 49 之间的随机整数。
 
 ```py
 [43, 3, 28, 34, 33]
@@ -96,9 +96,9 @@ print(sequence)
 
 接下来，我们需要一个函数[将单热编码](https://machinelearningmastery.com/how-to-one-hot-encode-sequence-data-in-python/)的离散整数值转换成二进制向量。
 
-如果使用50的基数，则每个整数将由0个值的50个元素向量和指定整数值的索引中的1表示。
+如果使用 50 的基数，则每个整数将由 0 个值的 50 个元素向量和指定整数值的索引中的 1 表示。
 
-下面的 _one_hot_encode（）_函数将对给定的整数序列进行热编码。
+下面的 _one_hot_encode（）_ 函数将对给定的整数序列进行热编码。
 
 ```py
 # one hot encode sequence
@@ -113,7 +113,7 @@ def one_hot_encode(sequence, n_unique):
 
 我们还需要能够解码编码序列。需要将预测从模型或编码的预期序列转换回我们可以读取和评估的整数序列。
 
-下面的 _one_hot_decode（）_函数将单热编码序列解码回整数序列。
+下面的 _one_hot_decode（）_ 函数将单热编码序列解码回整数序列。
 
 ```py
 # decode a one hot encoded string
@@ -170,9 +170,9 @@ print(decoded)
 
 最后，我们需要一个能够创建输入和输出序列对的函数来训练和评估模型。
 
-下面命名为 _get_pair（）_的函数将返回一个输入和输出序列对，给定指定的输入长度，输出长度和基数。输入和输出序列的长度和输入序列的长度相同，但输出序列将作为输入序列的第一个`n`字符，并用零值填充到所需长度。
+下面命名为 _get_pair（）_ 的函数将返回一个输入和输出序列对，给定指定的输入长度，输出长度和基数。输入和输出序列的长度和输入序列的长度相同，但输出序列将作为输入序列的第一个`n`字符，并用零值填充到所需长度。
 
-然后对整数序列进行编码，然后重新成形为循环神经网络所需的3D格式，其尺寸为：_样本_，_时间步长_和_特征_。在这种情况下，样本总是1，因为我们只生成一个输入 - 输出对，时间步长是输入序列长度，特征是每个时间步长的基数。
+然后对整数序列进行编码，然后重新成形为循环神经网络所需的 3D 格式，其尺寸为：_ 样本 _，_ 时间步长 _ 和 _ 特征 _。在这种情况下，样本总是 1，因为我们只生成一个输入 - 输出对，时间步长是输入序列长度，特征是每个时间步长的基数。
 
 ```py
 # prepare data for the LSTM
@@ -245,7 +245,7 @@ X=[12, 20, 36, 40, 12], y=[12, 20, 0, 0, 0]
 
 在本节中，我们将在没有注意的情况下使用编解码器模型开发关于问题表现的基线。
 
-我们将在5个时间步的输入和输出序列中修复问题定义，输出序列中输入序列的前2个元素和基数为50。
+我们将在 5 个时间步的输入和输出序列中修复问题定义，输出序列中输入序列的前 2 个元素和基数为 50。
 
 ```py
 # configure problem
@@ -254,17 +254,17 @@ n_timesteps_in = 5
 n_timesteps_out = 2
 ```
 
-我们可以通过从编码器LSTM模型获得输出，在Keras中开发一个简单的编解码器模型，对输出序列中的时间步长重复n次，然后使用解码器来预测输出序列。
+我们可以通过从编码器 LSTM 模型获得输出，在 Keras 中开发一个简单的编解码器模型，对输出序列中的时间步长重复 n 次，然后使用解码器来预测输出序列。
 
-有关如何在Keras中定义编解码器架构的更多详细信息，请参阅帖子：
+有关如何在 Keras 中定义编解码器架构的更多详细信息，请参阅帖子：
 
 *   [编解码器长短期记忆网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 
-我们将使用相同数量的单位配置编码器和解码器，在本例中为150.我们将使用梯度下降的有效Adam实现并优化分类交叉熵损失函数，因为该问题在技术上是一个多类别分类问题。
+我们将使用相同数量的单位配置编码器和解码器，在本例中为 150.我们将使用梯度下降的有效 Adam 实现并优化分类交叉熵损失函数，因为该问题在技术上是一个多类别分类问题。
 
 模型的配置是在经过一些试验和错误之后找到的，并未进行优化。
 
-下面列出了Keras中编解码器架构的代码。
+下面列出了 Keras 中编解码器架构的代码。
 
 ```py
 # define model
@@ -276,7 +276,7 @@ model.add(TimeDistributed(Dense(n_features, activation='softmax')))
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['acc'])
 ```
 
-我们将在5,000个随机输入 - 输出对的整数序列上训练模型。
+我们将在 5,000 个随机输入 - 输出对的整数序列上训练模型。
 
 ```py
 # train LSTM
@@ -287,7 +287,7 @@ for epoch in range(5000):
 	model.fit(X, y, epochs=1, verbose=2)
 ```
 
-一旦经过训练，我们将在100个新的随机生成的整数序列上评估模型，并且只在整个输出序列与预期值匹配时才标记预测正确。
+一旦经过训练，我们将在 100 个新的随机生成的整数序列上评估模型，并且只在整个输出序列与预期值匹配时才标记预测正确。
 
 ```py
 # evaluate LSTM
@@ -300,7 +300,7 @@ for _ in range(total):
 print('Accuracy: %.2f%%' % (float(correct)/float(total)*100.0))
 ```
 
-最后，我们将打印10个预期输出序列和模型预测序列的例子。
+最后，我们将打印 10 个预期输出序列和模型预测序列的例子。
 
 将所有这些放在一起，下面列出了完整的示例。
 
@@ -377,9 +377,9 @@ for _ in range(10):
 	print('Expected:', one_hot_decode(y[0]), 'Predicted', one_hot_decode(yhat[0]))
 ```
 
-运行此示例不会花费很长时间，可能需要几分钟的CPU，不需要GPU。
+运行此示例不会花费很长时间，可能需要几分钟的 CPU，不需要 GPU。
 
-据报道该模型的准确率略低于20％。鉴于[神经网络的随机性](https://machinelearningmastery.com/randomness-in-machine-learning/)，您的结果会有所不同;考虑运行几次示例并取平均值。
+据报道该模型的准确率略低于 20％。鉴于[神经网络的随机性](https://machinelearningmastery.com/randomness-in-machine-learning/)，您的结果会有所不同;考虑运行几次示例并取平均值。
 
 ```py
 Accuracy: 19.00%
@@ -400,19 +400,19 @@ Expected: [19, 28, 0, 0, 0] Predicted [19, 3, 0, 0, 0]
 Expected: [32, 33, 0, 0, 0] Predicted [32, 32, 0, 0, 0]
 ```
 
-## 自定义Keras注意层
+## 自定义 Keras 注意层
 
 现在我们需要关注编解码器模型。
 
-在撰写本文时，Keras没有内置于库中的注意力，但很快就会 [](https://github.com/fchollet/keras/pull/7980)。
+在撰写本文时，Keras 没有内置于库中的注意力，但很快就会 [](https://github.com/fchollet/keras/pull/7980)。
 
-在Keras正式提供关注之前，我们可以开发自己的实现或使用现有的第三方实现。
+在 Keras 正式提供关注之前，我们可以开发自己的实现或使用现有的第三方实现。
 
 为了加快速度，让我们使用现有的第三方实现。
 
-[Zafarali Ahmed](http://www.zafarali.me/) [Datalogue](https://www.datalogue.io/) 的实习生为Keras开发了一个[自定义层](https://keras.io/layers/writing-your-own-keras-layers/)，提供了关注支持，在一篇名为“[如何可视化您的复发的帖子中提出2017年Keras](https://medium.com/datalogue/attention-in-keras-1892773a4f22) 中关注的神经网络和GitHub项目称为“ [keras-attention](https://github.com/datalogue/keras-attention) ”。
+[Zafarali Ahmed](http://www.zafarali.me/) [Datalogue](https://www.datalogue.io/) 的实习生为 Keras 开发了一个[自定义层](https://keras.io/layers/writing-your-own-keras-layers/)，提供了关注支持，在一篇名为“[如何可视化您的复发的帖子中提出 2017 年 Keras](https://medium.com/datalogue/attention-in-keras-1892773a4f22) 中关注的神经网络和 GitHub 项目称为“ [keras-attention](https://github.com/datalogue/keras-attention) ”。
 
-自定义注意层称为`AttentionDecoder`，可在GitHub项目的 [custom_recurrents.py](https://github.com/datalogue/keras-attention/blob/master/models/custom_recurrents.py) 文件中找到。我们可以在项目的 [GNU Affero通用公共许可证v3.0许可证](https://github.com/datalogue/keras-attention/blob/master/LICENSE)下重用此代码。
+自定义注意层称为`AttentionDecoder`，可在 GitHub 项目的 [custom_recurrents.py](https://github.com/datalogue/keras-attention/blob/master/models/custom_recurrents.py) 文件中找到。我们可以在项目的 [GNU Affero 通用公共许可证 v3.0 许可证](https://github.com/datalogue/keras-attention/blob/master/LICENSE)下重用此代码。
 
 下面列出了自定义层的副本以确保完整性。将其复制并粘贴到当前工作目录中名为“`attention_decoder.py`”的新单独文件中。
 
@@ -727,15 +727,15 @@ class AttentionDecoder(Recurrent):
 from attention_decoder import AttentionDecoder
 ```
 
-如Bahdanau等人所述，该层实现了关注。在他们的论文“[神经机器翻译中通过联合学习来对齐和翻译](https://arxiv.org/abs/1409.0473)。”
+如 Bahdanau 等人所述，该层实现了关注。在他们的论文“[神经机器翻译中通过联合学习来对齐和翻译](https://arxiv.org/abs/1409.0473)。”
 
-该代码在原始帖子中得到了很好的解释，并与LSTM和注意力方程相关联。
+该代码在原始帖子中得到了很好的解释，并与 LSTM 和注意力方程相关联。
 
 该实现的限制是它必须输出与输入序列长度相同的序列，编解码器架构被设计为克服的特定限制。
 
-重要的是，新层管理由第二LSTM执行的重复解码，以及由编解码器模型中的密集输出层执行的模型的softmax输出，而没有注意。这极大地简化了模型的代码。
+重要的是，新层管理由第二 LSTM 执行的重复解码，以及由编解码器模型中的密集输出层执行的模型的 softmax 输出，而没有注意。这极大地简化了模型的代码。
 
-值得注意的是，自定义层建立在Keras的 [Recurrent](https://github.com/fchollet/keras/blob/master/keras/legacy/layers.py#L762) 层上，在编写本文时，它被标记为遗留代码，并且可能会在某个时候从项目中删除。
+值得注意的是，自定义层建立在 Keras 的 [Recurrent](https://github.com/fchollet/keras/blob/master/keras/legacy/layers.py#L762) 层上，在编写本文时，它被标记为遗留代码，并且可能会在某个时候从项目中删除。
 
 ## 编解码器注意
 
@@ -825,7 +825,7 @@ for _ in range(10):
 	print('Expected:', one_hot_decode(y[0]), 'Predicted', one_hot_decode(yhat[0]))
 ```
 
-运行该示例在100个随机生成的输入 - 输出对上打印模型的技能。在相同的资源和相同数量的训练下，关注的模型表现得更好。
+运行该示例在 100 个随机生成的输入 - 输出对上打印模型的技能。在相同的资源和相同数量的训练下，关注的模型表现得更好。
 
 鉴于神经网络的随机性，您的结果可能会有所不同。尝试运行几次示例。
 
@@ -899,7 +899,7 @@ def train_evaluate_model(model, n_timesteps_in, n_timesteps_out, n_features):
 	return float(correct)/float(total)*100.0
 ```
 
-综上所述，我们可以多次重复创建，训练和评估每种类型的模型，并报告重复的平均准确度。为了减少运行时间，我们将重复每次模型评估10次，但如果您有资源，则可以将此值增加到30或100次。
+综上所述，我们可以多次重复创建，训练和评估每种类型的模型，并报告重复的平均准确度。为了减少运行时间，我们将重复每次模型评估 10 次，但如果您有资源，则可以将此值增加到 30 或 100 次。
 
 The complete example is listed below.
 
@@ -1035,7 +1035,7 @@ Encoder-Decoder With Attention Model
 Mean Accuracy: 95.70%
 ```
 
-我们可以看到，即使平均超过10次运行，注意模型仍然表现出比没有注意的编解码器模型更好的表现，23.10％对95.70％。
+我们可以看到，即使平均超过 10 次运行，注意模型仍然表现出比没有注意的编解码器模型更好的表现，23.10％对 95.70％。
 
 此评估的一个很好的扩展是捕获每个模型的每个时期的模型损失，取平均值，并比较损失如何随着时间的推移而变化，无论是否受到关注。我希望这种追踪能够比非注意力模型更快，更快地显示出更好的技能，进一步突出了这种方法的好处。
 
@@ -1047,13 +1047,13 @@ Mean Accuracy: 95.70%
 *   [编解码器循环神经网络中的注意事项如何工作](https://machinelearningmastery.com/how-does-attention-work-in-encoder-decoder-recurrent-neural-networks/)
 *   [编解码器长短期记忆网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 *   [如何评估深度学习模型的技巧](https://machinelearningmastery.com/evaluate-skill-deep-learning-models/)
-*   [如何在Keras中注意循环神经网络](https://medium.com/datalogue/attention-in-keras-1892773a4f22)，2017。
+*   [如何在 Keras 中注意循环神经网络](https://medium.com/datalogue/attention-in-keras-1892773a4f22)，2017。
 *   [keras-attention GitHub Project](https://github.com/datalogue/keras-attention)
 *   [通过共同学习对齐和翻译的神经机器翻译](https://github.com/datalogue/keras-attention)，2015。
 
 ## 摘要
 
-在本教程中，您了解了如何使用Keras在Python中开发编解码器循环神经网络。
+在本教程中，您了解了如何使用 Keras 在 Python 中开发编解码器循环神经网络。
 
 具体来说，你学到了：
 

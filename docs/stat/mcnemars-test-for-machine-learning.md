@@ -1,26 +1,26 @@
-# 如何计算McNemar检验来比较两种机器学习分类器
+# 如何计算 McNemar 检验来比较两种机器学习分类器
 
 > 原文： [https://machinelearningmastery.com/mcnemars-test-for-machine-learning/](https://machinelearningmastery.com/mcnemars-test-for-machine-learning/)
 
 统计假设检验的选择对于解释机器学习结果是一个具有挑战性的开放性问题。
 
-在他1998年被广泛引用的论文中，Thomas Dietterich在那些训练多份分类器模型昂贵或不切实际的案例中推荐了McNemar的测试。
+在他 1998 年被广泛引用的论文中，Thomas Dietterich 在那些训练多份分类器模型昂贵或不切实际的案例中推荐了 McNemar 的测试。
 
 这描述了深度学习模型的当前情况，这些模型非常大并且在大型数据集上进行训练和评估，通常需要数天或数周来训练单个模型。
 
-在本教程中，您将了解如何使用McNemar的统计假设检验来比较单个测试数据集上的机器学习分类器模型。
+在本教程中，您将了解如何使用 McNemar 的统计假设检验来比较单个测试数据集上的机器学习分类器模型。
 
 完成本教程后，您将了解：
 
-*   McNemar测试对于训练昂贵的模型的建议，适合大型深度学习模型。
-*   如何将两个分类器的预测结果转换为列联表，以及如何使用该表来计算McNemar测试中的统计量。
-*   如何用Python计算McNemar的测试并解释和报告结果。
+*   McNemar 测试对于训练昂贵的模型的建议，适合大型深度学习模型。
+*   如何将两个分类器的预测结果转换为列联表，以及如何使用该表来计算 McNemar 测试中的统计量。
+*   如何用 Python 计算 McNemar 的测试并解释和报告结果。
 
 让我们开始吧。
 
 ![How to Calculate McNemar's Test for Two Machine Learning Classifiers](img/d5401d2995454ada4c17b76798243936.jpg)
 
-如何计算McNemar对两台机器学习量词的测试
+如何计算 McNemar 对两台机器学习量词的测试
 [Mark Kao](https://www.flickr.com/photos/67415843@N05/37883206606/) 的照片，保留一些权利。
 
 ## 教程概述
@@ -30,20 +30,20 @@
 1.  深度学习的统计假设检验
 2.  列联表
 3.  麦克尼玛的测试统计
-4.  解读McNemar的分类器测试
-5.  McNemar的Python测试
+4.  解读 McNemar 的分类器测试
+5.  McNemar 的 Python 测试
 
 ## 深度学习的统计假设检验
 
-在他1998年重要且广泛引用的关于使用统计假设检验来比较标题为“[近似统计检验比较监督分类学习算法](https://www.mitpressjournals.org/doi/abs/10.1162/089976698300017197)”的论文中，Thomas Dietterich建议使用McNemar检验。
+在他 1998 年重要且广泛引用的关于使用统计假设检验来比较标题为“[近似统计检验比较监督分类学习算法](https://www.mitpressjournals.org/doi/abs/10.1162/089976698300017197)”的论文中，Thomas Dietterich 建议使用 McNemar 检验。
 
-具体而言，建议在那些被比较的算法只能评估一次的情况下进行测试，例如，在一个测试集上，而不是通过重采样技术重复评估，例如k折交叉验证。
+具体而言，建议在那些被比较的算法只能评估一次的情况下进行测试，例如，在一个测试集上，而不是通过重采样技术重复评估，例如 k 折交叉验证。
 
-> 对于只能执行一次的算法，McNemar的测试是唯一具有可接受的I类错误的测试。
+> 对于只能执行一次的算法，McNemar 的测试是唯一具有可接受的 I 类错误的测试。
 
 - [用于比较监督分类学习算法的近似统计检验](https://www.mitpressjournals.org/doi/abs/10.1162/089976698300017197)，1998。
 
-具体而言，Dietterich的研究涉及不同统计假设检验的评估，其中一些检验采用重采样方法的结果。该研究的关注点是 [I型错误](https://en.wikipedia.org/wiki/Type_I_and_type_II_errors)，即统计检验报告实际上没有效果时的效果（假阳性）。
+具体而言，Dietterich 的研究涉及不同统计假设检验的评估，其中一些检验采用重采样方法的结果。该研究的关注点是 [I 型错误](https://en.wikipedia.org/wiki/Type_I_and_type_II_errors)，即统计检验报告实际上没有效果时的效果（假阳性）。
 
 可以比较基于单个测试集的模型的统计测试是现代机器学习的重要考虑因素，特别是在深度学习领域。
 
@@ -51,19 +51,19 @@
 
 这排除了重采样方法的实际应用以比较模型，并建议需要使用可以对在单个测试数据集上评估训练模型的结果进行操作的测试。
 
-McNemar的测试可能是评估这些大型和慢速训练深度学习模型的合适测试。
+McNemar 的测试可能是评估这些大型和慢速训练深度学习模型的合适测试。
 
 ## 列联表
 
-McNemar的测试按照列联表进行。
+McNemar 的测试按照列联表进行。
 
 在我们深入测试之前，让我们花一点时间来理解如何计算两个分类器的列联表。
 
-[列联表](https://en.wikipedia.org/wiki/Contingency_table)是两个分类变量的列表或计数。在McNemar测试的情况下，我们感兴趣的是二进制变量正确/不正确或是/否对于对照和治疗或两种情况。这被称为2×2列联表。
+[列联表](https://en.wikipedia.org/wiki/Contingency_table)是两个分类变量的列表或计数。在 McNemar 测试的情况下，我们感兴趣的是二进制变量正确/不正确或是/否对于对照和治疗或两种情况。这被称为 2×2 列联表。
 
 列表的列联表乍一看可能不直观。让我们通过一个有效的例子来具体化。
 
-考虑一下我们有两个训练有素的分类器。每个分类器对测试数据集中的10个示例中的每个示例进行二进制类预测。预测被评估并确定为正确或不正确。
+考虑一下我们有两个训练有素的分类器。每个分类器对测试数据集中的 10 个示例中的每个示例进行二进制类预测。预测被评估并确定为正确或不正确。
 
 然后我们可以在表格中总结这些结果，如下所示：
 
@@ -81,7 +81,7 @@ Instance,	Classifier1 Correct,	Classifier2 Correct
 10			Yes						Yes
 ```
 
-我们可以看到Classifier1得到6个正确，或者精度为60％，Classifier2得到5个正确，或者在测试集上有50％的准确度。
+我们可以看到 Classifier1 得到 6 个正确，或者精度为 60％，Classifier2 得到 5 个正确，或者在测试集上有 50％的准确度。
 
 该表现在可以简化为列联表。
 
@@ -95,7 +95,7 @@ Classifier1 Correct 	??						??
 Classifier1 Incorrect 	?? 						??
 ```
 
-对于表中第一个单元格，我们必须将Classifier1得到正确且Classifier2正确的测试实例总数相加。例如，两个分类器正确预测的第一个实例是实例编号5.两个分类器正确预测的实例总数为4。
+对于表中第一个单元格，我们必须将 Classifier1 得到正确且 Classifier2 正确的测试实例总数相加。例如，两个分类器正确预测的第一个实例是实例编号 5.两个分类器正确预测的实例总数为 4。
 
 考虑这一点的另一种更具编程性的方法是在上面的结果表中总结是/否的每个组合。
 
@@ -115,40 +115,40 @@ Classifier1 Incorrect 	1 						3
 
 ## 麦克尼玛的测试统计
 
-[McNemar的测试](https://en.wikipedia.org/wiki/McNemar%27s_test)是一个配对的非参数或无分布的统计假设检验。
+[McNemar 的测试](https://en.wikipedia.org/wiki/McNemar%27s_test)是一个配对的非参数或无分布的统计假设检验。
 
 它也不像其他一些统计假设检验那么直观。
 
-McNemar的测试是检查两个案件之间的分歧是否匹配。从技术上讲，这被称为列联表的同质性（特别是边际同质性）。因此，McNemar的测试是一种应变表的同质性测试。
+McNemar 的测试是检查两个案件之间的分歧是否匹配。从技术上讲，这被称为列联表的同质性（特别是边际同质性）。因此，McNemar 的测试是一种应变表的同质性测试。
 
 该试验广泛用于医学中以比较治疗对照的效果。
 
 在比较两个二分类算法方面，测试是评论两个模型是否以相同的方式不同意。它没有评论一个模型是否比另一个模型更准确或更准确或更容易出错。当我们查看统计量的计算方式时，这一点很清楚。
 
-McNemar的检验统计量计算如下：
+McNemar 的检验统计量计算如下：
 
 ```py
 statistic = (Yes/No - No/Yes)^2 / (Yes/No + No/Yes)
 ```
 
-其中Yes / No是Classifier1正确且Classifier2不正确的测试实例的数量，No / Yes是Classifier1不正确且Classifier2正确的测试实例的计数。
+其中 Yes / No 是 Classifier1 正确且 Classifier2 不正确的测试实例的数量，No / Yes 是 Classifier1 不正确且 Classifier2 正确的测试实例的计数。
 
-测试统计量的这种计算假定计算中使用的列联表中的每个单元具有至少25的计数。检验统计量具有1自由度的卡方分布。
+测试统计量的这种计算假定计算中使用的列联表中的每个单元具有至少 25 的计数。检验统计量具有 1 自由度的卡方分布。
 
 我们可以看到只使用列联表的两个元素，特别是在计算测试统计量时不使用是/是和否/否元素。因此，我们可以看到统计量报告了两个模型之间不同的正确或不正确的预测，而不是准确率或错误率。在了解统计量的发现时，这一点非常重要。
 
 测试的默认假设或零假设是两个案例不同意相同的数量。如果零假设被拒绝，则表明有证据表明案例在不同方面存在分歧，即分歧存在偏差。
 
-给定显着性水平的选择，通过测试计算的p值可以解释如下：
+给定显着性水平的选择，通过测试计算的 p 值可以解释如下：
 
-*   **p＆gt; α**：不能拒绝H0，在分歧上没有差异（例如治疗没有效果）。
-*   **p &lt;=α**：排斥H0，不一致的显着差异（例如治疗有效）。
+*   **p＆gt; α**：不能拒绝 H0，在分歧上没有差异（例如治疗没有效果）。
+*   **p &lt;=α**：排斥 H0，不一致的显着差异（例如治疗有效）。
 
-## 解读McNemar的分类器测试
+## 解读 McNemar 的分类器测试
 
 重要的是花点时间清楚地理解如何在两个机器学习分类器模型的上下文中解释测试结果。
 
-计算McNemar测试时使用的两个术语捕获了两个模型的误差。具体而言，列联表中的No / Yes和Yes / No单元格。该测试检查这两个单元格中的计数之间是否存在显着差异。就这些。
+计算 McNemar 测试时使用的两个术语捕获了两个模型的误差。具体而言，列联表中的 No / Yes 和 Yes / No 单元格。该测试检查这两个单元格中的计数之间是否存在显着差异。就这些。
 
 如果这些单元格具有相似的计数，则向我们显示两个模型在大小相同的比例中产生错误，仅在测试集的不同实例上。在这种情况下，测试结果不会很明显，零假设也不会被拒绝。
 
@@ -171,7 +171,7 @@ statistic = (Yes/No - No/Yes)^2 / (Yes/No + No/Yes)
 
 报告测试集上两个分类器之间的差异可能很有用。在这种情况下，请小心您的声明，因为重要测试不会报告模型之间的误差差异，只会报告模型之间误差比例的相对差异。
 
-最后，在使用McNemar的测试时，Dietterich强调了必须考虑的两个重要限制。他们是：
+最后，在使用 McNemar 的测试时，Dietterich 强调了必须考虑的两个重要限制。他们是：
 
 ### 1.没有训练集或模型可变性的度量。
 
@@ -181,7 +181,7 @@ statistic = (Yes/No - No/Yes)^2 / (Yes/No + No/Yes)
 
 如果可变性的来源很小，则该测试是合适的。
 
-> 因此，只有当我们认为这些可变性来源很小时，才应该应用McNemar的测试。
+> 因此，只有当我们认为这些可变性来源很小时，才应该应用 McNemar 的测试。
 
 — [Approximate Statistical Tests for Comparing Supervised Classification Learning Algorithm](https://www.mitpressjournals.org/doi/abs/10.1162/089976698300017197), 1998.
 
@@ -193,27 +193,27 @@ statistic = (Yes/No - No/Yes)^2 / (Yes/No + No/Yes)
 
 这提供了较少的机会来比较模型的表现。它要求测试集合适当地代表域，通常意味着测试数据集很大。
 
-## McNemar的Python测试
+## McNemar 的 Python 测试
 
-可以使用 [mcnemar（）Statsmodels函数](http://www.statsmodels.org/dev/generated/statsmodels.stats.contingency_tables.mcnemar.html)在Python中实现McNemar的测试。
+可以使用 [mcnemar（）Statsmodels 函数](http://www.statsmodels.org/dev/generated/statsmodels.stats.contingency_tables.mcnemar.html)在 Python 中实现 McNemar 的测试。
 
-该函数将列联表作为参数，并返回计算的测试统计量和p值。
+该函数将列联表作为参数，并返回计算的测试统计量和 p 值。
 
 根据数据量，有两种方法可以使用统计量。
 
-如果表中有一个单元用于计算计数小于25的测试统计量，则使用测试的修改版本，使用二项分布计算精确的p值。这是测试的默认用法：
+如果表中有一个单元用于计算计数小于 25 的测试统计量，则使用测试的修改版本，使用二项分布计算精确的 p 值。这是测试的默认用法：
 
 ```py
 stat, p = mcnemar(table, exact=True)
 ```
 
-或者，如果在列联表中计算测试统计量时使用的所有单元具有25或更大的值，则可以使用测试的标准计算。
+或者，如果在列联表中计算测试统计量时使用的所有单元具有 25 或更大的值，则可以使用测试的标准计算。
 
 ```py
 stat, p = mcnemar(table, exact=False, correction=True)
 ```
 
-我们可以在上面描述的示例列联表上计算McNemar。这个列联表在两个不同的单元中都有一个小的计数，因此必须使用确切的方法。
+我们可以在上面描述的示例列联表上计算 McNemar。这个列联表在两个不同的单元中都有一个小的计数，因此必须使用确切的方法。
 
 下面列出了完整的示例。
 
@@ -235,7 +235,7 @@ else:
 	print('Different proportions of errors (reject H0)')
 ```
 
-运行该示例计算列联表上的统计值和p值并打印结果。
+运行该示例计算列联表上的统计值和 p 值并打印结果。
 
 我们可以看到，该测试强烈证实两种情况之间的分歧差别很小。零假设没有被拒绝。
 
@@ -250,9 +250,9 @@ Same proportions of errors (fail to reject H0)
 
 本节列出了一些扩展您可能希望探索的教程的想法。
 
-*   在机器学习中找到一篇利用McNemar统计假设检验的研究论文。
+*   在机器学习中找到一篇利用 McNemar 统计假设检验的研究论文。
 *   更新代码示例，以便列联表显示两种情况之间不一致的显着差异。
-*   实现一个函数，该函数将根据提供的列联表使用正确版本的McNemar测试。
+*   实现一个函数，该函数将根据提供的列联表使用正确版本的 McNemar 测试。
 
 如果你探索任何这些扩展，我很想知道。
 
@@ -271,19 +271,19 @@ Same proportions of errors (fail to reject H0)
 
 ### 用品
 
-*   [McNemar对维基百科的测试](https://en.wikipedia.org/wiki/McNemar%27s_test)
-*   [维基百科上的I型和II型错误](https://en.wikipedia.org/wiki/Type_I_and_type_II_errors)
+*   [McNemar 对维基百科的测试](https://en.wikipedia.org/wiki/McNemar%27s_test)
+*   [维基百科上的 I 型和 II 型错误](https://en.wikipedia.org/wiki/Type_I_and_type_II_errors)
 *   [维基百科上的列联表](https://en.wikipedia.org/wiki/Contingency_table)
 
 ## 摘要
 
-在本教程中，您了解了如何使用McNemar的测试统计假设检验来比较单个测试数据集上的机器学习分类器模型。
+在本教程中，您了解了如何使用 McNemar 的测试统计假设检验来比较单个测试数据集上的机器学习分类器模型。
 
 具体来说，你学到了：
 
-*   McNemar测试对于训练昂贵的模型的建议，适合大型深度学习模型。
-*   如何将两个分类器的预测结果转换为列联表，以及如何使用该表来计算McNemar测试中的统计量。
-*   如何用Python计算McNemar的测试并解释和报告结果。
+*   McNemar 测试对于训练昂贵的模型的建议，适合大型深度学习模型。
+*   如何将两个分类器的预测结果转换为列联表，以及如何使用该表来计算 McNemar 测试中的统计量。
+*   如何用 Python 计算 McNemar 的测试并解释和报告结果。
 
 你有任何问题吗？
 在下面的评论中提出您的问题，我会尽力回答。

@@ -2,11 +2,11 @@
 
 > 原文： [https://machinelearningmastery.com/dont-start-with-open-source-code-when-implementing-machine-learning-algorithms/](https://machinelearningmastery.com/dont-start-with-open-source-code-when-implementing-machine-learning-algorithms/)
 
-[Edward Raff](https://www.linkedin.com/pub/edward-raff/40/920/99) 是Java机器学习库的作者，名为 [JSAT](https://code.google.com/p/java-statistical-analysis-tool/) （Java统计分析工具的首字母缩写）。
+[Edward Raff](https://www.linkedin.com/pub/edward-raff/40/920/99) 是 Java 机器学习库的作者，名为 [JSAT](https://code.google.com/p/java-statistical-analysis-tool/) （Java 统计分析工具的首字母缩写）。
 
-Edward在创建这个库时实现了很多算法，最近我和他联系并询问他可以给初学者从零开始实现机器学习算法的建议。
+Edward 在创建这个库时实现了很多算法，最近我和他联系并询问他可以给初学者从零开始实现机器学习算法的建议。
 
-在这篇文章中，我们将介绍基于Edwards建议实现机器学习算法的技巧。
+在这篇文章中，我们将介绍基于 Edwards 建议实现机器学习算法的技巧。
 
 [![Implement Machine Learning Algorithms from Scratch](img/ee2d2be174f6f3355360894c7cc4cd86.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/10/Implement-Machine-Learning-Algorithms-from-Scratch.jpg)
 
@@ -17,11 +17,11 @@ Edward在创建这个库时实现了很多算法，最近我和他联系并询�
 
 至少，不是最初的。
 
-是什么让我问爱德华有关他从零开始实现机器学习算法的建议的问题是他对Reddit问题的评论，题目是“[实现机器学习算法](http://www.reddit.com/r/MachineLearning/comments/2h94uj/implementing_machine_learning_algorithms/)”。
+是什么让我问爱德华有关他从零开始实现机器学习算法的建议的问题是他对 Reddit 问题的评论，题目是“[实现机器学习算法](http://www.reddit.com/r/MachineLearning/comments/2h94uj/implementing_machine_learning_algorithms/)”。
 
-在[他的评论](http://www.reddit.com/r/MachineLearning/comments/2h94uj/implementing_machine_learning_algorithms/ckqrn1t)中，Edward建议初学者尽可能避免查看其他开源实现的源代码。他知道这与大多数建议相反（[甚至是我自己的](http://machinelearningmastery.com/how-to-implement-a-machine-learning-algorithm/ "How to Implement a Machine Learning Algorithm")），它确实引起了我的注意。
+在[他的评论](http://www.reddit.com/r/MachineLearning/comments/2h94uj/implementing_machine_learning_algorithms/ckqrn1t)中，Edward 建议初学者尽可能避免查看其他开源实现的源代码。他知道这与大多数建议相反（[甚至是我自己的](http://machinelearningmastery.com/how-to-implement-a-machine-learning-algorithm/ "How to Implement a Machine Learning Algorithm")），它确实引起了我的注意。
 
-Edward开始建议在实现机器学习算法时有两个完全不同的任务：
+Edward 开始建议在实现机器学习算法时有两个完全不同的任务：
 
 1.  ****实现**熟知算法**。这些在许多论文，书籍，网站讲义等中都有很好的描述。你有很多来源，他们的算法比较直接，他们是自我教育的好案例研究。
 2.  **从论文**实现算法。这些算法在文献中具有有限和稀疏的描述，并且需要大量的工作和先前的知识来理解和实现。
@@ -32,31 +32,31 @@ Edward开始建议在实现机器学习算法时有两个完全不同的任务�
 
 方便的机器学习算法思维导图的样本。
 
-我已经创建了一个由类型组织的60多种算法的方便思维导图。
+我已经创建了一个由类型组织的 60 多种算法的方便思维导图。
 
 下载，打印并使用它。
 
 ### 实现众所周知的算法
 
-如果您对实现众所周知的算法感兴趣，Edward建议阅读代码是一个坏主意。
+如果您对实现众所周知的算法感兴趣，Edward 建议阅读代码是一个坏主意。
 
-我从他的评论中提炼了至少3个关键原因：
+我从他的评论中提炼了至少 3 个关键原因：
 
 *   **代码优化**：开源库中的代码很可能针对执行速度，内存和准确率进行了高度优化。这意味着它实现了各种数学和编程技巧。结果，代码将很难遵循。您将花费大部分时间来计算技巧而不是计算出算法，这首先是您的目标。
-*   **以项目为中心**：代码不是一个可以单独运行的通用实现，它将精心设计为在项目框架内工作。框架也很可能从_方便地_“抽象和隐藏细节。您将花时间学习该框架及其设计，以便了解算法实现。
+*   **以项目为中心**：代码不是一个可以单独运行的通用实现，它将精心设计为在项目框架内工作。框架也很可能从 _ 方便地 _“抽象和隐藏细节。您将花时间学习该框架及其设计，以便了解算法实现。
 *   **有限理解**：研究算法的实现并不能帮助您理解算法，它可以教您高效算法实现的技巧。一开始，最关键的时候，其他人的代码会让你感到困惑。
 
 我认为这里有很深的智慧。
 
 我要指出的是，开源实现有时可以帮助理解特定的技术细节，例如更新规则或其他可能描述不当的模块化数据，但是在代码中的单个函数中实现。我自己经历过很多次，但它是一种启发式的，而不是一种规则。
 
-爱德华建议像k-means和随机梯度下降这样的算法作为开始的好例子。
+爱德华建议像 k-means 和随机梯度下降这样的算法作为开始的好例子。
 
 ### 从论文实现算法
 
-Edward建议如果你没有首先实现众所周知的算法，那么从纸上实现机器学习算法是一个很大的进步，如上所述。
+Edward 建议如果你没有首先实现众所周知的算法，那么从纸上实现机器学习算法是一个很大的进步，如上所述。
 
-根据Edwards的评论，您可以从零开始实现学习机器学习算法的过程。我对该过程的解释如下所示：
+根据 Edwards 的评论，您可以从零开始实现学习机器学习算法的过程。我对该过程的解释如下所示：
 
 1.  从零开始实现算法。
 2.  将表现与现成的实现进行比较。
@@ -69,7 +69,7 @@ Edward建议如果你没有首先实现众所周知的算法，那么从纸上�
 
 ## 给初学者的建议
 
-在通过电子邮件进行一些讨论后，爱德华扩展了他的评论并在一篇题为“[初学者关于学习实现ML算法的建议](http://jsatml.blogspot.com.au/2014/10/beginner-advice-on-learning-to.html)”的博客文章中写下了他的想法。
+在通过电子邮件进行一些讨论后，爱德华扩展了他的评论并在一篇题为“[初学者关于学习实现 ML 算法的建议](http://jsatml.blogspot.com.au/2014/10/beginner-advice-on-learning-to.html)”的博客文章中写下了他的想法。
 
 这是一篇很棒的文章。在其中，他提出了三个关键问题：如何从零开始实现机器学习算法，为初学者提供常见陷阱以及可能有用的资源。
 
@@ -81,12 +81,12 @@ Edward建议如果你没有首先实现众所周知的算法，那么从纸上�
 
 ### 实现算法的技巧
 
-在他的博客文章中，Edward提供了4个主要技巧，可以帮助您从零开始实现机器学习算法。总之，它们是：
+在他的博客文章中，Edward 提供了 4 个主要技巧，可以帮助您从零开始实现机器学习算法。总之，它们是：
 
 1.  **阅读全文**。慢慢阅读全文。然后沉浸在想法中一段时间​​，比如说几天。稍后再读一遍，但直到你有一个关于算法如何工作的数据流以及它们如何挂在一起的第一个你自己的心理模型。有意读。随后的读取必须纠正并改进您对算法的现有理解。
-2.  **设计测试问题**。找到，选择或设计一个足够简单的测试问题，以便您理解和可视化算法的结果或行为，但复杂程度足以强制程序展示差异化特征或结果。这个问题将是你的试金石，告诉你什么时候实现是正确的，什么时候优化没有引入致命的错误。爱德华称之为“_有用的宏功能单元测试_”。
+2.  **设计测试问题**。找到，选择或设计一个足够简单的测试问题，以便您理解和可视化算法的结果或行为，但复杂程度足以强制程序展示差异化特征或结果。这个问题将是你的试金石，告诉你什么时候实现是正确的，什么时候优化没有引入致命的错误。爱德华称之为“_ 有用的宏功能单元测试 _”。
 3.  **优化最后**。首先通过从零开始实现整个过程来理解算法的过程和逻辑，利用很少的现有代码或技巧。只有在您理解并具有可行的实现之后，才应考虑在空间或时间复杂度方面提高表现，或者使用算法扩展来提高表现。
-4.  **了解基础**。在生产级实现方面，您可以利用现有库。 Edward指出了诸如 [LIBSVM](http://www.csie.ntu.edu.tw/~cjlin/libsvm/) 和 [LIBLINEAR](http://www.csie.ntu.edu.tw/~cjlin/liblinear/) 之类的例子。这些功能强大的库包含数十年的错误修复和优化功能。在采用它们之前，请确信您确切了解您正在利用的是什么，它是如何工作的以及它所提供的好处的特征。有目的地优化您的实现，使用最好的并理解它的作用。
+4.  **了解基础**。在生产级实现方面，您可以利用现有库。 Edward 指出了诸如 [LIBSVM](http://www.csie.ntu.edu.tw/~cjlin/libsvm/) 和 [LIBLINEAR](http://www.csie.ntu.edu.tw/~cjlin/liblinear/) 之类的例子。这些功能强大的库包含数十年的错误修复和优化功能。在采用它们之前，请确信您确切了解您正在利用的是什么，它是如何工作的以及它所提供的好处的特征。有目的地优化您的实现，使用最好的并理解它的作用。
 
 同样，这些提示中有很多智慧。我自己也不能把它变得更好。特别是。我非常同意从零开始无效地实现算法以最大化学习的需要。算法优化是一种进口但完全不同的技能，用于完全不同的目的。
 
@@ -107,7 +107,7 @@ Edward建议如果你没有首先实现众所周知的算法，那么从纸上�
 
 实现机器学习算法是学习机器学习的一种很好的（如果不是最好的）方法。知识是内心的，因为你必须为细节而汗流，背，他们变得亲密。当您尝试从算法中获得最大收益时，这会有所帮助。
 
-在这篇文章中，您发现经常建议的“_阅读开源实现_”并没有错，但需要在您的学习策略中仔细考虑。
+在这篇文章中，您发现经常建议的“_ 阅读开源实现 _”并没有错，但需要在您的学习策略中仔细考虑。
 
 爱德华建议你学习机器学习算法的难点，自己弄清楚，以便你成长，然后转向开源实现，学习有效的数学和程序技巧来优化实现，如果你当需要那些效率。
 

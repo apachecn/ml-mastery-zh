@@ -23,7 +23,7 @@ TensorFlow 是一个用于快速数值计算的开源库。
 
 它由 Google 创建并维护，并在 Apache 2.0 开源许可下发布。虽然可以访问底层的 C ++ API，但 API 名义上是用于 Python 编程语言的。
 
-与 Theano 等深度学习中使用的其他库不同，TensorFlow 设计用于研究和开发以及企业生产环境系统，尤其是 [谷歌搜索RankBrain项目 ](https://en.wikipedia.org/wiki/RankBrain) 和有趣的[DeepDream 项目](https://en.wikipedia.org/wiki/DeepDream) ]。
+与 Theano 等深度学习中使用的其他库不同，TensorFlow 设计用于研究和开发以及企业生产环境系统，尤其是 [谷歌搜索 RankBrain 项目 ](https://en.wikipedia.org/wiki/RankBrain) 和有趣的[DeepDream 项目](https://en.wikipedia.org/wiki/DeepDream) ]。
 
 它可以在单 CPU 系统，GPU 以及移动设备和数百台机器的大规模分布式系统上运行。
 
@@ -33,11 +33,11 @@ TensorFlow 是一个用于快速数值计算的开源库。
 
 TensorFlow 适用于 Python 2.7 和 Python 3.3+。您可以按照 TensorFlow 网站上的[下载和设置说明](https://www.tensorflow.org/versions/r0.8/get_started/os_setup.html)进行操作。通过 PyPI 进行安装可能是最简单的，并且下载和设置网页上有用于 Linux 或 Mac OS X 平台的 pip 命令的特定说明。
 
-如果您愿意，还可以使用 [虚拟机环境](http://docs.python-guide.org/en/latest/dev/virtualenvs/) 和[docker镜像](https://www.docker.com/)。
+如果您愿意，还可以使用 [虚拟机环境](http://docs.python-guide.org/en/latest/dev/virtualenvs/) 和[docker 镜像](https://www.docker.com/)。
 
-只有Linux系统支持GPU,并且还需要安装Cuda工具包。
+只有 Linux 系统支持 GPU,并且还需要安装 Cuda 工具包。
 
-## 使用TensorFlow创建第一个示例
+## 使用 TensorFlow 创建第一个示例
 
 根据有向图的结构中的数据流和操作来描述计算。
 
@@ -47,7 +47,7 @@ TensorFlow 适用于 Python 2.7 和 Python 3.3+。您可以按照 TensorFlow 网
 
 ### 使用 TensorFlow 计算
 
-第一个示例是 [TensorFlow](https://github.com/tensorflow/tensorflow)上的示例的修改版本。它向你展示了如何创建一个session，在这个session中定义常量并使用常量进行计算。
+第一个示例是 [TensorFlow](https://github.com/tensorflow/tensorflow)上的示例的修改版本。它向你展示了如何创建一个 session，在这个 session 中定义常量并使用常量进行计算。
 
 ```py
 import tensorflow as tf
@@ -69,7 +69,7 @@ print(sess.run(a+b))
 
 此示例显示了如何定义变量（例如 W 和 b）以及变量（y）接收结果输出。
 
-我们对 TensorFlow 有一定的了解，它将计算的定义和声明与session中的执行和运行调用分开。
+我们对 TensorFlow 有一定的了解，它将计算的定义和声明与 session 中的执行和运行调用分开。
 
 ```py
 import tensorflow as tf
@@ -143,17 +143,17 @@ python -c 'import os; import inspect; import tensorflow; print(os.path.dirname(i
 
 切换到此目录并记下 models 子目录。包括许多深度学习模型，包含类似教程的注释，例如：
 
-*   多线程 word2vec 小批量skip-gram模型。
+*   多线程 word2vec 小批量 skip-gram 模型。
 *   多线程 word2vec 全量 skip-gram 模型。
 *   CNN CIFAR-10 网络。
 *   简单，端到端，类似 LeNet-5 的卷积 MNIST 模型示例。
-*   Seq2seq模型。
+*   Seq2seq 模型。
 
 还要检查 examples 目录，因为它包含使用 MNIST 数据集的示例。
 
 在 TensorFlow 主网站上还有一个很全好的[教程列表](https://www.tensorflow.org/versions/r0.8/tutorials/index.html)。它们展示了如何使用不同的网络类型，不同的数据集以及如何以各种不同的方式使用框架。
 
-最后，有 [TensorFlow实验室](http://playground.tensorflow.org/)，您可以在 Web 浏览器中试验小型网络。
+最后，有 [TensorFlow 实验室](http://playground.tensorflow.org/)，您可以在 Web 浏览器中试验小型网络。
 
 ## TensorFlow 资源
 

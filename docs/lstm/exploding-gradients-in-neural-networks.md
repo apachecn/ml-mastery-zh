@@ -16,7 +16,7 @@
 
 让我们开始吧。
 
-*   **更新Oct / 2018** ：删除了ReLU作为解决方案的提及。
+*   **更新 Oct / 2018** ：删除了 ReLU 作为解决方案的提及。
 
 ![A Gentle Introduction to Exploding Gradients in Recurrent Neural Networks](img/ba10cf5120398411d9e2cd2ef9304a3d.jpg)
 
@@ -27,17 +27,17 @@
 
 误差梯度是在训练神经网络期间计算的方向和幅度，该神经网络用于以正确的方向和正确的量更新网络权重。
 
-在深度网络或循环神经网络中，误差梯度可能在更新期间累积并导致非常大的梯度。这反过来又导致网络权重的大量更新，进而导致网络不稳定。在极端情况下，权重值可能会变得很大，以至于溢出并导致NaN值。
+在深度网络或循环神经网络中，误差梯度可能在更新期间累积并导致非常大的梯度。这反过来又导致网络权重的大量更新，进而导致网络不稳定。在极端情况下，权重值可能会变得很大，以至于溢出并导致 NaN 值。
 
-通过重复地将梯度乘以具有大于1.0的值的网络层，爆炸通过指数增长发生。
+通过重复地将梯度乘以具有大于 1.0 的值的网络层，爆炸通过指数增长发生。
 
 ## 梯度爆炸有什么问题？
 
-在深层多层Perceptron网络中，梯度爆炸可能导致网络不稳定，最多无法从训练数据中学习，最坏的情况是导致无法再更新的NaN权重值。
+在深层多层 Perceptron 网络中，梯度爆炸可能导致网络不稳定，最多无法从训练数据中学习，最坏的情况是导致无法再更新的 NaN 权重值。
 
 > 爆炸性的梯度会使学习变得不稳定。
 
-- 第282页，[深度学习](http://amzn.to/2fwdoKR)，2016年。
+- 第 282 页，[深度学习](http://amzn.to/2fwdoKR)，2016 年。
 
 在循环神经网络中，爆炸性梯度可能导致不稳定的网络无法从训练数据中学习，并且最多是无法通过长输入数据序列学习的网络。
 
@@ -51,15 +51,15 @@
 
 *   该模型无法获得您的训练数据（例如损失不佳）。
 *   该模型不稳定，导致从更新到更新的损失发生很大变化。
-*   在训练期间模型损失归NaN所有。
+*   在训练期间模型损失归 NaN 所有。
 
 如果你有这些类型的问题，你可以深入挖掘，看看你是否有梯度爆炸的问题。
 
 有一些不太微妙的迹象可以用来确认你有爆炸的梯度。
 
 *   在训练期间，模型权重很快变得非常大。
-*   模型权重在训练期间达到NaN值。
-*   在训练期间，每个节点和层的误差梯度值始终高于1.0。
+*   模型权重在训练期间达到 NaN 值。
+*   在训练期间，每个节点和层的误差梯度值始终高于 1.0。
 
 ## 如何修复梯度爆炸？
 
@@ -79,11 +79,11 @@
 
 通过使用[长短期记忆（LSTM）](https://machinelearningmastery.com/gentle-introduction-long-short-term-memory-networks-experts/)记忆单元和可能相关的门控型神经元结构，可以减少梯度爆炸。
 
-采用LSTM存储器单元是用于序列预测的循环神经网络的新的最佳实践。
+采用 LSTM 存储器单元是用于序列预测的循环神经网络的新的最佳实践。
 
 ### 3.使用梯度剪辑
 
-在具有大批量大小和具有非常长输入序列长度的LSTM的非常深的多层感知机网络中仍然可能发生梯度爆炸。
+在具有大批量大小和具有非常长输入序列长度的 LSTM 的非常深的多层感知机网络中仍然可能发生梯度爆炸。
 
 如果仍然出现梯度爆炸，您可以在网络训练期间检查并限制梯度的大小。
 
@@ -91,15 +91,15 @@
 
 > 处理梯度爆炸有一个简单但非常有效的解决方案：如果它们的范数超过给定阈值，则剪切梯度。
 
-- 第5.2.4节，消失和梯度爆炸，[自然语言处理中的神经网络方法](http://amzn.to/2fwTPCn)，2017。
+- 第 5.2.4 节，消失和梯度爆炸，[自然语言处理中的神经网络方法](http://amzn.to/2fwTPCn)，2017。
 
 具体地，如果误差梯度超过阈值，则针对阈值检查误差梯度的值并将其剪切或设置为该阈值。
 
 > 在某种程度上，可以通过梯度限幅（在执行梯度下降步骤之前对梯度的值进行阈值处理）来减轻梯度爆炸问题。
 
-- 第294页，[深度学习](http://amzn.to/2fwdoKR)，2016年。
+- 第 294 页，[深度学习](http://amzn.to/2fwdoKR)，2016 年。
 
-在Keras深度学习库中，您可以通过在训练之前在优化器上设置`clipnorm`或`clipvalue`参数来使用梯度剪辑。
+在 Keras 深度学习库中，您可以通过在训练之前在优化器上设置`clipnorm`或`clipvalue`参数来使用梯度剪辑。
 
 好的默认值是 _clipnorm = 1.0_ 和 _clipvalue = 0.5_ 。
 
@@ -109,13 +109,13 @@
 
 另一种方法，如果仍然出现梯度爆炸，则检查网络权重的大小，并对网络损失函数应用较大权重值的惩罚。
 
-这被称为权重正则化，并且通常可以使用L1（绝对权重）或L2（平方权重）惩罚。
+这被称为权重正则化，并且通常可以使用 L1（绝对权重）或 L2（平方权重）惩罚。
 
-> 对复发权重使用L1或L2惩罚可以帮助梯度爆炸
+> 对复发权重使用 L1 或 L2 惩罚可以帮助梯度爆炸
 
 — [On the difficulty of training recurrent neural networks](http://proceedings.mlr.press/v28/pascanu13.pdf), 2013.
 
-在Keras深度学习库中，您可以通过在层上设置`kernel_regularizer`参数并使用`L1`或`L2`正则化器来使用权重正则化。
+在 Keras 深度学习库中，您可以通过在层上设置`kernel_regularizer`参数并使用`L1`或`L2`正则化器来使用权重正则化。
 
 *   [Keras API](https://keras.io/regularizers/) 中正则化器的使用
 
@@ -125,7 +125,7 @@
 
 ### 图书
 
-*   [深度学习](http://amzn.to/2fwdoKR)，2016年。
+*   [深度学习](http://amzn.to/2fwdoKR)，2016 年。
 *   [自然语言处理中的神经网络方法](http://amzn.to/2fwTPCn)，2017。
 
 ### 文件
@@ -136,8 +136,8 @@
 
 ### 用品
 
-*   [为什么在神经网络（特别是在RNN中）梯度爆炸是一个问题？](https://www.quora.com/Why-is-it-a-problem-to-have-exploding-gradients-in-a-neural-net-especially-in-an-RNN)
-*   [LSTM如何帮助防止循环神经网络中的消失（和爆炸）梯度问题？](https://www.quora.com/How-does-LSTM-help-prevent-the-vanishing-and-exploding-gradient-problem-in-a-recurrent-neural-network)
+*   [为什么在神经网络（特别是在 RNN 中）梯度爆炸是一个问题？](https://www.quora.com/Why-is-it-a-problem-to-have-exploding-gradients-in-a-neural-net-especially-in-an-RNN)
+*   [LSTM 如何帮助防止循环神经网络中的消失（和爆炸）梯度问题？](https://www.quora.com/How-does-LSTM-help-prevent-the-vanishing-and-exploding-gradient-problem-in-a-recurrent-neural-network)
 *   [整流器（神经网络）](https://en.wikipedia.org/wiki/Rectifier_(neural_networks))
 
 ### Keras API

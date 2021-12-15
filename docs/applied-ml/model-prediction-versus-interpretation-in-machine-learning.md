@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/model-prediction-versus-interpretation-in-machine-learning/](https://machinelearningmastery.com/model-prediction-versus-interpretation-in-machine-learning/)
 
-在他们的书 [Applied Predictive Modeling](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20) 中，Kuhn和Johnson早期就模型预测准确率与模型解释的权衡进行了评论。
+在他们的书 [Applied Predictive Modeling](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20) 中，Kuhn 和 Johnson 早期就模型预测准确率与模型解释的权衡进行了评论。
 
 对于给定的问题，清楚地了解哪个是优先级，准确率或可解释性是至关重要的，以便可以明确而不是隐式地进行这种权衡。
 
@@ -27,7 +27,7 @@
 
 精度的优化导致以附加模型参数（以及调整那些参数所需的资源）的形式进一步增加模型的复杂性。
 
-> “_不幸的是，最强大的预测模型通常是最不易解释的。_ “
+> “_ 不幸的是，最强大的预测模型通常是最不易解释的。_ “
 
 具有较少参数的模型更易于解释。这很直观。线性回归模型具有每个输入特征的系数和截距项。例如，您可以查看每个术语并了解它们对输出的贡献。转向逻辑回归在底层关系方面提供了更多的权力，这些关系可以以功能转换为输出为代价进行建模，现在也必须与系数一起理解。
 
@@ -39,7 +39,7 @@
 
 他们评论说：
 
-> “_只要复杂模型得到适当验证，使用为解释而不是预测表现而构建的模型可能是不合适的。_ “
+> “_ 只要复杂模型得到适当验证，使用为解释而不是预测表现而构建的模型可能是不合适的。_ “
 
 解释是模型准确率的次要因素，它们的例子包括将电子邮件区分为垃圾邮件和非垃圾邮件，以及评估房屋作为问题的例子。医学实例被触及两次，并且在两种情况下都用于捍卫绝对需要和对可解释性准确率的需求，只要模型得到适当的验证。
 

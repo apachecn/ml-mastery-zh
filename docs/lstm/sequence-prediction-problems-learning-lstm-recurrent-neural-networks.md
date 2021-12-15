@@ -1,4 +1,4 @@
-# 5个使用LSTM循环神经网络的简单序列预测问题的示例
+# 5 个使用 LSTM 循环神经网络的简单序列预测问题的示例
 
 > 原文： [https://machinelearningmastery.com/sequence-prediction-problems-learning-lstm-recurrent-neural-networks/](https://machinelearningmastery.com/sequence-prediction-problems-learning-lstm-recurrent-neural-networks/)
 
@@ -6,26 +6,26 @@
 
 它要求您考虑观察的顺序，并使用具有记忆的长短期记忆（LSTM）循环神经网络等模型，并且可以学习观察之间的任何时间依赖性。
 
-应用LSTM来学习如何在序列预测问题上使用它们是至关重要的，为此，您需要一套明确定义的问题，使您能够专注于不同的问题类型和框架。至关重要的是，您可以建立您对序列预测问题如何不同的直觉，以及如何使用像LSTM这样复杂的模型来解决它们。
+应用 LSTM 来学习如何在序列预测问题上使用它们是至关重要的，为此，您需要一套明确定义的问题，使您能够专注于不同的问题类型和框架。至关重要的是，您可以建立您对序列预测问题如何不同的直觉，以及如何使用像 LSTM 这样复杂的模型来解决它们。
 
-在本教程中，您将发现一套5个狭义定义和可扩展的序列预测问题，您可以使用这些问题来应用和了解有关LSTM循环神经网络的更多信息。
+在本教程中，您将发现一套 5 个狭义定义和可扩展的序列预测问题，您可以使用这些问题来应用和了解有关 LSTM 循环神经网络的更多信息。
 
 完成本教程后，您将了解：
 
-*   简单的记忆任务，用于测试LSTM的学习记忆能力。
-*   简单的打印任务，用于测试LSTM的学习时间依赖表现力。
-*   用于测试LSTM解释能力的简单算术任务。
+*   简单的记忆任务，用于测试 LSTM 的学习记忆能力。
+*   简单的打印任务，用于测试 LSTM 的学习时间依赖表现力。
+*   用于测试 LSTM 解释能力的简单算术任务。
 
 让我们开始吧。
 
 ![5 Examples of Simple Sequence Prediction Problems for Learning LSTM Recurrent Neural Networks](img/b45c5a73c43228fa44ebdd42dcf41db3.jpg)
 
-5用于学习LSTM循环神经网络的简单序列预测问题示例
+5 用于学习 LSTM 循环神经网络的简单序列预测问题示例
 照片由 [Geraint Otis Warlow](https://www.flickr.com/photos/gpwarlow/850611221/) ，保留一些权利。
 
 ## 教程概述
 
-本教程分为5个部分;他们是：
+本教程分为 5 个部分;他们是：
 
 1.  序列学习问题
 2.  价值记忆
@@ -47,7 +47,7 @@
 
 ## 1.序列学习问题
 
-在该问题中，生成0.0和1.0之间的连续实数值序列。给定过去值的一个或多个时间步长，模型必须预测序列中的下一个项目。
+在该问题中，生成 0.0 和 1.0 之间的连续实数值序列。给定过去值的一个或多个时间步长，模型必须预测序列中的下一个项目。
 
 我们可以直接生成这个序列，如下所示：
 
@@ -99,20 +99,20 @@ X (timesteps),		y
 
 问题是要记住序列中的第一个值，并在序列的末尾重复它。
 
-该问题基于用于在1997年论文[长期短期记忆](http://www.bioinf.jku.at/publications/older/2604.pdf)中证明LSTM的“实验2”。
+该问题基于用于在 1997 年论文[长期短期记忆](http://www.bioinf.jku.at/publications/older/2604.pdf)中证明 LSTM 的“实验 2”。
 
 这可以被视为一步预测问题。
 
 给定序列中的一个值，模型必须预测序列中的下一个值。例如，给定值“0”作为输入，模型必须预测值“1”。
 
-考虑以下两个5个整数的序列：
+考虑以下两个 5 个整数的序列：
 
 ```py
 3, 0, 1, 2, 3
 4, 0, 1, 2, 4
 ```
 
-Python代码将生成两个任意长度的序列。如果您愿意，可以进一步概括。
+Python 代码将生成两个任意长度的序列。如果您愿意，可以进一步概括。
 
 ```py
 def generate_sequence(length=5):
@@ -141,7 +141,7 @@ print(seq1)
 
 我们可以看到序列的第一个值重复作为序列的最后一个值。这是指示器为模型提供关于它正在处理的序列的上下文。
 
-冲突是从每个序列中的第二个项目到最后一个项目的过渡。在序列1中，给出“2”作为输入并且必须预测“3”，而在序列2中，给出“2”作为输入并且必须预测“4”。
+冲突是从每个序列中的第二个项目到最后一个项目的过渡。在序列 1 中，给出“2”作为输入并且必须预测“3”，而在序列 2 中，给出“2”作为输入并且必须预测“4”。
 
 ```py
 Sequence 1:
@@ -183,13 +183,13 @@ This framing of the problem would be modeled as a many-to-one sequence predictio
 
 在这个问题中，生成随机的整数序列。模型必须记住特定滞后时间的整数，并在序列结束时打印它。
 
-例如，10个整数的随机序列可以是：
+例如，10 个整数的随机序列可以是：
 
 ```py
 5, 3, 2, 1, 9, 9, 2, 7, 1, 6
 ```
 
-该问题可能被设置为在第5个时间步骤打印该值，在这种情况下为9。
+该问题可能被设置为在第 5 个时间步骤打印该值，在这种情况下为 9。
 
 下面的代码将生成随机的整数序列。
 
@@ -241,7 +241,7 @@ X (timesteps),		y
 
 这是多层感知机无法解决的问题。
 
-echo的索引可以进一步推迟，从而对LSTM内存产生更多需求。
+echo 的索引可以进一步推迟，从而对 LSTM 内存产生更多需求。
 
 与上面的“值记忆”问题不同，每个训练时期都会产生一个新的序列。这将要求模型学习泛化打印解，而不是记忆特定序列或随机数序列。
 
@@ -275,19 +275,19 @@ X (timesteps),		y
 5, 3, 2, 4, 1,		5, 3, 2
 ```
 
-这更具挑战性，因为输入数量与输出数量不匹配。这个问题的多对多模型需要更高级的架构，例如编解码器LSTM。
+这更具挑战性，因为输入数量与输出数量不匹配。这个问题的多对多模型需要更高级的架构，例如编解码器 LSTM。
 
 同样，单热编码将是优选的，尽管该问题可以被建模为标准化整数值。
 
 ## 5.序列分类
 
-该问题被定义为0和1之间的随机值序列。该序列被作为问题的输入，每个时间步提供一个数字。
+该问题被定义为 0 和 1 之间的随机值序列。该序列被作为问题的输入，每个时间步提供一个数字。
 
-二进制标签（0或1）与每个输入相关联。输出值均为0.一旦序列中输入值的累积和超过阈值，则输出值从0翻转为1。
+二进制标签（0 或 1）与每个输入相关联。输出值均为 0.一旦序列中输入值的累积和超过阈值，则输出值从 0 翻转为 1。
 
-使用序列长度的1/4的阈值。
+使用序列长度的 1/4 的阈值。
 
-例如，下面是10个输入时间步长（X）的序列：
+例如，下面是 10 个输入时间步长（X）的序列：
 
 ```py
 0.63144003 0.29414551 0.91587952 0.95189228 0.32195638 0.60742236 0.83895793 0.18023048 0.84762691 0.29165514
@@ -299,7 +299,7 @@ X (timesteps),		y
 0 0 0 1 1 1 1 1 1 1
 ```
 
-我们可以用Python实现它。
+我们可以用 Python 实现它。
 
 ```py
 from random import random
@@ -329,28 +329,28 @@ print(y)
 [0 0 0 0 1 1 1 1 1 1]
 ```
 
-这是一个序列分类问题，可以建模为一对一。状态需要解释过去的时间步骤，以正确预测输出序列何时从0翻转到1。
+这是一个序列分类问题，可以建模为一对一。状态需要解释过去的时间步骤，以正确预测输出序列何时从 0 翻转到 1。
 
 ## 进一步阅读
 
 如果您要深入了解，本节将提供有关该主题的更多资源。
 
-*   [长期短期记忆](http://www.bioinf.jku.at/publications/older/2604.pdf)，1997年
-*   [如何使用Keras](http://machinelearningmastery.com/use-different-batch-sizes-training-predicting-python-keras/) 在Python中使用不同的批量大小进行训练和预测
-*   [用Python中的长短期记忆网络演示内存](http://machinelearningmastery.com/memory-in-a-long-short-term-memory-network/)
+*   [长期短期记忆](http://www.bioinf.jku.at/publications/older/2604.pdf)，1997 年
+*   [如何使用 Keras](http://machinelearningmastery.com/use-different-batch-sizes-training-predicting-python-keras/) 在 Python 中使用不同的批量大小进行训练和预测
+*   [用 Python 中的长短期记忆网络演示内存](http://machinelearningmastery.com/memory-in-a-long-short-term-memory-network/)
 *   [如何通过长短期记忆循环神经网络学习打印随机整数](http://machinelearningmastery.com/learn-echo-random-integers-long-short-term-memory-recurrent-neural-networks/)
-*   [如何将编解码器LSTM用于随机整数的回波序列](http://machinelearningmastery.com/learn-echo-random-integers-long-short-term-memory-recurrent-neural-networks/)
-*   [如何使用Keras开发用于Python序列分类的双向LSTM](http://machinelearningmastery.com/develop-bidirectional-lstm-sequence-classification-python-keras/)
+*   [如何将编解码器 LSTM 用于随机整数的回波序列](http://machinelearningmastery.com/learn-echo-random-integers-long-short-term-memory-recurrent-neural-networks/)
+*   [如何使用 Keras 开发用于 Python 序列分类的双向 LSTM](http://machinelearningmastery.com/develop-bidirectional-lstm-sequence-classification-python-keras/)
 
 ## 摘要
 
-在本教程中，您发现了一套精心设计的人工序列预测问题，可用于探索LSTM循环神经网络的学习和记忆功能。
+在本教程中，您发现了一套精心设计的人工序列预测问题，可用于探索 LSTM 循环神经网络的学习和记忆功能。
 
 具体来说，你学到了：
 
-*   简单的记忆任务，用于测试LSTM的学习记忆能力。
-*   简单的打印任务，用于测试LSTM的学习时间依赖表现力。
-*   用于测试LSTM解释能力的简单算术任务。
+*   简单的记忆任务，用于测试 LSTM 的学习记忆能力。
+*   简单的打印任务，用于测试 LSTM 的学习时间依赖表现力。
+*   用于测试 LSTM 解释能力的简单算术任务。
 
 你有任何问题吗？
 在下面的评论中提出您的问题，我会尽力回答。

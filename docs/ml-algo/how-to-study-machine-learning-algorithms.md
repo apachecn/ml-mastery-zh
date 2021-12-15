@@ -6,7 +6,7 @@
 
 您可以选择并应用机器学习算法，根据数据构建模型，选择要素，组合多个模型的预测，甚至评估给定模型的功能。
 
-在这篇文章中，您将回顾5种不同的方法，您可以使用它们来研究机器学习算法。
+在这篇文章中，您将回顾 5 种不同的方法，您可以使用它们来研究机器学习算法。
 
 [![study machine learning algorithms](img/9cc23a6914f0da856fc09d1b25a9d5d9.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/10/study-machine-learning-algorithms.jpg)
 
@@ -19,7 +19,7 @@
 
 即使定义机器学习算法是什么，也可能很棘手。
 
-一个很好的起点是制作自己的算法列表。启动文本文件，word文档或电子表格并列出算法名称。还列出每种算法所属的一般类别。
+一个很好的起点是制作自己的算法列表。启动文本文件，word 文档或电子表格并列出算法名称。还列出每种算法所属的一般类别。
 
 这个简单的策略可以帮助您熟悉不同类型和类别的算法。之后，随着您的经验越来越丰富，这样的列表可以提示您并提供不同方法的想法，以便对您的问题进行检查。
 
@@ -35,7 +35,7 @@
 
 方便的机器学习算法思维导图的样本。
 
-我已经创建了一个由类型组织的60多种算法的方便思维导图。
+我已经创建了一个由类型组织的 60 多种算法的方便思维导图。
 
 下载，打印并使用它。
 
@@ -61,13 +61,13 @@
 
 你可以研究一种算法。这包括定位和读取首次描述算法的主要来源以及教科书和评论文章中对算法的权威解释。
 
-会议论文，竞赛结果甚至表格以及 [Q＆amp; A网站](http://machinelearningmastery.com/machine-learning-communities/ "Machine Learning Communities")可以帮助您更好地理解算法的最佳实践和使用启发式方法。
+会议论文，竞赛结果甚至表格以及 [Q＆amp; A 网站](http://machinelearningmastery.com/machine-learning-communities/ "Machine Learning Communities")可以帮助您更好地理解算法的最佳实践和使用启发式方法。
 
 在研究算法时，请构建描述。我喜欢使用定义明确的[算法描述模板](http://machinelearningmastery.com/algorithm-description-template/ "You Can Learn Machine Learning Algorithms")。
 
 您可以继续添加到此模板，以发现有关算法的更多信息。您可以添加引用，列出算法的伪代码并列出最佳实践和使用启发式。
 
-这是一种有价值的技术，您可以构建自己的算法描述迷你百科全书供您自己参考（例如，参见 [Clever Algorithms](http://CleverAlgorithms.com) 获取45种算法秘籍）。
+这是一种有价值的技术，您可以构建自己的算法描述迷你百科全书供您自己参考（例如，参见 [Clever Algorithms](http://CleverAlgorithms.com) 获取 45 种算法秘籍）。
 
 有关我使用的模板的更多信息，请查看帖子“[如何学习机器学习算法](http://machinelearningmastery.com/how-to-learn-a-machine-learning-algorithm/ "How to Learn a Machine Learning Algorithm")”。
 
@@ -83,9 +83,9 @@
 
 您可以利用算法的教程和开源实现来帮助您完成这些困难的部分。
 
-请注意，算法的“_我的第一个实现_”将比您在机器学习工具或库中找到的生产级实现更不可扩展且更脆弱。
+请注意，算法的“_ 我的第一个实现 _”将比您在机器学习工具或库中找到的生产级实现更不可扩展且更脆弱。
 
-看看我的[教程，在Python](http://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/ "Tutorial To Implement K 最近邻 in Python From Scratch") 中从零开始实现k-最近邻居。
+看看我的[教程，在 Python](http://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/ "Tutorial To Implement K 最近邻 in Python From Scratch") 中从零开始实现 k-最近邻居。
 
 您可能也对我的帖子“[如何实现机器学习算法](http://machinelearningmastery.com/how-to-implement-a-machine-learning-algorithm/ "How to Implement a Machine Learning Algorithm")”感兴趣。
 

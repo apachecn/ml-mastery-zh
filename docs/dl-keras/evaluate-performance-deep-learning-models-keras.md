@@ -55,7 +55,7 @@ Keras 可以将训练数据的一部分划分为为验证数据集，并在每�
 下面的示例演示了如何在小二分类问题上使用自动验证数据集。本文中的所有实例均使用[皮马印第安人糖尿病数据集](http://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)。您可以[从 UCI 机器学习库下载](http://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/pima-indians-diabetes.data)，并使用文件名 **pima-indians-diabetes.csv** 将数据文件保存到当前工作目录中（更新：[从这里](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
 
 ```py
-# 使用自动验证集的MLP
+# 使用自动验证集的 MLP
 from keras.models import Sequential
 from keras.layers import Dense
 import numpy
@@ -104,7 +104,7 @@ Keras 还允许您手动指定在训练期间用于验证的数据集。
 可以通过 **validation_data** 参数将验证数据集指定给 Keras 中的`fit()`函数，该函数输出和输入的数据类型是数据集中的元组类型。
 
 ```py
-# 使用手动验证集的MLP
+# 使用手动验证集的 MLP
 from keras.models import Sequential
 from keras.layers import Dense
 from sklearn.model_selection import train_test_split
@@ -114,10 +114,10 @@ seed = 7
 numpy.random.seed(seed)
 # 加载数据集
 dataset = numpy.loadtxt("pima-indians-diabetes.csv", delimiter=",")
-# 将数据集划分为输入变量X和输出变量Y
+# 将数据集划分为输入变量 X 和输出变量 Y
 X = dataset[:,0:8]
 Y = dataset[:,8]
-# 将数据集划分为67%的训练集和33%的测试集
+# 将数据集划分为 67%的训练集和 33%的测试集
 X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.33, random_state=seed)
 # 创建模型
 model = Sequential()
@@ -165,7 +165,7 @@ Epoch 150/150
 为每个模型存储和打印相关的表现数据，然后，在运行结束时打印模型表现的平均差和标准差，以提供对模型准确率的可靠估计。
 
 ```py
-# 为Pima Indians 数据集使用10折交叉验证的MLP
+# 为 Pima Indians 数据集使用 10 折交叉验证的 MLP
 from keras.models import Sequential
 from keras.layers import Dense
 from sklearn.model_selection import StratifiedKFold
@@ -175,10 +175,10 @@ seed = 7
 numpy.random.seed(seed)
 # 加载数据集
 dataset = numpy.loadtxt("pima-indians-diabetes.csv", delimiter=",")
-# 将数据集划分为输入数据X和输出数据Y
+# 将数据集划分为输入数据 X 和输出数据 Y
 X = dataset[:,0:8]
 Y = dataset[:,8]
-# 定义10折交叉验证测试线束
+# 定义 10 折交叉验证测试线束
 kfold = StratifiedKFold(n_splits=10, shuffle=True, random_state=seed)
 cvscores = []
 for train, test in kfold.split(X, Y):

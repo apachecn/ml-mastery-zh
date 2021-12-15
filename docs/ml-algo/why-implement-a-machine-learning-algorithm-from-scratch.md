@@ -2,13 +2,13 @@
 
 > 原文： [https://machinelearningmastery.com/why-implement-a-machine-learning-algorithm-from-scratch/](https://machinelearningmastery.com/why-implement-a-machine-learning-algorithm-from-scratch/)
 
-当现有API中提供了如此多的算法时，为什么要从零开始实现机器学习算法？
+当现有 API 中提供了如此多的算法时，为什么要从零开始实现机器学习算法？
 
 这是一个很好的问题。在编写第一行代码之前必须考虑的问题。
 
 在这篇文章中，您将发现这个问题的各种有趣甚至发人深省的答案。
 
-这篇文章中的答案总结自Quora问题：“[当有许多高级API如tensorflow可用时，为什么需要手动实现机器学习算法？](https://www.quora.com/Why-is-there-a-need-to-manually-implement-machine-learning-algorithms-when-there-are-many-advanced-APIs-like-tensorflow-available) “。
+这篇文章中的答案总结自 Quora 问题：“[当有许多高级 API 如 tensorflow 可用时，为什么需要手动实现机器学习算法？](https://www.quora.com/Why-is-there-a-need-to-manually-implement-machine-learning-algorithms-when-there-are-many-advanced-APIs-like-tensorflow-available) “。
 
 ![Why Implement a Machine Learning Algorithm From Scratch](img/eb1a35be0f1f24f7f32e26c4fcfc220f.jpg)
 
@@ -28,7 +28,7 @@
 
 > ...假设我们没有谈论机器学习算法，而是谈论排序算法。当然，许多数据结构都有一个排序函数，几乎不需要编码，但你真的会聘请一个无法做出反对的程序员吗？选择排序？插入排序？归并排序？快速排序？二叉搜索树？
 
-Charles描述了4种不同的用例，从零开始实现机器学习算法是非常可取的：
+Charles 描述了 4 种不同的用例，从零开始实现机器学习算法是非常可取的：
 
 *   作为机器学习领域的初学者。
 *   作为机器学习领域的研究员。
@@ -39,9 +39,9 @@ Charles描述了4种不同的用例，从零开始实现机器学习算法是非
 
 [Xavier Amatriain](http://qr.ae/RgpWnT) 在他的回答中关注这个话题。他评论道：
 
-> 首先我要说的是，我确实认为任何团队都应该默认重新使用现有的实现。 ...但是，公司可能决定实现自己版本的ML算法的原因也很多。
+> 首先我要说的是，我确实认为任何团队都应该默认重新使用现有的实现。 ...但是，公司可能决定实现自己版本的 ML 算法的原因也很多。
 
-Xavier列出了实现机器学习算法的5个理由，如下所示：
+Xavier 列出了实现机器学习算法的 5 个理由，如下所示：
 
 *   **表现**。对于特定用例，开源实现可能过于笼统且效率不高。
 *   **正确性**。对于特定用例（例如较大规模的数据集），开源实现中可能存在错误或限制。

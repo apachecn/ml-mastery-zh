@@ -52,7 +52,7 @@
 为什么是深度学习？
 [Andrew Ng](http://www.slideshare.net/ExtractConf)的幻灯片。保留所有权利。
 
-最后，他清楚地指出，我们在实践中看到的深度学习的好处来自监督学习（supervised learning）。在 2015年 的 ExtractConf 演讲中，他评论道：
+最后，他清楚地指出，我们在实践中看到的深度学习的好处来自监督学习（supervised learning）。在 2015 年 的 ExtractConf 演讲中，他评论道：
 
 > 如今深度学习的所有价值几乎都是通过监督学习或从已标记的数据中学习而得到的。
 

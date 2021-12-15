@@ -12,7 +12,7 @@
 
 *   编码 - 解码器架构和固定长度内部表示的限制。
 *   克服限制的注意机制允许网络在输出序列中的每个项目的输入序列中学习在哪里注意。
-*   在诸如文本翻译，语音识别等领域中具有循环神经网络的注意机制的5种应用。
+*   在诸如文本翻译，语音识别等领域中具有循环神经网络的注意机制的 5 种应用。
 
 让我们开始吧。
 
@@ -23,14 +23,14 @@
 
 ## 长序列的问题
 
-编解码器循环神经网络是这样的架构，其中一组LSTM学习将输入序列编码成固定长度的内部表示，第二组LSTM读取内部表示并将其解码成输出序列。
+编解码器循环神经网络是这样的架构，其中一组 LSTM 学习将输入序列编码成固定长度的内部表示，第二组 LSTM 读取内部表示并将其解码成输出序列。
 
 这种架构已经在诸如文本翻译等困难的序列预测问题上展示了最先进的结果，并迅速成为主导方法。
 
 例如，请参阅：
 
 *   [用神经网络进行序列学习的序列](https://arxiv.org/abs/1409.3215)，2014
-*   [使用RNN编解码器进行统计机器翻译的学习短语表示](https://arxiv.org/abs/1406.1078)，2014
+*   [使用 RNN 编解码器进行统计机器翻译的学习短语表示](https://arxiv.org/abs/1406.1078)，2014
 
 编解码器架构仍然在广泛的问题上实现了出色的结果。然而，它受到所有输入序列被强制编码为固定长度内部向量的约束。
 
@@ -38,13 +38,13 @@
 
 > 这种编解码器方法的潜在问题是神经网络需要能够将源句子的所有必要信息压缩成固定长度的向量。这可能使神经网络难以处理长句，特别是那些比训练语料库中的句子长的句子。
 
-- Dzmitry Bahdanau等，[神经机器翻译通过联合学习调整和翻译](https://arxiv.org/abs/1409.0473)，2015
+- Dzmitry Bahdanau 等，[神经机器翻译通过联合学习调整和翻译](https://arxiv.org/abs/1409.0473)，2015
 
 ## 序列中的注意事项
 
 注意是将编解码器架构从固定长度内部表示中释放出来的想法。
 
-这是通过保持来自编码器LSTM的中间输出来自输入序列的每个步骤并训练模型以学习选择性地关注这些输入并将它们与输出序列中的项目相关联来实现的。
+这是通过保持来自编码器 LSTM 的中间输出来自输入序列的每个步骤并训练模型以学习选择性地关注这些输入并将它们与输出序列中的项目相关联来实现的。
 
 换句话说，输出序列中的每个项都取决于输入序列中的选择项。
 
@@ -80,7 +80,7 @@
 *   [DRAW：用于图像生成的循环神经网络](https://arxiv.org/abs/1502.04623)，2014
 *   [具有视觉注意力的多目标识别](https://arxiv.org/abs/1412.7755)，2014
 
-## 5序列预测中的注意事项
+## 5 序列预测中的注意事项
 
 本节提供了一些具体示例，说明如何将注意力用于具有循环神经网络的序列预测。
 
@@ -97,7 +97,7 @@
 ![Attentional Interpretation of French to English Translation](img/84a928d27c8fcd69c6a233f2311b42f5.jpg)
 
 法语与英语翻译的注意解释
-摘自Dzmitry Bahdanau等人，通过联合学习对齐和翻译的神经机器翻译，2015
+摘自 Dzmitry Bahdanau 等人，通过联合学习对齐和翻译的神经机器翻译，2015
 
 ### 2.图像描述中的注意事项
 
@@ -120,19 +120,19 @@
 
 例如：
 
-*   前提：“_婚礼派对拍照_”
-*   假设：“_有人结婚_”
+*   前提：“_ 婚礼派对拍照 _”
+*   假设：“_ 有人结婚 _”
 
 注意用于将假设中的每个单词与前提中的单词相关联，反之亦然。
 
-> 我们提出了一个基于LSTM的神经模型，它一次读取两个句子来确定蕴涵，而不是将每个句子独立地映射到语义空间。我们用神经逐字注意机制来扩展这个模型，以鼓励对词语和短语对的蕴涵进行推理。 ......具有逐字神经注意力的扩展超越了这一强大的基准LSTM结果2.6个百分点，创造了一种新的最先进的准确率......
+> 我们提出了一个基于 LSTM 的神经模型，它一次读取两个句子来确定蕴涵，而不是将每个句子独立地映射到语义空间。我们用神经逐字注意机制来扩展这个模型，以鼓励对词语和短语对的蕴涵进行推理。 ......具有逐字神经注意力的扩展超越了这一强大的基准 LSTM 结果 2.6 个百分点，创造了一种新的最先进的准确率......
 
-- [关于神经注意蕴涵的推理](https://arxiv.org/abs/1509.06664)，2016年
+- [关于神经注意蕴涵的推理](https://arxiv.org/abs/1509.06664)，2016 年
 
 ![Attentional Interpretation of Premise Words to Hypothesis Words](img/92842ce7592dd8bdcbdb7a935a63e77e.jpg)
 
 关于假设词的前提词的注意解释
-摘自2016年神经注意蕴涵的推理
+摘自 2016 年神经注意蕴涵的推理
 
 ### 4.语音识别中的注意力
 
@@ -166,32 +166,32 @@
 
 ## 进一步阅读
 
-如果您想了解有关增加对LSTM的关注的更多信息，本节将提供其他资源。
+如果您想了解有关增加对 LSTM 的关注的更多信息，本节将提供其他资源。
 
-*   [深度学习和NLP中的注意力和记忆](http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/)
+*   [深度学习和 NLP 中的注意力和记忆](http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/)
 *   [注意机制](https://blog.heuritech.com/2016/01/20/attention-mechanism/)
-*   [应用于NLP的基于注意力模型的调查](http://yanran.li/peppypapers/2015/10/07/survey-attention-model-1.html)
-*   [RNN引入的注意机制究竟是什么？ Quora上的](https://www.quora.com/What-is-exactly-the-attention-mechanism-introduced-to-RNN-recurrent-neural-network-It-would-be-nice-if-you-could-make-it-easy-to-understand)。
+*   [应用于 NLP 的基于注意力模型的调查](http://yanran.li/peppypapers/2015/10/07/survey-attention-model-1.html)
+*   [RNN 引入的注意机制究竟是什么？ Quora 上的](https://www.quora.com/What-is-exactly-the-attention-mechanism-introduced-to-RNN-recurrent-neural-network-It-would-be-nice-if-you-could-make-it-easy-to-understand)。
 *   [什么是神经网络中的注意机制？](https://www.quora.com/What-is-Attention-Mechanism-in-Neural-Networks)
 
-在撰写本文时，Keras并未提供开箱即用的注意事项，但很少有第三方实现。看到：
+在撰写本文时，Keras 并未提供开箱即用的注意事项，但很少有第三方实现。看到：
 
-*   [使用Keras进行问答的深度语言建模](http://ben.bolte.cc/blog/2016/language.html)
+*   [使用 Keras 进行问答的深度语言建模](http://ben.bolte.cc/blog/2016/language.html)
 *   [注意模型可用！](https://github.com/fchollet/keras/issues/2067)
-*   [Keras注意机制](https://github.com/philipperemy/keras-attention-mechanism)
+*   [Keras 注意机制](https://github.com/philipperemy/keras-attention-mechanism)
 *   [注意和增强循环神经网络](http://distill.pub/2016/augmented-rnns/)
 *   [如何在循环层（文本分类）](https://github.com/fchollet/keras/issues/4962)之上添加注意
 *   [注意机制实现问题](https://github.com/fchollet/keras/issues/1472)
 *   [实现简单的神经注意模型（用于填充输入）](https://github.com/fchollet/keras/issues/2612)
-*   [注意层需要另一个PR](https://github.com/fchollet/keras/issues/1094)
-*   [seq2seq库](https://github.com/farizrahman4u/seq2seq)
+*   [注意层需要另一个 PR](https://github.com/fchollet/keras/issues/1094)
+*   [seq2seq 库](https://github.com/farizrahman4u/seq2seq)
 
 你知道在循环神经网络中有一些关注的好资源吗？
 请在评论中告诉我。
 
 ## 摘要
 
-在这篇文章中，您发现了LSTM循环神经网络的序列预测问题的注意机制。
+在这篇文章中，您发现了 LSTM 循环神经网络的序列预测问题的注意机制。
 
 具体来说，你学到了：
 

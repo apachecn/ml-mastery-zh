@@ -8,7 +8,7 @@ Keras 非常易于使用，您可以在几分钟内开发出您的第一个[多�
 
 当您开始使用 Keras 时，您可能会遇到技术问题，这时候您可能需要一些帮助。
 
-在这篇文章中，您将会发现在 Keras 开发深度学习模型遇到问题时可以提供解决方案的9种途径。
+在这篇文章中，您将会发现在 Keras 开发深度学习模型遇到问题时可以提供解决方案的 9 种途径。
 
 让我们现在开始吧！
 
@@ -18,7 +18,7 @@ Keras 非常易于使用，您可以在几分钟内开发出您的第一个[多�
 
 以下是您可以使用的一些提示：
 
-*   将您的问题简化为最简单的形式，例如：不应该是“_我的模型不起作用_” 而是转化为 “_x如何工作_”。
+*   将您的问题简化为最简单的形式，例如：不应该是“_ 我的模型不起作用 _” 而是转化为 “_x 如何工作 _”。
 *   在提问之前搜索答案。
 *   提供尽可能小的工作示例来演示您的问题。
 
@@ -39,7 +39,7 @@ Keras 用户 Google Group
 ![Keras Slack Channel](img/07aad7228d9e13432d15e81820ae2199.png)
 
 
-也许Keras Slacks 频道是可以直接聊聊Keras和相关问题的最佳方式。
+也许 Keras Slacks 频道是可以直接聊聊 Keras 和相关问题的最佳方式。
 
 这种方式现在基本上取代了 IM 和 IIRC。
 
@@ -54,7 +54,7 @@ Keras 用户 Google Group
 
 
 
-另一个交流Keras的好地方是Keras Giiter，尽管组织比较松散，但这个平台上仍然有大量的人。
+另一个交流 Keras 的好地方是 Keras Giiter，尽管组织比较松散，但这个平台上仍然有大量的人。
 
 尽管在这个论坛里尽情“遨游”吧！
 
@@ -65,20 +65,20 @@ Keras 用户 Google Group
 ![Keras tag on StackOverflow](img/30e6e1be6cd09de3ce9d725b9ca33188.png)
 
 
-StackOverflow 是一个致力于编程问题的问答网站，在这里有大量有关深度学习和与Keras相关的问题，我建议您可以直接搜索带有“_Keras_”标签的相关回答。
+StackOverflow 是一个致力于编程问题的问答网站，在这里有大量有关深度学习和与 Keras 相关的问题，我建议您可以直接搜索带有“_Keras_”标签的相关回答。
 
 *   StackOverflow 上的 [Keras 标签](https://stackoverflow.com/questions/tagged/keras)
 
-## 5. CrossValidated 上的Keras 标签
+## 5. CrossValidated 上的 Keras 标签
 
 ![Keras tag on CrossValidated](img/6074ebf72c384434cedd2411d8a7f962.png)
 
 
-CrossValidated 是一个致力于机器学习的问答网站，并且有很多关于Keras相关的问题，但它们可能多的是一些理论上的问题集合，而不是专注于代码和编程。
+CrossValidated 是一个致力于机器学习的问答网站，并且有很多关于 Keras 相关的问题，但它们可能多的是一些理论上的问题集合，而不是专注于代码和编程。
 
 同样，我建议搜索并访问使用“_keras_”标签的问题。
 
-*   CrossValidated上的 [Keras 标签](https://stats.stackexchange.com/questions/tagged/keras)
+*   CrossValidated 上的 [Keras 标签](https://stats.stackexchange.com/questions/tagged/keras)
 
 ## 6.数据科学上的 Keras 标签
 
@@ -93,7 +93,7 @@ CrossValidated 是一个致力于机器学习的问答网站，并且有很多�
 
 同样，我建议搜索并访问带有“`keras`”标签的话题。
 
-*   [数据科学StackExchange中的 Keras 标签](https://datascience.stackexchange.com/questions/tagged/keras)
+*   [数据科学 StackExchange 中的 Keras 标签](https://datascience.stackexchange.com/questions/tagged/keras)
 
 ## 7\. Quora 上的 Keras 主题
 
@@ -121,12 +121,12 @@ GitHub 提供了一个基本的问题管理系统，Keras 项目报告了很多�
 
 *   [Keras Github 问题](https://github.com/fchollet/keras/issues)
 
-## 9\.Twitter 上的 Keras问题
+## 9\.Twitter 上的 Keras 问题
 
 ![Keras hash tag on Twitter](img/dcf7adb1cfb7d2e4d2acfe7acb62f171.png)
 
 
-您可以直接在 Twitter 上快速获有关Keras的相关问题。
+您可以直接在 Twitter 上快速获有关 Keras 的相关问题。
 
 我建议您直接在 Twitter 搜索“`keras`”。
 
@@ -134,7 +134,7 @@ GitHub 提供了一个基本的问题管理系统，Keras 项目报告了很多�
 
 *   Twitter 上的 [Keras 话题标签](https://twitter.com/hashtag/keras)
 
-您也可以通过关注 Keras 背后的创造者和首席开发人员，[FrançoisChollet](https://twitter.com/fchollet)来获得对于Keras更深刻的理解。
+您也可以通过关注 Keras 背后的创造者和首席开发人员，[FrançoisChollet](https://twitter.com/fchollet)来获得对于 Keras 更深刻的理解。
 
 ## 其他 Keras 站点
 
@@ -146,8 +146,8 @@ GitHub 提供了一个基本的问题管理系统，Keras 项目报告了很多�
 
 ### 摘要
 
-在这篇文章中，您了解了可以在全网范围内获得有关Keras深度学习的问答网站。
+在这篇文章中，您了解了可以在全网范围内获得有关 Keras 深度学习的问答网站。
 
 你有没有使用过这些资源？你是怎么做到的？
 
-您是否想在其他地方获得有关Keras的帮助？请在下面的评论中告诉我。
+您是否想在其他地方获得有关 Keras 的帮助？请在下面的评论中告诉我。

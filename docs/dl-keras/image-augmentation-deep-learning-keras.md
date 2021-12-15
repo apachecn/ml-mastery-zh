@@ -21,7 +21,7 @@
 *   **2017 年 1 月更新**：更新了 Keras 1.2.0 和 TensorFlow 0.12.1 的示例。
 *   **2017 年 3 月更新**：更新了 Keras 2.0.2，TensorFlow 1.0.1 和 Theano 0.9.0 的示例。
 
-## Keras 图像增谦API
+## Keras 图像增谦 API
 
 与 Keras 的其他部分一样，图像增强 API 简单而强大。
 
@@ -74,7 +74,7 @@ from keras.datasets import mnist
 from matplotlib import pyplot
 # 加载数据
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
-# 创建一个3×3的网格图像
+# 创建一个 3×3 的网格图像
 for i in range(0, 9):
 	pyplot.subplot(330 + 1 + i)
 	pyplot.imshow(X_train[i], cmap=pyplot.get_cmap('gray'))
@@ -95,7 +95,7 @@ pyplot.show()
 您可以通过在 ImageDataGenerator 类上设置 featurewise_center 和 featurewise_std_normalization 参数来执行特征标准化。实际上，默认情况下这些参数设置为 True，并且创建没有参数的 ImageDataGenerator 实例将具有相同的效果。
 
 ```py
-# 标准化图像数据集，均值为0，方差为1
+# 标准化图像数据集，均值为 0，方差为 1
 from keras.datasets import mnist
 from keras.preprocessing.image import ImageDataGenerator
 from matplotlib import pyplot
@@ -106,7 +106,7 @@ K.set_image_dim_ordering('th')
 # 将图像转换为一维数据 高度×宽度×通道
 X_train = X_train.reshape(X_train.shape[0], 1, 28, 28)
 X_test = X_test.reshape(X_test.shape[0], 1, 28, 28)
-# 将int类型转化为float型
+# 将 int 类型转化为 float 型
 X_train = X_train.astype('float32')
 X_test = X_test.astype('float32')
 # 定义数据处理
@@ -115,7 +115,7 @@ datagen = ImageDataGenerator(featurewise_center=True, featurewise_std_normalizat
 datagen.fit(X_train)
 # configure batch size and retrieve one batch of images
 for X_batch, y_batch in datagen.flow(X_train, y_train, batch_size=9):
-	# 创建3×3的网个图像
+	# 创建 3×3 的网个图像
 	for i in range(0, 9):
 		pyplot.subplot(330 + 1 + i)
 		pyplot.imshow(X_batch[i].reshape(28, 28), cmap=pyplot.get_cmap('gray'))
@@ -152,7 +152,7 @@ K.set_image_dim_ordering('th')
 # 将图像转换为一维数据 高度×宽度×通道
 X_train = X_train.reshape(X_train.shape[0], 1, 28, 28)
 X_test = X_test.reshape(X_test.shape[0], 1, 28, 28)
-# 将int类型转化为float型
+# 将 int 类型转化为 float 型
 X_train = X_train.astype('float32')
 X_test = X_test.astype('float32')
 # 定义数据处理
@@ -161,7 +161,7 @@ datagen = ImageDataGenerator(zca_whitening=True)
 datagen.fit(X_train)
 # configure batch size and retrieve one batch of images
 for X_batch, y_batch in datagen.flow(X_train, y_train, batch_size=9):
-	# 创建个3×3的网格图像
+	# 创建个 3×3 的网格图像
 	for i in range(0, 9):
 		pyplot.subplot(330 + 1 + i)
 		pyplot.imshow(X_batch[i].reshape(28, 28), cmap=pyplot.get_cmap('gray'))
@@ -182,7 +182,7 @@ ZCA 白化 MNIST 图像
 
 您可以训练模型，以便在训练期间通过人工和随机旋转数据集中的图像来更好地处理图像旋转。
 
-下面的示例通过设置 rotation_range 参数创建最多 达90 度的 MNIST 数字的随机旋转。
+下面的示例通过设置 rotation_range 参数创建最多 达 90 度的 MNIST 数字的随机旋转。
 
 ```py
 # 随机旋转
@@ -196,7 +196,7 @@ K.set_image_dim_ordering('th')
 # 将图像转换为一维数据 高度×宽度×通道
 X_train = X_train.reshape(X_train.shape[0], 1, 28, 28)
 X_test = X_test.reshape(X_test.shape[0], 1, 28, 28)
-# 将int类型转化为float类型
+# 将 int 类型转化为 float 类型
 X_train = X_train.astype('float32')
 X_test = X_test.astype('float32')
 # 定义数据处理
@@ -205,7 +205,7 @@ datagen = ImageDataGenerator(rotation_range=90)
 datagen.fit(X_train)
 # configure batch size and retrieve one batch of images
 for X_batch, y_batch in datagen.flow(X_train, y_train, batch_size=9):
-	# 创建3×3的网格图像
+	# 创建 3×3 的网格图像
 	for i in range(0, 9):
 		pyplot.subplot(330 + 1 + i)
 		pyplot.imshow(X_batch[i].reshape(28, 28), cmap=pyplot.get_cmap('gray'))
@@ -214,7 +214,7 @@ for X_batch, y_batch in datagen.flow(X_train, y_train, batch_size=9):
 	break
 ```
 
-运行该示例，您可以看到图像已经发生了旋转，并且最大角度达到了90度，这对具有标准方向的MINIST的数字来说，可能意义不大，但是当学习的照片中物体具有不同的方向时，这种变换可能会有所帮助。
+运行该示例，您可以看到图像已经发生了旋转，并且最大角度达到了 90 度，这对具有标准方向的 MINIST 的数字来说，可能意义不大，但是当学习的照片中物体具有不同的方向时，这种变换可能会有所帮助。
 
 ![Random Rotations of MNIST Images](img/c74159d0c08a16f4d34d423625015f83.png)
 
@@ -238,7 +238,7 @@ K.set_image_dim_ordering('th')
 # 将图像转换为一维数据 高度×宽度×通道
 X_train = X_train.reshape(X_train.shape[0], 1, 28, 28)
 X_test = X_test.reshape(X_test.shape[0], 1, 28, 28)
-# 将数据集从int类型转化为float类型
+# 将数据集从 int 类型转化为 float 类型
 X_train = X_train.astype('float32')
 X_test = X_test.astype('float32')
 # 定义数据处理
@@ -248,7 +248,7 @@ datagen = ImageDataGenerator(width_shift_range=shift, height_shift_range=shift)
 datagen.fit(X_train)
 # configure batch size and retrieve one batch of images
 for X_batch, y_batch in datagen.flow(X_train, y_train, batch_size=9):
-	# 创建个3×3的网格图像
+	# 创建个 3×3 的网格图像
 	for i in range(0, 9):
 		pyplot.subplot(330 + 1 + i)
 		pyplot.imshow(X_batch[i].reshape(28, 28), cmap=pyplot.get_cmap('gray'))
@@ -281,7 +281,7 @@ K.set_image_dim_ordering('th')
 # 将图像转换为一维数据 高度×宽度×通道
 X_train = X_train.reshape(X_train.shape[0], 1, 28, 28)
 X_test = X_test.reshape(X_test.shape[0], 1, 28, 28)
-# 将int类型转化为float类型
+# 将 int 类型转化为 float 类型
 X_train = X_train.astype('float32')
 X_test = X_test.astype('float32')
 # 定义数据处理
@@ -290,7 +290,7 @@ datagen = ImageDataGenerator(horizontal_flip=True, vertical_flip=True)
 datagen.fit(X_train)
 # configure batch size and retrieve one batch of images
 for X_batch, y_batch in datagen.flow(X_train, y_train, batch_size=9):
-	# 创建一个3×3的网格图像
+	# 创建一个 3×3 的网格图像
 	for i in range(0, 9):
 		pyplot.subplot(330 + 1 + i)
 		pyplot.imshow(X_batch[i].reshape(28, 28), cmap=pyplot.get_cmap('gray'))
@@ -328,7 +328,7 @@ K.set_image_dim_ordering('th')
 # 将图像转换为一维数据 高度×宽度×通道
 X_train = X_train.reshape(X_train.shape[0], 1, 28, 28)
 X_test = X_test.reshape(X_test.shape[0], 1, 28, 28)
-# 将int类型转换为float类型
+# 将 int 类型转换为 float 类型
 X_train = X_train.astype('float32')
 X_test = X_test.astype('float32')
 # 定义数据处理
@@ -338,7 +338,7 @@ datagen.fit(X_train)
 # 配置批大小并且保存一个批大小的图像数量
 os.makedirs('images')
 for X_batch, y_batch in datagen.flow(X_train, y_train, batch_size=9, save_to_dir='images', save_prefix='aug', save_format='png'):
-	# 创建一个3×3的图像网格
+	# 创建一个 3×3 的图像网格
 	for i in range(0, 9):
 		pyplot.subplot(330 + 1 + i)
 		pyplot.imshow(X_batch[i].reshape(28, 28), cmap=pyplot.get_cmap('gray'))

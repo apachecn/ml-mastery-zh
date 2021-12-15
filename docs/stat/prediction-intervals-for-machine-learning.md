@@ -23,7 +23,7 @@
 
 ## 教程概述
 
-本教程分为5个部分;他们是：
+本教程分为 5 个部分;他们是：
 
 1.  什么是错误的点估计？
 2.  什么是预测区间？
@@ -41,7 +41,7 @@
 yhat = model.predict(X)
 ```
 
-其中_是_是由训练模型对给定输入数据`X`进行的估计结果或预测。
+其中 _ 是 _ 是由训练模型对给定输入数据`X`进行的估计结果或预测。
 
 这是一个点预测。
 
@@ -61,13 +61,13 @@ yhat = model.predict(X)
 
 > 单个未来观察的预测间隔是具有指定置信度的区间，其将包含来自分布的未来随机选择的观察。
 
-- 第27页，[统计间隔：从业者和研究人员指南](http://amzn.to/2G8w3IL)，2017年。
+- 第 27 页，[统计间隔：从业者和研究人员指南](http://amzn.to/2G8w3IL)，2017 年。
 
 在使用回归模型做出预测或预测时，最常使用预测区间，其中正在预测数量。
 
 预测间隔的呈现示例如下：
 
-_鉴于给定'x'的'y'预测，'a'到'b'的范围有95％可能覆盖真实结果。_
+_ 鉴于给定'x'的'y'预测，'a'到'b'的范围有 95％可能覆盖真实结果。_
 
 预测间隔围绕模型进行的预测，并希望涵盖真实结果的范围。
 
@@ -86,9 +86,9 @@ _鉴于给定'x'的'y'预测，'a'到'b'的范围有95％可能覆盖真实结�
 
 预测间隔通常大于置信区间，因为它必须考虑置信区间和输出变量的方差。
 
-> 预测间隔总是比置信区间宽，因为它们考虑了与e [误差]相关的不确定性，即不可减少的误差。
+> 预测间隔总是比置信区间宽，因为它们考虑了与 e [误差]相关的不确定性，即不可减少的误差。
 
-- 第103页，[统计学习导论：应用于R](http://amzn.to/2p1CKoB) ，2013。
+- 第 103 页，[统计学习导论：应用于 R](http://amzn.to/2p1CKoB) ，2013。
 
 ## 如何计算预测区间
 
@@ -102,7 +102,7 @@ _鉴于给定'x'的'y'预测，'a'到'b'的范围有95％可能覆盖真实结�
 
 论文“[基于神经网络的预测区间和新进展综合评述](http://alumnus.caltech.edu/~amir/pred-intv-2.pdf)”提供了一个合理的近期研究神经网络背景下非线性模型的预测区间。以下列表总结了一些可用于非线性机器学习模型的预测不确定性的方法：
 
-*   Delta方法，来自非线性回归领域。
+*   Delta 方法，来自非线性回归领域。
 *   贝叶斯方法，来自贝叶斯建模和统计。
 *   均值 - 方差估计方法，使用估计的统计量。
 *   自举法，使用数据重采样和开发模型集合。
@@ -119,7 +119,7 @@ _鉴于给定'x'的'y'预测，'a'到'b'的范围有95％可能覆盖真实结�
 yhat = b0 + b1 . x
 ```
 
-是预测的_，`b0`和`b1`是根据训练数据估计的模型的系数，`x`是输入变量。_
+是预测的 _，`b0`和`b1`是根据训练数据估计的模型的系数，`x`是输入变量。_
 
 我们不知道系数`b0`和`b1`的真实值。我们也不知道真实的群体参数，例如`x`或`y`的平均值和标准偏差。必须估计所有这些元素，这为模型的使用带来了不确定性，以便做出预测。
 
@@ -131,15 +131,15 @@ yhat = b0 + b1 . x
 yhat +/- z * sigma
 ```
 
-`y`是预测值，`z`是高斯分布的临界值（例如，95％间隔为1.96），`sigma`是标准偏差预测的分布。
+`y`是预测值，`z`是高斯分布的临界值（例如，95％间隔为 1.96），`sigma`是标准偏差预测的分布。
 
-我们在实践中并不知道。我们可以如下计算预测标准偏差的无偏估计（取自_用于估计模型输出_的预测间隔的机器学习方法）：
+我们在实践中并不知道。我们可以如下计算预测标准偏差的无偏估计（取自 _ 用于估计模型输出 _ 的预测间隔的机器学习方法）：
 
 ```py
 stdev = sqrt(1 / (N - 2) * e(i)^2 for i to N)
 ```
 
-`stdev`是预测分布的标准偏差的无偏估计，`n`是所做的总预测，而 _e（i）_是之间的差异。 ith预测和实际价值。
+`stdev`是预测分布的标准偏差的无偏估计，`n`是所做的总预测，而 _e（i）_ 是之间的差异。 ith 预测和实际价值。
 
 ## 工作示例
 
@@ -184,7 +184,7 @@ y: mean=151.050 stdv=22.358
 
 相关变量的散点图
 
-接下来，我们可以开发一个简单的线性回归，给出输入变量`x`，将预测`y`变量。我们可以使用 [linregress（）SciPy函数](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.linregress.html)拟合模型并返回模型的`b0`和`b1`系数。
+接下来，我们可以开发一个简单的线性回归，给出输入变量`x`，将预测`y`变量。我们可以使用 [linregress（）SciPy 函数](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.linregress.html)拟合模型并返回模型的`b0`和`b1`系数。
 
 ```py
 # fit linear regression model
@@ -254,7 +254,7 @@ yhat_out = yhat[0]
 SE = sqrt(1 / (N - 2) * e(i)^2 for i to N)
 ```
 
-我们可以使用NumPy数组直接计算它，如下所示：
+我们可以使用 NumPy 数组直接计算它，如下所示：
 
 ```py
 # estimate stdev of yhat
@@ -268,7 +268,7 @@ stdev = sqrt(1/(len(y)-2) * sum_errs)
 interval = z . stdev
 ```
 
-我们将使用95％的显着性水平，即高斯临界值1.96。
+我们将使用 95％的显着性水平，即高斯临界值 1.96。
 
 一旦计算了间隔，我们就可以将预测的界限汇总给用户。
 
@@ -353,16 +353,16 @@ True value: 183.124
 ### 帖子
 
 *   [如何以置信区间报告分类器表现](https://machinelearningmastery.com/report-classifier-performance-confidence-intervals/)
-*   [如何计算Python中机器学习结果的Bootstrap置信区间](https://machinelearningmastery.com/calculate-bootstrap-confidence-intervals-machine-learning-results-python/)
-*   [使用Python的置信区间理解时间序列预测不确定性](https://machinelearningmastery.com/time-series-forecast-uncertainty-using-confidence-intervals-python/)
+*   [如何计算 Python 中机器学习结果的 Bootstrap 置信区间](https://machinelearningmastery.com/calculate-bootstrap-confidence-intervals-machine-learning-results-python/)
+*   [使用 Python 的置信区间理解时间序列预测不确定性](https://machinelearningmastery.com/time-series-forecast-uncertainty-using-confidence-intervals-python/)
 *   [估计随机机器学习算法的实验重复次数](https://machinelearningmastery.com/estimate-number-experiment-repeats-stochastic-machine-learning-algorithms/)
 
 ### 图书
 
-*   [了解新统计：影响大小，置信区间和元分析](http://amzn.to/2oQW6No)，2017年。
-*   [统计间隔：从业者和研究人员指南](http://amzn.to/2G8w3IL)，2017年。
-*   [统计学习简介：应用于R](http://amzn.to/2p1CKoB) ，2013。
-*   [新统计学概论：估计，开放科学及其他](http://amzn.to/2FJlj5H)，2016年。
+*   [了解新统计：影响大小，置信区间和元分析](http://amzn.to/2oQW6No)，2017 年。
+*   [统计间隔：从业者和研究人员指南](http://amzn.to/2G8w3IL)，2017 年。
+*   [统计学习简介：应用于 R](http://amzn.to/2p1CKoB) ，2013。
+*   [新统计学概论：估计，开放科学及其他](http://amzn.to/2FJlj5H)，2016 年。
 *   [预测：原则与实践](http://amzn.to/2tFQ1Io)，2013。
 
 ### 文件
@@ -380,7 +380,7 @@ True value: 183.124
 ### 用品
 
 *   维基百科上的[预测区间](https://en.wikipedia.org/wiki/Prediction_interval)
-*   [交叉验证](https://stats.stackexchange.com/questions/226565/bootstrap-prediction-interval)上的Bootstrap预测间隔
+*   [交叉验证](https://stats.stackexchange.com/questions/226565/bootstrap-prediction-interval)上的 Bootstrap 预测间隔
 
 ## 摘要
 

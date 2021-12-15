@@ -1,4 +1,4 @@
-# 如何使用Python从零开始创建算法测试工具
+# 如何使用 Python 从零开始创建算法测试工具
 
 > 原文： [https://machinelearningmastery.com/create-algorithm-test-harness-scratch-python/](https://machinelearningmastery.com/create-algorithm-test-harness-scratch-python/)
 
@@ -6,29 +6,29 @@
 
 因此，我们需要设计一个可用于评估不同机器学习算法的测试工具。
 
-在本教程中，您将了解如何在Python中从零开始开发机器学习算法测试工具。
+在本教程中，您将了解如何在 Python 中从零开始开发机器学习算法测试工具。
 
 完成本教程后，您将了解：
 
 *   如何实现训练测试算法测试工具。
-*   如何实现k-fold交叉验证算法测试工具。
+*   如何实现 k-fold 交叉验证算法测试工具。
 
 让我们开始吧。
 
-*   **2017年1月更新**：将cross_validation_split（）中的fold_size计算更改为始终为整数。修复了Python 3的问题。
-*   **更新Mar / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
-*   **更新Aug / 2018** ：经过测试和更新，可与Python 3.6配合使用。
+*   **2017 年 1 月更新**：将 cross_validation_split（）中的 fold_size 计算更改为始终为整数。修复了 Python 3 的问题。
+*   **更新 Mar / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
+*   **更新 Aug / 2018** ：经过测试和更新，可与 Python 3.6 配合使用。
 
 ![How To Create an Algorithm Test Harness From Scratch With Python](img/c4506f436c1db5a203009d0db6942e81.jpg)
 
-如何使用Python从[Scragch]创建算法测试工具
+如何使用 Python 从[Scragch]创建算法测试工具
 照片由 [Chris Meller](https://www.flickr.com/photos/mellertime/5688957140/) ，保留一些权利。
 
 ## 描述
 
 测试工具提供了一种一致的方法来评估数据集上的机器学习算法。
 
-它涉及3个要素：
+它涉及 3 个要素：
 
 1.  拆分数据集的重采样方法。
 2.  机器学习算法进行评估。
@@ -40,7 +40,7 @@
 
 在本教程中，我们将使用真实数据集演示测试工具。
 
-使用的数据集是Pima Indians糖尿病数据集。它包含768行和9列。文件中的所有值都是数字，特别是浮点值。您可以在 [UCI机器学习库](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)上了解有关此数据集的更多信息（更新：[从此处下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
+使用的数据集是 Pima Indians 糖尿病数据集。它包含 768 行和 9 列。文件中的所有值都是数字，特别是浮点值。您可以在 [UCI 机器学习库](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)上了解有关此数据集的更多信息（更新：[从此处下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
 
 零规则算法将作为本教程的一部分进行评估。零规则算法始终预测训练数据集中观察次数最多的类。
 
@@ -63,7 +63,7 @@
 
 我们需要一个可以采用数据集和算法并返回表现分数的函数。
 
-下面是一个名为 **evaluate_algorithm（）**的函数来实现这一点。它需要3个固定的参数，包括数据集，算法函数和训练测试拆分的拆分百分比。
+下面是一个名为 **evaluate_algorithm（）**的函数来实现这一点。它需要 3 个固定的参数，包括数据集，算法函数和训练测试拆分的拆分百分比。
 
 首先，数据集分为训练和测试元素。接下来，制作测试集的副本，并通过将其设置为**无**值来清除每个输出值，以防止算法意外作弊。
 
@@ -94,7 +94,7 @@ def evaluate_algorithm(dataset, algorithm, split, *args):
 
 让我们将这个与一个有效的例子结合起来。
 
-我们将使用Pima Indians糖尿病数据集并评估零规则算法。您可以在 [UCI机器学习库](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)上下载并了解有关糖尿病数据集的更多信息（更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
+我们将使用 Pima Indians 糖尿病数据集并评估零规则算法。您可以在 [UCI 机器学习库](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)上下载并了解有关糖尿病数据集的更多信息（更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
 
 ```py
 # Train-Test Test Harness
@@ -165,7 +165,7 @@ accuracy = evaluate_algorithm(dataset, zero_rule_algorithm_classification, split
 print('Accuracy: %.3f%%' % (accuracy))
 ```
 
-数据集分为60％用于训练模型，40％用于评估模型。
+数据集分为 60％用于训练模型，40％用于评估模型。
 
 注意零规则算法 **zero_rule_algorithm_classification** 的名称是如何作为参数传递给 **evaluate_algorithm（）**函数的。您可以看到如何使用不同的算法一次又一次地使用此测试工具。
 
@@ -179,7 +179,7 @@ Accuracy: 67.427%
 
 交叉验证是一种重采样技术，可以对看不见的数据提供更可靠的算法表现估计。
 
-它需要在数据的不同子集上创建和评估k模型，这样计算成本更高。然而，它是评估机器学习算法的黄金标准。
+它需要在数据的不同子集上创建和评估 k 模型，这样计算成本更高。然而，它是评估机器学习算法的黄金标准。
 
 与前一节一样，我们需要创建一个将重采样方法，算法对数据集的评估和表现计算方法联系在一起的函数。
 
@@ -299,7 +299,7 @@ print('Scores: %s' % scores)
 print('Mean Accuracy: %.3f%%' % (sum(scores)/len(scores)))
 ```
 
-总共5个交叉验证折叠被用于评估零规则算法。因此，从 **evaluate_algorithm（）**算法返回5个分数。
+总共 5 个交叉验证折叠被用于评估零规则算法。因此，从 **evaluate_algorithm（）**算法返回 5 个分数。
 
 运行此示例都会打印这些计算得分列表并打印平均得分。
 

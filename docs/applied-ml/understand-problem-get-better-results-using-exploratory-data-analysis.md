@@ -6,7 +6,7 @@
 
 可以用来快速建立与新数据问题的关系的经典和未充分利用的方法是**探索性数据分析**。
 
-在这篇文章中，您将发现探索性数据分析（EDA），您可以使用的技术和策略，以及为什么您应该在下一个问题上执行EDA。
+在这篇文章中，您将发现探索性数据分析（EDA），您可以使用的技术和策略，以及为什么您应该在下一个问题上执行 EDA。
 
 [![Exploratory Data Analysis](img/e1109dd520c06c6257c547b8dc4c4f10.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/11/Exploratory-Data-Analysis.jpg)
 
@@ -31,15 +31,15 @@
 
 ## 探索性数据分析的起源
 
-探索性数据分析由贝尔实验室的 [John Tukey](http://en.wikipedia.org/wiki/John_Tukey) 开发，作为在开发关于数据的假设之前系统地使用统计工具的方法。它是“_验证数据分析_”的替代或相反方法。
+探索性数据分析由贝尔实验室的 [John Tukey](http://en.wikipedia.org/wiki/John_Tukey) 开发，作为在开发关于数据的假设之前系统地使用统计工具的方法。它是“_ 验证数据分析 _”的替代或相反方法。
 
-该过程的开创性描述在Tukey的1977年书[探索性数据分析](http://www.amazon.com/dp/0201076160?tag=inspiredalgor-20)中。
+该过程的开创性描述在 Tukey 的 1977 年书[探索性数据分析](http://www.amazon.com/dp/0201076160?tag=inspiredalgor-20)中。
 
 目的是了解问题以产生可测试的假设。因此，图表和汇总统计量等结果仅供您改善的理解，而不是为了向一般受众展示数据中的关系。这为该过程提供了敏捷的味道。
 
-[S语言](http://en.wikipedia.org/wiki/S_(programming_language))是在同一个实验室开发的，并被用作EDA的工具。使用脚本生成数据摘要和视图是该过程的自然和有意的契合。
+[S 语言](http://en.wikipedia.org/wiki/S_(programming_language))是在同一个实验室开发的，并被用作 EDA 的工具。使用脚本生成数据摘要和视图是该过程的自然和有意的契合。
 
-维基百科提供了一个很好的 [EDA目标的简短列表](http://en.wikipedia.org/wiki/Exploratory_data_analysis)：
+维基百科提供了一个很好的 [EDA 目标的简短列表](http://en.wikipedia.org/wiki/Exploratory_data_analysis)：
 
 *   建议关于观察现象的原因的假设
 *   评估统计推断将基于的假设
@@ -87,7 +87,7 @@
 
 您无需深入了解高级统计方法或图表。保持简单并花时间处理数据。
 
-像SQL这样的查询接口可以帮助您使用数据样本快速播放大量的假设情景。
+像 SQL 这样的查询接口可以帮助您使用数据样本快速播放大量的假设情景。
 
 模型只会与您对数据和问题的问题和理解一样好。
 
@@ -95,7 +95,7 @@
 
 [![Amazon Image](img/b2e5de14ca298184b1c5ae6d58fb8486.jpg)](http://www.amazon.com/dp/0961392142?tag=inspiredalgor-20)
 
-书[做数据科学：从前线直接谈话](http://www.amazon.com/dp/1449358659?tag=inspiredalgor-20)有一个关于EDA的简短部分，并提供了一个很好的阅读列表，以获取更多信息：
+书[做数据科学：从前线直接谈话](http://www.amazon.com/dp/1449358659?tag=inspiredalgor-20)有一个关于 EDA 的简短部分，并提供了一个很好的阅读列表，以获取更多信息：
 
 *   [探索性数据分析](http://www.amazon.com/dp/0201076160?tag=inspiredalgor-20)
 *   [定量信息的视觉显示](http://www.amazon.com/dp/0961392142?tag=inspiredalgor-20)（强烈推荐）

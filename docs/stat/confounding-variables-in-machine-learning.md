@@ -25,7 +25,7 @@
 
 ## 概观
 
-这篇文章分为四个部分：l它们是：
+这篇文章分为四个部分：l 它们是：
 
 1.  混淆变量
 2.  混淆机器学习
@@ -54,7 +54,7 @@
 
 另一个特征是混杂变量以不同方式影响群体或观察。
 
-> 混淆变量或混淆因素通常被定义为变量与因变量和自变量相关（正或负）。 Confounder是一个无关变量，其存在会影响正在研究的变量，因此结果不会反映所研究变量之间的实际关系。
+> 混淆变量或混淆因素通常被定义为变量与因变量和自变量相关（正或负）。 Confounder 是一个无关变量，其存在会影响正在研究的变量，因此结果不会反映所研究变量之间的实际关系。
 
 - [如何通过统计分析控制混杂效应](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4017459/)，2012。
 
@@ -102,11 +102,11 @@
 
 例如，神经网络中的权重被初始化为随机值。随机梯度下降使得时期中的样本的顺序随机化以改变所执行的更新的类型。为随机森林中的每个可能的切割点选择随机的特征子集。还有更多的例子。
 
-机器学习算法中的随机化不是一个bug;它是一种旨在平均超过经典确定性方法来改善模型表现的特征。
+机器学习算法中的随机化不是一个 bug;它是一种旨在平均超过经典确定性方法来改善模型表现的特征。
 
-> 随机性可以在许多不同水平的ML中存在，通常增强表现或减轻经典方法的问题和困难。
+> 随机性可以在许多不同水平的 ML 中存在，通常增强表现或减轻经典方法的问题和困难。
 
-- [随机机器学习方法：最新发展和挑战](https://www.researchgate.net/publication/316740225_Randomized_Machine_Learning_Approaches_Recent_Developments_and_Challenges)，2017年。
+- [随机机器学习方法：最新发展和挑战](https://www.researchgate.net/publication/316740225_Randomized_Machine_Learning_Approaches_Recent_Developments_and_Challenges)，2017 年。
 
 这些是混淆变量，我们不能保持不变。如果它们保持不变，模型的评估将不再提供对结果的普遍性的深入了解。我们将了解模型在特定数据样本上的表现如何，或者在学习过程中对决策序列的初始化进行初始化，但对模型在一般情况下的表现几乎一无所知。
 
@@ -128,7 +128,7 @@
 
 > [随机临床试验]是一项特殊的队列研究，其特征是患者被随机分配到实验组（有暴露）和对照组（无暴露）。 [...]因此，随机化有助于防止临床医生选择，并有助于建立与相关预后因素相同的群体。
 
-- [随机临床试验：临床研究中无与伦比的标准？](http://www.kidneyinternational-online.org/article/S0085-2538(15)52692-6/fulltext) ，2007年。
+- [随机临床试验：临床研究中无与伦比的标准？](http://www.kidneyinternational-online.org/article/S0085-2538(15)52692-6/fulltext) ，2007 年。
 
 使用随机临床试验时仍存在混淆变量。一个例子是实验者知道研究的参与者正在接受什么样的治疗。这可能会影响实验者与参与者互动的方式，从而影响实验结果。
 
@@ -162,9 +162,9 @@
 
 例如，机器学习从业者在通过数据准备和超参数调整为每个模型提供最佳机会之前了解模型的技能。也许从业者应该盲目地消除偏向最终模型选择的可能性。
 
-风险在于，真正喜欢人工神经网络的从业者将“_发现_”一种优于其他模型的神经网络配置。
+风险在于，真正喜欢人工神经网络的从业者将“_ 发现 _”一种优于其他模型的神经网络配置。
 
-对于预测性建模项目的简约解决方案，最好是统计侥幸或违反Occam的Razor;在最坏的情况下，这是科学欺诈。临床医生积极消除这种偏见的原因是人们的生命处于危险之中。我们可以通过机器学习算法来达到这一点，例如：在汽车里。
+对于预测性建模项目的简约解决方案，最好是统计侥幸或违反 Occam 的 Razor;在最坏的情况下，这是科学欺诈。临床医生积极消除这种偏见的原因是人们的生命处于危险之中。我们可以通过机器学习算法来达到这一点，例如：在汽车里。
 
 在实践中，今天，我认为这是通过大量精心设计实现前期加载实验的良好动机，并使结果的执行和统计解释自动化。
 
@@ -175,11 +175,11 @@
 *   [混淆维基百科](https://en.wikipedia.org/wiki/Confounding)
 *   [控制维基百科上的变量](https://en.wikipedia.org/wiki/Controlling_for_a_variable)
 *   [维基百科上的随机对照试验](https://en.wikipedia.org/wiki/Randomized_controlled_trial)
-*   [随机临床试验：临床研究中无与伦比的标准？](http://www.kidneyinternational-online.org/article/S0085-2538(15)52692-6/fulltext) ，2007年。
+*   [随机临床试验：临床研究中无与伦比的标准？](http://www.kidneyinternational-online.org/article/S0085-2538(15)52692-6/fulltext) ，2007 年。
 *   [混淆：它是什么以及如何处理它](https://www.sciencedirect.com/science/article/pii/S0085253815529748)，2008。
 *   [机器学习预测中的混淆变量？在交叉验证](https://stats.stackexchange.com/questions/271694/confounding-variables-in-machine-learning-predictions)
 *   [如何通过统计分析控制混杂效应](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4017459/)，2012。
-*   [随机机器学习方法：最新发展和挑战](https://www.researchgate.net/publication/316740225_Randomized_Machine_Learning_Approaches_Recent_Developments_and_Challenges)，2017年。
+*   [随机机器学习方法：最新发展和挑战](https://www.researchgate.net/publication/316740225_Randomized_Machine_Learning_Approaches_Recent_Developments_and_Challenges)，2017 年。
 
 ## 摘要
 

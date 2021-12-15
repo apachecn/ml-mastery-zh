@@ -1,4 +1,4 @@
-# Python中数据可视化方法的简要介绍
+# Python 中数据可视化方法的简要介绍
 
 > 原文： [https://machinelearningmastery.com/data-visualization-methods-in-python/](https://machinelearningmastery.com/data-visualization-methods-in-python/)
 
@@ -6,7 +6,7 @@
 
 能够为自己和他人快速可视化数据样本是应用统计和应用机器学习的重要技能。
 
-在本教程中，您将发现在Python中可视化数据时需要了解的五种类型的图，以及如何使用它们来更好地理解您自己的数据。
+在本教程中，您将发现在 Python 中可视化数据时需要了解的五种类型的图，以及如何使用它们来更好地理解您自己的数据。
 
 完成本教程后，您将了解：
 
@@ -18,15 +18,15 @@
 
 ![A Gentle Introduction to Data Visualization Methods in Python](img/7e2e9d16985331fef83538c68c807780.jpg)
 
-Python中数据可视化方法的温和介绍
+Python 中数据可视化方法的温和介绍
 [Ian Sutton](https://www.flickr.com/photos/22616984@N07/5084905801/) 的照片，保留一些权利。
 
 ## 教程概述
 
-本教程分为7个部分;他们是：
+本教程分为 7 个部分;他们是：
 
 1.  数据可视化
-2.  Matplotlib简介
+2.  Matplotlib 简介
 3.  线图
 4.  条形图
 5.  直方图
@@ -55,13 +55,13 @@ Python中数据可视化方法的温和介绍
 
 在本教程的其余部分中，我们将仔细研究每种情节类型。
 
-## Matplotlib简介
+## Matplotlib 简介
 
-Python中有许多优秀的绘图库，我建议探索它们以创建可呈现的图形。
+Python 中有许多优秀的绘图库，我建议探索它们以创建可呈现的图形。
 
-对于供您自己使用的快速和脏图，我建议使用matplotlib库。它是许多其他绘图库的基础，也是Pandas等高级库中的绘图支持。
+对于供您自己使用的快速和脏图，我建议使用 matplotlib 库。它是许多其他绘图库的基础，也是 Pandas 等高级库中的绘图支持。
 
-matplotlib提供了一个上下文，其中可以在显示图像或将其保存到文件之前绘制一个或多个图。可以通过`pyplot`上的函数访问上下文。可以按如下方式导入上下文：
+matplotlib 提供了一个上下文，其中可以在显示图像或将其保存到文件之前绘制一个或多个图。可以通过`pyplot`上的函数访问上下文。可以按如下方式导入上下文：
 
 ```py
 from matplotlib import pyplot
@@ -73,7 +73,7 @@ from matplotlib import pyplot
 import matplotlib.pyplot as plt
 ```
 
-我们不会使用此约定，而是坚持使用标准的Python导入约定。
+我们不会使用此约定，而是坚持使用标准的 Python 导入约定。
 
 图表和情节是通过制作和调用背景来制作的;例如：
 
@@ -90,13 +90,13 @@ pyplot.plot(...)
 pyplot.show()
 ```
 
-或者，可以将上下文中的图形保存到文件，例如PNG格式的图像文件。 [savefig（）函数](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.savefig.html)可用于保存图像。
+或者，可以将上下文中的图形保存到文件，例如 PNG 格式的图像文件。 [savefig（）函数](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.savefig.html)可用于保存图像。
 
 ```py
 pyplot.savefig('my_image.png')
 ```
 
-这是使用matplotlib库的最基本的速成课程。
+这是使用 matplotlib 库的最基本的速成课程。
 
 有关更多详细信息，请参阅[用户指南](https://matplotlib.org/users/index.html)和本教程末尾的资源。
 
@@ -104,9 +104,9 @@ pyplot.savefig('my_image.png')
 
 线图通常用于呈现定期收集的观察结果。
 
-x轴表示规则间隔，例如时间。 y轴显示观察结果，由x轴排序并通过线连接。
+x 轴表示规则间隔，例如时间。 y 轴显示观察结果，由 x 轴排序并通过线连接。
 
-可以通过调用 [plot（）函数](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html)并传递常规间隔的x轴数据和观察的y轴来创建折线图。
+可以通过调用 [plot（）函数](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html)并传递常规间隔的 x 轴数据和观察的 y 轴来创建折线图。
 
 ```py
 # create line plot
@@ -115,7 +115,7 @@ pyplot.plot(x, y)
 
 线图对于呈现时间序列数据以及观察之间存在排序的任何序列数据是有用的。
 
-下面的示例创建一个包含100个浮点值的序列作为x轴，将正弦波作为x轴的函数作为y轴上的观察值。结果绘制成线图。
+下面的示例创建一个包含 100 个浮点值的序列作为 x 轴，将正弦波作为 x 轴的函数作为 y 轴上的观察值。结果绘制成线图。
 
 ```py
 # example of a line plot
@@ -131,7 +131,7 @@ pyplot.plot(x, y)
 pyplot.show()
 ```
 
-运行该示例会创建一个折线图，显示横跨x轴的y轴上熟悉的正弦波图案，观察之间的间隔一致。
+运行该示例会创建一个折线图，显示横跨 x 轴的 y 轴上熟悉的正弦波图案，观察之间的间隔一致。
 
 ![Example of a Line Plot](img/2710a9f119b631179a58f7d708faa6c0.jpg)
 
@@ -141,9 +141,9 @@ pyplot.show()
 
 条形图通常用于显示多个类别的相对数量。
 
-x轴表示类别并均匀分布。 y轴表示每个类别的数量，并绘制为从基线到y轴上的适当水平的条形。
+x 轴表示类别并均匀分布。 y 轴表示每个类别的数量，并绘制为从基线到 y 轴上的适当水平的条形。
 
-可以通过调用 [bar（）函数](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.bar.html)并传递x轴的类别名称和y轴的数量来创建条形图。
+可以通过调用 [bar（）函数](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.bar.html)并传递 x 轴的类别名称和 y 轴的数量来创建条形图。
 
 ```py
 # create bar chart
@@ -171,7 +171,7 @@ pyplot.bar(x, y)
 pyplot.show()
 ```
 
-运行该示例将创建条形图，显示x轴上的类别标签和y轴上的数量。
+运行该示例将创建条形图，显示 x 轴上的类别标签和 y 轴上的数量。
 
 ![Example of a Bar Chart](img/1ee372ca444b5624584208ecc54433e9.jpg)
 
@@ -181,15 +181,15 @@ pyplot.show()
 
 直方图通常用于概括数据样本的分布。
 
-x轴表示观察的离散区间或间隔。例如，值为1到10的观测值可以分为5个区间，值[1,2]将分配给第一个区间，[3,4]将分配给第二个区间，依此类推。
+x 轴表示观察的离散区间或间隔。例如，值为 1 到 10 的观测值可以分为 5 个区间，值[1,2]将分配给第一个区间，[3,4]将分配给第二个区间，依此类推。
 
-y轴表示数据集中属于每个箱的观测数的频率或计数。
+y 轴表示数据集中属于每个箱的观测数的频率或计数。
 
-基本上，数据样本被转换为条形图，其中x轴上的每个类别代表观察值的间隔。
+基本上，数据样本被转换为条形图，其中 x 轴上的每个类别代表观察值的间隔。
 
 > 直方图是密度估计值。密度估计给出了数据分布的良好印象。[...]想法是通过计算连续间隔（箱）序列中的观测数量来局部表示数据密度......
 
-- 第11页，[应用多变量统计分析](http://amzn.to/2Dtykv7)，2015年。
+- 第 11 页，[应用多变量统计分析](http://amzn.to/2Dtykv7)，2015 年。
 
 可以通过调用 [hist（）函数](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.hist.html)并传入表示数据样本的列表或数组来创建直方图。
 
@@ -200,7 +200,7 @@ pyplot.hist(x)
 
 直方图对于总结数据样本的分布很有价值。
 
-下面的示例创建了一个从标准高斯分布中绘制的1,000个随机数的数据集，然后将数据集绘制为直方图。
+下面的示例创建了一个从标准高斯分布中绘制的 1,000 个随机数的数据集，然后将数据集绘制为直方图。
 
 ```py
 # example of a histogram plot
@@ -234,13 +234,13 @@ pyplot.hist(x, bins=100)
 
 箱形和须状图（简称箱形图）通常用于概括数据样本的分布。
 
-x轴用于表示数据样本，其中如果需要，可以在x轴上并排绘制多个箱图。
+x 轴用于表示数据样本，其中如果需要，可以在 x 轴上并排绘制多个箱图。
 
-y轴表示观察值。绘制一个框以汇总数据集的中间50％，从第25百分位的观察开始到第75百分位结束。中位数或第50百分位数用线绘制。称为[四分位数范围](https://en.wikipedia.org/wiki/Interquartile_range)或IQR的值计算为第75百分位数和第25百分位数之差的1.5 *。称为晶须的线从盒子的两端延伸，具有IQR的长度，以展示分布中预期的敏感值范围。胡须外的观察可能是异常值，并用小圆圈绘制。
+y 轴表示观察值。绘制一个框以汇总数据集的中间 50％，从第 25 百分位的观察开始到第 75 百分位结束。中位数或第 50 百分位数用线绘制。称为[四分位数范围](https://en.wikipedia.org/wiki/Interquartile_range)或 IQR 的值计算为第 75 百分位数和第 25 百分位数之差的 1.5 *。称为晶须的线从盒子的两端延伸，具有 IQR 的长度，以展示分布中预期的敏感值范围。胡须外的观察可能是异常值，并用小圆圈绘制。
 
-> boxplot是一种显示变量分布的图形技术。它可以帮助我们查看位置，偏斜度，展布，平铺长度和边远点。 [...] boxplot是Five Number Summary的图形表示。
+> boxplot 是一种显示变量分布的图形技术。它可以帮助我们查看位置，偏斜度，展布，平铺长度和边远点。 [...] boxplot 是 Five Number Summary 的图形表示。
 
-- 第5页，[应用多变量统计分析](http://amzn.to/2Dtykv7)，2015年。
+- 第 5 页，[应用多变量统计分析](http://amzn.to/2Dtykv7)，2015 年。
 
 可以通过调用 [boxplot（）函数](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.boxplot.html)作为数组或列表传入数据样本来绘制箱图。
 
@@ -268,9 +268,9 @@ pyplot.boxplot(x)
 pyplot.show()
 ```
 
-运行该示例将创建一个显示三个框和胡须图的图表。我们可以看到，每个y轴使用相同的比例，使第一个图看起来被压扁，最后一个图看起来展开。
+运行该示例将创建一个显示三个框和胡须图的图表。我们可以看到，每个 y 轴使用相同的比例，使第一个图看起来被压扁，最后一个图看起来展开。
 
-在这种情况下，我们可以看到中间50％数据的黑框，中位数的橙色线，总结敏感数据范围的胡须线，最后是可能的异常值的点。
+在这种情况下，我们可以看到中间 50％数据的黑框，中位数的橙色线，总结敏感数据范围的胡须线，最后是可能的异常值的点。
 
 ![Example of a Box and Whisker Plot](img/065cb6dd055bb920aec2268f29e3366a.jpg)
 
@@ -282,11 +282,11 @@ pyplot.show()
 
 配对数据样本意味着针对给定观察记录了两个度量，例如人的体重和身高。
 
-x轴表示第一样品的观察值，y轴表示第二样品的观察值。图上的每个点代表一次观察。
+x 轴表示第一样品的观察值，y 轴表示第二样品的观察值。图上的每个点代表一次观察。
 
 > 散点图是彼此相对的变量的二元或三变量图。它们帮助我们理解数据集变量之间的关系。向下倾斜的散射表示当我们在水平轴上增加变量时，垂直轴上的变量减小。
 
-- 第19页，[应用多变量统计分析](http://amzn.to/2Dtykv7)，2015年。
+- 第 19 页，[应用多变量统计分析](http://amzn.to/2Dtykv7)，2015 年。
 
 可以通过调用 [scatter（）函数](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.scatter.html)并传递两个数据样本数组来创建散点图。
 
@@ -340,20 +340,20 @@ pyplot.show()
 
 ### 帖子
 
-*   [使用Pandas在Python中可视化机器学习数据](https://machinelearningmastery.com/visualize-machine-learning-data-python-pandas/)
-*   [使用Python进行时间序列数据可视化](https://machinelearningmastery.com/time-series-data-visualization-with-python/)
-*   [使用Caret R软件包进行数据可视化](https://machinelearningmastery.com/data-visualization-with-the-caret-r-package/)
+*   [使用 Pandas 在 Python 中可视化机器学习数据](https://machinelearningmastery.com/visualize-machine-learning-data-python-pandas/)
+*   [使用 Python 进行时间序列数据可视化](https://machinelearningmastery.com/time-series-data-visualization-with-python/)
+*   [使用 Caret R 软件包进行数据可视化](https://machinelearningmastery.com/data-visualization-with-the-caret-r-package/)
 
 ### 图书
 
 *   [定量信息的视觉显示](http://amzn.to/2pbC14o)，2001。
-*   [用于数据分析的Python：与Pandas，NumPy和IPython进行数据争夺](http://amzn.to/2Gt8Pgt)，2017年。
-*   [应用多变量统计分析](http://amzn.to/2Dtykv7)，2015年。
+*   [用于数据分析的 Python：与 Pandas，NumPy 和 IPython 进行数据争夺](http://amzn.to/2Gt8Pgt)，2017 年。
+*   [应用多变量统计分析](http://amzn.to/2Dtykv7)，2015 年。
 
 ### API
 
-*   [matplotlib库](https://matplotlib.org/)
-*   [matplotlib用户指南](https://matplotlib.org/users/index.html)
+*   [matplotlib 库](https://matplotlib.org/)
+*   [matplotlib 用户指南](https://matplotlib.org/users/index.html)
 *   [matplotlib.pyplot（）API](https://matplotlib.org/api/pyplot_api.html#module-matplotlib.pyplot)
 *   [matplotlib.pyplot.show（）API](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html)
 *   [matplotlib.pyplot.savefig（）API](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.savefig.html)
@@ -374,7 +374,7 @@ pyplot.show()
 
 ## 摘要
 
-在本教程中，您发现了Python中可视化数据的温和介绍。
+在本教程中，您发现了 Python 中可视化数据的温和介绍。
 
 具体来说，你学到了：
 

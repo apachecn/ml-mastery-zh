@@ -55,7 +55,7 @@
 
 您使用的[准确度分数](http://machinelearningmastery.com/classification-accuracy-is-not-enough-more-performance-measures-you-can-use/ "Classification Accuracy is Not Enough: More Performance Measures You Can Use")很重要。在计算基线之前，您必须选择计划使用的准确度分数。分数必须是相关的，并通过首先处理问题来告知您要回答的问题。
 
-如果您正在处理分类问题，您可能需要查看 [Kappa统计量](http://en.wikipedia.org/wiki/Cohen's_kappa)，它会为您提供基线标准化的准确度分数。基线准确度为0，高于零的分数显示基线的改善。
+如果您正在处理分类问题，您可能需要查看 [Kappa 统计量](http://en.wikipedia.org/wiki/Cohen's_kappa)，它会为您提供基线标准化的准确度分数。基线准确度为 0，高于零的分数显示基线的改善。
 
 ## 将结果与基线进行比较
 

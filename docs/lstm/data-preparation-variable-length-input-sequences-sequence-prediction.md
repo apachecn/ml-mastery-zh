@@ -8,7 +8,7 @@
 
 此向量化允许代码有效地为您选择的深度学习算法批量执行矩阵运算。
 
-在本教程中，您将发现可用于使用Keras在Python中为序列预测问题准备可变长度序列数据的技术。
+在本教程中，您将发现可用于使用 Keras 在 Python 中为序列预测问题准备可变长度序列数据的技术。
 
 完成本教程后，您将了解：
 
@@ -25,7 +25,7 @@
 
 ## 概观
 
-本节分为3部分;他们是：
+本节分为 3 部分;他们是：
 
 1.  受控序列问题
 2.  序列填充
@@ -33,21 +33,21 @@
 
 ### 环境
 
-本教程假定您已安装Python SciPy环境。您可以在此示例中使用Python 2或3。
+本教程假定您已安装 Python SciPy 环境。您可以在此示例中使用 Python 2 或 3。
 
-本教程假设您使用TensorFlow（v1.1.0 +）或Theano（v0.9 +）后端安装了Keras（v2.0.4 +）。
+本教程假设您使用 TensorFlow（v1.1.0 +）或 Theano（v0.9 +）后端安装了 Keras（v2.0.4 +）。
 
-本教程还假设您安装了scikit-learn，Pandas，NumPy和Matplotlib。
+本教程还假设您安装了 scikit-learn，Pandas，NumPy 和 Matplotlib。
 
-如果您在设置Python环境时需要帮助，请参阅以下帖子：
+如果您在设置 Python 环境时需要帮助，请参阅以下帖子：
 
-*   [如何使用Anaconda设置用于机器学习和深度学习的Python环境](http://machinelearningmastery.com/setup-python-environment-machine-learning-deep-learning-anaconda/)
+*   [如何使用 Anaconda 设置用于机器学习和深度学习的 Python 环境](http://machinelearningmastery.com/setup-python-environment-machine-learning-deep-learning-anaconda/)
 
 ## 受控序列问题
 
 为了本教程的目的，我们可以设计一个简单的序列问题。
 
-该问题被定义为整数序列。有三个序列，长度在4到1个步骤之间，如下所示：
+该问题被定义为整数序列。有三个序列，长度在 4 到 1 个步骤之间，如下所示：
 
 ```py
 1, 2, 3, 4
@@ -55,7 +55,7 @@
 1
 ```
 
-这些可以在Python中定义为列表列表，如下所示（可读性的间距）：
+这些可以在 Python 中定义为列表列表，如下所示（可读性的间距）：
 
 ```py
 sequences = [
@@ -69,9 +69,9 @@ sequences = [
 
 ## 序列填充
 
-Keras深度学习库中的 [pad_sequences（）函数](https://keras.io/preprocessing/sequence/)可用于填充可变长度序列。
+Keras 深度学习库中的 [pad_sequences（）函数](https://keras.io/preprocessing/sequence/)可用于填充可变长度序列。
 
-默认填充值为0.0，适用于大多数应用程序，但可以通过“value”参数指定首选值来更改。例如：
+默认填充值为 0.0，适用于大多数应用程序，但可以通过“value”参数指定首选值来更改。例如：
 
 ```py
 pad_sequences(..., value=99)
@@ -83,7 +83,7 @@ pad_sequences(..., value=99)
 
 预序列填充是默认值（padding ='pre'）
 
-下面的示例演示了具有0值的预填充3输入序列。
+下面的示例演示了具有 0 值的预填充 3 输入序列。
 
 ```py
 from keras.preprocessing.sequence import pad_sequences
@@ -98,7 +98,7 @@ padded = pad_sequences(sequences)
 print(padded)
 ```
 
-运行该示例将打印3个预先填充零序列的序列。
+运行该示例将打印 3 个预先填充零序列的序列。
 
 ```py
 [[1 2 3 4]
@@ -152,7 +152,7 @@ padded = pad_sequences(sequences, maxlen=5)
 print(padded)
 ```
 
-运行示例将每个序列填充到所需的5个步骤的长度，即使观察序列的最大长度仅为4个步骤。
+运行示例将每个序列填充到所需的 5 个步骤的长度，即使观察序列的最大长度仅为 4 个步骤。
 
 ```py
 [[0 1 2 3 4]
@@ -172,7 +172,7 @@ print(padded)
 
 默认的截断方法是从序列的开头删除时间步。这称为序列前截断。
 
-下面的示例将序列截断为所需的长度2。
+下面的示例将序列截断为所需的长度 2。
 
 ```py
 from keras.preprocessing.sequence import pad_sequences
@@ -226,7 +226,7 @@ print(truncated)
 
 ## 摘要
 
-在本教程中，您了解了如何准备可变长度序列数据以用于Python中的序列预测问题。
+在本教程中，您了解了如何准备可变长度序列数据以用于 Python 中的序列预测问题。
 
 具体来说，你学到了：
 

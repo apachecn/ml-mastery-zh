@@ -5,7 +5,7 @@
 +   [如何比较 Python 和 scikit-learn 中的机器学习算法](compare-machine-learning-algorithms-python-scikit-learn.md)
 +   [面向机器学习开发人员的 Python 速成课](crash-course-python-machine-learning-developers.md)
 +   [使用 Python 和 scikit-learn 的集成机器学习算法](ensemble-machine-learning-algorithms-python-scikit-learn.md)
-+   [在Python 中使用重采样评估机器学习算法的表现](evaluate-performance-machine-learning-algorithms-python-using-resampling.md)
++   [在 Python 中使用重采样评估机器学习算法的表现](evaluate-performance-machine-learning-algorithms-python-using-resampling.md)
 +   [使用 Python 和 Scikit-Learn 的特征选择](feature-selection-in-python-with-scikit-learn.md)
 +   [Python 中机器学习的特征选择](feature-selection-machine-learning-python.md)
 +   [如何使用 Python 和 scikit-learn 生成测试数据集](generate-test-datasets-python-scikit-learn.md)

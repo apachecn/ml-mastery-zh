@@ -1,4 +1,4 @@
-# 在没有数学背景的情况下理解机器学习算法的5种技巧
+# 在没有数学背景的情况下理解机器学习算法的 5 种技巧
 
 > 原文： [https://machinelearningmastery.com/techniques-to-understand-machine-learning-algorithms-without-the-background-in-mathematics/](https://machinelearningmastery.com/techniques-to-understand-machine-learning-algorithms-without-the-background-in-mathematics/)
 
@@ -12,7 +12,7 @@
 
 您将发现，一旦您熟练地解决问题并提供结果，您就会发展出更深层次的潜力，以便更好地理解和获得结果。 **没有人能够阻止你**。
 
-最后，您将发现在标准数据集上练习机器学习时可以使用的5种技术，以逐步增加对机器学习算法的理解。
+最后，您将发现在标准数据集上练习机器学习时可以使用的 5 种技术，以逐步增加对机器学习算法的理解。
 
 ![Machine Learning Theory](img/2e4c99ffd64d88b21f94efb8ca444970.jpg)
 
@@ -27,7 +27,7 @@
 
 传统方法要求您在学习算法理论之前先学习所有必备数学，如线性代数，概率和统计学。如果您接近算法的工作实现或讨论如何端到端地解决问题并提供可靠，可靠和准确的预测模型，那么您很幸运。
 
-我教自上而下学习机器学习的方法。在这种方法中，我们首先从1）学习系统化的过程来解决端到端的问题，2）将过程映射到“最佳”机器学习工具和平台，然后3）完成测试数据集的有针对性的实践。
+我教自上而下学习机器学习的方法。在这种方法中，我们首先从 1）学习系统化的过程来解决端到端的问题，2）将过程映射到“最佳”机器学习工具和平台，然后 3）完成测试数据集的有针对性的实践。
 
 您可以在“[程序员机器学习：从开发人员到机器学习从业者](http://machinelearningmastery.com/machine-learning-for-programmers/)”的帖子中了解更多关于自上而下机器学习教学的方法。
 
@@ -41,7 +41,7 @@
 
 方便的机器学习算法思维导图的样本。
 
-我已经创建了一个由类型组织的60多种算法的方便思维导图。
+我已经创建了一个由类型组织的 60 多种算法的方便思维导图。
 
 下载，打印并使用它。
 
@@ -69,9 +69,9 @@
 
 我通常建议在着名的机器学习数据集上进行有针对性的练习。
 
-这是因为众所周知的机器学习数据集，如UCI机器学习库中的那些，很容易使用。它们很小，因此适合内存，可以在工作站上处理。它们也经过充分研究和理解，因此您可以进行比较基线。
+这是因为众所周知的机器学习数据集，如 UCI 机器学习库中的那些，很容易使用。它们很小，因此适合内存，可以在工作站上处理。它们也经过充分研究和理解，因此您可以进行比较基线。
 
-您可以在“[练习机器学习与UCI机器学习库](http://machinelearningmastery.com/practice-machine-learning-with-small-in-memory-datasets-from-the-uci-machine-learning-repository/)中的小型内存数据集”中了解有关机器学习数据集的目标实践的更多信息。
+您可以在“[练习机器学习与 UCI 机器学习库](http://machinelearningmastery.com/practice-machine-learning-with-small-in-memory-datasets-from-the-uci-machine-learning-repository/)中的小型内存数据集”中了解有关机器学习数据集的目标实践的更多信息。
 
 理解机器学习算法适合这个过程。原因是为了在标准机器学习算法上获得结果，您将遇到限制。您将想要了解如何从给定算法中获得更多信息，或者了解有关如何最佳配置算法或如何实际工作的更多信息。
 
@@ -81,13 +81,13 @@
 
 如果你很好奇并且有动力去取得成功，你就无法抗拒研究这一理论。
 
-## 5了解机器学习算法的技巧
+## 5 了解机器学习算法的技巧
 
 作为您的目标实践的一部分，现在是时候深入了解机器学习算法
 
 当那个时候到来时，您可以使用许多技术和模板来缩短流程。
 
-在本节中，您将发现5种可用于快速理解机器学习算法理论的技术。
+在本节中，您将发现 5 种可用于快速理解机器学习算法理论的技术。
 
 ### 1）创建机器学习算法列表
 
@@ -123,7 +123,7 @@
 1.  权威资料，如教科书，讲义，幻灯片和概述文件。
 2.  精算资料来源，例如首次描述算法的论文和文章。
 3.  最先进的资源，描述了算法的最新扩展和实验。
-4.  启发式消息来源，如机器学习竞赛，Q＆amp; A网站和会议论文的帖子。
+4.  启发式消息来源，如机器学习竞赛，Q＆amp; A 网站和会议论文的帖子。
 5.  实现源，例如工具和库的开源代码，博客文章和技术报告。
 
 您不需要成为博士研究员也不需要是机器学习算法专家。
@@ -184,17 +184,17 @@
 
 1.  选择一种您最熟悉的编程语言可能是最好的。
 2.  选择要实现的算法，从容易的事情开始（参见下面的列表）。
-3.  在开发时选择一个问题来测试您的实现，2D数据有利于可视化（甚至在Excel中）。
+3.  在开发时选择一个问题来测试您的实现，2D 数据有利于可视化（甚至在 Excel 中）。
 4.  研究算法并利用许多不同的信息来源（例如阅读教程，论文，其他实现等）。
 5.  单元测试算法以确认您的理解并验证实现。
 
 从小处着手，建立信心。
 
-例如，您从零开始选择的第一个机器学习算法实现的3种算法是：
+例如，您从零开始选择的第一个机器学习算法实现的 3 种算法是：
 
 *   使用梯度下降的线性回归
-*   k-最近邻（[参见Python中的教程](http://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/)）
-*   Naive Bayes（[参见我的Python教程](http://machinelearningmastery.com/naive-bayes-classifier-scratch-python/)）
+*   k-最近邻（[参见 Python 中的教程](http://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/)）
+*   Naive Bayes（[参见我的 Python 教程](http://machinelearningmastery.com/naive-bayes-classifier-scratch-python/)）
 
 有关如何实现机器学习算法的更多信息，请参阅“[如何实现机器学习算法](http://machinelearningmastery.com/how-to-implement-a-machine-learning-algorithm/)”。
 
@@ -217,7 +217,7 @@
 
 研究不仅仅适用于学术界。任何人都可以阅读书籍和论文，并编写自己对某个主题的理解，如特定的机器学习算法。
 
-当你扮演“_科学家_”的角色时，你将获得最大的突破，并开始尝试机器学习算法，好像它们是需要学习的复杂系统一样。您将发现行为中可能无法记录的各种有趣的怪癖。
+当你扮演“_ 科学家 _”的角色时，你将获得最大的突破，并开始尝试机器学习算法，好像它们是需要学习的复杂系统一样。您将发现行为中可能无法记录的各种有趣的怪癖。
 
 ## 采取行动
 
@@ -227,12 +227,12 @@
 
 **不确定从哪里开始？**
 
-以下是您可以从哪里开始的5个好主意：
+以下是您可以从哪里开始的 5 个好主意：
 
-1.  列出10种用于分类的机器算法（看看我的[算法之旅](http://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/)来获得一些想法）。
+1.  列出 10 种用于分类的机器算法（看看我的[算法之旅](http://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/)来获得一些想法）。
 2.  找五本书，详细描述随机森林。
-3.  使用您自己的算法描述模板在Naive Bayes上创建五张幻灯片演示文稿。
-4.  打开 [Weka](http://machinelearningmastery.com/how-to-run-your-first-classifier-in-weka/) 并查看“k”参数如何影响虹膜花数据集上k-最近邻居的准确率。
+3.  使用您自己的算法描述模板在 Naive Bayes 上创建五张幻灯片演示文稿。
+4.  打开 [Weka](http://machinelearningmastery.com/how-to-run-your-first-classifier-in-weka/) 并查看“k”参数如何影响虹膜花数据集上 k-最近邻居的准确率。
 5.  使用随机梯度下降实现线性回归。
 
 你有没有采取行动？喜欢这篇文章？在下面发表评论。

@@ -67,7 +67,7 @@
 
 > “太好了不可能”表现是它存在的“死亡赠品”
 
-- 第13章，[做数据科学：从前线直接谈话](http://www.amazon.com/dp/1449358659?tag=inspiredalgor-20)
+- 第 13 章，[做数据科学：从前线直接谈话](http://www.amazon.com/dp/1449358659?tag=inspiredalgor-20)
 
 数据泄漏通常是复杂数据集的一个问题，例如：
 
@@ -98,7 +98,7 @@
 
 > 现实情况是，作为一名数据科学家，您在准备，清理数据，估算缺失值，删除异常值等任何时候都存在产生数据泄漏情况的风险。您可能在准备数据时扭曲数据到了你将构建一个在你的“干净”数据集上运行良好的模型，但是在你真正想要应用它的真实情况中应用时会非常糟糕。
 
-- 第313页，[做数据科学：从前线直接谈话](http://www.amazon.com/dp/1449358659?tag=inspiredalgor-20)
+- 第 313 页，[做数据科学：从前线直接谈话](http://www.amazon.com/dp/1449358659?tag=inspiredalgor-20)
 
 更一般地说，非泄漏数据准备必须在交叉验证周期的每个折叠内进行。
 
@@ -108,9 +108,9 @@
 
 > 如果对所有数据执行特征选择然后交叉验证，则交叉验证过程的每个折叠中的测试数据也用于选择特征，这是表现分析的偏差。
 
-- Dikran Marsupial，回答Cross Validated上的问题“[特征选择和交叉验证](http://stats.stackexchange.com/questions/27750/feature-selection-and-cross-validation)”。
+- Dikran Marsupial，回答 Cross Validated 上的问题“[特征选择和交叉验证](http://stats.stackexchange.com/questions/27750/feature-selection-and-cross-validation)”。
 
-像R中的R和scikit-learn这样的平台有助于自动化这种良好实践，使用中的[插入符包和scikit-learn](http://machinelearningmastery.com/caret-r-package-for-applied-predictive-modeling/) 中的[管道。](http://machinelearningmastery.com/automate-machine-learning-workflows-pipelines-python-scikit-learn/)
+像 R 中的 R 和 scikit-learn 这样的平台有助于自动化这种良好实践，使用中的[插入符包和 scikit-learn](http://machinelearningmastery.com/caret-r-package-for-applied-predictive-modeling/) 中的[管道。](http://machinelearningmastery.com/automate-machine-learning-workflows-pipelines-python-scikit-learn/)
 
 ### 2.阻止验证数据集
 
@@ -122,14 +122,14 @@
 
 > 基本上，真正解决这个问题的唯一方法是保留一个独立的测试集并保持它直到研究完成并用它进行最终验证。
 
-- Dikran Marsupial回答问题“[我如何帮助确保测试数据不会泄漏到训练数据中？](http://stats.stackexchange.com/questions/20010/how-can-i-help-ensure-testing-data-does-not-leak-into-training-data) “在Cross验证
+- Dikran Marsupial 回答问题“[我如何帮助确保测试数据不会泄漏到训练数据中？](http://stats.stackexchange.com/questions/20010/how-can-i-help-ensure-testing-data-does-not-leak-into-training-data) “在 Cross 验证
 
-## 5个防止数据泄漏的技巧
+## 5 个防止数据泄漏的技巧
 
 *   **时间截止**。在感兴趣事件发生之前删除所有数据，重点关注您了解事实或观察的时间，而不是观察发生的时间。
 *   **添加噪音**。将随机噪声添加到输入数据以尝试平滑可能泄漏变量的影响。
-*   **删除Leaky变量**。使用帐号和ID等变量评估简单的基于规则的模型行OneR，以查看这些变量是否泄漏，如果是，则删除它们。如果您怀疑变量是否泄漏，请考虑将其删除。
-*   **使用管道**。大量使用管道架构，允许在交叉验证折叠中执行一系列数据准备步骤，例如R中的插入符包和scikit-learn中的管道。
+*   **删除 Leaky 变量**。使用帐号和 ID 等变量评估简单的基于规则的模型行 OneR，以查看这些变量是否泄漏，如果是，则删除它们。如果您怀疑变量是否泄漏，请考虑将其删除。
+*   **使用管道**。大量使用管道架构，允许在交叉验证折叠中执行一系列数据准备步骤，例如 R 中的插入符包和 scikit-learn 中的管道。
 *   **使用保持数据集**。在使用模型之前，请暂停一个看不见的验证数据集作为模型的最终完整性检查。
 
 ## 进一步阅读数据泄漏
@@ -140,10 +140,10 @@
 
 *   [数据挖掘中的泄漏：秘籍，检测和避免](https://www.cs.umb.edu/~ding/history/470_670_fall_2011/papers/cs670_Tran_PreferredPaper_LeakingInDataMining.pdf) [pdf]，2011。（推荐！）
 *   [关于数据怀疑播客](http://dataskeptic.com/epnotes/leakage.php)数据泄漏的迷你剧集。
-*   第13章：从数据竞争中吸取的教训：数据泄漏和模型评估，来自[做数据科学：直接从前线谈话](http://www.amazon.com/dp/1449358659?tag=inspiredalgor-20)，2013。
-*   [询问数据科学家：数据泄漏](http://insidebigdata.com/2014/11/26/ask-data-scientist-data-leakage/)，2014年
-*   [Kaggle Wiki上的数据泄漏](https://www.kaggle.com/wiki/Leakage)
-*   [有关ICML 2013鲸鱼挑战赛](https://www.kaggle.com/c/the-icml-2013-whale-challenge-right-whale-redux/forums/t/4865/the-leakage-and-how-it-was-fixed/25839#post25839)数据泄漏的精彩讨论
+*   第 13 章：从数据竞争中吸取的教训：数据泄漏和模型评估，来自[做数据科学：直接从前线谈话](http://www.amazon.com/dp/1449358659?tag=inspiredalgor-20)，2013。
+*   [询问数据科学家：数据泄漏](http://insidebigdata.com/2014/11/26/ask-data-scientist-data-leakage/)，2014 年
+*   [Kaggle Wiki 上的数据泄漏](https://www.kaggle.com/wiki/Leakage)
+*   [有关 ICML 2013 鲸鱼挑战赛](https://www.kaggle.com/c/the-icml-2013-whale-challenge-right-whale-redux/forums/t/4865/the-leakage-and-how-it-was-fixed/25839#post25839)数据泄漏的精彩讨论
 
 ## 摘要
 

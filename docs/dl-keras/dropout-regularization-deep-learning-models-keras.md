@@ -2,16 +2,16 @@
 
 > 原文： [https://machinelearningmastery.com/dropout-regularization-deep-learning-models-keras/](https://machinelearningmastery.com/dropout-regularization-deep-learning-models-keras/)
 
-神经网络和深度学习模型的简单而强大的正则化技术是dropout。
+神经网络和深度学习模型的简单而强大的正则化技术是 dropout。
 
 在这篇文章中，您将了解 dropout 正则化技术以及如何将其应用于使用 Keras 用 Python 编写的模型中。
 
 阅读这篇文章后你会知道：
 
-*   dropout正则化技术原理。
+*   dropout 正则化技术原理。
 *   如何在输入层上使用 dropout。
 *   如何在隐藏层上使用 dropout。
-*   如何针对具体问题对dropout调优
+*   如何针对具体问题对 dropout 调优
 
 让我们开始吧。
 
@@ -20,14 +20,14 @@
 
 ![Dropout Regularization in Deep Learning Models With Keras](img/79c8df17f76c38e054a8760b935e6ed9.png)
 
-使用 Keras 的深度学习模型中的dropout正规化
+使用 Keras 的深度学习模型中的 dropout 正规化
 照片由 [Trekking Rinjani](https://www.flickr.com/photos/trekkingrinjani/4930552641/) ，保留一些权利。
 
 ## 神经网络的 dropout 正则化
 
 Dropout 是 Srivastava 等人提出的神经网络模型的正则化技术。在他们的 2014 年论文[dropout：一种防止神经网络过拟合的简单方法](http://jmlr.org/papers/v15/srivastava14a.html)（[下载 PDF](http://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf) ）。
 
-dropout是一种在训练过程中忽略随机选择的神经元的技术。这些神经元被随机“dropout“，这意味着它们对激活下一层神经元的贡献在正向传递时暂时消除，并且在反向传递时任何权重更新也不会应用于这些神经元。
+dropout 是一种在训练过程中忽略随机选择的神经元的技术。这些神经元被随机“dropout“，这意味着它们对激活下一层神经元的贡献在正向传递时暂时消除，并且在反向传递时任何权重更新也不会应用于这些神经元。
 
 当神经网络学习时，网络中的神经元的权重将进行调整重置。神经元的权重针对某些特征进行调优，具有一些特殊化。周围的神经元则会依赖于这种特殊化，如果过于特殊化，模型会因为对训练数据过拟合而变得脆弱不堪。神经元在训练过程中的这种依赖于上下文的现象被称为复杂的协同适应（complex co-adaptations）。
 
@@ -35,9 +35,9 @@ dropout是一种在训练过程中忽略随机选择的神经元的技术。这�
 
 其结果是网络对神经元的特定权重变得不那么敏感。这反过来使得网络能够更好地泛化，减少了过拟合训练数据的可能性。
 
-## Keras的dropout规范化
+## Keras 的 dropout 规范化
 
-通过以每轮权重更新时的给定概率（例如 20％）随机选择要丢弃的节点、。这就是在Keras实现 Dropout 的方式。 Dropout 仅在模型训练期间使用，在评估模型的表现时不使用。
+通过以每轮权重更新时的给定概率（例如 20％）随机选择要丢弃的节点、。这就是在 Keras 实现 Dropout 的方式。 Dropout 仅在模型训练期间使用，在评估模型的表现时不使用。
 
 接下来，我们将探讨在 Keras 中使用 Dropout 的几种不同方法。
 
@@ -102,7 +102,7 @@ results = cross_val_score(pipeline, X, encoded_Y, cv=kfold)
 print("Baseline: %.2f%% (%.2f%%)" % (results.mean()*100, results.std()*100))
 ```
 
-运行该示例可生成 分类准确度约为86%。
+运行该示例可生成 分类准确度约为 86%。
 
 ```py
 Baseline: 86.04% (4.58%)
@@ -112,13 +112,13 @@ Baseline: 86.04% (4.58%)
 
 Dropout 可以应用于称为可见层的输入神经元。
 
-在下面的示例中，我们在输入（或可见层）和第一个隐藏层之间添加一个新的 Dropout 层。dropout率设置为 20％，这意味着每个更新周期中将随机丢弃五分之一输入。
+在下面的示例中，我们在输入（或可见层）和第一个隐藏层之间添加一个新的 Dropout 层。dropout 率设置为 20％，这意味着每个更新周期中将随机丢弃五分之一输入。
 
 此外，正如 Dropout 那篇论文中所建议的那样，对每个隐藏层的权重施加约束，确保权重的最大范数不超过值 3.这可以通过在构造模型层时设置 kernel_constraint 参数来完成。
 
-学习率提高了一个数量级，冲量增加到 0.9。 这也是Dropout 论文中推荐的做法。
+学习率提高了一个数量级，冲量增加到 0.9。 这也是 Dropout 论文中推荐的做法。
 
-继续上面的基准示例，下面的代码使用输入层dropout的网络模型。
+继续上面的基准示例，下面的代码使用输入层 dropout 的网络模型。
 
 ```py
 # dropout in the input layer with weight constraint
@@ -154,7 +154,7 @@ Visible: 83.52% (7.68%)
 
 Dropout 可以应用于网络模型内的隐藏层节点。
 
-在下面的示例中，Dropout 应用于两个隐藏层之间以及最后一个隐藏层和输出层之间。再次使用 20％的dropout率，并且对这些层进行权重约束。
+在下面的示例中，Dropout 应用于两个隐藏层之间以及最后一个隐藏层和输出层之间。再次使用 20％的 dropout 率，并且对这些层进行权重约束。
 
 ```py
 # dropout in hidden layers with weight constraint
@@ -191,28 +191,28 @@ Hidden: 83.59% (7.31%)
 
 ## 使用 Dropout 的技巧
 
-关于 Dropout 的原始论文提供了一套标准机器学习问题的实践性结论。因此在运用dropout时，会带来很多帮助。
+关于 Dropout 的原始论文提供了一套标准机器学习问题的实践性结论。因此在运用 dropout 时，会带来很多帮助。
 
-*   通常，使用 20％-50％神经元的小dropout值，20％可作为良好的起点。比例太低具有最小的影响比列太高会导致模型的欠学习。
+*   通常，使用 20％-50％神经元的小 dropout 值，20％可作为良好的起点。比例太低具有最小的影响比列太高会导致模型的欠学习。
 *   使用更大的网络。当在较大的网络上使用 dropout 时，模型可能会获得更好的表现，模型有更多的机会学习到多种独立的表征。
 *   在输入层（可见层）和隐藏层都使用 dropout。在网络的每一层应用 dropout 已被证明具有良好的结果。
 *   增加学习率和冲量。将学习率提高 10 到 100 倍，并使用 0.9 或 0.99 的高冲量值。
 *   限制网络模型权重的大小。较大的学习率可能导致非常大的权重值。对网络的权重值做最大范数正则化等方法，例如大小为 4 或 5 的最大范数正则化已被证明可以改善结果。
 
-## 关于dropout的更多资源
+## 关于 dropout 的更多资源
 
 以下是一些资源，您可以用它们来了解有关神经网络和深度学习模型中的 dropout 的更多信息。
 
 *   [dropout：一种防止神经网络过拟合的简单方法](http://jmlr.org/papers/v15/srivastava14a.html)（原始论文）。
 *   [通过阻止特征检测器的共同适应来改善神经网络](http://arxiv.org/abs/1207.0580)。
-*   [dropout方法如何在深度学习中发挥作用？ Quora 上的](https://www.quora.com/How-does-the-dropout-method-work-in-deep-learning)。
+*   [dropout 方法如何在深度学习中发挥作用？ Quora 上的](https://www.quora.com/How-does-the-dropout-method-work-in-deep-learning)。
 
 ## 总结
 
 在这篇文章中，您了解了深度学习模型的 dropout 正则化技术。你了解到：
 
-*   dropout含义和原理。
+*   dropout 含义和原理。
 *   如何在自己的深度学习模型中使用 dropout。
-*   使用dropout的技巧。
+*   使用 dropout 的技巧。
 
-您对dropout或这篇文章有任何疑问吗？在评论中提出您的问题，我会尽力回答。
+您对 dropout 或这篇文章有任何疑问吗？在评论中提出您的问题，我会尽力回答。

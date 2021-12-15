@@ -42,7 +42,7 @@
 
 示例问题是分类和回归。
 
-示例算法包括逻辑回归和Back Propagation神经网络。
+示例算法包括逻辑回归和 Back Propagation 神经网络。
 
 ### **2.无监督学习**
 
@@ -52,7 +52,7 @@
 
 示例问题是聚类，降维和关联规则学习。
 
-示例算法包括：Apriori算法和k-Means。
+示例算法包括：Apriori 算法和 k-Means。
 
 ### **3.半监督学习**
 
@@ -76,7 +76,7 @@ Example problems are classification and regression.
 
 方便的机器学习算法思维导图的样本。
 
-我已经创建了一个由类型组织的60多种算法的方便思维导图。
+我已经创建了一个由类型组织的 60 多种算法的方便思维导图。
 
 下载，打印并使用它。
 
@@ -146,8 +146,8 @@ Example problems are classification and regression.
 最流行的决策树算法是：
 
 *   分类和回归树（CART）
-*   迭代Dichotomiser 3（ID3）
-*   C4.5和C5.0（强大方法的不同版本）
+*   迭代 Dichotomiser 3（ID3）
+*   C4.5 和 C5.0（强大方法的不同版本）
 *   卡方自动交互检测（CHAID）
 *   决策树桩
 *   M5
@@ -187,8 +187,8 @@ Example problems are classification and regression.
 
 最流行的关联规则学习算法是：
 
-*   Apriori算法
-*   Eclat算法
+*   Apriori 算法
+*   Eclat 算法
 
 ### 人工神经网络算法
 
@@ -202,7 +202,7 @@ Example problems are classification and regression.
 
 *   感知
 *   反向传播
-*   Hopfield网络
+*   Hopfield 网络
 *   径向基函数网络（RBFN）
 
 ### 深度学习算法
@@ -243,7 +243,7 @@ Example problems are classification and regression.
 
 *   推进
 *   自举聚合（套袋）
-*   AdaBoost的
+*   AdaBoost 的
 *   堆叠泛化（混合）
 *   梯度增压机（GBM）
 *   梯度升压回归树（GBRT）
@@ -285,7 +285,7 @@ Example problems are classification and regression.
 
 *   [机器学习算法列表](http://en.wikipedia.org/wiki/List_of_machine_learning_algorithms)：在维基百科上。虽然很广泛，但我没有发现这个列表或算法的组织特别有用。
 *   [机器学习算法类别](http://en.wikipedia.org/wiki/Category:Machine_learning_algorithms)：也在维基百科上，比上面的维基百科上面的列表稍微有用。它按字母顺序组织算法。
-*   [CRAN任务视图：机器学习＆amp;统计学习](http://cran.r-project.org/web/views/MachineLearning.html)：R中每个机器学习包支持的所有包和所有算法的列表。让您有一种基础的感觉，即每天的内容以及人们用于分析的内容。
+*   [CRAN 任务视图：机器学习＆amp;统计学习](http://cran.r-project.org/web/views/MachineLearning.html)：R 中每个机器学习包支持的所有包和所有算法的列表。让您有一种基础的感觉，即每天的内容以及人们用于分析的内容。
 *   [数据挖掘中的十大算法](http://www.cs.uvm.edu/~icdm/algorithms/index.shtml)：[已发表文章](http://link.springer.com/article/10.1007/s10115-007-0114-2)，现在是[书籍](http://www.amazon.com/dp/1420089641?tag=inspiredalgor-20)（Affiliate Link）关于最流行的数据挖掘算法。另一种基础和不那么压倒性的方法，你可以去深入学习。
 
 ### 如何研究机器学习算法
@@ -302,9 +302,9 @@ Example problems are classification and regression.
 
 有时你只想潜入代码。下面是一些可用于运行机器学习算法的链接，使用标准库对其进行编码或从零开始实现。
 
-*   [如何开始使用R中的机器学习算法](http://machinelearningmastery.com/how-to-get-started-with-machine-learning-algorithms-in-r/)：链接到该站点上的大量代码示例，演示了R中的机器学习算法。
-*   [机器学习算法scikit-learn中的秘籍](http://machinelearningmastery.com/get-your-hands-dirty-with-scikit-learn-now/)：Python代码示例的集合，演示了如何使用scikit-learn创建预测模型。
-*   [如何在Weka中运行您的第一个分类器](http://machinelearningmastery.com/how-to-run-your-first-classifier-in-weka/)：在Weka中运行您的第一个分类器的教程（**无需代码！**）。
+*   [如何开始使用 R 中的机器学习算法](http://machinelearningmastery.com/how-to-get-started-with-machine-learning-algorithms-in-r/)：链接到该站点上的大量代码示例，演示了 R 中的机器学习算法。
+*   [机器学习算法 scikit-learn 中的秘籍](http://machinelearningmastery.com/get-your-hands-dirty-with-scikit-learn-now/)：Python 代码示例的集合，演示了如何使用 scikit-learn 创建预测模型。
+*   [如何在 Weka 中运行您的第一个分类器](http://machinelearningmastery.com/how-to-run-your-first-classifier-in-weka/)：在 Weka 中运行您的第一个分类器的教程（**无需代码！**）。
 
 ## 最后的话
 
@@ -312,6 +312,6 @@ Example problems are classification and regression.
 
 如果您对如何改进算法之旅有任何疑问或想法，请发表评论。
 
-**更新＃1** ：继续关于HackerNews 和 [reddit](http://www.reddit.com/r/programming/comments/267zmd/a_tour_of_machine_learning_algorithms/) 的[讨论。](https://news.ycombinator.com/item?id=7783550)
+**更新＃1** ：继续关于 HackerNews 和 [reddit](http://www.reddit.com/r/programming/comments/267zmd/a_tour_of_machine_learning_algorithms/) 的[讨论。](https://news.ycombinator.com/item?id=7783550)
 
 **更新＃2** ：我添加了更多资源和更多算法。我还添加了一个方便的思维导图，您可以下载（见上文）。

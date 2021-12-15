@@ -4,15 +4,15 @@
 
 开发了用于序列预测的长短期记忆循环神经网络。
 
-除了序列预测问题。 LSTM也可以用作生成模型
+除了序列预测问题。 LSTM 也可以用作生成模型
 
-在这篇文章中，您将了解LSTM如何用作生成模型。
+在这篇文章中，您将了解 LSTM 如何用作生成模型。
 
 完成这篇文章后，你会知道：
 
 *   关于生成模型，重点关注称为语言建模的文本的生成模型。
-*   使用LSTM Generative模型的应用示例。
-*   如何使用LSTM为生成模型建模文本的示例。
+*   使用 LSTM Generative 模型的应用示例。
+*   如何使用 LSTM 为生成模型建模文本的示例。
 
 让我们开始吧。
 
@@ -23,9 +23,9 @@
 
 ## 生成模型
 
-LSTM可以用作生成模型。
+LSTM 可以用作生成模型。
 
-给定大量序列数据，例如文本文档，可以设计LSTM模型以学习语料库的一般结构属性，并且当给定种子输入时，可以生成代表原始语料库的新序列。
+给定大量序列数据，例如文本文档，可以设计 LSTM 模型以学习语料库的一般结构属性，并且当给定种子输入时，可以生成代表原始语料库的新序列。
 
 开发用于概括文本语料库的模型的问题在自然语言处理领域被称为语言建模。语言模型可以在单词级别工作并学习文档中单词之间的概率关系，以便准确地完成句子并生成全新的句子。在最具挑战性的语言模型中，语言模型在角色级别工作，从角色序列中学习，并一次生成一个角色的新序列。
 
@@ -39,7 +39,7 @@ LSTM可以用作生成模型。
 
 - [生成具有循环神经网络的序列](https://arxiv.org/abs/1308.0850)，2013。
 
-语言建模是迄今为止生成LSTM最常研究的应用，可能是因为使用了可以量化和比较模型表现的标准数据集。这种方法已用于生成一系列有趣的语言建模问题的文本，例如：
+语言建模是迄今为止生成 LSTM 最常研究的应用，可能是因为使用了可以量化和比较模型表现的标准数据集。这种方法已用于生成一系列有趣的语言建模问题的文本，例如：
 
 *   生成维基百科文章（包括标记）。
 *   生成莎士比亚等伟大作家的片段。
@@ -57,18 +57,18 @@ LSTM可以用作生成模型。
 
 ![Example of LSTMs used in Automatic Handwriting Generation](img/0f679146e2ebc5a248e2a29fb2b222dc.jpg)
 
-用于自动手写生成的LSTM的示例。
-取自“[生成序列与循环神经网络](https://arxiv.org/abs/1308.0850)”，2014年。
+用于自动手写生成的 LSTM 的示例。
+取自“[生成序列与循环神经网络](https://arxiv.org/abs/1308.0850)”，2014 年。
 
-## 生成LSTM
+## 生成 LSTM
 
-生成型LSTM实际上不是架构，它更多地是关于LSTM预测模型学习内容以及模型如何使用的观点的变化。
+生成型 LSTM 实际上不是架构，它更多地是关于 LSTM 预测模型学习内容以及模型如何使用的观点的变化。
 
-我们可以想象使用任何LSTM架构作为生成模型。在这种情况下，我们将使用简单的Vanilla LSTM。
+我们可以想象使用任何 LSTM 架构作为生成模型。在这种情况下，我们将使用简单的 Vanilla LSTM。
 
 ![Vanilla LSTM Architecture for Generative Models](img/74cd1a905ea5c1621df4e4230f610b2c.jpg)
 
-用于生成模型的Vanilla LSTM架构
+用于生成模型的 Vanilla LSTM 架构
 
 在字符级语言模型的情况下，所有可能字符的字母表是固定的。单热编码用于学习输入序列和预测输出序列。
 
@@ -89,7 +89,7 @@ LSTM可以用作生成模型。
 ...
 ```
 
-这可以按原样呈现为一个时间步骤样本的数据集，这可能对网络非常有限（例如，没有BPTT）。
+这可以按原样呈现为一个时间步骤样本的数据集，这可能对网络非常有限（例如，没有 BPTT）。
 
 或者，它可以被向量化为固定长度的输入序列，用于多对一时间步长模型，例如：
 
@@ -123,25 +123,25 @@ LSTM可以用作生成模型。
 
 *   [使用循环神经网络生成文本](http://www.cs.utoronto.ca/~ilya/pubs/2011/LANG-RNN.pdf)，2011。
 *   [使用循环神经网络生成序列](https://arxiv.org/abs/1308.0850)，2013。
-*   [TTS合成与双向LSTM的循环神经网络](https://pdfs.semanticscholar.org/564f/ed868f652f361bb3e345f6f94073d8f6f261.pdf)，2014年。
-*   [使用LSTM循环神经网络](http://people.idsia.ch/~juergen/blues/IDSIA-07-02.pdf)，2002年首次研究音乐作品。
+*   [TTS 合成与双向 LSTM 的循环神经网络](https://pdfs.semanticscholar.org/564f/ed868f652f361bb3e345f6f94073d8f6f261.pdf)，2014 年。
+*   [使用 LSTM 循环神经网络](http://people.idsia.ch/~juergen/blues/IDSIA-07-02.pdf)，2002 年首次研究音乐作品。
 *   [来自几个人类旋律的循环网络学习的爵士乐旋律](https://www.aaai.org/Papers/FLAIRS/2005/Flairs05-010.pdf)，2005。
 
 ### 帖子
 
-*   [使用Keras进行LSTM循环神经网络的文本生成](http://machinelearningmastery.com/text-generation-lstm-recurrent-neural-networks-python-keras/)，2016
+*   [使用 Keras 进行 LSTM 循环神经网络的文本生成](http://machinelearningmastery.com/text-generation-lstm-recurrent-neural-networks-python-keras/)，2016
     [循环神经网络的不合理有效性](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)，2015。
 *   维基百科上的[语言模型](https://en.wikipedia.org/wiki/Language_model)。
 
 ## 摘要
 
-在这篇文章中，您发现了使用LSTM作为生成模型。
+在这篇文章中，您发现了使用 LSTM 作为生成模型。
 
 具体来说，你学到了：
 
 *   关于生成模型，重点关注称为语言建模的文本的生成模型。
-*   使用LSTM Generative模型的应用示例。
-*   如何使用LSTM为生成模型建模文本的示例。
+*   使用 LSTM Generative 模型的应用示例。
+*   如何使用 LSTM 为生成模型建模文本的示例。
 
 你有任何问题吗？
 在下面的评论中提出您的问题，我会尽力回答。

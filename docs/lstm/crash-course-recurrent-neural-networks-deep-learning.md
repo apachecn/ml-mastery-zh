@@ -8,7 +8,7 @@
 
 一种称为长短期记忆网络的强大类型的循环神经网络在堆叠成深层配置时显示出特别有效，从语言翻译到自动字幕等各种各样的问题上实现了最先进的结果的图像和视频。
 
-在这篇文章中，您将获得用于深度学习的循环神经网络的速成课程，获得足够的理解以开始在使用Keras的Python中使用LSTM网络。
+在这篇文章中，您将获得用于深度学习的循环神经网络的速成课程，获得足够的理解以开始在使用 Keras 的 Python 中使用 LSTM 网络。
 
 阅读这篇文章后，你会知道：
 
@@ -27,13 +27,13 @@
 
 有一些问题类型是最好的框架，涉及序列作为输入或输出。
 
-例如，考虑一个单变量的时间序列问题，例如股票随时间的价格。通过定义窗口大小（例如5）并训练网络学习从固定大小的输入窗口进行短期预测，可以将该数据集构建为经典前馈多层感知机网络的预测问题。
+例如，考虑一个单变量的时间序列问题，例如股票随时间的价格。通过定义窗口大小（例如 5）并训练网络学习从固定大小的输入窗口进行短期预测，可以将该数据集构建为经典前馈多层感知机网络的预测问题。
 
 这可行，但非常有限。输入窗口为问题增加了记忆，但仅限于固定数量的点，必须在充分了解问题的情况下进行选择。一个朴素的窗口无法捕捉可能与预测相关的分钟，小时和天的更广泛趋势。从一个预测到下一个预测，网络仅知道它所提供的特定输入。
 
 单变量时间序列预测很重要，但还有更多有趣的问题涉及序列。
 
-考虑以下需要将输入映射到输出的序列问题分类（取自Andrej Karpathy）。
+考虑以下需要将输入映射到输出的序列问题分类（取自 Andrej Karpathy）。
 
 *   **一对多**：序列输出，用于图像字幕。
 *   **多对一**：序列输入，用于情感分类。
@@ -46,9 +46,9 @@
 
 ## 循环神经网络
 
-循环神经网络或RNN是一种特殊类型的神经网络，专为序列问题而设计。
+循环神经网络或 RNN 是一种特殊类型的神经网络，专为序列问题而设计。
 
-给定标准的前馈多层Perceptron网络，可以将循环神经网络视为向架构添加循环。例如，在给定层中，除了前进到下一层之外，每个神经元可以随后（侧向）传递其信号。网络的输出可以作为具有下一输入向量的网络的输入反馈。等等。
+给定标准的前馈多层 Perceptron 网络，可以将循环神经网络视为向架构添加循环。例如，在给定层中，除了前进到下一层之外，每个神经元可以随后（侧向）传递其信号。网络的输出可以作为具有下一输入向量的网络的输入反馈。等等。
 
 循环连接为网络添加状态或内存，并允许它从输入序列中学习更广泛的抽象。
 
@@ -63,7 +63,7 @@
 
 由于循环或循环连接，反向传播在循环神经网络中发生故障。
 
-这通过对后传播技术的改进来解决，该技术称为[反向传播时间](https://en.wikipedia.org/wiki/Backpropagation_through_time)或BPTT。
+这通过对后传播技术的改进来解决，该技术称为[反向传播时间](https://en.wikipedia.org/wiki/Backpropagation_through_time)或 BPTT。
 
 如上所述，不是在循环网络上执行反向传播，而是展开网络的结构，其中创建具有循环连接的神经元的副本。例如，具有与其自身连接的单个神经元（A-&gt; A）可以表示为具有相同权重值的两个神经元（A-&gt; B）。
 
@@ -81,13 +81,13 @@
 
 ## 长期短期记忆网络
 
-长期短期记忆或LSTM网络是一种循环神经网络，使用反向传播时间训练并克服消失的梯度问题。
+长期短期记忆或 LSTM 网络是一种循环神经网络，使用反向传播时间训练并克服消失的梯度问题。
 
 因此，它可以用于创建大型（堆叠）循环网络，这反过来可以用于解决机器学习中的困难序列问题并实现最先进的结果。
 
-LSTM网络具有连接到层中的存储块，而不是神经元。
+LSTM 网络具有连接到层中的存储块，而不是神经元。
 
-块具有使其比经典神经元更聪明的组件和用于最近序列的存储器。块包含管理块状态和输出的门。单元对输入序列进行操作，并且单元内的每个门使用S形激活功能来控制它们是否被触发，使状态的改变和流过该单元的信息的添加成为条件。
+块具有使其比经典神经元更聪明的组件和用于最近序列的存储器。块包含管理块状态和输出的门。单元对输入序列进行操作，并且单元内的每个门使用 S 形激活功能来控制它们是否被触发，使状态的改变和流过该单元的信息的添加成为条件。
 
 存储器单元中有三种类型的门：
 
@@ -97,34 +97,34 @@ LSTM网络具有连接到层中的存储块，而不是神经元。
 
 每个单元就像一个小型状态机，其中单元的门具有在训练过程中学习的权重。
 
-您可以看到如何从一层LSTM中获得复杂的学习和记忆，并且不难想象高阶抽象如何与多个这样的层分层。
+您可以看到如何从一层 LSTM 中获得复杂的学习和记忆，并且不难想象高阶抽象如何与多个这样的层分层。
 
 ## 资源
 
 我们在这篇文章中介绍了很多内容。下面是一些资源，您可以使用这些资源深入了解用于深度学习的循环神经网络的主题。
 
-有关了解Recurrent Neural Networks和LSTM的更多信息的资源。
+有关了解 Recurrent Neural Networks 和 LSTM 的更多信息的资源。
 
 *   [维基百科上的循环神经网络](https://en.wikipedia.org/wiki/Recurrent_neural_network)
 *   [维基百科上的长短期记忆](https://en.wikipedia.org/wiki/Long_short-term_memory)
 *   [反复神经网络的不合理效力](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)作者：Andrej Karpathy
-*   [了解LSTM网络](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+*   [了解 LSTM 网络](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 *   [深入研究循环神经网络](http://nikhilbuduma.com/2015/01/11/a-deep-dive-into-recurrent-neural-networks/)
-*   [经常性网络和LSTM初学者指南](http://deeplearning4j.org/lstm.html)
+*   [经常性网络和 LSTM 初学者指南](http://deeplearning4j.org/lstm.html)
 
-实现LSTM的热门教程。
+实现 LSTM 的热门教程。
 
-*   [使用TensorFlow进行语言建模的LSTM](https://www.tensorflow.org/versions/r0.9/tutorials/recurrent/index.html)
-*   [在Theano中进行口语理解的RNN](http://deeplearning.net/tutorial/rnnslu.html)
-*   [LSTM用于Theano](http://deeplearning.net/tutorial/lstm.html) 的情感分析
+*   [使用 TensorFlow 进行语言建模的 LSTM](https://www.tensorflow.org/versions/r0.9/tutorials/recurrent/index.html)
+*   [在 Theano 中进行口语理解的 RNN](http://deeplearning.net/tutorial/rnnslu.html)
+*   [LSTM 用于 Theano](http://deeplearning.net/tutorial/lstm.html) 的情感分析
 
-LSTM的主要来源。
+LSTM 的主要来源。
 
-*   [长期记忆](http://deeplearning.cs.cmu.edu/pdfs/Hochreiter97_lstm.pdf) [pdf]，1997年Hochreiter和Schmidhuber的论文
-*   [学会忘记：使用LSTM](http://www.mitpressjournals.org/doi/abs/10.1162/089976600300015015) 进行持续预测，2000年Schmidhuber和Cummins加上遗忘门
+*   [长期记忆](http://deeplearning.cs.cmu.edu/pdfs/Hochreiter97_lstm.pdf) [pdf]，1997 年 Hochreiter 和 Schmidhuber 的论文
+*   [学会忘记：使用 LSTM](http://www.mitpressjournals.org/doi/abs/10.1162/089976600300015015) 进行持续预测，2000 年 Schmidhuber 和 Cummins 加上遗忘门
 *   [关于训练循环神经网络的难度](http://arxiv.org/pdf/1211.5063v2.pdf) [pdf]，2013
 
-人们跟随LSTM做了很多工作。
+人们跟随 LSTM 做了很多工作。
 
 *   [Alex Graves](http://www.cs.toronto.edu/~graves/)
 *   [JürgenSchmidhuber](http://people.idsia.ch/~juergen/)
@@ -141,4 +141,4 @@ LSTM的主要来源。
 *   训练复现神经网络的实际问题及其克服方法。
 *   用于创建深度循环神经网络的长短期记忆网络。
 
-您对深度循环神经网络，LSTM或关于这篇文章有任何疑问吗？在评论中提出您的问题，我会尽力回答。
+您对深度循环神经网络，LSTM 或关于这篇文章有任何疑问吗？在评论中提出您的问题，我会尽力回答。

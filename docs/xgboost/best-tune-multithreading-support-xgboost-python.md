@@ -134,7 +134,7 @@ pyplot.show()
 
 XGBoost 在 1 到 32 个核心上训练模型所需的时间
 
-值得注意的是，在多于 16 个线程（大约 7 秒）的情况下，我们没有看到太多进步。我想其原因是Amazon仅在硬件中提供 16 个内核，而另外的16个核心是通过超线程提供额外。结果表明，如果您的计算机具有超线程能力，则可能需要将 **num_threads** 设置为等于计算机中物理 CPU 核心的数量。
+值得注意的是，在多于 16 个线程（大约 7 秒）的情况下，我们没有看到太多进步。我想其原因是 Amazon 仅在硬件中提供 16 个内核，而另外的 16 个核心是通过超线程提供额外。结果表明，如果您的计算机具有超线程能力，则可能需要将 **num_threads** 设置为等于计算机中物理 CPU 核心的数量。
 
 使用 OpenMP 进行 XGBoost 的低层面最优执行能压缩像这样大型计算机的每一次最后一个周期（last cycle）。
 
@@ -200,7 +200,7 @@ elapsed = time.time() - start
 print("Parallel Thread XGBoost and CV: %f" % (elapsed))
 ```
 
-运行这段示例代码将会print以下结果：
+运行这段示例代码将会 print 以下结果：
 
 ```py
 Single Thread XGBoost, Parallel Thread CV: 359.854589

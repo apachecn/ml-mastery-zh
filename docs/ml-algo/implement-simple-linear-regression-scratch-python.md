@@ -1,12 +1,12 @@
-# 如何用Python从零开始实现简单线性回归
+# 如何用 Python 从零开始实现简单线性回归
 
 > 原文： [https://machinelearningmastery.com/implement-simple-linear-regression-scratch-python/](https://machinelearningmastery.com/implement-simple-linear-regression-scratch-python/)
 
-线性回归是一种超过200年的预测方法。
+线性回归是一种超过 200 年的预测方法。
 
 [简单线性回归](http://machinelearningmastery.com/simple-linear-regression-tutorial-for-machine-learning/)是一个很好的第一个机器学习算法，因为它需要你从训练数据集中估计属性，但是对于初学者来说很简单。
 
-在本教程中，您将了解如何在Python中从零开始实现简单的线性回归算法。
+在本教程中，您将了解如何在 Python 中从零开始实现简单的线性回归算法。
 
 完成本教程后，您将了解：
 
@@ -16,12 +16,12 @@
 
 让我们开始吧。
 
-*   **更新Aug / 2018** ：经过测试和更新，可与Python 3.6配合使用。
-*   **2002年2月更新**：对保险数据集的预期默认RMSE进行小幅更新。
+*   **更新 Aug / 2018** ：经过测试和更新，可与 Python 3.6 配合使用。
+*   **2002 年 2 月更新**：对保险数据集的预期默认 RMSE 进行小幅更新。
 
 ![How To Implement Simple Linear Regression From Scratch With Python](img/8d21d8bbe9560bec279e6b57fc9cde68.jpg)
 
-如何使用Python实现简单的线性回归
+如何使用 Python 实现简单的线性回归
 照片由 [Kamyar Adl](https://www.flickr.com/photos/kamshots/456696484/) ，保留一些权利。
 
 ## 描述
@@ -42,9 +42,9 @@
 y = b0 + b1 * x
 ```
 
-其中b0和b1是我们必须根据训练数据估计的系数。
+其中 b0 和 b1 是我们必须根据训练数据估计的系数。
 
-一旦系数已知，我们可以使用此公式来估计给定x的新输入示例的y的输出值。
+一旦系数已知，我们可以使用此公式来估计给定 x 的新输入示例的 y 的输出值。
 
 它要求您根据数据计算统计特性，例如均值，方差和协方差。
 
@@ -57,7 +57,7 @@ B1 = sum((x(i) - mean(x)) * (y(i) - mean(y))) / sum( (x(i) - mean(x))^2 )
 B0 = mean(y) - B1 * mean(x)
 ```
 
-其中i指的是输入x或输出y的第i个值。
+其中 i 指的是输入 x 或输出 y 的第 i 个值。
 
 如果现在还不清楚，请不要担心，这些功能将在教程中实现。
 
@@ -69,7 +69,7 @@ B0 = mean(y) - B1 * mean(x)
 
 这意味着对于新的索赔（x），我们将能够预测索赔的总支付额（y）。
 
-以下是数据集前5个记录的一小部分样本。
+以下是数据集前 5 个记录的一小部分样本。
 
 ```py
 108,392.5
@@ -79,7 +79,7 @@ B0 = mean(y) - B1 * mean(x)
 40,119.4
 ```
 
-使用零规则算法（预测平均值）预期的均方根误差或RMSE约为81（千克朗）。
+使用零规则算法（预测平均值）预期的均方根误差或 RMSE 约为 81（千克朗）。
 
 下面是整个数据集的散点图。
 
@@ -89,9 +89,9 @@ B0 = mean(y) - B1 * mean(x)
 
 您可以在 或 [](http://college.cengage.com/mathematics/brase/understandable_statistics/7e/students/datasets/slr/frames/slr06.html) 下载[的原始数据集。](https://www.math.muni.cz/~kolacek/docs/frvs/M7222/data/AutoInsurSweden.txt)
 
-将其保存到本地工作目录中的CSV文件，名称为“ **insurance.csv** ”。
+将其保存到本地工作目录中的 CSV 文件，名称为“ **insurance.csv** ”。
 
-注意，您可能需要将欧洲“，”转换为小数“。”。您还需要将文件从空格分隔的变量更改为CSV格式。
+注意，您可能需要将欧洲“，”转换为小数“。”。您还需要将文件从空格分隔的变量更改为 CSV 格式。
 
 ## 教程
 
@@ -141,9 +141,9 @@ def variance(values, mean):
 
 我们可以将这两个函数放在一起，并在一个小的设计数据集上进行测试。
 
-下面是x和y值的小数据集。
+下面是 x 和 y 值的小数据集。
 
-**注意**：如果将其保存到.CSV文件以与最终代码示例一起使用，则从该数据中删除列标题。
+**注意**：如果将其保存到.CSV 文件以与最终代码示例一起使用，则从该数据中删除列标题。
 
 ```py
 x, y
@@ -160,7 +160,7 @@ x, y
 
 简单线性回归的小受控数据集
 
-我们可以在下面的例子中计算x和y值的均值和方差。
+我们可以在下面的例子中计算 x 和 y 值的均值和方差。
 
 ```py
 # Estimate Mean and Variance
@@ -206,7 +206,7 @@ y stats: mean=2.800 variance=8.800
 covariance = sum((x(i) - mean(x)) * (y(i) - mean(y)))
 ```
 
-下面是一个名为 **covariance（）**的函数，它实现了这个统计量。它建立在前一步骤的基础上，并将x和y值的列表以及这些值的平均值作为参数。
+下面是一个名为 **covariance（）**的函数，它实现了这个统计量。它建立在前一步骤的基础上，并将 x 和 y 值的列表以及这些值的平均值作为参数。
 
 ```py
 # Calculate covariance between x and y
@@ -244,7 +244,7 @@ covar = covariance(x, mean_x, y, mean_y)
 print('Covariance: %.3f' % (covar))
 ```
 
-运行此示例将打印x和y变量的协方差。
+运行此示例将打印 x 和 y 变量的协方差。
 
 ```py
 Covariance: 8.000
@@ -256,7 +256,7 @@ Covariance: 8.000
 
 我们必须在简单线性回归中估计两个系数的值。
 
-第一个是B1，可以估算为：
+第一个是 B1，可以估算为：
 
 ```py
 B1 = sum((x(i) - mean(x)) * (y(i) - mean(y))) / sum( (x(i) - mean(x))^2 )
@@ -270,13 +270,13 @@ B1 = covariance(x, y) / variance(x)
 
 我们已经有了计算**协方差（）**和**方差（）**的函数。
 
-接下来，我们需要估计B0的值，也称为截距，因为它控制与y轴相交的直线的起点。
+接下来，我们需要估计 B0 的值，也称为截距，因为它控制与 y 轴相交的直线的起点。
 
 ```py
 B0 = mean(y) - B1 * mean(x)
 ```
 
-同样，我们知道如何估计B1，我们有一个函数来估计 **mean（）**。
+同样，我们知道如何估计 B1，我们有一个函数来估计 **mean（）**。
 
 我们可以将所有这些放在一个名为 **coefficients（）**的函数中，该函数将数据集作为参数并返回系数。
 
@@ -431,7 +431,7 @@ rmse = evaluate_algorithm(dataset, simple_linear_regression)
 print('RMSE: %.3f' % (rmse))
 ```
 
-运行此示例将显示以下输出，该输出首先列出这些预测的预测和RMSE。
+运行此示例将显示以下输出，该输出首先列出这些预测的预测和 RMSE。
 
 ```py
 [1.1999999999999995, 1.9999999999999996, 3.5999999999999996, 2.8, 4.3999999999999995]
@@ -454,11 +454,11 @@ RMSE: 0.693
 
 我们将为前面步骤中的简单线性回归添加一些便利函数。
 
-特别是加载称为 **load_csv（）**的CSV文件的函数，该函数将加载的数据集转换为称为 **str_column_to_float（）**的数字，这是一个使用训练和测试来评估算法的函数设置调用 **train_test_split（）**一个函数来计算称为 **rmse_metric（）**的RMSE和一个函数来评估一个叫做 **evaluate_algorithm（）**的算法。
+特别是加载称为 **load_csv（）**的 CSV 文件的函数，该函数将加载的数据集转换为称为 **str_column_to_float（）**的数字，这是一个使用训练和测试来评估算法的函数设置调用 **train_test_split（）**一个函数来计算称为 **rmse_metric（）**的 RMSE 和一个函数来评估一个叫做 **evaluate_algorithm（）**的算法。
 
 下面列出了完整的示例。
 
-使用60％数据的训练数据集来准备模型，并对剩余的40％做出预测。
+使用 60％数据的训练数据集来准备模型，并对剩余的 40％做出预测。
 
 ```py
 # Simple Linear Regression on the Swedish Insurance Dataset
@@ -561,9 +561,9 @@ rmse = evaluate_algorithm(dataset, simple_linear_regression, split)
 print('RMSE: %.3f' % (rmse))
 ```
 
-运行算法会在训练数据集上打印训练模型的RMSE。
+运行算法会在训练数据集上打印训练模型的 RMSE。
 
-获得了大约33（千克朗）的分数，这比在相同问题上实现大约81（数千克朗）的零规则算法好得多。
+获得了大约 33（千克朗）的分数，这比在相同问题上实现大约 81（数千克朗）的零规则算法好得多。
 
 ```py
 RMSE: 33.630
@@ -582,7 +582,7 @@ RMSE: 33.630
 
 ## 评论
 
-在本教程中，您了解了如何在Python中从零开始实现简单的线性回归算法。
+在本教程中，您了解了如何在 Python 中从零开始实现简单的线性回归算法。
 
 具体来说，你学到了：
 

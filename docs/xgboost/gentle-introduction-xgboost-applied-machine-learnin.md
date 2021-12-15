@@ -6,7 +6,7 @@ XGBoost 是一种算法库，近年来在应用机器学习和 Kaggle 竞赛中�
 
 XGBoost 是为速度和表现而设计的一种梯度提升决策树方法。
 
-在这篇文章中，您将轻松了解 XGBoost的入门信息，并知晓它究竟是什么，源自何处，以及如何学习它的更多信息。
+在这篇文章中，您将轻松了解 XGBoost 的入门信息，并知晓它究竟是什么，源自何处，以及如何学习它的更多信息。
 
 阅读之后您会学习到：
 
@@ -27,28 +27,28 @@ XGBoost 的名字源自 e **X** treme **G** radient **B** oosting （极限梯�
 
 > 其实 xgboost 实际上是在致力于将提升树算法对计算资源的利用推至工程极限。这也是为什么有许多人会使用 xgboost 的原因。
 
-- Tianqi Chen（陈天奇）对Quora问题“ [R gbm（梯度提升机）和 xgboost（极限梯度提升）有什么区别？](https://www.quora.com/What-is-the-difference-between-the-R-gbm-gradient-boosting-machine-and-xgboost-extreme-gradient-boosting) “的回答。
+- Tianqi Chen（陈天奇）对 Quora 问题“ [R gbm（梯度提升机）和 xgboost（极限梯度提升）有什么区别？](https://www.quora.com/What-is-the-difference-between-the-R-gbm-gradient-boosting-machine-and-xgboost-extreme-gradient-boosting) “的回答。
 
-它是 [Tianqi Chen](http://homes.cs.washington.edu/~tqchen/) 创建的一种梯度提升机实现，现在有许多开发人员在为这个项目做贡献。它属于分布式机器学习社区（[DMLC](http://dmlc.ml/)） 宽泛范畴中的一种工具。Chen同时也是流行的 [mxnet 深度学习库](https://github.com/dmlc/mxnet)创建者。
+它是 [Tianqi Chen](http://homes.cs.washington.edu/~tqchen/) 创建的一种梯度提升机实现，现在有许多开发人员在为这个项目做贡献。它属于分布式机器学习社区（[DMLC](http://dmlc.ml/)） 宽泛范畴中的一种工具。Chen 同时也是流行的 [mxnet 深度学习库](https://github.com/dmlc/mxnet)创建者。
 
 Tianqi Chen 在[ XGBoost 的背后故事与经验](http://homes.cs.washington.edu/~tqchen/2016/03/10/story-and-lessons-behind-the-evolution-of-xgboost.html)中提供了关于 XGBoost 演进的简短而有趣的背景故事。
 
 XGBoost 定义了一个软件库，您可以在您的电脑上下载和安装，有多种接口方式可以调用。具体来说，XGBoost 支持以下主要接口：
 
 *   命令行界面（CLI）。
-*   C++（编写XGBoost库的语言）。
+*   C++（编写 XGBoost 库的语言）。
 *   Python 界面以及作为 scikit-learn 的一个模型。
-*   R 接口以及作为caret包中的模型。
+*   R 接口以及作为 caret 包中的模型。
 *   Julia。
-*   Java 和 JVM 语言，例如Scala，以及像 Hadoop 这样的平台。
+*   Java 和 JVM 语言，例如 Scala，以及像 Hadoop 这样的平台。
 
 ## XGBoost 的特点
 
-XGBoost库高度专注于计算速度和模型表现，因此几乎没有冗余功能。不过它仍然提供了许多高级功能。
+XGBoost 库高度专注于计算速度和模型表现，因此几乎没有冗余功能。不过它仍然提供了许多高级功能。
 
 ### 模型的特点
 
-XGBoost模型支持 scikit-learn 和 R 的实现，并且新增了正则化等功能。它支持三种主要的梯度提升形式：
+XGBoost 模型支持 scikit-learn 和 R 的实现，并且新增了正则化等功能。它支持三种主要的梯度提升形式：
 
 *   **Gradient Boosting** 算法，也称为具有学习率的梯度提升机。
 *   对行、列以及分割列进行子采样的**随机梯度提升**。
@@ -56,7 +56,7 @@ XGBoost模型支持 scikit-learn 和 R 的实现，并且新增了正则化等�
 
 ### 系统的特点
 
-XGBoost库提供了丰富的计算环境，包括而不限于：
+XGBoost 库提供了丰富的计算环境，包括而不限于：
 
 *   **在训练期间使用所有 CPU 内核并行化的进行树构建**。
 *   **分布式计算**可在一组计算机集群上训练超大型模型。
@@ -84,7 +84,7 @@ XGBoost 是免费的开源软件，可在 Apache-2 许可范围使用。
 
 通常，XGBoost 相当快速。与梯度提升的其他实现方法相比，真的很快。
 
-[Szilard Pafka](https://www.linkedin.com/in/szilard) 进行了一些客观的基准测试，比较了 XGBoost 与其它梯度提升实现方法以及bagged决策树方法。他在 2015 年 5 月的博客文章“[随机森林方法的基准测试](http://datascience.la/benchmarking-random-forest-implementations/)”中展示了他的结果。
+[Szilard Pafka](https://www.linkedin.com/in/szilard) 进行了一些客观的基准测试，比较了 XGBoost 与其它梯度提升实现方法以及 bagged 决策树方法。他在 2015 年 5 月的博客文章“[随机森林方法的基准测试](http://datascience.la/benchmarking-random-forest-implementations/)”中展示了他的结果。
 
 他同时在 [GitHub](https://github.com/szilard/benchm-ml) 上提供了所有代码以及附有更多硬核数字的拓展报告。
 
@@ -112,23 +112,23 @@ XGBoost 在分类和回归预测性建模问题上对于有着结构化或表格
 
 > 作为 Kaggle 比赛的赢家，并且仍在增长获胜数字，XGBoost 再次向我们展示了它是一个值得留在您工具箱中的全面算法。
 
-- [Dato获奖者访谈：第1名 Mad Professors](http://blog.kaggle.com/2015/12/03/dato-winners-interview-1st-place-mad-professors/)
+- [Dato 获奖者访谈：第 1 名 Mad Professors](http://blog.kaggle.com/2015/12/03/dato-winners-interview-1st-place-mad-professors/)
 
 > 如果感到困惑，不知道作何选择，请使用 xgboost。
 
-- [Avito获奖者访谈：第1名，Owen Zhang](http://blog.kaggle.com/2015/08/26/avito-winners-interview-1st-place-owen-zhang/)
+- [Avito 获奖者访谈：第 1 名，Owen Zhang](http://blog.kaggle.com/2015/08/26/avito-winners-interview-1st-place-owen-zhang/)
 
 > 我喜欢让单一模特表现的更好，而我最好的单一模特是 XGBoost，它可以自己获得第 10 名。
 
-- [Caterpillar获奖者访谈：第1名](http://blog.kaggle.com/2015/09/22/caterpillar-winners-interview-1st-place-gilberto-josef-leustagos-mario/)
+- [Caterpillar 获奖者访谈：第 1 名](http://blog.kaggle.com/2015/09/22/caterpillar-winners-interview-1st-place-gilberto-josef-leustagos-mario/)
 
 > 我只用过 XGBoost。
 
-- [Liberty Mutual Property Inspection，获奖者访谈：第1名，Qingchen Wang](http://blog.kaggle.com/2015/09/28/liberty-mutual-property-inspection-winners-interview-qingchen-wang/)
+- [Liberty Mutual Property Inspection，获奖者访谈：第 1 名，Qingchen Wang](http://blog.kaggle.com/2015/09/28/liberty-mutual-property-inspection-winners-interview-qingchen-wang/)
 
 > 我唯一用过的有监督学习方法是梯度提升，通过优秀的 xgboost 实现。
 
-- [Recruit Coupon Purchase获奖者访谈：第2名，Halla Yang](http://blog.kaggle.com/2015/10/21/recruit-coupon-purchase-winners-interview-2nd-place-halla-yang/)
+- [Recruit Coupon Purchase 获奖者访谈：第 2 名，Halla Yang](http://blog.kaggle.com/2015/10/21/recruit-coupon-purchase-winners-interview-2nd-place-halla-yang/)
 
 ## XGBoost 使用什么算法？
 
@@ -150,7 +150,7 @@ XGBoost 库执行[梯度提升决策树算法](https://en.wikipedia.org/wiki/Gra
 
 关于 XGBoost 的最佳信息来源是项目的[官方 GitHub 仓库。](https://github.com/dmlc/xgboost)
 
-从那里，您可以访问[议题追踪（Issue Tracker）](https://github.com/dmlc/xgboost/issues)以及[用户组（User Group）](https://groups.google.com/forum/#!forum/xgboost-user/)，它们可用于提问和报告bug。
+从那里，您可以访问[议题追踪（Issue Tracker）](https://github.com/dmlc/xgboost/issues)以及[用户组（User Group）](https://groups.google.com/forum/#!forum/xgboost-user/)，它们可用于提问和报告 bug。
 
 [Awesome XGBoost 页面](https://github.com/dmlc/xgboost/tree/master/demo)是一个很好的资源库，配有示例代码和帮助信息。
 
@@ -167,7 +167,7 @@ XGBoost 库执行[梯度提升决策树算法](https://en.wikipedia.org/wiki/Gra
 
 ### XGBoost：A Scalable Tree Boosting System
 
-XGBoost库的创建者Tianqi Chen 2016 年 6 月在洛杉矶Data Science Group进行了一次题为“ [XGBoost：A Scalable Tree Boosting System](https://www.youtube.com/watch?v=Vly8xGnNiWs)”的演讲。
+XGBoost 库的创建者 Tianqi Chen 2016 年 6 月在洛杉矶 Data Science Group 进行了一次题为“ [XGBoost：A Scalable Tree Boosting System](https://www.youtube.com/watch?v=Vly8xGnNiWs)”的演讲。
 
 &lt;iframe allowfullscreen="" frameborder="0" height="281" src="https://www.youtube.com/embed/Vly8xGnNiWs?feature=oembed" width="500"&gt;&lt;/iframe&gt;
 
@@ -179,7 +179,7 @@ XGBoost库的创建者Tianqi Chen 2016 年 6 月在洛杉矶Data Science Group�
 
 ### XGBoost：eXtreme Gradient Boosting
 
-2015 年 12 月一位XGBoost的R语言接口贡献者在纽约Data Science Academy发表了题为“ [XGBoost: eXtreme Gradient Boosting](https://www.youtube.com/watch?v=ufHo8vbk6g4)”的演讲。
+2015 年 12 月一位 XGBoost 的 R 语言接口贡献者在纽约 Data Science Academy 发表了题为“ [XGBoost: eXtreme Gradient Boosting](https://www.youtube.com/watch?v=ufHo8vbk6g4)”的演讲。
 
 &lt;iframe allowfullscreen="" frameborder="0" height="281" src="https://www.youtube.com/embed/ufHo8vbk6g4?feature=oembed" width="500"&gt;&lt;/iframe&gt;
 
@@ -201,7 +201,7 @@ XGBoost库的创建者Tianqi Chen 2016 年 6 月在洛杉矶Data Science Group�
 
 ### R 中的 XGBoost
 
-如果您是R语言用户，最好的入门位置是 [xgboost 包的CRAN 页面](https://cran.r-project.org/web/packages/xgboost/index.html)。
+如果您是 R 语言用户，最好的入门位置是 [xgboost 包的 CRAN 页面](https://cran.r-project.org/web/packages/xgboost/index.html)。
 
 在此页面中，您可以访问 [R vignette Package'xgboost'](https://cran.r-project.org/web/packages/xgboost/xgboost.pdf) （pdf）。
 
@@ -225,7 +225,7 @@ XGBoost库的创建者Tianqi Chen 2016 年 6 月在洛杉矶Data Science Group�
 sudo pip install xgboost
 ```
 
-在 [XGBoost Python Feature Walkthrough](https://github.com/tqchen/xgboost/tree/master/demo/guide-python)中，有一个很好的Python范例源代码列表。
+在 [XGBoost Python Feature Walkthrough](https://github.com/tqchen/xgboost/tree/master/demo/guide-python)中，有一个很好的 Python 范例源代码列表。
 
 ## 总结
 

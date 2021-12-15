@@ -1,13 +1,13 @@
-# 15 个Python中的统计假设检验（备忘单）
+# 15 个 Python 中的统计假设检验（备忘单）
 
 > 原文： [https://machinelearningmastery.com/statistical-hypothesis-tests-in-python-cheat-sheet/](https://machinelearningmastery.com/statistical-hypothesis-tests-in-python-cheat-sheet/)
 
 #### 在
-应用机器学习中需要的15个统计假设检验的快速参考指南，以及Python中的示例代码。
+应用机器学习中需要的 15 个统计假设检验的快速参考指南，以及 Python 中的示例代码。
 
 尽管您可以使用数百种统计假设检验，但您可能只需要在机器学习项目中使用一小部分。
 
-在这篇文章中，您将发现一个备忘单，用于机器学习项目的最流行的统计假设检验，其中包含使用Python API的示例。
+在这篇文章中，您将发现一个备忘单，用于机器学习项目的最流行的统计假设检验，其中包含使用 Python API 的示例。
 
 每个统计测试都以一致的方式呈现，包括：
 
@@ -15,7 +15,7 @@
 *   测试的内容是什么。
 *   测试的关键假设。
 *   如何解释测试结果。
-*   用于使用测试的Python API。
+*   用于使用测试的 Python API。
 
 注意，当涉及诸如预期的数据分布或样本大小之类的假设时，给定测试的结果可能会优雅地降级，而不是在违反假设时立即变得不可用。
 
@@ -27,11 +27,11 @@
 
 让我们开始吧。
 
-*   **更新Nov / 2018** ：更好地概述了所涵盖的测试。
+*   **更新 Nov / 2018** ：更好地概述了所涵盖的测试。
 
 ![Statistical Hypothesis Tests in Python Cheat Sheet](img/e75b65d84f0c276d384372821a4a100f.jpg)
 
-Python备忘单中的统计假设检验
+Python 备忘单中的统计假设检验
 [davemichuda](https://www.flickr.com/photos/36137232@N00/4800239195/) 的照片，保留一些权利。
 
 ## 教程概述
@@ -39,8 +39,8 @@ Python备忘单中的统计假设检验
 本教程分为四个部分;他们是：
 
 1.  **正态性测试**
-    1.  Shapiro-Wilk测试
-    2.  D'Agostino的K ^ 2测试
+    1.  Shapiro-Wilk 测试
+    2.  D'Agostino 的 K ^ 2 测试
     3.  安德森 - 达林测试
 2.  **相关性测试**
     1.  皮尔逊的相关系数
@@ -48,21 +48,21 @@ Python备忘单中的统计假设检验
     3.  肯德尔的秩相关
     4.  卡方测试
 3.  **参数统计假设检验**
-    1.  学生的t检验
-    2.  配对学生的t检验
+    1.  学生的 t 检验
+    2.  配对学生的 t 检验
     3.  方差检验分析（ANOVA）
     4.  重复测量方差分析测试
 4.  **非参数统计假设检验**
-    1.  Mann-Whitney U测试
+    1.  Mann-Whitney U 测试
     2.  威尔科克森签名等级测试
-    3.  Kruskal-Wallis H测试
+    3.  Kruskal-Wallis H 测试
     4.  弗里德曼测试
 
 ## 1.正态性测试
 
 本节列出了可用于检查数据是否具有高斯分布的统计测试。
 
-### Shapiro-Wilk测试
+### Shapiro-Wilk 测试
 
 测试数据样本是否具有高斯分布。
 
@@ -75,7 +75,7 @@ Python备忘单中的统计假设检验
 *   H0：样本具有高斯分布。
 *   H1：样本没有高斯分布。
 
-Python代码
+Python 代码
 
 ```py
 from scipy.stats import shapiro
@@ -86,9 +86,9 @@ stat, p = shapiro(data)
 更多信息
 
 *   [scipy.stats.shapiro](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.shapiro.html)
-*   维基百科上的 [Shapiro-Wilk测试](https://en.wikipedia.org/wiki/Shapiro%E2%80%93Wilk_test)
+*   维基百科上的 [Shapiro-Wilk 测试](https://en.wikipedia.org/wiki/Shapiro%E2%80%93Wilk_test)
 
-### D'Agostino的K ^ 2测试
+### D'Agostino 的 K ^ 2 测试
 
 Tests whether a data sample has a Gaussian distribution.
 
@@ -112,7 +112,7 @@ stat, p = normaltest(data)
 More Information
 
 *   [scipy.stats.normaltest](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.normaltest.html)
-*   [D'Agostino在维基百科上的$ K $平方测试](https://en.wikipedia.org/wiki/D%27Agostino%27s_K-squared_test)
+*   [D'Agostino 在维基百科上的$ K $平方测试](https://en.wikipedia.org/wiki/D%27Agostino%27s_K-squared_test)
 
 ### 安德森 - 达林测试
 
@@ -138,7 +138,7 @@ result = anderson(data)
 More Information
 
 *   [scipy.stats.anderson](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.anderson.html)
-*   [维基百科上的Anderson-Darling测试](https://en.wikipedia.org/wiki/Anderson%E2%80%93Darling_test)
+*   [维基百科上的 Anderson-Darling 测试](https://en.wikipedia.org/wiki/Anderson%E2%80%93Darling_test)
 
 ## 2.相关性测试
 
@@ -170,7 +170,7 @@ corr, p = pearsonr(data1, data2)
 More Information
 
 *   [scipy.stats.pearsonr](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html)
-*   [Pearson在维基百科上的相关系数](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)
+*   [Pearson 在维基百科上的相关系数](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)
 
 ### 斯皮尔曼的秩相关
 
@@ -197,7 +197,7 @@ corr, p = spearmanr(data1, data2)
 More Information
 
 *   [scipy.stats.spearmanr](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.spearmanr.html)
-*   [Spearman在维基百科上的等级相关系数](https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient)
+*   [Spearman 在维基百科上的等级相关系数](https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient)
 
 ### 肯德尔的秩相关
 
@@ -233,7 +233,7 @@ More Information
 Assumptions
 
 *   用于计算列联表的观察是独立的。
-*   列联表的每个单元格中有25个或更多个例子。
+*   列联表的每个单元格中有 25 个或更多个例子。
 
 Interpretation
 
@@ -251,13 +251,13 @@ stat, p, dof, expected = chi2_contingency(table)
 More Information
 
 *   [scipy.stats.chi2_contingency](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.chi2_contingency.html)
-*   [维基百科上的卡方测试](https://en.wikipedia.org/wiki/卡方_test)
+*   [维基百科上的卡方测试](https://en.wikipedia.org/wiki/卡方 _test)
 
 ## 3.参数统计假设检验
 
 本节列出了可用于比较数据样本的统计测试。
 
-### 学生的t检验
+### 学生的 t 检验
 
 测试两个独立样本的均值是否显着不同。
 
@@ -283,9 +283,9 @@ stat, p = ttest_ind(data1, data2)
 More Information
 
 *   [scipy.stats.ttest_ind](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html)
-*   [维基百科上的T检验](https://en.wikipedia.org/wiki/Student%27s_t-test)
+*   [维基百科上的 T 检验](https://en.wikipedia.org/wiki/Student%27s_t-test)
 
-### 配对学生的t检验
+### 配对学生的 t 检验
 
 测试两个配对样本的均值是否显着不同。
 
@@ -312,7 +312,7 @@ stat, p = ttest_rel(data1, data2)
 More Information
 
 *   [scipy.stats.ttest_rel](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_rel.html)
-*   [维基百科上的T检验](https://en.wikipedia.org/wiki/Student%27s_t-test)
+*   [维基百科上的 T 检验](https://en.wikipedia.org/wiki/Student%27s_t-test)
 
 ### 方差检验分析（ANOVA）
 
@@ -360,7 +360,7 @@ Interpretation
 
 Python Code
 
-目前在Python中不支持。
+目前在 Python 中不支持。
 
 More Information
 
@@ -368,7 +368,7 @@ More Information
 
 ## 4.非参数统计假设检验
 
-### Mann-Whitney U测试
+### Mann-Whitney U 测试
 
 测试两个独立样本的分布是否相等。
 
@@ -393,7 +393,7 @@ stat, p = mannwhitneyu(data1, data2)
 More Information
 
 *   [scipy.stats.mannwhitneyu](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mannwhitneyu.html)
-*   [维基百科上的Mann-Whitney U测试](https://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U_test)
+*   [维基百科上的 Mann-Whitney U 测试](https://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U_test)
 
 ### 威尔科克森签名等级测试
 
@@ -421,9 +421,9 @@ stat, p = wilcoxon(data1, data2)
 More Information
 
 *   [scipy.stats.wilcoxon](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.wilcoxon.html)
-*   [Wilcoxon对维基百科的签名等级测试](https://en.wikipedia.org/wiki/Wilcoxon_signed-rank_test)
+*   [Wilcoxon 对维基百科的签名等级测试](https://en.wikipedia.org/wiki/Wilcoxon_signed-rank_test)
 
-### Kruskal-Wallis H测试
+### Kruskal-Wallis H 测试
 
 测试两个或多个独立样本的分布是否相等。
 
@@ -448,7 +448,7 @@ stat, p = kruskal(data1, data2, ...)
 More Information
 
 *   [scipy.stats.kruskal](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.kruskal.html)
-*   [Kruskal-Wallis对维基百科的单因素方差分析](https://en.wikipedia.org/wiki/Kruskal%E2%80%93Wallis_one-way_analysis_of_variance)
+*   [Kruskal-Wallis 对维基百科的单因素方差分析](https://en.wikipedia.org/wiki/Kruskal%E2%80%93Wallis_one-way_analysis_of_variance)
 
 ### 弗里德曼测试
 
@@ -482,9 +482,9 @@ More Information
 
 如果您希望深入了解，本节将提供有关该主题的更多资源。
 
-*   [Python中正常性测试的温和介绍](https://machinelearningmastery.com/a-gentle-introduction-to-normality-tests-in-python/)
+*   [Python 中正常性测试的温和介绍](https://machinelearningmastery.com/a-gentle-introduction-to-normality-tests-in-python/)
 *   [如何使用相关来理解变量之间的关系](https://machinelearningmastery.com/how-to-use-correlation-to-understand-the-relationship-between-variables/)
-*   [如何在Python中使用参数统计显着性检验](https://machinelearningmastery.com/parametric-statistical-significance-tests-in-python/)
+*   [如何在 Python 中使用参数统计显着性检验](https://machinelearningmastery.com/parametric-statistical-significance-tests-in-python/)
 *   [统计假设检验的温和介绍](https://machinelearningmastery.com/statistical-hypothesis-tests/)
 
 ## 摘要
@@ -495,7 +495,7 @@ More Information
 
 *   在不同情况下使用的测试类型，例如正态性检查，变量之间的关系以及样本之间的差异。
 *   每个测试的关键假设以及如何解释测试结果。
-*   如何使用Python API实现测试。
+*   如何使用 Python API 实现测试。
 
 你有任何问题吗？
 在下面的评论中提出您的问题，我会尽力回答。

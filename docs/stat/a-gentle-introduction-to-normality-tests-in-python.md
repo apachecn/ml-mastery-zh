@@ -1,4 +1,4 @@
-# Python中正态测试的温和介绍
+# Python 中正态测试的温和介绍
 
 > 原文： [https://machinelearningmastery.com/a-gentle-introduction-to-normality-tests-in-python/](https://machinelearningmastery.com/a-gentle-introduction-to-normality-tests-in-python/)
 
@@ -13,22 +13,22 @@
 完成本教程后，您将了解：
 
 *   样本是否正常如何决定了与数据样本一起使用的统计方法的类型。
-*   用于限定偏离法线的图形方法，例如直方图和Q-Q图。
+*   用于限定偏离法线的图形方法，例如直方图和 Q-Q 图。
 *   用于量化偏离正常的统计正态性检验。
 
 让我们开始吧。
 
-*   **更新于2018年5月**：更新了Anderson-Darling测试结果的解释，感谢Elie。
-*   **更新May / 2018** ：更新了关于“拒绝”与“拒绝拒绝”H0的语言。
+*   **更新于 2018 年 5 月**：更新了 Anderson-Darling 测试结果的解释，感谢 Elie。
+*   **更新 May / 2018** ：更新了关于“拒绝”与“拒绝拒绝”H0 的语言。
 
 ![A Gentle Introduction to Normality Tests in Python](img/333a7e43476d9a74a0484c61c6d9f450.jpg)
 
-Python中的正常性测试的温和介绍
+Python 中的正常性测试的温和介绍
 [Ramoun Cabuhay](https://www.flickr.com/photos/kahboohigh/34984478670/) 的照片，保留一些权利。
 
 ## 教程概述
 
-本教程分为5个部分;他们是：
+本教程分为 5 个部分;他们是：
 
 1.  正常性假设
 2.  测试数据集
@@ -76,7 +76,7 @@ Else:
 
 为测试数据集选择高斯随机数意味着我们确实希望每个测试都能正确识别分布，然而，小样本大小可能会在结果中引入一些噪声。
 
-我们将使用 [randn（）](https://docs.scipy.org/doc/numpy/reference/generated/numpy.random.randn.html) NumPy函数生成平均值为0且标准差为1的随机高斯数，即所谓的标准正态变量。然后我们将它们转换为平均值50和标准差5。
+我们将使用 [randn（）](https://docs.scipy.org/doc/numpy/reference/generated/numpy.random.randn.html) NumPy 函数生成平均值为 0 且标准差为 1 的随机高斯数，即所谓的标准正态变量。然后我们将它们转换为平均值 50 和标准差 5。
 
 下面列出了完整的示例。
 
@@ -116,11 +116,11 @@ mean=50.303 stdv=4.426
 
 在直方图中，数据被分成预先指定数量的组，称为区间。然后将数据分类到每个箱中，并保留每个箱中观察数的计数。
 
-该图显示了横跨x轴的箱保持其序数关系，以及y轴上每个箱中的计数。
+该图显示了横跨 x 轴的箱保持其序数关系，以及 y 轴上每个箱中的计数。
 
 数据样本具有直方图的高斯分布图，显示熟悉的钟形。
 
-可以使用 [hist（）matplotlib函数](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.hist.html)创建直方图。默认情况下，从数据样本中自动估计容器的数量。
+可以使用 [hist（）matplotlib 函数](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.hist.html)创建直方图。默认情况下，从数据样本中自动估计容器的数量。
 
 下面列出了一个完整的例子，展示了测试问题的直方图。
 
@@ -138,7 +138,7 @@ pyplot.hist(data)
 pyplot.show()
 ```
 
-运行该示例会创建一个直方图，显示每个bin中的观察数。
+运行该示例会创建一个直方图，显示每个 bin 中的观察数。
 
 我们可以看到数据的类似高斯的形状，虽然不是熟悉的钟形，但是粗略的近似。
 
@@ -148,17 +148,17 @@ pyplot.show()
 
 ### 分位数 - 分位数图
 
-用于检查数据样本分布的另一个流行图是分位数 - 分位数图，Q-Q图或简称QQ图。
+用于检查数据样本分布的另一个流行图是分位数 - 分位数图，Q-Q 图或简称 QQ 图。
 
-该图生成了我们正在比较的理想分布的自己的样本，在这种情况下是高斯分布。理想化的样本被分成组（例如5），称为分位数。样本中的每个数据点与来自相同累积分布的理想分布的类似成员配对。
+该图生成了我们正在比较的理想分布的自己的样本，在这种情况下是高斯分布。理想化的样本被分成组（例如 5），称为分位数。样本中的每个数据点与来自相同累积分布的理想分布的类似成员配对。
 
-将得到的点绘制为散点图，其中x轴为理想值，y轴为数据样本。
+将得到的点绘制为散点图，其中 x 轴为理想值，y 轴为数据样本。
 
-分布的完美匹配将通过从绘图的左下角到右上角的45度角的点线来显示。通常在图上绘制一条线以帮助明确这种期望。线上的点偏差表示与预期分布的偏差。
+分布的完美匹配将通过从绘图的左下角到右上角的 45 度角的点线来显示。通常在图上绘制一条线以帮助明确这种期望。线上的点偏差表示与预期分布的偏差。
 
-我们可以使用 [qqplot（）statsmodels函数](http://www.statsmodels.org/dev/generated/statsmodels.graphics.gofplots.qqplot.html)在Python中开发QQ图。该函数采用数据样本，默认情况下假设我们将其与高斯分布进行比较。我们可以通过将'_行_'参数设置为'`s`'来绘制标准化行。
+我们可以使用 [qqplot（）statsmodels 函数](http://www.statsmodels.org/dev/generated/statsmodels.graphics.gofplots.qqplot.html)在 Python 中开发 QQ 图。该函数采用数据样本，默认情况下假设我们将其与高斯分布进行比较。我们可以通过将'_ 行 _'参数设置为'`s`'来绘制标准化行。
 
-下面提供了将测试数据集绘制为QQ图的完整示例。
+下面提供了将测试数据集绘制为 QQ 图的完整示例。
 
 ```py
 # QQ Plot
@@ -175,13 +175,13 @@ qqplot(data, line='s')
 pyplot.show()
 ```
 
-运行该示例创建QQ图，其显示对角线中的点的散点图，紧密拟合来自高斯分布的样本的预期对角线图案。
+运行该示例创建 QQ 图，其显示对角线中的点的散点图，紧密拟合来自高斯分布的样本的预期对角线图案。
 
 有一些小的偏差，特别是在图的底部，这是小数据样本所预期的。
 
 ![Q-Q Plot Normality Check](img/1d72761d3b300cca79d94e6735ac66ec.jpg)
 
-QQ图正常检查
+QQ 图正常检查
 
 ## 统计正态性检验
 
@@ -189,7 +189,7 @@ QQ图正常检查
 
 每个测试都做出不同的假设，并考虑数据的不同方面。
 
-我们将在本节中介绍3种常用测试，您可以将这些测试应用于您自己的数据样本。
+我们将在本节中介绍 3 种常用测试，您可以将这些测试应用于您自己的数据样本。
 
 ### 解释考试
 
@@ -198,30 +198,30 @@ QQ图正常检查
 每个测试至少会返回两件事：
 
 *   **统计**：通过测试计算的数量，通过将其与测试统计分布的临界值进行比较，可以在测试环境中进行解释。
-*   **p值**：用于解释测试，在这种情况下，样本是否是从高斯分布中提取的。
+*   **p 值**：用于解释测试，在这种情况下，样本是否是从高斯分布中提取的。
 
-每个测试都会计算特定于测试的统计量。该统计量可以帮助解释结果，但可能需要更深入的统计量和更深入的特定统计检验知识。相反，p值可用于在实际应用中快速准确地解释统计量。
+每个测试都会计算特定于测试的统计量。该统计量可以帮助解释结果，但可能需要更深入的统计量和更深入的特定统计检验知识。相反，p 值可用于在实际应用中快速准确地解释统计量。
 
-测试假设样本是从高斯分布中提取的。从技术上讲，这称为零假设，即H0。选择称为α的阈值水平，通常为5％（或0.05），用于解释p值。
+测试假设样本是从高斯分布中提取的。从技术上讲，这称为零假设，即 H0。选择称为α的阈值水平，通常为 5％（或 0.05），用于解释 p 值。
 
-在这些测试的SciPy实现中，您可以按如下方式解释p值。
+在这些测试的 SciPy 实现中，您可以按如下方式解释 p 值。
 
-*   **p &lt;= alpha** ：拒绝H0，不正常。
-*   **p＆gt; alpha** ：无法拒绝H0，正常。
+*   **p &lt;= alpha** ：拒绝 H0，不正常。
+*   **p＆gt; alpha** ：无法拒绝 H0，正常。
 
-这意味着，一般来说，我们正在寻找具有更大p值的结果，以确认我们的样本可能来自高斯分布。
+这意味着，一般来说，我们正在寻找具有更大 p 值的结果，以确认我们的样本可能来自高斯分布。
 
-高于5％的结果并不意味着零假设是正确的。这意味着，鉴于现有证据，这很可能是真的。 p值不是数据拟合高斯分布的概率;它可以被认为是一个有助于我们解释统计测试的价值。
+高于 5％的结果并不意味着零假设是正确的。这意味着，鉴于现有证据，这很可能是真的。 p 值不是数据拟合高斯分布的概率;它可以被认为是一个有助于我们解释统计测试的价值。
 
-### Shapiro-Wilk测试
+### Shapiro-Wilk 测试
 
-[Shapiro-Wilk测试](https://en.wikipedia.org/wiki/Shapiro%E2%80%93Wilk_test)评估数据样本并量化数据从高斯分布中抽取的可能性，以Samuel Shapiro和Martin Wilk命名。
+[Shapiro-Wilk 测试](https://en.wikipedia.org/wiki/Shapiro%E2%80%93Wilk_test)评估数据样本并量化数据从高斯分布中抽取的可能性，以 Samuel Shapiro 和 Martin Wilk 命名。
 
-在实践中，Shapiro-Wilk测试被认为是对正常性的可靠测试，尽管有一些建议认为该测试可能适用于较小的数据样本，例如成千上万的观察或更少。
+在实践中，Shapiro-Wilk 测试被认为是对正常性的可靠测试，尽管有一些建议认为该测试可能适用于较小的数据样本，例如成千上万的观察或更少。
 
-[shapiro（）SciPy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.shapiro.html) 函数将计算给定数据集上的Shapiro-Wilk。该函数返回由测试计算的W统计量和p值。
+[shapiro（）SciPy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.shapiro.html) 函数将计算给定数据集上的 Shapiro-Wilk。该函数返回由测试计算的 W 统计量和 p 值。
 
-下面列出了对数据集执行Shapiro-Wilk测试的完整示例。
+下面列出了对数据集执行 Shapiro-Wilk 测试的完整示例。
 
 ```py
 # Shapiro-Wilk Test
@@ -243,25 +243,25 @@ else:
 	print('Sample does not look Gaussian (reject H0)')
 ```
 
-首先运行示例计算数据样本的测试，然后打印统计和计算的p值。
+首先运行示例计算数据样本的测试，然后打印统计和计算的 p 值。
 
-p值感兴趣并且发现数据可能来自高斯分布。
+p 值感兴趣并且发现数据可能来自高斯分布。
 
 ```py
 Statistics=0.992, p=0.822
 Sample looks Gaussian (fail to reject H0)
 ```
 
-### D'Agostino的K ^ 2测试
+### D'Agostino 的 K ^ 2 测试
 
-[D'Agostino的K ^ 2检验](https://en.wikipedia.org/wiki/D%27Agostino%27s_K-squared_test)根据数据计算汇总统计量，即峰度和偏度，以确定数据分布是否偏离正态分布，以Ralph D'Agostino命名。
+[D'Agostino 的 K ^ 2 检验](https://en.wikipedia.org/wiki/D%27Agostino%27s_K-squared_test)根据数据计算汇总统计量，即峰度和偏度，以确定数据分布是否偏离正态分布，以 Ralph D'Agostino 命名。
 
 *   **偏斜**是左或右推送分布量的量化，是分布中不对称性的度量。
 *   **峰度**量化了尾部的分布量。它是一种简单且常用的常态统计检验。
 
-D'Agostino的K ^ 2检验可通过 [normaltest（）SciPy函数](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.normaltest.html)获得，并返回检验统计量和p值。
+D'Agostino 的 K ^ 2 检验可通过 [normaltest（）SciPy 函数](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.normaltest.html)获得，并返回检验统计量和 p 值。
 
-下面列出了数据集上D'Agostino的K ^ 2检验的完整示例。
+下面列出了数据集上 D'Agostino 的 K ^ 2 检验的完整示例。
 
 ```py
 # D'Agostino and Pearson's Test
@@ -283,9 +283,9 @@ else:
 	print('Sample does not look Gaussian (reject H0)')
 ```
 
-运行该示例计算统计量并打印统计量和p值。
+运行该示例计算统计量并打印统计量和 p 值。
 
-p值被解释为5％的α，并且发现测试数据集没有显着偏离正常。
+p 值被解释为 5％的α，并且发现测试数据集没有显着偏离正常。
 
 ```py
 Statistics=0.102, p=0.950
@@ -294,15 +294,15 @@ Sample looks Gaussian (fail to reject H0)
 
 ### 安德森 - 达林测试
 
-[Anderson-Darling测试](https://en.wikipedia.org/wiki/Anderson%E2%80%93Darling_test)是一项统计测试，可用于评估数据样本是否来自众多已知数据样本之一，以Theodore Anderson和Donald Darling命名。
+[Anderson-Darling 测试](https://en.wikipedia.org/wiki/Anderson%E2%80%93Darling_test)是一项统计测试，可用于评估数据样本是否来自众多已知数据样本之一，以 Theodore Anderson 和 Donald Darling 命名。
 
-它可用于检查数据样本是否正常。该测试是更复杂的非参数拟合优度统计检验的修改版本，称为 [Kolmogorov-Smirnov检验](https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test)。
+它可用于检查数据样本是否正常。该测试是更复杂的非参数拟合优度统计检验的修改版本，称为 [Kolmogorov-Smirnov 检验](https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test)。
 
-Anderson-Darling测试的一个特征是它返回一个临界值列表而不是单个p值。这可以为更彻底地解释结果提供基础。
+Anderson-Darling 测试的一个特征是它返回一个临界值列表而不是单个 p 值。这可以为更彻底地解释结果提供基础。
 
-[anderson（）SciPy函数](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.anderson.html)实现了Anderson-Darling测试。它将数据样本和分发的名称作为参数进行测试。默认情况下，测试将检查高斯分布（ _dist ='norm'_）。
+[anderson（）SciPy 函数](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.anderson.html)实现了 Anderson-Darling 测试。它将数据样本和分发的名称作为参数进行测试。默认情况下，测试将检查高斯分布（ _dist ='norm'_）。
 
-下面列出了计算样本问题的Anderson-Darling检验的完整示例。
+下面列出了计算样本问题的 Anderson-Darling 检验的完整示例。
 
 ```py
 # Anderson-Darling Test
@@ -327,7 +327,7 @@ for i in range(len(result.critical_values)):
 
 运行该示例计算测试数据集上的统计量并打印临界值。
 
-统计检验中的临界值是一系列预定义的显着性边界，如果计算的统计量小于临界值，则H0可能无法被拒绝。测试返回一系列不同的常用显着性水平的临界值，而不仅仅是单个p值。
+统计检验中的临界值是一系列预定义的显着性边界，如果计算的统计量小于临界值，则 H0 可能无法被拒绝。测试返回一系列不同的常用显着性水平的临界值，而不仅仅是单个 p 值。
 
 如果计算的检验统计量小于选定显着性水平的临界值，我们可以通过不拒绝数据正常的零假设来解释结果。
 
@@ -398,10 +398,10 @@ Statistic: 0.220
 
 *   [维基百科的正常性测试](https://en.wikipedia.org/wiki/Normality_test)
 *   [维基百科上的直方图](https://en.wikipedia.org/wiki/Histogram)
-*   [维基百科上的Q-Q情节](https://en.wikipedia.org/wiki/Q%E2%80%93Q_plot)
-*   [D'Agostino在维基百科上的K平方测试](https://en.wikipedia.org/wiki/D%27Agostino%27s_K-squared_test)
-*   [维基百科上的Anderson-Darling测试](https://en.wikipedia.org/wiki/Anderson%E2%80%93Darling_test)
-*   维基百科上的 [Shapiro-Wilk测试](https://en.wikipedia.org/wiki/Shapiro%E2%80%93Wilk_test)
+*   [维基百科上的 Q-Q 情节](https://en.wikipedia.org/wiki/Q%E2%80%93Q_plot)
+*   [D'Agostino 在维基百科上的 K 平方测试](https://en.wikipedia.org/wiki/D%27Agostino%27s_K-squared_test)
+*   [维基百科上的 Anderson-Darling 测试](https://en.wikipedia.org/wiki/Anderson%E2%80%93Darling_test)
+*   维基百科上的 [Shapiro-Wilk 测试](https://en.wikipedia.org/wiki/Shapiro%E2%80%93Wilk_test)
 
 ## 摘要
 
@@ -410,7 +410,7 @@ Statistic: 0.220
 具体来说，你学到了：
 
 *   样本是否正常如何决定了与数据样本一起使用的统计方法的类型。
-*   用于限定偏离正常的图形方法，例如直方图和Q-Q图。
+*   用于限定偏离正常的图形方法，例如直方图和 Q-Q 图。
 *   用于量化偏离正常的统计正态性检验。
 
 你有任何问题吗？

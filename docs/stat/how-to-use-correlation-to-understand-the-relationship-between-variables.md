@@ -11,12 +11,12 @@
 完成本教程后，您将了解：
 
 *   如何计算协方差矩阵以总结两个或多个变量之间的线性关系。
-*   如何计算Pearson相关系数来总结两个变量之间的线性关系。
-*   如何计算Spearman的相关系数来总结两个变量之间的单调关系。
+*   如何计算 Pearson 相关系数来总结两个变量之间的线性关系。
+*   如何计算 Spearman 的相关系数来总结两个变量之间的单调关系。
 
 让我们开始吧。
 
-*   **更新May / 2018** ：更新了协方差符号的描述（感谢 [Fulya](https://twitter.com/Fulyaku/status/990662656406237190) ）。
+*   **更新 May / 2018** ：更新了协方差符号的描述（感谢 [Fulya](https://twitter.com/Fulyaku/status/990662656406237190) ）。
 
 ![How to Use Correlation to Understand the Relationship Between Variables](img/ddbd0b23160c64e70d18247789b7328e.jpg)
 
@@ -25,7 +25,7 @@
 
 ## 教程概述
 
-本教程分为5个部分;他们是：
+本教程分为 5 个部分;他们是：
 
 1.  什么是相关性？
 2.  测试数据集
@@ -63,9 +63,9 @@
 
 在我们查看关联方法之前，让我们定义一个可用于测试方法的数据集。
 
-我们将生成两个具有强正相关的两个变量的1,000个样本。第一个变量是从高斯分布中抽取的随机数，平均值为100，标准差为20.第二个变量是来自第一个变量的值，高斯噪声加上平均值为50，标准差为10 。
+我们将生成两个具有强正相关的两个变量的 1,000 个样本。第一个变量是从高斯分布中抽取的随机数，平均值为 100，标准差为 20.第二个变量是来自第一个变量的值，高斯噪声加上平均值为 50，标准差为 10 。
 
-我们将使用 _randn（）_函数生成平均值为0且标准差为1的随机高斯值，然后将结果乘以我们自己的标准差并添加平均值以将值转换为首选范围。
+我们将使用 _randn（）_ 函数生成平均值为 0 且标准差为 1 的随机高斯值，然后将结果乘以我们自己的标准差并添加平均值以将值转换为首选范围。
 
 伪随机数生成器被播种以确保每次运行代码时我们都得到相同的数字样本。
 
@@ -120,7 +120,7 @@ cov(X, Y) = (sum (x - mean(X)) * (y - mean(Y))) * 1/(n-1)
 
 协方差的符号可以解释为两个变量是在相同方向上变化（正）还是在不同方向上变化（负）。协方差的大小不容易解释。协方差值为零表示两个变量完全独立。
 
-`cov()`NumPy函数可用于计算两个或更多个变量之间的协方差矩阵。
+`cov()`NumPy 函数可用于计算两个或更多个变量之间的协方差矩阵。
 
 ```py
 covariance = cov(data1, data2)
@@ -153,20 +153,20 @@ print(covariance)
 
 因为数据集是根据从高斯分布绘制的每个变量而设计的，并且变量是线性相关的，所以协方差是描述关系的合理方法。
 
-两个变量之间的协方差为389.75。我们可以看到它是积极的，表明变量的变化方向与我们预期的相同。
+两个变量之间的协方差为 389.75。我们可以看到它是积极的，表明变量的变化方向与我们预期的相同。
 
 ```py
 [[385.33297729 389.7545618 ]
  [389.7545618  500.38006058]]
 ```
 
-作为统计工具的协方差问题在于解释具有挑战性。这导致我们接下来的Pearson相关系数。
+作为统计工具的协方差问题在于解释具有挑战性。这导致我们接下来的 Pearson 相关系数。
 
 ## 皮尔逊的相关性
 
-Pearson相关系数（以Karl Pearson命名）可用于总结两个数据样本之间的线性关系的强度。
+Pearson 相关系数（以 Karl Pearson 命名）可用于总结两个数据样本之间的线性关系的强度。
 
-Pearson相关系数计算为两个变量的协方差除以每个数据样本的标准差的乘积。这是两个变量之间协方差的归一化，以给出可解释的分数。
+Pearson 相关系数计算为两个变量的协方差除以每个数据样本的标准差的乘积。这是两个变量之间协方差的归一化，以给出可解释的分数。
 
 ```py
 Pearson's correlation coefficient = covariance(X, Y) / (stdv(X) * stdv(Y))
@@ -176,9 +176,9 @@ Pearson's correlation coefficient = covariance(X, Y) / (stdv(X) * stdv(Y))
 
 计算结果，相关系数可以解释为理解关系。
 
-系数返回介于-1和1之间的值，表示从完全负相关到完全正相关的相关限制。值0表示没有相关性。必须解释该值，其中低于-0.5或高于0.5的值通常表示显着的相关性，低于这些值的值表明相关性较不显着。
+系数返回介于-1 和 1 之间的值，表示从完全负相关到完全正相关的相关限制。值 0 表示没有相关性。必须解释该值，其中低于-0.5 或高于 0.5 的值通常表示显着的相关性，低于这些值的值表明相关性较不显着。
 
-`pearsonr()`SciPy函数可用于计算具有相同长度的两个数据样本之间的Pearson相关系数。
+`pearsonr()`SciPy 函数可用于计算具有相同长度的两个数据样本之间的 Pearson 相关系数。
 
 我们可以计算出测试问题中两个变量之间的相关性。
 
@@ -199,17 +199,17 @@ corr, _ = pearsonr(data1, data2)
 print('Pearsons correlation: %.3f' % corr)
 ```
 
-运行该示例计算并打印Pearson的相关系数。
+运行该示例计算并打印 Pearson 的相关系数。
 
-我们可以看到这两个变量是正相关的，相关系数是0.8。这表明高水平的相关性，例如值大于0.5且接近1.0。
+我们可以看到这两个变量是正相关的，相关系数是 0.8。这表明高水平的相关性，例如值大于 0.5 且接近 1.0。
 
 ```py
 Pearsons correlation: 0.888
 ```
 
-Pearson相关系数可用于评估两个以上变量之间的关系。
+Pearson 相关系数可用于评估两个以上变量之间的关系。
 
-这可以通过计算数据集中每对变量之间的关系矩阵来完成。结果是一个称为相关矩阵的对称矩阵，沿对角线的值为1.0，因为每列总是与自身完全相关。
+这可以通过计算数据集中每对变量之间的关系矩阵来完成。结果是一个称为相关矩阵的对称矩阵，沿对角线的值为 1.0，因为每列总是与自身完全相关。
 
 ## 斯皮尔曼的相关性
 
@@ -217,9 +217,9 @@ Pearson相关系数可用于评估两个以上变量之间的关系。
 
 此外，所考虑的两个变量可以具有非高斯分布。
 
-在这种情况下，Spearman的相关系数（以Charles Spearman命名）可用于总结两个数据样本之间的强度。如果变量之间存在线性关系，也可以使用这种关系测试，但功率稍低（例如，可能导致系数得分较低）。
+在这种情况下，Spearman 的相关系数（以 Charles Spearman 命名）可用于总结两个数据样本之间的强度。如果变量之间存在线性关系，也可以使用这种关系测试，但功率稍低（例如，可能导致系数得分较低）。
 
-与Pearson相关系数一样，对于完全负相关的变量，得分在-1和1之间，并且分别完全正相关。
+与 Pearson 相关系数一样，对于完全负相关的变量，得分在-1 和 1 之间，并且分别完全正相关。
 
 不是使用样本本身的协方差和标准偏差来计算系数，而是根据每个样本的值的相对等级计算这些统计量。这是非参数统计中常用的方法，例如统计方法，我们不假设数据的分布，如高斯。
 
@@ -229,9 +229,9 @@ Spearman's correlation coefficient = covariance(rank(X), rank(Y)) / (stdv(rank(X
 
 尽管假设了单调关系，但不假设变量之间存在线性关系。这是两个变量之间增加或减少关系的数学名称。
 
-如果您不确定两个变量之间的分布和可能的关系，Spearman相关系数是一个很好的工具。
+如果您不确定两个变量之间的分布和可能的关系，Spearman 相关系数是一个很好的工具。
 
-`spearmanr()`SciPy函数可用于计算具有相同长度的两个数据样本之间的Spearman相关系数。
+`spearmanr()`SciPy 函数可用于计算具有相同长度的两个数据样本之间的 Spearman 相关系数。
 
 We can calculate the correlation between the two variables in our test problem.
 
@@ -252,22 +252,22 @@ corr, _ = spearmanr(data1, data2)
 print('Spearmans correlation: %.3f' % corr)
 ```
 
-运行该示例计算并打印Spearman的相关系数。
+运行该示例计算并打印 Spearman 的相关系数。
 
-我们知道数据是高斯数，并且变量之间的关系是线性的。然而，非参数基于秩的方法显示0.8之间的强相关性。
+我们知道数据是高斯数，并且变量之间的关系是线性的。然而，非参数基于秩的方法显示 0.8 之间的强相关性。
 
 ```py
 Spearmans correlation: 0.872
 ```
 
-与Pearson相关系数一样，可以对数据集中的每个变量成对地计算系数，以给出用于查看的相关矩阵。
+与 Pearson 相关系数一样，可以对数据集中的每个变量成对地计算系数，以给出用于查看的相关矩阵。
 
 ## 扩展
 
 本节列出了一些扩展您可能希望探索的教程的想法。
 
 *   生成具有正负关系的自己的数据集，并计算两个相关系数。
-*   编写函数来计算所提供数据集的Pearson或Spearman相关矩阵。
+*   编写函数来计算所提供数据集的 Pearson 或 Spearman 相关矩阵。
 *   加载标准机器学习数据集并计算所有实值变量对之间的相关系数。
 
 如果你探索任何这些扩展，我很想知道。
@@ -278,7 +278,7 @@ Spearmans correlation: 0.872
 
 ### 帖子
 
-*   [对NumPy](https://machinelearningmastery.com/introduction-to-expected-value-variance-and-covariance/) 的期望值，方差和协方差的温和介绍
+*   [对 NumPy](https://machinelearningmastery.com/introduction-to-expected-value-variance-and-covariance/) 的期望值，方差和协方差的温和介绍
 *   [自相关和部分自相关的温和介绍](https://machinelearningmastery.com/gentle-introduction-autocorrelation-partial-autocorrelation/)
 
 ### API
@@ -296,8 +296,8 @@ Spearmans correlation: 0.872
 
 *   [维基百科的相关性和依赖性](https://en.wikipedia.org/wiki/Correlation_and_dependence)
 *   [维基百科上的协方差](https://en.wikipedia.org/wiki/Covariance)
-*   [维基百科的Pearson相关系数](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)
-*   [Spearman在维基百科上的等级相关系数](https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient)
+*   [维基百科的 Pearson 相关系数](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)
+*   [Spearman 在维基百科上的等级相关系数](https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient)
 *   [维基百科排名](https://en.wikipedia.org/wiki/Ranking)
 
 ## 摘要
@@ -307,8 +307,8 @@ Spearmans correlation: 0.872
 具体来说，你学到了：
 
 *   如何计算协方差矩阵以总结两个或多个变量之间的线性关系。
-*   如何计算Pearson相关系数来总结两个变量之间的线性关系。
-*   如何计算Spearman的相关系数来总结两个变量之间的单调关系。
+*   如何计算 Pearson 相关系数来总结两个变量之间的线性关系。
+*   如何计算 Spearman 的相关系数来总结两个变量之间的单调关系。
 
 你有任何问题吗？
 在下面的评论中提出您的问题，我会尽力回答。

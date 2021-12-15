@@ -1,14 +1,14 @@
-# 更好的朴素贝叶斯：从朴素贝叶斯算法中收益最大的12个技巧
+# 更好的朴素贝叶斯：从朴素贝叶斯算法中收益最大的 12 个技巧
 
 > 原文： [https://machinelearningmastery.com/better-naive-bayes/](https://machinelearningmastery.com/better-naive-bayes/)
 
-Naive Bayes是一种简单而强大的技术，您应该在分类问题上进行测试和使用。
+Naive Bayes 是一种简单而强大的技术，您应该在分类问题上进行测试和使用。
 
 它易于理解，可以提供良好的结果，并且可以快速构建模型并做出预测。仅出于这些原因，您应该仔细查看算法。
 
-在最近的博客文章中，[学习了如何在python](http://machinelearningmastery.com/naive-bayes-classifier-scratch-python/ "How To Implement Naive Bayes From Scratch in Python") 中从零开始实现Naive Bayes算法。
+在最近的博客文章中，[学习了如何在 python](http://machinelearningmastery.com/naive-bayes-classifier-scratch-python/ "How To Implement Naive Bayes From Scratch in Python") 中从零开始实现 Naive Bayes 算法。
 
-在这篇文章中，您将学习从Naive Bayes算法中获得最大收益的技巧和窍门。
+在这篇文章中，您将学习从 Naive Bayes 算法中获得最大收益的技巧和窍门。
 
 [![Better Naive Bayes](img/407cd2016e6e4e31481076cfa4675a2d.jpg)](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/12/Better-Naive-Bayes.jpg)
 
@@ -37,31 +37,31 @@ Naive Bayes是一种简单而强大的技术，您应该在分类问题上进行
 
 方便的机器学习算法思维导图的样本。
 
-我已经创建了一个由类型组织的60多种算法的方便思维导图。
+我已经创建了一个由类型组织的 60 多种算法的方便思维导图。
 
 下载，打印并使用它。
 
 ## 3.使用其他分配
 
-要将Naive Bayes与分类属性一起使用，您需要计算每个观察的频率。
+要将 Naive Bayes 与分类属性一起使用，您需要计算每个观察的频率。
 
 要将朴素贝叶斯与实值属性一起使用，您可以使用高斯分布来汇总属性的密度。或者，您可以使用另一种更好地描述数据分布的函数形式，例如指数。
 
-不要将自己局限于Naive Bayes算法示例中使用的分布。选择最能表征您的数据和预测问题的分布。
+不要将自己局限于 Naive Bayes 算法示例中使用的分布。选择最能表征您的数据和预测问题的分布。
 
 ## 4.使用概率进行特征选择
 
 特征选择是选择最能表征预测变量的数据属性。
 
-在Naive Bayes中，每个属性的概率都是独立于训练数据集计算的。您可以使用搜索算法将不同属性的概率组合在一起，并在预测输出变量时评估其表现。
+在 Naive Bayes 中，每个属性的概率都是独立于训练数据集计算的。您可以使用搜索算法将不同属性的概率组合在一起，并在预测输出变量时评估其表现。
 
 ## 5.细分数据
 
-他们的数据明确定义是否能够很好地响应Naive Bayes概率方法？
+他们的数据明确定义是否能够很好地响应 Naive Bayes 概率方法？
 
-通过简单的概率方法（如Naive Bayes）识别和分离易于处理的段可以提高表现并关注更难以建模的问题元素。
+通过简单的概率方法（如 Naive Bayes）识别和分离易于处理的段可以提高表现并关注更难以建模的问题元素。
 
-探索不同的子集，例如Naive Bayes很可能处理的平均或流行案例。
+探索不同的子集，例如 Naive Bayes 很可能处理的平均或流行案例。
 
 ## 6.重新计算概率
 
@@ -73,13 +73,13 @@ Naive Bayes是一种简单而强大的技术，您应该在分类问题上进行
 
 ## 7.用作生成模型
 
-Naive Bayes方法表征了问题，而这又可以用于对看不见的数据做出预测。
+Naive Bayes 方法表征了问题，而这又可以用于对看不见的数据做出预测。
 
 该概率表征也可用于生成问题的实例。
 
 在数字向量的情况下，可以对概率分布进行采样以创建新的虚构向量。
 
-在文本（Naive Bayes的一个非常流行的应用程序）的情况下，该模型可用于创建虚构的输入文档。
+在文本（Naive Bayes 的一个非常流行的应用程序）的情况下，该模型可用于创建虚构的输入文档。
 
 这对你的问题有什么用？
 
@@ -101,11 +101,11 @@ Naive Bayes方法表征了问题，而这又可以用于对看不见的数据做
 
 您可以通过并行计算属性概率来利用此假设来进一步加速算法的执行。
 
-根据数据集和资源的大小，您可以使用不同的CPU，不同的计算机或不同的集群来执行此操作。
+根据数据集和资源的大小，您可以使用不同的 CPU，不同的计算机或不同的集群来执行此操作。
 
 ## 10.比您想象的更少的数据
 
-Naive Bayes不需要很多数据就能很好地运行。
+Naive Bayes 不需要很多数据就能很好地运行。
 
 它需要足够的数据来理解与输出变量隔离的每个属性的概率关系。
 
@@ -113,24 +113,24 @@ Naive Bayes不需要很多数据就能很好地运行。
 
 此外，不太可能以较小的样本尺寸过拟合训练数据。
 
-如果您没有太多的训练数据，请尝试Naive Bayes。
+如果您没有太多的训练数据，请尝试 Naive Bayes。
 
 ## 11.零观测问题
 
 如果属性分布与训练数据集相比存在显着差异，那么朴素贝叶斯将不可靠。
 
-一个重要的例子是分类属性具有在训练中未观察到的值的情况。在这种情况下，模型将分配0概率并且无法做出预测。
+一个重要的例子是分类属性具有在训练中未观察到的值的情况。在这种情况下，模型将分配 0 概率并且无法做出预测。
 
 应检查这些案例并以不同方式处理。在解决了这些案例后（已知答案），应重新计算概率并更新模型。
 
 ## 12.无论如何它都有效
 
-关于Naive Bayes的一个有趣观点是，即使违反了独立性假设并且属性之间存在明确的已知关系，它仍然有效。
+关于 Naive Bayes 的一个有趣观点是，即使违反了独立性假设并且属性之间存在明确的已知关系，它仍然有效。
 
 重要的是，这是您需要[在给定问题上检查各种算法](http://machinelearningmastery.com/why-you-should-be-spot-checking-algorithms-on-your-machine-learning-problems/ "Why you should be Spot-Checking Algorithms on your Machine Learning Problems")的原因之一，因为结果很可能会让您大吃一惊。
 
 ## 摘要
 
-在这篇文章中，您学到了很多关于如何使用和从Naive Bayes算法中获得更多信息的知识。
+在这篇文章中，您学到了很多关于如何使用和从 Naive Bayes 算法中获得更多信息的知识。
 
 你有一些使用本文未涉及的朴素贝叶斯的技巧和提示发表评论。

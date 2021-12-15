@@ -10,7 +10,7 @@
 
 这是一篇很长的文章，可以深入链接到很多视频，你可以收藏，跳转到整个课程的特定目录，而不是选择一门课程并从头至尾完成。
 
-通过我的新书中的几行代码，了解如何为一系列问题的预测性建模并开发深度学习模型，总共包括18个分步教程和9个项目。
+通过我的新书中的几行代码，了解如何为一系列问题的预测性建模并开发深度学习模型，总共包括 18 个分步教程和 9 个项目。
 
 让我们现在开始吧。
 
@@ -62,8 +62,8 @@
 *   [深度学习第 4 讲：正则化，模型复杂性和数据复杂性（第 1 部分）](https://www.youtube.com/watch?v=VR0W_PNwLGw&index=7&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu)
 *   [深度学习第五讲：正则化，模型复杂性和数据复杂性（第 2 部分）](https://www.youtube.com/watch?v=qz9bKfOqd0Y&index=8&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu)
 *   [深度学习第六讲：优化](https://www.youtube.com/watch?v=0qUAb94CpOw&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu&index=9)
-*   [深度学习第 7 讲：逻辑回归，Torch实现](https://www.youtube.com/watch?v=FYgsztDxSvE&index=11&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu)
-*   [深度学习第 8 讲：模块化反向传播，逻辑回归和Torch](https://www.youtube.com/watch?v=-YRB0eFxeQA&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu&index=10)
+*   [深度学习第 7 讲：逻辑回归，Torch 实现](https://www.youtube.com/watch?v=FYgsztDxSvE&index=11&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu)
+*   [深度学习第 8 讲：模块化反向传播，逻辑回归和 Torch](https://www.youtube.com/watch?v=-YRB0eFxeQA&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu&index=10)
 *   [深度学习讲座 9：Torch 中的神经网络和模块化设计](https://www.youtube.com/watch?v=NUKp0c4xb8w&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu&index=12)
 *   [深度学习讲座 10：卷积神经网络](https://www.youtube.com/watch?v=bEUX_56Lojc&index=13&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu)
 *   [深度学习讲座 11：最大边缘学习，转移和记忆网络](https://www.youtube.com/watch?v=jCGplSKrl2Y&index=15&list=PLE6Wd9FR--EfW8dtjAuPoTuPcqmOV53Fu)
@@ -190,7 +190,7 @@ YouTube 播放列表的文件名称很差，而且有些缺少讲座， 2016 年
 *   [第 10 讲：针对不同任务的递归神经网络（例如情绪分析）](https://www.youtube.com/watch?v=sVXp0UwheXw&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=10)
 *   [第 11 讲：期中考试](https://www.youtube.com/watch?v=HYLZCCX4q5o&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=13)
 *   [第 13 讲：用于句子分类的卷积神经网络](https://www.youtube.com/watch?v=EevTPpQvxiU&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=11)
-*   [第 15 讲：DL 在 NLP方面上 的应用](https://www.youtube.com/watch?v=BVbQRrrsJo0&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=12)
+*   [第 15 讲：DL 在 NLP 方面上 的应用](https://www.youtube.com/watch?v=BVbQRrrsJo0&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=12)
 *   [与 Andrew Maas 的客座讲座：语音识别](https://www.youtube.com/watch?v=6D8_4GkEWUg&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=14)
 *   [与杰森韦斯顿的客座讲座：记忆网络](https://www.youtube.com/watch?v=Xumy3Yjq4zk&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=15)
 *   [与 Elliot 英语的客座讲座：高效的实现和 GPU](https://www.youtube.com/watch?v=8Uxe8umUDYA&list=PLmImxx8Char8dxWB9LRqdpCTmewaml96q&index=16)
@@ -212,7 +212,7 @@ YouTube 播放列表的文件名称很差，而且有些缺少讲座， 2016 年
 
 不幸的是，课程视频被删除了，但是一些聪明的人已经找到了将它们放回其他地方的方法，请参阅下面资源部分中的播放列表。
 
-> 我现在很遗憾的通知，由于法律问题，我们被迫删除了 CS231n 视频。仅仅有25万的社会观点因此服务而受益。
+> 我现在很遗憾的通知，由于法律问题，我们被迫删除了 CS231n 视频。仅仅有 25 万的社会观点因此服务而受益。
 >
 > - Andrej Karpathy（@karpathy） [2016 年 5 月 3 日](https://twitter.com/karpathy/status/727618058471112704)
 

@@ -6,7 +6,7 @@
 
 有许多术语可供使用，许多术语可能无法一致使用。如果您来自另一个可能使用与机器学习相同的术语的研究领域，尤其如此，但它们的使用方式不同。
 
-例如：术语“_模型参数_”和“_模型超参数_”。
+例如：术语“_ 模型参数 _”和“_ 模型超参数 _”。
 
 对这些术语没有明确的定义是初学者的共同斗争，尤其是那些来自统计学或经济学领域的初学者。
 
@@ -36,7 +36,7 @@
 *   **统计**：在统计中，您可以假设变量的分布，例如高斯分布。高斯分布的两个参数是平均值（`mu`）和标准偏差（`sigma`）。这适用于机器学习，其中这些参数可以从数据估计并用作预测模型的一部分。
 *   **编程**：在编程中，您可以将参数传递给函数。在这种情况下，参数是一个函数参数，可以具有一系列值。在机器学习中，您使用的特定模型是函数，需要参数才能对新数据做出预测。
 
-模型是否具有固定或可变数量的参数确定它是否可被称为“_参数_”或“_非参数_”。
+模型是否具有固定或可变数量的参数确定它是否可被称为“_ 参数 _”或“_ 非参数 _”。
 
 模型参数的一些示例包括：
 
@@ -57,9 +57,9 @@
 
 当针对特定问题调整机器学习算法时，例如当您使用网格搜索或随机搜索时，您正在调整模型的超参数或命令以发现导致最熟练的模型参数预测。
 
-> 许多模型具有不能从数据直接估计的重要参数。例如，在K-最近邻分类模型中......这种类型的模型参数被称为调整参数，因为没有可用于计算适当值的分析公式。
+> 许多模型具有不能从数据直接估计的重要参数。例如，在 K-最近邻分类模型中......这种类型的模型参数被称为调整参数，因为没有可用于计算适当值的分析公式。
 
-- 第64-65页， [Applied Predictive Modeling](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20) ，2013
+- 第 64-65 页， [Applied Predictive Modeling](http://www.amazon.com/dp/1461468485?tag=inspiredalgor-20) ，2013
 
 模型超参数通常被称为模型参数，这可能使事情变得混乱。克服这种混乱的一个好的经验法则如下：
 
@@ -69,15 +69,15 @@
 模型超参数的一些示例包括：
 
 *   训练神经网络的学习率。
-*   支持向量机的C和sigma超参数。
-*   k-最近邻居中的k。
+*   支持向量机的 C 和 sigma 超参数。
+*   k-最近邻居中的 k。
 
 ## 进一步阅读
 
 *   维基百科上的 [Hyperparameter](https://en.wikipedia.org/wiki/Hyperparameter)
-*   [什么是机器学习中的超参数？ Quora上的](https://www.quora.com/What-are-hyperparameters-in-machine-learning)
-*   [模型超参数和模型参数有什么区别？ StackExchange上的](https://datascience.stackexchange.com/questions/14187/what-is-the-difference-between-model-hyperparameters-and-model-parameters)
-*   [什么被认为是超参数？](https://www.reddit.com/r/MachineLearning/comments/40tfc4/what_is_considered_a_hyperparameter/) 在Reddit上
+*   [什么是机器学习中的超参数？ Quora 上的](https://www.quora.com/What-are-hyperparameters-in-machine-learning)
+*   [模型超参数和模型参数有什么区别？ StackExchange 上的](https://datascience.stackexchange.com/questions/14187/what-is-the-difference-between-model-hyperparameters-and-model-parameters)
+*   [什么被认为是超参数？](https://www.reddit.com/r/MachineLearning/comments/40tfc4/what_is_considered_a_hyperparameter/) 在 Reddit 上
 
 ## 摘要
 

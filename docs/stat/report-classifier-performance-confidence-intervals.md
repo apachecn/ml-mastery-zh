@@ -27,7 +27,7 @@
 classification accuracy = correct predictions / total predictions * 100.0
 ```
 
-分类器可以具有诸如60％或90％的准确度，并且这仅在问题域的上下文中具有意义。
+分类器可以具有诸如 60％或 90％的准确度，并且这仅在问题域的上下文中具有意义。
 
 ## 分类错误
 
@@ -35,15 +35,15 @@ classification accuracy = correct predictions / total predictions * 100.0
 
 这是因为利益相关者认为模型表现良好，他们可能真的想知道模型是否容易出错。
 
-您可以将分类错误计算为对预测数量的错误预测百分比，表示为0到1之间的值。
+您可以将分类错误计算为对预测数量的错误预测百分比，表示为 0 到 1 之间的值。
 
 ```py
 classification error = incorrect predictions / total predictions
 ```
 
-分类器可能具有0.25或0.02的误差。
+分类器可能具有 0.25 或 0.02 的误差。
 
-该值也可以通过乘以100转换为百分比。例如，0.02将变为（0.02 * 100.0）或2％分类错误。
+该值也可以通过乘以 100 转换为百分比。例如，0.02 将变为（0.02 * 100.0）或 2％分类错误。
 
 ## 验证数据集
 
@@ -70,9 +70,9 @@ classification error = incorrect predictions / total predictions
 error +/- const * sqrt( (error * (1 - error)) / n)
 ```
 
-如果error是分类错误，const是定义所选概率的常数值，sqrt是平方根函数，n是用于评估模型的观察（行）数。从技术上讲，这被称为 [Wilson评分区间](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval)。
+如果 error 是分类错误，const 是定义所选概率的常数值，sqrt 是平方根函数，n 是用于评估模型的观察（行）数。从技术上讲，这被称为 [Wilson 评分区间](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval)。
 
-const的值由统计提供，常用值为：
+const 的值由统计提供，常用值为：
 
 *   1.64（90％）
 *   1.96（95％）
@@ -82,15 +82,15 @@ const的值由统计提供，常用值为：
 使用这些置信区间会产生一些您需要确保可以满足的假设。他们是：
 
 *   验证数据集中的观察结果独立地从域中提取（例如它们是[独立且相同分布的](https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables)）。
-*   至少使用30个观察值来评估模型。
+*   至少使用 30 个观察值来评估模型。
 
 这是基于采样理论的一些统计量，它将分类器的误差计算为二项分布，我们有足够的观测值来逼近二项分布的正态分布，并且通过中心极限定理我们分类的观察结果越多，我们越接近真实但未知的模型技能。
 
 ## 置信区间示例
 
-在具有50个示例（n = 50）的验证数据集上考虑具有0.02（错误= 0.02）的错误的模型。
+在具有 50 个示例（n = 50）的验证数据集上考虑具有 0.02（错误= 0.02）的错误的模型。
 
-我们可以如下计算95％置信区间（const = 1.96）：
+我们可以如下计算 95％置信区间（const = 1.96）：
 
 ```py
 error +/- const * sqrt( (error * (1 - error)) / n)
@@ -102,13 +102,13 @@ error +/- const * sqrt( (error * (1 - error)) / n)
 
 或者，换句话说：
 
-置信区间[0.0,0.0588]有95％的可能性涵盖模型对未见数据的真实分类误差。
+置信区间[0.0,0.0588]有 95％的可能性涵盖模型对未见数据的真实分类误差。
 
-请注意，分类错误的置信区间必须剪切为值0.0和1.0。不可能有负误差（例如小于0.0）或误差大于1.0。
+请注意，分类错误的置信区间必须剪切为值 0.0 和 1.0。不可能有负误差（例如小于 0.0）或误差大于 1.0。
 
 ## 进一步阅读
 
-*   第5章，[机器学习](http://www.amazon.com/dp/1259096955?tag=inspiredalgor-20)，1997
+*   第 5 章，[机器学习](http://www.amazon.com/dp/1259096955?tag=inspiredalgor-20)，1997
 *   维基百科上的[二项式比例置信区间](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval)
 *   维基百科上的[置信区间](https://en.wikipedia.org/wiki/Confidence_interval)
 

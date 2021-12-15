@@ -1,4 +1,4 @@
-# 处理机器学习的大数据文件的7种方法
+# 处理机器学习的大数据文件的 7 种方法
 
 > 原文： [https://machinelearningmastery.com/large-data-files-machine-learning/](https://machinelearningmastery.com/large-data-files-machine-learning/)
 
@@ -14,7 +14,7 @@
 
 ![7 Ways to Handle Large Data Files for Machine Learning](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2017/05/7-Ways-to-Handle-Large-Data-Files-for-Machine-Learning.jpg)
 
-处理机器学习的大数据文件的7种方法
+处理机器学习的大数据文件的 7 种方法
 [Gareth Thompson](https://www.flickr.com/photos/evo_gt/12267202894/) 的照片，保留一些权利。
 
 ## 1.分配更多记忆
@@ -23,13 +23,13 @@
 
 检查是否可以重新配置工具或库以分配更多内存。
 
-一个很好的例子是Weka，你可以[在启动应用程序时将内存作为参数](https://weka.wikispaces.com/OutOfMemoryException)增加。
+一个很好的例子是 Weka，你可以[在启动应用程序时将内存作为参数](https://weka.wikispaces.com/OutOfMemoryException)增加。
 
 ## 2.使用较小的样本
 
 您确定需要处理所有数据吗？
 
-随机抽取一些数据，例如前1000行或100,000行。在为所有数据拟合最终模型之前，使用此较小的示例来解决您的问题（使用渐进式数据加载技术）。
+随机抽取一些数据，例如前 1000 行或 100,000 行。在为所有数据拟合最终模型之前，使用此较小的示例来解决您的问题（使用渐进式数据加载技术）。
 
 我认为这对于机器学习来说是一种很好的做法，可以让您快速抽查算法和结果。
 
@@ -41,23 +41,23 @@
 
 也许你可以访问更大的计算机，内存更多。
 
-例如，一个好的选择是在像Amazon Web Services这样的云服务上租用计算时间，该服务为机器提供数十GB的RAM，每小时不到一美元。
+例如，一个好的选择是在像 Amazon Web Services 这样的云服务上租用计算时间，该服务为机器提供数十 GB 的 RAM，每小时不到一美元。
 
 我发现这种方法在过去非常有用。
 
 看帖子：
 
-*   [如何使用亚马逊网络服务上的Keras开发和评估大型深度学习模型](http://machinelearningmastery.com/develop-evaluate-large-deep-learning-models-keras-amazon-web-services/)
+*   [如何使用亚马逊网络服务上的 Keras 开发和评估大型深度学习模型](http://machinelearningmastery.com/develop-evaluate-large-deep-learning-models-keras-amazon-web-services/)
 
 ## 4.更改数据格式
 
-您的数据是否以原始ASCII文本存储，如CSV文件？
+您的数据是否以原始 ASCII 文本存储，如 CSV 文件？
 
-也许您可以通过使用其他数据格式来加速数据加载并减少使用内存。一个很好的例子是像GRIB，NetCDF或HDF这样的二进制格式。
+也许您可以通过使用其他数据格式来加速数据加载并减少使用内存。一个很好的例子是像 GRIB，NetCDF 或 HDF 这样的二进制格式。
 
 有许多命令行工具可用于将一种数据格式转换为另一种不需要将整个数据集加载到内存中的数据格式。
 
-使用其他格式可以允许您以更紧凑的形式存储数据，以节省内存，例如2字节整数或4字节浮点数。
+使用其他格式可以允许您以更紧凑的形式存储数据，以节省内存，例如 2 字节整数或 4 字节浮点数。
 
 ## 5.流数据或使用渐进式加载
 
@@ -67,9 +67,9 @@
 
 这可能需要可以使用诸如随机梯度下降之类的优化技术迭代地学习的算法，而不是需要存储器中的所有数据来执行矩阵运算的算法，诸如线性和逻辑回归的一些实现。
 
-例如，Keras深度学习库提供此功能以逐步加载图像文件，称为 [flow_from_directory](https://keras.io/preprocessing/image/) 。
+例如，Keras 深度学习库提供此功能以逐步加载图像文件，称为 [flow_from_directory](https://keras.io/preprocessing/image/) 。
 
-另一个例子是Pandas库，它可以[以块](http://pandas.pydata.org/pandas-docs/stable/io.html#iterating-through-files-chunk-by-chunk)加载大型CSV文件。
+另一个例子是 Pandas 库，它可以[以块](http://pandas.pydata.org/pandas-docs/stable/io.html#iterating-through-files-chunk-by-chunk)加载大型 CSV 文件。
 
 ## 6.使用关系数据库
 
@@ -89,7 +89,7 @@
 
 也就是说，一个专为处理非常大的数据集而设计的平台，允许您在其上使用数据转换和机器学习算法。
 
-两个很好的例子是带有 [Mahout](http://mahout.apache.org/) 机器学习库的Hadoop和带有 [MLLib](http://spark.apache.org/mllib/) 库的Spark。
+两个很好的例子是带有 [Mahout](http://mahout.apache.org/) 机器学习库的 Hadoop 和带有 [MLLib](http://spark.apache.org/mllib/) 库的 Spark。
 
 我相信，如果您已经用尽上述选项，这是最后的选择，只是因为这会给您的机器学习项目带来额外的硬件和软件复杂性。
 

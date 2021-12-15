@@ -31,7 +31,7 @@ Y = f（x）
 
 方便的机器学习算法思维导图的样本。
 
-我已经创建了一个由类型组织的60多种算法的方便思维导图。
+我已经创建了一个由类型组织的 60 多种算法的方便思维导图。
 
 下载，打印并使用它。
 
@@ -41,7 +41,7 @@ Y = f（x）
 
 > 用一组固定大小的参数（与训练样本的数量无关）总结数据的学习模型称为参数模型。无论您在参数模型中投放多少数据，它都不会改变它所需要的参数数量。
 
-- [人工智能：现代方法](http://www.amazon.com/dp/0136042597?tag=inspiredalgor-20)，第737页
+- [人工智能：现代方法](http://www.amazon.com/dp/0136042597?tag=inspiredalgor-20)，第 737 页
 
 算法包括两个步骤：
 
@@ -52,11 +52,11 @@ Y = f（x）
 
 b0 + b1 * x1 + b2 * x2 = 0
 
-其中b0，b1和b2是控制截距和斜率的线的系数，x1和x2是两个输入变量。
+其中 b0，b1 和 b2 是控制截距和斜率的线的系数，x1 和 x2 是两个输入变量。
 
 假设一条线的功能形式大大简化了学习过程。现在，我们需要做的就是估计线方程的系数，我们有一个问题的预测模型。
 
-假设的函数形式通常是输入变量的线性组合，因此参数机器学习算法通常也称为“_线性机器学习算法_”。
+假设的函数形式通常是输入变量的线性组合，因此参数机器学习算法通常也称为“_ 线性机器学习算法 _”。
 
 问题是，实际的未知基础函数可能不是像线一样的线性函数。它可能几乎是一条线，需要对输入数据进行一些小的转换才能正常工作。或者它可能就像一条线，在这种情况下，假设是错误的，并且该方法将产生不良结果。
 
@@ -86,16 +86,16 @@ b0 + b1 * x1 + b2 * x2 = 0
 
 > 如果您拥有大量数据且没有先验知识，并且您不想过于担心选择正确的功能，那么非参数方法就很好。
 
-- [人工智能：现代方法](http://www.amazon.com/dp/0136042597?tag=inspiredalgor-20)，第757页
+- [人工智能：现代方法](http://www.amazon.com/dp/0136042597?tag=inspiredalgor-20)，第 757 页
 
 非参数方法寻求最佳地拟合训练数据以构建映射函数，同时保持一些推广到看不见的数据的能力。因此，它们能够适合大量的功能形式。
 
-一个易于理解的非参数模型是k-最近邻算法，它基于新数据实例的k个最相似的训练模式做出预测。除了关闭的模式可能具有类似的输出变量之外，该方法不假设任何关于映射函数的形式。
+一个易于理解的非参数模型是 k-最近邻算法，它基于新数据实例的 k 个最相似的训练模式做出预测。除了关闭的模式可能具有类似的输出变量之外，该方法不假设任何关于映射函数的形式。
 
 流行的非参数机器学习算法的更多示例是：
 
 *   k-最近邻居
-*   决策树如CART和C4.5
+*   决策树如 CART 和 C4.5
 *   支持向量机
 
 非参数机器学习算法的好处：
@@ -116,16 +116,16 @@ b0 + b1 * x1 + b2 * x2 = 0
 
 ### 图书
 
-*   [统计学习简介：在R](http://www.amazon.com/dp/1461471370?tag=inspiredalgor-20) 中的应用，第2章
-*   [人工智能：现代方法](http://www.amazon.com/dp/0136042597?tag=inspiredalgor-20)，第18章
+*   [统计学习简介：在 R](http://www.amazon.com/dp/1461471370?tag=inspiredalgor-20) 中的应用，第 2 章
+*   [人工智能：现代方法](http://www.amazon.com/dp/0136042597?tag=inspiredalgor-20)，第 18 章
 
 ### 帖子
 
-*   [在机器学习中使用非参数方法有什么好处？ Quora上的](https://www.quora.com/What-are-the-advantages-of-using-non-parametric-methods-in-machine-learning)
-*   [非参数方法在机器学习中有哪些缺点？ Quora上的](https://www.quora.com/What-are-the-disadvantages-of-non-parametric-methods-in-machine-learning)
+*   [在机器学习中使用非参数方法有什么好处？ Quora 上的](https://www.quora.com/What-are-the-advantages-of-using-non-parametric-methods-in-machine-learning)
+*   [非参数方法在机器学习中有哪些缺点？ Quora 上的](https://www.quora.com/What-are-the-disadvantages-of-non-parametric-methods-in-machine-learning)
 *   维基百科上的[非参数统计](https://en.wikipedia.org/wiki/Nonparametric_statistics)
 *   维基百科上的[参数统计](https://en.wikipedia.org/wiki/Parametric_statistics)
-*   StackExchange上的[参数与非参数](http://stats.stackexchange.com/questions/50141/parametric-vs-nonparametric)
+*   StackExchange 上的[参数与非参数](http://stats.stackexchange.com/questions/50141/parametric-vs-nonparametric)
 
 ## 摘要
 

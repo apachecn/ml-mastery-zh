@@ -8,9 +8,9 @@
 
 您应该使用哪个库以及您应该关注哪些技术？
 
-在这篇文章中，您将学习一个由 14个 部分组成的 Python 深度学习速成课程，其中包含易于使用且功能强大的 Keras 库。
+在这篇文章中，您将学习一个由 14 个 部分组成的 Python 深度学习速成课程，其中包含易于使用且功能强大的 Keras 库。
 
-这个迷你课程适用于已经熟悉 SciPy 生态学机器学习的Python机器学习从业者。
+这个迷你课程适用于已经熟悉 SciPy 生态学机器学习的 Python 机器学习从业者。
 
 让我们现在开始吧。
 
@@ -40,7 +40,7 @@
 
 这个迷你课程分为 14 个部分。
 
-开发者每节课平均需要花费的时间大约是30分钟，课程中的一些知识也许可以很快的学完，而另一些知识则需要花费更多的时间以便于学习的更加深入。
+开发者每节课平均需要花费的时间大约是 30 分钟，课程中的一些知识也许可以很快的学完，而另一些知识则需要花费更多的时间以便于学习的更加深入。
 
 您可以根据自己的需要或快或慢的完成每个部分，强烈推荐您可以在两周的时间内每天花费一些的时间完成一节课的内容。
 
@@ -98,7 +98,7 @@ b = tensor.dscalar()
 # 创建一个简单的表达式
 c = a + b
 # 将表达式转换为可调用的对象
-# 计算输入值并将其赋值给输出变量c
+# 计算输入值并将其赋值给输出变量 c
 f = theano.function([a,b], c)
 
 result = f(1.5, 2.5)
@@ -210,7 +210,7 @@ Keras 允许您在极少数代码行中开发和评估深度学习模型。
 您可以[将 Pima Indians 数据集](https://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/pima-indians-diabetes.data)下载到您当前的工作目录中，文件名为 _pima-indians-diabetes.csv_ （更新：[从这里下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)） 。
 
 ```py
-# 利用keras创建第一个神经网络
+# 利用 keras 创建第一个神经网络
 from keras.models import Sequential
 from keras.layers import Dense
 import numpy
@@ -238,7 +238,7 @@ print("%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
 
 现在，根据此示例，您可以在利用不同数据集开发不同的模型或者继续调整此模型。
 
-您可以在[Keras API更多信息](http://keras.io/models/sequential/)上了解有关用于简单模型开发的更多的知识。
+您可以在[Keras API 更多信息](http://keras.io/models/sequential/)上了解有关用于简单模型开发的更多的知识。
 
 ## 第 06 课：使用 Scikit-Learn 的 Keras 模型
 
@@ -255,7 +255,7 @@ Keras 提供了一个封装类，允许您使用 scikit-learn 的深度学习模
 例如，您可以定义 KerasClassifier 的实例和自定义函数来创建模型，如下所示：
 
 ```py
-#  KerasClassifier类中创建模型的函数
+#  KerasClassifier 类中创建模型的函数
 def create_model():
 	# 创建模型
 	model = Sequential()
@@ -264,9 +264,9 @@ def create_model():
 	model.compile(...)
 	return model
 
-# 使用scikit-learn创建分类器
+# 使用 scikit-learn 创建分类器
 model = KerasClassifier(build_fn=create_model, nb_epoch=150, batch_size=10)
-# 在scikit-learn中使用10折交叉验证评估模型表现
+# 在 scikit-learn 中使用 10 折交叉验证评估模型表现
 kfold = StratifiedKFold(n_splits=10, shuffle=True, random_state=seed)
 results = cross_val_score(model, X, Y, cv=kfold)
 ```
@@ -299,7 +299,7 @@ print(history.history.keys())
 
 应用程序检查点是一种适用于长时间运行过程的容错技术。
 
-Keras 库通过回调 API 提供检查点功能， ModelCheckpoint回调类允许您定义模型权重参数检查点的位置，文件命名规范和创建模型检查点的条件。
+Keras 库通过回调 API 提供检查点功能， ModelCheckpoint 回调类允许您定义模型权重参数检查点的位置，文件命名规范和创建模型检查点的条件。
 
 如果训练运行过早停止，则检查点可用于跟踪模型权重，也可以跟踪训练期间观察到的最佳模型。
 
@@ -328,7 +328,7 @@ model.fit(..., callbacks=callbacks_list)
 
 您可以使用 Dropout 层类将随机失活层添加到深度学习模型中。
 
-在本课程中，您的目标是尝试在神经网络的不同节点添加随机dropout，并设置不同的dropout的概率值。
+在本课程中，您的目标是尝试在神经网络的不同节点添加随机 dropout，并设置不同的 dropout 的概率值。
 
 例如，您可以创建一个概率为 20％的随机失活层，并将其添加到您的模型中，如下所示：
 
@@ -348,7 +348,7 @@ model.add(Dropout(0.2))
 
 Keras 具有基于时间的学习率计划，该表内置于 SGD 类中的随机梯度下降算法的实现中。
 
-构建类时，您可以指定衰减数量，即您的学习率（也是被指定的）每次迭代时减少的数量，当使用学习率衰减数量时，你应该指定您的初始学习率值并考虑增加一个大的动量值，如0.8或者0.9.
+构建类时，您可以指定衰减数量，即您的学习率（也是被指定的）每次迭代时减少的数量，当使用学习率衰减数量时，你应该指定您的初始学习率值并考虑增加一个大的动量值，如 0.8 或者 0.9.
 
 您在本课程中的目标是尝试 Keras 内置的基于时间的学习率计划。
 
@@ -403,7 +403,7 @@ from keras.datasets import mnist
 
 将文件下载到您的计算机可能需要一些时间。
 
->一个小提示：您 Keras [Conv2D](http://keras.io/layers/convolutional/) 作为您的第一个隐藏层，数据的格式为`通道 x 宽 x 高`的图像数据，其中 MNIST 数据集具有 1 个通道，因为图像是宽度和高度都是28像素的灰度级图像，您可以很容易的在代码中重新改变数据的格式，如下代码所示:
+>一个小提示：您 Keras [Conv2D](http://keras.io/layers/convolutional/) 作为您的第一个隐藏层，数据的格式为`通道 x 宽 x 高`的图像数据，其中 MNIST 数据集具有 1 个通道，因为图像是宽度和高度都是 28 像素的灰度级图像，您可以很容易的在代码中重新改变数据的格式，如下代码所示:
 
 ```py
 X_train = X_train.reshape(X_train.shape[0], 1, 28, 28)
@@ -494,11 +494,11 @@ datagen = ImageDataGenerator(rotation_range=90)
 datagen.fit(X_train)
 # configure batch size and retrieve one batch of images
 for X_batch, y_batch in datagen.flow(X_train, y_train, batch_size=9):
-	# 创建一个3×3的网格图像
+	# 创建一个 3×3 的网格图像
 	for i in range(0, 9):
 		pyplot.subplot(330 + 1 + i)
 		pyplot.imshow(X_batch[i].reshape(28, 28), cmap=pyplot.get_cmap('gray'))
-	# 显示突袭iang
+	# 显示突袭 iang
 	pyplot.show()
 	break
 ```

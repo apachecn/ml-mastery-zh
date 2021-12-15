@@ -107,7 +107,7 @@ vectorizer.fit（all_events）`
 
 现在，当我尝试将其提供给真正花费很长时间的分类器时，结果很糟糕。这实际上并不令人意外，因为在这种情况下，几乎每个单词都是一个特征。所以我开始寻找一种方法来选择表现最佳的功能。
 
-Scikit-learn 提供方法 [SelectKBest](http://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SelectKBest.html) ，你可以传递评分函数和许多功能来选择它，它为你执行魔术。对于得分，我使用 chi2（[卡方检验](http://en.wikipedia.org/wiki/卡方_test)），我不会说你到底为什么。我只是凭经验发现它在我的情况下表现得更好，并在我的 todo 桶中“研究了 chi2 背后的理论”。
+Scikit-learn 提供方法 [SelectKBest](http://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SelectKBest.html) ，你可以传递评分函数和许多功能来选择它，它为你执行魔术。对于得分，我使用 chi2（[卡方检验](http://en.wikipedia.org/wiki/卡方 _test)），我不会说你到底为什么。我只是凭经验发现它在我的情况下表现得更好，并在我的 todo 桶中“研究了 chi2 背后的理论”。
 
 `来自 sklearn.feature_selection import SelectKBest，chi2
 num_features = 100

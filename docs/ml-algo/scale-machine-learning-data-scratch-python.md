@@ -1,4 +1,4 @@
-# 如何使用Python从零开始扩展机器学习数据
+# 如何使用 Python 从零开始扩展机器学习数据
 
 > 原文： [https://machinelearningmastery.com/scale-machine-learning-data-scratch-python/](https://machinelearningmastery.com/scale-machine-learning-data-scratch-python/)
 
@@ -14,13 +14,13 @@
 
 让我们开始吧。
 
-*   **更新Feb / 2018** ：修复了最小/最大代码示例中的小错字。
-*   **更新Mar / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
-*   **更新Aug / 2018** ：经过测试和更新，可与Python 3.6配合使用。
+*   **更新 Feb / 2018** ：修复了最小/最大代码示例中的小错字。
+*   **更新 Mar / 2018** ：添加了备用链接以下载数据集，因为原始图像已被删除。
+*   **更新 Aug / 2018** ：经过测试和更新，可与 Python 3.6 配合使用。
 
 ![How To Prepare Machine Learning Data From Scratch With Python](img/32fa1f42f072869aeab7b8fa797cd3db.jpg)
 
-如何使用Python从零开始准备机器学习数据
+如何使用 Python 从零开始准备机器学习数据
 照片由 [Ondra Chotovinsky](https://www.flickr.com/photos/-chetta-/5634966046/) ，保留一些权利。
 
 ## 描述
@@ -31,15 +31,15 @@
 
 在以复杂方式组合加权输入的方法中实际上需要它，例如在人工神经网络和深度学习中。
 
-在本教程中，我们将练习以CSV格式重新缩放一个标准机器学习数据集。
+在本教程中，我们将练习以 CSV 格式重新缩放一个标准机器学习数据集。
 
-具体来说，Pima Indians数据集。它包含768行和9列。文件中的所有值都是数字，特别是浮点值。我们将首先学习如何加载文件，然后学习如何将加载的字符串转换为数值。
+具体来说，Pima Indians 数据集。它包含 768 行和 9 列。文件中的所有值都是数字，特别是浮点值。我们将首先学习如何加载文件，然后学习如何将加载的字符串转换为数值。
 
-您可以在 [UCI机器学习库](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)上了解有关此数据集的更多信息（更新：[从此处下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
+您可以在 [UCI 机器学习库](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)上了解有关此数据集的更多信息（更新：[从此处下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv)）。
 
 ## 教程
 
-本教程分为3个部分：
+本教程分为 3 个部分：
 
 1.  规范化数据。
 2.  标准化数据。
@@ -51,7 +51,7 @@
 
 归一化可以根据上下文引用不同的技术。
 
-这里，我们使用规范化来指示将输入变量重新缩放到0到1之间的范围。
+这里，我们使用规范化来指示将输入变量重新缩放到 0 到 1 之间的范围。
 
 规范化要求您知道每个属性的最小值和最大值。
 
@@ -104,7 +104,7 @@ print(minmax)
 
 运行该示例将生成以下输出。
 
-首先，数据集以列表格式列表打印，然后每列的最小值和最大值以 **column1：min，max和column2：min，max** 的格式打印。
+首先，数据集以列表格式列表打印，然后每列的最小值和最大值以 **column1：min，max 和 column2：min，max** 的格式打印。
 
 例如：
 
@@ -113,7 +113,7 @@ print(minmax)
 [[20, 50], [30, 90]]
 ```
 
-一旦我们估计了每列的最大和最小允许值，我们现在可以将原始数据标准化为0和1的范围。
+一旦我们估计了每列的最大和最小允许值，我们现在可以将原始数据标准化为 0 和 1 的范围。
 
 规范化列的单个值的计算是：
 
@@ -169,9 +169,9 @@ print(dataset)
 [[1, 0], [0, 1]]
 ```
 
-我们可以将此代码与用于加载CSV数据集的代码相结合，并加载和规范化Pima Indians糖尿病数据集。
+我们可以将此代码与用于加载 CSV 数据集的代码相结合，并加载和规范化 Pima Indians 糖尿病数据集。
 
-从 [UCI机器学习库](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)下载Pima Indians数据集，并将其放在当前目录中，名称为 **pima-indians-diabetes.csv** （更新：[从此处下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv) **）**。打开文件并删除底部的任何空行。
+从 [UCI 机器学习库](https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes)下载 Pima Indians 数据集，并将其放在当前目录中，名称为 **pima-indians-diabetes.csv** （更新：[从此处下载](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv) **）**。打开文件并删除底部的任何空行。
 
 该示例首先加载数据集，并将每列的值从字符串转换为浮点值。从数据集估计每列的最小值和最大值，最后，对数据集中的值进行标准化。
 
@@ -233,7 +233,7 @@ Loaded data file pima-indians-diabetes.csv with 768 rows and 9 columns
 
 ### 2.标准化数据
 
-标准化是一种重新缩放技术，它指的是将数据分布的中心值0和标准偏差定义为值1。
+标准化是一种重新缩放技术，它指的是将数据分布的中心值 0 和标准偏差定义为值 1。
 
 总之，平均值和标准偏差可用于总结正态分布，也称为高斯分布或钟形曲线。
 
@@ -259,7 +259,7 @@ def column_means(dataset):
 	return means
 ```
 
-标准偏差描述了平均值的平均值。它可以计算为每个值与平均值之间的平方差之和的平方根，并除以值的数量减1。
+标准偏差描述了平均值的平均值。它可以计算为每个值与平均值之间的平方差之和的平方根，并除以值的数量减 1。
 
 ```py
 standard deviation = sqrt( (value_i - mean)^2 / (total_values-1))
@@ -287,7 +287,7 @@ x1	x2
 30	50
 ```
 
-使用Excel电子表格，我们可以估算每列的平均值和标准差，如下所示：
+使用 Excel 电子表格，我们可以估算每列的平均值和标准差，如下所示：
 
 ```py
  	x1	x2
@@ -405,7 +405,7 @@ print(dataset)
 
 同样，我们可以演示机器学习数据集的标准化。
 
-下面的示例演示了如何加载和标准化Pima Indians糖尿病数据集，假设它在当前工作目录中，如前面的标准化示例中所示。
+下面的示例演示了如何加载和标准化 Pima Indians 糖尿病数据集，假设它在当前工作目录中，如前面的标准化示例中所示。
 
 ```py
 from csv import reader
@@ -494,10 +494,10 @@ Loaded data file pima-indians-diabetes.csv with 768 rows and 9 columns
 
 以下是您可能需要考虑研究和实现的一些其他变换：
 
-*   允许可配置范围的标准化，例如-1到1和更多。
-*   标准化，允许可配置的传播，例如平均值的1,2或更多标准偏差。
+*   允许可配置范围的标准化，例如-1 到 1 和更多。
+*   标准化，允许可配置的传播，例如平均值的 1,2 或更多标准偏差。
 *   指数变换，如对数，平方根和指数。
-*   功率变换（例如box-cox）用于修复正态分布数据中的偏斜。
+*   功率变换（例如 box-cox）用于修复正态分布数据中的偏斜。
 
 ## 评论
 

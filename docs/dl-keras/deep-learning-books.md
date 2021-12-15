@@ -152,7 +152,7 @@ Packet 2016 年 5 月出版了一本书，由 [Yusuke Sugomori](https://www.link
 *   深度学习
 *   卷积神经网络
 *   修剪和模型选择
-*   dropout和正规化
+*   dropout 和正规化
 *   时间序列和循环网络
 *   构建神经网络
 *   可视化

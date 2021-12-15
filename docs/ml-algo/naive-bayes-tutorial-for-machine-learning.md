@@ -2,15 +2,15 @@
 
 > 原文： [https://machinelearningmastery.com/naive-bayes-tutorial-for-machine-learning/](https://machinelearningmastery.com/naive-bayes-tutorial-for-machine-learning/)
 
-Naive Bayes是一种非常简单的分类算法，它对每个输入变量的独立性做出了一些强有力的假设。
+Naive Bayes 是一种非常简单的分类算法，它对每个输入变量的独立性做出了一些强有力的假设。
 
 然而，它已被证明在许多问题领域都是有效的。在这篇文章中，您将发现用于分类数据的朴素贝叶斯算法。阅读这篇文章后，你会知道的。
 
-*   如何使用Naive Bayes的分类数据。
+*   如何使用 Naive Bayes 的分类数据。
 *   如何为朴素贝叶斯模型准备类和条件概率。
 *   如何使用学习的朴素贝叶斯模型做出预测。
 
-这篇文章是为开发人员编写的，不承担统计或概率的背景。打开电子表格并按照说明进行操作。如果您对Naive Bayes有任何疑问，请在评论中提出，我会尽力回答。
+这篇文章是为开发人员编写的，不承担统计或概率的背景。打开电子表格并按照说明进行操作。如果您对 Naive Bayes 有任何疑问，请在评论中提出，我会尽力回答。
 
 让我们开始吧。
 
@@ -78,7 +78,7 @@ Weather	Car	Class
 
 方便的机器学习算法思维导图的样本。
 
-我已经创建了一个由类型组织的60多种算法的方便思维导图。
+我已经创建了一个由类型组织的 60 多种算法的方便思维导图。
 
 下载，打印并使用它。
 
@@ -95,7 +95,7 @@ Weather	Car	Class
 
 数据集是一个两类问题，我们已经知道每个类的概率，因为我们设计了数据集。
 
-不过，我们可以计算出0级和1级的类概率，如下所示：
+不过，我们可以计算出 0 级和 1 级的类概率，如下所示：
 
 *   P（class = 1）= count（class = 1）/（count（class = 0）+ count（class = 1））
 *   P（class = 0）= count（class = 0）/（count（class = 0）+ count（class = 1））
@@ -105,7 +105,7 @@ Weather	Car	Class
 *   P（class = 1）= 5 /（5 + 5）
 *   P（class = 0）= 5 /（5 + 5）
 
-对于属于0级或1级的任何给定数据实例，这可能是0.5的概率。
+对于属于 0 级或 1 级的任何给定数据实例，这可能是 0.5 的概率。
 
 ### 计算条件概率
 
@@ -130,7 +130,7 @@ Weather	Car	Class
 #### 汽车输入变量
 
 *   P（car = working | class = go-out）= count（car = working and class = go-out）/ count（class = go-out）
-*   P（car = broken | class = go-out）= count（car = brokenrainy和class = go-out）/ count（class = go-out）
+*   P（car = broken | class = go-out）= count（car = brokenrainy 和 class = go-out）/ count（class = go-out）
 *   P（car = working | class = stay-home）= count（car = working and class = stay-home）/ count（class = stay-home）
 *   P（car = broken | class = stay-home）= count（car = brokenrainy and class = stay-home）/ count（class = stay-home）
 
@@ -151,9 +151,9 @@ P（h | d）=（P（d | h）* P（h））/ P（d）
 
 哪里：
 
-*   **P（h | d）**是给定数据d的假设h的概率。这称为后验概率。
-*   **P（d | h）**是假设h为真的数据d的概率。
-*   **P（h）**是假设h为真的概率（无论数据如何）。这被称为h的先验概率。
+*   **P（h | d）**是给定数据 d 的假设 h 的概率。这称为后验概率。
+*   **P（d | h）**是假设 h 为真的数据 d 的概率。
+*   **P（h）**是假设 h 为真的概率（无论数据如何）。这被称为 h 的先验概率。
 *   **P（d）**是数据的概率（不论假设）。
 
 实际上，我们不需要概率来预测新数据实例的最可能类。我们只需要得到最大响应的分子和类，这将是预测输出。
@@ -176,7 +176,7 @@ MAP（h）= max（P（d | h）* P（h））
 *   住宿= 0.4 * 0.2 * 0.5
 *   住宿= 0.04
 
-我们可以看到0.32大于0.04，因此我们预测此实例的“走出去”，这是正确的。
+我们可以看到 0.32 大于 0.04，因此我们预测此实例的“走出去”，这是正确的。
 
 我们可以对整个数据集重复此操作，如下所示：
 
@@ -194,16 +194,16 @@ sunny	broken	stay-home	0.08	0.16	stay-home
 rainy	broken	stay-home	0.02	0.24	stay-home
 ```
 
-如果我们将预测与实际类值进行比较，我们得到80％的准确度，鉴于数据集中存在冲突的示例，这是非常好的。
+如果我们将预测与实际类值进行比较，我们得到 80％的准确度，鉴于数据集中存在冲突的示例，这是非常好的。
 
 ## 摘要
 
-在这篇文章中，您发现了如何从零开始实现Naive Bayes。你了解到：
+在这篇文章中，您发现了如何从零开始实现 Naive Bayes。你了解到：
 
-*   如何使用Naive Bayes处理分类数据。
+*   如何使用 Naive Bayes 处理分类数据。
 *   如何根据训练数据计算班级概率。
 *   如何从训练数据计算条件概率。
 *   如何使用学习的朴素贝叶斯模型对新数据做出预测。
 
-您对Naive Bayes或这篇文章有任何疑问吗？
+您对 Naive Bayes 或这篇文章有任何疑问吗？
 发表评论提出您的问题，我会尽力回答。

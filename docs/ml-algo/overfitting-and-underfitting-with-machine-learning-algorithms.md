@@ -29,7 +29,7 @@ Y = f（X）
 
 方便的机器学习算法思维导图的样本。
 
-我已经创建了一个由类型组织的60多种算法的方便思维导图。
+我已经创建了一个由类型组织的 60 多种算法的方便思维导图。
 
 下载，打印并使用它。
 
@@ -104,7 +104,7 @@ Y = f（X）
 1.  使用重采样技术来估计模型准确率。
 2.  阻止验证数据集。
 
-最流行的重采样技术是k折交叉验证。它允许您在不同的训练数据子集上训练和测试模型k次，并建立机器学习模型在看不见的数据上的表现估计。
+最流行的重采样技术是 k 折交叉验证。它允许您在不同的训练数据子集上训练和测试模型 k 次，并建立机器学习模型在看不见的数据上的表现估计。
 
 验证数据集只是训练数据的一个子集，您可以从机器学习算法中保留，直到项目结束。在训练数据集上选择并调整机器学习算法后，您可以评估验证数据集上的学习模型，以最终客观地了解模型对未见数据的执行情况。
 
@@ -119,7 +119,7 @@ Y = f（X）
 *   维基百科上的[归纳推理](https://en.wikipedia.org/wiki/Inductive_reasoning)
 *   [维基百科上的归纳问题](https://en.wikipedia.org/wiki/Problem_of_induction)
 *   维基百科上的[适合度](https://en.wikipedia.org/wiki/Goodness_of_fit)
-*   [过拟合的直观解释是什么？ Quora上的](https://www.quora.com/What-is-an-intuitive-explanation-of-overfitting)
+*   [过拟合的直观解释是什么？ Quora 上的](https://www.quora.com/What-is-an-intuitive-explanation-of-overfitting)
 
 ## 摘要
 

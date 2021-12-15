@@ -4,13 +4,13 @@
 
 在比较两种不同的机器学习算法或将相同算法与不同配置进行比较时，最好收集一组结果。
 
-考虑到大多数机器学习算法的随机性，重复每次实验运行30次或更多次会给出一组结果，您可以从中计算平均预期表现。
+考虑到大多数机器学习算法的随机性，重复每次实验运行 30 次或更多次会给出一组结果，您可以从中计算平均预期表现。
 
 如果两种算法或配置的平均预期表现不同，您如何知道差异是显着的，有多重要？
 
 统计显着性检验是帮助解释机器学习实验结果的重要工具。此外，这些工具的发现可以帮助您更好，更自信地呈现您的实验结果，并为您的预测性建模问题选择正确的算法和配置。
 
-在本教程中，您将了解如何使用Python中的统计显着性检验来研究和解释机器学习实验结果。
+在本教程中，您将了解如何使用 Python 中的统计显着性检验来研究和解释机器学习实验结果。
 
 完成本教程后，您将了解：
 
@@ -20,7 +20,7 @@
 
 让我们开始吧。
 
-*   **更新May / 2018** ：更新了与“拒绝”和“拒绝拒绝”H0相关的语言。
+*   **更新 May / 2018** ：更新了与“拒绝”和“拒绝拒绝”H0 相关的语言。
 
 ![How to Use Statistical Significance Tests to Interpret Machine Learning Results](img/def30fc8352ac3aa72461269bd36baa2.jpg)
 
@@ -29,7 +29,7 @@
 
 ## 教程概述
 
-本教程分为6个部分。他们是：
+本教程分为 6 个部分。他们是：
 
 1.  生成样本数据
 2.  摘要统计
@@ -38,7 +38,7 @@
 5.  比较具有不同方差的高斯结果的均值
 6.  比较非高斯结果的均值
 
-本教程假定Python 2或3以及具有NumPy，Pandas和Matplotlib的SciPy环境。
+本教程假定 Python 2 或 3 以及具有 NumPy，Pandas 和 Matplotlib 的 SciPy 环境。
 
 ## 生成样本数据
 
@@ -48,7 +48,7 @@
 
 我们可以通过生成两个以略微不同的方式分布的高斯随机数群来模拟这一点。
 
-下面的代码生成第一个算法的结果。总共1000个结果存储在名为`results1.csv`的文件中。结果来自高斯分布，平均值为50，标准差为10。
+下面的代码生成第一个算法的结果。总共 1000 个结果存储在名为`results1.csv`的文件中。结果来自高斯分布，平均值为 50，标准差为 10。
 
 ```py
 from numpy.random import seed
@@ -64,7 +64,7 @@ results = normal(mean, stev, 1000)
 savetxt('results1.csv', results)
 ```
 
-下面是`results1.csv`的前5行数据片段。
+下面是`results1.csv`的前 5 行数据片段。
 
 ```py
 6.624345363663240960e+01
@@ -75,7 +75,7 @@ savetxt('results1.csv', results)
 ...
 ```
 
-我们现在可以生成第二个算法的结果。我们将使用相同的方法，并从稍微不同的高斯分布绘制结果（具有相同标准偏差的平均值为60）。结果写入`results2.csv`。
+我们现在可以生成第二个算法的结果。我们将使用相同的方法，并从稍微不同的高斯分布绘制结果（具有相同标准偏差的平均值为 60）。结果写入`results2.csv`。
 
 ```py
 from numpy.random import seed
@@ -91,7 +91,7 @@ results = normal(mean, stev, 1000)
 savetxt('results2.csv', results)
 ```
 
-以下是`results2.csv`的前5行样本。
+以下是`results2.csv`的前 5 行样本。
 
 ```py
 7.624345363663240960e+01
@@ -104,7 +104,7 @@ savetxt('results2.csv', results)
 
 展望未来，我们将假装我们不知道任何一组结果的基本分布。
 
-我每个实验任意选择1000个结果的人群。使用30或100个结果的群体来实现适当的良好估计（例如低标准误差）更为现实。
+我每个实验任意选择 1000 个结果的人群。使用 30 或 100 个结果的群体来实现适当的良好估计（例如低标准误差）更为现实。
 
 如果您的结果不是高斯结果，请不要担心;我们将看看这些方法如何分解非高斯数据以及使用哪种替代方法。
 
@@ -138,7 +138,7 @@ pyplot.show()
 
 我们假设数据代表测试数据集上的错误分数，并且最小化分数是目标。
 
-我们可以看到平均A（50.388125）优于B（60.388125）。我们也可以在中位数（第50百分位数）看到相同的故事。查看标准差，我们还可以看到两个分布似乎都有相似（相同）的差异。
+我们可以看到平均 A（50.388125）优于 B（60.388125）。我们也可以在中位数（第 50 百分位数）看到相同的故事。查看标准差，我们还可以看到两个分布似乎都有相似（相同）的差异。
 
 ```py
                  A            B
@@ -152,9 +152,9 @@ min      19.462356    29.462356
 max      89.586027    99.586027
 ```
 
-接下来，创建比较两组结果的盒子和须状图。该框捕获中间50％的数据，异常值显示为点，绿线显示中位数。我们可以看到数据确实具有来自两个分布的类似差异，并且看起来围绕中值对称。
+接下来，创建比较两组结果的盒子和须状图。该框捕获中间 50％的数据，异常值显示为点，绿线显示中位数。我们可以看到数据确实具有来自两个分布的类似差异，并且看起来围绕中值对称。
 
-A的结果看起来比B好。
+A 的结果看起来比 B 好。
 
 ![Box and Whisker Plots of Both Sets of Results](img/42650400f46637e86e7d37c6a82153bb.jpg)
 
@@ -174,7 +174,7 @@ A的结果看起来比B好。
 
 我们可以使用统计检验来确认从两个分布中得出的结果都是高斯分布（也称为正态分布）。
 
-在SciPy中，这是 [normaltest（）](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.normaltest.html)函数。
+在 SciPy 中，这是 [normaltest（）](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.normaltest.html)函数。
 
 从文档中，测试描述为：
 
@@ -182,7 +182,7 @@ A的结果看起来比B好。
 
 测试的零假设（H0）或默认期望是统计描述正态分布。
 
-如果p值大于0.05，我们就不能拒绝这个假设。如果p值&lt;= 0.05，我们拒绝这个假设。在这种情况下，我们相信分布不正常，95％的置信度。
+如果 p 值大于 0.05，我们就不能拒绝这个假设。如果 p 值&lt;= 0.05，我们拒绝这个假设。在这种情况下，我们相信分布不正常，95％的置信度。
 
 下面的代码加载`results1.csv`并确定数据是否可能是高斯数据。
 
@@ -199,7 +199,7 @@ else:
 	print('It is unlikely that result1 is normal')
 ```
 
-运行该示例首先打印计算的统计量和从高斯分布计算统计量的p值。
+运行该示例首先打印计算的统计量和从高斯分布计算统计量的 p 值。
 
 我们可以看到`results1.csv`很可能是高斯分布。
 
@@ -225,7 +225,7 @@ else:
 	print('It is unlikely that result2 is normal')
 ```
 
-运行该示例提供相同的统计p值和结果。
+运行该示例提供相同的统计 p 值和结果。
 
 两组结果都是高斯分布。
 
@@ -236,17 +236,17 @@ It is likely that result2 is normal
 
 ## 比较高斯结果的均值
 
-两组结果都是高斯分布，具有相同的方差;这意味着我们可以使用Student t检验来查看两个分布均值之间的差异是否具有统计显着性。
+两组结果都是高斯分布，具有相同的方差;这意味着我们可以使用 Student t 检验来查看两个分布均值之间的差异是否具有统计显着性。
 
-在SciPy中，我们可以使用 [ttest_ind（）](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html)函数。
+在 SciPy 中，我们可以使用 [ttest_ind（）](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html)函数。
 
 该测试描述为：
 
-> 计算两个独立分数样本均值的T检验。
+> 计算两个独立分数样本均值的 T 检验。
 
 测试的零假设（H0）或默认期望是两个样本都来自相同的群体。如果我们不能拒绝这个假设，那就意味着手段之间没有显着差异。
 
-如果我们得到＆lt; = 0.05的p值，则意味着我们可以拒绝零假设，并且平均值显着不同，置信度为95％。这意味着对于100个中的95个类似样本，平均值将显着不同，并且在100个案例中的5个中并非如此。
+如果我们得到＆lt; = 0.05 的 p 值，则意味着我们可以拒绝零假设，并且平均值显着不同，置信度为 95％。这意味着对于 100 个中的 95 个类似样本，平均值将显着不同，并且在 100 个案例中的 5 个中并非如此。
 
 除了高斯数据之外，该统计检验的一个重要假设是两个分布具有相同的方差。我们通过回顾上一步中的描述性统计量来了解这种情况。
 
@@ -271,7 +271,7 @@ else:
 	print('Samples are likely drawn from different distributions (reject H0)')
 ```
 
-运行该示例将打印统计量和p值。我们可以看到p值远低于0.05。
+运行该示例将打印统计量和 p 值。我们可以看到 p 值远低于 0.05。
 
 事实上，它是如此之小，我们几乎可以确定手段之间的差异在统计上是显着的。
 
@@ -284,11 +284,11 @@ Samples are likely drawn from different distributions (reject H0)
 
 如果两组结果的均值相同，但方差不同，该怎么办？
 
-我们无法按原样使用T检验。实际上，我们必须使用名为Welch t检验的测试的修改版本。
+我们无法按原样使用 T 检验。实际上，我们必须使用名为 Welch t 检验的测试的修改版本。
 
-在SciPy中，这是相同的 [ttest_ind（）](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html)函数，但我们必须将“`equal_var`”参数设置为“`False`”以指示差异不相等。
+在 SciPy 中，这是相同的 [ttest_ind（）](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html)函数，但我们必须将“`equal_var`”参数设置为“`False`”以指示差异不相等。
 
-我们可以通过一个例子证明这一点，我们生成两组结果，其中非常相似（50对51）和非常不同的标准差（1对10）。我们将生成100个样本。
+我们可以通过一个例子证明这一点，我们生成两组结果，其中非常相似（50 对 51）和非常不同的标准差（1 对 10）。我们将生成 100 个样本。
 
 ```py
 from numpy.random import seed
@@ -308,9 +308,9 @@ else:
 	print('Samples are likely drawn from different distributions (reject H0)')
 ```
 
-运行该示例将打印测试统计量和p值。
+运行该示例将打印测试统计量和 p 值。
 
-我们可以看到，有很好的证据（接近99％）样本来自不同的分布，这些方法有显着差异。
+我们可以看到，有很好的证据（接近 99％）样本来自不同的分布，这些方法有显着差异。
 
 ```py
 -2.62233137406 0.0100871483783
@@ -319,9 +319,9 @@ Samples are likely drawn from different distributions (reject H0)
 
 分布越接近，将它们分开所需的样本越大。
 
-我们可以通过计算每组结果的不同大小子样本的统计检验并绘制p值与样本大小来证明这一点。
+我们可以通过计算每组结果的不同大小子样本的统计检验并绘制 p 值与样本大小来证明这一点。
 
-我们希望随着样本量的增加，p值会变小。我们还可以绘制95％的水平线（0.05），并显示样本量足够大以表明这两个群体有显着差异。
+我们希望随着样本量的增加，p 值会变小。我们还可以绘制 95％的水平线（0.05），并显示样本量足够大以表明这两个群体有显着差异。
 
 ```py
 from numpy.random import seed
@@ -345,31 +345,31 @@ pyplot.plot([0.05 for x in range(len(pvalues))], color='red')
 pyplot.show()
 ```
 
-运行该示例将创建p值与样本大小的折线图。
+运行该示例将创建 p 值与样本大小的折线图。
 
-我们可以看到，对于这两组结果，样本大小必须大约为90才有95％的置信度，即平均值明显不同（蓝线与红线相交）。
+我们可以看到，对于这两组结果，样本大小必须大约为 90 才有 95％的置信度，即平均值明显不同（蓝线与红线相交）。
 
 ![Line Plot of p-values for Datasets with a Differing Variance](img/f8f4f3610326cda07d1bf1ab5f3acd76.jpg)
 
-p值与样本大小的线图
+p 值与样本大小的线图
 
 ## 比较非高斯结果的均值
 
-如果我们的数据不是高斯数据，我们不能使用T检验或韦尔奇t检验。
+如果我们的数据不是高斯数据，我们不能使用 T 检验或韦尔奇 t 检验。
 
-我们可以用于非高斯数据的替代统计显着性检验称为Kolmogorov-Smirnov检验。
+我们可以用于非高斯数据的替代统计显着性检验称为 Kolmogorov-Smirnov 检验。
 
-在SciPy中，这称为 [ks_2samp（）](http://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ks_2samp.html)函数。
+在 SciPy 中，这称为 [ks_2samp（）](http://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ks_2samp.html)函数。
 
 在文档中，此测试描述为：
 
-> 这是零假设的双侧检验，即2个独立样本来自相同的连续分布。
+> 这是零假设的双侧检验，即 2 个独立样本来自相同的连续分布。
 
 该测试可用于高斯数据，但具有较低的统计功效并且可能需要大样本。
 
-我们可以用非高斯分布证明两组结果的统计显着性的计算。我们可以生成两组具有重叠均匀分布的结果（50到60和55到65）。这些结果集将分别具有约55和60的不同平均值。
+我们可以用非高斯分布证明两组结果的统计显着性的计算。我们可以生成两组具有重叠均匀分布的结果（50 到 60 和 55 到 65）。这些结果集将分别具有约 55 和 60 的不同平均值。
 
-下面的代码生成两组100个结果，并使用Kolmogorov-Smirnov检验来证明总体均值之间的差异具有统计学意义。
+下面的代码生成两组 100 个结果，并使用 Kolmogorov-Smirnov 检验来证明总体均值之间的差异具有统计学意义。
 
 ```py
 from numpy.random import seed
@@ -389,9 +389,9 @@ else:
 	print('Samples are likely drawn from different distributions (reject H0)')
 ```
 
-运行该示例将打印统计量和p值。
+运行该示例将打印统计量和 p 值。
 
-p值非常小，表明两种群体之间的差异非常明显。
+p 值非常小，表明两种群体之间的差异非常明显。
 
 ```py
 0.47 2.16825856737e-10
@@ -403,9 +403,9 @@ Samples are likely drawn from different distributions (reject H0)
 本节列出了一些文章和资源，以深入探讨应用机器学习的统计显着性检验领域。
 
 *   [维基百科的正常性测试](https://en.wikipedia.org/wiki/Normality_test)
-*   [维基百科上的T检验](https://en.wikipedia.org/wiki/Student's_t-test)
-*   [韦尔奇在维基百科上的t检验](https://en.wikipedia.org/wiki/Welch%27s_t-test)
-*   维基百科上的 [Kolmogorov-Smirnov测试](https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test)
+*   [维基百科上的 T 检验](https://en.wikipedia.org/wiki/Student's_t-test)
+*   [韦尔奇在维基百科上的 t 检验](https://en.wikipedia.org/wiki/Welch%27s_t-test)
+*   维基百科上的 [Kolmogorov-Smirnov 测试](https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test)
 
 ## 摘要
 

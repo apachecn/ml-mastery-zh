@@ -44,7 +44,7 @@
 
 ## 2.分类预测
 
-分类问题是模型学习输入要素和作为标签的输出要素之间的映射的问题，例如“_垃圾邮件_”和“_非垃圾邮件_”。
+分类问题是模型学习输入要素和作为标签的输出要素之间的映射的问题，例如“_ 垃圾邮件 _”和“_ 非垃圾邮件 _”。
 
 下面是 Keras 中针对简单的两类（二元）分类问题开发的最终神经网络模型的示例。
 
@@ -58,7 +58,7 @@ from keras.models import Sequential
 from keras.layers import Dense
 from sklearn.datasets.samples_generator import make_blobs
 from sklearn.preprocessing import MinMaxScaler
-# 生成2维分类数据集
+# 生成 2 维分类数据集
 X, y = make_blobs(n_samples=100, centers=2, n_features=2, random_state=1)
 scalar = MinMaxScaler()
 scalar.fit(X)
@@ -103,7 +103,7 @@ from keras.models import Sequential
 from keras.layers import Dense
 from sklearn.datasets.samples_generator import make_blobs
 from sklearn.preprocessing import MinMaxScaler
-#生成2维的分类数据集
+#生成 2 维的分类数据集
 X, y = make_blobs(n_samples=100, centers=2, n_features=2, random_state=1)
 scalar = MinMaxScaler()
 scalar.fit(X)
@@ -142,7 +142,7 @@ from keras.layers import Dense
 from sklearn.datasets.samples_generator import make_blobs
 from sklearn.preprocessing import MinMaxScaler
 from numpy import array
-# 生成2维分类数据集
+# 生成 2 维分类数据集
 X, y = make_blobs(n_samples=100, centers=2, n_features=2, random_state=1)
 scalar = MinMaxScaler()
 scalar.fit(X)
@@ -201,7 +201,7 @@ from keras.models import Sequential
 from keras.layers import Dense
 from sklearn.datasets.samples_generator import make_blobs
 from sklearn.preprocessing import MinMaxScaler
-# 生成2维分类数据集
+# 生成 2 维分类数据集
 X, y = make_blobs(n_samples=100, centers=2, n_features=2, random_state=1)
 scalar = MinMaxScaler()
 scalar.fit(X)

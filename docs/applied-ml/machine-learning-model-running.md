@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/machine-learning-model-running/](https://machinelearningmastery.com/machine-learning-model-running/)
 
-最近有一个问题是“[如何在ml脚本运行时不浪费时间/拖延？](http://www.reddit.com/r/MachineLearning/comments/2uznyb/how_to_not_wastetimeprocrastinate_while_ml/) “。
+最近有一个问题是“[如何在 ml 脚本运行时不浪费时间/拖延？](http://www.reddit.com/r/MachineLearning/comments/2uznyb/how_to_not_wastetimeprocrastinate_while_ml/) “。
 
 我认为这是一个重要的问题。我认为这个问题的答案显示了你的工作方法的组织或成熟程度。
 
@@ -59,7 +59,7 @@
 
 要在停机时间运行实验，意味着您需要安排它们。如果您能够批量实验，这将变得更加容易。
 
-你可以花时间在一批中设计5-10个实验，准备模型运行并在你的关闭时间顺序或并行地运行实验。
+你可以花时间在一批中设计 5-10 个实验，准备模型运行并在你的关闭时间顺序或并行地运行实验。
 
 这可能需要纪律来解决问题和实验所服务的答案。这样做的好处将是您获得的有关问题的深度知识以及获得问题的速度。
 
@@ -67,7 +67,7 @@
 
 有些实验可能需要数天或数周，这意味着在工作站上运行它们实际上是不可行的。
 
-对于长时间运行的实验，您可以利用云中的计算服务器（如EC2和朋友）或本地计算服务器。无论是哪种语言环境，都不能实时使用计算服务器。您提出问题并收到答案。
+对于长时间运行的实验，您可以利用云中的计算服务器（如 EC2 和朋友）或本地计算服务器。无论是哪种语言环境，都不能实时使用计算服务器。您提出问题并收到答案。
 
 计算服务器的最有效使用是拥有一个问题队列和一个过程，用于消费并将答案集成到您不断增长的问题知识库中。
 
