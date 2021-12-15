@@ -1,29 +1,29 @@
-# 具有注意力的编码器 - 解码器RNN体系结构的实现模式
+# 具有注意力的编解码器RNN体系结构的实现模式
 
 > 原文： [https://machinelearningmastery.com/implementation-patterns-encoder-decoder-rnn-architecture-attention/](https://machinelearningmastery.com/implementation-patterns-encoder-decoder-rnn-architecture-attention/)
 
-用于循环神经网络的编码器 - 解码器架构被证明在自然语言处理领域中的一系列序列到序列预测问题上是强大的。
+用于循环神经网络的编解码器架构被证明在自然语言处理领域中的一系列序列到序列预测问题上是强大的。
 
-注意力是一种解决编码器 - 解码器架构在长序列上的限制的机制，并且通常加速学习并提高模型在序列到序列预测问题上的技能。
+注意力是一种解决编解码器架构在长序列上的限制的机制，并且通常加速学习并提高模型在序列到序列预测问题上的技能。
 
-在这篇文章中，您将发现用于实现编码器 - 解码器模型的模式，无论是否受到关注。
+在这篇文章中，您将发现用于实现编解码器模型的模式，无论是否受到关注。
 
 阅读这篇文章后，你会知道：
 
-*   编码器 - 解码器循环神经网络的直接与递归实现模式。
-*   注意力如何适合编码器 - 解码器模型的直接实现模式。
-*   如何使用编码器 - 解码器模型的递归实现模式来实现关注。
+*   编解码器循环神经网络的直接与递归实现模式。
+*   注意力如何适合编解码器模型的直接实现模式。
+*   如何使用编解码器模型的递归实现模式来实现关注。
 
 让我们开始吧。
 
 ![Implementation Patterns for the Encoder-Decoder RNN Architecture with Attention](img/cf4a06346b261f096ad61babb48f969e.jpg)
 
-具有注意力的编码器 - 解码器RNN架构的实现模式
+具有注意力的编解码器RNN架构的实现模式
 照片由 [Philip McErlean](https://www.flickr.com/photos/64320477@N05/34172852904/) ，保留一些权利。
 
 ## 注意编码器解码器
 
-用于循环神经网络的编码器 - 解码器模型是用于序列到序列预测问题的架构，其中输入序列的长度不同于输出序列的长度。
+用于循环神经网络的编解码器模型是用于序列到序列预测问题的架构，其中输入序列的长度不同于输出序列的长度。
 
 它由两个子模型组成，顾名思义：
 
@@ -34,21 +34,21 @@
 
 注意是解决此限制的体系结构的扩展。它的工作原理是首先提供从编码器到解码器的更丰富的上下文和学习机制，其中解码器可以在预测输出序列中的每个时间步长时学习在更丰富的编码中注意的位置。
 
-有关编码器 - 解码器架构的更多信息，请参阅帖子：
+有关编解码器架构的更多信息，请参阅帖子：
 
-*   [编码器 - 解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
+*   [编解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 
-## 直接编码器 - 解码器实现
+## 直接编解码器实现
 
-有多种方法可以将编码器 - 解码器架构实现为系统。
+有多种方法可以将编解码器架构实现为系统。
 
 一种方法是在给定编码器输入的情况下从解码器整体产生输出。这就是模型经常被描述的方式。
 
 > ...我们提出了一种新颖的神经网络架构，它学习将可变长度序列编码成固定长度的向量表示，并将给定的固定长度向量表示解码回可变长度序列。
 
-- [使用RNN编码器 - 解码器进行统计机器翻译的学习短语表示](https://arxiv.org/abs/1406.1078)，2014。
+- [使用RNN编解码器进行统计机器翻译的学习短语表示](https://arxiv.org/abs/1406.1078)，2014。
 
-我们将此模型称为直接编码器 - 解码器实现，因为缺少更好的名称。
+我们将此模型称为直接编解码器实现，因为缺少更好的名称。
 
 为了清楚起见，让我们通过一个法国到英语神经机器翻译的小插图。
 
@@ -62,7 +62,7 @@
 
 神经机器翻译的直接编码器解码器模型实现
 
-## 递归编码器 - 解码器实现
+## 递归编解码器实现
 
 另一种实现是对模型进行帧化，使得它仅生成一个字，并且递归地调用模型以生成整个输出序列。
 
@@ -98,7 +98,7 @@ Below is a depiction of this implementation.
 
 到目前为止生成的整个输出序列可以被重放作为具有或不具有编码输入序列的解码器的输入，以允许解码器在预测下一个字之前到达相同的内部状态，如果模型生成整个模型那么输出序列一次，如上一节所述。
 
-## 合并编码器 - 解码器实现
+## 合并编解码器实现
 
 递归实现可以模仿输出整个序列，如在第一个模型中那样。
 
@@ -116,9 +116,9 @@ Below is a depiction of this implementation.
 
 用于神经机器翻译的合并编码器解码器模型实现
 
-## 具有注意实现的直接编码器 - 解码器
+## 具有注意实现的直接编解码器
 
-我们现在可以在编码器 - 解码器循环神经网络架构的这些不同实现的上下文中考虑注意机制。
+我们现在可以在编解码器循环神经网络架构的这些不同实现的上下文中考虑注意机制。
 
 正如Bahdanau等人所描述的那样。在他们的论文“[通过联合学习对齐和翻译](https://arxiv.org/abs/1409.0473)的神经机器翻译”，涉及以下几个要素：
 
@@ -127,23 +127,23 @@ Below is a depiction of this implementation.
 *   **加权编码**。对齐的加权，可用作编码输入序列上的概率分布。
 *   **加权上下文向量**。应用于编码输入序列的加权然后可用于解码下一个字。
 
-注意，在所有这些编码器 - 解码器模型中，模型的输出（下一个预测字）和解码器的输出（内部表示）之间存在差异。解码器不直接输出字;通常，完全连接的层连接到解码器，该解码器输出单词词汇表上的概率分布，然后使用诸如波束搜索的启发式进一步搜索。
+注意，在所有这些编解码器模型中，模型的输出（下一个预测字）和解码器的输出（内部表示）之间存在差异。解码器不直接输出字;通常，完全连接的层连接到解码器，该解码器输出单词词汇表上的概率分布，然后使用诸如波束搜索的启发式进一步搜索。
 
-有关如何计算编码器 - 解码器模型中的注意力的更多详细信息，请参阅帖子：
+有关如何计算编解码器模型中的注意力的更多详细信息，请参阅帖子：
 
-*   [编码器 - 解码器循环神经网络中的注意事项如何工作](https://machinelearningmastery.com/how-does-attention-work-in-encoder-decoder-recurrent-neural-networks/)
+*   [编解码器循环神经网络中的注意事项如何工作](https://machinelearningmastery.com/how-does-attention-work-in-encoder-decoder-recurrent-neural-networks/)
 
-我们可以关注直接编码器 - 解码器模型的动画，如下所示。
+我们可以关注直接编解码器模型的动画，如下所示。
 
 ![Direct Encoder Decoder With Attention Model Implementation for Neural Machine Translation](img/25f86b9f1dffd58a35818eea06e520d6.jpg)
 
 基于注意模型的直接编码器解码器在神经机器翻译中的应用
 
-在直接编码器 - 解码器模型中实现注意力可能具有挑战性。这是因为具有向量化方程的有效神经网络库需要在计算之前获得所有信息。
+在直接编解码器模型中实现注意力可能具有挑战性。这是因为具有向量化方程的有效神经网络库需要在计算之前获得所有信息。
 
 对于每个预测，模型需要从解码器访问有人参与的输出，从而中断了这种需要。
 
-## 具有注意实现的递归编码器 - 解码器
+## 具有注意实现的递归编解码器
 
 注意力有助于递归描述和实现。
 
@@ -175,13 +175,13 @@ Below is a depiction of this implementation.
 
 ### 帖子
 
-*   [编码器 - 解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
+*   [编解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 *   [长期短期记忆循环神经网络](https://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/)的注意事项
-*   [编码器 - 解码器循环神经网络中的注意事项如何工作](https://machinelearningmastery.com/how-does-attention-work-in-encoder-decoder-recurrent-neural-networks/)
+*   [编解码器循环神经网络中的注意事项如何工作](https://machinelearningmastery.com/how-does-attention-work-in-encoder-decoder-recurrent-neural-networks/)
 
 ### 文件
 
-*   [使用RNN编码器 - 解码器进行统计机器翻译的学习短语表示](https://arxiv.org/abs/1406.1078)，2014。
+*   [使用RNN编解码器进行统计机器翻译的学习短语表示](https://arxiv.org/abs/1406.1078)，2014。
 *   [通过共同学习对齐和翻译的神经机器翻译](https://arxiv.org/abs/1409.0473)，2015。
 *   [将图像放在图像标题生成器](https://arxiv.org/abs/1703.09137)中的位置，2017。
 *   [循环神经网络（RNN）在图像标题生成器中的作用是什么？](https://arxiv.org/abs/1708.02043) ，2017
@@ -189,13 +189,13 @@ Below is a depiction of this implementation.
 
 ## 摘要
 
-在这篇文章中，您发现了用于实现编码器 - 解码器模型的模式，无论是否受到关注。
+在这篇文章中，您发现了用于实现编解码器模型的模式，无论是否受到关注。
 
 具体来说，你学到了：
 
-*   编码器 - 解码器循环神经网络的直接与递归实现模式。
-*   注意力如何适合编码器 - 解码器模型的直接实现模式。
-*   如何使用编码器 - 解码器模型的递归实现模式来实现关注。
+*   编解码器循环神经网络的直接与递归实现模式。
+*   注意力如何适合编解码器模型的直接实现模式。
+*   如何使用编解码器模型的递归实现模式来实现关注。
 
 你有任何问题吗？
 在下面的评论中提出您的问题，我会尽力回答。

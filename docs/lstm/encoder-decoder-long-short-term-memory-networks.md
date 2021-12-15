@@ -1,27 +1,27 @@
-# 编码器 - 解码器长短期存储器网络
+# 编解码器长短期存储器网络
 
 > 原文： [https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 
 ### 使用示例Python代码，轻松介绍
-序列到序列预测的编码器 - 解码器LSTM。
+序列到序列预测的编解码器LSTM。
 
-编码器 - 解码器LSTM是一种循环神经网络，旨在解决序列到序列问题，有时称为seq2seq。
+编解码器LSTM是一种循环神经网络，旨在解决序列到序列问题，有时称为seq2seq。
 
 序列到序列预测问题具有挑战性，因为输入和输出序列中的项目数可以变化。例如，文本翻译和学习执行程序是seq2seq问题的例子。
 
-在这篇文章中，您将发现用于序列到序列预测的编码器 - 解码器LSTM架构。
+在这篇文章中，您将发现用于序列到序列预测的编解码器LSTM架构。
 
 完成这篇文章后，你会知道：
 
 *   序列到序列预测的挑战。
-*   编码器 - 解码器架构以及它旨在解决的LSTM中的限制。
-*   如何使用Keras在Python中实现编码器 - 解码器LSTM模型架构。
+*   编解码器架构以及它旨在解决的LSTM中的限制。
+*   如何使用Keras在Python中实现编解码器LSTM模型架构。
 
 让我们开始吧。
 
 ![Encoder-Decoder Long Short-Term Memory Networks](img/c1cac01eed6e2d603129617a1e7921a8.jpg)
 
-编码器 - 解码器长短期记忆网络
+编解码器长短期记忆网络
 照片来自 [slashvee](https://www.flickr.com/photos/slashvee/14992713152/) ，保留一些权利。
 
 ## 序列到序列预测问题
@@ -34,23 +34,23 @@
 
 使这些问题具有挑战性的一个建模问题是输入和输出序列的长度可能变化。假设存在多个输入时间步长和多个输出时间步长，则这种形式的问题被称为多对多类型序列预测问题。
 
-## 编码器 - 解码器LSTM架构
+## 编解码器LSTM架构
 
-已证明非常有效的seq2seq预测问题的一种方法称为编码器 - 解码器LSTM。
+已证明非常有效的seq2seq预测问题的一种方法称为编解码器LSTM。
 
 该架构由两个模型组成：一个用于读取输入序列并将其编码为固定长度向量，第二个用于解码固定长度向量并输出预测序列。这些模型的使用使该架构的名称为Encoder-Decoder LSTM，专门针对seq2seq问题而设计。
 
-> ... RNN编码器 - 解码器，由两个循环神经网络（RNN）组成，充当编码器和解码器对。编码器将可变长度源序列映射到固定长度向量，并且解码器将向量表示映射回可变长度目标序列。
+> ... RNN编解码器，由两个循环神经网络（RNN）组成，充当编码器和解码器对。编码器将可变长度源序列映射到固定长度向量，并且解码器将向量表示映射回可变长度目标序列。
 
-- [使用RNN编码器 - 解码器进行统计机器翻译的学习短语表示](https://arxiv.org/abs/1406.1078)，2014。
+- [使用RNN编解码器进行统计机器翻译的学习短语表示](https://arxiv.org/abs/1406.1078)，2014。
 
-编码器 - 解码器LSTM是为自然语言处理问题而开发的，它展示了最先进的表现，特别是在称为统计机器翻译的文本翻译领域。
+编解码器LSTM是为自然语言处理问题而开发的，它展示了最先进的表现，特别是在称为统计机器翻译的文本翻译领域。
 
 该架构的创新之处在于在模型的核心使用固定大小的内部表示，读取输入序列并读取输出序列。因此，该方法可以称为序列嵌入。
 
 在该架构的第一个应用之一中，英语到法语的翻译，编码的英语短语的内部表示是可视化的。这些图揭示了用于翻译任务的短语的定性有意义的学习结构。
 
-> 所提出的RNN编码器 - 解码器自然地生成短语的连续空间表示。 [...]从可视化中，很明显RNN编码器 - 解码器捕获短语的语义和句法结构
+> 所提出的RNN编解码器自然地生成短语的连续空间表示。 [...]从可视化中，很明显RNN编解码器捕获短语的语义和句法结构
 
 — [Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation](https://arxiv.org/abs/1406.1078), 2014.
 
@@ -68,11 +68,11 @@
 
 ![Encoder-Decoder LSTM Model Architecture](img/4bcb998fc39d11b4abf0c21d80e57c76.jpg)
 
-编码器 - 解码器LSTM模型体系结构
+编解码器LSTM模型体系结构
 
-## 编码器 - 解码器LSTM的应用
+## 编解码器LSTM的应用
 
-下面的列表突出了编码器 - 解码器LSTM架构的一些有趣应用。
+下面的列表突出了编解码器LSTM架构的一些有趣应用。
 
 *   机器翻译，例如英语到法语的短语翻译。
 *   学习执行，例如计算小程序的结果。
@@ -80,9 +80,9 @@
 *   会话建模，例如产生文本问题的答案。
 *   运动分类，例如从一系列手势生成一系列命令。
 
-## 在Keras中实现编码器 - 解码器LSTM
+## 在Keras中实现编解码器LSTM
 
-编码器 - 解码器LSTM可以直接在Keras深度学习库中实现。
+编解码器LSTM可以直接在Keras深度学习库中实现。
 
 我们可以认为该模型由两个关键部分组成：编码器和解码器。
 
@@ -140,7 +140,7 @@ model.add(TimeDistributed(Dense(...)))
 
 ### 文件
 
-*   [使用RNN编码器 - 解码器进行统计机器翻译的学习短语表示](https://arxiv.org/abs/1406.1078)，2014。
+*   [使用RNN编解码器进行统计机器翻译的学习短语表示](https://arxiv.org/abs/1406.1078)，2014。
 *   [用神经网络进行序列学习的序列](https://arxiv.org/abs/1409.3215)，2014。
 *   [Show and Tell：神经图像标题生成器](https://arxiv.org/abs/1411.4555)，2014。
 *   [学习执行](http://arxiv.org/abs/1410.4615)，2015年。
@@ -153,19 +153,19 @@ model.add(TimeDistributed(Dense(...)))
 
 ### 帖子
 
-*   [如何将编码器 - 解码器LSTM用于随机整数的回波序列](http://machinelearningmastery.com/how-to-use-an-encoder-decoder-lstm-to-echo-sequences-of-random-integers/)
-*   [学习使用编码器 - 解码器LSTM循环神经网络](http://machinelearningmastery.com/learn-add-numbers-seq2seq-recurrent-neural-networks/)添加数字
+*   [如何将编解码器LSTM用于随机整数的回波序列](http://machinelearningmastery.com/how-to-use-an-encoder-decoder-lstm-to-echo-sequences-of-random-integers/)
+*   [学习使用编解码器LSTM循环神经网络](http://machinelearningmastery.com/learn-add-numbers-seq2seq-recurrent-neural-networks/)添加数字
 *   [长期短期记忆循环神经网络](http://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/)的注意事项
 
 ## 摘要
 
-在这篇文章中，您发现了用于序列到序列预测的编码器 - 解码器LSTM架构
+在这篇文章中，您发现了用于序列到序列预测的编解码器LSTM架构
 
 具体来说，你学到了：
 
 *   序列到序列预测的挑战。
-*   编码器 - 解码器架构以及它旨在解决的LSTM中的限制。
-*   如何使用Keras在Python中实现编码器 - 解码器LSTM模型架构。
+*   编解码器架构以及它旨在解决的LSTM中的限制。
+*   如何使用Keras在Python中实现编解码器LSTM模型架构。
 
 你有任何问题吗？
 在下面的评论中提出您的问题，我会尽力回答。

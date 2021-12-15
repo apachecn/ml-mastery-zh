@@ -12,9 +12,9 @@
 
 完成本教程后，您将了解：
 
-*   如何开发和评估用于多步时间序列预测的单变量和多变量编码器 - 解码器 LSTM。
-*   如何开发和评估用于多步时间序列预测的 CNN-LSTM 编码器 - 解码器模型。
-*   如何开发和评估用于多步时间序列预测的 ConvLSTM 编码器 - 解码器模型。
+*   如何开发和评估用于多步时间序列预测的单变量和多变量编解码器 LSTM。
+*   如何开发和评估用于多步时间序列预测的 CNN-LSTM 编解码器模型。
+*   如何开发和评估用于多步时间序列预测的 ConvLSTM 编解码器模型。
 
 让我们开始吧。
 
@@ -36,10 +36,10 @@
 3.  模型评估
 4.  用于多步预测的 LSTM
 5.  具有单变量输入和向量输出的 LSTM 模型
-6.  具有单变量输入的编码器 - 解码器 LSTM 模型
-7.  具有多变量输入的编码器 - 解码器 LSTM 模型
-8.  具有单变量输入的 CNN-LSTM 编码器 - 解码器模型
-9.  具有单变量输入的 ConvLSTM 编码器 - 解码器模型
+6.  具有单变量输入的编解码器 LSTM 模型
+7.  具有多变量输入的编解码器 LSTM 模型
+8.  具有单变量输入的 CNN-LSTM 编解码器模型
+9.  具有单变量输入的 ConvLSTM 编解码器模型
 
 ### Python 环境
 
@@ -450,11 +450,11 @@ LSTM 在多步时间序列预测方面具有许多优势;他们是：
 
 此外，已经开发了专门设计用于进行多步序列预测的专用架构，通常称为序列到序列预测，或简称为 seq2seq。这很有用，因为多步时间序列预测是一种 seq2seq 预测。
 
-针对 seq2seq 问题设计的循环神经网络架构的示例是编码器 - 解码器 LSTM。
+针对 seq2seq 问题设计的循环神经网络架构的示例是编解码器 LSTM。
 
-编码器 - 解码器 LSTM 是由两个子模型组成的模型：一个称为编码器，其读取输入序列并将其压缩为固定长度的内部表示，以及称为解码器的输出模型，其解释内部表示并使用它预测输出序列。
+编解码器 LSTM 是由两个子模型组成的模型：一个称为编码器，其读取输入序列并将其压缩为固定长度的内部表示，以及称为解码器的输出模型，其解释内部表示并使用它预测输出序列。
 
-事实证明，序列预测的编码器 - 解码器方法比直接输出向量更有效，并且是首选方法。
+事实证明，序列预测的编解码器方法比直接输出向量更有效，并且是首选方法。
 
 通常，已经发现 LSTM 在自回归类型问题上不是非常有效。这些是预测下一个时间步长是最近时间步长的函数。
 
@@ -475,10 +475,10 @@ CNN LSTM 架构的功率变化是 ConvLSTM，它直接在 LSTM 的单元内使�
 在本教程中，我们将探索一套用于多步时间序列预测的 LSTM 架构。具体来说，我们将看看如何开发以下模型：
 
 *   **LSTM** 模型，带有向量输出，用于多变量预测，具有单变量输入数据。
-*   **编码器 - 解码器 LSTM** 模型，用于使用单变量输入数据进行多步预测。
-*   **编码器 - 解码器 LSTM** 模型，用于多变量输入数据的多步预测。
-*   **CNN-LSTM 编码器 - 解码器**模型，用于使用单变量输入数据进行多步预测。
-*   **ConvLSTM 编码器 - 解码器**模型，用于使用单变量输入数据进行多步预测。
+*   **编解码器 LSTM** 模型，用于使用单变量输入数据进行多步预测。
+*   **编解码器 LSTM** 模型，用于多变量输入数据的多步预测。
+*   **CNN-LSTM 编解码器**模型，用于使用单变量输入数据进行多步预测。
+*   **ConvLSTM 编解码器**模型，用于使用单变量输入数据进行多步预测。
 
 如果您不熟悉使用 LSTM 进行时间序列预测，我强烈推荐这篇文章：
 
@@ -867,9 +867,9 @@ lstm: [370.028] 387.4, 377.9, 334.0, 371.2, 367.1, 330.4, 415.1
 
 具有向量输出和 14 天输入的单变量 LSTM 每日 RMSE 的线图
 
-## 具有单变量输入的编码器 - 解码器 LSTM 模型
+## 具有单变量输入的编解码器 LSTM 模型
 
-在本节中，我们可以更新 vanilla LSTM 以使用编码器 - 解码器模型。
+在本节中，我们可以更新 vanilla LSTM 以使用编解码器模型。
 
 这意味着模型不会直接输出向量序列。相反，该模型将包括两个子模型，即用于读取和编码输入序列的编码器，以及将读取编码输入序列并对输出序列中的每个元素进行一步预测的解码器。
 
@@ -887,7 +887,7 @@ model = Sequential()
 model.add(LSTM(200, activation='relu', input_shape=(n_timesteps, n_features)))
 ```
 
-我们将使用一种易于在 Keras 中实现的简单编码器 - 解码器架构，它与 LSTM 自动编码器的架构有很多相似之处。
+我们将使用一种易于在 Keras 中实现的简单编解码器架构，它与 LSTM 自动编码器的架构有很多相似之处。
 
 首先，输入序列的内部表示重复多次，输出序列中的每个时间步长一次。该序列的向量将被呈现给 LSTM 解码器。
 
@@ -948,7 +948,7 @@ def build_model(train, n_input):
 	return model
 ```
 
-下面列出了编码器 - 解码器模型的完整示例。
+下面列出了编解码器模型的完整示例。
 
 ```py
 # univariate multi-step encoder-decoder lstm
@@ -1104,11 +1104,11 @@ lstm: [372.595] 379.5, 399.8, 339.6, 372.2, 370.9, 309.9, 424.8
 
 ![Line Plot of RMSE per Day for Univariate Encoder-Decoder LSTM with 14-day Inputs](img/581b1e054e46aaa80b4e5cd32dfcbef2.jpg)
 
-具有 14 天输入的单变量编码器 - 解码器 LSTM 每天 RMSE 的线图
+具有 14 天输入的单变量编解码器 LSTM 每天 RMSE 的线图
 
-## 具有多变量输入的编码器 - 解码器 LSTM 模型
+## 具有多变量输入的编解码器 LSTM 模型
 
-在本节中，我们将更新上一节中开发的编码器 - 解码器 LSTM，以使用八个时间序列变量中的每一个来预测下一个标准周的每日总功耗。
+在本节中，我们将更新上一节中开发的编解码器 LSTM，以使用八个时间序列变量中的每一个来预测下一个标准周的每日总功耗。
 
 我们将通过将每个一维时间序列作为单独的输入序列提供给模型来实现此目的。
 
@@ -1333,13 +1333,13 @@ lstm: [376.273] 378.5, 381.5, 328.4, 388.3, 361.2, 308.0, 467.2
 
 ![Line Plot of RMSE per Day for Multivariate Encoder-Decoder LSTM with 14-day Inputs](img/d463c92463bbfd80a905df0c8cc129aa.jpg)
 
-具有 14 天输入的多变量编码器 - 解码器 LSTM 每天 RMSE 的线图
+具有 14 天输入的多变量编解码器 LSTM 每天 RMSE 的线图
 
-## 具有单变量输入的 CNN-LSTM 编码器 - 解码器模型
+## 具有单变量输入的 CNN-LSTM 编解码器模型
 
-卷积神经网络或 CNN 可以用作编码器 - 解码器架构中的编码器。
+卷积神经网络或 CNN 可以用作编解码器架构中的编码器。
 
-CNN 不直接支持序列输入;相反，1D CNN 能够读取序列输入并自动学习显着特征。然后可以按照正常情况由 LSTM 解码器解释这些。我们将使用 CNN 和 LSTM 的混合模型称为 [CNN-LSTM 模型](https://machinelearningmastery.com/cnn-long-short-term-memory-networks/)，在这种情况下，我们在编码器 - 解码器架构中一起使用它们。
+CNN 不直接支持序列输入;相反，1D CNN 能够读取序列输入并自动学习显着特征。然后可以按照正常情况由 LSTM 解码器解释这些。我们将使用 CNN 和 LSTM 的混合模型称为 [CNN-LSTM 模型](https://machinelearningmastery.com/cnn-long-short-term-memory-networks/)，在这种情况下，我们在编解码器架构中一起使用它们。
 
 CNN 期望输入数据具有与 LSTM 模型相同的 3D 结构，尽管多个特征被读取为最终具有相同效果的不同通道。
 
@@ -1392,7 +1392,7 @@ def build_model(train, n_input):
 	return model
 ```
 
-我们现在准备尝试使用 CNN 编码器的编码器 - 解码器架构。
+我们现在准备尝试使用 CNN 编码器的编解码器架构。
 
 完整的代码清单如下。
 
@@ -1557,9 +1557,9 @@ lstm: [372.055] 383.8, 381.6, 339.1, 371.8, 371.8, 319.6, 427.2
 
 ![Line Plot of RMSE per Day for Univariate Encoder-Decoder CNN LSTM with 14-day Inputs](img/667d8a4b2415019c4c974300451c5bc5.jpg)
 
-具有 14 天输入的单变量编码器 - 解码器 CNN LSTM 每天 RMSE 的线图
+具有 14 天输入的单变量编解码器 CNN LSTM 每天 RMSE 的线图
 
-## 具有单变量输入的 ConvLSTM 编码器 - 解码器模型
+## 具有单变量输入的 ConvLSTM 编解码器模型
 
 CNN-LSTM 方法的进一步扩展是执行 CNN 的卷积（例如 CNN 如何读取输入序列数据）作为每个时间步长的 LSTM 的一部分。
 
@@ -1677,7 +1677,7 @@ def forecast(model, history, n_steps, n_length, n_input):
 	return yhat
 ```
 
-我们现在拥有评估编码器 - 解码器架构的所有元素，用于多步时间序列预测，其中 ConvLSTM 用作编码器。
+我们现在拥有评估编解码器架构的所有元素，用于多步时间序列预测，其中 ConvLSTM 用作编码器。
 
 完整的代码示例如下所示。
 
@@ -1841,7 +1841,7 @@ lstm: [367.929] 416.3, 379.7, 334.7, 362.3, 374.7, 284.8, 406.7
 
 ![Line Plot of RMSE per Day for Univariate Encoder-Decoder ConvLSTM with 14-day Inputs](img/cad0705f4ea93f292420695b0d6b2fb8.jpg)
 
-具有 14 天输入的单变量编码器 - 解码器 ConvLSTM 每天 RMSE 的线图
+具有 14 天输入的单变量编解码器 ConvLSTM 每天 RMSE 的线图
 
 ## 扩展
 
@@ -1865,7 +1865,7 @@ lstm: [367.929] 416.3, 379.7, 334.7, 362.3, 374.7, 284.8, 406.7
 *   [专家对长短期记忆网络的简要介绍](https://machinelearningmastery.com/gentle-introduction-long-short-term-memory-networks-experts/)
 *   [关于 LSTM 对时间序列预测的适用性](https://machinelearningmastery.com/suitability-long-short-term-memory-networks-time-series-forecasting/)
 *   [CNN 长短期记忆网络](https://machinelearningmastery.com/cnn-long-short-term-memory-networks/)
-*   [如何开发 Keras 中序列到序列预测的编码器 - 解码器模型](https://machinelearningmastery.com/develop-encoder-decoder-model-sequence-sequence-prediction-keras/)
+*   [如何开发 Keras 中序列到序列预测的编解码器模型](https://machinelearningmastery.com/develop-encoder-decoder-model-sequence-sequence-prediction-keras/)
 
 ### API
 
@@ -1887,9 +1887,9 @@ lstm: [367.929] 416.3, 379.7, 334.7, 362.3, 374.7, 284.8, 406.7
 
 具体来说，你学到了：
 
-*   如何开发和评估用于多步时间序列预测的单变量和多变量编码器 - 解码器 LSTM。
-*   如何开发和评估用于多步时间序列预测的 CNN-LSTM 编码器 - 解码器模型。
-*   如何开发和评估用于多步时间序列预测的 ConvLSTM 编码器 - 解码器模型。
+*   如何开发和评估用于多步时间序列预测的单变量和多变量编解码器 LSTM。
+*   如何开发和评估用于多步时间序列预测的 CNN-LSTM 编解码器模型。
+*   如何开发和评估用于多步时间序列预测的 ConvLSTM 编解码器模型。
 
 你有任何问题吗？
 在下面的评论中提出您的问题，我会尽力回答。

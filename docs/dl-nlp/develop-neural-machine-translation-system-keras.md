@@ -14,7 +14,7 @@
 完成本教程后，您将了解：
 
 *   如何清理和准备数据准备训练神经机器翻译系统。
-*   如何开发机器翻译的编码器 - 解码器模型。
+*   如何开发机器翻译的编解码器模型。
 *   如何使用训练有素的模型推断新的输入短语并评估模型技巧。
 
 让我们开始吧。
@@ -440,7 +440,7 @@ testY = encode_output(testY, eng_vocab_size)
 
 我们现在准备定义模型。
 
-我们将在这个问题上使用编码器 - 解码器 LSTM 模型。在这种架构中，输入序列由称为编码器的前端模型编码，然后由称为解码器的后端模型逐字解码。
+我们将在这个问题上使用编解码器 LSTM 模型。在这种架构中，输入序列由称为编码器的前端模型编码，然后由称为解码器的后端模型逐字解码。
 
 下面的函数`define_model()`定义了模型，并采用了许多用于配置模型的参数，例如输入和输出词汇的大小，输入和输出短语的最大长度以及数字用于配置模型的内存单元。
 
@@ -450,7 +450,7 @@ testY = encode_output(testY, eng_vocab_size)
 
 有关配置神经机器翻译模型的更多建议，请参阅帖子：
 
-*   [如何为神经机器翻译配置编码器 - 解码器模型](https://machinelearningmastery.com/configure-encoder-decoder-model-neural-machine-translation/)
+*   [如何为神经机器翻译配置编解码器模型](https://machinelearningmastery.com/configure-encoder-decoder-model-neural-machine-translation/)
 
 ```py
 # define NMT model
@@ -927,7 +927,7 @@ BLEU-4: 0.076238
 
 *   [制表符分隔的双语句子对](http://www.manythings.org/anki/)
 *   [德语 - 英语 deu-eng.zip](http://www.manythings.org/anki/deu-eng.zip)
-*   [编码器 - 解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
+*   [编解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 
 ## 摘要
 
@@ -936,7 +936,7 @@ BLEU-4: 0.076238
 具体来说，你学到了：
 
 *   如何清理和准备数据准备训练神经机器翻译系统。
-*   如何开发机器翻译的编码器 - 解码器模型。
+*   如何开发机器翻译的编解码器模型。
 *   如何使用训练有素的模型推断新的输入短语并评估模型技巧。
 
 你有任何问题吗？

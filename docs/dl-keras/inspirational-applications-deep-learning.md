@@ -124,7 +124,7 @@
 ### 文件
 
 *   [用神经网络进行序列学习的序列](http://arxiv.org/pdf/1409.3215v3.pdf) [pdf]，2014
-*   [使用 RNN 编码器 - 解码器进行统计机器翻译的学习短语表示](http://arxiv.org/pdf/1406.1078v3.pdf) [pdf]，2014
+*   [使用 RNN 编解码器进行统计机器翻译的学习短语表示](http://arxiv.org/pdf/1406.1078v3.pdf) [pdf]，2014
 *   [机器翻译中的深度神经网络：概述](http://www.nlpr.ia.ac.cn/cip/ZongPublications/2015/IEEE-Zhang-8-5.pdf) [pdf]，2015
 
 ## 4.照片中的物体分类和检测

@@ -58,7 +58,7 @@
 *   **第 04 课**：时间序列预测的 CNN
 *   **第 05 课**：时间序列预测的 LSTM
 *   **第 06 课：** CNN-LSTM 用于时间序列预测
-*   **第 07 课**：编码器 - 解码器 LSTM 多步预测
+*   **第 07 课**：编解码器 LSTM 多步预测
 
 每节课可能需要 60 秒或 30 分钟。花点时间，按照自己的进度完成课程。在下面的评论中提出问题甚至发布结果。
 
@@ -388,15 +388,15 @@ print(yhat)
 *   [CNN 长短期记忆网络](https://machinelearningmastery.com/cnn-long-short-term-memory-networks/)
 *   [如何在 Python](https://machinelearningmastery.com/timedistributed-layer-for-long-short-term-memory-networks-in-python/) 中为长期短期内存网络使用时间分布层
 
-在下一课中，您将了解如何开发用于多步时间序列预测的编码器 - 解码器 LSTM 网络模型。
+在下一课中，您将了解如何开发用于多步时间序列预测的编解码器 LSTM 网络模型。
 
-## 课程 07：编码器 - 解码器 LSTM 多步预测
+## 课程 07：编解码器 LSTM 多步预测
 
-在本课程中，您将了解如何为多步时间序列预测开发编码器 - 解码器 LSTM 网络模型。
+在本课程中，您将了解如何为多步时间序列预测开发编解码器 LSTM 网络模型。
 
 我们可以将一个简单的单变量问题定义为整数序列，使模型适合该序列，并让模型预测序列中的下两个值。我们将问题框架为 3 输入和 2 输出，例如：[10,20,30]作为输入，[40,50]作为输出。
 
-LSTM 模型需要具有[_ 样本，时间步长，特征 _]形状的三维输入。我们将以[_ 样本，时间步长 _]的形式定义数据并相应地重新整形。使用编码器 - 解码器模型时，输出也必须以这种方式成形。
+LSTM 模型需要具有[_ 样本，时间步长，特征 _]形状的三维输入。我们将以[_ 样本，时间步长 _]的形式定义数据并相应地重新整形。使用编解码器模型时，输出也必须以这种方式成形。
 
 我们将通过第一个隐藏层上的`input_shape`参数将输入时间步数定义为 3，将要素数定义为 1。
 
@@ -452,7 +452,7 @@ print(yhat)
 
 ### 更多信息
 
-*   [编码器 - 解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
+*   [编解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 *   [多步时间序列预测的 4 种策略](https://machinelearningmastery.com/multi-step-time-series-forecasting/)
 *   [Python 中长期短期记忆网络的多步时间序列预测](https://machinelearningmastery.com/multi-step-time-series-forecasting-long-short-term-memory-networks-python/)
 
@@ -471,7 +471,7 @@ print(yhat)
 *   如何建立一个单变量时间序列预测问题的卷积神经网络模型。
 *   如何为单变量时间序列预测问题开发长短期记忆网络模型。
 *   如何为单变量时间序列预测问题开发混合 CNN-LSTM 模型。
-*   如何为多步时间序列预测问题开发编码器 - 解码器 LSTM 模型。
+*   如何为多步时间序列预测问题开发编解码器 LSTM 模型。
 
 这只是您深入学习时间序列预测的旅程的开始。继续练习和发展你的技能。
 

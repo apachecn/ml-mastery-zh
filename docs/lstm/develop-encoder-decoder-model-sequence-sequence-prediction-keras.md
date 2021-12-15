@@ -1,35 +1,35 @@
-# 如何开发Keras序列到序列预测的编码器 - 解码器模型
+# 如何开发Keras序列到序列预测的编解码器模型
 
 > 原文： [https://machinelearningmastery.com/develop-encoder-decoder-model-sequence-sequence-prediction-keras/](https://machinelearningmastery.com/develop-encoder-decoder-model-sequence-sequence-prediction-keras/)
 
-编码器 - 解码器模型提供了使用循环神经网络来解决具有挑战性的序列到序列预测问题（例如机器翻译）的模式。
+编解码器模型提供了使用循环神经网络来解决具有挑战性的序列到序列预测问题（例如机器翻译）的模式。
 
-可以在Keras Python深度学习库中开发编码器 - 解码器模型，并且在Keras博客上描述了使用该模型开发的神经机器翻译系统的示例，其中示例代码与Keras项目一起分发。
+可以在Keras Python深度学习库中开发编解码器模型，并且在Keras博客上描述了使用该模型开发的神经机器翻译系统的示例，其中示例代码与Keras项目一起分发。
 
-这个例子可以为您自己的序列到序列预测问题提供编码器 - 解码器LSTM模型的基础。
+这个例子可以为您自己的序列到序列预测问题提供编解码器LSTM模型的基础。
 
-在本教程中，您将了解如何使用Keras为序列到序列预测问题开发复杂的编码器 - 解码器循环神经网络。
+在本教程中，您将了解如何使用Keras为序列到序列预测问题开发复杂的编解码器循环神经网络。
 
 完成本教程后，您将了解：
 
-*   如何在Keras中正确定义复杂的编码器 - 解码器模型以进行序列到序列预测。
-*   如何定义可用于评估编码器 - 解码器LSTM模型的人为但可扩展的序列到序列预测问题。
-*   如何在Keras中应用编码器 - 解码器LSTM模型来解决可伸缩的整数序列到序列预测问题。
+*   如何在Keras中正确定义复杂的编解码器模型以进行序列到序列预测。
+*   如何定义可用于评估编解码器LSTM模型的人为但可扩展的序列到序列预测问题。
+*   如何在Keras中应用编解码器LSTM模型来解决可伸缩的整数序列到序列预测问题。
 
 让我们开始吧。
 
 ![How to Develop an Encoder-Decoder Model for Sequence-to-Sequence Prediction in Keras](img/aa2a843b49a185a698da7748e1ce1131.jpg)
 
-如何开发Keras序列到序列预测的编码器 - 解码器模型
+如何开发Keras序列到序列预测的编解码器模型
 照片由[BjörnGroß](https://www.flickr.com/photos/damescalito/35370558025/)，保留一些权利。
 
 ## 教程概述
 
 本教程分为3个部分;他们是：
 
-*   Keras中的编码器 - 解码器模型
+*   Keras中的编解码器模型
 *   可扩展的序列到序列问题
-*   用于序列预测的编码器 - 解码器LSTM
+*   用于序列预测的编解码器LSTM
 
 ### Python环境
 
@@ -43,19 +43,19 @@
 
 *   [如何使用Anaconda设置用于机器学习和深度学习的Python环境](https://machinelearningmastery.com/setup-python-environment-machine-learning-deep-learning-anaconda/)
 
-## Keras中的编码器 - 解码器模型
+## Keras中的编解码器模型
 
-编码器 - 解码器模型是一种组织序列到序列预测问题的循环神经网络的方法。
+编解码器模型是一种组织序列到序列预测问题的循环神经网络的方法。
 
 它最初是为机器翻译问题而开发的，尽管它已经证明在相关的序列到序列预测问题上是成功的，例如文本摘要和问题回答。
 
 该方法涉及两个循环神经网络，一个用于编码源序列，称为编码器，第二个用于将编码的源序列解码为目标序列，称为解码器。
 
-Keras深度学习Python库提供了一个如何实现机器翻译的编码器 - 解码器模型的例子（ [lstm_seq2seq.py](https://github.com/fchollet/keras/blob/master/examples/lstm_seq2seq.py) ），由库创建者在帖子中描述：“[十分钟的介绍在Keras](https://blog.keras.io/a-ten-minute-introduction-to-sequence-to-sequence-learning-in-keras.html) 中进行序列到序列学习。“
+Keras深度学习Python库提供了一个如何实现机器翻译的编解码器模型的例子（ [lstm_seq2seq.py](https://github.com/fchollet/keras/blob/master/examples/lstm_seq2seq.py) ），由库创建者在帖子中描述：“[十分钟的介绍在Keras](https://blog.keras.io/a-ten-minute-introduction-to-sequence-to-sequence-learning-in-keras.html) 中进行序列到序列学习。“
 
 有关此型号的详细分类，请参阅帖子：
 
-*   [如何定义Keras神经机器翻译的编码器 - 解码器序列 - 序列模型](https://machinelearningmastery.com/define-encoder-decoder-sequence-sequence-model-neural-machine-translation-keras/)
+*   [如何定义Keras神经机器翻译的编解码器序列 - 序列模型](https://machinelearningmastery.com/define-encoder-decoder-sequence-sequence-model-neural-machine-translation-keras/)
 
 有关使用return_state的更多信息，可能是您的新手，请参阅帖子：
 
@@ -65,7 +65,7 @@ Keras深度学习Python库提供了一个如何实现机器翻译的编码器 - 
 
 *   [如何使用Keras功能API进行深度学习](https://machinelearningmastery.com/keras-functional-api-deep-learning/)
 
-使用该示例中的代码作为起点，我们可以开发一个通用函数来定义编码器 - 解码器循环神经网络。下面是这个名为 _define_models（）_的函数。
+使用该示例中的代码作为起点，我们可以开发一个通用函数来定义编解码器循环神经网络。下面是这个名为 _define_models（）_的函数。
 
 ```py
 # returns train, inference_encoder and inference_decoder models
@@ -320,9 +320,9 @@ X1=[32, 16, 12, 34, 25, 24], X2=[0, 12, 16], y=[12, 16, 32]
 
 我们现在准备为这个序列到序列预测问题开发一个模型。
 
-## 用于序列预测的编码器 - 解码器LSTM
+## 用于序列预测的编解码器LSTM
 
-在本节中，我们将第一部分中开发的编码器 - 解码器LSTM模型应用于第二部分中开发的序列到序列预测问题。
+在本节中，我们将第一部分中开发的编解码器LSTM模型应用于第二部分中开发的序列到序列预测问题。
 
 第一步是配置问题。
 
@@ -514,7 +514,7 @@ X=[20, 28, 21, 39, 5, 25] y=[21, 28, 20], yhat=[21, 28, 20]
 X=[50, 38, 17, 25, 31, 48] y=[17, 38, 50], yhat=[17, 38, 50]
 ```
 
-您现在有一个编码器 - 解码器LSTM模型的模板，您可以将其应用于您自己的序列到序列预测问题。
+您现在有一个编解码器LSTM模型的模板，您可以将其应用于您自己的序列到序列预测问题。
 
 ## 进一步阅读
 
@@ -523,7 +523,7 @@ X=[50, 38, 17, 25, 31, 48] y=[17, 38, 50], yhat=[17, 38, 50]
 ### 相关文章
 
 *   [如何使用Anaconda设置用于机器学习和深度学习的Python环境](https://machinelearningmastery.com/setup-python-environment-machine-learning-deep-learning-anaconda/)
-*   [如何定义Keras神经机器翻译的编码器 - 解码器序列 - 序列模型](https://machinelearningmastery.com/define-encoder-decoder-sequence-sequence-model-neural-machine-translation-keras/)
+*   [如何定义Keras神经机器翻译的编解码器序列 - 序列模型](https://machinelearningmastery.com/define-encoder-decoder-sequence-sequence-model-neural-machine-translation-keras/)
 *   [了解Keras中LSTM的返回序列和返回状态之间的差异](https://machinelearningmastery.com/return-sequences-and-return-states-for-lstms-in-keras/)
 *   [如何使用Keras功能API进行深度学习](https://machinelearningmastery.com/keras-functional-api-deep-learning/)
 
@@ -536,13 +536,13 @@ X=[50, 38, 17, 25, 31, 48] y=[17, 38, 50], yhat=[17, 38, 50]
 
 ## 摘要
 
-在本教程中，您了解了如何使用Keras为序列到序列预测问题开发编码器 - 解码器循环神经网络。
+在本教程中，您了解了如何使用Keras为序列到序列预测问题开发编解码器循环神经网络。
 
 具体来说，你学到了：
 
-*   如何在Keras中正确定义复杂的编码器 - 解码器模型以进行序列到序列预测。
-*   如何定义可用于评估编码器 - 解码器LSTM模型的人为但可扩展的序列到序列预测问题。
-*   如何在Keras中应用编码器 - 解码器LSTM模型来解决可伸缩的整数序列到序列预测问题。
+*   如何在Keras中正确定义复杂的编解码器模型以进行序列到序列预测。
+*   如何定义可用于评估编解码器LSTM模型的人为但可扩展的序列到序列预测问题。
+*   如何在Keras中应用编解码器LSTM模型来解决可伸缩的整数序列到序列预测问题。
 
 你有任何问题吗？
 在下面的评论中提出您的问题，我会尽力回答。

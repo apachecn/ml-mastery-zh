@@ -1,24 +1,24 @@
-# 如何开发一种编码器 - 解码器模型，注重Keras中的序列到序列预测
+# 如何开发一种编解码器模型，注重Keras中的序列到序列预测
 
 > 原文： [https://machinelearningmastery.com/encoder-decoder-attention-sequence-to-sequence-prediction-keras/](https://machinelearningmastery.com/encoder-decoder-attention-sequence-to-sequence-prediction-keras/)
 
-用于循环神经网络的编码器 - 解码器架构被证明在诸如机器翻译和字幕生成之类的自然语言处理领域中的大量序列到序列预测问题上是强大的。
+用于循环神经网络的编解码器架构被证明在诸如机器翻译和字幕生成之类的自然语言处理领域中的大量序列到序列预测问题上是强大的。
 
-注意力是一种解决编码器 - 解码器架构在长序列上的限制的机制，并且通常加速学习并且提升模型的技能而没有序列来排序预测问题。
+注意力是一种解决编解码器架构在长序列上的限制的机制，并且通常加速学习并且提升模型的技能而没有序列来排序预测问题。
 
-在本教程中，您将了解如何使用Keras在Python中开发一个编码器 - 解码器循环神经网络。
+在本教程中，您将了解如何使用Keras在Python中开发一个编解码器循环神经网络。
 
 完成本教程后，您将了解：
 
-*   如何设计一个小的可配置问题来评估编码器 - 解码器循环神经网络有无注意。
-*   如何设计和评估编码器 - 解码器网络，有和没有注意序列预测问题。
-*   如何有力地比较编码器 - 解码器网络的表现有没有注意。
+*   如何设计一个小的可配置问题来评估编解码器循环神经网络有无注意。
+*   如何设计和评估编解码器网络，有和没有注意序列预测问题。
+*   如何有力地比较编解码器网络的表现有没有注意。
 
 让我们开始吧。
 
 ![How to Develop an Encoder-Decoder Model with Attention for Sequence-to-Sequence Prediction in Keras](img/a508d456c2630712158b024c6041c69e.jpg)
 
-如何开发一个编码器 - 解码器模型，注意Keras中的序列到序列预测
+如何开发一个编解码器模型，注意Keras中的序列到序列预测
 照片由 [Angela和Andrew](https://www.flickr.com/photos/150568953@N07/34585914155/) ，保留一些权利。
 
 ## 教程概述
@@ -27,7 +27,7 @@
 
 1.  注意编码器解码器
 2.  注意力的测试问题
-3.  编码器 - 解码器没有注意
+3.  编解码器没有注意
 4.  自定义Keras注意层
 5.  注意编码器解码器
 6.  模型比较
@@ -46,7 +46,7 @@
 
 ## 注意编码器解码器
 
-用于循环神经网络的编码器 - 解码器模型是用于序列到序列预测问题的架构。
+用于循环神经网络的编解码器模型是用于序列到序列预测问题的架构。
 
 它由两个子模型组成，顾名思义：
 
@@ -57,10 +57,10 @@
 
 注意是解决此限制的体系结构的扩展。它的工作原理是首先提供从编码器到解码器的更丰富的上下文和学习机制，其中解码器可以在预测输出序列中的每个时间步长时学习在更丰富的编码中注意的位置。
 
-有关编码器 - 解码器架构的更多关注，请参阅帖子：
+有关编解码器架构的更多关注，请参阅帖子：
 
 *   [长期短期记忆循环神经网络](https://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/)的注意事项
-*   [编码器 - 解码器循环神经网络中的注意事项如何工作](https://machinelearningmastery.com/how-does-attention-work-in-encoder-decoder-recurrent-neural-networks/)
+*   [编解码器循环神经网络中的注意事项如何工作](https://machinelearningmastery.com/how-does-attention-work-in-encoder-decoder-recurrent-neural-networks/)
 
 ## 注意力的测试问题
 
@@ -241,9 +241,9 @@ print('X=%s, y=%s' % (one_hot_decode(X[0]), one_hot_decode(y[0])))
 X=[12, 20, 36, 40, 12], y=[12, 20, 0, 0, 0]
 ```
 
-## 编码器 - 解码器没有注意
+## 编解码器没有注意
 
-在本节中，我们将在没有注意的情况下使用编码器 - 解码器模型开发关于问题表现的基线。
+在本节中，我们将在没有注意的情况下使用编解码器模型开发关于问题表现的基线。
 
 我们将在5个时间步的输入和输出序列中修复问题定义，输出序列中输入序列的前2个元素和基数为50。
 
@@ -254,17 +254,17 @@ n_timesteps_in = 5
 n_timesteps_out = 2
 ```
 
-我们可以通过从编码器LSTM模型获得输出，在Keras中开发一个简单的编码器 - 解码器模型，对输出序列中的时间步长重复n次，然后使用解码器来预测输出序列。
+我们可以通过从编码器LSTM模型获得输出，在Keras中开发一个简单的编解码器模型，对输出序列中的时间步长重复n次，然后使用解码器来预测输出序列。
 
-有关如何在Keras中定义编码器 - 解码器架构的更多详细信息，请参阅帖子：
+有关如何在Keras中定义编解码器架构的更多详细信息，请参阅帖子：
 
-*   [编码器 - 解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
+*   [编解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 
 我们将使用相同数量的单位配置编码器和解码器，在本例中为150.我们将使用梯度下降的有效Adam实现并优化分类交叉熵损失函数，因为该问题在技术上是一个多类别分类问题。
 
 模型的配置是在经过一些试验和错误之后找到的，并未进行优化。
 
-下面列出了Keras中编码器 - 解码器架构的代码。
+下面列出了Keras中编解码器架构的代码。
 
 ```py
 # define model
@@ -402,7 +402,7 @@ Expected: [32, 33, 0, 0, 0] Predicted [32, 32, 0, 0, 0]
 
 ## 自定义Keras注意层
 
-现在我们需要关注编码器 - 解码器模型。
+现在我们需要关注编解码器模型。
 
 在撰写本文时，Keras没有内置于库中的注意力，但很快就会 [](https://github.com/fchollet/keras/pull/7980)。
 
@@ -731,17 +731,17 @@ from attention_decoder import AttentionDecoder
 
 该代码在原始帖子中得到了很好的解释，并与LSTM和注意力方程相关联。
 
-该实现的限制是它必须输出与输入序列长度相同的序列，编码器 - 解码器架构被设计为克服的特定限制。
+该实现的限制是它必须输出与输入序列长度相同的序列，编解码器架构被设计为克服的特定限制。
 
-重要的是，新层管理由第二LSTM执行的重复解码，以及由编码器 - 解码器模型中的密集输出层执行的模型的softmax输出，而没有注意。这极大地简化了模型的代码。
+重要的是，新层管理由第二LSTM执行的重复解码，以及由编解码器模型中的密集输出层执行的模型的softmax输出，而没有注意。这极大地简化了模型的代码。
 
 值得注意的是，自定义层建立在Keras的 [Recurrent](https://github.com/fchollet/keras/blob/master/keras/legacy/layers.py#L762) 层上，在编写本文时，它被标记为遗留代码，并且可能会在某个时候从项目中删除。
 
 ## 编码器解码器注意
 
-现在我们已经可以使用我们的注意力实现，我们可以开发一个编码器 - 解码器模型，注意我们设计的序列预测问题。
+现在我们已经可以使用我们的注意力实现，我们可以开发一个编解码器模型，注意我们设计的序列预测问题。
 
-具有关注层的模型定义如下。我们可以看到该层处理编码器 - 解码器模型本身的一些机制，使得定义模型更简单。
+具有关注层的模型定义如下。我们可以看到该层处理编解码器模型本身的一些机制，使得定义模型更简单。
 
 ```py
 # define model
@@ -1035,7 +1035,7 @@ Encoder-Decoder With Attention Model
 Mean Accuracy: 95.70%
 ```
 
-我们可以看到，即使平均超过10次运行，注意模型仍然表现出比没有注意的编码器 - 解码器模型更好的表现，23.10％对95.70％。
+我们可以看到，即使平均超过10次运行，注意模型仍然表现出比没有注意的编解码器模型更好的表现，23.10％对95.70％。
 
 此评估的一个很好的扩展是捕获每个模型的每个时期的模型损失，取平均值，并比较损失如何随着时间的推移而变化，无论是否受到关注。我希望这种追踪能够比非注意力模型更快，更快地显示出更好的技能，进一步突出了这种方法的好处。
 
@@ -1044,8 +1044,8 @@ Mean Accuracy: 95.70%
 如果您希望深入了解，本节将提供有关该主题的更多资源。
 
 *   [长期短期记忆循环神经网络](https://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/)的注意事项
-*   [编码器 - 解码器循环神经网络中的注意事项如何工作](https://machinelearningmastery.com/how-does-attention-work-in-encoder-decoder-recurrent-neural-networks/)
-*   [编码器 - 解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
+*   [编解码器循环神经网络中的注意事项如何工作](https://machinelearningmastery.com/how-does-attention-work-in-encoder-decoder-recurrent-neural-networks/)
+*   [编解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 *   [如何评估深度学习模型的技巧](https://machinelearningmastery.com/evaluate-skill-deep-learning-models/)
 *   [如何在Keras中注意循环神经网络](https://medium.com/datalogue/attention-in-keras-1892773a4f22)，2017。
 *   [keras-attention GitHub Project](https://github.com/datalogue/keras-attention)
@@ -1053,13 +1053,13 @@ Mean Accuracy: 95.70%
 
 ## 摘要
 
-在本教程中，您了解了如何使用Keras在Python中开发编码器 - 解码器循环神经网络。
+在本教程中，您了解了如何使用Keras在Python中开发编解码器循环神经网络。
 
 具体来说，你学到了：
 
-*   如何设计一个小的可配置问题来评估编码器 - 解码器循环神经网络有无注意。
-*   如何设计和评估编码器 - 解码器网络，有和没有注意序列预测问题。
-*   如何有力地比较编码器 - 解码器网络的表现有没有注意。
+*   如何设计一个小的可配置问题来评估编解码器循环神经网络有无注意。
+*   如何设计和评估编解码器网络，有和没有注意序列预测问题。
+*   如何有力地比较编解码器网络的表现有没有注意。
 
 你有任何问题吗？
 在下面的评论中提出您的问题，我会尽力回答。

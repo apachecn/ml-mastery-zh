@@ -1159,7 +1159,7 @@ print(yhat)
 有两种主要类型的 LSTM 模型可用于多步预测;他们是：
 
 1.  向量输出模型
-2.  编码器 - 解码器模型
+2.  编解码器模型
 
 在我们查看这些模型之前，让我们首先看一下多步骤预测的数据准备。
 
@@ -1361,9 +1361,9 @@ print(yhat)
 [[100.98096 113.28924]]
 ```
 
-### 编码器 - 解码器模型
+### 编解码器模型
 
-专门为预测可变长度输出序列而开发的模型称为[编码器 - 解码器 LSTM](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/) 。
+专门为预测可变长度输出序列而开发的模型称为[编解码器 LSTM](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/) 。
 
 该模型设计用于预测问题，其中存在输入和输出序列，即所谓的序列到序列或 seq2seq 问题，例如将文本从一种语言翻译成另一种语言。
 
@@ -1397,7 +1397,7 @@ model.add(LSTM(100, activation='relu', return_sequences=True))
 model.add(TimeDistributed(Dense(1)))
 ```
 
-下面列出了用于多步时间序列预测的编码器 - 解码器模型的完整定义。
+下面列出了用于多步时间序列预测的编解码器模型的完整定义。
 
 ```py
 # define model
@@ -1415,13 +1415,13 @@ model.compile(optimizer='adam', loss='mse')
 X = X.reshape((X.shape[0], X.shape[1], n_features))
 ```
 
-在编码器 - 解码器模型的情况下，训练数据集的输出或 y 部分也必须具有该形状。这是因为模型将使用每个输入样本的给定数量的特征预测给定数量的时间步长。
+在编解码器模型的情况下，训练数据集的输出或 y 部分也必须具有该形状。这是因为模型将使用每个输入样本的给定数量的特征预测给定数量的时间步长。
 
 ```py
 y = y.reshape((y.shape[0], y.shape[1], n_features))
 ```
 
-下面列出了用于多步时间序列预测的编码器 - 解码器 LSTM 的完整示例。
+下面列出了用于多步时间序列预测的编解码器 LSTM 的完整示例。
 
 ```py
 # univariate multi-step encoder-decoder lstm example
@@ -1627,7 +1627,7 @@ for i in range(len(X)):
 
 我们现在可以开发用于多步预测的 LSTM 模型。
 
-可以使用向量输出或编码器 - 解码器模型。在这种情况下，我们将使用 Stacked LSTM 演示向量输出。
+可以使用向量输出或编解码器模型。在这种情况下，我们将使用 Stacked LSTM 演示向量输出。
 
 下面列出了完整的示例。
 
@@ -1834,7 +1834,7 @@ for i in range(len(X)):
  [ 90  95 185]]
 ```
 
-我们可以使用向量输出或编码器解码器 LSTM 来模拟这个问题。在这种情况下，我们将使用编码器 - 解码器模型。
+我们可以使用向量输出或编码器解码器 LSTM 来模拟这个问题。在这种情况下，我们将使用编解码器模型。
 
 下面列出了完整的示例。
 

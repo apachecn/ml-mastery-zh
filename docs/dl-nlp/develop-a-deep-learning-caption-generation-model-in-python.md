@@ -744,7 +744,7 @@ def max_length(descriptions):
 
 有关此架构的温和介绍，请参阅帖子：
 
-*   [使用编码器 - 解码器模型的注入和合并架构生成字幕](https://machinelearningmastery.com/caption-generation-inject-merge-architectures-encoder-decoder-model/)
+*   [使用编解码器模型的注入和合并架构生成字幕](https://machinelearningmastery.com/caption-generation-inject-merge-architectures-encoder-decoder-model/)
 
 作者提供了一个很好的模型示意图，如下所示。
 

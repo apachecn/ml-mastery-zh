@@ -1,16 +1,16 @@
-# 如何配置神经机器翻译的编码器 - 解码器模型
+# 如何配置神经机器翻译的编解码器模型
 
 > 原文： [https://machinelearningmastery.com/configure-encoder-decoder-model-neural-machine-translation/](https://machinelearningmastery.com/configure-encoder-decoder-model-neural-machine-translation/)
 
-用于循环神经网络的编码器 - 解码器架构在标准机器翻译基准上实现了最先进的结果，并且正在用于工业翻译服务的核心。
+用于循环神经网络的编解码器架构在标准机器翻译基准上实现了最先进的结果，并且正在用于工业翻译服务的核心。
 
-该模型很简单，但考虑到训练它所需的大量数据，调整模型中的无数设计决策以获得最佳表现问题可能实际上难以处理。值得庆幸的是，研究科学家已经使用 Google 规模的硬件为我们完成这项工作，并提供了一套启发式方法，用于如何配置编码器 - 解码器模型进行神经机器翻译和一般的序列预测。
+该模型很简单，但考虑到训练它所需的大量数据，调整模型中的无数设计决策以获得最佳表现问题可能实际上难以处理。值得庆幸的是，研究科学家已经使用 Google 规模的硬件为我们完成这项工作，并提供了一套启发式方法，用于如何配置编解码器模型进行神经机器翻译和一般的序列预测。
 
-在这篇文章中，您将了解如何最好地配置编码器 - 解码器循环神经网络以进行神经机器翻译和其他自然语言处理任务的详细信息。
+在这篇文章中，您将了解如何最好地配置编解码器循环神经网络以进行神经机器翻译和其他自然语言处理任务的详细信息。
 
 阅读这篇文章后，你会知道：
 
-*   Google 研究调查了编码器 - 解码器模型中的每个模型设计决策，以隔离它们的影响。
+*   Google 研究调查了编解码器模型中的每个模型设计决策，以隔离它们的影响。
 *   设计决策的结果和建议，如字嵌入，编码器和解码器深度以及注意机制。
 *   一组基本模型设计决策，可用作您自己的序列到序列项目的起点。
 
@@ -18,12 +18,12 @@
 
 ![How to Configure an Encoder-Decoder Model for Neural Machine Translation](img/f51461220fc281d9dea38cd12d3be911.jpg)
 
-如何配置神经机器翻译的编码器 - 解码器模型
+如何配置神经机器翻译的编解码器模型
 照片由 [Sporting Park](https://www.flickr.com/photos/sporting_su/34385197705/) ，保留一些权利。
 
-## 神经机器翻译的编码器 - 解码器模型
+## 神经机器翻译的编解码器模型
 
-用于循环神经网络的编码器 - 解码器架构正在取代基于经典短语的统计机器翻译系统，以获得最先进的结果。
+用于循环神经网络的编解码器架构正在取代基于经典短语的统计机器翻译系统，以获得最先进的结果。
 
 作为证据，他们的 2016 年论文“[谷歌的神经机器翻译系统：缩小人机翻译之间的差距](https://arxiv.org/abs/1609.08144)”，谷歌现在将这种方法用于他们的谷歌翻译服务的核心。
 
@@ -35,9 +35,9 @@
 
 在这篇文章中，我们将看一下本文的一些发现，我们可以用来调整我们自己的神经机器翻译模型，以及一般的序列到序列模型。
 
-有关编码器 - 解码器架构和注意机制的更多背景信息，请参阅帖子：
+有关编解码器架构和注意机制的更多背景信息，请参阅帖子：
 
-*   [编码器 - 解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
+*   [编解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 *   [长期短期记忆循环神经网络](https://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/)的注意事项
 
 ## 基线模型
@@ -59,7 +59,7 @@
 
 ![Encoder-Decoder Architecture for Neural Machine Translation](img/38abff20be7b017cc50576763f7328b3.jpg)
 
-用于神经机器翻译的编码器 - 解码器架构
+用于神经机器翻译的编解码器架构
 取自“神经机器翻译架构的大规模探索”。
 
 ## 嵌入尺寸
@@ -92,7 +92,7 @@ LSTM 的开发是为了解决简单 RNN 的消失梯度问题，这限制了深 
 
 **建议**：在您的模型中使用 LSTM RNN 单位。
 
-## 编码器 - 解码器深度
+## 编解码器深度
 
 通常，深层网络被认为比浅层网络具有更好的表现。
 
@@ -130,7 +130,7 @@ LSTM 的开发是为了解决简单 RNN 的消失梯度问题，这限制了深 
 
 ## 注意机制
 
-朴素的编码器 - 解码器模型的问题在于编码器将输入映射到固定长度的内部表示，解码器必须从该表示产生整个输出序列。
+朴素的编解码器模型的问题在于编码器将输入映射到固定长度的内部表示，解码器必须从该表示产生整个输出序列。
 
 注意是对模型的改进，其允许解码器在输出序列中输出每个字时“注意”输入序列中的不同字。
 
@@ -158,7 +158,7 @@ Bahdanau 等人描述的简单加权平均风格注意。在他们的 2015 年�
 
 作者将他们的研究结果汇总到一个“最佳模型”中，并将该模型的结果与其他表现良好的模型和最先进的结果进行比较。
 
-该模型的具体配置总结在下表中，摘自论文。在为 NLP 应用程序开发自己的编码器 - 解码器模型时，这些参数可以作为一个好的或最好的起点。
+该模型的具体配置总结在下表中，摘自论文。在为 NLP 应用程序开发自己的编解码器模型时，这些参数可以作为一个好的或最好的起点。
 
 ![Summary of Model Configuration for the Final NMT Model](img/c508993d3836a302efe11a3c00a0861d.jpg)
 
@@ -179,18 +179,18 @@ Bahdanau 等人描述的简单加权平均风格注意。在他们的 2015 年�
 *   [Denny Britz 主页](http://blog.dennybritz.com/)
 *   [WildML 博客](http://www.wildml.com/)
 *   [介绍 tf-seq2seq：TensorFlow 中的开源序列到序列框架](https://research.googleblog.com/2017/04/introducing-tf-seq2seq-open-source.html)，2017。
-*   [tf-seq2seq：Tensorflow](https://github.com/google/seq2seq) 的通用编码器 - 解码器框架
+*   [tf-seq2seq：Tensorflow](https://github.com/google/seq2seq) 的通用编解码器框架
 *   [tf-seq2seq 项目文件](https://google.github.io/seq2seq/)
 *   [tf-seq2seq 教程：神经机器翻译背景](https://google.github.io/seq2seq/nmt/)
 *   [神经机器翻译通过联合学习调整和翻译](https://arxiv.org/abs/1409.0473)，2015。
 
 ## 摘要
 
-在这篇文章中，您了解了如何最好地配置编码器 - 解码器循环神经网络，用于神经机器翻译和其他自然语言处理任务。
+在这篇文章中，您了解了如何最好地配置编解码器循环神经网络，用于神经机器翻译和其他自然语言处理任务。
 
 具体来说，你学到了：
 
-*   Google 研究调查了编码器 - 解码器模型中的每个模型设计决策，以隔离它们的影响。
+*   Google 研究调查了编解码器模型中的每个模型设计决策，以隔离它们的影响。
 *   设计决策的结果和建议，如字嵌入，编码器和解码器深度以及注意机制。
 *   一组基本模型设计决策，可用作您自己序列的起点，以对项目进行排序。
 

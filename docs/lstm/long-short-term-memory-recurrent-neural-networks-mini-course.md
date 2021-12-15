@@ -13,7 +13,7 @@ LSTM与多层感知器和卷积神经网络的不同之处在于它们专门用�
 完成这个迷你课程后，您将知道：
 
 *   LSTM是什么，如何训练，以及如何准备训练LSTM模型的数据。
-*   如何开发一套LSTM模型，包括堆叠，双向和编码器 - 解码器模型。
+*   如何开发一套LSTM模型，包括堆叠，双向和编解码器模型。
 *   如何通过超参数优化，更新和最终模型来充分利用模型。
 
 让我们开始吧。
@@ -87,7 +87,7 @@ LSTM迷你课程概述
 *   **第05课**：如何开发香草LSTMs
 *   **第06课**：如何开发堆叠式LSTM
 *   **第07课**：如何开发CNN LSTM
-*   **第08课**：如何开发编码器 - 解码器LSTM
+*   **第08课**：如何开发编解码器LSTM
 *   **第09课**：如何开发双向LSTM
 *   **第10课**：如何开发注意力的LSTM
 *   **第11课**：如何开发生成LSTM
@@ -275,30 +275,30 @@ LSTM迷你课程概述
 
 *   [用Keras](http://machinelearningmastery.com/sequence-classification-lstm-recurrent-neural-networks-python-keras/) 在Python中用LSTM循环神经网络进行序列分类
 
-## 第8课：如何开发编码器 - 解码器LSTM
+## 第8课：如何开发编解码器LSTM
 
 ### Goal
 
-本课程的目标是学习如何开发编码器 - 解码器LSTM模型。
+本课程的目标是学习如何开发编解码器LSTM模型。
 
 ### Questions
 
 *   什么是序列到序列（seq2seq）预测问题？
 *   在seq2seq问题上使用香草LSTM有什么困难？
-*   什么是编码器 - 解码器LSTM架构？
-*   编码器 - 解码器LSTM有哪些例子？
-*   编码器 - 解码器LSTM有什么好处？
-*   如何在Keras中实现编码器 - 解码器LSTM？
+*   什么是编解码器LSTM架构？
+*   编解码器LSTM有哪些例子？
+*   编解码器LSTM有什么好处？
+*   如何在Keras中实现编解码器LSTM？
 
 ### Experiment
 
-设计并执行一个实验，演示序列到序列预测问题的编码器 - 解码器LSTM。
+设计并执行一个实验，演示序列到序列预测问题的编解码器LSTM。
 
 ### Further Reading
 
 *   [如何在Python](http://machinelearningmastery.com/timedistributed-layer-for-long-short-term-memory-networks-in-python/) 中为长期短期内存网络使用时间分布层
 *   [如何学习使用seq2seq循环神经网络添加数字](http://machinelearningmastery.com/learn-add-numbers-seq2seq-recurrent-neural-networks/)
-*   [如何将编码器 - 解码器LSTM用于随机整数的回波序列](http://machinelearningmastery.com/how-to-use-an-encoder-decoder-lstm-to-echo-sequences-of-random-integers/)
+*   [如何将编解码器LSTM用于随机整数的回波序列](http://machinelearningmastery.com/how-to-use-an-encoder-decoder-lstm-to-echo-sequences-of-random-integers/)
 
 ## 第9课：如何开发双向LSTM
 
@@ -448,7 +448,7 @@ LSTM迷你课程概述
 5.  香草LSTM由输入层，隐藏的LSTM层和密集输出层组成。
 6.  隐藏的LSTM层可以堆叠，但必须从一层到另一层暴露整个序列的输出。
 7.  在处理图像和视频数据时，CNN可用作LSTM的输入层。
-8.  在预测可变长度输出序列时可以使用编码器 - 解码器架构。
+8.  在预测可变长度输出序列时可以使用编解码器架构。
 9.  在双向LSTM中向前和向后提供输入序列可以提高某些问题的技能。
 10.  该注意力可以为包含中性信息的长输入序列提供优化。
 11.  LSTM可以学习输入数据的结构化关系，进而可以用来生成新的例子。

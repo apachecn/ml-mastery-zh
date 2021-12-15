@@ -1,4 +1,4 @@
-# 使用于文本摘要的编码器 - 解码器深度学习模型
+# 使用于文本摘要的编解码器深度学习模型
 
 > 原文： [https://machinelearningmastery.com/encoder-decoder-deep-learning-models-text-summarization/](https://machinelearningmastery.com/encoder-decoder-deep-learning-models-text-summarization/)
 
@@ -6,19 +6,19 @@
 
 最近深度学习方法已被证明在文本摘要的抽象方法中是有效的。
 
-在这篇文章中，您将发现三种不同的模型，它们构建在有效的编码器 - 解码器架构之上，该架构是为机器翻译中的序列到序列预测而开发的。
+在这篇文章中，您将发现三种不同的模型，它们构建在有效的编解码器架构之上，该架构是为机器翻译中的序列到序列预测而开发的。
 
 阅读这篇文章后，你会知道：
 
-*   Facebook AI Research 模型使用编码器 - 解码器模型和卷积神经网络编码器。
+*   Facebook AI Research 模型使用编解码器模型和卷积神经网络编码器。
 *   使用 Encoder-Decoder 模型的 IBM Watson 模型，具有指向和分层注意力。
-*   斯坦福/谷歌模型使用带有指向和覆盖的编码器 - 解码器模型。
+*   斯坦福/谷歌模型使用带有指向和覆盖的编解码器模型。
 
 让我们开始吧。
 
 ![Encoder-Decoder Deep Learning Models for Text Summarization](img/3c52998a2f284f4cb4fabfab639712d7.jpg)
 
-用于文本摘要的编码器 - 解码器深度学习模型
+用于文本摘要的编解码器深度学习模型
 照片由[HiếuBùi](https://www.flickr.com/photos/thphoto1788/34624647625/)拍摄，保留一些权利。
 
 ## 型号概述
@@ -66,7 +66,7 @@ Alexander Rush 等人描述了这种方法。来自 Facebook AI Research（FAIR�
 
 Ramesh Nallapati 等人描述了这种方法。来自 IBM Watson 的 2016 年论文“[使用序列到序列 RNN 和超越](https://arxiv.org/abs/1602.06023)的抽象文本摘要”。
 
-该方法基于编码器 - 解码器循环神经网络，注重机器翻译。
+该方法基于编解码器循环神经网络，注重机器翻译。
 
 > 我们的基线模型对应于 Bahdanau 等人使用的神经机器翻译模型。 （2014）。编码器由双向 GRU-RNN（Chung 等，2014）组成，而解码器由具有与编码器相同的隐藏状态大小的单向 GRU-RNN 和源上的关注机制组成。 - 隐藏状态和目标词汇表上的软最大层以生成单词。
 
@@ -89,7 +89,7 @@ Ramesh Nallapati 等人描述了这种方法。来自 IBM Watson 的 2016 年论
 
 与 Facebook 方法和其他方法相比，IBM 方法在标准数据集上取得了令人瞩目的成果。
 
-> ...我们将注意力编码器 - 解码器应用于抽象概括的任务，具有非常有希望的结果，在两个不同的数据集上显着优于最先进的结果。
+> ...我们将注意力编解码器应用于抽象概括的任务，具有非常有希望的结果，在两个不同的数据集上显着优于最先进的结果。
 
 ## 谷歌模型
 
@@ -97,7 +97,7 @@ Abigail See 等人描述了这种方法。来自斯坦福大学 2017 年论文�
 
 一个更好的名字可能是“斯坦福模型”，但我试图将这项工作与合作者 Peter Liu（谷歌大脑）2016 年帖子标题为“[文本摘要与 TensorFlow](https://research.googleblog.com/2016/08/text-summarization-with-tensorflow.html) ”在谷歌上联系起来研究博客。
 
-在他们的博客文章中，Peter Liu 等人。在 Google Brain 上引入了 [TensorFlow 模型](https://github.com/tensorflow/models/tree/master/textsum)，该模型直接将用于机器翻译的编码器 - 解码器模型应用于生成 Gigaword 数据集的短句的摘要。虽然没有在代码提供的文本文档之外提供结果的正式记录，但它们声称比模型的最新结果更好。
+在他们的博客文章中，Peter Liu 等人。在 Google Brain 上引入了 [TensorFlow 模型](https://github.com/tensorflow/models/tree/master/textsum)，该模型直接将用于机器翻译的编解码器模型应用于生成 Gigaword 数据集的短句的摘要。虽然没有在代码提供的文本文档之外提供结果的正式记录，但它们声称比模型的最新结果更好。
 
 在他们的论文中，Abigail See 等人。描述了抽象文本摘要的深度学习方法的两个主要缺点：它们产生事实错误并且它们重复出现。
 
@@ -105,7 +105,7 @@ Abigail See 等人描述了这种方法。来自斯坦福大学 2017 年论文�
 
 他们的方法旨在总结多个句子而不是单句概括，并应用于用于演示 IBM 模型的 CNN / Daily Mail 数据集。该数据集中的文章平均包含大约 39 个句子。
 
-基线编码器 - 解码器模型与字嵌入，双向 LSTM 用于输入和注意一起使用。探索了一种扩展，它使用指向输入数据中的单词来解决词汇表单词，类似于 IBM 模型中使用的方法。最后，覆盖机制用于帮助减少输出中的重复。
+基线编解码器模型与字嵌入，双向 LSTM 用于输入和注意一起使用。探索了一种扩展，它使用指向输入数据中的单词来解决词汇表单词，类似于 IBM 模型中使用的方法。最后，覆盖机制用于帮助减少输出中的重复。
 
 ![Pointer-generator model for Text Summarization](img/b1597fc975e0921630e8ec485d29844d.jpg)
 
@@ -116,7 +116,7 @@ Abigail See 等人描述了这种方法。来自斯坦福大学 2017 年论文�
 
 > 我们的指针生成器模型覆盖率进一步提高了 ROUGE 和 METEOR 得分，令人信服地超越了最佳[比较]抽象模型......
 
-结果确实表明可以使用基线 seq-to-seq 模型（带注意的编码器 - 解码器），但不会产生竞争结果，显示了它们对方法的扩展的好处。
+结果确实表明可以使用基线 seq-to-seq 模型（带注意的编解码器），但不会产生竞争结果，显示了它们对方法的扩展的好处。
 
 > 我们发现我们的基线模型在 ROUGE 和 METEOR 方面都表现不佳，实际上较大的词汇量（150k）似乎没有帮助。 ......事实细节经常被错误地复制，通常用一个更常见的替代词替换一个不常见的（但是词汇表中）词。
 
@@ -136,9 +136,9 @@ Abigail See 等人描述了这种方法。来自斯坦福大学 2017 年论文�
 
 具体来说，你学到了：
 
-*   使用编码器 - 解码器模型和卷积神经网络编码器的 Facebook AI Research 模型。
+*   使用编解码器模型和卷积神经网络编码器的 Facebook AI Research 模型。
 *   使用 Encoder-Decoder 模型的 IBM Watson 模型，具有指向和分层注意力。
-*   斯坦福/谷歌模型使用带有指向和覆盖的编码器 - 解码器模型。
+*   斯坦福/谷歌模型使用带有指向和覆盖的编解码器模型。
 
 你有任何问题吗？
 在下面的评论中提出您的问题，我会尽力回答。

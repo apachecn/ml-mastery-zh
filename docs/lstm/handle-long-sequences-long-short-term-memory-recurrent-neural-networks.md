@@ -79,11 +79,11 @@ LSTM的一些现代实现允许您指定用于更新的时间步数，将用作�
 
 *   [Theano](http://deeplearning.net/software/theano/library/scan.html) 中的“truncate_gradient”参数。
 
-## 6.使用编码器 - 解码器架构
+## 6.使用编解码器架构
 
 您可以使用自动编码器来学习长序列的新表示长度，然后使用解码器网络将编码表示解释为所需的输出。
 
-这可能涉及无监督自动编码器作为序列的预处理传递，或者用于自然语言翻译的更新近的[编码器 - 解码器LSTM样式网络](http://machinelearningmastery.com/learn-add-numbers-seq2seq-recurrent-neural-networks/)。
+这可能涉及无监督自动编码器作为序列的预处理传递，或者用于自然语言翻译的更新近的[编解码器LSTM样式网络](http://machinelearningmastery.com/learn-add-numbers-seq2seq-recurrent-neural-networks/)。
 
 同样，从非常长的序列中学习可能仍然存在困难，但是更复杂的架构可以提供额外的杠杆或技能，特别是如果与上述一种或多种技术结合使用。
 
@@ -113,7 +113,7 @@ LSTM的一些现代实现允许您指定用于更新的时间步数，将用作�
 
 *   如何使用截断，摘要和随机采样来减少序列长度。
 *   如何调整学习使用截断反向传播的时间。
-*   如何调整网络架构以使用编码器 - 解码器结构。
+*   如何调整网络架构以使用编解码器结构。
 
 你有任何问题吗？
 在评论中提出您的问题，我会尽力回答。

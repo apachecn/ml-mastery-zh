@@ -2,7 +2,7 @@
 
 > 原文： [https://machinelearningmastery.com/lstm-autoencoders/](https://machinelearningmastery.com/lstm-autoencoders/)
 
-LSTM自动编码器是使用编码器 - 解码器LSTM架构的用于序列数据的自动编码器的实现。
+LSTM自动编码器是使用编解码器LSTM架构的用于序列数据的自动编码器的实现。
 
 一旦拟合，模型的编码器部分可用于编码或压缩序列数据，而序列数据又可用于数据可视化或作为监督学习模型的特征向量输入。
 
@@ -27,7 +27,7 @@ LSTM自动编码器
 
 1.  什么是自动编码器？
 2.  序列问题
-3.  编码器 - 解码器LSTM模型
+3.  编解码器LSTM模型
 4.  什么是LSTM自动编码器？
 5.  LSTM自动编码器的早期应用
 6.  如何在Keras中创建LSTM自动编码器
@@ -66,27 +66,27 @@ X = model.predict(X)
 
 *   [用序列做出预测](https://machinelearningmastery.com/sequence-prediction/)
 
-## 编码器 - 解码器LSTM模型
+## 编解码器LSTM模型
 
 诸如长短期存储器或LSTM网络的循环神经网络专门设计用于支持输入数据序列。
 
 它们能够学习输入序列的时间排序中的复杂动态，以及使用内部存储器来记忆或使用长输入序列中的信息。
 
-LSTM网络可以组织成称为编码器 - 解码器LSTM的架构，该架构允许该模型用于支持可变长度输入序列并预测或输出可变长度输出序列。
+LSTM网络可以组织成称为编解码器LSTM的架构，该架构允许该模型用于支持可变长度输入序列并预测或输出可变长度输出序列。
 
 该架构是复杂序列预测问题（如语音识别和文本转换）中许多进步的基础。
 
 在该架构中，编码器LSTM模型逐步读取输入序列。在读入整个输入序列之后，该模型的隐藏状态或输出将整个输入序列的内部学习表示表示为固定长度向量。然后将该向量作为输入提供给解码器模型，该解码器模型在生成输出序列中的每个步骤时对其进行解释。
 
-您可以在此处了解有关编码器 - 解码器架构的更多信息
+您可以在此处了解有关编解码器架构的更多信息
 
-*   [编码器 - 解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
+*   [编解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 
 ## 什么是LSTM自动编码器？
 
-LSTM自动编码器是使用编码器 - 解码器LSTM架构的用于序列数据的自动编码器的实现。
+LSTM自动编码器是使用编解码器LSTM架构的用于序列数据的自动编码器的实现。
 
-对于给定的序列数据集，编码器 - 解码器LSTM被配置为读取输入序列，对其进行编码，对其进行解码并重新创建它。基于模型重新创建输入序列的能力来评估模型的表现。
+对于给定的序列数据集，编解码器LSTM被配置为读取输入序列，对其进行编码，对其进行解码并重新创建它。基于模型重新创建输入序列的能力来评估模型的表现。
 
 一旦模型达到重建序列的所需表现水平，就可以移除模型的解码器部分，仅留下编码器模型。然后，该模型可用于将输入序列编码为固定长度的向量。
 
@@ -101,7 +101,7 @@ LSTM Autoencoder的早期和广泛引用的应用之一是在2015年的论文“
 LSTM自动编码器模型
 取自“使用LSTM的无监督学习视频表示”
 
-在论文中，Nitish Srivastava等人。将LSTM Autoencoder描述为编码器 - 解码器LSTM的扩展或应用。
+在论文中，Nitish Srivastava等人。将LSTM Autoencoder描述为编解码器LSTM的扩展或应用。
 
 他们使用具有视频输入数据的模型来重建视频帧的序列以及预测视频帧，这两者都被描述为无监督学习任务。
 
@@ -150,7 +150,7 @@ LSTM自动编码器模型
 
 ## 如何在Keras中创建LSTM自动编码器
 
-在Keras中创建LSTM自动编码器可以通过实现编码器 - 解码器LSTM架构并配置模型来重新创建输入序列来实现。
+在Keras中创建LSTM自动编码器可以通过实现编解码器LSTM架构并配置模型来重新创建输入序列来实现。
 
 让我们看几个例子来说明这一点。
 
@@ -174,7 +174,7 @@ n_in = len(sequence)
 sequence = sequence.reshape((1, n_in, 1))
 ```
 
-接下来，我们可以定义编码器 - 解码器LSTM架构，该架构期望输入序列具有九个时间步长和一个特征，并输出具有九个时间步长和一个特征的序列。
+接下来，我们可以定义编解码器LSTM架构，该架构期望输入序列具有九个时间步长和一个特征，并输出具有九个时间步长和一个特征的序列。
 
 ```py
 # define model
@@ -508,7 +508,7 @@ print(yhat)
 如果您希望深入了解，本节将提供有关该主题的更多资源。
 
 *   [用序列做出预测](https://machinelearningmastery.com/sequence-prediction/)
-*   [编码器 - 解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
+*   [编解码器长短期存储器网络](https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/)
 *   [自动编码器，维基百科](https://en.wikipedia.org/wiki/Autoencoder)
 *   [使用LSTM进行视频表示的无监督学习](https://arxiv.org/abs/1502.04681)，ArXiv 2015。
 *   [使用LSTM进行视频表示的无监督学习](http://proceedings.mlr.press/v37/srivastava15.pdf)，PMLR，PDF，2015。

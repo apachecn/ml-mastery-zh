@@ -1,38 +1,38 @@
-# 如何在 Keras 中定义神经机器翻译的编码器 - 解码器序列 - 序列模型
+# 如何在 Keras 中定义神经机器翻译的编解码器序列 - 序列模型
 
 > 原文： [https://machinelearningmastery.com/define-encoder-decoder-sequence-sequence-model-neural-machine-translation-keras/](https://machinelearningmastery.com/define-encoder-decoder-sequence-sequence-model-neural-machine-translation-keras/)
 
-编码器 - 解码器模型提供了使用循环神经网络来解决具有挑战性的序列到序列预测问题（例如机器翻译）的模式。
+编解码器模型提供了使用循环神经网络来解决具有挑战性的序列到序列预测问题（例如机器翻译）的模式。
 
-可以在 Keras Python 深度学习库中开发编码器 - 解码器模型，并且在 Keras 博客上描述了使用该模型开发的神经机器翻译系统的示例，其中示例代码与 Keras 项目一起分发。
+可以在 Keras Python 深度学习库中开发编解码器模型，并且在 Keras 博客上描述了使用该模型开发的神经机器翻译系统的示例，其中示例代码与 Keras 项目一起分发。
 
-在本文中，您将了解如何定义用于机器翻译的编码器 - 解码器序列到序列预测模型，如 Keras 深度学习库的作者所述。
+在本文中，您将了解如何定义用于机器翻译的编解码器序列到序列预测模型，如 Keras 深度学习库的作者所述。
 
 阅读这篇文章后，你会知道：
 
 *   神奇机器翻译示例与 Keras 一起提供并在 Keras 博客上进行了描述。
-*   如何正确定义编码器 - 解码器 LSTM 以训练神经机器翻译模型。
-*   如何正确定义推理模型以使用经过训练的编码器 - 解码器模型来转换新序列。
+*   如何正确定义编解码器 LSTM 以训练神经机器翻译模型。
+*   如何正确定义推理模型以使用经过训练的编解码器模型来转换新序列。
 
 让我们开始吧。
 
-*   **更新 Apr / 2018** ：有关应用此复杂模型的示例，请参阅帖子：[如何开发 Keras 中序列到序列预测的编码器 - 解码器模型](https://machinelearningmastery.com/develop-encoder-decoder-model-sequence-sequence-prediction-keras/)
+*   **更新 Apr / 2018** ：有关应用此复杂模型的示例，请参阅帖子：[如何开发 Keras 中序列到序列预测的编解码器模型](https://machinelearningmastery.com/develop-encoder-decoder-model-sequence-sequence-prediction-keras/)
 
 ![How to Define an Encoder-Decoder Sequence-to-Sequence Model for Neural Machine Translation in Keras](img/38cae6eb1536c9b0a1ba0bb9d1c6906e.jpg)
 
 如何在 Keras
-中定义用于神经机器翻译的编码器 - 解码器序列 - 序列模型 [Tom Lee](https://www.flickr.com/photos/68942208@N02/16012752622/) ，保留一些权利。
+中定义用于神经机器翻译的编解码器序列 - 序列模型 [Tom Lee](https://www.flickr.com/photos/68942208@N02/16012752622/) ，保留一些权利。
 
 ## Keras 中的序列到序列预测
 
-[Keras 深度学习库的作者 Francois Chollet](https://twitter.com/fchollet) 最近发布了一篇博文，其中介绍了一个代码示例，用于开发一个序列到序列预测的编码器 - 解码器 LSTM，标题为“ [A ten - 对 Keras](https://blog.keras.io/a-ten-minute-introduction-to-sequence-to-sequence-learning-in-keras.html) 中序列到序列学习的细致介绍。
+[Keras 深度学习库的作者 Francois Chollet](https://twitter.com/fchollet) 最近发布了一篇博文，其中介绍了一个代码示例，用于开发一个序列到序列预测的编解码器 LSTM，标题为“ [A ten - 对 Keras](https://blog.keras.io/a-ten-minute-introduction-to-sequence-to-sequence-learning-in-keras.html) 中序列到序列学习的细致介绍。
 
 博客文章中开发的代码也已添加到 Keras 中，作为文件 [lstm_seq2seq.py](https://github.com/fchollet/keras/blob/master/examples/lstm_seq2seq.py) 中的示例。
 
-该帖子开发了编码器 - 解码器 LSTM 的复杂实现，如关于该主题的规范论文中所述：
+该帖子开发了编解码器 LSTM 的复杂实现，如关于该主题的规范论文中所述：
 
 *   [用神经网络进行序列学习的序列](https://arxiv.org/abs/1409.3215)，2014。
-*   [使用 RNN 编码器 - 解码器进行统计机器翻译的学习短语表示](https://arxiv.org/abs/1406.1078)，2014。
+*   [使用 RNN 编解码器进行统计机器翻译的学习短语表示](https://arxiv.org/abs/1406.1078)，2014。
 
 该模型适用于机器翻译问题，与首次描述该方法的源文件相同。从技术上讲，该模型是神经机器翻译模型。
 
@@ -84,7 +84,7 @@ Stop!	Arrête-toi !
 
 ## 机器翻译模型
 
-神经翻译模型是编码器 - 解码器循环神经网络。
+神经翻译模型是编解码器循环神经网络。
 
 它由读取可变长度输入序列的编码器和预测可变长度输出序列的解码器组成。
 
@@ -181,7 +181,7 @@ plot_model(model, to_file='model.png', show_shapes=True)
 
 ![Graph of Encoder-Decoder Model For Training](img/2700043ef80aa99a679207e3c43f0a5e.jpg)
 
-用于训练的编码器 - 解码器模型图
+用于训练的编解码器模型图
 
 ## 神经机器翻译推理
 
@@ -305,23 +305,23 @@ plot_model(decoder_model, to_file='decoder_model.png', show_shapes=True)
 *   [长期短期记忆](http://www.bioinf.jku.at/publications/older/2604.pdf)，1997 年。
 *   [了解 LSTM 网络](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)，2015 年。
 *   [用神经网络进行序列学习的序列](https://arxiv.org/abs/1409.3215)，2014。
-*   [使用 RNN 编码器 - 解码器进行统计机器翻译的学习短语表示](https://arxiv.org/abs/1406.1078)，2014。
+*   [使用 RNN 编解码器进行统计机器翻译的学习短语表示](https://arxiv.org/abs/1406.1078)，2014。
 
 **更新**
 
 有关如何在独立问题上使用此模型的示例，请参阅此帖子：
 
-*   [如何开发 Keras 中序列到序列预测的编码器 - 解码器模型](https://machinelearningmastery.com/develop-encoder-decoder-model-sequence-sequence-prediction-keras/)
+*   [如何开发 Keras 中序列到序列预测的编解码器模型](https://machinelearningmastery.com/develop-encoder-decoder-model-sequence-sequence-prediction-keras/)
 
 ## 摘要
 
-在这篇文章中，您发现了如何定义用于机器翻译的编码器 - 解码器序列到序列预测模型，如 Keras 深度学习库的作者所描述的。
+在这篇文章中，您发现了如何定义用于机器翻译的编解码器序列到序列预测模型，如 Keras 深度学习库的作者所描述的。
 
 具体来说，你学到了：
 
 *   神奇机器翻译示例与 Keras 一起提供并在 Keras 博客上进行了描述。
-*   如何正确定义编码器 - 解码器 LSTM 以训练神经机器翻译模型。
-*   如何正确定义推理模型以使用经过训练的编码器 - 解码器模型来转换新序列。
+*   如何正确定义编解码器 LSTM 以训练神经机器翻译模型。
+*   如何正确定义推理模型以使用经过训练的编解码器模型来转换新序列。
 
 你有任何问题吗？
 在下面的评论中提出您的问题，我会尽力回答。

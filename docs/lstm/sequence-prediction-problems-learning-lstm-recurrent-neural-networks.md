@@ -275,7 +275,7 @@ X (timesteps),		y
 5, 3, 2, 4, 1,		5, 3, 2
 ```
 
-这更具挑战性，因为输入数量与输出数量不匹配。这个问题的多对多模型需要更高级的架构，例如编码器 - 解码器LSTM。
+这更具挑战性，因为输入数量与输出数量不匹配。这个问题的多对多模型需要更高级的架构，例如编解码器LSTM。
 
 同样，一个热编码将是优选的，尽管该问题可以被建模为标准化整数值。
 
@@ -339,7 +339,7 @@ print(y)
 *   [如何使用Keras](http://machinelearningmastery.com/use-different-batch-sizes-training-predicting-python-keras/) 在Python中使用不同的批量大小进行训练和预测
 *   [用Python中的长短期内存网络演示内存](http://machinelearningmastery.com/memory-in-a-long-short-term-memory-network/)
 *   [如何通过长短期记忆循环神经网络学习回声随机整数](http://machinelearningmastery.com/learn-echo-random-integers-long-short-term-memory-recurrent-neural-networks/)
-*   [如何将编码器 - 解码器LSTM用于随机整数的回波序列](http://machinelearningmastery.com/learn-echo-random-integers-long-short-term-memory-recurrent-neural-networks/)
+*   [如何将编解码器LSTM用于随机整数的回波序列](http://machinelearningmastery.com/learn-echo-random-integers-long-short-term-memory-recurrent-neural-networks/)
 *   [如何使用Keras开发用于Python序列分类的双向LSTM](http://machinelearningmastery.com/develop-bidirectional-lstm-sequence-classification-python-keras/)
 
 ## 摘要
