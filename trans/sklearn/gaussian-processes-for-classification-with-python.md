@@ -28,7 +28,7 @@
 本教程分为三个部分；它们是:
 
 1.  高斯分类过程
-2.  用 Sklearn高斯过程
+2.  用 Sklearn 高斯过程
 3.  调整高斯过程超参数
 
 ## 高斯分类过程
@@ -71,7 +71,7 @@
 
 *   [机器学习的高斯过程](https://amzn.to/3aY1nsu)，2006。
 
-## 用 Sklearn高斯过程
+## 用 Sklearn 高斯过程
 
 高斯过程分类器可通过[高斯过程分类器类](https://Sklearn.org/stable/modules/generated/sklearn.gaussian_process.GaussianProcessClassifier.html)在 Sklearn Python 机器学习库中获得。
 

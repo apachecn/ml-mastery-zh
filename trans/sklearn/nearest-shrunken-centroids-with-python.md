@@ -22,7 +22,7 @@
 
 ![Nearest Shrunken Centroids With Python](img/a0b81176fcb54f89f21a5b771d530f04.png)
 
-Giuseppe Milo 拍摄的最近的Python缩小质心
+Giuseppe Milo 拍摄的最近的 Python 缩小质心
 照片，保留部分权利。
 
 ## 教程概述
@@ -30,7 +30,7 @@ Giuseppe Milo 拍摄的最近的Python缩小质心
 本教程分为三个部分；它们是:
 
 1.  最近质心算法
-2.  用 Sklearn最近的质心
+2.  用 Sklearn 最近的质心
 3.  调谐最近质心超参数
 
 ## 最近质心算法
@@ -61,7 +61,7 @@ A [质心](https://en.wikipedia.org/wiki/Centroid)是数据分布的几何中心
 
 这种方法被称为“*最近的收缩着丝粒*”，最早由[罗伯特·蒂比什拉尼](https://statweb.stanford.edu/~tibs/)等人在他们 2002 年发表的题为“[通过基因表达的收缩着丝粒](https://www.pnas.org/content/99/10/6567.short)诊断多种癌症类型”的论文中描述
 
-## 用 Sklearn最近的质心
+## 用 Sklearn 最近的质心
 
 最近收缩质心可通过[最近质心类](https://Sklearn.org/stable/modules/generated/sklearn.neighbors.NearestCentroid.html)在 Sklearn Python 机器学习库中获得。
 

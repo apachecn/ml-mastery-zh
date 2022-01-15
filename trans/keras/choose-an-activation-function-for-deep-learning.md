@@ -158,7 +158,7 @@ pyplot.show()
 
 运行该示例计算一系列值的输出，并创建输入与输出的关系图。
 
-我们可以看到熟悉的 S 形的Sigmoid激活函数。
+我们可以看到熟悉的 S 形的 Sigmoid 激活函数。
 
 ![Plot of Inputs vs. Outputs for the Sigmoid Activation Function.](img/64e9917fa31d025a855334f80d5d0079.png)
 
@@ -170,7 +170,7 @@ Sigmoid 激活函数的输入与输出图。
 
 双曲正切激活函数也简称为 Tanh(也是“ *tanh* ”和“ *TanH* ”)函数。
 
-它与Sigmoid激活函数非常相似，甚至具有相同的 S 形。
+它与 Sigmoid 激活函数非常相似，甚至具有相同的 S 形。
 
 该函数将任何实数值作为输入，并输出-1 到 1 范围内的值。输入越大(越正)，输出值越接近 1.0，而输入越小(越负)，输出越接近-1.0。
 
@@ -327,7 +327,7 @@ pyplot.show()
 
 运行该示例计算一系列值的输出，并创建输入与输出的关系图。
 
-我们可以看到熟悉的 S 形的Sigmoid激活函数。
+我们可以看到熟悉的 S 形的 Sigmoid 激活函数。
 
 ![Plot of Inputs vs. Outputs for the Sigmoid Activation Function.](img/64e9917fa31d025a855334f80d5d0079.png)
 
@@ -401,9 +401,9 @@ print(outputs.sum())
 
 如果有两个互斥的类(二进制分类)，那么您的输出层将有一个节点，应该使用 sigmoid 激活函数。如果有两个以上互斥的类(多类分类)，那么你的输出层每个类有一个节点，应该使用 softmax 激活。如果有两个或更多相互包含的类(multilabel 分类)，那么输出层将为每个类提供一个节点，并使用 sigmoid 激活函数。
 
-*   **二元分类**:一个节点，Sigmoid激活。
+*   **二元分类**:一个节点，Sigmoid 激活。
 *   **多类分类**:每类一个节点，softmax 激活。
-*   **多标签分类**:每类一个节点，Sigmoid激活。
+*   **多标签分类**:每类一个节点，Sigmoid 激活。
 
 下图总结了如何为神经网络模型的输出层选择激活函数。
 

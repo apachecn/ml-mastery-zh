@@ -74,7 +74,7 @@ TensorFlow 是由谷歌开发和维护的首要开源深度学习框架。虽然
 
 **你不需要什么都懂(至少现在不需要)**。您的目标是将教程从头到尾运行一遍并获得结果。你不需要第一遍就明白所有的事情。边走边列出你的问题。大量使用 API 文档来了解您正在使用的所有功能。
 
-**你不需要Prophet道数学**。数学是描述算法如何工作的简洁方式，特别是来自[线性代数](https://machinelearningmastery.com/start-here/#linear_algebra)、[概率](https://machinelearningmastery.com/start-here/#probability)和[统计](https://machinelearningmastery.com/start-here/#statistical_methods)的工具。这些不是你可以用来学习算法如何工作的唯一工具。您还可以使用代码并探索具有不同输入和输出的算法行为。知道数学不会告诉你选择什么算法或者如何最好地配置它。你只能通过仔细的受控实验来发现这一点。
+**你不需要 Prophet 道数学**。数学是描述算法如何工作的简洁方式，特别是来自[线性代数](https://machinelearningmastery.com/start-here/#linear_algebra)、[概率](https://machinelearningmastery.com/start-here/#probability)和[统计](https://machinelearningmastery.com/start-here/#statistical_methods)的工具。这些不是你可以用来学习算法如何工作的唯一工具。您还可以使用代码并探索具有不同输入和输出的算法行为。知道数学不会告诉你选择什么算法或者如何最好地配置它。你只能通过仔细的受控实验来发现这一点。
 
 **你不需要知道算法是如何工作的**。了解这些限制以及如何配置深度学习算法非常重要。但是关于算法的学习可以在以后进行。你需要长时间慢慢积累这些算法知识。今天，从适应平台开始。
 

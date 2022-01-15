@@ -1,4 +1,4 @@
-# 如何重塑Keras长短期记忆网络的输入数据
+# 如何重塑 Keras 长短期记忆网络的输入数据
 
 > 原文：<https://machinelearningmastery.com/reshape-input-data-long-short-term-memory-networks-keras/>
 
@@ -24,7 +24,7 @@
 
 ![How to Reshape Input for Long Short-Term Memory Networks in Keras](img/8fc6bb4ace397f56877135f7cedfc102.png)
 
-如何在Keras重塑长短期记忆网络的输入
+如何在 Keras 重塑长短期记忆网络的输入
 图片由[全球景观论坛](https://www.flickr.com/photos/152793655@N07/33495968401/)提供，保留部分权利。
 
 ## 教程概述

@@ -28,7 +28,7 @@
 本教程分为三个部分；它们是:
 
 1.  线性判别分析
-2.  基于 Sklearn的线性判别分析
+2.  基于 Sklearn 的线性判别分析
 3.  调整线性判别分析超参数
 
 ## 线性判别分析
@@ -63,7 +63,7 @@ LDA 模型自然是多类的。这意味着它支持两类分类问题，并且�
 
 现在我们已经熟悉了 LDA，让我们看看如何使用 Sklearn 库来拟合和评估模型。
 
-## 基于 Sklearn的线性判别分析
+## 基于 Sklearn 的线性判别分析
 
 线性判别分析可通过[线性判别分析类](https://Sklearn.org/stable/modules/generated/sklearn.discriminant_analysis.LinearDiscriminantAnalysis.html)在 Sklearn Python 机器学习库中获得。
 
