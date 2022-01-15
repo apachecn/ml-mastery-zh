@@ -288,7 +288,7 @@ model.add(Dense(n_class, activation='softmax'))
 model.compile(loss='sparse_categorical_crossentropy', optimizer='adam')
 ```
 
-如前所述，在将模型拟合到训练数据集上之后，我们可以通过计算保持测试集上的分类精确率来评估模型的性能。
+如前所述，在将模型拟合到训练数据集上之后，我们可以通过计算保持测试集上的分类精确率来评估模型的表现。
 
 ```py
 ...

@@ -55,9 +55,9 @@
 
 有许多不同类型的分类算法用于建模分类预测建模问题。
 
-关于如何将算法映射到问题类型上，没有好的理论；相反，通常建议从业者使用受控实验，并发现对于给定的分类任务，哪种算法和算法配置导致最佳性能。
+关于如何将算法映射到问题类型上，没有好的理论；相反，通常建议从业者使用受控实验，并发现对于给定的分类任务，哪种算法和算法配置导致最佳表现。
 
-基于分类预测建模算法的结果对其进行评估。分类精确率是一种流行的度量标准，用于基于预测的类标签来评估模型的性能。[分类准确率并不完美](https://machinelearningmastery.com/failure-of-accuracy-for-imbalanced-class-distributions/)但是对于很多分类任务来说是一个很好的起点。
+基于分类预测建模算法的结果对其进行评估。分类精确率是一种流行的度量标准，用于基于预测的类标签来评估模型的表现。[分类准确率并不完美](https://machinelearningmastery.com/failure-of-accuracy-for-imbalanced-class-distributions/)但是对于很多分类任务来说是一个很好的起点。
 
 代替类标签，一些任务可能需要预测每个例子的类成员的[概率。这为应用程序或用户可以解释的预测提供了额外的不确定性。评估预测概率的一个流行诊断是](https://machinelearningmastery.com/probability-metrics-for-imbalanced-classification/) [ROC 曲线](https://machinelearningmastery.com/roc-curves-and-precision-recall-curves-for-classification-in-python/)。
 
@@ -348,7 +348,7 @@ for i in range(10):
 *   成本敏感决策树。
 *   成本敏感的支持向量机。
 
-最后，可能需要替代性能指标，因为报告分类准确性可能会产生误导。
+最后，可能需要替代表现指标，因为报告分类准确性可能会产生误导。
 
 例子包括:
 

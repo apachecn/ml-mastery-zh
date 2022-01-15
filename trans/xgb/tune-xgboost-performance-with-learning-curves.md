@@ -1,4 +1,4 @@
-# 通过学习曲线调整 XGBoost 性能
+# 通过学习曲线调整 XGBoost 表现
 
 > 原文：<https://machinelearningmastery.com/tune-xgboost-performance-with-learning-curves/>
 
@@ -6,7 +6,7 @@ XGBoost 是梯度增强集成算法的一个强大而有效的实现。
 
 配置 XGBoost 模型的超参数可能具有挑战性，这通常会导致使用既耗时又计算成本高的大型网格搜索实验。
 
-配置 **XGBoost** 模型的另一种方法是在训练期间评估算法每次迭代的模型性能，并将结果绘制为**学习曲线**。这些学习曲线提供了一种诊断工具，可以对其进行解释，并建议对模型超参数进行特定的更改，从而提高预测性能。
+配置 **XGBoost** 模型的另一种方法是在训练期间评估算法每次迭代的模型表现，并将结果绘制为**学习曲线**。这些学习曲线提供了一种诊断工具，可以对其进行解释，并建议对模型超参数进行特定的更改，从而提高预测表现。
 
 在本教程中，您将发现如何在 Python 中绘制和解释 XGBoost 模型的学习曲线。
 
@@ -14,13 +14,13 @@ XGBoost 是梯度增强集成算法的一个强大而有效的实现。
 
 *   学习曲线为理解像 XGBoost 这样的监督学习模型的训练动态提供了一个有用的诊断工具。
 *   如何配置 XGBoost 来评估每次迭代的数据集，并将结果绘制为学习曲线。
-*   如何解读和使用学习曲线图提高 XGBoost 模型性能？
+*   如何解读和使用学习曲线图提高 XGBoost 模型表现？
 
 我们开始吧。
 
 ![Tune XGBoost Performance With Learning Curves](img/115762700023d91cec16244d42946843.png)
 
-通过学习曲线调整 XGBoost 性能
+通过学习曲线调整 XGBoost 表现
 图片由[伯纳德·斯拉格提供。新西兰](https://www.flickr.com/photos/volvob12b/21180557498/)，保留部分权利。
 
 ## 教程概述
@@ -50,7 +50,7 @@ XGBoost 是梯度增强集成算法的一个强大而有效的实现。
 
 它被设计为既有计算效率(例如，执行速度快)，又非常有效，可能比其他开源实现更有效。
 
-使用 XGBoost 的两个主要原因是执行速度和模型性能。
+使用 XGBoost 的两个主要原因是执行速度和模型表现。
 
 XGBoost 在分类和回归预测建模问题上主导结构化或表格数据集。证据是，它是 Kaggle 竞争数据科学平台上竞争赢家的 go-to 算法。
 
@@ -78,7 +78,7 @@ XGBoost 在分类和回归预测建模问题上主导结构化或表格数据集
 
  *在训练和验证数据集的训练过程中，为机器学习模型创建双重学习曲线是很常见的。
 
-学习曲线的形状和动态可以用于诊断机器学习模型的行为，并且反过来可能建议可以进行的配置改变的类型，以改进学习和/或性能。
+学习曲线的形状和动态可以用于诊断机器学习模型的行为，并且反过来可能建议可以进行的配置改变的类型，以改进学习和/或表现。
 
 在学习曲线中，你可能会观察到三种常见的动态；它们是:
 
@@ -90,11 +90,11 @@ XGBoost 在分类和回归预测建模问题上主导结构化或表格数据集
 
 过拟合是指模型对训练数据集的学习太好，包括训练数据集中的统计噪声或随机波动。
 
-过拟合的问题是，模型对训练数据越专门化，它对新数据的泛化能力就越差，导致泛化误差增加。泛化误差的增加可以通过模型在验证数据集上的性能来衡量。
+过拟合的问题是，模型对训练数据越专门化，它对新数据的泛化能力就越差，导致泛化误差增加。泛化误差的增加可以通过模型在验证数据集上的表现来衡量。
 
 有关学习曲线的更多信息，请参见教程:
 
-*   [如何利用学习曲线诊断机器学习模型性能](https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/)
+*   [如何利用学习曲线诊断机器学习模型表现](https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/)
 
 现在我们已经熟悉了学习曲线，让我们看看如何为 XGBoost 模型绘制学习曲线。
 
@@ -145,7 +145,7 @@ model = XGBClassifier()
 
 接下来，可以在数据集上拟合模型。
 
-在这种情况下，我们必须向训练算法指定，我们希望它在每次迭代中评估模型和测试集的性能(例如，在每个新树被添加到集合中之后)。
+在这种情况下，我们必须向训练算法指定，我们希望它在每次迭代中评估模型和测试集的表现(例如，在每个新树被添加到集合中之后)。
 
 为此，我们必须指定要评估的数据集和要评估的指标。
 
@@ -167,7 +167,7 @@ evalset = [(X_train, y_train), (X_test,y_test)]
 model.fit(X_train, y_train, eval_metric='logloss', eval_set=evalset)
 ```
 
-一旦模型被拟合，我们可以评估它的性能作为测试数据集上的分类精确率。
+一旦模型被拟合，我们可以评估它的表现作为测试数据集上的分类精确率。
 
 ```py
 ...
@@ -240,7 +240,7 @@ pyplot.show()
 
 **注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
-首先，报告模型性能，表明该模型在等待测试集上实现了约 94.5%的分类精确率。
+首先，报告模型表现，表明该模型在等待测试集上实现了约 94.5%的分类精确率。
 
 ```py
 Accuracy: 0.945
@@ -248,19 +248,19 @@ Accuracy: 0.945
 
 该图显示了训练和测试数据集的学习曲线，其中 x 轴是算法的迭代次数(或添加到集合中的树的数量)，y 轴是模型的对数损失。每行显示给定数据集每次迭代的对数损失。
 
-从学习曲线中，我们可以看到模型在训练数据集上的性能(蓝色线)比模型在测试数据集上的性能(橙色线)更好或损失更低，这是我们通常可能预期的。
+从学习曲线中，我们可以看到模型在训练数据集上的表现(蓝色线)比模型在测试数据集上的表现(橙色线)更好或损失更低，这是我们通常可能预期的。
 
 ![Learning Curves for the XGBoost Model on the Synthetic Classification Dataset](img/2e194df1c8268002a42b17aab868233f.png)
 
 综合分类数据集上 XGBoost 模型的学习曲线
 
-现在我们知道了如何绘制 XGBoost 模型的学习曲线，让我们看看如何使用这些曲线来提高模型性能。
+现在我们知道了如何绘制 XGBoost 模型的学习曲线，让我们看看如何使用这些曲线来提高模型表现。
 
 ## 使用学习曲线调整 XGBoost 模型
 
 我们可以使用学习曲线作为诊断工具。
 
-这些曲线可以被解释并用作对模型配置提出可能导致更好性能的具体改变的基础。
+这些曲线可以被解释并用作对模型配置提出可能导致更好表现的具体改变的基础。
 
 上一节中的模型和结果可以用作基线和起点。
 
@@ -310,7 +310,7 @@ pyplot.legend()
 pyplot.show()
 ```
 
-运行示例拟合和评估模型，并绘制模型性能的学习曲线。
+运行示例拟合和评估模型，并绘制模型表现的学习曲线。
 
 **注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
@@ -370,7 +370,7 @@ pyplot.legend()
 pyplot.show()
 ```
 
-运行示例拟合和评估模型，并绘制模型性能的学习曲线。
+运行示例拟合和评估模型，并绘制模型表现的学习曲线。
 
 **注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
@@ -380,7 +380,7 @@ pyplot.show()
 Accuracy: 0.951
 ```
 
-我们可以从学习曲线中看到，学习确实已经慢了下来。这些曲线表明，我们可以继续增加更多的迭代，并可能获得更好的性能，因为曲线将有更多的机会继续减少。
+我们可以从学习曲线中看到，学习确实已经慢了下来。这些曲线表明，我们可以继续增加更多的迭代，并可能获得更好的表现，因为曲线将有更多的机会继续减少。
 
 ![Learning Curves for the XGBoost Model With Smaller Learning Rate](img/4400830859a045ad8d5c520e08c85c72.png)
 
@@ -428,7 +428,7 @@ pyplot.legend()
 pyplot.show()
 ```
 
-运行示例拟合和评估模型，并绘制模型性能的学习曲线。
+运行示例拟合和评估模型，并绘制模型表现的学习曲线。
 
 **注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
@@ -490,7 +490,7 @@ pyplot.legend()
 pyplot.show()
 ```
 
-运行示例拟合和评估模型，并绘制模型性能的学习曲线。
+运行示例拟合和评估模型，并绘制模型表现的学习曲线。
 
 **注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
@@ -516,7 +516,7 @@ Accuracy: 0.966
 
 *   [机器学习梯度增强算法的简单介绍](https://machinelearningmastery.com/gentle-introduction-gradient-boosting-algorithm-machine-learning/)
 *   [Python 中的极限梯度增强(XGBoost)集成](https://machinelearningmastery.com/extreme-gradient-boosting-ensemble-in-python/)
-*   [如何利用学习曲线诊断机器学习模型性能](https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/)
+*   [如何利用学习曲线诊断机器学习模型表现](https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/)
 *   [通过在 Python 中使用 XGBoost 提前停止来避免过度拟合](https://machinelearningmastery.com/avoid-overfitting-by-early-stopping-with-xgboost-in-python/)
 
 ### 报纸
@@ -537,7 +537,7 @@ Accuracy: 0.966
 
 *   学习曲线为理解像 XGBoost 这样的监督学习模型的训练动态提供了一个有用的诊断工具。
 *   如何配置 XGBoost 来评估每次迭代的数据集，并将结果绘制为学习曲线。
-*   如何解读和使用学习曲线图提高 XGBoost 模型性能？
+*   如何解读和使用学习曲线图提高 XGBoost 模型表现？
 
 **你有什么问题吗？**
 在下面的评论中提问，我会尽力回答。*

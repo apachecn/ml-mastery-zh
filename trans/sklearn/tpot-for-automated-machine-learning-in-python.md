@@ -2,7 +2,7 @@
 
 > 原文：<https://machinelearningmastery.com/tpot-for-automated-machine-learning-in-python/>
 
-自动机器学习(AutoML)指的是在很少用户参与的情况下，自动发现用于预测建模任务的性能良好的模型的技术。
+自动机器学习(AutoML)指的是在很少用户参与的情况下，自动发现用于预测建模任务的表现良好的模型的技术。
 
 TPOT 是一个用 Python 执行自动语言的开源库。它利用流行的 Scikit-Learn 机器学习库进行数据转换和机器学习算法，并使用遗传编程随机全局搜索过程来有效地发现给定数据集的最佳模型管道。
 
@@ -81,11 +81,11 @@ tpot: 0.11.1
 
 使用 TPOT 很简单。
 
-它包括创建一个[tpotrecruler 或 TPOTClassifier 类](https://epistasislab.github.io/tpot/api/)的实例，为搜索进行配置，然后导出在数据集上获得最佳性能的模型管道。
+它包括创建一个[tpotrecruler 或 TPOTClassifier 类](https://epistasislab.github.io/tpot/api/)的实例，为搜索进行配置，然后导出在数据集上获得最佳表现的模型管道。
 
 配置类涉及两个主要元素。
 
-首先是如何评估模型，例如交叉验证方案和性能指标。我建议用您选择的配置和要使用的性能度量来显式指定交叉验证类。
+首先是如何评估模型，例如交叉验证方案和表现指标。我建议用您选择的配置和要使用的表现度量来显式指定交叉验证类。
 
 例如，用“*负平均绝对误差*度量进行回归时，[重复“T1”:](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html)
 
@@ -119,7 +119,7 @@ model = TPOTClassifier(... scoring='accuracy', cv=cv)
 model = TPOTClassifier(generations=5, population_size=50, ...)
 ```
 
-在搜索结束时，会找到性能最佳的管道。
+在搜索结束时，会找到表现最佳的管道。
 
 这个管道可以作为代码导出到 Python 文件中，以后可以复制粘贴到自己的项目中。
 
@@ -137,7 +137,7 @@ model.export('tpot_model.py')
 
 声纳数据集是一个标准的机器学习数据集，由 208 行数据组成，包含 60 个数字输入变量和一个具有两个类值的目标变量，例如二进制分类。
 
-使用三次重复的重复分层 10 倍交叉验证的测试工具，一个简单的模型可以达到大约 53%的准确率。一个性能最好的模型在同样的测试设备上可以达到 88%的准确率。这提供了此数据集的预期性能范围。
+使用三次重复的重复分层 10 倍交叉验证的测试工具，一个简单的模型可以达到大约 53%的准确率。一个表现最好的模型在同样的测试设备上可以达到 88%的准确率。这提供了此数据集的预期表现范围。
 
 该数据集包括预测声纳回波显示的是岩石还是模拟地雷。
 
@@ -184,7 +184,7 @@ cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
 model = TPOTClassifier(generations=5, population_size=50, cv=cv, scoring='accuracy', verbosity=2, random_state=1, n_jobs=-1)
 ```
 
-最后，我们可以开始搜索，并确保在运行结束时保存性能最佳的模型。
+最后，我们可以开始搜索，并确保在运行结束时保存表现最佳的模型。
 
 ```py
 ...
@@ -225,7 +225,7 @@ model.export('tpot_sonar_best_model.py')
 
 **注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
-高性能模型的准确性将在过程中报告。
+高表现模型的准确性将在过程中报告。
 
 ```py
 Generation 1 - Current best internal CV score: 0.8650793650793651
@@ -237,9 +237,9 @@ Generation 5 - Current best internal CV score: 0.8667460317460318
 Best pipeline: GradientBoostingClassifier(GaussianNB(input_matrix), learning_rate=0.1, max_depth=7, max_features=0.7000000000000001, min_samples_leaf=15, min_samples_split=10, n_estimators=100, subsample=0.9000000000000001)
 ```
 
-在这种情况下，我们可以看到性能最好的管道实现了大约 86.6%的平均准确率。这是一个技巧性的模型，接近于这个数据集上表现最好的模型。
+在这种情况下，我们可以看到表现最好的管道实现了大约 86.6%的平均准确率。这是一个技巧性的模型，接近于这个数据集上表现最好的模型。
 
-然后，性能最好的管道被保存到名为“ *tpot_sonar_best_model.py* 的文件中。
+然后，表现最好的管道被保存到名为“ *tpot_sonar_best_model.py* 的文件中。
 
 打开这个文件，您可以看到有一些用于加载数据集和拟合管道的通用代码。下面列出了一个例子。
 
@@ -273,7 +273,7 @@ results = exported_pipeline.predict(testing_features)
 
 **注**:按原样，该代码不执行，这是设计好的。这是一个可以复制粘贴到项目中的模板。
 
-在这种情况下，我们可以看到性能最好的模型是由朴素贝叶斯模型和梯度增强模型组成的管道。
+在这种情况下，我们可以看到表现最好的模型是由朴素贝叶斯模型和梯度增强模型组成的管道。
 
 我们可以修改这段代码，使其适合所有可用数据的最终模型，并对新数据进行预测。
 
@@ -313,7 +313,7 @@ yhat = exported_pipeline.predict([row])
 print('Predicted: %.3f' % yhat[0])
 ```
 
-运行该示例适合数据集上性能最好的模型，并对单行新数据进行预测。
+运行该示例适合数据集上表现最好的模型，并对单行新数据进行预测。
 
 ```py
 Predicted: 1.000
@@ -325,7 +325,7 @@ Predicted: 1.000
 
 汽车保险数据集是一个标准的机器学习数据集，由 63 行数据组成，包括一个数字输入变量和一个数字目标变量。
 
-使用三次重复的重复分层 10 倍交叉验证的测试工具，一个简单的模型可以获得大约 66 的平均绝对误差(MAE)。一个性能最好的模型可以在大约 28 的相同测试线束上实现 MAE。这提供了此数据集的预期性能范围。
+使用三次重复的重复分层 10 倍交叉验证的测试工具，一个简单的模型可以获得大约 66 的平均绝对误差(MAE)。一个表现最好的模型可以在大约 28 的相同测试线束上实现 MAE。这提供了此数据集的预期表现范围。
 
 考虑到不同地理区域的索赔数量，数据集包括预测索赔总额(千瑞典克朗)。
 
@@ -372,7 +372,7 @@ cv = RepeatedKFold(n_splits=10, n_repeats=3, random_state=1)
 model = TPOTRegressor(generations=5, population_size=50, scoring='neg_mean_absolute_error', cv=cv, verbosity=2, random_state=1, n_jobs=-1)
 ```
 
-最后，我们可以开始搜索，并确保在运行结束时保存性能最佳的模型。
+最后，我们可以开始搜索，并确保在运行结束时保存表现最佳的模型。
 
 ```py
 ...
@@ -410,7 +410,7 @@ model.export('tpot_insurance_best_model.py')
 
 **注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
-高性能模型的 MAE 将会一路被报道。
+高表现模型的 MAE 将会一路被报道。
 
 ```py
 Generation 1 - Current best internal CV score: -29.147625969129034
@@ -424,7 +424,7 @@ Best pipeline: LinearSVR(input_matrix, C=1.0, dual=False, epsilon=0.0001, loss=s
 
 在这种情况下，我们可以看到表现最好的管道实现了大约 29.14 的平均 MAE。这是一个技巧性的模型，接近于这个数据集上表现最好的模型。
 
-然后，性能最好的管道被保存到名为“*tpot _ insurance _ best _ model . py*的文件中。
+然后，表现最好的管道被保存到名为“*tpot _ insurance _ best _ model . py*的文件中。
 
 打开这个文件，您可以看到有一些用于加载数据集和拟合管道的通用代码。下面列出了一个例子。
 
@@ -452,7 +452,7 @@ results = exported_pipeline.predict(testing_features)
 
 **注**:按原样，该代码不执行，这是设计好的。这是一个可以复制粘贴到项目中的模板。
 
-在这种情况下，我们可以看到性能最好的模型是由线性支持向量机模型组成的管道。
+在这种情况下，我们可以看到表现最好的模型是由线性支持向量机模型组成的管道。
 
 我们可以修改这段代码，使其适合所有可用数据的最终模型，并对新数据进行预测。
 
@@ -483,7 +483,7 @@ yhat = exported_pipeline.predict([row])
 print('Predicted: %.3f' % yhat[0])
 ```
 
-运行该示例适合数据集上性能最好的模型，并对单行新数据进行预测。
+运行该示例适合数据集上表现最好的模型，并对单行新数据进行预测。
 
 ```py
 Predicted: 389.612

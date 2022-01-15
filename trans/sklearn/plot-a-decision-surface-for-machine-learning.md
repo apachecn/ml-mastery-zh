@@ -171,7 +171,7 @@ print('Accuracy: %.3f' % acc)
 
 **注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
-在这种情况下，我们可以看到该模型实现了大约 97.2%的性能。
+在这种情况下，我们可以看到该模型实现了大约 97.2%的表现。
 
 ```py
 Accuracy: 0.972

@@ -10,15 +10,15 @@ AutoML 指的是自动发现给定数据集的最佳模型的技术。
 
 AutoKeras 是一个开源库，用于为深度学习模型执行 AutoML。通过 TensorFlow tf.keras API 使用所谓的 Keras 模型执行搜索。
 
-它提供了一种简单有效的方法，可以自动为各种预测建模任务找到性能最佳的模型，包括表格或所谓的结构化分类和回归数据集。
+它提供了一种简单有效的方法，可以自动为各种预测建模任务找到表现最佳的模型，包括表格或所谓的结构化分类和回归数据集。
 
 在本教程中，您将发现如何使用 AutoKeras 为分类和回归任务找到良好的神经网络模型。
 
 完成本教程后，您将知道:
 
 *   AutoKeras 是 AutoML 的一个实现，用于使用神经架构搜索的深度学习。
-*   如何使用 AutoKeras 为二进制分类数据集找到性能最佳的模型。
-*   如何使用 AutoKeras 为回归数据集查找性能最佳的模型。
+*   如何使用 AutoKeras 为二进制分类数据集找到表现最佳的模型。
+*   如何使用 AutoKeras 为回归数据集查找表现最佳的模型。
 
 我们开始吧。
 
@@ -55,7 +55,7 @@ AutoKeras 是 AutoML 的一个实现，用于使用 Keras API 的深度学习模
 
 ——[Auto-keras:一个高效的神经架构搜索系统](https://www.kdd.org/kdd2019/accepted-papers/view/auto-keras-an-efficient-neural-architecture-search-system)，2019。
 
-本着 Keras 的精神，AutoKeras 为不同的任务提供了一个易于使用的界面，例如图像分类、结构化数据分类或回归等等。用户只需要指定数据的位置和要尝试的模型数量，并返回一个在该数据集上获得最佳性能(在配置的约束下)的模型。
+本着 Keras 的精神，AutoKeras 为不同的任务提供了一个易于使用的界面，例如图像分类、结构化数据分类或回归等等。用户只需要指定数据的位置和要尝试的模型数量，并返回一个在该数据集上获得最佳表现(在配置的约束下)的模型。
 
 **注意** : AutoKeras 提供的是 TensorFlow 2 Keras 模型(例如 tf.keras)，而不是 Standalone Keras 模型。因此，该库假设您安装了 Python 3 和 TensorFlow 2.3.0 或更高版本。
 
@@ -289,7 +289,7 @@ model.save('model_sonar.h5')
  |-structured_data_block_1/dense_block_2/use_batchnorm: False
 ```
 
-然后在搁置测试数据集上评估性能最佳的模型。
+然后在搁置测试数据集上评估表现最佳的模型。
 
 **注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
@@ -299,7 +299,7 @@ model.save('model_sonar.h5')
 Accuracy: 0.826
 ```
 
-接下来，报告性能最佳的模型的体系结构。
+接下来，报告表现最佳的模型的体系结构。
 
 我们可以看到一个模型有两个隐藏层，分别是 drop 和 ReLU 激活。
 
@@ -340,7 +340,7 @@ AutoKeras 也可以用于回归任务，即预测数值的预测建模问题。
 
 我们将使用汽车保险数据集，该数据集包括根据索赔总数预测总付款。数据集有 63 行，一个输入变量和一个输出变量。
 
-使用重复的 10 倍交叉验证，一个简单的模型可以获得大约 66 的平均绝对误差(MAE)，提供了预期性能的下限。一个好的模型可以达到 28 左右的 MAE，提供一个性能上限。
+使用重复的 10 倍交叉验证，一个简单的模型可以获得大约 66 的平均绝对误差(MAE)，提供了预期表现的下限。一个好的模型可以达到 28 左右的 MAE，提供一个表现上限。
 
 您可以在此了解有关此数据集的更多信息:
 
@@ -395,7 +395,7 @@ search = StructuredDataRegressor(max_trials=15, loss='mean_absolute_error')
 search.fit(x=X_train, y=y_train, verbose=0)
 ```
 
-然后，我们可以使用性能最好的模型，并在等待数据集上对其进行评估，对新数据进行预测，并总结其结构。
+然后，我们可以使用表现最好的模型，并在等待数据集上对其进行评估，对新数据进行预测，并总结其结构。
 
 ```py
 ...
@@ -480,7 +480,7 @@ model.save('model_insurance.h5')
 |-structured_data_block_1/dense_block_2/use_batchnorm: True
 ```
 
-然后在搁置测试数据集上评估性能最佳的模型。
+然后在搁置测试数据集上评估表现最佳的模型。
 
 **注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
@@ -490,7 +490,7 @@ model.save('model_insurance.h5')
 MAE: 24.916
 ```
 
-接下来，报告性能最佳的模型的体系结构。
+接下来，报告表现最佳的模型的体系结构。
 
 我们可以看到一个带有两个隐藏层的模型，带有 ReLU 激活。
 
@@ -541,8 +541,8 @@ _________________________________________________________________
 具体来说，您了解到:
 
 *   AutoKeras 是 AutoML 的一个实现，用于使用神经架构搜索的深度学习。
-*   如何使用 AutoKeras 为二进制分类数据集找到性能最佳的模型。
-*   如何使用 AutoKeras 为回归数据集查找性能最佳的模型。
+*   如何使用 AutoKeras 为二进制分类数据集找到表现最佳的模型。
+*   如何使用 AutoKeras 为回归数据集查找表现最佳的模型。
 
 **你有什么问题吗？**
 在下面的评论中提问，我会尽力回答。

@@ -14,7 +14,7 @@ PyCaret 库提供了这些功能，允许 Python 中的机器学习从业者通�
 
 *   PyCaret 是 r .中流行且广泛使用的 Caret 机器学习包的 Python 版本
 *   如何使用 PyCaret 轻松评估和比较数据集上的标准机器学习模型。
-*   如何使用 PyCaret 轻松调整性能良好的机器学习模型的超参数。
+*   如何使用 PyCaret 轻松调整表现良好的机器学习模型的超参数。
 
 我们开始吧。
 
@@ -156,7 +156,7 @@ print(df.head())
 
 ## 用于比较机器学习模型的 PyCaret
 
-在本节中，我们将评估和比较标准机器学习模型在声纳分类数据集上的性能。
+在本节中，我们将评估和比较标准机器学习模型在声纳分类数据集上的表现。
 
 首先，我们必须通过 [setup()函数](https://pycaret.org/classification/)用 PyCaret 库设置数据集。这要求我们提供 Pandas DataFrame，并指定包含目标变量的列的名称。
 
@@ -182,9 +182,9 @@ grid = setup(data=df, target=df.columns[-1], html=False, silent=True, verbose=Fa
 best = compare_models()
 ```
 
-调用 *compare_models()* 函数还会报告一个结果表，该表总结了所有被评估的模型及其性能。
+调用 *compare_models()* 函数还会报告一个结果表，该表总结了所有被评估的模型及其表现。
 
-最后，我们可以报告性能最佳的模型及其配置。
+最后，我们可以报告表现最佳的模型及其配置。
 
 将这些联系在一起，下面列出了在声纳分类数据集上评估一套标准模型的完整示例。
 
@@ -282,7 +282,7 @@ grid = setup(data=df, target=df.columns[-1], html=False, silent=True, verbose=Fa
 
 该函数将模型的一个实例作为输入进行调整，并知道自动调整哪些超参数。执行模型超参数的随机搜索，并且可以通过“ *n_iter* ”参数控制评估的总数。
 
-默认情况下，该功能将优化“*精确率*”，并将使用 10 倍交叉验证来评估每个配置的性能，尽管这个合理的默认配置可以更改。
+默认情况下，该功能将优化“*精确率*”，并将使用 10 倍交叉验证来评估每个配置的表现，尽管这个合理的默认配置可以更改。
 
 我们可以对额外的树分类器执行如下随机搜索:
 
@@ -292,7 +292,7 @@ grid = setup(data=df, target=df.columns[-1], html=False, silent=True, verbose=Fa
 best = tune_model(ExtraTreesClassifier(), n_iter=200)
 ```
 
-该函数将返回性能最佳的模型，可直接使用或打印该模型来确定所选的超参数。
+该函数将返回表现最佳的模型，可直接使用或打印该模型来确定所选的超参数。
 
 它还将打印 k 折叠交叉验证中最佳配置的结果表(例如 10 次折叠)。
 
@@ -321,7 +321,7 @@ print(best)
 
 运行该示例首先加载数据集并配置 PyCaret 库。
 
-然后执行网格搜索，报告跨 10 倍交叉验证的最佳配置性能和平均精确率。
+然后执行网格搜索，报告跨 10 倍交叉验证的最佳配置表现和平均精确率。
 
 **注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
@@ -369,7 +369,7 @@ ExtraTreesClassifier(bootstrap=False, ccp_alpha=0.0, class_weight=None,
 
 *   PyCaret 是 r .中流行且广泛使用的 Caret 机器学习包的 Python 版本
 *   如何使用 PyCaret 轻松评估和比较数据集上的标准机器学习模型。
-*   如何使用 PyCaret 轻松调整性能良好的机器学习模型的超参数。
+*   如何使用 PyCaret 轻松调整表现良好的机器学习模型的超参数。
 
 **你有什么问题吗？**
 在下面的评论中提问，我会尽力回答。

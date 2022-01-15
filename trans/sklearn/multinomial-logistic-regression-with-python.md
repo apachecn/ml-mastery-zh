@@ -104,7 +104,7 @@ model = LogisticRegression(multi_class='multinomial', solver='lbfgs')
 
 使用[重复分层 k 重交叉验证](https://machinelearningmastery.com/repeated-k-fold-cross-validation-with-python/)来评估分类模型是一个很好的做法。分层确保每个交叉验证文件夹在每个类中的示例分布与整个训练数据集大致相同。
 
-我们将使用 10 倍的三个重复，这是一个很好的默认值，并使用分类精确率来评估模型性能，假设类是平衡的。
+我们将使用 10 倍的三个重复，这是一个很好的默认值，并使用分类精确率来评估模型表现，假设类是平衡的。
 
 下面列出了评估多类分类的多项逻辑回归的完整示例。
 
@@ -242,7 +242,7 @@ LogisticRegression(multi_class='multinomial', solver='lbfgs', penalty='l2', C=1.
 LogisticRegression(multi_class='multinomial', solver='lbfgs', penalty='none')
 ```
 
-现在我们已经熟悉了惩罚，让我们看看我们如何探索不同的惩罚值对多项式逻辑回归模型性能的影响。
+现在我们已经熟悉了惩罚，让我们看看我们如何探索不同的惩罚值对多项式逻辑回归模型表现的影响。
 
 通常在对数尺度上测试惩罚值，以便快速发现适合模型的惩罚尺度。一旦找到，在这个尺度上进一步调整可能是有益的。
 
@@ -323,7 +323,7 @@ pyplot.show()
 
 为每种配置的准确度分数创建了一个方框图和触须图，所有图都以相同的比例并排显示在图形上，以便直接比较。
 
-在这种情况下，我们可以看到，我们对这个数据集使用的惩罚越大(即 C 值越小)，模型的性能就越差。
+在这种情况下，我们可以看到，我们对这个数据集使用的惩罚越大(即 C 值越小)，模型的表现就越差。
 
 ![Box and Whisker Plots of L2 Penalty Configuration vs. Accuracy for Multinomial Logistic Regression](img/f052c40c22d68dcab0b58d7ac4adff92.png)
 

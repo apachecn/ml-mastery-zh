@@ -4,7 +4,7 @@
 
 最后更新于 2020 年 11 月 6 日
 
-超参数优化指的是执行搜索，以便发现一组特定的模型配置参数，从而在特定数据集上获得模型的最佳性能。
+超参数优化指的是执行搜索，以便发现一组特定的模型配置参数，从而在特定数据集上获得模型的最佳表现。
 
 有许多方法可以执行超参数优化，尽管现代方法，如贝叶斯优化，是快速有效的。 **Scikit-Optimize 库**是一个开源 Python 库，它提供了贝叶斯优化的实现，可用于调整 scikit-Learn Python 库中机器学习模型的超参数。
 
@@ -86,7 +86,7 @@ skopt 0.7.2
 
 我们将使用电离层机器学习数据集。这是一个标准的机器学习数据集，包括 351 行数据，其中有三个数字输入变量和一个目标变量，目标变量有两个类值，例如二进制分类。
 
-使用带有三次重复的[重复分层 10 倍交叉验证](https://machinelearningmastery.com/k-fold-cross-validation/)的测试工具，一个简单的模型可以达到大约 64%的准确率。一个性能最好的模型可以在同样的测试设备上达到大约 94%的精确度。这提供了此数据集的预期性能范围。
+使用带有三次重复的[重复分层 10 倍交叉验证](https://machinelearningmastery.com/k-fold-cross-validation/)的测试工具，一个简单的模型可以达到大约 64%的准确率。一个表现最好的模型可以在同样的测试设备上达到大约 94%的精确度。这提供了此数据集的预期表现范围。
 
 该数据集包括预测电离层测量值是否表明特定结构。
 
@@ -119,7 +119,7 @@ print(X.shape, y.shape)
 
 我们可以使用重复的分层交叉验证在这个数据集上评估[支持向量机](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html) (SVM)模型。
 
-我们可以报告数据集上所有折叠和重复的平均模型性能，这将为后面章节中执行的模型超参数调整提供参考。
+我们可以报告数据集上所有折叠和重复的平均模型表现，这将为后面章节中执行的模型超参数调整提供参考。
 
 下面列出了完整的示例。
 
@@ -151,14 +151,14 @@ print('Accuracy: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 
 **注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
-在这种情况下，我们可以看到具有默认超参数的 SVM 实现了大约 93.7%的平均分类准确率，这是熟练的，并且接近 94%的问题上的最高性能。
+在这种情况下，我们可以看到具有默认超参数的 SVM 实现了大约 93.7%的平均分类准确率，这是熟练的，并且接近 94%的问题上的最高表现。
 
 ```py
 (351, 34) (351,)
 Accuracy: 0.937 (0.038)
 ```
 
-接下来，让我们看看是否可以通过使用 scikit-optimize 库调整模型超参数来提高性能。
+接下来，让我们看看是否可以通过使用 scikit-optimize 库调整模型超参数来提高表现。
 
 ## 手动调整算法超参数
 
@@ -224,7 +224,7 @@ result = gp_minimize(evaluate_model, search_space)
 
 该过程将一直运行，直到它收敛并返回结果。
 
-结果对象包含许多细节，但重要的是，我们可以访问最佳性能配置的分数和最佳成形模型使用的超参数。
+结果对象包含许多细节，但重要的是，我们可以访问最佳表现配置的分数和最佳成形模型使用的超参数。
 
 ```py
 ...
@@ -292,7 +292,7 @@ print('Best Parameters: %s' % (result.x))
 UserWarning: The objective has been evaluated at this point before.
 ```
 
-运行结束时，会报告性能最佳的配置。
+运行结束时，会报告表现最佳的配置。
 
 **注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
@@ -394,11 +394,11 @@ print(search.best_params_)
 UserWarning: The objective has been evaluated at this point before.
 ```
 
-运行结束时，会报告性能最佳的配置。
+运行结束时，会报告表现最佳的配置。
 
 **注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
-在这种情况下，我们可以看到，该模型的性能高于表现最好的模型，平均分类准确率约为 95.2%。
+在这种情况下，我们可以看到，该模型的表现高于表现最好的模型，平均分类准确率约为 95.2%。
 
 搜索发现了一个大的 *C* 值、一个径向基函数*核*和一个小的*γ*值。
 

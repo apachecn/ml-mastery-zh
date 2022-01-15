@@ -18,7 +18,7 @@ TensorFlow 是由谷歌开发和维护的首要开源深度学习框架。虽然
 *   tf.keras 模型的 5 步生命周期以及如何使用顺序和功能 API。
 *   如何用 tf.keras 开发用于回归、分类和时间序列预测的 MLP、CNN 和 RNN 模型。
 *   如何使用 tf.keras API 的高级功能来检查和诊断您的模型。
-*   如何通过减少过度训练和加速训练来提高 tf.keras 模型的性能？
+*   如何通过减少过度训练和加速训练来提高 tf.keras 模型的表现？
 
 这是一个大型教程，非常有趣。你可能想把它做成书签。
 
@@ -63,7 +63,7 @@ TensorFlow 是由谷歌开发和维护的首要开源深度学习框架。虽然
     1.  如何可视化深度学习模型
     2.  如何绘制模型学习曲线
     3.  如何保存和加载模型
-5.  如何获得更好的模型性能
+5.  如何获得更好的模型表现
     1.  如何减少辍学的过度适应
     2.  如何利用批量标准化加速训练
     3.  如何适时停止训练，提前停止
@@ -244,7 +244,7 @@ model = ...
 
 编译模型要求您首先选择要优化的损失函数，例如均方误差或交叉熵。
 
-它还要求您选择一个算法来执行优化过程，通常是随机梯度下降，或现代变化，如亚当。它可能还要求您在模型训练过程中选择任何要跟踪的性能指标。
+它还要求您选择一个算法来执行优化过程，通常是随机梯度下降，或现代变化，如亚当。它可能还要求您在模型训练过程中选择任何要跟踪的表现指标。
 
 从应用编程接口的角度来看，这包括调用一个函数来编译具有所选配置的模型，这将为有效使用您定义的模型准备适当的数据结构。
 
@@ -309,7 +309,7 @@ model.fit(X, y, epochs=100, batch_size=32)
 
 *   [如何控制批量训练神经网络的稳定性](https://machinelearningmastery.com/how-to-control-the-speed-and-stability-of-training-neural-networks-with-gradient-descent-batch-size/)
 
-在拟合模型时，进度条将总结每个时期的状态和整个训练过程。通过将“ *verbose* ”参数设置为 2，可以将其简化为每个时期模型性能的简单报告。通过将“*详细*”设置为 0，可以在训练期间关闭所有输出。
+在拟合模型时，进度条将总结每个时期的状态和整个训练过程。通过将“ *verbose* ”参数设置为 2，可以将其简化为每个时期模型表现的简单报告。通过将“*详细*”设置为 0，可以在训练期间关闭所有输出。
 
 ```py
 ...
@@ -319,7 +319,7 @@ model.fit(X, y, epochs=100, batch_size=32, verbose=0)
 
 #### 评估模型
 
-评估模型需要首先选择用于评估模型的保持数据集。这应该是在训练过程中不使用的数据，以便我们在对新数据进行预测时可以获得模型性能的无偏估计。
+评估模型需要首先选择用于评估模型的保持数据集。这应该是在训练过程中不使用的数据，以便我们在对新数据进行预测时可以获得模型表现的无偏估计。
 
 模型评估的速度与您想要用于评估的数据量成正比，尽管由于模型没有改变，它比训练快得多。
 
@@ -910,7 +910,7 @@ MSE: 12755421.000, RMSE: 3571.473, MAE: 2856.084
 Predicted: 13199.325
 ```
 
-**注**:在拟合模型之前，最好先对数据进行缩放，使序列平稳。为了获得更好的性能，我建议将其作为扩展。有关为建模准备时间序列数据的更多信息，请参见教程:
+**注**:在拟合模型之前，最好先对数据进行缩放，使序列平稳。为了获得更好的表现，我建议将其作为扩展。有关为建模准备时间序列数据的更多信息，请参见教程:
 
 *   [4 时间序列预测的常用机器学习数据转换](https://machinelearningmastery.com/machine-learning-data-transforms-for-time-series-forecasting/)
 
@@ -996,21 +996,21 @@ plot_model(model, 'model.png', show_shapes=True)
 
 ### 4.2 如何绘制模型学习曲线
 
-学习曲线是神经网络模型性能随时间变化的曲线，例如在每个训练时期结束时计算的曲线。
+学习曲线是神经网络模型表现随时间变化的曲线，例如在每个训练时期结束时计算的曲线。
 
 学习曲线图提供了对模型学习动态的洞察，例如模型是否学习良好，是否对训练数据集拟合不足，或者是否对训练数据集过度拟合。
 
 对于学习曲线以及如何使用它们来诊断模型的学习动态的温和介绍，请参见教程:
 
-*   [如何利用学习曲线诊断机器学习模型性能](https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/)
+*   [如何利用学习曲线诊断机器学习模型表现](https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/)
 
 您可以轻松地为深度学习模型创建学习曲线。
 
-首先，您必须更新对 fit 函数的调用，以包含对[验证数据集](https://machinelearningmastery.com/difference-test-validation-datasets/)的引用。这是训练集中不用于拟合模型的一部分，而是用于在训练期间评估模型的性能。
+首先，您必须更新对 fit 函数的调用，以包含对[验证数据集](https://machinelearningmastery.com/difference-test-validation-datasets/)的引用。这是训练集中不用于拟合模型的一部分，而是用于在训练期间评估模型的表现。
 
 您可以手动拆分数据并指定 *validation_data* 参数，也可以使用 *validation_split* 参数并指定训练数据集的百分比拆分，让 API 为您执行拆分。后者目前比较简单。
 
-拟合函数将返回一个*历史*对象，该对象包含在每个训练时期结束时记录的性能指标的轨迹。这包括所选的损失函数和每个已配置的度量，例如准确性，并且每个损失和度量都是为训练和验证数据集计算的。
+拟合函数将返回一个*历史*对象，该对象包含在每个训练时期结束时记录的表现指标的轨迹。这包括所选的损失函数和每个已配置的度量，例如准确性，并且每个损失和度量都是为训练和验证数据集计算的。
 
 学习曲线是训练数据集和验证数据集的损失图。我们可以使用 [Matplotlib](https://matplotlib.org/) 库从*历史*对象创建该图。
 
@@ -1119,9 +1119,9 @@ print('Predicted: %.3f' % yhat[0])
 Predicted: 0.831
 ```
 
-## 5.如何获得更好的模型性能
+## 5.如何获得更好的模型表现
 
-在本节中，您将发现一些可以用来提高深度学习模型性能的技术。
+在本节中，您将发现一些可以用来提高深度学习模型表现的技术。
 
 提高深度学习绩效的一大部分涉及到通过减慢学习过程或在正确的时间停止学习过程来避免过度适应。
 
@@ -1227,7 +1227,7 @@ model.fit(X, y, epochs=100, batch_size=32, verbose=0)
 
 通过首先确保您有一个[验证数据集](https://machinelearningmastery.com/difference-test-validation-datasets/)，提前停止可以用于您的模型。您可以通过 *fit()* 函数的 *validation_data* 参数手动定义验证数据集，也可以使用 *validation_split* 并指定要保留以进行验证的训练数据集的数量。
 
-然后，您可以定义一个早期预测，并指示它监控哪个性能度量，例如验证数据集中的损失的“ *val_loss* ”，以及采取措施之前观察到的过度拟合的时期数，例如 5。
+然后，您可以定义一个早期预测，并指示它监控哪个表现度量，例如验证数据集中的损失的“ *val_loss* ”，以及采取措施之前观察到的过度拟合的时期数，例如 5。
 
 这种配置的[早期提示](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/EarlyStopping)回调可以通过获取回调列表的“*回调*参数提供给 *fit()* 函数。
 
@@ -1272,7 +1272,7 @@ tf.keras API 提供了许多您可能想探索的回调；您可以在这里了�
 *   [机器学习中分类和回归的区别](https://machinelearningmastery.com/classification-versus-regression-in-machine-learning/)
 *   [如何手动缩放图像像素数据进行深度学习](https://machinelearningmastery.com/how-to-manually-scale-image-pixel-data-for-deep-learning/)
 *   [4 时间序列预测的常用机器学习数据转换](https://machinelearningmastery.com/machine-learning-data-transforms-for-time-series-forecasting/)
-*   [如何利用学习曲线诊断机器学习模型性能](https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/)
+*   [如何利用学习曲线诊断机器学习模型表现](https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/)
 *   [轻度介绍用于调节深层神经网络的缺失](https://machinelearningmastery.com/dropout-for-regularizing-deep-neural-networks/)
 *   [深度神经网络批量归一化简介](https://machinelearningmastery.com/batch-normalization-for-training-of-deep-neural-networks/)
 *   [提前停车避免过度训练神经网络的温和介绍](https://machinelearningmastery.com/early-stopping-to-avoid-overtraining-neural-network-models/)
@@ -1307,7 +1307,7 @@ tf.keras API 提供了许多您可能想探索的回调；您可以在这里了�
 *   tf.keras 模型的 5 步生命周期以及如何使用顺序和功能 API。
 *   如何用 tf.keras 开发用于回归、分类和时间序列预测的 MLP、CNN 和 RNN 模型。
 *   如何使用 tf.keras API 的高级功能来检查和诊断您的模型。
-*   如何通过减少过度训练和加速训练来提高 tf.keras 模型的性能？
+*   如何通过减少过度训练和加速训练来提高 tf.keras 模型的表现？
 
 **你有什么问题吗？**
 在下面的评论中提问，我会尽力回答。

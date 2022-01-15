@@ -1,4 +1,4 @@
-# xboost 损失函数的温和介绍
+# XGBoost 损失函数的温和介绍
 
 > 原文：<https://machinelearningmastery.com/xgboost-loss-functions/>
 

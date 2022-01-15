@@ -1,4 +1,4 @@
-# XGBoost 用于回归
+# 用于回归的 XGBoost
 
 > 原文：<https://machinelearningmastery.com/xgboost-for-regression/>
 
@@ -49,7 +49,7 @@
 
 它被设计为既有计算效率(例如，执行速度快)，又非常有效，可能比其他开源实现更有效。
 
-使用 XGBoost 的两个主要原因是执行速度和模型性能。
+使用 XGBoost 的两个主要原因是执行速度和模型表现。
 
 XGBoost 在分类和回归预测建模问题上主导结构化或表格数据集。证据是，它是 Kaggle 竞争数据科学平台上竞争赢家的 go-to 算法。
 
@@ -131,7 +131,7 @@ model = XGBRegressor(n_estimators=1000, max_depth=7, eta=0.1, subsample=0.7, col
 
 随机性用于模型的构建。这意味着算法每次在相同的数据上运行时，可能会产生稍微不同的模型。
 
-当使用具有随机学习算法的机器学习算法时，最好通过在多次运行或重复交叉验证中平均它们的性能来评估它们。当拟合最终模型时，可能需要增加树的数量，直到模型的方差在重复评估中减小，或者拟合多个最终模型并对它们的预测进行平均。
+当使用具有随机学习算法的机器学习算法时，最好通过在多次运行或重复交叉验证中平均它们的表现来评估它们。当拟合最终模型时，可能需要增加树的数量，直到模型的方差在重复评估中减小，或者拟合多个最终模型并对它们的预测进行平均。
 
 让我们看看如何为回归开发一个 XGBoost 集成。
 
@@ -145,7 +145,7 @@ model = XGBRegressor(n_estimators=1000, max_depth=7, eta=0.1, subsample=0.7, col
 
 外壳数据集是一个标准的机器学习数据集，包括 506 行数据，有 13 个数字输入变量和一个数字目标变量。
 
-使用三次重复的重复分层 10 倍交叉验证的测试工具，一个简单的模型可以获得大约 6.6 的[平均绝对误差(MAE)](https://machinelearningmastery.com/regression-metrics-for-machine-learning/) 。一个性能最好的模型可以在大约 1.9 的相同测试线束上实现 MAE。这提供了此数据集的预期性能范围。
+使用三次重复的重复分层 10 倍交叉验证的测试工具，一个简单的模型可以获得大约 6.6 的[平均绝对误差(MAE)](https://machinelearningmastery.com/regression-metrics-for-machine-learning/) 。一个表现最好的模型可以在大约 1.9 的相同测试线束上实现 MAE。这提供了此数据集的预期表现范围。
 
 该数据集包括预测美国波士顿郊区的房价。
 
@@ -205,7 +205,7 @@ model = XGBRegressor()
 
 这可以通过使用 [RepeatedKFold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html) 类配置评估过程，并调用 [cross_val_score()](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html) 使用该过程评估模型并收集分数来实现。
 
-将使用均方差(MAE)评估模型性能。注意，MAE 在 scikit-learn 库中被设为负，这样它可以被最大化。因此，我们可以忽略符号，假设所有错误都是正的。
+将使用均方差(MAE)评估模型表现。注意，MAE 在 scikit-learn 库中被设为负，这样它可以被最大化。因此，我们可以忽略符号，假设所有错误都是正的。
 
 ```py
 ...
@@ -215,11 +215,11 @@ cv = RepeatedKFold(n_splits=10, n_repeats=3, random_state=1)
 scores = cross_val_score(model, X, y, scoring='neg_mean_absolute_error', cv=cv, n_jobs=-1)
 ```
 
-一旦评估完毕，我们就可以报告模型的估计性能，用于对这个问题的新数据进行预测。
+一旦评估完毕，我们就可以报告模型的估计表现，用于对这个问题的新数据进行预测。
 
 在这种情况下，因为分数被设为负值，所以我们可以使用[绝对()NumPy 函数](https://numpy.org/doc/stable/reference/generated/numpy.absolute.html)将分数设为正值。
 
-然后，我们使用分数分布的平均值和标准偏差来报告性能的统计摘要，这是另一种好的做法。
+然后，我们使用分数分布的平均值和标准偏差来报告表现的统计摘要，这是另一种好的做法。
 
 ```py
 ...

@@ -210,7 +210,7 @@ Predicted Class: 0
 
 *   [高斯过程内核，Scikit-Learn 用户指南](https://scikit-learn.org/stable/modules/gaussian_process.html#kernels-for-gaussian-processes)。
 
-我们将使用默认参数来评估高斯过程分类器的性能。
+我们将使用默认参数来评估高斯过程分类器的表现。
 
 ```py
 ...
@@ -259,7 +259,7 @@ for mean, param in zip(means, params):
 
 鉴于学习算法的随机性，您的具体结果可能会有所不同。试着运行这个例子几次。
 
-在这种情况下，我们可以看到*比率二次*内核以大约 91.3%的精确率提升了性能，而上一节中的径向基函数内核达到了 79.0%。
+在这种情况下，我们可以看到*比率二次*内核以大约 91.3%的精确率提升了表现，而上一节中的径向基函数内核达到了 79.0%。
 
 ```py
 Best Mean Accuracy: 0.913

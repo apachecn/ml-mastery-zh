@@ -1,4 +1,4 @@
-# 应用机器学习 XGBoost 的温和介绍
+# 应用机器学习中 XGBoost 的温和介绍
 
 > 原文：<https://machinelearningmastery.com/gentle-introduction-xgboost-applied-machine-learning/>
 
@@ -6,7 +6,7 @@
 
 XGBoost 是一种算法，最近在结构化或表格数据的应用机器学习和 Kaggle 竞赛中占据主导地位。
 
-XGBoost 是梯度增强决策树的实现，旨在提高速度和性能。
+XGBoost 是梯度增强决策树的实现，旨在提高速度和表现。
 
 在这篇文章中，你将发现 XGBoost，并得到一个温和的介绍，它是什么，它来自哪里，以及你如何可以了解更多。
 
@@ -50,7 +50,7 @@ XGBoost 是一个软件库，你可以下载并安装在你的机器上，然后
 
 ## XGBoost 功能
 
-该库专注于计算速度和模型性能，因此几乎没有多余的东西。然而，它确实提供了许多高级功能。
+该库专注于计算速度和模型表现，因此几乎没有多余的东西。然而，它确实提供了许多高级功能。
 
 ### 模型特征
 
@@ -84,19 +84,19 @@ XGBoost 是自由开源软件，可在许可的 Apache-2 许可证下使用。
 使用 XGBoost 的两个原因也是项目的两个目标:
 
 1.  执行速度。
-2.  模型性能。
+2.  模型表现。
 
 ### 1.XGBoost 执行速度
 
 一般来说，XGBoost 速度很快。与其他梯度增强实现相比，速度非常快。
 
-[Szilard Pafka](https://www.linkedin.com/in/szilard) 执行了一些客观的基准测试，将 XGBoost 的性能与梯度提升和袋装决策树的其他实现进行了比较。2015 年 5 月，他在名为“[基准随机森林实施](http://datascience.la/benchmarking-random-forest-implementations/)”的博客中写下了自己的结果。
+[Szilard Pafka](https://www.linkedin.com/in/szilard) 执行了一些客观的基准测试，将 XGBoost 的表现与梯度提升和袋装决策树的其他实现进行了比较。2015 年 5 月，他在名为“[基准随机森林实施](http://datascience.la/benchmarking-random-forest-implementations/)”的博客中写下了自己的结果。
 
 他还在 GitHub 上提供了[所有的代码，以及一份更广泛的硬数字结果报告。](https://github.com/szilard/benchm-ml)
 
 ![Benchmark Performance of XGBoost](img/81ef43cc19303f40e6f277b527f7d0f1.png)
 
-XGBoost 的基准性能，取自[基准随机森林实现](http://datascience.la/benchmarking-random-forest-implementations/)。
+XGBoost 的基准表现，取自[基准随机森林实现](http://datascience.la/benchmarking-random-forest-implementations/)。
 
 他的结果显示，XGBoost 几乎总是比来自 R、Python Spark 和 H2O 的其他基准实现更快。
 
@@ -106,7 +106,7 @@ XGBoost 的基准性能，取自[基准随机森林实现](http://datascience.la
 
 — Szilard Pafka，[基准测试随机森林实现](http://datascience.la/benchmarking-random-forest-implementations/)。
 
-### 2.XGBoost 模型性能
+### 2.XGBoost 模型表现
 
 XGBoost 在分类和回归预测建模问题上主导结构化或表格数据集。
 
@@ -196,8 +196,8 @@ sudo pip install xgboost
 
 你学会了:
 
-*   XGBoost 是一个用于开发快速和高性能梯度提升树模型的库。
-*   XGBoost 在一系列困难的机器学习任务中取得了最佳性能。
+*   XGBoost 是一个用于开发快速和高表现梯度提升树模型的库。
+*   XGBoost 在一系列困难的机器学习任务中取得了最佳表现。
 *   你可以从命令行使用这个库，Python 和 R 以及如何开始。
 
 你用过 XGBoost 吗？在下面的评论中分享你的经历。
