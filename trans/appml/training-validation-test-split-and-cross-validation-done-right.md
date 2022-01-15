@@ -1,4 +1,4 @@
-# 训练-验证-测试拆分和交叉验证正确完成
+# 正确实现训练-验证-测试拆分和交叉验证
 
 > 原文：<https://machinelearningmastery.com/training-validation-test-split-and-cross-validation-done-right/>
 
