@@ -1,4 +1,4 @@
-# sci kit-优化机器学习中的超参数调整
+# 用于机器学习中的超参数调整的 SkOpt
 
 > 原文：<https://machinelearningmastery.com/scikit-optimize-for-hyperparameter-tuning-in-machine-learning/>
 

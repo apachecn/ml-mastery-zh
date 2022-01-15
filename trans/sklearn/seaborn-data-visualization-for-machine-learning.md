@@ -1,4 +1,4 @@
-# 如何使用 Seaborn 数据可视化进行机器学习
+# 如何将 Seaborn 数据可视化用于机器学习
 
 > 原文：<https://machinelearningmastery.com/seaborn-data-visualization-for-machine-learning/>
 
