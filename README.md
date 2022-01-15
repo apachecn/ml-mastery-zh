@@ -13,9 +13,19 @@
 
 ## 目录
 
-+   [XGBoost](docs/xgboost/SUMMARY.md)
-+   [深度学习（Keras）](docs/dl-keras/SUMMARY.md)
-
++   [应用机器学习](docs/appml/README.md)
++   [Keras](docs/keras/README.md)
++   [NLP](docs/nlp/README.md)
++   [深度学习时间序列](docs/dlts/README.md)
++   [线性代数](docs/linalg/README.md)
++   [LSTM](docs/lstm/README.md)
++   [机器学习算法](docs/algo/README.md)
++   [机器学习入门](docs/start/README.md)
++   [Sklearn](docs/sklearn/README.md)
++   [统计学](docs/stat/README.md)
++   [时间序列入门](docs/ts/README.md)
++   [XGBoost](docs/xgboost/README.md)
+    
 ## 负责人
 
 * [mooker](https://github.com/ElmaDavies): 1306014226
