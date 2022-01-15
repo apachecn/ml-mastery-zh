@@ -1,6 +1,6 @@
 # 深度学习分类变量的 3 种编码方式
 
-> 原文:[https://machinelearning master . com/如何为 python 深度学习准备分类数据/](https://machinelearningmastery.com/how-to-prepare-categorical-data-for-deep-learning-in-python/)
+> 原文：<https://machinelearningmastery.com/how-to-prepare-categorical-data-for-deep-learning-in-python/>
 
 最后更新于 2020 年 8 月 27 日
 

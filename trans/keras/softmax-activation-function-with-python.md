@@ -1,6 +1,6 @@
 # Python 的 Softmax 激活功能
 
-> 原文:[https://machinelearning master . com/softmax-activation-function-with-python/](https://machinelearningmastery.com/softmax-activation-function-with-python/)
+> 原文：<https://machinelearningmastery.com/softmax-activation-function-with-python/>
 
 **Softmax** 是一个数学函数，它将一个数字向量转换成一个概率向量，其中每个值的概率与向量中每个值的相对比例成正比。
 

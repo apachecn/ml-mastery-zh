@@ -1,6 +1,6 @@
 # xboost 损失函数的温和介绍
 
-> 原文:[https://machinelearningmastery.com/xgboost-loss-functions/](https://machinelearningmastery.com/xgboost-loss-functions/)
+> 原文：<https://machinelearningmastery.com/xgboost-loss-functions/>
 
 最后更新于 2021 年 4 月 14 日
 

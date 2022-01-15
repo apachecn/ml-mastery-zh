@@ -1,6 +1,6 @@
 # 用 Python 进行分类的高斯过程
 
-> 原文:[https://machinelearning master . com/Gaussian-processes-for-classing-with-python/](https://machinelearningmastery.com/gaussian-processes-for-classification-with-python/)
+> 原文：<https://machinelearningmastery.com/gaussian-processes-for-classification-with-python/>
 
 **高斯过程分类器**是一种分类机器学习算法。
 

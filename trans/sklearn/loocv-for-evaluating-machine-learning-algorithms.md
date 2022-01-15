@@ -1,6 +1,6 @@
 # LOOCV 评估机器学习算法
 
-> 原文:[https://machinelearning master . com/loocv-for-evaluation-machine-learning-algorithms/](https://machinelearningmastery.com/loocv-for-evaluating-machine-learning-algorithms/)
+> 原文：<https://machinelearningmastery.com/loocv-for-evaluating-machine-learning-algorithms/>
 
 最后更新于 2020 年 8 月 26 日
 

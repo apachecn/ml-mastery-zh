@@ -1,6 +1,6 @@
 # 如何在 Python 中开发岭回归模型
 
-> 原文:[https://machinelearning master . com/ridge-revolution-with-python/](https://machinelearningmastery.com/ridge-regression-with-python/)
+> 原文：<https://machinelearningmastery.com/ridge-regression-with-python/>
 
 最后更新于 2020 年 10 月 11 日
 

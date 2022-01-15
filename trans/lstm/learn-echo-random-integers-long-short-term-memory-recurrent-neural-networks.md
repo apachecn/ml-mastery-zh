@@ -1,6 +1,6 @@
 # 如何学习在 Keras 中用 LSTMs 回显随机整数
 
-> 原文:[https://machinelearning master . com/learn-echo-random-integs-long-short-memory-recurrent-neural-networks/](https://machinelearningmastery.com/learn-echo-random-integers-long-short-term-memory-recurrent-neural-networks/)
+> 原文：<https://machinelearningmastery.com/learn-echo-random-integers-long-short-term-memory-recurrent-neural-networks/>
 
 最后更新于 2020 年 8 月 27 日
 

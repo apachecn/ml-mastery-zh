@@ -1,6 +1,6 @@
 # 什么是半监督学习
 
-> 原文:[https://machinelearning master . com/什么是半监督学习/](https://machinelearningmastery.com/what-is-semi-supervised-learning/)
+> 原文：<https://machinelearningmastery.com/what-is-semi-supervised-learning/>
 
 **半监督学习**是一个涉及少量已标记示例和大量未标记示例的学习问题。
 

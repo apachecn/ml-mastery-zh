@@ -1,6 +1,6 @@
 # 如何用 Python 开发弹性网络回归模型
 
-> 原文:[https://machinelearning master . com/elastic-net-回归-in-python/](https://machinelearningmastery.com/elastic-net-regression-in-python/)
+> 原文：<https://machinelearningmastery.com/elastic-net-regression-in-python/>
 
 回归是一项建模任务，包括预测给定输入的数值。
 

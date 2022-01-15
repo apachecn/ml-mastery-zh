@@ -1,6 +1,6 @@
 # 面向程序员的实用深度学习(复习)
 
-> 原文:[https://machinelearning master . com/practical-deep-learning-for-coders-review/](https://machinelearningmastery.com/practical-deep-learning-for-coders-review/)
+> 原文：<https://machinelearningmastery.com/practical-deep-learning-for-coders-review/>
 
 最后更新于 2019 年 11 月 1 日
 

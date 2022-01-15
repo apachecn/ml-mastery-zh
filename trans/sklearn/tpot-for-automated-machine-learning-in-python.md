@@ -1,6 +1,6 @@
 # Python 自动机器学习 TPOT
 
-> 原文:[https://machinelearning master . com/tpot-for-automatic-machine-learning-in-python/](https://machinelearningmastery.com/tpot-for-automated-machine-learning-in-python/)
+> 原文：<https://machinelearningmastery.com/tpot-for-automated-machine-learning-in-python/>
 
 自动机器学习(AutoML)指的是在很少用户参与的情况下，自动发现用于预测建模任务的性能良好的模型的技术。
 

@@ -1,6 +1,6 @@
 # 用于评估机器学习算法的训练-测试分割
 
-> 原文:[https://machinelearning master . com/train-test-split-for-evaluation-machinelearning-algorithms/](https://machinelearningmastery.com/train-test-split-for-evaluating-machine-learning-algorithms/)
+> 原文：<https://machinelearningmastery.com/train-test-split-for-evaluating-machine-learning-algorithms/>
 
 最后更新于 2020 年 8 月 26 日
 

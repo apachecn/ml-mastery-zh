@@ -1,6 +1,6 @@
 # 什么是机器学习中的假设？
 
-> 原文:[https://machinelearning master . com/什么是机器学习中的假设/](https://machinelearningmastery.com/what-is-a-hypothesis-in-machine-learning/)
+> 原文：<https://machinelearningmastery.com/what-is-a-hypothesis-in-machine-learning/>
 
 最后更新于 2020 年 9 月 4 日
 

@@ -1,6 +1,6 @@
 # 如何用 Python 计算偏差-方差权衡
 
-> 原文:[https://machinelearning master . com/compute-the-bias-variant-权衡/](https://machinelearningmastery.com/calculate-the-bias-variance-trade-off/)
+> 原文：<https://machinelearningmastery.com/calculate-the-bias-variance-trade-off/>
 
 最后更新于 2020 年 8 月 26 日
 

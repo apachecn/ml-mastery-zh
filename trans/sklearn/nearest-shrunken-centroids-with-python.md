@@ -1,6 +1,6 @@
 # 蟒蛇最近的缩小形心
 
-> 原文:[https://machinelearning master . com/最近-缩小-质心-带-python/](https://machinelearningmastery.com/nearest-shrunken-centroids-with-python/)
+> 原文：<https://machinelearningmastery.com/nearest-shrunken-centroids-with-python/>
 
 最近质心是一种线性分类机器学习算法。
 

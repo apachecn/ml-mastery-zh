@@ -1,6 +1,6 @@
 # Python 线性判别分析
 
-> 原文:[https://machinelearning master . com/linear-判别分析-with-python/](https://machinelearningmastery.com/linear-discriminant-analysis-with-python/)
+> 原文：<https://machinelearningmastery.com/linear-discriminant-analysis-with-python/>
 
 **线性判别分析**是一种线性分类机器学习算法。
 

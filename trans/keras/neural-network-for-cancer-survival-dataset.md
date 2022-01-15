@@ -1,6 +1,6 @@
 # 为癌症生存数据集开发神经网络
 
-> 原文:[https://machinelearning master . com/神经网络-癌症-生存-数据集/](https://machinelearningmastery.com/neural-network-for-cancer-survival-dataset/)
+> 原文：<https://machinelearningmastery.com/neural-network-for-cancer-survival-dataset/>
 
 为新数据集开发神经网络预测模型可能具有挑战性。
 

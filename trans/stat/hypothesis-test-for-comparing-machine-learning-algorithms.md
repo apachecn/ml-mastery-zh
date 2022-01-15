@@ -1,6 +1,6 @@
 # 比较机器学习算法的假设检验
 
-> 原文:[https://machinelearning master . com/假设检验-比较-机器学习-算法/](https://machinelearningmastery.com/hypothesis-test-for-comparing-machine-learning-algorithms/)
+> 原文：<https://machinelearningmastery.com/hypothesis-test-for-comparing-machine-learning-algorithms/>
 
 最后更新于 2020 年 9 月 1 日
 

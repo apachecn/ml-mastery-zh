@@ -1,6 +1,6 @@
 # Python 中带先知的时间序列预测
 
-> 原文:[https://machinelearning master . com/时间序列-用 python 中的预言家进行预测/](https://machinelearningmastery.com/time-series-forecasting-with-prophet-in-python/)
+> 原文：<https://machinelearningmastery.com/time-series-forecasting-with-prophet-in-python/>
 
 时间序列预测可能具有挑战性，因为有许多不同的方法可以使用，而且每种方法都有许多不同的超参数。
 

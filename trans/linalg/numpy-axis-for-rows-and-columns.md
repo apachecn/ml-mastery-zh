@@ -2,7 +2,7 @@
 
 中设置行和列的轴
 
-> 原文:[https://machinelearningmaster . com/numpy-行和列轴/](https://machinelearningmastery.com/numpy-axis-for-rows-and-columns/)
+> 原文：<https://machinelearningmastery.com/numpy-axis-for-rows-and-columns/>
 
 NumPy 数组为在 Python 中存储和操作数据提供了一种快速有效的方法。
 

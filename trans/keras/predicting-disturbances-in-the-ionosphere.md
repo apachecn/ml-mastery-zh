@@ -1,6 +1,6 @@
 # 如何开发预测电离层扰动的神经网络
 
-> 原文:[https://machinelearning master . com/预测电离层扰动/](https://machinelearningmastery.com/predicting-disturbances-in-the-ionosphere/)
+> 原文：<https://machinelearningmastery.com/predicting-disturbances-in-the-ionosphere/>
 
 为新数据集开发神经网络预测模型可能具有挑战性。
 

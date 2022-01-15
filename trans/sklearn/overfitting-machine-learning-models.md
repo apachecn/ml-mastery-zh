@@ -1,6 +1,6 @@
 # 如何在 Scikit-Learn 中识别过拟合机器学习模型
 
-> 原文:[https://machinelearning master . com/overfitting-machine-learning-models/](https://machinelearningmastery.com/overfitting-machine-learning-models/)
+> 原文：<https://machinelearningmastery.com/overfitting-machine-learning-models/>
 
 最后更新于 2020 年 11 月 27 日
 

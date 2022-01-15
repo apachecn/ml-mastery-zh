@@ -1,6 +1,6 @@
 # 如何将 NumPy 数组保存到文件中进行机器学习
 
-> 原文:[https://machinelearning master . com/如何保存数字阵列到文件的机器学习/](https://machinelearningmastery.com/how-to-save-a-numpy-array-to-file-for-machine-learning/)
+> 原文：<https://machinelearningmastery.com/how-to-save-a-numpy-array-to-file-for-machine-learning/>
 
 最后更新于 2020 年 8 月 19 日
 

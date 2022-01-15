@@ -1,6 +1,6 @@
 # 利用隔离林和核密度估计进行异常检测
 
-> 原文:[https://machinelearningmaster . com/异常检测与隔离-森林和内核-密度估计/](https://machinelearningmastery.com/anomaly-detection-with-isolation-forest-and-kernel-density-estimation/)
+> 原文：<https://machinelearningmastery.com/anomaly-detection-with-isolation-forest-and-kernel-density-estimation/>
 
 异常检测是发现偏离规范的数据点。换句话说，这些都是不符合预期模式的点。异常值和异常值是用来描述异常数据的术语。异常检测在许多领域都很重要，因为它提供了有价值且可操作的见解。例如，磁共振成像扫描中的异常可能指示大脑中的肿瘤区域，而来自制造厂传感器的异常读数可能指示部件损坏。
 

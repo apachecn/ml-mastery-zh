@@ -1,6 +1,6 @@
 # 自动编码器特征提取分类
 
-> 原文:[https://machinelearning master . com/auto encoder-for-class/](https://machinelearningmastery.com/autoencoder-for-classification/)
+> 原文：<https://machinelearningmastery.com/autoencoder-for-classification/>
 
 **自动编码器**是一种神经网络，可用于学习原始数据的压缩表示。
 

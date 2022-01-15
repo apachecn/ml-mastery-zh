@@ -1,6 +1,6 @@
 # 如何在 Python 中开发 LASSO 回归模型
 
-> 原文:[https://machinelearning master . com/lasso-revolution-with-python/](https://machinelearningmastery.com/lasso-regression-with-python/)
+> 原文：<https://machinelearningmastery.com/lasso-regression-with-python/>
 
 最后更新于 2021 年 10 月 6 日
 

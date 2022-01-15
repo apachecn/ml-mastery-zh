@@ -1,6 +1,6 @@
 # 如何重塑喀拉斯长短期记忆网络的输入数据
 
-> 原文:[https://machinelearning master . com/resform-input-data-long-short-memory-networks-keras/](https://machinelearningmastery.com/reshape-input-data-long-short-term-memory-networks-keras/)
+> 原文：<https://machinelearningmastery.com/reshape-input-data-long-short-term-memory-networks-keras/>
 
 最后更新于 2019 年 8 月 14 日
 

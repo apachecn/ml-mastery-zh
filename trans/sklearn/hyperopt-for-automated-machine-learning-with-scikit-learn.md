@@ -1,6 +1,6 @@
 # 通过 Scikit-Learn 实现自动化机器学习的 HyperOpt】
 
-> 原文:[https://machinelearning master . com/hyperopt-for-automatic-machine-learning-with-sci kit-learn/](https://machinelearningmastery.com/hyperopt-for-automated-machine-learning-with-scikit-learn/)
+> 原文：<https://machinelearningmastery.com/hyperopt-for-automated-machine-learning-with-scikit-learn/>
 
 自动机器学习(AutoML)指的是在很少用户参与的情况下，自动发现用于预测建模任务的性能良好的模型的技术。
 

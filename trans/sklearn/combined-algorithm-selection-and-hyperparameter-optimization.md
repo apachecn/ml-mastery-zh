@@ -1,6 +1,6 @@
 # 组合算法选择和超参数优化(CASH 优化)
 
-> 原文:[https://machinelearning master . com/组合算法-选择-和-超参数-优化/](https://machinelearningmastery.com/combined-algorithm-selection-and-hyperparameter-optimization/)
+> 原文：<https://machinelearningmastery.com/combined-algorithm-selection-and-hyperparameter-optimization/>
 
 机器学习模型的选择和配置可能是应用机器学习中最大的挑战。
 

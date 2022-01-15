@@ -1,6 +1,6 @@
 # 机器学习模型选择的温和介绍
 
-> 原文:[https://machinelearning master . com/a-温柔-模型介绍-机器学习选择/](https://machinelearningmastery.com/a-gentle-introduction-to-model-selection-for-machine-learning/)
+> 原文：<https://machinelearningmastery.com/a-gentle-introduction-to-model-selection-for-machine-learning/>
 
 考虑到像 [scikit-learn](https://machinelearningmastery.com/machine-learning-in-python-step-by-step/) 和 [Keras](https://machinelearningmastery.com/tutorial-first-neural-network-python-keras/) 这样易于使用的机器学习库，在给定的预测建模数据集上拟合许多不同的机器学习模型是很简单的。
 

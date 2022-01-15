@@ -2,7 +2,7 @@
 
 中处理大 p、小 n (p > > n)
 
-> 原文:[https://machinelearning master . com/how-hand-big-p-little-n-p-n 机器学习/](https://machinelearningmastery.com/how-to-handle-big-p-little-n-p-n-in-machine-learning/)
+> 原文：<https://machinelearningmastery.com/how-to-handle-big-p-little-n-p-n-in-machine-learning/>
 
 最后更新于 2020 年 8 月 19 日
 

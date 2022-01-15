@@ -1,6 +1,6 @@
 # 机器学习中的 14 种不同类型的学习
 
-> 原文:[https://machinelearning master . com/机器学习中的学习类型/](https://machinelearningmastery.com/types-of-learning-in-machine-learning/)
+> 原文：<https://machinelearningmastery.com/types-of-learning-in-machine-learning/>
 
 最后更新于 2019 年 11 月 11 日
 

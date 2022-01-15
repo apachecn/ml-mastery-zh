@@ -1,6 +1,6 @@
 # 神经网络是函数逼近算法
 
-> 原文:[https://machinelearning master . com/神经网络是函数逼近器/](https://machinelearningmastery.com/neural-networks-are-function-approximators/)
+> 原文：<https://machinelearningmastery.com/neural-networks-are-function-approximators/>
 
 最后更新于 2020 年 8 月 27 日
 

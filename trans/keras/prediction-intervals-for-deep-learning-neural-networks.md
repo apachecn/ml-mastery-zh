@@ -1,6 +1,6 @@
 # 深度学习神经网络的预测区间
 
-> 原文:[https://machinelearning master . com/forecast-intervals-for-deep-learning-neural-networks/](https://machinelearningmastery.com/prediction-intervals-for-deep-learning-neural-networks/)
+> 原文：<https://machinelearningmastery.com/prediction-intervals-for-deep-learning-neural-networks/>
 
 **预测间隔**为回归问题的预测提供了不确定性的度量。
 

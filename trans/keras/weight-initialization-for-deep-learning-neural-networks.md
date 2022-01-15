@@ -1,6 +1,6 @@
 # 深度学习神经网络的权重初始化
 
-> 原文:[https://machinelearning master . com/weight-initiation-for-deep-learning-neural-networks/](https://machinelearningmastery.com/weight-initialization-for-deep-learning-neural-networks/)
+> 原文：<https://machinelearningmastery.com/weight-initialization-for-deep-learning-neural-networks/>
 
 最后更新于 2021 年 2 月 8 日
 

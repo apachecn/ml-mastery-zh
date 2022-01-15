@@ -1,6 +1,6 @@
 # 如何计算深度学习模型的精度、召回率、F1 等
 
-> 原文:[https://machinelearning master . com/如何计算精度-召回-f1-和更多-用于深度学习-模型/](https://machinelearningmastery.com/how-to-calculate-precision-recall-f1-and-more-for-deep-learning-models/)
+> 原文：<https://machinelearningmastery.com/how-to-calculate-precision-recall-f1-and-more-for-deep-learning-models/>
 
 最后更新于 2020 年 8 月 27 日
 

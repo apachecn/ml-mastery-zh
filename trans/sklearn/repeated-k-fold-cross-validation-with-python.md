@@ -1,6 +1,6 @@
 # Python 中模型评估的重复 k 重交叉验证
 
-> 原文:[https://machinelearning master . com/repeated-k-fold-交叉验证-with-python/](https://machinelearningmastery.com/repeated-k-fold-cross-validation-with-python/)
+> 原文：<https://machinelearningmastery.com/repeated-k-fold-cross-validation-with-python/>
 
 最后更新于 2020 年 8 月 26 日
 

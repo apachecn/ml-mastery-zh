@@ -1,6 +1,6 @@
 # 机器学习用 PyCaret 的温和介绍
 
-> 原文:[https://machinelearning master . com/pycaret-for-machine-learning/](https://machinelearningmastery.com/pycaret-for-machine-learning/)
+> 原文：<https://machinelearningmastery.com/pycaret-for-machine-learning/>
 
 **PyCaret** 是一个 Python 开源机器学习库，旨在使在机器学习项目中执行标准任务变得容易。
 

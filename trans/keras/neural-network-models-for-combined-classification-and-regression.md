@@ -1,6 +1,6 @@
 # 用于组合分类和回归的神经网络模型
 
-> 原文:[https://machinelearning master . com/神经网络模型用于组合分类和回归/](https://machinelearningmastery.com/neural-network-models-for-combined-classification-and-regression/)
+> 原文：<https://machinelearningmastery.com/neural-network-models-for-combined-classification-and-regression/>
 
 一些预测问题需要预测相同输入的数值和类别标签。
 

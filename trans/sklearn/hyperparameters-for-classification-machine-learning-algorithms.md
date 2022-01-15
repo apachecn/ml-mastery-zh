@@ -1,6 +1,6 @@
 # 调整分类机器学习算法的超参数
 
-> 原文:[https://machinelearning master . com/分类超参数-机器学习-算法/](https://machinelearningmastery.com/hyperparameters-for-classification-machine-learning-algorithms/)
+> 原文：<https://machinelearningmastery.com/hyperparameters-for-classification-machine-learning-algorithms/>
 
 最后更新于 2020 年 8 月 28 日
 

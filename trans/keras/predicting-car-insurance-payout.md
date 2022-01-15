@@ -1,6 +1,6 @@
 # 如何开发预测车险赔付的神经网络
 
-> 原文:[https://machinelearning master . com/prediction-car-insurance-payment/](https://machinelearningmastery.com/predicting-car-insurance-payout/)
+> 原文：<https://machinelearningmastery.com/predicting-car-insurance-payout/>
 
 为新数据集开发神经网络预测模型可能具有挑战性。
 

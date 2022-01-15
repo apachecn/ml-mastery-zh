@@ -1,6 +1,6 @@
 # 时间序列预测的随机森林
 
-> 原文:[https://machinelearning master . com/random-forest-for-time-series-prediction/](https://machinelearningmastery.com/random-forest-for-time-series-forecasting/)
+> 原文：<https://machinelearningmastery.com/random-forest-for-time-series-forecasting/>
 
 **随机森林**是一种流行且有效的集成机器学习算法。
 

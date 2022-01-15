@@ -1,6 +1,6 @@
 # XGBoost 用于回归
 
-> 原文:[https://machinelearningmastery.com/xgboost-for-regression/](https://machinelearningmastery.com/xgboost-for-regression/)
+> 原文：<https://machinelearningmastery.com/xgboost-for-regression/>
 
 极限梯度增强(XGBoost)是一个开源库，它提供了梯度增强算法的高效和有效的实现。
 

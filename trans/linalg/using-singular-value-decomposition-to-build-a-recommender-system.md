@@ -1,6 +1,6 @@
 # 利用奇异值分解构建推荐系统
 
-> 原文:[https://machinelearning master . com/使用奇异值分解构建推荐系统/](https://machinelearningmastery.com/using-singular-value-decomposition-to-build-a-recommender-system/)
+> 原文：<https://machinelearningmastery.com/using-singular-value-decomposition-to-build-a-recommender-system/>
 
 最后更新于 2021 年 10 月 29 日
 

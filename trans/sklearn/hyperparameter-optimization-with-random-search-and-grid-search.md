@@ -1,6 +1,6 @@
 # 随机搜索和网格搜索的超参数优化
 
-> 原文:[https://machinelearning master . com/hyperparameter-optimization-with-random-search-and-grid-search/](https://machinelearningmastery.com/hyperparameter-optimization-with-random-search-and-grid-search/)
+> 原文：<https://machinelearningmastery.com/hyperparameter-optimization-with-random-search-and-grid-search/>
 
 最后更新于 2020 年 9 月 19 日
 

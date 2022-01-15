@@ -1,6 +1,6 @@
 # 10 个具有挑战性的机器学习时间序列预测问题
 
-> 原文:[https://machinelearning master . com/challenge-machine-learning-时序-预测-问题/](https://machinelearningmastery.com/challenging-machine-learning-time-series-forecasting-problems/)
+> 原文：<https://machinelearningmastery.com/challenging-machine-learning-time-series-forecasting-problems/>
 
 最后更新于 2019 年 8 月 21 日
 

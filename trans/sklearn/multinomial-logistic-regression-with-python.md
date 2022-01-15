@@ -1,6 +1,6 @@
 # Python 多项式逻辑回归
 
-> 原文:[https://machinelearning master . com/多项式-逻辑回归-带-python/](https://machinelearningmastery.com/multinomial-logistic-regression-with-python/)
+> 原文：<https://machinelearningmastery.com/multinomial-logistic-regression-with-python/>
 
 **多项式逻辑回归**是逻辑回归的扩展，增加了对多类分类问题的原生支持。
 

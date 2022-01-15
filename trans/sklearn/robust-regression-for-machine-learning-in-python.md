@@ -1,6 +1,6 @@
 # Python 中机器学习的稳健回归
 
-> 原文:[https://machinelearning master . com/robust-回归机器学习 python/](https://machinelearningmastery.com/robust-regression-for-machine-learning-in-python/)
+> 原文：<https://machinelearningmastery.com/robust-regression-for-machine-learning-in-python/>
 
 回归是一项建模任务，包括预测给定输入的数值。
 

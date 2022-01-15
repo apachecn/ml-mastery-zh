@@ -1,6 +1,6 @@
 # 机器学习的算术、几何和调和方法
 
-> 原文:[https://machinelearning master . com/算术-几何和调和-机器学习平均值/](https://machinelearningmastery.com/arithmetic-geometric-and-harmonic-means-for-machine-learning/)
+> 原文：<https://machinelearningmastery.com/arithmetic-geometric-and-harmonic-means-for-machine-learning/>
 
 最后更新于 2020 年 8 月 19 日
 

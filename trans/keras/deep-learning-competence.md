@@ -1,6 +1,6 @@
 # 3 级深度学习能力
 
-> 原文:[https://machinelearning master . com/deep-learning-capability/](https://machinelearningmastery.com/deep-learning-competence/)
+> 原文：<https://machinelearningmastery.com/deep-learning-competence/>
 
 最后更新于 2019 年 8 月 19 日
 

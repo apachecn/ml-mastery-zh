@@ -1,6 +1,6 @@
 # 通过学习曲线调整 XGBoost 性能
 
-> 原文:[https://machinelearning master . com/tune-xboost-performance-with-learning-curves/](https://machinelearningmastery.com/tune-xgboost-performance-with-learning-curves/)
+> 原文：<https://machinelearningmastery.com/tune-xgboost-performance-with-learning-curves/>
 
 XGBoost 是梯度增强集成算法的一个强大而有效的实现。
 

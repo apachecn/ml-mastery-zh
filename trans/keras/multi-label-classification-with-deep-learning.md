@@ -1,6 +1,6 @@
 # 深度学习多标签分类
 
-> 原文:[https://machinelearning master . com/多标签-分类-带深度学习/](https://machinelearningmastery.com/multi-label-classification-with-deep-learning/)
+> 原文：<https://machinelearningmastery.com/multi-label-classification-with-deep-learning/>
 
 最后更新于 2020 年 8 月 31 日
 

@@ -1,6 +1,6 @@
 # 如何修复 scikit 中的未来学习消息-学习
 
-> 原文:[https://machinelearning master . com/how-fix-future warning-messages-in-sci kit-learn/](https://machinelearningmastery.com/how-to-fix-futurewarning-messages-in-scikit-learn/)
+> 原文：<https://machinelearningmastery.com/how-to-fix-futurewarning-messages-in-scikit-learn/>
 
 最后更新于 2019 年 8 月 21 日
 

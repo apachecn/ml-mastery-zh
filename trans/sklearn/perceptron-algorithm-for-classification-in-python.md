@@ -1,6 +1,6 @@
 # Python 中分类的感知器算法
 
-> 原文:[https://machinelearning master . com/python 中用于分类的感知器算法/](https://machinelearningmastery.com/perceptron-algorithm-for-classification-in-python/)
+> 原文：<https://machinelearningmastery.com/perceptron-algorithm-for-classification-in-python/>
 
 **感知器**是一种用于二进制分类任务的线性机器学习算法。
 

@@ -1,6 +1,6 @@
 # 开发钞票鉴别的神经网络
 
-> 原文:[https://machinelearning master . com/神经网络换钞认证/](https://machinelearningmastery.com/neural-network-for-banknote-authentication/)
+> 原文：<https://machinelearningmastery.com/neural-network-for-banknote-authentication/>
 
 最后更新于 2021 年 10 月 22 日
 

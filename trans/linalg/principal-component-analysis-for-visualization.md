@@ -1,6 +1,6 @@
 # 可视化主成分分析
 
-> 原文:[https://machinelearning master . com/主成分分析用于可视化/](https://machinelearningmastery.com/principal-component-analysis-for-visualization/)
+> 原文：<https://machinelearningmastery.com/principal-component-analysis-for-visualization/>
 
 最后更新于 2021 年 10 月 27 日
 

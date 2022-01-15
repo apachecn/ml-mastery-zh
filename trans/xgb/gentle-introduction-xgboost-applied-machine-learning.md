@@ -1,6 +1,6 @@
 # 应用机器学习 XGBoost 的温和介绍
 
-> 原文:[https://machinelearning master . com/温柔-简介-xboost-applied-机器学习/](https://machinelearningmastery.com/gentle-introduction-xgboost-applied-machine-learning/)
+> 原文：<https://machinelearningmastery.com/gentle-introduction-xgboost-applied-machine-learning/>
 
 最后更新于 2021 年 2 月 17 日
 

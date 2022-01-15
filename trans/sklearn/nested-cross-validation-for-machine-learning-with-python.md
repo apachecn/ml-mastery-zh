@@ -1,6 +1,6 @@
 # Python 机器学习的嵌套交叉验证
 
-> 原文:[https://machinelearning master . com/python 机器学习的嵌套交叉验证/](https://machinelearningmastery.com/nested-cross-validation-for-machine-learning-with-python/)
+> 原文：<https://machinelearningmastery.com/nested-cross-validation-for-machine-learning-with-python/>
 
 最后更新于 2021 年 11 月 20 日
 

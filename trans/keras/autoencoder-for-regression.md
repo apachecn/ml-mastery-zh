@@ -1,6 +1,6 @@
 # 回归自动编码器特征提取
 
-> 原文:[https://machinelearning master . com/auto encoder-for-revolution/](https://machinelearningmastery.com/autoencoder-for-regression/)
+> 原文：<https://machinelearningmastery.com/autoencoder-for-regression/>
 
 自动编码器是一种神经网络，可用于学习原始数据的压缩表示。
 

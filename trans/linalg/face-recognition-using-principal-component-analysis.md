@@ -1,6 +1,6 @@
 # 利用主成分分析进行人脸识别
 
-> 原文:[https://machinelearning master . com/人脸识别-使用-主成分分析/](https://machinelearningmastery.com/face-recognition-using-principal-component-analysis/)
+> 原文：<https://machinelearningmastery.com/face-recognition-using-principal-component-analysis/>
 
 最后更新于 2021 年 10 月 30 日
 

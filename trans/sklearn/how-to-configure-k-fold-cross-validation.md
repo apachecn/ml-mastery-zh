@@ -1,6 +1,6 @@
 # 如何配置 k 重交叉验证
 
-> 原文:[https://machinelearning master . com/如何配置-k-fold-交叉验证/](https://machinelearningmastery.com/how-to-configure-k-fold-cross-validation/)
+> 原文：<https://machinelearningmastery.com/how-to-configure-k-fold-cross-validation/>
 
 最后更新于 2020 年 8 月 26 日
 

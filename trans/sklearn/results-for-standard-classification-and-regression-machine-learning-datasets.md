@@ -1,6 +1,6 @@
 # 标准机器学习数据集的最佳结果
 
-> 原文:[https://machinelearning master . com/标准分类和回归结果-机器学习-数据集/](https://machinelearningmastery.com/results-for-standard-classification-and-regression-machine-learning-datasets/)
+> 原文：<https://machinelearningmastery.com/results-for-standard-classification-and-regression-machine-learning-datasets/>
 
 最后更新于 2020 年 8 月 28 日
 

@@ -1,6 +1,6 @@
 # 如何用更多数据更新神经网络模型
 
-> 原文:[https://machinelearning master . com/update-neural-network-models-with-more-data/](https://machinelearningmastery.com/update-neural-network-models-with-more-data/)
+> 原文：<https://machinelearningmastery.com/update-neural-network-models-with-more-data/>
 
 用于预测建模的深度学习神经网络模型可能需要更新。
 

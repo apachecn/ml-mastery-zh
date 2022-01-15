@@ -1,6 +1,6 @@
 # 训练-验证-测试拆分和交叉验证正确完成
 
-> 原文:[https://machinelearning master . com/training-validation-test-split-and-cross-validation-done-right/](https://machinelearningmastery.com/training-validation-test-split-and-cross-validation-done-right/)
+> 原文：<https://machinelearningmastery.com/training-validation-test-split-and-cross-validation-done-right/>
 
 最后更新于 2021 年 9 月 23 日
 

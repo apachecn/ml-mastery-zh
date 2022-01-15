@@ -1,6 +1,6 @@
 # TensorFlow 2 教程:使用 tf.keras 开始深度学习
 
-> 原文:[https://machinelearning master . com/tensorflow-tutorial-deep-learning-with-TF-keras/](https://machinelearningmastery.com/tensorflow-tutorial-deep-learning-with-tf-keras/)
+> 原文：<https://machinelearningmastery.com/tensorflow-tutorial-deep-learning-with-tf-keras/>
 
 最后更新于 2020 年 8 月 27 日
 

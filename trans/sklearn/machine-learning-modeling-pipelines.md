@@ -1,6 +1,6 @@
 # 机器学习建模管道的温和介绍
 
-> 原文:[https://machinelearning master . com/machine-learning-modeling-pipelines/](https://machinelearningmastery.com/machine-learning-modeling-pipelines/)
+> 原文：<https://machinelearningmastery.com/machine-learning-modeling-pipelines/>
 
 应用机器学习通常专注于寻找在给定数据集上表现良好或最好的单一模型。
 

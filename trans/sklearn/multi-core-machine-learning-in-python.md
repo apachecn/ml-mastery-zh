@@ -1,6 +1,6 @@
 # 用 Scikit 学习 Python 中的多核机器学习
 
-> 原文:[https://machinelearning master . com/多核-python 机器学习/](https://machinelearningmastery.com/multi-core-machine-learning-in-python/)
+> 原文：<https://machinelearningmastery.com/multi-core-machine-learning-in-python/>
 
 机器学习的许多计算成本很高的任务可以通过将工作划分到多个中央处理器内核(称为多核处理)来并行完成。
 

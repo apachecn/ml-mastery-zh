@@ -1,6 +1,6 @@
 # 数据集大小对模型性能的敏感性分析
 
-> 原文:[https://machinelearning master . com/灵敏度-数据集分析-大小-vs-模型-性能/](https://machinelearningmastery.com/sensitivity-analysis-of-dataset-size-vs-model-performance/)
+> 原文：<https://machinelearningmastery.com/sensitivity-analysis-of-dataset-size-vs-model-performance/>
 
 机器学习模型性能通常随着用于预测建模的数据集大小而提高。
 

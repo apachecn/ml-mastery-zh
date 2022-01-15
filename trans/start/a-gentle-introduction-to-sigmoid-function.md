@@ -1,6 +1,6 @@
 # 乙状结肠功能的温和介绍
 
-> 原文:[https://machinelearning master . com/a-温柔-介绍-sigmoid-function/](https://machinelearningmastery.com/a-gentle-introduction-to-sigmoid-function/)
+> 原文：<https://machinelearningmastery.com/a-gentle-introduction-to-sigmoid-function/>
 
 无论您是自己实现神经网络，还是使用内置库进行神经网络学习，理解 sigmoid 函数的意义都是至关重要的。sigmoid 函数是理解神经网络如何学习复杂问题的关键。这一功能也是发现其他功能的基础，这些功能为深度学习架构中的监督学习提供了高效且良好的解决方案。
 

@@ -1,6 +1,6 @@
 # 如何将模型输入数据与机器学习的预测联系起来
 
-> 原文:[https://machinelearning master . com/模型输入数据与机器学习预测的连接方式/](https://machinelearningmastery.com/how-to-connect-model-input-data-with-predictions-for-machine-learning/)
+> 原文：<https://machinelearningmastery.com/how-to-connect-model-input-data-with-predictions-for-machine-learning/>
 
 最后更新于 2020 年 8 月 19 日
 

@@ -1,6 +1,6 @@
 # 带标签扩散的半监督学习
 
-> 原文:[https://machinelearning master . com/半监督-带标签学习-传播/](https://machinelearningmastery.com/semi-supervised-learning-with-label-spreading/)
+> 原文：<https://machinelearningmastery.com/semi-supervised-learning-with-label-spreading/>
 
 **半监督学习**是指试图同时利用已标记和未标记训练数据的算法。
 

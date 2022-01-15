@@ -1,6 +1,6 @@
 # PyTorch 教程:如何用 Python 开发深度学习模型
 
-> 原文:[https://machinelearning master . com/py torch-教程-开发-深度学习-模型/](https://machinelearningmastery.com/pytorch-tutorial-develop-deep-learning-models/)
+> 原文：<https://machinelearningmastery.com/pytorch-tutorial-develop-deep-learning-models/>
 
 最后更新于 2020 年 8 月 27 日
 

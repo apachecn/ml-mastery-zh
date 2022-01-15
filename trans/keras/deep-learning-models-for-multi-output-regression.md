@@ -1,6 +1,6 @@
 # 多输出回归的深度学习模型
 
-> 原文:[https://machinelearning master . com/deep-learning-models-for-multi-output-revolution/](https://machinelearningmastery.com/deep-learning-models-for-multi-output-regression/)
+> 原文：<https://machinelearningmastery.com/deep-learning-models-for-multi-output-regression/>
 
 最后更新于 2020 年 8 月 28 日
 

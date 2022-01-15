@@ -1,6 +1,6 @@
 # 为伍兹乳腺摄影数据集开发神经网络
 
-> 原文:[https://machinelearningmaster . com/develop-a-神经网络-for-Woods-乳房 x 线摄影-数据集/](https://machinelearningmastery.com/develop-a-neural-network-for-woods-mammography-dataset/)
+> 原文：<https://machinelearningmastery.com/develop-a-neural-network-for-woods-mammography-dataset/>
 
 为新数据集开发神经网络预测模型可能具有挑战性。
 

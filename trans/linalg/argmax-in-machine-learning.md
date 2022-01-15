@@ -1,6 +1,6 @@
 # 什么是机器学习中的 Argmax？
 
-> 原文:[https://machinelearning master . com/arg max-in-machine-learning/](https://machinelearningmastery.com/argmax-in-machine-learning/)
+> 原文：<https://machinelearningmastery.com/argmax-in-machine-learning/>
 
 最后更新于 2020 年 8 月 19 日
 

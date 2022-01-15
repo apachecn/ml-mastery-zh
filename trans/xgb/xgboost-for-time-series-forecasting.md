@@ -1,6 +1,6 @@
 # 如何使用 XGBoost 进行时间序列预测
 
-> 原文:[https://machinelearning master . com/xboost-for-time-series-prediction/](https://machinelearningmastery.com/xgboost-for-time-series-forecasting/)
+> 原文：<https://machinelearningmastery.com/xgboost-for-time-series-forecasting/>
 
 最后更新于 2021 年 3 月 19 日
 

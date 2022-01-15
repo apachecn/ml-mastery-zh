@@ -1,6 +1,6 @@
 # 反向传播和随机梯度下降的区别
 
-> 原文:[https://machinelearning master . com/反向传播和随机梯度下降之间的差异/](https://machinelearningmastery.com/difference-between-backpropagation-and-stochastic-gradient-descent/)
+> 原文：<https://machinelearningmastery.com/difference-between-backpropagation-and-stochastic-gradient-descent/>
 
 最后更新于 2021 年 2 月 1 日
 

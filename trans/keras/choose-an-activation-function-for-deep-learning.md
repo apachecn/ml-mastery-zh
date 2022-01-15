@@ -1,6 +1,6 @@
 # 如何选择深度学习的激活函数
 
-> 原文:[https://machinelearning master . com/select-an-activation-function-for-deep-learning/](https://machinelearningmastery.com/choose-an-activation-function-for-deep-learning/)
+> 原文：<https://machinelearningmastery.com/choose-an-activation-function-for-deep-learning/>
 
 最后更新于 2021 年 1 月 22 日
 

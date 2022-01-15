@@ -1,6 +1,6 @@
 # sci kit-优化机器学习中的超参数调整
 
-> 原文:[https://machinelearning master . com/sci kit-针对超参数优化-机器学习中的调优/](https://machinelearningmastery.com/scikit-optimize-for-hyperparameter-tuning-in-machine-learning/)
+> 原文：<https://machinelearningmastery.com/scikit-optimize-for-hyperparameter-tuning-in-machine-learning/>
 
 最后更新于 2020 年 11 月 6 日
 

@@ -1,6 +1,6 @@
 # 为什么机器学习每次得到的结果都不一样？
 
-> 原文:[https://machinelearning master . com/机器学习每次不同结果/](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)
+> 原文：<https://machinelearningmastery.com/different-results-each-time-in-machine-learning/>
 
 最后更新于 2020 年 8 月 27 日
 

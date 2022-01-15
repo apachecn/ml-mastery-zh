@@ -1,6 +1,6 @@
 # 机器学习中算法和模型的区别
 
-> 原文:[https://machinelearning master . com/机器学习中算法和模型的区别/](https://machinelearningmastery.com/difference-between-algorithm-and-model-in-machine-learning/)
+> 原文：<https://machinelearningmastery.com/difference-between-algorithm-and-model-in-machine-learning/>
 
 最后更新于 2020 年 8 月 19 日
 

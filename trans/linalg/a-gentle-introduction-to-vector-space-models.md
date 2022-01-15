@@ -1,6 +1,6 @@
 # 向量空间模型的温和介绍
 
-> 原文:[https://machinelearning master . com/a-温柔-向量空间-模型介绍/](https://machinelearningmastery.com/a-gentle-introduction-to-vector-space-models/)
+> 原文：<https://machinelearningmastery.com/a-gentle-introduction-to-vector-space-models/>
 
 最后更新于 2021 年 10 月 23 日
 
