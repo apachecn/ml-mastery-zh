@@ -1,6 +1,4 @@
-# 如何在机器学习
-
-中处理大 p、小 n (p > > n)
+# 如何在机器学习中处理大`p`小`n`（`p >> n`）
 
 > 原文：<https://machinelearningmastery.com/how-to-handle-big-p-little-n-p-n-in-machine-learning/>
 
