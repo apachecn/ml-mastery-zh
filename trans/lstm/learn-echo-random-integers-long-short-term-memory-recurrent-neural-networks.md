@@ -1,4 +1,4 @@
-# 如何学习在 Keras 中用 LSTMs 回显随机整数
+# 如何学习在 Keras 中用 LSTM 回显随机整数
 
 > 原文：<https://machinelearningmastery.com/learn-echo-random-integers-long-short-term-memory-recurrent-neural-networks/>
 
