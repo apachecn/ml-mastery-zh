@@ -1,4 +1,4 @@
-# 比较机器学习算法的假设检验
+# 用于比较机器学习算法的假设检验
 
 > 原文：<https://machinelearningmastery.com/hypothesis-test-for-comparing-machine-learning-algorithms/>
 

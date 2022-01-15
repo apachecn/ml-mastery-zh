@@ -1,4 +1,4 @@
-# 机器学习的算术、几何和调和方法
+# 机器学习的算术、几何和调和均值
 
 > 原文：<https://machinelearningmastery.com/arithmetic-geometric-and-harmonic-means-for-machine-learning/>
 
