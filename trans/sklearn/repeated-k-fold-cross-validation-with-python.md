@@ -98,9 +98,9 @@ scores = cross_val_score(model, X, y, scoring='accuracy', cv=cv, n_jobs=-1)
 print('Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 ```
 
-运行该示例会创建数据集，然后使用 10 倍交叉验证对其进行逻辑回归模型评估。然后报告数据集的平均分类精度。
+运行该示例会创建数据集，然后使用 10 倍交叉验证对其进行逻辑回归模型评估。然后报告数据集的平均分类精确率。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到该模型实现了大约 86.8%的估计分类准确率。
 
@@ -178,9 +178,9 @@ scores = cross_val_score(model, X, y, scoring='accuracy', cv=cv, n_jobs=-1)
 print('Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 ```
 
-运行该示例会创建数据集，然后使用具有三次重复的 10 倍交叉验证对数据集的逻辑回归模型进行评估。然后报告数据集的平均分类精度。
+运行该示例会创建数据集，然后使用具有三次重复的 10 倍交叉验证对数据集的逻辑回归模型进行评估。然后报告数据集的平均分类精确率。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到模型实现了大约 86.7%的估计分类准确率，这低于之前报告的 86.8%的单次运行结果。这可能表明单次运行结果可能是乐观的，三次重复的结果可能是对真实均值模型性能的更好估计。
 
@@ -248,9 +248,9 @@ pyplot.boxplot(results, labels=[str(r) for r in repeats], showmeans=True)
 pyplot.show()
 ```
 
-运行该示例使用不同重复次数的 10 倍交叉验证来报告平均和标准误差分类精度。
+运行该示例使用不同重复次数的 10 倍交叉验证来报告平均和标准误差分类精确率。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到，与其他结果相比，一个重复的默认值似乎是乐观的，准确率约为 86.80%，而不是 86.73%，并且随着重复次数的不同而降低。
 

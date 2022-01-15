@@ -102,7 +102,7 @@ XGBoost 的基准性能，取自[基准随机森林实现](http://datascience.la
 
 从他的实验中，他评论道:
 
-> 我还尝试了 xgboost，这是一个流行的增强库，它也能构建随机森林。它速度快，内存效率高，精度高
+> 我还尝试了 xgboost，这是一个流行的增强库，它也能构建随机森林。它速度快，内存效率高，精确率高
 
 — Szilard Pafka，[基准测试随机森林实现](http://datascience.la/benchmarking-random-forest-implementations/)。
 

@@ -42,7 +42,7 @@ TPOT 使用基于树的结构来表示预测建模问题的模型管道，包括
 
 然后执行优化过程，以找到对给定数据集表现最佳的树结构。具体地说，是一种遗传编程算法，用于对表示为树的程序进行随机全局优化。
 
-> TPOT 使用一个版本的遗传编程来自动设计和优化一系列数据转换和机器学习模型，试图最大化给定监督学习数据集的分类精度。
+> TPOT 使用一个版本的遗传编程来自动设计和优化一系列数据转换和机器学习模型，试图最大化给定监督学习数据集的分类精确率。
 
 ——[评估用于自动化数据科学的基于树的管道优化工具](https://dl.acm.org/doi/10.1145/2908812.2908918)，2016 年。
 
@@ -97,7 +97,7 @@ cv = RepeatedKFold(n_splits=10, n_repeats=3, random_state=1)
 model = TPOTRegressor(... scoring='neg_mean_absolute_error', cv=cv)
 ```
 
-或者是一个[重复的 stratifiedfold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html)进行回归，用*精度*度量进行分类:
+或者是一个[重复的 stratifiedfold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html)进行回归，用*精确率*度量进行分类:
 
 ```py
 ...
@@ -223,7 +223,7 @@ model.export('tpot_sonar_best_model.py')
 
 运行该示例可能需要几分钟时间，您将在命令行上看到一个进度条。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 高性能模型的准确性将在过程中报告。
 
@@ -408,7 +408,7 @@ model.export('tpot_insurance_best_model.py')
 
 运行该示例可能需要几分钟时间，您将在命令行上看到一个进度条。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 高性能模型的 MAE 将会一路被报道。
 

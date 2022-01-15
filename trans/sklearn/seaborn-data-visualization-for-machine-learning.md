@@ -188,7 +188,7 @@ pyplot.show()
 
 ![Bar Chart Plot of Age Range Categorical Variable](img/05611c0729adcb500beff7b0ac9bed8a.png)
 
-年龄范围分类变量的条形图
+年龄范围类别变量的条形图
 
 我们可能还想针对类标签绘制一个变量的每个类别的计数，例如第一个变量。
 
@@ -220,7 +220,7 @@ pyplot.show()
 
 ![Bar Chart Plot of Age Range Categorical Variable by Class Label](img/55fbe671157530ed6f75103ec0bfcfa4.png)
 
-按类别标签划分的年龄范围分类变量的条形图
+按类别标签划分的年龄范围类别变量的条形图
 
 有关使用 Seaborn 绘制条形图的更多示例，请参见:[使用分类数据绘制](https://seaborn.pydata.org/tutorial/categorical.html)。
 
@@ -314,7 +314,7 @@ pyplot.show()
 
 孕次数值变量的盒须图
 
-我们可能还想对照类标签，为分类变量(如第一个变量)的每个值绘制数字变量的分布。
+我们可能还想对照类标签，为类别变量(如第一个变量)的每个值绘制数字变量的分布。
 
 这可以通过调用 *boxplot()* 函数，将类变量作为 x 轴传递，将数值变量作为 y 轴传递来实现。
 

@@ -256,7 +256,7 @@ print('Mean MAE: %.3f (%.3f)' % (scores.mean(), scores.std()) )
 
 运行该示例评估住房数据集上的 XGBoost 回归算法，并报告 10 倍交叉验证的三次重复的平均 MAE。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到模型实现了大约 2.1 的 MAE。
 
@@ -306,7 +306,7 @@ print('Predicted: %.3f' % yhat)
 
 运行该示例符合模型，并对新的数据行进行预测。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到模型预测的值约为 24。
 

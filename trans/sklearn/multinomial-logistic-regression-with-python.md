@@ -104,7 +104,7 @@ model = LogisticRegression(multi_class='multinomial', solver='lbfgs')
 
 使用[重复分层 k 重交叉验证](https://machinelearningmastery.com/repeated-k-fold-cross-validation-with-python/)来评估分类模型是一个很好的做法。分层确保每个交叉验证文件夹在每个类中的示例分布与整个训练数据集大致相同。
 
-我们将使用 10 倍的三个重复，这是一个很好的默认值，并使用分类精度来评估模型性能，假设类是平衡的。
+我们将使用 10 倍的三个重复，这是一个很好的默认值，并使用分类精确率来评估模型性能，假设类是平衡的。
 
 下面列出了评估多类分类的多项逻辑回归的完整示例。
 
@@ -128,11 +128,11 @@ n_scores = cross_val_score(model, X, y, scoring='accuracy', cv=cv, n_jobs=-1)
 print('Mean Accuracy: %.3f (%.3f)' % (mean(n_scores), std(n_scores)))
 ```
 
-运行该示例会报告评估过程中所有折叠和重复的平均分类精度。
+运行该示例会报告评估过程中所有折叠和重复的平均分类精确率。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
-在这种情况下，我们可以看到，在我们的综合分类数据集上，具有默认惩罚的多项式逻辑回归模型实现了大约 68.1%的平均分类精度。
+在这种情况下，我们可以看到，在我们的综合分类数据集上，具有默认惩罚的多项式逻辑回归模型实现了大约 68.1%的平均分类精确率。
 
 ```py
 Mean Accuracy: 0.681 (0.042)
@@ -196,7 +196,7 @@ print('Predicted Probabilities: %s' % yhat[0])
 
 运行该示例首先在所有可用数据上拟合模型，然后定义一行数据，提供给模型以预测类概率。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到类 1(例如，数组索引被映射到类整数值)具有大约 0.50 的最大预测概率。
 
@@ -306,9 +306,9 @@ pyplot.boxplot(results, labels=names, showmeans=True)
 pyplot.show()
 ```
 
-运行该示例会报告沿途每个配置的平均分类精度。
+运行该示例会报告沿途每个配置的平均分类精确率。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到，C 值为 1.0 的最佳分数约为 77.7%，这与不使用达到相同分数的惩罚相同。
 

@@ -188,7 +188,7 @@ model.compile(optimizer='adam', loss='binary_crossentropy')
 history = model.fit(X_train, y_train, epochs=200, batch_size=32, verbose=0, validation_data=(X_test,y_test))
 ```
 
-在训练结束时，我们将评估模型在测试数据集上的性能，并将性能报告为分类精度。
+在训练结束时，我们将评估模型在测试数据集上的性能，并将性能报告为分类精确率。
 
 ```py
 ...
@@ -260,9 +260,9 @@ pyplot.legend()
 pyplot.show()
 ```
 
-运行该示例首先在训练数据集上拟合模型，然后在测试数据集上报告分类精度。
+运行该示例首先在训练数据集上拟合模型，然后在测试数据集上报告分类精确率。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到模型达到了大约 88%的准确率，这是一个很好的性能基线，我们或许可以在此基础上进行改进。
 
@@ -340,9 +340,9 @@ pyplot.plot(history.history['val_loss'], label='val')
 pyplot.legend()
 ```
 
-运行该示例首先在训练数据集上拟合模型，然后在测试数据集上报告精度。
+运行该示例首先在训练数据集上拟合模型，然后在测试数据集上报告精确率。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到准确率略有提高，约为 93%，尽管训练/测试分割的高方差意味着该评估不可靠。
 
@@ -427,9 +427,9 @@ pyplot.legend()
 pyplot.show()
 ```
 
-运行该示例首先在训练数据集上拟合模型，然后在测试数据集上报告精度。
+运行该示例首先在训练数据集上拟合模型，然后在测试数据集上报告精确率。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，模型获得了更好的准确性分数，其值约为 94%。我们将暂时忽略模型性能。
 
@@ -522,11 +522,11 @@ for train_ix, test_ix in kfold.split(X, y):
 print('Mean Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 ```
 
-运行该示例会报告评估程序每次迭代的模型性能，并在运行结束时报告分类精度的平均值和标准偏差。
+运行该示例会报告评估程序每次迭代的模型性能，并在运行结束时报告分类精确率的平均值和标准偏差。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
-在这种情况下，我们可以看到 MLP 模型达到了大约 93.4%的平均精度。
+在这种情况下，我们可以看到 MLP 模型达到了大约 93.4%的平均精确率。
 
 我们将使用这个结果作为我们的基线，看看我们是否可以实现更好的性能。
 
@@ -614,7 +614,7 @@ print('Mean Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 运行报告运行结束时分类准确度的平均值和标准偏差。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到，有辍学的 MLP 模型取得了更好的结果，准确率约为 94.6%，而没有辍学的准确率为 93.4%
 
@@ -687,7 +687,7 @@ print('Mean Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 运行报告运行结束时分类准确度的平均值和标准偏差。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到，带有脱落的 MLP 模型获得了稍好的结果，准确率约为 94.9%。
 
@@ -815,7 +815,7 @@ print('Predicted: %s' % (yhat[0]))
 
 运行该示例使模型适合整个数据集，并对单行新数据进行预测。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到模型为输入行预测了一个“g”标签。
 

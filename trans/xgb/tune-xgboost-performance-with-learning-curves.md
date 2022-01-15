@@ -167,7 +167,7 @@ evalset = [(X_train, y_train), (X_test,y_test)]
 model.fit(X_train, y_train, eval_metric='logloss', eval_set=evalset)
 ```
 
-一旦模型被拟合，我们可以评估它的性能作为测试数据集上的分类精度。
+一旦模型被拟合，我们可以评估它的性能作为测试数据集上的分类精确率。
 
 ```py
 ...
@@ -238,9 +238,9 @@ pyplot.show()
 
 运行该示例符合 XGBoost 模型，检索计算出的指标，并绘制学习曲线。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
-首先，报告模型性能，表明该模型在等待测试集上实现了约 94.5%的分类精度。
+首先，报告模型性能，表明该模型在等待测试集上实现了约 94.5%的分类精确率。
 
 ```py
 Accuracy: 0.945
@@ -312,9 +312,9 @@ pyplot.show()
 
 运行示例拟合和评估模型，并绘制模型性能的学习曲线。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
-我们可以看到，更多的迭代导致精度从大约 94.5%提升到大约 95.8%。
+我们可以看到，更多的迭代导致精确率从大约 94.5%提升到大约 95.8%。
 
 ```py
 Accuracy: 0.958
@@ -372,7 +372,7 @@ pyplot.show()
 
 运行示例拟合和评估模型，并绘制模型性能的学习曲线。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 我们可以看到，学习率越小，准确率越差，从 95.8%左右下降到 95.1%左右。
 
@@ -430,7 +430,7 @@ pyplot.show()
 
 运行示例拟合和评估模型，并绘制模型性能的学习曲线。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 我们可以看到，更多的迭代给了算法更大的改进空间，达到了 96.1%的准确率，是目前为止最好的。
 
@@ -492,9 +492,9 @@ pyplot.show()
 
 运行示例拟合和评估模型，并绘制模型性能的学习曲线。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
-我们可以看到，正则化的加入导致了进一步的改进，碰撞精度从大约 96.1%提高到大约 96.6%。
+我们可以看到，正则化的加入导致了进一步的改进，碰撞精确率从大约 96.1%提高到大约 96.6%。
 
 ```py
 Accuracy: 0.966

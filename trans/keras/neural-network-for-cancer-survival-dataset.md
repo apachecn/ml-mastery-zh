@@ -1,4 +1,4 @@
-# 为癌症生存数据集开发神经网络
+# 为癌症存活数据集开发神经网络
 
 > 原文：<https://machinelearningmastery.com/neural-network-for-cancer-survival-dataset/>
 
@@ -8,11 +8,11 @@
 
 该过程可用于开发用于分类和回归预测建模问题的有效神经网络模型。
 
-在本教程中，您将发现如何为癌症生存二元分类数据集开发多层感知器神经网络模型。
+在本教程中，您将发现如何为癌症存活二元分类数据集开发多层感知器神经网络模型。
 
 完成本教程后，您将知道:
 
-*   如何加载和总结癌症生存数据集，并使用结果建议数据准备和模型配置使用。
+*   如何加载和总结癌症存活数据集，并使用结果建议数据准备和模型配置使用。
 *   如何探索数据集上简单 MLP 模型的学习动态。
 *   如何对模型性能进行稳健的估计，调整模型性能并对新数据进行预测。
 
@@ -20,19 +20,19 @@
 
 ![Develop a Neural Network for Cancer Survival Dataset](img/79ccd8569f154da92b3b3e8b26672a47.png)
 
-为癌症生存数据集开发神经网络
+为癌症存活数据集开发神经网络
 图片由[贝恩德·泰勒](https://flickr.com/photos/bernd_thaller/47315883761/)提供，保留部分权利。
 
 ## 教程概述
 
 本教程分为 4 个部分；它们是:
 
-1.  哈贝曼乳腺癌生存数据集
+1.  哈贝曼乳腺癌存活数据集
 2.  神经网络学习动力学
 3.  稳健模型评估
 4.  最终模型和做出预测
 
-## 哈贝曼乳腺癌生存数据集
+## 哈贝曼乳腺癌存活数据集
 
 第一步是定义和探索数据集。
 
@@ -50,7 +50,7 @@
 
 因此，除了数据集中可用的情况之外，我们无法控制组成数据集的情况或在这些情况下使用的要素的选择。
 
-尽管数据集描述了乳腺癌患者的生存率，但鉴于数据集规模较小，并且数据基于几十年前的乳腺癌诊断和手术，因此任何基于该数据集构建的模型都不可一概而论。
+尽管数据集描述了乳腺癌患者的存活率，但鉴于数据集规模较小，并且数据基于几十年前的乳腺癌诊断和手术，因此任何基于该数据集构建的模型都不可一概而论。
 
 **注:说得再清楚不过**了，我们是不是“*解决乳腺癌*”。我们正在探索一个标准的分类数据集。
 
@@ -67,8 +67,8 @@
 
 您可以在此了解有关数据集的更多信息:
 
-*   [哈贝曼生存数据集(haberman.csv)](https://github.com/jbrownlee/Datasets/blob/master/haberman.csv)
-*   [哈贝曼生存数据集详情(哈贝曼. name)](https://github.com/jbrownlee/Datasets/blob/master/haberman.names)
+*   [哈贝曼存活数据集(haberman.csv)](https://github.com/jbrownlee/Datasets/blob/master/haberman.csv)
+*   [哈贝曼存活数据集详情(哈贝曼. name)](https://github.com/jbrownlee/Datasets/blob/master/haberman.names)
 
 我们可以直接从网址将数据集加载为熊猫数据帧；例如:
 
@@ -136,7 +136,7 @@ max     83.000000   69.000000   52.000000    2.000000
 
 ![Histograms of the Haberman Breast Cancer Survival Classification Dataset](img/eac089342cd334e5b9ecb1b6c9e94021.png)
 
-哈贝曼乳腺癌生存分类数据集的直方图
+哈贝曼乳腺癌存活分类数据集的直方图
 
 我们可以看到两个类之间的例子分布有些偏斜，这意味着分类问题是不平衡的。这是不平衡的。
 
@@ -166,7 +166,7 @@ for k,v in counter.items():
 
 运行该示例总结了数据集的类分布。
 
-我们可以看到生存类 1 在 225 处有最多的例子，大约占数据集的 74%。我们可以看到非存活类 2 的例子更少，只有 81 个，约占数据集的 26%。
+我们可以看到存活类 1 在 225 处有最多的例子，大约占数据集的 74%。我们可以看到非存活类 2 的例子更少，只有 81 个，约占数据集的 26%。
 
 阶级分布是倾斜的，但并不严重不平衡。
 
@@ -175,7 +175,7 @@ Class=1, Count=225, Percentage=73.529%
 Class=2, Count=81, Percentage=26.471%
 ```
 
-这是有帮助的，因为如果我们使用分类精度，那么任何达到低于约 73.5%精度的模型都不具备在这个数据集上的技能。
+这是有帮助的，因为如果我们使用分类精确率，那么任何达到低于约 73.5%精确率的模型都不具备在这个数据集上的技能。
 
 现在我们已经熟悉了数据集，让我们探索如何开发一个神经网络模型。
 
@@ -239,7 +239,7 @@ model.compile(optimizer='adam', loss='binary_crossentropy')
 history = model.fit(X_train, y_train, epochs=200, batch_size=16, verbose=0, validation_data=(X_test,y_test))
 ```
 
-在训练结束时，我们将评估模型在测试数据集上的性能，并将性能报告为分类精度。
+在训练结束时，我们将评估模型在测试数据集上的性能，并将性能报告为分类精确率。
 
 ```py
 ...
@@ -264,7 +264,7 @@ pyplot.legend()
 pyplot.show()
 ```
 
-将所有这些结合起来，下面列出了在癌症生存数据集上评估我们的第一个 MLP 的完整示例。
+将所有这些结合起来，下面列出了在癌症存活数据集上评估我们的第一个 MLP 的完整示例。
 
 ```py
 # fit a simple mlp model on the haberman and review learning curves
@@ -311,7 +311,7 @@ pyplot.legend()
 pyplot.show()
 ```
 
-运行该示例首先在训练数据集上拟合模型，然后在测试数据集上报告分类精度。
+运行该示例首先在训练数据集上拟合模型，然后在测试数据集上报告分类精确率。
 
 **用我的新书[机器学习的数据准备](https://machinelearningmastery.com/data-preparation-for-machine-learning/)启动你的项目**，包括*分步教程*和所有示例的 *Python 源代码*文件。
 
@@ -327,7 +327,7 @@ Accuracy: 0.765
 
 ![Learning Curves of Simple Multilayer Perceptron on Cancer Survival Dataset](img/4520a0264ac7035bbb20444496ffe4b9.png)
 
-癌症生存数据集上简单多层感知器的学习曲线
+癌症存活数据集上简单多层感知器的学习曲线
 
 现在，我们已经对数据集上的简单 MLP 模型的学习动态有了一些了解，我们可以考虑对数据集上的模型性能进行更稳健的评估。
 
@@ -335,7 +335,7 @@ Accuracy: 0.765
 
 k 倍交叉验证程序可以提供更可靠的 MLP 性能估计，尽管它可能非常慢。
 
-这是因为 k 模型必须被拟合和评估。当数据集规模较小时，例如癌症生存数据集，这不是问题。
+这是因为 k 模型必须被拟合和评估。当数据集规模较小时，例如癌症存活数据集，这不是问题。
 
 我们可以使用[stratifiedfold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html)类手动枚举每个折叠，拟合模型，对其进行评估，然后在程序结束时报告评估分数的平均值。
 
@@ -408,11 +408,11 @@ for train_ix, test_ix in kfold.split(X, y):
 print('Mean Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 ```
 
-运行该示例会报告评估程序每次迭代的模型性能，并在运行结束时报告分类精度的平均值和标准偏差。
+运行该示例会报告评估程序每次迭代的模型性能，并在运行结束时报告分类精确率的平均值和标准偏差。
 
 **用我的新书[机器学习的数据准备](https://machinelearningmastery.com/data-preparation-for-machine-learning/)启动你的项目**，包括*分步教程*和所有示例的 *Python 源代码*文件。
 
-在这种情况下，我们可以看到 MLP 模型获得了大约 75.2%的平均精度，这与我们在前面部分中的粗略估计非常接近。
+在这种情况下，我们可以看到 MLP 模型获得了大约 75.2%的平均精确率，这与我们在前面部分中的粗略估计非常接近。
 
 这证实了我们的预期，即对于这个数据集，基本模型配置可能比简单模型工作得更好
 
@@ -555,7 +555,7 @@ Predicted: 1
 
 ### 教程
 
-*   [如何建立乳腺癌患者生存概率模型](https://machinelearningmastery.com/how-to-develop-a-probabilistic-model-of-breast-cancer-patient-survival/)
+*   [如何建立乳腺癌患者存活概率模型](https://machinelearningmastery.com/how-to-develop-a-probabilistic-model-of-breast-cancer-patient-survival/)
 *   [如何开发预测电离层扰动的神经网络](https://machinelearningmastery.com/predicting-disturbances-in-the-ionosphere/)
 *   [标准机器学习数据集的最佳结果](https://machinelearningmastery.com/results-for-standard-classification-and-regression-machine-learning-datasets/)
 *   [TensorFlow 2 教程:使用 tf.keras 开始深度学习](https://machinelearningmastery.com/tensorflow-tutorial-deep-learning-with-tf-keras/)
@@ -563,11 +563,11 @@ Predicted: 1
 
 ## 摘要
 
-在本教程中，您发现了如何为癌症生存二元分类数据集开发多层感知器神经网络模型。
+在本教程中，您发现了如何为癌症存活二元分类数据集开发多层感知器神经网络模型。
 
 具体来说，您了解到:
 
-*   如何加载和总结癌症生存数据集，并使用结果建议数据准备和模型配置使用。
+*   如何加载和总结癌症存活数据集，并使用结果建议数据准备和模型配置使用。
 *   如何探索数据集上简单 MLP 模型的学习动态。
 *   如何对模型性能进行稳健的估计，调整模型性能并对新数据进行预测。
 

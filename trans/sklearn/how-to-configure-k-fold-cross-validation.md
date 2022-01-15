@@ -100,9 +100,9 @@ scores = cross_val_score(model, X, y, scoring='accuracy', cv=cv, n_jobs=-1)
 print('Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 ```
 
-运行该示例会创建数据集，然后使用 10 倍交叉验证对其进行逻辑回归模型评估。然后报告数据集的平均分类精度。
+运行该示例会创建数据集，然后使用 10 倍交叉验证对其进行逻辑回归模型评估。然后报告数据集的平均分类精确率。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到该模型实现了大约 85.0%的估计分类准确率。
 
@@ -138,7 +138,7 @@ k-fold 交叉验证的关键配置参数是 k，它定义了分割给定数据�
 
 相反，我们可以使用[省去一个交叉验证(LOOCV)](https://machinelearningmastery.com/loocv-for-evaluating-machine-learning-algorithms/) 来模拟这种情况，这是一个计算量很大的交叉验证版本，其中 *k=N* ，而 *N* 是训练数据集中的示例总数。也就是说，训练集中的每个样本都给出了一个单独用作测试评估数据集的示例。它很少用于大型数据集，因为它的计算成本很高，尽管在给定可用数据的情况下，它可以很好地估计模型性能。
 
-然后，我们可以将不同 k 值的平均分类精度与同一数据集上来自 LOOCV 的平均分类精度进行比较。分数之间的差异为 k 值接近理想模型评估测试条件的程度提供了一个粗略的代表。
+然后，我们可以将不同 k 值的平均分类精确率与同一数据集上来自 LOOCV 的平均分类精确率进行比较。分数之间的差异为 k 值接近理想模型评估测试条件的程度提供了一个粗略的代表。
 
 让我们探索如何实现 k 倍交叉验证的敏感性分析。
 
@@ -164,7 +164,7 @@ def get_model():
 
 接下来，您可以定义一个函数来评估给定测试条件下数据集上的模型。测试条件可以是配置了给定 k 值的 KFold 的实例，也可以是代表我们理想测试条件的 LeaveOneOut 的实例。
 
-该函数返回平均分类精度以及折叠的最小和最大精度。我们可以用最小值和最大值来总结分数的分布。
+该函数返回平均分类精确率以及折叠的最小和最大精确率。我们可以用最小值和最大值来总结分数的分布。
 
 ```py
 # evaluate the model using a given test condition
@@ -292,7 +292,7 @@ pyplot.show()
 
 运行该示例首先报告 LOOCV，然后报告评估的每个 k 值的平均值、最小值和最大值。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到 LOOCV 结果约为 84%，略低于 85%的 k=10 结果。
 
@@ -536,9 +536,9 @@ pyplot.ylabel('Mean Accuracy (LOOCV)')
 pyplot.show()
 ```
 
-运行该示例会报告通过每个测试线束计算出的每个算法的平均分类精度。
+运行该示例会报告通过每个测试线束计算出的每个算法的平均分类精确率。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 您可能会看到一些可以安全忽略的警告，例如:
 
@@ -546,7 +546,7 @@ pyplot.show()
 Variables are collinear
 ```
 
-我们可以看到，对于某些算法，与 LOOCV 相比，测试工具高估了精度，而在其他情况下，它低估了精度。这是意料之中的。
+我们可以看到，对于某些算法，与 LOOCV 相比，测试工具高估了精确率，而在其他情况下，它低估了精确率。这是意料之中的。
 
 在运行结束时，我们可以看到两组结果之间的相关性被报告。在这种情况下，我们可以看到报告了 0.746 的相关性，这是一个很好的强正相关。结果表明，10 倍交叉验证确实为该数据集上的 LOOCV 测试工具提供了一个很好的近似，这是用 18 种流行的机器学习算法计算的。
 

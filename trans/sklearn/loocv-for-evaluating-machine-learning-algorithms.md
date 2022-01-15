@@ -188,7 +188,7 @@ print('Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 运行该示例会自动估计合成数据集上随机森林分类器的性能。
 
-所有折叠的平均分类精度与我们之前的手动估计相匹配。
+所有折叠的平均分类精确率与我们之前的手动估计相匹配。
 
 ```py
 Accuracy: 0.990 (0.099)
@@ -299,7 +299,7 @@ print('Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 运行该示例首先加载数据集，并确认输入和输出元素中的行数。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 然后使用 LOOCV 对模型进行评估，当对新数据进行预测时，估计的性能具有大约 82.2%的准确性。
 
@@ -412,7 +412,7 @@ print('MAE: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 运行该示例首先加载数据集，并确认输入和输出元素中的行数。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 该模型使用 LOOCV 进行评估，在对新数据进行预测时，该模型的性能平均绝对误差约为 2.180(千美元)。
 

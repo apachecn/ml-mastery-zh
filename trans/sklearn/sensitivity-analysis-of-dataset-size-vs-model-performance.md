@@ -116,7 +116,7 @@ print('Mean Accuracy: %.3f (%.3f)' % (scores.mean(), scores.std()))
 
 运行该示例会创建数据集，然后使用所选的测试工具来评估模型在问题上的性能。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到平均分类准确率约为 82.7%。
 
@@ -296,9 +296,9 @@ pyplot.show()
 
 运行该示例会报告数据集大小和估计模型性能的状态。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
-在这种情况下，我们可以看到平均模型性能随着数据集大小的增加而增加，而使用分类精度的标准偏差测量的模型方差减少的预期趋势。
+在这种情况下，我们可以看到平均模型性能随着数据集大小的增加而增加，而使用分类精确率的标准偏差测量的模型方差减少的预期趋势。
 
 我们可以看到，在估计大约 10，000 或 50，000 行的模型性能时，可能存在收益递减点。
 

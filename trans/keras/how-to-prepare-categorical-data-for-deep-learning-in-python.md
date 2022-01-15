@@ -1,4 +1,4 @@
-# 深度学习分类变量的 3 种编码方式
+# 深度学习类别变量的 3 种编码方式
 
 > 原文：<https://machinelearningmastery.com/how-to-prepare-categorical-data-for-deep-learning-in-python/>
 
@@ -15,8 +15,8 @@
 完成本教程后，您将知道:
 
 *   使用机器学习和深度学习模型时处理分类数据的挑战。
-*   如何对建模的分类变量进行整数编码和热编码？
-*   如何学习嵌入分布式表示作为分类变量神经网络的一部分。
+*   如何对建模的类别变量进行整数编码和热编码？
+*   如何学习嵌入分布式表示作为类别变量神经网络的一部分。
 
 **用我的新书[用 Python 深度学习](https://machinelearningmastery.com/deep-learning-with-python/)来启动你的项目**，包括*分步教程*和所有示例的 *Python 源代码*文件。
 
@@ -39,7 +39,7 @@
 
 ## 分类数据的挑战
 
-分类变量是其值具有标签值的变量。
+类别变量是其值具有标签值的变量。
 
 例如，变量可以是“*颜色*”，可以取值“*红色*”、“*绿色*”和“*蓝色*
 
@@ -49,7 +49,7 @@
 
 这意味着分类数据必须编码成数字，然后我们才能使用它来拟合和评估模型。
 
-有许多方法可以为建模编码分类变量，尽管最常见的有以下三种:
+有许多方法可以为建模编码类别变量，尽管最常见的有以下三种:
 
 1.  **整数编码**:每个唯一的标签映射到一个整数。
 2.  **一个热编码**:每个标签映射到一个二进制向量。
@@ -334,9 +334,9 @@ print('Accuracy: %.2f' % (accuracy*100))
 
 在任何现代硬件(不需要图形处理器)上运行该示例只需几秒钟即可适应该模型。
 
-在每个训练时期结束时报告模型的损失和精度，最后报告模型在测试数据集上的精度。
+在每个训练时期结束时报告模型的损失和精确率，最后报告模型在测试数据集上的精确率。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到模型在测试数据集上达到了大约 70%的准确率。
 
@@ -368,7 +368,7 @@ Accuracy: 70.53
 
 单一热编码适用于类别之间不存在关系的分类数据。
 
-它包括用二进制向量表示每个分类变量，每个唯一标签有一个元素，用 1 标记类标签，所有其他元素为 0。
+它包括用二进制向量表示每个类别变量，每个唯一标签有一个元素，用 1 标记类标签，所有其他元素为 0。
 
 例如，如果我们的变量是“ *color* ”，标签是“ *red* ”、“ *green* ”和“ *blue* ”，我们将这些标签中的每一个编码为三元素二进制向量，如下所示:
 
@@ -376,7 +376,7 @@ Accuracy: 70.53
 *   绿色:[0，1，0]
 *   蓝色:[0，0，1]
 
-然后，数据集中的每个标签将被替换为一个向量(一列变成三列)。这是对所有分类变量进行的，因此在乳腺癌数据集的情况下，我们的九个输入变量或列变为 43。
+然后，数据集中的每个标签将被替换为一个向量(一列变成三列)。这是对所有类别变量进行的，因此在乳腺癌数据集的情况下，我们的九个输入变量或列变为 43。
 
 scikit-learn 库提供了 [OneHotEncoder](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html) 来自动对一个或多个变量进行热编码。
 
@@ -457,11 +457,11 @@ print('Accuracy: %.2f' % (accuracy*100))
 
 示例 one hot 对输入分类数据进行了编码，标签也对目标变量进行了编码，就像我们在上一节中所做的那样。然后在准备好的数据集上拟合相同的神经网络模型。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，模型表现相当好，达到了大约 72%的准确率，接近上一节看到的结果。
 
-更公平的比较是将每个配置运行 10 或 30 次，并使用平均精度来比较性能。回想一下，在本教程中，我们更关注如何对分类数据进行编码，而不是在这个特定的数据集上获得最佳分数。
+更公平的比较是将每个配置运行 10 或 30 次，并使用平均精确率来比较性能。回想一下，在本教程中，我们更关注如何对分类数据进行编码，而不是在这个特定的数据集上获得最佳分数。
 
 ```py
 ...
@@ -505,7 +505,7 @@ Accuracy: 72.63
 
 *   [如何使用单词嵌入层对 Keras 进行深度学习](https://machinelearningmastery.com/use-word-embedding-layers-deep-learning-keras/)
 
-每个分类变量需要一个嵌入层，嵌入期望类别是有序编码的，尽管类别之间没有关系。
+每个类别变量需要一个嵌入层，嵌入期望类别是有序编码的，尽管类别之间没有关系。
 
 每个嵌入还需要用于分布式表示(向量空间)的维数。在自然语言应用程序中，使用 50、100 或 300 维是很常见的。对于我们的小例子，我们将维数固定为 10，但这是任意的；你应该用其他价值观来做实验。
 
@@ -684,7 +684,7 @@ print('Accuracy: %.2f' % (accuracy*100))
 
 运行该示例如上所述准备数据，拟合模型，并报告性能。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，模型表现相当好，与我们在前面部分看到的一个热编码相匹配。
 
@@ -716,7 +716,7 @@ Accuracy: 72.63
 
 [![Plot of the Model Architecture With Separate Inputs and Embeddings for each Categorical Variable](img/e0573e236a4131666d033bd273a655f4.png)](https://machinelearningmastery.com/wp-content/uploads/2019/09/Plot-of-the-Model-Architecture-with-Separate-Inputs-and-Embeddings-for-each-Categorical-Variable.png)
 
-每个分类变量有单独输入和嵌入的模型架构图
+每个类别变量有单独输入和嵌入的模型架构图
 点击放大。
 
 ## 常见问题
@@ -777,8 +777,8 @@ Accuracy: 72.63
 具体来说，您了解到:
 
 *   使用机器学习和深度学习模型时处理分类数据的挑战。
-*   如何对建模的分类变量进行整数编码和热编码？
-*   如何学习嵌入分布式表示作为分类变量神经网络的一部分。
+*   如何对建模的类别变量进行整数编码和热编码？
+*   如何学习嵌入分布式表示作为类别变量神经网络的一部分。
 
 你有什么问题吗？
 在下面的评论中提问，我会尽力回答。

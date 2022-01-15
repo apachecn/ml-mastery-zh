@@ -1,4 +1,4 @@
-# 如何使用 AutoKeras 进行分类和回归
+# 如何将 AutoKeras 用于分类和回归
 
 > 原文：<https://machinelearningmastery.com/autokeras-for-classification-and-regression/>
 
@@ -291,7 +291,7 @@ model.save('model_sonar.h5')
 
 然后在搁置测试数据集上评估性能最佳的模型。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到该模型实现了大约 82.6%的分类准确率。
 
@@ -482,7 +482,7 @@ model.save('model_insurance.h5')
 
 然后在搁置测试数据集上评估性能最佳的模型。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到模型实现了大约 24 的 MAE。
 

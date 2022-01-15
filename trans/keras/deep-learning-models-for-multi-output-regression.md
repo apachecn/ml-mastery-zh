@@ -1,4 +1,4 @@
-# 多输出回归的深度学习模型
+# 用于多输出回归的深度学习模型
 
 > 原文：<https://machinelearningmastery.com/deep-learning-models-for-multi-output-regression/>
 
@@ -207,7 +207,7 @@ print('MAE: %.3f (%.3f)' % (mean(results), std(results)))
 
 运行该示例报告每个折叠和每个重复的 MAE，以给出评估进度的想法。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 最后，报告了平均和标准差。在这种情况下，该模型显示的 MAE 约为 8.184。
 
@@ -263,7 +263,7 @@ print('Predicted: %s' % yhat[0])
 
 运行该示例符合模型，并对新行进行预测。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 正如预期的那样，预测包含多输出回归任务所需的三个输出变量。
 

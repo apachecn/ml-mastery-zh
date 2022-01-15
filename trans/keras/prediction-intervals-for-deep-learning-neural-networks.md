@@ -264,7 +264,7 @@ print('MAE: %.3f' % mae)
 
 运行该示例加载和准备数据集，在训练数据集上定义和拟合 MLP 模型，并在测试集上评估其性能。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到，该模型实现了大约 2.3 的平均绝对误差，这优于天真模型，并接近最佳模型。
 
@@ -506,7 +506,7 @@ print('True value: %.3f' % y_test[0])
 
 运行该示例依次适合每个集成成员，并在等待测试集上报告其估计性能；最后，作出并报告具有预测区间的单一预测。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到每个模型的性能略有不同，这证实了我们对模型确实不同的预期。
 

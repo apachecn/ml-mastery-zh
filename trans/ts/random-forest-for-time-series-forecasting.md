@@ -351,7 +351,7 @@ pyplot.show()
 
 运行该示例会报告测试集中每个步骤的预期值和预测值，然后是所有预测值的 MAE。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 我们可以看到，该模型比持久性模型表现得更好，实现了大约 5.9 次出生的 MAE，而不是 6.7 次出生。
 

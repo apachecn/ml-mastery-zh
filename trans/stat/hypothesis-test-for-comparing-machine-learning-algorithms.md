@@ -92,7 +92,7 @@ t, p = paired_ttest_5x2cv(estimator1=model1, estimator2=model2, X=X, y=y)
 
 p 值必须使用 alpha 值来解释，这是您愿意接受的重要级别。
 
-如果 p 值小于或等于所选的α，我们拒绝零假设，即模型具有相同的平均性能，这意味着差异可能是真实的。如果 p 值大于α，我们不能拒绝零假设，即模型具有相同的平均性能，任何观察到的平均精度差异都可能是统计上的侥幸。
+如果 p 值小于或等于所选的α，我们拒绝零假设，即模型具有相同的平均性能，这意味着差异可能是真实的。如果 p 值大于α，我们不能拒绝零假设，即模型具有相同的平均性能，任何观察到的平均精确率差异都可能是统计上的侥幸。
 
 alpha 值越小越好，常用值为 5%(0.05)。
 
@@ -134,7 +134,7 @@ print(X.shape, y.shape)
 
 我们将在这个数据集上比较两种线性算法的性能。具体来说，一个[逻辑回归](https://machinelearningmastery.com/logistic-regression-tutorial-for-machine-learning/)算法和一个[线性判别分析](https://machinelearningmastery.com/linear-discriminant-analysis-for-machine-learning/) (LDA)算法。
 
-我喜欢的程序是使用重复的分层 k-fold 交叉验证，重复 10 次和 3 次。我们将使用此过程来评估每个算法，并返回和报告平均分类精度。
+我喜欢的程序是使用重复的分层 k-fold 交叉验证，重复 10 次和 3 次。我们将使用此过程来评估每个算法，并返回和报告平均分类精确率。
 
 下面列出了完整的示例。
 
@@ -165,9 +165,9 @@ pyplot.boxplot([scores1, scores2], labels=['LR', 'LDA'], showmeans=True)
 pyplot.show()
 ```
 
-运行该示例首先报告每个算法的平均分类精度。
+运行该示例首先报告每个算法的平均分类精确率。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，结果表明，如果我们只看平均分数，线性判别分析的性能更好:逻辑回归为 89.2%，线性判别分析为 89.3%。
 
@@ -244,7 +244,7 @@ else:
 
 运行这个例子，我们首先评估之前的算法，然后报告统计假设检验的结果。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到 p 值约为 0.3，比 0.05 大得多。这导致我们无法拒绝零假设，这表明算法之间的任何观察到的差异可能都不是真实的。
 
@@ -261,7 +261,7 @@ Algorithms probably have the same performance
 
 回想一下，我们在报告绩效时使用的程序(3×10 CV)与统计测试中用于评估绩效的程序(5×2 CV)不同。如果我们使用五次重复的双重交叉验证来看分数，结果可能会有所不同？
 
-更新以下示例，以使用 5×2 CV 报告每个算法的分类精度。
+更新以下示例，以使用 5×2 CV 报告每个算法的分类精确率。
 
 ```py
 # use 5x2 statistical hypothesis testing procedure to compare two machine learning algorithms
@@ -296,9 +296,9 @@ else:
 	print('Algorithms probably have the same performance')
 ```
 
-运行该示例会报告两种算法的平均精度以及统计测试的结果。
+运行该示例会报告两种算法的平均精确率以及统计测试的结果。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到两种算法的平均性能差异甚至更大，89.4%对 89.0%支持逻辑回归，而不是我们在 3×10 CV 中看到的 LDA。
 

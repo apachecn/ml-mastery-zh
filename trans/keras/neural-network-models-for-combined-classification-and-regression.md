@@ -225,7 +225,7 @@ print('MAE: %.3f' % error)
 
 运行该示例将准备数据集，拟合模型，并报告模型误差的估计值。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到模型实现了大约 1.5(环)的误差。
 
@@ -288,7 +288,7 @@ model.add(Dense(n_class, activation='softmax'))
 model.compile(loss='sparse_categorical_crossentropy', optimizer='adam')
 ```
 
-如前所述，在将模型拟合到训练数据集上之后，我们可以通过计算保持测试集上的分类精度来评估模型的性能。
+如前所述，在将模型拟合到训练数据集上之后，我们可以通过计算保持测试集上的分类精确率来评估模型的性能。
 
 ```py
 ...
@@ -342,7 +342,7 @@ print('Accuracy: %.3f' % acc)
 
 运行该示例将准备数据集，拟合模型，并报告模型误差的估计值。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到模型达到了大约 27%的准确率。
 
@@ -482,7 +482,7 @@ error = mean_absolute_error(y_test, yhat1)
 print('MAE: %.3f' % error)
 ```
 
-第二阵列可用于通过分类精度评估分类预测。
+第二阵列可用于通过分类精确率评估分类预测。
 
 ```py
 ...
@@ -551,7 +551,7 @@ print('Accuracy: %.3f' % acc)
 
 运行该示例将准备数据集，拟合模型，并报告模型误差的估计值。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 创建多输出模型的图，清楚地显示连接到模型的第二个隐藏层的回归(左)和分类(右)输出层。
 
@@ -559,7 +559,7 @@ print('Accuracy: %.3f' % acc)
 
 用于组合回归和分类预测的多输出模型图
 
-在这种情况下，我们可以看到该模型实现了大约 1.495(环)的合理误差和大约 25.6%的类似精度。
+在这种情况下，我们可以看到该模型实现了大约 1.495(环)的合理误差和大约 25.6%的类似精确率。
 
 ```py
 ...

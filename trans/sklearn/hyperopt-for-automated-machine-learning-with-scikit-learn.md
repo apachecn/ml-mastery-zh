@@ -37,7 +37,7 @@ HyperOpt 是一个面向大规模 AutoML 的开源库，HyperOpt-Sklearn 是 Hyp
 
 该库明确用于优化机器学习管道，包括数据准备、模型选择和模型超参数。
 
-> 我们的方法是展示如何根据超参数计算性能指标(例如，验证示例的分类精度)的底层表达式图，这些超参数不仅控制如何应用各个处理步骤，甚至还控制包括哪些处理步骤。
+> 我们的方法是展示如何根据超参数计算性能指标(例如，验证示例的分类精确率)的底层表达式图，这些超参数不仅控制如何应用各个处理步骤，甚至还控制包括哪些处理步骤。
 
 ——[做模型搜索的科学:视觉架构的数百维超参数优化](https://dl.acm.org/doi/10.5555/3042817.3042832)，2013。
 
@@ -295,7 +295,7 @@ print(model.best_model())
 
 运行结束时，在保持数据集上评估性能最佳的模型，并打印发现的管道供以后使用。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到选择的模型在保持测试集上达到了大约 85.5%的准确率。管道涉及没有预处理的梯度增强模型。
 
@@ -402,7 +402,7 @@ print(model.best_model())
 
 在运行结束时，在保持数据集上评估性能最佳的模型，并打印发现的管道供以后使用。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到选择的模型在保持测试集上实现了大约 0.883 的 MAE，这看起来很巧妙。管道包含一个没有预处理的*xgbreversor*模型。
 

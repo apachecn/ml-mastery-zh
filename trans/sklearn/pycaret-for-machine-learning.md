@@ -172,7 +172,7 @@ grid = setup(data=df, target=df.columns[-1], html=False, silent=True, verbose=Fa
 
 接下来，我们可以通过调用 *compare_models()* 函数来比较标准机器学习模型。
 
-默认情况下，它将使用 10 倍交叉验证来评估模型，根据分类精度对结果进行排序，并返回单个最佳模型。
+默认情况下，它将使用 10 倍交叉验证来评估模型，根据分类精确率对结果进行排序，并返回单个最佳模型。
 
 这些都是不错的违约，我们不需要改变什么。
 
@@ -210,7 +210,7 @@ print(best)
 
 运行该示例将加载数据集，配置 PyCaret 库，评估一套标准模型，并报告为数据集找到的最佳模型。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到“*额外树分类器*”在数据集上具有最好的准确性，得分约为 86.95%。
 
@@ -282,7 +282,7 @@ grid = setup(data=df, target=df.columns[-1], html=False, silent=True, verbose=Fa
 
 该函数将模型的一个实例作为输入进行调整，并知道自动调整哪些超参数。执行模型超参数的随机搜索，并且可以通过“ *n_iter* ”参数控制评估的总数。
 
-默认情况下，该功能将优化“*精度*”，并将使用 10 倍交叉验证来评估每个配置的性能，尽管这个合理的默认配置可以更改。
+默认情况下，该功能将优化“*精确率*”，并将使用 10 倍交叉验证来评估每个配置的性能，尽管这个合理的默认配置可以更改。
 
 我们可以对额外的树分类器执行如下随机搜索:
 
@@ -321,9 +321,9 @@ print(best)
 
 运行该示例首先加载数据集并配置 PyCaret 库。
 
-然后执行网格搜索，报告跨 10 倍交叉验证的最佳配置性能和平均精度。
+然后执行网格搜索，报告跨 10 倍交叉验证的最佳配置性能和平均精确率。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到，随机搜索找到了一个准确率约为 75.29%的配置，这并不比上一部分的默认配置好，后者的得分约为 86.95%。
 

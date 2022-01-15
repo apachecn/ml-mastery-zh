@@ -350,7 +350,7 @@ model = RandomForestClassifier(random_state=1)
 model.fit(X_train, y_train)
 ```
 
-然后使用拟合模型进行预测，并使用分类精度性能度量来评估预测。
+然后使用拟合模型进行预测，并使用分类精确率性能度量来评估预测。
 
 ```py
 ...
@@ -391,7 +391,7 @@ print('Accuracy: %.3f' % acc)
 
 运行该示例首先加载数据集，并确认输入和输出元素中的行数。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 数据集被分成训练集和测试集，我们可以看到有 139 行用于训练，69 行用于测试集。
 
@@ -504,7 +504,7 @@ print('MAE: %.3f' % mae)
 
 运行该示例首先加载数据集，并确认输入和输出元素中的行数。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 数据集被分成训练集和测试集，我们可以看到有 339 行用于训练，167 行用于测试集。
 

@@ -199,7 +199,7 @@ model.compile(optimizer='adam', loss='binary_crossentropy')
 history = model.fit(X_train, y_train, epochs=50, batch_size=32, verbose=0, validation_data=(X_test,y_test))
 ```
 
-在训练结束时，我们将评估模型在测试数据集上的性能，并将性能报告为分类精度。
+在训练结束时，我们将评估模型在测试数据集上的性能，并将性能报告为分类精确率。
 
 ```py
 ...
@@ -273,11 +273,11 @@ pyplot.legend()
 pyplot.show()
 ```
 
-运行该示例首先在训练数据集上拟合模型，然后在测试数据集上报告分类精度。
+运行该示例首先在训练数据集上拟合模型，然后在测试数据集上报告分类精确率。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
-在这种情况下，我们可以看到模型达到了 100%的高精度或完美精度。这可能表明预测问题很容易，和/或神经网络很适合这个问题。
+在这种情况下，我们可以看到模型达到了 100%的高精确率或完美精确率。这可能表明预测问题很容易，和/或神经网络很适合这个问题。
 
 ```py
 Accuracy: 1.000
@@ -373,11 +373,11 @@ for train_ix, test_ix in kfold.split(X, y):
 print('Mean Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 ```
 
-运行该示例会报告评估程序每次迭代的模型性能，并在运行结束时报告分类精度的平均值和标准偏差。
+运行该示例会报告评估程序每次迭代的模型性能，并在运行结束时报告分类精确率的平均值和标准偏差。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
-在这种情况下，我们可以看到 MLP 模型达到了大约 99.9%的平均精度。
+在这种情况下，我们可以看到 MLP 模型达到了大约 99.9%的平均精确率。
 
 这证实了我们的期望，即基本模型配置对于这个数据集非常有效，并且实际上模型非常适合这个问题，并且这个问题可能很难解决。
 
@@ -506,7 +506,7 @@ print('Predicted: %s' % (yhat[0]))
 
 运行该示例使模型适合整个数据集，并对单行新数据进行预测。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到模型为输入行预测了一个“0”标签。
 

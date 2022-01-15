@@ -103,7 +103,7 @@ sigmoid 函数在任何地方都是单调的、连续的和可微的，加上它
 
 *   [作用中的微积分:神经网络](https://machinelearningmastery.com/calculus-in-action-neural-networks/)
 *   [缓步介绍梯度下降程序](https://machinelearningmastery.com/a-gentle-introduction-to-gradient-descent-procedure)
-*   [神经网络是函数逼近算法](https://machinelearningmastery.com/neural-networks-are-function-approximators/)
+*   [神经网络是函数近似算法](https://machinelearningmastery.com/neural-networks-are-function-approximators/)
 *   [如何选择深度学习的激活函数](https://machinelearningmastery.com/choose-an-activation-function-for-deep-learning/)
 
 ### **资源**

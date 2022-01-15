@@ -249,7 +249,7 @@ print("Accuracy: %.3f" % acc)
 
 考虑到我们对运行施加的硬性限制，运行该示例大约需要五分钟。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 运行结束时，会打印一份摘要，显示评估了 1，054 个模型，最终模型的估计性能为 91%。
 
@@ -364,7 +364,7 @@ print("MAE: %.3f" % mae)
 Target Algorithm returned NaN or inf as quality. Algorithm run is treated as CRASHED, cost is set to 1.0 for quality scenarios. (Change value through "cost_for_crash"-option.)
 ```
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 运行结束时，会打印一份摘要，显示评估了 1，759 个模型，最终模型的估计性能为 29 的 MAE。
 

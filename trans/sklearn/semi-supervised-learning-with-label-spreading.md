@@ -142,7 +142,7 @@ model = LogisticRegression()
 model.fit(X_train_lab, y_train_lab)
 ```
 
-然后，该模型可用于对整个保持测试数据集进行预测，并使用分类精度进行评估。
+然后，该模型可用于对整个保持测试数据集进行预测，并使用分类精确率进行评估。
 
 ```py
 ...
@@ -180,13 +180,13 @@ score = accuracy_score(y_test, yhat)
 print('Accuracy: %.3f' % (score*100))
 ```
 
-运行该算法使模型适合标记的训练数据集，并在保持数据集上对其进行评估，并打印分类精度。
+运行该算法使模型适合标记的训练数据集，并在保持数据集上对其进行评估，并打印分类精确率。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到该算法实现了大约 84.8%的分类准确率。
 
-我们期望一种有效的半监督学习算法能获得比这更好的精度。
+我们期望一种有效的半监督学习算法能获得比这更好的精确率。
 
 ```py
 Accuracy: 84.800
@@ -260,7 +260,7 @@ model = LabelSpreading()
 model.fit(X_train_mixed, y_train_mixed)
 ```
 
-接下来，我们可以使用该模型对保持数据集进行预测，并使用分类精度评估该模型。
+接下来，我们可以使用该模型对保持数据集进行预测，并使用分类精确率评估该模型。
 
 ```py
 ...
@@ -305,11 +305,11 @@ score = accuracy_score(y_test, yhat)
 print('Accuracy: %.3f' % (score*100))
 ```
 
-运行该算法使模型适合整个训练数据集，并在保持数据集上对其进行评估，并打印分类精度。
+运行该算法使模型适合整个训练数据集，并在保持数据集上对其进行评估，并打印分类精确率。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
-在这种情况下，我们可以看到标签传播模型实现了大约 85.4%的分类精度，这略高于仅在实现了大约 84.8%的精度的标签训练数据集上的逻辑回归拟合。
+在这种情况下，我们可以看到标签传播模型实现了大约 85.4%的分类精确率，这略高于仅在实现了大约 84.8%的精确率的标签训练数据集上的逻辑回归拟合。
 
 ```py
 Accuracy: 85.400
@@ -385,11 +385,11 @@ score = accuracy_score(y_test, yhat)
 print('Accuracy: %.3f' % (score*100))
 ```
 
-运行该算法将半监督模型拟合到整个训练数据集上，然后将监督学习模型拟合到具有推断标签的整个训练数据集上，并在保持数据集上对其进行评估，打印分类精度。
+运行该算法将半监督模型拟合到整个训练数据集上，然后将监督学习模型拟合到具有推断标签的整个训练数据集上，并在保持数据集上对其进行评估，打印分类精确率。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
-在这种情况下，我们可以看到，半监督模型跟随监督模型的分层方法在保持数据集上实现了大约 85.8%的分类精度，略好于单独使用的半监督学习算法，该算法实现了大约 85.6%的精度。
+在这种情况下，我们可以看到，半监督模型跟随监督模型的分层方法在保持数据集上实现了大约 85.8%的分类精确率，略好于单独使用的半监督学习算法，该算法实现了大约 85.6%的精确率。
 
 ```py
 Accuracy: 85.800

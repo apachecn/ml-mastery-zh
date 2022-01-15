@@ -564,13 +564,13 @@ print('Predicted: %.3f (class=%d)' % (yhat, yhat.round()))
 
 运行该示例首先报告训练和测试数据集的形状，然后拟合模型并在测试数据集上对其进行评估。最后，对单行数据进行预测。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 **你得到了什么结果？**
 **能不能换个模式做得更好？**
 将你的发现发布到下面的评论中。
 
-在这种情况下，我们可以看到模型达到了大约 94%的分类精度，然后预测一行数据属于类别 1 的概率为 0.99。
+在这种情况下，我们可以看到模型达到了大约 94%的分类精确率，然后预测一行数据属于类别 1 的概率为 0.99。
 
 ```py
 235 116
@@ -756,7 +756,7 @@ print('Predicted: %s (class=%d)' % (yhat, argmax(yhat)))
 
 运行该示例首先报告训练和测试数据集的形状，然后拟合模型并在测试数据集上对其进行评估。最后，对单行数据进行预测。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 **你得到了什么结果？
 能不能换个型号做得更好？**
@@ -783,7 +783,7 @@ Predicted: [[9.5524162e-01 4.4516966e-02 2.4138369e-04]] (class=0)
 
 这是一个涉及预测单个数值的回归问题。因此，输出层只有一个节点，并使用默认或线性激活函数(无激活函数)。拟合模型时，均方误差(mse)损失最小。
 
-回想一下，这是回归，不是分类；因此，我们无法计算分类精度。有关这方面的更多信息，请参见教程:
+回想一下，这是回归，不是分类；因此，我们无法计算分类精确率。有关这方面的更多信息，请参见教程:
 
 *   [机器学习中分类和回归的区别](https://machinelearningmastery.com/classification-versus-regression-in-machine-learning/)
 
@@ -941,7 +941,7 @@ print('Predicted: %.3f' % yhat)
 
 运行该示例首先报告训练和测试数据集的形状，然后拟合模型并在测试数据集上对其进行评估。最后，对单行数据进行预测。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 **你得到了什么结果？
 能不能换个型号做得更好？**
@@ -1158,7 +1158,7 @@ print('Accuracy: %.3f' % acc)
 
 运行该示例首先报告训练和测试数据集的形状，然后拟合模型并在测试数据集上对其进行评估。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 **你得到了什么结果？
 能不能换个型号做得更好？**

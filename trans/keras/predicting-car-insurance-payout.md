@@ -245,7 +245,7 @@ pyplot.show()
 
 运行该示例首先在训练数据集上拟合模型，然后在测试数据集上报告 MAE。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到模型实现了大约 33.2 的 MAE，这是一个很好的性能基线，我们可能可以在此基础上进行改进。
 
@@ -323,7 +323,7 @@ pyplot.show()
 
 运行该示例首先在训练数据集上拟合模型，然后在测试数据集上报告 MAE。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到 MAE 略有提高，约为 27.9，尽管列车/测试分割的高方差意味着这种评估不可靠。
 
@@ -441,7 +441,7 @@ pyplot.show()
 
 运行该示例首先在训练数据集上拟合模型，然后在测试数据集上报告 MAE。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，该模型获得了合理的 MAE 分数，尽管比以前报告的性能差。我们将暂时忽略模型性能。
 
@@ -530,7 +530,7 @@ print('Mean MAE: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 运行该示例会报告评估程序每次迭代的模型性能，并在运行结束时报告 MAE 的平均值和标准偏差。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到 MLP 模型实现了大约 38.913 的 MAE。
 
@@ -612,7 +612,7 @@ print('Mean MAE: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 运行报告运行结束时的平均和标准偏差。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到 MLP 模型实现了大约 35.384 的 MAE，这比基线模型实现了大约 38.913 的 MAE 稍好。
 
@@ -685,7 +685,7 @@ print('Mean MAE: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 运行报告运行结束时的平均和标准偏差。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到 MLP 模型实现了大约 37.371 的 MAE，比基线模型好，但并不比更深的基线模型好。
 
@@ -776,7 +776,7 @@ print('Mean MAE: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 运行报告运行结束时的平均和标准偏差。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到 MLP 模型实现了大约 30.388 的 MAE，这比我们迄今为止尝试的任何其他配置都要好。
 
@@ -918,7 +918,7 @@ print('f(%s) = %.3f' % (row, yhat[0]))
 
 运行该示例使模型适合整个数据集，并对单行新数据进行预测。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到输入 13 导致输出 62(千瑞典克朗)。
 

@@ -1,4 +1,4 @@
-# 如何计算深度学习模型的精度、召回率、F1 等
+# 如何计算深度学习模型的精确率、召回率、F1 等
 
 > 原文：<https://machinelearningmastery.com/how-to-calculate-precision-recall-f1-and-more-for-deep-learning-models/>
 
@@ -12,7 +12,7 @@
 
 我经常被问到的问题，比如:
 
-> 如何计算模型的精度和召回率？
+> 如何计算模型的精确率和召回率？
 
 以及:
 
@@ -24,7 +24,7 @@
 
 *   如何使用 scikit-learn metrics API 评估深度学习模型？
 *   如何用 scikit-learn API 要求的最终模型进行类和概率预测。
-*   如何用 scikit-learn API 为一个模型计算精度、召回率、F1-评分、ROC AUC 等。
+*   如何用 scikit-learn API 为一个模型计算精确率、召回率、F1-评分、ROC AUC 等。
 
 **用我的新书[用 Python 深度学习](https://machinelearningmastery.com/deep-learning-with-python/)来启动你的项目**，包括*分步教程*和所有示例的 *Python 源代码*文件。
 
@@ -34,7 +34,7 @@
 
 ![How to Calculate Precision, Recall, F1, and More for Deep Learning Models](img/e7ad4c9b8f5fcd6d2ce46c6c547024d2.png)
 
-如何计算深度学习模型的精度、召回率、F1 和更多信息[约翰](https://www.flickr.com/photos/shebalso/358533824/)摄，版权所有。
+如何计算深度学习模型的精确率、召回率、F1 和更多信息[约翰](https://www.flickr.com/photos/shebalso/358533824/)摄，版权所有。
 
 ## 教程概述
 
@@ -109,7 +109,7 @@ model.add(Dense(100, input_dim=2, activation='relu'))
 model.add(Dense(1, activation='sigmoid'))
 ```
 
-模型将使用二元交叉熵损失函数进行拟合，我们将使用有效的[亚当版本的随机梯度下降](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/)。该模型还将监控分类精度度量。
+模型将使用二元交叉熵损失函数进行拟合，我们将使用有效的[亚当版本的随机梯度下降](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/)。该模型还将监控分类精确率度量。
 
 ```py
 # compile model
@@ -123,7 +123,7 @@ model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy']
 history = model.fit(trainX, trainy, validation_data=(testX, testy), epochs=300, verbose=0)
 ```
 
-在训练结束时，我们将在训练和测试数据集上再次评估最终模型，并报告分类精度。
+在训练结束时，我们将在训练和测试数据集上再次评估最终模型，并报告分类精确率。
 
 ```py
 # evaluate the model
@@ -131,7 +131,7 @@ _, train_acc = model.evaluate(trainX, trainy, verbose=0)
 _, test_acc = model.evaluate(testX, testy, verbose=0)
 ```
 
-最后，模型在列车上的性能和在训练期间记录的测试集将使用线图来绘制，损失和分类精度各一个。
+最后，模型在列车上的性能和在训练期间记录的测试集将使用线图来绘制，损失和分类精确率各一个。
 
 ```py
 # plot loss during training
@@ -192,7 +192,7 @@ pyplot.show()
 
 在中央处理器上运行该示例非常快速地符合模型(不需要图形处理器)。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 对该模型进行了评估，报告在列车和测试集上的分类准确率分别约为 83%和 85%。
 
@@ -212,7 +212,7 @@ Train: 0.838, Test: 0.850
 
 也许你需要使用 [Keras 度量 API](https://keras.io/metrics/) 不支持的额外度量来评估你的深度学习神经网络模型。
 
-Keras 度量 API 是有限的，您可能想要计算诸如精度、召回率、F1 等度量。
+Keras 度量 API 是有限的，您可能想要计算诸如精确率、召回率、F1 等度量。
 
 计算新度量的一种方法是在 Keras API 中自己实现它们，并让 Keras 在模型训练和模型评估期间为您计算它们。
 
@@ -224,13 +224,13 @@ Keras 度量 API 是有限的，您可能想要计算诸如精度、召回率、
 
 一个更简单的替代方法是使用您的最终模型对测试数据集进行预测，然后使用 [scikit-learn metrics API](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.metrics) 计算您想要的任何度量。
 
-除了分类精度之外，二元分类问题的神经网络模型通常还需要三个指标:
+除了分类精确率之外，二元分类问题的神经网络模型通常还需要三个指标:
 
 *   精确
 *   回忆
 *   F1 分数
 
-在本节中，我们将使用 scikit-learn metrics API 计算这三个指标以及分类精度，我们还将计算三个不太常见但可能有用的附加指标。它们是:
+在本节中，我们将使用 scikit-learn metrics API 计算这三个指标以及分类精确率，我们还将计算三个不太常见但可能有用的附加指标。它们是:
 
 *   科恩的卡帕
 *   中华民国
@@ -424,7 +424,7 @@ matrix = confusion_matrix(testy, yhat_classes)
 print(matrix)
 ```
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 运行该示例准备数据集，拟合模型，然后计算并报告在测试数据集上评估的模型的度量。
 
@@ -474,7 +474,7 @@ ROC AUC: 0.923739
 
 *   如何使用 scikit-learn metrics API 评估深度学习模型？
 *   如何用 scikit-learn API 要求的最终模型进行类和概率预测。
-*   如何用 scikit-learn API 为一个模型计算精度、召回率、F1-score、ROC、AUC 等。
+*   如何用 scikit-learn API 为一个模型计算精确率、召回率、F1-score、ROC、AUC 等。
 
 你有什么问题吗？
 在下面的评论中提问，我会尽力回答。

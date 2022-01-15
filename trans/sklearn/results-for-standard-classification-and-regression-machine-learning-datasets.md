@@ -198,7 +198,7 @@ scores = cross_val_score(model, X, y, scoring='neg_mean_absolute_error', cv=cv, 
 model = DummyClassifier(strategy='most_frequent')
 ```
 
-分类模型的标准评估是分类精度，尽管这对于不平衡和一些多类问题并不理想。尽管如此，不管是好是坏，这个分数将被使用(现在)。
+分类模型的标准评估是分类精确率，尽管这对于不平衡和一些多类问题并不理想。尽管如此，不管是好是坏，这个分数将被使用(现在)。
 
 准确性报告为 0 (0%或无技能)和 1 (100%或完美技能)之间的分数。
 
@@ -256,7 +256,7 @@ m_scores = cross_val_score(pipeline, X, y, scoring='accuracy', cv=cv, n_jobs=-1,
 print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 ```
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 运行该示例，您应该会看到以下结果。
 
@@ -303,7 +303,7 @@ m_scores = cross_val_score(model, X, y, scoring='accuracy', cv=cv, n_jobs=-1, er
 print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 ```
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 运行该示例，您应该会看到以下结果。
 
@@ -354,7 +354,7 @@ m_scores = cross_val_score(pipeline, X, y, scoring='accuracy', cv=cv, n_jobs=-1,
 print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 ```
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 运行该示例，您应该会看到以下结果。
 
@@ -406,7 +406,7 @@ m_scores = cross_val_score(pipeline, X, y, scoring='accuracy', cv=cv, n_jobs=-1,
 print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 ```
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 运行该示例，您应该会看到以下结果。
 
@@ -458,7 +458,7 @@ m_scores = cross_val_score(pipeline, X, y, scoring='accuracy', cv=cv, n_jobs=-1,
 print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 ```
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 运行该示例，您应该会看到以下结果。
 
@@ -518,7 +518,7 @@ m_scores = cross_val_score(pipeline, X, y, scoring='accuracy', cv=cv, n_jobs=-1,
 print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 ```
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 运行该示例，您应该会看到以下结果。
 
@@ -568,7 +568,7 @@ m_scores = cross_val_score(model, X, y, scoring='accuracy', cv=cv, n_jobs=-1, er
 print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 ```
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 运行该示例，您应该会看到以下结果。
 
@@ -620,7 +620,7 @@ m_scores = cross_val_score(pipeline, X, y, scoring='accuracy', cv=cv, n_jobs=-1,
 print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 ```
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 运行该示例，您应该会看到以下结果。
 
@@ -671,7 +671,7 @@ m_scores = cross_val_score(pipeline, X, y, scoring='accuracy', cv=cv, n_jobs=-1,
 print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 ```
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 运行该示例，您应该会看到以下结果。
 
@@ -742,7 +742,7 @@ m_scores = absolute(m_scores)
 print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 ```
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 运行该示例，您应该会看到以下结果。
 
@@ -797,7 +797,7 @@ m_scores = absolute(m_scores)
 print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 ```
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 运行该示例，您应该会看到以下结果。
 
@@ -854,7 +854,7 @@ m_scores = absolute(m_scores)
 print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 ```
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 运行该示例，您应该会看到以下结果。
 
@@ -912,7 +912,7 @@ m_scores = absolute(m_scores)
 print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 ```
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 运行该示例，您应该会看到以下结果。
 

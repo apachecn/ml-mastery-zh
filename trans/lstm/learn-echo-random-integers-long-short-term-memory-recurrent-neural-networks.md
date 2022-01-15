@@ -148,7 +148,7 @@ decoded = one_hot_decode(encoded)
 print(decoded)
 ```
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 运行该示例首先打印 25 个随机整数的列表，然后是序列中所有整数的二进制表示的截断视图，每行一个向量，然后是解码后的序列。
 
@@ -214,7 +214,7 @@ def generate_data():
 
 输出层是一个完全连接的层(密集层)，对于可能输出的 100 个可能的整数，有 100 个神经元。输出层使用 softmax 激活函数，允许网络学习并输出可能输出值的分布。
 
-该网络在训练时将使用对数损失函数，适用于多类分类问题，以及高效的 ADAM 优化算法。精度度量将在每个训练时期报告，以便除了损失之外，还能了解模型的技能。
+该网络在训练时将使用对数损失函数，适用于多类分类问题，以及高效的 ADAM 优化算法。精确率度量将在每个训练时期报告，以便除了损失之外，还能了解模型的技能。
 
 ```py
 # define model
@@ -300,7 +300,7 @@ print('Predicted: %s' % one_hot_decode(yhat))
 
 运行该示例会打印每个时期的日志丢失和准确性。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 网络有点过了，内存单元和训练时期比这么简单的问题需要的多，你可以从网络很快达到 100%的准确率这一事实看出这一点。
 
@@ -432,7 +432,7 @@ for i in range(len(X)):
 
 运行该示例会打印问题框架的 X 和 y 部分。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 我们可以看到，考虑到冷启动，第一种模式对于网络来说很难(不可能)学会。我们可以通过数据看到 yhat(t)= X(t-1)的预期模式。
 
@@ -545,9 +545,9 @@ print('Predicted: %s' % one_hot_decode(yhat))
 
 运行这个例子给出了一个令人惊讶的结果。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
-该问题无法学习，训练以模型结束，该模型以 0%的精度回应序列中的最后一个观察。
+该问题无法学习，训练以模型结束，该模型以 0%的精确率回应序列中的最后一个观察。
 
 ```py
 ...
@@ -797,7 +797,7 @@ print('Predicted: %s' % one_hot_decode(yhat))
 
 运行实例表明，该网络能够拟合问题，并正确地学习在 5 个先验观测值的背景下将 X(t-1)观测值作为预测值返回。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 输出示例如下。
 

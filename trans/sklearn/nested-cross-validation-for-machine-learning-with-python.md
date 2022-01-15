@@ -259,15 +259,15 @@ print('Accuracy: %.3f (%.3f)' % (mean(outer_results), std(outer_results)))
 
 运行该示例使用合成分类数据集上的嵌套交叉验证来评估[随机森林](https://machinelearningmastery.com/random-forest-ensemble-in-python/)。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 您可以使用该示例作为起点，并对其进行调整以评估不同的算法超参数、不同的算法或不同的数据集。
 
-外部交叉验证过程的每一次迭代都报告最佳性能模型的估计性能(使用 3 倍交叉验证)和被发现表现最佳的超参数，以及保持数据集的精度。
+外部交叉验证过程的每一次迭代都报告最佳性能模型的估计性能(使用 3 倍交叉验证)和被发现表现最佳的超参数，以及保持数据集的精确率。
 
 这是有见地的，因为我们可以看到，实际和估计的准确性是不同的，但在这种情况下，类似的。我们还可以看到，每次迭代都会发现不同的超参数，这表明这个数据集上的好的超参数取决于数据集的细节。
 
-然后报告最终的平均分类精度。
+然后报告最终的平均分类精确率。
 
 ```py
 >acc=0.900, est=0.932, cfg={'max_features': 4, 'n_estimators': 100}
@@ -318,9 +318,9 @@ scores = cross_val_score(search, X, y, scoring='accuracy', cv=cv_outer, n_jobs=-
 print('Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 ```
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
-运行示例在随机森林算法上执行嵌套交叉验证，达到了与我们的手动过程相匹配的平均精度。
+运行示例在随机森林算法上执行嵌套交叉验证，达到了与我们的手动过程相匹配的平均精确率。
 
 ```py
 Accuracy: 0.927 (0.019)

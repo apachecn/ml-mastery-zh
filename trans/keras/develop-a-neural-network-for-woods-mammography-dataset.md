@@ -164,7 +164,7 @@ Class='-1', Count=10923, Percentage=97.675%
 Class='1', Count=260, Percentage=2.325%
 ```
 
-这是有帮助的，因为如果我们使用分类精度，那么任何达到低于约 97.7%的精度的模型都没有这个数据集的技能。
+这是有帮助的，因为如果我们使用分类精确率，那么任何达到低于约 97.7%的精确率的模型都没有这个数据集的技能。
 
 现在我们已经熟悉了数据集，让我们探索如何开发一个神经网络模型。
 
@@ -227,7 +227,7 @@ model.compile(optimizer='adam', loss='binary_crossentropy')
 history = model.fit(X_train, y_train, epochs=300, batch_size=32, verbose=0, validation_data=(X_test,y_test))
 ```
 
-在训练结束时，我们将评估模型在测试数据集上的性能，并将性能报告为分类精度。
+在训练结束时，我们将评估模型在测试数据集上的性能，并将性能报告为分类精确率。
 
 ```py
 ...
@@ -252,7 +252,7 @@ pyplot.legend()
 pyplot.show()
 ```
 
-将所有这些结合起来，下面列出了在癌症生存数据集上评估我们的第一个 MLP 的完整示例。
+将所有这些结合起来，下面列出了在癌症存活数据集上评估我们的第一个 MLP 的完整示例。
 
 ```py
 # fit a simple mlp model on the mammography and review learning curves
@@ -299,9 +299,9 @@ pyplot.legend()
 pyplot.show()
 ```
 
-运行该示例首先在训练数据集上拟合模型，然后在测试数据集上报告分类精度。
+运行该示例首先在训练数据集上拟合模型，然后在测试数据集上报告分类精确率。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到该模型比无技能模型表现得更好，假设准确率在大约 97.7%以上，在这种情况下达到大约 98.8%的准确率。
 
@@ -323,7 +323,7 @@ Accuracy: 0.988
 
 k 倍交叉验证程序可以提供更可靠的 MLP 性能估计，尽管它可能非常慢。
 
-这是因为 k 模型必须被拟合和评估。当数据集规模较小时，例如癌症生存数据集，这不是问题。
+这是因为 k 模型必须被拟合和评估。当数据集规模较小时，例如癌症存活数据集，这不是问题。
 
 我们可以使用[stratifiedfold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html)类手动枚举每个折叠，拟合模型，对其进行评估，然后在程序结束时报告评估分数的平均值。
 
@@ -396,11 +396,11 @@ for train_ix, test_ix in kfold.split(X, y):
 print('Mean Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 ```
 
-运行该示例会报告评估程序每次迭代的模型性能，并在运行结束时报告分类精度的平均值和标准偏差。
+运行该示例会报告评估程序每次迭代的模型性能，并在运行结束时报告分类精确率的平均值和标准偏差。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
-在这种情况下，我们可以看到 MLP 模型获得了大约 98.7%的平均精度，这与我们在前面部分中的粗略估计非常接近。
+在这种情况下，我们可以看到 MLP 模型获得了大约 98.7%的平均精确率，这与我们在前面部分中的粗略估计非常接近。
 
 这证实了我们的预期，即对于这个数据集，基本模型配置可能比简单模型工作得更好
 
@@ -525,7 +525,7 @@ print('Predicted: %s' % (yhat[0]))
 
 运行该示例使模型适合整个数据集，并对单行新数据进行预测。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到模型为输入行预测了一个“-1”标签。
 

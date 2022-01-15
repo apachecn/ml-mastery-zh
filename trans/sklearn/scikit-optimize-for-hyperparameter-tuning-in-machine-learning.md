@@ -149,7 +149,7 @@ print('Accuracy: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 
 运行该示例首先加载和准备数据集，然后对数据集评估 SVM 模型。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到具有默认超参数的 SVM 实现了大约 93.7%的平均分类准确率，这是熟练的，并且接近 94%的问题上的最高性能。
 
@@ -175,7 +175,7 @@ Scikit-Optimize 库可用于调整机器学习模型的超参数。
 *   **次**，用于多项式核。
 *   **γ**，用于大多数其他内核。
 
-对于数值超参数 *C* 和*γ*，我们将定义一个对数标度，在 1e-6 和 100 的小值之间进行搜索。*度*是一个整数，我们将搜索 1 到 5 之间的值。最后，*内核*是一个具有特定命名值的分类变量。
+对于数值超参数 *C* 和*γ*，我们将定义一个对数标度，在 1e-6 和 100 的小值之间进行搜索。*度*是一个整数，我们将搜索 1 到 5 之间的值。最后，*内核*是一个具有特定命名值的类别变量。
 
 我们可以为这四个超参数定义搜索空间，它们是来自 skopt 库的数据类型列表，如下所示:
 
@@ -193,7 +193,7 @@ search_space.append(Real(1e-6, 100.0, 'log-uniform', name='gamma'))
 
 然后，我们可以定义一个将由搜索过程调用的函数。这是优化过程稍后期望的函数，它获取模型和模型的特定超参数集，对其进行评估，并返回超参数集的分数。
 
-在我们的案例中，我们希望在电离层数据集上使用重复的分层 10 倍交叉验证来评估模型。我们希望最大化分类精度，例如，找到给出最佳精度的模型超参数集。默认情况下，该过程最小化从该函数返回的分数，因此，我们将返回 1 减去准确性，例如，完美技能将是(1–准确性)或 0.0，最差技能将是 1.0。
+在我们的案例中，我们希望在电离层数据集上使用重复的分层 10 倍交叉验证来评估模型。我们希望最大化分类精确率，例如，找到给出最佳精确率的模型超参数集。默认情况下，该过程最小化从该函数返回的分数，因此，我们将返回 1 减去准确性，例如，完美技能将是(1–准确性)或 0.0，最差技能将是 1.0。
 
 下面的 *evaluate_model()* 函数实现了这一点，并获取了一组特定的超参数。
 
@@ -294,7 +294,7 @@ UserWarning: The objective has been evaluated at this point before.
 
 运行结束时，会报告性能最佳的配置。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到，按照搜索空间列表的顺序报告的配置是适度的 *C* 值、径向基函数*核*、2 的*度*(被径向基函数核忽略)和适度的*γ*值。
 
@@ -396,7 +396,7 @@ UserWarning: The objective has been evaluated at this point before.
 
 运行结束时，会报告性能最佳的配置。
 
-**注**:考虑到算法或评估程序的随机性，或数值精度的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
+**注**:考虑到算法或评估程序的随机性，或数值精确率的差异，您的[结果可能会有所不同](https://machinelearningmastery.com/different-results-each-time-in-machine-learning/)。考虑运行该示例几次，并比较平均结果。
 
 在这种情况下，我们可以看到，该模型的性能高于表现最好的模型，平均分类准确率约为 95.2%。
 
