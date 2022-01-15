@@ -1,4 +1,4 @@
-# 时间序列预测的随机森林
+# 用于时间序列预测的随机森林
 
 > 原文：<https://machinelearningmastery.com/random-forest-for-time-series-forecasting/>
 

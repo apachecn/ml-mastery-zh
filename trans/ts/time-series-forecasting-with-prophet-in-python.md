@@ -1,41 +1,41 @@
-# Python 中带先知的时间序列预测
+# Python 中使用 Prophet 的时间序列预测
 
 > 原文：<https://machinelearningmastery.com/time-series-forecasting-with-prophet-in-python/>
 
 时间序列预测可能具有挑战性，因为有许多不同的方法可以使用，而且每种方法都有许多不同的超参数。
 
-先知库是一个开源库，设计用于对单变量时间序列数据集进行预测。它易于使用，旨在自动为模型找到一组好的超参数，以便对默认情况下具有趋势和季节结构的数据进行熟练的预测。
+Prophet库是一个开源库，设计用于对单变量时间序列数据集进行预测。它易于使用，旨在自动为模型找到一组好的超参数，以便对默认情况下具有趋势和季节结构的数据进行熟练的预测。
 
-在本教程中，您将发现如何使用脸书先知库进行时间序列预测。
+在本教程中，您将发现如何使用脸书Prophet库进行时间序列预测。
 
 完成本教程后，您将知道:
 
 *   Prophet 是一个由脸书开发的开源库，设计用于单变量时间序列数据的自动预测。
 *   如何拟合预言家模型并使用它们进行样本内和样本外预测。
-*   如何在搁置数据集上评估先知模型。
+*   如何在搁置数据集上评估Prophet模型。
 
 我们开始吧。
 
 ![Time Series Forecasting With Prophet in Python](img/c8f6da2dd6c2b69b9db4dbddb275c708.png)
 
-时间序列预测与 Python 中的先知
+时间序列预测与 Python 中的Prophet
 图片由[里纳尔多·伍尔格利茨](https://flickr.com/photos/wurglitsch/9466317145/)提供，保留部分权利。
 
 ## 教程概述
 
 本教程分为三个部分；它们是:
 
-1.  先知预测图书馆
+1.  Prophet预测图书馆
 2.  汽车销售数据集
     1.  加载和汇总数据集
     2.  加载和绘制数据集
-3.  先知预测汽车销量
-    1.  适合先知模型
+3.  Prophet预测汽车销量
+    1.  适合Prophet模型
     2.  进行抽样预测
     3.  进行样本外预测
     4.  手动评估预测模型
 
-## 先知预测图书馆
+## Prophet预测图书馆
 
 [预言家](https://github.com/facebook/prophet)，或“*脸书预言家*”，是脸书开发的单变量(单变量)时间序列预测的开源库。
 
@@ -43,7 +43,7 @@
 
 > 实施基于加法模型预测时间序列数据的程序，其中非线性趋势与年度、每周和每日季节性以及假日影响相匹配
 
-——[包裹‘先知’](https://cran.r-project.org/web/packages/prophet/prophet.pdf)，2019 年。
+——[包裹‘Prophet’](https://cran.r-project.org/web/packages/prophet/prophet.pdf)，2019 年。
 
 它被设计成简单和完全自动的，例如，以时间序列为点，得到一个预测。因此，它旨在供公司内部使用，如预测销售、产能等。
 
@@ -53,7 +53,7 @@
 
 该库提供了两个接口，包括 R 和 Python。在本教程中，我们将重点关注 Python 接口。
 
-第一步是使用 Pip 安装先知库，如下所示:
+第一步是使用 Pip 安装Prophet库，如下所示:
 
 ```py
 sudo pip install fbprophet
@@ -70,7 +70,7 @@ import fbprophet
 print('Prophet %s' % fbprophet.__version__)
 ```
 
-运行该示例会打印先知的安装版本。
+运行该示例会打印Prophet的安装版本。
 
 你应该有相同或更高的版本。
 
@@ -159,15 +159,15 @@ pyplot.show()
 
 汽车销售数据集的线图
 
-现在我们已经熟悉了数据集，让我们探索如何使用先知库进行预测。
+现在我们已经熟悉了数据集，让我们探索如何使用Prophet库进行预测。
 
-## 先知预测汽车销量
+## Prophet预测汽车销量
 
 在本节中，我们将探索使用预言家来预测汽车销售数据集。
 
 让我们从在数据集上拟合模型开始
 
-### 适合先知模型
+### 适合Prophet模型
 
 要使用 Prophet 进行预测，首先定义并配置一个 *Prophet()* 对象，然后通过调用 *fit()* 函数并传递数据来拟合数据集。
 
@@ -186,7 +186,7 @@ df.columns = ['ds', 'y']
 df['ds']= to_datetime(df['ds'])
 ```
 
-下面列出了在汽车销售数据集中拟合先知模型的完整示例。
+下面列出了在汽车销售数据集中拟合Prophet模型的完整示例。
 
 ```py
 # fit prophet model on the car sales dataset
@@ -205,7 +205,7 @@ model = Prophet()
 model.fit(df)
 ```
 
-运行该示例将加载数据集，以预期的格式准备数据帧，并适合先知模型。
+运行该示例将加载数据集，以预期的格式准备数据帧，并适合Prophet模型。
 
 默认情况下，在拟合过程中，库会提供大量详细的输出。我认为这是一个坏主意，因为它训练开发人员忽略输出。
 
@@ -532,29 +532,29 @@ MAE: 1336.814
 
 过去 12 个月汽车销量的实际值与预测值图
 
-先知库还提供了自动评估模型和绘制结果的工具，尽管这些工具对于分辨率超过一天的数据似乎不能很好地工作。
+Prophet库还提供了自动评估模型和绘制结果的工具，尽管这些工具对于分辨率超过一天的数据似乎不能很好地工作。
 
 ## 进一步阅读
 
 如果您想更深入地了解这个主题，本节将提供更多资源。
 
-*   [先知主页](https://facebook.github.io/prophet/)。
-*   [先知 GitHub 项目](https://github.com/facebook/prophet)。
+*   [Prophet主页](https://facebook.github.io/prophet/)。
+*   [Prophet GitHub 项目](https://github.com/facebook/prophet)。
 *   [预言家 API 文档](https://facebook.github.io/prophet/docs/)。
 *   [预言家:规模预测](https://research.fb.com/blog/2017/02/prophet-forecasting-at-scale/)，2017 年。
 *   [规模预测](https://peerj.com/preprints/3190/)，2017 年。
 *   [汽车销量数据集](https://raw.githubusercontent.com/jbrownlee/Datasets/master/monthly-car-sales.csv)。
-*   [包装‘先知’，R 文件](https://cran.r-project.org/web/packages/prophet/prophet.pdf)。
+*   [包装‘Prophet’，R 文件](https://cran.r-project.org/web/packages/prophet/prophet.pdf)。
 
 ## 摘要
 
-在本教程中，您发现了如何使用脸书先知库进行时间序列预测。
+在本教程中，您发现了如何使用脸书Prophet库进行时间序列预测。
 
 具体来说，您了解到:
 
 *   Prophet 是一个由脸书开发的开源库，设计用于单变量时间序列数据的自动预测。
 *   如何拟合预言家模型并使用它们进行样本内和样本外预测。
-*   如何在搁置数据集上评估先知模型。
+*   如何在搁置数据集上评估Prophet模型。
 
 **你有什么问题吗？**
 在下面的评论中提问，我会尽力回答。
