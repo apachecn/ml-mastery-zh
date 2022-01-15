@@ -66,7 +66,7 @@ Bagging 是一种有效的集成算法，因为每个决策树都适合于稍微
 
 让我们用一个例子来具体说明。假设我们有一个时间序列如下:
 
-```
+```py
 time, measure
 1, 100
 2, 110
@@ -79,7 +79,7 @@ time, measure
 
 以这种方式重新组织时间序列数据集，数据将如下所示:
 
-```
+```py
 X, y
 ?, 100
 100, 110
@@ -103,7 +103,7 @@ X, y
 
 下面的函数将把一个时间序列作为一个具有一列或多列的 NumPy 数组时间序列，并将其转换为具有指定数量的输入和输出的监督学习问题。
 
-```
+```py
 # transform a time series dataset into a supervised learning dataset
 def series_to_supervised(data, n_in=1, n_out=1, dropnan=True):
 	n_vars = 1 if type(data) is list else data.shape[1]
@@ -151,7 +151,7 @@ def series_to_supervised(data, n_in=1, n_out=1, dropnan=True):
 
 然后它遍历测试集，调用 *random_forest_forecast()* 函数进行一步预测。计算误差度量，并返回详细信息进行分析。
 
-```
+```py
 # walk-forward validation for univariate data
 def walk_forward_validation(data, n_test):
 	predictions = list()
@@ -180,7 +180,7 @@ def walk_forward_validation(data, n_test):
 
 我们可以在下面定义这个函数。
 
-```
+```py
 # split a univariate dataset into train/test sets
 def train_test_split(data, n_test):
 	return data[:-n_test, :], data[-n_test:, :]
@@ -190,7 +190,7 @@ def train_test_split(data, n_test):
 
 下面的 *random_forest_forecast()* 函数实现了这一点，以训练数据集和测试输入行为输入，拟合一个模型，进行一步预测。
 
-```
+```py
 # fit an random forest model and make a one step prediction
 def random_forest_forecast(train, testX):
 	# transform list into array
@@ -224,7 +224,7 @@ def random_forest_forecast(train, testX):
 
 数据集的前几行如下所示:
 
-```
+```py
 "Date","Births"
 "1959-01-01",35
 "1959-01-02",32
@@ -238,7 +238,7 @@ def random_forest_forecast(train, testX):
 
 下面列出了完整的示例。
 
-```
+```py
 # load and plot the time series dataset
 from pandas import read_csv
 from matplotlib import pyplot
@@ -266,7 +266,7 @@ pyplot.show()
 
 下面列出了完整的示例。
 
-```
+```py
 # forecast monthly births with random forest
 from numpy import asarray
 from pandas import read_csv
@@ -359,7 +359,7 @@ pyplot.show()
 
 您可以测试不同的随机森林超参数和时间步长数作为输入，看看是否可以获得更好的性能。在下面的评论中分享你的结果。
 
-```
+```py
 >expected=42.0, predicted=45.0
 >expected=53.0, predicted=43.7
 >expected=39.0, predicted=41.4
@@ -389,7 +389,7 @@ MAE: 5.905
 
 下面的示例演示了在所有可用数据上拟合最终的随机森林模型，并在数据集结束后进行一步预测。
 
-```
+```py
 # finalize model and make a prediction for monthly births with random forest
 from numpy import asarray
 from pandas import read_csv
@@ -436,7 +436,7 @@ print('Input: %s, Predicted: %.3f' % (row, yhat[0]))
 
 使用过去六个月的已知数据准备新的输入行，并预测数据集结束后的下一个月。
 
-```
+```py
 Input: [34 37 52 48 55 50], Predicted: 43.053
 ```
 

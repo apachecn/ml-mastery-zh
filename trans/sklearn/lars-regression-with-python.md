@@ -90,7 +90,7 @@ L1 罚函数最小化了所有系数的大小，并允许任何系数达到零�
 
 下面的示例将数据集下载并加载为熊猫数据框，并总结了数据集的形状和前五行数据。
 
-```
+```py
 # load and summarize the housing dataset
 from pandas import read_csv
 from matplotlib import pyplot
@@ -105,7 +105,7 @@ print(dataframe.head())
 
 运行该示例确认了 506 行数据、13 个输入变量和一个数字目标变量(总共 14 个)。我们还可以看到，所有的输入变量都是数字。
 
-```
+```py
 (506, 14)
         0     1     2   3      4      5   ...  8      9     10      11    12    13
 0  0.00632  18.0  2.31   0  0.538  6.575  ...   1  296.0  15.3  396.90  4.98  24.0
@@ -119,7 +119,7 @@ print(dataframe.head())
 
 scikit-learn Python 机器学习库通过 [Lars 类](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lars.html)提供了 LARS 惩罚回归算法的实现。
 
-```
+```py
 ...
 # define model
 model = Lars()
@@ -127,7 +127,7 @@ model = Lars()
 
 我们可以使用[重复 10 倍交叉验证](https://machinelearningmastery.com/k-fold-cross-validation/)在住房数据集上评估 LARS 回归模型，并报告数据集上的平均绝对误差(MAE)。
 
-```
+```py
 # evaluate an lars regression model on the dataset
 from numpy import mean
 from numpy import std
@@ -158,7 +158,7 @@ print('Mean MAE: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 在这种情况下，我们可以看到模型实现了大约 3.432 的 MAE。
 
-```
+```py
 Mean MAE: 3.432 (0.552)
 ```
 
@@ -168,7 +168,7 @@ Mean MAE: 3.432 (0.552)
 
 我们可以用下面列出的一个完整的例子来演示这一点。
 
-```
+```py
 # make a prediction with a lars regression model on the dataset
 from pandas import read_csv
 from sklearn.linear_model import Lars
@@ -193,7 +193,7 @@ print('Predicted: %.3f' % yhat)
 
 鉴于学习算法的随机性，您的具体结果可能会有所不同。试着运行这个例子几次。
 
-```
+```py
 Predicted: 29.904
 ```
 
@@ -213,7 +213,7 @@ scikit-learn 库提供了 LARS 的交叉验证版本，用于通过 [LarsCV 类]
 
 下面的示例演示了如何拟合 *LarsCV* 模型并报告通过交叉验证找到的*α*值
 
-```
+```py
 # use automatically configured the lars regression algorithm
 from numpy import arange
 from pandas import read_csv
@@ -236,7 +236,7 @@ print('alpha: %f' % model.alpha_)
 
 运行该示例符合使用重复交叉验证的 *LarsCV* 模型，并报告在运行中发现的最佳*α*值。
 
-```
+```py
 alpha: 0.001623
 ```
 
@@ -246,7 +246,7 @@ alpha: 0.001623
 
 下面列出了完整的示例。
 
-```
+```py
 # evaluate an lars cross-validation regression model on the dataset
 from numpy import mean
 from numpy import std
@@ -277,7 +277,7 @@ print('Mean MAE: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 在这种情况下，我们可以看到，与上一节中的 3.432 相比，我们获得了稍好的结果。
 
-```
+```py
 Mean MAE: 3.374 (0.558)
 ```
 

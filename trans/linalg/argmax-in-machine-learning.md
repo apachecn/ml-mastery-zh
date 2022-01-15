@@ -131,7 +131,7 @@ argmax 函数用于整个数学和机器学习领域。
 
 下面列出了完整的示例。
 
-```
+```py
 # argmax function
 def argmax(vector):
 	index, value = 0, vector[0]
@@ -149,7 +149,7 @@ print('arg max of %s: %d' % (vector, result))
 
 运行该示例会打印上一节中使用的测试数据的 argmax，在本例中，该数据的索引为 1。
 
-```
+```py
 arg max of [0.4, 0.5, 0.1]: 1
 ```
 
@@ -161,7 +161,7 @@ arg max of [0.4, 0.5, 0.1]: 1
 
 下面的例子演示了同一个概率向量上的 *argmax()* NumPy 函数。
 
-```
+```py
 # numpy implementation of argmax
 from numpy import argmax
 # define vector
@@ -173,7 +173,7 @@ print('arg max of %s: %d' % (vector, result))
 
 如预期的那样，运行该示例将打印索引 1。
 
-```
+```py
 arg max of [0.4, 0.5, 0.1]: 1
 ```
 
@@ -185,7 +185,7 @@ arg max of [0.4, 0.5, 0.1]: 1
 
 下面的例子用三个类标签的四行预测概率矩阵来演示这一点。
 
-```
+```py
 # numpy implementation of argmax
 from numpy import argmax
 from numpy import asarray
@@ -201,7 +201,7 @@ print(result)
 
 然后计算矩阵的 argmax 并打印为向量，显示四个值。这就是我们所期望的，每一行都以最大的概率产生一个 argmax 值或索引。
 
-```
+```py
 (4, 3)
 [1 2 0 2]
 ```

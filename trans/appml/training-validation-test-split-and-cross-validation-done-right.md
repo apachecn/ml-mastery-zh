@@ -94,7 +94,7 @@ scikit-learn 的[指标页面有一个较长但并非详尽的列表，列出了
 
 首先，我们使用 numpy 生成一个数据集:
 
-```
+```py
 ...
 # Generate data and plot
 N = 300
@@ -113,7 +113,7 @@ $ y = 1+0.5 \ sin(x)+\ε$
 
 然后，我们执行一个训练-测试分割，并保持测试集，直到我们完成我们的最终模型。因为我们将使用 scikit-learn 模型进行回归，并且他们假设输入`x`是二维数组，所以我们首先在这里重塑它。此外，为了使模型选择的效果更明显，我们不会在分割中打乱数据。实际上，这通常不是一个好主意。
 
-```
+```py
 ...
 # Train-test split, intentionally use shuffle=False
 X = x.reshape(-1,1)
@@ -130,7 +130,7 @@ $ y = b+ a \乘以 x$
 
 scikit-learn 中没有多项式回归，但是我们可以利用`PolynomialFeatures`结合`LinearRegression`来实现。`PolynomialFeatures(2)`将输入$x$转换成$1,x,x^2$，对这三者进行线性回归，我们会发现上面公式中的系数$a，b，c$。
 
-```
+```py
 ...
 # Create two models: Quadratic and linear regression
 polyreg = make_pipeline(PolynomialFeatures(2), LinearRegression(fit_intercept=False))
@@ -139,7 +139,7 @@ linreg = LinearRegression()
 
 下一步是仅使用训练集并将 *k* 折叠交叉验证应用于两个模型中的每一个:
 
-```
+```py
 ...
 # Cross-validation
 scoring = "neg_root_mean_squared_error"
@@ -149,7 +149,7 @@ linscores = cross_validate(linreg, X_train, y_train, scoring=scoring, return_est
 
 函数`cross_validate()`返回如下 Python 字典:
 
-```
+```py
 {'fit_time': array([0.00177097, 0.00117302, 0.00219226, 0.0015142 , 0.00126314]),
  'score_time': array([0.00054097, 0.0004108 , 0.00086379, 0.00092077, 0.00043106]),
  'estimator': [Pipeline(steps=[('polynomialfeatures', PolynomialFeatures()),
@@ -169,13 +169,13 @@ linscores = cross_validate(linreg, X_train, y_train, scoring=scoring, return_est
 
 以上来自二次模型。线性模型的相应测试分数如下:
 
-```
+```py
 array([-0.43401194, -0.52385836, -0.42231028, -0.41532203, -0.43441137])
 ```
 
 通过比较平均得分，我们发现线性模型比二次模型表现更好。
 
-```
+```py
 ...
 # Which one is better? Linear and polynomial
 print(linscores["test_score"].mean())
@@ -183,7 +183,7 @@ print(polyscores["test_score"].mean())
 print(linscores["test_score"].mean() - polyscores["test_score"].mean())
 ```
 
-```
+```py
 Linear regression score: -0.4459827970437929
 Polynomial regression score: -0.6228780695994603
 Difference: 0.17689527255566745
@@ -191,14 +191,14 @@ Difference: 0.17689527255566745
 
 在我们开始训练我们的选择模型之前，我们可以说明发生了什么。以第一次交叉验证迭代为例，我们可以看到二次回归的系数如下:
 
-```
+```py
 ...
 # Let's show the coefficient of the first fitted polynomial regression
 # This starts from the constant term and in ascending order of powers
 print(polyscores["estimator"][0].steps[1][1].coef_)
 ```
 
-```
+```py
 [-0.03190358 0.20818594 -0.00937904]
 ```
 
@@ -208,13 +208,13 @@ $ y =-0.0319+0.2082 \倍 x–0.0094 \倍 x^2$
 
 线性回归在交叉验证的第一次迭代时的系数为
 
-```
+```py
 ...
 # And show the coefficient of the last-fitted linear regression
 print(linscores["estimator"][0].intercept_, linscores["estimator"][-1].coef_)
 ```
 
-```
+```py
 0.856999187854241 [-0.00918622]
 ```
 
@@ -224,7 +224,7 @@ $ y = 0.8570–0.0092 \乘以 x$
 
 我们可以在一个情节中看到它们的样子:
 
-```
+```py
 ...
 # Plot and compare
 plt.plot(x, y)
@@ -243,7 +243,7 @@ plt.show()
 
 由于我们决定使用线性模型进行回归，我们需要重新训练模型，并使用我们的测试数据进行测试。
 
-```
+```py
 ...
 # Retrain the model and evaluate
 linreg.fit(X_train, y_train)
@@ -251,7 +251,7 @@ print("Test set RMSE:", mean_squared_error(y_test, linreg.predict(X_test), squar
 print("Mean validation RMSE:", -linscores["test_score"].mean())
 ```
 
-```
+```py
 Test set RMSE: 0.4403109417232645
 Mean validation RMSE: 0.4459827970437929
 ```
@@ -260,7 +260,7 @@ Mean validation RMSE: 0.4459827970437929
 
 将所有这些结合在一起，完整的示例如下所示。
 
-```
+```py
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.model_selection import cross_validate, train_test_split

@@ -44,7 +44,7 @@ LSTM 输入层由网络第一个隐藏层上的“ *input_shape* ”参数指定
 
 例如，下面是具有一个隐藏 LSTM 层和一个密集输出层的网络示例。
 
-```
+```py
 model = Sequential()
 model.add(LSTM(32))
 model.add(Dense(1))
@@ -66,7 +66,7 @@ model.add(Dense(1))
 
 例如，下面的模型定义了一个需要 1 个或更多样本、50 个时间步长和 2 个特征的输入层。
 
-```
+```py
 model = Sequential()
 model.add(LSTM(32, input_shape=(50, 2)))
 model.add(Dense(1))
@@ -80,13 +80,13 @@ model.add(Dense(1))
 
 例如，这可能是 10 个值的序列:
 
-```
+```py
 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0
 ```
 
 我们可以将这个数字序列定义为一个 NumPy 数组。
 
-```
+```py
 from numpy import array
 data = array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
 ```
@@ -95,19 +95,19 @@ data = array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
 
 当在数组上调用时，*重塑()*函数接受一个参数，该参数是定义数组新形状的元组。我们不能传入任何一组数字；整形必须均匀地重新组织数组中的数据。
 
-```
+```py
 data = data.reshape((1, 10, 1))
 ```
 
 一旦重塑，我们就可以打印新的阵列形状。
 
-```
+```py
 print(data.shape)
 ```
 
 将所有这些放在一起，下面列出了完整的示例。
 
-```
+```py
 from numpy import array
 data = array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
 data = data.reshape((1, 10, 1))
@@ -116,13 +116,13 @@ print(data.shape)
 
 运行该示例将打印单个样本的新三维形状。
 
-```
+```py
 (1, 10, 1)
 ```
 
 该数据现在可以用作输入( *X* )到输入形状为(10，1)的 LSTM。
 
-```
+```py
 model = Sequential()
 model.add(LSTM(32, input_shape=(10, 1)))
 model.add(Dense(1))
@@ -134,14 +134,14 @@ model.add(Dense(1))
 
 例如，这可能是由 10 个值组成的两个并行系列:
 
-```
+```py
 series 1: 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0
 series 2: 1.0, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1
 ```
 
 我们可以将这些数据定义为 2 列 10 行的矩阵:
 
-```
+```py
 from numpy import array
 data = array([
 	[0.1, 1.0],
@@ -160,13 +160,13 @@ data = array([
 
 它可以按如下方式重新造型为三维阵列:
 
-```
+```py
 data = data.reshape(1, 10, 2)
 ```
 
 将所有这些放在一起，下面列出了完整的示例。
 
-```
+```py
 from numpy import array
 data = array([
 	[0.1, 1.0],
@@ -185,13 +185,13 @@ print(data.shape)
 
 运行该示例将打印单个样本的新三维形状。
 
-```
+```py
 (1, 10, 2)
 ```
 
 该数据现在可以用作输入( *X* )到输入形状为(10，2)的 LSTM。
 
-```
+```py
 model = Sequential()
 model.add(LSTM(32, input_shape=(10, 2)))
 model.add(Dense(1))

@@ -69,13 +69,13 @@ Auto-Sklearn 是一个面向 AutoML 的开源 Python 库，使用 scikit-learn �
 
 第一步是安装 Auto-Sklearn 库，这可以使用 pip 实现，如下所示:
 
-```
+```py
 sudo pip install autosklearn
 ```
 
 安装后，我们可以导入库并打印版本号，以确认安装成功:
 
-```
+```py
 # print autosklearn version
 import autosklearn
 print('autosklearn: %s' % autosklearn.__version__)
@@ -83,7 +83,7 @@ print('autosklearn: %s' % autosklearn.__version__)
 
 运行该示例会打印版本号。您的版本号应该相同或更高。
 
-```
+```py
 autosklearn: 0.6.0
 ```
 
@@ -93,7 +93,7 @@ autosklearn: 0.6.0
 
 下面列出了完整的示例。
 
-```
+```py
 # example of auto-sklearn for a classification dataset
 from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
@@ -119,7 +119,7 @@ print("Accuracy: %.3f" % acc)
 
 运行结束时，会打印一份摘要，显示评估了 599 个模型，最终模型的估计性能为 95.6%。
 
-```
+```py
 auto-sklearn results:
 Dataset name: 771625f7c0142be6ac52bcd108459927
 Metric: accuracy
@@ -133,7 +133,7 @@ Number of target algorithms that exceeded the memory limit: 0
 
 然后，我们在保持数据集上评估模型，发现分类准确率达到了 97%，这是相当巧妙的。
 
-```
+```py
 Accuracy: 0.970
 ```
 
@@ -154,13 +154,13 @@ TPOT 使用基于树的结构来表示预测建模问题的模型管道，包括
 
 第一步是安装 TPOT 图书馆，这可以使用 pip 实现，如下所示:
 
-```
+```py
 pip install tpot
 ```
 
 安装后，我们可以导入库并打印版本号，以确认安装成功:
 
-```
+```py
 # check tpot version
 import tpot
 print('tpot: %s' % tpot.__version__)
@@ -168,7 +168,7 @@ print('tpot: %s' % tpot.__version__)
 
 运行该示例会打印版本号。您的版本号应该相同或更高。
 
-```
+```py
 tpot: 0.11.1
 ```
 
@@ -178,7 +178,7 @@ tpot: 0.11.1
 
 下面列出了完整的示例。
 
-```
+```py
 # example of tpot for a classification dataset
 from sklearn.datasets import make_classification
 from sklearn.model_selection import RepeatedStratifiedKFold
@@ -201,7 +201,7 @@ model.export('tpot_best_model.py')
 
 考虑到搜索过程的随机性，您的具体结果会有所不同。
 
-```
+```py
 Generation 1 - Current best internal CV score: 0.9166666666666666
 Generation 2 - Current best internal CV score: 0.9166666666666666
 Generation 3 - Current best internal CV score: 0.9266666666666666
@@ -217,7 +217,7 @@ Best pipeline: ExtraTreesClassifier(input_matrix, bootstrap=False, criterion=gin
 
 打开这个文件，您可以看到有一些用于加载数据集和拟合管道的通用代码。下面列出了一个例子。
 
-```
+```py
 import numpy as np
 import pandas as pd
 from sklearn.ensemble import ExtraTreesClassifier
@@ -265,7 +265,7 @@ HyperOpt-Sklearn 包装了 HyperOpt 库，允许自动搜索数据准备方法�
 
 这可以通过使用 pip 包管理器来实现，如下所示:
 
-```
+```py
 sudo pip install hyperopt
 ```
 
@@ -273,7 +273,7 @@ sudo pip install hyperopt
 
 这也可以使用 pip 安装，尽管我们必须通过克隆存储库并从本地文件运行安装来手动执行此操作，如下所示:
 
-```
+```py
 git clone git@github.com:hyperopt/hyperopt-sklearn.git
 cd hyperopt-sklearn
 sudo pip install .
@@ -282,13 +282,13 @@ cd ..
 
 我们可以通过使用以下命令检查版本号来确认安装成功:
 
-```
+```py
 sudo pip show hpsklearn
 ```
 
 这将总结 HyperOpt-Sklearn 的安装版本，确认正在使用现代版本。
 
-```
+```py
 Name: hpsklearn
 Version: 0.0.3
 Summary: Hyperparameter Optimization for sklearn
@@ -309,7 +309,7 @@ Required-by:
 
 下面列出了完整的示例。
 
-```
+```py
 # example of hyperopt-sklearn for a classification dataset
 from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
@@ -342,7 +342,7 @@ print(model.best_model())
 
 在这种情况下，我们可以看到选择的模型在保持测试集上达到了大约 84.8%的准确率。管道涉及一个没有预处理的 SGDClassifier 模型。
 
-```
+```py
 Accuracy: 0.848
 {'learner': SGDClassifier(alpha=0.0012253733891387925, average=False,
               class_weight='balanced', early_stopping=False, epsilon=0.1,

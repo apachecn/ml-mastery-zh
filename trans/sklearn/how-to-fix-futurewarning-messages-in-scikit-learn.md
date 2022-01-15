@@ -75,7 +75,7 @@ scikit-learn API 中提供的大多数函数都有一个或多个参数，可以
 
 这可以通过在代码周围添加以下您知道会生成警告的块来实现:
 
-```
+```py
 # run block of code and catch warnings
 with warnings.catch_warnings():
 	# ignore all caught warnings
@@ -86,7 +86,7 @@ with warnings.catch_warnings():
 
 或者，如果您有一个非常简单的平面脚本(没有函数或块)，您可以通过在文件顶部添加两行来抑制所有的未来预览:
 
-```
+```py
 # import warnings filter
 from warnings import simplefilter
 # ignore all future warnings
@@ -107,7 +107,7 @@ simplefilter(action='ignore', category=FutureWarning)
 
 本节中的示例是用 scikit-learn 版本 0.20.2 开发的。您可以通过运行以下代码来检查 scikit-learn 版本:
 
-```
+```py
 # check scikit-learn version
 import sklearn
 print('sklearn: %s' % sklearn.__version__)
@@ -115,7 +115,7 @@ print('sklearn: %s' % sklearn.__version__)
 
 您将看到如下输出:
 
-```
+```py
 sklearn: 0.20.2
 ```
 
@@ -133,7 +133,7 @@ sklearn: 0.20.2
 
 下面的示例将生成一个关于物流配送使用的求解器参数的未来学习。
 
-```
+```py
 # example of LogisticRegression that generates a FutureWarning
 from sklearn.datasets import make_blobs
 from sklearn.linear_model import LogisticRegression
@@ -147,7 +147,7 @@ model.fit(X, y)
 
 运行该示例会导致以下警告消息:
 
-```
+```py
 FutureWarning: Default solver will be changed to 'lbfgs' in 0.22\. Specify a solver to silence this warning.
 ```
 
@@ -155,14 +155,14 @@ FutureWarning: Default solver will be changed to 'lbfgs' in 0.22\. Specify a sol
 
 要保持旧的行为，可以按如下方式指定参数:
 
-```
+```py
 # create and configure model
 model = LogisticRegression(solver='liblinear')
 ```
 
 为了支持新的行为(推荐)，可以按如下方式指定参数:
 
-```
+```py
 # create and configure model
 model = LogisticRegression(solver='lbfgs')
 ```
@@ -171,7 +171,7 @@ model = LogisticRegression(solver='lbfgs')
 
 下面的示例将生成一个关于物流出口使用的“*多类*参数的未来警告。
 
-```
+```py
 # example of LogisticRegression that generates a FutureWarning
 from sklearn.datasets import make_blobs
 from sklearn.linear_model import LogisticRegression
@@ -185,7 +185,7 @@ model.fit(X, y)
 
 运行该示例会导致以下警告消息:
 
-```
+```py
 FutureWarning: Default multi_class will be changed to 'auto' in 0.22\. Specify the multi_class option to silence this warning.
 ```
 
@@ -195,14 +195,14 @@ FutureWarning: Default multi_class will be changed to 'auto' in 0.22\. Specify t
 
 要保持旧的行为，可以按如下方式指定参数:
 
-```
+```py
 # create and configure model
 model = LogisticRegression(solver='lbfgs', multi_class='ovr')
 ```
 
 为了支持新的行为(推荐)，可以按如下方式指定参数:
 
-```
+```py
 # create and configure model
 model = LogisticRegression(solver='lbfgs', multi_class='auto')
 ```
@@ -213,7 +213,7 @@ model = LogisticRegression(solver='lbfgs', multi_class='auto')
 
 下面的示例将生成一个关于 SVC 使用的“ *gamma* ”参数的未来警告，但同样适用于 SVR。
 
-```
+```py
 # example of SVC that generates a FutureWarning
 from sklearn.datasets import make_blobs
 from sklearn.svm import SVC
@@ -227,7 +227,7 @@ model.fit(X, y)
 
 运行此示例将生成以下警告消息:
 
-```
+```py
 FutureWarning: The default value of gamma will change from 'auto' to 'scale' in version 0.22 to account better for unscaled features. Set gamma explicitly to 'auto' or 'scale' to avoid this warning.
 ```
 
@@ -239,14 +239,14 @@ gamma 参数只影响使用径向基函数、多项式或 Sigmoid 核的 SVM 模
 
 要保持旧的行为，可以按如下方式指定参数:
 
-```
+```py
 # create and configure model
 model = SVC(gamma='auto')
 ```
 
 为了支持新的行为(推荐)，可以按如下方式指定参数:
 
-```
+```py
 # create and configure model
 model = SVC(gamma='scale')
 ```
@@ -259,7 +259,7 @@ model = SVC(gamma='scale')
 
 下面的例子将生成一个关于随机森林分类器使用的“*n _ estimates”*参数的未来警告，但同样适用于随机森林回归器和额外的树类。
 
-```
+```py
 # example of RandomForestClassifier that generates a FutureWarning
 from sklearn.datasets import make_blobs
 from sklearn.ensemble import RandomForestClassifier
@@ -273,7 +273,7 @@ model.fit(X, y)
 
 运行此示例将生成以下警告消息:
 
-```
+```py
 FutureWarning: The default value of n_estimators will change from 10 in version 0.20 to 100 in 0.22.
 ```
 
@@ -281,14 +281,14 @@ FutureWarning: The default value of n_estimators will change from 10 in version 
 
 要保持旧的行为，可以按如下方式指定参数:
 
-```
+```py
 # create and configure model
 model = RandomForestClassifier(n_estimators=10)
 ```
 
 为了支持新的行为(推荐)，可以按如下方式指定参数:
 
-```
+```py
 # create and configure model
 model = RandomForestClassifier(n_estimators=100)
 ```

@@ -91,7 +91,7 @@
 
 下面的示例创建数据集并总结输入和输出组件的形状。
 
-```
+```py
 # synthetic classification dataset
 from sklearn.datasets import make_classification
 # define dataset
@@ -102,7 +102,7 @@ print(X.shape, y.shape)
 
 运行该示例会创建数据集并报告形状，这证实了我们的预期。
 
-```
+```py
 (10000, 20) (10000,)
 ```
 
@@ -110,7 +110,7 @@ print(X.shape, y.shape)
 
 我们将使用 [train_test_split()函数](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)，将数据分成 70%用于训练模型，30%用于评估模型。
 
-```
+```py
 # split a dataset into train and test sets
 from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
@@ -124,7 +124,7 @@ print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
 
 运行该示例会分割数据集，我们可以确认我们有 7000 个示例用于训练，3000 个示例用于评估模型。
 
-```
+```py
 (7000, 20) (3000, 20) (7000,) (3000,)
 ```
 
@@ -136,7 +136,7 @@ print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
 
 我们评估决策树深度从 1 到 20。
 
-```
+```py
 ...
 # define the tree depths to evaluate
 values = [i for i in range(1, 21)]
@@ -146,7 +146,7 @@ values = [i for i in range(1, 21)]
 
 预期随着树的深度增加，训练和测试的性能将提高到一定程度，随着树变得太深，它将开始过度填充训练数据集，代价是保持测试集的性能变差。
 
-```
+```py
 ...
 # evaluate a decision tree for each depth
 for i in values:
@@ -168,7 +168,7 @@ for i in values:
 
 在运行结束时，我们将在列车和测试集上绘制所有模型准确度分数，以便进行视觉比较。
 
-```
+```py
 ...
 # plot of train and test scores vs tree depth
 pyplot.plot(values, train_scores, '-o', label='Train')
@@ -179,7 +179,7 @@ pyplot.show()
 
 综上所述，下面列出了在合成二进制分类数据集上探索不同树深度的完整示例。
 
-```
+```py
 # evaluate decision tree performance on train and test sets with different tree depths
 from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
@@ -229,7 +229,7 @@ pyplot.show()
 
 在模型开始过度填充训练数据集之前，我们会选择 8 或 9 的树深度。
 
-```
+```py
 >1, train: 0.769, test: 0.761
 >2, train: 0.808, test: 0.804
 >3, train: 0.879, test: 0.878
@@ -282,7 +282,7 @@ pyplot.show()
 
 下面列出了完整的示例。
 
-```
+```py
 # evaluate knn performance on train and test sets with different numbers of neighbors
 from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
@@ -332,7 +332,7 @@ pyplot.show()
 
 我们还看到，模型在保持测试中的性能提高到大约五个邻居的值，保持水平，并在此之后开始下降趋势。
 
-```
+```py
 >1, train: 1.000, test: 0.919
 >2, train: 0.965, test: 0.916
 >3, train: 0.962, test: 0.932

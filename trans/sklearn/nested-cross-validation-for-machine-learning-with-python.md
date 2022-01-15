@@ -150,7 +150,7 @@ k-fold 交叉验证程序可通过 [KFold 类](https://scikit-learn.org/stable/m
 
 例如:
 
-```
+```py
 ...
 # configure the cross-validation procedure
 cv = KFold(n_splits=10, random_state=1)
@@ -169,7 +169,7 @@ scikit-learn 库分别通过[随机化搜索 CV](https://scikit-learn.org/stable
 
 例如:
 
-```
+```py
 ...
 # configure the cross-validation procedure
 cv = KFold(n_splits=3, shuffle=True, random_state=1)
@@ -188,7 +188,7 @@ result = search.fit(X, y)
 
 重要的是，我们可以配置超参数搜索，使用搜索过程中找到的最佳超参数，用整个训练数据集重新调整最终模型。这可以通过将“ *refit* ”参数设置为 True，然后通过搜索结果上的“ *best_estimator_* ”属性检索模型来实现。
 
-```
+```py
 ...
 # define search
 search = GridSearchCV(model, space, scoring='accuracy', n_jobs=-1, cv=cv_inner, refit=True)
@@ -200,7 +200,7 @@ best_model = result.best_estimator_
 
 然后，该模型可用于对来自外环的保持数据进行预测，并估计模型的性能。
 
-```
+```py
 ...
 # evaluate model on the hold out dataset
 yhat = best_model.predict(X_test)
@@ -212,7 +212,7 @@ yhat = best_model.predict(X_test)
 
 下面列出了完整的示例。
 
-```
+```py
 # manual nested cross-validation for random forest on a classification dataset
 from numpy import mean
 from numpy import std
@@ -269,7 +269,7 @@ print('Accuracy: %.3f (%.3f)' % (mean(outer_results), std(outer_results)))
 
 然后报告最终的平均分类精度。
 
-```
+```py
 >acc=0.900, est=0.932, cfg={'max_features': 4, 'n_estimators': 100}
 >acc=0.940, est=0.924, cfg={'max_features': 4, 'n_estimators': 500}
 >acc=0.930, est=0.929, cfg={'max_features': 4, 'n_estimators': 500}
@@ -289,7 +289,7 @@ Accuracy: 0.927 (0.019)
 
 下面列出了完整的示例。
 
-```
+```py
 # automatic nested cross-validation for random forest on a classification dataset
 from numpy import mean
 from numpy import std
@@ -322,7 +322,7 @@ print('Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 运行示例在随机森林算法上执行嵌套交叉验证，达到了与我们的手动过程相匹配的平均精度。
 
-```
+```py
 Accuracy: 0.927 (0.019)
 ```
 

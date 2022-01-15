@@ -56,7 +56,7 @@
 
 下面是数据集前 5 行的示例
 
-```
+```py
 30,64,1,1
 30,62,3,1
 30,65,0,1
@@ -72,7 +72,7 @@
 
 我们可以直接从网址将数据集加载为熊猫数据帧；例如:
 
-```
+```py
 # load the haberman dataset and summarize the shape
 from pandas import read_csv
 # define the location of the dataset
@@ -91,13 +91,13 @@ print(df.shape)
 
 它还建议使用 k 倍交叉验证将是一个好主意，因为它将给出比训练/测试分割更可靠的模型性能估计，并且因为单个模型将在几秒钟内适合最大数据集，而不是几小时或几天。
 
-```
+```py
 (306, 4)
 ```
 
 接下来，我们可以通过查看汇总统计数据和数据图来了解更多关于数据集的信息。
 
-```
+```py
 # show summary statistics and plots of the haberman dataset
 from pandas import read_csv
 from matplotlib import pyplot
@@ -116,7 +116,7 @@ pyplot.show()
 
 我们可以看到，数值随着不同的平均值和标准偏差而变化，也许在建模之前需要一些规范化或标准化。
 
-```
+```py
                 0           1           2           3
 count  306.000000  306.000000  306.000000  306.000000
 mean    52.457516   62.852941    4.026144    1.264706
@@ -146,7 +146,7 @@ max     83.000000   69.000000   52.000000    2.000000
 
 下面列出了完整的示例。
 
-```
+```py
 # summarize the class ratio of the haberman dataset
 from pandas import read_csv
 from collections import Counter
@@ -170,7 +170,7 @@ for k,v in counter.items():
 
 阶级分布是倾斜的，但并不严重不平衡。
 
-```
+```py
 Class=1, Count=225, Percentage=73.529%
 Class=2, Count=81, Percentage=26.471%
 ```
@@ -193,7 +193,7 @@ Class=2, Count=81, Percentage=26.471%
 
 首先，我们必须确保所有输入变量都是浮点值，并将目标标签编码为整数值 0 和 1。
 
-```
+```py
 ...
 # ensure all data are floating point values
 X = X.astype('float32')
@@ -205,7 +205,7 @@ y = LabelEncoder().fit_transform(y)
 
 我们必须确保按类对拆分进行分层，确保训练集和测试集具有与主数据集相同的类标签分布。
 
-```
+```py
 ...
 # split into input and output columns
 X, y = df.values[:, :-1], df.values[:, -1]
@@ -217,7 +217,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, stratif
 
 模型的输出是二进制分类的 sigmoid 激活，我们将最小化二进制[交叉熵损失](https://machinelearningmastery.com/how-to-choose-loss-functions-when-training-deep-learning-neural-networks/)。
 
-```
+```py
 ...
 # determine the number of input features
 n_features = X.shape[1]
@@ -233,7 +233,7 @@ model.compile(optimizer='adam', loss='binary_crossentropy')
 
 我们正在原始数据上拟合模型，我们认为这可能是一个好主意，但这是一个重要的起点。
 
-```
+```py
 ...
 # fit the model
 history = model.fit(X_train, y_train, epochs=200, batch_size=16, verbose=0, validation_data=(X_test,y_test))
@@ -241,7 +241,7 @@ history = model.fit(X_train, y_train, epochs=200, batch_size=16, verbose=0, vali
 
 在训练结束时，我们将评估模型在测试数据集上的性能，并将性能报告为分类精度。
 
-```
+```py
 ...
 # predict test set
 yhat = model.predict_classes(X_test)
@@ -252,7 +252,7 @@ print('Accuracy: %.3f' % score)
 
 最后，我们将绘制训练和测试集上交叉熵损失的学习曲线。
 
-```
+```py
 ...
 # plot learning curves
 pyplot.title('Learning Curves')
@@ -266,7 +266,7 @@ pyplot.show()
 
 将所有这些结合起来，下面列出了在癌症生存数据集上评估我们的第一个 MLP 的完整示例。
 
-```
+```py
 # fit a simple mlp model on the haberman and review learning curves
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
@@ -317,7 +317,7 @@ pyplot.show()
 
 在这种情况下，我们可以看到该模型比无技能模型表现得更好，假设准确率在 73.5%以上。
 
-```
+```py
 Accuracy: 0.765
 ```
 
@@ -339,7 +339,7 @@ k 倍交叉验证程序可以提供更可靠的 MLP 性能估计，尽管它可�
 
 我们可以使用[stratifiedfold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html)类手动枚举每个折叠，拟合模型，对其进行评估，然后在程序结束时报告评估分数的平均值。
 
-```
+```py
 ...
 # prepare cross validation
 kfold = KFold(10)
@@ -361,7 +361,7 @@ print('Mean Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 下面列出了评估前一节中的基本 MLP 模型的框架的完整示例。
 
-```
+```py
 # k-fold cross-validation of base model for the haberman dataset
 from numpy import mean
 from numpy import std
@@ -416,7 +416,7 @@ print('Mean Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 这证实了我们的预期，即对于这个数据集，基本模型配置可能比简单模型工作得更好
 
-```
+```py
 >0.742
 >0.774
 >0.774
@@ -444,7 +444,7 @@ Mean Accuracy: 0.752 (0.048)
 
 我们可以像以前一样准备数据并拟合模型，尽管是在整个数据集上，而不是数据集的训练子集上。
 
-```
+```py
 ...
 # split into input and output columns
 X, y = df.values[:, :-1], df.values[:, -1]
@@ -467,7 +467,7 @@ model.compile(optimizer='adam', loss='binary_crossentropy')
 
 首先，我们可以定义一行新数据。
 
-```
+```py
 ...
 # define a row of new data
 row = [30,64,1]
@@ -477,7 +477,7 @@ row = [30,64,1]
 
 然后我们可以做一个预测。
 
-```
+```py
 ...
 # make prediction
 yhat = model.predict_classes([row])
@@ -485,7 +485,7 @@ yhat = model.predict_classes([row])
 
 然后反转预测上的转换，这样我们就可以使用或解释正确标签中的结果(对于这个数据集，它只是一个整数)。
 
-```
+```py
 ...
 # invert transform to get label for class
 yhat = le.inverse_transform(yhat)
@@ -493,7 +493,7 @@ yhat = le.inverse_transform(yhat)
 
 在这种情况下，我们将简单地报告预测。
 
-```
+```py
 ...
 # report prediction
 print('Predicted: %s' % (yhat[0]))
@@ -501,7 +501,7 @@ print('Predicted: %s' % (yhat[0]))
 
 将所有这些结合起来，下面列出了为 haberman 数据集拟合最终模型并使用它对新数据进行预测的完整示例。
 
-```
+```py
 # fit a final model and make predictions on new data for the haberman dataset
 from pandas import read_csv
 from sklearn.preprocessing import LabelEncoder
@@ -545,7 +545,7 @@ print('Predicted: %s' % (yhat[0]))
 
 在这种情况下，我们可以看到模型为输入行预测了一个“1”标签。
 
-```
+```py
 Predicted: 1
 ```
 

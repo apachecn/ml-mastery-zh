@@ -69,7 +69,7 @@ A [质心](https://en.wikipedia.org/wiki/Centroid)是数据分布的几何中心
 
 这可以更改为其他内置指标，如“*曼哈顿*”
 
-```
+```py
 ...
 # create the nearest centroid model
 model = NearestCentroid(metric='euclidean')
@@ -77,7 +77,7 @@ model = NearestCentroid(metric='euclidean')
 
 默认情况下，不使用收缩，但是可以通过“*收缩 _ 阈值*参数指定收缩，该参数采用 0 到 1 之间的浮点值。
 
-```
+```py
 ...
 # create the nearest centroid model
 model = NearestCentroid(metric='euclidean', shrink_threshold=0.5)
@@ -91,7 +91,7 @@ model = NearestCentroid(metric='euclidean', shrink_threshold=0.5)
 
 该示例创建并汇总数据集。
 
-```
+```py
 # test classification dataset
 from sklearn.datasets import make_classification
 # define dataset
@@ -102,7 +102,7 @@ print(X.shape, y.shape)
 
 运行该示例将创建数据集，并确认数据集的行数和列数。
 
-```
+```py
 (1000, 20) (1000,)
 ```
 
@@ -110,7 +110,7 @@ print(X.shape, y.shape)
 
 我们将使用欧几里德距离和无收缩的默认配置。
 
-```
+```py
 ...
 # create the nearest centroid model
 model = NearestCentroid()
@@ -118,7 +118,7 @@ model = NearestCentroid()
 
 下面列出了评估合成二进制分类任务的最近收缩质心模型的完整示例。
 
-```
+```py
 # evaluate an nearest centroid model on the dataset
 from numpy import mean
 from numpy import std
@@ -144,7 +144,7 @@ print('Mean Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 在这种情况下，我们可以看到模型达到了大约 71%的平均精度。
 
-```
+```py
 Mean Accuracy: 0.711 (0.055)
 ```
 
@@ -154,7 +154,7 @@ Mean Accuracy: 0.711 (0.055)
 
 我们可以用下面列出的完整示例来演示这一点。
 
-```
+```py
 # make a prediction with a nearest centroid model on the dataset
 from sklearn.datasets import make_classification
 from sklearn.neighbors import NearestCentroid
@@ -174,7 +174,7 @@ print('Predicted Class: %d' % yhat)
 
 运行该示例符合模型，并对新的数据行进行类别标签预测。
 
-```
+```py
 Predicted Class: 0
 ```
 
@@ -188,7 +188,7 @@ Predicted Class: 0
 
 下面的例子使用 [GridSearchCV 类](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)和我们定义的值网格来演示这一点。
 
-```
+```py
 # grid search shrinkage for nearest centroid
 from numpy import arange
 from sklearn.datasets import make_classification
@@ -219,7 +219,7 @@ print('Config: %s' % results.best_params_)
 
 在这种情况下，我们可以看到我们获得了比默认情况下稍好的结果，71.4%对 71.1%。我们可以看到模型分配了一个 0.53 的*收缩阈值*值。
 
-```
+```py
 Mean Accuracy: 0.714
 Config: {'shrink_threshold': 0.53}
 ```
@@ -242,7 +242,7 @@ Config: {'shrink_threshold': 0.53}
 
 我们可以在网格搜索中包含这些指标；下面列出了完整的示例。
 
-```
+```py
 # grid search shrinkage and distance metric for nearest centroid
 from numpy import arange
 from sklearn.datasets import make_classification
@@ -274,7 +274,7 @@ print('Config: %s' % results.best_params_)
 
 在这种情况下，我们可以看到，使用无收缩和曼哈顿代替欧几里德距离测量，我们获得了略好的 75%的精度。
 
-```
+```py
 Mean Accuracy: 0.750
 Config: {'metric': 'manhattan', 'shrink_threshold': 0.0}
 ```

@@ -47,7 +47,7 @@
 
 您可以在下面看到数据集的前几行。
 
-```
+```py
 1,0,0.99539,-0.05889,0.85243,0.02306,0.83398,-0.37708,1,0.03760,0.85243,-0.17755,0.59755,-0.44945,0.60536,-0.38223,0.84356,-0.38542,0.58212,-0.32192,0.56971,-0.29674,0.36946,-0.47357,0.56811,-0.51171,0.41078,-0.46168,0.21266,-0.34090,0.42267,-0.54487,0.18641,-0.45300,g
 1,0,1,-0.18829,0.93035,-0.36156,-0.10868,-0.93597,1,-0.04549,0.50874,-0.67743,0.34432,-0.69707,-0.51685,-0.97515,0.05499,-0.62237,0.33109,-1,-0.13151,-0.45300,-0.18056,-0.35734,-0.20332,-0.26569,-0.20468,-0.18401,-0.19040,-0.11593,-0.16626,-0.06288,-0.13738,-0.02447,b
 1,0,1,-0.03365,1,0.00485,1,-0.12062,0.88965,0.01198,0.73082,0.05346,0.85443,0.00827,0.54591,0.00299,0.83775,-0.13644,0.75535,-0.08540,0.70887,-0.27502,0.43385,-0.12062,0.57528,-0.40220,0.58984,-0.22145,0.43100,-0.17365,0.60436,-0.24180,0.56045,-0.38238,g
@@ -62,7 +62,7 @@
 
 我们可以直接从网址将数据集加载为熊猫数据帧；例如:
 
-```
+```py
 # load the ionosphere dataset and summarize the shape
 from pandas import read_csv
 # define the location of the dataset
@@ -81,13 +81,13 @@ print(df.shape)
 
 它还建议使用 [k 倍交叉验证](https://machinelearningmastery.com/k-fold-cross-validation/)将是一个好主意，因为它将给出比训练/测试分割更可靠的模型性能估计，并且因为单个模型将在几秒钟内适合最大数据集，而不是几小时或几天。
 
-```
+```py
 (351, 35)
 ```
 
 接下来，我们可以通过查看汇总统计数据和数据图来了解更多关于数据集的信息。
 
-```
+```py
 # show summary statistics and plots of the ionosphere dataset
 from pandas import read_csv
 from matplotlib import pyplot
@@ -106,7 +106,7 @@ pyplot.show()
 
 我们可以看到每个变量的平均值都在十位数，取值范围从-1 到 1。这证实了缩放数据可能不是必需的。
 
-```
+```py
                0      1           2   ...          31          32          33
 count  351.000000  351.0  351.000000  ...  351.000000  351.000000  351.000000
 mean     0.891738    0.0    0.641342  ...   -0.003794    0.349364    0.014480
@@ -144,7 +144,7 @@ max      1.000000    0.0    1.000000  ...    1.000000    1.000000    1.000000
 
 首先，我们必须确保所有输入变量都是浮点值，并将目标标签编码为整数值 0 和 1。
 
-```
+```py
 ...
 # ensure all data are floating point values
 X = X.astype('float32')
@@ -154,7 +154,7 @@ y = LabelEncoder().fit_transform(y)
 
 接下来，我们可以将数据集分成输入和输出变量，然后分成 67/33 训练集和测试集。
 
-```
+```py
 ...
 # split into input and output columns
 X, y = df.values[:, :-1], df.values[:, -1]
@@ -166,7 +166,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33)
 
 模型的输出是二进制分类的 sigmoid 激活，我们将最小化[二进制交叉熵损失](https://machinelearningmastery.com/cross-entropy-for-machine-learning/)。
 
-```
+```py
 ...
 # determine the number of input features
 n_features = X.shape[1]
@@ -182,7 +182,7 @@ model.compile(optimizer='adam', loss='binary_crossentropy')
 
 我们正在原始数据上拟合模型，我们认为这可能是一个好主意，但这是一个重要的起点。
 
-```
+```py
 ...
 # fit the model
 history = model.fit(X_train, y_train, epochs=200, batch_size=32, verbose=0, validation_data=(X_test,y_test))
@@ -190,7 +190,7 @@ history = model.fit(X_train, y_train, epochs=200, batch_size=32, verbose=0, vali
 
 在训练结束时，我们将评估模型在测试数据集上的性能，并将性能报告为分类精度。
 
-```
+```py
 ...
 # predict test set
 yhat = model.predict_classes(X_test)
@@ -201,7 +201,7 @@ print('Accuracy: %.3f' % score)
 
 最后，我们将绘制训练和测试集上交叉熵损失的学习曲线。
 
-```
+```py
 ...
 # plot learning curves
 pyplot.title('Learning Curves')
@@ -215,7 +215,7 @@ pyplot.show()
 
 将所有这些联系在一起，下面列出了在电离层数据集上评估我们的第一个 MLP 的完整示例。
 
-```
+```py
 # fit a simple mlp model on the ionosphere and review learning curves
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
@@ -266,7 +266,7 @@ pyplot.show()
 
 在这种情况下，我们可以看到模型达到了大约 88%的准确率，这是一个很好的性能基线，我们或许可以在此基础上进行改进。
 
-```
+```py
 Accuracy: 0.888
 ```
 
@@ -284,7 +284,7 @@ Accuracy: 0.888
 
 我们将添加带有八个节点的第二个隐藏层，任意选择。
 
-```
+```py
 ...
 # define model
 model = Sequential()
@@ -295,7 +295,7 @@ model.add(Dense(1, activation='sigmoid'))
 
 下面列出了完整的示例。
 
-```
+```py
 # fit a deeper mlp model on the ionosphere and review learning curves
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
@@ -346,7 +346,7 @@ pyplot.legend()
 
 在这种情况下，我们可以看到准确率略有提高，约为 93%，尽管训练/测试分割的高方差意味着该评估不可靠。
 
-```
+```py
 Accuracy: 0.931
 ```
 
@@ -362,7 +362,7 @@ Accuracy: 0.931
 
 这将增加模型的容量，减慢学习速度，并可能进一步提高结果。
 
-```
+```py
 ...
 # define model
 model = Sequential()
@@ -373,7 +373,7 @@ model.add(Dense(1, activation='sigmoid'))
 
 我们还将把训练期从 200 个减少到 100 个。
 
-```
+```py
 ...
 # fit the model
 history = model.fit(X_train, y_train, epochs=100, batch_size=32, verbose=0, validation_data=(X_test,y_test))
@@ -381,7 +381,7 @@ history = model.fit(X_train, y_train, epochs=100, batch_size=32, verbose=0, vali
 
 下面列出了完整的示例。
 
-```
+```py
 # fit a wider mlp model on the ionosphere and review learning curves
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
@@ -433,7 +433,7 @@ pyplot.show()
 
 在这种情况下，模型获得了更好的准确性分数，其值约为 94%。我们将暂时忽略模型性能。
 
-```
+```py
 Accuracy: 0.940
 ```
 
@@ -453,7 +453,7 @@ k 倍交叉验证程序可以提供更可靠的 MLP 性能估计，尽管它可�
 
 我们可以使用[stratifiedfold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html)类手动枚举每个折叠，拟合模型，对其进行评估，然后在程序结束时报告评估分数的平均值。
 
-```
+```py
 # prepare cross validation
 kfold = KFold(10)
 # enumerate splits
@@ -474,7 +474,7 @@ print('Mean Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 下面列出了评估前一节中的基本 MLP 模型的框架的完整示例。
 
-```
+```py
 # k-fold cross-validation of base model for the ionosphere dataset
 from numpy import mean
 from numpy import std
@@ -530,7 +530,7 @@ print('Mean Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 我们将使用这个结果作为我们的基线，看看我们是否可以实现更好的性能。
 
-```
+```py
 >0.972
 >0.886
 >0.943
@@ -548,7 +548,7 @@ Mean Accuracy: 0.934 (0.039)
 
 在这种情况下，我们可以在网络的隐藏层之间添加脱落层。例如:
 
-```
+```py
 ...
 # define model
 model = Sequential()
@@ -561,7 +561,7 @@ model.add(Dense(1, activation='sigmoid'))
 
 下面列出了辍学的 MLP 模式的完整例子。
 
-```
+```py
 # k-fold cross-validation of the MLP with dropout for the ionosphere dataset
 from numpy import mean
 from numpy import std
@@ -618,7 +618,7 @@ print('Mean Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 在这种情况下，我们可以看到，有辍学的 MLP 模型取得了更好的结果，准确率约为 94.6%，而没有辍学的准确率为 93.4%
 
-```
+```py
 Mean Accuracy: 0.946 (0.043)
 ```
 
@@ -626,7 +626,7 @@ Mean Accuracy: 0.946 (0.043)
 
 这将导致更多的噪声梯度，也可能降低模型学习问题的速度。
 
-```
+```py
 ...
 # fit the model
 model.fit(X_train, y_train, epochs=100, batch_size=8, verbose=0)
@@ -634,7 +634,7 @@ model.fit(X_train, y_train, epochs=100, batch_size=8, verbose=0)
 
 下面列出了完整的示例。
 
-```
+```py
 # k-fold cross-validation of the MLP with dropout for the ionosphere dataset
 from numpy import mean
 from numpy import std
@@ -691,7 +691,7 @@ print('Mean Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 在这种情况下，我们可以看到，带有脱落的 MLP 模型获得了稍好的结果，准确率约为 94.9%。
 
-```
+```py
 Mean Accuracy: 0.949 (0.042)
 ```
 
@@ -712,7 +712,7 @@ Mean Accuracy: 0.949 (0.042)
 
 我们可以像以前一样准备数据并拟合模型，尽管是在整个数据集上，而不是数据集的训练子集上。
 
-```
+```py
 ...
 # split into input and output columns
 X, y = df.values[:, :-1], df.values[:, -1]
@@ -738,7 +738,7 @@ model.compile(optimizer='adam', loss='binary_crossentropy')
 
 首先，我们可以定义一行新数据。
 
-```
+```py
 ...
 # define a row of new data
 row = [1,0,0.99539,-0.05889,0.85243,0.02306,0.83398,-0.37708,1,0.03760,0.85243,-0.17755,0.59755,-0.44945,0.60536,-0.38223,0.84356,-0.38542,0.58212,-0.32192,0.56971,-0.29674,0.36946,-0.47357,0.56811,-0.51171,0.41078,-0.46168,0.21266,-0.34090,0.42267,-0.54487,0.18641,-0.45300]
@@ -748,7 +748,7 @@ row = [1,0,0.99539,-0.05889,0.85243,0.02306,0.83398,-0.37708,1,0.03760,0.85243,-
 
 然后我们可以做一个预测。
 
-```
+```py
 ...
 # make prediction
 yhat = model.predict_classes([row])
@@ -756,7 +756,7 @@ yhat = model.predict_classes([row])
 
 然后反转预测上的变换，这样我们就可以在正确的标签中使用或解释结果。
 
-```
+```py
 ...
 # invert transform to get label for class
 yhat = le.inverse_transform(yhat)
@@ -764,7 +764,7 @@ yhat = le.inverse_transform(yhat)
 
 在这种情况下，我们将简单地报告预测。
 
-```
+```py
 ...
 # report prediction
 print('Predicted: %s' % (yhat[0]))
@@ -772,7 +772,7 @@ print('Predicted: %s' % (yhat[0]))
 
 将所有这些结合起来，下面列出了为电离层数据集拟合最终模型并使用它对新数据进行预测的完整示例。
 
-```
+```py
 # fit a final model and make predictions on new data for the ionosphere dataset
 from pandas import read_csv
 from sklearn.preprocessing import LabelEncoder
@@ -819,7 +819,7 @@ print('Predicted: %s' % (yhat[0]))
 
 在这种情况下，我们可以看到模型为输入行预测了一个“g”标签。
 
-```
+```py
 Predicted: g
 ```
 

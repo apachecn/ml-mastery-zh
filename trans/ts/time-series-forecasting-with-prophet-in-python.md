@@ -55,7 +55,7 @@
 
 第一步是使用 Pip 安装先知库，如下所示:
 
-```
+```py
 sudo pip install fbprophet
 ```
 
@@ -63,7 +63,7 @@ sudo pip install fbprophet
 
 为此，我们可以导入库，并用 Python 打印版本号。下面列出了完整的示例。
 
-```
+```py
 # check prophet version
 import fbprophet
 # print version number
@@ -74,7 +74,7 @@ print('Prophet %s' % fbprophet.__version__)
 
 你应该有相同或更高的版本。
 
-```
+```py
 Prophet 0.5
 ```
 
@@ -101,7 +101,7 @@ Prophet 0.5
 
 下面列出了完整的示例。
 
-```
+```py
 # load the car sales dataset
 from pandas import read_csv
 # load data
@@ -119,7 +119,7 @@ print(df.head())
 
 请注意，输出中的第一列是行索引，不是数据集的一部分，只是 Pandas 用来排序行的一个有用工具。
 
-```
+```py
 (108, 2)
      Month  Sales
 0  1960-01   6550
@@ -139,7 +139,7 @@ print(df.head())
 
 下面列出了完整的示例。
 
-```
+```py
 # load and plot the car sales dataset
 from pandas import read_csv
 from matplotlib import pyplot
@@ -179,7 +179,7 @@ pyplot.show()
 
 例如，我们可以修改加载的汽车销售数据集，使其具有如下预期结构:
 
-```
+```py
 ...
 # prepare expected column names
 df.columns = ['ds', 'y']
@@ -188,7 +188,7 @@ df['ds']= to_datetime(df['ds'])
 
 下面列出了在汽车销售数据集中拟合先知模型的完整示例。
 
-```
+```py
 # fit prophet model on the car sales dataset
 from pandas import read_csv
 from pandas import to_datetime
@@ -211,7 +211,7 @@ model.fit(df)
 
 然而，输出总结了模型拟合过程中发生的事情，特别是运行的优化过程。
 
-```
+```py
 INFO:fbprophet:Disabling weekly seasonality. Run prophet with weekly_seasonality=True to override this.
 INFO:fbprophet:Disabling daily seasonality. Run prophet with daily_seasonality=True to override this.
 Initial log joint probability = -4.39613
@@ -247,7 +247,7 @@ Optimization terminated normally:
 
 有很多方法可以创建这个“*预测*”*数据框*。在这种情况下，我们将循环一年的日期，例如数据集中的最后 12 个月，并为每个月创建一个字符串。然后，我们将把日期列表转换成一个*数据帧*，并将字符串值转换成日期时间对象。
 
-```
+```py
 ...
 # define the period for which we want a prediction
 future = list()
@@ -265,7 +265,7 @@ predict()函数的结果是一个包含许多列的*数据帧*。最重要的列
 
 例如，我们可以将前几个预测打印如下:
 
-```
+```py
 ...
 # summarize the forecast
 print(forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].head())
@@ -275,7 +275,7 @@ Prophet 还提供了一个内置工具，用于在训练数据集的上下文中
 
 这可以通过在模型上调用 *plot()* 函数并向其传递结果数据帧来实现。它将创建训练数据集的图，并用预测日期的上限和下限覆盖预测。
 
-```
+```py
 ...
 print(forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].head())
 # plot forecast
@@ -285,7 +285,7 @@ pyplot.show()
 
 将所有这些结合起来，下面列出了一个完整的样本内预测示例。
 
-```
+```py
 # make an in-sample forecast
 from pandas import read_csv
 from pandas import to_datetime
@@ -323,7 +323,7 @@ pyplot.show()
 
 报告了预测的前五个月，我们可以看到这些值与数据集中的实际销售值没有太大差异。
 
-```
+```py
           ds          yhat    yhat_lower    yhat_upper
 0 1968-01-01  14364.866157  12816.266184  15956.555409
 1 1968-02-01  14940.687225  13299.473640  16463.811658
@@ -350,7 +350,7 @@ pyplot.show()
 
 在这种情况下，是从 1969-01 年开始的训练数据集结束后的一段时间。
 
-```
+```py
 ...
 # define the period for which we want a prediction
 future = list()
@@ -364,7 +364,7 @@ future['ds']= to_datetime(future['ds'])
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # make an out-of-sample forecast
 from pandas import read_csv
 from pandas import to_datetime
@@ -402,7 +402,7 @@ pyplot.show()
 
 预测的前五行被打印出来，尽管很难知道它们是否明智。
 
-```
+```py
           ds          yhat    yhat_lower    yhat_upper
 0 1969-01-01  15406.401318  13751.534121  16789.969780
 1 1969-02-01  16165.737458  14486.887740  17634.953132
@@ -429,7 +429,7 @@ pyplot.show()
 
 我们可以通过创建一个新的*数据框架*来处理样本数据，并删除过去 12 个月的数据。
 
-```
+```py
 ...
 # create test dataset, remove last 12 months
 train = df.drop(df.index[-12:])
@@ -440,7 +440,7 @@ print(train.tail())
 
 然后，我们可以从原始数据集中检索预测值和期望值，并使用 scikit-learn 库计算平均绝对误差度量。
 
-```
+```py
 ...
 # calculate MAE between expected and predicted values for december
 y_true = df['y'][-12:].values
@@ -451,7 +451,7 @@ print('MAE: %.3f' % mae)
 
 绘制预期值与预测值的关系图也有助于了解样本外预测与已知值的匹配程度。
 
-```
+```py
 ...
 # plot expected vs actual
 pyplot.plot(y_true, label='Actual')
@@ -462,7 +462,7 @@ pyplot.show()
 
 将这些联系在一起，下面的例子演示了如何在一个搁置的数据集上评估一个预言家模型。
 
-```
+```py
 # evaluate prophet time series forecasting model on hold out dataset
 from pandas import read_csv
 from pandas import to_datetime
@@ -509,7 +509,7 @@ pyplot.show()
 
 它确认训练在 1967 年的最后一个月结束，1968 年将被用作暂停数据集。
 
-```
+```py
            ds      y
 91 1967-08-01  13434
 92 1967-09-01  13598
@@ -522,7 +522,7 @@ pyplot.show()
 
 在这种情况下，我们可以看到误差约为 1，336 次销售，这比同期实现 3，235 次销售误差的简单持久性模型低得多(更好)。
 
-```
+```py
 MAE: 1336.814
 ```
 

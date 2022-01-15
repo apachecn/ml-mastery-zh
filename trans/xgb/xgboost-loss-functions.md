@@ -57,13 +57,13 @@ xboost 可以作为一个独立的库安装，并且可以使用 scikit-learn AP
 
 第一步是安装尚未安装的 XGBoost 库。这可以在大多数平台上使用 pip python 包管理器来实现；例如:
 
-```
+```py
 sudo pip install xgboost
 ```
 
 然后，您可以通过运行以下脚本来确认 XGBoost 库安装正确，并且可以使用。
 
-```
+```py
 # check xgboost version
 import xgboost
 print(xgboost.__version__)
@@ -73,7 +73,7 @@ print(xgboost.__version__)
 
 您的版本应该相同或更高。如果没有，您必须升级 XGBoost 库的版本。
 
-```
+```py
 1.1.1
 ```
 
@@ -83,13 +83,13 @@ print(xgboost.__version__)
 
 如果您在尝试运行上述脚本时确实有错误，我建议降级到 1.0.1 版(或更低版本)。这可以通过指定要安装到 pip 命令的版本来实现，如下所示:
 
-```
+```py
 sudo pip install xgboost==1.0.1
 ```
 
 如果您看到一条警告消息，您可以暂时忽略它。例如，下面是一个警告消息示例，您可能会看到它，但可以忽略它:
 
-```
+```py
 FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
 ```
 
@@ -135,7 +135,7 @@ XGBoost 为这些问题类型提供了损失函数。
 
 例如，对于二进制分类:
 
-```
+```py
 ...
 # define the model for binary classification
 model = XGBClassifier(objective='binary:logistic')
@@ -143,7 +143,7 @@ model = XGBClassifier(objective='binary:logistic')
 
 对于多类分类:
 
-```
+```py
 ...
 # define the model for multi-class classification
 model = XGBClassifier(objective='multi:softprob')
@@ -155,7 +155,7 @@ model = XGBClassifier(objective='multi:softprob')
 
 下面的例子创建了一个合成的二进制分类数据集，用默认的超参数在数据集上拟合一个 *XGBClassifier* ，然后打印模型目标配置。
 
-```
+```py
 # example of automatically choosing the loss function for binary classification
 from sklearn.datasets import make_classification
 from xgboost import XGBClassifier
@@ -173,13 +173,13 @@ print(model.objective)
 
 我们可以看到模型自动选择一个损失函数进行二元分类。
 
-```
+```py
 binary:logistic
 ```
 
 或者，我们可以指定目标并拟合模型，确认使用了损失函数。
 
-```
+```py
 # example of manually specifying the loss function for binary classification
 from sklearn.datasets import make_classification
 from xgboost import XGBClassifier
@@ -197,7 +197,7 @@ print(model.objective)
 
 我们可以看到用于指定二元分类损失函数的模型。
 
-```
+```py
 binary:logistic
 ```
 
@@ -205,7 +205,7 @@ binary:logistic
 
 下面列出了完整的示例。
 
-```
+```py
 # example of automatically choosing the loss function for multi-class classification
 from sklearn.datasets import make_classification
 from xgboost import XGBClassifier
@@ -223,13 +223,13 @@ print(model.objective)
 
 我们可以看到模型自动选择了一个损失函数进行多类分类。
 
-```
+```py
 multi:softprob
 ```
 
 或者，我们可以手动指定损失函数，并确认它用于训练模型。
 
-```
+```py
 # example of manually specifying the loss function for multi-class classification
 from sklearn.datasets import make_classification
 from xgboost import XGBClassifier
@@ -247,7 +247,7 @@ print(model.objective)
 
 我们可以看到用于为多类分类指定损失函数的模型。
 
-```
+```py
 multi:softprob
 ```
 
@@ -273,7 +273,7 @@ multi:softprob
 
 例如:
 
-```
+```py
 ...
 # define the model for regression
 model = XGBRegressor(objective='reg:squarederror')
@@ -285,7 +285,7 @@ model = XGBRegressor(objective='reg:squarederror')
 
 下面的示例创建了一个合成回归数据集，在数据集上拟合一个*xgbreturnor*，然后打印模型目标配置。
 
-```
+```py
 # example of automatically choosing the loss function for regression
 from sklearn.datasets import make_regression
 from xgboost import XGBRegressor
@@ -303,13 +303,13 @@ print(model.objective)
 
 我们可以看到模型自动选择一个损失函数进行回归。
 
-```
+```py
 reg:squarederror
 ```
 
 或者，我们可以指定目标并拟合模型，确认使用了损失函数。
 
-```
+```py
 # example of manually specifying the loss function for regression
 from sklearn.datasets import make_regression
 from xgboost import XGBRegressor
@@ -327,7 +327,7 @@ print(model.objective)
 
 我们可以看到模型使用了指定的损失函数进行回归。
 
-```
+```py
 reg:squarederror
 ```
 

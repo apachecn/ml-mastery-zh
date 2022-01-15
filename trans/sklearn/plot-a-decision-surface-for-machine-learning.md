@@ -65,7 +65,7 @@
 
 我们可以使用 [make_blobs() scikit-learn 函数](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_blobs.html)定义一个分类任务，该分类任务具有一个二维类数值特征空间，每个点被分配两个类标签中的一个，例如二进制分类任务。
 
-```
+```py
 ...
 # generate dataset
 X, y = make_blobs(n_samples=1000, centers=2, n_features=2, random_state=1, cluster_std=3)
@@ -75,7 +75,7 @@ X, y = make_blobs(n_samples=1000, centers=2, n_features=2, random_state=1, clust
 
 然后，我们可以根据散点图中的点的类别标签将它们着色为 0 或 1。
 
-```
+```py
 ...
 # create scatter plot for samples from each class
 for class_value in range(2):
@@ -89,7 +89,7 @@ pyplot.show()
 
 下面列出了定义和绘制综合分类数据集的完整示例。
 
-```
+```py
 # generate binary classification dataset and plot
 from numpy import where
 from matplotlib import pyplot
@@ -122,7 +122,7 @@ pyplot.show()
 
 我们可以定义模型，然后将其拟合到训练数据集中。
 
-```
+```py
 ...
 # define the model
 model = LogisticRegression()
@@ -132,7 +132,7 @@ model.fit(X, y)
 
 一旦定义，我们可以使用该模型对训练数据集进行预测，以了解它在划分训练数据集的特征空间和分配标签方面的学习程度。
 
-```
+```py
 ...
 # make predictions
 yhat = model.predict(X)
@@ -140,7 +140,7 @@ yhat = model.predict(X)
 
 可以使用分类精度来评估预测。
 
-```
+```py
 ...
 # evaluate the predictions
 acc = accuracy_score(y, yhat)
@@ -149,7 +149,7 @@ print('Accuracy: %.3f' % acc)
 
 将这些联系在一起，下面列出了在合成二进制分类数据集上拟合和评估模型的完整示例。
 
-```
+```py
 # example of fitting and evaluating a model on the classification dataset
 from sklearn.datasets import make_blobs
 from sklearn.linear_model import LogisticRegression
@@ -173,7 +173,7 @@ print('Accuracy: %.3f' % acc)
 
 在这种情况下，我们可以看到该模型实现了大约 97.2%的性能。
 
-```
+```py
 Accuracy: 0.972
 ```
 
@@ -195,7 +195,7 @@ Accuracy: 0.972
 
 为此，我们可以找到每个要素的最小值和最大值，并将网格扩展一步，以确保覆盖整个要素空间。
 
-```
+```py
 ...
 # define bounds of the domain
 min1, max1 = X[:, 0].min()-1, X[:, 0].max()+1
@@ -204,7 +204,7 @@ min2, max2 = X[:, 1].min()-1, X[:, 1].max()+1
 
 然后，我们可以使用[保证()函数](https://docs.scipy.org/doc/numpy/reference/generated/numpy.arange.html)以选定的分辨率在每个维度上创建一个统一的样本。在这种情况下，我们将使用 0.1 的分辨率。
 
-```
+```py
 ...
 # define the x and y scale
 x1grid = arange(min1, max1, 0.1)
@@ -221,7 +221,7 @@ x2grid = arange(min2, max2, 0.1)
 
 *meshgrid()* 函数会为我们完成这个操作，根据需要为我们复制行和列。它为两个输入向量返回两个网格。x 值的第一个网格和 y 值的第二个网格，在要素空间中以适当大小的行和列网格组织。
 
-```
+```py
 ...
 # create all of the lines and rows of the grid
 xx, yy = meshgrid(x1grid, x2grid)
@@ -231,7 +231,7 @@ xx, yy = meshgrid(x1grid, x2grid)
 
 为此，首先，我们将每个网格展平为一个向量。
 
-```
+```py
 ...
 # flatten each grid to a vector
 r1, r2 = xx.flatten(), yy.flatten()
@@ -240,7 +240,7 @@ r1, r2 = r1.reshape((len(r1), 1)), r2.reshape((len(r2), 1))
 
 然后，我们将向量作为输入数据集中的列并排堆叠，例如，像我们的原始训练数据集一样，但分辨率要高得多。
 
-```
+```py
 ...
 # horizontal stack vectors to create x1,x2 input for the model
 grid = hstack((r1,r2))
@@ -248,7 +248,7 @@ grid = hstack((r1,r2))
 
 然后，我们可以将其输入到我们的模型中，并获得网格中每个点的预测。
 
-```
+```py
 ...
 # make predictions for the grid
 yhat = model.predict(grid)
@@ -265,7 +265,7 @@ yhat = model.predict(grid)
 
 所以我们可以使用之前准备的 *xx* 和 *yy* ，简单的将模型中的预测( *yhat* )重塑成相同的形状。
 
-```
+```py
 ...
 # reshape the predictions back into a grid
 zz = yhat.reshape(xx.shape)
@@ -273,7 +273,7 @@ zz = yhat.reshape(xx.shape)
 
 然后，我们用双色色图绘制决策表面。
 
-```
+```py
 ...
 # plot the grid of x, y and z values as a surface
 pyplot.contourf(xx, yy, zz, cmap='Paired')
@@ -283,7 +283,7 @@ pyplot.contourf(xx, yy, zz, cmap='Paired')
 
 下面列出了在我们的合成二进制分类数据集上绘制逻辑回归模型决策面的完整示例。
 
-```
+```py
 # decision surface for logistic regression on a binary classification dataset
 from numpy import where
 from numpy import meshgrid
@@ -342,7 +342,7 @@ pyplot.show()
 
 我们可以通过使用模型来预测概率而不是类标签来增加决策面的深度。
 
-```
+```py
 ...
 # make predictions for the grid
 yhat = model.predict_proba(grid)
@@ -354,7 +354,7 @@ yhat = yhat[:, 0]
 
 我们可以使用一个[不同的颜色图](https://matplotlib.org/tutorials/colors/colormaps.html)，它有层次，并显示一个图例，这样我们就可以解释颜色。
 
-```
+```py
 ...
 # plot the grid of x, y and z values as a surface
 c = pyplot.contourf(xx, yy, zz, cmap='RdBu')
@@ -364,7 +364,7 @@ pyplot.colorbar(c)
 
 下面列出了使用概率创建决策面的完整示例。
 
-```
+```py
 # probability decision surface for logistic regression on a binary classification dataset
 from numpy import where
 from numpy import meshgrid

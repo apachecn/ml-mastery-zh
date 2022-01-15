@@ -59,13 +59,13 @@ TPOT 管道搜索概述
 
 第一步是安装 TPOT 图书馆，这可以使用 pip 实现，如下所示:
 
-```
+```py
 pip install tpot
 ```
 
 安装后，我们可以导入库并打印版本号，以确认安装成功:
 
-```
+```py
 # check tpot version
 import tpot
 print('tpot: %s' % tpot.__version__)
@@ -75,7 +75,7 @@ print('tpot: %s' % tpot.__version__)
 
 您的版本号应该相同或更高。
 
-```
+```py
 tpot: 0.11.1
 ```
 
@@ -89,7 +89,7 @@ tpot: 0.11.1
 
 例如，用“*负平均绝对误差*度量进行回归时，[重复“T1”:](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html)
 
-```
+```py
 ...
 # define evaluation procedure
 cv = RepeatedKFold(n_splits=10, n_repeats=3, random_state=1)
@@ -99,7 +99,7 @@ model = TPOTRegressor(... scoring='neg_mean_absolute_error', cv=cv)
 
 或者是一个[重复的 stratifiedfold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html)进行回归，用*精度*度量进行分类:
 
-```
+```py
 ...
 # define evaluation procedure
 cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
@@ -113,7 +113,7 @@ model = TPOTClassifier(... scoring='accuracy', cv=cv)
 
 例如，100 代和 5 代或 10 代的适度人口规模是一个很好的起点。
 
-```
+```py
 ...
 # define search
 model = TPOTClassifier(generations=5, population_size=50, ...)
@@ -123,7 +123,7 @@ model = TPOTClassifier(generations=5, population_size=50, ...)
 
 这个管道可以作为代码导出到 Python 文件中，以后可以复制粘贴到自己的项目中。
 
-```
+```py
 ...
 # export the best model
 model.export('tpot_model.py')
@@ -148,7 +148,7 @@ model.export('tpot_model.py')
 
 下面的示例下载数据集并总结其形状。
 
-```
+```py
 # summarize the sonar dataset
 from pandas import read_csv
 # load dataset
@@ -162,7 +162,7 @@ print(X.shape, y.shape)
 
 运行该示例会下载数据集，并将其拆分为输入和输出元素。不出所料，我们可以看到有 208 行数据，60 个输入变量。
 
-```
+```py
 (208, 60) (208,)
 ```
 
@@ -170,7 +170,7 @@ print(X.shape, y.shape)
 
 首先，我们可以定义评估模型的方法。我们将采用[重复分层 k 倍交叉验证](https://machinelearningmastery.com/k-fold-cross-validation/)的良好做法，重复 3 次，重复 10 次。
 
-```
+```py
 ...
 # define model evaluation
 cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
@@ -178,7 +178,7 @@ cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
 
 我们将使用五代 50 的人口规模进行搜索，并通过将“ *n_jobs* ”设置为-1 来使用系统上的所有核心。
 
-```
+```py
 ...
 # define search
 model = TPOTClassifier(generations=5, population_size=50, cv=cv, scoring='accuracy', verbosity=2, random_state=1, n_jobs=-1)
@@ -186,7 +186,7 @@ model = TPOTClassifier(generations=5, population_size=50, cv=cv, scoring='accura
 
 最后，我们可以开始搜索，并确保在运行结束时保存性能最佳的模型。
 
-```
+```py
 ...
 # perform the search
 model.fit(X, y)
@@ -196,7 +196,7 @@ model.export('tpot_sonar_best_model.py')
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # example of tpot for the sonar classification dataset
 from pandas import read_csv
 from sklearn.preprocessing import LabelEncoder
@@ -227,7 +227,7 @@ model.export('tpot_sonar_best_model.py')
 
 高性能模型的准确性将在过程中报告。
 
-```
+```py
 Generation 1 - Current best internal CV score: 0.8650793650793651
 Generation 2 - Current best internal CV score: 0.8650793650793651
 Generation 3 - Current best internal CV score: 0.8650793650793651
@@ -243,7 +243,7 @@ Best pipeline: GradientBoostingClassifier(GaussianNB(input_matrix), learning_rat
 
 打开这个文件，您可以看到有一些用于加载数据集和拟合管道的通用代码。下面列出了一个例子。
 
-```
+```py
 import numpy as np
 import pandas as pd
 from sklearn.ensemble import GradientBoostingClassifier
@@ -279,7 +279,7 @@ results = exported_pipeline.predict(testing_features)
 
 下面列出了完整的示例。
 
-```
+```py
 # example of fitting a final model and making a prediction on the sonar dataset
 from pandas import read_csv
 from sklearn.preprocessing import LabelEncoder
@@ -315,7 +315,7 @@ print('Predicted: %.3f' % yhat[0])
 
 运行该示例适合数据集上性能最好的模型，并对单行新数据进行预测。
 
-```
+```py
 Predicted: 1.000
 ```
 
@@ -336,7 +336,7 @@ Predicted: 1.000
 
 下面的示例下载数据集并总结其形状。
 
-```
+```py
 # summarize the auto insurance dataset
 from pandas import read_csv
 # load dataset
@@ -350,7 +350,7 @@ print(X.shape, y.shape)
 
 运行该示例会下载数据集，并将其拆分为输入和输出元素。不出所料，我们可以看到有 63 行数据带有一个输入变量。
 
-```
+```py
 (63, 1) (63,)
 ```
 
@@ -358,7 +358,7 @@ print(X.shape, y.shape)
 
 首先，我们可以定义评估模型的方法。我们将使用重复 k-fold 交叉验证的良好实践，重复 3 次，重复 10 次。
 
-```
+```py
 ...
 # define evaluation procedure
 cv = RepeatedKFold(n_splits=10, n_repeats=3, random_state=1)
@@ -366,7 +366,7 @@ cv = RepeatedKFold(n_splits=10, n_repeats=3, random_state=1)
 
 我们将使用 5 代 50 的种群大小进行搜索，并通过将“ *n_jobs* ”设置为-1 来使用系统上的所有内核。
 
-```
+```py
 ...
 # define search
 model = TPOTRegressor(generations=5, population_size=50, scoring='neg_mean_absolute_error', cv=cv, verbosity=2, random_state=1, n_jobs=-1)
@@ -374,7 +374,7 @@ model = TPOTRegressor(generations=5, population_size=50, scoring='neg_mean_absol
 
 最后，我们可以开始搜索，并确保在运行结束时保存性能最佳的模型。
 
-```
+```py
 ...
 # perform the search
 model.fit(X, y)
@@ -384,7 +384,7 @@ model.export('tpot_insurance_best_model.py')
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # example of tpot for the insurance regression dataset
 from pandas import read_csv
 from sklearn.model_selection import RepeatedKFold
@@ -412,7 +412,7 @@ model.export('tpot_insurance_best_model.py')
 
 高性能模型的 MAE 将会一路被报道。
 
-```
+```py
 Generation 1 - Current best internal CV score: -29.147625969129034
 Generation 2 - Current best internal CV score: -29.147625969129034
 Generation 3 - Current best internal CV score: -29.147625969129034
@@ -428,7 +428,7 @@ Best pipeline: LinearSVR(input_matrix, C=1.0, dual=False, epsilon=0.0001, loss=s
 
 打开这个文件，您可以看到有一些用于加载数据集和拟合管道的通用代码。下面列出了一个例子。
 
-```
+```py
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -458,7 +458,7 @@ results = exported_pipeline.predict(testing_features)
 
 下面列出了完整的示例。
 
-```
+```py
 # example of fitting a final model and making a prediction on the insurance dataset
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
@@ -485,7 +485,7 @@ print('Predicted: %.3f' % yhat[0])
 
 运行该示例适合数据集上性能最好的模型，并对单行新数据进行预测。
 
-```
+```py
 Predicted: 389.612
 ```
 

@@ -53,7 +53,7 @@ k 折叠交叉验证过程将有限的数据集分成 k 个不重叠的折叠。
 
 下面的示例创建并汇总了数据集。
 
-```
+```py
 # test classification dataset
 from sklearn.datasets import make_classification
 # define dataset
@@ -66,7 +66,7 @@ print(X.shape, y.shape)
 
 伪随机数发生器的固定种子确保我们每次生成数据集时获得相同的样本。
 
-```
+```py
 (1000, 20) (1000,)
 ```
 
@@ -78,7 +78,7 @@ print(X.shape, y.shape)
 
 下面列出了完整的示例。
 
-```
+```py
 # evaluate a logistic regression model using k-fold cross-validation
 from numpy import mean
 from numpy import std
@@ -104,7 +104,7 @@ print('Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 在这种情况下，我们可以看到该模型实现了大约 86.8%的估计分类准确率。
 
-```
+```py
 Accuracy: 0.868 (0.032)
 ```
 
@@ -150,7 +150,7 @@ k 的良好默认值是 k=10。
 
 重复次数的良好默认值取决于数据集上模型性能估计的噪声程度。值为 3、5 或 10 的重复可能是一个好的开始。可能不需要超过 10 次的重复。
 
-```
+```py
 ...
 # prepare the cross-validation procedure
 cv = RepeatedKFold(n_splits=10, n_repeats=3, random_state=1)
@@ -158,7 +158,7 @@ cv = RepeatedKFold(n_splits=10, n_repeats=3, random_state=1)
 
 下面的例子演示了我们的测试数据集的重复 k 倍交叉验证。
 
-```
+```py
 # evaluate a logistic regression model using repeated k-fold cross-validation
 from numpy import mean
 from numpy import std
@@ -184,7 +184,7 @@ print('Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 在这种情况下，我们可以看到模型实现了大约 86.7%的估计分类准确率，这低于之前报告的 86.8%的单次运行结果。这可能表明单次运行结果可能是乐观的，三次重复的结果可能是对真实均值模型性能的更好估计。
 
-```
+```py
 Accuracy: 0.867 (0.031)
 ```
 
@@ -210,7 +210,7 @@ Accuracy: 0.867 (0.031)
 
 考虑到[大数定律](https://machinelearningmastery.com/a-gentle-introduction-to-the-law-of-large-numbers-in-machine-learning/)，我们预计程序的更多重复将导致平均模型性能的更精确估计。虽然，这些试验不是独立的，所以潜在的统计原理变得具有挑战性。
 
-```
+```py
 # compare the number of repeats for repeated k-fold cross-validation
 from scipy.stats import sem
 from numpy import mean
@@ -258,7 +258,7 @@ pyplot.show()
 
 查看标准误差，我们可以看到它随着重复次数的增加而减少，并在大约 9 或 10 次重复时稳定在大约 0.003 的值，尽管 5 次重复达到 0.005 的标准误差，是单次重复的一半。
 
-```
+```py
 >1 mean=0.8680 se=0.011
 >2 mean=0.8675 se=0.008
 >3 mean=0.8673 se=0.006

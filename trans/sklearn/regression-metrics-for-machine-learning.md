@@ -117,7 +117,7 @@
 
 下面的例子给出了一个由所有 1.0 值和预测组成的小的人为数据集，范围从完美(1.0)到错误(0.0)，增量为 0.1。计算并绘制每个预测值和期望值之间的平方误差，以显示平方误差的二次增加。
 
-```
+```py
 ...
 # calculate error
 err = (expected[i] - predicted[i])**2
@@ -125,7 +125,7 @@ err = (expected[i] - predicted[i])**2
 
 下面列出了完整的示例。
 
-```
+```py
 # example of increase in mean squared error
 from matplotlib import pyplot
 from sklearn.metrics import mean_squared_error
@@ -154,7 +154,7 @@ pyplot.show()
 
 我们可以看到误差上升得很快，比线性(直线)上升得更快。
 
-```
+```py
 >1.0, 1.0 = 0.000
 >1.0, 0.9 = 0.010
 >1.0, 0.8 = 0.040
@@ -186,7 +186,7 @@ pyplot.show()
 
 该函数采用一维数组或期望值和预测值的列表，并返回均方误差值。
 
-```
+```py
 ...
 # calculate errors
 errors = mean_squared_error(expected, predicted)
@@ -194,7 +194,7 @@ errors = mean_squared_error(expected, predicted)
 
 下面的例子给出了一个计算设计的期望值和预测值之间的均方误差的例子。
 
-```
+```py
 # example of calculate the mean squared error
 from sklearn.metrics import mean_squared_error
 # real value
@@ -209,7 +209,7 @@ print(errors)
 
 运行该示例计算并打印均方误差。
 
-```
+```py
 0.35000000000000003
 ```
 
@@ -251,7 +251,7 @@ RMSE 可以计算如下:
 
 该函数采用一维数组或期望值和预测值的列表，并返回均方误差值。
 
-```
+```py
 ...
 # calculate errors
 errors = mean_squared_error(expected, predicted, squared=False)
@@ -259,7 +259,7 @@ errors = mean_squared_error(expected, predicted, squared=False)
 
 下面的例子给出了一个计算设计的期望值和预测值之间的均方根误差的例子。
 
-```
+```py
 # example of calculate the root mean squared error
 from sklearn.metrics import mean_squared_error
 # real value
@@ -274,7 +274,7 @@ print(errors)
 
 运行该示例计算并打印均方根误差。
 
-```
+```py
 0.5916079783099616
 ```
 
@@ -306,7 +306,7 @@ MAE 可以计算如下:
 
 下面的例子给出了一个由所有 1.0 值和预测组成的小的人为数据集，范围从完美(1.0)到错误(0.0)，增量为 0.1。计算并绘制每个预测值和期望值之间的绝对误差，以显示误差的线性增加。
 
-```
+```py
 ...
 # calculate error
 err = abs((expected[i] - predicted[i]))
@@ -314,7 +314,7 @@ err = abs((expected[i] - predicted[i]))
 
 下面列出了完整的示例。
 
-```
+```py
 # plot of the increase of mean absolute error with prediction error
 from matplotlib import pyplot
 from sklearn.metrics import mean_squared_error
@@ -343,7 +343,7 @@ pyplot.show()
 
 我们可以看到误差线性上升，直观易懂。
 
-```
+```py
 >1.0, 1.0 = 0.000
 >1.0, 0.9 = 0.100
 >1.0, 0.8 = 0.200
@@ -367,7 +367,7 @@ pyplot.show()
 
 该函数采用一维数组或期望值和预测值的列表，并返回平均绝对误差值。
 
-```
+```py
 ...
 # calculate errors
 errors = mean_absolute_error(expected, predicted)
@@ -375,7 +375,7 @@ errors = mean_absolute_error(expected, predicted)
 
 下面的例子给出了一个计算设计的期望值和预测值之间的平均绝对误差的例子。
 
-```
+```py
 # example of calculate the mean absolute error
 from sklearn.metrics import mean_absolute_error
 # real value
@@ -390,7 +390,7 @@ print(errors)
 
 运行该示例计算并打印平均绝对误差。
 
-```
+```py
 0.5
 ```
 

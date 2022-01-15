@@ -76,7 +76,7 @@ Python 中分类的感知器算法
 
 该课程允许您配置学习率( *eta0* )，默认为 1.0。
 
-```
+```py
 ...
 # define model
 model = Perceptron(eta0=1.0)
@@ -84,7 +84,7 @@ model = Perceptron(eta0=1.0)
 
 该实现还允许您配置训练时期的总数( *max_iter* ，默认为 1，000。
 
-```
+```py
 ...
 # define model
 model = Perceptron(max_iter=1000)
@@ -100,7 +100,7 @@ model = Perceptron(max_iter=1000)
 
 该示例创建并汇总数据集。
 
-```
+```py
 # test classification dataset
 from sklearn.datasets import make_classification
 # define dataset
@@ -111,7 +111,7 @@ print(X.shape, y.shape)
 
 运行该示例将创建数据集，并确认数据集的行数和列数。
 
-```
+```py
 (1000, 10) (1000,)
 ```
 
@@ -119,7 +119,7 @@ print(X.shape, y.shape)
 
 我们将使用默认配置。
 
-```
+```py
 ...
 # create the model
 model = Perceptron()
@@ -127,7 +127,7 @@ model = Perceptron()
 
 下面列出了评估用于合成二进制分类任务的感知器模型的完整示例。
 
-```
+```py
 # evaluate a perceptron model on the dataset
 from numpy import mean
 from numpy import std
@@ -153,7 +153,7 @@ print('Mean Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 在这种情况下，我们可以看到模型达到了大约 84.7%的平均准确率。
 
-```
+```py
 Mean Accuracy: 0.847 (0.052)
 ```
 
@@ -163,7 +163,7 @@ Mean Accuracy: 0.847 (0.052)
 
 我们可以用下面列出的完整示例来演示这一点。
 
-```
+```py
 # make a prediction with a perceptron model on the dataset
 from sklearn.datasets import make_classification
 from sklearn.linear_model import Perceptron
@@ -183,7 +183,7 @@ print('Predicted Class: %d' % yhat)
 
 运行该示例符合模型，并对新的数据行进行类别标签预测。
 
-```
+```py
 Predicted Class: 1
 ```
 
@@ -203,7 +203,7 @@ Predicted Class: 1
 
 通常在一个小值(如 1e-4(或更小)和 1.0 之间的对数标度上测试学习速率。在这种情况下，我们将测试以下值:
 
-```
+```py
 ...
 # define grid
 grid = dict()
@@ -212,7 +212,7 @@ grid['eta0'] = [0.0001, 0.001, 0.01, 0.1, 1.0]
 
 下面的例子使用 [GridSearchCV 类](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)和我们定义的值网格来演示这一点。
 
-```
+```py
 # grid search learning rate for the perceptron
 from sklearn.datasets import make_classification
 from sklearn.model_selection import GridSearchCV
@@ -247,7 +247,7 @@ for mean, param in zip(means, params):
 
 在这种情况下，我们可以看到，比默认值更小的学习速率导致更好的性能，学习速率 0.0001 和 0.001 都实现了大约 85.7%的分类准确率，而默认值 1.0 实现了大约 84.7%的准确率。
 
-```
+```py
 Mean Accuracy: 0.857
 Config: {'eta0': 0.0001}
 >0.857 with: {'eta0': 0.0001}
@@ -261,7 +261,7 @@ Config: {'eta0': 0.0001}
 
 这可能取决于训练数据集，并且可能有很大差异。同样，我们将在 1 到 1e+4 之间的对数标度上探索配置值。
 
-```
+```py
 ...
 # define grid
 grid = dict()
@@ -270,7 +270,7 @@ grid['max_iter'] = [1, 10, 100, 1000, 10000]
 
 我们将使用上一次搜索中发现的 0.0001 的良好学习率。
 
-```
+```py
 ...
 # define model
 model = Perceptron(eta0=0.0001)
@@ -278,7 +278,7 @@ model = Perceptron(eta0=0.0001)
 
 下面列出了网格搜索训练时期数量的完整示例。
 
-```
+```py
 # grid search total epochs for the perceptron
 from sklearn.datasets import make_classification
 from sklearn.model_selection import GridSearchCV
@@ -313,7 +313,7 @@ for mean, param in zip(means, params):
 
 在这种情况下，我们可以看到 10 到 10，000 个纪元导致了大约相同的分类精度。一个有趣的例外是探索同时配置学习速率和训练时期的数量，看看是否能取得更好的结果。
 
-```
+```py
 Mean Accuracy: 0.857
 Config: {'max_iter': 10}
 >0.850 with: {'max_iter': 1}

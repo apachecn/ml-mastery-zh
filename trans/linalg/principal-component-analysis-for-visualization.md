@@ -45,7 +45,7 @@
 
 我们从[葡萄酒数据集](https://scikit-learn.org/stable/datasets/toy_dataset.html#wine-dataset)开始，这是一个包含 13 个特征(即数据集是 13 维的)和 3 个类的分类数据集。共有 178 个样本:
 
-```
+```py
 from sklearn.datasets import load_wine
 winedata = load_wine()
 X, y = winedata['data'], winedata['target']
@@ -53,14 +53,14 @@ print(X.shape)
 print(y.shape)
 ```
 
-```
+```py
 (178, 13)
 (178,)
 ```
 
 在 13 个特征中，我们可以选择任意两个并用 matplotlib 绘制(我们使用`c`参数对不同的类进行颜色编码):
 
-```
+```py
 ...
 import matplotlib.pyplot as plt
 plt.scatter(X[:,1], X[:,2], c=y)
@@ -71,7 +71,7 @@ plt.show()
 
 或者我们也可以选择任意三个，用 3D 显示:
 
-```
+```py
 ...
 ax = fig.add_subplot(projection='3d')
 ax.scatter(X[:,1], X[:,2], X[:,3], c=y)
@@ -82,7 +82,7 @@ plt.show()
 
 但这并没有揭示数据的大部分样子，因为大多数特征都没有显示出来。我们现在求助于主成分分析:
 
-```
+```py
 ...
 from sklearn.decomposition import PCA
 pca = PCA()
@@ -96,7 +96,7 @@ plt.show()
 
 这里我们通过主成分分析将输入数据`X`转化为`Xt`。我们只考虑包含最多信息的前两列，并以二维方式绘制。我们可以看到紫色类还是挺有特色的，但是还是有一些重叠。如果我们在进行主成分分析之前对数据进行缩放，结果会有所不同:
 
-```
+```py
 ...
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
@@ -114,7 +114,7 @@ plt.show()
 
 将这些放在一起，下面是生成可视化的完整代码:
 
-```
+```py
 from sklearn.datasets import load_wine
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
@@ -171,7 +171,7 @@ plt.show()
 
 如果我们在不同的数据集(如 MINST 手写数字)上应用相同的方法，散点图不会显示明显的边界，因此需要更复杂的模型(如神经网络)来分类:
 
-```
+```py
 from sklearn.datasets import load_digits
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
@@ -197,7 +197,7 @@ plt.show()
 
 为了说明这个想法，我们可以分步骤从原始数据集中移除主成分，并查看数据集的外观。让我们考虑具有较少要素的数据集，并在图中显示两个要素:
 
-```
+```py
 from sklearn.datasets import load_iris
 irisdata = load_iris()
 X, y = irisdata['data'], irisdata['target']
@@ -210,13 +210,13 @@ plt.show()
 
 这是[虹膜数据集](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html)，它只有四个特征。这些功能的比例相当，因此我们可以跳过缩放器。利用 4 特征数据，主成分分析最多可以产生 4 个主成分:
 
-```
+```py
 ...
 pca = PCA().fit(X)
 print(pca.components_)
 ```
 
-```
+```py
 [[ 0.36138659 -0.08452251  0.85667061  0.3582892 ]
  [ 0.65658877  0.73016143 -0.17337266 -0.07548102]
  [-0.58202985  0.59791083  0.07623608  0.54583143]
@@ -239,7 +239,7 @@ $
 
 如果我们绘制$(X \cdot v) \cdot v^T$的前两个特征，它看起来像这样:
 
-```
+```py
 ...
 # Remove PC1
 Xmean = X - X.mean(axis=0)
@@ -255,7 +255,7 @@ plt.show()
 numpy 数组`Xmean`是将`X`的特征移动到零中心。这是 PCA 所必需的。然后通过矩阵向量乘法计算阵列`value`。
 数组`value`是映射在主轴上的每个数据点的大小。所以如果我们把这个值乘以主轴向量，我们得到一个数组`pc1`。从原始数据集`X`中移除这个，我们得到一个新的数组`Xremove`。在图中，我们观察到散点图上的点破碎在一起，每个类的聚类没有以前那么明显。这意味着我们通过去除第一主成分去除了很多信息。如果我们再次重复同样的过程，这些点会进一步瓦解:
 
-```
+```py
 ...
 # Remove PC2
 value = Xmean @ pca.components_[1]
@@ -269,7 +269,7 @@ plt.show()
 
 这看起来像一条直线，但实际上不是。如果我们再重复一次，所有的点都会折叠成一条直线:
 
-```
+```py
 ...
 # Remove PC3
 value = Xmean @ pca.components_[2]
@@ -283,12 +283,12 @@ plt.show()
 
 这些点都落在一条直线上，因为我们从只有四个特征的数据中去除了三个主成分。因此，我们的数据矩阵成为**等级 1** 。你可以试着再重复一次这个过程，结果是所有的点都折叠成一个点。当我们去除主成分时，每个步骤中去除的信息量可以通过主成分分析中相应的**解释方差比**找到:
 
-```
+```py
 ...
 print(pca.explained_variance_ratio_)
 ```
 
-```
+```py
 [0.92461872 0.05306648 0.01710261 0.00521218]
 ```
 
@@ -296,7 +296,7 @@ print(pca.explained_variance_ratio_)
 
 在机器学习方面，我们可以考虑在这个数据集中只使用一个单一的特征进行分类，即第一主成分。使用全套功能时，我们应期望达到不低于 90%的原始精度:
 
-```
+```py
 ...
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import f1_score
@@ -318,7 +318,7 @@ print("Using PC1, accuracy: ", clf.score(X_test2, y_test))
 print("Using PC1, F1: ", f1_score(y_test, clf.predict(X_test2), average="macro"))
 ```
 
-```
+```py
 Using all features, accuracy:  1.0
 Using all features, F1:  1.0
 Using PC1, accuracy:  0.96
@@ -333,7 +333,7 @@ $
 
 将这些放在一起，下面是生成可视化的完整代码:
 
-```
+```py
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.decomposition import PCA

@@ -95,7 +95,7 @@ ReLU 函数计算如下:
 
 我们可以通过下面的例子得到这个函数形状的直觉。
 
-```
+```py
 # example plot for the relu activation function
 from matplotlib import pyplot
 
@@ -138,7 +138,7 @@ sigmoid 激活函数计算如下:
 
 我们可以通过下面的例子得到这个函数形状的直觉。
 
-```
+```py
 # example plot for the sigmoid activation function
 from math import exp
 from matplotlib import pyplot
@@ -182,7 +182,7 @@ Tanh 激活函数计算如下:
 
 我们可以通过下面的例子得到这个函数形状的直觉。
 
-```
+```py
 # example plot for the tanh activation function
 from math import exp
 from matplotlib import pyplot
@@ -274,7 +274,7 @@ sigmoid 和 Tanh 函数都可以通过所谓的消失梯度问题，使模型在
 
 我们可以通过下面的例子得到这个函数形状的直觉。
 
-```
+```py
 # example plot for the linear activation function
 from matplotlib import pyplot
 
@@ -307,7 +307,7 @@ pyplot.show()
 
 然而，为了增加一些对称性，我们可以用下面的例子来检查这个函数的形状。
 
-```
+```py
 # example plot for the sigmoid activation function
 from math import exp
 from matplotlib import pyplot
@@ -355,7 +355,7 @@ softmax 函数计算如下:
 
 我们无法绘制 softmax 函数，但我们可以用 Python 给出一个计算它的例子。
 
-```
+```py
 from numpy import exp
 
 # softmax activation function
@@ -376,7 +376,7 @@ print(outputs.sum())
 
 然后，我们确认 softmax 输出的总和确实等于值 1.0。
 
-```
+```py
 [0.09003057 0.66524096 0.24472847]
 1.0
 ```

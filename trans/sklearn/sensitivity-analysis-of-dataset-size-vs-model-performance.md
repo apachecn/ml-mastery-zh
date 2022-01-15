@@ -73,7 +73,7 @@
 
 下面的示例生成了合成分类数据集，并总结了生成数据的形状。
 
-```
+```py
 # test classification dataset
 from sklearn.datasets import make_classification
 # define dataset
@@ -84,7 +84,7 @@ print(X.shape, y.shape)
 
 运行该示例会生成数据并报告输入和输出组件的大小，从而确认预期的形状。
 
-```
+```py
 (1000, 20) (1000,)
 ```
 
@@ -96,7 +96,7 @@ print(X.shape, y.shape)
 
 下面列出了在综合分类数据集上评估决策树模型的完整示例。
 
-```
+```py
 # evaluate a decision tree model on the synthetic classification dataset
 from sklearn.datasets import make_classification
 from sklearn.model_selection import cross_val_score
@@ -120,7 +120,7 @@ print('Mean Accuracy: %.3f (%.3f)' % (scores.mean(), scores.std()))
 
 在这种情况下，我们可以看到平均分类准确率约为 82.7%。
 
-```
+```py
 Mean Accuracy: 0.827 (0.042)
 ```
 
@@ -156,7 +156,7 @@ Mean Accuracy: 0.827 (0.042)
 
 如果您将此代码用作模板，则可以更改此函数以从文件中加载数据集，并选择给定大小的随机样本。
 
-```
+```py
 # load dataset
 def load_dataset(n_samples):
 	# define the dataset
@@ -170,7 +170,7 @@ def load_dataset(n_samples):
 
 下面列出了这个函数，它获取数据集的输入和输出元素，并返回数据集上决策树模型的平均值和标准差。
 
-```
+```py
 # evaluate a model
 def evaluate_model(X, y):
 	# define model evaluation procedure
@@ -189,7 +189,7 @@ def evaluate_model(X, y):
 
 在这种情况下，我们将保持适当的大小来限制运行时间，从 50 行到 100 万行，大致按 log10 的比例。
 
-```
+```py
 ...
 # define number of samples to consider
 sizes = [50, 100, 500, 1000, 5000, 10000, 50000, 100000, 500000, 1000000]
@@ -197,7 +197,7 @@ sizes = [50, 100, 500, 1000, 5000, 10000, 50000, 100000, 500000, 1000000]
 
 接下来，我们可以枚举每个数据集的大小，创建数据集，评估数据集上的模型，并存储结果供以后分析。
 
-```
+```py
 ...
 # evaluate each number of samples
 means, stds = list(), list()
@@ -219,7 +219,7 @@ for n_samples in sizes:
 
 这可以在图上显示为数据集大小的平均预期性能周围的误差线。
 
-```
+```py
 ...
 # define error bar as 2 standard deviations from the mean or 95%
 err = [min(1, s * 2) for s in stds]
@@ -229,7 +229,7 @@ pyplot.errorbar(sizes, means, yerr=err, fmt='-o')
 
 为了使图更易读，我们可以将 x 轴的比例改为 log，因为我们的数据集大小大约为 log10。
 
-```
+```py
 ...
 # change the scale of the x-axis to log
 ax = pyplot.gca()
@@ -244,7 +244,7 @@ pyplot.show()
 
 将所有这些结合起来，下面列出了对数据集大小对模型性能进行敏感性分析的完整示例。
 
-```
+```py
 # sensitivity analysis of model performance to dataset size
 from sklearn.datasets import make_classification
 from sklearn.model_selection import cross_val_score
@@ -308,7 +308,7 @@ pyplot.show()
 
 这可能意味着预期性能有一个上限，超过这个上限的数据可能不会改善所选测试工具的特定模型和配置。
 
-```
+```py
 >50: 0.673 (0.141)
 >100: 0.703 (0.135)
 >500: 0.809 (0.055)

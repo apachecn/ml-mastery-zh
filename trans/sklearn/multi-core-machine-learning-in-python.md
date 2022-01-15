@@ -93,7 +93,7 @@ scikit-learn Python 机器学习库通过关于关键机器学习任务的 [n_jo
 
 在这种情况下，我们将定义一个具有 500 棵树的随机森林模型，并使用单个核心来训练该模型。
 
-```
+```py
 ...
 # define the model
 model = RandomForestClassifier(n_estimators=500, n_jobs=1)
@@ -103,7 +103,7 @@ model = RandomForestClassifier(n_estimators=500, n_jobs=1)
 
 下面列出了评估使用单核训练随机森林模型的执行时间的完整示例。
 
-```
+```py
 # example of timing the training of a random forest model on one core
 from time import time
 from sklearn.datasets import make_classification
@@ -129,13 +129,13 @@ print('%.3f seconds' % result)
 
 你的系统需要多长时间？在下面的评论中分享你的结果。
 
-```
+```py
 10.702 seconds
 ```
 
 我们现在可以将示例更改为使用系统上的所有物理内核，在本例中为四个。
 
-```
+```py
 ...
 # define the model
 model = RandomForestClassifier(n_estimators=500, n_jobs=4)
@@ -143,7 +143,7 @@ model = RandomForestClassifier(n_estimators=500, n_jobs=4)
 
 下面列出了四核模型多核训练的完整示例。
 
-```
+```py
 # example of timing the training of a random forest model on 4 cores
 from time import time
 from sklearn.datasets import make_classification
@@ -169,13 +169,13 @@ print('%.3f seconds' % result)
 
 **你的系统需要多长时间？**在下面的评论中分享你的结果。
 
-```
+```py
 3.151 seconds
 ```
 
 我们现在可以将内核数量更改为八个，以考虑四个物理内核支持的超线程。
 
-```
+```py
 ...
 # define the model
 model = RandomForestClassifier(n_estimators=500, n_jobs=8)
@@ -183,7 +183,7 @@ model = RandomForestClassifier(n_estimators=500, n_jobs=8)
 
 我们可以通过将 *n_jobs* 设置为-1 自动使用所有内核来达到同样的效果；例如:
 
-```
+```py
 ...
 # define the model
 model = RandomForestClassifier(n_estimators=500, n_jobs=-1)
@@ -193,7 +193,7 @@ model = RandomForestClassifier(n_estimators=500, n_jobs=-1)
 
 下面列出了八核模型多核训练的完整示例。
 
-```
+```py
 # example of timing the training of a random forest model on 8 cores
 from time import time
 from sklearn.datasets import make_classification
@@ -219,7 +219,7 @@ print('%.3f seconds' % result)
 
 你的系统需要多长时间？在下面的评论中分享你的结果。
 
-```
+```py
 2.521 seconds
 ```
 
@@ -227,7 +227,7 @@ print('%.3f seconds' % result)
 
 下面列出了完整的示例。
 
-```
+```py
 # example of comparing number of cores used during training to execution speed
 from time import time
 from sklearn.datasets import make_classification
@@ -261,7 +261,7 @@ pyplot.show()
 
 你的系统需要多长时间？在下面的评论中分享你的结果。
 
-```
+```py
 >cores=1: 10.798 seconds
 >cores=2: 5.743 seconds
 >cores=3: 3.964 seconds
@@ -294,7 +294,7 @@ pyplot.show()
 
 首先，让我们使用单个核心来评估模型。
 
-```
+```py
 ...
 # evaluate the model
 n_scores = cross_val_score(model, X, y, scoring='accuracy', cv=cv, n_jobs=1)
@@ -302,7 +302,7 @@ n_scores = cross_val_score(model, X, y, scoring='accuracy', cv=cv, n_jobs=1)
 
 我们将评估随机森林模型，并在模型的训练中使用单个核心(目前)。
 
-```
+```py
 ...
 # define the model
 model = RandomForestClassifier(n_estimators=100, n_jobs=1)
@@ -310,7 +310,7 @@ model = RandomForestClassifier(n_estimators=100, n_jobs=1)
 
 下面列出了完整的示例。
 
-```
+```py
 # example of evaluating a model using a single core
 from time import time
 from sklearn.datasets import make_classification
@@ -340,13 +340,13 @@ print('%.3f seconds' % result)
 
 你的系统需要多长时间？在下面的评论中分享你的结果。
 
-```
+```py
 6.412 seconds
 ```
 
 我们可以更新示例以使用系统的所有八个内核，并期待大幅加速。
 
-```
+```py
 ...
 # evaluate the model
 n_scores = cross_val_score(model, X, y, scoring='accuracy', cv=cv, n_jobs=8)
@@ -354,7 +354,7 @@ n_scores = cross_val_score(model, X, y, scoring='accuracy', cv=cv, n_jobs=8)
 
 下面列出了完整的示例。
 
-```
+```py
 # example of evaluating a model using 8 cores
 from time import time
 from sklearn.datasets import make_classification
@@ -384,7 +384,7 @@ print('%.3f seconds' % result)
 
 你的系统需要多长时间？在下面的评论中分享你的结果。
 
-```
+```py
 2.371 seconds
 ```
 
@@ -392,7 +392,7 @@ print('%.3f seconds' % result)
 
 下面列出了完整的示例。
 
-```
+```py
 # compare execution speed for model evaluation vs number of cpu cores
 from time import time
 from sklearn.datasets import make_classification
@@ -436,7 +436,7 @@ pyplot.show()
 
 你的系统需要多长时间？在下面的评论中分享你的结果。
 
-```
+```py
 >cores=1: 6.339 seconds
 >cores=2: 3.765 seconds
 >cores=3: 2.404 seconds
@@ -459,7 +459,7 @@ pyplot.show()
 
 为了探索这个问题，让我们首先考虑模型训练使用所有核心，模型评估使用单个核心的情况。
 
-```
+```py
 ...
 # define the model
 model = RandomForestClassifier(n_estimators=100, n_jobs=8)
@@ -470,7 +470,7 @@ n_scores = cross_val_score(model, X, y, scoring='accuracy', cv=cv, n_jobs=1)
 
 下面列出了完整的示例。
 
-```
+```py
 # example of using multiple cores for model training but not model evaluation
 from time import time
 from sklearn.datasets import make_classification
@@ -500,13 +500,13 @@ print('%.3f seconds' % result)
 
 你的系统需要多长时间？在下面的评论中分享你的结果。
 
-```
+```py
 10.461 seconds
 ```
 
 如果我们在培训和评估程序之间划分核心数量，会怎么样？
 
-```
+```py
 ...
 # define the model
 model = RandomForestClassifier(n_estimators=100, n_jobs=4)
@@ -517,7 +517,7 @@ n_scores = cross_val_score(model, X, y, scoring='accuracy', cv=cv, n_jobs=4)
 
 下面列出了完整的示例。
 
-```
+```py
 # example of using multiple cores for model training and evaluation
 from time import time
 from sklearn.datasets import make_classification
@@ -547,7 +547,7 @@ print('%.3f seconds' % result)
 
 你的系统需要多长时间？在下面的评论中分享你的结果。
 
-```
+```py
 3.434 seconds
 ```
 
@@ -567,7 +567,7 @@ scikit-learn 库分别通过 [GridSearchCV](https://scikit-learn.org/stable/modu
 
 首先，让我们使用一个内核来评估随机森林算法的不同配置的网格。
 
-```
+```py
 ...
 # define grid search
 search = GridSearchCV(model, grid, n_jobs=1, cv=cv)
@@ -575,7 +575,7 @@ search = GridSearchCV(model, grid, n_jobs=1, cv=cv)
 
 下面列出了完整的示例。
 
-```
+```py
 # example of tuning model hyperparameters with a single core
 from time import time
 from sklearn.datasets import make_classification
@@ -610,13 +610,13 @@ print('%.3f seconds' % result)
 
 你的系统需要多长时间？在下面的评论中分享你的结果。
 
-```
+```py
 28.838 seconds
 ```
 
 我们现在可以将网格搜索配置为使用系统上所有可用的内核，在本例中是八个内核。
 
-```
+```py
 ...
 # define grid search
 search = GridSearchCV(model, grid, n_jobs=8, cv=cv)
@@ -624,7 +624,7 @@ search = GridSearchCV(model, grid, n_jobs=8, cv=cv)
 
 然后，我们可以评估多核网格搜索需要执行多长时间。下面列出了完整的示例。
 
-```
+```py
 # example of tuning model hyperparameters with 8 cores
 from time import time
 from sklearn.datasets import make_classification
@@ -659,7 +659,7 @@ print('%.3f seconds' % result)
 
 你的系统需要多长时间？在下面的评论中分享你的结果。
 
-```
+```py
 7.418 seconds
 ```
 
@@ -667,7 +667,7 @@ print('%.3f seconds' % result)
 
 然而，我们可以在模型训练和网格搜索之间划分核心数量，看看它是否为这个数据集上的这个模型提供了好处。
 
-```
+```py
 ...
 # define the model
 model = RandomForestClassifier(n_estimators=100, n_jobs=4)
@@ -678,7 +678,7 @@ search = GridSearchCV(model, grid, n_jobs=4, cv=cv)
 
 多核模型训练和多核超参数调整的完整示例如下所示。
 
-```
+```py
 # example of multi-core model training and hyperparameter tuning
 from time import time
 from sklearn.datasets import make_classification
@@ -711,7 +711,7 @@ print('%.3f seconds' % result)
 
 你的系统需要多长时间？在下面的评论中分享你的结果。
 
-```
+```py
 14.148 seconds
 ```
 

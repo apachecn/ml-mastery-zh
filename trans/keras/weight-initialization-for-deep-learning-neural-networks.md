@@ -112,7 +112,7 @@ xavier 初始化方法被计算为在范围-(1/sqrt(n))和 1/sqrt(n)之间具有
 
 下面列出了完整的示例。
 
-```
+```py
 # example of the xavier weight initialization
 from math import sqrt
 from numpy import mean
@@ -137,7 +137,7 @@ print(scaled.mean(), scaled.std())
 
 我们可以看到，生成的权重遵守这些界限，平均权重值接近零，标准偏差接近 0.17。
 
-```
+```py
 -0.31622776601683794 0.31622776601683794
 -0.3157663248679193 0.3160839282916222
 0.006806069733149146 0.17777128902976705
@@ -149,7 +149,7 @@ print(scaled.mean(), scaled.std())
 
 下面列出了完整的示例。
 
-```
+```py
 # plot of the bounds on xavier weight initialization for different numbers of inputs
 from math import sqrt
 from matplotlib import pyplot
@@ -180,7 +180,7 @@ pyplot.show()
 
 下面列出了完整的示例。
 
-```
+```py
 # example of the normalized xavier weight initialization
 from math import sqrt
 from numpy import mean
@@ -207,7 +207,7 @@ print(scaled.mean(), scaled.std())
 
 我们可以看到，生成的权重遵守这些界限，平均权重值接近零，标准偏差接近 0.17。
 
-```
+```py
 -0.44721359549995787 0.44721359549995787
 -0.4447861894315135 0.4463641245392874
 -0.01135636099916006 0.2581340352889168
@@ -219,7 +219,7 @@ print(scaled.mean(), scaled.std())
 
 下面列出了完整的示例。
 
-```
+```py
 # plot of the bounds of normalized xavier weight initialization for different numbers of inputs
 from math import sqrt
 from matplotlib import pyplot
@@ -268,7 +268,7 @@ pyplot.show()
 
 下面列出了完整的示例。
 
-```
+```py
 # example of the he weight initialization
 from math import sqrt
 from numpy.random import randn
@@ -292,7 +292,7 @@ print(scaled.mean(), scaled.std())
 
 我们可以看到权重的范围约为-1.573 到 1.433，接近理论范围约为-1.788 和 1.788，是[标准偏差的 4 倍，在高斯分布](https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule)中捕获了 99.7%的观测值。我们还可以看到，生成权重的均值和标准差分别接近规定的 0.0 和 0.447。
 
-```
+```py
 0.4472135954999579
 -1.5736761136523203 1.433348584081719
 -0.00023406487278826836 0.4522609460629265
@@ -304,7 +304,7 @@ print(scaled.mean(), scaled.std())
 
 下面列出了完整的示例。
 
-```
+```py
 # plot of the bounds on he weight initialization for different numbers of inputs
 from math import sqrt
 from matplotlib import pyplot

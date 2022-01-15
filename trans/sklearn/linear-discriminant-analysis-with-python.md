@@ -69,7 +69,7 @@ LDA 模型自然是多类的。这意味着它支持两类分类问题，并且�
 
 该方法可以在没有配置的情况下直接使用，尽管该实现确实提供了自定义参数，例如选择求解器和使用惩罚。
 
-```
+```py
 ...
 # create the lda model
 model = LinearDiscriminantAnalysis()
@@ -83,7 +83,7 @@ model = LinearDiscriminantAnalysis()
 
 该示例创建并汇总数据集。
 
-```
+```py
 # test classification dataset
 from sklearn.datasets import make_classification
 # define dataset
@@ -94,7 +94,7 @@ print(X.shape, y.shape)
 
 运行该示例将创建数据集，并确认数据集的行数和列数。
 
-```
+```py
 (1000, 10) (1000,)
 ```
 
@@ -102,7 +102,7 @@ print(X.shape, y.shape)
 
 下面列出了评估综合二元分类任务的线性判别分析模型的完整示例。
 
-```
+```py
 # evaluate a lda model on the dataset
 from numpy import mean
 from numpy import std
@@ -128,7 +128,7 @@ print('Mean Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 在这种情况下，我们可以看到模型实现了大约 89.3%的平均精度。
 
-```
+```py
 Mean Accuracy: 0.893 (0.033)
 ```
 
@@ -138,7 +138,7 @@ Mean Accuracy: 0.893 (0.033)
 
 我们可以用下面列出的完整示例来演示这一点。
 
-```
+```py
 # make a prediction with a lda model on the dataset
 from sklearn.datasets import make_classification
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
@@ -158,7 +158,7 @@ print('Predicted Class: %d' % yhat)
 
 运行该示例符合模型，并对新的数据行进行类别标签预测。
 
-```
+```py
 Predicted Class: 1
 ```
 
@@ -172,7 +172,7 @@ Predicted Class: 1
 
 下面的示例使用带有不同解算器值的网格的[网格分类](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)来演示这一点。
 
-```
+```py
 # grid search solver for lda
 from sklearn.datasets import make_classification
 from sklearn.model_selection import GridSearchCV
@@ -202,7 +202,7 @@ print('Config: %s' % results.best_params_)
 
 在这种情况下，我们可以看到，与其他内置解算器相比，默认的 SVD 解算器的性能最好。
 
-```
+```py
 Mean Accuracy: 0.893
 Config: {'solver': 'svd'}
 ```
@@ -221,7 +221,7 @@ Config: {'solver': 'svd'}
 
 下面列出了调整收缩超参数的完整示例。
 
-```
+```py
 # grid search shrinkage for lda
 from numpy import arange
 from sklearn.datasets import make_classification
@@ -252,7 +252,7 @@ print('Config: %s' % results.best_params_)
 
 在这种情况下，我们可以看到使用收缩将性能从大约 89.3%略微提升到大约 89.4%，值为 0.02。
 
-```
+```py
 Mean Accuracy: 0.894
 Config: {'shrinkage': 0.02}
 ```

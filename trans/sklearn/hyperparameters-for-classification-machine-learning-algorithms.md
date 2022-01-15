@@ -81,7 +81,7 @@ C 参数控制惩罚力度，这也是有效的。
 
 为了减少警告/错误，省略了一些组合。
 
-```
+```py
 # example of grid searching key hyperparametres for logistic regression
 from sklearn.datasets import make_blobs
 from sklearn.model_selection import RepeatedStratifiedKFold
@@ -112,7 +112,7 @@ for mean, stdev, param in zip(means, stds, params):
 
 运行该示例将打印最佳结果以及所有评估组合的结果。
 
-```
+```py
 Best: 0.945333 using {'C': 0.01, 'penalty': 'l2', 'solver': 'liblinear'}
 0.936333 (0.016829) with: {'C': 100, 'penalty': 'l2', 'solver': 'newton-cg'}
 0.937667 (0.017259) with: {'C': 100, 'penalty': 'l2', 'solver': 'lbfgs'}
@@ -147,7 +147,7 @@ Best: 0.945333 using {'C': 0.01, 'penalty': 'l2', 'solver': 'liblinear'}
 
 下面的示例演示了在合成二进制分类数据集上网格搜索 RidgeClassifier 的关键超参数。
 
-```
+```py
 # example of grid searching key hyperparametres for ridge classifier
 from sklearn.datasets import make_blobs
 from sklearn.model_selection import RepeatedStratifiedKFold
@@ -176,7 +176,7 @@ for mean, stdev, param in zip(means, stds, params):
 
 运行该示例将打印最佳结果以及所有评估组合的结果。
 
-```
+```py
 Best: 0.974667 using {'alpha': 0.1}
 0.974667 (0.014545) with: {'alpha': 0.1}
 0.974667 (0.014545) with: {'alpha': 0.2}
@@ -216,7 +216,7 @@ Best: 0.974667 using {'alpha': 0.1}
 
 下面的示例演示了在合成二进制分类数据集上网格搜索 KNeighborsClassifier 的关键超参数。
 
-```
+```py
 # example of grid searching key hyperparametres for KNeighborsClassifier
 from sklearn.datasets import make_blobs
 from sklearn.model_selection import RepeatedStratifiedKFold
@@ -247,7 +247,7 @@ for mean, stdev, param in zip(means, stds, params):
 
 运行该示例将打印最佳结果以及所有评估组合的结果。
 
-```
+```py
 Best: 0.937667 using {'metric': 'manhattan', 'n_neighbors': 13, 'weights': 'uniform'}
 0.833667 (0.031674) with: {'metric': 'euclidean', 'n_neighbors': 1, 'weights': 'uniform'}
 0.833667 (0.031674) with: {'metric': 'euclidean', 'n_neighbors': 1, 'weights': 'distance'}
@@ -282,7 +282,7 @@ SVM 算法，像梯度增强一样，非常流行，非常有效，并且提供�
 
 下面的示例演示了在合成二进制分类数据集上网格搜索支持向量机的关键超参数。
 
-```
+```py
 # example of grid searching key hyperparametres for SVC
 from sklearn.datasets import make_blobs
 from sklearn.model_selection import RepeatedStratifiedKFold
@@ -313,7 +313,7 @@ for mean, stdev, param in zip(means, stds, params):
 
 运行该示例将打印最佳结果以及所有评估组合的结果。
 
-```
+```py
 Best: 0.974333 using {'C': 1.0, 'gamma': 'scale', 'kernel': 'poly'}
 0.973667 (0.012512) with: {'C': 50, 'gamma': 'scale', 'kernel': 'poly'}
 0.970667 (0.018062) with: {'C': 50, 'gamma': 'scale', 'kernel': 'rbf'}
@@ -348,7 +348,7 @@ Best: 0.974333 using {'C': 1.0, 'gamma': 'scale', 'kernel': 'poly'}
 
 下面的示例演示了在合成二进制分类数据集上网格搜索巴金分类器的关键超参数。
 
-```
+```py
 # example of grid searching key hyperparameters for BaggingClassifier
 from sklearn.datasets import make_blobs
 from sklearn.model_selection import RepeatedStratifiedKFold
@@ -377,7 +377,7 @@ for mean, stdev, param in zip(means, stds, params):
 
 运行该示例将打印最佳结果以及所有评估组合的结果。
 
-```
+```py
 Best: 0.873667 using {'n_estimators': 1000}
 0.839000 (0.038588) with: {'n_estimators': 10}
 0.869333 (0.030434) with: {'n_estimators': 100}
@@ -410,7 +410,7 @@ Best: 0.873667 using {'n_estimators': 1000}
 
 下面的示例演示了在合成二进制分类数据集上网格搜索巴金分类器的关键超参数。
 
-```
+```py
 # example of grid searching key hyperparameters for RandomForestClassifier
 from sklearn.datasets import make_blobs
 from sklearn.model_selection import RepeatedStratifiedKFold
@@ -440,7 +440,7 @@ for mean, stdev, param in zip(means, stds, params):
 
 运行该示例将打印最佳结果以及所有评估组合的结果。
 
-```
+```py
 Best: 0.952000 using {'max_features': 'log2', 'n_estimators': 1000}
 0.841000 (0.032078) with: {'max_features': 'sqrt', 'n_estimators': 10}
 0.938333 (0.020830) with: {'max_features': 'sqrt', 'n_estimators': 100}
@@ -476,7 +476,7 @@ Best: 0.952000 using {'max_features': 'log2', 'n_estimators': 1000}
 
 下面的示例演示了在合成二进制分类数据集上网格搜索 gradientboosting 分类器的关键超参数。
 
-```
+```py
 # example of grid searching key hyperparameters for GradientBoostingClassifier
 from sklearn.datasets import make_blobs
 from sklearn.model_selection import RepeatedStratifiedKFold
@@ -508,7 +508,7 @@ for mean, stdev, param in zip(means, stds, params):
 
 运行该示例将打印最佳结果以及所有评估组合的结果。
 
-```
+```py
 Best: 0.936667 using {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 1000, 'subsample': 0.5}
 0.803333 (0.042058) with: {'learning_rate': 0.001, 'max_depth': 3, 'n_estimators': 10, 'subsample': 0.5}
 0.783667 (0.042386) with: {'learning_rate': 0.001, 'max_depth': 3, 'n_estimators': 10, 'subsample': 0.7}

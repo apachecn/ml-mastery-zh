@@ -138,7 +138,7 @@ scikit-learn 库提供了一套不同的聚类算法可供选择。
 
 您可以使用 pip Python 安装程序安装 scikit-learn 库，如下所示:
 
-```
+```py
 sudo pip install scikit-learn
 ```
 
@@ -150,7 +150,7 @@ sudo pip install scikit-learn
 
 运行以下脚本打印库版本号。
 
-```
+```py
 # check scikit-learn version
 import sklearn
 print(sklearn.__version__)
@@ -158,7 +158,7 @@ print(sklearn.__version__)
 
 运行该示例时，您应该会看到以下版本号或更高版本号。
 
-```
+```py
 0.22.1
 ```
 
@@ -172,7 +172,7 @@ print(sklearn.__version__)
 
 下面列出了创建和汇总合成聚类数据集的示例。
 
-```
+```py
 # synthetic classification dataset
 from numpy import where
 from sklearn.datasets import make_classification
@@ -220,7 +220,7 @@ pyplot.show()
 
 下面列出了完整的示例。
 
-```
+```py
 # affinity propagation clustering
 from numpy import unique
 from numpy import where
@@ -267,7 +267,7 @@ pyplot.show()
 
 下面列出了完整的示例。
 
-```
+```py
 # agglomerative clustering
 from numpy import unique
 from numpy import where
@@ -317,7 +317,7 @@ BIRCH 聚类(BIRCH 是使用
 
 下面列出了完整的示例。
 
-```
+```py
 # birch clustering
 from numpy import unique
 from numpy import where
@@ -368,7 +368,7 @@ DBSCAN 聚类(其中 DBSCAN 是基于密度的噪声应用空间聚类的缩写)
 
 下面列出了完整的示例。
 
-```
+```py
 # dbscan clustering
 from numpy import unique
 from numpy import where
@@ -417,7 +417,7 @@ pyplot.show()
 
 下面列出了完整的示例。
 
-```
+```py
 # k-means clustering
 from numpy import unique
 from numpy import where
@@ -468,7 +468,7 @@ Mini-Batch K-Means 是 K-Means 的修改版本，它使用样本的小批量而�
 
 下面列出了完整的示例。
 
-```
+```py
 # mini-batch k-means clustering
 from numpy import unique
 from numpy import where
@@ -519,7 +519,7 @@ pyplot.show()
 
 下面列出了完整的示例。
 
-```
+```py
 # mean shift clustering
 from numpy import unique
 from numpy import where
@@ -568,7 +568,7 @@ pyplot.show()
 
 下面列出了完整的示例。
 
-```
+```py
 # optics clustering
 from numpy import unique
 from numpy import where
@@ -617,7 +617,7 @@ pyplot.show()
 
 下面列出了完整的示例。
 
-```
+```py
 # spectral clustering
 from numpy import unique
 from numpy import where
@@ -662,7 +662,7 @@ pyplot.show()
 
 下面列出了完整的示例。
 
-```
+```py
 # gaussian mixture clustering
 from numpy import unique
 from numpy import where

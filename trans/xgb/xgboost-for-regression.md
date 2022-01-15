@@ -65,13 +65,13 @@ xboost 可以作为一个独立的库安装，并且可以使用 scikit-learn AP
 
 第一步是安装尚未安装的 XGBoost 库。这可以在大多数平台上使用 pip python 包管理器来实现；例如:
 
-```
+```py
 sudo pip install xgboost
 ```
 
 然后，您可以通过运行以下脚本来确认 XGBoost 库安装正确，并且可以使用。
 
-```
+```py
 # check xgboost version
 import xgboost
 print(xgboost.__version__)
@@ -81,7 +81,7 @@ print(xgboost.__version__)
 
 您的版本应该相同或更高。如果没有，您必须升级 XGBoost 库的版本。
 
-```
+```py
 1.1.1
 ```
 
@@ -91,7 +91,7 @@ print(xgboost.__version__)
 
 如果您在尝试运行上述脚本时确实有错误，我建议降级到 1.0.1 版(或更低版本)。这可以通过指定要安装到 pip 命令的版本来实现，如下所示:
 
-```
+```py
 sudo pip install xgboost==1.0.1
 ```
 
@@ -103,7 +103,7 @@ sudo pip install xgboost==1.0.1
 
 一个 XGBoost 回归模型可以通过创建一个*xgbreversor*类的实例来定义；例如:
 
-```
+```py
 ...
 # create an xgboost regression model
 model = XGBRegressor()
@@ -121,7 +121,7 @@ model = XGBRegressor()
 
 例如:
 
-```
+```py
 ...
 # create an xgboost regression model
 model = XGBRegressor(n_estimators=1000, max_depth=7, eta=0.1, subsample=0.7, colsample_bytree=0.8)
@@ -156,7 +156,7 @@ model = XGBRegressor(n_estimators=1000, max_depth=7, eta=0.1, subsample=0.7, col
 
 下面的示例将数据集下载并加载为熊猫数据框，并总结了数据集的形状和前五行数据。
 
-```
+```py
 # load and summarize the housing dataset
 from pandas import read_csv
 from matplotlib import pyplot
@@ -171,7 +171,7 @@ print(dataframe.head())
 
 运行该示例确认了 506 行数据、13 个输入变量和一个数字目标变量(总共 14 个)。我们还可以看到，所有的输入变量都是数字。
 
-```
+```py
 (506, 14)
         0     1     2   3      4      5   ...  8      9     10      11    12    13
 0  0.00632  18.0  2.31   0  0.538  6.575  ...   1  296.0  15.3  396.90  4.98  24.0
@@ -187,7 +187,7 @@ print(dataframe.head())
 
 首先，我们可以将加载的数据集分成输入和输出列，用于训练和评估预测模型。
 
-```
+```py
 ...
 # split data into input and output columns
 X, y = data[:, :-1], data[:, -1]
@@ -195,7 +195,7 @@ X, y = data[:, :-1], data[:, -1]
 
 接下来，我们可以创建一个具有默认配置的模型实例。
 
-```
+```py
 ...
 # define model
 model = XGBRegressor()
@@ -207,7 +207,7 @@ model = XGBRegressor()
 
 将使用均方差(MAE)评估模型性能。注意，MAE 在 scikit-learn 库中被设为负，这样它可以被最大化。因此，我们可以忽略符号，假设所有错误都是正的。
 
-```
+```py
 ...
 # define model evaluation method
 cv = RepeatedKFold(n_splits=10, n_repeats=3, random_state=1)
@@ -221,7 +221,7 @@ scores = cross_val_score(model, X, y, scoring='neg_mean_absolute_error', cv=cv, 
 
 然后，我们使用分数分布的平均值和标准偏差来报告性能的统计摘要，这是另一种好的做法。
 
-```
+```py
 ...
 # force scores to be positive
 scores = absolute(scores)
@@ -230,7 +230,7 @@ print('Mean MAE: %.3f (%.3f)' % (scores.mean(), scores.std()) )
 
 将这些联系在一起，下面列出了评估住房回归预测建模问题的 XGBoost 模型的完整示例。
 
-```
+```py
 # evaluate an xgboost regression model on the housing dataset
 from numpy import absolute
 from pandas import read_csv
@@ -262,7 +262,7 @@ print('Mean MAE: %.3f (%.3f)' % (scores.mean(), scores.std()) )
 
 这是一个不错的分数，比基线好，意味着模型有技巧，接近 1.9 的最佳分数。
 
-```
+```py
 Mean MAE: 2.109 (0.320)
 ```
 
@@ -272,7 +272,7 @@ Mean MAE: 2.109 (0.320)
 
 例如:
 
-```
+```py
 ...
 # make a prediction
 yhat = model.predict(new_data)
@@ -280,7 +280,7 @@ yhat = model.predict(new_data)
 
 我们可以用下面列出的一个完整的例子来演示这一点。
 
-```
+```py
 # fit a final xgboost model on the housing dataset and make a prediction
 from numpy import asarray
 from pandas import read_csv
@@ -310,7 +310,7 @@ print('Predicted: %.3f' % yhat)
 
 在这种情况下，我们可以看到模型预测的值约为 24。
 
-```
+```py
 Predicted: 24.019
 ```
 

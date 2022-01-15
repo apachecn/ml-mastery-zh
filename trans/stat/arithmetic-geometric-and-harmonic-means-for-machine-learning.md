@@ -77,7 +77,7 @@
 
 下面的例子演示了如何计算 10 个数的算术平均值。
 
-```
+```py
 # example of calculating the arithmetic mean
 from numpy import mean
 # define the dataset
@@ -89,7 +89,7 @@ print('Arithmetic Mean: %.3f' % result)
 
 运行该示例计算算术平均值并报告结果。
 
-```
+```py
 Arithmetic Mean: 4.500
 ```
 
@@ -111,7 +111,7 @@ Arithmetic Mean: 4.500
 
 下面的例子演示了如何计算 10 个数的几何平均值。
 
-```
+```py
 # example of calculating the geometric mean
 from scipy.stats import gmean
 # define the dataset
@@ -123,7 +123,7 @@ print('Geometric Mean: %.3f' % result)
 
 运行该示例计算几何平均值并报告结果。
 
-```
+```py
 Geometric Mean: 7.246
 ```
 
@@ -151,7 +151,7 @@ Geometric Mean: 7.246
 
 下面的例子演示了如何计算九个数的调和平均值。
 
-```
+```py
 # example of calculating the harmonic mean
 from scipy.stats import hmean
 # define the dataset
@@ -163,7 +163,7 @@ print('Harmonic Mean: %.3f' % result)
 
 运行该示例计算调和平均值并报告结果。
 
-```
+```py
 Harmonic Mean: 0.350
 ```
 

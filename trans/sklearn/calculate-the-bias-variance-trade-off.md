@@ -155,13 +155,13 @@
 
 首先，您必须安装 mlxtend 库；例如:
 
-```
+```py
 sudo pip install mlxtend
 ```
 
 以下示例通过 URL 直接加载[波士顿住房数据集](https://github.com/jbrownlee/Datasets/blob/master/housing.names)，将其拆分为训练集和测试集，然后估计线性回归的均方误差(MSE)以及 200 多个自举样本的模型误差的偏差和方差。
 
-```
+```py
 # estimate the bias and variance for a regression model
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
@@ -191,7 +191,7 @@ print('Variance: %.3f' % var)
 
 在这种情况下，我们可以看到模型具有高偏差和低方差。鉴于我们使用的是线性回归模型，这是可以预期的。我们还可以看到，估计的均值和方差之和等于模型的估计误差，例如 20.726 + 1.761 = 22.487。
 
-```
+```py
 MSE: 22.487
 Bias: 20.726
 Variance: 1.761

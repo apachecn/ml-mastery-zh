@@ -48,13 +48,13 @@ Seaborn 要求先安装 Matplotlib。
 
 可以直接使用 [pip](https://en.wikipedia.org/wiki/Pip_(package_manager)) 安装 Matplotlib，如下所示:
 
-```
+```py
 sudo pip install matplotlib
 ```
 
 安装后，您可以通过打印版本号来确认库可以加载和使用，如下所示:
 
-```
+```py
 # matplotlib
 import matplotlib
 print('matplotlib: %s' % matplotlib.__version__)
@@ -62,19 +62,19 @@ print('matplotlib: %s' % matplotlib.__version__)
 
 运行该示例将打印 Matplotlib 库的当前版本。
 
-```
+```py
 matplotlib: 3.1.2
 ```
 
 接下来，也可以使用 pip 安装 Seaborn 库:
 
-```
+```py
 sudo pip install seaborn
 ```
 
 安装后，我们还可以通过打印版本号来确认库是否可以加载和使用，如下所示:
 
-```
+```py
 # seaborn
 import seaborn
 print('seaborn: %s' % seaborn.__version__)
@@ -82,7 +82,7 @@ print('seaborn: %s' % seaborn.__version__)
 
 运行该示例将打印当前版本的 Seaborn 库。
 
-```
+```py
 seaborn: 0.10.0
 ```
 
@@ -92,7 +92,7 @@ seaborn: 0.10.0
 
 要显示剧情，可以调用 Matplotlib 库上的 [show()函数](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html)。
 
-```
+```py
 ...
 # display the plot
 pyplot.show()
@@ -100,7 +100,7 @@ pyplot.show()
 
 或者，可以将绘图保存到文件中，例如 PNG 格式的图像文件。 [savefig() Matplotlib 功能](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.savefig.html)可用于保存图像。
 
-```
+```py
 ...
 # save the plot
 pyplot.savefig('my_image.png')
@@ -120,7 +120,7 @@ x 轴表示规则的时间间隔，如时间。y 轴显示观察值，按 x 轴�
 
 数据集有两列:“*月*”和“*销售*”月将用作 x 轴，销售额将绘制在 y 轴上。
 
-```
+```py
 ...
 # create line plot
 lineplot(x='Month', y='Sales', data=dataset)
@@ -128,7 +128,7 @@ lineplot(x='Month', y='Sales', data=dataset)
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # line plot of a time series dataset
 from pandas import read_csv
 from seaborn import lineplot
@@ -162,7 +162,7 @@ x 轴表示均匀分布的类别。y 轴表示每个类别的数量，并绘制�
 
 我们将只绘制一个变量，在这种情况下，第一个变量是年龄段。
 
-```
+```py
 ...
 # create line plot
 countplot(x=0, data=dataset)
@@ -170,7 +170,7 @@ countplot(x=0, data=dataset)
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # bar chart plot of a categorical variable
 from pandas import read_csv
 from seaborn import countplot
@@ -194,7 +194,7 @@ pyplot.show()
 
 这可以通过使用 *countplot()* 函数并通过“*色调*参数指定类变量(列索引 9)来实现，如下所示:
 
-```
+```py
 ...
 # create bar chart plot
 countplot(x=0, hue=9, data=dataset)
@@ -202,7 +202,7 @@ countplot(x=0, hue=9, data=dataset)
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # bar chart plot of a categorical variable against a class variable
 from pandas import read_csv
 from seaborn import countplot
@@ -238,7 +238,7 @@ y 轴表示数据集中属于每个面元的观测值的频率或数量。
 
 我们将展示一个带有来自[糖尿病分类数据集](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.csv)的数字变量的箱线图。我们将只绘制一个变量，在这种情况下，第一个变量，即患者怀孕的次数。
 
-```
+```py
 ...
 # create histogram plot
 distplot(dataset[[0]])
@@ -246,7 +246,7 @@ distplot(dataset[[0]])
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # histogram plot of a numerical variable
 from pandas import read_csv
 from seaborn import distplot
@@ -284,7 +284,7 @@ y 轴代表观察值。绘制一个方框来总结数据集的中间 50%，从�
 
 我们将展示一个带有来自[糖尿病分类数据集](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.csv)的数字变量的箱线图。我们将只绘制一个变量，在这种情况下，第一个变量，即患者怀孕的次数。
 
-```
+```py
 ...
 # create box and whisker plot
 boxplot(x=0, data=dataset)
@@ -292,7 +292,7 @@ boxplot(x=0, data=dataset)
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # box and whisker plot of a numerical variable
 from pandas import read_csv
 from seaborn import boxplot
@@ -318,7 +318,7 @@ pyplot.show()
 
 这可以通过调用 *boxplot()* 函数，将类变量作为 x 轴传递，将数值变量作为 y 轴传递来实现。
 
-```
+```py
 ...
 # create box and whisker plot
 boxplot(x=8, y=0, data=dataset)
@@ -326,7 +326,7 @@ boxplot(x=8, y=0, data=dataset)
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # box and whisker plot of a numerical variable vs class label
 from pandas import read_csv
 from seaborn import boxplot
@@ -358,7 +358,7 @@ x 轴代表第一个样本的观察值，y 轴代表第二个样本的观察值�
 
 我们将用来自[糖尿病分类数据集](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.csv)的两个数值变量演示散点图。我们将绘制第一个变量与第二个变量的对比图，在本例中，第一个变量是患者怀孕的次数，第二个是两小时口服葡萄糖耐量试验后的血浆葡萄糖浓度([变量的更多细节在此](https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.names))。
 
-```
+```py
 ...
 # create scatter plot
 scatterplot(x=0, y=1, data=dataset)
@@ -366,7 +366,7 @@ scatterplot(x=0, y=1, data=dataset)
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # scatter plot of two numerical variables
 from pandas import read_csv
 from seaborn import scatterplot
@@ -392,7 +392,7 @@ pyplot.show()
 
 这可以通过使用散点图()函数并通过“*色调*”参数指定类变量(列索引 8)来实现，如下所示:
 
-```
+```py
 ...
 # create scatter plot
 scatterplot(x=0, y=1, hue=8, data=dataset)
@@ -400,7 +400,7 @@ scatterplot(x=0, y=1, hue=8, data=dataset)
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # scatter plot of two numerical variables vs class label
 from pandas import read_csv
 from seaborn import scatterplot

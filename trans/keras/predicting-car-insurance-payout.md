@@ -47,7 +47,7 @@
 
 您可以在下面看到数据集的前几行。
 
-```
+```py
 108,392.5
 19,46.2
 13,15.7
@@ -60,7 +60,7 @@
 
 我们可以直接从网址将数据集加载为熊猫数据帧；例如:
 
-```
+```py
 # load the dataset and summarize the shape
 from pandas import read_csv
 # define the location of the dataset
@@ -79,13 +79,13 @@ print(df.shape)
 
 它还建议使用 [k 倍交叉验证](https://machinelearningmastery.com/k-fold-cross-validation/)将是一个好主意，因为它将给出比训练/测试分割更可靠的模型性能估计，并且因为单个模型将在几秒钟内适合最大数据集，而不是几小时或几天。
 
-```
+```py
 (63, 2)
 ```
 
 接下来，我们可以通过查看汇总统计数据和数据图来了解更多关于数据集的信息。
 
-```
+```py
 # show summary statistics and plots of the dataset
 from pandas import read_csv
 from matplotlib import pyplot
@@ -104,7 +104,7 @@ pyplot.show()
 
 我们可以看到，每个变量的平均值都在十位数，取值范围从 0 到数百。这证实了扩展数据可能是一个好主意。
 
-```
+```py
                 0           1
 count   63.000000   63.000000
 mean    22.904762   98.187302
@@ -142,7 +142,7 @@ max    124.000000  422.200000
 
 首先，我们可以将数据集拆分成输入和输出变量，然后分成 67/33 [训练和测试集](https://machinelearningmastery.com/train-test-split-for-evaluating-machine-learning-algorithms/)。
 
-```
+```py
 ...
 # split into input and output columns
 X, y = df.values[:, :-1], df.values[:, -1]
@@ -154,7 +154,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33)
 
 模型的输出是线性激活(无激活)，我们将最小化均方误差(MSE)损失。
 
-```
+```py
 ...
 # determine the number of input features
 n_features = X.shape[1]
@@ -170,7 +170,7 @@ model.compile(optimizer='adam', loss='mse')
 
 我们正在原始数据上拟合模型，我们认为这可能是一个坏主意，但这是一个重要的起点。
 
-```
+```py
 ...
 # fit the model
 history = model.fit(X_train, y_train, epochs=100, batch_size=8, verbose=0, validation_data=(X_test,y_test))
@@ -178,7 +178,7 @@ history = model.fit(X_train, y_train, epochs=100, batch_size=8, verbose=0, valid
 
 在训练结束时，我们将评估模型在测试数据集上的性能，并将性能报告为平均绝对误差(MAE)，与 MSE 或 r MSE 相比，我通常更喜欢它。
 
-```
+```py
 ...
 # predict test set
 yhat = model.predict(X_test)
@@ -189,7 +189,7 @@ print('MAE: %.3f' % score)
 
 最后，我们将绘制训练和测试集上的均方误差损失的学习曲线。
 
-```
+```py
 ...
 # plot learning curves
 pyplot.title('Learning Curves')
@@ -203,7 +203,7 @@ pyplot.show()
 
 将所有这些结合起来，下面列出了在汽车保险数据集上评估我们的第一个 MLP 的完整示例。
 
-```
+```py
 # fit a simple mlp model and review learning curves
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
@@ -249,7 +249,7 @@ pyplot.show()
 
 在这种情况下，我们可以看到模型实现了大约 33.2 的 MAE，这是一个很好的性能基线，我们可能可以在此基础上进行改进。
 
-```
+```py
 MAE: 33.233
 ```
 
@@ -265,7 +265,7 @@ MAE: 33.233
 
 我们可能会稍微增加模型的容量，并期望类似的学习动态。例如，我们可以添加第二个具有八个节点的隐藏层(任意选择)，并将训练时期的数量增加一倍至 200。
 
-```
+```py
 ...
 # define model
 model = Sequential()
@@ -280,7 +280,7 @@ history = model.fit(X_train, y_train, epochs=200, batch_size=8, verbose=0, valid
 
 下面列出了完整的示例。
 
-```
+```py
 # fit a deeper mlp model and review learning curves
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
@@ -327,7 +327,7 @@ pyplot.show()
 
 在这种情况下，我们可以看到 MAE 略有提高，约为 27.9，尽管列车/测试分割的高方差意味着这种评估不可靠。
 
-```
+```py
 MAE: 27.939
 ```
 
@@ -343,7 +343,7 @@ MAE: 27.939
 
 首先，我们必须确保目标变量是一个二维数组。
 
-```
+```py
 ...
 # ensure that the target variable is a 2d array
 y_train, y_test = y_train.reshape((len(y_train),1)), y_test.reshape((len(y_test),1))
@@ -355,7 +355,7 @@ y_train, y_test = y_train.reshape((len(y_train),1)), y_test.reshape((len(y_test)
 
 该过程对输入和输出变量分别应用于[以避免数据泄露](https://machinelearningmastery.com/data-preparation-without-data-leakage/)。
 
-```
+```py
 ...
 # power transform input data
 pt1 = PowerTransformer()
@@ -373,7 +373,7 @@ y_test = pt2.transform(y_test)
 
 然后，可以根据模型做出的预测和测试集的预期目标值对转换进行反演，我们可以像以前一样以正确的比例计算 MAE。
 
-```
+```py
 ...
 # inverse transforms on target variable
 y_test = pt2.inverse_transform(y_test)
@@ -382,7 +382,7 @@ yhat = pt2.inverse_transform(yhat)
 
 将这些联系在一起，下面列出了用转换后的数据拟合和评估 MLP 并创建模型的学习曲线的完整示例。
 
-```
+```py
 # fit a mlp model with data transforms and review learning curves
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
@@ -445,7 +445,7 @@ pyplot.show()
 
 在这种情况下，该模型获得了合理的 MAE 分数，尽管比以前报告的性能差。我们将暂时忽略模型性能。
 
-```
+```py
 MAE: 34.320
 ```
 
@@ -465,7 +465,7 @@ MAE: 34.320
 
 我们可以使用 [KFold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html) 类创建拆分并手动枚举每个折叠，拟合模型，对其进行评估，然后在过程结束时报告评估分数的平均值。
 
-```
+```py
 # prepare cross validation
 kfold = KFold(10)
 # enumerate splits
@@ -486,7 +486,7 @@ print('Mean MAE: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 下面列出了评估前一节中的基本 MLP 模型的框架的完整示例。
 
-```
+```py
 # k-fold cross-validation of base model for the auto insurance regression dataset
 from numpy import mean
 from numpy import std
@@ -536,7 +536,7 @@ print('Mean MAE: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 我们将使用这个结果作为我们的基线，看看我们是否可以实现更好的性能。
 
-```
+```py
 >27.314
 >69.577
 >20.891
@@ -552,7 +552,7 @@ Mean MAE: 38.913 (21.056)
 
 首先，让我们尝试在原始数据集上评估更深层次的模型，看看它是否比基线模型表现得更好。
 
-```
+```py
 ...
 # define model
 model = Sequential()
@@ -567,7 +567,7 @@ model.fit(X_train, y_train, epochs=200, batch_size=8, verbose=0)
 
 下面列出了完整的示例。
 
-```
+```py
 # k-fold cross-validation of deeper model for the auto insurance regression dataset
 from numpy import mean
 from numpy import std
@@ -616,7 +616,7 @@ print('Mean MAE: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 在这种情况下，我们可以看到 MLP 模型实现了大约 35.384 的 MAE，这比基线模型实现了大约 38.913 的 MAE 稍好。
 
-```
+```py
 Mean MAE: 35.384 (14.951)
 ```
 
@@ -624,7 +624,7 @@ Mean MAE: 35.384 (14.951)
 
 下面列出了完整的示例。
 
-```
+```py
 # k-fold cross-validation of deeper model with data transforms
 from numpy import mean
 from numpy import std
@@ -691,7 +691,7 @@ print('Mean MAE: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 也许这种转变并不像我们最初认为的那样有帮助。
 
-```
+```py
 Mean MAE: 37.371 (29.326)
 ```
 
@@ -699,7 +699,7 @@ Mean MAE: 37.371 (29.326)
 
 这意味着将每个变量的值缩放到范围[0，1]。我们可以使用[最小最大缩放器](https://machinelearningmastery.com/standardscaler-and-minmaxscaler-transforms-in-python/)来实现这一点；例如:
 
-```
+```py
 ...
 # prepare input data
 pt1 = MinMaxScaler()
@@ -715,7 +715,7 @@ y_test = pt2.transform(y_test)
 
 将这些联系在一起，下面列出了使用数据规范化评估更深层次的 MLP 的完整示例。
 
-```
+```py
 # k-fold cross-validation of deeper model with normalization transforms
 from numpy import mean
 from numpy import std
@@ -780,7 +780,7 @@ print('Mean MAE: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 在这种情况下，我们可以看到 MLP 模型实现了大约 30.388 的 MAE，这比我们迄今为止尝试的任何其他配置都要好。
 
-```
+```py
 Mean MAE: 30.388 (14.258)
 ```
 
@@ -801,7 +801,7 @@ Mean MAE: 30.388 (14.258)
 
 我们可以像以前一样准备数据并拟合模型，尽管是在整个数据集上，而不是数据集的训练子集上。
 
-```
+```py
 ...
 # split into input and output columns
 X, y = df.values[:, :-1], df.values[:, -1]
@@ -830,7 +830,7 @@ model.compile(optimizer='adam', loss='mse')
 
 首先，我们可以定义一行新数据，这只是这个数据集的一个变量。
 
-```
+```py
 ...
 # define a row of new data
 row = [13]
@@ -838,7 +838,7 @@ row = [13]
 
 然后，我们可以转换这些新数据，准备用作模型的输入。
 
-```
+```py
 ...
 # transform the input data
 X_new = pt1.transform([row])
@@ -846,7 +846,7 @@ X_new = pt1.transform([row])
 
 然后我们可以做一个预测。
 
-```
+```py
 ...
 # make prediction
 yhat = model.predict(X_new)
@@ -854,7 +854,7 @@ yhat = model.predict(X_new)
 
 然后反转预测的变换，这样我们就可以用正确的比例来使用或解释结果。
 
-```
+```py
 ...
 # invert transform on prediction
 yhat = pt2.inverse_transform(yhat)
@@ -862,7 +862,7 @@ yhat = pt2.inverse_transform(yhat)
 
 在这种情况下，我们将简单地报告预测。
 
-```
+```py
 ...
 # report prediction
 print('f(%s) = %.3f' % (row, yhat[0]))
@@ -870,7 +870,7 @@ print('f(%s) = %.3f' % (row, yhat[0]))
 
 将所有这些结合起来，下面列出了为汽车保险数据集拟合最终模型并使用它对新数据进行预测的完整示例。
 
-```
+```py
 # fit a final model and make predictions on new data.
 from pandas import read_csv
 from sklearn.model_selection import KFold
@@ -922,7 +922,7 @@ print('f(%s) = %.3f' % (row, yhat[0]))
 
 在这种情况下，我们可以看到输入 13 导致输出 62(千瑞典克朗)。
 
-```
+```py
 f([13]) = 62.595
 ```
 

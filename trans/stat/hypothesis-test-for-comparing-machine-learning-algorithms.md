@@ -67,13 +67,13 @@
 
 首先，您必须安装 mlxtend 库，例如:
 
-```
+```py
 sudo pip install mlxtend
 ```
 
 要使用评估，必须首先加载数据集，然后定义要比较的两个模型。
 
-```
+```py
 ...
 # load data
 X, y = ....
@@ -84,7 +84,7 @@ model2 = ...
 
 然后，您可以调用*paintest _ 5x2cv()*函数，并传入您的数据和模型，它将报告关于两种算法的性能差异是否显著的 t 统计值和 p 值。
 
-```
+```py
 ...
 # compare algorithms
 t, p = paired_ttest_5x2cv(estimator1=model1, estimator2=model2, X=X, y=y)
@@ -96,7 +96,7 @@ p 值必须使用 alpha 值来解释，这是您愿意接受的重要级别。
 
 alpha 值越小越好，常用值为 5%(0.05)。
 
-```
+```py
 ...
 # interpret the result
 if p <= 0.05:
@@ -115,7 +115,7 @@ else:
 
 下面的示例创建数据集并总结其形状。
 
-```
+```py
 # create classification dataset
 from sklearn.datasets import make_classification
 # define dataset
@@ -128,7 +128,7 @@ print(X.shape, y.shape)
 
 我们可以将这些数据作为比较两种算法的基础。
 
-```
+```py
 (1000, 10) (1000,)
 ```
 
@@ -138,7 +138,7 @@ print(X.shape, y.shape)
 
 下面列出了完整的示例。
 
-```
+```py
 # compare logistic regression and lda for binary classification
 from numpy import mean
 from numpy import std
@@ -171,7 +171,7 @@ pyplot.show()
 
 在这种情况下，结果表明，如果我们只看平均分数，线性判别分析的性能更好:逻辑回归为 89.2%，线性判别分析为 89.3%。
 
-```
+```py
 LogisticRegression Mean Accuracy: 0.892 (0.036)
 LinearDiscriminantAnalysis Mean Accuracy: 0.893 (0.033)
 ```
@@ -188,7 +188,7 @@ LinearDiscriminantAnalysis Mean Accuracy: 0.893 (0.033)
 
 首先，我们将使用 5×2 过程来评估算法，并计算 p 值和测试统计值。
 
-```
+```py
 ...
 # check if difference between algorithms is real
 t, p = paired_ttest_5x2cv(estimator1=model1, estimator2=model2, X=X, y=y, scoring='accuracy', random_seed=1)
@@ -198,7 +198,7 @@ print('P-value: %.3f, t-Statistic: %.3f' % (p, t))
 
 然后我们可以用 5%的α值来解释 p 值。
 
-```
+```py
 ...
 # interpret the result
 if p <= 0.05:
@@ -209,7 +209,7 @@ else:
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # use 5x2 statistical hypothesis testing procedure to compare two machine learning algorithms
 from numpy import mean
 from numpy import std
@@ -252,7 +252,7 @@ else:
 
 这突出表明，仅基于平均性能进行模型选择可能是不够的。
 
-```
+```py
 LogisticRegression Mean Accuracy: 0.892 (0.036)
 LinearDiscriminantAnalysis Mean Accuracy: 0.893 (0.033)
 P-value: 0.328, t-Statistic: 1.085
@@ -263,7 +263,7 @@ Algorithms probably have the same performance
 
 更新以下示例，以使用 5×2 CV 报告每个算法的分类精度。
 
-```
+```py
 # use 5x2 statistical hypothesis testing procedure to compare two machine learning algorithms
 from numpy import mean
 from numpy import std
@@ -302,7 +302,7 @@ else:
 
 在这种情况下，我们可以看到两种算法的平均性能差异甚至更大，89.4%对 89.0%支持逻辑回归，而不是我们在 3×10 CV 中看到的 LDA。
 
-```
+```py
 LogisticRegression Mean Accuracy: 0.894 (0.012)
 LinearDiscriminantAnalysis Mean Accuracy: 0.890 (0.013)
 P-value: 0.328, t-Statistic: 1.085

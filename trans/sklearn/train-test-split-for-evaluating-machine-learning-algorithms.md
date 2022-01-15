@@ -101,7 +101,7 @@ scikit-learn Python 机器学习库通过 [train_test_split()函数](https://sci
 
 该函数将加载的数据集作为输入，并返回分割成两个子集的数据集。
 
-```
+```py
 ...
 # split into train test sets
 train, test = train_test_split(dataset, ...)
@@ -109,7 +109,7 @@ train, test = train_test_split(dataset, ...)
 
 理想情况下，您可以将原始数据集拆分为输入( *X* )和输出( *y* )列，然后调用传递这两个数组的函数，并让它们适当地拆分为训练和测试子集。
 
-```
+```py
 ...
 # split into train test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, ...)
@@ -119,7 +119,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, ...)
 
 后者是最常见的，使用的值如 0.33，其中 33%的数据集将分配给测试集，67%的数据集将分配给训练集。
 
-```
+```py
 ...
 # split into train test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33)
@@ -129,7 +129,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33)
 
 下面列出了完整的示例。
 
-```
+```py
 # split a dataset into train and test sets
 from sklearn.datasets import make_blobs
 from sklearn.model_selection import train_test_split
@@ -144,13 +144,13 @@ print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
 
 我们可以看到，670 个示例(67%)被分配给了训练集，330 个示例(33%)被分配给了测试集，正如我们所指定的。
 
-```
+```py
 (670, 2) (330, 2) (670,) (330,)
 ```
 
 或者，可以通过指定“ *train_size* ”参数来拆分数据集，该参数可以是行数(整数)或原始数据集在 0 到 1 之间的百分比，例如 0.67 代表 67%。
 
-```
+```py
 ...
 # split into train test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.67)
@@ -170,7 +170,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.67)
 
 这可以通过将“ *random_state* ”设置为整数值来实现。任何价值都行；它不是可调超参数。
 
-```
+```py
 ...
 # split again, and we should see the same split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=1)
@@ -178,7 +178,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random
 
 下面的示例演示了这一点，并显示了数据的两个独立拆分会产生相同的结果。
 
-```
+```py
 # demonstrate that the train-test split procedure is repeatable
 from sklearn.datasets import make_blobs
 from sklearn.model_selection import train_test_split
@@ -198,7 +198,7 @@ print(X_train[:5, :])
 
 再次分割数据集，打印训练数据集的前五行，显示相同的值，确认当我们固定伪随机数发生器的种子时，我们得到原始数据集的相同分割。
 
-```
+```py
 [[-2.54341511  4.98947608]
  [ 5.65996724 -8.50997751]
  [-2.5072835  10.06155749]
@@ -222,7 +222,7 @@ print(X_train[:5, :])
 
 我们可以通过将“*分层*”参数设置为原始数据集的 y 分量来实现这一点。这将由 *train_test_split()* 功能使用，以确保在提供的“ *y* ”数组中，列车和测试集在每个类别中都有一定比例的示例。
 
-```
+```py
 ...
 # split into train test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.50, random_state=1, stratify=y)
@@ -232,7 +232,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.50, random
 
 首先，我们可以将数据集分割成训练集和测试集，而不需要“*分层*”参数。下面列出了完整的示例。
 
-```
+```py
 # split imbalanced dataset into train and test sets without stratification
 from collections import Counter
 from sklearn.datasets import make_classification
@@ -250,7 +250,7 @@ print(Counter(y_test))
 
 然后分割数据集，并报告训练集和测试集的组成。我们可以看到训练集有 45/5 个例子，测试集中有 49/1 个例子。列车和测试集的组成不同，这是不可取的。
 
-```
+```py
 Counter({0: 94, 1: 6})
 Counter({0: 45, 1: 5})
 Counter({0: 49, 1: 1})
@@ -258,7 +258,7 @@ Counter({0: 49, 1: 1})
 
 接下来，我们可以对列车测试分割进行分层，并比较结果。
 
-```
+```py
 # split imbalanced dataset into train and test sets with stratification
 from collections import Counter
 from sklearn.datasets import make_classification
@@ -276,7 +276,7 @@ print(Counter(y_test))
 
 运行该示例，我们可以看到在这种情况下，分层版本的 train-test split 已经创建了 train 和 test 数据集，在 train/test 集中有 47/3 个示例，正如我们所期望的那样。
 
-```
+```py
 Counter({0: 94, 1: 6})
 Counter({0: 47, 1: 3})
 Counter({0: 47, 1: 3})
@@ -303,7 +303,7 @@ Counter({0: 47, 1: 3})
 
 下面的示例下载数据集并总结其形状。
 
-```
+```py
 # summarize the sonar dataset
 from pandas import read_csv
 # load dataset
@@ -317,7 +317,7 @@ print(X.shape, y.shape)
 
 运行该示例会下载数据集，并将其拆分为输入和输出元素。不出所料，我们可以看到有 208 行数据，60 个输入变量。
 
-```
+```py
 (208, 60) (208,)
 ```
 
@@ -325,7 +325,7 @@ print(X.shape, y.shape)
 
 首先，加载的数据集必须分成输入和输出组件。
 
-```
+```py
 ...
 # split into inputs and outputs
 X, y = data[:, :-1], data[:, -1]
@@ -334,7 +334,7 @@ print(X.shape, y.shape)
 
 接下来，我们可以分割数据集，以便 67%用于训练模型，33%用于评估模型。这种分裂是任意选择的。
 
-```
+```py
 ...
 # split into train test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=1)
@@ -343,7 +343,7 @@ print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
 
 然后，我们可以在训练数据集上定义和拟合模型。
 
-```
+```py
 ...
 # fit the model
 model = RandomForestClassifier(random_state=1)
@@ -352,7 +352,7 @@ model.fit(X_train, y_train)
 
 然后使用拟合模型进行预测，并使用分类精度性能度量来评估预测。
 
-```
+```py
 ...
 # make predictions
 yhat = model.predict(X_test)
@@ -363,7 +363,7 @@ print('Accuracy: %.3f' % acc)
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # train-test split evaluation random forest on the sonar dataset
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
@@ -397,7 +397,7 @@ print('Accuracy: %.3f' % acc)
 
 最后，在测试集上对模型进行评估，当对新数据进行预测时，模型的性能具有大约 78.3%的准确性。
 
-```
+```py
 (208, 60) (208,)
 (139, 60) (69, 60) (139,) (69,)
 Accuracy: 0.783
@@ -418,7 +418,7 @@ Accuracy: 0.783
 
 以下示例将数据集下载并加载为熊猫数据框，并总结了数据集的形状。
 
-```
+```py
 # load and summarize the housing dataset
 from pandas import read_csv
 # load dataset
@@ -430,7 +430,7 @@ print(dataframe.shape)
 
 运行该示例确认了 506 行数据、13 个输入变量和单个数值目标变量(总共 14 个)。
 
-```
+```py
 (506, 14)
 ```
 
@@ -438,7 +438,7 @@ print(dataframe.shape)
 
 首先，加载的数据集必须分成输入和输出组件。
 
-```
+```py
 ...
 # split into inputs and outputs
 X, y = data[:, :-1], data[:, -1]
@@ -447,7 +447,7 @@ print(X.shape, y.shape)
 
 接下来，我们可以分割数据集，以便 67%用于训练模型，33%用于评估模型。这种分裂是任意选择的。
 
-```
+```py
 ...
 # split into train test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=1)
@@ -456,7 +456,7 @@ print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
 
 然后，我们可以在训练数据集上定义和拟合模型。
 
-```
+```py
 ...
 # fit the model
 model = RandomForestRegressor(random_state=1)
@@ -465,7 +465,7 @@ model.fit(X_train, y_train)
 
 然后使用拟合模型进行预测，并使用平均绝对误差(MAE)性能指标评估预测。
 
-```
+```py
 ...
 # make predictions
 yhat = model.predict(X_test)
@@ -476,7 +476,7 @@ print('MAE: %.3f' % mae)
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # train-test split evaluation random forest on the housing dataset
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
@@ -510,7 +510,7 @@ print('MAE: %.3f' % mae)
 
 最后，在测试集上对模型进行评估，当对新数据进行预测时，模型的性能平均绝对误差约为 2.211(千美元)。
 
-```
+```py
 (506, 13) (506,)
 (339, 13) (167, 13) (339,) (167,)
 MAE: 2.157

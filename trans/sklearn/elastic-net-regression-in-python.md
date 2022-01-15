@@ -90,7 +90,7 @@
 
 以下示例下载并加载数据集作为 Pandas [数据框](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html)，并总结数据集的形状和前五行数据。
 
-```
+```py
 # load and summarize the housing dataset
 from pandas import read_csv
 from matplotlib import pyplot
@@ -107,7 +107,7 @@ print(dataframe.head())
 
 我们还可以看到，所有的输入变量都是数字。
 
-```
+```py
 (506, 14)
         0     1     2   3      4      5   ...  8      9     10      11    12    13
 0  0.00632  18.0  2.31   0  0.538  6.575  ...   1  296.0  15.3  396.90  4.98  24.0
@@ -125,7 +125,7 @@ scikit-learn Python 机器学习库通过 [ElasticNet 类](https://scikit-learn.
 
 默认情况下， *l1_ratio* 使用相等的余额 0.5，alpha 使用 1.0 的全权重。
 
-```
+```py
 ...
 # define model
 model = ElasticNet(alpha=1.0, l1_ratio=0.5)
@@ -133,7 +133,7 @@ model = ElasticNet(alpha=1.0, l1_ratio=0.5)
 
 我们可以使用[重复 10 倍交叉验证](https://machinelearningmastery.com/k-fold-cross-validation/)来评估房屋数据集上的弹性网模型，并报告数据集上的平均绝对误差(MAE)。
 
-```
+```py
 # evaluate an elastic net model on the dataset
 from numpy import mean
 from numpy import std
@@ -164,7 +164,7 @@ print('Mean MAE: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 在这种情况下，我们可以看到模型实现了大约 3.682 的 MAE。
 
-```
+```py
 Mean MAE: 3.682 (0.530)
 ```
 
@@ -174,7 +174,7 @@ Mean MAE: 3.682 (0.530)
 
 我们可以用下面列出的一个完整的例子来演示这一点。
 
-```
+```py
 # make a prediction with an elastic net model on the dataset
 from pandas import read_csv
 from sklearn.linear_model import ElasticNet
@@ -197,7 +197,7 @@ print('Predicted: %.3f' % yhat)
 
 运行该示例符合模型，并对新的数据行进行预测。
 
-```
+```py
 Predicted: 31.047
 ```
 
@@ -215,7 +215,7 @@ Predicted: 31.047
 
 下面的例子使用 [GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) 类和我们定义的值网格来演示这一点。
 
-```
+```py
 # grid search hyperparameters for the elastic net
 from numpy import arange
 from pandas import read_csv
@@ -248,7 +248,7 @@ print('Config: %s' % results.best_params_)
 
 您可能会看到一些可以安全忽略的警告，例如:
 
-```
+```py
 Objective did not converge. You might want to increase the number of iterations.
 ```
 
@@ -258,7 +258,7 @@ Objective did not converge. You might want to increase the number of iterations.
 
 我们可以看到，该模型将 0.01 的 alpha 权重分配给了处罚，并且只关注 L2 处罚。
 
-```
+```py
 MAE: -3.378
 Config: {'alpha': 0.01, 'l1_ratio': 0.97}
 ```
@@ -271,7 +271,7 @@ scikit-learn 库还提供了一个内置的算法版本，可以通过[elastic c
 
 下面的例子演示了这一点。
 
-```
+```py
 # use automatically configured elastic net algorithm
 from numpy import arange
 from pandas import read_csv
@@ -299,7 +299,7 @@ print('l1_ratio_: %f' % model.l1_ratio_)
 
 同样，您可能会看到一些可以安全忽略的警告，例如:
 
-```
+```py
 Objective did not converge. You might want to increase the number of iterations.
 ```
 
@@ -307,7 +307,7 @@ Objective did not converge. You might want to increase the number of iterations.
 
 这与我们通过手动网格搜索发现的不同，可能是由于搜索或选择配置的系统方式。
 
-```
+```py
 alpha: 0.000000
 l1_ratio_: 0.470000
 ```

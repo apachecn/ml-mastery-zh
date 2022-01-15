@@ -69,7 +69,7 @@
 
 下面的示例定义了数据集并总结了它的形状。
 
-```
+```py
 # synthetic regression dataset
 from sklearn.datasets import make_regression
 # define dataset
@@ -80,7 +80,7 @@ print(X.shape, y.shape)
 
 运行该示例定义数据集并打印数组的形状，确认行数和列数。
 
-```
+```py
 (1000, 100) (1000,)
 ```
 
@@ -100,7 +100,7 @@ print(X.shape, y.shape)
 
 在定义和拟合模型之前，我们将把数据分成训练集和测试集，并通过将值归一化到 0-1 的范围来缩放输入数据，这是 MLPs 的一个很好的实践。
 
-```
+```py
 ...
 # split into train test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=1)
@@ -115,7 +115,7 @@ X_test = t.transform(X_test)
 
 随后是瓶颈层，其节点数与输入数据中的列数相同，例如没有压缩。
 
-```
+```py
 ...
 # define encoder
 visible = Input(shape=(n_inputs,))
@@ -131,7 +131,7 @@ bottleneck = Dense(n_bottleneck)(e)
 
 它将有一个带有批处理规范化和 ReLU 激活的隐藏层。输出层的节点数将与输入数据中的列数相同，并将使用线性激活函数输出数值。
 
-```
+```py
 ...
 # define decoder
 d = Dense(n_inputs*2)(bottleneck)
@@ -147,7 +147,7 @@ model.compile(optimizer='adam', loss='mse')
 
 考虑到重建是一种多输出回归问题，模型将使用随机梯度下降的有效 Adam 版本进行拟合，并最小化均方误差。
 
-```
+```py
 ...
 # compile autoencoder model
 model.compile(optimizer='adam', loss='mse')
@@ -155,7 +155,7 @@ model.compile(optimizer='adam', loss='mse')
 
 我们可以在自动编码器模型中绘制图层，以了解数据如何在模型中流动。
 
-```
+```py
 ...
 # plot the autoencoder
 plot_model(model, 'autoencoder.png', show_shapes=True)
@@ -169,7 +169,7 @@ plot_model(model, 'autoencoder.png', show_shapes=True)
 
 接下来，我们可以训练模型来重现输入，并跟踪模型在保持测试集上的性能。该模型针对 400 个时期和 16 个实例的批量进行训练。
 
-```
+```py
 ...
 # fit the autoencoder model to reconstruct input
 history = model.fit(X_train, X_train, epochs=400, batch_size=16, verbose=2, validation_data=(X_test,X_test))
@@ -177,7 +177,7 @@ history = model.fit(X_train, X_train, epochs=400, batch_size=16, verbose=2, vali
 
 训练后，我们可以为训练集和测试集绘制学习曲线，以确认模型很好地学习了重建问题。
 
-```
+```py
 ...
 # plot loss
 pyplot.plot(history.history['loss'], label='train')
@@ -188,7 +188,7 @@ pyplot.show()
 
 最后，如果需要，我们可以保存编码器模型供以后使用。
 
-```
+```py
 ...
 # define an encoder model (without the decoder)
 encoder = Model(inputs=visible, outputs=bottleneck)
@@ -207,7 +207,7 @@ encoder.save('encoder.h5')
 
 将所有这些结合在一起，下面列出了一个完整的自动编码器示例，用于在瓶颈层没有任何压缩的情况下重建回归数据集的输入数据。
 
-```
+```py
 # train autoencoder for regression with no compression in the bottleneck layer
 from sklearn.datasets import make_regression
 from sklearn.preprocessing import MinMaxScaler
@@ -272,7 +272,7 @@ encoder.save('encoder.h5')
 
 在这种情况下，我们看到，在瓶颈层没有压缩的情况下，损耗变低，但不会归零(正如我们可能预期的那样)。也许需要进一步调整模型架构或学习超参数。
 
-```
+```py
 ...
 Epoch 393/400
 42/42 - 0s - loss: 0.0025 - val_loss: 0.0024
@@ -316,7 +316,7 @@ Epoch 400/400
 
 下面列出了完整的示例。
 
-```
+```py
 # baseline in performance with support vector regression model
 from sklearn.datasets import make_regression
 from sklearn.preprocessing import MinMaxScaler
@@ -363,7 +363,7 @@ print(score)
 
 我们希望并期望 SVR 模型适合输入的编码版本，以实现被认为有用的编码的较低误差。
 
-```
+```py
 89.51082036130629
 ```
 
@@ -371,7 +371,7 @@ print(score)
 
 首先，我们可以从文件中加载训练好的编码器模型。
 
-```
+```py
 ...
 # load the model from file
 encoder = load_model('encoder.h5')
@@ -381,7 +381,7 @@ encoder = load_model('encoder.h5')
 
 这个过程可以应用于训练和测试数据集。
 
-```
+```py
 ...
 # encode the train data
 X_train_encode = encoder.predict(X_train)
@@ -391,7 +391,7 @@ X_test_encode = encoder.predict(X_test)
 
 然后，我们可以像以前一样，使用这些编码数据来训练和评估 SVR 模型。
 
-```
+```py
 ...
 # define model
 model = SVR()
@@ -403,7 +403,7 @@ yhat = model.predict(X_test_encode)
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # support vector regression performance with encoded input
 from sklearn.datasets import make_regression
 from sklearn.preprocessing import MinMaxScaler
@@ -457,7 +457,7 @@ print(score)
 
 这是一个比在原始数据集上评估的相同模型更好的 MAE，表明编码对我们选择的模型和测试工具有帮助。
 
-```
+```py
 69.45890939600503
 ```
 

@@ -75,7 +75,7 @@ scikit-leave Python 机器学习库通过 [LeaveOneOut 类](https://scikit-learn
 
 该方法没有配置，因此，没有提供任何参数来创建类的实例。
 
-```
+```py
 ...
 # create loocv procedure
 cv = LeaveOneOut()
@@ -85,7 +85,7 @@ cv = LeaveOneOut()
 
 每次迭代将从提供的数据集中返回可用于训练和测试集的行索引。
 
-```
+```py
 ...
 for train_ix, test_ix in cv.split(X):
 	...
@@ -93,7 +93,7 @@ for train_ix, test_ix in cv.split(X):
 
 这些索引可用于数据集数组的输入( *X* )和输出( *y* )列，以分割数据集。
 
-```
+```py
 ...
 # split data
 X_train, X_test = X[train_ix, :], X[test_ix, :]
@@ -102,7 +102,7 @@ y_train, y_test = y[train_ix], y[test_ix]
 
 训练集可用于拟合模型，测试集可用于通过首先进行预测并根据预测值和期望值计算性能度量来评估模型。
 
-```
+```py
 ...
 # fit model
 model = RandomForestClassifier(random_state=1)
@@ -117,7 +117,7 @@ yhat = model.predict(X_test)
 
 下面列出了完整的示例。
 
-```
+```py
 # loocv to manually evaluate the performance of a random forest classifier
 from sklearn.datasets import make_blobs
 from sklearn.model_selection import LeaveOneOut
@@ -152,7 +152,7 @@ print('Accuracy: %.3f' % acc)
 
 然后报告所有预测的分类准确率，在这种情况下为 99%。
 
-```
+```py
 Accuracy: 0.990
 ```
 
@@ -166,7 +166,7 @@ Accuracy: 0.990
 
 下面的例子演示了在同一合成数据集上使用 LOOCV 使用 *cross_val_score()* 函数评估*随机森林分类器*。
 
-```
+```py
 # loocv to automatically evaluate the performance of a random forest classifier
 from numpy import mean
 from numpy import std
@@ -190,7 +190,7 @@ print('Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 所有折叠的平均分类精度与我们之前的手动估计相匹配。
 
-```
+```py
 Accuracy: 0.990 (0.099)
 ```
 
@@ -215,7 +215,7 @@ Accuracy: 0.990 (0.099)
 
 下面的示例下载数据集并总结其形状。
 
-```
+```py
 # summarize the sonar dataset
 from pandas import read_csv
 # load dataset
@@ -229,7 +229,7 @@ print(X.shape, y.shape)
 
 运行该示例会下载数据集，并将其拆分为输入和输出元素。不出所料，我们可以看到有 208 行数据，60 个输入变量。
 
-```
+```py
 (208, 60) (208,)
 ```
 
@@ -237,7 +237,7 @@ print(X.shape, y.shape)
 
 首先，加载的数据集必须分成输入和输出组件。
 
-```
+```py
 ...
 # split into inputs and outputs
 X, y = data[:, :-1], data[:, -1]
@@ -246,7 +246,7 @@ print(X.shape, y.shape)
 
 接下来，我们定义 LOOCV 程序。
 
-```
+```py
 ...
 # create loocv procedure
 cv = LeaveOneOut()
@@ -254,7 +254,7 @@ cv = LeaveOneOut()
 
 然后我们可以定义要评估的模型。
 
-```
+```py
 ...
 # create model
 model = RandomForestClassifier(random_state=1)
@@ -262,7 +262,7 @@ model = RandomForestClassifier(random_state=1)
 
 然后使用 *cross_val_score()* 函数枚举褶皱，拟合模型，然后进行预测和评估。然后，我们可以报告模型性能的平均值和标准偏差。
 
-```
+```py
 ...
 # evaluate model
 scores = cross_val_score(model, X, y, scoring='accuracy', cv=cv, n_jobs=-1)
@@ -272,7 +272,7 @@ print('Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # loocv evaluate random forest on the sonar dataset
 from numpy import mean
 from numpy import std
@@ -303,7 +303,7 @@ print('Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 然后使用 LOOCV 对模型进行评估，当对新数据进行预测时，估计的性能具有大约 82.2%的准确性。
 
-```
+```py
 (208, 60) (208,)
 Accuracy: 0.822 (0.382)
 ```
@@ -323,7 +323,7 @@ Accuracy: 0.822 (0.382)
 
 以下示例将数据集下载并加载为熊猫数据框，并总结了数据集的形状。
 
-```
+```py
 # load and summarize the housing dataset
 from pandas import read_csv
 # load dataset
@@ -335,7 +335,7 @@ print(dataframe.shape)
 
 运行该示例确认了 506 行数据、13 个输入变量和单个数值目标变量(总共 14 个)。
 
-```
+```py
 (506, 14)
 ```
 
@@ -343,7 +343,7 @@ print(dataframe.shape)
 
 首先，加载的数据集必须分成输入和输出组件。
 
-```
+```py
 ...
 # split into inputs and outputs
 X, y = data[:, :-1], data[:, -1]
@@ -352,7 +352,7 @@ print(X.shape, y.shape)
 
 接下来，我们定义 LOOCV 程序。
 
-```
+```py
 ...
 # create loocv procedure
 cv = LeaveOneOut()
@@ -360,7 +360,7 @@ cv = LeaveOneOut()
 
 然后我们可以定义要评估的模型。
 
-```
+```py
 ...
 # create model
 model = RandomForestRegressor(random_state=1)
@@ -370,7 +370,7 @@ model = RandomForestRegressor(random_state=1)
 
 在这种情况下，我们使用适用于回归的平均绝对误差(MAE)性能指标。
 
-```
+```py
 ...
 # evaluate model
 scores = cross_val_score(model, X, y, scoring='neg_mean_absolute_error', cv=cv, n_jobs=-1)
@@ -382,7 +382,7 @@ print('MAE: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # loocv evaluate random forest on the housing dataset
 from numpy import mean
 from numpy import std
@@ -416,7 +416,7 @@ print('MAE: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 该模型使用 LOOCV 进行评估，在对新数据进行预测时，该模型的性能平均绝对误差约为 2.180(千美元)。
 
-```
+```py
 (506, 13) (506,)
 MAE: 2.180 (2.346)
 ```

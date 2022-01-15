@@ -73,7 +73,7 @@
 
 具体来说，所有变量都是带引号的字符串；有些是序数，有些不是。
 
-```
+```py
 '40-49','premeno','15-19','0-2','yes','3','right','left_up','no','recurrence-events'
 '50-59','ge40','15-19','0-2','no','1','right','central','no','no-recurrence-events'
 '50-59','ge40','35-39','0-2','no','2','left','left_low','no','recurrence-events'
@@ -84,7 +84,7 @@
 
 我们可以使用熊猫库将这个数据集加载到内存中。
 
-```
+```py
 ...
 # load the dataset as a pandas DataFrame
 data = read_csv(filename, header=None)
@@ -94,7 +94,7 @@ dataset = data.values
 
 加载后，我们可以将列拆分为输入( *X* )和输出( *y* )进行建模。
 
-```
+```py
 ...
 # split into input (X) and output (y) variables
 X = dataset[:, :-1]
@@ -105,7 +105,7 @@ y = dataset[:,-1]
 
 我们还可以将输出变量整形为一列(例如，2D 形状)。
 
-```
+```py
 ...
 # format all fields as string
 X = X.astype(str)
@@ -115,7 +115,7 @@ y = y.reshape((len(y), 1))
 
 我们可以将所有这些结合到一个有用的函数中，以便以后重用。
 
-```
+```py
 # load the dataset
 def load_dataset(filename):
 	# load the dataset as a pandas DataFrame
@@ -136,7 +136,7 @@ def load_dataset(filename):
 
 我们将使用 scikit-learn 中的 [train_test_split()函数](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)，使用 67%的数据进行训练，33%的数据进行测试。
 
-```
+```py
 ...
 # load the dataset
 X, y = load_dataset('breast-cancer.csv')
@@ -146,7 +146,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random
 
 将所有这些元素结合在一起，下面列出了加载、拆分和汇总原始分类数据集的完整示例。
 
-```
+```py
 # load and summarize the dataset
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
@@ -179,7 +179,7 @@ print('Test', X_test.shape, y_test.shape)
 
 我们可以看到，我们有 191 个示例用于培训，95 个示例用于测试。
 
-```
+```py
 Train (191, 9) (191, 1)
 Test (95, 9) (95, 1)
 ```
@@ -206,7 +206,7 @@ Test (95, 9) (95, 1)
 
 下面的函数名为 *prepare_inputs()* ，获取列车和测试集的输入数据，并使用顺序编码对其进行编码。
 
-```
+```py
 # prepare input data
 def prepare_inputs(X_train, X_test):
 	oe = OrdinalEncoder()
@@ -224,7 +224,7 @@ def prepare_inputs(X_train, X_test):
 
 *prepare_targets()* 整数编码列车和测试集的输出数据。
 
-```
+```py
 # prepare target
 def prepare_targets(y_train, y_test):
 	le = LabelEncoder()
@@ -236,7 +236,7 @@ def prepare_targets(y_train, y_test):
 
 我们可以调用这些函数来准备我们的数据。
 
-```
+```py
 ...
 # prepare input data
 X_train_enc, X_test_enc = prepare_inputs(X_train, X_test)
@@ -250,7 +250,7 @@ y_train_enc, y_test_enc = prepare_targets(y_train, y_test)
 
 下面的代码没有涉及太多细节，而是定义了模型，将其放在训练数据集上，然后在测试数据集上对其进行评估。
 
-```
+```py
 ...
 # define the model
 model = Sequential()
@@ -271,7 +271,7 @@ print('Accuracy: %.2f' % (accuracy*100))
 
 将所有这些联系在一起，下面列出了用序数编码准备数据以及对数据拟合和评估神经网络的完整示例。
 
-```
+```py
 # example of ordinal encoding for a neural network
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
@@ -342,7 +342,7 @@ print('Accuracy: %.2f' % (accuracy*100))
 
 还不错，因为序数关系只存在于一些输入变量中，而对于那些存在序数关系的变量，它在编码中并不被认可。
 
-```
+```py
 ...
 Epoch 95/100
  - 0s - loss: 0.5349 - acc: 0.7696
@@ -382,7 +382,7 @@ scikit-learn 库提供了 [OneHotEncoder](https://scikit-learn.org/stable/module
 
 下面的 *prepare_inputs()* 函数为上一节中的示例提供了一个插入替换函数。它没有使用 T2 普通编码器，而是使用了 T4 统一编码器。
 
-```
+```py
 # prepare input data
 def prepare_inputs(X_train, X_test):
 	ohe = OneHotEncoder()
@@ -394,7 +394,7 @@ def prepare_inputs(X_train, X_test):
 
 将这些联系在一起，下面列出了一个完整的例子，它对乳腺癌分类数据集进行了热编码，并用神经网络对其进行建模。
 
-```
+```py
 # example of one hot encoding for a neural network
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
@@ -463,7 +463,7 @@ print('Accuracy: %.2f' % (accuracy*100))
 
 更公平的比较是将每个配置运行 10 或 30 次，并使用平均精度来比较性能。回想一下，在本教程中，我们更关注如何对分类数据进行编码，而不是在这个特定的数据集上获得最佳分数。
 
-```
+```py
 ...
 Epoch 95/100
  - 0s - loss: 0.3837 - acc: 0.8272
@@ -515,7 +515,7 @@ Accuracy: 72.63
 
 下面的 *prepare_inputs()* 函数实现了这一点，枚举每个输入变量，使用最佳实践对每个变量进行整数编码，并返回编码的训练和测试变量(或单变量数据集)列表，这些变量可以用作我们模型的输入。
 
-```
+```py
 # prepare input data
 def prepare_inputs(X_train, X_test):
 	X_train_enc, X_test_enc = list(), list()
@@ -542,7 +542,7 @@ def prepare_inputs(X_train, X_test):
 
 首先，我们可以枚举每个变量，构造一个输入层，并将其连接到一个嵌入层，并将两个层都存储在列表中。在定义模型时，我们需要一个对所有输入层的引用，并且我们需要一个对每个嵌入层的引用，以便用一个合并层来集中它们。
 
-```
+```py
 ...
 # prepare each input head
 in_layers = list()
@@ -561,7 +561,7 @@ for i in range(len(X_train_enc)):
 
 然后我们可以合并所有的嵌入层，定义隐藏层和输出层，然后定义模型。
 
-```
+```py
 ...
 # concat all embeddings
 merge = concatenate(em_layers)
@@ -576,7 +576,7 @@ model = Model(inputs=in_layers, outputs=output)
 
 另外，我们将通过调用 *plot_model()* 函数来绘制模型，并将其保存到文件中。这需要安装 pygraphviz 和 pydot，这在某些系统上可能会很麻烦。**如果有麻烦**就评论一下进口声明，打电话给 *plot_model()* 。
 
-```
+```py
 ...
 # compile the keras model
 model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
@@ -591,7 +591,7 @@ print('Accuracy: %.2f' % (accuracy*100))
 
 将所有这些结合起来，下面列出了在多输入层模型中对每个分类输入变量使用单独嵌入的完整示例。
 
-```
+```py
 # example of learned embedding encoding for a neural network
 from numpy import unique
 from pandas import read_csv
@@ -690,7 +690,7 @@ print('Accuracy: %.2f' % (accuracy*100))
 
 由于学习的向量是在一个熟练的模型中训练的，因此可以保存它们，并将其用作对相同数据进行操作的其他模型中这些变量的一般表示。探索这种编码的一个有用且令人信服的理由。
 
-```
+```py
 ...
 Epoch 15/20
  - 0s - loss: 0.4891 - acc: 0.7696

@@ -84,7 +84,7 @@ L2 惩罚最小化了所有系数的大小，尽管它通过允许任何系数�
 
 下面的示例将数据集下载并加载为熊猫数据框，并总结了数据集的形状和前五行数据。
 
-```
+```py
 # load and summarize the housing dataset
 from pandas import read_csv
 from matplotlib import pyplot
@@ -99,7 +99,7 @@ print(dataframe.head())
 
 运行该示例确认了 506 行数据、13 个输入变量和一个数字目标变量(总共 14 个)。我们还可以看到，所有的输入变量都是数字。
 
-```
+```py
 (506, 14)
         0     1     2   3      4      5   ...  8      9     10      11    12    13
 0  0.00632  18.0  2.31   0  0.538  6.575  ...   1  296.0  15.3  396.90  4.98  24.0
@@ -115,7 +115,7 @@ scikit-learn Python 机器学习库通过[岭类](https://scikit-learn.org/stabl
 
 令人困惑的是，在定义类时，lambda 术语可以通过“ *alpha* ”参数进行配置。默认值为 1.0 或全额罚款。
 
-```
+```py
 ...
 # define model
 model = Ridge(alpha=1.0)
@@ -123,7 +123,7 @@ model = Ridge(alpha=1.0)
 
 我们可以使用[重复 10 倍交叉验证](https://machinelearningmastery.com/k-fold-cross-validation/)来评估住房数据集上的岭回归模型，并报告数据集上的平均绝对误差(MAE)。
 
-```
+```py
 # evaluate an ridge regression model on the dataset
 from numpy import mean
 from numpy import std
@@ -154,7 +154,7 @@ print('Mean MAE: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 在这种情况下，我们可以看到模型实现了大约 3.382 的 MAE。
 
-```
+```py
 Mean MAE: 3.382 (0.519)
 ```
 
@@ -164,7 +164,7 @@ Mean MAE: 3.382 (0.519)
 
 我们可以用下面列出的完整示例来演示这一点。
 
-```
+```py
 # make a prediction with a ridge regression model on the dataset
 from pandas import read_csv
 from sklearn.linear_model import Ridge
@@ -187,7 +187,7 @@ print('Predicted: %.3f' % yhat)
 
 运行该示例符合模型，并对新的数据行进行预测。
 
-```
+```py
 Predicted: 30.253
 ```
 
@@ -205,7 +205,7 @@ Predicted: 30.253
 
 下面的例子使用 [GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) 类和我们定义的值网格来演示这一点。
 
-```
+```py
 # grid search hyperparameters for ridge regression
 from numpy import arange
 from pandas import read_csv
@@ -241,7 +241,7 @@ print('Config: %s' % results.best_params_)
 
 我们可以看到模型给惩罚分配了一个 0.51 的*α*权重。
 
-```
+```py
 MAE: -3.379
 Config: {'alpha': 0.51}
 ```
@@ -254,7 +254,7 @@ scikit-learn 库还提供了一个内置的算法版本，可以通过 [RidgeCV 
 
 下面的例子演示了这一点。
 
-```
+```py
 # use automatically configured the ridge regression algorithm
 from numpy import arange
 from pandas import read_csv
@@ -281,7 +281,7 @@ print('alpha: %f' % model.alpha_)
 
 在这种情况下，我们可以看到模型选择了我们通过手动网格搜索找到的*α= 0.51*的相同超参数。
 
-```
+```py
 alpha: 0.510000
 ```
 

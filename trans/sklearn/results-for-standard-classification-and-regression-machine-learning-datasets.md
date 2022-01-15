@@ -120,7 +120,7 @@
 
 例如:
 
-```
+```py
 ...
 # load dataset
 dataframe = read_csv('ionosphere.csv', header=None)
@@ -162,7 +162,7 @@ dataframe = read_csv('ionosphere.csv', header=None)
 
 使用 scikit-learn Python 机器学习库，下面的示例可用于评估给定的模型(或 [Pipeline](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html) )。[repeated stratifiedfold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html)类定义了用于分类的折叠和重复次数， [cross_val_score()函数](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)定义了分数并执行评估，返回一个分数列表，从中可以计算出平均值和标准偏差。
 
-```
+```py
 ...
 cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
 scores = cross_val_score(model, X, y, scoring='accuracy', cv=cv, n_jobs=-1, error_score='raise')
@@ -170,7 +170,7 @@ scores = cross_val_score(model, X, y, scoring='accuracy', cv=cv, n_jobs=-1, erro
 
 对于回归，我们可以使用 [RepeatedKFold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html) 类和 MAE 分数。
 
-```
+```py
 ...
 cv = RepeatedKFold(n_splits=10, n_repeats=3, random_state=1)
 scores = cross_val_score(model, X, y, scoring='neg_mean_absolute_error', cv=cv, n_jobs=-1, error_score='raise')
@@ -193,7 +193,7 @@ scores = cross_val_score(model, X, y, scoring='neg_mean_absolute_error', cv=cv, 
 
 分类任务的基线模型是预测多数标签的模型。这可以在 scikit-learn 中使用带有“*最频繁*策略的 [DummyClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.dummy.DummyClassifier.html) 类来实现；例如:
 
-```
+```py
 ...
 model = DummyClassifier(strategy='most_frequent')
 ```
@@ -221,7 +221,7 @@ model = DummyClassifier(strategy='most_frequent')
 
 下面列出了在该数据集上实现基线和良好结果的完整代码示例。
 
-```
+```py
 # baseline and good result for Ionosphere
 from numpy import mean
 from numpy import std
@@ -260,7 +260,7 @@ print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 
 运行该示例，您应该会看到以下结果。
 
-```
+```py
 Shape: (351, 34), (351,)
 Baseline: 0.641 (0.006)
 Good: 0.948 (0.033)
@@ -273,7 +273,7 @@ Good: 0.948 (0.033)
 
 下面列出了在该数据集上实现基线和良好结果的完整代码示例。
 
-```
+```py
 # baseline and good result for Pima Indian Diabetes
 from numpy import mean
 from numpy import std
@@ -307,7 +307,7 @@ print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 
 运行该示例，您应该会看到以下结果。
 
-```
+```py
 Shape: (768, 8), (768,)
 Baseline: 0.651 (0.003)
 Good: 0.774 (0.055)
@@ -320,7 +320,7 @@ Good: 0.774 (0.055)
 
 下面列出了在该数据集上实现基线和良好结果的完整代码示例。
 
-```
+```py
 # baseline and good result for Sonar
 from numpy import mean
 from numpy import std
@@ -358,7 +358,7 @@ print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 
 运行该示例，您应该会看到以下结果。
 
-```
+```py
 Shape: (208, 60), (208,)
 Baseline: 0.534 (0.012)
 Good: 0.882 (0.071)
@@ -371,7 +371,7 @@ Good: 0.882 (0.071)
 
 下面列出了在该数据集上实现基线和良好结果的完整代码示例。
 
-```
+```py
 # baseline and good result for Wisconsin Breast Cancer
 from numpy import mean
 from numpy import std
@@ -410,7 +410,7 @@ print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 
 运行该示例，您应该会看到以下结果。
 
-```
+```py
 Shape: (699, 9), (699,)
 Baseline: 0.655 (0.003)
 Good: 0.973 (0.019)
@@ -423,7 +423,7 @@ Good: 0.973 (0.019)
 
 下面列出了在该数据集上实现基线和良好结果的完整代码示例(归功于 Dragos Stan)。
 
-```
+```py
 # baseline and good result for Horse Colic
 from numpy import mean
 from numpy import std
@@ -462,7 +462,7 @@ print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 
 运行该示例，您应该会看到以下结果。
 
-```
+```py
 Shape: (300, 27), (300,)
 Baseline: 0.637 (0.010)
 Good: 0.893 (0.057)
@@ -484,7 +484,7 @@ Good: 0.893 (0.057)
 
 下面列出了在该数据集上实现基线和良好结果的完整代码示例。
 
-```
+```py
 # baseline and good result for Iris
 from numpy import mean
 from numpy import std
@@ -522,7 +522,7 @@ print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 
 运行该示例，您应该会看到以下结果。
 
-```
+```py
 Shape: (150, 4), (150,)
 Baseline: 0.333 (0.000)
 Good: 0.980 (0.039)
@@ -537,7 +537,7 @@ Good: 0.980 (0.039)
 
 注意:测试工具从 10 倍交叉验证更改为 5 倍交叉验证，以确保每一倍都有所有类的示例，并避免警告消息。
 
-```
+```py
 # baseline and good result for Glass
 from numpy import mean
 from numpy import std
@@ -572,7 +572,7 @@ print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 
 运行该示例，您应该会看到以下结果。
 
-```
+```py
 Shape: (214, 9), (214,)
 Baseline: 0.355 (0.009)
 Good: 0.815 (0.048)
@@ -585,7 +585,7 @@ Good: 0.815 (0.048)
 
 下面列出了在该数据集上实现基线和良好结果的完整代码示例。
 
-```
+```py
 # baseline and good result for Wine
 from numpy import mean
 from numpy import std
@@ -624,7 +624,7 @@ print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 
 运行该示例，您应该会看到以下结果。
 
-```
+```py
 Shape: (178, 13), (178,)
 Baseline: 0.399 (0.017)
 Good: 0.992 (0.020)
@@ -637,7 +637,7 @@ Good: 0.992 (0.020)
 
 下面列出了在该数据集上实现基线和良好结果的完整代码示例。
 
-```
+```py
 # baseline and good result for Wine
 from numpy import mean
 from numpy import std
@@ -675,7 +675,7 @@ print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 
 运行该示例，您应该会看到以下结果。
 
-```
+```py
 Shape: (210, 7), (210,)
 Baseline: 0.333 (0.000)
 Good: 0.973 (0.036)
@@ -687,7 +687,7 @@ Good: 0.973 (0.036)
 
 分类任务的基线模型是预测平均值或中值的模型。这可以在 scikit-learn 中使用[dummymergressor](https://scikit-learn.org/stable/modules/generated/sklearn.dummy.DummyRegressor.html)类使用“*中位数*策略来实现；例如:
 
-```
+```py
 ...
 model = DummyRegressor(strategy='median')
 ```
@@ -710,7 +710,7 @@ MAE 被报告为 0(完美技能)和非常大的数字或无穷大(无技能)之�
 
 下面列出了在该数据集上实现基线和良好结果的完整代码示例。
 
-```
+```py
 # baseline and good result for Housing
 from numpy import mean
 from numpy import std
@@ -746,7 +746,7 @@ print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 
 运行该示例，您应该会看到以下结果。
 
-```
+```py
 Shape: (506, 13), (506,)
 Baseline: 6.544 (0.754)
 Good: 1.928 (0.292)
@@ -759,7 +759,7 @@ Good: 1.928 (0.292)
 
 下面列出了在该数据集上实现基线和良好结果的完整代码示例。
 
-```
+```py
 # baseline and good result for Auto Insurance
 from numpy import mean
 from numpy import std
@@ -801,7 +801,7 @@ print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 
 运行该示例，您应该会看到以下结果。
 
-```
+```py
 Shape: (63, 1), (63,)
 Baseline: 66.624 (19.303)
 Good: 28.358 (9.747)
@@ -814,7 +814,7 @@ Good: 28.358 (9.747)
 
 下面列出了在该数据集上实现基线和良好结果的完整代码示例。
 
-```
+```py
 # baseline and good result for Abalone
 from numpy import mean
 from numpy import std
@@ -858,7 +858,7 @@ print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 
 运行该示例，您应该会看到以下结果。
 
-```
+```py
 Shape: (4177, 8), (4177,)
 Baseline: 2.363 (0.116)
 Good: 1.460 (0.075)
@@ -871,7 +871,7 @@ Good: 1.460 (0.075)
 
 下面列出了在该数据集上实现基线和良好结果的完整代码示例。
 
-```
+```py
 # baseline and good result for Auto Imports
 from numpy import mean
 from numpy import std
@@ -916,7 +916,7 @@ print('Good: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 
 运行该示例，您应该会看到以下结果。
 
-```
+```py
 Shape: (201, 25), (201,)
 Baseline: 5509.486 (1440.942)
 Good: 1361.965 (290.236)

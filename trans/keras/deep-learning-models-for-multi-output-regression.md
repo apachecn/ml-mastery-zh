@@ -49,7 +49,7 @@
 
 下面列出了创建和总结合成多输出回归数据集的完整示例。
 
-```
+```py
 # example of a multi-output regression problem
 from sklearn.datasets import make_regression
 # create dataset
@@ -62,7 +62,7 @@ print(X.shape, y.shape)
 
 我们可以看到，正如预期的那样，有 1000 个样本，每个样本有 10 个输入特征和 3 个输出特征。
 
-```
+```py
 (1000, 10) (1000, 3)
 ```
 
@@ -88,7 +88,7 @@ print(X.shape, y.shape)
 
 下面列出了多输出回归任务的网络定义。
 
-```
+```py
 ...
 # define the model
 model = Sequential()
@@ -99,7 +99,7 @@ model.compile(loss='mae', optimizer='adam')
 
 您可能希望将此模型用于自己的多输出回归任务，因此，我们可以创建一个函数来定义和返回模型，其中输入变量的数量和输出变量的数量作为参数提供。
 
-```
+```py
 # get the model
 def get_model(n_inputs, n_outputs):
 	model = Sequential()
@@ -125,7 +125,7 @@ def get_model(n_inputs, n_outputs):
 
 下面的 *evaluate_model()* 函数获取数据集，对模型进行评估，并返回评估分数列表，在本例中为 MAE 分数。
 
-```
+```py
 # evaluate a model using repeated k-fold cross-validation
 def evaluate_model(X, y):
 	results = list()
@@ -153,7 +153,7 @@ def evaluate_model(X, y):
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # mlp for multi-output regression
 from numpy import mean
 from numpy import std
@@ -213,7 +213,7 @@ print('MAE: %.3f (%.3f)' % (mean(results), std(results)))
 
 您可以使用此代码作为模板，在自己的多输出回归任务中评估 MLP 模型。模型中节点和图层的数量可以根据数据集的复杂性轻松调整和定制。
 
-```
+```py
 ...
 >8.054
 >7.562
@@ -227,7 +227,7 @@ MAE: 8.184 (1.032)
 
 下面的示例演示了这一点，首先在整个多输出回归数据集上拟合 MLP 模型，然后在保存的模型上调用 *predict()* 函数，以便对新的数据行进行预测。
 
-```
+```py
 # use mlp for prediction on multi-output regression
 from numpy import asarray
 from sklearn.datasets import make_regression
@@ -267,7 +267,7 @@ print('Predicted: %s' % yhat[0])
 
 正如预期的那样，预测包含多输出回归任务所需的三个输出变量。
 
-```
+```py
 Predicted: [-152.22713 -78.04891 -91.97194]
 ```
 

@@ -52,7 +52,7 @@ Scikit-Optimize，简称 skopt，是一个用于执行优化任务的开源 Pyth
 
 scikit-optimize 库可以使用 pip 安装，如下所示:
 
-```
+```py
 sudo pip install scikit-optimize
 ```
 
@@ -60,7 +60,7 @@ sudo pip install scikit-optimize
 
 下面列出了完整的示例。
 
-```
+```py
 # report scikit-optimize version number
 import skopt
 print('skopt %s' % skopt.__version__)
@@ -70,7 +70,7 @@ print('skopt %s' % skopt.__version__)
 
 您的版本号应该相同或更高。
 
-```
+```py
 skopt 0.7.2
 ```
 
@@ -99,7 +99,7 @@ skopt 0.7.2
 
 下面的示例下载数据集并总结其形状。
 
-```
+```py
 # summarize the ionosphere dataset
 from pandas import read_csv
 # load dataset
@@ -113,7 +113,7 @@ print(X.shape, y.shape)
 
 运行该示例会下载数据集，并将其拆分为输入和输出元素。不出所料，我们可以看到有 351 行数据，34 个输入变量。
 
-```
+```py
 (351, 34) (351,)
 ```
 
@@ -123,7 +123,7 @@ print(X.shape, y.shape)
 
 下面列出了完整的示例。
 
-```
+```py
 # evaluate an svm for the ionosphere dataset
 from numpy import mean
 from numpy import std
@@ -153,7 +153,7 @@ print('Accuracy: %.3f (%.3f)' % (mean(m_scores), std(m_scores)))
 
 在这种情况下，我们可以看到具有默认超参数的 SVM 实现了大约 93.7%的平均分类准确率，这是熟练的，并且接近 94%的问题上的最高性能。
 
-```
+```py
 (351, 34) (351,)
 Accuracy: 0.937 (0.038)
 ```
@@ -179,7 +179,7 @@ Scikit-Optimize 库可用于调整机器学习模型的超参数。
 
 我们可以为这四个超参数定义搜索空间，它们是来自 skopt 库的数据类型列表，如下所示:
 
-```
+```py
 ...
 # define the space of hyperparameters to search
 search_space = list()
@@ -197,7 +197,7 @@ search_space.append(Real(1e-6, 100.0, 'log-uniform', name='gamma'))
 
 下面的 *evaluate_model()* 函数实现了这一点，并获取了一组特定的超参数。
 
-```
+```py
 # define the function used to evaluate a given configuration
 @use_named_args(search_space)
 def evaluate_model(**params):
@@ -216,7 +216,7 @@ def evaluate_model(**params):
 
 接下来，我们可以通过调用*gp _ minimum()*函数来执行搜索，并传递要调用的函数的名称来评估每个模型和要优化的搜索空间。
 
-```
+```py
 ...
 # perform optimization
 result = gp_minimize(evaluate_model, search_space)
@@ -226,7 +226,7 @@ result = gp_minimize(evaluate_model, search_space)
 
 结果对象包含许多细节，但重要的是，我们可以访问最佳性能配置的分数和最佳成形模型使用的超参数。
 
-```
+```py
 ...
 # summarizing finding:
 print('Best Accuracy: %.3f' % (1.0 - result.fun))
@@ -235,7 +235,7 @@ print('Best Parameters: %s' % (result.x))
 
 下面列出了手动调整电离层数据集上 SVM 超参数的完整示例。
 
-```
+```py
 # manually tune svm model hyperparameters using skopt on the ionosphere dataset
 from numpy import mean
 from pandas import read_csv
@@ -288,7 +288,7 @@ print('Best Parameters: %s' % (result.x))
 
 您可能会看到一些可以安全忽略的警告消息，例如:
 
-```
+```py
 UserWarning: The objective has been evaluated at this point before.
 ```
 
@@ -300,7 +300,7 @@ UserWarning: The objective has been evaluated at this point before.
 
 重要的是，我们可以看到这个模型的技能大约是 94.7%，这是一个表现最好的模型
 
-```
+```py
 (351, 34) (351,)
 Best Accuracy: 0.948
 Best Parameters: [1.2852670137769258, 'rbf', 2, 0.18178016885627174]
@@ -322,7 +322,7 @@ Scikit-Learn 机器学习库提供了调整模型超参数的工具。
 
 首先，搜索空间必须定义为一个字典，其中超参数名称用作关键字，变量的范围用作值。
 
-```
+```py
 ...
 # define search space
 params = dict()
@@ -334,7 +334,7 @@ params['kernel'] = ['linear', 'poly', 'rbf', 'sigmoid']
 
 然后，我们可以定义*Bayesarccv*配置，采用我们希望评估的模型、超参数搜索空间和交叉验证配置。
 
-```
+```py
 ...
 # define evaluation
 cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
@@ -344,7 +344,7 @@ search = BayesSearchCV(estimator=SVC(), search_spaces=params, n_jobs=-1, cv=cv)
 
 然后，我们可以执行搜索，并在最后报告最佳结果和配置。
 
-```
+```py
 ...
 # perform the search
 search.fit(X, y)
@@ -355,7 +355,7 @@ print(search.best_params_)
 
 将这些联系在一起，下面列出了使用电离层数据集上的 BayesSearchCV 类自动调整 SVM 超参数的完整示例。
 
-```
+```py
 # automatic svm hyperparameter tuning using skopt for the ionosphere dataset
 from pandas import read_csv
 from sklearn.model_selection import cross_val_score
@@ -390,7 +390,7 @@ print(search.best_params_)
 
 您可能会看到一些可以安全忽略的警告消息，例如:
 
-```
+```py
 UserWarning: The objective has been evaluated at this point before.
 ```
 
@@ -402,7 +402,7 @@ UserWarning: The objective has been evaluated at this point before.
 
 搜索发现了一个大的 *C* 值、一个径向基函数*核*和一个小的*γ*值。
 
-```
+```py
 (351, 34) (351,)
 0.9525166191832859
 OrderedDict([('C', 4.8722263953328735), ('degree', 4), ('gamma', 0.09805881007239009), ('kernel', 'rbf')])

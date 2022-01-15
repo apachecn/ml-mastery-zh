@@ -43,7 +43,7 @@
 
 首先，让我们加载必要的库和包。
 
-```
+```py
 from sklearn.datasets import make_blobs
 from numpy import quantile, random, where
 from sklearn.ensemble import IsolationForest
@@ -54,14 +54,14 @@ import matplotlib.pyplot as plt
 
 我们将使用`make_blob()`函数创建一个带有随机数据点的数据集。
 
-```
+```py
 random.seed(3)
 X, _ = make_blobs(n_samples=300, centers=1, cluster_std=.3, center_box=(20, 5))
 ```
 
 让我们可视化数据集图，以查看样本空间中随机分离的数据点。
 
-```
+```py
 plt.scatter(X[:, 0], X[:, 1], marker="o", c=_, s=25, edgecolor="k")
 ```
 
@@ -71,14 +71,14 @@ plt.scatter(X[:, 0], X[:, 1], marker="o", c=_, s=25, edgecolor="k")
 
 如上所述，我们将使用 scikit-learn API 中的`IsolationForest`类来定义我们的模型。在类参数中，我们将设置估计量的数量和污染值。然后，我们将使用`fit_predict()`函数通过将数据集拟合到模型来获得数据集的预测。
 
-```
+```py
 IF = IsolationForest(n_estimators=100, contamination=.03)
 predictions = IF.fit_predict(X)
 ```
 
 现在，让我们提取负值作为异常值，并用颜色突出显示异常值来绘制结果。
 
-```
+```py
 outlier_index = where(predictions==-1)
 values = X[outlier_index]
 
@@ -91,7 +91,7 @@ plt.show()
 
 将所有这些放在一起，下面是完整的代码:
 
-```
+```py
 from sklearn.datasets import make_blobs
 from numpy import quantile, random, where
 from sklearn.ensemble import IsolationForest
@@ -119,7 +119,7 @@ plt.show()
 
 首先，我们将加载必要的库和包。
 
-```
+```py
 from sklearn.neighbors import KernelDensity
 from numpy import where, random, array, quantile
 from sklearn.preprocessing import scale
@@ -131,7 +131,7 @@ from sklearn.datasets import load_boston
 
 让我们编写一个简单的函数来准备数据集。随机生成的数据将用作目标数据集。
 
-```
+```py
 random.seed(135)
 def prepData(N):
     X = []
@@ -151,7 +151,7 @@ X = prepData(n)
 
 让我们可视化图来检查数据集。
 
-```
+```py
 x_ax = range(n)
 plt.plot(x_ax, X)
 plt.show()
@@ -163,7 +163,7 @@ plt.show()
 
 我们将使用 scikit-learn API 来准备和适应模型。然后使用`score_sample()`函数获取数据集中样本的得分。接下来，我们将使用`quantile()`函数来获取阈值。
 
-```
+```py
 kern_dens = KernelDensity()
 kern_dens.fit(X)
 
@@ -172,13 +172,13 @@ threshold = quantile(scores, .02)
 print(threshold)
 ```
 
-```
+```py
 -5.676136054971186
 ```
 
 分数等于或低于获得的阈值的样本将被检测到，然后用颜色突出显示异常:
 
-```
+```py
 idx = where(scores <= threshold)
 values = X[idx]
 
@@ -191,7 +191,7 @@ plt.show()
 
 将所有这些放在一起，下面是完整的代码:
 
-```
+```py
 from sklearn.neighbors import KernelDensity
 from numpy import where, random, array, quantile
 from sklearn.preprocessing import scale

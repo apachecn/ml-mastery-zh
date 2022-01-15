@@ -84,7 +84,7 @@ scikit-learn Python 开源机器学习库提供了调整模型超参数的技术
 
 两个类都需要两个参数。首先是你正在优化的模型。这是模型的一个实例，其中包含要优化的超参数集的值。第二是搜索空间。这被定义为[字典](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)，其中名称是模型的超参数参数，值是离散值或随机搜索情况下要采样的值的分布。
 
-```
+```py
 ...
 # define model
 model = LogisticRegression()
@@ -99,7 +99,7 @@ search = GridSearchCV(model, space)
 
 在分类任务的情况下，我建议使用[repeated stratifiedfold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html)类，对于回归任务，我建议使用 [RepeatedKFold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html) 进行适当次数的折叠和重复，比如 10 次折叠和 3 次重复。
 
-```
+```py
 ...
 # define evaluation
 cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
@@ -111,7 +111,7 @@ search = GridSearchCV(..., cv=cv)
 
 度量必须是最大化的，这意味着更好的模型导致更高的分数。对于分类，这可能是“*精度*”。对于回归，这是负误差度量，例如负版本的平均绝对误差的“ *neg_mean_absolute_error* ”，其中更接近零的值表示模型的预测误差更小。
 
-```
+```py
 ...
 # define search
 search = GridSearchCV(..., scoring='neg_mean_absolute_error')
@@ -123,7 +123,7 @@ search = GridSearchCV(..., scoring='neg_mean_absolute_error')
 
 最后，搜索可以并行进行，例如，通过将“ *n_jobs* ”参数指定为系统内核数量的整数，例如 8，来使用所有的 CPU 内核。或者，您可以将其设置为-1，以自动使用系统中的所有内核。
 
-```
+```py
 ...
 # define search
 search = GridSearchCV(..., n_jobs=-1)
@@ -131,7 +131,7 @@ search = GridSearchCV(..., n_jobs=-1)
 
 定义后，通过调用 *fit()* 函数并提供一个数据集来执行搜索，该数据集用于使用交叉验证来训练和评估模型超参数组合。
 
-```
+```py
 ...
 # execute search
 result = search.fit(X, y)
@@ -141,7 +141,7 @@ result = search.fit(X, y)
 
 在搜索结束时，您可以通过类的属性访问所有结果。也许最重要的属性是观察到的**最佳得分**和获得最佳得分的**超参数**。
 
-```
+```py
 ...
 # summarize result
 print('Best Score: %s' % result.best_score_)
@@ -169,7 +169,7 @@ print('Best Hyperparameters: %s' % result.best_params_)
 
 下面的示例下载数据集并总结其形状。
 
-```
+```py
 # summarize the sonar dataset
 from pandas import read_csv
 # load dataset
@@ -183,7 +183,7 @@ print(X.shape, y.shape)
 
 运行该示例会下载数据集，并将其拆分为输入和输出元素。不出所料，我们可以看到有 208 行数据，60 个输入变量。
 
-```
+```py
 (208, 60) (208,)
 ```
 
@@ -197,7 +197,7 @@ print(X.shape, y.shape)
 
 首先，我们将定义将被优化的模型，并对将不被优化的超参数使用默认值。
 
-```
+```py
 ...
 # define model
 model = LogisticRegression()
@@ -205,7 +205,7 @@ model = LogisticRegression()
 
 我们将使用[重复分层 k 折叠交叉验证](https://machinelearningmastery.com/k-fold-cross-validation/)评估模型配置，重复 3 次，折叠 10 次。
 
-```
+```py
 ...
 # define evaluation
 cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
@@ -217,7 +217,7 @@ cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
 
 对数均匀性对于搜索惩罚值很有用，因为我们经常探索不同数量级的值，至少作为第一步。
 
-```
+```py
 ...
 # define search space
 space = dict()
@@ -230,7 +230,7 @@ space['C'] = loguniform(1e-5, 100)
 
 重要的是，我们必须通过“ *n_iter* ”参数设置要从搜索空间中抽取的迭代或样本的数量。在这种情况下，我们将它设置为 500。
 
-```
+```py
 ...
 # define search
 search = RandomizedSearchCV(model, space, n_iter=500, scoring='accuracy', n_jobs=-1, cv=cv, random_state=1)
@@ -238,7 +238,7 @@ search = RandomizedSearchCV(model, space, n_iter=500, scoring='accuracy', n_jobs
 
 最后，我们可以执行优化并报告结果。
 
-```
+```py
 ...
 # execute search
 result = search.fit(X, y)
@@ -249,7 +249,7 @@ print('Best Hyperparameters: %s' % result.best_params_)
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # random search logistic regression model on the sonar dataset
 from scipy.stats import loguniform
 from pandas import read_csv
@@ -288,7 +288,7 @@ print('Best Hyperparameters: %s' % result.best_params_)
 
 在这种情况下，我们可以看到最佳配置实现了大约 78.9%的精度，这是公平的，并且用于实现该分数的*求解器*、*惩罚*和 *C* 超参数的具体值。
 
-```
+```py
 Best Score: 0.7897619047619049
 Best Hyperparameters: {'C': 4.878363034905756, 'penalty': 'l2', 'solver': 'newton-cg'}
 ```
@@ -301,7 +301,7 @@ Best Hyperparameters: {'C': 4.878363034905756, 'penalty': 'l2', 'solver': 'newto
 
 主要区别在于搜索空间必须是要搜索的离散网格。这意味着我们可以在对数尺度上指定离散值，而不是对 *C* 使用对数均匀分布。
 
-```
+```py
 ...
 # define search space
 space = dict()
@@ -312,7 +312,7 @@ space['C'] = [1e-5, 1e-4, 1e-3, 1e-2, 1e-1, 1, 10, 100]
 
 另外， [GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) 类不需要多次迭代，因为我们只评估网格中超参数的组合。
 
-```
+```py
 ...
 # define search
 search = GridSearchCV(model, space, scoring='accuracy', n_jobs=-1, cv=cv)
@@ -320,7 +320,7 @@ search = GridSearchCV(model, space, scoring='accuracy', n_jobs=-1, cv=cv)
 
 将这些联系在一起，下面列出了声纳数据集的网格搜索逻辑回归配置的完整示例。
 
-```
+```py
 # grid search logistic regression model on the sonar dataset
 from pandas import read_csv
 from sklearn.linear_model import LogisticRegression
@@ -358,7 +358,7 @@ print('Best Hyperparameters: %s' % result.best_params_)
 
 在这种情况下，我们可以看到最佳配置实现了大约 78.2%的精度，这也是公平的，并且用于实现该分数的*求解器*、*惩罚*和 *C* 超参数的具体值。有趣的是，结果与通过随机搜索找到的结果非常相似。
 
-```
+```py
 Best Score: 0.7828571428571429
 Best Hyperparameters: {'C': 1, 'penalty': 'l2', 'solver': 'newton-cg'}
 ```
@@ -380,7 +380,7 @@ Best Hyperparameters: {'C': 1, 'penalty': 'l2', 'solver': 'newton-cg'}
 
 下面的示例下载数据集并总结其形状。
 
-```
+```py
 # summarize the auto insurance dataset
 from pandas import read_csv
 # load dataset
@@ -394,7 +394,7 @@ print(X.shape, y.shape)
 
 运行该示例会下载数据集，并将其拆分为输入和输出元素。不出所料，我们可以看到有 63 行数据，1 个输入变量。
 
-```
+```py
 (63, 1) (63,)
 ```
 
@@ -410,7 +410,7 @@ print(X.shape, y.shape)
 
 除了作为惩罚项的“*α*”参数之外，我们将在搜索空间中对所有值使用离散分布，在这种情况下，我们将使用对数均匀分布，就像我们在前面一节中对逻辑回归的“ *C* ”参数所做的那样。
 
-```
+```py
 ...
 # define search space
 space = dict()
@@ -430,7 +430,7 @@ space['normalize'] = [True, False]
 
 在这种情况下，我们将意味着绝对误差(MAE)，通过将“*评分*”参数设置为“ *neg_mean_absolute_error* ，可以获得该误差的最大化版本。
 
-```
+```py
 ...
 # define search
 search = RandomizedSearchCV(model, space, n_iter=500, scoring='neg_mean_absolute_error', n_jobs=-1, cv=cv, random_state=1)
@@ -438,7 +438,7 @@ search = RandomizedSearchCV(model, space, n_iter=500, scoring='neg_mean_absolute
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # random search linear regression model on the auto insurance dataset
 from scipy.stats import loguniform
 from pandas import read_csv
@@ -478,7 +478,7 @@ print('Best Hyperparameters: %s' % result.best_params_)
 
 在这种情况下，我们可以看到最佳配置实现了大约 29.2 的 MAE，这非常接近模型上的最佳性能。然后，我们可以看到实现这一结果的特定超参数值。
 
-```
+```py
 Best Score: -29.23046315344758
 Best Hyperparameters: {'alpha': 0.008301451461243866, 'fit_intercept': True, 'normalize': True, 'solver': 'sag'}
 ```
@@ -489,7 +489,7 @@ Best Hyperparameters: {'alpha': 0.008301451461243866, 'fit_intercept': True, 'no
 
 作为网格搜索，我们不能定义要采样的分布，而必须定义超参数值的离散网格。因此，我们将把“ *alpha* ”参数指定为一个对数-10 标度的数值范围。
 
-```
+```py
 ...
 # define search space
 space = dict()
@@ -503,7 +503,7 @@ space['normalize'] = [True, False]
 
 在这种情况下，我们将再次使用负 MAE 评分函数。
 
-```
+```py
 ...
 # define search
 search = GridSearchCV(model, space, scoring='neg_mean_absolute_error', n_jobs=-1, cv=cv)
@@ -511,7 +511,7 @@ search = GridSearchCV(model, space, scoring='neg_mean_absolute_error', n_jobs=-1
 
 将这些联系在一起，下面列出了汽车保险数据集的网格搜索线性回归配置的完整示例。
 
-```
+```py
 # grid search linear regression model on the auto insurance dataset
 from pandas import read_csv
 from sklearn.linear_model import Ridge
@@ -550,7 +550,7 @@ print('Best Hyperparameters: %s' % result.best_params_)
 
 在这种情况下，我们可以看到最佳配置实现了大约 29.2 的 MAE，这与我们在前面部分中使用随机搜索实现的 MAE 几乎相同。有趣的是，超参数也几乎相同，这是很好的证实。
 
-```
+```py
 Best Score: -29.275708614337326
 Best Hyperparameters: {'alpha': 0.1, 'fit_intercept': True, 'normalize': False, 'solver': 'sag'}
 ```

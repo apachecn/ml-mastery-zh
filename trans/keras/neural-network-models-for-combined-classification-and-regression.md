@@ -87,7 +87,7 @@
 
 首先，让我们开发一个下载和总结数据集的示例。
 
-```
+```py
 # load and summarize the abalone dataset
 from pandas import read_csv
 from matplotlib import pyplot
@@ -108,7 +108,7 @@ print(dataframe.head())
 
 为了简化数据准备，我们将从模型中删除第一列，并将重点放在数字输入值的建模上。
 
-```
+```py
 (4177, 9)
    0      1      2      3       4       5       6      7   8
 0  M  0.455  0.365  0.095  0.5140  0.2245  0.1010  0.150  15
@@ -130,7 +130,7 @@ print(dataframe.head())
 
 我们还将强制所有加载的列具有浮点类型(神经网络模型所期望的)，并记录输入特征的数量，这将需要由模型稍后知道。
 
-```
+```py
 ...
 # split into input (X) and output (y) variables
 X, y = dataset[:, 1:-1], dataset[:, -1]
@@ -142,7 +142,7 @@ n_features = X.shape[1]
 
 我们将使用 67%的随机样本来训练模型，剩下的 33%用于评估模型。
 
-```
+```py
 ...
 # split data into train and test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=1)
@@ -154,7 +154,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random
 
 输出层将有一个用于预测数值的节点和一个线性激活函数。
 
-```
+```py
 ...
 # define the keras model
 model = Sequential()
@@ -165,7 +165,7 @@ model.add(Dense(1, activation='linear'))
 
 该模型将被训练为使用随机梯度下降的有效亚当版本来最小化均方误差损失函数。
 
-```
+```py
 ...
 # compile the keras model
 model.compile(loss='mse', optimizer='adam')
@@ -173,7 +173,7 @@ model.compile(loss='mse', optimizer='adam')
 
 我们将用 32 个样本的小批量为 150 个时代训练模型，同样是任意选择的。
 
-```
+```py
 ...
 # fit the keras model on the dataset
 model.fit(X_train, y_train, epochs=150, batch_size=32, verbose=2)
@@ -181,7 +181,7 @@ model.fit(X_train, y_train, epochs=150, batch_size=32, verbose=2)
 
 最后，在训练模型后，我们将在保持测试数据集上对其进行评估，并报告平均绝对误差(MAE)。
 
-```
+```py
 ...
 # evaluate on test set
 yhat = model.predict(X_test)
@@ -191,7 +191,7 @@ print('MAE: %.3f' % error)
 
 将所有这些联系在一起，鲍鱼数据集的 MLP 神经网络的完整示例被框定为回归问题，如下所示。
 
-```
+```py
 # regression mlp model for the abalone dataset
 from pandas import read_csv
 from tensorflow.keras.models import Sequential
@@ -229,7 +229,7 @@ print('MAE: %.3f' % error)
 
 在这种情况下，我们可以看到模型实现了大约 1.5(环)的误差。
 
-```
+```py
 ...
 Epoch 145/150
 88/88 - 0s - loss: 4.6130
@@ -262,7 +262,7 @@ MAE: 1.554
 
 我们还可以将类的总数记录为唯一编码类值的总数，这将是模型稍后需要的。
 
-```
+```py
 ...
 # encode strings to integer
 y = LabelEncoder().fit_transform(y)
@@ -271,7 +271,7 @@ n_class = len(unique(y))
 
 像以前一样将数据拆分为训练集和测试集后，我们可以定义模型，并将模型的输出数量更改为等于类的数量，并使用多类分类通用的 softmax 激活函数。
 
-```
+```py
 ...
 # define the keras model
 model = Sequential()
@@ -282,7 +282,7 @@ model.add(Dense(n_class, activation='softmax'))
 
 假设我们已经将类标签编码为整数值，我们可以通过最小化稀疏分类交叉熵损失函数来拟合模型，适用于具有整数编码类标签的多类分类任务。
 
-```
+```py
 ...
 # compile the keras model
 model.compile(loss='sparse_categorical_crossentropy', optimizer='adam')
@@ -290,7 +290,7 @@ model.compile(loss='sparse_categorical_crossentropy', optimizer='adam')
 
 如前所述，在将模型拟合到训练数据集上之后，我们可以通过计算保持测试集上的分类精度来评估模型的性能。
 
-```
+```py
 ...
 # evaluate on test set
 yhat = model.predict(X_test)
@@ -301,7 +301,7 @@ print('Accuracy: %.3f' % acc)
 
 将所有这些结合起来，下面列出了鲍鱼数据集的 MLP 神经网络作为分类问题的完整示例。
 
-```
+```py
 # classification mlp model for the abalone dataset
 from numpy import unique
 from numpy import argmax
@@ -346,7 +346,7 @@ print('Accuracy: %.3f' % acc)
 
 在这种情况下，我们可以看到模型达到了大约 27%的准确率。
 
-```
+```py
 ...
 Epoch 145/150
 88/88 - 0s - loss: 1.9271
@@ -382,7 +382,7 @@ Accuracy: 0.274
 
 我们可以像以前一样准备数据集进行分类，尽管我们应该用单独的名称保存编码的目标变量，以将其与原始目标变量值区分开来。
 
-```
+```py
 ...
 # encode strings to integer
 y_class = LabelEncoder().fit_transform(y)
@@ -391,7 +391,7 @@ n_class = len(unique(y_class))
 
 然后，我们可以将输入、原始输出和编码输出变量分成训练集和测试集。
 
-```
+```py
 ...
 # split data into train and test sets
 X_train, X_test, y_train, y_test, y_train_class, y_test_class = train_test_split(X, y, y_class, test_size=0.33, random_state=1)
@@ -401,7 +401,7 @@ X_train, X_test, y_train, y_test, y_train_class, y_test_class = train_test_split
 
 该模型采用与独立模型相同数量的输入，并使用以相同方式配置的两个隐藏层。
 
-```
+```py
 ...
 # input
 visible = Input(shape=(n_features,))
@@ -413,7 +413,7 @@ hidden2 = Dense(10, activation='relu', kernel_initializer='he_normal')(hidden1)
 
 第一个是回归输出层，具有单个节点和线性激活函数。
 
-```
+```py
 ...
 # regression output
 out_reg = Dense(1, activation='linear')(hidden2)
@@ -421,7 +421,7 @@ out_reg = Dense(1, activation='linear')(hidden2)
 
 第二个是分类输出层，每个被预测的类有一个节点，并使用 softmax 激活函数。
 
-```
+```py
 ...
 # classification output
 out_clas = Dense(n_class, activation='softmax')(hidden2)
@@ -429,7 +429,7 @@ out_clas = Dense(n_class, activation='softmax')(hidden2)
 
 然后，我们可以用一个输入层和两个输出层来定义模型。
 
-```
+```py
 ...
 # define model
 model = Model(inputs=visible, outputs=[out_reg, out_clas])
@@ -437,7 +437,7 @@ model = Model(inputs=visible, outputs=[out_reg, out_clas])
 
 给定两个输出层，我们可以编译具有两个损失函数的模型，第一(回归)输出层的均方误差损失和第二(分类)输出层的稀疏分类交叉熵。
 
-```
+```py
 ...
 # compile the keras model
 model.compile(loss=['mse','sparse_categorical_crossentropy'], optimizer='adam')
@@ -447,7 +447,7 @@ model.compile(loss=['mse','sparse_categorical_crossentropy'], optimizer='adam')
 
 这要求安装 pydot 和 pygraphviz。如果这是一个问题，您可以注释掉这一行和 *plot_model()* 函数的导入语句。
 
-```
+```py
 ...
 # plot graph of model
 plot_model(model, to_file='model.png', show_shapes=True)
@@ -459,7 +459,7 @@ plot_model(model, to_file='model.png', show_shapes=True)
 
 因此，我们可以训练模型，小心地为模型的每个输出提供回归目标和分类目标数据。
 
-```
+```py
 ...
 # fit the keras model on the dataset
 model.fit(X_train, [y_train,y_train_class], epochs=150, batch_size=32, verbose=2)
@@ -467,7 +467,7 @@ model.fit(X_train, [y_train,y_train_class], epochs=150, batch_size=32, verbose=2
 
 然后，拟合模型可以对搁置测试集中的每个示例进行回归和分类预测。
 
-```
+```py
 ...
 # make predictions on test set
 yhat1, yhat2 = model.predict(X_test)
@@ -475,7 +475,7 @@ yhat1, yhat2 = model.predict(X_test)
 
 第一个数组可用于通过平均绝对误差评估回归预测。
 
-```
+```py
 ...
 # calculate error for regression model
 error = mean_absolute_error(y_test, yhat1)
@@ -484,7 +484,7 @@ print('MAE: %.3f' % error)
 
 第二阵列可用于通过分类精度评估分类预测。
 
-```
+```py
 ...
 # evaluate accuracy for classification model
 yhat2 = argmax(yhat2, axis=-1).astype('int')
@@ -496,7 +496,7 @@ print('Accuracy: %.3f' % acc)
 
 将这些结合起来，下面列出了在鲍鱼数据集上训练和评估用于组合器回归和分类预测的多输出模型的完整示例。
 
-```
+```py
 # mlp for combined regression and classification predictions on the abalone dataset
 from numpy import unique
 from numpy import argmax
@@ -561,7 +561,7 @@ print('Accuracy: %.3f' % acc)
 
 在这种情况下，我们可以看到该模型实现了大约 1.495(环)的合理误差和大约 25.6%的类似精度。
 
-```
+```py
 ...
 Epoch 145/150
 88/88 - 0s - loss: 6.5707 - dense_2_loss: 4.5396 - dense_3_loss: 2.0311

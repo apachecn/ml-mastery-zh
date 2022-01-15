@@ -58,7 +58,7 @@
 
 下面的示例为输入( *X* )和输出( *y* )创建了具有独立数组的数据集。
 
-```
+```py
 # example of creating a test dataset
 from sklearn.datasets import make_blobs
 # create the inputs and outputs
@@ -71,7 +71,7 @@ print(X.shape, y.shape)
 
 我们可以看到数据集中的 1000 个样本有 1000 行。我们还可以看到，对于两个输入变量，输入数据有两列，输出数组是输入数据中每一行的一个长的类标签数组。
 
-```
+```py
 (1000, 2) (1000,)
 ```
 
@@ -95,7 +95,7 @@ print(X.shape, y.shape)
 
 下面列出了完整的示例。
 
-```
+```py
 # fit a logistic regression on the training dataset
 from sklearn.linear_model import LogisticRegression
 from sklearn.datasets import make_blobs
@@ -117,7 +117,7 @@ print(acc)
 
 在这种情况下，我们可以看到该模型在训练数据集上具有 100%的分类精度。
 
-```
+```py
 1.0
 ```
 
@@ -140,7 +140,7 @@ print(acc)
 
 输入必须定义为一个数字数组，特别是 1 行 2 列。我们可以通过将示例定义为一个行列表，每行有一个列列表来实现这一点；例如:
 
-```
+```py
 ...
 # define input
 new_input = [[2.12309797, -1.41131072]]
@@ -148,7 +148,7 @@ new_input = [[2.12309797, -1.41131072]]
 
 然后，我们可以将此作为输入提供给模型，并进行预测。
 
-```
+```py
 ...
 # get prediction for new input
 new_output = model.predict(new_input)
@@ -156,7 +156,7 @@ new_output = model.predict(new_input)
 
 将这一点与前一节中的模型相结合，下面列出了完整的示例。
 
-```
+```py
 # make a single prediction with the model
 from sklearn.linear_model import LogisticRegression
 from sklearn.datasets import make_blobs
@@ -178,7 +178,7 @@ print(new_input, new_output)
 
 我们可以看到，在这种情况下，模型为输入预测类标签 1。
 
-```
+```py
 [[2.12309797, -1.41131072]] [1]
 ```
 
@@ -202,7 +202,7 @@ print(new_input, new_output)
 
 首先，我们可以对训练数据集中的每一行输入进行预测:
 
-```
+```py
 ...
 # make predictions on the entire training dataset
 yhat = model.predict(X)
@@ -212,14 +212,14 @@ yhat = model.predict(X)
 
 这精确地显示了如何将预测与输入行联系起来。例如，第 0 行的输入和索引 0 的预测:
 
-```
+```py
 ...
 print(X[0], yhat[0])
 ```
 
 在这种情况下，我们将只查看前 10 行及其预测。
 
-```
+```py
 ...
 # connect predictions with outputs
 for i in range(10):
@@ -228,7 +228,7 @@ for i in range(10):
 
 将这些联系在一起，下面列出了为训练数据中的每一行进行预测并将预测与输入连接起来的完整示例。
 
-```
+```py
 # make a single prediction with the model
 from sklearn.linear_model import LogisticRegression
 from sklearn.datasets import make_blobs
@@ -249,7 +249,7 @@ for i in range(10):
 
 这提供了一个模板，您可以使用该模板并对自己的预测建模项目进行调整，以便通过行索引将预测连接到输入行。
 
-```
+```py
 [ 1.23839154 -2.8475005 ] 1
 [-1.25884111 -8.57055785] 0
 [ -0.86599821 -10.50446358] 0

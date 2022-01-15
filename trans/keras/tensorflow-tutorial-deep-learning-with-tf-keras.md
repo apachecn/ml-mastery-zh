@@ -107,7 +107,7 @@ Keras 起飞的第二个原因是，它允许您使用一系列流行的深度�
 
 Keras 中的 Keras API 实现被称为“ *tf.keras* ”，因为这是引用 API 时使用的 Python 习惯用法。首先导入 TensorFlow 模块，命名为“*TF*”；然后，通过调用 *tf.keras* 访问 Keras API 元素；例如:
 
-```
+```py
 # example of tf.keras python idiom
 import tensorflow as tf
 # use keras API
@@ -137,7 +137,7 @@ model = tf.keras.Sequential()
 
 例如，在命令行上，您可以键入:
 
-```
+```py
 sudo pip install tensorflow
 ```
 
@@ -159,7 +159,7 @@ sudo pip install tensorflow
 
 创建一个名为 *versions.py* 的新文件，并将以下代码复制粘贴到文件中。
 
-```
+```py
 # check version
 import tensorflow
 print(tensorflow.__version__)
@@ -169,13 +169,13 @@ print(tensorflow.__version__)
 
 然后键入:
 
-```
+```py
 python versions.py
 ```
 
 然后，您应该会看到如下输出:
 
-```
+```py
 2.2.0
 ```
 
@@ -194,7 +194,7 @@ python versions.py
 
 我的工作站上的一些示例包括:
 
-```
+```py
 Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
 XLA service 0x7fde3f2e6180 executing computations on platform Host. Devices:
 StreamExecutor device (0): Host, Default Version
@@ -234,7 +234,7 @@ StreamExecutor device (0): Host, Default Version
 
 模型既可以用顺序应用编程接口定义，也可以用功能应用编程接口定义，我们将在下一节讨论这一点。
 
-```
+```py
 ...
 # define the model
 model = ...
@@ -254,7 +254,7 @@ model = ...
 
 *   [tf.keras Optimizers](https://www.tensorflow.org/api_docs/python/tf/keras/optimizers)
 
-```
+```py
 ...
 # compile the model
 opt = SGD(learning_rate=0.01, momentum=0.9)
@@ -267,7 +267,7 @@ model.compile(optimizer=opt, loss='binary_crossentropy')
 *   *稀疏 _ 分类 _ 交叉熵*，用于多类分类。
 *   *回归的均方误差*。
 
-```
+```py
 ...
 # compile the model
 model.compile(optimizer='sgd', loss='mse')
@@ -283,7 +283,7 @@ model.compile(optimizer='sgd', loss='mse')
 
 *   [tf.keras Metrics](https://www.tensorflow.org/api_docs/python/tf/keras/metrics)
 
-```
+```py
 ...
 # compile the model
 model.compile(optimizer='sgd', loss='binary_crossentropy', metrics=['accuracy'])
@@ -299,7 +299,7 @@ model.compile(optimizer='sgd', loss='binary_crossentropy', metrics=['accuracy'])
 
 从应用编程接口的角度来看，这包括调用一个函数来执行训练过程。在培训过程结束之前，该功能将一直阻止(不返回)。
 
-```
+```py
 ...
 # fit the model
 model.fit(X, y, epochs=100, batch_size=32)
@@ -311,7 +311,7 @@ model.fit(X, y, epochs=100, batch_size=32)
 
 在拟合模型时，进度条将总结每个时期的状态和整个训练过程。通过将“ *verbose* ”参数设置为 2，可以将其简化为每个时期模型性能的简单报告。通过将“*详细*”设置为 0，可以在训练期间关闭所有输出。
 
-```
+```py
 ...
 # fit the model
 model.fit(X, y, epochs=100, batch_size=32, verbose=0)
@@ -325,7 +325,7 @@ model.fit(X, y, epochs=100, batch_size=32, verbose=0)
 
 从应用编程接口的角度来看，这包括用保持数据集调用一个函数，并获得一个损失，也许还有其他可以报告的指标。
 
-```
+```py
 ...
 # evaluate the model
 loss = model.evaluate(X, y, verbose=0)
@@ -343,7 +343,7 @@ loss = model.evaluate(X, y, verbose=0)
 
 现在我们已经熟悉了模型生命周期，让我们来看看使用 tf.keras API 构建模型的两种主要方式:顺序和功能。
 
-```
+```py
 ...
 # make a prediction
 yhat = model.predict(X)
@@ -357,7 +357,7 @@ yhat = model.predict(X)
 
 下面的示例定义了一个顺序 MLP 模型，该模型接受八个输入，有一个包含 10 个节点的隐藏层，然后有一个包含一个节点的输出层来预测数值。
 
-```
+```py
 # example of a model defined with the sequential api
 from tensorflow.keras import Sequential
 from tensorflow.keras.layers import Dense
@@ -373,7 +373,7 @@ model.add(Dense(1))
 
 例如，这里是一个有五个隐藏层的深 MLP。
 
-```
+```py
 # example of a model defined with the sequential api
 from tensorflow.keras import Sequential
 from tensorflow.keras.layers import Dense
@@ -395,7 +395,7 @@ model.add(Dense(1))
 
 首先，必须通过*输入*类定义输入图层，并指定输入样本的形状。定义模型时，我们必须保留对输入层的引用。
 
-```
+```py
 ...
 # define the layers
 x_in = Input(shape=(8,))
@@ -403,21 +403,21 @@ x_in = Input(shape=(8,))
 
 接下来，完全连接的层可以通过调用该层并传递输入层来连接到输入。这将返回对这个新层中输出连接的引用。
 
-```
+```py
 ...
 x = Dense(10)(x_in)
 ```
 
 然后，我们可以用同样的方式将它连接到输出层。
 
-```
+```py
 ...
 x_out = Dense(1)(x)
 ```
 
 一旦连接，我们定义一个模型对象，并指定输入和输出层。下面列出了完整的示例。
 
-```
+```py
 # example of a model defined with the functional api
 from tensorflow.keras import Model
 from tensorflow.keras import Input
@@ -477,7 +477,7 @@ MLP 由一个或多个*密集*层创建。这种模型适用于表格数据，�
 
 下面列出了完整的示例。
 
-```
+```py
 # mlp for binary classification
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
@@ -525,7 +525,7 @@ print('Predicted: %.3f' % yhat)
 
 在这种情况下，我们可以看到模型达到了大约 94%的分类准确率，然后预测一行数据属于类别 1 的概率为 0.9。
 
-```
+```py
 (235, 34) (116, 34) (235,) (116,)
 Test Accuracy: 0.940
 Predicted: 0.991
@@ -546,7 +546,7 @@ Predicted: 0.991
 
 下面列出了在鸢尾花数据集上拟合和评估 MLP 的完整示例。
 
-```
+```py
 # mlp for multiclass classification
 from numpy import argmax
 from pandas import read_csv
@@ -595,7 +595,7 @@ print('Predicted: %s (class=%d)' % (yhat, argmax(yhat)))
 
 在这种情况下，我们可以看到该模型实现了大约 98%的分类准确率，然后预测了一行数据属于每个类的概率，尽管类 0 的概率最高。
 
-```
+```py
 (100, 4) (50, 4) (100,) (50,)
 Test Accuracy: 0.980
 Predicted: [[0.8680804 0.12356871 0.00835086]] (class=0)
@@ -620,7 +620,7 @@ Predicted: [[0.8680804 0.12356871 0.00835086]] (class=0)
 
 下面列出了在波士顿住房数据集上拟合和评估 MLP 的完整示例。
 
-```
+```py
 # mlp for regression
 from numpy import sqrt
 from pandas import read_csv
@@ -664,7 +664,7 @@ print('Predicted: %.3f' % yhat)
 
 在这种情况下，我们可以看到模型实现了大约 60 的最小均方误差，这是大约 7 的 RMSE(单位是千美元)。然后为单个例子预测大约 26 的值。
 
-```
+```py
 (339, 13) (167, 13) (339,) (167,)
 MSE: 60.751, RMSE: 7.794
 Predicted: 26.983
@@ -684,7 +684,7 @@ tf.keras API 提供了一个方便的函数来直接下载和加载这个数据�
 
 以下示例加载数据集并绘制前几幅图像。
 
-```
+```py
 # example of loading and plotting the mnist dataset
 from tensorflow.keras.datasets.mnist import load_data
 from matplotlib import pyplot
@@ -705,7 +705,7 @@ pyplot.show()
 
 运行该示例会加载 MNIST 数据集，然后汇总默认的训练和测试数据集。
 
-```
+```py
 Train: X=(60000, 28, 28), y=(60000,)
 Test: X=(10000, 28, 28), y=(10000,)
 ```
@@ -726,7 +726,7 @@ Test: X=(10000, 28, 28), y=(10000,)
 
 下面列出了在 MNIST 数据集上拟合和评估 CNN 模型的完整示例。
 
-```
+```py
 # example of a cnn for image classification
 from numpy import asarray
 from numpy import unique
@@ -783,7 +783,7 @@ print('Predicted: class=%d' % argmax(yhat))
 
 在这种情况下，我们可以看到该模型在测试数据集上实现了大约 98%的分类准确率。然后我们可以看到，模型为训练集中的第一幅图像预测了类别 5。
 
-```
+```py
 (28, 28, 1) 10
 Accuracy: 0.987
 Predicted: class=5
@@ -812,13 +812,13 @@ Predicted: class=5
 
 例如，如果序列是:
 
-```
+```py
 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 ```
 
 那么用于训练模型的样本将如下所示:
 
-```
+```py
 Input 				Output
 1, 2, 3, 4, 5 		6
 2, 3, 4, 5, 6 		7
@@ -835,7 +835,7 @@ LSTMs 期望数据集中的每个样本都有两个维度；第一个是时间�
 
 下面列出了针对单变量时间序列预测问题拟合和评估 LSTM 的完整示例。
 
-```
+```py
 # lstm for time series forecasting
 from numpy import sqrt
 from numpy import asarray
@@ -904,7 +904,7 @@ print('Predicted: %.3f' % (yhat))
 
 在这种情况下，模型的 MAE 约为 2，800，并预测测试集中的下一个值为 13，199，其中期望值为 14，577(非常接近)。
 
-```
+```py
 (91, 5, 1) (12, 5, 1) (91,) (12,)
 MSE: 12755421.000, RMSE: 3571.473, MAE: 2856.084
 Predicted: 13199.325
@@ -932,7 +932,7 @@ Predicted: 13199.325
 
 下面的例子定义了一个三层的小模型，然后总结了结构。
 
-```
+```py
 # example of summarizing a model
 from tensorflow.keras import Sequential
 from tensorflow.keras.layers import Dense
@@ -949,7 +949,7 @@ model.summary()
 
 对于检查模型中的输出形状和参数(权重)数量，这是一个非常有价值的诊断。
 
-```
+```py
 Model: "sequential"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
@@ -974,7 +974,7 @@ _________________________________________________________________
 
 下面的示例创建了一个小型的三层模型，并将模型体系结构的一个图保存到包含输入和输出形状的“*model.png”*。
 
-```
+```py
 # example of plotting a model
 from tensorflow.keras import Sequential
 from tensorflow.keras.layers import Dense
@@ -1016,7 +1016,7 @@ plot_model(model, 'model.png', show_shapes=True)
 
 下面的例子适合一个合成二进制分类问题的小神经网络。30%的验证分割用于在训练期间评估模型，然后使用线图绘制训练和验证数据集上的[交叉熵损失](https://machinelearningmastery.com/cross-entropy-for-machine-learning/)。
 
-```
+```py
 # example of plotting learning curves
 from sklearn.datasets import make_classification
 from tensorflow.keras import Sequential
@@ -1064,13 +1064,13 @@ pyplot.show()
 
 模型以 H5 格式保存，这是一种高效的阵列存储格式。因此，您必须确保工作站上安装了 [h5py 库](https://www.h5py.org/)。这可以使用 *pip* 实现；例如:
 
-```
+```py
 pip install h5py
 ```
 
 下面的例子适合一个合成二进制分类问题的简单模型，然后保存模型文件。
 
-```
+```py
 # example of saving a fit model
 from sklearn.datasets import make_classification
 from tensorflow.keras import Sequential
@@ -1099,7 +1099,7 @@ model.save('model.h5')
 
 下面的示例加载模型并使用它进行预测。
 
-```
+```py
 # example of loading a saved model
 from sklearn.datasets import make_classification
 from tensorflow.keras.models import load_model
@@ -1115,7 +1115,7 @@ print('Predicted: %.3f' % yhat[0])
 
 运行该示例从文件加载图像，然后使用它对新的数据行进行预测并打印结果。
 
-```
+```py
 Predicted: 0.831
 ```
 
@@ -1147,7 +1147,7 @@ Dropout 是一种聪明的正则化方法，它减少了训练数据集的过拟
 
 在第一隐藏层和输出层之间插入 50%脱落的脱落层。
 
-```
+```py
 # example of using dropout
 from sklearn.datasets import make_classification
 from tensorflow.keras import Sequential
@@ -1187,7 +1187,7 @@ model.fit(X, y, epochs=100, batch_size=32, verbose=0)
 
 下面的例子为二进制分类预测问题定义了一个小的 MLP 网络，在第一个隐藏层和输出层之间有一个批处理规范化层。
 
-```
+```py
 # example of using batch normalization
 from sklearn.datasets import make_classification
 from tensorflow.keras import Sequential
@@ -1235,7 +1235,7 @@ model.fit(X, y, epochs=100, batch_size=32, verbose=0)
 
 下面的例子演示了一个关于合成二进制分类问题的小型神经网络，一旦模型开始过拟合(大约 50 个时期后)，它就使用提前停止来停止训练。
 
-```
+```py
 # example of using early stopping
 from sklearn.datasets import make_classification
 from tensorflow.keras import Sequential

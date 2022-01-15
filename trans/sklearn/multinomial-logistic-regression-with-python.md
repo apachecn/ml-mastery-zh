@@ -70,7 +70,7 @@
 
 下面的示例生成数据集，并总结了数组的形状以及示例在三个类中的分布。
 
-```
+```py
 # test classification dataset
 from collections import Counter
 from sklearn.datasets import make_classification
@@ -83,7 +83,7 @@ print(Counter(y))
 
 运行该示例确认数据集有 1，000 行和 10 列，正如我们预期的那样，并且这些行在三个类中大致均匀分布，每个类中大约有 334 个示例。
 
-```
+```py
 (1000, 10) (1000,)
 Counter({1: 334, 2: 334, 0: 332})
 ```
@@ -92,7 +92,7 @@ scikit-learn 库中通过[后勤回归类](https://scikit-learn.org/stable/modul
 
 通过将“ *multi_class* ”参数设置为“*多项式*”并将“*求解器*”参数设置为支持多项式逻辑回归的求解器，如“ *lbfgs* ”，可以为多项式逻辑回归配置*逻辑回归*类。
 
-```
+```py
 ...
 # define the multinomial logistic regression model
 model = LogisticRegression(multi_class='multinomial', solver='lbfgs')
@@ -108,7 +108,7 @@ model = LogisticRegression(multi_class='multinomial', solver='lbfgs')
 
 下面列出了评估多类分类的多项逻辑回归的完整示例。
 
-```
+```py
 # evaluate multinomial logistic regression model
 from numpy import mean
 from numpy import std
@@ -134,7 +134,7 @@ print('Mean Accuracy: %.3f (%.3f)' % (mean(n_scores), std(n_scores)))
 
 在这种情况下，我们可以看到，在我们的综合分类数据集上，具有默认惩罚的多项式逻辑回归模型实现了大约 68.1%的平均分类精度。
 
-```
+```py
 Mean Accuracy: 0.681 (0.042)
 ```
 
@@ -144,7 +144,7 @@ Mean Accuracy: 0.681 (0.042)
 
 下面的例子演示了如何使用多项式逻辑回归模型对新数据进行预测。
 
-```
+```py
 # make a prediction with a multinomial logistic regression model
 from sklearn.datasets import make_classification
 from sklearn.linear_model import LogisticRegression
@@ -166,7 +166,7 @@ print('Predicted Class: %d' % yhat[0])
 
 在这种情况下，我们可以看到模型为单行数据预测了类“1”。
 
-```
+```py
 Predicted Class: 1
 ```
 
@@ -176,7 +176,7 @@ Predicted Class: 1
 
 下面的例子演示了如何使用多项式逻辑回归模型来预测一个新例子的多项式概率分布。
 
-```
+```py
 # predict probabilities with a multinomial logistic regression model
 from sklearn.datasets import make_classification
 from sklearn.linear_model import LogisticRegression
@@ -200,7 +200,7 @@ print('Predicted Probabilities: %s' % yhat[0])
 
 在这种情况下，我们可以看到类 1(例如，数组索引被映射到类整数值)具有大约 0.50 的最大预测概率。
 
-```
+```py
 Predicted Probabilities: [0.16470456 0.50297138 0.33232406]
 ```
 
@@ -216,7 +216,7 @@ Predicted Probabilities: [0.16470456 0.50297138 0.33232406]
 
 默认情况下，*物流配送*类使用 L2 惩罚，权重系数设置为 1.0。处罚类型可以通过“*处罚*”参数设置，值为“ *l1* ”、“ *l2* ”、“ *elasticnet* ”(例如两者都有)，尽管并非所有解算器都支持所有处罚类型。惩罚中系数的权重可以通过“ *C* 参数设置。
 
-```
+```py
 ...
 # define the multinomial logistic regression model with a default penalty
 LogisticRegression(multi_class='multinomial', solver='lbfgs', penalty='l2', C=1.0)
@@ -236,7 +236,7 @@ LogisticRegression(multi_class='multinomial', solver='lbfgs', penalty='l2', C=1.
 
 通过将“*惩罚*”参数设置为字符串“*无*，可以禁用惩罚。
 
-```
+```py
 ...
 # define the multinomial logistic regression model without a penalty
 LogisticRegression(multi_class='multinomial', solver='lbfgs', penalty='none')
@@ -250,7 +250,7 @@ LogisticRegression(multi_class='multinomial', solver='lbfgs', penalty='none')
 
 下面列出了评估多项逻辑回归的 L2 罚值的完整示例。
 
-```
+```py
 # tune regularization for multinomial logistic regression
 from numpy import mean
 from numpy import std
@@ -312,7 +312,7 @@ pyplot.show()
 
 在这种情况下，我们可以看到，C 值为 1.0 的最佳分数约为 77.7%，这与不使用达到相同分数的惩罚相同。
 
-```
+```py
 >0.0000 0.777 (0.037)
 >0.0001 0.683 (0.049)
 >0.0010 0.762 (0.044)

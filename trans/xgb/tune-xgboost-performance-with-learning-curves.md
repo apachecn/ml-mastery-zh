@@ -110,7 +110,7 @@ XGBoost 在分类和回归预测建模问题上主导结构化或表格数据集
 
 下面的示例生成了合成分类数据集，并总结了生成数据的形状。
 
-```
+```py
 # test classification dataset
 from sklearn.datasets import make_classification
 # define dataset
@@ -121,7 +121,7 @@ print(X.shape, y.shape)
 
 运行该示例会生成数据并报告输入和输出组件的大小，从而确认预期的形状。
 
-```
+```py
 (10000, 50) (10000,)
 ```
 
@@ -129,7 +129,7 @@ print(X.shape, y.shape)
 
 首先，我们必须将数据集分成一部分用于训练模型(train)，另一部分不用于训练模型，而是保留下来用于评估训练算法(测试集或验证集)每一步的模型。
 
-```
+```py
 ...
 # split data into train and test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.50, random_state=1)
@@ -137,7 +137,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.50, random
 
 然后我们可以定义一个带有默认超参数的 XGBoost 分类模型。
 
-```
+```py
 ...
 # define the model
 model = XGBClassifier()
@@ -151,7 +151,7 @@ model = XGBClassifier()
 
 数据集必须指定为元组列表，其中每个元组包含数据集的输入和输出列，列表中的每个元素都是要评估的不同数据集，例如训练集和测试集。
 
-```
+```py
 ...
 # define the datasets to evaluate each iteration
 evalset = [(X_train, y_train), (X_test,y_test)]
@@ -161,7 +161,7 @@ evalset = [(X_train, y_train), (X_test,y_test)]
 
 这可以通过在调用 *fit()* 时指定“ *eval_metric* ”参数并为其提供我们将评估的度量名称“ *logloss* ”来实现。我们还可以通过“ *eval_set* ”参数指定要评估的数据集。 *fit()* 函数按照常规将训练数据集作为前两个参数。
 
-```
+```py
 ...
 # fit the model
 model.fit(X_train, y_train, eval_metric='logloss', eval_set=evalset)
@@ -169,7 +169,7 @@ model.fit(X_train, y_train, eval_metric='logloss', eval_set=evalset)
 
 一旦模型被拟合，我们可以评估它的性能作为测试数据集上的分类精度。
 
-```
+```py
 ...
 # evaluate performance
 yhat = model.predict(X_test)
@@ -179,7 +179,7 @@ print('Accuracy: %.3f' % score)
 
 然后，我们可以通过调用 *evals_result()* 函数来检索为每个数据集计算的指标。
 
-```
+```py
 ...
 # retrieve performance metrics
 results = model.evals_result()
@@ -189,7 +189,7 @@ results = model.evals_result()
 
 我们可以为每个数据集创建度量的线图。
 
-```
+```py
 ...
 # plot learning curves
 pyplot.plot(results['validation_0']['logloss'], label='train')
@@ -204,7 +204,7 @@ pyplot.show()
 
 将所有这些结合在一起，下面列出了在综合分类任务上拟合 XGBoost 模型并绘制学习曲线的完整示例。
 
-```
+```py
 # plot learning curve of an xgboost model
 from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
@@ -242,7 +242,7 @@ pyplot.show()
 
 首先，报告模型性能，表明该模型在等待测试集上实现了约 94.5%的分类精度。
 
-```
+```py
 Accuracy: 0.945
 ```
 
@@ -270,7 +270,7 @@ Accuracy: 0.945
 
 我们可以通过默认为 100 的“*n _ estimates*”超参数来增加算法的迭代次数。让我们把它增加到 500。
 
-```
+```py
 ...
 # define the model
 model = XGBClassifier(n_estimators=500)
@@ -278,7 +278,7 @@ model = XGBClassifier(n_estimators=500)
 
 下面列出了完整的示例。
 
-```
+```py
 # plot learning curve of an xgboost model
 from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
@@ -316,7 +316,7 @@ pyplot.show()
 
 我们可以看到，更多的迭代导致精度从大约 94.5%提升到大约 95.8%。
 
-```
+```py
 Accuracy: 0.958
 ```
 
@@ -330,7 +330,7 @@ Accuracy: 0.958
 
 这可以使用学习速率来实现，学习速率限制了添加到集合中的每棵树的贡献。这可以通过“ *eta* ”超参数控制，默认值为 0.3。我们可以尝试较小的值，例如 0.05。
 
-```
+```py
 ...
 # define the model
 model = XGBClassifier(n_estimators=500, eta=0.05)
@@ -338,7 +338,7 @@ model = XGBClassifier(n_estimators=500, eta=0.05)
 
 下面列出了完整的示例。
 
-```
+```py
 # plot learning curve of an xgboost model
 from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
@@ -376,7 +376,7 @@ pyplot.show()
 
 我们可以看到，学习率越小，准确率越差，从 95.8%左右下降到 95.1%左右。
 
-```
+```py
 Accuracy: 0.951
 ```
 
@@ -388,7 +388,7 @@ Accuracy: 0.951
 
 让我们尝试将迭代次数从 500 次增加到 2000 次。
 
-```
+```py
 ...
 # define the model
 model = XGBClassifier(n_estimators=2000, eta=0.05)
@@ -396,7 +396,7 @@ model = XGBClassifier(n_estimators=2000, eta=0.05)
 
 下面列出了完整的示例。
 
-```
+```py
 # plot learning curve of an xgboost model
 from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
@@ -434,7 +434,7 @@ pyplot.show()
 
 我们可以看到，更多的迭代给了算法更大的改进空间，达到了 96.1%的准确率，是目前为止最好的。
 
-```
+```py
 Accuracy: 0.961
 ```
 
@@ -450,7 +450,7 @@ Accuracy: 0.961
 
 在这种情况下，我们将尝试分别通过“*子样本*”和“ *colsample_bytree* ”超参数将样本和特征的数量减半。
 
-```
+```py
 ...
 # define the model
 model = XGBClassifier(n_estimators=2000, eta=0.05, subsample=0.5, colsample_bytree=0.5)
@@ -458,7 +458,7 @@ model = XGBClassifier(n_estimators=2000, eta=0.05, subsample=0.5, colsample_bytr
 
 下面列出了完整的示例。
 
-```
+```py
 # plot learning curve of an xgboost model
 from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
@@ -496,7 +496,7 @@ pyplot.show()
 
 我们可以看到，正则化的加入导致了进一步的改进，碰撞精度从大约 96.1%提高到大约 96.6%。
 
-```
+```py
 Accuracy: 0.966
 ```
 

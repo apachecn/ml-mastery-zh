@@ -106,7 +106,7 @@
 
 下面的示例生成一个数据集，其中有 1，000 个属于两个类之一的示例，每个类都有两个输入要素。
 
-```
+```py
 # example of binary classification task
 from numpy import where
 from collections import Counter
@@ -136,7 +136,7 @@ pyplot.show()
 
 接下来，对数据集中的前 10 个示例进行总结，显示输入值是数字，目标值是代表类成员身份的整数。
 
-```
+```py
 (1000, 2) (1000,)
 
 Counter({0: 500, 1: 500})
@@ -209,7 +209,7 @@ Counter({0: 500, 1: 500})
 
 下面的示例生成一个数据集，其中有 1，000 个属于三个类之一的示例，每个类都有两个输入要素。
 
-```
+```py
 # example of multi-class classification task
 from numpy import where
 from collections import Counter
@@ -239,7 +239,7 @@ pyplot.show()
 
 接下来，对数据集中的前 10 个示例进行总结，显示输入值是数字，目标值是代表类成员身份的整数。
 
-```
+```py
 (1000, 2) (1000,)
 
 Counter({0: 334, 1: 333, 2: 333})
@@ -288,7 +288,7 @@ Counter({0: 334, 1: 333, 2: 333})
 
 下面的示例生成了一个包含 1，000 个示例的数据集，每个示例都有两个输入要素。有三个类，每个类可以有两个标签(0 或 1)中的一个。
 
-```
+```py
 # example of a multi-label classification task
 from sklearn.datasets import make_multilabel_classification
 # define dataset
@@ -304,7 +304,7 @@ for i in range(10):
 
 接下来，对数据集中的前 10 个示例进行总结，显示输入值是数字，目标值是代表类标签成员身份的整数。
 
-```
+```py
 (1000, 2) (1000, 3)
 
 [18\. 35.] [1 1 1]
@@ -362,7 +362,7 @@ for i in range(10):
 
 下面的示例生成一个数据集，其中有 1，000 个属于两个类之一的示例，每个类都有两个输入要素。
 
-```
+```py
 # example of an imbalanced binary classification task
 from numpy import where
 from collections import Counter
@@ -392,7 +392,7 @@ pyplot.show()
 
 接下来，对数据集中的前 10 个示例进行总结，显示输入值是数字，目标值是代表类成员身份的整数。在这种情况下，我们可以看到大多数例子都属于类 0，正如我们所期望的那样。
 
-```
+```py
 (1000, 2) (1000,)
 
 Counter({0: 983, 1: 17})

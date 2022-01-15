@@ -68,7 +68,7 @@ $ z = f \ CDO w $
 
 现在我们尝试用 numpy 和 scikit-learn 实现特征脸的思想。我们也会利用 OpenCV 来读取图片文件。您可能需要使用`pip`命令安装相关软件包:
 
-```
+```py
 pip install opencv-python
 ```
 
@@ -80,7 +80,7 @@ pip install opencv-python
 
 我们可以提取 zip 文件获取图片，也可以利用 Python 中的`zipfile`包直接从 zip 文件中读取内容:
 
-```
+```py
 import cv2
 import zipfile
 import numpy as np
@@ -99,7 +99,7 @@ with zipfile.ZipFile("attface.zip") as facezip:
 
 这里我们可以用 matplotlib 来看看这些人脸照片:
 
-```
+```py
 ...
 import matplotlib.pyplot as plt
 
@@ -114,44 +114,44 @@ plt.show()
 
 我们还可以找到每张图片的像素大小:
 
-```
+```py
 ...
 faceshape = list(faces.values())[0].shape
 print("Face image shape:", faceshape)
 ```
 
-```
+```py
 Face image shape: (112, 92)
 ```
 
 在 Python 字典中，人脸的图片由它们的文件名来标识。我们可以浏览一下文件名:
 
-```
+```py
 ...
 print(list(faces.keys())[:5])
 ```
 
-```
+```py
 ['s1/1.pgm', 's1/10.pgm', 's1/2.pgm', 's1/3.pgm', 's1/4.pgm']
 ```
 
 因此我们可以把同一个人的脸放入同一类。共有 40 节课，共 400 张图片:
 
-```
+```py
 ...
 classes = set(filename.split("/")[0] for filename in faces.keys())
 print("Number of classes:", len(classes))
 print("Number of pictures:", len(faces))
 ```
 
-```
+```py
 Number of classes: 40
 Number of pictures: 400
 ```
 
 为了说明使用特征脸进行识别的能力，我们想在生成特征脸之前保留一些图片。我们拿出一个人的所有照片以及另一个人的一张照片作为我们的测试集。剩余的图片被矢量化并转换成 2D 数字阵列:
 
-```
+```py
 ...
 # Take classes 1-39 for eigenfaces, keep entire class 40 and
 # image 10 of class 39 as out-of-sample test
@@ -171,7 +171,7 @@ facematrix = np.array(facematrix)
 
 现在我们可以对这个数据集矩阵进行主成分分析。我们没有一步一步地计算主成分分析，而是利用 scikit-learn 中的主成分分析功能，我们可以轻松检索所需的所有结果:
 
-```
+```py
 ...
 # Apply PCA to extract eigenfaces
 from sklearn.decomposition import PCA
@@ -181,12 +181,12 @@ pca = PCA().fit(facematrix)
 
 我们可以从解释的方差比中确定每个主成分的重要性:
 
-```
+```py
 ...
 print(pca.explained_variance_ratio_)
 ```
 
-```
+```py
 [1.77824822e-01 1.29057925e-01 6.67093882e-02 5.63561346e-02
  5.13040312e-02 3.39156477e-02 2.47893586e-02 2.27967054e-02
  1.95632067e-02 1.82678428e-02 1.45655853e-02 1.38626271e-02
@@ -204,7 +204,7 @@ print(pca.explained_variance_ratio_)
 
 或者我们可以简单地组成一个适中的数，比如说 50，然后把这些主成分向量看作特征面。为了方便起见，我们从主成分分析结果中提取特征脸，并将其存储为 numpy 数组。请注意，本征面以行的形式存储在矩阵中。如果我们想展示它，我们可以把它转换回 2D。在下面，我们展示了一些特征脸，看看它们是什么样子的:
 
-```
+```py
 ...
 # Take the first K principal components as eigenfaces
 n_components = 50
@@ -223,7 +223,7 @@ plt.show()
 
 由于我们的目标是建立一个人脸识别系统，我们首先计算每个输入图片的权重向量:
 
-```
+```py
 ...
 # Generate weights as a KxN matrix where K is the number of eigenfaces and N the number of samples
 weights = eigenfaces @ (facematrix - pca.mean_).T
@@ -231,7 +231,7 @@ weights = eigenfaces @ (facematrix - pca.mean_).T
 
 上面的代码是用矩阵乘法代替循环。大致相当于以下内容:
 
-```
+```py
 ...
 weights = []
 for i in range(facematrix.shape[0]):
@@ -244,7 +244,7 @@ for i in range(facematrix.shape[0]):
 
 至此，我们的人脸识别系统已经完成。我们用 39 个人的照片来建立我们的特征脸。我们使用属于这 39 个人中的一个人的测试图片(从训练主成分分析模型的矩阵中拿出的图片)来看它是否能成功识别人脸:
 
-```
+```py
 ...
 # Test on out-of-sample image of existing class
 query = faces["s39/10.pgm"].reshape(1,-1)
@@ -263,7 +263,7 @@ plt.show()
 
 上面，我们首先用从主成分分析结果中检索到的平均向量减去矢量化图像。然后我们计算这个减去平均值的向量到每个特征面的投影，并把它作为这张图片的权重。然后，我们将所讨论的图片的权重向量与每个现有图片的权重向量进行比较，并找到具有最小 L2 距离的图片作为最佳匹配。我们可以看到，它确实可以成功地在同一个类中找到最接近的匹配:
 
-```
+```py
 Best match s39 with Euclidean distance 1559.997137
 ```
 
@@ -273,7 +273,7 @@ Best match s39 with Euclidean distance 1559.997137
 
 我们可以用 PCA 中第 40 个人的照片再试一次。我们永远不会把它纠正过来，因为它对我们的模型来说是一个新人。但是，我们想看看它的错误程度以及距离度量中的值:
 
-```
+```py
 ...
 # Test on out-of-sample image of new class
 query = faces["s40/1.pgm"].reshape(1,-1)
@@ -292,7 +292,7 @@ plt.show()
 
 我们可以看到，它的最佳匹配具有更大的 L2 距离:
 
-```
+```py
 Best match s5 with Euclidean distance 2690.209330
 ```
 
@@ -303,7 +303,7 @@ Best match s5 with Euclidean distance 2690.209330
 
 实际上，我们可以更进一步，使用特征脸生成新的人脸，但是结果不是很现实。在下面，我们使用随机权重向量生成一个，并将其与“平均脸”并排显示:
 
-```
+```py
 ...
 # Visualize the mean face and random face
 fig, axes = plt.subplots(1,2,sharex=True,sharey=True,figsize=(8,6))
@@ -322,7 +322,7 @@ plt.show()
 
 将所有内容放在一起，下面是完整的代码:
 
-```
+```py
 import zipfile
 import cv2
 import numpy as np

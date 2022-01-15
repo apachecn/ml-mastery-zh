@@ -76,7 +76,7 @@
 
 下面的示例将数据集下载并加载为熊猫数据框，并总结了数据集的形状和前五行数据。
 
-```
+```py
 # load and summarize the housing dataset
 from pandas import read_csv
 from matplotlib import pyplot
@@ -91,7 +91,7 @@ print(dataframe.head())
 
 运行该示例确认了 506 行数据、13 个输入变量和一个数字目标变量(总共 14 个)。我们还可以看到，所有的输入变量都是数字。
 
-```
+```py
 (506, 14)
         0     1     2   3      4      5   ...  8      9     10      11    12    13
 0  0.00632  18.0  2.31   0  0.538  6.575  ...   1  296.0  15.3  396.90  4.98  24.0
@@ -109,7 +109,7 @@ print(dataframe.head())
 
 在这种情况下，我们将使用大约 67%的行来训练模型，剩下的 33%用于估计模型的性能。
 
-```
+```py
 ...
 # split into input and output values
 X, y = values[:,:-1], values[:,-1]
@@ -123,7 +123,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.67)
 
 然后，我们将缩放所有输入列(变量)，使其范围为 0-1，称为数据规范化，这在使用神经网络模型时是一种很好的做法。
 
-```
+```py
 ...
 # scale input data
 scaler = MinMaxScaler()
@@ -138,7 +138,7 @@ X_test = scaler.transform(X_test)
 
 下面列出了为建模准备数据的完整示例。
 
-```
+```py
 # load and prepare the dataset for modeling
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
@@ -164,7 +164,7 @@ print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
 
 打印了列车和测试集的形状，显示我们有 339 行来训练模型，167 行来评估模型。
 
-```
+```py
 (339, 13) (167, 13) (339,) (167,)
 ```
 
@@ -174,7 +174,7 @@ print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
 
 每个隐藏层中的节点数是经过一点点尝试和错误后选择的。
 
-```
+```py
 ...
 # define neural network model
 features = X_train.shape[1]
@@ -186,7 +186,7 @@ model.add(Dense(1))
 
 我们将使用具有接近默认学习率和动量值的随机梯度下降的有效亚当版本，并使用均方误差(MSE)损失函数拟合模型，这是回归预测建模问题的标准。
 
-```
+```py
 ...
 # compile the model and specify loss and optimizer
 opt = Adam(learning_rate=0.01, beta_1=0.85, beta_2=0.999)
@@ -199,7 +199,7 @@ model.compile(optimizer=opt, loss='mse')
 
 该模型将适用于 300 个时代，批量为 16 个样本。这种配置是经过反复试验后选择的。
 
-```
+```py
 ...
 # fit the model on the training dataset
 model.fit(X_train, y_train, verbose=2, epochs=300, batch_size=16)
@@ -211,7 +211,7 @@ model.fit(X_train, y_train, verbose=2, epochs=300, batch_size=16)
 
 最后，该模型可用于对测试数据集进行预测，我们可以通过将预测与测试集中的期望值进行比较来评估预测，并计算平均绝对误差(MAE)，这是模型性能的一个有用度量。
 
-```
+```py
 ...
 # make predictions on the test set
 yhat = model.predict(X_test, verbose=0)
@@ -222,7 +222,7 @@ print('MAE: %.3f' % mae)
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # train and evaluate a multilayer perceptron neural network on the housing regression dataset
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
@@ -270,7 +270,7 @@ print('MAE: %.3f' % mae)
 
 毫无疑问，通过进一步调整模型，我们可以获得接近最优的性能，但这对于我们研究预测区间来说已经足够好了。
 
-```
+```py
 ...
 Epoch 296/300
 22/22 - 0s - loss: 7.1741
@@ -315,7 +315,7 @@ MAE: 2.300
 
 首先，让我们定义一个函数，用于加载和准备由 URL 定义的回归数据集。
 
-```
+```py
 # load and prepare the dataset
 def load_dataset(url):
 	dataframe = read_csv(url, header=None)
@@ -334,7 +334,7 @@ def load_dataset(url):
 
 接下来，我们可以定义一个函数，该函数将在给定训练数据集的情况下定义和训练 MLP 模型，然后返回拟合模型，准备进行预测。
 
-```
+```py
 # define and fit the model
 def fit_model(X_train, y_train):
 	# define neural network model
@@ -361,7 +361,7 @@ def fit_model(X_train, y_train):
 
 出于兴趣，每个拟合模型也在测试集上进行评估，测试集在每个模型拟合后报告。我们预计，每个模型在搁置测试集上的估计性能会略有不同，报告的分数将有助于我们确认这一预期。
 
-```
+```py
 # fit an ensemble of models
 def fit_ensemble(n_members, X_train, X_test, y_train, y_test):
 	ensemble = list()
@@ -383,7 +383,7 @@ def fit_ensemble(n_members, X_train, X_test, y_train, y_test):
 
 该函数被设计为以一行作为输入，但可以很容易地适应多行。
 
-```
+```py
 # make predictions with the ensemble and calculate a prediction interval
 def predict_with_pi(ensemble, X):
 	# make predictions
@@ -399,7 +399,7 @@ def predict_with_pi(ensemble, X):
 
 首先，加载和准备数据集，然后定义和拟合集合。
 
-```
+```py
 ...
 # load dataset
 url = 'https://raw.githubusercontent.com/jbrownlee/Datasets/master/housing.csv'
@@ -413,7 +413,7 @@ ensemble = fit_ensemble(n_members, X_train, X_test, y_train, y_test)
 
 我们还报告了预期值，我们预计该值将被预测区间覆盖(可能接近 95%的时间；这并不完全准确，只是一个粗略的近似值)。
 
-```
+```py
 ...
 # make predictions with prediction interval
 newX = asarray([X_test[0, :]])
@@ -425,7 +425,7 @@ print('True value: %.3f' % y_test[0])
 
 将这些联系在一起，下面列出了使用多层感知器神经网络以预测间隔进行预测的完整示例。
 
-```
+```py
 # prediction interval for mlps on the housing regression dataset
 from numpy import asarray
 from pandas import read_csv
@@ -512,7 +512,7 @@ print('True value: %.3f' % y_test[0])
 
 最后，我们可以看到，集合做出了大约 30.5 的点预测，95%的预测间隔为[26.287，34.822]。我们还可以看到真实值是 28.2，间隔确实捕捉到了这个值，这很棒。
 
-```
+```py
 >1, MAE: 2.259
 >2, MAE: 2.144
 >3, MAE: 2.732

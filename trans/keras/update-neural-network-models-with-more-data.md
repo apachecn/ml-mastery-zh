@@ -103,7 +103,7 @@
 
 首先，我们可以定义一个合成的二进制分类数据集，并将其分成两半，然后使用一部分作为“*旧数据*，另一部分作为“*新数据*
 
-```
+```py
 ...
 # define dataset
 X, y = make_classification(n_samples=1000, n_features=20, n_informative=15, n_redundant=5, random_state=1)
@@ -115,7 +115,7 @@ X_old, X_new, y_old, y_new = train_test_split(X, y, test_size=0.50, random_state
 
 然后，我们可以定义一个多层感知器模型(MLP)，并将其仅适用于旧数据。
 
-```
+```py
 ...
 # define the model
 model = Sequential()
@@ -138,7 +138,7 @@ model.fit(X_old, y_old, epochs=150, batch_size=32, verbose=0)
 
 **注**:你需要发现一个适合你的模型和数据集的学习率，这个学习率要比简单地从头拟合一个新模型获得更好的性能。
 
-```
+```py
 ...
 # update model on new data only with a smaller learning rate
 opt = SGD(learning_rate=0.001, momentum=0.9)
@@ -148,7 +148,7 @@ model.compile(optimizer=opt, loss='binary_crossentropy')
 
 然后，我们可以用这个较小的学习率将模型拟合到新数据上。
 
-```
+```py
 ...
 model.compile(optimizer=opt, loss='binary_crossentropy')
 # fit the model on new data
@@ -157,7 +157,7 @@ model.fit(X_new, y_new, epochs=100, batch_size=32, verbose=0)
 
 将这些联系在一起，下面列出了仅在新数据上更新神经网络模型的完整示例。
 
-```
+```py
 # update neural network with new data only
 from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
@@ -208,7 +208,7 @@ model.fit(X_new, y_new, epochs=100, batch_size=32, verbose=0)
 
 合成数据集和模型可以像以前一样适合旧数据集。
 
-```
+```py
 ...
 # define dataset
 X, y = make_classification(n_samples=1000, n_features=20, n_informative=15, n_redundant=5, random_state=1)
@@ -235,7 +235,7 @@ model.fit(X_old, y_old, epochs=150, batch_size=32, verbose=0)
 
 **注**:你需要发现一个适合你的模型和数据集的学习率，这个学习率要比简单地从头拟合一个新模型获得更好的性能。
 
-```
+```py
 ...
 # update model with a smaller learning rate
 opt = SGD(learning_rate=0.001, momentum=0.9)
@@ -245,7 +245,7 @@ model.compile(optimizer=opt, loss='binary_crossentropy')
 
 然后，我们可以创建一个由新旧数据组成的复合数据集。
 
-```
+```py
 ...
 # create a composite dataset of old and new data
 X_both, y_both = vstack((X_old, X_new)), hstack((y_old, y_new))
@@ -253,7 +253,7 @@ X_both, y_both = vstack((X_old, X_new)), hstack((y_old, y_new))
 
 最后，我们可以在这个复合数据集上更新模型。
 
-```
+```py
 ...
 # fit the model on new data
 model.fit(X_both, y_both, epochs=100, batch_size=32, verbose=0)
@@ -261,7 +261,7 @@ model.fit(X_both, y_both, epochs=100, batch_size=32, verbose=0)
 
 将这些联系在一起，下面列出了根据新旧数据更新神经网络模型的完整示例。
 
-```
+```py
 # update neural network with both old and new data
 from numpy import vstack
 from numpy import hstack
@@ -335,7 +335,7 @@ model.fit(X_both, y_both, epochs=100, batch_size=32, verbose=0)
 
 首先，我们可以准备数据集并拟合旧模型，就像我们在前面几节中所做的那样。
 
-```
+```py
 ...
 # define dataset
 X, y = make_classification(n_samples=1000, n_features=20, n_informative=15, n_redundant=5, random_state=1)
@@ -362,7 +362,7 @@ old_model.fit(X_old, y_old, epochs=150, batch_size=32, verbose=0)
 
 在这种情况下，我们将简单地使用与旧模型相同的模型架构和配置。
 
-```
+```py
 ...
 # define the new model
 new_model = Sequential()
@@ -377,7 +377,7 @@ new_model.compile(optimizer=opt, loss='binary_crossentropy')
 
 然后，我们可以只在新数据上拟合这个新模型。
 
-```
+```py
 ...
 # fit the model on old data
 new_model.fit(X_new, y_new, epochs=150, batch_size=32, verbose=0)
@@ -385,7 +385,7 @@ new_model.fit(X_new, y_new, epochs=150, batch_size=32, verbose=0)
 
 现在我们有了这两个模型，我们可以用每个模型进行预测，并将预测的平均值计算为“*集合预测*”
 
-```
+```py
 ...
 # make predictions with both models
 yhat1 = old_model.predict(X_new)
@@ -398,7 +398,7 @@ yhat = mean(combined, axis=-1)
 
 将这些联系在一起，下面列出了使用现有模型和仅适用于新数据的新模型的集合进行更新的完整示例。
 
-```
+```py
 # ensemble old neural network with new model fit on new data only
 from numpy import hstack
 from numpy import mean
@@ -458,7 +458,7 @@ yhat = mean(combined, axis=-1)
 
 首先，我们可以准备数据集并拟合旧模型，就像我们在前面几节中所做的那样。
 
-```
+```py
 ...
 # define dataset
 X, y = make_classification(n_samples=1000, n_features=20, n_informative=15, n_redundant=5, random_state=1)
@@ -485,7 +485,7 @@ old_model.fit(X_old, y_old, epochs=150, batch_size=32, verbose=0)
 
 在这种情况下，我们将简单地使用与旧模型相同的模型架构和配置。
 
-```
+```py
 ...
 # define the new model
 new_model = Sequential()
@@ -500,7 +500,7 @@ new_model.compile(optimizer=opt, loss='binary_crossentropy')
 
 我们可以从旧数据和新数据创建一个复合数据集，然后在这个数据集上拟合新模型。
 
-```
+```py
 ...
 # create a composite dataset of old and new data
 X_both, y_both = vstack((X_old, X_new)), hstack((y_old, y_new))
@@ -510,7 +510,7 @@ new_model.fit(X_both, y_both, epochs=150, batch_size=32, verbose=0)
 
 最后，我们可以一起使用这两个模型来进行集合预测。
 
-```
+```py
 ...
 # make predictions with both models
 yhat1 = old_model.predict(X_new)
@@ -523,7 +523,7 @@ yhat = mean(combined, axis=-1)
 
 将这些联系在一起，下面列出了使用现有模型和适合新旧数据的新模型的集合进行更新的完整示例。
 
-```
+```py
 # ensemble old neural network with new model fit on old and new data
 from numpy import hstack
 from numpy import vstack

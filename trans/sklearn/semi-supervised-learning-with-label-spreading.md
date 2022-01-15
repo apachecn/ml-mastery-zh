@@ -73,7 +73,7 @@
 
 我们将用两个类(二进制分类)和两个输入变量以及 1000 个示例来定义数据集。
 
-```
+```py
 ...
 # define dataset
 X, y = make_classification(n_samples=1000, n_features=2, n_informative=2, n_redundant=0, random_state=1)
@@ -81,7 +81,7 @@ X, y = make_classification(n_samples=1000, n_features=2, n_informative=2, n_redu
 
 接下来，我们将数据集分割成训练数据集和测试数据集，分割比例为 50-50(例如，每组 500 行)。
 
-```
+```py
 ...
 # split into train and test
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.50, random_state=1, stratify=y)
@@ -89,7 +89,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.50, random
 
 最后，我们将训练数据集再次分成两部分，一部分有标签，另一部分我们假装没有标签。
 
-```
+```py
 ...
 # split train into labeled and unlabeled
 X_train_lab, X_test_unlab, y_train_lab, y_test_unlab = train_test_split(X_train, y_train, test_size=0.50, random_state=1, stratify=y_train)
@@ -97,7 +97,7 @@ X_train_lab, X_test_unlab, y_train_lab, y_test_unlab = train_test_split(X_train,
 
 将这些联系在一起，下面列出了准备半监督学习数据集的完整示例。
 
-```
+```py
 # prepare semi-supervised learning dataset
 from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
@@ -118,7 +118,7 @@ print('Test Set:', X_test.shape, y_test.shape)
 
 结果证实，我们有一个 500 行的测试数据集、一个 250 行的标记训练数据集和 250 行的未标记数据。
 
-```
+```py
 Labeled Train Set: (250, 2) (250,)
 Unlabeled Train Set: (250, 2) (250,)
 Test Set: (500, 2) (500,)
@@ -134,7 +134,7 @@ Test Set: (500, 2) (500,)
 
 在这种情况下，我们将使用逻辑回归算法来拟合训练数据集的标记部分。
 
-```
+```py
 ...
 # define model
 model = LogisticRegression()
@@ -144,7 +144,7 @@ model.fit(X_train_lab, y_train_lab)
 
 然后，该模型可用于对整个保持测试数据集进行预测，并使用分类精度进行评估。
 
-```
+```py
 ...
 # make predictions on hold out test set
 yhat = model.predict(X_test)
@@ -156,7 +156,7 @@ print('Accuracy: %.3f' % (score*100))
 
 将这些联系在一起，下面列出了在半监督学习数据集上评估监督学习算法的完整示例。
 
-```
+```py
 # baseline performance on the semi-supervised learning dataset
 from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
@@ -188,7 +188,7 @@ print('Accuracy: %.3f' % (score*100))
 
 我们期望一种有效的半监督学习算法能获得比这更好的精度。
 
-```
+```py
 Accuracy: 84.800
 ```
 
@@ -200,7 +200,7 @@ Accuracy: 84.800
 
 通过调用 *fit()* 函数，该模型可以像任何其他分类模型一样进行拟合，并通过 *predict()* 函数用于对新数据进行预测。
 
-```
+```py
 ...
 # define model
 model = LabelSpreading()
@@ -216,7 +216,7 @@ yhat = model.predict(...)
 
 模型拟合后，训练数据集中已标记和未标记数据的估计标签可通过*标签预标记*类上的“*转导 _* ”属性获得。
 
-```
+```py
 ...
 # get labels for entire training dataset data
 tran_labels = model.transduction_
@@ -228,7 +228,7 @@ tran_labels = model.transduction_
 
 我们可以将训练数据集的输入数据连接成一个数组。
 
-```
+```py
 ...
 # create the training dataset input
 X_train_mixed = concatenate((X_train_lab, X_test_unlab))
@@ -236,7 +236,7 @@ X_train_mixed = concatenate((X_train_lab, X_test_unlab))
 
 然后，我们可以为训练数据集中未标记部分的每一行创建一个-1 值(未标记)的列表。
 
-```
+```py
 ...
 # create "no label" for unlabeled data
 nolabel = [-1 for _ in range(len(y_test_unlab))]
@@ -244,7 +244,7 @@ nolabel = [-1 for _ in range(len(y_test_unlab))]
 
 然后，该列表可以与来自训练数据集标记部分的标签连接起来，以对应于训练数据集的输入数组。
 
-```
+```py
 ...
 # recombine training dataset labels
 y_train_mixed = concatenate((y_train_lab, nolabel))
@@ -252,7 +252,7 @@ y_train_mixed = concatenate((y_train_lab, nolabel))
 
 我们现在可以在整个训练数据集上训练*标签预定义*模型。
 
-```
+```py
 ...
 # define model
 model = LabelSpreading()
@@ -262,7 +262,7 @@ model.fit(X_train_mixed, y_train_mixed)
 
 接下来，我们可以使用该模型对保持数据集进行预测，并使用分类精度评估该模型。
 
-```
+```py
 ...
 # make predictions on hold out test set
 yhat = model.predict(X_test)
@@ -274,7 +274,7 @@ print('Accuracy: %.3f' % (score*100))
 
 将这些联系在一起，下面列出了在半监督学习数据集上评估标签扩散的完整示例。
 
-```
+```py
 # evaluate label spreading on the semi-supervised learning dataset
 from numpy import concatenate
 from sklearn.datasets import make_classification
@@ -311,7 +311,7 @@ print('Accuracy: %.3f' % (score*100))
 
 在这种情况下，我们可以看到标签传播模型实现了大约 85.4%的分类精度，这略高于仅在实现了大约 84.8%的精度的标签训练数据集上的逻辑回归拟合。
 
-```
+```py
 Accuracy: 85.400
 ```
 
@@ -321,7 +321,7 @@ Accuracy: 85.400
 
 回想一下，我们可以从标签传播模型中检索整个训练数据集的标签，如下所示:
 
-```
+```py
 ...
 # get labels for entire training dataset data
 tran_labels = model.transduction_
@@ -331,7 +331,7 @@ tran_labels = model.transduction_
 
 希望适合整个训练数据集的监督学习模型将获得比单独的半监督学习模型更好的性能。
 
-```
+```py
 ...
 # define supervised learning model
 model2 = LogisticRegression()
@@ -347,7 +347,7 @@ print('Accuracy: %.3f' % (score*100))
 
 将这些联系在一起，下面列出了使用估计的训练集标签来训练和评估监督学习模型的完整示例。
 
-```
+```py
 # evaluate logistic regression fit on label spreading for semi-supervised learning
 from numpy import concatenate
 from sklearn.datasets import make_classification
@@ -391,7 +391,7 @@ print('Accuracy: %.3f' % (score*100))
 
 在这种情况下，我们可以看到，半监督模型跟随监督模型的分层方法在保持数据集上实现了大约 85.8%的分类精度，略好于单独使用的半监督学习算法，该算法实现了大约 85.6%的精度。
 
-```
+```py
 Accuracy: 85.800
 ```
 

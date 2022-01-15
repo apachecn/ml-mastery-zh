@@ -61,7 +61,7 @@
 
 该类允许您通过“*半径*”参数指定进行预测时使用的半径大小，该参数默认为 1.0。
 
-```
+```py
 ...
 # create the model
 model = RadiusNeighborsClassifier(radius=1.0)
@@ -69,7 +69,7 @@ model = RadiusNeighborsClassifier(radius=1.0)
 
 另一个重要的超参数是“*权重*”参数，该参数控制邻居是以一致的*方式对预测做出贡献，还是与该示例的距离(*距离*)成反比。默认情况下使用统一重量。*
 
- *```
+```py
 ...
 # create the model
 model = RadiusNeighborsClassifier(weights='uniform')
@@ -83,7 +83,7 @@ model = RadiusNeighborsClassifier(weights='uniform')
 
 下面的示例创建并汇总了数据集。
 
-```
+```py
 # test classification dataset
 from sklearn.datasets import make_classification
 # define dataset
@@ -94,7 +94,7 @@ print(X.shape, y.shape)
 
 运行该示例将创建数据集，并确认数据集的行数和列数。
 
-```
+```py
 (1000, 20) (1000,)
 ```
 
@@ -102,7 +102,7 @@ print(X.shape, y.shape)
 
 我们将使用默认配置。
 
-```
+```py
 ...
 # create the model
 model = RadiusNeighborsClassifier()
@@ -112,7 +112,7 @@ model = RadiusNeighborsClassifier()
 
 我们可以通过使用[最小最大缩放器](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)来归一化输入特征，并使用[管道](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html)来首先应用缩放，然后使用模型。
 
-```
+```py
 ...
 # define model
 model = RadiusNeighborsClassifier()
@@ -122,7 +122,7 @@ pipeline = Pipeline(steps=[('norm', MinMaxScaler()),('model',model)])
 
 下面列出了为合成二进制分类任务评估半径邻居分类器模型的完整示例。
 
-```
+```py
 # evaluate an radius neighbors classifier model on the dataset
 from numpy import mean
 from numpy import std
@@ -152,7 +152,7 @@ print('Mean Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 在这种情况下，我们可以看到模型达到了大约 75.4%的平均精度。
 
-```
+```py
 Mean Accuracy: 0.754 (0.042)
 ```
 
@@ -162,7 +162,7 @@ Mean Accuracy: 0.754 (0.042)
 
 我们可以用下面列出的完整示例来演示这一点。
 
-```
+```py
 # make a prediction with a radius neighbors classifier model on the dataset
 from sklearn.datasets import make_classification
 from sklearn.pipeline import Pipeline
@@ -186,7 +186,7 @@ print('Predicted Class: %d' % yhat)
 
 运行该示例符合模型，并对新的数据行进行类别标签预测。
 
-```
+```py
 Predicted Class: 0
 ```
 
@@ -200,7 +200,7 @@ Predicted Class: 0
 
 我们将在合成数据集上探索 0.8 到 1.5 之间的值，网格为 0.01。
 
-```
+```py
 ...
 # define grid
 grid = dict()
@@ -211,7 +211,7 @@ grid['model__radius'] = arange(0.8, 1.5, 0.01)
 
 下面的例子使用 [GridSearchCV 类](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)和我们定义的值网格来演示这一点。
 
-```
+```py
 # grid search radius for radius neighbors classifier
 from numpy import arange
 from sklearn.datasets import make_classification
@@ -246,7 +246,7 @@ print('Config: %s' % results.best_params_)
 
 在这种情况下，我们可以看到，使用 0.8 的半径获得了更好的结果，精度约为 87.2%，而前面示例中的半径为 1.0，精度约为 75.4%。
 
-```
+```py
 Mean Accuracy: 0.872
 Config: {'model__radius': 0.8}
 ```
@@ -255,7 +255,7 @@ Config: {'model__radius': 0.8}
 
 我们可以测试这两个内置权重，看看半径为 0.8 时哪个表现更好。
 
-```
+```py
 ...
 # define grid
 grid = dict()
@@ -264,7 +264,7 @@ grid['model__weights'] = ['uniform', 'distance']
 
 下面列出了完整的示例。
 
-```
+```py
 # grid search weights for radius neighbors classifier
 from sklearn.datasets import make_classification
 from sklearn.model_selection import GridSearchCV
@@ -298,7 +298,7 @@ print('Config: %s' % results.best_params_)
 
 在这种情况下，我们可以看到平均分类准确率从上一个示例中的 87.2%左右的“T0”统一权重提升到本例中的 89.3%左右的“T2”距离权重。
 
-```
+```py
 Mean Accuracy: 0.893
 Config: {'model__weights': 'distance'}
 ```

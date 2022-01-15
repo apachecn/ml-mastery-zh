@@ -55,7 +55,7 @@ k 折叠交叉验证过程将有限的数据集分成 k 个不重叠的折叠。
 
 下面的示例创建并汇总了数据集。
 
-```
+```py
 # test classification dataset
 from sklearn.datasets import make_classification
 # define dataset
@@ -68,7 +68,7 @@ print(X.shape, y.shape)
 
 伪随机数发生器的固定种子确保我们每次生成数据集时获得相同的样本。
 
-```
+```py
 (100, 20) (100,)
 ```
 
@@ -80,7 +80,7 @@ print(X.shape, y.shape)
 
 下面列出了完整的示例。
 
-```
+```py
 # evaluate a logistic regression model using k-fold cross-validation
 from numpy import mean
 from numpy import std
@@ -106,7 +106,7 @@ print('Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 在这种情况下，我们可以看到该模型实现了大约 85.0%的估计分类准确率。
 
-```
+```py
 Accuracy: 0.850 (0.128)
 ```
 
@@ -144,7 +144,7 @@ k-fold 交叉验证的关键配置参数是 k，它定义了分割给定数据�
 
 首先，让我们定义一个函数来创建数据集。这允许您根据需要将数据集更改为自己的数据集。
 
-```
+```py
 # create the dataset
 def get_dataset(n_samples=100):
 	X, y = make_classification(n_samples=n_samples, n_features=20, n_informative=15, n_redundant=5, random_state=1)
@@ -155,7 +155,7 @@ def get_dataset(n_samples=100):
 
 同样，如果您愿意，这种分离允许您将模型更改为自己的模型。
 
-```
+```py
 # retrieve the model to be evaluate
 def get_model():
 	model = LogisticRegression()
@@ -166,7 +166,7 @@ def get_model():
 
 该函数返回平均分类精度以及折叠的最小和最大精度。我们可以用最小值和最大值来总结分数的分布。
 
-```
+```py
 # evaluate the model using a given test condition
 def evaluate_model(cv):
 	# get the dataset
@@ -181,7 +181,7 @@ def evaluate_model(cv):
 
 接下来，我们可以使用 LOOCV 程序计算模型性能。
 
-```
+```py
 ...
 # calculate the ideal test condition
 ideal, _, _ = evaluate_model(LeaveOneOut())
@@ -190,7 +190,7 @@ print('Ideal: %.3f' % ideal)
 
 然后我们可以定义要评估的 k 值。在这种情况下，我们将测试 2 到 30 之间的值。
 
-```
+```py
 ...
 # define folds to test
 folds = range(2,31)
@@ -198,7 +198,7 @@ folds = range(2,31)
 
 然后，我们可以依次评估每个值，并存储结果。
 
-```
+```py
 ...
 # record mean and min/max of each set of results
 means, mins, maxs = list(),list(),list()
@@ -219,7 +219,7 @@ for k in folds:
 
 最后，我们可以绘制结果进行解释。
 
-```
+```py
 ...
 # line plot of k mean values with min/max error bars
 pyplot.errorbar(folds, means, yerr=[mins, maxs], fmt='o')
@@ -231,7 +231,7 @@ pyplot.show()
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # sensitivity analysis of k in k-fold cross-validation
 from numpy import mean
 from sklearn.datasets import make_classification
@@ -296,7 +296,7 @@ pyplot.show()
 
 在这种情况下，我们可以看到 LOOCV 结果约为 84%，略低于 85%的 k=10 结果。
 
-```
+```py
 Ideal: 0.840
 > folds=2, accuracy=0.740 (0.700,0.780)
 > folds=3, accuracy=0.749 (0.697,0.824)
@@ -353,7 +353,7 @@ Ideal: 0.840
 
 首先，我们可以定义一个函数，创建一个标准机器学习模型列表，通过每个测试工具进行评估。
 
-```
+```py
 # get a list of models to evaluate
 def get_models():
 	models = list()
@@ -382,7 +382,7 @@ def get_models():
 
 然后，我们可以列举每个模型，并使用 10 倍交叉验证和我们的理想测试条件(在本例中是 LOOCV)对其进行评估。
 
-```
+```py
 ...
 # define test conditions
 ideal_cv = LeaveOneOut()
@@ -408,7 +408,7 @@ for model in models:
 
 然后，我们可以计算 10 倍交叉验证测试工具和 LOOCV 测试工具的平均分类准确度之间的相关性。
 
-```
+```py
 ...
 # calculate the correlation between each test condition
 corr, _ = pearsonr(cv_results, ideal_results)
@@ -417,7 +417,7 @@ print('Correlation: %.3f' % corr)
 
 最后，我们可以创建两组结果的散点图，并绘制一条最佳拟合线，以直观地看到它们一起变化的情况。
 
-```
+```py
 ...
 # scatter plot of results
 pyplot.scatter(cv_results, ideal_results)
@@ -431,7 +431,7 @@ pyplot.show()
 
 将所有这些结合在一起，下面列出了完整的示例。
 
-```
+```py
 # correlation between test harness and ideal test condition
 from numpy import mean
 from numpy import isnan
@@ -542,7 +542,7 @@ pyplot.show()
 
 您可能会看到一些可以安全忽略的警告，例如:
 
-```
+```py
 Variables are collinear
 ```
 
@@ -550,7 +550,7 @@ Variables are collinear
 
 在运行结束时，我们可以看到两组结果之间的相关性被报告。在这种情况下，我们可以看到报告了 0.746 的相关性，这是一个很好的强正相关。结果表明，10 倍交叉验证确实为该数据集上的 LOOCV 测试工具提供了一个很好的近似，这是用 18 种流行的机器学习算法计算的。
 
-```
+```py
 >LogisticRegression: ideal=0.840, cv=0.850
 >RidgeClassifier: ideal=0.830, cv=0.830
 >SGDClassifier: ideal=0.730, cv=0.790

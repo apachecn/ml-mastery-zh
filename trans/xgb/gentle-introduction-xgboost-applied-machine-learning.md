@@ -184,7 +184,7 @@ XGBoost 库实现了[梯度提升决策树算法](https://en.wikipedia.org/wiki/
 
 要快速开始，您可以键入:
 
-```
+```py
 sudo pip install xgboost
 ```
 

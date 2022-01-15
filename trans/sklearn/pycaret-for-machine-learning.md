@@ -58,13 +58,13 @@ PyCaret 库有大量使用该应用编程接口的文档；您可以从这里开
 
 您可以使用 Python 包管理器安装 PyCaret，例如 pip。例如:
 
-```
+```py
 pip install pycaret
 ```
 
 安装后，我们可以通过打印已安装的版本来确认库在您的开发环境中可用并且工作正常。
 
-```
+```py
 # check pycaret version
 import pycaret
 print('PyCaret: %s' % pycaret.__version__)
@@ -74,7 +74,7 @@ print('PyCaret: %s' % pycaret.__version__)
 
 您的版本号应该相同或更高。
 
-```
+```py
 PyCaret: 2.0.0
 ```
 
@@ -93,7 +93,7 @@ PyCaret: 2.0.0
 
 我们可以直接从网址下载数据集，并将其作为熊猫数据框架加载。
 
-```
+```py
 ...
 # define the location of the dataset
 url = 'https://raw.githubusercontent.com/jbrownlee/Datasets/master/sonar.csv'
@@ -105,7 +105,7 @@ print(df.shape)
 
 PyCaret 似乎要求数据集有列名，而我们的数据集没有列名，所以我们可以直接将列号设置为列名。
 
-```
+```py
 ...
 # set column names as the column number
 n_cols = df.shape[1]
@@ -114,7 +114,7 @@ df.columns = [str(i) for i in range(n_cols)]
 
 最后，我们可以总结前几行数据。
 
-```
+```py
 ...
 # summarize the first few rows of data
 print(df.head())
@@ -122,7 +122,7 @@ print(df.head())
 
 将这些联系在一起，下面列出了加载和总结声纳数据集的完整示例。
 
-```
+```py
 # load the sonar dataset
 from pandas import read_csv
 # define the location of the dataset
@@ -142,7 +142,7 @@ print(df.head())
 
 然后打印前五行，显示输入变量都是数字，目标变量是列“60”并带有字符串标签。
 
-```
+```py
 (208, 61)
 0 1 2 3 4 ... 56 57 58 59 60
 0 0.0200 0.0371 0.0428 0.0207 0.0954 ... 0.0180 0.0084 0.0090 0.0032 R
@@ -164,7 +164,7 @@ print(df.head())
 
 我们将指定数据、目标变量，并关闭 HTML 输出、详细输出和用户反馈请求。
 
-```
+```py
 ...
 # setup the dataset
 grid = setup(data=df, target=df.columns[-1], html=False, silent=True, verbose=False)
@@ -176,7 +176,7 @@ grid = setup(data=df, target=df.columns[-1], html=False, silent=True, verbose=Fa
 
 这些都是不错的违约，我们不需要改变什么。
 
-```
+```py
 ...
 # evaluate models and compare models
 best = compare_models()
@@ -188,7 +188,7 @@ best = compare_models()
 
 将这些联系在一起，下面列出了在声纳分类数据集上评估一套标准模型的完整示例。
 
-```
+```py
 # compare machine learning algorithms on the sonar classification dataset
 from pandas import read_csv
 from pycaret.classification import setup
@@ -216,7 +216,7 @@ print(best)
 
 然后我们可以看到所使用的模型的配置，看起来它使用了默认的超参数值。
 
-```
+```py
                               Model  Accuracy     AUC  Recall   Prec.      F1  \
 0            Extra Trees Classifier    0.8695  0.9497  0.8571  0.8778  0.8631
 1               CatBoost Classifier    0.8695  0.9548  0.8143  0.9177  0.8508
@@ -272,7 +272,7 @@ ExtraTreesClassifier(bootstrap=False, ccp_alpha=0.0, class_weight=None,
 
 我们必须像以前比较模型时那样加载和设置数据集。
 
-```
+```py
 ...
 # setup the dataset
 grid = setup(data=df, target=df.columns[-1], html=False, silent=True, verbose=False)
@@ -286,7 +286,7 @@ grid = setup(data=df, target=df.columns[-1], html=False, silent=True, verbose=Fa
 
 我们可以对额外的树分类器执行如下随机搜索:
 
-```
+```py
 ...
 # tune model hyperparameters
 best = tune_model(ExtraTreesClassifier(), n_iter=200)
@@ -298,7 +298,7 @@ best = tune_model(ExtraTreesClassifier(), n_iter=200)
 
 将这些联系在一起，下面列出了在声纳数据集上调整额外树分类器的超参数的完整示例。
 
-```
+```py
 # tune model hyperparameters on the sonar classification dataset
 from pandas import read_csv
 from sklearn.ensemble import ExtraTreesClassifier
@@ -327,7 +327,7 @@ print(best)
 
 在这种情况下，我们可以看到，随机搜索找到了一个准确率约为 75.29%的配置，这并不比上一部分的默认配置好，后者的得分约为 86.95%。
 
-```
+```py
       Accuracy     AUC  Recall   Prec.      F1   Kappa     MCC
 0       0.8667  1.0000  1.0000  0.7778  0.8750  0.7368  0.7638
 1       0.6667  0.8393  0.4286  0.7500  0.5455  0.3119  0.3425

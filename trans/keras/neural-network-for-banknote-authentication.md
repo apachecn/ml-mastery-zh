@@ -56,7 +56,7 @@
 
 下面是数据集前 5 行的示例
 
-```
+```py
 3.6216,8.6661,-2.8073,-0.44699,0
 4.5459,8.1674,-2.4586,-1.4621,0
 3.866,-2.6383,1.9242,0.10645,0
@@ -73,7 +73,7 @@
 
 我们可以直接从网址将数据集加载为熊猫数据帧；例如:
 
-```
+```py
 # load the banknote dataset and summarize the shape
 from pandas import read_csv
 # define the location of the dataset
@@ -92,13 +92,13 @@ print(df.shape)
 
 它还建议使用 k 倍交叉验证将是一个好主意，因为它将给出比训练/测试分割更可靠的模型性能估计，并且因为单个模型将在几秒钟内适合最大数据集，而不是几小时或几天。
 
-```
+```py
 (1372, 5)
 ```
 
 接下来，我们可以通过查看汇总统计数据和数据图来了解更多关于数据集的信息。
 
-```
+```py
 # show summary statistics and plots of the banknote dataset
 from pandas import read_csv
 from matplotlib import pyplot
@@ -117,7 +117,7 @@ pyplot.show()
 
 我们可以看到，数值随着不同的平均值和标准偏差而变化，也许在建模之前需要一些规范化或标准化。
 
-```
+```py
                  0            1            2            3            4
 count  1372.000000  1372.000000  1372.000000  1372.000000  1372.000000
 mean      0.433735     1.922353     1.397627    -1.191657     0.444606
@@ -155,7 +155,7 @@ max       6.824800    12.951600    17.927400     2.449500     1.000000
 
 首先，我们必须确保所有输入变量都是浮点值，并将目标标签编码为整数值 0 和 1。
 
-```
+```py
 ...
 # ensure all data are floating point values
 X = X.astype('float32')
@@ -165,7 +165,7 @@ y = LabelEncoder().fit_transform(y)
 
 接下来，我们可以将数据集分成输入和输出变量，然后分成 67/33 训练集和测试集。
 
-```
+```py
 ...
 # split into input and output columns
 X, y = df.values[:, :-1], df.values[:, -1]
@@ -177,7 +177,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33)
 
 模型的输出是用于二进制分类的 [sigmoid 激活](https://machinelearningmastery.com/choose-an-activation-function-for-deep-learning/)，我们将最小化二进制交叉熵损失。
 
-```
+```py
 ...
 # determine the number of input features
 n_features = X.shape[1]
@@ -193,7 +193,7 @@ model.compile(optimizer='adam', loss='binary_crossentropy')
 
 我们正在原始数据上拟合模型，我们认为这可能是一个好主意，但这是一个重要的起点。
 
-```
+```py
 ...
 # fit the model
 history = model.fit(X_train, y_train, epochs=50, batch_size=32, verbose=0, validation_data=(X_test,y_test))
@@ -201,7 +201,7 @@ history = model.fit(X_train, y_train, epochs=50, batch_size=32, verbose=0, valid
 
 在训练结束时，我们将评估模型在测试数据集上的性能，并将性能报告为分类精度。
 
-```
+```py
 ...
 # predict test set and convert to class label
 ypred = model.predict(X_test)
@@ -213,7 +213,7 @@ print('Accuracy: %.3f' % score)
 
 最后，我们将绘制训练和测试集上交叉熵损失的学习曲线。
 
-```
+```py
 ...
 # plot learning curves
 pyplot.title('Learning Curves')
@@ -227,7 +227,7 @@ pyplot.show()
 
 综上所述，下面列出了在钞票数据集上评估我们的第一个 MLP 的完整示例。
 
-```
+```py
 # fit a simple mlp model on the banknote and review learning curves
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
@@ -279,7 +279,7 @@ pyplot.show()
 
 在这种情况下，我们可以看到模型达到了 100%的高精度或完美精度。这可能表明预测问题很容易，和/或神经网络很适合这个问题。
 
-```
+```py
 Accuracy: 1.000
 ```
 
@@ -303,7 +303,7 @@ k 倍交叉验证程序可以提供更可靠的 MLP 性能估计，尽管它可�
 
 我们可以使用[stratifiedfold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html)类手动枚举每个折叠，拟合模型，对其进行评估，然后在程序结束时报告评估分数的平均值。
 
-```
+```py
 ...
 # prepare cross validation
 kfold = KFold(10)
@@ -325,7 +325,7 @@ print('Mean Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 下面列出了评估前一节中的基本 MLP 模型的框架的完整示例。
 
-```
+```py
 # k-fold cross-validation of base model for the banknote dataset
 from numpy import mean
 from numpy import std
@@ -383,7 +383,7 @@ print('Mean Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 这(对我来说)令人惊讶，因为我本以为需要一些数据扩展，或许还需要一次电源转换。
 
-```
+```py
 >1.000
 >1.000
 >1.000
@@ -407,7 +407,7 @@ Mean Accuracy: 0.999 (0.002)
 
 我们可以像以前一样准备数据并拟合模型，尽管是在整个数据集上，而不是数据集的训练子集上。
 
-```
+```py
 ...
 # split into input and output columns
 X, y = df.values[:, :-1], df.values[:, -1]
@@ -430,7 +430,7 @@ model.compile(optimizer='adam', loss='binary_crossentropy')
 
 首先，我们可以定义一行新数据。
 
-```
+```py
 ...
 # define a row of new data
 row = [3.6216,8.6661,-2.8073,-0.44699]
@@ -440,7 +440,7 @@ row = [3.6216,8.6661,-2.8073,-0.44699]
 
 然后我们可以做一个预测。
 
-```
+```py
 ...
 # make prediction and convert to class label
 ypred = model.predict([row])
@@ -449,7 +449,7 @@ yhat = (ypred > 0.5).flatten().astype(int)
 
 然后反转预测上的转换，这样我们就可以使用或解释正确标签中的结果(对于这个数据集，它只是一个整数)。
 
-```
+```py
 ...
 # invert transform to get label for class
 yhat = le.inverse_transform(yhat)
@@ -457,7 +457,7 @@ yhat = le.inverse_transform(yhat)
 
 在这种情况下，我们将简单地报告预测。
 
-```
+```py
 ...
 # report prediction
 print('Predicted: %s' % (yhat[0]))
@@ -465,7 +465,7 @@ print('Predicted: %s' % (yhat[0]))
 
 将所有这些结合起来，下面列出了为钞票数据集拟合最终模型并使用它对新数据进行预测的完整示例。
 
-```
+```py
 # fit a final model and make predictions on new data for the banknote dataset
 from pandas import read_csv
 from sklearn.preprocessing import LabelEncoder
@@ -510,7 +510,7 @@ print('Predicted: %s' % (yhat[0]))
 
 在这种情况下，我们可以看到模型为输入行预测了一个“0”标签。
 
-```
+```py
 Predicted: 0.0
 ```
 

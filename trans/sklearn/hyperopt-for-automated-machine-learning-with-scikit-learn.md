@@ -59,19 +59,19 @@ HyperOpt-Sklearn 包装了 HyperOpt 库，允许自动搜索数据准备方法�
 
 这可以通过使用 pip 包管理器来实现，如下所示:
 
-```
+```py
 sudo pip install hyperopt
 ```
 
 安装后，我们可以通过键入以下命令来确认安装成功并检查库的版本:
 
-```
+```py
 sudo pip show hyperopt
 ```
 
 这将总结 HyperOpt 的安装版本，确认正在使用现代版本。
 
-```
+```py
 Name: hyperopt
 Version: 0.2.3
 Summary: Distributed Asynchronous Hyperparameter Optimization
@@ -88,7 +88,7 @@ Required-by:
 
 这也可以使用 pip 安装，尽管我们必须通过克隆存储库并从本地文件运行安装来手动执行此操作，如下所示:
 
-```
+```py
 git clone git@github.com:hyperopt/hyperopt-sklearn.git
 cd hyperopt-sklearn
 sudo pip install .
@@ -97,13 +97,13 @@ cd ..
 
 同样，我们可以通过使用以下命令检查版本号来确认安装成功:
 
-```
+```py
 sudo pip show hpsklearn
 ```
 
 这将总结 HyperOpt-Sklearn 的安装版本，确认正在使用现代版本。
 
-```
+```py
 Name: hpsklearn
 Version: 0.0.3
 Summary: Hyperparameter Optimization for sklearn
@@ -122,7 +122,7 @@ Required-by:
 
 用于搜索的算法可以通过“ *algo* ”参数指定，搜索中执行的评估数量通过“ *max_evals* ”参数指定，并且可以通过“ *trial_timeout* ”参数对评估每个管道施加限制。
 
-```
+```py
 ...
 # define search
 model = HyperoptEstimator(..., algo=tpe.suggest, max_evals=50, trial_timeout=120)
@@ -142,7 +142,7 @@ Parzen 估值器的“*树”是一个很好的默认值，你可以在论文“
 
 同样，数据准备的搜索空间是通过“*预处理*”参数指定的，也可以通过“*any _ premization*使用预定义的预处理步骤列表。
 
-```
+```py
 ...
 # define search
 model = HyperoptEstimator(classifier=any_classifier('cla'), preprocessing=any_preprocessing('pre'), ...)
@@ -154,7 +154,7 @@ model = HyperoptEstimator(classifier=any_classifier('cla'), preprocessing=any_pr
 
 一旦定义了搜索，就可以通过调用 *fit()* 函数来执行。
 
-```
+```py
 ...
 # perform the search
 model.fit(X_train, y_train)
@@ -162,7 +162,7 @@ model.fit(X_train, y_train)
 
 在运行结束时，通过调用 *score()* 函数，可以在新数据上评估性能最佳的模型。
 
-```
+```py
 ...
 # summarize performance
 acc = model.score(X_test, y_test)
@@ -171,7 +171,7 @@ print("Accuracy: %.3f" % acc)
 
 最后，我们可以通过 *best_model()* 函数检索在训练数据集上表现最好的变换、模型和模型配置的*管道*。
 
-```
+```py
 ...
 # summarize the best model
 print(model.best_model())
@@ -196,7 +196,7 @@ print(model.best_model())
 
 下面的示例下载数据集并总结其形状。
 
-```
+```py
 # summarize the sonar dataset
 from pandas import read_csv
 # load dataset
@@ -210,7 +210,7 @@ print(X.shape, y.shape)
 
 运行该示例会下载数据集，并将其拆分为输入和输出元素。不出所料，我们可以看到有 208 行数据，60 个输入变量。
 
-```
+```py
 (208, 60) (208,)
 ```
 
@@ -218,7 +218,7 @@ print(X.shape, y.shape)
 
 我们可以执行一些基本的数据准备，包括将目标字符串转换为类标签，然后将数据集拆分为训练集和测试集。
 
-```
+```py
 ...
 # minimally prepare dataset
 X = X.astype('float32')
@@ -231,7 +231,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random
 
 搜索将评估 50 条管道，并将每次评估限制在 30 秒内。
 
-```
+```py
 ...
 # define search
 model = HyperoptEstimator(classifier=any_classifier('cla'), preprocessing=any_preprocessing('pre'), algo=tpe.suggest, max_evals=50, trial_timeout=30)
@@ -239,7 +239,7 @@ model = HyperoptEstimator(classifier=any_classifier('cla'), preprocessing=any_pr
 
 然后我们开始搜索。
 
-```
+```py
 ...
 # perform the search
 model.fit(X_train, y_train)
@@ -247,7 +247,7 @@ model.fit(X_train, y_train)
 
 在运行结束时，我们将报告模型在保持数据集上的性能，并总结性能最好的管道。
 
-```
+```py
 ...
 # summarize performance
 acc = model.score(X_test, y_test)
@@ -258,7 +258,7 @@ print(model.best_model())
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # example of hyperopt-sklearn for the sonar classification dataset
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
@@ -299,7 +299,7 @@ print(model.best_model())
 
 在这种情况下，我们可以看到选择的模型在保持测试集上达到了大约 85.5%的准确率。管道涉及没有预处理的梯度增强模型。
 
-```
+```py
 Accuracy: 0.855
 {'learner': GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
                            learning_rate=0.009132299586303643, loss='deviance',
@@ -335,7 +335,7 @@ Accuracy: 0.855
 
 下面的示例下载数据集并总结其形状。
 
-```
+```py
 # summarize the auto insurance dataset
 from pandas import read_csv
 # load dataset
@@ -349,7 +349,7 @@ print(X.shape, y.shape)
 
 运行该示例会下载数据集，并将其拆分为输入和输出元素。不出所料，我们可以看到有 63 行数据带有一个输入变量。
 
-```
+```py
 (208, 60), (208,)
 ```
 
@@ -359,7 +359,7 @@ print(X.shape, y.shape)
 
 在这种情况下，我们想要优化 MAE，因此，我们将把“ *loss_fn* ”参数设置为 scikit-learn 库提供的 *mean_absolute_error()* 函数。
 
-```
+```py
 ...
 # define search
 model = HyperoptEstimator(regressor=any_regressor('reg'), preprocessing=any_preprocessing('pre'), loss_fn=mean_absolute_error, algo=tpe.suggest, max_evals=50, trial_timeout=30)
@@ -367,7 +367,7 @@ model = HyperoptEstimator(regressor=any_regressor('reg'), preprocessing=any_prep
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # example of hyperopt-sklearn for the housing regression dataset
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
@@ -408,7 +408,7 @@ print(model.best_model())
 
 **注意**:要搜索使用 xboost，必须安装[xboost 库](https://machinelearningmastery.com/install-xgboost-python-macos/)。
 
-```
+```py
 MAE: 0.883
 {'learner': XGBRegressor(base_score=0.5, booster='gbtree',
              colsample_bylevel=0.5843250948679669, colsample_bynode=1,

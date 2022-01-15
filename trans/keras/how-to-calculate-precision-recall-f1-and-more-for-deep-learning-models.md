@@ -54,7 +54,7 @@ scikit-learn 库中的 [make_circles()函数](https://scikit-learn.org/stable/mo
 
 下面的示例生成 1000 个样本，统计噪声为 0.1，种子为 1。
 
-```
+```py
 # generate 2d classification dataset
 X, y = make_circles(n_samples=1000, noise=0.1, random_state=1)
 ```
@@ -63,7 +63,7 @@ X, y = make_circles(n_samples=1000, noise=0.1, random_state=1)
 
 下面的示例生成样本并绘制它们，根据类别给每个点着色，其中属于类别 0(外圈)的点被着色为蓝色，属于类别 1(内圈)的点被着色为橙色。
 
-```
+```py
 # Example of generating samples from the two circle problem
 from sklearn.datasets import make_circles
 from matplotlib import pyplot
@@ -91,7 +91,7 @@ pyplot.show()
 
 生成数据集的样本后，我们将它们分成两个相等的部分:一个用于训练模型，一个用于评估训练好的模型。
 
-```
+```py
 # split into train and test
 n_test = 500
 trainX, testX = X[:n_test, :], X[n_test:, :]
@@ -102,7 +102,7 @@ trainy, testy = y[:n_test], y[n_test:]
 
 该模型将预测一个介于 0 和 1 之间的值，该值将被解释为输入示例属于类别 0 还是类别 1。
 
-```
+```py
 # define model
 model = Sequential()
 model.add(Dense(100, input_dim=2, activation='relu'))
@@ -111,21 +111,21 @@ model.add(Dense(1, activation='sigmoid'))
 
 模型将使用二元交叉熵损失函数进行拟合，我们将使用有效的[亚当版本的随机梯度下降](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/)。该模型还将监控分类精度度量。
 
-```
+```py
 # compile model
 model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 ```
 
 我们将为 300 个训练时期拟合模型，默认批量为 32 个样本，并在每个训练时期结束时在测试数据集上评估模型的性能。
 
-```
+```py
 # fit model
 history = model.fit(trainX, trainy, validation_data=(testX, testy), epochs=300, verbose=0)
 ```
 
 在训练结束时，我们将在训练和测试数据集上再次评估最终模型，并报告分类精度。
 
-```
+```py
 # evaluate the model
 _, train_acc = model.evaluate(trainX, trainy, verbose=0)
 _, test_acc = model.evaluate(testX, testy, verbose=0)
@@ -133,7 +133,7 @@ _, test_acc = model.evaluate(testX, testy, verbose=0)
 
 最后，模型在列车上的性能和在训练期间记录的测试集将使用线图来绘制，损失和分类精度各一个。
 
-```
+```py
 # plot loss during training
 pyplot.subplot(211)
 pyplot.title('Loss')
@@ -151,7 +151,7 @@ pyplot.show()
 
 将所有这些元素结合在一起，下面列出了训练和评估两个圆圈问题上的 MLP 的完整代码列表。
 
-```
+```py
 # multilayer perceptron model for the two circles problem
 from sklearn.datasets import make_circles
 from keras.models import Sequential
@@ -196,7 +196,7 @@ pyplot.show()
 
 对该模型进行了评估，报告在列车和测试集上的分类准确率分别约为 83%和 85%。
 
-```
+```py
 Train: 0.838, Test: 0.850
 ```
 
@@ -249,7 +249,7 @@ Keras 度量 API 是有限的，您可能想要计算诸如精度、召回率、
 
 首先，我们可以定义一个名为 *get_data()* 的函数，该函数将生成数据集并将其拆分为训练集和测试集。
 
-```
+```py
 # generate and prepare the dataset
 def get_data():
 	# generate dataset
@@ -263,7 +263,7 @@ def get_data():
 
 接下来，我们将定义一个名为 *get_model()* 的函数，该函数将定义 MLP 模型并将其拟合到训练数据集上。
 
-```
+```py
 # define and fit the model
 def get_model(trainX, trainy):
 	# define model
@@ -279,7 +279,7 @@ def get_model(trainX, trainy):
 
 然后我们可以调用 *get_data()* 函数准备数据集，调用 *get_model()* 函数拟合并返回模型。
 
-```
+```py
 # generate data
 trainX, trainy, testX, testy = get_data()
 # fit model
@@ -298,7 +298,7 @@ model = get_model(trainX, trainy)
 
 我们可以用这个模型进行分类和概率预测。
 
-```
+```py
 # predict probabilities for test set
 yhat_probs = model.predict(testX, verbose=0)
 # predict crisp classes for test set
@@ -309,7 +309,7 @@ yhat_classes = model.predict_classes(testX, verbose=0)
 
 scikit-learn metrics API 期望使用 1D 阵列的实际值和预测值进行比较，因此，我们必须将 2D 预测阵列简化为 1D 阵列。
 
-```
+```py
 # reduce to 1d array
 yhat_probs = yhat_probs[:, 0]
 yhat_classes = yhat_classes[:, 0]
@@ -317,7 +317,7 @@ yhat_classes = yhat_classes[:, 0]
 
 我们现在准备为我们的深度学习神经网络模型计算度量。我们可以从计算分类准确度、精确度、召回率和 F1 分数开始。
 
-```
+```py
 # accuracy: (tp + tn) / (p + n)
 accuracy = accuracy_score(testy, yhat_classes)
 print('Accuracy: %f' % accuracy)
@@ -338,7 +338,7 @@ print('F1 score: %f' % f1)
 
 请注意，ROC AUC 需要预测的类概率( *yhat_probs* )作为参数，而不是预测的类(*yhat _ class*)。
 
-```
+```py
 # kappa
 kappa = cohen_kappa_score(testy, yhat_classes)
 print('Cohens kappa: %f' % kappa)
@@ -352,7 +352,7 @@ print(matrix)
 
 现在我们知道了如何使用 scikit-learn API 计算深度学习神经网络的指标，我们可以将所有这些元素结合成一个完整的示例，如下所示。
 
-```
+```py
 # demonstration of calculating metrics for a neural network model using sklearn
 from sklearn.datasets import make_circles
 from sklearn.metrics import accuracy_score
@@ -428,7 +428,7 @@ print(matrix)
 
 运行该示例准备数据集，拟合模型，然后计算并报告在测试数据集上评估的模型的度量。
 
-```
+```py
 Accuracy: 0.842000
 Precision: 0.836576
 Recall: 0.853175

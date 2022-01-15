@@ -56,7 +56,7 @@ Python 中机器学习的稳健回归
 
 在这种情况下，我们需要一个易于绘制和理解的数据集。这可以通过使用单个输入变量和单个输出变量来实现。我们不希望任务太容易，所以我们会添加大量的统计噪声。
 
-```
+```py
 ...
 X, y = make_regression(n_samples=100, n_features=1, tail_strength=0.9, effective_rank=1, n_informative=1, noise=3, bias=50, random_state=1)
 ```
@@ -65,7 +65,7 @@ X, y = make_regression(n_samples=100, n_features=1, tail_strength=0.9, effective
 
 这可以通过改变一些输入变量的值来实现，该值是偏离平均值的标准偏差数的因子，例如 2 到 4。我们将向数据集中添加 10 个异常值。
 
-```
+```py
 # add some artificial outliers
 seed(1)
 for i in range(10):
@@ -80,7 +80,7 @@ for i in range(10):
 
 下面列出了准备和绘制数据集的完整示例。
 
-```
+```py
 # create a regression dataset with outliers
 from random import random
 from random import randint
@@ -130,7 +130,7 @@ pyplot.show()
 
 我们可以在有异常值的回归数据集上使用[重复 k 倍交叉验证](https://machinelearningmastery.com/k-fold-cross-validation/)来评估线性回归。我们将测量平均绝对误差，这将提供一个模型性能的下限，在这个任务中，我们可能会期望一些稳健的回归算法表现出色。
 
-```
+```py
 # evaluate a model
 def evaluate_model(X, y, model):
 	# define model evaluation method
@@ -145,7 +145,7 @@ def evaluate_model(X, y, model):
 
 该图显示了模型“*”如何看待*”问题，特别是输入和输出变量之间的关系。这个想法是，当使用线性回归时，线会被异常值扭曲。
 
-```
+```py
 # plot the dataset and the model's line of best fit
 def plot_best_fit(X, y, model):
 	# fut the model on all data
@@ -163,7 +163,7 @@ def plot_best_fit(X, y, model):
 
 将这些联系在一起，下面列出了线性回归的完整示例。
 
-```
+```py
 # linear regression on a dataset with outliers
 from random import random
 from random import randint
@@ -229,7 +229,7 @@ plot_best_fit(X, y, model)
 
 我们可以看到，线性回归在这个数据集上实现了大约 5.2 的 MAE，提供了误差的上限。
 
-```
+```py
 Mean MAE: 5.260 (1.149)
 ```
 
@@ -249,7 +249,7 @@ Mean MAE: 5.260 (1.149)
 
 下面的示例评估具有异常值的回归数据集上的 Huber 回归，首先使用重复交叉验证评估模型，然后绘制最佳拟合线。
 
-```
+```py
 # huber regression on a dataset with outliers
 from random import random
 from random import randint
@@ -315,7 +315,7 @@ plot_best_fit(X, y, model)
 
 我们可以看到 Huber 回归在这个数据集上实现了大约 4.435 的 MAE，优于上一节中的线性回归模型。
 
-```
+```py
 Mean MAE: 4.435 (1.868)
 ```
 
@@ -337,7 +337,7 @@ scikit-learn 库通过[transacruler](https://scikit-learn.org/stable/modules/gen
 
 下面的示例在具有异常值的回归数据集上评估 RANSAC 回归，首先通过重复交叉验证评估模型，然后绘制最佳拟合线。
 
-```
+```py
 # ransac regression on a dataset with outliers
 from random import random
 from random import randint
@@ -403,7 +403,7 @@ plot_best_fit(X, y, model)
 
 我们可以看到，RANSAC 回归在这个数据集上实现了大约 4.454 的 MAE，优于线性回归模型，但可能不是 Huber 回归。
 
-```
+```py
 Mean MAE: 4.454 (2.165)
 ```
 
@@ -423,7 +423,7 @@ scikit-learn 通过[类提供了一个实现。](https://scikit-learn.org/stable
 
 下面的示例在具有异常值的回归数据集上评估泰尔森回归，首先通过重复交叉验证评估模型，然后绘制最佳拟合线。
 
-```
+```py
 # theilsen regression on a dataset with outliers
 from random import random
 from random import randint
@@ -489,7 +489,7 @@ plot_best_fit(X, y, model)
 
 我们可以看到，泰尔森回归在这个数据集上实现了大约 4.371 的 MAE，优于线性回归模型以及 RANSAC 和 Huber 回归。
 
-```
+```py
 Mean MAE: 4.371 (1.961)
 ```
 
@@ -509,7 +509,7 @@ Mean MAE: 4.371 (1.961)
 
 下面列出了完整的示例。
 
-```
+```py
 # compare robust regression algorithms on a regression dataset with outliers
 from random import random
 from random import randint
@@ -579,7 +579,7 @@ pyplot.show()
 
 我们可以看到这些分数与上一节中报告的分数之间的一些微小差异，尽管这些差异可能具有统计学意义，也可能不具有统计学意义。稳健回归方法比线性回归性能更好的一般模式成立，lSen 比其他方法获得更好的性能。
 
-```
+```py
 >Linear 5.260 (1.149)
 >Huber 4.435 (1.868)
 >RANSAC 4.405 (2.206)
@@ -598,7 +598,7 @@ pyplot.show()
 
 下面的示例适合每种稳健回归算法，并在整个训练数据集散点图的上下文中，在同一图上绘制它们的最佳拟合线。
 
-```
+```py
 # plot line of best for multiple robust regression algorithms
 from random import random
 from random import randint

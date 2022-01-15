@@ -94,7 +94,7 @@
 
 下面的例子用 Python 实现了这一点。
 
-```
+```py
 # example of creating a univariate dataset with a given mapping function
 from matplotlib import pyplot
 # define the input data
@@ -131,7 +131,7 @@ pyplot.show()
 
 首先，让我们定义数据集。
 
-```
+```py
 ...
 # define the dataset
 x = asarray([i for i in range(-50,51)])
@@ -141,7 +141,7 @@ print(x.min(), x.max(), y.min(), y.max())
 
 接下来，我们可以重塑数据，使输入和输出变量是每行一个观察值的列，正如使用监督学习模型时所预期的那样。
 
-```
+```py
 ...
 # reshape arrays into into rows and cols
 x = x.reshape((len(x), 1))
@@ -154,7 +154,7 @@ y = y.reshape((len(y), 1))
 
 我们可以使用[最小最大缩放器](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)将输入值和输出值分别归一化为 0 到 1 之间的值。
 
-```
+```py
 ...
 # separately scale the input and output variables
 scale_x = MinMaxScaler()
@@ -168,7 +168,7 @@ print(x.min(), x.max(), y.min(), y.max())
 
 经过一些反复试验，我选择了一个模型，它有两个隐藏层，每层有 10 个节点。也许可以尝试其他配置，看看是否可以做得更好。
 
-```
+```py
 ...
 # design the neural network model
 model = Sequential()
@@ -181,7 +181,7 @@ model.add(Dense(1))
 
 这意味着模型在试图逼近映射函数时，将寻求最小化预测值和预期输出值( *y* )之间的均方误差。
 
-```
+```py
 ...
 # define the loss function and optimization algorithm
 model.compile(loss='mse', optimizer='adam')
@@ -191,7 +191,7 @@ model.compile(loss='mse', optimizer='adam')
 
 同样，这些值是经过一点点反复试验后发现的；尝试不同的价值观，看看你是否能做得更好。
 
-```
+```py
 ...
 # ft the model on the training dataset
 model.fit(x, y, epochs=500, batch_size=10, verbose=0)
@@ -205,7 +205,7 @@ model.fit(x, y, epochs=500, batch_size=10, verbose=0)
 
 首先，我们可以做出预测。
 
-```
+```py
 ...
 # make predictions for the input data
 yhat = model.predict(x)
@@ -215,7 +215,7 @@ yhat = model.predict(x)
 
 这是因为错误是以目标变量的原始单位报告的。
 
-```
+```py
 ...
 # inverse transforms
 x_plot = scale_x.inverse_transform(x)
@@ -225,7 +225,7 @@ yhat_plot = scale_y.inverse_transform(yhat)
 
 然后，我们可以用目标变量的原始单位来计算和报告预测误差。
 
-```
+```py
 ...
 # report model error
 print('MSE: %.3f' % mean_squared_error(y_plot, yhat_plot))
@@ -235,7 +235,7 @@ print('MSE: %.3f' % mean_squared_error(y_plot, yhat_plot))
 
 这有助于发展神经网络正在学习的东西背后的直觉。
 
-```
+```py
 ...
 # plot x vs yhat
 pyplot.scatter(x_plot,yhat_plot, label='Predicted')
@@ -248,7 +248,7 @@ pyplot.show()
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # example of fitting a neural net on x vs x^2
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import mean_squared_error
@@ -308,7 +308,7 @@ pyplot.show()
 **你得到了什么结果？**你能做得更好吗？
 请在下面的评论中告诉我。
 
-```
+```py
 -50 50 0.0 2500.0
 0.0 1.0 0.0 1.0
 MSE: 1300.776

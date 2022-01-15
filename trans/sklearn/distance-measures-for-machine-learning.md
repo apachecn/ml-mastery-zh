@@ -113,7 +113,7 @@ KNN 属于一个更广泛的算法领域，称为基于案例或基于实例的�
 
 我们可以用一个计算两个位串之间汉明距离的例子来演示这一点，如下所示。
 
-```
+```py
 # calculating hamming distance between bit strings
 
 # calculate hamming distance
@@ -132,13 +132,13 @@ print(dist)
 
 我们可以看到，字符串之间有两个差异，或者说 6 个比特位置中有 2 个不同，其平均值(2/6)约为 1/3 或 0.333。
 
-```
+```py
 0.3333333333333333
 ```
 
 我们也可以使用 SciPy 中的[汉明()函数](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.distance.hamming.html)进行同样的计算。下面列出了完整的示例。
 
-```
+```py
 # calculating hamming distance between bit strings
 from scipy.spatial.distance import hamming
 # define data
@@ -151,7 +151,7 @@ print(dist)
 
 运行这个例子，我们可以看到我们得到了相同的结果，证实了我们的手动实现。
 
-```
+```py
 0.3333333333333333
 ```
 
@@ -179,7 +179,7 @@ print(dist)
 
 我们可以用一个计算两个实值向量之间欧几里得距离的例子来演示这一点，如下所示。
 
-```
+```py
 # calculating euclidean distance between vectors
 from math import sqrt
 
@@ -197,13 +197,13 @@ print(dist)
 
 运行该示例会报告两个向量之间的欧氏距离。
 
-```
+```py
 6.082762530298219
 ```
 
 我们也可以使用 SciPy 中的[欧几里德()函数](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.distance.euclidean.html)进行同样的计算。下面列出了完整的示例。
 
-```
+```py
 # calculating euclidean distance between vectors
 from scipy.spatial.distance import euclidean
 # define data
@@ -216,7 +216,7 @@ print(dist)
 
 运行这个例子，我们可以看到我们得到了相同的结果，证实了我们的手动实现。
 
-```
+```py
 6.082762530298219
 ```
 
@@ -236,7 +236,7 @@ print(dist)
 
 我们可以用下面列出的计算两个整数向量之间曼哈顿距离的例子来证明这一点。
 
-```
+```py
 # calculating manhattan distance between vectors
 from math import sqrt
 
@@ -254,13 +254,13 @@ print(dist)
 
 运行该示例会报告两个向量之间的曼哈顿距离。
 
-```
+```py
 13
 ```
 
 我们也可以使用 SciPy 中的 [cityblock()函数](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.distance.cityblock.html)进行同样的计算。下面列出了完整的示例。
 
-```
+```py
 # calculating manhattan distance between vectors
 from scipy.spatial.distance import cityblock
 # define data
@@ -273,7 +273,7 @@ print(dist)
 
 运行这个例子，我们可以看到我们得到了相同的结果，证实了我们的手动实现。
 
-```
+```py
 13
 ```
 
@@ -300,7 +300,7 @@ print(dist)
 
 我们可以用一个计算两个实向量之间闵可夫斯基距离的例子来演示这个计算，如下所示。
 
-```
+```py
 # calculating minkowski distance between vectors
 from math import sqrt
 
@@ -321,14 +321,14 @@ print(dist)
 
 运行该示例首先计算并打印闵可夫斯基距离，将 *p* 设置为 1 以给出曼哈顿距离，然后将 *p* 设置为 2 以给出欧几里德距离，与根据前面部分的相同数据计算的值相匹配。
 
-```
+```py
 13.0
 6.082762530298219
 ```
 
 我们也可以使用 SciPy 的 [minkowski_distance()函数](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.minkowski_distance.html)进行同样的计算。下面列出了完整的示例。
 
-```
+```py
 # calculating minkowski distance between vectors
 from scipy.spatial import minkowski_distance
 # define data
@@ -344,7 +344,7 @@ print(dist)
 
 运行这个例子，我们可以看到我们得到了相同的结果，证实了我们的手动实现。
 
-```
+```py
 13.0
 6.082762530298219
 ```

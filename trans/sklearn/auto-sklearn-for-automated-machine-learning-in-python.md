@@ -63,13 +63,13 @@ Auto-Sklearn 的好处是，除了发现为数据集执行的数据准备和模�
 
 第一步是安装 Auto-Sklearn 库，这可以使用 pip 实现，如下所示:
 
-```
+```py
 sudo pip install autosklearn
 ```
 
 安装后，我们可以导入库并打印版本号，以确认安装成功:
 
-```
+```py
 # print autosklearn version
 import autosklearn
 print('autosklearn: %s' % autosklearn.__version__)
@@ -79,7 +79,7 @@ print('autosklearn: %s' % autosklearn.__version__)
 
 您的版本号应该相同或更高。
 
-```
+```py
 autosklearn: 0.6.0
 ```
 
@@ -87,7 +87,7 @@ autosklearn: 0.6.0
 
 根据您的预测任务是分类还是回归，您可以创建并配置一个[自动学习分类器](https://automl.github.io/auto-sklearn/master/api.html#classification)或[自动学习回归器](https://automl.github.io/auto-sklearn/master/api.html#regression)类的实例，使其适合您的数据集，就是这样。然后，生成的模型可用于直接进行预测，或保存到文件中(使用 pickle)以备后用。
 
-```
+```py
 ...
 # define search
 model = AutoSklearnClassifier()
@@ -107,7 +107,7 @@ model.fit(X_train, y_train)
 
 对于本教程中的示例，我们将使用 5 分钟(300 秒)。我们还将通过“*”per _ run _ time _ limit*”参数将分配给每个模型评估的时间限制为 30 秒。例如:
 
-```
+```py
 ...
 # define search
 model = AutoSklearnClassifier(time_left_for_this_task=5*60, per_run_time_limit=30, n_jobs=8)
@@ -117,7 +117,7 @@ model = AutoSklearnClassifier(time_left_for_this_task=5*60, per_run_time_limit=3
 
 默认情况下，搜索将创建作为搜索的一部分发现的顶级模型的集合。有时，这可能会导致过度拟合，可以通过将“*集合 _ 大小*”参数设置为 1 并将“*初始 _ 配置 _ via _ metallowing*”设置为 0 来禁用。
 
-```
+```py
 ...
 # define search
 model = AutoSklearnClassifier(ensemble_size=1, initial_configurations_via_metalearning=0)
@@ -127,7 +127,7 @@ model = AutoSklearnClassifier(ensemble_size=1, initial_configurations_via_metale
 
 也许最有用的特性是 *sprint_statistics()* 函数，它总结了最终模型的搜索和性能。
 
-```
+```py
 ...
 # summarize performance
 print(model.sprint_statistics())
@@ -152,7 +152,7 @@ print(model.sprint_statistics())
 
 下面的示例下载数据集并总结其形状。
 
-```
+```py
 # summarize the sonar dataset
 from pandas import read_csv
 # load dataset
@@ -166,7 +166,7 @@ print(X.shape, y.shape)
 
 运行该示例会下载数据集，并将其拆分为输入和输出元素。不出所料，我们可以看到有 208 行数据，60 个输入变量。
 
-```
+```py
 (208, 60) (208,)
 ```
 
@@ -174,7 +174,7 @@ print(X.shape, y.shape)
 
 首先，我们将数据集分成训练集和测试集，并允许流程在训练集上找到一个好的模型，然后评估在保持测试集上找到的模型的性能。
 
-```
+```py
 ...
 # split into train and test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=1)
@@ -182,7 +182,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random
 
 *自动学习分类器*配置为 8 核运行 5 分钟，每次模型评估限于 30 秒。
 
-```
+```py
 ...
 # define search
 model = AutoSklearnClassifier(time_left_for_this_task=5*60, per_run_time_limit=30, n_jobs=8)
@@ -190,7 +190,7 @@ model = AutoSklearnClassifier(time_left_for_this_task=5*60, per_run_time_limit=3
 
 然后对训练数据集执行搜索。
 
-```
+```py
 ...
 # perform the search
 model.fit(X_train, y_train)
@@ -198,7 +198,7 @@ model.fit(X_train, y_train)
 
 随后，报告了搜索和最佳表现模型的摘要。
 
-```
+```py
 ...
 # summarize
 print(model.sprint_statistics())
@@ -206,7 +206,7 @@ print(model.sprint_statistics())
 
 最后，我们评估在保持测试数据集上准备的模型的性能。
 
-```
+```py
 ...
 # evaluate best model
 y_hat = model.predict(X_test)
@@ -216,7 +216,7 @@ print("Accuracy: %.3f" % acc)
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # example of auto-sklearn for the sonar classification dataset
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
@@ -253,7 +253,7 @@ print("Accuracy: %.3f" % acc)
 
 运行结束时，会打印一份摘要，显示评估了 1，054 个模型，最终模型的估计性能为 91%。
 
-```
+```py
 auto-sklearn results:
 Dataset name: f4c282bd4b56d4db7e5f7fe1a6a8edeb
 Metric: accuracy
@@ -267,7 +267,7 @@ Number of target algorithms that exceeded the memory limit: 0
 
 然后，我们在保持数据集上评估模型，发现分类准确率达到了 81.2%，这是相当巧妙的。
 
-```
+```py
 Accuracy: 0.812
 ```
 
@@ -288,7 +288,7 @@ Accuracy: 0.812
 
 下面的示例下载数据集并总结其形状。
 
-```
+```py
 # summarize the auto insurance dataset
 from pandas import read_csv
 # load dataset
@@ -302,7 +302,7 @@ print(X.shape, y.shape)
 
 运行该示例会下载数据集，并将其拆分为输入和输出元素。不出所料，我们可以看到有 63 行数据带有一个输入变量。
 
-```
+```py
 (63, 1) (63,)
 ```
 
@@ -310,7 +310,7 @@ print(X.shape, y.shape)
 
 我们可以使用与上一节相同的过程，尽管我们将使用*自动学习回归器*类来代替*自动学习分类器*。
 
-```
+```py
 ...
 # define search
 model = AutoSklearnRegressor(time_left_for_this_task=5*60, per_run_time_limit=30, n_jobs=8)
@@ -320,7 +320,7 @@ model = AutoSklearnRegressor(time_left_for_this_task=5*60, per_run_time_limit=30
 
 在这种情况下，我们对平均绝对误差(MAE)感兴趣，当调用 *fit()* 函数时，我们可以通过“*度量*”参数指定它。
 
-```
+```py
 ...
 # perform the search
 model.fit(X_train, y_train, metric=auto_mean_absolute_error)
@@ -328,7 +328,7 @@ model.fit(X_train, y_train, metric=auto_mean_absolute_error)
 
 下面列出了完整的示例。
 
-```
+```py
 # example of auto-sklearn for the insurance regression dataset
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
@@ -360,7 +360,7 @@ print("MAE: %.3f" % mae)
 
 在运行过程中，您可能会看到一些警告消息，您可以放心地忽略它们，例如:
 
-```
+```py
 Target Algorithm returned NaN or inf as quality. Algorithm run is treated as CRASHED, cost is set to 1.0 for quality scenarios. (Change value through "cost_for_crash"-option.)
 ```
 
@@ -368,7 +368,7 @@ Target Algorithm returned NaN or inf as quality. Algorithm run is treated as CRA
 
 运行结束时，会打印一份摘要，显示评估了 1，759 个模型，最终模型的估计性能为 29 的 MAE。
 
-```
+```py
 auto-sklearn results:
 Dataset name: ff51291d93f33237099d48c48ee0f9ad
 Metric: mean_absolute_error
@@ -382,7 +382,7 @@ Number of target algorithms that exceeded the memory limit: 0
 
 然后，我们在保持数据集上评估模型，看到 MAE 达到了 26，这是一个很好的结果。
 
-```
+```py
 MAE: 26.498
 ```
 

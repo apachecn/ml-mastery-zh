@@ -77,7 +77,7 @@
 
 该类允许您通过“*内核*”参数指定要使用的内核，并默认为 1 *径向基函数(1.0)，例如径向基函数内核。
 
-```
+```py
 ...
 # define model
 model = GaussianProcessClassifier(kernel=1*RBF(1.0))
@@ -89,7 +89,7 @@ model = GaussianProcessClassifier(kernel=1*RBF(1.0))
 
 默认情况下，执行单次优化运行，这可以通过将“*优化*”设置为*无*来关闭。
 
-```
+```py
 ...
 # define model
 model = GaussianProcessClassifier(optimizer=None)
@@ -103,7 +103,7 @@ model = GaussianProcessClassifier(optimizer=None)
 
 下面的示例创建并汇总了数据集。
 
-```
+```py
 # test classification dataset
 from sklearn.datasets import make_classification
 # define dataset
@@ -114,7 +114,7 @@ print(X.shape, y.shape)
 
 运行该示例将创建数据集，并确认数据集的行数和列数。
 
-```
+```py
 (100, 20) (100,)
 ```
 
@@ -122,7 +122,7 @@ print(X.shape, y.shape)
 
 我们将使用默认配置。
 
-```
+```py
 ...
 # create the model
 model = GaussianProcessClassifier()
@@ -130,7 +130,7 @@ model = GaussianProcessClassifier()
 
 下面列出了评估合成二进制分类任务的高斯过程分类器模型的完整示例。
 
-```
+```py
 # evaluate a gaussian process classifier model on the dataset
 from numpy import mean
 from numpy import std
@@ -156,7 +156,7 @@ print('Mean Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 
 在这种情况下，我们可以看到模型实现了大约 79.0%的平均精度。
 
-```
+```py
 Mean Accuracy: 0.790 (0.101)
 ```
 
@@ -166,7 +166,7 @@ Mean Accuracy: 0.790 (0.101)
 
 我们可以用下面列出的完整示例来演示这一点。
 
-```
+```py
 # make a prediction with a gaussian process classifier model on the dataset
 from sklearn.datasets import make_classification
 from sklearn.gaussian_process import GaussianProcessClassifier
@@ -186,7 +186,7 @@ print('Predicted Class: %d' % yhat)
 
 运行该示例符合模型，并对新的数据行进行类别标签预测。
 
-```
+```py
 Predicted Class: 0
 ```
 
@@ -212,7 +212,7 @@ Predicted Class: 0
 
 我们将使用默认参数来评估高斯过程分类器的性能。
 
-```
+```py
 ...
 # define grid
 grid = dict()
@@ -221,7 +221,7 @@ grid['kernel'] = [1*RBF(), 1*DotProduct(), 1*Matern(), 1*RationalQuadratic(), 1*
 
 下面的例子使用 [GridSearchCV 类](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)和我们定义的值网格来演示这一点。
 
-```
+```py
 # grid search kernel for gaussian process classifier
 from sklearn.datasets import make_classification
 from sklearn.model_selection import GridSearchCV
@@ -261,7 +261,7 @@ for mean, param in zip(means, params):
 
 在这种情况下，我们可以看到*比率二次*内核以大约 91.3%的精度提升了性能，而上一节中的径向基函数内核达到了 79.0%。
 
-```
+```py
 Best Mean Accuracy: 0.913
 Best Config: {'kernel': 1**2 * RationalQuadratic(alpha=1, length_scale=1)}
 >0.790 with: {'kernel': 1**2 * RBF(length_scale=1)}

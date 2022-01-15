@@ -62,7 +62,7 @@ $
 
 如果我们打开这个 tar 文件，我们会看到一个名为“reviews.json”的大文件。我们可以提取它，或者动态读取包含的文件。下面显示了前三行 reviews.json:
 
-```
+```py
 import tarfile
 
 # Read downloaded file from:
@@ -82,7 +82,7 @@ with tarfile.open("lthing_data.tar.gz") as tar:
 
 上面会打印:
 
-```
+```py
 Files in tar archive:
 ?rwxr-xr-x julian/julian 0 2016-09-30 17:58:55 lthing_data/
 ?rw-r--r-- julian/julian 4824989 2014-01-02 13:55:12 lthing_data/edges.txt
@@ -95,7 +95,7 @@ b'{\'work\': \'12981302\', \'flags\': [], \'unixtime\': 1364515200, \'stars\': 4
 
 reviews.json 中的每一行都是一条记录。我们将提取每个记录的“用户”、“工作”和“星星”字段，只要这三个字段中没有缺失数据。尽管有名字，但记录不是格式良好的 JSON 字符串(最明显的是它使用单引号而不是双引号)。因此，我们不能使用 Python 中的`json`包，而是使用`ast`来解码这样的字符串:
 
-```
+```py
 ...
 import ast
 
@@ -110,20 +110,20 @@ with tarfile.open("lthing_data.tar.gz") as tar:
 print(len(reviews), "records retrieved")
 ```
 
-```
+```py
 1387209 records retrieved
 ```
 
 现在我们应该制作一个不同用户如何评价每本书的矩阵。我们利用熊猫库来帮助将我们收集的数据转换成表格:
 
-```
+```py
 ...
 import pandas as pd
 reviews = pd.DataFrame(reviews, columns=["user", "work", "stars"])
 print(reviews.head())
 ```
 
-```
+```py
             user      work  stars
 0       van_stef   3206242    5.0
 1       dwatson2  12198649    5.0
@@ -134,7 +134,7 @@ print(reviews.head())
 
 例如，为了节省时间和内存，我们尽量不使用所有数据。这里我们只考虑那些评论超过 50 本书的用户，也考虑那些被超过 50 个用户评论的书。通过这种方式，我们将数据集修剪到原始大小的 15%以下:
 
-```
+```py
 ...
 # Look for the users who reviewed more than 50 books
 usercount = reviews[["work","user"]].groupby("user").count()
@@ -142,7 +142,7 @@ usercount = usercount[usercount["work"] >= 50]
 print(usercount.head())
 ```
 
-```
+```py
             work
 user
               84
@@ -152,7 +152,7 @@ user
 1dragones    194
 ```
 
-```
+```py
 ...
 # Look for the books who reviewed by more than 50 users
 workcount = reviews[["work","user"]].groupby("work").count()
@@ -160,7 +160,7 @@ workcount = workcount[workcount["user"] >= 50]
 print(workcount.head())
 ```
 
-```
+```py
           user
 work
 10000      106
@@ -170,14 +170,14 @@ work
 10005525   134
 ```
 
-```
+```py
 ...
 # Keep only the popular books and active users
 reviews = reviews[reviews["user"].isin(usercount.index) & reviews["work"].isin(workcount.index)]
 print(reviews)
 ```
 
-```
+```py
                 user     work  stars
 0           van_stef  3206242    5.0
 6            justine     3067    4.5
@@ -196,7 +196,7 @@ print(reviews)
 
 然后我们可以利用熊猫中的“透视表”功能将其转换成矩阵:
 
-```
+```py
 ...
 reviewmatrix = reviews.pivot(index="user", columns="work", values="stars").fillna(0)
 ```
@@ -206,7 +206,7 @@ reviewmatrix = reviews.pivot(index="user", columns="work", values="stars").filln
 ![](img/3368ce4eed459b4d5d7d46630b853aef.png)
 这里我们用一个矩阵表示了 5593 个用户和 2898 本书。然后我们应用奇异值分解(这需要一段时间):
 
-```
+```py
 ...
 from numpy.linalg import svd
 matrix = reviewmatrix.values
@@ -215,7 +215,7 @@ u, s, vh = svd(matrix, full_matrices=False)
 
 默认情况下，`svd()`返回一个完整的奇异值分解。我们选择缩小版，这样我们可以使用更小的矩阵来节省内存。`vh`的栏目对应书籍。我们可以基于向量空间模型来找出哪本书与我们正在看的那本最相似:
 
-```
+```py
 ...
 import numpy as np
 def cosine_similarity(v,u):
@@ -234,7 +234,7 @@ print("Column %d is most similar to column 0" % highest_sim_col)
 
 在上面的例子中，我们试图找到与第一列最匹配的书。结果是:
 
-```
+```py
 Column 906 is most similar to column 0
 ```
 
@@ -246,7 +246,7 @@ Column 906 is most similar to column 0
 
 以下是完整的代码:
 
-```
+```py
 import tarfile
 import ast
 import pandas as pd

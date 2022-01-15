@@ -58,7 +58,7 @@ $
 
 世界银行收集世界上各个国家和地区的各种数据。虽然每个国家都不同，但我们可以尝试在向量空间模型下比较国家。为了方便起见，我们将使用 Python 中的`pandas_datareader`模块从世界银行读取数据。您可以使用`pip`或`conda`命令安装`pandas_datareader`:
 
-```
+```py
 pip install pandas_datareader
 ```
 
@@ -66,7 +66,7 @@ pip install pandas_datareader
 
 下面我们试着收集一下 2010 年各个*国家的一些经济数据:*
 
- *```
+```py
 from pandas_datareader import wb
 import pandas as pd
 pd.options.display.width = 0
@@ -86,7 +86,7 @@ df_nonagg = df[df["country"].isin(non_aggregates)].dropna()
 print(df_nonagg)
 ```
 
-```
+```py
                  country  year  NE.EXP.GNFS.CD  NE.IMP.GNFS.CD  NV.AGR.TOTL.CD  NY.GDP.MKTP.CD  NE.RSB.GNFS.CD
 50               Albania  2010    3.337089e+09    5.792189e+09    2.141580e+09    1.192693e+10   -2.455100e+09
 51               Algeria  2010    6.197541e+10    5.065473e+10    1.364852e+10    1.612073e+11    1.132067e+10
@@ -107,7 +107,7 @@ print(df_nonagg)
 
 为了更好地说明这个想法，而不是隐藏熊猫或 numpy 函数中的实际操作，我们首先提取每个国家的数据作为向量:
 
-```
+```py
 ...
 vectors = {}
 for rowid, row in df_nonagg.iterrows():
@@ -116,7 +116,7 @@ for rowid, row in df_nonagg.iterrows():
 print(vectors)
 ```
 
-```
+```py
 {'Albania': array([3337088824.25553, 5792188899.58985, 2141580308.0144,
 11926928505.5231, -2455100075.33431], dtype=object),
 'Algeria': array([61975405318.205, 50654732073.2396, 13648522571.4516,
@@ -136,7 +136,7 @@ print(vectors)
 
 这对我们有帮助的是，我们可以使用每个国家的向量表示来看看它与另一个国家有多相似。让我们尝试差值的 L2 范数(欧几里得距离)和余弦距离。我们选择一个国家，如澳大利亚，并根据选定的经济指标将其与名单上的所有其他国家进行比较。
 
-```
+```py
 ...
 import numpy as np
 
@@ -155,7 +155,7 @@ for country in vectors:
 
 在上面的 for-loop 中，我们将`vecA`设置为目标国家(即澳大利亚)的向量，将`vecB`设置为其他国家的向量。然后我们计算它们的差的 L2 范数作为两个向量之间的欧几里得距离。我们还使用公式计算余弦相似度，并将其从 1 减去，以获得余弦距离。有一百多个国家，我们可以看到哪一个国家到澳大利亚的欧几里得距离最短:
 
-```
+```py
 ...
 import pandas as pd
 
@@ -163,7 +163,7 @@ df_distance = pd.DataFrame({"euclid": euclid, "cos": cosine})
 print(df_distance.sort_values(by="euclid").head())
 ```
 
-```
+```py
                  euclid           cos
 Australia  0.000000e+00 -2.220446e-16
 Mexico     1.533802e+11  7.949549e-03
@@ -174,12 +174,12 @@ Indonesia  4.083531e+11  7.417614e-03
 
 通过对结果进行排序，我们可以看到在欧氏距离下，墨西哥距离澳大利亚最近。然而，用余弦距离，它是哥伦比亚最接近澳大利亚的。
 
-```
+```py
 ...
 df_distance.sort_values(by="cos").head()
 ```
 
-```
+```py
                  euclid           cos
 Australia  0.000000e+00 -2.220446e-16
 Colombia   8.981118e+11  1.720644e-03
@@ -190,12 +190,12 @@ Argentina  7.572323e+11  2.930187e-03
 
 为了理解为什么这两个距离给出不同的结果，我们可以观察这三个国家的度量标准是如何相互比较的:
 
-```
+```py
 ...
 print(df_nonagg[df_nonagg.country.isin(["Mexico", "Colombia", "Australia"])])
 ```
 
-```
+```py
        country  year  NE.EXP.GNFS.CD  NE.IMP.GNFS.CD  NV.AGR.TOTL.CD  NY.GDP.MKTP.CD  NE.RSB.GNFS.CD
 59   Australia  2010    2.270501e+11    2.388514e+11    2.518718e+10    1.146138e+12   -1.180129e+10
 91    Colombia  2010    4.682683e+10    5.136288e+10    1.812470e+10    2.865631e+11   -4.536047e+09
@@ -211,7 +211,7 @@ $
 
 综上所述，下面是完整的代码
 
-```
+```py
 from pandas_datareader import wb
 import numpy as np
 import pandas as pd

@@ -95,7 +95,7 @@ PyTorch API 简单而灵活，使其成为学者和研究人员在开发新的�
 
 例如，在命令行上，您可以键入:
 
-```
+```py
 sudo pip install torch
 ```
 
@@ -103,7 +103,7 @@ sudo pip install torch
 
 强烈建议安装 torchvision，安装方式如下:
 
-```
+```py
 sudo pip install torchvision
 ```
 
@@ -125,7 +125,7 @@ sudo pip install torchvision
 
 创建一个名为 *versions.py* 的新文件，并将以下代码复制粘贴到文件中。
 
-```
+```py
 # check pytorch version
 import torch
 print(torch.__version__)
@@ -135,13 +135,13 @@ print(torch.__version__)
 
 然后键入:
 
-```
+```py
 python versions.py
 ```
 
 然后，您应该会看到如下输出:
 
-```
+```py
 1.3.1
 ```
 
@@ -185,7 +185,7 @@ PyTorch 提供了[数据集类](https://pytorch.org/docs/stable/data.html#torch.
 
 自定义*数据集*类的框架如下。
 
-```
+```py
 # dataset definition
 class CSVDataset(Dataset):
     # load the dataset
@@ -211,7 +211,7 @@ class CSVDataset(Dataset):
 
 例如，我们可以通过传入数据集中选定的行样本来定义*数据加载器*。
 
-```
+```py
 ...
 # create the dataset
 dataset = CSVDataset(...)
@@ -224,7 +224,7 @@ test_dl = DataLoader(test, batch_size=1024, shuffle=False)
 
 一旦定义，就可以枚举*数据加载器*，每次迭代产生一批样本。
 
-```
+```py
 ...
 # train the model
 for i, (inputs, targets) in enumerate(train_dl):
@@ -245,7 +245,7 @@ for i, (inputs, targets) in enumerate(train_dl):
 
 下面是一个简单的一层 MLP 模型的例子。
 
-```
+```py
 # model definition
 class MLP(Module):
     # define model elements
@@ -265,7 +265,7 @@ class MLP(Module):
 
 常见的例子包括[泽维尔](https://pytorch.org/docs/stable/nn.init.html#torch.nn.init.xavier_uniform_)和 [He 权重](https://pytorch.org/docs/stable/nn.init.html#torch.nn.init.kaiming_uniform_)初始化方案。例如:
 
-```
+```py
 ...
 xavier_uniform_(self.layer.weight)
 ```
@@ -286,7 +286,7 @@ xavier_uniform_(self.layer.weight)
 
 随机梯度下降用于优化，标准算法由 [SGD 类](https://pytorch.org/docs/stable/optim.html#torch.optim.SGD)提供，不过也有其他版本的算法，如[亚当](https://pytorch.org/docs/stable/optim.html#torch.optim.Adam)。
 
-```
+```py
 # define the optimization
 criterion = MSELoss()
 optimizer = SGD(model.parameters(), lr=0.01, momentum=0.9)
@@ -296,7 +296,7 @@ optimizer = SGD(model.parameters(), lr=0.01, momentum=0.9)
 
 首先，训练时期的数量需要一个循环。然后对于随机梯度下降的小批量需要一个内环。
 
-```
+```py
 ...
 # enumerate epochs
 for epoch in range(100):
@@ -315,7 +315,7 @@ for epoch in range(100):
 
 例如:
 
-```
+```py
 ...
 # clear the gradients
 optimizer.zero_grad()
@@ -335,7 +335,7 @@ optimizer.step()
 
 这可以通过对测试数据集使用*数据加载器*并收集测试集的预测，然后将预测与测试集的期望值进行比较并计算性能指标来实现。
 
-```
+```py
 ...
 for i, (inputs, targets) in enumerate(test_dl):
     # evaluate the model on the test set
@@ -355,7 +355,7 @@ for i, (inputs, targets) in enumerate(test_dl):
 
 预测也将是张量，尽管您可以通过从自动微分图中分离张量并调用 NumPy 函数来检索 NumPy 数组。
 
-```
+```py
 ...
 # convert row to data
 row = Variable(Tensor([row]).float())
@@ -402,7 +402,7 @@ MLP 是具有一个或多个完全连接的层的模型。这种模型适用于�
 
 下面列出了完整的示例。
 
-```
+```py
 # pytorch mlp for binary classification
 from numpy import vstack
 from pandas import read_csv
@@ -572,7 +572,7 @@ print('Predicted: %.3f (class=%d)' % (yhat, yhat.round()))
 
 在这种情况下，我们可以看到模型达到了大约 94%的分类精度，然后预测一行数据属于类别 1 的概率为 0.99。
 
-```
+```py
 235 116
 Accuracy: 0.948
 Predicted: 0.998 (class=1)
@@ -593,7 +593,7 @@ Predicted: 0.998 (class=1)
 
 下面列出了在鸢尾花数据集上拟合和评估 MLP 的完整示例。
 
-```
+```py
 # pytorch mlp for multiclass classification
 from numpy import vstack
 from numpy import argmax
@@ -764,7 +764,7 @@ print('Predicted: %s (class=%d)' % (yhat, argmax(yhat)))
 
 在这种情况下，我们可以看到该模型实现了大约 98%的分类准确率，然后预测了一行数据属于每个类的概率，尽管类 0 的概率最高。
 
-```
+```py
 100 50
 Accuracy: 0.980
 Predicted: [[9.5524162e-01 4.4516966e-02 2.4138369e-04]] (class=0)
@@ -789,7 +789,7 @@ Predicted: [[9.5524162e-01 4.4516966e-02 2.4138369e-04]] (class=0)
 
 下面列出了在波士顿住房数据集上拟合和评估 MLP 的完整示例。
 
-```
+```py
 # pytorch mlp for regression
 from numpy import vstack
 from numpy import sqrt
@@ -949,7 +949,7 @@ print('Predicted: %.3f' % yhat)
 
 在这种情况下，我们可以看到模型实现了大约 82 的 MSE，这是大约 9 的 RMSE(单位是千美元)。然后为单个示例预测值 21。
 
-```
+```py
 339 167
 MSE: 82.576, RMSE: 9.087
 Predicted: 21.909
@@ -969,7 +969,7 @@ torchvision API 提供了一个方便的函数来直接下载和加载这个数�
 
 以下示例加载数据集并绘制前几幅图像。
 
-```
+```py
 # load mnist dataset in pytorch
 from torch.utils.data import DataLoader
 from torchvision.datasets import MNIST
@@ -1000,7 +1000,7 @@ pyplot.show()
 
 运行该示例会加载 MNIST 数据集，然后汇总默认的训练和测试数据集。
 
-```
+```py
 Train: X=(60000, 28, 28), y=(60000,)
 Test: X=(10000, 28, 28), y=(10000,)
 ```
@@ -1021,7 +1021,7 @@ Test: X=(10000, 28, 28), y=(10000,)
 
 下面列出了在 MNIST 数据集上拟合和评估 CNN 模型的完整示例。
 
-```
+```py
 # pytorch cnn for multiclass classification
 from numpy import vstack
 from numpy import argmax
@@ -1166,7 +1166,7 @@ print('Accuracy: %.3f' % acc)
 
 在这种情况下，我们可以看到该模型在测试数据集上实现了大约 98%的分类准确率。然后我们可以看到，模型为训练集中的第一幅图像预测了类别 5。
 
-```
+```py
 60000 10000
 Accuracy: 0.985
 ```

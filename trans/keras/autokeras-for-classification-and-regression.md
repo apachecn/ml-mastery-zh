@@ -61,7 +61,7 @@ AutoKeras 是 AutoML 的一个实现，用于使用 Keras API 的深度学习模
 
 在编写时，您需要手动安装名为 [keras-tuner](https://keras-team.github.io/keras-tuner/) 的必备库。您可以按如下方式安装此库:
 
-```
+```py
 sudo pip install git+https://github.com/keras-team/keras-tuner.git@1.0.2rc1
 ```
 
@@ -73,19 +73,19 @@ sudo pip install git+https://github.com/keras-team/keras-tuner.git@1.0.2rc1
 
 要安装 AutoKeras，可以使用 Pip，如下所示:
 
-```
+```py
 sudo pip install autokeras
 ```
 
 您可以确认安装成功，并按如下方式检查版本号:
 
-```
+```py
 sudo pip show autokeras
 ```
 
 您应该会看到如下输出:
 
-```
+```py
 Name: autokeras
 Version: 1.0.8
 Summary: AutoML for deep learning
@@ -123,7 +123,7 @@ AutoKeras 可用于发现表格数据分类任务的良好或伟大模型。
 
 下面列出了完整的示例。
 
-```
+```py
 # load the sonar dataset
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
@@ -148,7 +148,7 @@ print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
 
 然后数据集被分成输入和输出元素，然后这些元素被进一步分成训练和测试数据集。
 
-```
+```py
 (208, 61)
 (208, 60) (208,)
 (139, 60) (69, 60) (139,) (69,)
@@ -158,7 +158,7 @@ print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
 
 这可以通过使用 [StructuredDataClassifier](https://autokeras.com/structured_data_classifier/) 类并指定要搜索的模型数量来实现。这定义了要执行的搜索。
 
-```
+```py
 ...
 # define the search
 search = StructuredDataClassifier(max_trials=15)
@@ -166,7 +166,7 @@ search = StructuredDataClassifier(max_trials=15)
 
 然后，我们可以使用加载的数据集执行搜索。
 
-```
+```py
 ...
 # perform the search
 search.fit(x=X_train, y=y_train, verbose=0)
@@ -176,7 +176,7 @@ search.fit(x=X_train, y=y_train, verbose=0)
 
 接下来，我们可以在测试数据集上评估模型，看看它在新数据上的表现。
 
-```
+```py
 ...
 # evaluate the model
 loss, acc = search.evaluate(X_test, y_test, verbose=0)
@@ -185,7 +185,7 @@ print('Accuracy: %.3f' % acc)
 
 然后，我们使用该模型对新的数据行进行预测。
 
-```
+```py
 ...
 # use the model to make a prediction
 row = [0.0200,0.0371,0.0428,0.0207,0.0954,0.0986,0.1539,0.1601,0.3109,0.2111,0.1609,0.1582,0.2238,0.0645,0.0660,0.2273,0.3100,0.2999,0.5078,0.4797,0.5783,0.5071,0.4328,0.5550,0.6711,0.6415,0.7104,0.8080,0.6791,0.3857,0.1307,0.2604,0.5121,0.7547,0.8537,0.8507,0.6692,0.6097,0.4943,0.2744,0.0510,0.2834,0.2825,0.4256,0.2641,0.1386,0.1051,0.1343,0.0383,0.0324,0.0232,0.0027,0.0065,0.0159,0.0072,0.0167,0.0180,0.0084,0.0090,0.0032]
@@ -196,7 +196,7 @@ print('Predicted: %.3f' % yhat[0])
 
 我们可以检索最终的模型，它是 TensorFlow Keras 模型的一个实例。
 
-```
+```py
 ...
 # get the best performing model
 model = search.export_model()
@@ -204,7 +204,7 @@ model = search.export_model()
 
 然后我们可以总结模型的结构，看看选择了什么。
 
-```
+```py
 ...
 # summarize the loaded model
 model.summary()
@@ -212,7 +212,7 @@ model.summary()
 
 最后，我们可以将模型保存到文件中以备后用，可以使用 TensorFlow [load_model()函数](https://www.tensorflow.org/api_docs/python/tf/keras/models/load_model)进行加载。
 
-```
+```py
 ...
 # save the best performing model to file
 model.save('model_sonar.h5')
@@ -220,7 +220,7 @@ model.save('model_sonar.h5')
 
 将这些联系在一起，下面列出了应用 AutoKeras 为声纳数据集找到有效神经网络模型的完整示例。
 
-```
+```py
 # use autokeras to find a model for the sonar dataset
 from numpy import asarray
 from pandas import read_csv
@@ -265,7 +265,7 @@ model.save('model_sonar.h5')
 
 模型和结果都保存在当前工作目录中名为“*结构化数据分类器*的文件夹中。
 
-```
+```py
 ...
 [Trial complete]
 [Trial summary]
@@ -295,7 +295,7 @@ model.save('model_sonar.h5')
 
 在这种情况下，我们可以看到该模型实现了大约 82.6%的分类准确率。
 
-```
+```py
 Accuracy: 0.826
 ```
 
@@ -303,7 +303,7 @@ Accuracy: 0.826
 
 我们可以看到一个模型有两个隐藏层，分别是 drop 和 ReLU 激活。
 
-```
+```py
 Model: "model"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
@@ -351,7 +351,7 @@ AutoKeras 也可以用于回归任务，即预测数值的预测建模问题。
 
 下面列出了完整的示例。
 
-```
+```py
 # load the sonar dataset
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
@@ -371,7 +371,7 @@ print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
 
 运行该示例加载数据集，确认行数和列数，然后将数据集拆分为训练集和测试集。
 
-```
+```py
 (63, 2)
 (63, 1) (63,)
 (42, 1) (21, 1) (42,) (21,)
@@ -379,7 +379,7 @@ print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
 
 可以使用 [StructuredDataRegressor](https://autokeras.com/structured_data_regressor/) 类将自动 Keras 应用于回归任务，并为要试用的模型数量进行配置。
 
-```
+```py
 ...
 # define the search
 search = StructuredDataRegressor(max_trials=15, loss='mean_absolute_error')
@@ -387,7 +387,7 @@ search = StructuredDataRegressor(max_trials=15, loss='mean_absolute_error')
 
 然后可以运行搜索并保存最佳模型，就像在分类案例中一样。
 
-```
+```py
 ...
 # define the search
 search = StructuredDataRegressor(max_trials=15, loss='mean_absolute_error')
@@ -397,7 +397,7 @@ search.fit(x=X_train, y=y_train, verbose=0)
 
 然后，我们可以使用性能最好的模型，并在等待数据集上对其进行评估，对新数据进行预测，并总结其结构。
 
-```
+```py
 ...
 # evaluate the model
 mae, _ = search.evaluate(X_test, y_test, verbose=0)
@@ -416,7 +416,7 @@ model.save('model_insurance.h5')
 
 将这些联系在一起，下面列出了使用 AutoKeras 为汽车保险数据集发现有效神经网络模型的完整示例。
 
-```
+```py
 # use autokeras to find a model for the insurance dataset
 from numpy import asarray
 from pandas import read_csv
@@ -457,7 +457,7 @@ model.save('model_insurance.h5')
 
 模型和结果都保存在当前工作目录中名为“*structured _ data _ reversor*”的文件夹中。
 
-```
+```py
 ...
 [Trial summary]
 |-Trial ID: ea28b767d13e958c3ace7e54e7cb5a14
@@ -486,7 +486,7 @@ model.save('model_insurance.h5')
 
 在这种情况下，我们可以看到模型实现了大约 24 的 MAE。
 
-```
+```py
 MAE: 24.916
 ```
 
@@ -494,7 +494,7 @@ MAE: 24.916
 
 我们可以看到一个带有两个隐藏层的模型，带有 ReLU 激活。
 
-```
+```py
 Model: "model"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #

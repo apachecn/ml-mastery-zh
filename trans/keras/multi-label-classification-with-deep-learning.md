@@ -51,7 +51,7 @@
 
 下面列出了创建和总结合成多标签分类数据集的完整示例。
 
-```
+```py
 # example of a multi-label classification task
 from sklearn.datasets import make_multilabel_classification
 # define dataset
@@ -69,7 +69,7 @@ for i in range(10):
 
 对前 10 行输入和输出进行了汇总，我们可以看到该数据集的所有输入都是数字，并且输出类标签在三个类标签中各有 0 或 1 个值。
 
-```
+```py
 (1000, 10) (1000, 3)
 
 [ 3\.  3\.  6\.  7\.  8\.  2\. 11\. 11\.  1\.  3.] [1 1 0]
@@ -112,7 +112,7 @@ for i in range(10):
 
 下面列出了多标签分类任务的网络定义。
 
-```
+```py
 # define the model
 model = Sequential()
 model.add(Dense(20, input_dim=n_inputs, kernel_initializer='he_uniform', activation='relu'))
@@ -122,7 +122,7 @@ model.compile(loss='binary_crossentropy', optimizer='adam')
 
 您可能希望将此模型用于您自己的多标签分类任务；因此，我们可以创建一个函数来定义和返回模型，其中输入和输出变量的数量作为参数提供。
 
-```
+```py
 # get the model
 def get_model(n_inputs, n_outputs):
 	model = Sequential()
@@ -146,7 +146,7 @@ def get_model(n_inputs, n_outputs):
 
 默认情况下，MLP 模型将预测每个类别标签的概率。这意味着它将为每个样本预测三种概率。通过将这些值舍入为 0 或 1，可以将其转换为清晰的类标签。然后，我们可以计算清晰类别标签的分类精度。
 
-```
+```py
 ...
 # make a prediction on the test set
 yhat = model.predict(X_test)
@@ -160,7 +160,7 @@ acc = accuracy_score(y_test, yhat)
 
 下面的 *evaluate_model()* 函数获取数据集，对模型进行评估，并返回评估分数列表，在本例中是准确性分数。
 
-```
+```py
 # evaluate a model using repeated k-fold cross-validation
 def evaluate_model(X, y):
 	results = list()
@@ -192,7 +192,7 @@ def evaluate_model(X, y):
 
 将这些联系在一起，完整的示例如下所示。
 
-```
+```py
 # mlp for multi-label classification
 from numpy import mean
 from numpy import std
@@ -257,7 +257,7 @@ print('Accuracy: %.3f (%.3f)' % (mean(results), std(results)))
 
 您可以使用此代码作为模板，在自己的多标签分类任务中评估 MLP 模型。模型中节点和图层的数量可以根据数据集的复杂性轻松调整和定制。
 
-```
+```py
 ...
 >0.780
 >0.820
@@ -271,7 +271,7 @@ Accuracy: 0.812 (0.032)
 
 下面的示例演示了这一点，首先在整个多标签分类数据集上拟合 MLP 模型，然后在保存的模型上调用 *predict()* 函数，以便对新的数据行进行预测。
 
-```
+```py
 # use mlp for prediction on multi-label classification
 from numpy import asarray
 from sklearn.datasets import make_multilabel_classification
@@ -307,7 +307,7 @@ print('Predicted: %s' % yhat[0])
 
 运行该示例符合模型，并对新行进行预测。正如预期的那样，预测包含多标签分类任务所需的三个输出变量:每个类别标签的概率。
 
-```
+```py
 Predicted: [0.9998627 0.9849341 0.00208042]
 ```
 
