@@ -1,4 +1,4 @@
-# 基于 Python 的半径邻居分类器算法
+# 使用 Python 的半径邻居分类器算法
 
 > 原文：<https://machinelearningmastery.com/radius-neighbors-classifier-algorithm-with-python/>
 
@@ -13,7 +13,7 @@
 完成本教程后，您将知道:
 
 *   最近半径近邻分类器是 k 近邻分类算法的简单扩展。
-*   如何使用带有 Scikit-Learn 的半径邻居分类器模型进行拟合、评估和预测。
+*   如何使用带有 Sklearn 的半径邻居分类器模型进行拟合、评估和预测。
 *   如何在给定数据集上调整半径邻居分类器算法的超参数。
 
 我们开始吧。
@@ -28,7 +28,7 @@
 本教程分为三个部分；它们是:
 
 1.  半径邻居分类器
-2.  基于 Scikit-Learn 的半径邻居分类器
+2.  基于 Sklearn 的半径邻居分类器
 3.  调整半径邻居分类器超参数
 
 ## 半径邻居分类器
@@ -55,9 +55,9 @@
 
 假设半径在要素空间的所有维度上都是固定的，随着输入要素数量的增加，半径的有效性会降低，这将导致要素空间中的示例越来越分散。这个属性被称为维度的[诅咒](https://en.wikipedia.org/wiki/Curse_of_dimensionality)。
 
-## 基于 Scikit-Learn 的半径邻居分类器
+## 基于 Sklearn 的半径邻居分类器
 
-半径邻居分类器可通过[半径邻居分类器类](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.RadiusNeighborsClassifier.html)在 scikit-learn Python 机器学习库中获得。
+半径邻居分类器可通过[半径邻居分类器类](https://Sklearn.org/stable/modules/generated/sklearn.neighbors.RadiusNeighborsClassifier.html)在 Sklearn Python 机器学习库中获得。
 
 该类允许您通过“*半径*”参数指定进行预测时使用的半径大小，该参数默认为 1.0。
 
@@ -79,7 +79,7 @@ model = RadiusNeighborsClassifier(weights='uniform')
 
 首先，让我们定义一个综合分类数据集。
 
-我们将使用 [make_classification()函数](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)创建一个包含 1000 个示例的数据集，每个示例有 20 个输入变量。
+我们将使用 [make_classification()函数](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_classification.html)创建一个包含 1000 个示例的数据集，每个示例有 20 个输入变量。
 
 下面的示例创建并汇总了数据集。
 
@@ -98,7 +98,7 @@ print(X.shape, y.shape)
 (1000, 20) (1000,)
 ```
 
-我们可以通过[repeated stratifiedfold 类](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html)使用重复的分层 k 重交叉验证来拟合和评估半径邻居分类器模型。我们将在测试装具中使用 10 次折叠和三次重复。
+我们可以通过[repeated stratifiedfold 类](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html)使用重复的分层 k 折交叉验证来拟合和评估半径邻居分类器模型。我们将在测试装具中使用 10 次折叠和三次重复。
 
 我们将使用默认配置。
 
@@ -110,7 +110,7 @@ model = RadiusNeighborsClassifier()
 
 在准备和使用模型之前，对特征空间进行缩放是很重要的。
 
-我们可以通过使用[最小最大缩放器](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)来归一化输入特征，并使用[管道](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html)来首先应用缩放，然后使用模型。
+我们可以通过使用[最小最大缩放器](https://Sklearn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)来归一化输入特征，并使用[管道](https://Sklearn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html)来首先应用缩放，然后使用模型。
 
 ```py
 ...
@@ -209,7 +209,7 @@ grid['model__radius'] = arange(0.8, 1.5, 0.01)
 
 请注意，我们正在*管线*内对*半径邻居分类器*的“*半径*超参数进行网格搜索，其中模型名为“*模型*”，因此半径参数通过带有双下划线( *__* )分隔符的*模型- >半径*访问，例如“*模型 __ 半径*”。
 
-下面的例子使用 [GridSearchCV 类](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)和我们定义的值网格来演示这一点。
+下面的例子使用 [GridSearchCV 类](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)和我们定义的值网格来演示这一点。
 
 ```py
 # grid search radius for radius neighbors classifier
@@ -323,10 +323,10 @@ Config: {'model__weights': 'distance'}
 
 ### 蜜蜂
 
-*   [最近邻居，sci kit-学习用户指南](https://scikit-learn.org/stable/modules/neighbors.html)。
-*   [sklearn . neights . radiusNeightosclassifier API](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.RadiusNeighborsClassifier.html)。
-*   [sklearn . pipeline . pipeline API](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html)。
-*   [硬化。预处理。MinMaxScaler API](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html) 。
+*   [最近邻居，sci kit-学习用户指南](https://Sklearn.org/stable/modules/neighbors.html)。
+*   [sklearn . neights . radiusNeightosclassifier API](https://Sklearn.org/stable/modules/generated/sklearn.neighbors.RadiusNeighborsClassifier.html)。
+*   [sklearn . pipeline . pipeline API](https://Sklearn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html)。
+*   [硬化。预处理。MinMaxScaler API](https://Sklearn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html) 。
 
 ### 文章
 
@@ -340,7 +340,7 @@ Config: {'model__weights': 'distance'}
 具体来说，您了解到:
 
 *   最近半径近邻分类器是 k 近邻分类算法的简单扩展。
-*   如何使用带有 Scikit-Learn 的半径邻居分类器模型进行拟合、评估和预测。
+*   如何使用带有 Sklearn 的半径邻居分类器模型进行拟合、评估和预测。
 *   如何在给定数据集上调整半径邻居分类器算法的超参数。
 
 **你有什么问题吗？**

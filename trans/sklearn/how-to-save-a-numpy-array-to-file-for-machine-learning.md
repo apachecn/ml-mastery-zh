@@ -1,4 +1,4 @@
-# 如何将 NumPy 数组保存到文件中进行机器学习
+# 如何为机器学习将 NumPy 数组保存到文件中
 
 > 原文：<https://machinelearningmastery.com/how-to-save-a-numpy-array-to-file-for-machine-learning/>
 
@@ -6,7 +6,7 @@
 
 用 Python 开发机器学习模型经常需要使用 [NumPy 数组](https://machinelearningmastery.com/gentle-introduction-n-dimensional-arrays-python-numpy/)。
 
-NumPy 数组是 Python 中处理数据的高效数据结构，像 scikit-learn 库中的机器学习模型，以及像 Keras 库中的深度学习模型，以 NumPy 数组的格式期待输入数据，以 NumPy 数组的格式进行预测。
+NumPy 数组是 Python 中处理数据的高效数据结构，像 Sklearn 库中的机器学习模型，以及像 Keras 库中的深度学习模型，以 NumPy 数组的格式期待输入数据，以 NumPy 数组的格式进行预测。
 
 因此，通常需要将 NumPy 数组保存到文件中。
 

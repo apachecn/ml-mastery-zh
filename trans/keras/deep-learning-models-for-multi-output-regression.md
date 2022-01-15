@@ -43,7 +43,7 @@
 
 在多输出回归中，每个输入样本需要两个或多个输出，并且同时需要输出。假设输出是输入的函数。
 
-我们可以使用 scikit-learn 库中的[make _ revolution()函数](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_regression.html)创建一个合成的多输出回归数据集。
+我们可以使用 Sklearn 库中的[make _ revolution()函数](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_regression.html)创建一个合成的多输出回归数据集。
 
 我们的数据集将有 1000 个样本，包含 10 个输入要素，其中 5 个与输出相关，5 个是冗余的。对于每个样本，数据集将有三个数字输出。
 
@@ -80,7 +80,7 @@ print(X.shape, y.shape)
 
 我们可以使用 Keras 深度学习库来演示这一点。
 
-我们将为上一节中定义的多输出回归任务定义一个多层感知器(MLP)模型。
+我们将为上一节中定义的多输出回归任务定义一个多层感知机(MLP)模型。
 
 每个样本有 10 个输入和 3 个输出，因此，网络需要一个输入层，它期望通过第一个隐藏层中的“ *input_dim* ”参数和输出层中的 3 个节点指定 10 个输入。
 
@@ -275,9 +275,9 @@ Predicted: [-152.22713 -78.04891 -91.97194]
 
 如果您想更深入地了解这个主题，本节将提供更多资源。
 
-*   [sklearn . datasets . make _ revolution API](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_regression.html)。
+*   [sklearn . datasets . make _ revolution API](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_regression.html)。
 *   [硬主页](https://keras.io/) 。
-*   [sklearn.model_selection。重复应用编程接口](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html)。
+*   [sklearn.model_selection。重复应用编程接口](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html)。
 
 ## 摘要
 

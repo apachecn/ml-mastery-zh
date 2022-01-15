@@ -89,9 +89,9 @@
 *   均方根误差(RMSE)。
 *   平均绝对误差
 
-回归还有许多其他的度量标准，尽管这些是最常用的。您可以在这里看到 scikit-learn Python 机器学习库支持的回归度量的完整列表:
+回归还有许多其他的度量标准，尽管这些是最常用的。您可以在这里看到 Sklearn Python 机器学习库支持的回归度量的完整列表:
 
-*   [Scikit-Learn API:回归度量](https://scikit-learn.org/stable/modules/classes.html#regression-metrics)。
+*   [Sklearn API:回归度量](https://Sklearn.org/stable/modules/classes.html#regression-metrics)。
 
 在下一节中，让我们依次仔细看看每一个。
 
@@ -182,7 +182,7 @@ pyplot.show()
 
 例如，如果你的目标值代表“*美元*，那么均线将是“*平方美元*这可能会让利益相关者感到困惑；因此，在报告结果时，通常使用均方根误差来代替(*将在下一节*中讨论)。
 
-可以使用 scikit-learn 库中的[均方误差()函数](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html)计算预期值和预测值之间的均方误差。
+可以使用 Sklearn 库中的[均方误差()函数](https://Sklearn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html)计算预期值和预测值之间的均方误差。
 
 该函数采用一维数组或期望值和预测值的列表，并返回均方误差值。
 
@@ -245,7 +245,7 @@ RMSE 可以计算如下:
 
 你可能还记得平方根是平方运算的倒数。MSE 使用平方运算来移除每个误差值的符号，并惩罚较大的误差。平方根反转这个操作，虽然它确保结果保持正。
 
-可以使用 scikit-learn 库中的[均方误差()函数](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html)计算预期值和预测值之间的均方根误差。
+可以使用 Sklearn 库中的[均方误差()函数](https://Sklearn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html)计算预期值和预测值之间的均方根误差。
 
 默认情况下，该函数计算均方误差，但我们可以将其配置为通过将“*平方*”参数设置为*假*来计算均方误差的平方根。
 
@@ -363,7 +363,7 @@ pyplot.show()
 
 预测绝对误差增加的线图
 
-可以使用 scikit-learn 库中的 [mean_absolute_error()函数](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_absolute_error.html)来计算预期值和预测值之间的平均绝对误差。
+可以使用 Sklearn 库中的 [mean_absolute_error()函数](https://Sklearn.org/stable/modules/generated/sklearn.metrics.mean_absolute_error.html)来计算预期值和预测值之间的平均绝对误差。
 
 该函数采用一维数组或期望值和预测值的列表，并返回平均绝对误差值。
 
@@ -413,10 +413,10 @@ print(errors)
 
 ### 蜜蜂
 
-*   [Scikit-Learn API:回归度量](https://scikit-learn.org/stable/modules/classes.html#regression-metrics)。
-*   [sci kit-学习用户指南第 3.3.4 节。回归指标](https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics)。
-*   [sklearn . metrics . mean _ squared _ error API](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html)。
-*   [均值 _ 绝对 _ 误差 API](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_absolute_error.html) 。
+*   [Sklearn API:回归度量](https://Sklearn.org/stable/modules/classes.html#regression-metrics)。
+*   [sci kit-学习用户指南第 3.3.4 节。回归指标](https://Sklearn.org/stable/modules/model_evaluation.html#regression-metrics)。
+*   [sklearn . metrics . mean _ squared _ error API](https://Sklearn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html)。
+*   [均值 _ 绝对 _ 误差 API](https://Sklearn.org/stable/modules/generated/sklearn.metrics.mean_absolute_error.html) 。
 
 ### 文章
 

@@ -134,7 +134,7 @@ def load_dataset(filename):
 
 加载后，我们可以将数据分成训练集和测试集，这样我们就可以拟合和评估深度学习模型。
 
-我们将使用 scikit-learn 中的 [train_test_split()函数](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)，使用 67%的数据进行训练，33%的数据进行测试。
+我们将使用 Sklearn 中的 [train_test_split()函数](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)，使用 67%的数据进行训练，33%的数据进行测试。
 
 ```py
 ...
@@ -198,7 +198,7 @@ Test (95, 9) (95, 1)
 
 在这种情况下，我们将忽略任何可能存在的序数关系，并假设所有变量都是分类的。使用序数编码仍然是有帮助的，至少作为其他编码方案的参考点。
 
-我们可以使用 scikit-learn 中的[序数编码器()将每个变量编码为整数。这是一个灵活的类，如果已知任何这样的顺序，它确实允许将类别的顺序指定为参数。](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OrdinalEncoder.html)
+我们可以使用 Sklearn 中的[序数编码器()将每个变量编码为整数。这是一个灵活的类，如果已知任何这样的顺序，它确实允许将类别的顺序指定为参数。](https://Sklearn.org/stable/modules/generated/sklearn.preprocessing.OrdinalEncoder.html)
 
 **注**:我会留给你一个练习，更新下面的例子，尝试为那些具有自然排序的变量指定顺序，看看是否对模型表现有影响。
 
@@ -220,7 +220,7 @@ def prepare_inputs(X_train, X_test):
 
 这是一个二元分类问题，所以我们需要将两个类标签映射为 0 和 1。
 
-这是一种序数编码，scikit-learn 提供了专门为此目的设计的 [LabelEncoder](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html) 类。虽然*标签编码器*是为编码单个变量而设计的，但是我们也可以很容易地使用[普通编码器](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OrdinalEncoder.html)来获得同样的结果。
+这是一种序数编码，Sklearn 提供了专门为此目的设计的 [LabelEncoder](https://Sklearn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html) 类。虽然*标签编码器*是为编码单个变量而设计的，但是我们也可以很容易地使用[普通编码器](https://Sklearn.org/stable/modules/generated/sklearn.preprocessing.OrdinalEncoder.html)来获得同样的结果。
 
 *prepare_targets()* 整数编码列车和测试集的输出数据。
 
@@ -246,7 +246,7 @@ y_train_enc, y_test_enc = prepare_targets(y_train, y_test)
 
 我们现在可以定义一个神经网络模型。
 
-我们将在所有这些示例中使用相同的通用模型。具体来说，就是一个多层感知器(MLP)神经网络，其中一个隐藏层有 10 个节点，输出层有一个节点用于进行二进制分类。
+我们将在所有这些示例中使用相同的通用模型。具体来说，就是一个多层感知机(MLP)神经网络，其中一个隐藏层有 10 个节点，输出层有一个节点用于进行二进制分类。
 
 下面的代码没有涉及太多细节，而是定义了模型，将其放在训练数据集上，然后在测试数据集上对其进行评估。
 
@@ -378,7 +378,7 @@ Accuracy: 70.53
 
 然后，数据集中的每个标签将被替换为一个向量(一列变成三列)。这是对所有类别变量进行的，因此在乳腺癌数据集的情况下，我们的九个输入变量或列变为 43。
 
-scikit-learn 库提供了 [OneHotEncoder](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html) 来自动对一个或多个变量进行热编码。
+Sklearn 库提供了 [OneHotEncoder](https://Sklearn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html) 来自动对一个或多个变量进行热编码。
 
 下面的 *prepare_inputs()* 函数为上一节中的示例提供了一个插入替换函数。它没有使用 T2 普通编码器，而是使用了 T4 统一编码器。
 
@@ -758,8 +758,8 @@ Accuracy: 72.63
 
 ### 应用程序接口
 
-*   [sklearn . model _ selection . train _ test _ split API](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)。
-*   [硬化。预处理。序编码器 API](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OrdinalEncoder.html) 。
+*   [sklearn . model _ selection . train _ test _ split API](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)。
+*   [硬化。预处理。序编码器 API](https://Sklearn.org/stable/modules/generated/sklearn.preprocessing.OrdinalEncoder.html) 。
 *   硬化。预处理。标签编码 API 。
 *   [嵌入硬 API](https://keras.io/layers/embeddings/) 。
 *   [可视化 Keras API](https://keras.io/visualization/) 。

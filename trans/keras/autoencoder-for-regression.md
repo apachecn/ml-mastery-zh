@@ -65,7 +65,7 @@
 
 首先，让我们定义一个回归预测建模问题。
 
-我们将使用[make _ revolution()sci kit-learn 函数](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_regression.html)定义一个包含 100 个输入特征(列)和 1000 个示例(行)的合成回归任务。重要的是，我们将以这样的方式定义问题，即大多数输入变量是冗余的(100%或 90%中的 90%)，允许自编码器稍后学习有用的压缩表示。
+我们将使用[make _ revolution()sci kit-learn 函数](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_regression.html)定义一个包含 100 个输入特征(列)和 1000 个示例(行)的合成回归任务。重要的是，我们将以这样的方式定义问题，即大多数输入变量是冗余的(100%或 90%中的 90%)，允许自编码器稍后学习有用的压缩表示。
 
 下面的示例定义了数据集并总结了它的形状。
 
@@ -84,7 +84,7 @@ print(X.shape, y.shape)
 (1000, 100) (1000,)
 ```
 
-接下来，我们将开发一个多层感知器(MLP)自编码器模型。
+接下来，我们将开发一个多层感知机(MLP)自编码器模型。
 
 该模型将采用所有输入列，然后输出相同的值。它将学会精确地重新创建输入模式。
 
@@ -477,8 +477,8 @@ print(score)
 
 ### 蜜蜂
 
-*   [sklearn . datasets . make _ revolution API](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_regression.html)。
-*   [sklearn . model _ selection . train _ test _ split API](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)。
+*   [sklearn . datasets . make _ revolution API](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_regression.html)。
+*   [sklearn . model _ selection . train _ test _ split API](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)。
 
 ### 文章
 

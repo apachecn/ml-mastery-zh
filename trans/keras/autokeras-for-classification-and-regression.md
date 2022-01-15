@@ -94,7 +94,7 @@ Author: Data Analytics at Texas A&M (DATA) Lab, Keras Team
 Author-email: jhfjhfj1@gmail.com
 License: MIT
 Location: ...
-Requires: tensorflow, packaging, pandas, scikit-learn
+Requires: tensorflow, packaging, pandas, Sklearn
 Required-by: 
 ```
 

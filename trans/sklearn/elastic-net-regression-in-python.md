@@ -119,7 +119,7 @@ print(dataframe.head())
 [5 rows x 14 columns]
 ```
 
-scikit-learn Python 机器学习库通过 [ElasticNet 类](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html)提供了弹性网络惩罚回归算法的实现。
+Sklearn Python 机器学习库通过 [ElasticNet 类](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html)提供了弹性网络惩罚回归算法的实现。
 
 令人困惑的是，*α*超参数可以通过控制 l1 和 L2 罚分贡献的“ *l1_ratio* 参数设置，而*λ*超参数可以通过控制两个罚分之和对损失函数贡献的“*α*参数设置。
 
@@ -213,7 +213,7 @@ Predicted: 31.047
 
 一种方法是以 0.1 或 0.01 的间隔网格搜索 0 到 1 之间的 L1 _ ratio 值，以对数-10 的标度网格搜索 1e-5 到 100 之间的 T2α值，并找出最适合数据集的值。
 
-下面的例子使用 [GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) 类和我们定义的值网格来演示这一点。
+下面的例子使用 [GridSearchCV](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) 类和我们定义的值网格来演示这一点。
 
 ```py
 # grid search hyperparameters for the elastic net
@@ -263,7 +263,7 @@ MAE: -3.378
 Config: {'alpha': 0.01, 'l1_ratio': 0.97}
 ```
 
-scikit-learn 库还提供了一个内置的算法版本，可以通过[elastic cnetcv](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNetCV.html)类自动找到好的超参数。
+Sklearn 库还提供了一个内置的算法版本，可以通过[elastic cnetcv](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.ElasticNetCV.html)类自动找到好的超参数。
 
 要使用这个类，首先要对数据集进行拟合，然后用它来进行预测。它会自动找到合适的超参数。
 
@@ -323,8 +323,8 @@ l1_ratio_: 0.470000
 
 ### 蜜蜂
 
-*   [sklearn.linear_model。弹力网 API](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html) 。
-*   [硬化. linear_model .弹性体 CV API](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNetCV.html) 。
+*   [sklearn.linear_model。弹力网 API](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html) 。
+*   [硬化. linear_model .弹性体 CV API](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.ElasticNetCV.html) 。
 
 ### 文章
 

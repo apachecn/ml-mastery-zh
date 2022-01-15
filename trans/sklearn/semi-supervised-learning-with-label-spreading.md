@@ -1,4 +1,4 @@
-# 带标签扩散的半监督学习
+# 使用标签传播的半监督学习
 
 > 原文：<https://machinelearningmastery.com/semi-supervised-learning-with-label-spreading/>
 
@@ -8,7 +8,7 @@
 
 半监督学习的一种流行方法是创建一个连接训练数据集中的示例的图，并通过图的边缘传播已知的标签来标记未标记的示例。这种半监督学习方法的一个例子是用于分类预测建模的**标签传播算法**。
 
-在本教程中，您将发现如何将标签扩散算法应用于半监督学习分类数据集。
+在本教程中，您将发现如何将标签传播算法应用于半监督学习分类数据集。
 
 完成本教程后，您将知道:
 
@@ -29,11 +29,11 @@
 
 1.  标签扩展算法
 2.  半监督分类数据集
-3.  半监督学习中的标签扩散
+3.  半监督学习中的标签传播
 
 ## 标签扩展算法
 
-标签扩散是一种半监督学习算法。
+标签传播是一种半监督学习算法。
 
 该算法是由周等人在 2003 年的论文《具有局部和全局一致性的学习》中提出的
 
@@ -69,7 +69,7 @@
 
 在本节中，我们将为半监督学习定义一个数据集，并在该数据集上建立一个表现基线。
 
-首先，我们可以使用[make _ classion()函数](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)定义一个合成分类数据集。
+首先，我们可以使用[make _ classion()函数](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_classification.html)定义一个合成分类数据集。
 
 我们将用两个类(二进制分类)和两个输入变量以及 1000 个示例来定义数据集。
 
@@ -192,11 +192,11 @@ print('Accuracy: %.3f' % (score*100))
 Accuracy: 84.800
 ```
 
-接下来，让我们探索如何将标签扩散算法应用于数据集。
+接下来，让我们探索如何将标签传播算法应用于数据集。
 
-## 半监督学习中的标签扩散
+## 半监督学习中的标签传播
 
-标签传播算法可通过[标签传播类](https://scikit-learn.org/stable/modules/generated/sklearn.semi_supervised.LabelSpreading.html)在 scikit-learn Python 机器学习库中获得。
+标签传播算法可通过[标签传播类](https://Sklearn.org/stable/modules/generated/sklearn.semi_supervised.LabelSpreading.html)在 Sklearn Python 机器学习库中获得。
 
 通过调用 *fit()* 函数，该模型可以像任何其他分类模型一样进行拟合，并通过 *predict()* 函数用于对新数据进行预测。
 
@@ -222,7 +222,7 @@ yhat = model.predict(...)
 tran_labels = model.transduction_
 ```
 
-现在我们已经熟悉了如何在 scikit-learn 中使用标签传播算法，让我们看看如何将其应用于我们的半监督学习数据集。
+现在我们已经熟悉了如何在 Sklearn 中使用标签传播算法，让我们看看如何将其应用于我们的半监督学习数据集。
 
 首先，我们必须准备训练数据集。
 
@@ -272,7 +272,7 @@ score = accuracy_score(y_test, yhat)
 print('Accuracy: %.3f' % (score*100))
 ```
 
-将这些联系在一起，下面列出了在半监督学习数据集上评估标签扩散的完整示例。
+将这些联系在一起，下面列出了在半监督学习数据集上评估标签传播的完整示例。
 
 ```py
 # evaluate label spreading on the semi-supervised learning dataset
@@ -413,11 +413,11 @@ Accuracy: 85.800
 
 ### 蜜蜂
 
-*   [sklearn.semi_supervised。标签预发布 API](https://scikit-learn.org/stable/modules/generated/sklearn.semi_supervised.LabelSpreading.html) 。
-*   [第 1.14 节。半监督，Scikit-学习用户指南](https://scikit-learn.org/stable/modules/label_propagation.html)。
-*   [sklearn . model _ selection . train _ test _ split API](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)。
-*   [sklearn.linear_model。物流配送应用编程接口](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)。
-*   [sklearn . datasets . make _ classification API](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)。
+*   [sklearn.semi_supervised。标签预发布 API](https://Sklearn.org/stable/modules/generated/sklearn.semi_supervised.LabelSpreading.html) 。
+*   [第 1.14 节。半监督，Scikit-学习用户指南](https://Sklearn.org/stable/modules/label_propagation.html)。
+*   [sklearn . model _ selection . train _ test _ split API](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)。
+*   [sklearn.linear_model。物流配送应用编程接口](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)。
+*   [sklearn . datasets . make _ classification API](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_classification.html)。
 
 ### 文章
 
@@ -425,7 +425,7 @@ Accuracy: 85.800
 
 ## 摘要
 
-在本教程中，您发现了如何将标签扩散算法应用于半监督学习分类数据集。
+在本教程中，您发现了如何将标签传播算法应用于半监督学习分类数据集。
 
 具体来说，您了解到:
 

@@ -106,7 +106,7 @@ XGBoost 在分类和回归预测建模问题上主导结构化或表格数据集
 
 在本教程中，我们将使用合成二进制(两类)分类数据集。
 
-[make _ classification()sci kit-learn 功能](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)可用于创建合成分类数据集。在这种情况下，我们将使用 50 个输入特征(列)并生成 10，000 个样本(行)。伪随机数生成器的种子是固定的，以确保每次生成样本时使用相同的基数“*问题*”。
+[make _ classification()sci kit-learn 功能](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_classification.html)可用于创建合成分类数据集。在这种情况下，我们将使用 50 个输入特征(列)并生成 10，000 个样本(行)。伪随机数生成器的种子是固定的，以确保每次生成样本时使用相同的基数“*问题*”。
 
 下面的示例生成了合成分类数据集，并总结了生成数据的形状。
 

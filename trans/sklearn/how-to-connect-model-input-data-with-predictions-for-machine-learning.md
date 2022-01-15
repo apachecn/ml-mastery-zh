@@ -4,7 +4,7 @@
 
 最后更新于 2020 年 8 月 19 日
 
-如今，使用 scikit-learn 这样的库，将模型拟合到训练数据集非常容易。
+如今，使用 Sklearn 这样的库，将模型拟合到训练数据集非常容易。
 
 只需几行代码，就可以在数据集上拟合和评估模型。太容易了，都成问题了。
 
@@ -28,7 +28,7 @@
 
 我们开始吧。
 
-*   **2020 年 1 月更新**:针对 scikit-learn v0.22 API 的变化进行了更新。
+*   **2020 年 1 月更新**:针对 Sklearn v0.22 API 的变化进行了更新。
 
 ![How to Connect Model Input Data With Predictions for Machine Learning](img/e8acc6b3f758c6c5c194e7b0bf251b3a.png)
 
@@ -54,7 +54,7 @@
 *   **输入**:两个数值输入变量:
 *   **输出**:类别标签为 0 或 1。
 
-我们可以使用 [make_blobs() scikit-learn 函数](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_blobs.html)创建这个包含 1000 个示例的数据集。
+我们可以使用 [make_blobs() Sklearn 函数](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_blobs.html)创建这个包含 1000 个示例的数据集。
 
 下面的示例为输入( *X* )和输出( *y* )创建了具有独立数组的数据集。
 
@@ -85,7 +85,7 @@ print(X.shape, y.shape)
 
 在这种情况下，由于是两类问题，我们将尝试逻辑回归分类算法。
 
-这可以通过 scikit-learn 中的[物流配送类](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)来实现。
+这可以通过 Sklearn 中的[物流配送类](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)来实现。
 
 首先，必须用我们需要的任何特定配置来定义模型。在这种情况下，我们将使用高效的“ *lbfgs* ”求解器。
 
@@ -269,13 +269,13 @@ for i in range(10):
 ### 邮件
 
 *   [你的第一个 Python 机器学习项目循序渐进](https://machinelearningmastery.com/machine-learning-in-python-step-by-step/)
-*   [如何使用 scikit 进行预测-学习](https://machinelearningmastery.com/make-predictions-scikit-learn/)
+*   [如何使用 scikit 进行预测-学习](https://machinelearningmastery.com/make-predictions-Sklearn/)
 
 ### 蜜蜂
 
-*   [sklearn . dataset . make _ blobs API](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_blobs.html)
-*   [sklearn . metrics . accuracy _ score API](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html)
-*   [sklearn.linear_model。物流配送应用编程接口](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
+*   [sklearn . dataset . make _ blobs API](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_blobs.html)
+*   [sklearn . metrics . accuracy _ score API](https://Sklearn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html)
+*   [sklearn.linear_model。物流配送应用编程接口](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
 
 ## 摘要
 

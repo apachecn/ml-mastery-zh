@@ -111,7 +111,7 @@ else:
 
 在本节中，让我们比较两种机器学习算法在二进制分类任务上的表现，然后检查观察到的差异是否具有统计学意义。
 
-首先，我们可以使用 [make_classification()函数](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)创建一个包含 1000 个样本和 20 个输入变量的合成数据集。
+首先，我们可以使用 [make_classification()函数](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_classification.html)创建一个包含 1000 个样本和 20 个输入变量的合成数据集。
 
 下面的示例创建数据集并总结其形状。
 

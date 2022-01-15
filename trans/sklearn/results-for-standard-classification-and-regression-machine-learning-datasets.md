@@ -79,7 +79,7 @@
 2.  数据集很小。
 3.  数据集是**理解的**。
 
-**真实数据集**与[虚构数据集](https://machinelearningmastery.com/generate-test-datasets-python-scikit-learn/)相比非常有用，因为它们杂乱无章。可能存在测量误差、缺失值、错误标记的示例等等。这些问题中的一些或全部必须被搜索和解决，并且是我们在自己的项目中可能遇到的一些属性。
+**真实数据集**与[虚构数据集](https://machinelearningmastery.com/generate-test-datasets-python-Sklearn/)相比非常有用，因为它们杂乱无章。可能存在测量误差、缺失值、错误标记的示例等等。这些问题中的一些或全部必须被搜索和解决，并且是我们在自己的项目中可能遇到的一些属性。
 
 **小数据集**与可能有数千兆字节大小的大数据集相比非常有用。小数据集可以很容易地放入内存中，并允许轻松快速地测试和探索许多不同的数据可视化、数据准备和建模算法。测试想法和获得反馈的速度对于初学者来说至关重要，而小数据集恰恰促进了这一点。
 
@@ -160,7 +160,7 @@ dataframe = read_csv('ionosphere.csv', header=None)
 
 使用重复编号作为每个交叉验证拆分的种子，可确保在数据集上评估的每个算法获得相同的数据拆分，从而确保公平的直接比较。
 
-使用 scikit-learn Python 机器学习库，下面的示例可用于评估给定的模型(或 [Pipeline](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html) )。[repeated stratifiedfold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html)类定义了用于分类的折叠和重复次数， [cross_val_score()函数](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)定义了分数并执行评估，返回一个分数列表，从中可以计算出平均值和标准偏差。
+使用 Sklearn Python 机器学习库，下面的示例可用于评估给定的模型(或 [Pipeline](https://Sklearn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html) )。[repeated stratifiedfold](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html)类定义了用于分类的折叠和重复次数， [cross_val_score()函数](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)定义了分数并执行评估，返回一个分数列表，从中可以计算出平均值和标准偏差。
 
 ```py
 ...
@@ -168,7 +168,7 @@ cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
 scores = cross_val_score(model, X, y, scoring='accuracy', cv=cv, n_jobs=-1, error_score='raise')
 ```
 
-对于回归，我们可以使用 [RepeatedKFold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html) 类和 MAE 分数。
+对于回归，我们可以使用 [RepeatedKFold](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html) 类和 MAE 分数。
 
 ```py
 ...
@@ -191,7 +191,7 @@ scores = cross_val_score(model, X, y, scoring='neg_mean_absolute_error', cv=cv, 
 
 分类是一个预测建模问题，它预测给定一个或多个输入变量的一个标签。
 
-分类任务的基线模型是预测多数标签的模型。这可以在 scikit-learn 中使用带有“*最频繁*策略的 [DummyClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.dummy.DummyClassifier.html) 类来实现；例如:
+分类任务的基线模型是预测多数标签的模型。这可以在 Sklearn 中使用带有“*最频繁*策略的 [DummyClassifier](https://Sklearn.org/stable/modules/generated/sklearn.dummy.DummyClassifier.html) 类来实现；例如:
 
 ```py
 ...
@@ -685,7 +685,7 @@ Good: 0.973 (0.036)
 
 回归是一个预测建模问题，它预测给定一个或多个输入变量的数值。
 
-分类任务的基线模型是预测平均值或中值的模型。这可以在 scikit-learn 中使用[dummymergressor](https://scikit-learn.org/stable/modules/generated/sklearn.dummy.DummyRegressor.html)类使用“*中位数*策略来实现；例如:
+分类任务的基线模型是预测平均值或中值的模型。这可以在 Sklearn 中使用[dummymergressor](https://Sklearn.org/stable/modules/generated/sklearn.dummy.DummyRegressor.html)类使用“*中位数*策略来实现；例如:
 
 ```py
 ...
@@ -937,7 +937,7 @@ Good: 1361.965 (290.236)
 *   [用于分类的数据集:结果比较](http://www.is.umk.pl/~duch/projects/projects/datasets.html)，wodzisaw Duch。
 *   [机器学习，神经和统计分类](https://amzn.to/2lDHgeK)，1994。
 *   [机器学习，神经和统计分类，主页](http://www1.maths.leeds.ac.uk/~charles/statlog/)，1994。
-*   [数据集加载实用程序，scikit-learn](https://scikit-learn.org/stable/datasets/index.html) 。
+*   [数据集加载实用程序，Sklearn](https://Sklearn.org/stable/datasets/index.html) 。
 
 ## 摘要
 

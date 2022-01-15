@@ -1,4 +1,4 @@
-# 用 Python 进行分类的高斯过程
+# Python 中用于分类的高斯过程
 
 > 原文：<https://machinelearningmastery.com/gaussian-processes-for-classification-with-python/>
 
@@ -13,7 +13,7 @@
 完成本教程后，您将知道:
 
 *   高斯过程分类器是一种非参数算法，可以应用于二进制分类任务。
-*   如何使用带有 Scikit-Learn 的高斯过程分类器模型进行拟合、评估和预测。
+*   如何使用带有 Sklearn 的高斯过程分类器模型进行拟合、评估和预测。
 *   如何在给定数据集上调整高斯过程分类器算法的超参数。
 
 我们开始吧。
@@ -28,7 +28,7 @@
 本教程分为三个部分；它们是:
 
 1.  高斯分类过程
-2.  用 Scikit 学习高斯过程
+2.  用 Sklearn高斯过程
 3.  调整高斯过程超参数
 
 ## 高斯分类过程
@@ -71,9 +71,9 @@
 
 *   [机器学习的高斯过程](https://amzn.to/3aY1nsu)，2006。
 
-## 用 Scikit 学习高斯过程
+## 用 Sklearn高斯过程
 
-高斯过程分类器可通过[高斯过程分类器类](https://scikit-learn.org/stable/modules/generated/sklearn.gaussian_process.GaussianProcessClassifier.html)在 scikit-learn Python 机器学习库中获得。
+高斯过程分类器可通过[高斯过程分类器类](https://Sklearn.org/stable/modules/generated/sklearn.gaussian_process.GaussianProcessClassifier.html)在 Sklearn Python 机器学习库中获得。
 
 该类允许您通过“*内核*”参数指定要使用的内核，并默认为 1 *径向基函数(1.0)，例如径向基函数内核。
 
@@ -99,7 +99,7 @@ model = GaussianProcessClassifier(optimizer=None)
 
 首先，让我们定义一个综合分类数据集。
 
-我们将使用 [make_classification()函数](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)创建一个包含 100 个示例的数据集，每个示例有 20 个输入变量。
+我们将使用 [make_classification()函数](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_classification.html)创建一个包含 100 个示例的数据集，每个示例有 20 个输入变量。
 
 下面的示例创建并汇总了数据集。
 
@@ -118,7 +118,7 @@ print(X.shape, y.shape)
 (100, 20) (100,)
 ```
 
-我们可以通过[repeated stratifiedfold 类](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html)使用重复的分层 k 重交叉验证来拟合和评估高斯过程分类器模型。我们将在测试装具中使用 10 次折叠和三次重复。
+我们可以通过[repeated stratifiedfold 类](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html)使用重复的分层 k 折交叉验证来拟合和评估高斯过程分类器模型。我们将在测试装具中使用 10 次折叠和三次重复。
 
 我们将使用默认配置。
 
@@ -196,7 +196,7 @@ Predicted Class: 0
 
 必须为您的特定数据集配置高斯过程分类器方法的超参数。
 
-也许最重要的超参数是通过“*内核*”参数控制的内核。scikit-learn 库提供了许多可以使用的内置内核。
+也许最重要的超参数是通过“*内核*”参数控制的内核。Sklearn 库提供了许多可以使用的内置内核。
 
 也许一些更常见的例子包括:
 
@@ -208,7 +208,7 @@ Predicted Class: 0
 
 您可以在这里了解更多关于该库提供的内核的信息:
 
-*   [高斯过程内核，Scikit-Learn 用户指南](https://scikit-learn.org/stable/modules/gaussian_process.html#kernels-for-gaussian-processes)。
+*   [高斯过程内核，Sklearn 用户指南](https://Sklearn.org/stable/modules/gaussian_process.html#kernels-for-gaussian-processes)。
 
 我们将使用默认参数来评估高斯过程分类器的表现。
 
@@ -219,7 +219,7 @@ grid = dict()
 grid['kernel'] = [1*RBF(), 1*DotProduct(), 1*Matern(), 1*RationalQuadratic(), 1*WhiteKernel()]
 ```
 
-下面的例子使用 [GridSearchCV 类](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)和我们定义的值网格来演示这一点。
+下面的例子使用 [GridSearchCV 类](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)和我们定义的值网格来演示这一点。
 
 ```py
 # grid search kernel for gaussian process classifier
@@ -284,10 +284,10 @@ Best Config: {'kernel': 1**2 * RationalQuadratic(alpha=1, length_scale=1)}
 
 ### 蜜蜂
 
-*   [sklearn.gaussian_process。高斯过程分类器应用编程接口](https://scikit-learn.org/stable/modules/generated/sklearn.gaussian_process.GaussianProcessClassifier.html)。
-*   [sklearn.gaussian_process。高斯处理器回归器应用编程接口](https://scikit-learn.org/stable/modules/generated/sklearn.gaussian_process.GaussianProcessRegressor.html)。
-*   [高斯过程，Scikit-Learn 用户指南](https://scikit-learn.org/stable/modules/gaussian_process.html)。
-*   [高斯过程核应用编程接口](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.gaussian_process)。
+*   [sklearn.gaussian_process。高斯过程分类器应用编程接口](https://Sklearn.org/stable/modules/generated/sklearn.gaussian_process.GaussianProcessClassifier.html)。
+*   [sklearn.gaussian_process。高斯处理器回归器应用编程接口](https://Sklearn.org/stable/modules/generated/sklearn.gaussian_process.GaussianProcessRegressor.html)。
+*   [高斯过程，Sklearn 用户指南](https://Sklearn.org/stable/modules/gaussian_process.html)。
+*   [高斯过程核应用编程接口](https://Sklearn.org/stable/modules/classes.html#module-sklearn.gaussian_process)。
 
 ### 文章
 
@@ -300,7 +300,7 @@ Best Config: {'kernel': 1**2 * RationalQuadratic(alpha=1, length_scale=1)}
 具体来说，您了解到:
 
 *   高斯过程分类器是一种非参数算法，可以应用于二进制分类任务。
-*   如何使用带有 Scikit-Learn 的高斯过程分类器模型进行拟合、评估和预测。
+*   如何使用带有 Sklearn 的高斯过程分类器模型进行拟合、评估和预测。
 *   如何在给定数据集上调整高斯过程分类器算法的超参数。
 
 **你有什么问题吗？**

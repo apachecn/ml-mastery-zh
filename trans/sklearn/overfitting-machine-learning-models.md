@@ -1,4 +1,4 @@
-# 如何在 Scikit-Learn 中识别过拟合机器学习模型
+# 如何在 Sklearn 中识别过拟合机器学习模型
 
 > 原文：<https://machinelearningmastery.com/overfitting-machine-learning-models/>
 
@@ -8,7 +8,7 @@
 
 对学习动态的分析可以帮助识别模型是否过度训练了训练数据集，并且可以建议使用替代配置来获得更好的预测表现。
 
-对于像神经网络这样的增量学习算法来说，对学习动态进行分析是很简单的，但是不太清楚我们如何对其他不增量学习的算法进行同样的分析，例如决策树、k 近邻以及 scikit-learn 机器学习库中的其他通用算法。
+对于像神经网络这样的增量学习算法来说，对学习动态进行分析是很简单的，但是不太清楚我们如何对其他不增量学习的算法进行同样的分析，例如决策树、k 近邻以及 Sklearn 机器学习库中的其他通用算法。
 
 在本教程中，您将发现如何在 Python 中识别机器学习模型的过拟合。
 
@@ -20,7 +20,7 @@
 
 我们开始吧。
 
-![Identify Overfitting Machine Learning Models With Scikit-Learn](img/6f61830d543ac2421dbf57a9ced0b190.png)
+![Identify Overfitting Machine Learning Models With Sklearn](img/6f61830d543ac2421dbf57a9ced0b190.png)
 
 用 Scikit 识别过度拟合的机器学习模型-学习
 图片由[邦妮·莫兰](https://www.flickr.com/photos/icetsarina/24082660497/)提供，保留部分权利。
@@ -31,7 +31,7 @@
 
 1.  什么是过度拟合
 2.  如何执行过度拟合分析
-3.  Scikit-Learn 中的过度拟合示例
+3.  Sklearn 中的过度拟合示例
 4.  科学知识学习中过度拟合的反例
 5.  将过拟合分析与模型选择分开
 
@@ -75,19 +75,19 @@
 
 这对于像神经网络那样增量学习的算法是有意义的，但是其他算法呢？
 
-*   **如何在 scikit-learn 中对机器学习算法进行过拟合分析？**
+*   **如何在 Sklearn 中对机器学习算法进行过拟合分析？**
 
 一种对不增量学习的算法执行过拟合分析的方法是通过改变关键模型超参数并评估每个配置的训练和测试集上的模型表现。
 
 为了说明这一点，让我们在下一节探讨一个分析过拟合模型的案例。
 
-## Scikit-Learn 中的过度拟合示例
+## Sklearn 中的过度拟合示例
 
 在本节中，我们将看一个将机器学习模型过度拟合到训练数据集的例子。
 
 首先，让我们定义一个综合分类数据集。
 
-我们将使用 [make_classification()函数](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)定义一个包含 10，000 个示例(行)和 20 个输入特征(列)的二进制(两类)分类预测问题。
+我们将使用 [make_classification()函数](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_classification.html)定义一个包含 10，000 个示例(行)和 20 个输入特征(列)的二进制(两类)分类预测问题。
 
 下面的示例创建数据集并总结输入和输出组件的形状。
 
@@ -108,7 +108,7 @@ print(X.shape, y.shape)
 
 接下来，我们需要将数据集分割成训练和测试子集。
 
-我们将使用 [train_test_split()函数](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)，将数据分成 70%用于训练模型，30%用于评估模型。
+我们将使用 [train_test_split()函数](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)，将数据分成 70%用于训练模型，30%用于评估模型。
 
 ```py
 # split a dataset into train and test sets
@@ -130,7 +130,7 @@ print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
 
 接下来，我们可以探索一种超拟合训练数据集的机器学习模型。
 
-我们将通过[决策树分类器](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html)使用决策树，并用“*最大深度*参数测试不同的树深度。
+我们将通过[决策树分类器](https://Sklearn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html)使用决策树，并用“*最大深度*参数测试不同的树深度。
 
 浅层决策树(例如，几个级别)通常不会过度拟合，但表现较差(高偏差、低方差)。而深树(例如，许多级别)通常会过度填充并具有良好的表现(低偏差、高方差)。理想的树不是浅到技能低，也不是深到覆盖训练数据集。
 
@@ -274,7 +274,7 @@ pyplot.show()
 
 有时，我们可能会对机器学习模型行为进行分析，并被结果所欺骗。
 
-一个很好的例子是改变 k 近邻算法的邻居数量，我们可以使用 [KNeighborsClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html) 类实现，并通过“*n _ neights*参数进行配置。
+一个很好的例子是改变 k 近邻算法的邻居数量，我们可以使用 [KNeighborsClassifier](https://Sklearn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html) 类实现，并通过“*n _ neights*参数进行配置。
 
 让我们暂时忘记 KNN 是如何工作的。
 
@@ -427,7 +427,7 @@ pyplot.show()
 
 一个推论是，在测试集上表现良好但在训练集上表现不佳的模型是幸运的(例如统计侥幸)，而在训练集上表现良好但在测试集上表现不佳的模型是过度匹配的。
 
-我相信这是初学者的症结所在，他们经常问如何为他们的 scikit-learn 机器学习模型修复过度拟合。
+我相信这是初学者的症结所在，他们经常问如何为他们的 Sklearn 机器学习模型修复过度拟合。
 
 令人担心的是，模型必须在列车和测试集上都表现良好，否则，它们就有麻烦了。
 
@@ -447,10 +447,10 @@ pyplot.show()
 
 ### 蜜蜂
 
-*   [sklearn . datasets . make _ classification API](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)。
-*   [sklearn . model _ selection . train _ test _ split API](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)。
-*   [硬化. tree .决策树分类器 API](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html) 。
-*   [sklearn . neighborsclassifier API](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html)。
+*   [sklearn . datasets . make _ classification API](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_classification.html)。
+*   [sklearn . model _ selection . train _ test _ split API](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)。
+*   [硬化. tree .决策树分类器 API](https://Sklearn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html) 。
+*   [sklearn . neighborsclassifier API](https://Sklearn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html)。
 
 ### 文章
 

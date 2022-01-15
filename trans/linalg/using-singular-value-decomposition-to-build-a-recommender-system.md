@@ -335,7 +335,7 @@ print("Column %d (book id %s) is most similar to column 0 (book id %s)" %
 
 *   [熊猫。数据框架枢轴应用编程接口](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.pivot.html)
 *   num py . linalg . SVD API
-*   [sklearn . declaration .截断的 VD API](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.TruncatedSVD.html)
+*   [sklearn . declaration .截断的 VD API](https://Sklearn.org/stable/modules/generated/sklearn.decomposition.TruncatedSVD.html)
 
 ### 文章
 

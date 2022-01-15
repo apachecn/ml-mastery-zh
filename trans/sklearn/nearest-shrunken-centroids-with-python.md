@@ -1,4 +1,4 @@
-# 蟒蛇最近的缩小形心
+# Python 中的最近收缩质心
 
 > 原文：<https://machinelearningmastery.com/nearest-shrunken-centroids-with-python/>
 
@@ -15,14 +15,14 @@
 完成本教程后，您将知道:
 
 *   最近收缩质心是一种简单的线性机器学习分类算法。
-*   如何使用 Scikit-Learn 的最近收缩质心模型进行拟合、评估和预测。
+*   如何使用 Sklearn 的最近收缩质心模型进行拟合、评估和预测。
 *   如何在给定数据集上调整最近收缩质心算法的超参数。
 
 我们开始吧。
 
 ![Nearest Shrunken Centroids With Python](img/a0b81176fcb54f89f21a5b771d530f04.png)
 
-Giuseppe Milo 拍摄的最近的蟒蛇缩小质心
+Giuseppe Milo 拍摄的最近的Python缩小质心
 照片，保留部分权利。
 
 ## 教程概述
@@ -30,7 +30,7 @@ Giuseppe Milo 拍摄的最近的蟒蛇缩小质心
 本教程分为三个部分；它们是:
 
 1.  最近质心算法
-2.  用 Scikit 学习最近的质心
+2.  用 Sklearn最近的质心
 3.  调谐最近质心超参数
 
 ## 最近质心算法
@@ -61,9 +61,9 @@ A [质心](https://en.wikipedia.org/wiki/Centroid)是数据分布的几何中心
 
 这种方法被称为“*最近的收缩着丝粒*”，最早由[罗伯特·蒂比什拉尼](https://statweb.stanford.edu/~tibs/)等人在他们 2002 年发表的题为“[通过基因表达的收缩着丝粒](https://www.pnas.org/content/99/10/6567.short)诊断多种癌症类型”的论文中描述
 
-## 用 Scikit 学习最近的质心
+## 用 Sklearn最近的质心
 
-最近收缩质心可通过[最近质心类](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestCentroid.html)在 scikit-learn Python 机器学习库中获得。
+最近收缩质心可通过[最近质心类](https://Sklearn.org/stable/modules/generated/sklearn.neighbors.NearestCentroid.html)在 Sklearn Python 机器学习库中获得。
 
 该类允许通过“*度量*”参数配置算法中使用的距离度量，对于欧几里德距离度量，该参数默认为“*欧几里德*”。
 
@@ -87,7 +87,7 @@ model = NearestCentroid(metric='euclidean', shrink_threshold=0.5)
 
 首先，让我们定义一个综合分类数据集。
 
-我们将使用 [make_classification()函数](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)创建一个包含 1000 个示例的数据集，每个示例有 20 个输入变量。
+我们将使用 [make_classification()函数](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_classification.html)创建一个包含 1000 个示例的数据集，每个示例有 20 个输入变量。
 
 该示例创建并汇总数据集。
 
@@ -106,7 +106,7 @@ print(X.shape, y.shape)
 (1000, 20) (1000,)
 ```
 
-我们可以通过[重复分层 k 重交叉验证类](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html)来拟合和评估最近收缩质心模型。我们将在测试装具中使用 10 次折叠和三次重复。
+我们可以通过[重复分层 k 折交叉验证类](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html)来拟合和评估最近收缩质心模型。我们将在测试装具中使用 10 次折叠和三次重复。
 
 我们将使用欧几里德距离和无收缩的默认配置。
 
@@ -186,7 +186,7 @@ Predicted Class: 0
 
 也许最重要的超参数是通过“*收缩阈值*参数控制的收缩。在值网格(如 0.1 或 0.01)上测试 0 到 1 之间的值是一个好主意。
 
-下面的例子使用 [GridSearchCV 类](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)和我们定义的值网格来演示这一点。
+下面的例子使用 [GridSearchCV 类](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)和我们定义的值网格来演示这一点。
 
 ```py
 # grid search shrinkage for nearest centroid
@@ -228,7 +228,7 @@ Config: {'shrink_threshold': 0.53}
 
 可以使用任何内置的距离测量，如下所列:
 
-*   [metrics . pair . pair _ distance API](https://scikit-learn.org/0.15/modules/generated/sklearn.metrics.pairwise.pairwise_distances.html)。
+*   [metrics . pair . pair _ distance API](https://Sklearn.org/0.15/modules/generated/sklearn.metrics.pairwise.pairwise_distances.html)。
 
 常见的距离测量包括:
 
@@ -279,7 +279,7 @@ Mean Accuracy: 0.750
 Config: {'metric': 'manhattan', 'shrink_threshold': 0.0}
 ```
 
-这些实验的一个很好的扩展是将数据规范化或标准化作为建模[管道](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html)的一部分添加到数据中。
+这些实验的一个很好的扩展是将数据规范化或标准化作为建模[管道](https://Sklearn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html)的一部分添加到数据中。
 
 ## 进一步阅读
 
@@ -299,8 +299,8 @@ Config: {'metric': 'manhattan', 'shrink_threshold': 0.0}
 
 ### 蜜蜂
 
-*   [sklearn . neights . nearest 质心 API](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestCentroid.html) 。
-*   [metrics . pair . pair _ distance API](https://scikit-learn.org/0.15/modules/generated/sklearn.metrics.pairwise.pairwise_distances.html)。
+*   [sklearn . neights . nearest 质心 API](https://Sklearn.org/stable/modules/generated/sklearn.neighbors.NearestCentroid.html) 。
+*   [metrics . pair . pair _ distance API](https://Sklearn.org/0.15/modules/generated/sklearn.metrics.pairwise.pairwise_distances.html)。
 
 ### 文章
 
@@ -314,7 +314,7 @@ Config: {'metric': 'manhattan', 'shrink_threshold': 0.0}
 具体来说，您了解到:
 
 *   最近收缩质心是一种简单的线性机器学习分类算法。
-*   如何使用 Scikit-Learn 的最近收缩质心模型进行拟合、评估和预测。
+*   如何使用 Sklearn 的最近收缩质心模型进行拟合、评估和预测。
 *   如何在给定数据集上调整最近收缩质心算法的超参数。
 
 **你有什么问题吗？**

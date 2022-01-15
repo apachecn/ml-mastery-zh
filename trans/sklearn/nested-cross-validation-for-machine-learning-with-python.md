@@ -16,7 +16,7 @@ k-fold 交叉验证程序用于在对训练期间未使用的数据进行预测�
 
 *   超参数优化可以对数据集进行过度优化，并提供不应用于模型选择的模型的乐观评估。
 *   嵌套交叉验证提供了一种减少组合超参数调整和模型选择偏差的方法。
-*   如何在 scikit-learn 中实现嵌套交叉验证来评估调整后的机器学习算法？
+*   如何在 Sklearn 中实现嵌套交叉验证来评估调整后的机器学习算法？
 
 **用我的新书[Python 机器学习精通](https://machinelearningmastery.com/machine-learning-with-python/)启动你的项目**，包括*分步教程*和所有示例的 *Python 源代码*文件。
 
@@ -39,11 +39,11 @@ Python 机器学习的嵌套交叉验证
     2.  你如何设置 k？
     3.  如何配置最终模型？
     4.  内环选择了什么配置？
-3.  使用 Scikit-Learn 进行嵌套交叉验证
+3.  使用 Sklearn 进行嵌套交叉验证
 
 ## 组合超参数调整和模型选择
 
-使用 k 重交叉验证在数据集上评估机器学习模型是很常见的。
+使用 k 折交叉验证在数据集上评估机器学习模型是很常见的。
 
 k 折叠交叉验证过程将有限的数据集分成 k 个不重叠的折叠。k 个折叠中的每一个都有机会用作保留测试集，而所有其他折叠一起用作训练数据集。在 k 个保持测试集上对总共 k 个模型进行拟合和评估，并报告平均表现。
 
@@ -111,7 +111,7 @@ k-fold 交叉验证程序是评估模型表现的有效方法。然而，该过�
 
 有关设置 k 的更多常规帮助，请参见本教程:
 
-*   [如何配置 k 重交叉验证](https://machinelearningmastery.com/how-to-configure-k-fold-cross-validation/)
+*   [如何配置 k 折交叉验证](https://machinelearningmastery.com/how-to-configure-k-fold-cross-validation/)
 
 ### 如何配置最终模型？
 
@@ -142,9 +142,9 @@ k-fold 交叉验证程序是评估模型表现的有效方法。然而，该过�
 
 现在我们已经熟悉了嵌套交叉验证，让我们回顾一下如何在实践中实现它。
 
-## 使用 Scikit-Learn 进行嵌套交叉验证
+## 使用 Sklearn 进行嵌套交叉验证
 
-k-fold 交叉验证程序可通过 [KFold 类](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html)在 scikit-learn Python 机器学习库中获得。
+k-fold 交叉验证程序可通过 [KFold 类](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.KFold.html)在 Sklearn Python 机器学习库中获得。
 
 该类配置了折叠(拆分)的数量，然后调用 *split()* 函数，在数据集中传递。枚举 *split()* 函数的结果，以给出列车的行索引和每个折叠的测试集。
 
@@ -165,7 +165,7 @@ for train_ix, test_ix in cv_outer.split(X):
 
 此类可用于执行嵌套交叉验证过程的外部循环。
 
-scikit-learn 库分别通过[随机化搜索 CV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html) 和 [GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) 类提供交叉验证随机搜索和网格搜索超参数优化。通过创建类并指定模型、数据集、要搜索的超参数和交叉验证过程来配置过程。
+Sklearn 库分别通过[随机化搜索 CV](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html) 和 [GridSearchCV](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) 类提供交叉验证随机搜索和网格搜索超参数优化。通过创建类并指定模型、数据集、要搜索的超参数和交叉验证过程来配置过程。
 
 例如:
 
@@ -206,7 +206,7 @@ best_model = result.best_estimator_
 yhat = best_model.predict(X_test)
 ```
 
-将所有这些联系在一起，我们可以在一个综合分类数据集上演示[随机森林分类器](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)的嵌套交叉验证。
+将所有这些联系在一起，我们可以在一个综合分类数据集上演示[随机森林分类器](https://Sklearn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)的嵌套交叉验证。
 
 我们将保持简单，只调整两个各有三个值的超参数，例如( *3 * 3* ) 9 的组合。我们将在外部交叉验证中使用 10 个折叠，在内部交叉验证中使用 3 个折叠，从而得到( *10 * 9 * 3* )或 270 个模型评估。
 
@@ -283,7 +283,7 @@ print('Accuracy: %.3f (%.3f)' % (mean(outer_results), std(outer_results)))
 Accuracy: 0.927 (0.019)
 ```
 
-我们可以执行相同程序的一个更简单的方法是使用 [cross_val_score()函数](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)，该函数将执行外部交叉验证程序。这可以在已配置的 *GridSearchCV* 上直接执行，它将从外环自动使用测试集上的改装最佳表现模型。
+我们可以执行相同程序的一个更简单的方法是使用 [cross_val_score()函数](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)，该函数将执行外部交叉验证程序。这可以在已配置的 *GridSearchCV* 上直接执行，它将从外环自动使用测试集上的改装最佳表现模型。
 
 这大大减少了执行嵌套交叉验证所需的代码量。
 
@@ -333,7 +333,7 @@ Accuracy: 0.927 (0.019)
 ### 教程
 
 *   [k 倍交叉验证的温和介绍](https://machinelearningmastery.com/k-fold-cross-validation/)
-*   [如何配置 k 重交叉验证](https://machinelearningmastery.com/how-to-configure-k-fold-cross-validation/)
+*   [如何配置 k 折交叉验证](https://machinelearningmastery.com/how-to-configure-k-fold-cross-validation/)
 *   [机器学习建模管道的温和介绍](https://machinelearningmastery.com/machine-learning-modeling-pipelines/)
 
 ### 报纸
@@ -345,12 +345,12 @@ Accuracy: 0.927 (0.019)
 
 ### 蜜蜂
 
-*   [交叉验证:评估评估者绩效，scikit-learn](https://scikit-learn.org/stable/modules/cross_validation.html) 。
-*   [嵌套与非嵌套交叉验证，scikit-learn 示例](https://scikit-learn.org/stable/auto_examples/model_selection/plot_nested_cross_validation_iris.html)。
-*   [sklearn.model_selection。KFold API](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html) 。
-*   [sklearn.model_selection。GridSearchCV API](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) 。
-*   [硬化。一起。随机应变分类 API](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) 。
-*   [sklearn . model _ selection . cross _ val _ score API](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)。
+*   [交叉验证:评估评估者绩效，Sklearn](https://Sklearn.org/stable/modules/cross_validation.html) 。
+*   [嵌套与非嵌套交叉验证，Sklearn 示例](https://Sklearn.org/stable/auto_examples/model_selection/plot_nested_cross_validation_iris.html)。
+*   [sklearn.model_selection。KFold API](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.KFold.html) 。
+*   [sklearn.model_selection。GridSearchCV API](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) 。
+*   [硬化。一起。随机应变分类 API](https://Sklearn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) 。
+*   [sklearn . model _ selection . cross _ val _ score API](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)。
 
 ## 摘要
 
@@ -360,7 +360,7 @@ Accuracy: 0.927 (0.019)
 
 *   超参数优化可以对数据集进行过度优化，并提供不应用于模型选择的模型的乐观评估。
 *   嵌套交叉验证提供了一种减少组合超参数调整和模型选择偏差的方法。
-*   如何在 scikit-learn 中实现嵌套交叉验证来评估调整后的机器学习算法？
+*   如何在 Sklearn 中实现嵌套交叉验证来评估调整后的机器学习算法？
 
 **你有什么问题吗？**
 在下面的评论中提问，我会尽力回答。

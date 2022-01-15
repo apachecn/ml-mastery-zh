@@ -1,4 +1,4 @@
-# Python 中自动机器学习的 Auto-Sklearn
+# Python 中用于自动机器学习的 Auto-Sklearn
 
 > 原文：<https://machinelearningmastery.com/auto-sklearn-for-automated-machine-learning-in-python/>
 
@@ -6,13 +6,13 @@
 
 自动机器学习(AutoML)指的是在很少用户参与的情况下，自动发现用于预测建模任务的表现良好的模型的技术。
 
-**Auto-Sklearn** 是一个用 Python 执行 AutoML 的开源库。它利用流行的 Scikit-Learn 机器学习库进行数据转换和机器学习算法，并使用贝叶斯优化搜索过程来有效地发现给定数据集的最佳模型管道。
+**Auto-Sklearn** 是一个用 Python 执行 AutoML 的开源库。它利用流行的 Sklearn 机器学习库进行数据转换和机器学习算法，并使用贝叶斯优化搜索过程来有效地发现给定数据集的最佳模型管道。
 
-在本教程中，您将发现如何在 Python 中使用 Auto-Sklearn for AutoML 和 Scikit-Learn 机器学习算法。
+在本教程中，您将发现如何在 Python 中使用 Auto-Sklearn for AutoML 和 Sklearn 机器学习算法。
 
 完成本教程后，您将知道:
 
-*   Auto-Sklearn 是一个面向 AutoML 的开源库，具有 scikit-learn 数据准备和机器学习模型。
+*   Auto-Sklearn 是一个面向 AutoML 的开源库，具有 Sklearn 数据准备和机器学习模型。
 *   如何使用 Auto-Sklearn 为分类任务自动发现表现最好的模型。
 *   如何使用 Auto-Sklearn 为回归任务自动发现表现最好的模型。
 
@@ -38,11 +38,11 @@ Python 中自动机器学习的 auto-Sklearn
 
 AutoML 通常涉及使用复杂的优化算法，如[贝叶斯优化](https://machinelearningmastery.com/what-is-bayesian-optimization/)，以有效地导航可能的模型和模型配置的空间，并快速发现什么适合给定的预测建模任务。它允许非专家的机器学习从业者快速而容易地发现什么对给定数据集很好，甚至是最好的，而几乎没有技术背景或直接输入。
 
-[Auto-Sklearn](https://automl.github.io/auto-sklearn/master/) 是一个面向 AutoML 的开源 Python 库，使用 scikit-learn 机器学习库中的机器学习模型。
+[Auto-Sklearn](https://automl.github.io/auto-sklearn/master/) 是一个面向 AutoML 的开源 Python 库，使用 Sklearn 机器学习库中的机器学习模型。
 
 它是由[马提亚斯·福雷尔](https://ml.informatik.uni-freiburg.de/people/feurer/index.html)等人开发的，并在他们 2015 年发表的题为“[高效稳健的自动机器学习](https://papers.nips.cc/paper/5872-efficient-and-robust-automated-machine-learning)的论文中进行了描述
 
-> ……我们介绍了一个基于 scikit-learn 的健壮的新 AutoML 系统(使用 15 个分类器、14 种特征预处理方法和 4 种数据预处理方法，产生了一个包含 110 个超参数的结构化假设空间)。
+> ……我们介绍了一个基于 Sklearn 的健壮的新 AutoML 系统(使用 15 个分类器、14 种特征预处理方法和 4 种数据预处理方法，产生了一个包含 110 个超参数的结构化假设空间)。
 
 ——[高效稳健的自动化机器学习](https://papers.nips.cc/paper/5872-efficient-and-robust-automated-machine-learning)，2015。
 
@@ -398,11 +398,11 @@ MAE: 26.498
 
 ## 摘要
 
-在本教程中，您发现了如何在 Python 中使用 Auto-Sklearn for AutoML 和 Scikit-Learn 机器学习算法。
+在本教程中，您发现了如何在 Python 中使用 Auto-Sklearn for AutoML 和 Sklearn 机器学习算法。
 
 具体来说，您了解到:
 
-*   Auto-Sklearn 是一个面向 AutoML 的开源库，具有 scikit-learn 数据准备和机器学习模型。
+*   Auto-Sklearn 是一个面向 AutoML 的开源库，具有 Sklearn 数据准备和机器学习模型。
 *   如何使用 Auto-Sklearn 为分类任务自动发现表现最好的模型。
 *   如何使用 Auto-Sklearn 为回归任务自动发现表现最好的模型。
 

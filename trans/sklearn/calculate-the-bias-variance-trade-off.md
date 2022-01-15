@@ -1,4 +1,4 @@
-# 如何用 Python 计算偏差-方差权衡
+# 如何用 Python 计算偏差方差权衡
 
 > 原文：<https://machinelearningmastery.com/calculate-the-bias-variance-trade-off/>
 

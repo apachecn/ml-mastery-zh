@@ -62,11 +62,11 @@
 
 ## 评价多项式逻辑回归模型
 
-在本节中，我们将使用 scikit-learn Python 机器学习库开发和评估一个多项式逻辑回归模型。
+在本节中，我们将使用 Sklearn Python 机器学习库开发和评估一个多项式逻辑回归模型。
 
 首先，我们将定义一个合成的多类分类数据集，作为调查的基础。这是一个通用数据集，您可以在以后用自己加载的数据集轻松替换它。
 
-[make_classification()函数](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)可用于生成具有给定行数、列数和类数的数据集。在这种情况下，我们将生成一个包含 1，000 行、10 个输入变量或列以及 3 个类的数据集。
+[make_classification()函数](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_classification.html)可用于生成具有给定行数、列数和类数的数据集。在这种情况下，我们将生成一个包含 1，000 行、10 个输入变量或列以及 3 个类的数据集。
 
 下面的示例生成数据集，并总结了数组的形状以及示例在三个类中的分布。
 
@@ -88,7 +88,7 @@ print(Counter(y))
 Counter({1: 334, 2: 334, 0: 332})
 ```
 
-scikit-learn 库中通过[后勤回归类](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)支持逻辑回归。
+Sklearn 库中通过[后勤回归类](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)支持逻辑回归。
 
 通过将“ *multi_class* ”参数设置为“*多项式*”并将“*求解器*”参数设置为支持多项式逻辑回归的求解器，如“ *lbfgs* ”，可以为多项式逻辑回归配置*逻辑回归*类。
 
@@ -102,7 +102,7 @@ model = LogisticRegression(multi_class='multinomial', solver='lbfgs')
 
 现在我们已经熟悉了多项式逻辑回归应用编程接口，我们可以看看如何在我们的合成多类分类数据集上评估多项式逻辑回归模型。
 
-使用[重复分层 k 重交叉验证](https://machinelearningmastery.com/repeated-k-fold-cross-validation-with-python/)来评估分类模型是一个很好的做法。分层确保每个交叉验证文件夹在每个类中的示例分布与整个训练数据集大致相同。
+使用[重复分层 k 折交叉验证](https://machinelearningmastery.com/repeated-k-fold-cross-validation-with-python/)来评估分类模型是一个很好的做法。分层确保每个交叉验证文件夹在每个类中的示例分布与整个训练数据集大致相同。
 
 我们将使用 10 倍的三个重复，这是一个很好的默认值，并使用分类精确率来评估模型表现，假设类是平衡的。
 
@@ -343,8 +343,8 @@ pyplot.show()
 
 ### 蜜蜂
 
-*   [sklearn . datasets . make _ classification API](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)。
-*   [sklearn.linear_model。物流配送应用编程接口](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)。
+*   [sklearn . datasets . make _ classification API](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_classification.html)。
+*   [sklearn.linear_model。物流配送应用编程接口](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)。
 
 ### 文章
 

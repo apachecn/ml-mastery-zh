@@ -61,7 +61,7 @@ XGBoost 在分类和回归预测建模问题上主导结构化或表格数据集
 
 ## XGBoost 回归 API
 
-xboost 可以作为一个独立的库安装，并且可以使用 scikit-learn API 开发一个 xboost 模型。
+xboost 可以作为一个独立的库安装，并且可以使用 Sklearn API 开发一个 xboost 模型。
 
 第一步是安装尚未安装的 XGBoost 库。这可以在大多数平台上使用 pip python 包管理器来实现；例如:
 
@@ -99,7 +99,7 @@ sudo pip install xgboost==1.0.1
 
 *   [XGBoost 安装指南](https://xgboost.readthedocs.io/en/latest/build.html)
 
-尽管我们将通过 scikit-learn 包装类使用这个方法:[xgbreversor](https://xgboost.readthedocs.io/en/latest/python/python_api.html#xgboost.XGBRegressor)和 [XGBClassifier](https://xgboost.readthedocs.io/en/latest/python/python_api.html#xgboost.XGBClassifier) ，但是 XGBoost 库有自己的自定义 API。这将允许我们使用 scikit-learn 机器学习库中的全套工具来准备数据和评估模型。
+尽管我们将通过 Sklearn 包装类使用这个方法:[xgbreversor](https://xgboost.readthedocs.io/en/latest/python/python_api.html#xgboost.XGBRegressor)和 [XGBClassifier](https://xgboost.readthedocs.io/en/latest/python/python_api.html#xgboost.XGBClassifier) ，但是 XGBoost 库有自己的自定义 API。这将允许我们使用 Sklearn 机器学习库中的全套工具来准备数据和评估模型。
 
 一个 XGBoost 回归模型可以通过创建一个*xgbreversor*类的实例来定义；例如:
 
@@ -203,9 +203,9 @@ model = XGBRegressor()
 
 我们将使用 3 次重复和 10 次重复的重复 k-fold 交叉验证的最佳实践来评估模型。
 
-这可以通过使用 [RepeatedKFold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html) 类配置评估过程，并调用 [cross_val_score()](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html) 使用该过程评估模型并收集分数来实现。
+这可以通过使用 [RepeatedKFold](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html) 类配置评估过程，并调用 [cross_val_score()](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html) 使用该过程评估模型并收集分数来实现。
 
-将使用均方差(MAE)评估模型表现。注意，MAE 在 scikit-learn 库中被设为负，这样它可以被最大化。因此，我们可以忽略符号，假设所有错误都是正的。
+将使用均方差(MAE)评估模型表现。注意，MAE 在 Sklearn 库中被设为负，这样它可以被最大化。因此，我们可以忽略符号，假设所有错误都是正的。
 
 ```py
 ...
@@ -321,7 +321,7 @@ Predicted: 24.019
 ### 教程
 
 *   [Python 中的极限梯度增强(XGBoost)集成](https://machinelearningmastery.com/extreme-gradient-boosting-ensemble-in-python/)
-*   [使用 Scikit-Learn、XGBoost、LightGBM 和 CatBoost 进行梯度增强](https://machinelearningmastery.com/gradient-boosting-with-scikit-learn-xgboost-lightgbm-and-catboost/)
+*   [使用 Sklearn、XGBoost、LightGBM 和 CatBoost 进行梯度增强](https://machinelearningmastery.com/gradient-boosting-with-Sklearn-xgboost-lightgbm-and-catboost/)
 *   [标准机器学习数据集的最佳结果](https://machinelearningmastery.com/results-for-standard-classification-and-regression-machine-learning-datasets/)
 *   [如何使用 XGBoost 进行时间序列预测](https://machinelearningmastery.com/xgboost-for-time-series-forecasting/)
 
@@ -333,8 +333,8 @@ Predicted: 24.019
 
 *   [XGBoost 安装指南](https://xgboost.readthedocs.io/en/latest/build.html)
 *   [xboost。xgbreversor API](https://xgboost.readthedocs.io/en/latest/python/python_api.html#xgboost.XGBRegressor)。
-*   [sklearn.model_selection。重复应用编程接口](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html)。
-*   [sklearn . model _ selection . cross _ val _ score API](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)。
+*   [sklearn.model_selection。重复应用编程接口](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html)。
+*   [sklearn . model _ selection . cross _ val _ score API](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)。
 
 ## 摘要
 

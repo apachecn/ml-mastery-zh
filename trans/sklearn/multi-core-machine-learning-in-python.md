@@ -1,14 +1,14 @@
-# 用 Scikit 学习 Python 中的多核机器学习
+# 使用 Python 和 Sklearn 的多核机器学习
 
 > 原文：<https://machinelearningmastery.com/multi-core-machine-learning-in-python/>
 
 机器学习的许多计算成本很高的任务可以通过将工作划分到多个中央处理器内核(称为多核处理)来并行完成。
 
-可以并行执行的常见机器学习任务包括训练模型(如决策树的集合)、使用重采样过程(如 k 重交叉验证)评估模型，以及调整模型超参数(如网格和随机搜索)。
+可以并行执行的常见机器学习任务包括训练模型(如决策树的集合)、使用重采样过程(如 k 折交叉验证)评估模型，以及调整模型超参数(如网格和随机搜索)。
 
 将多核用于常见的机器学习任务可以显著缩短执行时间，这是系统可用内核数量的一个因素。一台普通的笔记本电脑和台式电脑可能有 2、4 或 8 个内核。较大的服务器系统可能有 32 个、64 个或更多的可用内核，从而可以在几分钟内完成耗时数小时的机器学习任务。
 
-在本教程中，您将发现如何为多核机器学习配置 scikit-learn。
+在本教程中，您将发现如何为多核机器学习配置 Sklearn。
 
 完成本教程后，您将知道:
 
@@ -18,7 +18,7 @@
 
 我们开始吧。
 
-![Multi-Core Machine Learning in Python With Scikit-Learn](img/154b242688f61d13438fb31333654fd9.png)
+![Multi-Core Machine Learning in Python With Sklearn](img/154b242688f61d13438fb31333654fd9.png)
 
 带 Scikit 的 Python 多核机器学习-学习
 图片由 [ER Bauer](https://www.flickr.com/photos/erix-pix/16030189175/) 提供，保留部分权利。
@@ -57,7 +57,7 @@
 
 您可以配置您的机器学习模型来利用您的计算机的多个内核，从而大大加快计算开销。
 
-scikit-learn Python 机器学习库通过关于关键机器学习任务的 [n_jobs 参数](https://scikit-learn.org/stable/glossary.html#term-n-jobs)提供了这种能力，例如模型训练、模型评估和超参数调整。
+Sklearn Python 机器学习库通过关于关键机器学习任务的 [n_jobs 参数](https://Sklearn.org/stable/glossary.html#term-n-jobs)提供了这种能力，例如模型训练、模型评估和超参数调整。
 
 此配置参数允许您指定任务要使用的内核数量。默认值为无，将使用单核。您也可以将内核数量指定为整数，例如 1 或 2。最后，您可以指定-1，在这种情况下，任务将使用系统上所有可用的内核。
 
@@ -75,11 +75,11 @@ scikit-learn Python 机器学习库通过关于关键机器学习任务的 [n_jo
 
 例如，我的工作站有四个物理内核，由于超线程，这些物理内核增加了一倍，达到八个。因此，我可以尝试使用 1-8 个内核，或者指定-1 个内核来使用工作站上的所有内核。
 
-现在我们已经熟悉了 scikit-learn 库支持机器学习多核并行处理的能力，让我们来看一些例子。
+现在我们已经熟悉了 Sklearn 库支持机器学习多核并行处理的能力，让我们来看一些例子。
 
 对于本教程中的所有示例，您将获得不同的计时；在评论中分享你的结果。您可能还需要更改内核数量，以匹配系统上的内核数量。
 
-**注意**:是的，我知道 [timeit](https://docs.python.org/3/library/timeit.html) API，但是在本教程中选择了反对。我们没有剖析代码示例本身；相反，我希望您关注如何以及何时使用 scikit-learn 的多核功能，以及它们提供的真正好处。我希望代码示例简洁易读，即使对于初学者也是如此。我将其设置为一个扩展来更新所有示例，以使用 timeit API 并获得更精确的计时。在评论中分享你的结果。
+**注意**:是的，我知道 [timeit](https://docs.python.org/3/library/timeit.html) API，但是在本教程中选择了反对。我们没有剖析代码示例本身；相反，我希望您关注如何以及何时使用 Sklearn 的多核功能，以及它们提供的真正好处。我希望代码示例简洁易读，即使对于初学者也是如此。我将其设置为一个扩展来更新所有示例，以使用 timeit API 并获得更精确的计时。在评论中分享你的结果。
 
 ## 多核模型训练
 
@@ -89,7 +89,7 @@ scikit-learn Python 机器学习库通过关于关键机器学习任务的 [n_jo
 
 一个流行的例子是决策树的集合，例如袋装决策树、随机森林和梯度增强。
 
-在本节中，我们将探索使用多核加速训练[随机森林分类器](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)模型。我们将在实验中使用综合分类任务。
+在本节中，我们将探索使用多核加速训练[随机森林分类器](https://Sklearn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)模型。我们将在实验中使用综合分类任务。
 
 在这种情况下，我们将定义一个具有 500 棵树的随机森林模型，并使用单个核心来训练该模型。
 
@@ -288,7 +288,7 @@ pyplot.show()
 
 此外，多次重复此评估过程也是一种良好的做法，称为重复 k 倍交叉验证。
 
-评估过程可以配置为使用多个核心，其中每个模型训练和评估都在单独的核心上进行。这可以通过在调用 [cross_val_score()函数](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)时设置 *n_jobs* 参数来实现；例如:
+评估过程可以配置为使用多个核心，其中每个模型训练和评估都在单独的核心上进行。这可以通过在调用 [cross_val_score()函数](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)时设置 *n_jobs* 参数来实现；例如:
 
 我们可以探索多核对模型评估的影响。
 
@@ -555,7 +555,7 @@ print('%.3f seconds' % result)
 
 通常使用网格搜索或随机搜索来调整机器学习模型的超参数。
 
-scikit-learn 库分别通过 [GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) 和 [RandomizedSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html) 类提供这些功能。
+Sklearn 库分别通过 [GridSearchCV](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) 和 [RandomizedSearchCV](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html) 类提供这些功能。
 
 通过设置 *n_jobs* 参数，将每个超参数配置分配给一个核心进行评估，这两个搜索过程可以并行进行。
 
@@ -738,14 +738,14 @@ print('%.3f seconds' % result)
 
 ### 蜜蜂
 
-*   [如何优化速度，scikit-学习文档](https://scikit-learn.org/stable/developers/performance.html)。
+*   [如何优化速度，scikit-学习文档](https://Sklearn.org/stable/developers/performance.html)。
 *   [Joblib:运行 Python 函数作为流水线作业](https://joblib.readthedocs.io/en/latest/)
 *   时间 API 。
-*   [硬化。一起。随机应变分类 API](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) 。
-*   [sklearn . model _ selection . cross _ val _ score API](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)。
-*   [sklearn.model_selection。GridSearchCV API](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) 。
-*   [硬化. model_selection。random mizedsearchv API](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html)。
-*   [n _ jobs sci kit-学习参数](https://scikit-learn.org/stable/glossary.html#term-n-jobs)。
+*   [硬化。一起。随机应变分类 API](https://Sklearn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) 。
+*   [sklearn . model _ selection . cross _ val _ score API](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)。
+*   [sklearn.model_selection。GridSearchCV API](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) 。
+*   [硬化. model_selection。random mizedsearchv API](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html)。
+*   [n _ jobs sci kit-学习参数](https://Sklearn.org/stable/glossary.html#term-n-jobs)。
 
 ### 文章
 
@@ -754,7 +754,7 @@ print('%.3f seconds' % result)
 
 ## 摘要
 
-在本教程中，您发现了如何为多核机器学习配置 scikit-learn。
+在本教程中，您发现了如何为多核机器学习配置 Sklearn。
 
 具体来说，您了解到:
 

@@ -1,22 +1,22 @@
-# 通过 Scikit-Learn 实现自动化机器学习的 HyperOpt】
+# 用于 Sklearn 自动化机器学习的 HyperOpt
 
-> 原文：<https://machinelearningmastery.com/hyperopt-for-automated-machine-learning-with-scikit-learn/>
+> 原文：<https://machinelearningmastery.com/hyperopt-for-automated-machine-learning-with-Sklearn/>
 
 自动机器学习(AutoML)指的是在很少用户参与的情况下，自动发现用于预测建模任务的表现良好的模型的技术。
 
-HyperOpt 是一个面向大规模 AutoML 的开源库，HyperOpt-Sklearn 是 HyperOpt 的包装器，支持 AutoML 与 HyperOpt 一起用于流行的 Scikit-Learn 机器学习库，包括一套数据准备转换以及分类和回归算法。
+HyperOpt 是一个面向大规模 AutoML 的开源库，HyperOpt-Sklearn 是 HyperOpt 的包装器，支持 AutoML 与 HyperOpt 一起用于流行的 Sklearn 机器学习库，包括一套数据准备转换以及分类和回归算法。
 
-在本教程中，您将发现如何使用 HyperOpt 通过 Python 中的 Scikit-Learn 进行自动机器学习。
+在本教程中，您将发现如何使用 HyperOpt 通过 Python 中的 Sklearn 进行自动机器学习。
 
 完成本教程后，您将知道:
 
-*   Hyperopt-Sklearn 是一个面向 AutoML 的开源库，具有 scikit-learn 数据准备和机器学习模型。
+*   Hyperopt-Sklearn 是一个面向 AutoML 的开源库，具有 Sklearn 数据准备和机器学习模型。
 *   如何使用 Hyperopt-Sklearn 为分类任务自动发现表现最好的模型。
 *   如何使用 Hyperopt-Sklearn 为回归任务自动发现表现最好的模型。
 
 我们开始吧。
 
-![HyperOpt for Automated Machine Learning With Scikit-Learn](img/2ffc96e25d2fef157cb913519166810c.png)
+![HyperOpt for Automated Machine Learning With Sklearn](img/2ffc96e25d2fef157cb913519166810c.png)
 
 尼尔·威廉森为自动化机器学习拍摄的超级照片，保留部分权利。
 
@@ -43,11 +43,11 @@ HyperOpt 是一个面向大规模 AutoML 的开源库，HyperOpt-Sklearn 是 Hyp
 
 HyperOpt 很难直接使用，需要仔细指定优化程序和搜索空间。
 
-HyperOpt 的一个扩展被创建为 [HyperOpt-Sklearn](https://hyperopt.github.io/hyperopt-sklearn/) ，它允许 HyperOpt 过程被应用于流行的 [Scikit-Learn 开源机器学习库](https://scikit-learn.org/stable/)提供的数据准备和机器学习模型。
+HyperOpt 的一个扩展被创建为 [HyperOpt-Sklearn](https://hyperopt.github.io/hyperopt-sklearn/) ，它允许 HyperOpt 过程被应用于流行的 [Sklearn 开源机器学习库](https://Sklearn.org/stable/)提供的数据准备和机器学习模型。
 
 HyperOpt-Sklearn 包装了 HyperOpt 库，允许自动搜索数据准备方法、机器学习算法以及用于分类和回归任务的模型超参数。
 
-> ……我们介绍 Hyperopt-Sklearn:一个为 Python 和 scikit-learn 的用户带来自动算法配置好处的项目。Hyperopt-Sklearn 使用 Hyperopt 来描述 Scikit-Learn 组件的可能配置的搜索空间，包括预处理和分类模块。
+> ……我们介绍 Hyperopt-Sklearn:一个为 Python 和 Sklearn 的用户带来自动算法配置好处的项目。Hyperopt-Sklearn 使用 Hyperopt 来描述 Sklearn 组件的可能配置的搜索空间，包括预处理和分类模块。
 
 ——[Hyperopt-Sklearn:sci kit-Learn 的自动超参数配置](https://conference.scipy.org/proceedings/scipy2014/pdfs/komer.pdf)，2014。
 
@@ -112,7 +112,7 @@ Author: James Bergstra
 Author-email: anon@anon.com
 License: BSD
 Location: ...
-Requires: nose, scikit-learn, numpy, scipy, hyperopt
+Requires: nose, Sklearn, numpy, scipy, hyperopt
 Required-by:
 ```
 
@@ -357,7 +357,7 @@ print(X.shape, y.shape)
 
 使用 HyperOpt-Sklearn 进行回归与使用它进行分类相同，只是必须指定“*回归器*”参数。
 
-在这种情况下，我们想要优化 MAE，因此，我们将把“ *loss_fn* ”参数设置为 scikit-learn 库提供的 *mean_absolute_error()* 函数。
+在这种情况下，我们想要优化 MAE，因此，我们将把“ *loss_fn* ”参数设置为 Sklearn 库提供的 *mean_absolute_error()* 函数。
 
 ```py
 ...
@@ -434,11 +434,11 @@ MAE: 0.883
 
 ## 摘要
 
-在本教程中，您发现了如何使用 Python 中的 Scikit-Learn 将 HyperOpt 用于自动机器学习。
+在本教程中，您发现了如何使用 Python 中的 Sklearn 将 HyperOpt 用于自动机器学习。
 
 具体来说，您了解到:
 
-*   Hyperopt-Sklearn 是一个面向 AutoML 的开源库，具有 scikit-learn 数据准备和机器学习模型。
+*   Hyperopt-Sklearn 是一个面向 AutoML 的开源库，具有 Sklearn 数据准备和机器学习模型。
 *   如何使用 Hyperopt-Sklearn 为分类任务自动发现表现最好的模型。
 *   如何使用 Hyperopt-Sklearn 为回归任务自动发现表现最好的模型。
 

@@ -200,9 +200,9 @@
 
 尝试一些算法也是一个好主意。
 
-scikit-learn Python 机器学习库提供了一些基于图的半监督学习算法，您可以尝试:
+Sklearn Python 机器学习库提供了一些基于图的半监督学习算法，您可以尝试:
 
-*   [第 1.14 节。半监督，Scikit-学习用户指南](https://scikit-learn.org/stable/modules/label_propagation.html)。
+*   [第 1.14 节。半监督，Scikit-学习用户指南](https://Sklearn.org/stable/modules/label_propagation.html)。
 
 维基百科的文章也可能提供一些有用的链接供进一步阅读:
 

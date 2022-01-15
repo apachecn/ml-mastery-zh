@@ -1,20 +1,20 @@
-# 如何修复 scikit 中的未来学习消息-学习
+# 如何修复 Sklearn 中的`FutureWarning`消息
 
-> 原文：<https://machinelearningmastery.com/how-to-fix-futurewarning-messages-in-scikit-learn/>
+> 原文：<https://machinelearningmastery.com/how-to-fix-futurewarning-messages-in-Sklearn/>
 
 最后更新于 2019 年 8 月 21 日
 
-当代码运行时，通过使用*未来学习*消息报告机器学习的 [scikit-learn 库](https://scikit-learn.org/)即将发生的变化。
+当代码运行时，通过使用*未来学习*消息报告机器学习的 [Sklearn 库](https://Sklearn.org/)即将发生的变化。
 
 警告消息可能会让初学者感到困惑，因为看起来代码有问题或者他们做错了什么。警告消息也不利于操作代码，因为它们会掩盖错误和程序输出。
 
 有许多方法可以处理警告消息，包括忽略消息、抑制警告和修复代码。
 
-在本教程中，您将发现 scikit-learn API 中的 FutureWarning 消息，以及如何在自己的机器学习项目中处理这些消息。
+在本教程中，您将发现 Sklearn API 中的 FutureWarning 消息，以及如何在自己的机器学习项目中处理这些消息。
 
 完成本教程后，您将知道:
 
-*   未来学习消息旨在通知您即将对 scikit-learn API 中的参数默认值进行的更改。
+*   未来学习消息旨在通知您即将对 Sklearn API 中的参数默认值进行的更改。
 *   未来学习消息可以被忽略或抑制，因为它们不会停止程序的执行。
 *   未来学习消息的示例，以及如何解释消息并更改代码以应对即将到来的更改。
 
@@ -22,7 +22,7 @@
 
 我们开始吧。
 
-![How to Fix FutureWarning Messages in scikit-learn](img/5bd55ebd4349bbcac5f7be88e21fd54c.png)
+![How to Fix FutureWarning Messages in Sklearn](img/5bd55ebd4349bbcac5f7be88e21fd54c.png)
 
 如何修复 scikit 中的未来学习消息-学习
 图片由 [a.dombrowski](https://www.flickr.com/photos/adombrowski/5914604908/) 提供，保留部分权利。
@@ -38,17 +38,17 @@
 
 ## 未来家具的问题
 
-scikit-learn 库是一个开源库，为数据准备和机器学习算法提供工具。
+Sklearn 库是一个开源库，为数据准备和机器学习算法提供工具。
 
 这是一个广泛使用和不断更新的图书馆。
 
 像许多积极维护的软件库一样，API 经常随着时间的推移而变化。这可能是因为发现了更好的实践或者首选的使用模式发生了变化。
 
-scikit-learn API 中提供的大多数函数都有一个或多个参数，可以让您自定义函数的行为。许多参数都有合理的默认值，因此您不必为参数指定值。当您刚开始使用机器学习或 scikit-learn，并且不知道每个论点有什么影响时，这尤其有用。
+Sklearn API 中提供的大多数函数都有一个或多个参数，可以让您自定义函数的行为。许多参数都有合理的默认值，因此您不必为参数指定值。当您刚开始使用机器学习或 Sklearn，并且不知道每个论点有什么影响时，这尤其有用。
 
-随着时间的推移，对 scikit-learn API 的更改通常表现为对函数参数的合理默认值的更改。这种类型的更改通常不会立即执行；相反，他们是有计划的。
+随着时间的推移，对 Sklearn API 的更改通常表现为对函数参数的合理默认值的更改。这种类型的更改通常不会立即执行；相反，他们是有计划的。
 
-例如，如果您的代码是为 scikit-learn 库的早期版本编写的，并且依赖于函数参数的默认值，并且 API 的后续版本计划更改该默认值，则 API 会提醒您即将到来的更改。
+例如，如果您的代码是为 Sklearn 库的早期版本编写的，并且依赖于函数参数的默认值，并且 API 的后续版本计划更改该默认值，则 API 会提醒您即将到来的更改。
 
 每次运行代码时，此警报都会以警告消息的形式出现。具体来说，在标准错误(例如命令行)上报告“*未来预警*”。
 
@@ -99,16 +99,16 @@ simplefilter(action='ignore', category=FutureWarning)
 
 ## 如何修复未来的家具
 
-或者，您可以更改代码来解决 scikit-learn API 报告的更改。
+或者，您可以更改代码来解决 Sklearn API 报告的更改。
 
 通常，警告消息本身会指示您更改的性质以及如何更改代码来处理警告。
 
 尽管如此，让我们看几个你可能会遇到并正在努力解决的未来家具的例子。
 
-本节中的示例是用 scikit-learn 版本 0.20.2 开发的。您可以通过运行以下代码来检查 scikit-learn 版本:
+本节中的示例是用 Sklearn 版本 0.20.2 开发的。您可以通过运行以下代码来检查 Sklearn 版本:
 
 ```py
-# check scikit-learn version
+# check Sklearn version
 import sklearn
 print('sklearn: %s' % sklearn.__version__)
 ```
@@ -119,13 +119,13 @@ print('sklearn: %s' % sklearn.__version__)
 sklearn: 0.20.2
 ```
 
-随着 scikit-learn 新版本的发布，所报告的警告消息的性质将会改变，并将采用新的默认值。
+随着 Sklearn 新版本的发布，所报告的警告消息的性质将会改变，并将采用新的默认值。
 
-因此，尽管下面的例子是特定于 scikit-learn 版本的，但是诊断和解决每一个 API 变更本质的方法为处理未来的变更提供了很好的例子。
+因此，尽管下面的例子是特定于 Sklearn 版本的，但是诊断和解决每一个 API 变更本质的方法为处理未来的变更提供了很好的例子。
 
 ### 物流出口的未来学习
 
-[后勤导出算法](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)最近对默认参数值进行了两次更改，导致了未来预警消息。
+[后勤导出算法](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)最近对默认参数值进行了两次更改，导致了未来预警消息。
 
 第一个与寻找系数的解算器有关，第二个与如何使用模型进行多类分类有关。让我们用代码示例来看看每一个。
 
@@ -209,7 +209,7 @@ model = LogisticRegression(solver='lbfgs', multi_class='auto')
 
 ### SVM 的未来教育
 
-支持向量机实现最近对“ *gamma* ”参数进行了更改，导致了一条警告消息，特别是 [SVC](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html) 和 [SVR 类](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html)。
+支持向量机实现最近对“ *gamma* ”参数进行了更改，导致了一条警告消息，特别是 [SVC](https://Sklearn.org/stable/modules/generated/sklearn.svm.SVC.html) 和 [SVR 类](https://Sklearn.org/stable/modules/generated/sklearn.svm.SVR.html)。
 
 下面的示例将生成一个关于 SVC 使用的“ *gamma* ”参数的未来警告，但同样适用于 SVR。
 
@@ -315,29 +315,29 @@ model = RandomForestClassifier(n_estimators=100)
 
 对于长期运行的操作代码或生产代码，显式指定所有函数参数而不使用默认值可能是一个好主意，因为它们可能会在未来发生变化。
 
-我还建议您保持 scikit-learn 库的最新状态，并跟踪每个新版本中对 API 的更改。
+我还建议您保持 Sklearn 库的最新状态，并跟踪每个新版本中对 API 的更改。
 
 最简单的方法是查看每个版本的发行说明，如下所示:
 
-*   [scikit-学习发布历史](https://scikit-learn.org/stable/whats_new.html)
+*   [scikit-学习发布历史](https://Sklearn.org/stable/whats_new.html)
 
 ## 进一步阅读
 
 如果您想更深入地了解这个主题，本节将提供更多资源。
 
 *   [Python 警告控制 API](https://docs.python.org/3/library/warnings.html)
-*   [sklearn.linear_model。物流配送应用编程接口](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
-*   [硬化. svm.SVC API](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html)
-*   [硬化. svm.SVR API](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html)
-*   [scikit-学习发布历史](https://scikit-learn.org/stable/whats_new.html)
+*   [sklearn.linear_model。物流配送应用编程接口](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
+*   [硬化. svm.SVC API](https://Sklearn.org/stable/modules/generated/sklearn.svm.SVC.html)
+*   [硬化. svm.SVR API](https://Sklearn.org/stable/modules/generated/sklearn.svm.SVR.html)
+*   [scikit-学习发布历史](https://Sklearn.org/stable/whats_new.html)
 
 ## 摘要
 
-在本教程中，您发现了 scikit-learn API 中的 FutureWarning 消息，以及如何在自己的机器学习项目中处理这些消息。
+在本教程中，您发现了 Sklearn API 中的 FutureWarning 消息，以及如何在自己的机器学习项目中处理这些消息。
 
 具体来说，您了解到:
 
-*   未来学习消息旨在通知您即将对 scikit-learn API 中的参数默认值进行的更改。
+*   未来学习消息旨在通知您即将对 Sklearn API 中的参数默认值进行的更改。
 *   未来学习消息可以被忽略或抑制，因为它们不会停止程序的执行。
 *   未来学习消息的示例，以及如何解释消息并更改代码以应对即将到来的更改。
 

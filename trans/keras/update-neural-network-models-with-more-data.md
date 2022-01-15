@@ -113,7 +113,7 @@ n_features = X.shape[1]
 X_old, X_new, y_old, y_new = train_test_split(X, y, test_size=0.50, random_state=1)
 ```
 
-然后，我们可以定义一个多层感知器模型(MLP)，并将其仅适用于旧数据。
+然后，我们可以定义一个多层感知机模型(MLP)，并将其仅适用于旧数据。
 
 ```py
 ...

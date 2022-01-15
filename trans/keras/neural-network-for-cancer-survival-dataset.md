@@ -8,7 +8,7 @@
 
 该过程可用于开发用于分类和回归预测建模问题的有效神经网络模型。
 
-在本教程中，您将发现如何为癌症存活二元分类数据集开发多层感知器神经网络模型。
+在本教程中，您将发现如何为癌症存活二元分类数据集开发多层感知机神经网络模型。
 
 完成本教程后，您将知道:
 
@@ -181,7 +181,7 @@ Class=2, Count=81, Percentage=26.471%
 
 ## 神经网络学习动力学
 
-我们将使用[张量流](https://machinelearningmastery.com/tensorflow-tutorial-deep-learning-with-tf-keras/)为数据集开发一个多层感知器(MLP)模型。
+我们将使用[张量流](https://machinelearningmastery.com/tensorflow-tutorial-deep-learning-with-tf-keras/)为数据集开发一个多层感知机(MLP)模型。
 
 我们无法知道什么样的学习超参数的模型架构对这个数据集是好的或最好的，所以我们必须实验并发现什么是好的。
 
@@ -327,7 +327,7 @@ Accuracy: 0.765
 
 ![Learning Curves of Simple Multilayer Perceptron on Cancer Survival Dataset](img/4520a0264ac7035bbb20444496ffe4b9.png)
 
-癌症存活数据集上简单多层感知器的学习曲线
+癌症存活数据集上简单多层感知机的学习曲线
 
 现在，我们已经对数据集上的简单 MLP 模型的学习动态有了一些了解，我们可以考虑对数据集上的模型表现进行更稳健的评估。
 
@@ -337,7 +337,7 @@ k 倍交叉验证程序可以提供更可靠的 MLP 表现估计，尽管它可�
 
 这是因为 k 模型必须被拟合和评估。当数据集规模较小时，例如癌症存活数据集，这不是问题。
 
-我们可以使用[stratifiedfold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html)类手动枚举每个折叠，拟合模型，对其进行评估，然后在程序结束时报告评估分数的平均值。
+我们可以使用[stratifiedfold](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html)类手动枚举每个折叠，拟合模型，对其进行评估，然后在程序结束时报告评估分数的平均值。
 
 ```py
 ...
@@ -563,7 +563,7 @@ Predicted: 1
 
 ## 摘要
 
-在本教程中，您发现了如何为癌症存活二元分类数据集开发多层感知器神经网络模型。
+在本教程中，您发现了如何为癌症存活二元分类数据集开发多层感知机神经网络模型。
 
 具体来说，您了解到:
 

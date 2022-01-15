@@ -1,4 +1,4 @@
-# 用于评估机器学习算法的训练-测试分割
+# 用于评估机器学习算法的训练测试分割
 
 > 原文：<https://machinelearningmastery.com/train-test-split-for-evaluating-machine-learning-algorithms/>
 
@@ -13,7 +13,7 @@
 完成本教程后，您将知道:
 
 *   当你有一个非常大的数据集，一个昂贵的模型需要训练，或者需要一个好的模型表现的快速估计时，训练-测试分割过程是合适的。
-*   如何使用 scikit-learn 机器学习库执行训练-测试分割过程？
+*   如何使用 Sklearn 机器学习库执行训练-测试分割过程？
 *   如何使用训练-测试分割评估用于分类和回归的机器学习算法？
 
 **用我的新书[Python 机器学习精通](https://machinelearningmastery.com/machine-learning-with-python/)启动你的项目**，包括*分步教程*和所有示例的 *Python 源代码*文件。
@@ -32,7 +32,7 @@
 1.  列车测试分割评估
     1.  何时使用列车测试分割
     2.  如何配置列车测试分割
-2.  Scikit-Learn 中的训练-测试分割程序
+2.  Sklearn 中的训练-测试分割程序
     1.  可重复的列车测试分割
     2.  分层列车试验分割
 3.  评估机器学习模型的训练-测试分割
@@ -95,9 +95,9 @@
 
 现在我们已经熟悉了训练-测试分割模型评估过程，让我们看看如何在 Python 中使用这个过程。
 
-## Scikit-Learn 中的训练-测试分割程序
+## Sklearn 中的训练-测试分割程序
 
-scikit-learn Python 机器学习库通过 [train_test_split()函数](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)提供了 train-test split 评估程序的实现。
+Sklearn Python 机器学习库通过 [train_test_split()函数](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)提供了 train-test split 评估程序的实现。
 
 该函数将加载的数据集作为输入，并返回分割成两个子集的数据集。
 
@@ -520,9 +520,9 @@ MAE: 2.157
 
 如果您想更深入地了解这个主题，本节将提供更多资源。
 
-*   [sklearn . model _ selection . train _ test _ split API](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)。
-*   [sklearn . datasets . make _ classification API](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)。
-*   [sklearn . dataset . make _ blobs API](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_blobs.html)。
+*   [sklearn . model _ selection . train _ test _ split API](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)。
+*   [sklearn . datasets . make _ classification API](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_classification.html)。
+*   [sklearn . dataset . make _ blobs API](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_blobs.html)。
 
 ## 摘要
 
@@ -531,7 +531,7 @@ MAE: 2.157
 具体来说，您了解到:
 
 *   当你有一个非常大的数据集，一个昂贵的模型需要训练，或者需要一个好的模型表现的快速估计时，训练-测试分割过程是合适的。
-*   如何使用 scikit-learn 机器学习库执行训练-测试分割过程？
+*   如何使用 Sklearn 机器学习库执行训练-测试分割过程？
 *   如何使用训练-测试分割评估用于分类和回归的机器学习算法？
 
 **你有什么问题吗？**

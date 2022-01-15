@@ -1,4 +1,4 @@
-# Python 中模型评估的重复 k 重交叉验证
+# Python 中用于模型评估的重复 k 折交叉验证
 
 > 原文：<https://machinelearningmastery.com/repeated-k-fold-cross-validation-with-python/>
 
@@ -8,15 +8,15 @@ k-fold 交叉验证过程是一种评估数据集上机器学习算法或配置�
 
 k 倍交叉验证程序的一次运行可能会导致模型表现的噪声估计。不同的数据分割可能会导致截然不同的结果。
 
-重复的 k 重交叉验证提供了一种提高机器学习模型估计表现的方法。这包括多次重复交叉验证程序，并报告所有运行的所有折叠的平均结果。该平均结果有望成为数据集上模型的真实未知潜在平均表现的更准确估计，使用标准误差进行计算。
+重复的 k 折交叉验证提供了一种提高机器学习模型估计表现的方法。这包括多次重复交叉验证程序，并报告所有运行的所有折叠的平均结果。该平均结果有望成为数据集上模型的真实未知潜在平均表现的更准确估计，使用标准误差进行计算。
 
 在本教程中，您将发现模型评估的重复 k 倍交叉验证。
 
 完成本教程后，您将知道:
 
 *   k 倍交叉验证单次运行报告的平均表现可能会有噪声。
-*   重复的 k 重交叉验证提供了一种减少平均模型表现估计误差的方法。
-*   如何在 Python 中使用重复的 k 重交叉验证来评估机器学习模型。
+*   重复的 k 折交叉验证提供了一种减少平均模型表现估计误差的方法。
+*   如何在 Python 中使用重复的 k 折交叉验证来评估机器学习模型。
 
 **用我的新书[Python 机器学习精通](https://machinelearningmastery.com/machine-learning-with-python/)启动你的项目**，包括*分步教程*和所有示例的 *Python 源代码*文件。
 
@@ -37,7 +37,7 @@ Python 中模型评估的重复 k-Fold 交叉验证
 
 ## k 折叠交叉验证
 
-使用 k 重交叉验证在数据集上评估机器学习模型是很常见的。
+使用 k 折交叉验证在数据集上评估机器学习模型是很常见的。
 
 k 折叠交叉验证过程将有限的数据集分成 k 个不重叠的折叠。k 个折叠中的每一个都有机会用作保留测试集，而所有其他折叠一起用作训练数据集。在 k 个保持测试集上，对总共 k 个模型进行拟合和评估，并报告平均表现。
 
@@ -45,11 +45,11 @@ k 折叠交叉验证过程将有限的数据集分成 k 个不重叠的折叠。
 
 *   [k 倍交叉验证的温和介绍](https://machinelearningmastery.com/k-fold-cross-validation/)
 
-使用 scikit-learn 机器学习库可以轻松实现 k-fold 交叉验证过程。
+使用 Sklearn 机器学习库可以轻松实现 k-fold 交叉验证过程。
 
 首先，让我们定义一个可以作为本教程基础的综合分类数据集。
 
-[make_classification()函数](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)可用于创建合成二进制分类数据集。我们将配置它生成 1000 个样本，每个样本有 20 个输入特征，其中 15 个有助于目标变量。
+[make_classification()函数](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_classification.html)可用于创建合成二进制分类数据集。我们将配置它生成 1000 个样本，每个样本有 20 个输入特征，其中 15 个有助于目标变量。
 
 下面的示例创建并汇总了数据集。
 
@@ -72,9 +72,9 @@ print(X.shape, y.shape)
 
 接下来，我们可以使用 k-fold 交叉验证来评估这个数据集上的模型。
 
-我们将评估一个[logisticreduce](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)模型，并使用 [KFold 类](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html)执行交叉验证，配置为洗牌数据集并设置 k=10，这是一个流行的默认值。
+我们将评估一个[logisticreduce](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)模型，并使用 [KFold 类](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.KFold.html)执行交叉验证，配置为洗牌数据集并设置 k=10，这是一个流行的默认值。
 
-[cross_val_score()函数](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)将用于执行评估，获取数据集和交叉验证配置，并返回为每个折叠计算的分数列表。
+[cross_val_score()函数](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)将用于执行评估，获取数据集和交叉验证配置，并返回为每个折叠计算的分数列表。
 
 下面列出了完整的示例。
 
@@ -130,7 +130,7 @@ Accuracy: 0.868 (0.032)
 
 重要的是，k-fold 交叉验证过程的每个重复必须在分割成不同折叠的同一数据集上执行。
 
-重复 k 重交叉验证的好处是以拟合和评估更多模型为代价来改进平均模型表现的估计。
+重复 k 折交叉验证的好处是以拟合和评估更多模型为代价来改进平均模型表现的估计。
 
 常见的重复数包括 3、5 和 10。例如，如果使用 10 倍交叉验证的 3 次重复来估计模型表现，这意味着需要拟合和评估(3 * 10)或 30 个不同的模型。
 
@@ -142,7 +142,7 @@ Accuracy: 0.868 (0.032)
 
 ## Python 中重复的 k 折叠交叉验证
 
-scikit-learn Python 机器学习库通过 [RepeatedKFold 类](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html)提供了重复 k 重交叉验证的实现。
+Sklearn Python 机器学习库通过 [RepeatedKFold 类](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html)提供了重复 k 折交叉验证的实现。
 
 主要参数是折叠数( *n_splits* )，即 k 折叠交叉验证中的“ *k* ”，以及重复数( *n_repeats* )。
 
@@ -295,14 +295,14 @@ k 倍交叉验证的分类准确度与重复次数的方框图和须图
 ### 教程
 
 *   [k 倍交叉验证的温和介绍](https://machinelearningmastery.com/k-fold-cross-validation/)
-*   [如何固定不平衡分类的 k 重交叉验证](https://machinelearningmastery.com/cross-validation-for-imbalanced-classification/)
+*   [如何固定不平衡分类的 k 折交叉验证](https://machinelearningmastery.com/cross-validation-for-imbalanced-classification/)
 
 ### 蜜蜂
 
-*   [sklearn.model_selection。KFold API](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html) 。
-*   [sklearn.model_selection。重复应用编程接口](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html)。
-*   [sklearn.model_selection。离开应用编程接口](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.LeaveOneOut.html)。
-*   [sklearn . model _ selection . cross _ val _ score API](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)。
+*   [sklearn.model_selection。KFold API](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.KFold.html) 。
+*   [sklearn.model_selection。重复应用编程接口](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html)。
+*   [sklearn.model_selection。离开应用编程接口](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.LeaveOneOut.html)。
+*   [sklearn . model _ selection . cross _ val _ score API](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)。
 
 ### 文章
 
@@ -316,8 +316,8 @@ k 倍交叉验证的分类准确度与重复次数的方框图和须图
 具体来说，您了解到:
 
 *   k 倍交叉验证单次运行报告的平均表现可能会有噪声。
-*   重复的 k 重交叉验证提供了一种减少平均模型表现估计误差的方法。
-*   如何在 Python 中使用重复的 k 重交叉验证来评估机器学习模型。
+*   重复的 k 折交叉验证提供了一种减少平均模型表现估计误差的方法。
+*   如何在 Python 中使用重复的 k 折交叉验证来评估机器学习模型。
 
 **你有什么问题吗？**
 在下面的评论中提问，我会尽力回答。

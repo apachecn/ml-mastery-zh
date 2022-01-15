@@ -1,16 +1,16 @@
-# Python 自动机器学习 TPOT
+# 用于 Python 自动机器学习 TPOT
 
 > 原文：<https://machinelearningmastery.com/tpot-for-automated-machine-learning-in-python/>
 
 自动机器学习(AutoML)指的是在很少用户参与的情况下，自动发现用于预测建模任务的表现良好的模型的技术。
 
-TPOT 是一个用 Python 执行自动语言的开源库。它利用流行的 Scikit-Learn 机器学习库进行数据转换和机器学习算法，并使用遗传编程随机全局搜索过程来有效地发现给定数据集的最佳模型管道。
+TPOT 是一个用 Python 执行自动语言的开源库。它利用流行的 Sklearn 机器学习库进行数据转换和机器学习算法，并使用遗传编程随机全局搜索过程来有效地发现给定数据集的最佳模型管道。
 
-在本教程中，您将发现如何在 Python 中使用 TPOT for AutoML 和 Scikit-Learn 机器学习算法。
+在本教程中，您将发现如何在 Python 中使用 TPOT for AutoML 和 Sklearn 机器学习算法。
 
 完成本教程后，您将知道:
 
-*   TPOT 是一个面向 AutoML 的开源库，具有 scikit-learn 数据准备和机器学习模型。
+*   TPOT 是一个面向 AutoML 的开源库，具有 Sklearn 数据准备和机器学习模型。
 *   如何使用 TPOT 自动发现分类任务的最佳模型。
 *   如何使用 TPOT 自动发现回归任务的最佳模型。
 
@@ -87,7 +87,7 @@ tpot: 0.11.1
 
 首先是如何评估模型，例如交叉验证方案和表现指标。我建议用您选择的配置和要使用的表现度量来显式指定交叉验证类。
 
-例如，用“*负平均绝对误差*度量进行回归时，[重复“T1”:](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html)
+例如，用“*负平均绝对误差*度量进行回归时，[重复“T1”:](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html)
 
 ```py
 ...
@@ -97,7 +97,7 @@ cv = RepeatedKFold(n_splits=10, n_repeats=3, random_state=1)
 model = TPOTRegressor(... scoring='neg_mean_absolute_error', cv=cv)
 ```
 
-或者是一个[重复的 stratifiedfold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html)进行回归，用*精确率*度量进行分类:
+或者是一个[重复的 stratifiedfold](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html)进行回归，用*精确率*度量进行分类:
 
 ```py
 ...
@@ -499,11 +499,11 @@ Predicted: 389.612
 
 ## 摘要
 
-在本教程中，您发现了如何在 Python 中使用 TPOT for AutoML 和 Scikit-Learn 机器学习算法。
+在本教程中，您发现了如何在 Python 中使用 TPOT for AutoML 和 Sklearn 机器学习算法。
 
 具体来说，您了解到:
 
-*   TPOT 是一个面向 AutoML 的开源库，具有 scikit-learn 数据准备和机器学习模型。
+*   TPOT 是一个面向 AutoML 的开源库，具有 Sklearn 数据准备和机器学习模型。
 *   如何使用 TPOT 自动发现分类任务的最佳模型。
 *   如何使用 TPOT 自动发现回归任务的最佳模型。
 

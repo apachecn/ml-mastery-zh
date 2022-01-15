@@ -8,7 +8,7 @@
 
 该过程可用于开发用于分类和回归预测建模问题的有效神经网络模型。
 
-在本教程中，您将发现如何为电离层二进制分类数据集开发多层感知器神经网络模型。
+在本教程中，您将发现如何为电离层二进制分类数据集开发多层感知机神经网络模型。
 
 完成本教程后，您将知道:
 
@@ -122,7 +122,7 @@ max      1.000000    0.0    1.000000  ...    1.000000    1.000000    1.000000
 
 我们可以看到许多变量具有高斯或类高斯分布。
 
-我们在每个变量上使用[幂变换](https://machinelearningmastery.com/power-transforms-with-scikit-learn/)可能会有一些好处，以便使概率分布不那么偏斜，这可能会提高模型表现。
+我们在每个变量上使用[幂变换](https://machinelearningmastery.com/power-transforms-with-Sklearn/)可能会有一些好处，以便使概率分布不那么偏斜，这可能会提高模型表现。
 
 ![Histograms of the Ionosphere Classification Dataset](img/71071a077cb05adbe6fe54849461c4eb.png)
 
@@ -132,7 +132,7 @@ max      1.000000    0.0    1.000000  ...    1.000000    1.000000    1.000000
 
 ## 神经网络学习动力学
 
-我们将使用张量流为数据集开发一个多层感知器(MLP)模型。
+我们将使用张量流为数据集开发一个多层感知机(MLP)模型。
 
 我们无法知道什么样的学习超参数的模型架构对这个数据集是好的或最好的，所以我们必须实验并发现什么是好的。
 
@@ -451,7 +451,7 @@ k 倍交叉验证程序可以提供更可靠的 MLP 表现估计，尽管它可�
 
 这是因为 *k* 模型必须拟合和评估。当数据集规模较小时，例如电离层数据集，这不是问题。
 
-我们可以使用[stratifiedfold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html)类手动枚举每个折叠，拟合模型，对其进行评估，然后在程序结束时报告评估分数的平均值。
+我们可以使用[stratifiedfold](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html)类手动枚举每个折叠，拟合模型，对其进行评估，然后在程序结束时报告评估分数的平均值。
 
 ```py
 # prepare cross validation
@@ -835,7 +835,7 @@ Predicted: g
 
 ## 摘要
 
-在本教程中，您发现了如何为电离层二进制分类数据集开发多层感知器神经网络模型。
+在本教程中，您发现了如何为电离层二进制分类数据集开发多层感知机神经网络模型。
 
 具体来说，您了解到:
 

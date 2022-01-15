@@ -16,7 +16,7 @@
 
 *   聚类是在输入数据的特征空间中寻找自然群体的无监督问题。
 *   有许多不同的聚类算法，没有一种最佳方法适用于所有数据集。
-*   如何使用 scikit-learn 机器学习库在 Python 中实现、适应和使用顶级聚类算法。
+*   如何使用 Sklearn 机器学习库在 Python 中实现、适应和使用顶级聚类算法。
 
 **用我的新书[Python 机器学习精通](https://machinelearningmastery.com/machine-learning-with-python/)启动你的项目**，包括*分步教程*和所有示例的 *Python 源代码*文件。
 
@@ -93,7 +93,7 @@ Python 聚类算法
 
 因此，聚类分析是一个迭代过程，其中对所识别的聚类的主观评估被反馈到算法配置的改变中，直到获得期望的或适当的结果。
 
-scikit-learn 库提供了一套不同的聚类算法可供选择。
+Sklearn 库提供了一套不同的聚类算法可供选择。
 
 下面列出了 10 种比较流行的算法:
 
@@ -112,19 +112,19 @@ scikit-learn 库提供了一套不同的聚类算法可供选择。
 
 没有最佳的聚类算法，也没有简单的方法可以在不使用受控实验的情况下为您的数据找到最佳算法。
 
-在本教程中，我们将回顾如何使用 scikit-learn 库中这 10 种流行的聚类算法。
+在本教程中，我们将回顾如何使用 Sklearn 库中这 10 种流行的聚类算法。
 
 这些示例将为您复制粘贴示例和在自己的数据上测试方法提供基础。
 
 我们不会深入研究算法背后的理论，也不会直接比较它们。有关此主题的良好起点，请参见:
 
-*   [聚类，sci kit-学习 API](https://scikit-learn.org/stable/modules/clustering.html) 。
+*   [聚类，sci kit-学习 API](https://Sklearn.org/stable/modules/clustering.html) 。
 
 让我们开始吧。
 
 ## 聚类算法示例
 
-在本节中，我们将回顾如何在 scikit-learn 中使用 10 种流行的聚类算法。
+在本节中，我们将回顾如何在 Sklearn 中使用 10 种流行的聚类算法。
 
 这包括拟合模型的示例和可视化结果的示例。
 
@@ -136,22 +136,22 @@ scikit-learn 库提供了一套不同的聚类算法可供选择。
 
 不要跳过这一步，因为您需要确保安装了最新版本。
 
-您可以使用 pip Python 安装程序安装 scikit-learn 库，如下所示:
+您可以使用 pip Python 安装程序安装 Sklearn 库，如下所示:
 
 ```py
-sudo pip install scikit-learn
+sudo pip install Sklearn
 ```
 
 有关特定于您的平台的其他安装说明，请参见:
 
-*   [安装 scikit-learn](https://scikit-learn.org/stable/install.html)
+*   [安装 Sklearn](https://Sklearn.org/stable/install.html)
 
 接下来，让我们确认库已安装，并且您使用的是现代版本。
 
 运行以下脚本打印库版本号。
 
 ```py
-# check scikit-learn version
+# check Sklearn version
 import sklearn
 print(sklearn.__version__)
 ```
@@ -164,7 +164,7 @@ print(sklearn.__version__)
 
 ### 聚类数据集
 
-我们将使用 [make_classification()函数](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)创建一个测试二进制分类数据集。
+我们将使用 [make_classification()函数](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_classification.html)创建一个测试二进制分类数据集。
 
 数据集将有 1，000 个示例，每个类有两个输入要素和一个聚类。聚类在两个维度上是视觉上明显的，因此我们可以用散点图绘制数据，并用指定的聚类给图中的点着色。这将有助于看到，至少在测试问题上，集群被识别得有多“好”。
 
@@ -216,7 +216,7 @@ pyplot.show()
 
 *   [通过在数据点之间传递消息进行聚类](https://science.sciencemag.org/content/315/5814/972)，2007。
 
-它是通过 [AffinityPropagation 类](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AffinityPropagation.html)实现的，主要配置是设置在 0.5 和 1 之间的“*阻尼*，可能还有“偏好”
+它是通过 [AffinityPropagation 类](https://Sklearn.org/stable/modules/generated/sklearn.cluster.AffinityPropagation.html)实现的，主要配置是设置在 0.5 和 1 之间的“*阻尼*，可能还有“偏好”
 
 下面列出了完整的示例。
 
@@ -263,7 +263,7 @@ pyplot.show()
 
 *   [层次聚类，维基百科](https://en.wikipedia.org/wiki/Hierarchical_clustering)。
 
-它是通过[凝聚聚类](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html)类实现的，主要配置是“ *n_clusters* ”集合，数据中聚类数量的估计，例如 2。
+它是通过[凝聚聚类](https://Sklearn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html)类实现的，主要配置是“ *n_clusters* ”集合，数据中聚类数量的估计，例如 2。
 
 下面列出了完整的示例。
 
@@ -313,7 +313,7 @@ BIRCH 聚类(BIRCH 是使用
 
 *   [BIRCH:一种高效的大型数据库数据聚类方法](https://dl.acm.org/doi/10.1145/235968.233324)，1996。
 
-它是通过 [Birch 类](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.Birch.html)实现的，要调优的主要配置是“*阈值*”和“ *n_clusters* ”超参数，后者提供了集群数量的估计。
+它是通过 [Birch 类](https://Sklearn.org/stable/modules/generated/sklearn.cluster.Birch.html)实现的，要调优的主要配置是“*阈值*”和“ *n_clusters* ”超参数，后者提供了集群数量的估计。
 
 下面列出了完整的示例。
 
@@ -364,7 +364,7 @@ DBSCAN 聚类(其中 DBSCAN 是基于密度的噪声应用空间聚类的缩写)
 
 *   [一种基于密度的算法，用于在有噪声的大型空间数据库中发现聚类](https://www.osti.gov/biblio/421283)，1996。
 
-它是通过 [DBSCAN 类](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html)实现的，主要配置是 *eps* 和 *min_samples* 超参数。
+它是通过 [DBSCAN 类](https://Sklearn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html)实现的，主要配置是 *eps* 和 *min_samples* 超参数。
 
 下面列出了完整的示例。
 
@@ -413,7 +413,7 @@ pyplot.show()
 
 *   [k-means 聚类，维基百科](https://en.wikipedia.org/wiki/K-means_clustering)。
 
-它通过 [KMeans 类](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html)实现，主要配置是将“ *n_clusters* ”超参数设置为数据中的估计集群数。
+它通过 [KMeans 类](https://Sklearn.org/stable/modules/generated/sklearn.cluster.KMeans.html)实现，主要配置是将“ *n_clusters* ”超参数设置为数据中的估计集群数。
 
 下面列出了完整的示例。
 
@@ -464,7 +464,7 @@ Mini-Batch K-Means 是 K-Means 的修改版本，它使用样本的小批量而�
 
 *   [网页级 K 均值聚类](https://dl.acm.org/doi/10.1145/1772690.1772862)，2010。
 
-它是通过[微型批处理工具类](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.MiniBatchKMeans.html)实现的，主要配置是将“ *n_clusters* ”超参数设置为数据中的估计集群数。
+它是通过[微型批处理工具类](https://Sklearn.org/stable/modules/generated/sklearn.cluster.MiniBatchKMeans.html)实现的，主要配置是将“ *n_clusters* ”超参数设置为数据中的估计集群数。
 
 下面列出了完整的示例。
 
@@ -515,7 +515,7 @@ pyplot.show()
 
 *   [均值漂移:一种稳健的特征空间分析方法](https://www.computer.org/csdl/journal/tp/2002/05/i0603/13rRUxYrbVE)，2002。
 
-它是通过 [MeanShift 类](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.MeanShift.html)实现的，主要配置是*带宽*超参数。
+它是通过 [MeanShift 类](https://Sklearn.org/stable/modules/generated/sklearn.cluster.MeanShift.html)实现的，主要配置是*带宽*超参数。
 
 下面列出了完整的示例。
 
@@ -564,7 +564,7 @@ pyplot.show()
 
 *   [OPTICS:排序点识别聚类结构](https://dl.acm.org/doi/10.1145/304182.304187)，1999。
 
-它是通过 [OPTICS 类](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.OPTICS.html)实现的，主要配置是 *eps* 和 *min_samples* 超参数。
+它是通过 [OPTICS 类](https://Sklearn.org/stable/modules/generated/sklearn.cluster.OPTICS.html)实现的，主要配置是 *eps* 和 *min_samples* 超参数。
 
 下面列出了完整的示例。
 
@@ -613,7 +613,7 @@ pyplot.show()
 
 *   [关于谱聚类:分析和算法](https://papers.nips.cc/paper/2092-on-spectral-clustering-analysis-and-an-algorithm.pdf)，2002。
 
-它是通过[光谱聚类类](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.SpectralClustering.html)实现的，主要的光谱聚类是一类通用的聚类方法，取自线性代数。要调优的是“ *n_clusters* ”超参数，用于指定数据中估计的集群数量。
+它是通过[光谱聚类类](https://Sklearn.org/stable/modules/generated/sklearn.cluster.SpectralClustering.html)实现的，主要的光谱聚类是一类通用的聚类方法，取自线性代数。要调优的是“ *n_clusters* ”超参数，用于指定数据中估计的集群数量。
 
 下面列出了完整的示例。
 
@@ -658,7 +658,7 @@ pyplot.show()
 
 *   [混合模型，维基百科](https://en.wikipedia.org/wiki/Mixture_model)。
 
-它通过[高斯混合类](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html)实现，要调整的主要配置是“ *n_clusters* ”超参数，用于指定数据中估计的集群数量。
+它通过[高斯混合类](https://Sklearn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html)实现，要调整的主要配置是“ *n_clusters* ”超参数，用于指定数据中估计的集群数量。
 
 下面列出了完整的示例。
 
@@ -719,8 +719,8 @@ pyplot.show()
 
 ### 蜜蜂
 
-*   [聚类，sci kit-学习 API](https://scikit-learn.org/stable/modules/clustering.html) 。
-*   [sklearn . datasets . make _ classification API](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)。
+*   [聚类，sci kit-学习 API](https://Sklearn.org/stable/modules/clustering.html) 。
+*   [sklearn . datasets . make _ classification API](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_classification.html)。
 *   硬化。群集 API 。
 
 ### 文章
@@ -738,7 +738,7 @@ pyplot.show()
 
 *   聚类是在输入数据的特征空间中寻找自然群体的无监督问题。
 *   有许多不同的聚类算法，没有一种最佳方法适用于所有数据集。
-*   如何使用 scikit-learn 机器学习库在 Python 中实现、适应和使用顶级聚类算法。
+*   如何使用 Sklearn 机器学习库在 Python 中实现、适应和使用顶级聚类算法。
 
 **你有什么问题吗？**
 在下面的评论中提问，我会尽力回答。

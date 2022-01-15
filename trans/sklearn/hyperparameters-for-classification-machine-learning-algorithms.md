@@ -1,4 +1,4 @@
-# 调整分类机器学习算法的超参数
+# 调整机器学习分类算法的超参数
 
 > 原文：<https://machinelearningmastery.com/hyperparameters-for-classification-machine-learning-algorithms/>
 
@@ -22,7 +22,7 @@
 
 我们开始吧。
 
-*   **2020 年 1 月更新**:针对 scikit-learn v0.22 API 的变化进行了更新。
+*   **2020 年 1 月更新**:针对 Sklearn v0.22 API 的变化进行了更新。
 
 ![Hyperparameters for Classification Machine Learning Algorithms](img/d2e99c384a8c9a76f647bb3994df8a36.png)
 
@@ -47,7 +47,7 @@
 6.  随机森林
 7.  随机梯度升压
 
-我们将在 scikit-learn 实现(Python)的背景下考虑这些算法；尽管如此，您可以将相同的超参数建议用于其他平台，例如 Weka 和 r。
+我们将在 Sklearn 实现(Python)的背景下考虑这些算法；尽管如此，您可以将相同的超参数建议用于其他平台，例如 Weka 和 r。
 
 还为每个算法提供了一个小的网格搜索示例，您可以将其用作自己的分类预测建模项目的起点。
 
@@ -75,7 +75,7 @@ C 参数控制惩罚力度，这也是有效的。
 
 有关超参数的完整列表，请参见:
 
-*   [sklearn.linear_model。物流配送应用编程接口](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)。
+*   [sklearn.linear_model。物流配送应用编程接口](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)。
 
 下面的示例演示了在合成二进制分类数据集上网格搜索物流分类的关键超参数。
 
@@ -143,7 +143,7 @@ Best: 0.945333 using {'C': 0.01, 'penalty': 'l2', 'solver': 'liblinear'}
 
 有关超参数的完整列表，请参见:
 
-*   [sklearn.linear_model。脊分类器 API](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.RidgeClassifier.html) 。
+*   [sklearn.linear_model。脊分类器 API](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.RidgeClassifier.html) 。
 
 下面的示例演示了在合成二进制分类数据集上网格搜索 RidgeClassifier 的关键超参数。
 
@@ -204,7 +204,7 @@ Best: 0.974667 using {'alpha': 0.1}
 
 有关更完整的列表，请参见:
 
-*   [sklearn . neights . distance metric API](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html)
+*   [sklearn . neights . distance metric API](https://Sklearn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html)
 
 通过不同的权重(权重*权重*)来测试邻域成员的贡献可能也很有趣。
 
@@ -212,7 +212,7 @@ Best: 0.974667 using {'alpha': 0.1}
 
 有关超参数的完整列表，请参见:
 
-*   [sklearn . neighborsclassifier API](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html)。
+*   [sklearn . neighborsclassifier API](https://Sklearn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html)。
 
 下面的示例演示了在合成二进制分类数据集上网格搜索 KNeighborsClassifier 的关键超参数。
 
@@ -278,7 +278,7 @@ SVM 算法，像梯度增强一样，非常流行，非常有效，并且提供�
 
 有关超参数的完整列表，请参见:
 
-*   [硬化. svm.SVC API](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html) 。
+*   [硬化. svm.SVC API](https://Sklearn.org/stable/modules/generated/sklearn.svm.SVC.html) 。
 
 下面的示例演示了在合成二进制分类数据集上网格搜索支持向量机的关键超参数。
 
@@ -344,7 +344,7 @@ Best: 0.974333 using {'C': 1.0, 'gamma': 'scale', 'kernel': 'poly'}
 
 有关超参数的完整列表，请参见:
 
-*   [硬化。一起。bagginclassifier API](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.BaggingClassifier.html)
+*   [硬化。一起。bagginclassifier API](https://Sklearn.org/stable/modules/generated/sklearn.ensemble.BaggingClassifier.html)
 
 下面的示例演示了在合成二进制分类数据集上网格搜索巴金分类器的关键超参数。
 
@@ -406,7 +406,7 @@ Best: 0.873667 using {'n_estimators': 1000}
 
 有关超参数的完整列表，请参见:
 
-*   [硬化。一起。随机应变分类 API](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) 。
+*   [硬化。一起。随机应变分类 API](https://Sklearn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) 。
 
 下面的示例演示了在合成二进制分类数据集上网格搜索巴金分类器的关键超参数。
 
@@ -472,7 +472,7 @@ Best: 0.952000 using {'max_features': 'log2', 'n_estimators': 1000}
 
 有关超参数的完整列表，请参见:
 
-*   [硬化。集合。梯度助推器 API](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html) 。
+*   [硬化。集合。梯度助推器 API](https://Sklearn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html) 。
 
 下面的示例演示了在合成二进制分类数据集上网格搜索 gradientboosting 分类器的关键超参数。
 
@@ -533,7 +533,7 @@ Best: 0.936667 using {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100
 
 如果您想更深入地了解这个主题，本节将提供更多资源。
 
-*   [scikit-learn API](https://scikit-learn.org/stable/modules/classes.html)
+*   [Sklearn API](https://Sklearn.org/stable/modules/classes.html)
 *   [插入符号算法和调谐参数列表](https://topepo.github.io/caret/available-models.html)
 
 ## 摘要

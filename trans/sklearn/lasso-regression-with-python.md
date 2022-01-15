@@ -115,7 +115,7 @@ print(dataframe.head())
 [5 rows x 14 columns]
 ```
 
-scikit-learn Python 机器学习库通过[套索类](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html)提供了套索惩罚回归算法的实现。
+Sklearn Python 机器学习库通过[套索类](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.Lasso.html)提供了套索惩罚回归算法的实现。
 
 令人困惑的是， *lambda* 术语可以在定义类时通过“ *alpha* 参数进行配置。默认值为 1.0 或全额罚款。
 
@@ -209,7 +209,7 @@ Predicted: 30.998
 
 一种方法是在对数 10 标度上网格搜索从 1e-5 到 100 的α值，并发现什么最适合数据集。另一种方法是测试 0.0 到 1.0 之间的值，网格间距为 0.01。在这种情况下，我们将尝试后者。
 
-下面的例子使用 [GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) 类和我们定义的值网格来演示这一点。
+下面的例子使用 [GridSearchCV](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) 类和我们定义的值网格来演示这一点。
 
 ```py
 # grid search hyperparameters for lasso regression
@@ -258,7 +258,7 @@ MAE: -3.379
 Config: {'alpha': 0.01}
 ```
 
-scikit-learn 库还提供了一个内置的算法版本，可以通过 [LassoCV 类](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LassoCV.html)自动找到好的超参数。
+Sklearn 库还提供了一个内置的算法版本，可以通过 [LassoCV 类](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.LassoCV.html)自动找到好的超参数。
 
 为了使用该类，模型按照正常方式适合训练数据集，并且在训练过程中自动调整超参数。然后，拟合模型可用于进行预测。
 
@@ -308,9 +308,9 @@ alpha: 0.000000
 
 ### 蜜蜂
 
-*   [线性模型，sci kit-学习](https://scikit-learn.org/stable/modules/linear_model.html)。
-*   [sklearn.linear_model。套索 API](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html) 。
-*   [硬化. linear_model .lasocv API](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LassoCV.html)。
+*   [线性模型，sci kit-学习](https://Sklearn.org/stable/modules/linear_model.html)。
+*   [sklearn.linear_model。套索 API](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.Lasso.html) 。
+*   [硬化. linear_model .lasocv API](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.LassoCV.html)。
 
 ### 文章
 

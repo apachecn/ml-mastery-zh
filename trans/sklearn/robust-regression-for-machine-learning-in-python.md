@@ -52,7 +52,7 @@ Python 中机器学习的稳健回归
 
 ## 具有异常值的回归数据集
 
-我们可以使用[make _ revolution()函数](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_regression.html)定义一个合成回归数据集。
+我们可以使用[make _ revolution()函数](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_regression.html)定义一个合成回归数据集。
 
 在这种情况下，我们需要一个易于绘制和理解的数据集。这可以通过使用单个输入变量和单个输出变量来实现。我们不希望任务太容易，所以我们会添加大量的统计噪声。
 
@@ -245,7 +245,7 @@ Mean MAE: 5.260 (1.149)
 
 [Huber 回归](https://en.wikipedia.org/wiki/M-estimator)是一种稳健回归，它知道数据集中出现异常值的可能性，并赋予它们比数据集中其他示例更小的权重。
 
-我们可以通过 scikit-learn 中的【Huber 回归器类使用 Huber 回归。“*ε*参数控制什么被认为是异常值，其中较小的值考虑更多的数据异常值，反过来，使模型对异常值更加稳健。默认值为 1.35。
+我们可以通过 Sklearn 中的【Huber 回归器类使用 Huber 回归。“*ε*参数控制什么被认为是异常值，其中较小的值考虑更多的数据异常值，反过来，使模型对异常值更加稳健。默认值为 1.35。
 
 下面的示例评估具有异常值的回归数据集上的 Huber 回归，首先使用重复交叉验证评估模型，然后绘制最佳拟合线。
 
@@ -333,7 +333,7 @@ Mean MAE: 4.435 (1.868)
 
 RANSAC 试图将数据分为离群值和内联值，并在内联值上拟合模型。
 
-scikit-learn 库通过[transacruler](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.RANSACRegressor.html)类提供了一个实现。
+Sklearn 库通过[transacruler](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.RANSACRegressor.html)类提供了一个实现。
 
 下面的示例在具有异常值的回归数据集上评估 RANSAC 回归，首先通过重复交叉验证评估模型，然后绘制最佳拟合线。
 
@@ -419,7 +419,7 @@ Mean MAE: 4.454 (2.165)
 
 [泰尔森回归](https://en.wikipedia.org/wiki/Theil%E2%80%93Sen_estimator)包括在训练数据的子集上拟合多个回归模型，最后将系数组合在一起。
 
-scikit-learn 通过[类提供了一个实现。](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.TheilSenRegressor.html)
+Sklearn 通过[类提供了一个实现。](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.TheilSenRegressor.html)
 
 下面的示例在具有异常值的回归数据集上评估泰尔森回归，首先通过重复交叉验证评估模型，然后绘制最佳拟合线。
 
@@ -671,12 +671,12 @@ pyplot.show()
 
 ### 蜜蜂
 
-*   [线性模型，sci kit-学习](https://scikit-learn.org/stable/modules/linear_model.html)。
-*   [sklearn . datasets . make _ revolution API](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_regression.html)。
-*   [硬化. linear_model .线性回归 API](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html) 。
-*   [sklearn.linear_model。hubergressor API](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.HuberRegressor.html)。
-*   [sklearn.linear_model。ransacrecruler API](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.RANSACRegressor.html)。
-*   [sklearn.linear_model。lSenRegressor API](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.TheilSenRegressor.html) 。
+*   [线性模型，sci kit-学习](https://Sklearn.org/stable/modules/linear_model.html)。
+*   [sklearn . datasets . make _ revolution API](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_regression.html)。
+*   [硬化. linear_model .线性回归 API](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html) 。
+*   [sklearn.linear_model。hubergressor API](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.HuberRegressor.html)。
+*   [sklearn.linear_model。ransacrecruler API](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.RANSACRegressor.html)。
+*   [sklearn.linear_model。lSenRegressor API](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.TheilSenRegressor.html) 。
 
 ### 文章
 

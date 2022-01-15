@@ -8,7 +8,7 @@
 
 通常，超参数对模型的一般影响是已知的，但是如何为给定的数据集最佳地设置超参数和交互超参数的组合是具有挑战性的。通常有配置超参数的通用试探法或经验法则。
 
-一种更好的方法是客观地搜索模型超参数的不同值，并选择一个子集，该子集导致在给定数据集上获得最佳表现的模型。这被称为**超参数优化**或超参数调整，可在 scikit-learn Python 机器学习库中获得。超参数优化的结果是一组表现良好的超参数，可用于配置模型。
+一种更好的方法是客观地搜索模型超参数的不同值，并选择一个子集，该子集导致在给定数据集上获得最佳表现的模型。这被称为**超参数优化**或超参数调整，可在 Sklearn Python 机器学习库中获得。超参数优化的结果是一组表现良好的超参数，可用于配置模型。
 
 在本教程中，您将在 Python 中发现机器学习的超参数优化。
 
@@ -78,9 +78,9 @@
 
 ## 超参数优化套件-学习应用编程接口
 
-scikit-learn Python 开源机器学习库提供了调整模型超参数的技术。
+Sklearn Python 开源机器学习库提供了调整模型超参数的技术。
 
-具体来说，它提供了用于随机搜索的[随机化搜索 CV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html) 和用于网格搜索的[网格搜索 CV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) 。这两种技术都使用交叉验证来评估给定超参数向量的模型，因此每个类名都有“ *CV* ”后缀。
+具体来说，它提供了用于随机搜索的[随机化搜索 CV](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html) 和用于网格搜索的[网格搜索 CV](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) 。这两种技术都使用交叉验证来评估给定超参数向量的模型，因此每个类名都有“ *CV* ”后缀。
 
 两个类都需要两个参数。首先是你正在优化的模型。这是模型的一个实例，其中包含要优化的超参数集的值。第二是搜索空间。这被定义为[字典](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)，其中名称是模型的超参数参数，值是离散值或随机搜索情况下要采样的值的分布。
 
@@ -97,7 +97,7 @@ search = GridSearchCV(model, space)
 
 这两个类都提供了“ *cv* ”参数，该参数允许指定整数个折叠，例如 5，或者配置交叉验证对象。我建议定义和指定一个交叉验证对象，以获得对模型评估的更多控制，并使评估过程清晰明了。
 
-在分类任务的情况下，我建议使用[repeated stratifiedfold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html)类，对于回归任务，我建议使用 [RepeatedKFold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html) 进行适当次数的折叠和重复，比如 10 次折叠和 3 次重复。
+在分类任务的情况下，我建议使用[repeated stratifiedfold](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html)类，对于回归任务，我建议使用 [RepeatedKFold](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html) 进行适当次数的折叠和重复，比如 10 次折叠和 3 次重复。
 
 ```py
 ...
@@ -119,7 +119,7 @@ search = GridSearchCV(..., scoring='neg_mean_absolute_error')
 
 您可以在这里看到一个内置评分指标列表:
 
-*   [评分参数:定义模型评价规则](https://scikit-learn.org/stable/modules/model_evaluation.html#scoring-parameter)
+*   [评分参数:定义模型评价规则](https://Sklearn.org/stable/modules/model_evaluation.html#scoring-parameter)
 
 最后，搜索可以并行进行，例如，通过将“ *n_jobs* ”参数指定为系统内核数量的整数，例如 8，来使用所有的 CPU 内核。或者，您可以将其设置为-1，以自动使用系统中的所有内核。
 
@@ -150,7 +150,7 @@ print('Best Hyperparameters: %s' % result.best_params_)
 
 一旦知道了获得最佳结果的超参数集，就可以定义一个新模型，设置每个超参数的值，然后在所有可用数据上拟合该模型。这个模型可以用来对新数据进行预测。
 
-现在我们已经熟悉了 scikit-learn 中的超参数优化 API，让我们来看看一些工作示例。
+现在我们已经熟悉了 Sklearn 中的超参数优化 API，让我们来看看一些工作示例。
 
 ## 分类的超参数优化
 
@@ -310,7 +310,7 @@ space['penalty'] = ['none', 'l1', 'l2', 'elasticnet']
 space['C'] = [1e-5, 1e-4, 1e-3, 1e-2, 1e-1, 1, 10, 100]
 ```
 
-另外， [GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) 类不需要多次迭代，因为我们只评估网格中超参数的组合。
+另外， [GridSearchCV](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) 类不需要多次迭代，因为我们只评估网格中超参数的组合。
 
 ```py
 ...
@@ -400,7 +400,7 @@ print(X.shape, y.shape)
 
 接下来，我们可以使用超参数优化为汽车保险数据集找到一个好的模型配置。
 
-为了简单起见，我们将重点介绍一个线性模型，[线性回归模型](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)以及为该模型调整的常用超参数。
+为了简单起见，我们将重点介绍一个线性模型，[线性回归模型](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)以及为该模型调整的常用超参数。
 
 ### 回归的随机搜索
 
@@ -422,7 +422,7 @@ space['normalize'] = [True, False]
 
 回归与分类的主要区别在于评分方法的选择。
 
-对于回归，表现通常使用误差来衡量，误差被最小化，零代表具有完美技能的模型。scikit-learn 中的超参数优化程序假定分数最大化。因此，每个误差度量的版本被提供为负。
+对于回归，表现通常使用误差来衡量，误差被最小化，零代表具有完美技能的模型。Sklearn 中的超参数优化程序假定分数最大化。因此，每个误差度量的版本被提供为负。
 
 这意味着大的正误差变成大的负误差，好的表现是小的负值接近于零，完美的技巧是零。
 
@@ -611,7 +611,7 @@ Best Hyperparameters: {'alpha': 0.1, 'fit_intercept': True, 'normalize': False, 
 
 有关使用最终模型进行预测的示例，请参见教程:
 
-*   [如何使用 scikit 进行预测-学习](https://machinelearningmastery.com/make-predictions-scikit-learn/)
+*   [如何使用 scikit 进行预测-学习](https://machinelearningmastery.com/make-predictions-Sklearn/)
 
 **关于超参数优化，还有问题吗？**
 在下面的评论里告诉我。
@@ -626,13 +626,13 @@ Best Hyperparameters: {'alpha': 0.1, 'fit_intercept': True, 'normalize': False, 
 *   [标准分类和回归机器学习数据集的结果](https://machinelearningmastery.com/results-for-standard-classification-and-regression-machine-learning-datasets/)
 *   [调整分类机器学习算法的超参数](https://machinelearningmastery.com/hyperparameters-for-classification-machine-learning-algorithms/)
 *   [如何训练最终的机器学习模型](https://machinelearningmastery.com/train-final-machine-learning-model/)
-*   [如何使用 scikit 进行预测-学习](https://machinelearningmastery.com/make-predictions-scikit-learn/)
+*   [如何使用 scikit 进行预测-学习](https://machinelearningmastery.com/make-predictions-Sklearn/)
 
 ### 蜜蜂
 
-*   [调整估计器的超参数，scikit-learn 文档](https://scikit-learn.org/stable/modules/grid_search.html)。
-*   [sklearn.model_selection。GridSearchCV API](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) 。
-*   [硬化. model_selection。random mizedsearchv API](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html)。
+*   [调整估计器的超参数，Sklearn 文档](https://Sklearn.org/stable/modules/grid_search.html)。
+*   [sklearn.model_selection。GridSearchCV API](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) 。
+*   [硬化. model_selection。random mizedsearchv API](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html)。
 
 ### 文章
 

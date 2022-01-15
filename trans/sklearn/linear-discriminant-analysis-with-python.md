@@ -13,7 +13,7 @@
 完成本教程后，您将知道:
 
 *   线性判别分析是一种简单的线性机器学习分类算法。
-*   如何使用 Scikit-Learn 的线性判别分析模型进行拟合、评估和预测。
+*   如何使用 Sklearn 的线性判别分析模型进行拟合、评估和预测。
 *   如何在给定数据集上调整线性判别分析算法的超参数。
 
 我们开始吧。
@@ -28,7 +28,7 @@
 本教程分为三个部分；它们是:
 
 1.  线性判别分析
-2.  基于 scikit 学习的线性判别分析
+2.  基于 Sklearn的线性判别分析
 3.  调整线性判别分析超参数
 
 ## 线性判别分析
@@ -61,11 +61,11 @@ LDA 模型自然是多类的。这意味着它支持两类分类问题，并且�
 
 —第 149 页，[R](https://amzn.to/2xW4hPy)中应用的统计学习介绍，2014。
 
-现在我们已经熟悉了 LDA，让我们看看如何使用 scikit-learn 库来拟合和评估模型。
+现在我们已经熟悉了 LDA，让我们看看如何使用 Sklearn 库来拟合和评估模型。
 
-## 基于 scikit 学习的线性判别分析
+## 基于 Sklearn的线性判别分析
 
-线性判别分析可通过[线性判别分析类](https://scikit-learn.org/stable/modules/generated/sklearn.discriminant_analysis.LinearDiscriminantAnalysis.html)在 scikit-learn Python 机器学习库中获得。
+线性判别分析可通过[线性判别分析类](https://Sklearn.org/stable/modules/generated/sklearn.discriminant_analysis.LinearDiscriminantAnalysis.html)在 Sklearn Python 机器学习库中获得。
 
 该方法可以在没有配置的情况下直接使用，尽管该实现确实提供了自定义参数，例如选择求解器和使用惩罚。
 
@@ -79,7 +79,7 @@ model = LinearDiscriminantAnalysis()
 
 首先，让我们定义一个综合分类数据集。
 
-我们将使用 [make_classification()函数](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)创建一个包含 1000 个示例的数据集，每个示例有 10 个输入变量。
+我们将使用 [make_classification()函数](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_classification.html)创建一个包含 1000 个示例的数据集，每个示例有 10 个输入变量。
 
 该示例创建并汇总数据集。
 
@@ -98,7 +98,7 @@ print(X.shape, y.shape)
 (1000, 10) (1000,)
 ```
 
-我们可以通过[重复分层 k 重交叉验证类](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html)来拟合和评估线性判别分析模型。我们将在测试装具中使用 10 次折叠和三次重复。
+我们可以通过[重复分层 k 折交叉验证类](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html)来拟合和评估线性判别分析模型。我们将在测试装具中使用 10 次折叠和三次重复。
 
 下面列出了评估综合二元分类任务的线性判别分析模型的完整示例。
 
@@ -170,7 +170,7 @@ Predicted Class: 1
 
 一个重要的超参数是解算器，它默认为“ *svd* ”，但也可以设置为支持收缩能力的解算器的其他值。
 
-下面的示例使用带有不同解算器值的网格的[网格分类](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)来演示这一点。
+下面的示例使用带有不同解算器值的网格的[网格分类](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)来演示这一点。
 
 ```py
 # grid search solver for lda
@@ -276,8 +276,8 @@ Config: {'shrinkage': 0.02}
 
 ### 蜜蜂
 
-*   [sklearn . discriminal _ analysis。线性判别分析应用编程接口](https://scikit-learn.org/stable/modules/generated/sklearn.discriminant_analysis.LinearDiscriminantAnalysis.html)。
-*   [线性和二次判别分析，scikit-learn](https://scikit-learn.org/stable/modules/lda_qda.html#lda-qda) 。
+*   [sklearn . discriminal _ analysis。线性判别分析应用编程接口](https://Sklearn.org/stable/modules/generated/sklearn.discriminant_analysis.LinearDiscriminantAnalysis.html)。
+*   [线性和二次判别分析，Sklearn](https://Sklearn.org/stable/modules/lda_qda.html#lda-qda) 。
 
 ### 文章
 
@@ -290,7 +290,7 @@ Config: {'shrinkage': 0.02}
 具体来说，您了解到:
 
 *   线性判别分析是一种简单的线性机器学习分类算法。
-*   如何使用 Scikit-Learn 的线性判别分析模型进行拟合、评估和预测。
+*   如何使用 Sklearn 的线性判别分析模型进行拟合、评估和预测。
 *   如何在给定数据集上调整线性判别分析算法的超参数。
 
 **你有什么问题吗？**

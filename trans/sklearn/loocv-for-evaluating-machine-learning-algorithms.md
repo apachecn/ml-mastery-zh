@@ -1,4 +1,4 @@
-# LOOCV 评估机器学习算法
+# 用于评估机器学习算法的 LOOCV
 
 > 原文：<https://machinelearningmastery.com/loocv-for-evaluating-machine-learning-algorithms/>
 
@@ -13,7 +13,7 @@
 完成本教程后，您将知道:
 
 *   当您有一个小数据集，或者当模型表现的准确估计比方法的计算成本更重要时，省略交叉验证过程是合适的。
-*   如何使用 scikit-learn 机器学习库执行省去交叉验证程序。
+*   如何使用 Sklearn 机器学习库执行省去交叉验证程序。
 *   如何使用留一交叉验证评估用于分类和回归的机器学习算法。
 
 **用我的新书[Python 机器学习精通](https://machinelearningmastery.com/machine-learning-with-python/)启动你的项目**，包括*分步教程*和所有示例的 *Python 源代码*文件。
@@ -41,7 +41,7 @@ LOOCV 评价机器学习算法
 
 交叉验证有一个超参数“ *k* ”，它控制数据集被分割成的子集的数量。分割后，每个子集都有机会用作测试集，而所有其他子集一起用作训练数据集。
 
-这意味着 k 重交叉验证涉及拟合和评估 *k* 模型。这反过来提供了模型在数据集上的表现的 k 个估计，可以使用汇总统计数据(如平均值和标准偏差)来报告。然后，该分数可用于比较并最终选择用作数据集的“*最终模型*”的模型和配置。
+这意味着 k 折交叉验证涉及拟合和评估 *k* 模型。这反过来提供了模型在数据集上的表现的 k 个估计，可以使用汇总统计数据(如平均值和标准偏差)来报告。然后，该分数可用于比较并最终选择用作数据集的“*最终模型*”的模型和配置。
 
 k 的典型值为 k=3、k=5 和 k=10，其中 10 代表最常见的值。这是因为，给定广泛的测试，与其他 k 值和单一训练测试分割相比，10 倍交叉验证在模型表现估计中提供了低计算成本和低偏差的良好平衡。
 
@@ -71,7 +71,7 @@ LOOCV 是 k 倍交叉验证的极端版本，计算成本最高。它要求为�
 
 ## 科学工具包中的 LOOCV 程序-学习
 
-scikit-leave Python 机器学习库通过 [LeaveOneOut 类](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.LeaveOneOut.html)提供了 LOOCV 的实现。
+scikit-leave Python 机器学习库通过 [LeaveOneOut 类](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.LeaveOneOut.html)提供了 LOOCV 的实现。
 
 该方法没有配置，因此，没有提供任何参数来创建类的实例。
 
@@ -113,7 +113,7 @@ yhat = model.predict(X_test)
 
 可以从每个评估中保存分数，并且可以呈现模型表现的最终平均估计。
 
-我们可以将这些联系在一起，并演示如何使用 LOOCV 评估一个用于合成二进制分类数据集的 [RandomForestClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) 模型，该数据集是使用 [make_blobs()函数](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_blobs.html)创建的。
+我们可以将这些联系在一起，并演示如何使用 LOOCV 评估一个用于合成二进制分类数据集的 [RandomForestClassifier](https://Sklearn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) 模型，该数据集是使用 [make_blobs()函数](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_blobs.html)创建的。
 
 下面列出了完整的示例。
 
@@ -158,7 +158,7 @@ Accuracy: 0.990
 
 手动枚举折叠的缺点是速度慢，并且包含大量可能引入错误的代码。
 
-使用 LOOCV 评估模型的另一种方法是使用 [cross_val_score()函数](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)。
+使用 LOOCV 评估模型的另一种方法是使用 [cross_val_score()函数](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)。
 
 该函数通过“ *cv* ”参数获取模型、数据集和实例化的 LOOCV 对象集。然后返回准确度分数的样本，可通过计算平均值和标准偏差进行汇总。
 
@@ -431,9 +431,9 @@ MAE: 2.180 (2.346)
 
 ### 蜜蜂
 
-*   [交叉验证:评估评估者绩效，scikit-learn](https://scikit-learn.org/stable/modules/cross_validation.html) 。
-*   [sklearn.model_selection。离开应用编程接口](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.LeaveOneOut.html)。
-*   [sklearn . model _ selection . cross _ val _ score API](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)。
+*   [交叉验证:评估评估者绩效，Sklearn](https://Sklearn.org/stable/modules/cross_validation.html) 。
+*   [sklearn.model_selection。离开应用编程接口](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.LeaveOneOut.html)。
+*   [sklearn . model _ selection . cross _ val _ score API](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)。
 
 ## 摘要
 
@@ -442,7 +442,7 @@ MAE: 2.180 (2.346)
 具体来说，您了解到:
 
 *   当您有一个小数据集，或者当模型表现的准确估计比方法的计算成本更重要时，省略交叉验证过程是合适的。
-*   如何使用 scikit-learn 机器学习库执行省去交叉验证程序。
+*   如何使用 Sklearn 机器学习库执行省去交叉验证程序。
 *   如何使用留一交叉验证评估用于分类和回归的机器学习算法。
 
 **你有什么问题吗？**

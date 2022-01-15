@@ -1,39 +1,39 @@
-# Python 中分类的感知器算法
+# Python 中用于分类的感知机算法
 
 > 原文：<https://machinelearningmastery.com/perceptron-algorithm-for-classification-in-python/>
 
-**感知器**是一种用于二进制分类任务的线性机器学习算法。
+**感知机**是一种用于二进制分类任务的线性机器学习算法。
 
 它可以被认为是第一种也是最简单的人工神经网络。这绝对不是“深度”学习，而是一个重要的组成部分。
 
 像逻辑回归一样，它可以在特征空间中快速学习两类分类任务的线性分离，尽管与逻辑回归不同，它使用随机梯度下降优化算法学习，并且不预测校准概率。
 
-在本教程中，您将发现感知器分类机器学习算法。
+在本教程中，您将发现感知机分类机器学习算法。
 
 完成本教程后，您将知道:
 
-*   感知器分类器是一种线性算法，可以应用于二进制分类任务。
-*   如何使用带有 Scikit-Learn 的感知器模型进行拟合、评估和预测。
-*   如何在给定的数据集上调整感知器算法的超参数。
+*   感知机分类器是一种线性算法，可以应用于二进制分类任务。
+*   如何使用带有 Sklearn 的感知机模型进行拟合、评估和预测。
+*   如何在给定的数据集上调整感知机算法的超参数。
 
 我们开始吧。
 
 ![Perceptron Algorithm for Classification in Python](img/64910bd2c828ab5329b064d3805c7f5a.png)
 
-Python 中分类的感知器算法
+Python 中分类的感知机算法
 图片由[贝琳达·诺维卡](https://flickr.com/photos/bnovika/34068980060/)提供，保留部分权利。
 
 ## 教程概述
 
 本教程分为 3 =三个部分；它们是:
 
-1.  感知器算法
-2.  带有 Scikit 的感知器-学习
-3.  调整感知器超参数
+1.  感知机算法
+2.  带有 Scikit 的感知机-学习
+3.  调整感知机超参数
 
-## 感知器算法
+## 感知机算法
 
-[感知器算法](https://en.wikipedia.org/wiki/Perceptron)是一种两类(二进制)分类机器学习算法。
+[感知机算法](https://en.wikipedia.org/wiki/Perceptron)是一种两类(二进制)分类机器学习算法。
 
 这是一种神经网络模型，也许是最简单的神经网络模型。
 
@@ -48,11 +48,11 @@ Python 中分类的感知器算法
 
 假设输入乘以模型系数，如线性回归和逻辑回归，在使用模型之前对数据进行规范化或标准化是一个很好的做法。
 
-感知器是一种线性分类算法。这意味着它学习一个决策边界，该边界使用特征空间中的一条线(称为超平面)分隔两个类。因此，它适用于那些类可以被线或线性模型很好地分开的问题，称为线性可分的。
+感知机是一种线性分类算法。这意味着它学习一个决策边界，该边界使用特征空间中的一条线(称为超平面)分隔两个类。因此，它适用于那些类可以被线或线性模型很好地分开的问题，称为线性可分的。
 
 模型的系数被称为输入权重，并使用随机梯度下降优化算法进行训练。
 
-训练数据集中的示例一次一个地显示给模型，模型进行预测，并计算误差。然后更新模型的权重以减少示例的误差。这称为感知器更新规则。对训练数据集中的所有示例重复该过程，称为[时期](https://machinelearningmastery.com/difference-between-a-batch-and-an-epoch/)。然后，这个使用例子更新模型的过程会重复很多个时期。
+训练数据集中的示例一次一个地显示给模型，模型进行预测，并计算误差。然后更新模型的权重以减少示例的误差。这称为感知机更新规则。对训练数据集中的所有示例重复该过程，称为[时期](https://machinelearningmastery.com/difference-between-a-batch-and-an-epoch/)。然后，这个使用例子更新模型的过程会重复很多个时期。
 
 每批使用一小部分误差更新模型权重，该比例由称为学习率的超参数控制，通常设置为小值。这是为了确保学习不会发生得太快，导致可能较低的技能模型，称为模型权重优化(搜索)过程的过早收敛。
 
@@ -64,15 +64,15 @@ Python 中分类的感知器算法
 
 学习速率和训练时期的数量是算法的超参数，可以使用试探法或超参数调整来设置。
 
-有关感知器算法的更多信息，请参见教程:
+有关感知机算法的更多信息，请参见教程:
 
-*   [如何在 Python 中从头实现感知器算法](https://machinelearningmastery.com/implement-perceptron-algorithm-scratch-python/)
+*   [如何在 Python 中从头实现感知机算法](https://machinelearningmastery.com/implement-perceptron-algorithm-scratch-python/)
 
-现在我们已经熟悉了感知器算法，让我们探索如何在 Python 中使用该算法。
+现在我们已经熟悉了感知机算法，让我们探索如何在 Python 中使用该算法。
 
-## 带有 Scikit 的感知器-学习
+## 带有 Scikit 的感知机-学习
 
-感知机算法可通过[感知机类](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Perceptron.html)在 scikit-learn Python 机器学习库中获得。
+感知机算法可通过[感知机类](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.Perceptron.html)在 Sklearn Python 机器学习库中获得。
 
 该课程允许您配置学习率( *eta0* )，默认为 1.0。
 
@@ -90,13 +90,13 @@ model = Perceptron(eta0=1.0)
 model = Perceptron(max_iter=1000)
 ```
 
-感知器算法的 scikit-learn 实现还提供了您可能想要探索的其他配置选项，例如提前停止和使用惩罚损失。
+感知机算法的 Sklearn 实现还提供了您可能想要探索的其他配置选项，例如提前停止和使用惩罚损失。
 
-我们可以用一个工作示例来演示感知器分类器。
+我们可以用一个工作示例来演示感知机分类器。
 
 首先，让我们定义一个综合分类数据集。
 
-我们将使用 [make_classification()函数](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)创建一个包含 1000 个示例的数据集，每个示例有 20 个输入变量。
+我们将使用 [make_classification()函数](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_classification.html)创建一个包含 1000 个示例的数据集，每个示例有 20 个输入变量。
 
 该示例创建并汇总数据集。
 
@@ -115,7 +115,7 @@ print(X.shape, y.shape)
 (1000, 10) (1000,)
 ```
 
-我们可以通过[repeated stratifiedfold 类](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html)使用重复的分层 k 重交叉验证来拟合和评估感知器模型。我们将在测试装具中使用 10 次折叠和三次重复。
+我们可以通过[repeated stratifiedfold 类](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html)使用重复的分层 k 折交叉验证来拟合和评估感知机模型。我们将在测试装具中使用 10 次折叠和三次重复。
 
 我们将使用默认配置。
 
@@ -125,7 +125,7 @@ print(X.shape, y.shape)
 model = Perceptron()
 ```
 
-下面列出了评估用于合成二进制分类任务的感知器模型的完整示例。
+下面列出了评估用于合成二进制分类任务的感知机模型的完整示例。
 
 ```py
 # evaluate a perceptron model on the dataset
@@ -147,7 +147,7 @@ scores = cross_val_score(model, X, y, scoring='accuracy', cv=cv, n_jobs=-1)
 print('Mean Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 ```
 
-运行该示例在合成数据集上评估感知器算法，并报告 10 倍交叉验证的三次重复的平均准确性。
+运行该示例在合成数据集上评估感知机算法，并报告 10 倍交叉验证的三次重复的平均准确性。
 
 鉴于学习算法的随机性，您的具体结果可能会有所不同。考虑运行这个例子几次。
 
@@ -157,7 +157,7 @@ print('Mean Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
 Mean Accuracy: 0.847 (0.052)
 ```
 
-我们可能会决定使用感知器分类器作为最终模型，并对新数据进行预测。
+我们可能会决定使用感知机分类器作为最终模型，并对新数据进行预测。
 
 这可以通过在所有可用数据上拟合模型管道并调用 predict()函数传入新的数据行来实现。
 
@@ -189,9 +189,9 @@ Predicted Class: 1
 
 接下来，我们可以看看如何配置模型超参数。
 
-## 调整感知器超参数
+## 调整感知机超参数
 
-感知器算法的超参数必须针对您的特定数据集进行配置。
+感知机算法的超参数必须针对您的特定数据集进行配置。
 
 也许最重要的超参数是学习率。
 
@@ -210,7 +210,7 @@ grid = dict()
 grid['eta0'] = [0.0001, 0.001, 0.01, 0.1, 1.0]
 ```
 
-下面的例子使用 [GridSearchCV 类](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)和我们定义的值网格来演示这一点。
+下面的例子使用 [GridSearchCV 类](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)和我们定义的值网格来演示这一点。
 
 ```py
 # grid search learning rate for the perceptron
@@ -329,7 +329,7 @@ Config: {'max_iter': 10}
 
 ### 教程
 
-*   [如何在 Python 中从头开始实现感知器算法](https://machinelearningmastery.com/implement-perceptron-algorithm-scratch-python/)
+*   [如何在 Python 中从头开始实现感知机算法](https://machinelearningmastery.com/implement-perceptron-algorithm-scratch-python/)
 *   [了解学习率对神经网络表现的影响](https://machinelearningmastery.com/understand-the-dynamics-of-learning-rate-on-deep-learning-neural-networks/)
 *   [训练深度学习神经网络时如何配置学习速率](https://machinelearningmastery.com/learning-rate-for-deep-learning-neural-networks/)
 
@@ -341,22 +341,22 @@ Config: {'max_iter': 10}
 
 ### 蜜蜂
 
-*   [sklearn.linear_model。感知器 API](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Perceptron.html) 。
+*   [sklearn.linear_model。感知机 API](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.Perceptron.html) 。
 
 ### 文章
 
 *   [感知，维基百科](https://en.wikipedia.org/wiki/Perceptron)。
-*   [感知器(书)，维基百科](https://en.wikipedia.org/wiki/Perceptrons_(book))。
+*   [感知机(书)，维基百科](https://en.wikipedia.org/wiki/Perceptrons_(book))。
 
 ## 摘要
 
-在本教程中，您发现了感知器分类机器学习算法。
+在本教程中，您发现了感知机分类机器学习算法。
 
 具体来说，您了解到:
 
-*   感知器分类器是一种线性算法，可以应用于二进制分类任务。
-*   如何使用带有 Scikit-Learn 的感知器模型进行拟合、评估和预测。
-*   如何在给定的数据集上调整感知器算法的超参数。
+*   感知机分类器是一种线性算法，可以应用于二进制分类任务。
+*   如何使用带有 Sklearn 的感知机模型进行拟合、评估和预测。
+*   如何在给定的数据集上调整感知机算法的超参数。
 
 **你有什么问题吗？**
 在下面的评论中提问，我会尽力回答。

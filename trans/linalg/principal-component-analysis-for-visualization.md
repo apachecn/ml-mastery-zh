@@ -43,7 +43,7 @@
 
 这就是像主成分分析这样的降维技术发挥作用的地方。我们可以把维度缩小到两到三个，这样我们就可以把它可视化。让我们从一个例子开始。
 
-我们从[葡萄酒数据集](https://scikit-learn.org/stable/datasets/toy_dataset.html#wine-dataset)开始，这是一个包含 13 个特征(即数据集是 13 维的)和 3 个类的分类数据集。共有 178 个样本:
+我们从[葡萄酒数据集](https://Sklearn.org/stable/datasets/toy_dataset.html#wine-dataset)开始，这是一个包含 13 个特征(即数据集是 13 维的)和 3 个类的分类数据集。共有 178 个样本:
 
 ```py
 from sklearn.datasets import load_wine
@@ -208,7 +208,7 @@ plt.show()
 
 ![](img/4a6f73b846f7ce4de1e14115ae049c6d.png)
 
-这是[虹膜数据集](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html)，它只有四个特征。这些功能的比例相当，因此我们可以跳过缩放器。利用 4 特征数据，主成分分析最多可以产生 4 个主成分:
+这是[虹膜数据集](https://Sklearn.org/stable/modules/generated/sklearn.datasets.load_iris.html)，它只有四个特征。这些功能的比例相当，因此我们可以跳过缩放器。利用 4 特征数据，主成分分析最多可以产生 4 个主成分:
 
 ```py
 ...
@@ -430,9 +430,9 @@ print("Using PC1, F1: ", f1_score(y_test, clf.predict(X_test2), average="macro")
 
 ### 蜜蜂
 
-*   [sci kit-学习玩具数据集](https://scikit-learn.org/stable/datasets/toy_dataset.html)
-*   [sci kit-学习虹膜数据集](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html)
-*   [sci kit-学习葡萄酒数据集](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_wine.html)
+*   [sci kit-学习玩具数据集](https://Sklearn.org/stable/datasets/toy_dataset.html)
+*   [sci kit-学习虹膜数据集](https://Sklearn.org/stable/modules/generated/sklearn.datasets.load_iris.html)
+*   [sci kit-学习葡萄酒数据集](https://Sklearn.org/stable/modules/generated/sklearn.datasets.load_wine.html)
 *   [matplotlib scatter API](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html)
 *   [mplot 3d 工具包](https://matplotlib.org/stable/tutorials/toolkits/mplot3d.html)
 

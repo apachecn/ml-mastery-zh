@@ -45,7 +45,7 @@
 
 在多标签分类中，每个输入样本需要零个或多个标签作为输出，并且同时需要输出。假设输出标签是输入的函数。
 
-我们可以使用 scikit-learn 库中的[make _ multi label _ classification()函数](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_multilabel_classification.html)创建一个合成的多标签分类数据集。
+我们可以使用 Sklearn 库中的[make _ multi label _ classification()函数](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_multilabel_classification.html)创建一个合成的多标签分类数据集。
 
 我们的数据集将有 1000 个样本和 10 个输入要素。对于每个样本，数据集将有三个类别标签输出，每个类别将有一个或两个值(0 或 1，例如存在或不存在)。
 
@@ -104,7 +104,7 @@ for i in range(10):
 
 我们可以使用 Keras 深度学习库来演示这一点。
 
-我们将为上一节中定义的多标签分类任务定义一个多层感知器(MLP)模型。
+我们将为上一节中定义的多标签分类任务定义一个多层感知机(MLP)模型。
 
 每个样本有 10 个输入和 3 个输出；因此，网络需要一个输入层，该输入层期望通过第一个隐藏层中的“ *input_dim* ”参数指定的 10 个输入和输出层中的三个节点。
 
@@ -316,9 +316,9 @@ Predicted: [0.9998627 0.9849341 0.00208042]
 如果您想更深入地了解这个主题，本节将提供更多资源。
 
 *   [多标签分类，维基百科](https://en.wikipedia.org/wiki/Multi-label_classification)。
-*   [sklearn . datasets . make _ multi label _ classification API](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_multilabel_classification.html)。
+*   [sklearn . datasets . make _ multi label _ classification API](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_multilabel_classification.html)。
 *   [硬主页](https://keras.io/) 。
-*   [sklearn.model_selection。重复的策略应用编程接口](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html)。
+*   [sklearn.model_selection。重复的策略应用编程接口](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html)。
 
 ## 摘要
 

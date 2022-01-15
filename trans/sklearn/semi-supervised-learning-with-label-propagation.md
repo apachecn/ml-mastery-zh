@@ -1,4 +1,4 @@
-# 带标签传播的半监督学习
+# 使用标签传播的半监督学习
 
 > 原文：<https://machinelearningmastery.com/semi-supervised-learning-with-label-propagation/>
 
@@ -61,7 +61,7 @@
 
 在本节中，我们将为半监督学习定义一个数据集，并在该数据集上建立一个表现基线。
 
-首先，我们可以使用[make _ classion()函数](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)定义一个合成分类数据集。
+首先，我们可以使用[make _ classion()函数](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_classification.html)定义一个合成分类数据集。
 
 我们将用两个类(二进制分类)和两个输入变量以及 1000 个示例来定义数据集。
 
@@ -188,7 +188,7 @@ Accuracy: 84.800
 
 ## 半监督学习中的标签传播
 
-标签传播算法可通过[标签传播类](https://scikit-learn.org/stable/modules/generated/sklearn.semi_supervised.LabelPropagation.html)在 scikit-learn Python 机器学习库中获得。
+标签传播算法可通过[标签传播类](https://Sklearn.org/stable/modules/generated/sklearn.semi_supervised.LabelPropagation.html)在 Sklearn Python 机器学习库中获得。
 
 通过调用 *fit()* 函数，该模型可以像任何其他分类模型一样进行拟合，并通过 *predict()* 函数用于对新数据进行预测。
 
@@ -214,7 +214,7 @@ yhat = model.predict(...)
 tran_labels = model.transduction_
 ```
 
-现在我们已经熟悉了如何在 scikit-learn 中使用标签传播算法，让我们看看如何将其应用于我们的半监督学习数据集。
+现在我们已经熟悉了如何在 Sklearn 中使用标签传播算法，让我们看看如何将其应用于我们的半监督学习数据集。
 
 首先，我们必须准备训练数据集。
 
@@ -405,11 +405,11 @@ Accuracy: 86.200
 
 ### 蜜蜂
 
-*   [硬化。半监督。标签传播 API](https://scikit-learn.org/stable/modules/generated/sklearn.semi_supervised.LabelPropagation.html) 。
-*   [第 1.14 节。半监督，Scikit-学习用户指南](https://scikit-learn.org/stable/modules/label_propagation.html)。
-*   [sklearn . model _ selection . train _ test _ split API](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)。
-*   [sklearn.linear_model。物流配送应用编程接口](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)。
-*   [sklearn . datasets . make _ classification API](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)。
+*   [硬化。半监督。标签传播 API](https://Sklearn.org/stable/modules/generated/sklearn.semi_supervised.LabelPropagation.html) 。
+*   [第 1.14 节。半监督，Scikit-学习用户指南](https://Sklearn.org/stable/modules/label_propagation.html)。
+*   [sklearn . model _ selection . train _ test _ split API](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)。
+*   [sklearn.linear_model。物流配送应用编程接口](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)。
+*   [sklearn . datasets . make _ classification API](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_classification.html)。
 
 ### 文章
 

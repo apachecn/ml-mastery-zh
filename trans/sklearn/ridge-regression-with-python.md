@@ -111,7 +111,7 @@ print(dataframe.head())
 [5 rows x 14 columns]
 ```
 
-scikit-learn Python 机器学习库通过[岭类](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html)提供了岭回归算法的实现。
+Sklearn Python 机器学习库通过[岭类](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.Ridge.html)提供了岭回归算法的实现。
 
 令人困惑的是，在定义类时，lambda 术语可以通过“ *alpha* ”参数进行配置。默认值为 1.0 或全额罚款。
 
@@ -203,7 +203,7 @@ Predicted: 30.253
 
 一种方法是在对数标度上从 1e-5 到 100 的范围内网格搜索*α*值，并发现什么最适合数据集。另一种方法是测试 0.0 到 1.0 之间的值，网格间距为 0.01。在这种情况下，我们将尝试后者。
 
-下面的例子使用 [GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) 类和我们定义的值网格来演示这一点。
+下面的例子使用 [GridSearchCV](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) 类和我们定义的值网格来演示这一点。
 
 ```py
 # grid search hyperparameters for ridge regression
@@ -246,7 +246,7 @@ MAE: -3.379
 Config: {'alpha': 0.51}
 ```
 
-scikit-learn 库还提供了一个内置的算法版本，可以通过 [RidgeCV 类](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.RidgeCV.html)自动找到好的超参数。
+Sklearn 库还提供了一个内置的算法版本，可以通过 [RidgeCV 类](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.RidgeCV.html)自动找到好的超参数。
 
 为了使用这个类，它适合于训练数据集并用于进行预测。在训练过程中，它会自动调整超参数值。
 
@@ -296,9 +296,9 @@ alpha: 0.510000
 
 ### 蜜蜂
 
-*   [sklearn.linear_model。山脊 API](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html) 。
-*   [sklearn.linear_model。里奇韦原料药](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.RidgeCV.html)。
-*   [线性模型，sci kit-学习](https://scikit-learn.org/stable/modules/linear_model.html)。
+*   [sklearn.linear_model。山脊 API](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.Ridge.html) 。
+*   [sklearn.linear_model。里奇韦原料药](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.RidgeCV.html)。
+*   [线性模型，sci kit-学习](https://Sklearn.org/stable/modules/linear_model.html)。
 
 ### 文章
 

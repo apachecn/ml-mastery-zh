@@ -6,7 +6,7 @@
 
 超参数优化指的是执行搜索，以便发现一组特定的模型配置参数，从而在特定数据集上获得模型的最佳表现。
 
-有许多方法可以执行超参数优化，尽管现代方法，如贝叶斯优化，是快速有效的。 **Scikit-Optimize 库**是一个开源 Python 库，它提供了贝叶斯优化的实现，可用于调整 scikit-Learn Python 库中机器学习模型的超参数。
+有许多方法可以执行超参数优化，尽管现代方法，如贝叶斯优化，是快速有效的。 **Scikit-Optimize 库**是一个开源 Python 库，它提供了贝叶斯优化的实现，可用于调整 Sklearn Python 库中机器学习模型的超参数。
 
 您可以很容易地使用 Scikit-Optimize 库在下一个机器学习项目中调整模型。
 
@@ -48,7 +48,7 @@ Scikit-Optimize，简称 skopt，是一个用于执行优化任务的开源 Pyth
 
 *   [如何在 Python 中从头实现贝叶斯优化](https://machinelearningmastery.com/what-is-bayesian-optimization/)
 
-重要的是，该库为调整 scikit-learn 库提供的机器学习算法的超参数提供了支持，即所谓的超参数优化。因此，它为效率较低的超参数优化过程(如网格搜索和随机搜索)提供了一种有效的替代方案。
+重要的是，该库为调整 Sklearn 库提供的机器学习算法的超参数提供了支持，即所谓的超参数优化。因此，它为效率较低的超参数优化过程(如网格搜索和随机搜索)提供了一种有效的替代方案。
 
 scikit-optimize 库可以使用 pip 安装，如下所示:
 
@@ -117,7 +117,7 @@ print(X.shape, y.shape)
 (351, 34) (351,)
 ```
 
-我们可以使用重复的分层交叉验证在这个数据集上评估[支持向量机](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html) (SVM)模型。
+我们可以使用重复的分层交叉验证在这个数据集上评估[支持向量机](https://Sklearn.org/stable/modules/generated/sklearn.svm.SVC.html) (SVM)模型。
 
 我们可以报告数据集上所有折叠和重复的平均模型表现，这将为后面章节中执行的模型超参数调整提供参考。
 
@@ -310,15 +310,15 @@ Best Parameters: [1.2852670137769258, 'rbf', 2, 0.18178016885627174]
 
 ## 自动调整算法超参数
 
-Scikit-Learn 机器学习库提供了调整模型超参数的工具。
+Sklearn 机器学习库提供了调整模型超参数的工具。
 
-具体来说，它提供了 [GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) 和[随机化搜索 CV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html) 类，这些类采用一个模型、一个搜索空间和一个交叉验证配置。
+具体来说，它提供了 [GridSearchCV](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) 和[随机化搜索 CV](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html) 类，这些类采用一个模型、一个搜索空间和一个交叉验证配置。
 
 这些类的好处是搜索过程是自动执行的，只需要最少的配置。
 
 类似地，Scikit-Optimize 库提供了一个类似的界面，用于通过[Bayesarccv](https://scikit-optimize.github.io/stable/modules/generated/skopt.BayesSearchCV.html)类执行模型超参数的贝叶斯优化。
 
-这个类可以用与 Scikit-Learn 等价类相同的方式使用。
+这个类可以用与 Sklearn 等价类相同的方式使用。
 
 首先，搜索空间必须定义为一个字典，其中超参数名称用作关键字，变量的范围用作值。
 

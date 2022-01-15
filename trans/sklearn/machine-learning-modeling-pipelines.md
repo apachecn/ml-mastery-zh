@@ -6,7 +6,7 @@
 
 模型的有效使用将需要输入数据的适当准备和模型的超参数调整。
 
-准备数据、调整模型和转换预测所需的线性步骤序列统称为**建模管道**。像 scikit-learn Python 库这样的现代机器学习库允许正确(没有数据泄漏)和一致地(在评估和预测期间)定义和使用这一系列步骤。
+准备数据、调整模型和转换预测所需的线性步骤序列统称为**建模管道**。像 Sklearn Python 库这样的现代机器学习库允许正确(没有数据泄漏)和一致地(在评估和预测期间)定义和使用这一系列步骤。
 
 然而，使用建模管道可能会让初学者感到困惑，因为这需要改变应用机器学习过程的视角。
 
@@ -91,7 +91,7 @@
 
 管道确保操作顺序只定义一次，并在用于模型评估或进行预测时保持一致。
 
-Python scikit-learn 机器学习库通过 [Pipeline 类](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html)提供机器学习建模管道。
+Python Sklearn 机器学习库通过 [Pipeline 类](https://Sklearn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html)提供机器学习建模管道。
 
 您可以在本教程中了解有关如何使用此管道应用编程接口的更多信息:
 

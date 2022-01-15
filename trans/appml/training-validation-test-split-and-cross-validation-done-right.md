@@ -6,7 +6,7 @@
 
 机器学习的一个关键步骤是模型的选择。一个合适的模型和合适的超参数是获得良好预测结果的关键。当我们面临模式之间的选择时，应该如何做决定？
 
-这就是为什么我们有交叉验证。在 scikit-learn 中，有一系列函数可以帮助我们做到这一点。但是，我们经常看到交叉验证使用不当，或者交叉验证的结果没有被正确解释。
+这就是为什么我们有交叉验证。在 Sklearn 中，有一系列函数可以帮助我们做到这一点。但是，我们经常看到交叉验证使用不当，或者交叉验证的结果没有被正确解释。
 
 在本教程中，您将发现使用交叉验证和数据集为项目选择最佳模型的正确过程。
 
@@ -50,7 +50,7 @@
 *   对数损失
 *   f-测度
 
-scikit-learn 的[指标页面有一个较长但并非详尽的列表，列出了不同类别的常见评估。如果我们有一个样本数据集，并希望训练一个模型来预测它，我们可以使用这些指标之一来评估模型的效率。](https://scikit-learn.org/stable/modules/model_evaluation.html)
+Sklearn 的[指标页面有一个较长但并非详尽的列表，列出了不同类别的常见评估。如果我们有一个样本数据集，并希望训练一个模型来预测它，我们可以使用这些指标之一来评估模型的效率。](https://Sklearn.org/stable/modules/model_evaluation.html)
 
 但是，有一个问题；对于样本数据集，我们只评估了模型一次。假设我们正确地将数据集分为训练集和测试集，并在用测试集评估时用训练集拟合模型，那么我们只获得了用一个测试集评估的单个样本点。我们如何确定它是一个准确的评价，而不是一个偶然的过低或过高的值？如果我们有两个模型，并且根据评价发现一个模型比另一个模型好，我们怎么知道这也不是偶然的呢？
 
@@ -111,7 +111,7 @@ $ y = 1+0.5 \ sin(x)+\ε$
 
 ![The generated dataset](img/f6442354c49c090702c146d3fafcc6c8.png)
 
-然后，我们执行一个训练-测试分割，并保持测试集，直到我们完成我们的最终模型。因为我们将使用 scikit-learn 模型进行回归，并且他们假设输入`x`是二维数组，所以我们首先在这里重塑它。此外，为了使模型选择的效果更明显，我们不会在分割中打乱数据。实际上，这通常不是一个好主意。
+然后，我们执行一个训练-测试分割，并保持测试集，直到我们完成我们的最终模型。因为我们将使用 Sklearn 模型进行回归，并且他们假设输入`x`是二维数组，所以我们首先在这里重塑它。此外，为了使模型选择的效果更明显，我们不会在分割中打乱数据。实际上，这通常不是一个好主意。
 
 ```py
 ...
@@ -128,7 +128,7 @@ $ y = c+b \乘以 x+a \乘以 x^2$
 
 $ y = b+ a \乘以 x$
 
-scikit-learn 中没有多项式回归，但是我们可以利用`PolynomialFeatures`结合`LinearRegression`来实现。`PolynomialFeatures(2)`将输入$x$转换成$1,x,x^2$，对这三者进行线性回归，我们会发现上面公式中的系数$a，b，c$。
+Sklearn 中没有多项式回归，但是我们可以利用`PolynomialFeatures`结合`LinearRegression`来实现。`PolynomialFeatures(2)`将输入$x$转换成$1,x,x^2$，对这三者进行线性回归，我们会发现上面公式中的系数$a，b，c$。
 
 ```py
 ...
@@ -256,7 +256,7 @@ Test set RMSE: 0.4403109417232645
 Mean validation RMSE: 0.4459827970437929
 ```
 
-在这里，由于 scikit-learn 将在交叉验证的每次迭代中克隆一个新模型，因此我们创建的模型**在交叉验证后仍未经过训练**。否则，我们应该使用`linreg = sklearn.base.clone(linreg)`克隆一个新的模型来重置模型。但是从上面，我们看到我们从我们的测试集中获得了 0.440 的均方根误差，而我们从交叉验证中获得的分数是 0.446。这没有太大的差别，因此，我们得出结论，对于新数据，这个模型应该看到类似大小的误差。
+在这里，由于 Sklearn 将在交叉验证的每次迭代中克隆一个新模型，因此我们创建的模型**在交叉验证后仍未经过训练**。否则，我们应该使用`linreg = sklearn.base.clone(linreg)`克隆一个新的模型来重置模型。但是从上面，我们看到我们从我们的测试集中获得了 0.440 的均方根误差，而我们从交叉验证中获得的分数是 0.446。这没有太大的差别，因此，我们得出结论，对于新数据，这个模型应该看到类似大小的误差。
 
 将所有这些结合在一起，完整的示例如下所示。
 
@@ -335,13 +335,13 @@ print("Mean validation RMSE:", -linscores["test_score"].mean())
 
 *   [k 倍交叉验证的温和介绍](https://machinelearningmastery.com/k-fold-cross-validation/)
 *   [测试数据集和验证数据集有什么区别？](https://machinelearningmastery.com/difference-test-validation-datasets/)
-*   [如何配置 k 重交叉验证](https://machinelearningmastery.com/how-to-configure-k-fold-cross-validation/)
+*   [如何配置 k 折交叉验证](https://machinelearningmastery.com/how-to-configure-k-fold-cross-validation/)
 
 ### 蜜蜂
 
-*   [sklearn.model_selection。KFold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html) API。
-*   [sklearn . model _ selection . cross _ val _ score](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)API。
-*   [sklearn . model _ selection . cross _ validate](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_validate.html)API。
+*   [sklearn.model_selection。KFold](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.KFold.html) API。
+*   [sklearn . model _ selection . cross _ val _ score](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)API。
+*   [sklearn . model _ selection . cross _ validate](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.cross_validate.html)API。
 
 ### 文章
 

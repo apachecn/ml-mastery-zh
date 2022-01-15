@@ -117,7 +117,7 @@ print(dataframe.head())
 [5 rows x 14 columns]
 ```
 
-scikit-learn Python 机器学习库通过 [Lars 类](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lars.html)提供了 LARS 惩罚回归算法的实现。
+Sklearn Python 机器学习库通过 [Lars 类](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.Lars.html)提供了 LARS 惩罚回归算法的实现。
 
 ```py
 ...
@@ -203,13 +203,13 @@ Predicted: 29.904
 
 作为 LARS 训练算法的一部分，它会自动发现 Lasso 算法中使用的 lambda 超参数的最佳值。
 
-这个超参数在 scikit-learn 套索和 LARS 的实现中被称为“ *alpha* ”参数。
+这个超参数在 Sklearn 套索和 LARS 的实现中被称为“ *alpha* ”参数。
 
 然而，自动发现最佳模型和*α*超参数的过程仍然基于单个训练数据集。
 
 另一种方法是在训练数据集的多个子集上拟合模型，并在褶皱上选择最佳的内部模型配置，在这种情况下是*α*的值。通常，这被称为交叉验证估计。
 
-scikit-learn 库提供了 LARS 的交叉验证版本，用于通过 [LarsCV 类](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LarsCV.html)为 *alpha* 找到更可靠的值。
+Sklearn 库提供了 LARS 的交叉验证版本，用于通过 [LarsCV 类](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.LarsCV.html)为 *alpha* 找到更可靠的值。
 
 下面的示例演示了如何拟合 *LarsCV* 模型并报告通过交叉验证找到的*α*值
 
@@ -292,9 +292,9 @@ Mean MAE: 3.374 (0.558)
 
 ### 蜜蜂
 
-*   [线性模型，sci kit-学习](https://scikit-learn.org/stable/modules/linear_model.html)。
-*   [sklearn.linear_model。拉斯 API](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lars.html) 。
-*   [sklearn.linear_model。拉斯 API](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lars.html) 。
+*   [线性模型，sci kit-学习](https://Sklearn.org/stable/modules/linear_model.html)。
+*   [sklearn.linear_model。拉斯 API](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.Lars.html) 。
+*   [sklearn.linear_model。拉斯 API](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.Lars.html) 。
 
 ### 文章
 

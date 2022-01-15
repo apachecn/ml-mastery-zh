@@ -118,7 +118,7 @@ print(dataframe.head())
 4  I  0.330  0.255  0.080  0.2050  0.0895  0.0395  0.055   7
 ```
 
-我们可以使用这些数据作为开发单独的回归和分类多层感知器(MLP)神经网络模型的基础。
+我们可以使用这些数据作为开发单独的回归和分类多层感知机(MLP)神经网络模型的基础。
 
 **注**:我们并不是试图为此数据集开发一个最优模型；相反，我们正在演示一种特定的技术:开发一个可以进行回归和分类预测的模型。
 
@@ -258,7 +258,7 @@ MAE: 1.554
 
 这需要首先为每个“*环*值分配一个单独的整数，从 0 开始，以“*类*的总数减 1 结束。
 
-这可以通过[标签编码器](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html)来实现。
+这可以通过[标签编码器](https://Sklearn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html)来实现。
 
 我们还可以将类的总数记录为唯一编码类值的总数，这将是模型稍后需要的。
 

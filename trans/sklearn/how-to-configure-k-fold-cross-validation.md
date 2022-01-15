@@ -1,4 +1,4 @@
-# 如何配置 k 重交叉验证
+# 如何配置 k 折交叉验证
 
 > 原文：<https://machinelearningmastery.com/how-to-configure-k-fold-cross-validation/>
 
@@ -16,7 +16,7 @@ k-fold 交叉验证过程是一种评估数据集上机器学习算法表现的�
 
 完成本教程后，您将知道:
 
-*   如何在数据集上使用 k 重交叉验证评估机器学习算法？
+*   如何在数据集上使用 k 折交叉验证评估机器学习算法？
 *   如何对 k 值进行敏感性分析以进行 k 倍交叉验证？
 *   如何计算交叉验证测试线束和理想测试条件之间的相关性？
 
@@ -39,7 +39,7 @@ k-fold 交叉验证过程是一种评估数据集上机器学习算法表现的�
 
 ## k 折叠交叉验证
 
-使用 k 重交叉验证在数据集上评估机器学习模型是很常见的。
+使用 k 折交叉验证在数据集上评估机器学习模型是很常见的。
 
 k 折叠交叉验证过程将有限的数据集分成 k 个不重叠的折叠。k 个折叠中的每一个都有机会被用作保留测试集，而所有其他折叠一起被用作训练数据集。在 k 个保持测试集上，对总共 k 个模型进行拟合和评估，并报告平均表现。
 
@@ -47,11 +47,11 @@ k 折叠交叉验证过程将有限的数据集分成 k 个不重叠的折叠。
 
 *   [k 倍交叉验证的温和介绍](https://machinelearningmastery.com/k-fold-cross-validation/)
 
-使用 scikit-learn 机器学习库可以轻松实现 k-fold 交叉验证过程。
+使用 Sklearn 机器学习库可以轻松实现 k-fold 交叉验证过程。
 
 首先，让我们定义一个可以作为本教程基础的综合分类数据集。
 
-[make_classification()函数](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)可用于创建合成二进制分类数据集。我们将配置它生成 100 个样本，每个样本有 20 个输入特征，其中 15 个有助于目标变量。
+[make_classification()函数](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_classification.html)可用于创建合成二进制分类数据集。我们将配置它生成 100 个样本，每个样本有 20 个输入特征，其中 15 个有助于目标变量。
 
 下面的示例创建并汇总了数据集。
 
@@ -74,9 +74,9 @@ print(X.shape, y.shape)
 
 接下来，我们可以使用 k-fold 交叉验证来评估这个数据集上的模型。
 
-我们将评估一个[logisticreduce](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)模型，并使用 [KFold 类](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html)执行交叉验证，配置为洗牌数据集并设置 k=10，这是一个流行的默认值。
+我们将评估一个[logisticreduce](https://Sklearn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)模型，并使用 [KFold 类](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.KFold.html)执行交叉验证，配置为洗牌数据集并设置 k=10，这是一个流行的默认值。
 
-[cross_val_score()函数](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)将用于执行评估，获取数据集和交叉验证配置，并返回为每个折叠计算的分数列表。
+[cross_val_score()函数](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)将用于执行评估，获取数据集和交叉验证配置，并返回为每个折叠计算的分数列表。
 
 下面列出了完整的示例。
 
@@ -589,13 +589,13 @@ Correlation: 0.746
 ### 教程
 
 *   [k 倍交叉验证的温和介绍](https://machinelearningmastery.com/k-fold-cross-validation/)
-*   [如何固定不平衡分类的 k 重交叉验证](https://machinelearningmastery.com/cross-validation-for-imbalanced-classification/)
+*   [如何固定不平衡分类的 k 折交叉验证](https://machinelearningmastery.com/cross-validation-for-imbalanced-classification/)
 
 ### 蜜蜂
 
-*   [sklearn.model_selection。KFold API](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html) 。
-*   [sklearn.model_selection。离开应用编程接口](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.LeaveOneOut.html)。
-*   [sklearn . model _ selection . cross _ val _ score API](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)。
+*   [sklearn.model_selection。KFold API](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.KFold.html) 。
+*   [sklearn.model_selection。离开应用编程接口](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.LeaveOneOut.html)。
+*   [sklearn . model _ selection . cross _ val _ score API](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html)。
 
 ### 文章
 
@@ -607,7 +607,7 @@ Correlation: 0.746
 
 具体来说，您了解到:
 
-*   如何在数据集上使用 k 重交叉验证评估机器学习算法？
+*   如何在数据集上使用 k 折交叉验证评估机器学习算法？
 *   如何对 k 值进行敏感性分析以进行 k 倍交叉验证？
 *   如何计算交叉验证测试线束和理想测试条件之间的相关性？
 

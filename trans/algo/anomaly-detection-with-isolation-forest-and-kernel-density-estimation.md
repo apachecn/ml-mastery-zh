@@ -39,7 +39,7 @@
 
 回想一下，决策树是使用信息标准(如基尼指数或熵)构建的。明显不同的群体在树根处被分开，在树枝深处，更细微的区别被识别出来。基于随机选取的特征，隔离森林以树形结构处理随机二次抽样数据。深入到树中并需要更多的切口来分离它们的样本，它们是异常的概率非常小。同样，在树的较短分支上发现的样本更有可能是异常，因为树发现将它们与其他数据区分开来更简单。
 
-在本节中，我们将在 Python 中实现隔离森林，以了解它如何检测数据集中的异常。我们都知道不可思议的 scikit-learn API，它为简单的实现提供了各种 API。因此，我们将使用它来应用隔离森林，以展示其异常检测的有效性。
+在本节中，我们将在 Python 中实现隔离森林，以了解它如何检测数据集中的异常。我们都知道不可思议的 Sklearn API，它为简单的实现提供了各种 API。因此，我们将使用它来应用隔离森林，以展示其异常检测的有效性。
 
 首先，让我们加载必要的库和包。
 
@@ -69,7 +69,7 @@ plt.scatter(X[:, 0], X[:, 1], marker="o", c=_, s=25, edgecolor="k")
 
 ### **定义和拟合用于预测的隔离森林模型**
 
-如上所述，我们将使用 scikit-learn API 中的`IsolationForest`类来定义我们的模型。在类参数中，我们将设置估计量的数量和污染值。然后，我们将使用`fit_predict()`函数通过将数据集拟合到模型来获得数据集的预测。
+如上所述，我们将使用 Sklearn API 中的`IsolationForest`类来定义我们的模型。在类参数中，我们将设置估计量的数量和污染值。然后，我们将使用`fit_predict()`函数通过将数据集拟合到模型来获得数据集的预测。
 
 ```py
 IF = IsolationForest(n_estimators=100, contamination=.03)
@@ -115,7 +115,7 @@ plt.show()
 
 如果我们认为数据集的范数应该符合某种概率分布，那么异常就是我们应该很少看到的，或者概率很低的异常。核密度估计是一种在样本空间中随机估计数据点概率密度函数的技术。利用密度函数，我们可以检测数据集中的异常。
 
-为了实现，我们将通过创建均匀分布来准备数据，然后应用 scikit-learn 库中的`KernelDensity`类来检测异常值。
+为了实现，我们将通过创建均匀分布来准备数据，然后应用 Sklearn 库中的`KernelDensity`类来检测异常值。
 
 首先，我们将加载必要的库和包。
 
@@ -161,7 +161,7 @@ plt.show()
 
 ### **准备并拟合用于预测的核密度函数**
 
-我们将使用 scikit-learn API 来准备和适应模型。然后使用`score_sample()`函数获取数据集中样本的得分。接下来，我们将使用`quantile()`函数来获取阈值。
+我们将使用 Sklearn API 来准备和适应模型。然后使用`score_sample()`函数获取数据集中样本的得分。接下来，我们将使用`quantile()`函数来获取阈值。
 
 ```py
 kern_dens = KernelDensity()
@@ -238,8 +238,8 @@ plt.show()
 
 ### API
 
-*   [sklearn . neights . kerneldensity](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KernelDensity.html)API
-*   [硬化。一起。绝缘林](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.IsolationForest.html) API
+*   [sklearn . neights . kerneldensity](https://Sklearn.org/stable/modules/generated/sklearn.neighbors.KernelDensity.html)API
+*   [硬化。一起。绝缘林](https://Sklearn.org/stable/modules/generated/sklearn.ensemble.IsolationForest.html) API
 
 ## **总结**
 

@@ -22,9 +22,9 @@
 
 完成本教程后，您将知道:
 
-*   如何使用 scikit-learn metrics API 评估深度学习模型？
-*   如何用 scikit-learn API 要求的最终模型进行类和概率预测。
-*   如何用 scikit-learn API 为一个模型计算精确率、召回率、F1-评分、ROC AUC 等。
+*   如何使用 Sklearn metrics API 评估深度学习模型？
+*   如何用 Sklearn API 要求的最终模型进行类和概率预测。
+*   如何用 Sklearn API 为一个模型计算精确率、召回率、F1-评分、ROC AUC 等。
 
 **用我的新书[用 Python 深度学习](https://machinelearningmastery.com/deep-learning-with-python/)来启动你的项目**，包括*分步教程*和所有示例的 *Python 源代码*文件。
 
@@ -41,7 +41,7 @@
 本教程分为三个部分；它们是:
 
 1.  二元分类问题
-2.  多层感知器模型
+2.  多层感知机模型
 3.  如何计算模型度量
 
 ## 二元分类问题
@@ -50,7 +50,7 @@
 
 它被称为两个圆的问题，因为这个问题是由点组成的，当绘制时，显示两个同心圆，每个类一个。因此，这是二元分类问题的一个例子。这个问题有两个输入，可以解释为图上的 x 和 y 坐标。每个点属于内圆或外圆。
 
-scikit-learn 库中的 [make_circles()函数](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_circles.html)允许您从两个圆的问题中生成样本。“ *n_samples* ”参数允许您指定要生成的样本数量，在两个类之间平均分配。“*噪声*”参数允许您指定向每个点的输入或坐标添加多少随机统计噪声，从而使分类任务更具挑战性。“ *random_state* ”参数指定伪随机数发生器的种子，确保每次运行代码时生成相同的样本。
+Sklearn 库中的 [make_circles()函数](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_circles.html)允许您从两个圆的问题中生成样本。“ *n_samples* ”参数允许您指定要生成的样本数量，在两个类之间平均分配。“*噪声*”参数允许您指定向每个点的输入或坐标添加多少随机统计噪声，从而使分类任务更具挑战性。“ *random_state* ”参数指定伪随机数发生器的种子，确保每次运行代码时生成相同的样本。
 
 下面的示例生成 1000 个样本，统计噪声为 0.1，种子为 1。
 
@@ -83,9 +83,9 @@ pyplot.show()
 
 两个圆问题的样本散点图
 
-## 多层感知器模型
+## 多层感知机模型
 
-我们将开发一个多层感知器或 MLP 模型来解决二元分类问题。
+我们将开发一个多层感知机或 MLP 模型来解决二元分类问题。
 
 这个模型不是针对问题优化的，但是很有技巧(比随机好)。
 
@@ -222,7 +222,7 @@ Keras 度量 API 是有限的，您可能想要计算诸如精确率、召回率
 
 这在技术上具有挑战性。
 
-一个更简单的替代方法是使用您的最终模型对测试数据集进行预测，然后使用 [scikit-learn metrics API](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.metrics) 计算您想要的任何度量。
+一个更简单的替代方法是使用您的最终模型对测试数据集进行预测，然后使用 [Sklearn metrics API](https://Sklearn.org/stable/modules/classes.html#module-sklearn.metrics) 计算您想要的任何度量。
 
 除了分类精确率之外，二元分类问题的神经网络模型通常还需要三个指标:
 
@@ -230,18 +230,18 @@ Keras 度量 API 是有限的，您可能想要计算诸如精确率、召回率
 *   回忆
 *   F1 分数
 
-在本节中，我们将使用 scikit-learn metrics API 计算这三个指标以及分类精确率，我们还将计算三个不太常见但可能有用的附加指标。它们是:
+在本节中，我们将使用 Sklearn metrics API 计算这三个指标以及分类精确率，我们还将计算三个不太常见但可能有用的附加指标。它们是:
 
 *   科恩的卡帕
 *   中华民国
 *   [混乱矩阵](https://machinelearningmastery.com/confusion-matrix-machine-learning/)。
 
-这不是 scikit-learn 支持的分类模型的完整指标列表；尽管如此，计算这些指标将向您展示如何使用 scikit-learn API 计算您可能需要的任何指标。
+这不是 Sklearn 支持的分类模型的完整指标列表；尽管如此，计算这些指标将向您展示如何使用 Sklearn API 计算您可能需要的任何指标。
 
 有关支持的指标的完整列表，请参见:
 
-*   [sklearn . Metrics:Metrics API](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.metrics)
-*   [分类指标指南](https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics)
+*   [sklearn . Metrics:Metrics API](https://Sklearn.org/stable/modules/classes.html#module-sklearn.metrics)
+*   [分类指标指南](https://Sklearn.org/stable/modules/model_evaluation.html#classification-metrics)
 
 本节中的示例将计算 MLP 模型的度量，但是计算度量的相同代码也可以用于其他模型，例如神经网络和中枢神经网络。
 
@@ -286,7 +286,7 @@ trainX, trainy, testX, testy = get_data()
 model = get_model(trainX, trainy)
 ```
 
-现在我们已经有了一个适合训练数据集的模型，我们可以使用 scikit-learn metrics API 中的度量来评估它。
+现在我们已经有了一个适合训练数据集的模型，我们可以使用 Sklearn metrics API 中的度量来评估它。
 
 首先，我们必须使用模型进行预测。大多数度量函数需要真实类值(例如 *testy* )和预测类值(*yhat _ class*)之间的比较。我们可以使用模型上的*predict _ class()*函数直接用我们的模型预测类值。
 
@@ -307,7 +307,7 @@ yhat_classes = model.predict_classes(testX, verbose=0)
 
 预测以二维数组的形式返回，测试数据集中的每个示例对应一行，预测对应一列。
 
-scikit-learn metrics API 期望使用 1D 阵列的实际值和预测值进行比较，因此，我们必须将 2D 预测阵列简化为 1D 阵列。
+Sklearn metrics API 期望使用 1D 阵列的实际值和预测值进行比较，因此，我们必须将 2D 预测阵列简化为 1D 阵列。
 
 ```py
 # reduce to 1d array
@@ -350,7 +350,7 @@ matrix = confusion_matrix(testy, yhat_classes)
 print(matrix)
 ```
 
-现在我们知道了如何使用 scikit-learn API 计算深度学习神经网络的指标，我们可以将所有这些元素结合成一个完整的示例，如下所示。
+现在我们知道了如何使用 Sklearn API 计算深度学习神经网络的指标，我们可以将所有这些元素结合成一个完整的示例，如下所示。
 
 ```py
 # demonstration of calculating metrics for a neural network model using sklearn
@@ -439,7 +439,7 @@ ROC AUC: 0.923739
  [ 37 215]]
 ```
 
-如果您需要解释给定指标的帮助，或许可以从 scikit-learn API 文档中的“分类指标指南”开始:[分类指标指南](https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics)
+如果您需要解释给定指标的帮助，或许可以从 Sklearn API 文档中的“分类指标指南”开始:[分类指标指南](https://Sklearn.org/stable/modules/model_evaluation.html#classification-metrics)
 
 此外，查看维基百科页面了解你的指标；比如:[精准与召回，维基百科](https://en.wikipedia.org/wiki/Precision_and_recall)。
 
@@ -450,15 +450,15 @@ ROC AUC: 0.923739
 ### 邮件
 
 *   [如何使用 Python 中的 Keras 进行深度学习的度量](https://machinelearningmastery.com/custom-metrics-deep-learning-keras-python/)
-*   [如何用 scikit 在 Python 中生成测试数据集-学习](https://machinelearningmastery.com/generate-test-datasets-python-scikit-learn/)
+*   [如何用 scikit 在 Python 中生成测试数据集-学习](https://machinelearningmastery.com/generate-test-datasets-python-Sklearn/)
 *   [如何用 Keras 进行预测](https://machinelearningmastery.com/how-to-make-classification-and-regression-predictions-for-deep-learning-models-in-keras/)
 
 ### 应用程序接口
 
-*   [sklearn . Metrics:Metrics API](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.metrics)
-*   [分类指标指南](https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics)
+*   [sklearn . Metrics:Metrics API](https://Sklearn.org/stable/modules/classes.html#module-sklearn.metrics)
+*   [分类指标指南](https://Sklearn.org/stable/modules/model_evaluation.html#classification-metrics)
 *   [硬指标 API](https://keras.io/metrics/)
-*   [sklearn . dataset . make _ circles API](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_circles.html)
+*   [sklearn . dataset . make _ circles API](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_circles.html)
 
 ### 文章
 
@@ -472,9 +472,9 @@ ROC AUC: 0.923739
 
 具体来说，您了解到:
 
-*   如何使用 scikit-learn metrics API 评估深度学习模型？
-*   如何用 scikit-learn API 要求的最终模型进行类和概率预测。
-*   如何用 scikit-learn API 为一个模型计算精确率、召回率、F1-score、ROC、AUC 等。
+*   如何使用 Sklearn metrics API 评估深度学习模型？
+*   如何用 Sklearn API 要求的最终模型进行类和概率预测。
+*   如何用 Sklearn API 为一个模型计算精确率、召回率、F1-score、ROC、AUC 等。
 
 你有什么问题吗？
 在下面的评论中提问，我会尽力回答。

@@ -53,7 +53,7 @@ XGBoost 是通过最小化目标函数对数据集的损失来训练的。因此
 
 在我们开始之前，让我们开始设置。
 
-xboost 可以作为一个独立的库安装，并且可以使用 scikit-learn API 开发一个 xboost 模型。
+xboost 可以作为一个独立的库安装，并且可以使用 Sklearn API 开发一个 xboost 模型。
 
 第一步是安装尚未安装的 XGBoost 库。这可以在大多数平台上使用 pip python 包管理器来实现；例如:
 
@@ -97,11 +97,11 @@ FutureWarning: pandas.util.testing is deprecated. Use the functions in the publi
 
 *   [XGBoost 安装指南](https://xgboost.readthedocs.io/en/latest/build.html)
 
-尽管我们将通过 scikit-learn 包装类使用这个方法:[xgbreversor](https://xgboost.readthedocs.io/en/latest/python/python_api.html#xgboost.XGBRegressor)和 [XGBClassifier](https://xgboost.readthedocs.io/en/latest/python/python_api.html#xgboost.XGBClassifier) ，但是 XGBoost 库有自己的自定义 API。这将允许我们使用 scikit-learn 机器学习库中的全套工具来准备数据和评估模型。
+尽管我们将通过 Sklearn 包装类使用这个方法:[xgbreversor](https://xgboost.readthedocs.io/en/latest/python/python_api.html#xgboost.XGBRegressor)和 [XGBClassifier](https://xgboost.readthedocs.io/en/latest/python/python_api.html#xgboost.XGBClassifier) ，但是 XGBoost 库有自己的自定义 API。这将允许我们使用 Sklearn 机器学习库中的全套工具来准备数据和评估模型。
 
 这两个模型以相同的方式运行，并采用相同的参数来影响决策树的创建和添加。
 
-有关如何在 scikit-learn 中使用 XGBoost API 的更多信息，请参见教程:
+有关如何在 Sklearn 中使用 XGBoost API 的更多信息，请参见教程:
 
 *   [Python 中的极限梯度增强(XGBoost)集成](https://machinelearningmastery.com/extreme-gradient-boosting-ensemble-in-python/)
 
@@ -344,7 +344,7 @@ reg:squarederror
 ### 教程
 
 *   [Python 中的极限梯度增强(XGBoost)集成](https://machinelearningmastery.com/extreme-gradient-boosting-ensemble-in-python/)
-*   [使用 Scikit-Learn、XGBoost、LightGBM 和 CatBoost 进行梯度增强](https://machinelearningmastery.com/gradient-boosting-with-scikit-learn-xgboost-lightgbm-and-catboost/)
+*   [使用 Sklearn、XGBoost、LightGBM 和 CatBoost 进行梯度增强](https://machinelearningmastery.com/gradient-boosting-with-Sklearn-xgboost-lightgbm-and-catboost/)
 *   [机器学习中的 4 类分类任务](https://machinelearningmastery.com/types-of-classification-in-machine-learning/)
 
 ### 蜜蜂

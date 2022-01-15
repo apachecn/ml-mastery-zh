@@ -1,4 +1,4 @@
-# 4 机器学习的距离度量
+# 机器学习的四种距离度量
 
 > 原文：<https://machinelearningmastery.com/distance-measures-for-machine-learning/>
 

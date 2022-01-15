@@ -1,4 +1,4 @@
-# 数据集大小对模型表现的敏感性分析
+# 数据集大小 VS 模型表现的敏感性分析
 
 > 原文：<https://machinelearningmastery.com/sensitivity-analysis-of-dataset-size-vs-model-performance/>
 
@@ -69,7 +69,7 @@
 
 在本教程中，我们将使用合成二进制(两类)分类数据集。这是理想的，因为它允许我们根据需要为相同的问题调整生成样本的数量。
 
-[make _ classification()sci kit-learn 功能](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)可用于创建合成分类数据集。在这种情况下，我们将使用 20 个输入特征(列)并生成 1，000 个样本(行)。伪随机数生成器的种子是固定的，以确保每次生成样本时使用相同的基本“问题”。
+[make _ classification()sci kit-learn 功能](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_classification.html)可用于创建合成分类数据集。在这种情况下，我们将使用 20 个输入特征(列)并生成 1，000 个样本(行)。伪随机数生成器的种子是固定的，以确保每次生成样本时使用相同的基本“问题”。
 
 下面的示例生成了合成分类数据集，并总结了生成数据的形状。
 
@@ -90,7 +90,7 @@ print(X.shape, y.shape)
 
 接下来，我们可以在这个数据集上评估一个预测模型。
 
-我们将使用决策树([决策树分类器](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html))作为预测模型。之所以选择它，是因为它是一种非线性算法，并且具有较高的方差，这意味着我们预计表现会随着训练数据集大小的增加而提高。
+我们将使用决策树([决策树分类器](https://Sklearn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html))作为预测模型。之所以选择它，是因为它是一种非线性算法，并且具有较高的方差，这意味着我们预计表现会随着训练数据集大小的增加而提高。
 
 我们将使用[重复分层 k 折叠交叉验证](https://machinelearningmastery.com/repeated-k-fold-cross-validation-with-python/)的最佳实践来评估数据集上的模型，重复 3 次，折叠 10 次。
 
@@ -346,8 +346,8 @@ pyplot.show()
 
 ### 蜜蜂
 
-*   [sklearn . datasets . make _ classification API](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)。
-*   [硬化. tree .决策树分类器 API](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html) 。
+*   [sklearn . datasets . make _ classification API](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_classification.html)。
+*   [硬化. tree .决策树分类器 API](https://Sklearn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html) 。
 
 ### 文章
 

@@ -66,7 +66,7 @@ $ z = f \ CDO w $
 
 ## 实现特征脸
 
-现在我们尝试用 numpy 和 scikit-learn 实现特征脸的思想。我们也会利用 OpenCV 来读取图片文件。您可能需要使用`pip`命令安装相关软件包:
+现在我们尝试用 numpy 和 Sklearn 实现特征脸的思想。我们也会利用 OpenCV 来读取图片文件。您可能需要使用`pip`命令安装相关软件包:
 
 ```py
 pip install opencv-python
@@ -169,7 +169,7 @@ for key,val in faces.items():
 facematrix = np.array(facematrix)
 ```
 
-现在我们可以对这个数据集矩阵进行主成分分析。我们没有一步一步地计算主成分分析，而是利用 scikit-learn 中的主成分分析功能，我们可以轻松检索所需的所有结果:
+现在我们可以对这个数据集矩阵进行主成分分析。我们没有一步一步地计算主成分分析，而是利用 Sklearn 中的主成分分析功能，我们可以轻松检索所需的所有结果:
 
 ```py
 ...
@@ -431,7 +431,7 @@ plt.show()
 
 ### 蜜蜂
 
-*   [硬化。分解。PCA API](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)
+*   [硬化。分解。PCA API](https://Sklearn.org/stable/modules/generated/sklearn.decomposition.PCA.html)
 *   [matplotlib . pyplot . im how API](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html)
 
 ### 文章

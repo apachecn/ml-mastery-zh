@@ -1,4 +1,4 @@
-# 机器学习中的 4 类分类任务
+# 机器学习中的 4 种分类任务
 
 > 原文：<https://machinelearningmastery.com/types-of-classification-in-machine-learning/>
 
@@ -102,7 +102,7 @@
 
 接下来，让我们仔细看看一个数据集，为二进制分类问题开发一种直觉。
 
-我们可以使用 [make_blobs()函数](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_blobs.html)生成一个合成的二进制分类数据集。
+我们可以使用 [make_blobs()函数](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_blobs.html)生成一个合成的二进制分类数据集。
 
 下面的示例生成一个数据集，其中有 1，000 个属于两个类之一的示例，每个类都有两个输入要素。
 
@@ -205,7 +205,7 @@ Counter({0: 500, 1: 500})
 
 接下来，让我们仔细看看数据集，为多类分类问题开发一种直觉。
 
-我们可以使用 [make_blobs()函数](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_blobs.html)生成一个合成的多类分类数据集。
+我们可以使用 [make_blobs()函数](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_blobs.html)生成一个合成的多类分类数据集。
 
 下面的示例生成一个数据集，其中有 1，000 个属于三个类之一的示例，每个类都有两个输入要素。
 
@@ -284,7 +284,7 @@ Counter({0: 334, 1: 333, 2: 333})
 
 接下来，让我们仔细看看数据集，为多标签分类问题开发一种直觉。
 
-我们可以使用[make _ multi label _ classification()函数](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)生成一个合成的多标签分类数据集。
+我们可以使用[make _ multi label _ classification()函数](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_classification.html)生成一个合成的多标签分类数据集。
 
 下面的示例生成了一个包含 1，000 个示例的数据集，每个示例都有两个输入要素。有三个类，每个类可以有两个标签(0 或 1)中的一个。
 
@@ -358,7 +358,7 @@ for i in range(10):
 
 接下来，让我们仔细看看数据集，为不平衡的分类问题开发一种直觉。
 
-我们可以使用 [make_classification()函数](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)生成一个合成的不平衡二进制分类数据集。
+我们可以使用 [make_classification()函数](https://Sklearn.org/stable/modules/generated/sklearn.datasets.make_classification.html)生成一个合成的不平衡二进制分类数据集。
 
 下面的示例生成一个数据集，其中有 1，000 个属于两个类之一的示例，每个类都有两个输入要素。
 
@@ -425,7 +425,7 @@ Counter({0: 983, 1: 17})
 *   [二进制分类，维基百科](https://en.wikipedia.org/wiki/Binary_classification)。
 *   [多类分类，维基百科](https://en.wikipedia.org/wiki/Multiclass_classification)。
 *   [多标签分类，维基百科](https://en.wikipedia.org/wiki/Multi-label_classification)。
-*   [多类和多标签算法，scikit-learn API](https://scikit-learn.org/stable/modules/multiclass.html) 。
+*   [多类和多标签算法，Sklearn API](https://Sklearn.org/stable/modules/multiclass.html) 。
 
 ## 摘要
 

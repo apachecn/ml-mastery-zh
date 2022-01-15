@@ -8,7 +8,7 @@
 
 该过程可用于开发用于分类和回归预测建模问题的有效神经网络模型。
 
-在本教程中，您将发现如何为瑞典汽车保险回归数据集开发多层感知器神经网络模型。
+在本教程中，您将发现如何为瑞典汽车保险回归数据集开发多层感知机神经网络模型。
 
 完成本教程后，您将知道:
 
@@ -130,7 +130,7 @@ max    124.000000  422.200000
 
 ## 第一 MLP 和学习动力
 
-我们将使用张量流为数据集开发一个多层感知器(MLP)模型。
+我们将使用张量流为数据集开发一个多层感知机(MLP)模型。
 
 我们无法知道什么样的学习超参数的模型架构对这个数据集是好的或最好的，所以我们必须实验并发现什么是好的。
 
@@ -349,7 +349,7 @@ MAE: 27.939
 y_train, y_test = y_train.reshape((len(y_train),1)), y_test.reshape((len(y_test),1))
 ```
 
-接下来，我们可以将[电力变压器](https://machinelearningmastery.com/power-transforms-with-scikit-learn/)应用于输入和目标变量。
+接下来，我们可以将[电力变压器](https://machinelearningmastery.com/power-transforms-with-Sklearn/)应用于输入和目标变量。
 
 这可以通过首先在训练数据上拟合变换，然后变换训练集和测试集来实现。
 
@@ -463,7 +463,7 @@ MAE: 34.320
 
 这是因为 *k* 模型必须拟合和评估。当数据集很小时，例如汽车保险数据集，这不是问题。
 
-我们可以使用 [KFold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html) 类创建拆分并手动枚举每个折叠，拟合模型，对其进行评估，然后在过程结束时报告评估分数的平均值。
+我们可以使用 [KFold](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.KFold.html) 类创建拆分并手动枚举每个折叠，拟合模型，对其进行评估，然后在过程结束时报告评估分数的平均值。
 
 ```py
 # prepare cross validation
@@ -938,7 +938,7 @@ f([13]) = 62.595
 
 ## 摘要
 
-在本教程中，您发现了如何为瑞典汽车保险回归数据集开发多层感知器神经网络模型。
+在本教程中，您发现了如何为瑞典汽车保险回归数据集开发多层感知机神经网络模型。
 
 具体来说，您了解到:
 

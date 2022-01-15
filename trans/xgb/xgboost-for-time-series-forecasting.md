@@ -83,9 +83,9 @@ print("xgboost", xgboost.__version__)
 xgboost 1.0.1
 ```
 
-虽然 XGBoost 库有自己的 Python API，但是我们可以通过[xgbreversor](https://xgboost.readthedocs.io/en/latest/python/python_api.html#xgboost.XGBRegressor)包装类将 XGBoost 模型与 scikit-learn API 一起使用。
+虽然 XGBoost 库有自己的 Python API，但是我们可以通过[xgbreversor](https://xgboost.readthedocs.io/en/latest/python/python_api.html#xgboost.XGBRegressor)包装类将 XGBoost 模型与 Sklearn API 一起使用。
 
-模型的一个实例可以像任何其他用于模型评估的 scikit-learn 类一样被实例化和使用。例如:
+模型的一个实例可以像任何其他用于模型评估的 Sklearn 类一样被实例化和使用。例如:
 
 ```py
 ...

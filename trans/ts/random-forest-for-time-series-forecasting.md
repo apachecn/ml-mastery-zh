@@ -186,7 +186,7 @@ def train_test_split(data, n_test):
 	return data[:-n_test, :], data[-n_test:, :]
 ```
 
-我们可以使用[randomforestreversor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)类进行一步预测。
+我们可以使用[randomforestreversor](https://Sklearn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)类进行一步预测。
 
 下面的 *random_forest_forecast()* 函数实现了这一点，以训练数据集和测试输入行为输入，拟合一个模型，进行一步预测。
 
@@ -453,7 +453,7 @@ Input: [34 37 52 48 55 50], Predicted: 43.053
 
 ### 蜜蜂
 
-*   [硬化。一起。随机应变回归 API](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html) 。
+*   [硬化。一起。随机应变回归 API](https://Sklearn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html) 。
 
 ## 摘要
 

@@ -1,4 +1,4 @@
-# 机器学习用 PyCaret 的温和介绍
+# PyCaret 机器学习的温和介绍
 
 > 原文：<https://machinelearningmastery.com/pycaret-for-machine-learning/>
 

@@ -56,7 +56,7 @@ TensorFlow 是由谷歌开发和维护的首要开源深度学习框架。虽然
     2.  顺序模型应用编程接口(简单)
     3.  功能模型应用编程接口(高级)
 3.  如何开发深度学习模型
-    1.  开发多层感知器模型
+    1.  开发多层感知机模型
     2.  发展卷积神经网络模型
     3.  开发递归神经网络模型
 4.  如何使用高级模型功能
@@ -442,11 +442,11 @@ model = Model(inputs=x_in, outputs=x_out)
 
 ## 3.如何开发深度学习模型
 
-在本节中，您将发现如何使用标准的深度学习模型进行开发、评估和预测，包括多层感知器(MLP)、卷积神经网络和递归神经网络。
+在本节中，您将发现如何使用标准的深度学习模型进行开发、评估和预测，包括多层感知机(MLP)、卷积神经网络和递归神经网络。
 
-### 3.1 开发多层感知器模型
+### 3.1 开发多层感知机模型
 
-多层感知器模型，简称 MLP，是一个标准的全连接神经网络模型。
+多层感知机模型，简称 MLP，是一个标准的全连接神经网络模型。
 
 它由节点层组成，其中每个节点连接到上一层的所有输出，每个节点的输出连接到下一层节点的所有输入。
 
@@ -467,7 +467,7 @@ MLP 由一个或多个*密集*层创建。这种模型适用于表格数据，�
 *   [电离层数据集(csv)](https://raw.githubusercontent.com/jbrownlee/Datasets/master/ionosphere.csv) 。
 *   [电离层数据集描述(csv)](https://raw.githubusercontent.com/jbrownlee/Datasets/master/ionosphere.names) 。
 
-我们将使用[标签编码器](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html)将字符串标签编码为整数值 0 和 1。该模型将适用于 67%的数据，剩余的 33%将用于评估，使用 [train_test_split()](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html) 功能进行分割。
+我们将使用[标签编码器](https://Sklearn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html)将字符串标签编码为整数值 0 和 1。该模型将适用于 67%的数据，剩余的 33%将用于评估，使用 [train_test_split()](https://Sklearn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html) 功能进行分割。
 
 用“ *he_normal* 权重初始化来激活“ *relu* 是一个很好的做法。这种组合对于克服训练深度神经网络模型时梯度消失的问题大有帮助。有关 ReLU 的更多信息，请参见教程:
 

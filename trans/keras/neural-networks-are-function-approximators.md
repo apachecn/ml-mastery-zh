@@ -127,7 +127,7 @@ pyplot.show()
 
 这是一个非常简单的映射函数，所以我们希望一个小的神经网络可以快速学习它。
 
-我们将使用 Keras 深度学习库定义网络，并使用 scikit-learn 库中的一些数据准备工具。
+我们将使用 Keras 深度学习库定义网络，并使用 Sklearn 库中的一些数据准备工具。
 
 首先，让我们定义数据集。
 
@@ -152,7 +152,7 @@ y = y.reshape((len(y), 1))
 
 输入范围在-50 和 50 之间，而输出范围在-50^2 (2500)和 0^2 (0)之间。大的输入输出值会使[训练神经网络变得不稳定](https://machinelearningmastery.com/how-to-improve-neural-network-stability-and-modeling-performance-with-data-scaling/)，因此，先对数据进行缩放是个好主意。
 
-我们可以使用[最小最大缩放器](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)将输入值和输出值分别归一化为 0 到 1 之间的值。
+我们可以使用[最小最大缩放器](https://Sklearn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)将输入值和输出值分别归一化为 0 到 1 之间的值。
 
 ```py
 ...
