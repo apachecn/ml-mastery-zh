@@ -1,4 +1,4 @@
-# 可视化主成分分析
+# 主成分分析的可视化
 
 > 原文：<https://machinelearningmastery.com/principal-component-analysis-for-visualization/>
 

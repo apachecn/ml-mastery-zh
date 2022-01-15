@@ -1,4 +1,4 @@
-# 面向程序员的实用深度学习(复习)
+# 面向程序员的实用深度学习（复习）
 
 > 原文：<https://machinelearningmastery.com/practical-deep-learning-for-coders-review/>
 

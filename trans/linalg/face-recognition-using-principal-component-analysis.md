@@ -1,4 +1,4 @@
-# 利用主成分分析进行人脸识别
+# 将主成分分析用于人脸识别
 
 > 原文：<https://machinelearningmastery.com/face-recognition-using-principal-component-analysis/>
 

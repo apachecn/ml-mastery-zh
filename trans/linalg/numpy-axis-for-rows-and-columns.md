@@ -1,6 +1,4 @@
-# 如何在 NumPy
-
-中设置行和列的轴
+# 如何在 NumPy 中为行和列设置轴
 
 > 原文：<https://machinelearningmastery.com/numpy-axis-for-rows-and-columns/>
 
