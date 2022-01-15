@@ -1,4 +1,4 @@
-# PyTorch 教程:如何用 Python 开发深度学习模型
+# PyTorch 教程：如何用 Python 开发深度学习模型
 
 > 原文：<https://machinelearningmastery.com/pytorch-tutorial-develop-deep-learning-models/>
 
@@ -241,7 +241,7 @@ for i, (inputs, targets) in enumerate(train_dl):
 
 有很多层可用，例如[线性](https://pytorch.org/docs/stable/nn.html#torch.nn.Linear)用于全连接层， [Conv2d](https://pytorch.org/docs/stable/nn.html#torch.nn.Conv2d) 用于卷积层， [MaxPool2d](https://pytorch.org/docs/stable/nn.html#torch.nn.MaxPool2d) 用于汇集层。
 
-激活功能也可以定义为图层，如 [ReLU](https://pytorch.org/docs/stable/nn.html#torch.nn.ReLU) 、 [Softmax](https://pytorch.org/docs/stable/nn.html#torch.nn.Softmax) 、 [Sigmoid](https://pytorch.org/docs/stable/nn.html#torch.nn.Sigmoid) 。
+激活函数也可以定义为图层，如 [ReLU](https://pytorch.org/docs/stable/nn.html#torch.nn.ReLU) 、 [Softmax](https://pytorch.org/docs/stable/nn.html#torch.nn.Softmax) 、 [Sigmoid](https://pytorch.org/docs/stable/nn.html#torch.nn.Sigmoid) 。
 
 下面是一个简单的一层 MLP 模型的例子。
 

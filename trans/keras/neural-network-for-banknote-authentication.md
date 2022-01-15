@@ -173,7 +173,7 @@ X, y = df.values[:, :-1], df.values[:, -1]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33)
 ```
 
-我们可以定义一个最小 MLP 模型。在这种情况下，我们将使用一个具有 10 个节点的隐藏层和一个输出层(任意选择)。我们将使用隐藏层中的 [ReLU 激活功能](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/)和 *he_normal* 权重初始化，作为一个整体，它们是一个很好的实践。
+我们可以定义一个最小 MLP 模型。在这种情况下，我们将使用一个具有 10 个节点的隐藏层和一个输出层(任意选择)。我们将使用隐藏层中的 [ReLU 激活函数](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/)和 *he_normal* 权重初始化，作为一个整体，它们是一个很好的实践。
 
 模型的输出是用于二进制分类的 [sigmoid 激活](https://machinelearningmastery.com/choose-an-activation-function-for-deep-learning/)，我们将最小化二进制交叉熵损失。
 

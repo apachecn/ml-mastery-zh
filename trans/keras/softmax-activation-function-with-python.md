@@ -1,4 +1,4 @@
-# Python 的 Softmax 激活功能
+# Python 的 Softmax 激活函数
 
 > 原文：<https://machinelearningmastery.com/softmax-activation-function-with-python/>
 
@@ -18,7 +18,7 @@ softmax 函数在应用机器学习中最常见的用途是用作神经网络模
 
 ![Softmax Activation Function with Python](img/fc4a52fda0460cac8c396b7a80ad2c29.png)
 
-带 Python 的 Softmax 激活功能
+带 Python 的 Softmax 激活函数
 图片由[伊恩·d·基廷](https://flickr.com/photos/ian-arlett/36340268755/)提供，保留部分权利。
 
 ## 教程概述
@@ -27,7 +27,7 @@ softmax 函数在应用机器学习中最常见的用途是用作神经网络模
 
 1.  用神经网络预测概率
 2.  最大值、最大值和最大值
-3.  软最大激活功能
+3.  软最大激活函数
 
 ## 用神经网络预测概率
 
@@ -40,13 +40,13 @@ softmax 函数在应用机器学习中最常见的用途是用作神经网络模
 
 神经网络模型需要模型输出层的激活函数来进行预测。
 
-有不同的激活功能可供选择；我们来看几个。
+有不同的激活函数可供选择；我们来看几个。
 
 ### 线性激活函数
 
 预测类成员概率的一种方法是使用线性激活。
 
-线性激活函数只是节点的加权输入之和，任何激活函数都需要它作为输入。因此，它通常被称为“无激活功能”*，因为不执行额外的转换。*
+线性激活函数只是节点的加权输入之和，任何激活函数都需要它作为输入。因此，它通常被称为“无激活函数”*，因为不执行额外的转换。*
 
  *回想一下[概率](https://machinelearningmastery.com/what-is-probability/)或可能性是一个介于 0 和 1 之间的数值。
 
@@ -224,7 +224,7 @@ print(sum(result))
 
 现在我们已经熟悉了 softmax 函数，让我们看看它是如何在神经网络模型中使用的。
 
-## 软最大激活功能
+## 软最大激活函数
 
 softmax 函数用作预测多项式概率分布的神经网络模型的输出层中的激活函数。
 

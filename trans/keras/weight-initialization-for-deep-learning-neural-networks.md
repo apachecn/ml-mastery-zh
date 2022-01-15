@@ -246,7 +246,7 @@ pyplot.show()
 
 ## ReLU 的权重初始化
 
-当用于初始化使用整流线性( [ReLU](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/) )激活功能的网络时，发现“ *xavier* ”权重初始化有问题。
+当用于初始化使用整流线性( [ReLU](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/) )激活函数的网络时，发现“ *xavier* ”权重初始化有问题。
 
 因此，该方法的修改版本是专门为使用 ReLU 激活的节点和层开发的，在大多数多层感知器和卷积神经网络模型的隐藏层中很流行。
 

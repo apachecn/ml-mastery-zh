@@ -170,7 +170,7 @@ print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
 
 接下来，我们可以在数据集上定义、训练和评估多层感知器(MLP)模型。
 
-我们将定义一个简单的模型，它有两个隐藏层和一个预测数值的输出层。我们将使用 [ReLU 激活功能](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/)和 *he* 权重初始化，这是一个很好的实践。
+我们将定义一个简单的模型，它有两个隐藏层和一个预测数值的输出层。我们将使用 [ReLU 激活函数](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/)和 *he* 权重初始化，这是一个很好的实践。
 
 每个隐藏层中的节点数是经过一点点尝试和错误后选择的。
 

@@ -15,14 +15,14 @@
 完成本教程后，您将知道:
 
 *   激活函数是神经网络设计的关键部分。
-*   隐藏层的现代默认激活功能是 ReLU 功能。
+*   隐藏层的现代默认激活函数是 ReLU 功能。
 *   输出层的激活函数取决于预测问题的类型。
 
 我们开始吧。
 
 ![How to Choose an Activation Function for Deep Learning](img/cf34fc7a617f4be04078ed4b053682d5.png)
 
-如何选择深度学习的激活功能
+如何选择深度学习的激活函数
 图片由[彼得·道利](https://www.flickr.com/photos/pedronet/6355538863/)提供，版权所有。
 
 ## 教程概述
@@ -37,15 +37,15 @@
 
 神经网络中的[激活函数](https://en.wikipedia.org/wiki/Activation_function)定义了如何将输入的加权和转换为网络层中一个或多个节点的输出。
 
-有时激活函数被称为“*传递函数*”如果激活功能的输出范围有限，则可称为“*挤压功能*”许多激活函数是非线性的，在层或网络设计中可能被称为“*非线性*”。
+有时激活函数被称为“*传递函数*”如果激活函数的输出范围有限，则可称为“*挤压功能*”许多激活函数是非线性的，在层或网络设计中可能被称为“*非线性*”。
 
 激活函数的选择对神经网络的能力和性能有很大的影响，不同的激活函数可以用于模型的不同部分。
 
-从技术上讲，激活功能在网络中每个节点的内部处理内部或之后使用，尽管网络被设计为对一层中的所有节点使用相同的激活功能。
+从技术上讲，激活函数在网络中每个节点的内部处理内部或之后使用，尽管网络被设计为对一层中的所有节点使用相同的激活函数。
 
 一个网络可以有三种类型的层:从域中获取原始输入的输入层、**从另一个层获取输入并将输出传递到另一个层的隐藏层、**进行预测的输出层。****
 
-所有隐藏层通常使用相同的激活功能。输出层通常使用不同于隐藏层的激活函数，并且取决于模型所需的预测类型。
+所有隐藏层通常使用相同的激活函数。输出层通常使用不同于隐藏层的激活函数，并且取决于模型所需的预测类型。
 
 激活函数通常也是可微的，这意味着可以为给定的输入值计算一阶导数。这是必需的，因为神经网络通常使用误差反向传播算法来训练，该算法需要预测误差的导数，以便更新模型的权重。
 
@@ -77,11 +77,11 @@
 
 让我们依次仔细看看每一个。
 
-### ReLU 隐藏层激活功能
+### ReLU 隐藏层激活函数
 
-[整流线性激活功能](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/)，或 ReLU 激活功能，可能是用于隐藏层的最常见功能。
+[整流线性激活函数](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/)，或 ReLU 激活函数，可能是用于隐藏层的最常见功能。
 
-它之所以常见，是因为它既易于实现，又能有效克服其他以前流行的激活功能(如 Sigmoid 和 Tanh)的限制。具体来说，它不太容易受到阻止深度模型被训练的[消失梯度](https://machinelearningmastery.com/how-to-fix-vanishing-gradients-using-the-rectified-linear-activation-function/)的影响，尽管它可能会遇到其他问题，如饱和或“*死亡*”单位。
+它之所以常见，是因为它既易于实现，又能有效克服其他以前流行的激活函数(如 Sigmoid 和 Tanh)的限制。具体来说，它不太容易受到阻止深度模型被训练的[消失梯度](https://machinelearningmastery.com/how-to-fix-vanishing-gradients-using-the-rectified-linear-activation-function/)的影响，尽管它可能会遇到其他问题，如饱和或“*死亡*”单位。
 
 ReLU 函数计算如下:
 
@@ -89,7 +89,7 @@ ReLU 函数计算如下:
 
 这意味着如果输入值(x)为负，则返回值 0.0，否则返回值。
 
-您可以在本教程中了解更多关于 ReLU 激活功能的细节:
+您可以在本教程中了解更多关于 ReLU 激活函数的细节:
 
 *   [整流线性单元的温和介绍](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/)
 
@@ -118,7 +118,7 @@ pyplot.show()
 
 ![Plot of Inputs vs. Outputs for the ReLU Activation Function.](img/d6b1a8575f3321d8eba95e78b1be8fcd.png)
 
-ReLU 激活功能的输入与输出图。
+ReLU 激活函数的输入与输出图。
 
 对隐藏图层使用 ReLU 函数时，最好在训练前使用“ *He Normal* ”或“ *He Uniform* ”进行权重初始化，并将输入数据缩放到 0-1(Normal)的范围。
 
@@ -158,7 +158,7 @@ pyplot.show()
 
 运行该示例计算一系列值的输出，并创建输入与输出的关系图。
 
-我们可以看到熟悉的 S 形的乙状结肠激活功能。
+我们可以看到熟悉的 S 形的乙状结肠激活函数。
 
 ![Plot of Inputs vs. Outputs for the Sigmoid Activation Function.](img/64e9917fa31d025a855334f80d5d0079.png)
 
@@ -170,7 +170,7 @@ Sigmoid 激活函数的输入与输出图。
 
 双曲正切激活函数也简称为 Tanh(也是“ *tanh* ”和“ *TanH* ”)函数。
 
-它与乙状结肠激活功能非常相似，甚至具有相同的 S 形。
+它与乙状结肠激活函数非常相似，甚至具有相同的 S 形。
 
 该函数将任何实数值作为输入，并输出-1 到 1 范围内的值。输入越大(越正)，输出值越接近 1.0，而输入越小(越负)，输出越接近-1.0。
 
@@ -210,13 +210,13 @@ Tanh 激活函数的输入与输出图。
 
 当对隐藏层使用 TanH 函数时，最好在训练前使用“*泽维尔正常*”或“*泽维尔均匀*”权重初始化(也称为格洛罗初始化，以泽维尔格洛罗命名)，并将输入数据缩放到-1 到 1 的范围(例如激活函数的范围)。
 
-### 如何选择隐藏层激活功能
+### 如何选择隐藏层激活函数
 
-神经网络在所有隐藏层中几乎总是具有相同的激活功能。
+神经网络在所有隐藏层中几乎总是具有相同的激活函数。
 
 通过网络模型改变激活函数是非常不寻常的。
 
-传统上，sigmoid 激活函数是 20 世纪 90 年代的默认激活函数。也许在 20 世纪 90 年代中后期到 2010 年代，Tanh 功能是隐藏层的默认激活功能。
+传统上，sigmoid 激活函数是 20 世纪 90 年代的默认激活函数。也许在 20 世纪 90 年代中后期到 2010 年代，Tanh 功能是隐藏层的默认激活函数。
 
 > …双曲正切激活函数的性能通常优于逻辑 sigmoid。
 
@@ -230,7 +230,7 @@ sigmoid 和 Tanh 函数都可以通过所谓的消失梯度问题，使模型在
 
 隐藏层中使用的激活函数通常是基于神经网络体系结构的类型来选择的。
 
-具有通用架构的现代神经网络模型，如 MLP 和美国有线电视新闻网，将利用 ReLU 激活功能或扩展。
+具有通用架构的现代神经网络模型，如 MLP 和美国有线电视新闻网，将利用 ReLU 激活函数或扩展。
 
 > 在现代神经网络中，默认的建议是使用校正后的线性单元或 ReLU …
 
@@ -238,17 +238,17 @@ sigmoid 和 Tanh 函数都可以通过所谓的消失梯度问题，使模型在
 
 递归网络仍然普遍使用 Tanh 或 sigmoid 激活函数，甚至两者都使用。例如，LSTM 通常使用 Sigmoid 激活进行循环连接，使用 Tanh 激活进行输出。
 
-*   **多层感知器(MLP)** : ReLU 激活功能。
+*   **多层感知器(MLP)** : ReLU 激活函数。
 *   **卷积神经网络(CNN)** : ReLU 激活函数。
-*   **递归神经网络** : Tanh 和/或 Sigmoid 激活功能。
+*   **递归神经网络** : Tanh 和/或 Sigmoid 激活函数。
 
-如果您不确定要为您的网络使用哪种激活功能，请尝试一些并比较结果。
+如果您不确定要为您的网络使用哪种激活函数，请尝试一些并比较结果。
 
 下图总结了如何为神经网络模型的隐藏层选择激活函数。
 
 ![How to Choose a Hidden Layer Activation Function](img/d736d04bcdd89b4d8b6967e383693a9b.png)
 
-如何选择隐藏层激活功能
+如何选择隐藏层激活函数
 
 ## 输出层的激活
 
@@ -327,7 +327,7 @@ pyplot.show()
 
 运行该示例计算一系列值的输出，并创建输入与输出的关系图。
 
-我们可以看到熟悉的 S 形的乙状结肠激活功能。
+我们可以看到熟悉的 S 形的乙状结肠激活函数。
 
 ![Plot of Inputs vs. Outputs for the Sigmoid Activation Function.](img/64e9917fa31d025a855334f80d5d0079.png)
 
@@ -335,7 +335,7 @@ Sigmoid 激活函数的输入与输出图。
 
 用于训练输出层中具有 sigmoid 激活函数的模型的目标标签将具有值 0 或 1。
 
-### 软最大输出激活功能
+### 软最大输出激活函数
 
 [softmax 函数](https://machinelearningmastery.com/softmax-activation-function-with-python/)输出一个总和为 1.0 的值向量，该向量可以解释为类成员的概率。
 
@@ -351,7 +351,7 @@ softmax 函数计算如下:
 
 您可以在本教程中了解更多关于 Softmax 功能的详细信息:
 
-*   [Python 的 Softmax 激活功能](https://machinelearningmastery.com/softmax-activation-function-with-python/)
+*   [Python 的 Softmax 激活函数](https://machinelearningmastery.com/softmax-activation-function-with-python/)
 
 我们无法绘制 softmax 函数，但我们可以用 Python 给出一个计算它的例子。
 
@@ -383,7 +383,7 @@ print(outputs.sum())
 
 用于在输出层使用 softmax 激活函数训练模型的目标标签将是向量，目标类为 1，所有其他类为 0。
 
-### 如何选择输出激活功能
+### 如何选择输出激活函数
 
 您必须根据正在解决的预测问题的类型为输出图层选择激活函数。
 
@@ -409,7 +409,7 @@ print(outputs.sum())
 
 ![How to Choose an Output Layer Activation Function](img/cf7d789b9054a3236636754802153939.png)
 
-如何选择输出层激活功能
+如何选择输出层激活函数
 
 ## 进一步阅读
 
@@ -418,7 +418,7 @@ print(outputs.sum())
 ### 教程
 
 *   [整流线性单元的温和介绍](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/)
-*   [Python 的 Softmax 激活功能](https://machinelearningmastery.com/softmax-activation-function-with-python/)
+*   [Python 的 Softmax 激活函数](https://machinelearningmastery.com/softmax-activation-function-with-python/)
 *   [机器学习中的 4 类分类任务](https://machinelearningmastery.com/types-of-classification-in-machine-learning/)
 *   [如何使用 ReLU](https://machinelearningmastery.com/how-to-fix-vanishing-gradients-using-the-rectified-linear-activation-function/) 修复渐变消失问题
 
@@ -431,7 +431,7 @@ print(outputs.sum())
 
 ### 文章
 
-*   [激活功能，维基百科](https://en.wikipedia.org/wiki/Activation_function)。
+*   [激活函数，维基百科](https://en.wikipedia.org/wiki/Activation_function)。
 
 ## 摘要
 
@@ -440,7 +440,7 @@ print(outputs.sum())
 具体来说，您了解到:
 
 *   激活函数是神经网络设计的关键部分。
-*   隐藏层的现代默认激活功能是 ReLU 功能。
+*   隐藏层的现代默认激活函数是 ReLU 功能。
 *   输出层的激活函数取决于预测问题的类型。
 
 **你有什么问题吗？**

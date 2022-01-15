@@ -84,7 +84,7 @@ print(X.shape, y.shape)
 
 每个样本有 10 个输入和 3 个输出，因此，网络需要一个输入层，它期望通过第一个隐藏层中的“ *input_dim* ”参数和输出层中的 3 个节点指定 10 个输入。
 
-我们将使用隐藏层中流行的 [ReLU](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/) 激活功能。隐藏层有 20 个节点，这些节点是经过反复试验选择的。我们将使用平均绝对误差损失和随机梯度下降的亚当版本来拟合模型。
+我们将使用隐藏层中流行的 [ReLU](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/) 激活函数。隐藏层有 20 个节点，这些节点是经过反复试验选择的。我们将使用平均绝对误差损失和随机梯度下降的亚当版本来拟合模型。
 
 下面列出了多输出回归任务的网络定义。
 

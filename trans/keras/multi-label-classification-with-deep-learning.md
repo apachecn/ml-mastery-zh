@@ -108,7 +108,7 @@ for i in range(10):
 
 每个样本有 10 个输入和 3 个输出；因此，网络需要一个输入层，该输入层期望通过第一个隐藏层中的“ *input_dim* ”参数指定的 10 个输入和输出层中的三个节点。
 
-我们将使用隐藏层中流行的 [ReLU 激活功能](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/)。隐藏层有 20 个节点，是经过反复试验选择的。我们将使用二元交叉熵损失和随机梯度下降的亚当版本来拟合模型。
+我们将使用隐藏层中流行的 [ReLU 激活函数](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/)。隐藏层有 20 个节点，是经过反复试验选择的。我们将使用二元交叉熵损失和随机梯度下降的亚当版本来拟合模型。
 
 下面列出了多标签分类任务的网络定义。
 
