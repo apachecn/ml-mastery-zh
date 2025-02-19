@@ -26,9 +26,9 @@ Python 中统计功效和功效分析的简要介绍
 本教程分为四个部分;他们是：
 
 1.  统计假设检验
-2.  什么是统计权力？
-3.  功效分析
-4.  学生的测试功效分析
+2.  什么是统计功效？
+3.  功率分析
+4.  学生的测试功率分析
 
 ## 统计假设检验
 
@@ -60,7 +60,7 @@ p 值对所选显着性水平的背景感兴趣。如果 p 值小于显着性水
 
 在这种情况下，我们可以将显着性水平视为拒绝零假设的概率，如果它是真的。这是发生 I 型错误或误报的可能性。
 
-## 什么是统计权力？
+## 什么是统计功效？
 
 统计功效或假设检验的功效是检验正确拒绝零假设的概率。
 
@@ -246,7 +246,7 @@ T 检验的功效曲线
 *   [statsmodels.stats.power.TTestIndPower](http://www.statsmodels.org/dev/generated/statsmodels.stats.power.TTestIndPower.html)
 *   [statsmodels.stats.power.TTestIndPower.solve_power（）API](http://www.statsmodels.org/dev/generated/statsmodels.stats.power.TTestIndPower.solve_power.html)
     [statsmodels.stats.power.TTestIndPower.plot_power（）API](http://www.statsmodels.org/dev/generated/statsmodels.stats.power.TTestIndPower.plot_power.html)
-*   [Statsmodels 统计权力](http://jpktd.blogspot.com.au/2013/03/statistical-power-in-statsmodels.html)，2013 年。
+*   [Statsmodels 统计功效](http://jpktd.blogspot.com.au/2013/03/statistical-power-in-statsmodels.html)，2013 年。
 *   [statsmodels 中的 Power Plots](http://jpktd.blogspot.com.au/2013/05/power-plots-in-statsmodels.html) ，2013。
 
 ### 用品
