@@ -6,19 +6,19 @@
 
 可以计算并报告完成实验的功效，以评论从研究结果中得出的结论中可能存在的置信度。它还可以用作估计观察数量或样本量的工具，以便检测实验中的效果。
 
-在本教程中，您将发现假设检验的统计功效的重要性，现在可以计算功效分析和功率曲线，作为实验设计的一部分。
+在本教程中，您将发现假设检验的统计功效的重要性，现在可以计算功效分析和功效曲线，作为实验设计的一部分。
 
 完成本教程后，您将了解：
 
 *   统计功效是在发现效果时发现效果的假设检验的概率。
-*   在给定期望的显着性水平，效应大小和统计功效的情况下，功率分析可用于估计实验所需的最小样本大小。
+*   在给定期望的显着性水平，效应大小和统计功效的情况下，功效分析可用于估计实验所需的最小样本大小。
 *   如何计算和绘制 Python 中 Student t 检验的功效分析，以便有效地设计实验。
 
 让我们开始吧。
 
 ![A Gentle Introduction to Statistical Power and Power Analysis in Python](img/dca7e472cd0be43357c2f357e5734038.jpg)
 
-Python 中统计功效和功率分析的简要介绍
+Python 中统计功效和功效分析的简要介绍
 [KamilPorembiński](https://www.flickr.com/photos/paszczak000/8018640930/)的照片，保留一些权利。
 
 ## 教程概述
@@ -27,8 +27,8 @@ Python 中统计功效和功率分析的简要介绍
 
 1.  统计假设检验
 2.  什么是统计权力？
-3.  功率分析
-4.  学生的测试功率分析
+3.  功效分析
+4.  学生的测试功效分析
 
 ## 统计假设检验
 
@@ -66,11 +66,11 @@ p 值对所选显着性水平的背景感兴趣。如果 p 值小于显着性水
 
 也就是说，真阳性结果的概率。只有当零假设被拒绝时才有用。
 
-> 统计功效是指测试正确拒绝假零假设的概率。仅当 null 为假时，统计功率才具有相关性。
+> 统计功效是指测试正确拒绝假零假设的概率。仅当 null 为假时，统计功效才具有相关性。
 
 - 第 60 页，[影响大小的基本指南：统计能力，Meta 分析和研究结果的解释](https://amzn.to/2JDcwSe)，2010。
 
-给定实验的统计功效越高，产生 II 型（假阴性）误差的概率越低。也就是说，当有效果时检测效果的概率越高。实际上，功率恰好是 II 型误差概率的倒数。
+给定实验的统计功效越高，产生 II 型（假阴性）误差的概率越低。也就是说，当有效果时检测效果的概率越高。实际上，功效恰好是 II 型误差概率的倒数。
 
 ```py
 Power = 1 - Type II Error
@@ -81,14 +81,14 @@ Pr(True Positive) = 1 - Pr(False Negative)
 
 在解释统计功效时，我们寻求具有高统计功效的经验设置。
 
-*   **低统计功率**：犯下 II 型错误的风险很大，例如：假阴性。
-*   **高统计功率**：犯下 II 型错误的风险很小。
+*   **低统计功效**：犯下 II 型错误的风险很大，例如：假阴性。
+*   **高统计功效**：犯下 II 型错误的风险很小。
 
-统计功率太低的实验结果将导致关于结果含义的无效结论。因此，必须寻求最低水平的统计功效。
+统计功效太低的实验结果将导致关于结果含义的无效结论。因此，必须寻求最低水平的统计功效。
 
 设计具有 80％或更高的统计功效的实验是常见的，例如， 0.80。这意味着遇到 II 型区域的概率为 20％。这与显着性水平的标准值遇到类型 I 错误的 5％可能性不同。
 
-## 功率分析
+## 功效分析
 
 统计力是拼图中的一个，有四个相关部分;他们是：
 
@@ -99,7 +99,7 @@ Pr(True Positive) = 1 - Pr(False Negative)
 
 所有四个变量都是相关的。例如，较大的样本大小可以使效果更容易检测，并且通过降低显着性水平可以在测试中增加统计功效。
 
-功率分析涉及在给定三个其他参数的值的情况下估计这四个参数中的一个。这是我们希望使用统计假设检验解释的实验设计和分析中的强大工具。
+功效分析涉及在给定三个其他参数的值的情况下估计这四个参数中的一个。这是我们希望使用统计假设检验解释的实验设计和分析中的强大工具。
 
 例如，可以在给定效应大小，样本大小和显着性水平的情况下估计统计功效。或者，可以给出不同的期望显着性水平来估计样本大小。
 
@@ -107,19 +107,19 @@ Pr(True Positive) = 1 - Pr(False Negative)
 
 - 第 56 页，[影响大小的基本指南：统计功效，Meta 分析和研究结果的解释](https://amzn.to/2JDcwSe)，2010。
 
-也许功率分析最常见的用途是估计实验所需的最小样本量。
+也许功效分析最常见的用途是估计实验所需的最小样本量。
 
-> 功率分析通常在进行研究之前进行。预期或先验功率分析可用于估计四个功率参数中的任何一个，但最常用于估计所需的样本大小。
+> 功效分析通常在进行研究之前进行。预期或先验功效分析可用于估计四个功效参数中的任何一个，但最常用于估计所需的样本大小。
 
 - 第 57 页，[影响大小的基本指南：统计能力，Meta 分析和研究结果的解释](https://amzn.to/2JDcwSe)，2010。
 
-作为从业者，我们可以从一些参数的合理默认值开始，例如 0.05 的显着性水平和 0.80 的功率水平。然后我们可以估计所需的最小效应大小，特定于正在进行的实验。然后可以使用功率分析来估计所需的最小样本量。
+作为从业者，我们可以从一些参数的合理默认值开始，例如 0.05 的显着性水平和 0.80 的功效水平。然后我们可以估计所需的最小效应大小，特定于正在进行的实验。然后可以使用功效分析来估计所需的最小样本量。
 
-此外，可以执行多个功率分析以提供一个参数相对于另一个参数的曲线，例如在给定样本大小变化的情况下实验中效果大小的变化。可以根据三个参数创建更精细的图表。这是实验设计的有用工具。
+此外，可以执行多个功效分析以提供一个参数相对于另一个参数的曲线，例如在给定样本大小变化的情况下实验中效果大小的变化。可以根据三个参数创建更精细的图表。这是实验设计的有用工具。
 
-## 学生的测试功率分析
+## 学生的测试功效分析
 
-我们可以通过一个有效的例子，将统计功效和功率分析的思想具体化。
+我们可以通过一个有效的例子，将统计功效和功效分析的思想具体化。
 
 在本节中，我们将研究 Student t 检验，这是一个统计假设检验，用于比较两个高斯变量样本的均值。该测试的假设或无假设是样本群具有相同的平均值，例如样本之间没有差异，或者样本来自相同的基础人群。
 
@@ -137,11 +137,11 @@ Pr(True Positive) = 1 - Pr(False Negative)
 
 对于具有这些默认值的给定实验，我们可能对估计合适的样本大小感兴趣。也就是说，每个样本需要多少观察才能至少检测到 0.80 的效果，如果是真的则有 80％的几率检测到效果（类型 II 误差的 20％）和 5％的检测机会如果没有这种效果会产生影响（类型 I 错误）。
 
-我们可以使用功率分析来解决这个问题。
+我们可以使用功效分析来解决这个问题。
 
 statsmodels 库提供 [TTestIndPower](http://www.statsmodels.org/dev/generated/statsmodels.stats.power.TTestIndPower.html) 类，用于计算具有独立样本的 Student t 检验的功效分析。值得注意的是 [TTestPower](http://www.statsmodels.org/dev/generated/statsmodels.stats.power.TTestPower.html) 类可以对配对的 Student t 检验执行相同的分析。
 
-函数 [solve_power（）](http://www.statsmodels.org/dev/generated/statsmodels.stats.power.TTestIndPower.solve_power.html)可用于计算功率分析中的四个参数之一。在我们的例子中，我们有兴趣计算样本量。我们可以通过提供我们知道的三条信息（`alpha`，_ 效果 _ 和`power`）并设置我们想要计算的参数大小来使用该功能（`nobs1`）对“_ 无 _”的答案。这告诉函数要计算什么。
+函数 [solve_power（）](http://www.statsmodels.org/dev/generated/statsmodels.stats.power.TTestIndPower.solve_power.html)可用于计算功效分析中的四个参数之一。在我们的例子中，我们有兴趣计算样本量。我们可以通过提供我们知道的三条信息（`alpha`，_ 效果 _ 和`power`）并设置我们想要计算的参数大小来使用该功能（`nobs1`）对“_ 无 _”的答案。这告诉函数要计算什么。
 
 关于样本大小的注释：该函数有一个称为比率的参数，即一个样本中的样本数与另一个样本中的样本数之比。如果预期两个样本具有相同的观察数量，则该比率为 1.0。例如，如果预计第二个样本的观察量是观察量的一半，那么该比率将为 0.5。
 
@@ -174,11 +174,11 @@ print('Sample Size: %.3f' % result)
 Sample Size: 25.525
 ```
 
-我们可以更进一步，计算功率曲线。
+我们可以更进一步，计算功效曲线。
 
 功效曲线是线图，显示变量的变化（如效应大小和样本大小）如何影响统计检验的功效。
 
-[plot_power（）函数](http://www.statsmodels.org/dev/generated/statsmodels.stats.power.TTestIndPower.plot_power.html)可用于创建功率曲线。因变量（x 轴）必须在'`dep_var`'参数中通过名称指定。然后可以为样本大小（`nobs`），效应大小（`effect_size`）和显着性（`alpha`）参数指定值数组。然后绘制一条或多条曲线，显示对统计功效的影响。
+[plot_power（）函数](http://www.statsmodels.org/dev/generated/statsmodels.stats.power.TTestIndPower.plot_power.html)可用于创建功效曲线。因变量（x 轴）必须在'`dep_var`'参数中通过名称指定。然后可以为样本大小（`nobs`），效应大小（`effect_size`）和显着性（`alpha`）参数指定值数组。然后绘制一条或多条曲线，显示对统计功效的影响。
 
 例如，我们可以假设 0.05 的显着性（函数的默认值）并探索样本大小在 5 到 100 之间的变化，具有低，中和高效果大小。
 
@@ -210,9 +210,9 @@ pyplot.show()
 
 ![Power Curves for Student's t Test](img/069ba5aaff77fc71bdc3dc494cb742fc.jpg)
 
-T 检验的功率曲线
+T 检验的功效曲线
 
-有用的是，statsmodels 具有[类来执行功率分析](http://www.statsmodels.org/dev/stats.html#power-and-sample-size-calculations)以及其他统计测试，例如 F 检验，Z 检验和卡方检验。
+有用的是，statsmodels 具有[类来执行功效分析](http://www.statsmodels.org/dev/stats.html#power-and-sample-size-calculations)以及其他统计测试，例如 F 检验，Z 检验和卡方检验。
 
 ## 扩展
 
@@ -241,7 +241,7 @@ T 检验的功率曲线
 
 ### API
 
-*   [Statsmodels 功率和样本量计算](http://www.statsmodels.org/dev/stats.html#power-and-sample-size-calculations)
+*   [Statsmodels 功效和样本量计算](http://www.statsmodels.org/dev/stats.html#power-and-sample-size-calculations)
 *   [statsmodels.stats.power.TTestPower API](http://www.statsmodels.org/dev/generated/statsmodels.stats.power.TTestPower.html)
 *   [statsmodels.stats.power.TTestIndPower](http://www.statsmodels.org/dev/generated/statsmodels.stats.power.TTestIndPower.html)
 *   [statsmodels.stats.power.TTestIndPower.solve_power（）API](http://www.statsmodels.org/dev/generated/statsmodels.stats.power.TTestIndPower.solve_power.html)
@@ -260,12 +260,12 @@ T 检验的功率曲线
 
 ## 摘要
 
-在本教程中，您发现了假设检验的统计功效以及如何计算功效分析和功率曲线作为实验设计的一部分。
+在本教程中，您发现了假设检验的统计功效以及如何计算功效分析和功效曲线作为实验设计的一部分。
 
 具体来说，你学到了：
 
 *   统计功效是在发现效果时发现效果的假设检验的概率。
-*   在给定期望的显着性水平，效应大小和统计功效的情况下，功率分析可用于估计实验所需的最小样本大小。
+*   在给定期望的显着性水平，效应大小和统计功效的情况下，功效分析可用于估计实验所需的最小样本大小。
 *   如何计算和绘制 Python 中 Student t 检验的功效分析，以便有效地设计实验。
 
 你有任何问题吗？
